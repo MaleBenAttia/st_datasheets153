@@ -1,5 +1,8 @@
 # STM32 Datasheet Table Extractor & RAG Transformer
 
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/MaleBenAttia/st_datasheets153)
+**Depot public :** [MaleBenAttia/st_datasheets153](https://github.com/MaleBenAttia/st_datasheets153)
+
 Pipeline complet d'extraction automatique de tableaux depuis les datasheets
 PDF STMicroelectronics (STM32) et de transformation en chunks optimises pour
 l'indexation vectorielle (RAG avec ChromaDB, Qdrant, Pinecone, etc.).
