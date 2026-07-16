@@ -535,6 +535,18 @@ results = collection.query(
 )
 ```
 
+---
+
+## Clé de déploiement (SSH)
+
+Cette machine utilise la clé publique suivante pour pusher sur le dépôt :
+
+```
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILCfGAITeIsVyGMw3K/P7Ai4LC/pKKNeTQpzA19fbJLX st_datasheets153
+```
+
+Ajoutée sur GitHub → https://github.com/settings/keys
+
 ### Requete par composant exact
 
 ```python
