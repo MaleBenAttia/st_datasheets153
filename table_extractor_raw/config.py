@@ -19,7 +19,10 @@ MAX_EMPTY_CELL_RATIO   = 0.50  # jusqu'à 50% de vide autorisé (ex: tables Pino
 MAX_COL_VARIANCE       = 0.40  # tolérance accrue pour les sous-lignes fusionnées (ex: "Master mode" au milieu d'une table)
 
 # ── Continuation multi-pages ──────────────────────────────────────────────────
-MAX_CONTINUATION_PAGES = 10    # sécurité anti-boucle infinie
+MAX_CONTINUATION_PAGES = 30    # sécurité anti-boucle infinie
+
+# ── Type 2 (Antenna House / XML-based) ────────────────────────────────────────
+MIN_TABLE_WIDTH = 40      # en dessous = bandeau décoratif / marge → rejeter
 
 # ── Debug / images ────────────────────────────────────────────────────────────
 SAVE_DEBUG_IMAGES         = True   # crop image à côté du JSON
@@ -46,4 +49,25 @@ PDFPLUMBER_TABLE_SETTINGS_FALLBACK = {
     "snap_tolerance":      3,
     "join_tolerance":      3,
     "text_tolerance":      3,
+}
+
+# ── pdfplumber — réglages Type 2 (Antenna House / XML) ───────────────────────
+PDFPLUMBER_TABLE_SETTINGS_TYPE2 = {
+    "vertical_strategy":      "lines",
+    "horizontal_strategy":    "lines",
+    "snap_tolerance":         5,
+    "join_tolerance":         5,
+    "edge_min_length":         5,
+    "min_words_vertical":     3,
+    "min_words_horizontal":   1,
+    "intersection_tolerance": 5,
+    "text_tolerance":         5,
+}
+
+PDFPLUMBER_TABLE_SETTINGS_FALLBACK_TYPE2 = {
+    "vertical_strategy":   "text",
+    "horizontal_strategy": "text",
+    "snap_tolerance":      5,
+    "join_tolerance":      5,
+    "text_tolerance":      5,
 }

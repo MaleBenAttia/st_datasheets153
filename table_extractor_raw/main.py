@@ -29,6 +29,18 @@ from core.toc_detector import detect_tables
 from core.grid_extractor import extract_table_grid
 from core.schema import RawTable
 
+
+def detect_pdf_type(pdf_path: str) -> int:
+    """Détecte le type de PDF : 1 = Acrobat, 2 = Antenna House (XML)."""
+    try:
+        import subprocess
+        info = subprocess.run(
+            ["pdfinfo", pdf_path], capture_output=True, text=True, timeout=10
+        ).stdout.lower()
+        return 2 if "antenna" in info else 1
+    except Exception:
+        return 1
+
 # ── Logging JSON simple ────────────────────────────────────────────────────────
 LOG_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -73,9 +85,13 @@ def process_pdf(pdf_path: Path, family: str) -> dict:
         "worst_tables": [],  # trié par empty_cell_ratio desc
     }
 
+    # ── Détection du type de PDF ───────────────────────────────────────────────
+    pdf_type = detect_pdf_type(str(pdf_path))
+    logger.info(f"PDF type: {pdf_type} ({'Antenna House' if pdf_type == 2 else 'Acrobat'})")
+
     # ── Étape 1 : détection ────────────────────────────────────────────────────
     try:
-        refs = detect_tables(str(pdf_path))
+        refs = detect_tables(str(pdf_path), pdf_type=pdf_type)
     except Exception as e:
         logger.error(f"TOC detection failed: {e}")
         summary["errors"].append(f"toc_detection:{e}")
@@ -100,6 +116,7 @@ def process_pdf(pdf_path: Path, family: str) -> dict:
                 pdf_name=pdf_name,
                 output_base=OUTPUT_DIR,
                 all_refs=refs,
+                pdf_type=pdf_type,
             )
 
             # Validation Pydantic

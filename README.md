@@ -243,6 +243,7 @@ base sur les lignes tracees dans le PDF.
 | 4 | **Continuation multi-pages**     | Fusion des tableaux etales sur 2+ pages                         |
 | 5 | **Propagation horizontale**      | Remplissage des cellules fusionnees (colspan)                   |
 | 6 | **Propagation verticale**        | Remplissage des cellules fusionnees (rowspan)                   |
+| 7 | **Detection couleur (Type 2)**   | Comptage des lignes d'en-tete via fond bleu fonce du PDF        |
 
 ### Extraction Spatiale des En-tetes (avance)
 
@@ -263,6 +264,117 @@ Certains textes pivotes dans le PDF sont encodes a l'envers par le
 moteur PDF (ex: "sremiT" au lieu de "Timers"). Le pipeline :
 - **Conserve** le texte original intact dans `raw_json` (fidelite)
 - **Ajoute** la version corrigee dans le champ `document` du RAG (recherche)
+
+### Selection robuste de la table sur la page
+
+Quand plusieurs tables coexistent sur une meme page (ex: Table 11 et
+Table 12 toutes deux page 42), le moteur selectionne la bonne table
+via deux mecanismes :
+
+1. **Matching par caption** (`_find_caption_y`) : localise la legende
+   dans le PDF en ignorant la ponctuation (ex: `"11."` matche `"11"`)
+2. **Fallback positionnel** (`_pick_best_table`) : si la legende est
+   introuvable, prend la table la plus haute sur la page (pas la plus
+   grande), evitant de confondre avec une table voisine plus volumineuse
+
+### Classification des datasheets (Type 1 / Type 2)
+
+Les 185 datasheets se divisent en **2 types** selon leur structure PDF :
+
+| Caracteristique          | Type 1 (Acrobat)                          | Type 2 (Antenna House)                    |
+|--------------------------|-------------------------------------------|-------------------------------------------|
+| **Producer**             | Acrobat Elements / Acrobat Distiller      | Antenna House PDF Output Library 7.0      |
+| **C2 version**           | 10.0.0 a 20.4.0                           | 4.2.0220                                  |
+| **Emplacement du TOC**   | Debut du document (pages 4 a 15)          | Fin du document (dernieres 10-15 pages)    |
+| **Fausses tables**       | Non (1 seule table reelle par page)       | Oui (bandeau lateral 25px sur chaque page) |
+| **Marqueur continuation**| "(continued)" / "(suite)" present         | Absent (pas de marqueur explicite)         |
+| **Pages moyennes**       | 80-200                                    | 130-240                                   |
+| **Taille fichier**       | 1.5 - 6 Mo                                | 7 - 14 Mo                                 |
+| **Tableaux par page**    | 1-2 (uniquement les vrais)                | 2-6 (dont 1+ faux bandeau)               |
+| **Texte rotatif**        | Rare                                      | Frequent (ex: "STM32H7A3L" vertical)     |
+| **Correctif necessaire** | Non                                       | Oui (filtrage + detection continuation)    |
+
+**Familles concernees :**
+
+```
+Type 1 (169 PDFs, Producer = Acrobat Elements/Distiller)
+├── C0/  (5)  stm32c011d6, stm32c031c4, stm32c051c6, stm32c071r8, stm32c091kb
+├── F0/ (13)  stm32f030c6, stm32f031c4, stm32f038c6, stm32f042c4, stm32f048c6,
+│             stm32f051c4, stm32f058c8, stm32f070c6, stm32f071c8, stm32f072c8,
+│             stm32f078cb, stm32f091cb, stm32f098cc
+├── F1/ (13)  stm32f100c4, stm32f100rc, stm32f101c4, stm32f101c8, stm32f101rc,
+│             stm32f101rf, stm32f102c4, stm32f102c8, stm32f103c4, stm32f103c8,
+│             stm32f103rc, stm32f103rf, stm32f105r8
+├── F2/  (2)  stm32f205rb, stm32f215re
+├── F3/ (14)  stm32f301c6, stm32f302c6, stm32f302cb, stm32f302rd, stm32f303c6,
+│             stm32f303cb, stm32f303rd, stm32f318c8, stm32f328c8, stm32f334c4,
+│             stm32f358cc, stm32f373c8, stm32f378cc, stm32f398ve
+├── F4/ (14)  stm32f401cb, stm32f401cd, stm32f405oe, stm32f410c8, stm32f411cc,
+│             stm32f412ce, stm32f413cg, stm32f415og, stm32f423ch, stm32f427ag,
+│             stm32f437ai, stm32f446mc, stm32f469ae, stm32f479ag
+├── F7/  (8)  stm32f722ic, stm32f730i8, stm32f732ie, stm32f745ie, stm32f750n8,
+│             stm32f756bg, stm32f765bg, stm32f777bi
+├── G0/ (12)  stm32g030c6, stm32g031c4, stm32g041c6, stm32g050c6, stm32g051c6,
+│             stm32g061c6, stm32g070cb, stm32g071c8, stm32g081cb, stm32g0b0ce,
+│             stm32g0b1cb, stm32g0c1cc
+├── G4/  (8)  stm32g431c6, stm32g441cb, stm32g473cb, stm32g474cb, stm32g483ce,
+│             stm32g484ce, stm32g491cc, stm32g4a1ce
+├── H5/  (9)  stm32h503cb, stm32h523cc, stm32h533ce, stm32h543ce, stm32h553cg,
+│             stm32h562ag, stm32h573ai, stm32h5e4aj, stm32h5f4aj
+├── H7/ (14)  stm32h723ve, stm32h725ae, stm32h730ab, stm32h733vg, stm32h735ag,
+│             stm32h742ag, stm32h745bg, stm32h747ag, stm32h750ib, stm32h753ai,
+│             stm32h755bi, stm32h757ai, stm32h7r3a8, stm32h7s3a8
+├── L0/ (19)  stm32l010c6, stm32l010f4, stm32l010k8, stm32l010rb, stm32l011d3,
+│             stm32l021d4, stm32l031c4, stm32l041c6, stm32l051c6, stm32l052c6,
+│             stm32l053c6, stm32l062c8, stm32l063c8, stm32l071c8, stm32l072cb,
+│             stm32l073cb, stm32l081cb, stm32l082cz, stm32l083cb
+├── L1/ (11)  stm32l100c6, stm32l100rc, stm32l151c6, stm32l151cc, stm32l151qc,
+│             stm32l151qd, stm32l151qe, stm32l162qc, stm32l162qd, stm32l162rc,
+│             stm32l162re
+├── L4/ (16)  stm32l412c8, stm32l422cb, stm32l431cb, stm32l432kb, stm32l433cb,
+│             stm32l442kc, stm32l443cc, stm32l451cc, stm32l452cc, stm32l462ce,
+│             stm32l471qe, stm32l475rc, stm32l476je, stm32l486jg, stm32l496ae,
+│             stm32l4a6ag
+├── L5/  (2)  stm32l552cc, stm32l562ce
+├── N6/  (1)  stm32n645a0
+└── U5/  (8)  stm32u535cb, stm32u545ce, stm32u575ag, stm32u585ai, stm32u595ai,
+             stm32u5a5aj, stm32u5f7vj, stm32u5g7vj
+
+Type 2 (16 PDFs, Producer = Antenna House, format "nouvelle generation")
+├── C5/  (6)  stm32c532cb, stm32c542cc, stm32c551cc, stm32c562ce,
+│             stm32c591ce, stm32c5a3cg
+├── H7/  (3)  stm32h7a3ag, stm32h7b0ab, stm32h7b3ai
+├── U0/  (3)  stm32u031c6, stm32u073c8, stm32u083cc
+└── U3/  (4)  stm32u375ce, stm32u385cg, stm32u3b5cg, stm32u3c5ci
+```
+
+**Problemes specifiques aux PDFs Type 2 et correctifs :**
+
+| # | Probleme | Cause | Correctif |
+|---|----------|-------|-----------|
+| 1 | **Fausse table de bordure** | Bandeau lateral 25px (DSxxxxx - Rev X) detecte comme table | `_filter_narrow_tables()` : rejet si largeur < `MIN_TABLE_WIDTH = 40`px |
+| 2 | **Absence de marqueur continuation** | Pas de "(continued)" en en-tete | `_is_continuation_page()` : detection par position + nombre de colonnes |
+| 3 | **TOC en fin de document** | Liste des tableaux aux pages 231-233 (vs 4-15 pour Type 1) | `_from_toc_reverse()` : scan des 30 dernieres pages pour Type 2 |
+| 4 | **Cellules fusionnees mal propagees** | Bbox exactes par ligne (pas d'overlap vertical) | `_propagate_spans_type2()` : utilise `cell_bbox[0] <= cx <= cell_bbox[2]` au lieu de `cell_bbox[2] > cx - 0.5` |
+| 5 | **Header depth = 1 errone** | Les cellules d'en-tete ne debordent pas sur la ligne suivante (Type 1 si) | `_count_header_rows_by_color()` : detection par fond bleu fonce `(0, 32, 82)` + fallback heuristique par densite |
+| 6 | **Texte tronque dans headers** | Valeurs multi-lignes (`"1.62\nV\n="`) coupees au 1er `\n` | `_build_final_headers()` : pour Type 2, `\n` → espace au lieu de `split()[0]` |
+| 7 | **Continuation limitee a 10 pages** | Table_7 s'etend sur 20 pages (48→67) | `MAX_CONTINUATION_PAGES` : 10 → 30, importe dans `continuation.py` |
+
+### Script de classification
+
+Un script `classify_pdfs.py` permet de classifier les 185 PDFs par type :
+
+```powershell
+# --- Classifier tous les PDFs ---
+.\venv\Scripts\python.exe classify_pdfs.py
+
+# Sortie : 169 Type 1 (Acrobat), 16 Type 2 (Antenna House)
+```
+
+Le script utilise `pdfinfo` (Poppler) pour lire le champ `Producer` de chaque
+PDF et determine automatiquement le type. La detection est integree dans le
+pipeline via `detect_pdf_type()` dans `main.py`, appelee avant l'extraction
+pour dispatcher vers le bon chemin de traitement.
 
 ---
 

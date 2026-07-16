@@ -46,17 +46,22 @@ class TableRef:
     section:  str = ""     # section parente si détectable
 
 
-def detect_tables(pdf_path: str) -> list[TableRef]:
+def detect_tables(pdf_path: str, pdf_type: int = 1) -> list[TableRef]:
     """
     Détecte toutes les tables d'un PDF via :
     1. "List of Tables" si présente
     2. Fallback : scan page par page pour les légendes inline
 
+    pdf_type=2 : TOC en fin de document → scan depuis la dernière page.
+
     Retourne une liste de TableRef triée par page.
     """
     with pdfplumber.open(pdf_path) as pdf:
         # Tentative 1 : TOC
-        refs = _from_toc(pdf)
+        if pdf_type == 2:
+            refs = _from_toc_reverse(pdf)
+        else:
+            refs = _from_toc(pdf)
         if refs:
             logger.info(f"TOC found: {len(refs)} tables detected via List of Tables")
             return refs
@@ -68,10 +73,12 @@ def detect_tables(pdf_path: str) -> list[TableRef]:
         return refs
 
 
-def _from_toc(pdf: pdfplumber.PDF) -> list[TableRef]:
+def _from_toc(pdf: pdfplumber.PDF, start_from: int = 1) -> list[TableRef]:
     """
     Cherche une section 'List of Tables' et en extrait toutes les entrées,
     y compris sur plusieurs pages consécutives.
+
+    start_from : page de début (1-indexé). Pour Type 1 : 1, pour Type 2 : dernière page - 30.
 
     Stratégie :
     - Détecter l'entrée dans le TOC (header "List of tables")
@@ -94,6 +101,9 @@ def _from_toc(pdf: pdfplumber.PDF) -> list[TableRef]:
     )
 
     for page_num, page in enumerate(pdf.pages, start=1):
+        # Skip pages before start_from
+        if page_num < start_from:
+            continue
         text = page.extract_text() or ""
         lines = text.splitlines()
 
@@ -196,6 +206,22 @@ def _from_toc(pdf: pdfplumber.PDF) -> list[TableRef]:
                     pending_caption = start_match.group(2).strip()
 
     return refs
+
+
+def _from_toc_reverse(pdf: pdfplumber.PDF) -> list[TableRef]:
+    """
+    Cherche la TOC en commençant par la fin du document (Type 2).
+    Les PDFs Antenna House placent la 'List of Tables' dans les dernières pages.
+    """
+    total = len(pdf.pages)
+    start_page = max(1, total - 30)
+
+    refs = _from_toc(pdf, start_page)
+    if refs:
+        return refs
+
+    # Fallback : chercher dans TOUT le document (au cas où la TOC serait ailleurs)
+    return _from_toc(pdf)
 
 
 def _from_inline_scan(pdf: pdfplumber.PDF) -> list[TableRef]:

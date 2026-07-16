@@ -11,7 +11,12 @@ import pdfplumber
 from pdfplumber.page import Page
 
 from core.toc_detector import TableRef
-from config import PDFPLUMBER_TABLE_SETTINGS
+from config import (
+    PDFPLUMBER_TABLE_SETTINGS,
+    PDFPLUMBER_TABLE_SETTINGS_TYPE2,
+    MIN_TABLE_WIDTH,
+    MAX_CONTINUATION_PAGES,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -20,6 +25,7 @@ def _is_continuation_page(
     page: Page,
     expected_col_count: int,
     current_table_id: str,
+    pdf_type: int = 1,
 ) -> tuple[bool, Optional[list]]:
     """
     Vérifie si la page contient la suite de la table en cours.
@@ -46,11 +52,22 @@ def _is_continuation_page(
     )
 
     # ── Extraire les tables ───────────────────────────────────────────────────
-    tables = page.extract_tables(PDFPLUMBER_TABLE_SETTINGS)
-    finder = page.debug_tablefinder(PDFPLUMBER_TABLE_SETTINGS)
+    settings = PDFPLUMBER_TABLE_SETTINGS_TYPE2 if pdf_type == 2 else PDFPLUMBER_TABLE_SETTINGS
+    tables = page.extract_tables(settings)
+    finder = page.debug_tablefinder(settings)
 
     if not tables or not finder.tables:
         return False, None
+
+    # Filtrer les bandeaux décoratifs (Type 2)
+    if pdf_type == 2:
+        filtered = [
+            (t, ft) for t, ft in zip(tables, finder.tables)
+            if ft.bbox[2] - ft.bbox[0] >= MIN_TABLE_WIDTH
+        ]
+        if filtered:
+            tables = [t for t, ft in filtered]
+            finder.tables = [ft for t, ft in filtered]
 
     # Prendre la table la plus haute sur la page
     candidates = [(t, ft) for t, ft in zip(tables, finder.tables) if t and len(t) >= 1]
@@ -135,6 +152,44 @@ def _expand_cont_row(row: list, expected_col_count: int) -> list:
     return result[:expected_col_count]
 
 
+def _reduce_cont_row(row: list, expected_col_count: int) -> list:
+    """
+    Reduce a row to expected_col_count by dropping columns that are likely
+    pdfplumber-injected separators (mostly None/empty).
+
+    Strategy: try all combinations of columns to drop; pick the one that
+    preserves the most real values, then favours dropping None/empty
+    columns (no data loss), then columns near the center (separator
+        heuristic), then rightmost columns.
+    """
+    from itertools import combinations
+
+    n_drop = len(row) - expected_col_count
+    center = (len(row) - 1) / 2
+
+    best_criteria = None
+    best_row = None
+
+    for drop_set in combinations(range(len(row)), n_drop):
+        kept = [row[i] for i in range(len(row)) if i not in drop_set]
+        real_count = sum(
+            1 for c in kept if c is not None and str(c).strip() != ""
+        )
+        none_dropped = sum(
+            1
+            for i in drop_set
+            if row[i] is None or str(row[i]).strip() == ""
+        )
+        avg_dist = sum(abs(i - center) for i in drop_set) / n_drop
+
+        crit = (real_count, none_dropped, -avg_dist, sum(drop_set))
+        if best_criteria is None or crit > best_criteria:
+            best_criteria = crit
+            best_row = kept
+
+    return best_row
+
+
 def find_continuations(
     pdf: pdfplumber.PDF,
     start_page_num: int,
@@ -143,7 +198,8 @@ def find_continuations(
     current_table_id: str = "",
     header_depth: int = 1,
     first_cell_text: str = "",
-    max_pages: int = 10,
+    max_pages: int = MAX_CONTINUATION_PAGES,
+    pdf_type: int = 1,
 ) -> tuple[list[int], list[list[str]]]:
     """
     Cherche les pages suivantes contenant la suite de la table.
@@ -161,11 +217,11 @@ def find_continuations(
 
     while current_page <= len(pdf.pages) and len(merged_pages) < max_pages:
         # Ne pas dépasser la page de la table suivante
-        if current_page >= next_table_page:
+        if current_page > next_table_page:
             break
 
         is_cont, table_data = _is_continuation_page(
-            pdf.pages[current_page - 1], expected_col_count, current_table_id
+            pdf.pages[current_page - 1], expected_col_count, current_table_id, pdf_type
         )
         if not is_cont:
             break
@@ -211,10 +267,14 @@ def find_continuations(
             # ── Expansion des cellules fusionnées ─────────────────────────────
             # Les pages de continuation ont souvent moins de colonnes physiques
             # que la page originale (ex: 5 cols physiques → 10 cols réelles).
+            # Elles peuvent aussi en avoir plus (colonnes séparatrices vues par
+            # pdfplumber entre les colonnes réelles).
             expanded = []
             for row in data_rows:
                 if len(row) < expected_col_count:
                     row = _expand_cont_row(row, expected_col_count)
+                elif len(row) > expected_col_count:
+                    row = _reduce_cont_row(row, expected_col_count)
                 expanded.append(row)
 
             extra_rows.extend(expanded)

@@ -21,6 +21,9 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from config import (
     PDFPLUMBER_TABLE_SETTINGS,
     PDFPLUMBER_TABLE_SETTINGS_FALLBACK,
+    PDFPLUMBER_TABLE_SETTINGS_TYPE2,
+    PDFPLUMBER_TABLE_SETTINGS_FALLBACK_TYPE2,
+    MIN_TABLE_WIDTH,
     SAVE_DEBUG_IMAGES,
     SAVE_IMAGES_ONLY_ON_ISSUE,
     DEBUG_IMAGE_DPI,
@@ -131,12 +134,16 @@ def _find_caption_y(page: Page, caption: str) -> Optional[float]:
 
     # Chercher une séquence de mots consécutifs qui matche le début de la légende
     for idx, word in enumerate(words):
-        if word["text"].lower() == caption_words[0]:
+        word_clean = word["text"].lower().rstrip(".,:;!?")
+        caption_word_clean = caption_words[0].rstrip(".,:;!?")
+        if word_clean == caption_word_clean:
             # Vérifier les mots suivants
             match_count = 1
             for k in range(1, len(caption_words)):
                 if idx + k < len(words):
-                    if words[idx + k]["text"].lower() == caption_words[k]:
+                    w_clean = words[idx + k]["text"].lower().rstrip(".,:;!?")
+                    c_clean = caption_words[k].rstrip(".,:;!?")
+                    if w_clean == c_clean:
                         match_count += 1
                     else:
                         break
@@ -181,8 +188,8 @@ def _pick_best_table(
         best_t, best_ft = candidates[0]
         return best_t, best_ft, best_ft.bbox
 
-    # Fallback : la plus grande (comportement original)
-    best_t, best_ft = max(candidates, key=lambda x: sum(len(r) for r in x[0]))
+    # Fallback : la plus haute sur la page (plus fiable que la plus grande)
+    best_t, best_ft = min(candidates, key=lambda x: x[1].bbox[1])
     return best_t, best_ft, best_ft.bbox
 
 
@@ -255,10 +262,140 @@ def _save_debug_image(
         logger.warning(f"Could not save debug image: {e}")
 
 
+def _propagate_spans_type2(
+    table: list[list],
+    raw_table: list[list],
+    rows: int,
+    cols: int,
+    inserted_rows: int,
+    ghost_cols: set[int],
+    col_centers: list[Optional[float]],
+    table_obj: Any,
+) -> None:
+    """
+    Propagation géométrique des cellules fusionnées pour les PDFs Type 2
+    (Antenna House / XML-based).
+    
+    Stratégie : pour chaque cellule vide, chercher la cellule la plus proche
+    (même ligne d'abord, puis en remontant) dont la bbox CONTIENT le centre
+    de la colonne cible.
+    """
+    if not table_obj or not hasattr(table_obj, "rows") or not table_obj.rows:
+        return
+
+    for r in range(rows):
+        r_phys = r - inserted_rows
+        if r_phys < 0:
+            for c in range(cols):
+                if table[r][c] is None:
+                    table[r][c] = table[0][c]
+            continue
+        if r_phys >= len(table_obj.rows):
+            break
+
+        target_row = table_obj.rows[r_phys]
+        target_row_top = target_row.bbox[1]
+
+        for c in range(cols):
+            if c >= len(table[r]) or table[r][c] is not None:
+                continue
+            if c in ghost_cols:
+                table[r][c] = ""
+                continue
+
+            target_cx = col_centers[c]
+            if target_cx is None:
+                table[r][c] = ""
+                continue
+
+            master_val = None
+
+            for r_m in range(r, -1, -1):
+                r_m_phys = r_m - inserted_rows
+                if r_m_phys < 0 or r_m_phys >= len(table_obj.rows):
+                    continue
+                for c_m in range(c + 1):
+                    if c_m >= len(table_obj.rows[r_m_phys].cells):
+                        continue
+                    cell_bbox = table_obj.rows[r_m_phys].cells[c_m]
+                    if cell_bbox is None:
+                        continue
+
+                    covers_row = (r_m == r) or (cell_bbox[3] > target_row_top + 2)
+                    covers_col = (cell_bbox[0] <= target_cx <= cell_bbox[2])
+
+                    if covers_row and covers_col:
+                        val = raw_table[r_m][c_m] if c_m < len(raw_table[r_m]) else None
+                        if val is not None:
+                            master_val = val
+                            break
+                if master_val is not None:
+                    break
+
+            table[r][c] = master_val
+
+
+def _count_header_rows_by_color(page, table_obj) -> int:
+    """
+    Compte les lignes d'en-tête via fond bleu foncé (Type 2 Antenna House).
+    Retourne 0 si pas de bleu détecté (fallback vers heuristiques).
+    """
+    if not hasattr(page, 'rects') or not hasattr(table_obj, 'rows') or not table_obj.rows:
+        return 0
+
+    table_bbox = table_obj.bbox
+    if not table_bbox:
+        return 0
+
+    # Collecter les rectangles remplis en bleu foncé dans la zone table
+    header_y_bottoms = set()
+    for r in page.rects:
+        if (r['x0'] >= table_bbox[0] - 5 and r['x1'] <= table_bbox[2] + 5
+                and r['top'] >= table_bbox[1] - 5 and r['bottom'] <= table_bbox[3] + 5):
+            fill = r.get('non_stroking_color')
+            if fill and len(fill) == 3:
+                r_norm, g_norm, b_norm = fill
+                # Bleu foncé : R et G faibles, B dominant
+                if r_norm < 0.15 and g_norm < 0.25 and b_norm > 0.25:
+                    # Arrondir à l'entier pour grouper les lignes proches
+                    header_y_bottoms.add(round(r['bottom'], 0))
+
+    if not header_y_bottoms:
+        return 0
+
+    # Trier les Y
+    sorted_y = sorted(header_y_bottoms)
+
+    # Filtrer : ne garder que les Y qui correspondent à une ligne réelle de table_obj.rows
+    row_y_bottoms = set(round(row.bbox[3], 0) for row in table_obj.rows)
+    matching = [y for y in sorted_y if y in row_y_bottoms]
+
+    if not matching:
+        return 0
+
+    # Compter les lignes consécutives depuis le haut
+    sorted_row_y = sorted(row_y_bottoms)
+    first_header_y = matching[0]
+    try:
+        first_idx = sorted_row_y.index(first_header_y)
+    except ValueError:
+        return 1
+
+    count = 0
+    for i in range(first_idx, min(first_idx + 10, len(sorted_row_y))):
+        if sorted_row_y[i] in matching:
+            count += 1
+        else:
+            break
+
+    return count
+
+
 def _expand_spans_and_headers(
     raw_table: list[list],
     table_obj: Optional[Any] = None,
-    page: Optional[Any] = None
+    page: Optional[Any] = None,
+    pdf_type: int = 1,
 ) -> tuple[list[str], list[list[str]], list[str]]:
     """
     Propagation géométrique + détection de profondeur d'en-tête + compression.
@@ -306,26 +443,36 @@ def _expand_spans_and_headers(
     inserted_rows = 0
     if page is not None and table_obj is not None and hasattr(table_obj, "rows") and len(table_obj.rows) > 0 and len(grid_col_centers) == cols:
         compressed_c = -1
+        cell_bbox = None
+        span_cols = []
         for c in range(min(cols, len(raw_table[0]))):
-            val = raw_table[0][c]
-            if val and val.count("\n") >= 2:
-                cell_bbox = table_obj.rows[0].cells[c] if c < len(table_obj.rows[0].cells) else None
-                if cell_bbox is not None:
-                    span_cols = []
-                    for c2, cx in enumerate(grid_col_centers):
-                        if cell_bbox[0] - 2 <= cx <= cell_bbox[2] + 2:
-                            span_cols.append(c2)
-                    if len(span_cols) > 1:
+            c_cell_bbox = table_obj.rows[0].cells[c] if c < len(table_obj.rows[0].cells) else None
+            if c_cell_bbox is not None:
+                c_span_cols = []
+                for c2, cx in enumerate(grid_col_centers):
+                    if c_cell_bbox[0] - 2 <= cx <= c_cell_bbox[2] + 2:
+                        c_span_cols.append(c2)
+                if len(c_span_cols) > 1:
+                    # Vérification géométrique : la cellule a-t-elle du contenu multi-lignes ?
+                    words = page.within_bbox(c_cell_bbox).extract_words(x_tolerance=1, y_tolerance=1)
+                    lines_words = []
+                    for w in words:
+                        placed = False
+                        for line in lines_words:
+                            if abs(line[0]['top'] - w['top']) < 3:
+                                line.append(w)
+                                placed = True
+                                break
+                        if not placed:
+                            lines_words.append([w])
+                    if len(lines_words) >= 2:
                         compressed_c = c
+                        cell_bbox = c_cell_bbox
+                        span_cols = c_span_cols
                         break
         
-        if compressed_c != -1:
+        if compressed_c != -1 and cell_bbox is not None:
             c = compressed_c
-            cell_bbox = table_obj.rows[0].cells[c]
-            span_cols = []
-            for c2, cx in enumerate(grid_col_centers):
-                if cell_bbox[0] - 2 <= cx <= cell_bbox[2] + 2:
-                    span_cols.append(c2)
                     
             # Extraction spatiale exacte
             words = page.within_bbox(cell_bbox).extract_words(x_tolerance=1, y_tolerance=1)
@@ -384,54 +531,47 @@ def _expand_spans_and_headers(
 
     # ── 3. Propagation géométrique des cellules fusionnées ─────────────────────
     if table_obj is not None and hasattr(table_obj, "rows") and len(table_obj.rows) > 0:
-        for r in range(rows):
-            # Récupérer l'index de ligne physique correspondant dans table_obj
-            r_phys = r - inserted_rows
-            if r_phys < 0:
-                # Ligne insérée : elle n'a pas de ligne physique dans table_obj.
-                # On propage uniquement depuis la ligne 0 (la ligne parent au-dessus d'elle)
+        if pdf_type == 2:
+            _propagate_spans_type2(table, raw_table, rows, cols, inserted_rows,
+                                   ghost_cols, col_centers, table_obj)
+        else:
+            for r in range(rows):
+                r_phys = r - inserted_rows
+                if r_phys < 0:
+                    for c in range(cols):
+                        if table[r][c] is None:
+                            table[r][c] = table[0][c]
+                    continue
+                if r_phys >= len(table_obj.rows):
+                    break
+                target_row = table_obj.rows[r_phys]
                 for c in range(cols):
-                    if table[r][c] is None:
-                        table[r][c] = table[0][c]
-                continue
-            
-            if r_phys >= len(table_obj.rows):
-                break
-                
-            target_row = table_obj.rows[r_phys]
-
-            for c in range(cols):
-                if c >= len(table[r]) or table[r][c] is not None:
-                    continue
-                # Colonne fantôme → chaîne vide
-                if c in ghost_cols:
-                    table[r][c] = ""
-                    continue
-
-                target_cx = col_centers[c]
-                master_val = None
-
-                # Chercher la cellule maître qui couvre (r, c) géométriquement
-                for r_m in range(r, -1, -1):
-                    r_m_phys = r_m - inserted_rows
-                    if r_m_phys < 0 or r_m_phys >= len(table_obj.rows):
+                    if c >= len(table[r]) or table[r][c] is not None:
                         continue
-                    for c_m in range(c, -1, -1):
-                        if c_m >= len(table_obj.rows[r_m_phys].cells):
+                    if c in ghost_cols:
+                        table[r][c] = ""
+                        continue
+                    target_cx = col_centers[c]
+                    master_val = None
+                    for r_m in range(r, -1, -1):
+                        r_m_phys = r_m - inserted_rows
+                        if r_m_phys < 0 or r_m_phys >= len(table_obj.rows):
                             continue
-                        cell_bbox = table_obj.rows[r_m_phys].cells[c_m]
-                        if cell_bbox is None:
-                            continue
-                        # Même ligne -> couvre de plein droit. Ligne différente -> doit dépasser la limite haute de la cible
-                        covers_row = (r_m == r) or (cell_bbox[3] > target_row.bbox[1] + 2)
-                        covers_col = (target_cx is None) or (cell_bbox[2] > target_cx - 0.5)
-                        if covers_row and covers_col:
-                            master_val = (raw_table[r_m][c_m]
-                                          if c_m < len(raw_table[r_m]) else None)
+                        for c_m in range(c, -1, -1):
+                            if c_m >= len(table_obj.rows[r_m_phys].cells):
+                                continue
+                            cell_bbox = table_obj.rows[r_m_phys].cells[c_m]
+                            if cell_bbox is None:
+                                continue
+                            covers_row = (r_m == r) or (cell_bbox[3] > target_row.bbox[1] + 2)
+                            covers_col = (target_cx is None) or (cell_bbox[2] > target_cx - 0.5)
+                            if covers_row and covers_col:
+                                master_val = (raw_table[r_m][c_m]
+                                              if c_m < len(raw_table[r_m]) else None)
+                                break
+                        if master_val is not None:
                             break
-                    if master_val is not None:
-                        break
-                table[r][c] = master_val
+                    table[r][c] = master_val
     else:
         # Fallback heuristique sans objet géométrique
         warnings.append("no_table_obj_for_spans")
@@ -476,13 +616,34 @@ def _expand_spans_and_headers(
             else:
                 break
 
+    # ── Type 2 : détection couleur des lignes d'en-tête ────────────────────
+    if pdf_type == 2 and rows >= 2:
+        hdr_rows = _count_header_rows_by_color(page, table_obj)
+        if hdr_rows > 0:
+            header_depth = max(header_depth, hdr_rows)
+
+        # Fallback heuristique si la couleur seule ne suffit pas
+        if header_depth == 1:
+            non_empty_0 = sum(1 for c in raw_table[0] if c is not None and str(c).strip())
+            if non_empty_0 < cols * 0.3:
+                header_depth = 2
+            elif non_empty_0 > 0:
+                empty_prefix = 0
+                for c in range(min(3, cols)):
+                    val_0 = raw_table[0][c] if c < len(raw_table[0]) else ''
+                    val_1 = raw_table[1][c] if c < len(raw_table[1]) else ''
+                    empty_0 = val_0 is None or str(val_0).strip() == ''
+                    filled_1 = val_1 is not None and str(val_1).strip() != ''
+                    if empty_0 and filled_1:
+                        empty_prefix += 1
+                if empty_prefix >= 1:
+                    header_depth = 2
+
     if header_depth > 1:
         warnings.append(f"dynamic_header_depth:{header_depth}")
 
     # ── 5. Construction des en-têtes finaux ────────────────────────────────────
-    final_headers = _build_final_headers(table, cols, header_depth)
-
-    # ── 6. Lignes de données ───────────────────────────────────────────────────
+    final_headers = _build_final_headers(table, cols, header_depth, pdf_type)    # ── 6. Lignes de données ───────────────────────────────────────────────────
     final_rows = [
         [_normalize_newlines_in_cell(str(cell or "")) for cell in table[r]]
         for r in range(header_depth, rows)
@@ -496,6 +657,7 @@ def _build_final_headers(
     table: list[list],
     cols: int,
     header_depth: int,
+    pdf_type: int = 1,
 ) -> list[str]:
     """
     Construit la liste finale des en-têtes.
@@ -525,9 +687,11 @@ def _build_final_headers(
         parts: list[str] = []
         for r in range(header_depth):
             val = str(table[r][c] or "").strip()
-            # Si la valeur contient un \n, ne garder que la première ligne
             if "\n" in val:
-                val = val.split("\n")[0].strip()
+                if pdf_type == 2:
+                    val = val.replace("\n", " ").strip()
+                else:
+                    val = val.split("\n")[0].strip()
             val = _normalize_newlines_in_cell(val).strip()
 
             if r == 0:
@@ -556,6 +720,7 @@ def extract_table_grid(
     pdf_name: str,
     output_base: Path,
     all_refs: list[TableRef] = None,
+    pdf_type: int = 1,
 ) -> dict:
     """
     Extrait la grille d'une table identifiée par `ref`.
@@ -588,7 +753,7 @@ def extract_table_grid(
         rotated_map = _get_rotated_text_map(page)
 
         # ── Extraire la grille ─────────────────────────────────────────────────
-        raw_table, table_obj, method, bbox = _extract_from_page(page, ref, rotated_map)
+        raw_table, table_obj, method, bbox = _extract_from_page(page, ref, rotated_map, pdf_type)
 
         if raw_table is None:
             result["warnings"].append("no_table_found_on_page")
@@ -602,7 +767,7 @@ def extract_table_grid(
             return result
 
         # ── Fix 2 & 5 : Headers structurels et Propagation globale ─────────────
-        headers, rows_raw, span_warnings = _expand_spans_and_headers(raw_table, table_obj, page)
+        headers, rows_raw, span_warnings = _expand_spans_and_headers(raw_table, table_obj, page, pdf_type)
         result["warnings"].extend(span_warnings)
 
         # ── Fix 4 : Continuation multi-pages ──────────────────────────────────
@@ -617,7 +782,8 @@ def extract_table_grid(
                 all_refs,
                 ref.table_id,
                 header_depth,
-                first_cell_text
+                first_cell_text,
+                pdf_type=pdf_type,
             )
             if c_pages and len(c_pages) > 1:
                 merged_pages = c_pages
@@ -634,6 +800,11 @@ def extract_table_grid(
             for r in range(1, len(rows_raw)):
                 for c in range(min(n_cols, len(rows_raw[r]))):
                     if rows_raw[r][c] == "" and c < len(rows_raw[r-1]) and rows_raw[r-1][c] != "":
+                        if pdf_type == 2:
+                            cur_first = (rows_raw[r][0] or "").strip() if len(rows_raw[r]) > 0 else ""
+                            prev_first = (rows_raw[r-1][0] or "").strip() if len(rows_raw[r-1]) > 0 else ""
+                            if cur_first and cur_first != prev_first:
+                                continue
                         rows_raw[r][c] = rows_raw[r-1][c]
 
         # ── Correction des glyphes ─────────────────────────────────────────────
@@ -667,20 +838,42 @@ def extract_table_grid(
     return result
 
 
+def _filter_narrow_tables(
+    tables: list, finder_tables: list
+) -> tuple[list, list]:
+    """Filtre les tables trop étroites (< MIN_TABLE_WIDTH) = bandeaux décoratifs."""
+    if not tables or not finder_tables:
+        return tables or [], finder_tables or []
+    filtered = [
+        (t, ft) for t, ft in zip(tables, finder_tables)
+        if ft.bbox[2] - ft.bbox[0] >= MIN_TABLE_WIDTH
+    ]
+    if not filtered:
+        return tables, finder_tables
+    return [t for t, ft in filtered], [ft for t, ft in filtered]
+
+
 def _extract_from_page(
     page: Page,
     ref: TableRef,
     rotated_map: dict,
+    pdf_type: int = 1,
 ) -> tuple[Optional[list], Optional[Any], str, Optional[tuple]]:
     """
     Tente d'extraire la grille depuis la page avec pdfplumber.
     Stratégie : "lines" (bordures réelles) → "text" (fallback interne).
+    pdf_type=2 : applique les réglages Type 2 + filtre les bandeaux.
     Retourne (raw_table, table_obj, method_name, bbox) ou (None, None, ..., None) si échec.
     """
+    settings = PDFPLUMBER_TABLE_SETTINGS_TYPE2 if pdf_type == 2 else PDFPLUMBER_TABLE_SETTINGS
+    fallback = PDFPLUMBER_TABLE_SETTINGS_FALLBACK_TYPE2 if pdf_type == 2 else PDFPLUMBER_TABLE_SETTINGS_FALLBACK
+
     # Essai 1 : stratégie lignes
-    tables = page.extract_tables(PDFPLUMBER_TABLE_SETTINGS)
-    finder = page.debug_tablefinder(PDFPLUMBER_TABLE_SETTINGS)
+    tables = page.extract_tables(settings)
+    finder = page.debug_tablefinder(settings)
     if tables and finder.tables:
+        if pdf_type == 2:
+            tables, finder.tables = _filter_narrow_tables(tables, finder.tables)
         best, best_ft, bbox = _pick_best_table(page, tables, finder.tables, ref.caption)
         if best is not None:
             # Fix 1 : corriger le texte rotatif dans la table choisie
@@ -688,9 +881,11 @@ def _extract_from_page(
             return best, best_ft, "pdfplumber", bbox
 
     # Essai 2 : stratégie texte
-    tables_text = page.extract_tables(PDFPLUMBER_TABLE_SETTINGS_FALLBACK)
-    finder_text = page.debug_tablefinder(PDFPLUMBER_TABLE_SETTINGS_FALLBACK)
+    tables_text = page.extract_tables(fallback)
+    finder_text = page.debug_tablefinder(fallback)
     if tables_text and finder_text.tables:
+        if pdf_type == 2:
+            tables_text, finder_text.tables = _filter_narrow_tables(tables_text, finder_text.tables)
         best, best_ft, bbox = _pick_best_table(page, tables_text, finder_text.tables, ref.caption)
         if best is not None:
             best = _apply_rotated_fix(page, best, rotated_map, finder_text.tables)
