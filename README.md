@@ -359,6 +359,8 @@ Type 2 (16 PDFs, Producer = Antenna House, format "nouvelle generation")
 | 5 | **Header depth = 1 errone** | Les cellules d'en-tete ne debordent pas sur la ligne suivante (Type 1 si) | `_count_header_rows_by_color()` : detection par fond bleu fonce `(0, 32, 82)` + fallback heuristique par densite |
 | 6 | **Texte tronque dans headers** | Valeurs multi-lignes (`"1.62\nV\n="`) coupees au 1er `\n` | `_build_final_headers()` : pour Type 2, `\n` → espace au lieu de `split()[0]` |
 | 7 | **Continuation limitee a 10 pages** | Table_7 s'etend sur 20 pages (48→67) | `MAX_CONTINUATION_PAGES` : 10 → 30, importe dans `continuation.py` |
+| 8 | **Colonnes supplementaires en continuation Type 2** | La page de continuation peut diviser une colonne en 2 sous-colonnes (ex: `Name` → `Name` + `Name sub`) | `_get_col_x0s()` : detection automatique des colonnes supplémentaires par comparaison des x0 geometriques → elargissement des headers et rows page 1 |
+| 9 | **Propagation inter-groupes erronee (Type 2)** | Fix 6 remplissait les cellules d'un nouveau groupe depuis le groupe precedent (ex: `I/O structure` → `Notes` dans table_6) | Heuristique "groupe connu" : si la 1ere colonne change vers une valeur jamais vue dans cette colonne → nouveau groupe → ne pas propager |
 
 ### Script de classification
 

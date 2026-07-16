@@ -21,12 +21,34 @@ from config import (
 logger = logging.getLogger(__name__)
 
 
+def _get_col_x0s(table_obj) -> list[float]:
+    """
+    Retourne les abscisses gauches (x0) médianes de chaque colonne,
+    dans l'ordre des colonnes du finder table pdfplumber.
+    """
+    if not hasattr(table_obj, 'rows') or not table_obj.rows:
+        return []
+    maxc = max(len(r.cells) for r in table_obj.rows) if table_obj.rows else 0
+    col_x0s: dict[int, list[float]] = {j: [] for j in range(maxc)}
+    for r in table_obj.rows:
+        for j, c in enumerate(r.cells):
+            if c:
+                col_x0s[j].append(round(c[0], 1))
+    result = []
+    for j in sorted(col_x0s.keys()):
+        vals = col_x0s[j]
+        if vals:
+            vals.sort()
+            result.append(vals[len(vals) // 2])
+    return result
+
+
 def _is_continuation_page(
     page: Page,
     expected_col_count: int,
     current_table_id: str,
     pdf_type: int = 1,
-) -> tuple[bool, Optional[list]]:
+) -> tuple[bool, Optional[list], Optional[list[float]]]:
     """
     Vérifie si la page contient la suite de la table en cours.
 
@@ -57,7 +79,7 @@ def _is_continuation_page(
     finder = page.debug_tablefinder(settings)
 
     if not tables or not finder.tables:
-        return False, None
+        return False, None, None
 
     # Filtrer les bandeaux décoratifs (Type 2)
     if pdf_type == 2:
@@ -78,19 +100,20 @@ def _is_continuation_page(
 
     if has_continued_title:
         # Si "(continued)" est détecté, on fait confiance au titre : c'est la bonne table.
-        # On vérifie juste qu'une table existe, sans contrainte de position.
         col_count = len(top_table[0])
-        # Tolérance plus large : les en-têtes multi-niveaux peuvent avoir moins de cols
-        # (ex: 10 cols réelles mais 5 cellules physiques à cause des fusions)
+        # Si la table a beaucoup plus de colonnes qu'attendu → pas la bonne table
+        if col_count > expected_col_count + 2:
+            return False, None, None
+        # Tolérance pour les en-têtes multi-niveaux : peut avoir moins de cols
         if col_count < max(1, expected_col_count // 2):
-            return False, None
-        return True, top_table
+            return False, None, None
+        return True, top_table, _get_col_x0s(top_ft)
 
     # ── Sans "(continued)" : heuristique de position ──────────────────────────
     # La table doit être proche du haut de la page.
     # Seuil élevé (300) car certaines pages ont un en-tête de ~2 cm.
     if top_ft.bbox[1] > 300:
-        return False, None
+        return False, None, None
 
     # Vérifier qu'il n'y a pas une AUTRE légende de table avant celle-ci
     for w in words:
@@ -103,14 +126,14 @@ def _is_continuation_page(
                 pass  # OK, c'est notre table qui continue
             else:
                 # C'est une nouvelle table différente → stopper
-                return False, None
+                return False, None, None
 
     # Vérifier le nombre de colonnes (tolérance ±2)
     col_count = len(top_table[0])
     if abs(col_count - expected_col_count) > 2:
-        return False, None
+        return False, None, None
 
-    return True, top_table
+    return True, top_table, _get_col_x0s(top_ft)
 
 
 def _expand_cont_row(row: list, expected_col_count: int) -> list:
@@ -200,13 +223,16 @@ def find_continuations(
     first_cell_text: str = "",
     max_pages: int = MAX_CONTINUATION_PAGES,
     pdf_type: int = 1,
-) -> tuple[list[int], list[list[str]]]:
+) -> tuple[list[int], list[list[str]], int, list[list[float]]]:
     """
     Cherche les pages suivantes contenant la suite de la table.
-    Retourne (liste_des_pages_fusionnees, lignes_supplementaires_brutes).
+    Retourne (pages_fusionnees, lignes_supplementaires, target_cols, all_col_x0s).
+    target_cols = max(expected_col_count, max cols trouvées dans les continuations).
     """
     merged_pages = [start_page_num]
-    extra_rows = []
+    all_data_rows: list[list] = []
+    all_col_x0s: list[list[float]] = []
+    max_cont_cols = 0
 
     current_page = start_page_num + 1
 
@@ -220,7 +246,7 @@ def find_continuations(
         if current_page > next_table_page:
             break
 
-        is_cont, table_data = _is_continuation_page(
+        is_cont, table_data, cont_x0s = _is_continuation_page(
             pdf.pages[current_page - 1], expected_col_count, current_table_id, pdf_type
         )
         if not is_cont:
@@ -228,6 +254,10 @@ def find_continuations(
 
         merged_pages.append(current_page)
         logger.info(f"    -> found continuation on page {current_page} ({len(table_data)} rows)")
+
+        # Collecter les x0s des colonnes de cette page de continuation
+        if cont_x0s:
+            all_col_x0s.append(cont_x0s)
 
         # ── Supprimer l'en-tête répété ────────────────────────────────────────
         if len(table_data) > 0:
@@ -240,45 +270,41 @@ def find_continuations(
             }
 
             # Méthode 1 : la 1ère cellule correspond au premier texte de la page 1
-            # → auto-détecter combien de lignes forment l'en-tête répété sur
-            #   cette page de continuation (peut différer de header_depth si
-            #   pdfplumber compresse les sous-lignes en une seule sur la cont.).
             if row0_cell0 and first_cell_text and row0_cell0 == first_cell_text:
                 skip = 0
                 for row in table_data:
                     c0 = str(row[0] or "").strip()
-                    # C'est encore une ligne d'en-tête si :
-                    # - sa première cellule est identique au premier texte (répétition directe)
-                    # - ou sa première cellule est vide/None (ligne de sous-titres fusionnés)
                     if c0 == first_cell_text or c0 == "":
                         skip += 1
                     else:
-                        break  # première ligne de données réelles
+                        break
                 data_rows = table_data[skip:]
 
             else:
-                # Méthode 2 : heuristique sur les noms de colonnes standard
                 row0 = [str(c or "").lower() for c in table_data[0]]
                 if any(cell in header_keywords for cell in row0):
                     data_rows = table_data[1:]
                 else:
                     data_rows = table_data
 
-            # ── Expansion des cellules fusionnées ─────────────────────────────
-            # Les pages de continuation ont souvent moins de colonnes physiques
-            # que la page originale (ex: 5 cols physiques → 10 cols réelles).
-            # Elles peuvent aussi en avoir plus (colonnes séparatrices vues par
-            # pdfplumber entre les colonnes réelles).
-            expanded = []
+            # Mettre à jour max_cont_cols
             for row in data_rows:
-                if len(row) < expected_col_count:
-                    row = _expand_cont_row(row, expected_col_count)
-                elif len(row) > expected_col_count:
-                    row = _reduce_cont_row(row, expected_col_count)
-                expanded.append(row)
+                max_cont_cols = max(max_cont_cols, len(row))
 
-            extra_rows.extend(expanded)
+            # Collecter les lignes brutes (sans expand/reduce) pour les traiter
+            # toutes avec le même target_cols final
+            all_data_rows.extend(data_rows)
 
         current_page += 1
 
-    return merged_pages, extra_rows
+    # ── Traiter toutes les lignes collectées avec le même target_cols ────
+    target_cols = max(expected_col_count, min(max_cont_cols, expected_col_count + 1))
+    extra_rows = []
+    for row in all_data_rows:
+        if len(row) < target_cols:
+            row = _expand_cont_row(row, target_cols)
+        elif len(row) > target_cols:
+            row = _reduce_cont_row(row, target_cols)
+        extra_rows.append(row)
+
+    return merged_pages, extra_rows, target_cols, all_col_x0s

@@ -32,7 +32,7 @@ from config import (
 from core.toc_detector import TableRef
 from core.glyph_fixer import fix_headers, fix_rows
 from core.quality_flags import evaluate_table
-from core.continuation import find_continuations
+from core.continuation import find_continuations, _get_col_x0s
 
 logger = logging.getLogger(__name__)
 
@@ -775,7 +775,7 @@ def extract_table_grid(
         if all_refs is not None:
             header_depth = len(raw_table) - len(rows_raw)
             first_cell_text = str(raw_table[0][0] or "").strip() if raw_table else ""
-            c_pages, c_rows = find_continuations(
+            c_pages, c_rows, target_cols, cont_x0s_list = find_continuations(
                 pdf,
                 ref.page,
                 len(headers),
@@ -787,24 +787,79 @@ def extract_table_grid(
             )
             if c_pages and len(c_pages) > 1:
                 merged_pages = c_pages
+
+                # Si les continuations ont plus de colonnes que la page 1,
+                # élargir la page 1 (rows + headers) en insérant des colonnes vides
+                # aux positions dictées par la géométrie des x0.
+                n_insert = target_cols - len(headers)
+                if n_insert > 0:
+                    p1_x0s = _get_col_x0s(table_obj) if table_obj else []
+                    # Fusionner tous les x0s des continuations
+                    merged_cont_x0s = sorted(set(
+                        round(x, 1) for lst in cont_x0s_list for x in lst
+                    ))
+                    # Déterminer les colonnes en surplus (x0 présent dans continuation
+                    # mais pas dans page1, tolérance 5pt)
+                    surplus_x0s = []
+                    for cx in merged_cont_x0s:
+                        if not any(abs(cx - px) < 5 for px in p1_x0s):
+                            surplus_x0s.append(cx)
+
+                    # Sécurité : si p1_x0s est vide (table_obj dummy), on place
+                    # les nouvelles colonnes à la fin (position len(headers))
+                    if not p1_x0s:
+                        insert_positions = list(range(len(headers), len(headers) + n_insert))
+                    else:
+                        insert_positions = []
+                        for sx in surplus_x0s:
+                            pos = sum(1 for px in p1_x0s if px < sx)
+                            insert_positions.append(pos)
+
+                    # Limiter à n_insert insertions (prendre les plus à gauche)
+                    insert_positions = sorted(set(insert_positions))[:n_insert]
+
+                    # Insérer les colonnes de droite à gauche pour préserver les indices
+                    for pos in sorted(insert_positions, reverse=True):
+                        # Insérer dans headers (doublon du header à gauche)
+                        if pos == 0:
+                            header_val = headers[0]
+                        else:
+                            header_val = headers[pos - 1]
+                        headers = headers[:pos] + [header_val] + headers[pos:]
+
+                        # Insérer "" dans toutes les rows de page1
+                        for r in range(len(rows_raw)):
+                            row = rows_raw[r]
+                            rows_raw[r] = row[:pos] + [""] + row[pos:]
+
                 rows_raw.extend([[_cell_str(c) for c in row] for row in c_rows])
                 result["warnings"].append(f"multi_page_merged:{len(merged_pages)}")
 
         # ── Fix 6 : Propagation descendante des cellules vides ─────────────
         # Les cellules fusionnées verticalement (rowspan) apparaissent comme ""
-        # dans les lignes de continuation et parfois même sur la 1ère page
-        # quand la géométrie ne couvre pas assez loin.
+        # dans les lignes de continuation et parfois même sur la 1ère page.
         # Règle : si une cellule est "", on copie la valeur de la ligne du dessus.
+        # Exception Type 2 : si la 1ère colonne change vers une valeur jamais vue
+        # → nouveau groupe → ne pas propager (ex: table_6 I/O → Notes évite
+        # la propagation erronée entre groupes différents).
         if rows_raw:
             n_cols = len(headers)
             for r in range(1, len(rows_raw)):
+                first_changed = False
+                seen_before = False
+                if pdf_type == 2:
+                    cur_first = (rows_raw[r][0] or "").strip() if len(rows_raw[r]) > 0 else ""
+                    prev_first = (rows_raw[r-1][0] or "").strip() if len(rows_raw[r-1]) > 0 else ""
+                    first_changed = cur_first != prev_first
+                    if first_changed:
+                        seen_before = any(
+                            (rows_raw[r2][0] or "").strip() == cur_first
+                            for r2 in range(r)
+                        )
                 for c in range(min(n_cols, len(rows_raw[r]))):
                     if rows_raw[r][c] == "" and c < len(rows_raw[r-1]) and rows_raw[r-1][c] != "":
-                        if pdf_type == 2:
-                            cur_first = (rows_raw[r][0] or "").strip() if len(rows_raw[r]) > 0 else ""
-                            prev_first = (rows_raw[r-1][0] or "").strip() if len(rows_raw[r-1]) > 0 else ""
-                            if cur_first and cur_first != prev_first:
-                                continue
+                        if first_changed and not seen_before:
+                            continue
                         rows_raw[r][c] = rows_raw[r-1][c]
 
         # ── Correction des glyphes ─────────────────────────────────────────────
