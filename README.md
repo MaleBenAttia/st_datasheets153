@@ -268,12 +268,21 @@ moteur PDF (ex: "sremiT" au lieu de "Timers"). Le pipeline :
 ### Selection robuste de la table sur la page
 
 Quand plusieurs tables coexistent sur une meme page (ex: Table 11 et
-Table 12 toutes deux page 42), le moteur selectionne la bonne table
-via deux mecanismes :
+Table 12 toutes deux page 42), ou quand le TOC contient une page
+incorrecte (décalage de ±1 fréquent), le moteur utilise deux mécanismes :
 
-1. **Matching par caption** (`_find_caption_y`) : localise la legende
-   dans le PDF en ignorant la ponctuation (ex: `"11."` matche `"11"`)
-2. **Fallback positionnel** (`_pick_best_table`) : si la legende est
+1. **TOC-guided page location** (`_locate_caption_page`) : corrige les
+   erreurs de page TOC en scannant les pages ±2 autour de la page
+   déclarée. Pour chaque candidate, vérifie :
+   - La présence de la légende via `_find_caption_y` (matching strict :
+     pas de mot avant "table" sur la même ligne, numéro suivi d'un point)
+   - La présence d'une grille de tableau réelle sous la légende
+   → retourne la page parfaite (légende + grille), ou la page déclarée
+   en fallback.
+2. **Matching par caption** (`_find_caption_y`) : localise la legende
+   dans le PDF via un matching mot-à-mot strict avec deux vérifications
+   100 % déterministes qui excluent les mentions « Refer to Table N… »
+3. **Fallback positionnel** (`_pick_best_table`) : si la legende est
    introuvable, prend la table la plus haute sur la page (pas la plus
    grande), evitant de confondre avec une table voisine plus volumineuse
 

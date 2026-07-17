@@ -30,6 +30,7 @@ class RawTable(BaseModel):
     extraction_confidence: Literal["high", "medium", "low", "failed"]      = "high"
     empty_cell_ratio:      float = Field(0.0, ge=0.0, le=1.0)
     col_count:             int   = Field(0, description="Nombre de colonnes détectées")
+    status:                Optional[str] = Field(None, description="Statut d'extraction : 'failed' si table non extractible")
 
     # ── Avertissements ────────────────────────────────────────────────────────
     warnings: list[str] = Field(default_factory=list,

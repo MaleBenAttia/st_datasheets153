@@ -32,6 +32,7 @@ if str(REPO_ROOT) not in sys.path:
 from config import OUTPUT_DIR, LOG_DIR
 from core.toc_detector import detect_tables
 from core.grid_extractor import extract_table_grid
+from core.glyph_fixer import correct_footer_in_table
 from core.schema import RawTable
 
 try:
@@ -129,6 +130,15 @@ def process_pdf(pdf_path: Path, family: str) -> dict:
                 pdf_type=pdf_type,
             )
 
+            # ── Garde-fou : dessins mécaniques/PCB détectés comme tableaux vides ──
+            if (raw_dict.get("empty_cell_ratio", 0) >= 0.90
+                    and not any(h.strip() for h in raw_dict.get("headers", []))):
+                raw_dict["status"] = "failed"
+                raw_dict.setdefault("warnings", []).append("unresolved:likely_mechanical_drawing_not_extractable_as_text")
+
+            # ── Nettoyage des pieds de page (après le garde-fou) ─────────────────
+            raw_dict = correct_footer_in_table(raw_dict)
+
             # Validation Pydantic
             table_obj = RawTable(**raw_dict)
             table_json = table_obj.model_dump()
@@ -198,11 +208,26 @@ def process_pdf(pdf_path: Path, family: str) -> dict:
     )[:5]
     summary["worst_tables"] = worst
 
+    # ── Classification des échecs : dessin-mécanique vs bug ──────────────────
+    mech_keywords = ["mechanical data", "outline", "package outline"]
+    n_mech = n_bug = 0
+    for t in extracted_tables:
+        if t.get("status") in ("failed", "review_needed") or t.get("confidence") == "low":
+            cap = (t.get("caption") or "").lower()
+            status = t.get("status") or ""
+            if any(kw in cap for kw in mech_keywords) and status in ("failed", "review_needed"):
+                n_mech += 1
+            else:
+                n_bug += 1
+    summary["drawing_failed"] = n_mech
+    summary["bug_suspected"] = n_bug
+
     elapsed = time.time() - t0
     logger.info(
         f"=== DONE {pdf_name} | {summary['tables_extracted']}/{summary['tables_found']} tables "
         f"| high={summary['high']} medium={summary['medium']} "
         f"low={summary['low']} failed={summary['failed']} "
+        f"| drawings={n_mech} bugs?={n_bug} "
         f"| {elapsed:.1f}s ==="
     )
 

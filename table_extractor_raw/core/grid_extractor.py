@@ -38,7 +38,7 @@ from config import (
     OUTPUT_DIR,
 )
 from core.toc_detector import TableRef
-from core.glyph_fixer import fix_headers, fix_rows
+from core.glyph_fixer import CID_PATTERN, FOOTER_PATTERN, fix_headers, fix_rows
 from core.quality_flags import evaluate_table
 from core.continuation import find_continuations, _get_col_x0s
 
@@ -121,12 +121,27 @@ def _normalize_newlines_in_cell(text: str) -> str:
 # FIX 3 — Sélection de table par proximité sous la légende
 # ══════════════════════════════════════════════════════════════════════════════
 
+def _same_line(a: dict, b: dict, tol: int = 3) -> bool:
+    """Deux mots sont sur la même ligne si leur top diffère de moins de tol px."""
+    return abs(a["top"] - b["top"]) < tol
+
+
 def _find_caption_y(page: Page, caption: str) -> Optional[float]:
     """
     Cherche la position y (bord bas) de la légende sur la page.
-    Extrait les mots de la page et cherche le début de la légende.
+
+    Méthode 1 : mot-à-mot strict — ne match UNIQUEMENT la vraie légende
+    (pas une mention « Refer to Table … ») grâce à deux vérifications
+    100 % déterministes :
+
+      1. Aucun mot significatif avant « table » sur la même ligne →
+         une légende commence une ligne, une référence est encastrée.
+      2. Le numéro de table doit être suivi d'un point « 1. » →
+         une référence utilise « 1: » ou « 1 » nu.
+
+    Méthode 2 (fallback) : sous-chaîne normalisée compacte typographique,
+    gère les mots scindés par le PDF ("T able" → "Table", "(1)(2)" en suffixe).
     """
-    # Extraire les 6 premiers mots de la légende pour la recherche
     caption_words = caption.lower().split()[:5]
     if not caption_words:
         return None
@@ -135,26 +150,121 @@ def _find_caption_y(page: Page, caption: str) -> Optional[float]:
     if not words:
         return None
 
-    # Chercher une séquence de mots consécutifs qui matche le début de la légende
+    # ── Méthode 1 : mot-à-mot strict + vérifications ────────────────
     for idx, word in enumerate(words):
         word_clean = word["text"].lower().rstrip(".,:;!?")
         caption_word_clean = caption_words[0].rstrip(".,:;!?")
-        if word_clean == caption_word_clean:
-            # Vérifier les mots suivants
-            match_count = 1
-            for k in range(1, len(caption_words)):
-                if idx + k < len(words):
-                    w_clean = words[idx + k]["text"].lower().rstrip(".,:;!?")
-                    c_clean = caption_words[k].rstrip(".,:;!?")
-                    if w_clean == c_clean:
-                        match_count += 1
-                    else:
-                        break
-            if match_count >= min(3, len(caption_words)):
-                # Retourner le bord bas du mot de début
-                return word["bottom"]
+        if word_clean != caption_word_clean:
+            continue
+
+        # VÉRIF 1 : pas de mot significatif avant « table » sur la même ligne
+        if idx > 0 and _same_line(words[idx - 1], word):
+            prev = words[idx - 1]["text"].lower().rstrip(".,:;!?").strip()
+            if prev and not prev.isdigit():
+                continue
+
+        # VÉRIF 2 : le numéro doit être suivi d'un point « 1. » (pas « 1: »)
+        if idx + 1 < len(words):
+            num_text = words[idx + 1]["text"]
+            if not re.match(r'^\d+[.)]$', num_text):
+                continue
+
+        match_count = 1
+        for k in range(1, len(caption_words)):
+            if idx + k < len(words):
+                w_clean = words[idx + k]["text"].lower().rstrip(".,:;!?")
+                c_clean = caption_words[k].rstrip(".,:;!?")
+                if w_clean == c_clean:
+                    match_count += 1
+                else:
+                    break
+        if match_count >= min(3, len(caption_words)):
+            return word["bottom"]
+
+    # ── Méthode 2 : normalisé compact (tolérant aux scissions) ────────
+    # Construire la forme compacte du caption (uniquement lettres+chiffres)
+    cap_compact = "".join(re.findall(r"[a-z0-9]+", "".join(caption_words)))
+
+    # Construire le texte compact de la page avec positions y
+    text_compact = ""
+    word_y_map = []  # (start_char, end_char, y_bottom)
+    char_pos = 0
+    for w in words:
+        wt = "".join(re.findall(r"[a-z0-9]+", w["text"].lower()))
+        if wt:
+            text_compact += wt
+            word_y_map.append((char_pos, char_pos + len(wt), w["bottom"]))
+            char_pos += len(wt)
+
+    match_pos = text_compact.find(cap_compact)
+    if match_pos >= 0:
+        for ws, we, wy in word_y_map:
+            if ws <= match_pos < we:
+                return wy
 
     return None
+
+
+def _locate_caption_page(
+    pdf: "pdfplumber.PDF",
+    caption: str,
+    declared_page: int,
+    window: int = 2,
+    pdf_type: int = 1,
+) -> Optional[int]:
+    """
+    Scanne `declared_page ± window` pour le caption TOC.
+    La page déclarée est testée en premier, puis on s'éloigne.
+
+    Retourne le numéro de page (1-indexé) où la légende ET un tableau
+    réel sont trouvés, ou None.
+    """
+    tbl_settings = PDFPLUMBER_TABLE_SETTINGS_TYPE2 if pdf_type == 2 else PDFPLUMBER_TABLE_SETTINGS
+
+    # Ordre : déclarée d'abord, puis on s'éloigne
+    order = [declared_page]
+    for d in range(1, window + 1):
+        p_lo = declared_page - d
+        p_hi = declared_page + d
+        if 1 <= p_lo <= len(pdf.pages):
+            order.append(p_lo)
+        if 1 <= p_hi <= len(pdf.pages):
+            order.append(p_hi)
+    order = list(dict.fromkeys(order))  # dédoublonne en gardant l'ordre
+
+    best = None
+    for pno in order:
+        cap_y = _find_caption_y(pdf.pages[pno - 1], caption)
+        if cap_y is None:
+            continue
+        # VÉRIF : la page contient-elle un tableau réel sous la légende ?
+        tables = pdf.pages[pno - 1].find_tables(tbl_settings)
+        has_grid = any(t.bbox[1] > cap_y - 20 for t in tables)
+        if has_grid:
+            return pno  # candidat parfait : légende + grille
+        if best is None:
+            best = pno  # garder le premier qui a au moins la légende
+    return best
+
+
+def _table_quality(table: list) -> float:
+    """
+    Score de 'qualité' d'un tableau réel (vs fragment d'image CID).
+    Privilégie : beaucoup de cellules réelles (non-CID), pas d'image fragmentée.
+    Retourne le nombre de cellules réelles (non-vides, non-CID), ou -1.0 si vide.
+    """
+    if not table:
+        return -1.0
+    n_real = 0
+    for row in table:
+        for c in row:
+            s = str(c or "").strip()
+            if not s:
+                continue
+            if CID_PATTERN.search(s):
+                continue
+            n_real += 1
+    return n_real if n_real > 0 else -1.0
 
 
 def _pick_best_table(
@@ -191,8 +301,13 @@ def _pick_best_table(
         best_t, best_ft = candidates[0]
         return best_t, best_ft, best_ft.bbox
 
-    # Fallback : la plus haute sur la page (plus fiable que la plus grande)
+    # Fallback : la plus haute sur la page, mais éviter les fragments d'image
+    # (dessins mécaniques fragmentés en mini-tables par pdfplumber, ex: F4 table_84)
     best_t, best_ft = min(candidates, key=lambda x: x[1].bbox[1])
+    if _table_quality(best_t) < 0.5:
+        best_alt = max(candidates, key=lambda x: _table_quality(x[0]))
+        if _table_quality(best_alt[0]) > _table_quality(best_t):
+            best_t, best_ft = best_alt
     return best_t, best_ft, best_ft.bbox
 
 
@@ -778,22 +893,59 @@ def extract_table_grid(
         "warnings":              [],
     }
 
+    effective_page = ref.page  # peut être mis à jour par le look-ahead
+
     with pdfplumber.open(pdf_path) as pdf:
         if ref.page < 1 or ref.page > len(pdf.pages):
             result["warnings"].append(f"page_out_of_range:{ref.page}")
             return result
 
-        page = pdf.pages[ref.page - 1]  # pdfplumber est 0-indexé
+        # ── Localisation guidée par le TOC : trouver la page réelle du caption ──
+        # Le TOC peut être off-by-one (ex H7 : TOC dit page 194, caption p195).
+        scan_page = _locate_caption_page(pdf, ref.caption, ref.page, pdf_type=pdf_type) or ref.page
+        if scan_page != ref.page:
+            effective_page = scan_page
+            result["page"] = scan_page
+            result["warnings"].append(f"caption_page:{scan_page}")
+            logger.info(f"{ref.table_id}: caption found on page {scan_page} (TOC: {ref.page})")
+        page = pdf.pages[effective_page - 1]
 
         # ── Fix 1 : préparer la map des textes rotatifs ────────────────────────
         rotated_map = _get_rotated_text_map(page)
 
-        # ── Extraire la grille ─────────────────────────────────────────────────
+        # ── Extraire la grille sur cette page ───────────────────────────────
         raw_table, table_obj, method, bbox = _extract_from_page(page, ref, rotated_map, pdf_type)
+
+        # ── Détection de faux positif (footer/bandeau au lieu de la vraie table) ──
+        if raw_table is not None and len(raw_table) <= 2:
+            cell_text = " ".join(str(c) for row in raw_table for c in row if c)
+            if FOOTER_PATTERN.search(cell_text):
+                logger.info(f"{ref.table_id}: false positive (footer) on page {effective_page}, trying neighbors...")
+                raw_table = None
+
+        # ── Fix look-ahead : si rien sur la page trouvée, essayer page+1 puis page-1 ──
+        if raw_table is None:
+            for delta in (1, -1):
+                cand_idx = (effective_page - 1) + delta
+                if 0 <= cand_idx < len(pdf.pages):
+                    cand_page = pdf.pages[cand_idx]
+                    cand_rotated = _get_rotated_text_map(cand_page)
+                    cand_table, cand_obj, cand_method, cand_bbox = _extract_from_page(
+                        cand_page, ref, cand_rotated, pdf_type
+                    )
+                    if cand_table is not None:
+                        page = cand_page
+                        rotated_map = cand_rotated
+                        raw_table, table_obj, method, bbox = cand_table, cand_obj, cand_method, cand_bbox
+                        effective_page = cand_idx + 1
+                        result["page"] = effective_page
+                        result["warnings"].append(f"page_shifted:{effective_page}")
+                        logger.info(f"{ref.table_id}: shifted from page {ref.page} to {effective_page}")
+                        break
 
         if raw_table is None:
             result["warnings"].append("no_table_found_on_page")
-            logger.warning(f"{ref.table_id}: no table found on page {ref.page}")
+            logger.warning(f"{ref.table_id}: no table found on page {ref.page} (or neighbors)")
             return result
 
         result["extraction_method"] = method
@@ -807,13 +959,13 @@ def extract_table_grid(
         result["warnings"].extend(span_warnings)
 
         # ── Fix 4 : Continuation multi-pages ──────────────────────────────────
-        merged_pages = [ref.page]
+        merged_pages = [effective_page]
         if all_refs is not None:
             header_depth = len(raw_table) - len(rows_raw)
             first_cell_text = str(raw_table[0][0] or "").strip() if raw_table else ""
             c_pages, c_rows, target_cols, cont_x0s_list = find_continuations(
                 pdf,
-                ref.page,
+                effective_page,
                 len(headers),
                 all_refs,
                 ref.table_id,
@@ -901,13 +1053,27 @@ def extract_table_grid(
         if pdf_type == 2:
             _ensure_no_empty_cells(rows_raw)
 
+        # ── Détection glyphes CID non mappés (avant nettoyage graphe) ──
+        _raw_hdr = " ".join(headers)
+        _raw_rows = " ".join(str(c) for row in rows_raw for c in row if c)
+        cid_detected = bool(CID_PATTERN.search(_raw_hdr) or CID_PATTERN.search(_raw_rows))
+
         # ── Correction des glyphes ─────────────────────────────────────────────
         headers    = fix_headers(headers)
         rows_fixed = fix_rows(rows_raw)
 
         # ── Évaluation qualité ─────────────────────────────────────────────────
-        confidence, empty_ratio, _, warnings_eval = evaluate_table(headers, rows_fixed)
+        confidence, empty_ratio, _, warnings_eval = evaluate_table(headers, rows_fixed, cid_detected)
         result["warnings"].extend(warnings_eval)
+
+        # ── Self-check : détection d'ambiguïté résiduelle ──────────────────
+        # Si la table extraite est quasi-vide ou ne contient que des CID,
+        # on marque un doute (sans écraser "failed" déjà posé par le guard).
+        if empty_ratio >= 0.9 and result.get("status") is None:
+            _raw = " ".join(headers) + " ".join(str(c) for row in rows_fixed for c in row)
+            _cleaned = CID_PATTERN.sub("", _raw).strip()
+            if not _cleaned:
+                result["status"] = "review_needed"
 
         # ── Remplissage du résultat ────────────────────────────────────────────
         result.update({
@@ -925,7 +1091,7 @@ def extract_table_grid(
             _save_debug_image(page, bbox, out_path, confidence)
 
     logger.info(
-        f"{ref.table_id} | page={ref.page} | method={method} "
+        f"{ref.table_id} | page={effective_page} | method={method} "
         f"| confidence={confidence} | rows={len(result['rows'])} "
         f"| empty={result['empty_cell_ratio']:.2f}"
     )
@@ -957,35 +1123,53 @@ def _extract_from_page(
     Tente d'extraire la grille depuis la page avec pdfplumber.
     Stratégie : "lines" (bordures réelles) → "text" (fallback interne).
     pdf_type=2 : applique les réglages Type 2 + filtre les bandeaux.
+
+    IMPORTANT : ne retourne JAMAIS un résultat garbage de la stratégie lignes
+    si la stratégie texte (tables sans bordures, très fréquentes chez STM32)
+    trouve un meilleur résultat. Les deux stratégies sont comparées par qualité.
     Retourne (raw_table, table_obj, method_name, bbox) ou (None, None, ..., None) si échec.
     """
     settings = PDFPLUMBER_TABLE_SETTINGS_TYPE2 if pdf_type == 2 else PDFPLUMBER_TABLE_SETTINGS
     fallback = PDFPLUMBER_TABLE_SETTINGS_FALLBACK_TYPE2 if pdf_type == 2 else PDFPLUMBER_TABLE_SETTINGS_FALLBACK
 
-    # Essai 1 : stratégie lignes
+    # ── Essai 1 : stratégie lignes ─────────────────────────────────────────────
     tables = page.extract_tables(settings)
     finder = page.debug_tablefinder(settings)
+    best1 = best_ft1 = bbox1 = None
     if tables and finder.tables:
         if pdf_type == 2:
             tables, finder.tables = _filter_narrow_tables(tables, finder.tables)
-        best, best_ft, bbox = _pick_best_table(page, tables, finder.tables, ref.caption)
-        if best is not None:
-            # Fix 1 : corriger le texte rotatif dans la table choisie
-            best = _apply_rotated_fix(page, best, rotated_map, finder.tables)
-            return best, best_ft, "pdfplumber", bbox
+        best1, best_ft1, bbox1 = _pick_best_table(page, tables, finder.tables, ref.caption)
+        if best1 is not None:
+            best1 = _apply_rotated_fix(page, best1, rotated_map, finder.tables)
 
-    # Essai 2 : stratégie texte
+    q1 = _table_quality(best1) if best1 else -1.0
+    if q1 >= 2.0:
+        # La stratégie lignes a trouvé une table réaliste → l'utiliser
+        return best1, best_ft1, "pdfplumber", bbox1
+
+    # ── Essai 2 : stratégie texte (gère les tables sans bordures visibles) ────
     tables_text = page.extract_tables(fallback)
     finder_text = page.debug_tablefinder(fallback)
+    best2 = best_ft2 = bbox2 = None
     if tables_text and finder_text.tables:
         if pdf_type == 2:
             tables_text, finder_text.tables = _filter_narrow_tables(tables_text, finder_text.tables)
-        best, best_ft, bbox = _pick_best_table(page, tables_text, finder_text.tables, ref.caption)
-        if best is not None:
-            best = _apply_rotated_fix(page, best, rotated_map, finder_text.tables)
-            return best, best_ft, "pdfplumber_text", bbox
+        best2, best_ft2, bbox2 = _pick_best_table(page, tables_text, finder_text.tables, ref.caption)
+        if best2 is not None:
+            best2 = _apply_rotated_fix(page, best2, rotated_map, finder_text.tables)
 
-    # Essai 3 : tables sans finder (PDF sans bordures nettes → bbox=page entière)
+    q2 = _table_quality(best2) if best2 else -1.0
+
+    # Retourner le meilleur des deux (tie-break : préférer lignes)
+    if best2 is not None and q2 >= q1:
+        return best2, best_ft2, "pdfplumber_text", bbox2
+    if best1 is not None:
+        return best1, best_ft1, "pdfplumber", bbox1
+    if best2 is not None:
+        return best2, best_ft2, "pdfplumber_text", bbox2
+
+    # ── Essai 3 : tables sans finder (PDF sans bordures nettes) ──────────────
     if tables:
         ft_dummy = [type("T", (), {"bbox": (0, 0, page.width, page.height)})()]
         best, best_ft, _ = _pick_best_table(page, tables, ft_dummy, ref.caption)

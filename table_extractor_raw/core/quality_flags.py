@@ -43,6 +43,7 @@ def compute_col_variance(headers: list[str], rows: list[list[str]]) -> float:
 def evaluate_table(
     headers: list[str],
     rows: list[list[str]],
+    cid_detected: bool = False,
 ) -> tuple[str, float, float, list[str]]:
     """
     Évalue la qualité d'une table extraite.
@@ -91,6 +92,10 @@ def evaluate_table(
                 if unique_ratio < 0.25:  # 75%+ de répétitions dans la colonne
                     warnings.append("vertical_merge_suspected")
                     break
+
+    # Glyphes CID non décodables (police sans ToUnicode) détectés avant nettoyage
+    if cid_detected:
+        warnings.append("unmapped_cid_glyphs_detected")
 
     # ── Calcul de la confiance ─────────────────────────────────────────────────
     critical = {"no_content_extracted", "no_headers_detected"}

@@ -23,9 +23,12 @@ TOC_SECTION_PATTERNS = [
 
 # Pattern d'une entrée de table dans le TOC :
 # "Table 12. I2C characteristics ....... 78"
+# "Table 83. LQPF100 - ... mechanical data125"   (page collée, pas de leader)
 # Gère les variations : points collés, espaces entre points, tirets
+# Note : le leader de pointillés est optionnel — certains PDFs collent le
+# numéro de page directement à la légende (ex: "... data125").
 TOC_ENTRY_PATTERN = re.compile(
-    r"(?:Table|Tableau)\s+(\d+)[.:]?\s+(.+?)\s+[.\-\s]{3,}\s*(\d+)\s*$",
+    r"(?:Table|Tableau)\s+(\d+)[.:]?\s+(.+?)\s*(?:[.\-\s]{3,})?\s*(\d+)\s*$",
     re.IGNORECASE,
 )
 
@@ -36,6 +39,18 @@ INLINE_CAPTION_PATTERN = re.compile(
     re.IGNORECASE,
 )
 
+# Pattern de detection des dessins mécaniques/PCB qui ne sont pas des tableaux
+MECHANICAL_DRAWING_PATTERN = re.compile(
+    r"mechanical data|pcb design rules|package (mechanical|outline) data",
+    re.IGNORECASE,
+)
+
+
+def _is_likely_mechanical_drawing(caption: str) -> bool:
+    """Détecte les captions qui sont en fait des cotes de dessin technique
+    (package/PCB), et non des vrais tableaux de données texte."""
+    return bool(MECHANICAL_DRAWING_PATTERN.search(caption))
+
 
 @dataclass
 class TableRef:
@@ -43,6 +58,7 @@ class TableRef:
     table_id: str          # "table_12"
     caption:  str          # légende complète
     page:     int          # page de début (1-indexé)
+    likely_drawing: bool = False  # True si caption évoque un dessin mécanique/PCB
 
 
 def detect_tables(pdf_path: str, pdf_type: int = 1) -> list[TableRef]:
@@ -63,12 +79,18 @@ def detect_tables(pdf_path: str, pdf_type: int = 1) -> list[TableRef]:
             refs = _from_toc(pdf)
         if refs:
             logger.info(f"TOC found: {len(refs)} tables detected via List of Tables")
+            for ref in refs:
+                if _is_likely_mechanical_drawing(ref.caption):
+                    ref.likely_drawing = True
             return refs
 
         # Fallback : scan inline
         logger.info("No TOC found, scanning pages for inline captions")
         refs = _from_inline_scan(pdf)
         logger.info(f"Inline scan: {len(refs)} tables detected")
+        for ref in refs:
+            if _is_likely_mechanical_drawing(ref.caption):
+                ref.likely_drawing = True
         return refs
 
 
@@ -147,16 +169,18 @@ def _from_toc(pdf: pdfplumber.PDF, start_from: int = 1) -> list[TableRef]:
 
             # Si on attend la fin d'une entrée multi-lignes
             if pending_num:
+                existing_ids = {r.table_id for r in refs}
+                is_new_table = bool(re.match(r"^(?:Table|Tableau)\s+\d+", line_stripped, re.IGNORECASE))
                 end_match = re.search(r"\s+[.\-\s]{3,}\s*(\d+)\s*$", line_stripped)
-                if end_match:
-                    # Ligne finale de l'entrée
+
+                if end_match and not is_new_table:
+                    # Ligne finale de l'entrée en attente (et ce n'est PAS une nouvelle table)
                     toc_page = int(end_match.group(1))
                     caption_part = line_stripped[:end_match.start()].strip()
                     if caption_part:
                         pending_caption += " " + caption_part
                     
                     caption_clean = re.sub(r"[\s.]+$", "", pending_caption).strip()
-                    existing_ids = {r.table_id for r in refs}
                     if f"table_{pending_num}" not in existing_ids:
                         refs.append(TableRef(
                             table_id=f"table_{pending_num}",
@@ -168,15 +192,23 @@ def _from_toc(pdf: pdfplumber.PDF, start_from: int = 1) -> list[TableRef]:
                     pending_caption = ""
                     continue
                 else:
-                    # Soit c'est une ligne intermédiaire de légende, soit le début d'une nouvelle table
-                    # (auquel cas la précédente est abandonnée car mal formée)
                     start_match = re.match(r"^(?:Table|Tableau)\s+(\d+)[.:]?\s+(.*)$", line_stripped, re.IGNORECASE)
                     if start_match:
-                        pending_num = start_match.group(1)
-                        pending_caption = start_match.group(2).strip()
+                        # FLUSH l'entrée en attente avant de commencer la nouvelle
+                        # (ne JAMAIS abandonner silencieusement une table)
+                        if f"table_{pending_num}" not in existing_ids:
+                            caption_clean = re.sub(r"[\s.]+$", "", pending_caption).strip()
+                            refs.append(TableRef(
+                                table_id=f"table_{pending_num}",
+                                caption=f"Table {pending_num}. {caption_clean}",
+                                page=0,
+                            ))
+                        pending_num = None
+                        pending_caption = ""
+                        # NE PAS continue — laisser le flux principal traiter cette ligne
                     else:
                         pending_caption += " " + line_stripped
-                    continue
+                        continue
 
             # Pas d'entrée en attente, on teste si c'est une ligne complète
             m = TOC_ENTRY_PATTERN.match(line_stripped)
@@ -198,6 +230,17 @@ def _from_toc(pdf: pdfplumber.PDF, start_from: int = 1) -> list[TableRef]:
                 if start_match:
                     pending_num = start_match.group(1)
                     pending_caption = start_match.group(2).strip()
+
+    # Flush toute entrée restante en attente (dernière ligne d'une liste de tables)
+    if pending_num:
+        existing_ids = {r.table_id for r in refs}
+        if f"table_{pending_num}" not in existing_ids:
+            caption_clean = re.sub(r"[\s.]+$", "", pending_caption).strip()
+            refs.append(TableRef(
+                table_id=f"table_{pending_num}",
+                caption=f"Table {pending_num}. {caption_clean}",
+                page=0,
+            ))
 
     return refs
 

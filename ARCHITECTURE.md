@@ -141,36 +141,64 @@ flowchart LR
 Ordre d'appel interne (les "Fix") :
 
 | # | Nom | Fonction | Ligne | Rôle |
-|---|---|---|---|---|
+|---|---|---|---|---|---|
 | 1 | Fix 1 | `_get_rotated_text_map()` | `:789` | Texte vertical inversé → upright |
-| 2 | — | `_extract_from_page()` | `:792` | 3 tentatives : lignes → texte → sans finder |
-| 3 | Fix 2 & 5 | `_expand_spans_and_headers()` | `:806` | Headers multi-niveaux, fusions, colonnes fantômes |
-| 4 | — | `find_continuations()` | `:814` | Détection et fusion multi-pages |
-| 5 | Fix 7 | Boucle surplus x0 | `:833-859` | Insertion colonnes split (géométrie x0) |
-| 6 | Fix 8 | `_fill_horizontal()` | `:861-868` | Remplissage horizontal Type 2 |
-| 7 | Fix 6 | Boucle `rows_raw` | `:877-895` | Propagation verticale avec détection de groupe |
-| 8 | Fix 8 | `_ensure_no_empty_cells()` | `:901` | Zéro cellule vide (horizontal → vertical → boucle) |
-| 9 | — | `fix_headers()` / `fix_rows()` | `:905-906` | Glyphes, None→"" |
-| 10 | — | `evaluate_table()` | `:909` | Confidence + warnings |
-| 11 | — | Assemblage dict final | `:913-920` | headers, rows, merged_pages, confidence... |
-| 12 | — | `_save_debug_image()` | `:923-925` | PNG debug (si SAVE_DEBUG_IMAGES) |
+| 2 | — | `_locate_caption_page()` | `:865` | Page réelle de la légende via scan ±2 + grille présente |
+| 3 | — | `_extract_from_page()` | `:792` | 3 tentatives : lignes → texte → sans finder |
+| 4 | Fix 2 & 5 | `_expand_spans_and_headers()` | `:806` | Headers multi-niveaux, fusions, colonnes fantômes |
+| 5 | — | `find_continuations()` | `:814` | Détection et fusion multi-pages |
+| 6 | Fix 7 | Boucle surplus x0 | `:833-859` | Insertion colonnes split (géométrie x0) |
+| 7 | Fix 8 | `_fill_horizontal()` | `:861-868` | Remplissage horizontal Type 2 |
+| 8 | Fix 6 | Boucle `rows_raw` | `:877-895` | Propagation verticale avec détection de groupe |
+| 9 | Fix 8 | `_ensure_no_empty_cells()` | `:901` | Zéro cellule vide (horizontal → vertical → boucle) |
+| 10 | — | `fix_headers()` / `fix_rows()` | `:905-906` | Glyphes, None→"" |
+| 11 | — | `evaluate_table()` | `:909` | Confidence + warnings |
+| 12 | — | Self-check `review_needed` | `:912-918` | Si table vide + 100% CID → doute |
+| 13 | — | Assemblage dict final | `:920-928` | headers, rows, merged_pages, confidence... |
+| 14 | — | `_save_debug_image()` | `:930-932` | PNG debug (si SAVE_DEBUG_IMAGES) |
 
-### `_extract_from_page()` — `grid_extractor.py:950-995`
+### `_extract_from_page()` — `grid_extractor.py:1069-1128`
 
-3 tentatives de plus en plus permissives :
+3 tentatives de plus en plus permissives, avec comparaison qualité :
 
 ```python
 # Tentative 1 — Lignes (settings standard)
 best, best_ft, method = page.extract_tables(settings) + debug_tablefinder
-# Tentative 2 — Texte fallback (settings souples)
-best, best_ft, method = page.extract_tables(fallback_settings) + debug_tablefinder
+if _table_quality(best) >= 2.0:
+    return best  # table réaliste avec bordures → utilisée directe
+
+# Tentative 2 — Texte fallback (settings souples, tables sans bordures)
+best2, best_ft2, method = page.extract_tables(fallback_settings) + debug_tablefinder
+# Retourne le meilleur des deux (comparé par _table_quality)
+
 # Tentative 3 — Sans finder (bbox = page entière)
 best, best_ft, method = page.extract_tables(), dummy_ft
 # Échec total
 return None, None, "pdfplumber", None
 ```
 
-### `_expand_spans_and_headers()` — `grid_extractor.py:430-688`
+### `_locate_caption_page()` — `grid_extractor.py:181-200`
+
+Corrige les erreurs de page TOC (souvent décalée de ±1) et les **fausses
+légendes** (mentions « Refer to Table N… ») — le problème le plus fréquent
+dans les datasheets STM32.
+
+Algorithme :
+
+1. **Candidats** : page déclarée TOC + les `window=2` pages voisines,
+   testées dans l'ordre (déclarée d'abord, puis on s'éloigne).
+2. **Caption matching** (`_find_caption_y`) : mot-à-mot strict avec
+   **deux vérifications 100 % déterministes** :
+   - **Vérif 1** : aucun mot alphabétique avant « table » sur la même
+     ligne → une légende commence une ligne, une référence est encastrée.
+   - **Vérif 2** : le numéro de table doit être suivi d'un point « 1. »,
+     pas d'un deux-points « 1: » (usage des références).
+3. **Grille présente** : `page.find_tables(settings)` doit trouver une
+   table sous la légende. Si oui → candidat parfait retourné immédiatement.
+   Si non → gardé comme fallback (permet les tables sans bordures Type 2).
+
+Si aucune page n'a de légende + grille, le TOC original est utilisé
+(après tout, il est correct dans > 95 % des cas).
 
 Étapes internes :
 1. **Géométrie grille** : `col_centers` (médian x des cellules des premières lignes)
@@ -271,7 +299,8 @@ extraction_method: str           # "pdfplumber" | "pdfplumber_text" | "failed"
 extraction_confidence: str       # "high" | "medium" | "low" | "failed"
 empty_cell_ratio: float          # 0.0 - 1.0
 col_count: int                   # len(headers)
-warnings: list[str]              # ["vertical_merge_suspected"]
+status: Optional[str]            # None | "failed" | "review_needed"
+warnings: list[str]              # ["vertical_merge_suspected", "caption_page:15"]
 ```
 
 ### `datasheet_metaData` (ajouté APRES validation, `main.py:137-146`)
@@ -318,6 +347,8 @@ GLYPH_MAP = {
 | `fix_text(text)` | `:58` | Glyph replace → NFC normalize → regex (espaces, newlines) |
 | `fix_headers(headers)` | `:83` | Applique `fix_text` sur chaque header + None→"" |
 | `fix_rows(rows)` | `:88` | Applique `fix_text` sur chaque cellule + None→"" |
+| `correct_footer_in_table(table)` | `:107` | Supprime les lignes de pied de page (numéro + titre) contaminant la table (`FOOTER_PATTERN`) |
+| `CID_PATTERN` | `:50` | Regex large `r"\(cid:\d+\)"` pour détecter les glyphes non résolus |
 
 ### `quality_flags.py`
 
@@ -527,8 +558,11 @@ RagJason/
 | `_from_toc()` (Type 1) | `toc_detector.py` | `:75-202` |
 | `_from_toc_reverse()` (Type 2) | `toc_detector.py` | `:205-218` |
 | `_from_inline_scan()` | `toc_detector.py` | `:221-244` |
-| `extract_table_grid()` | `grid_extractor.py` | `:752-932` |
-| `_extract_from_page()` (3 tentatives) | `grid_extractor.py` | `:950-995` |
+| `extract_table_grid()` | `grid_extractor.py` | `:864-1042` |
+| `_locate_caption_page()` | `grid_extractor.py` | `:181-200` |
+| `_find_caption_y()` | `grid_extractor.py` | `:128-220` |
+| `_extract_from_page()` (3 tentatives + qualité) | `grid_extractor.py` | `:1069-1128` |
+| `_table_quality()` | `grid_extractor.py` | `:203-220` |
 | `_expand_spans_and_headers()` | `grid_extractor.py` | `:430-688` |
 | `_build_final_headers()` | `grid_extractor.py` | `:692-748` |
 | `_propagate_spans_type2()` | `grid_extractor.py` | `:301-372` |

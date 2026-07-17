@@ -54,6 +54,16 @@ _REGEX_FIXES: list[tuple[str, str]] = [
     (r"[\r\n]+", " "),
 ]
 
+# Pattern de détection des glyphes CID non décodables (police sans ToUnicode)
+# Note : certains tokens sont malformés (parenthèse fermante manquante, ex: (cid:8)
+CID_PATTERN = re.compile(r"\(cid:[\d ]*\)?")
+
+# Pattern de pied de page DSxxxx - Rev x page xx/xx (contamination fréquente)
+FOOTER_PATTERN = re.compile(
+    r"\bDS\d{3,6}\s*-\s*Rev\s*\d+.*?page\s*\d+/\d+",
+    re.IGNORECASE,
+)
+
 
 def fix_text(text: str) -> str:
     """
@@ -77,6 +87,12 @@ def fix_text(text: str) -> str:
     for pattern, replacement in _REGEX_FIXES:
         text = re.sub(pattern, replacement, text)
 
+    # Étape 4 : nettoyage des glyphes CID non décodables (police sans ToUnicode)
+    if CID_PATTERN.search(text):
+        text = CID_PATTERN.sub("", text).strip()
+        if len(text) < 2:
+            text = ""
+
     return text.strip()
 
 
@@ -94,3 +110,18 @@ def fix_rows(rows: list[list[str | None]]) -> list[list[str]]:
         [fix_text(cell) if cell is not None else "" for cell in row]
         for row in rows
     ]
+
+
+def correct_footer_in_table(table: dict) -> dict:
+    """
+    Retire les pieds de page (DSxxxx - Rev x page xx/xx) des headers et rows
+    d'un dictionnaire de table brute.  Appelé depuis main.py APRÈS le garde-fou
+    dessin mécanique, pour ne pas marquer failed les tables qui n'avaient que
+    du footer dans leur en-tête.
+    """
+    table["headers"] = [FOOTER_PATTERN.sub("", h).strip() for h in table.get("headers", [])]
+    table["rows"] = [
+        [FOOTER_PATTERN.sub("", c).strip() for c in row]
+        for row in table.get("rows", [])
+    ]
+    return table
