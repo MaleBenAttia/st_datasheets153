@@ -35,9 +35,6 @@ GLYPH_MAP: dict[str, str] = {
     "\u201d":  '"',
     "\u2018":  "'",
     "\u2019":  "'",
-    # Séquences multi-caractères fréquentes
-    "Ω":       "Ω",   # déjà correct
-    "µ":       "µ",   # déjà correct
     # Puces / flèches
     "\uf0d8":  "↑",
     "\uf0da":  "↓",

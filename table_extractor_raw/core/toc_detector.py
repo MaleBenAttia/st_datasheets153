@@ -1,13 +1,13 @@
 """
 toc_detector.py — Étape 1 : détection des tables via "List of Tables" ou scan page par page.
 
-Extrait uniquement : table_id, caption, page (première occurrence).
-Ne touche pas au contenu des tables.
+Extrait : table_id, caption, page (1ère occurrence).
+Stratégie : TOC début (Type 1) → TOC fin (Type 2) → scan inline fallback.
 """
 from __future__ import annotations
 import re
 import logging
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 import pdfplumber
 
@@ -43,7 +43,6 @@ class TableRef:
     table_id: str          # "table_12"
     caption:  str          # légende complète
     page:     int          # page de début (1-indexé)
-    section:  str = ""     # section parente si détectable
 
 
 def detect_tables(pdf_path: str, pdf_type: int = 1) -> list[TableRef]:
@@ -89,16 +88,11 @@ def _from_toc(pdf: pdfplumber.PDF, start_from: int = 1) -> list[TableRef]:
     """
     refs: list[TableRef] = []
     in_toc = False
-    toc_page_count = 0           # pages consécutives de TOC lues
-    MAX_TOC_PAGES = 10           # sécurité anti-boucle
-    
+    toc_page_count = 0
+    MAX_TOC_PAGES = 10
+
     pending_num = None
     pending_caption = ""
-
-    # Patterns de lignes qui indiquent qu'on est sorti du TOC
-    BODY_SECTION_PATTERN = re.compile(
-        r"^(?:\d+\.?\s+)?[A-Z][A-Za-z\s]+$"  # ex: "Introduction", "1. Description"
-    )
 
     for page_num, page in enumerate(pdf.pages, start=1):
         # Skip pages before start_from

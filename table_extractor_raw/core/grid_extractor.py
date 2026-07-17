@@ -2,17 +2,25 @@
 grid_extractor.py — Étape 2 : extraction de la grille brute via pdfplumber.
 
 Fixes intégrés :
-  [Fix 1] Texte vertical inversé → reconstruction depuis page.chars avec upright=False
-  [Fix 2] Header multi-niveau (\n dans cellule) → expansion en colonnes logiques
-  [Fix 3] Sélection de table → la plus proche EN DESSOUS de la légende (pas la plus grande)
-  [Fix 4] Newlines internes dans les cellules → normalisés en espace
+  [Fix 1] Texte vertical inversé (upright=False) → reconstruction depuis page.chars
+  [Fix 2] Header multi-niveau → détection géométrique + split lignes
+  [Fix 3] Sélection de table la plus proche EN DESSOUS de la légende
+  [Fix 4] Newlines internes → espace
+  [Fix 5] Rowspan/colspan → propagation géométrique via bboxes
+  [Fix 6] Propagation descendante des cellules vides (rowspan) avec détection
+          de groupe pour les PDFs Type 2
+  [Fix 7] Insertion automatique de colonnes page 1 si continuation en a une
+          de plus (split géométrique détecté par x0)
+
+Pipeline : _extract_from_page → _expand_spans_and_headers → (continuation)
+           → Fix 6 propagation → glyphe → qualité
 """
 from __future__ import annotations
 import logging
 import re
 import sys
 from pathlib import Path
-from typing import Optional
+from typing import Any, Optional
 
 import pdfplumber
 from pdfplumber.page import Page
@@ -101,13 +109,8 @@ def _fix_cell_rotated_text(cell_text: str, cell_bbox: Optional[tuple],
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# FIX 2 — Header multi-niveau (cellule avec \n)
+# FIX 2 — Header multi-niveau (normalisation des \n dans les cellules)
 # ══════════════════════════════════════════════════════════════════════════════
-
-def _expand_multilevel_header(row: list[str]) -> list[str]:
-    # Fonction supprimée (remplacée par la logique structurelle)
-    pass
-
 
 def _normalize_newlines_in_cell(text: str) -> str:
     """Remplace les \n internes d'une cellule de data par un espace."""
@@ -205,34 +208,67 @@ def _cell_str(cell) -> str:
     return _normalize_newlines_in_cell(str(cell))
 
 
-def _is_header_row_ambiguous(row: list[str]) -> bool:
+def _fill_horizontal(rows: list[list[str]]) -> None:
     """
-    Heuristique : si tous les tokens non-vides sont très courts (≤ 4 chars),
-    ça ressemble plus à des valeurs que des libellés.
+    Remplit horizontalement les cellules vides : copie depuis le voisin gauche
+    non-vide le plus proche dans la même ligne.
+    Garantit que toute cellule vide reçoit une valeur.
     """
-    non_empty = [c for c in row if c.strip()]
-    if not non_empty:
-        return True
-    return all(len(c) <= 4 for c in non_empty)
+    for row in rows:
+        last_val: str = ""
+        for c in range(len(row)):
+            if row[c]:
+                last_val = row[c]
+            elif last_val:
+                row[c] = last_val
 
 
-def _merge_two_header_rows(row1: list[str], row2: list[str]) -> list[str]:
+def _fill_vertical(rows: list[list[str]]) -> None:
     """
-    Concatène deux lignes d'en-tête physiques cellule par cellule.
-    Ex: ["Symbol", ""] + ["", "µs"] → ["Symbol", "µs"]
-    Si les deux ont du contenu : "Symbol" + "µs" → "Symbol / µs"
+    Remplit verticalement les cellules vides : copie depuis la valeur au-dessus
+    si celle-ci existe.
     """
-    max_len = max(len(row1), len(row2))
-    result = []
-    for i in range(max_len):
-        a = row1[i] if i < len(row1) else ""
-        b = row2[i] if i < len(row2) else ""
-        a, b = a.strip(), b.strip()
-        if a and b:
-            result.append(f"{a} / {b}")
-        else:
-            result.append(a or b)
-    return result
+    if len(rows) < 2:
+        return
+    for c in range(min(len(rows[0]), max(len(r) for r in rows))):
+        last_val: str = ""
+        for r in range(len(rows)):
+            if c < len(rows[r]):
+                if rows[r][c]:
+                    last_val = rows[r][c]
+                elif last_val:
+                    rows[r][c] = last_val
+
+
+def _ensure_no_empty_cells(rows: list[list[str]]) -> None:
+    """
+    Garantit zéro cellule vide : horizontal → vertical → voisin le plus proche.
+    Même les cellules vides en première colonne sont remplies depuis la droite.
+    Si toute une ligne est vide, copier celle du dessus.
+    Itère jusqu'à stabilisation.
+    """
+    changed = True
+    while changed:
+        old = [list(r) for r in rows]
+        _fill_horizontal(rows)
+        _fill_vertical(rows)
+        for ri, row in enumerate(rows):
+            first_val = next((c for c in row if c), "")
+            if not first_val and ri > 0:
+                above = rows[ri - 1]
+                for c in range(len(row)):
+                    if c < len(above):
+                        row[c] = above[c]
+                first_val = next((c for c in row if c), "")
+            if first_val:
+                for c in range(len(row)):
+                    if not row[c]:
+                        row[c] = first_val
+        changed = any(
+            old[r][c] != rows[r][c]
+            for r in range(len(rows))
+            for c in range(len(rows[r]))
+        )
 
 
 def _save_debug_image(
@@ -788,25 +824,23 @@ def extract_table_grid(
             if c_pages and len(c_pages) > 1:
                 merged_pages = c_pages
 
-                # Si les continuations ont plus de colonnes que la page 1,
-                # élargir la page 1 (rows + headers) en insérant des colonnes vides
-                # aux positions dictées par la géométrie des x0.
+                # Fix 7 : élargir la page 1 si la continuation a scindé une colonne
+                # Ex: page 1 a ["Name"] mais page N a ["Name", "Name sub"]
+                # L'insertion se fait à la position dictée par la géométrie x0 :
+                # les x0 présents dans la continuation mais absents de la page 1
+                # (tolérance 5pt) reçoivent une colonne vide.
+                # Le nouveau header est copié depuis le voisin de gauche.
                 n_insert = target_cols - len(headers)
                 if n_insert > 0:
                     p1_x0s = _get_col_x0s(table_obj) if table_obj else []
-                    # Fusionner tous les x0s des continuations
                     merged_cont_x0s = sorted(set(
                         round(x, 1) for lst in cont_x0s_list for x in lst
                     ))
-                    # Déterminer les colonnes en surplus (x0 présent dans continuation
-                    # mais pas dans page1, tolérance 5pt)
                     surplus_x0s = []
                     for cx in merged_cont_x0s:
                         if not any(abs(cx - px) < 5 for px in p1_x0s):
                             surplus_x0s.append(cx)
 
-                    # Sécurité : si p1_x0s est vide (table_obj dummy), on place
-                    # les nouvelles colonnes à la fin (position len(headers))
                     if not p1_x0s:
                         insert_positions = list(range(len(headers), len(headers) + n_insert))
                     else:
@@ -815,25 +849,23 @@ def extract_table_grid(
                             pos = sum(1 for px in p1_x0s if px < sx)
                             insert_positions.append(pos)
 
-                    # Limiter à n_insert insertions (prendre les plus à gauche)
                     insert_positions = sorted(set(insert_positions))[:n_insert]
 
-                    # Insérer les colonnes de droite à gauche pour préserver les indices
+                    # Insertion droite→gauche pour préserver les indices
                     for pos in sorted(insert_positions, reverse=True):
-                        # Insérer dans headers (doublon du header à gauche)
-                        if pos == 0:
-                            header_val = headers[0]
-                        else:
-                            header_val = headers[pos - 1]
+                        header_val = headers[pos - 1] if pos > 0 else headers[0]
                         headers = headers[:pos] + [header_val] + headers[pos:]
-
-                        # Insérer "" dans toutes les rows de page1
                         for r in range(len(rows_raw)):
-                            row = rows_raw[r]
-                            rows_raw[r] = row[:pos] + [""] + row[pos:]
+                            rows_raw[r] = rows_raw[r][:pos] + [""] + rows_raw[r][pos:]
 
                 rows_raw.extend([[_cell_str(c) for c in row] for row in c_rows])
                 result["warnings"].append(f"multi_page_merged:{len(merged_pages)}")
+
+                # Fix 8 : remplir horizontalement les lignes de continuation
+                # (les cellules fusionnées horizontalement ne sont pas propagées
+                # dans les pages de continuation, contrairement à la page 1).
+                if pdf_type == 2:
+                    _fill_horizontal(rows_raw)
 
         # ── Fix 6 : Propagation descendante des cellules vides ─────────────
         # Les cellules fusionnées verticalement (rowspan) apparaissent comme ""
@@ -861,6 +893,13 @@ def extract_table_grid(
                         if first_changed and not seen_before:
                             continue
                         rows_raw[r][c] = rows_raw[r-1][c]
+
+        # ── Fix 8 (Type 2) : garantie zéro cellule vide ──────────────────
+        # Remplit horizontalement puis verticalement toute cellule résiduelle.
+        # Même les cellules vraiment vides dans le PDF reçoivent le dernier
+        # voisin connu (règle "remete le père").
+        if pdf_type == 2:
+            _ensure_no_empty_cells(rows_raw)
 
         # ── Correction des glyphes ─────────────────────────────────────────────
         headers    = fix_headers(headers)
@@ -946,7 +985,7 @@ def _extract_from_page(
             best = _apply_rotated_fix(page, best, rotated_map, finder_text.tables)
             return best, best_ft, "pdfplumber_text", bbox
 
-    # Essai 3 : extract_tables sans finder (certains PDFs sans bordures nettes)
+    # Essai 3 : tables sans finder (PDF sans bordures nettes → bbox=page entière)
     if tables:
         ft_dummy = [type("T", (), {"bbox": (0, 0, page.width, page.height)})()]
         best, best_ft, _ = _pick_best_table(page, tables, ft_dummy, ref.caption)

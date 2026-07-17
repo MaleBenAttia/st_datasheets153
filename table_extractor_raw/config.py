@@ -9,10 +9,6 @@ ROOT_DIR   = Path(__file__).parent
 OUTPUT_DIR = ROOT_DIR.parent / "outJason"
 LOG_DIR    = ROOT_DIR / "logs"
 
-# ── Flags fallback ────────────────────────────────────────────────────────────
-USE_CAMELOT_FALLBACK = False   # activer si camelot-py[cv] est installé
-USE_DOCLING_FALLBACK = False   # activer si docling est installé
-
 # ── Seuils qualité (déclenchent le fallback ou le flag) ───────────────────────
 MIN_DATA_ROWS          = 1     # une seule ligne de données est valide (ex: Calibration values)
 MAX_EMPTY_CELL_RATIO   = 0.50  # jusqu'à 50% de vide autorisé (ex: tables Pinout/Features très creuses)

@@ -1,7 +1,11 @@
 """
 continuation.py — Gestion des tables multi-pages.
 
-Implémente la logique pour suivre une table sur les pages suivantes.
+Détecte la suite d'une table sur les pages suivantes en reconnaissant
+les titres "Table X. ... (continued)", filtre les fausses pages de titre,
+et adapte le nombre de colonnes quand une colonne se scinde en sous-colonnes.
+
+Exporte : find_continuations(), _get_col_x0s()
 """
 from __future__ import annotations
 import logging
@@ -104,8 +108,9 @@ def _is_continuation_page(
         # Si la table a beaucoup plus de colonnes qu'attendu → pas la bonne table
         if col_count > expected_col_count + 2:
             return False, None, None
-        # Tolérance pour les en-têtes multi-niveaux : peut avoir moins de cols
-        if col_count < max(1, expected_col_count // 2):
+        # Doit avoir au moins expected - 2 colonnes (évite les petites tables
+        # de note de bas de page qui auraient aussi "(continued)")
+        if col_count < max(2, expected_col_count - 2):
             return False, None, None
         return True, top_table, _get_col_x0s(top_ft)
 

@@ -1,12 +1,10 @@
 """
 quality_flags.py — Évaluation de la confiance d'extraction d'une table brute.
 
-Ne devine pas le type de table. Évalue uniquement la qualité structurelle :
-- Ratio de cellules vides
-- Cohérence du nombre de colonnes
-- Nombre de lignes de données
+Métriques : ratio cellules vides, variance colonnes, nombre de lignes,
+détection de fusions verticales suspectes.
 
-Sortie : confidence level + liste de warnings textuels.
+Sortie : confidence ("high"/"medium"/"low"/"failed") + warnings textuels.
 """
 from __future__ import annotations
 import sys
