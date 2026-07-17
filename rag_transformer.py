@@ -6,7 +6,7 @@ convertit en objets "chunk" optimisés pour l'indexation dans une base de
 données vectorielle (ChromaDB, Qdrant, Pinecone, etc.).
 
 Architecture de sortie :
-    RagJason/
+    RagJason/<Family>/
         stm32c011d6.json   <- un fichier par datasheet
         stm32f103rc.json
         stm32g081cb.json
@@ -222,7 +222,41 @@ def process_table(table: dict) -> list[dict]:
 
 
 # ═════════════════════════════════════════════════════════════════════════════
-# MAIN — Génération des fichiers RAG par datasheet
+# FONCTION RÉUTILISABLE — appelée depuis main.py
+# ═════════════════════════════════════════════════════════════════════════════
+
+def generate_rag_for_pdf(
+    tables: list[dict],
+    family: str,
+    pdf_name: str,
+    out_base: Path,
+) -> int:
+    """
+    Construit les chunks RAG pour un datasheet et écrit
+    out_base/<family>/<pdf_name>.json.
+
+    Retourne le nombre de chunks écrits (0 si empty).
+    Sûr à appeler depuis main.py (gère les dossiers manquants).
+    """
+    if not tables:
+        return 0
+    chunks = []
+    for t in tables:
+        chunks.extend(process_table(t))
+    if not chunks:
+        return 0
+    out_dir = Path(out_base) / family
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out_file = out_dir / f"{pdf_name}.json"
+    out_file.write_text(
+        json.dumps(chunks, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    return len(chunks)
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+# MAIN — Génération des fichiers RAG par datasheet (standalone)
 # ═════════════════════════════════════════════════════════════════════════════
 
 def main():
@@ -231,37 +265,25 @@ def main():
         print("Erreur : le dossier outJason/ n'existe pas. Lancez d'abord l'extraction.")
         sys.exit(1)
 
-    out_dir = Path("RagJason")
-    out_dir.mkdir(parents=True, exist_ok=True)
-
     total_chunks = 0
 
-    # Un fichier RAG par datasheet
+    # Un fichier RAG par datasheet (dans RagJason/<Family>/)
     for json_file in sorted(in_dir.rglob("_all_tables.json")):
         try:
             data = json.loads(json_file.read_text(encoding="utf-8"))
             if not isinstance(data, list) or not data:
                 continue
 
-            pdf_chunks = []
             pdf_name = data[0].get("pdf_name", "unknown")
+            family = json_file.parent.parent.name  # outJason/<Family>/<pdf>/_all_tables.json
 
-            for table in data:
-                chunks = process_table(table)
-                pdf_chunks.extend(chunks)
-
-            if pdf_chunks:
-                out_file = out_dir / f"{pdf_name}.json"
-                out_file.write_text(
-                    json.dumps(pdf_chunks, ensure_ascii=False, indent=2),
-                    encoding="utf-8",
-                )
-                total_chunks += len(pdf_chunks)
+            n = generate_rag_for_pdf(data, family, pdf_name, Path("RagJason"))
+            total_chunks += n
 
         except Exception as e:
             print(f"Erreur lors du traitement de {json_file}: {e}")
 
-    print(f"Génération terminée : {total_chunks} chunks RAG dans {out_dir}/")
+    print(f"Génération terminée : {total_chunks} chunks RAG dans RagJason/")
 
 
 if __name__ == "__main__":
