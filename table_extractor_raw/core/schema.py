@@ -39,6 +39,10 @@ class RawTable(BaseModel):
     heuristics: dict = Field(default_factory=dict,
                              description="Traces des heuristiques appliquées pendant l'extraction")
 
+    # ── Données structurées pour non-tables (ordering info, etc.) ──────────
+    structured_json: Optional[dict] = Field(None,
+        description="Données structurées quand la page n'est pas une grille (ex: ordering information)")
+
     # ── Avertissements ────────────────────────────────────────────────────────
     warnings: list[str] = Field(default_factory=list,
                                 description="Ex: ['header_row_ambiguous', 'vertical_merge_suspected']")

@@ -170,6 +170,11 @@ Ordre d'appel interne (les "Fix") :
 | 15 | Fix 9 | `_remove_trailing_footnotes()` | `:1624` | Supprime les lignes de footnotes `"1."`, `"2."` en fin de tableau |
 | 16 | Fix 10 | `_merge_fragmented_columns()` | `:1353` | Fusionne les colonnes fragmentées (pdfplumber_text) : heuristiques minuscule, concat sans espace, guard duplication |
 | 17 | Fix 11 | `_merge_empty_header_rightward()` | `:1648` | Fusionne les colonnes à header vide vers la droite (bridge columns), guard `val != target` |
+| 18 | Fix 12 | Caption bleed row removal | `:1033` | Suppression 1ère ligne si `"Table N."` match table_id (continuation) |
+| 19 | Fix 13 | `extract_ordering_info()` | `:890` | Parsing texte pages "Ordering information" → structured_json |
+| 20 | Fix 14 | Header residual cleanup | `:1204` | Suppression lignes header dupliquées dans rows_fixed (footnotes) |
+| 21 | Fix 15 | body_on_next_page column check | `:1009` | Rejet si `nxt_cols > orig_col_count * 2 + 5` (TOC misdetection) |
+| 22 | Fix 16 | `result["extraction_method"]` sync | `:1018` | Synchronisation method après body_on_next_page |
 
 ### `_extract_from_page()` — `grid_extractor.py:950-995`
 
@@ -296,6 +301,7 @@ extraction_method: str           # "pdfplumber" | "pdfplumber_text" | "failed"
 extraction_confidence: str       # "high" | "medium" | "low" | "failed"
 empty_cell_ratio: float          # 0.0 - 1.0
 col_count: int                   # len(headers)
+structured_json: Optional[dict]  # Données structurées pages non-grille (ordering info)
 warnings: list[str]              # ["vertical_merge_suspected"]
 ```
 
@@ -542,7 +548,7 @@ RagJason/
 ## 12. Référence rapide (`file:line`)
 
 | Concern | Fichier | Ligne |
-|---|---|---|---|
+|---|---|---|---|---|
 | CLI group (`--pdf`, `--family`, `--all`) | `main.py` | `:224-227` |
 | `detect_pdf_type()` | `main.py` | `:43-52` |
 | `process_pdf()` | `main.py` | `:67-216` |
@@ -555,7 +561,7 @@ RagJason/
 | `_from_toc()` (H2.1-H2.4 texte) | `toc_detector.py` | `:299-423` |
 | `_from_toc_reverse()` (Type 2) | `toc_detector.py` | `:277-290` |
 | `_from_inline_scan()` (H2.5 fallback) | `toc_detector.py` | `:446-470` |
-| `extract_table_grid()` | `grid_extractor.py` | `:816-985` |
+| `extract_table_grid()` | `grid_extractor.py` | `:817-1289` |
 | `_extract_from_page()` (3 tentatives) | `grid_extractor.py` | `:1371-1463` |
 | `_find_caption_y()` (avec split("(")) | `grid_extractor.py` | `:124-157` |
 | `_expand_spans_and_headers()` | `grid_extractor.py` | `:458-706` |
@@ -568,6 +574,12 @@ RagJason/
 | Fix 9 (`_remove_trailing_footnotes`) | `grid_extractor.py` | `:1624-1645` |
 | Fix 10 (`_merge_fragmented_columns`) | `grid_extractor.py` | `:1353-1465` |
 | Fix 11 (`_merge_empty_header_rightward`) | `grid_extractor.py` | `:1648-1702` |
+| Fix 12 (caption bleed row removal) | `grid_extractor.py` | `:1033` |
+| Fix 13 (`extract_ordering_info`) | `grid_extractor.py` | `:890`, `ordering.py` `:66` |
+| Fix 14 (header residual cleanup) | `grid_extractor.py` | `:1204` |
+| Fix 15 (body_on_next_page col check) | `grid_extractor.py` | `:1009` |
+| Fix 16 (`result["extraction_method"]` sync) | `grid_extractor.py` | `:1018` |
+| `extract_ordering_info()` | `ordering.py` | `:66-221` |
 | Caption row filter (toutes méthodes) | `grid_extractor.py` | `:900-919` |
 | `_fill_horizontal()` | `grid_extractor.py` | `:211-223` |
 | `_fill_vertical()` | `grid_extractor.py` | `:226-240` |
@@ -593,4 +605,4 @@ RagJason/
 
 ---
 
-*Document généré automatiquement le 17 juillet 2026 — couvre le pipeline complet de l'extraction PDF à la génération des chunks RAG.*
+*Document généré automatiquement le 19 juillet 2026 — couvre le pipeline complet de l'extraction PDF à la génération des chunks RAG.*

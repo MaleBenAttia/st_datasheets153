@@ -41,6 +41,7 @@ from core.toc_detector import TableRef
 from core.glyph_fixer import CID_PATTERN, FOOTER_PATTERN, fix_headers, fix_rows
 from core.quality_flags import evaluate_table
 from core.continuation import find_continuations, _get_col_x0s
+from core.ordering import extract_ordering_info
 
 logger = logging.getLogger(__name__)
 
@@ -881,16 +882,38 @@ def extract_table_grid(
 
         result["extraction_method"] = method
 
+        # ── Sauvegarder le nb de colonnes original (avant filtrage caption_y) ─
+        orig_col_count = max(len(r) for r in raw_table) if raw_table else 0
+
         # ── Non-tables : Ordering information (pas une grille) ──────────────
         # Ces entrées de la TOC sont des listes textuelles, pas des tableaux.
         # On garde l'entrée mais avec rows vides + capture image.
+        # Pour Type 1, on utilise extract_ordering_info pour parser le texte.
         if "ordering information" in ref.caption.lower():
             result["headers"] = []
             result["rows"] = []
-            result["extraction_confidence"] = "low"
             result["empty_cell_ratio"] = 1.0
             result["col_count"] = 0
-            result["warnings"] = ["non_table_captured:ordering_information"]
+            if pdf_type == 1:
+                page_text = page.extract_text() or ""
+                oi = extract_ordering_info(
+                    page_text=page_text,
+                    doc_id=pdf_name,
+                    table_id=int(ref.table_id.split("_")[1]),
+                    page=ref.page,
+                )
+                if oi["structured_json"].get("type") == "ordering_information":
+                    result["structured_json"] = oi["structured_json"]
+                    result["rag_chunks"] = oi["rag_chunks"]
+                    result["extraction_confidence"] = "high"
+                    result["empty_cell_ratio"] = 0.0
+                    result["warnings"] = ["non_table:ordering_information"]
+                else:
+                    result["extraction_confidence"] = "low"
+                    result["warnings"] = ["non_table_captured:ordering_information"]
+            else:
+                result["extraction_confidence"] = "low"
+                result["warnings"] = ["non_table_captured:ordering_information"]
             if SAVE_DEBUG_IMAGES:
                 out_path = output_base / family / pdf_name / f"{ref.table_id}.json"
                 _save_debug_image(page, bbox, out_path, "low")
@@ -980,16 +1003,39 @@ def extract_table_grid(
                                     break
                         nq_boosted = nq + keyword_bonus
                         if nq_boosted >= 10.0:
-                            raw_table, table_obj, method, bbox = nxt_raw, nxt_obj, nxt_method, nxt_bbox
-                            page = pdf.pages[pg_idx]
-                            start_page = ref.page + 1
-                            heuristics["body_on_next_page"] = True
-                            heuristics["next_page_q_boosted"] = nq_boosted
-                            logger.info(f"{ref.table_id}: body on page {start_page}, re-extracted ({len(raw_table)} rows, {nxt_method}, q={nq_boosted:.0f})")
+                            # Vérification colonnes : si la page suivante a
+                            # significativement plus de colonnes que l'originale,
+                            # c'est probablement une table différente (TOC, etc.).
+                            nxt_cols = max(len(r) for r in nxt_raw) if nxt_raw else 0
+                            if orig_col_count > 0 and nxt_cols > orig_col_count * 2 + 5:
+                                logger.info(f"{ref.table_id}: body_on_next_page rejected "
+                                            f"(cols {orig_col_count}→{nxt_cols})")
+                                nq_boosted = -1  # force rejet
+                            else:
+                                raw_table, table_obj, method, bbox = nxt_raw, nxt_obj, nxt_method, nxt_bbox
+                                page = pdf.pages[pg_idx]
+                                start_page = ref.page + 1
+                                result["extraction_method"] = method
+                                heuristics["body_on_next_page"] = True
+                                heuristics["next_page_q_boosted"] = nq_boosted
+                                logger.info(f"{ref.table_id}: body on page {start_page}, re-extracted ({len(raw_table)} rows, {nxt_method}, q={nq_boosted:.0f})")
 
         # ── Capturer le nombre de colonnes extraites ─────────────────────────
         if raw_table:
             heuristics["cols_extracted"] = max(len(r) for r in raw_table)
+
+        # ── [Fix] Suppression des lignes de titre débordant dans la grille ──
+        # Cas rare : le titre "Table N. ... (continued)" sur la page de
+        # continuation est capturé comme 1ère ligne par pdfplumber, créant
+        # N colonnes fragmentées (ex: 14 au lieu de 7).
+        if raw_table and raw_table[0]:
+            first_cell = str(raw_table[0][0]).strip()
+            m = re.match(r"(?:Table|Tableau)\s+(\d+)[\.:]", first_cell, re.IGNORECASE)
+            if m:
+                cur_id = int(re.findall(r'\d+', str(ref.table_id))[0])
+                if int(m.group(1)) == cur_id:
+                    raw_table = raw_table[1:]
+                    logger.info(f"{ref.table_id}: removed caption bleed row ({len(raw_table)} rows remaining)")
 
         # ── [Fix] Troncature des tables suivantes (bleed) ────────────────────
         # La stratégie texte capture tout le texte de la page, y compris les
@@ -1152,6 +1198,19 @@ def extract_table_grid(
         # Les artefacts pdfplumber_text créent parfois des lignes où toutes
         # les cellules sont "" (ex: ligne séparatrice header/body mal capturée).
         rows_fixed = [row for row in rows_fixed if any(c for c in row)]
+
+        # ── [Fix] Suppression des lignes header résiduelles dans les données ─
+        # Cas rare : _expand_spans_and_headers peut laisser des lignes header
+        # dans rows_fixed (ex: footnote "(1)" ou header dupliqué après merge).
+        while rows_fixed and headers:
+            if rows_fixed[0] == headers:
+                rows_fixed.pop(0)
+            elif len(rows_fixed[0]) == len(headers) and all(
+                rows_fixed[0][c] == headers[c] for c in range(1, len(headers))
+            ):
+                rows_fixed.pop(0)
+            else:
+                break
 
         # ── [Fix] Fusion des colonnes adjacentes identiques ─────────────────
         headers, rows_fixed = _merge_identical_adjacent_columns(headers, rows_fixed)

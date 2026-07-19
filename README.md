@@ -7,8 +7,8 @@ Pipeline complet d'extraction automatique de tableaux depuis les datasheets
 PDF STMicroelectronics (STM32) et de transformation en chunks optimises pour
 l'indexation vectorielle (RAG avec ChromaDB, Qdrant, Pinecone, etc.).
 
-**Chiffres cles :** 185 datasheets, 20 familles STM32, extraction 100% high
-confidence, 0 erreur, 0 valeur null.
+**Chiffres cles :** 185 datasheets, 20 familles STM32, extraction 100 % high
+confidence, 0 erreur, 0 valeur null, extraction de l'ordering information pour les PDFs Type 1.
 
 ---
 
@@ -79,6 +79,7 @@ st_datasheets153/
 |   |   |-- continuation.py     #     Fusion multi-pages
 |   |   |-- quality_flags.py    #     Evaluation de la confiance
 |   |   |-- glyph_fixer.py      #     Correction des glyphes Unicode
+|   |   |-- ordering.py         #     Pages "Ordering information" (non-grille)
 |   |   |-- schema.py           #     Modele Pydantic de validation
 |
 |-- DataSHEET/                  # === PDFs SOURCES (non versionnes) ===
@@ -227,7 +228,7 @@ Remove-Item -Force global_extraction_stats.json -ErrorAction SilentlyContinue
 
 ## Moteur d'extraction - Architecture technique
 
-### Les 6 piliers geometriques
+### Les 8 piliers geometriques
 
 L'extracteur ne "devine" pas les mots : il agit comme un scanner optique
 base sur les lignes tracees dans le PDF.
@@ -290,6 +291,51 @@ fusionne ces colonnes-pont vers la droite (processe de droite a gauche
 pour preserver les indices). Guard `val != target` pour eviter la
 duplication quand pdfplumber place le meme mot dans deux rectangles
 adjacents.
+
+### Suppression des lignes de titre debordant dans la grille (Fix 12)
+
+Sur les pages de continuation, le titre `"Table N. ... (continued)"` est
+parfois capture dans le bbox de la table par pdfplumber, creant une
+premiere ligne parasite avec N colonnes fragmentees (ex: 14 au lieu de 7).
+`raw_table[0][0]` est matché par `r"(Table|Tableau) \d+[\.:]"` : si le
+numero correspond au `table_id` courant, la ligne est supprimee. Ce fix
+est execute avant le filtrage caption_y pour eviter les faux positifs.
+
+### Extraction des pages "Ordering information" (Fix 13)
+
+Les pages de type "Ordering information scheme" ne sont pas des tableaux
+en grille : elles decomposent le code produit STM32 en categories (Device
+family, Pin count, Package, ...) avec codes et significations. Le module
+`ordering.py` parse le texte via regex et produit un JSON structure avec
+8 categories possibles + des chunks RAG optimises. Reserve au Type 1
+(Acrobat). Les resultats sont stockes dans le champ `structured_json` du
+modele `RawTable`.
+
+### Nettoyage des lignes header residuelles dans les donnees (Fix 14)
+
+Apres `_expand_spans_and_headers()`, des lignes header peuvent rester
+dans `rows_fixed` (ex: footnote `(1)` de reference de note de bas de page,
+ou header duplique apres merge). Une boucle `while` supprime toute ligne
+en tete de `rows_fixed` qui est identique a `headers`, ou dont les
+colonnes 1..N sont identiques a celles de `headers` (cas footnote).
+
+### Rejet du body_on_next_page quand la table suivante est differente (Fix 15)
+
+Quand un petit tableau (2-3 colonnes) est proche du bas de page, le
+body_on_next_page capturait parfois la table des matieres (23 colonnes,
+25+ lignes). `orig_col_count` est sauvegarde avant tout filtrage caption_y,
+et si la page suivante a `nxt_cols > orig_col_count * 2 + 5`, la
+re-extraction est rejetee (`nq_boosted = -1`) et le resultat original
+de la page 1 est conserve.
+
+### Synchronisation de extraction_method apres body_on_next_page (Fix 16)
+
+La variable locale `method` etait mise a jour lors du body_on_next_page
+mais `result["extraction_method"]` restait a l'ancienne valeur (toujours
+`pdfplumber`). Puisque `_merge_fragmented_columns()` ne s'execute que si
+`method == "pdfplumber_text"`, les tables re-extraites en texte fallback
+n'avaient pas leurs colonnes fragmentees fusionnees. Le fix ajoute
+`result["extraction_method"] = method` dans le bloc body_on_next_page.
 
 ### Filtrage des figures au-dessus des tableaux
 
@@ -457,6 +503,7 @@ Chaque table extraite produit un fichier JSON individuel :
   "extraction_confidence": "high",
   "empty_cell_ratio": 0.0,
   "col_count": 5,
+  "structured_json": null,
   "warnings": [],
   "datasheet_metaData": {
     "pdf_name": "stm32g081cb",
@@ -484,6 +531,7 @@ Chaque table extraite produit un fichier JSON individuel :
 | `rows`                   | string[][] | Donnees ligne par ligne                        |
 | `extraction_method`      | string   | "pdfplumber" ou "pdfplumber_text"                |
 | `extraction_confidence`  | string   | "high", "medium", ou "low"                       |
+| `structured_json`        | dict/null | Donnees structurees pour pages non-grille (ordering info, etc.) |
 | `empty_cell_ratio`       | float    | Ratio de cellules vides (0.0 = parfait)          |
 
 ---
