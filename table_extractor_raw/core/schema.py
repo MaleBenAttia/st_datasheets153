@@ -32,6 +32,13 @@ class RawTable(BaseModel):
     col_count:             int   = Field(0, description="Nombre de colonnes détectées")
     status:                Optional[str] = Field(None, description="Statut d'extraction : 'failed' si table non extractible")
 
+    # ── Drapeaux qualité supplémentaires ─────────────────────────────────────
+    has_empty_cells: bool = Field(False, description="True si l'extraction brute avait ≥1 cellule vide (ensuite remplie par propagation)")
+
+    # ── Heuristiques de tracking ───────────────────────────────────────────────
+    heuristics: dict = Field(default_factory=dict,
+                             description="Traces des heuristiques appliquées pendant l'extraction")
+
     # ── Avertissements ────────────────────────────────────────────────────────
     warnings: list[str] = Field(default_factory=list,
                                 description="Ex: ['header_row_ambiguous', 'vertical_merge_suspected']")

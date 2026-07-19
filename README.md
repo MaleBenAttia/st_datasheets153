@@ -52,6 +52,7 @@ pip install -r table_extractor_raw\requirements.txt
 | Paquet       | Version min. | Role                                        |
 |--------------|-------------|---------------------------------------------|
 | `pdfplumber` | >= 0.11     | Extraction geometrique des tableaux PDF     |
+| `pypdf`      | >= 4.0      | Lecture des annotations PDF (liens /Link → /GoTo) |
 | `pydantic`   | >= 2.0      | Validation structurelle des JSON de sortie  |
 
 ---
@@ -63,7 +64,6 @@ st_datasheets153/
 |
 |-- app.py                      # Point d'entree CLI (wrapper principal)
 |-- check_quality.py            # Audit qualite des JSON extraits
-|-- aggregate_stats.py          # Consolidation des stats d'extraction
 |-- rag_transformer.py          # Transformation JSON -> chunks RAG
 |-- .gitignore                  # Fichiers/dossiers exclus du versioning
 |-- README.md                   # Ce fichier
@@ -115,16 +115,7 @@ inline, puis extrait chaque tableau avec un moteur geometrique spatial.
 **Entree :** Fichiers PDF dans `DataSHEET/`
 **Sortie :** Fichiers JSON dans `outJason/`
 
-### Etape 2 : Consolidation des statistiques (aggregate_stats.py)
-
-Regroupe les metadonnees d'extraction (methode, confiance, taux de vide,
-warnings) dans un fichier unique. Ce fichier est destine au monitoring et
-au debug, PAS a l'indexation vectorielle.
-
-**Entree :** `outJason/` (fichiers `_run_report.json` et `_all_tables.json`)
-**Sortie :** `global_extraction_stats.json`
-
-### Etape 3 : Transformation RAG (rag_transformer.py)
+### Etape 2 : Transformation RAG (rag_transformer.py)
 
 Convertit les tableaux bruts en chunks RAG optimises pour la recherche
 semantique. Nettoie les metadonnees internes, categorise les tables,
@@ -155,6 +146,12 @@ extrait les mots-cles, et genere un fichier JSON par datasheet.
 
 # --- Extraire TOUS les 185 PDFs d'un coup ---
 .\venv\Scripts\python.exe app.py --all
+
+# --- Extraire un echantillon aleatoire (ex: 60 PDFs) ---
+.\venv\Scripts\python.exe app.py --random 60 --workers 8
+
+# --- Parallelisme : --workers (defaut=1, max stable=8 sur 32 Go RAM) ---
+.\venv\Scripts\python.exe app.py --family H5 --workers 8
 ```
 
 **Familles disponibles (20) :**
@@ -237,13 +234,14 @@ base sur les lignes tracees dans le PDF.
 
 | # | Pilier                           | Description                                                     |
 |---|----------------------------------|-----------------------------------------------------------------|
-| 1 | **Textes rotatifs**              | Mapping des mots verticaux (90 degres) dans la bonne colonne    |
-| 2 | **En-tetes structurels**         | Detection dynamique de la profondeur (1 a 3 lignes)             |
-| 3 | **Grille X calculee**            | Centres de colonnes calcules mathematiquement                   |
-| 4 | **Continuation multi-pages**     | Fusion des tableaux etales sur 2+ pages                         |
-| 5 | **Propagation horizontale**      | Remplissage des cellules fusionnees (colspan)                   |
-| 6 | **Propagation verticale**        | Remplissage des cellules fusionnees (rowspan)                   |
-| 7 | **Detection couleur (Type 2)**   | Comptage des lignes d'en-tete via fond bleu fonce du PDF        |
+| 1 | **H2.0 annotations PDF**         | Detection des tables via les liens /Link → /GoTo du TOC         |
+| 2 | **Textes rotatifs**              | Mapping des mots verticaux (90 degres) dans la bonne colonne    |
+| 3 | **En-tetes structurels**         | Detection dynamique de la profondeur (1 a 3 lignes)             |
+| 4 | **Grille X calculee**            | Centres de colonnes calcules mathematiquement                   |
+| 5 | **Continuation multi-pages**     | Fusion des tableaux etales sur 2+ pages                         |
+| 6 | **Propagation horizontale**      | Remplissage des cellules fusionnees (colspan)                   |
+| 7 | **Propagation verticale**        | Remplissage des cellules fusionnees (rowspan + fill-down)       |
+| 8 | **Detection couleur (Type 2)**   | Comptage des lignes d'en-tete via fond bleu fonce du PDF        |
 
 ### Extraction Spatiale des En-tetes (avance)
 
@@ -252,7 +250,56 @@ dans les tables "device features"), le moteur recupere les mots un par un
 avec leurs coordonnees (x, y) et les projette geometriquement vers le
 centre de la colonne de donnees la plus proche.
 
-### Detection multi-lignes du sommaire (avance)
+### Selection robuste de la table sur la page
+
+Quand plusieurs tables coexistent sur une meme page (ex: Table 11 et
+Table 12 toutes deux page 42), le moteur selectionne la bonne table
+via deux mecanismes :
+
+1. **Matching par caption** (`_find_caption_y`) : localise la legende
+   dans le PDF en ignorant la ponctuation et les notes `(1)` (ex: `"TIMx(1)"` matche `"TIMx"`)
+2. **Fallback positionnel** (`_pick_best_table`) : si la legende est
+   introuvable, prend la table la plus haute sur la page (pas la plus
+   grande), evitant de confondre avec une table voisine plus volumineuse
+
+### Nettoyage des footnotes en fin de tableau (Fix 9)
+
+Les footnotes en fin de tableau (ex: `"1.The pull-up resistor..."`) sont
+automatiquement supprimees via `_remove_trailing_footnotes()`. Heuristique :
+lignes trailing consecutives dont la 1ere cellule commence par `\d+.`
+(ex: `"1."`, `"2."`, `"6.3.16"`). Minimum 2 lignes pour eviter de toucher
+aux donnees legitimes. Regex `^\d+\.` (sans `$` pour matcher les cellules
+avec texte apres le numero).
+
+### Fusion des colonnes fragmentees pdfplumber_text (Fix 10)
+
+L'extraction sans bordures (`pdfplumber_text`) place les mots par
+position geometrique, ce qui eclate souvent un mot unique sur 2-3
+colonnes (ex: `"Par"` + `"ameter"` → `"Parameter"`). `_merge_fragmented_columns()`
+detecte les fragments par 4 heuristiques : colonne vide, header minuscule,
+donnees minuscules, cellules tres courtes. La concatenation se fait
+**sans espace** (fragments de mot) avec un guard `left_cell != right_cell`
+pour eviter la duplication.
+
+### Fusion des colonnes-pont a header vide (Fix 11)
+
+Entre deux colonnes reelles, pdfplumber_text cree parfois des colonnes
+intermediaires a header vide qui contiennent des fragments de texte
+appartenant a la colonne de droite. `_merge_empty_header_rightward()`
+fusionne ces colonnes-pont vers la droite (processe de droite a gauche
+pour preserver les indices). Guard `val != target` pour eviter la
+duplication quand pdfplumber place le meme mot dans deux rectangles
+adjacents.
+
+### Filtrage des figures au-dessus des tableaux
+
+Quand une figure (ex: schema temporel) est situee juste au-dessus d'un
+tableau et que pdfplumber les fusionne en un seul objet table, le pipeline
+filtre automatiquement les lignes situees au-dessus de la legende du
+tableau (`caption_y`). Ce filtrage s'applique a toutes les methodes
+d'extraction (`pdfplumber` et `pdfplumber_text`).
+
+### Detection multi-pages du sommaire (avance)
 
 Le moteur gere les entrees de TOC dont le titre est trop long et se
 retrouve coupe sur deux lignes dans le PDF, grace a une machine a etats

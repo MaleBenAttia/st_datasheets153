@@ -20,6 +20,7 @@ from config import (
     PDFPLUMBER_TABLE_SETTINGS_TYPE2,
     MIN_TABLE_WIDTH,
     MAX_CONTINUATION_PAGES,
+    MAX_CONT_COL_DRIFT,
 )
 
 logger = logging.getLogger(__name__)
@@ -189,6 +190,10 @@ def _reduce_cont_row(row: list, expected_col_count: int) -> list:
     preserves the most real values, then favours dropping None/empty
     columns (no data loss), then columns near the center (separator
         heuristic), then rightmost columns.
+
+    ATTENTION : O(C(n,k)) — pour une ligne de 20 colonnes avec n_drop=10,
+    cela évalue C(20,10) = 184 756 combinaisons. Appels répétés par ligne
+    de continuation. Monitorer si ralentissement sur tables larges.
     """
     from itertools import combinations
 
@@ -228,9 +233,19 @@ def find_continuations(
     first_cell_text: str = "",
     max_pages: int = MAX_CONTINUATION_PAGES,
     pdf_type: int = 1,
+    base_col_x0s: list[float] | None = None,
 ) -> tuple[list[int], list[list[str]], int, list[list[float]]]:
     """
     Cherche les pages suivantes contenant la suite de la table.
+
+    Stratégie :
+    1. Pour chaque page suivante, vérifier si c'est une continuation via
+       _is_continuation_page (titre "Table X (continued)" ou position en haut)
+    2. Vérifier la dérive géométrique des colonnes (drift des x0)
+    3. Réduire/étendre les lignes de continuation au nombre de colonnes cible
+    4. Arrêter si : page de la table suivante atteinte, ou max_pages, ou
+       colonnes structurellement différentes
+
     Retourne (pages_fusionnees, lignes_supplementaires, target_cols, all_col_x0s).
     target_cols = max(expected_col_count, max cols trouvées dans les continuations).
     """
@@ -256,6 +271,35 @@ def find_continuations(
         )
         if not is_cont:
             break
+
+        # ── Vérification de la dérive des colonnes ─────────────────────────────
+        # Si la géométrie des colonnes diffère trop de la page de base,
+        # la continuation est structurellement différente (mauvaise détection).
+        if base_col_x0s and cont_x0s and len(base_col_x0s) >= 2:
+            if len(cont_x0s) == len(base_col_x0s):
+                drift = max(
+                    abs(cont_x0s[i] - base_col_x0s[i])
+                    for i in range(len(base_col_x0s))
+                )
+            elif len(cont_x0s) == len(base_col_x0s) + 1:
+                drift = max(
+                    abs(cont_x0s[i] - base_col_x0s[i])
+                    for i in range(len(base_col_x0s))
+                )
+            elif len(cont_x0s) + 1 == len(base_col_x0s):
+                drift = max(
+                    abs(cont_x0s[i] - base_col_x0s[i])
+                    for i in range(len(cont_x0s))
+                )
+            else:
+                drift = float("inf")
+
+            if drift > MAX_CONT_COL_DRIFT:
+                logger.warning(
+                    f"  -> page {current_page}: column drift {drift:.1f}px "
+                    f"({len(cont_x0s)} cols vs {len(base_col_x0s)} base), skipping"
+                )
+                break
 
         merged_pages.append(current_page)
         logger.info(f"    -> found continuation on page {current_page} ({len(table_data)} rows)")

@@ -2,16 +2,88 @@
 toc_detector.py — Étape 1 : détection des tables via "List of Tables" ou scan page par page.
 
 Extrait : table_id, caption, page (1ère occurrence).
-Stratégie : TOC début (Type 1) → TOC fin (Type 2) → scan inline fallback.
+Stratégie : H2.0 (annotations PDF multi-pages) → H2.1-H2.4 (texte regex) → H2.5 (inline scan).
 """
 from __future__ import annotations
 import re
 import logging
 from dataclasses import dataclass
+from typing import Optional
 
 import pdfplumber
+import pypdf
 
 logger = logging.getLogger(__name__)
+
+# ══════════════════════════════════════════════════════════════════════════════
+# Cache des mappings ST→actual (évite de rescanner le PDF pour chaque entrée)
+# ══════════════════════════════════════════════════════════════════════════════
+_ST_MAPPING_CACHE: dict[int, dict[int, int]] = {}  # {total_st: {st_page: actual_page}}
+
+def _st_to_actual_page(pdf: pdfplumber.PDF, st_page: int) -> int:
+    """
+    Convertit un numéro de page ST (imprimé dans le document) en index PDF réel.
+    Assemble TOUS les patterns 'X/TOTAL' en un mapping unique.
+    """
+    global _ST_MAPPING_CACHE
+    cache_id = id(pdf)
+
+    if cache_id not in _ST_MAPPING_CACHE:
+        _ST_MAPPING_CACHE.clear()
+        counters: dict[str, int] = {}
+
+        for pgnum, page in enumerate(pdf.pages):
+            text = page.extract_text() or ""
+            for m in re.finditer(r"(\d+)/(\d{3})\b", text):
+                counters[m.group(2)] = counters.get(m.group(2), 0) + 1
+
+        total_strs = [t for t, c in counters.items() if c >= 3]
+        combined: dict[int, int] = {}
+
+        for total_str in total_strs:
+            for pgnum, page in enumerate(pdf.pages):
+                text = page.extract_text() or ""
+                footer = text[-300:] if len(text) > 300 else text
+                m = re.search(r"(\d+)/" + total_str + r"\b", footer)
+                if m:
+                    st = int(m.group(1))
+                    combined[st] = pgnum + 1  # le dernier total gagne en cas de conflit
+
+        _ST_MAPPING_CACHE[cache_id] = combined
+
+    mapping = _ST_MAPPING_CACHE[cache_id]
+    if st_page in mapping:
+        return mapping[st_page]
+
+    # Fallback : estimer par offset
+    if mapping:
+        sorted_st = sorted(mapping.keys())
+        last_st = sorted_st[-1]
+        last_actual = mapping[last_st]
+        offset = last_st - last_actual
+        # Tenter d'extrapoler pour tout st_page > dernier_st connu
+        if st_page > last_st:
+            est = st_page - offset
+            if 1 <= est <= len(pdf.pages):
+                logger.debug(f"Estimated ST {st_page} -> actual {est} (offset={offset})")
+                return est
+        # ou si st_page est entre des pages du mapping mais pas dans le mapping
+        # (gap dans le mapping) : interpolation linéaire
+        for i in range(len(sorted_st) - 1):
+            if sorted_st[i] < st_page < sorted_st[i + 1]:
+                # Interpolation entre deux points connus
+                st_a, st_b = sorted_st[i], sorted_st[i + 1]
+                act_a, act_b = mapping[st_a], mapping[st_b]
+                ratio = (st_page - st_a) / (st_b - st_a)
+                est = round(act_a + ratio * (act_b - act_a))
+                if 1 <= est <= len(pdf.pages):
+                    logger.debug(f"Interpolated ST {st_page} -> actual {est}")
+                    return est
+                break
+
+    logger.debug(f"ST {st_page} not in mapping, using as-is")
+    return st_page
+
 
 # ── Patterns de détection ──────────────────────────────────────────────────────
 
@@ -23,12 +95,9 @@ TOC_SECTION_PATTERNS = [
 
 # Pattern d'une entrée de table dans le TOC :
 # "Table 12. I2C characteristics ....... 78"
-# "Table 83. LQPF100 - ... mechanical data125"   (page collée, pas de leader)
 # Gère les variations : points collés, espaces entre points, tirets
-# Note : le leader de pointillés est optionnel — certains PDFs collent le
-# numéro de page directement à la légende (ex: "... data125").
 TOC_ENTRY_PATTERN = re.compile(
-    r"(?:Table|Tableau)\s+(\d+)[.:]?\s+(.+?)\s*(?:[.\-\s]{3,})?\s*(\d+)\s*$",
+    r"(?:Table|Tableau)\s+(\d+)[.:]?\s+(.+?)\s+[.\-\s]{3,}\s*(\d+)\s*$",
     re.IGNORECASE,
 )
 
@@ -39,17 +108,12 @@ INLINE_CAPTION_PATTERN = re.compile(
     re.IGNORECASE,
 )
 
-# Pattern de detection des dessins mécaniques/PCB qui ne sont pas des tableaux
-MECHANICAL_DRAWING_PATTERN = re.compile(
-    r"mechanical data|pcb design rules|package (mechanical|outline) data",
-    re.IGNORECASE,
-)
 
-
-def _is_likely_mechanical_drawing(caption: str) -> bool:
-    """Détecte les captions qui sont en fait des cotes de dessin technique
-    (package/PCB), et non des vrais tableaux de données texte."""
-    return bool(MECHANICAL_DRAWING_PATTERN.search(caption))
+def _clean_caption(text: str) -> str:
+    """Supprime les points de remplissage du TOC et le numéro de page en fin."""
+    text = re.sub(r'(?:\s*\.\s*){2,}', ' ', text)
+    text = re.sub(r'\s+\d{1,4}\s*$', '', text)
+    return text.strip()
 
 
 @dataclass
@@ -58,40 +122,178 @@ class TableRef:
     table_id: str          # "table_12"
     caption:  str          # légende complète
     page:     int          # page de début (1-indexé)
-    likely_drawing: bool = False  # True si caption évoque un dessin mécanique/PCB
 
 
 def detect_tables(pdf_path: str, pdf_type: int = 1) -> list[TableRef]:
     """
     Détecte toutes les tables d'un PDF via :
-    1. "List of Tables" si présente
-    2. Fallback : scan page par page pour les légendes inline
-
-    pdf_type=2 : TOC en fin de document → scan depuis la dernière page.
+    1. H2.0 : annotations PDF (liens /Link → /GoTo) sur toutes les pages LOT
+    2. H2.1-H2.4 : regex texte sur les pages LOT
+    3. H2.5 : scan inline fallback page par page
 
     Retourne une liste de TableRef triée par page.
     """
     with pdfplumber.open(pdf_path) as pdf:
-        # Tentative 1 : TOC
+        # Tentative 1 : H2.0 annotations PDF
+        refs = _from_toc_links(pdf_path, pdf, pdf_type)
+        if refs:
+            logger.info("H2.0 (annotations): %d tables detected", len(refs))
+            return refs
+
+        # Tentative 2 : H2.1-H2.4 regex texte
         if pdf_type == 2:
             refs = _from_toc_reverse(pdf)
         else:
             refs = _from_toc(pdf)
         if refs:
-            logger.info(f"TOC found: {len(refs)} tables detected via List of Tables")
-            for ref in refs:
-                if _is_likely_mechanical_drawing(ref.caption):
-                    ref.likely_drawing = True
+            logger.info("H2.1-H2.4 (text regex): %d tables detected", len(refs))
             return refs
 
-        # Fallback : scan inline
+        # Tentative 3 : H2.5 inline scan
         logger.info("No TOC found, scanning pages for inline captions")
         refs = _from_inline_scan(pdf)
-        logger.info(f"Inline scan: {len(refs)} tables detected")
-        for ref in refs:
-            if _is_likely_mechanical_drawing(ref.caption):
-                ref.likely_drawing = True
+        logger.info("H2.5 (inline scan): %d tables detected", len(refs))
         return refs
+
+
+def _find_lot_pages(pdf: pdfplumber.PDF, pdf_type: int = 1) -> list[int]:
+    """
+    Trouve TOUTES les pages de la section 'List of Tables'.
+    
+    Cherche dans la direction suggérée par pdf_type, puis inverse si rien trouvé.
+    
+    Retourne une liste d'indices 0-indexés.
+    """
+    total = len(pdf.pages)
+    
+    def _search_in_direction(start: int, direction: int) -> list[int]:
+        """Cherche le header LOT à partir de 'start' puis suit les pages consécutives."""
+        lot_start = None
+        end = total if direction > 0 else -1
+        for i in range(start, end, direction):
+            text = (pdf.pages[i].extract_text() or "")[:1500].lower()
+            for pat in TOC_SECTION_PATTERNS:
+                if pat.search(text):
+                    lot_start = i
+                    break
+            if lot_start is not None:
+                break
+        
+        if lot_start is None:
+            return []
+        
+        lot_pages = [lot_start]
+        for i in range(lot_start + direction, max(-1, min(total, lot_start + direction * 11)), direction):
+            text = (pdf.pages[i].extract_text() or "")
+            text_lower = text[:1500].lower()
+            
+            has_header = any(p.search(text_lower) for p in TOC_SECTION_PATTERNS)
+            if has_header:
+                lot_pages.append(i)
+                continue
+            
+            has_entries = bool(re.search(r'(?:Table|Tableau)\s+\d+\.', text))
+            if has_entries:
+                lot_pages.append(i)
+            else:
+                break
+        
+        return sorted(lot_pages)
+    
+    # Direction initiale basée sur pdf_type
+    if pdf_type == 2:
+        result = _search_in_direction(total - 1, -1)
+    else:
+        result = _search_in_direction(0, 1)
+    
+    if result:
+        return result
+    
+    # Fallback : chercher dans l'autre sens
+    if pdf_type == 2:
+        return _search_in_direction(0, 1)
+    else:
+        return _search_in_direction(total - 1, -1)
+
+
+def _from_toc_links(pdf_path: str, pdf: pdfplumber.PDF, pdf_type: int = 1) -> Optional[list[TableRef]]:
+    """
+    H2.0 : Extrait les tables depuis les annotations PDF (liens /Link → /GoTo).
+    
+    Stratégie :
+    1. Trouve toutes les pages de la List of Tables
+    2. Extrait les annotations /Link avec destination /GoTo
+    3. Résout les destinations via pypdf (objid → page_index)
+    4. Matche le texte sous chaque annotation via pdfplumber coords
+    
+    Retourne None si 0 table trouvée (pour fallback vers H2.1-H2.5).
+    """
+    lot_pages = _find_lot_pages(pdf, pdf_type)
+    if not lot_pages:
+        logger.debug("H2.0: no LOT pages found")
+        return None
+    
+    try:
+        reader = pypdf.PdfReader(pdf_path)
+    except Exception as e:
+        logger.warning("H2.0: cannot open PDF with pypdf: %s", e)
+        return None
+    
+    idnum_to_page = {}
+    for i, p in enumerate(reader.pages):
+        ref = p.indirect_reference
+        if ref:
+            idnum_to_page[ref.idnum] = i
+    
+    pattern = re.compile(r'(?:Table|Tableau)\s+(\d+)[.:]\s+(.+)')
+    new_by_id: dict[str, tuple[str, int]] = {}
+    
+    for lot_idx in lot_pages:
+        page = pdf.pages[lot_idx]
+        try:
+            annots = page.annots or []
+        except Exception:
+            annots = []
+        try:
+            lines = page.extract_text_lines()
+        except Exception:
+            continue
+        
+        for a in annots:
+            d = a.get('data', {})
+            action = d.get('A', {})
+            dest = action.get('D', None)
+            if not dest or not isinstance(dest, list):
+                continue
+            page_ref = dest[0]
+            if not hasattr(page_ref, 'objid'):
+                continue
+            page_idx = idnum_to_page.get(page_ref.objid)
+            if page_idx is None:
+                continue
+            
+            y0, y1 = a['top'], a['bottom']
+            matching = [l for l in lines if l['top'] >= y0 - 5 and l['bottom'] <= y1 + 5]
+            text = ' '.join(l['text'] for l in matching)
+            m = pattern.search(text)
+            if m:
+                tid = 'table_%s' % m.group(1)
+                caption = _clean_caption(m.group(2))
+                new_by_id[tid] = (caption, page_idx + 1)
+    
+    if not new_by_id:
+        logger.debug("H2.0: 0 tables from annotations, will fallback")
+        return None
+    
+    refs = []
+    for tid, (caption, page_num) in sorted(new_by_id.items(), key=lambda x: x[1][1]):
+        refs.append(TableRef(
+            table_id=tid,
+            caption=f"Table {tid.split('_')[1]}. {caption}",
+            page=page_num,
+        ))
+    
+    return refs
 
 
 def _from_toc(pdf: pdfplumber.PDF, start_from: int = 1) -> list[TableRef]:
@@ -169,46 +371,37 @@ def _from_toc(pdf: pdfplumber.PDF, start_from: int = 1) -> list[TableRef]:
 
             # Si on attend la fin d'une entrée multi-lignes
             if pending_num:
-                existing_ids = {r.table_id for r in refs}
-                is_new_table = bool(re.match(r"^(?:Table|Tableau)\s+\d+", line_stripped, re.IGNORECASE))
                 end_match = re.search(r"\s+[.\-\s]{3,}\s*(\d+)\s*$", line_stripped)
-
-                if end_match and not is_new_table:
-                    # Ligne finale de l'entrée en attente (et ce n'est PAS une nouvelle table)
+                if end_match:
+                    # Ligne finale de l'entrée
                     toc_page = int(end_match.group(1))
                     caption_part = line_stripped[:end_match.start()].strip()
                     if caption_part:
                         pending_caption += " " + caption_part
                     
-                    caption_clean = re.sub(r"[\s.]+$", "", pending_caption).strip()
+                    caption_clean = _clean_caption(pending_caption)
+                    actual_page = _st_to_actual_page(pdf, toc_page)
+                    existing_ids = {r.table_id for r in refs}
                     if f"table_{pending_num}" not in existing_ids:
                         refs.append(TableRef(
                             table_id=f"table_{pending_num}",
                             caption=f"Table {pending_num}. {caption_clean}",
-                            page=toc_page,
+                            page=actual_page,
                         ))
                     
                     pending_num = None
                     pending_caption = ""
                     continue
                 else:
+                    # Soit c'est une ligne intermédiaire de légende, soit le début d'une nouvelle table
+                    # (auquel cas la précédente est abandonnée car mal formée)
                     start_match = re.match(r"^(?:Table|Tableau)\s+(\d+)[.:]?\s+(.*)$", line_stripped, re.IGNORECASE)
                     if start_match:
-                        # FLUSH l'entrée en attente avant de commencer la nouvelle
-                        # (ne JAMAIS abandonner silencieusement une table)
-                        if f"table_{pending_num}" not in existing_ids:
-                            caption_clean = re.sub(r"[\s.]+$", "", pending_caption).strip()
-                            refs.append(TableRef(
-                                table_id=f"table_{pending_num}",
-                                caption=f"Table {pending_num}. {caption_clean}",
-                                page=0,
-                            ))
-                        pending_num = None
-                        pending_caption = ""
-                        # NE PAS continue — laisser le flux principal traiter cette ligne
+                        pending_num = start_match.group(1)
+                        pending_caption = start_match.group(2).strip()
                     else:
                         pending_caption += " " + line_stripped
-                        continue
+                    continue
 
             # Pas d'entrée en attente, on teste si c'est une ligne complète
             m = TOC_ENTRY_PATTERN.match(line_stripped)
@@ -216,13 +409,14 @@ def _from_toc(pdf: pdfplumber.PDF, start_from: int = 1) -> list[TableRef]:
                 num = m.group(1)
                 caption_raw = m.group(2).strip()
                 toc_page = int(m.group(3))
+                actual_page = _st_to_actual_page(pdf, toc_page)
                 existing_ids = {r.table_id for r in refs}
                 if f"table_{num}" not in existing_ids:
-                    caption_clean = re.sub(r"[\s.]+$", "", caption_raw).strip()
+                    caption_clean = _clean_caption(caption_raw)
                     refs.append(TableRef(
                         table_id=f"table_{num}",
                         caption=f"Table {num}. {caption_clean}",
-                        page=toc_page,
+                        page=actual_page,
                     ))
             else:
                 # Peut-être le début d'une entrée multi-lignes ?
@@ -230,17 +424,6 @@ def _from_toc(pdf: pdfplumber.PDF, start_from: int = 1) -> list[TableRef]:
                 if start_match:
                     pending_num = start_match.group(1)
                     pending_caption = start_match.group(2).strip()
-
-    # Flush toute entrée restante en attente (dernière ligne d'une liste de tables)
-    if pending_num:
-        existing_ids = {r.table_id for r in refs}
-        if f"table_{pending_num}" not in existing_ids:
-            caption_clean = re.sub(r"[\s.]+$", "", pending_caption).strip()
-            refs.append(TableRef(
-                table_id=f"table_{pending_num}",
-                caption=f"Table {pending_num}. {caption_clean}",
-                page=0,
-            ))
 
     return refs
 
@@ -274,9 +457,7 @@ def _from_inline_scan(pdf: pdfplumber.PDF) -> list[TableRef]:
                 num = m.group(1)
                 tid = f"table_{num}"
                 if tid not in seen_ids:
-                    caption_text = m.group(2).strip()
-                    # Nettoyer les points de suite résiduels
-                    caption_text = re.sub(r"\s*\.{2,}\s*\d+\s*$", "", caption_text).strip()
+                    caption_text = _clean_caption(m.group(2))
                     refs.append(TableRef(
                         table_id=tid,
                         caption=f"Table {num}. {caption_text}",

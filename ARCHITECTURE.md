@@ -109,23 +109,34 @@ class TableRef:
     page:     int      # 1-indexed
 ```
 
-### Dispatch — `detect_tables(pdf_path, pdf_type)` (`toc_detector.py:48-72`)
+### Dispatch — `detect_tables(pdf_path, pdf_type)` (`toc_detector.py:121-143`)
 ```mermaid
 flowchart LR
-    A[pdf_type==2] --> B[_from_toc_reverse]
-    A -->|false| C[_from_toc]
-    B --> D{refs found?}
-    C --> D
-    D -->|yes| E[return refs]
-    D -->|no| F[_from_inline_scan]
-    F --> E
+    A[pdf_path, pdf_type] --> B[H2.0: _from_toc_links]
+    B --> C{refs found?}
+    C -->|yes| D[return refs]
+    C -->|no| E[pdf_type==2?]
+    E -->|yes| F[_from_toc_reverse]
+    E -->|no| G[_from_toc]
+    F --> H{refs found?}
+    G --> H
+    H -->|yes| D
+    H -->|no| I[_from_inline_scan]
+    I --> D
 ```
 
 | Fonction | Type | Comportement |
 |---|---|---|
-| `_from_toc(pdf, start_from)` (`:75`) | Type 1 | TOC début ; detection d'en-tête "List of Tables" ; machine à états pending_num/pending_caption ; `MAX_TOC_PAGES=10` ; dédup |
-| `_from_toc_reverse(pdf)` (`:205`) | Type 2 | `start_page = max(1, total-30)` puis `_from_toc` ; fallback sur scan complet |
-| `_from_inline_scan(pdf)` (`:221`) | Fallback | Itère toutes les pages ; match `INLINE_CAPTION_PATTERN` ; tri par `(page, table_id)` |
+| `_from_toc_links(pdf_path, pdf, pdf_type)` (`:206`) | **H2.0** | Utilise les annotations PDF `/Link → /GoTo` de la List of Tables pour détecter les tables avec une précision geometrique |
+| `_find_lot_pages(pdf, pdf_type)` (`:152`) | Helper | Détecte TOUTES les pages de la List of Tables (pas seulement la 1ère), avec fallback bidirectionnel |
+| `_from_toc(pdf, start_from)` (`:288`) | Type 1 | TOC début ; detection d'en-tête "List of Tables" ; machine à états pending_num/pending_caption ; `MAX_TOC_PAGES=10` ; dédup |
+| `_from_toc_reverse(pdf)` (`:277`) | Type 2 | `start_page = max(1, total-30)` puis `_from_toc` ; fallback sur scan complet |
+| `_from_inline_scan(pdf)` (`:293`) | Fallback | Itère toutes les pages ; match `INLINE_CAPTION_PATTERN` ; tri par `(page, table_id)` |
+| `_clean_caption(text)` (`:113`) | Helper | Supprime les points de remplissage du TOC (`. . . . .`) et le numéro de page en fin de caption |
+
+**Nouveau H2.0** : Extrait les tables via les annotations PDF natives (`/Link` avec `/Dest` GoTo). Résout les destinations via `pypdf` (mapping `objid → page_index`). Nettoie les captions des points de remplissage et des numéros de page en fin. Fallback automatique vers H2.1-H2.4 si 0 table trouvée.
+
+**Recherche multi-pages LOT** : `_find_lot_pages` cherche toutes les pages de la List of Tables (les datasheets récentes peuvent avoir 2-4 pages de TOC). Direction automatique : début pour Type 1, fin pour Type 2, avec fallbidirectionnel si la première direction échoue.
 
 **Détails de `_from_toc` :**
 - Repère en-tête de TOC via `TOC_SECTION_PATTERNS`
@@ -143,62 +154,39 @@ Ordre d'appel interne (les "Fix") :
 | # | Nom | Fonction | Ligne | Rôle |
 |---|---|---|---|---|---|
 | 1 | Fix 1 | `_get_rotated_text_map()` | `:789` | Texte vertical inversé → upright |
-| 2 | — | `_locate_caption_page()` | `:865` | Page réelle de la légende via scan ±2 + grille présente |
-| 3 | — | `_extract_from_page()` | `:792` | 3 tentatives : lignes → texte → sans finder |
-| 4 | Fix 2 & 5 | `_expand_spans_and_headers()` | `:806` | Headers multi-niveaux, fusions, colonnes fantômes |
+| 2 | — | `_extract_from_page()` | `:792` | 3 tentatives : lignes → texte → sans finder |
+| 3 | Fix 2 & 5 | `_expand_spans_and_headers()` | `:806` | Headers multi-niveaux, fusions, colonnes fantômes |
+| 4 | **—** | **Fill-down** | **`:811`** | **Propagation verticale des cellules vides depuis le header** |
 | 5 | — | `find_continuations()` | `:814` | Détection et fusion multi-pages |
 | 6 | Fix 7 | Boucle surplus x0 | `:833-859` | Insertion colonnes split (géométrie x0) |
 | 7 | Fix 8 | `_fill_horizontal()` | `:861-868` | Remplissage horizontal Type 2 |
 | 8 | Fix 6 | Boucle `rows_raw` | `:877-895` | Propagation verticale avec détection de groupe |
 | 9 | Fix 8 | `_ensure_no_empty_cells()` | `:901` | Zéro cellule vide (horizontal → vertical → boucle) |
 | 10 | — | `fix_headers()` / `fix_rows()` | `:905-906` | Glyphes, None→"" |
-| 11 | — | `evaluate_table()` | `:909` | Confidence + warnings |
-| 12 | — | Self-check `review_needed` | `:912-918` | Si table vide + 100% CID → doute |
-| 13 | — | Assemblage dict final | `:920-928` | headers, rows, merged_pages, confidence... |
-| 14 | — | `_save_debug_image()` | `:930-932` | PNG debug (si SAVE_DEBUG_IMAGES) |
+| 11 | — | **Caption row filter** | **`:909-919`** | **Filtrage des lignes au-dessus de la légende (toutes méthodes)** |
+| 12 | — | `evaluate_table()` | `:909` | Confidence + warnings |
+| 13 | — | Assemblage dict final | `:913-920` | headers, rows, merged_pages, confidence... |
+| 14 | — | `_save_debug_image()` | `:923-925` | PNG debug (si SAVE_DEBUG_IMAGES) |
+| 15 | Fix 9 | `_remove_trailing_footnotes()` | `:1624` | Supprime les lignes de footnotes `"1."`, `"2."` en fin de tableau |
+| 16 | Fix 10 | `_merge_fragmented_columns()` | `:1353` | Fusionne les colonnes fragmentées (pdfplumber_text) : heuristiques minuscule, concat sans espace, guard duplication |
+| 17 | Fix 11 | `_merge_empty_header_rightward()` | `:1648` | Fusionne les colonnes à header vide vers la droite (bridge columns), guard `val != target` |
 
-### `_extract_from_page()` — `grid_extractor.py:1069-1128`
+### `_extract_from_page()` — `grid_extractor.py:950-995`
 
-3 tentatives de plus en plus permissives, avec comparaison qualité :
+3 tentatives de plus en plus permissives :
 
 ```python
 # Tentative 1 — Lignes (settings standard)
 best, best_ft, method = page.extract_tables(settings) + debug_tablefinder
-if _table_quality(best) >= 2.0:
-    return best  # table réaliste avec bordures → utilisée directe
-
-# Tentative 2 — Texte fallback (settings souples, tables sans bordures)
-best2, best_ft2, method = page.extract_tables(fallback_settings) + debug_tablefinder
-# Retourne le meilleur des deux (comparé par _table_quality)
-
+# Tentative 2 — Texte fallback (settings souples)
+best, best_ft, method = page.extract_tables(fallback_settings) + debug_tablefinder
 # Tentative 3 — Sans finder (bbox = page entière)
 best, best_ft, method = page.extract_tables(), dummy_ft
 # Échec total
 return None, None, "pdfplumber", None
 ```
 
-### `_locate_caption_page()` — `grid_extractor.py:181-200`
-
-Corrige les erreurs de page TOC (souvent décalée de ±1) et les **fausses
-légendes** (mentions « Refer to Table N… ») — le problème le plus fréquent
-dans les datasheets STM32.
-
-Algorithme :
-
-1. **Candidats** : page déclarée TOC + les `window=2` pages voisines,
-   testées dans l'ordre (déclarée d'abord, puis on s'éloigne).
-2. **Caption matching** (`_find_caption_y`) : mot-à-mot strict avec
-   **deux vérifications 100 % déterministes** :
-   - **Vérif 1** : aucun mot alphabétique avant « table » sur la même
-     ligne → une légende commence une ligne, une référence est encastrée.
-   - **Vérif 2** : le numéro de table doit être suivi d'un point « 1. »,
-     pas d'un deux-points « 1: » (usage des références).
-3. **Grille présente** : `page.find_tables(settings)` doit trouver une
-   table sous la légende. Si oui → candidat parfait retourné immédiatement.
-   Si non → gardé comme fallback (permet les tables sans bordures Type 2).
-
-Si aucune page n'a de légende + grille, le TOC original est utilisé
-(après tout, il est correct dans > 95 % des cas).
+### `_expand_spans_and_headers()` — `grid_extractor.py:458-706`
 
 Étapes internes :
 1. **Géométrie grille** : `col_centers` (médian x des cellules des premières lignes)
@@ -207,8 +195,17 @@ Si aucune page n'a de légende + grille, le TOC original est utilisé
 4. **Propagation spans** :
    - Type 2 → `_propagate_spans_type2()` (`:301`) : logique spécifique Antenna House
    - Type 1 → propagation BBox + heuristique
-5. **Profondeur header** : géométrique + `_count_header_rows_by_color()` (Type 2, detecte bleu foncé RGB)
-6. **Headers finaux** : `_build_final_headers()` (`:692`) joint parents/enfants avec `" / "`
+5. **Fill-down** : propage la dernière valeur non-vide vers le bas dans chaque colonne (corrige les rivières de `""` dans les cellules rowspan)
+6. **Profondeur header** : géométrique + `_count_header_rows_by_color()` (Type 2, detecte bleu foncé RGB)
+7. **Headers finaux** : `_build_final_headers()` (`:692`) joint parents/enfants avec `" / "`
+
+### `_find_caption_y()` — `grid_extractor.py:124-157`
+
+Localise la légende d'une table sur la page en cherchant une séquence de mots consécutifs. Ignore la ponctuation ET les notes de bas de page entre parenthèses `(n)` via `split("(")[0]`, permettant de matcher `"TIMx(1)"` avec `"TIMx"`.
+
+### Filtrage des lignes par légende — `grid_extractor.py:900-919`
+
+Après extraction, les lignes situées au-dessus de la légende (capture de figures, diagrammes) sont automatiquement supprimées. Ce filtrage s'applique à **toutes les méthodes d'extraction** (`pdfplumber` et `pdfplumber_text`) via le caption y-position, pas seulement le fallback texte.
 
 ### Fix 6 — Propagation verticale (`grid_extractor.py:877-895`)
 
@@ -299,8 +296,7 @@ extraction_method: str           # "pdfplumber" | "pdfplumber_text" | "failed"
 extraction_confidence: str       # "high" | "medium" | "low" | "failed"
 empty_cell_ratio: float          # 0.0 - 1.0
 col_count: int                   # len(headers)
-status: Optional[str]            # None | "failed" | "review_needed"
-warnings: list[str]              # ["vertical_merge_suspected", "caption_page:15"]
+warnings: list[str]              # ["vertical_merge_suspected"]
 ```
 
 ### `datasheet_metaData` (ajouté APRES validation, `main.py:137-146`)
@@ -347,8 +343,6 @@ GLYPH_MAP = {
 | `fix_text(text)` | `:58` | Glyph replace → NFC normalize → regex (espaces, newlines) |
 | `fix_headers(headers)` | `:83` | Applique `fix_text` sur chaque header + None→"" |
 | `fix_rows(rows)` | `:88` | Applique `fix_text` sur chaque cellule + None→"" |
-| `correct_footer_in_table(table)` | `:107` | Supprime les lignes de pied de page (numéro + titre) contaminant la table (`FOOTER_PATTERN`) |
-| `CID_PATTERN` | `:50` | Regex large `r"\(cid:\d+\)"` pour détecter les glyphes non résolus |
 
 ### `quality_flags.py`
 
@@ -548,29 +542,38 @@ RagJason/
 ## 12. Référence rapide (`file:line`)
 
 | Concern | Fichier | Ligne |
-|---|---|---|
+|---|---|---|---|
 | CLI group (`--pdf`, `--family`, `--all`) | `main.py` | `:224-227` |
 | `detect_pdf_type()` | `main.py` | `:43-52` |
 | `process_pdf()` | `main.py` | `:67-216` |
 | Appel RAG automatique | `main.py` | `:182-190` |
-| `TableRef` dataclass | `toc_detector.py` | `:40-45` |
-| `detect_tables()` dispatch T1/T2 | `toc_detector.py` | `:60-63` |
-| `_from_toc()` (Type 1) | `toc_detector.py` | `:75-202` |
-| `_from_toc_reverse()` (Type 2) | `toc_detector.py` | `:205-218` |
-| `_from_inline_scan()` | `toc_detector.py` | `:221-244` |
-| `extract_table_grid()` | `grid_extractor.py` | `:864-1042` |
-| `_locate_caption_page()` | `grid_extractor.py` | `:181-200` |
-| `_find_caption_y()` | `grid_extractor.py` | `:128-220` |
-| `_extract_from_page()` (3 tentatives + qualité) | `grid_extractor.py` | `:1069-1128` |
-| `_table_quality()` | `grid_extractor.py` | `:203-220` |
-| `_expand_spans_and_headers()` | `grid_extractor.py` | `:430-688` |
-| `_build_final_headers()` | `grid_extractor.py` | `:692-748` |
+| `TableRef` dataclass | `toc_detector.py` | `:110-116` |
+| `detect_tables()` dispatch H2.0→H2.1→H2.5 | `toc_detector.py` | `:121-143` |
+| `_find_lot_pages()` (multi-pages LOT) | `toc_detector.py` | `:152-198` |
+| `_from_toc_links()` (H2.0 annotations) | `toc_detector.py` | `:206-296` |
+| `_clean_caption()` (nettoyage points) | `toc_detector.py` | `:113-118` |
+| `_from_toc()` (H2.1-H2.4 texte) | `toc_detector.py` | `:299-423` |
+| `_from_toc_reverse()` (Type 2) | `toc_detector.py` | `:277-290` |
+| `_from_inline_scan()` (H2.5 fallback) | `toc_detector.py` | `:446-470` |
+| `extract_table_grid()` | `grid_extractor.py` | `:816-985` |
+| `_extract_from_page()` (3 tentatives) | `grid_extractor.py` | `:1371-1463` |
+| `_find_caption_y()` (avec split("(")) | `grid_extractor.py` | `:124-157` |
+| `_expand_spans_and_headers()` | `grid_extractor.py` | `:458-706` |
+| Fill-down (étape 3b) | `grid_extractor.py` | `:665-674` |
+| `_build_final_headers()` | `grid_extractor.py` | `:735-780` |
 | `_propagate_spans_type2()` | `grid_extractor.py` | `:301-372` |
-| Fix 7 (insertion split colonnes) | `grid_extractor.py` | `:833-859` |
-| Fix 6 (propagation verticale) | `grid_extractor.py` | `:877-895` |
-| Fix 8 (`_ensure_no_empty_cells`) | `grid_extractor.py` | `:243-271` (def), `:901` (appel) |
+| Fix 7 (insertion split colonnes) | `grid_extractor.py` | `:863-889` |
+| Fix 6 (propagation verticale) | `grid_extractor.py` | `:907-925` |
+| Fix 8 (`_ensure_no_empty_cells`) | `grid_extractor.py` | `:243-271` (def), `:931` (appel) |
+| Fix 9 (`_remove_trailing_footnotes`) | `grid_extractor.py` | `:1624-1645` |
+| Fix 10 (`_merge_fragmented_columns`) | `grid_extractor.py` | `:1353-1465` |
+| Fix 11 (`_merge_empty_header_rightward`) | `grid_extractor.py` | `:1648-1702` |
+| Caption row filter (toutes méthodes) | `grid_extractor.py` | `:900-919` |
 | `_fill_horizontal()` | `grid_extractor.py` | `:211-223` |
 | `_fill_vertical()` | `grid_extractor.py` | `:226-240` |
+| `_remove_trailing_footnotes()` | `grid_extractor.py` | `:1624-1645` |
+| `_merge_fragmented_columns()` | `grid_extractor.py` | `:1353-1465` |
+| `_merge_empty_header_rightward()` | `grid_extractor.py` | `:1648-1702` |
 | `_is_continuation_page()` | `continuation.py` | `:50-141` |
 | `find_continuations()` | `continuation.py` | `:221-315` |
 | `target_cols` formula | `continuation.py` | `:306` |

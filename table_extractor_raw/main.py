@@ -2,9 +2,11 @@
 main.py — CLI : traite un PDF ou un dossier entier.
 
 Usage:
-    python main.py --pdf ../C0/stm32c011d6.pdf
+    python main.py --pdf DataSHEET/C0/stm32c011d6.pdf
     python main.py --family C0
-    python main.py --all
+    python main.py --family C0 --workers 4
+    python main.py --all --workers 8
+    python main.py --random 20 --workers 8
 """
 from __future__ import annotations
 import argparse
@@ -12,14 +14,23 @@ import json
 import logging
 import sys
 import io
+import os
+import random as random_module
+from concurrent.futures import ProcessPoolExecutor, as_completed
+from pathlib import Path
 
 # Force UTF-8 sur stdout Windows (cp1252 ne supporte pas µ, Ω, ✓, →, etc.)
-if sys.stdout.encoding != "utf-8":
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
-if sys.stderr.encoding != "utf-8":
-    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
+try:
+    if sys.stdout.encoding != "utf-8":
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+except Exception:
+    pass
+try:
+    if sys.stderr.encoding != "utf-8":
+        sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
+except Exception:
+    pass
 import time
-from pathlib import Path
 
 # ── Setup path ─────────────────────────────────────────────────────────────────
 sys.path.insert(0, str(Path(__file__).parent))
@@ -44,11 +55,10 @@ except ImportError:
 def detect_pdf_type(pdf_path: str) -> int:
     """Détecte le type de PDF : 1 = Acrobat, 2 = Antenna House (XML)."""
     try:
-        import subprocess
-        info = subprocess.run(
-            ["pdfinfo", pdf_path], capture_output=True, text=True, timeout=10
-        ).stdout.lower()
-        return 2 if "antenna" in info else 1
+        import pdfplumber
+        with pdfplumber.open(pdf_path) as pdf:
+            producer = (pdf.metadata or {}).get("Producer", "")
+        return 2 if "antenna" in producer.lower() else 1
     except Exception:
         return 1
 
@@ -68,10 +78,12 @@ logger = logging.getLogger("main")
 def process_pdf(pdf_path: Path, family: str) -> dict:
     """
     Traite un PDF complet :
-    1. Détecte les tables (TOC ou scan)
-    2. Extrait chaque table
-    3. Valide via Pydantic
-    4. Sauvegarde en JSON
+    1. Détecte le type (Acrobat vs Antenna House) via detect_pdf_type
+    2. Détecte les tables (TOC ou scan) via detect_tables
+    3. Extrait chaque table via extract_table_grid (pipeline complet)
+    4. Valide via Pydantic (RawTable schema)
+    5. Sauvegarde en JSON + image debug si nécessaire
+    6. Génère le chunks RAG (optionnel)
 
     Retourne un résumé du run pour ce PDF.
     """
@@ -173,6 +185,7 @@ def process_pdf(pdf_path: Path, family: str) -> dict:
                 "table_id": ref.table_id,
                 "confidence": conf,
                 "empty_cell_ratio": table_json["empty_cell_ratio"],
+                "has_empty_cells": table_json.get("has_empty_cells", False),
             })
 
             logger.info(f"  [OK] {ref.table_id} -> {out_file.name} [{conf}]")
@@ -200,12 +213,12 @@ def process_pdf(pdf_path: Path, family: str) -> dict:
             logger.error(f"RagJason generation failed: {e}")
 
     # ── Rapport de synthèse ────────────────────────────────────────────────────
-    # Top 5 des tables les plus problématiques (pour prioriser le debug)
+    # Toutes les tables problématiques : non-high + high avec cellules vides
     worst = sorted(
-        [t for t in extracted_tables if t["confidence"] != "high"],
+        [t for t in extracted_tables if t["confidence"] != "high" or t.get("has_empty_cells")],
         key=lambda t: t["empty_cell_ratio"],
         reverse=True
-    )[:5]
+    )
     summary["worst_tables"] = worst
 
     # ── Classification des échecs : dessin-mécanique vs bug ──────────────────
@@ -241,6 +254,46 @@ def process_pdf(pdf_path: Path, family: str) -> dict:
     return summary
 
 
+def _run_parallel(
+    items: list[Path],
+    get_family: callable,
+    workers: int,
+) -> None:
+    """Exécute process_pdf en parallèle via ProcessPoolExecutor.
+
+    Mémoire : chaque processus charge un pdfplumber complet en RAM.
+    Sur 32 Go, workers=16 OOM sur PDFs de 200+ pages. workers=8 est
+    le max stable pour les gros PDFs de la famille H5 (200+ pages).
+    """
+    t_start = time.time()
+    ok = failed = 0
+    total = len(items)
+
+    with ProcessPoolExecutor(max_workers=workers) as executor:
+        futures = {
+            executor.submit(process_pdf, pdf, get_family(pdf)[1]): pdf
+            for pdf in items
+        }
+        for future in as_completed(futures):
+            pdf = futures[future]
+            try:
+                summary = future.result()
+                name = summary["pdf_name"]
+                if summary["failed"] == 0 and summary["tables_extracted"] == summary["tables_found"]:
+                    ok += 1
+                else:
+                    failed += 1
+                    n_fail = summary["failed"]
+                    n_tot = summary["tables_found"]
+                    logger.warning(f"⚠ {name}: {n_fail}/{n_tot} tables failed")
+            except Exception as e:
+                failed += 1
+                logger.error(f"✗ {pdf.name}: {e}")
+
+    elapsed = time.time() - t_start
+    logger.info(f"=== PARALLEL DONE: {ok} OK / {failed} FAILED / {total} total | {elapsed:.0f}s ===")
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="STM32 PDF Table Extractor — sortie JSON brute sans classification"
@@ -250,11 +303,16 @@ def main():
     group.add_argument("--pdf",    type=Path, help="Chemin vers un PDF spécifique")
     group.add_argument("--family", type=str,  help="Ex: C0 → traite tous les PDFs de cette famille")
     group.add_argument("--all",    action="store_true", help="Traite tous les PDFs du projet")
+    group.add_argument("--random", type=int, metavar="N", help="Traite N PDFs aléatoires")
 
-    # Chemin racine des PDFs (relatif au dossier parent de table_extractor_raw)
-    DATASHEETS_ROOT = Path(__file__).parent.parent
+    parser.add_argument("--workers", type=int, default=None,
+                        help="Nombre de workers parallèles (défaut = nombre de cœurs CPU)")
+
+    # Chemin racine des PDFs — sous-dossier DataSHEET du repo
+    DATASHEETS_ROOT = Path(__file__).parent.parent / "DataSHEET"
 
     args = parser.parse_args()
+    workers = args.workers or os.cpu_count() or 1
 
     if args.pdf:
         # Un seul PDF — déduire la famille depuis le dossier parent
@@ -268,16 +326,20 @@ def main():
             logger.error(f"Family directory not found: {family_dir}")
             sys.exit(1)
         pdfs = sorted(family_dir.glob("*.pdf"))
-        logger.info(f"Processing {len(pdfs)} PDFs from family {args.family}")
-        for pdf in pdfs:
-            process_pdf(pdf, args.family)
+        logger.info(f"Processing {len(pdfs)} PDFs from family {args.family} ({workers} workers)")
+        _run_parallel(pdfs, lambda p: (p, args.family), workers)
+
+    elif args.random:
+        all_pdfs = sorted(DATASHEETS_ROOT.glob("*/*.pdf"))
+        n = min(args.random, len(all_pdfs))
+        selected = random_module.sample(all_pdfs, n)
+        logger.info(f"Processing {n} random PDFs ({workers} workers)")
+        _run_parallel(selected, lambda p: (p, p.parent.name), workers)
 
     elif args.all:
         all_pdfs = sorted(DATASHEETS_ROOT.glob("*/*.pdf"))
-        logger.info(f"Processing {len(all_pdfs)} PDFs total")
-        for pdf in all_pdfs:
-            family = pdf.parent.name
-            process_pdf(pdf, family)
+        logger.info(f"Processing {len(all_pdfs)} PDFs total ({workers} workers)")
+        _run_parallel(all_pdfs, lambda p: (p, p.parent.name), workers)
 
 
 if __name__ == "__main__":

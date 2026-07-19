@@ -98,6 +98,15 @@ def evaluate_table(
         warnings.append("unmapped_cid_glyphs_detected")
 
     # ── Calcul de la confiance ─────────────────────────────────────────────────
+    # Logique de décision (par ordre de priorité) :
+    # 1. "failed" : aucun contenu extrait
+    # 2. "low" : pas de headers OU empty_ratio > MAX OU variance colonnes > MAX
+    # 3. "medium" : empty_ratio modéré (> 60% du max) OU peu de lignes de données
+    # 4. "high" : tous les seuils respectés
+    #
+    # Note : le "has_empty_cells" dans grid_extractor.py est un indicateur
+    # séparé (marqueur pour le rapport) — il n'influence PAS la confiance.
+    # Un table avec des cellules vides peut être "high" si Fix 8 a tout rempli.
     critical = {"no_content_extracted", "no_headers_detected"}
     if any(w in critical for w in warnings):
         confidence = "failed" if "no_content_extracted" in warnings else "low"

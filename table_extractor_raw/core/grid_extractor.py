@@ -121,27 +121,12 @@ def _normalize_newlines_in_cell(text: str) -> str:
 # FIX 3 — Sélection de table par proximité sous la légende
 # ══════════════════════════════════════════════════════════════════════════════
 
-def _same_line(a: dict, b: dict, tol: int = 3) -> bool:
-    """Deux mots sont sur la même ligne si leur top diffère de moins de tol px."""
-    return abs(a["top"] - b["top"]) < tol
-
-
 def _find_caption_y(page: Page, caption: str) -> Optional[float]:
     """
     Cherche la position y (bord bas) de la légende sur la page.
-
-    Méthode 1 : mot-à-mot strict — ne match UNIQUEMENT la vraie légende
-    (pas une mention « Refer to Table … ») grâce à deux vérifications
-    100 % déterministes :
-
-      1. Aucun mot significatif avant « table » sur la même ligne →
-         une légende commence une ligne, une référence est encastrée.
-      2. Le numéro de table doit être suivi d'un point « 1. » →
-         une référence utilise « 1: » ou « 1 » nu.
-
-    Méthode 2 (fallback) : sous-chaîne normalisée compacte typographique,
-    gère les mots scindés par le PDF ("T able" → "Table", "(1)(2)" en suffixe).
+    Extrait les mots de la page et cherche le début de la légende.
     """
+    # Extraire les 6 premiers mots de la légende pour la recherche
     caption_words = caption.lower().split()[:5]
     if not caption_words:
         return None
@@ -150,107 +135,31 @@ def _find_caption_y(page: Page, caption: str) -> Optional[float]:
     if not words:
         return None
 
-    # ── Méthode 1 : mot-à-mot strict + vérifications ────────────────
+    # Chercher une séquence de mots consécutifs qui matche le début de la légende
     for idx, word in enumerate(words):
-        word_clean = word["text"].lower().rstrip(".,:;!?")
-        caption_word_clean = caption_words[0].rstrip(".,:;!?")
-        if word_clean != caption_word_clean:
-            continue
-
-        # VÉRIF 1 : pas de mot significatif avant « table » sur la même ligne
-        if idx > 0 and _same_line(words[idx - 1], word):
-            prev = words[idx - 1]["text"].lower().rstrip(".,:;!?").strip()
-            if prev and not prev.isdigit():
-                continue
-
-        # VÉRIF 2 : le numéro doit être suivi d'un point « 1. » (pas « 1: »)
-        if idx + 1 < len(words):
-            num_text = words[idx + 1]["text"]
-            if not re.match(r'^\d+[.)]$', num_text):
-                continue
-
-        match_count = 1
-        for k in range(1, len(caption_words)):
-            if idx + k < len(words):
-                w_clean = words[idx + k]["text"].lower().rstrip(".,:;!?")
-                c_clean = caption_words[k].rstrip(".,:;!?")
-                if w_clean == c_clean:
-                    match_count += 1
-                else:
-                    break
-        if match_count >= min(3, len(caption_words)):
-            return word["bottom"]
-
-    # ── Méthode 2 : normalisé compact (tolérant aux scissions) ────────
-    # Construire la forme compacte du caption (uniquement lettres+chiffres)
-    cap_compact = "".join(re.findall(r"[a-z0-9]+", "".join(caption_words)))
-
-    # Construire le texte compact de la page avec positions y
-    text_compact = ""
-    word_y_map = []  # (start_char, end_char, y_bottom)
-    char_pos = 0
-    for w in words:
-        wt = "".join(re.findall(r"[a-z0-9]+", w["text"].lower()))
-        if wt:
-            text_compact += wt
-            word_y_map.append((char_pos, char_pos + len(wt), w["bottom"]))
-            char_pos += len(wt)
-
-    match_pos = text_compact.find(cap_compact)
-    if match_pos >= 0:
-        for ws, we, wy in word_y_map:
-            if ws <= match_pos < we:
-                return wy
+        word_clean = word["text"].lower().split("(")[0].rstrip(".,:;!?")
+        caption_word_clean = caption_words[0].lower().split("(")[0].rstrip(".,:;!?")
+        if word_clean == caption_word_clean:
+            # Vérifier les mots suivants
+            match_count = 1
+            for k in range(1, len(caption_words)):
+                if idx + k < len(words):
+                    w_clean = words[idx + k]["text"].lower().split("(")[0].rstrip(".,:;!?")
+                    c_clean = caption_words[k].lower().split("(")[0].rstrip(".,:;!?")
+                    if w_clean == c_clean:
+                        match_count += 1
+                    else:
+                        break
+            if match_count >= min(3, len(caption_words)):
+                # Retourner le bord bas du mot de début
+                return word["bottom"]
 
     return None
-
-
-def _locate_caption_page(
-    pdf: "pdfplumber.PDF",
-    caption: str,
-    declared_page: int,
-    window: int = 2,
-    pdf_type: int = 1,
-) -> Optional[int]:
-    """
-    Scanne `declared_page ± window` pour le caption TOC.
-    La page déclarée est testée en premier, puis on s'éloigne.
-
-    Retourne le numéro de page (1-indexé) où la légende ET un tableau
-    réel sont trouvés, ou None.
-    """
-    tbl_settings = PDFPLUMBER_TABLE_SETTINGS_TYPE2 if pdf_type == 2 else PDFPLUMBER_TABLE_SETTINGS
-
-    # Ordre : déclarée d'abord, puis on s'éloigne
-    order = [declared_page]
-    for d in range(1, window + 1):
-        p_lo = declared_page - d
-        p_hi = declared_page + d
-        if 1 <= p_lo <= len(pdf.pages):
-            order.append(p_lo)
-        if 1 <= p_hi <= len(pdf.pages):
-            order.append(p_hi)
-    order = list(dict.fromkeys(order))  # dédoublonne en gardant l'ordre
-
-    best = None
-    for pno in order:
-        cap_y = _find_caption_y(pdf.pages[pno - 1], caption)
-        if cap_y is None:
-            continue
-        # VÉRIF : la page contient-elle un tableau réel sous la légende ?
-        tables = pdf.pages[pno - 1].find_tables(tbl_settings)
-        has_grid = any(t.bbox[1] > cap_y - 20 for t in tables)
-        if has_grid:
-            return pno  # candidat parfait : légende + grille
-        if best is None:
-            best = pno  # garder le premier qui a au moins la légende
-    return best
 
 
 def _table_quality(table: list) -> float:
     """
     Score de 'qualité' d'un tableau réel (vs fragment d'image CID).
-    Privilégie : beaucoup de cellules réelles (non-CID), pas d'image fragmentée.
     Retourne le nombre de cellules réelles (non-vides, non-CID), ou -1.0 si vide.
     """
     if not table:
@@ -264,7 +173,7 @@ def _table_quality(table: list) -> float:
             if CID_PATTERN.search(s):
                 continue
             n_real += 1
-    return n_real if n_real > 0 else -1.0
+    return float(n_real) if n_real > 0 else -1.0
 
 
 def _pick_best_table(
@@ -301,13 +210,14 @@ def _pick_best_table(
         best_t, best_ft = candidates[0]
         return best_t, best_ft, best_ft.bbox
 
-    # Fallback : la plus haute sur la page, mais éviter les fragments d'image
-    # (dessins mécaniques fragmentés en mini-tables par pdfplumber, ex: F4 table_84)
+    # Fallback : la plus haute sur la page (plus fiable que la plus grande)
     best_t, best_ft = min(candidates, key=lambda x: x[1].bbox[1])
+    
     if _table_quality(best_t) < 0.5:
         best_alt = max(candidates, key=lambda x: _table_quality(x[0]))
         if _table_quality(best_alt[0]) > _table_quality(best_t):
             best_t, best_ft = best_alt
+            
     return best_t, best_ft, best_ft.bbox
 
 
@@ -320,7 +230,7 @@ def _cell_str(cell) -> str:
     if cell is None:
         return ""
     # Fix 4 : normaliser les \n internes dans les cellules de data
-    return _normalize_newlines_in_cell(str(cell))
+    return _normalize_newlines_in_cell(str(cell)).strip()
 
 
 def _fill_horizontal(rows: list[list[str]]) -> None:
@@ -361,6 +271,12 @@ def _ensure_no_empty_cells(rows: list[list[str]]) -> None:
     Même les cellules vides en première colonne sont remplies depuis la droite.
     Si toute une ligne est vide, copier celle du dessus.
     Itère jusqu'à stabilisation.
+
+    Convergence : boucle while stabilise en ≤3 itérations. La 1ère itération
+    remplit horizontal+vertical. La 2nde étend les valeurs nouvellement
+    arrivées. La 3ème ne trouve plus de changement. La seule cellule qui
+    reste vide est la (0,0) si la 1ère ligne est entièrement vide (artefact
+    pdfplumber_text — pas de voisin à propager). Voir table_65.
     """
     changed = True
     while changed:
@@ -391,10 +307,11 @@ def _save_debug_image(
     table_bbox: Optional[tuple],
     output_path: Path,
     confidence: str,
+    has_empty_cells: bool = False,
 ) -> None:
     """Sauvegarde un crop de la zone de la table pour debug visuel."""
     try:
-        if SAVE_IMAGES_ONLY_ON_ISSUE and confidence == "high":
+        if SAVE_IMAGES_ONLY_ON_ISSUE and confidence == "high" and not has_empty_cells:
             return
 
         img_dir = output_path.parent / "debug_images"
@@ -490,56 +407,52 @@ def _count_header_rows_by_color(page, table_obj) -> int:
     """
     Compte les lignes d'en-tête via fond bleu foncé (Type 2 Antenna House).
     Retourne 0 si pas de bleu détecté (fallback vers heuristiques).
+    Vérifie que les Y bleus correspondent à des vraies lignes du tableau,
+    puis groupe les Y consécutifs (tolérance 2px). Limite à 150px de hauteur.
     """
-    if not hasattr(page, 'rects') or not hasattr(table_obj, 'rows') or not table_obj.rows:
+    if not hasattr(page, 'rects') or not table_obj or not table_obj.bbox:
+        return 0
+    if not hasattr(table_obj, 'rows') or not table_obj.rows:
         return 0
 
     table_bbox = table_obj.bbox
-    if not table_bbox:
-        return 0
+
+    # Collecter les Y des vraies rangées du tableau
+    row_y_bottoms = sorted(set(round(r.bbox[3], 1) for r in table_obj.rows if hasattr(r, 'bbox')))
 
     # Collecter les rectangles remplis en bleu foncé dans la zone table
-    header_y_bottoms = set()
+    header_y_bottoms = []
     for r in page.rects:
         if (r['x0'] >= table_bbox[0] - 5 and r['x1'] <= table_bbox[2] + 5
                 and r['top'] >= table_bbox[1] - 5 and r['bottom'] <= table_bbox[3] + 5):
             fill = r.get('non_stroking_color')
             if fill and len(fill) == 3:
                 r_norm, g_norm, b_norm = fill
-                # Bleu foncé : R et G faibles, B dominant
                 if r_norm < 0.15 and g_norm < 0.25 and b_norm > 0.25:
-                    # Arrondir à l'entier pour grouper les lignes proches
-                    header_y_bottoms.add(round(r['bottom'], 0))
+                    if r['bottom'] - table_bbox[1] < 150:
+                        header_y_bottoms.append(r['bottom'])
 
     if not header_y_bottoms:
         return 0
 
-    # Trier les Y
-    sorted_y = sorted(header_y_bottoms)
-
-    # Filtrer : ne garder que les Y qui correspondent à une ligne réelle de table_obj.rows
-    row_y_bottoms = set(round(row.bbox[3], 0) for row in table_obj.rows)
-    matching = [y for y in sorted_y if y in row_y_bottoms]
+    # Filtrer : ne garder que les Y qui correspondent à des lignes réelles
+    matching = sorted(set(
+        round(y, 1) for y in header_y_bottoms
+        if any(abs(round(y, 1) - ry) < 2.0 for ry in row_y_bottoms)
+    ))
 
     if not matching:
         return 0
 
-    # Compter les lignes consécutives depuis le haut
-    sorted_row_y = sorted(row_y_bottoms)
-    first_header_y = matching[0]
-    try:
-        first_idx = sorted_row_y.index(first_header_y)
-    except ValueError:
-        return 1
-
-    count = 0
-    for i in range(first_idx, min(first_idx + 10, len(sorted_row_y))):
-        if sorted_row_y[i] in matching:
-            count += 1
+    # Grouper les Y consécutifs (tolérance 2px)
+    groups = []
+    for y in matching:
+        if not groups or y - groups[-1][-1] > 2.0:
+            groups.append([y])
         else:
-            break
+            groups[-1].append(y)
 
-    return count
+    return len(groups)
 
 
 def _expand_spans_and_headers(
@@ -550,6 +463,17 @@ def _expand_spans_and_headers(
 ) -> tuple[list[str], list[list[str]], list[str]]:
     """
     Propagation géométrique + détection de profondeur d'en-tête + compression.
+
+    Pipeline interne :
+      0. Pré-calcul grille géométrique (centres de colonnes via bboxes)
+      1. Division spatiale headers compressés (Type 2 : "STM32G081_/_F4")
+      2. Détection colonnes fantômes (absentes de toutes les lignes physiques)
+      3. Propagation géométrique des cellules fusionnées (rowspan/colspan)
+         - Type 1 : parcours left-to-right, remontée verticale
+         - Type 2 : recherche bbox qui CONTIENT le centre de colonne cible
+      4. Détection profondeur d'en-tête (géométrique + couleur Type 2)
+      5. Construction headers finaux (_build_final_headers avec propagation parent)
+      6. Extraction lignes de données (hors header_depth)
 
     Fix complet gérant :
     - rowspan / colspan réels via bboxes
@@ -740,6 +664,17 @@ def _expand_spans_and_headers(
                     elif top_val is not None:
                         table[r][c] = top_val
 
+    # ── 3b. Fill-down : propager la dernière valeur non-vide vers le bas ───────
+    for c in range(cols):
+        carry = None
+        for r in range(rows):
+            val = table[r][c] if c < len(table[r]) else None
+            if val is not None and str(val).strip():
+                carry = val
+            elif (val is not None and not str(val).strip()) or val is None:
+                if carry is not None:
+                    table[r][c] = carry
+
     # ── 4. Détection géométrique de la profondeur d'en-tête ────────────────────
     header_depth = 1 + inserted_rows
     if table_obj is not None and hasattr(table_obj, "rows") and len(table_obj.rows) > 0:
@@ -767,7 +702,7 @@ def _expand_spans_and_headers(
             else:
                 break
 
-    # ── Type 2 : détection couleur des lignes d'en-tête ────────────────────
+    # ── Détection couleur des lignes d'en-tête (Type 2 Antenna House) ─────
     if pdf_type == 2 and rows >= 2:
         hdr_rows = _count_header_rows_by_color(page, table_obj)
         if hdr_rows > 0:
@@ -788,6 +723,20 @@ def _expand_spans_and_headers(
                     if empty_0 and filled_1:
                         empty_prefix += 1
                 if empty_prefix >= 1:
+                    header_depth = 2
+
+            # Détection des en-têtes spanning via répétitions adjacentes dans Row 0
+            # Ex: [A, B, C,C,C, D,D,D,D,D, E,E,E,E,E, F] → header_depth=2
+            # On compare uniquement la 1ère ligne (avant \n) car les cellules
+            # peuvent contenir des sous-étiquettes (ex: "Conditions\nVDD=1.62V").
+            if header_depth == 1 and rows >= 2:
+                identical = 0
+                for c in range(1, min(cols, len(raw_table[0]))):
+                    v0 = (str(raw_table[0][c] or "").strip()).split("\n")[0]
+                    v1 = (str(raw_table[0][c-1] or "").strip()).split("\n")[0]
+                    if v0 and v0 == v1:
+                        identical += 1
+                if identical >= cols * 0.25:
                     header_depth = 2
 
     if header_depth > 1:
@@ -876,6 +825,25 @@ def extract_table_grid(
     """
     Extrait la grille d'une table identifiée par `ref`.
     Retourne un dict conforme au schéma RawTable (sérialisable en JSON).
+
+    Pipeline interne (dans l'ordre) :
+      1. _extract_from_page → grille brute pdfplumber (bordures) ou pdfplumber_text
+      2. Filtrage lignes au-dessus de la légende (si bleed)
+      3. Si table vide → ré-extraction depuis page suivante (body sur page N+1)
+      4. Troncature si bleed (texte de table suivante dans les données)
+      5. _expand_spans_and_headers : Fix 2 (headers compressés), Fix 3 (ghost cols),
+         Fix 5 (rowspan/colspan géométrique), détection profondeur header
+      6. Fix 4 : continuation multi-pages (colonnes, ordre, correction headers)
+      7. Fix 7 : insertion colonnes page 1 si continuation en a plus (x0 géométrique)
+      8. Fix 6 : propagation descendante cellules vides (rowspan)
+      9. Fix 8 : garantie zéro cellule vide (Type 2 uniquement)
+     10. Détection has_empty_cells (APRÈS Fix 8 — seul le vrai artefact compte)
+     11. Correction glyphes (fix_headers, fix_rows)
+     12. Dedup lignes consécutives + suppression lignes totalement vides
+     13. Fusion colonnes adjacentes identiques (_merge_identical_adjacent_columns)
+     14. Fusion colonnes fragmentées (_merge_fragmented_columns) — SEULEMENT pdfplumber_text
+     15. Évaluation qualité (confidence, empty_ratio)
+     16. Image de debug si nécessaire
     """
     result = {
         "table_id":              ref.table_id,
@@ -893,63 +861,158 @@ def extract_table_grid(
         "warnings":              [],
     }
 
-    effective_page = ref.page  # peut être mis à jour par le look-ahead
-
     with pdfplumber.open(pdf_path) as pdf:
         if ref.page < 1 or ref.page > len(pdf.pages):
             result["warnings"].append(f"page_out_of_range:{ref.page}")
             return result
 
-        # ── Localisation guidée par le TOC : trouver la page réelle du caption ──
-        # Le TOC peut être off-by-one (ex H7 : TOC dit page 194, caption p195).
-        scan_page = _locate_caption_page(pdf, ref.caption, ref.page, pdf_type=pdf_type) or ref.page
-        if scan_page != ref.page:
-            effective_page = scan_page
-            result["page"] = scan_page
-            result["warnings"].append(f"caption_page:{scan_page}")
-            logger.info(f"{ref.table_id}: caption found on page {scan_page} (TOC: {ref.page})")
-        page = pdf.pages[effective_page - 1]
+        page = pdf.pages[ref.page - 1]  # pdfplumber est 0-indexé
 
         # ── Fix 1 : préparer la map des textes rotatifs ────────────────────────
         rotated_map = _get_rotated_text_map(page)
 
-        # ── Extraire la grille sur cette page ───────────────────────────────
+        # ── Extraire la grille ─────────────────────────────────────────────────
         raw_table, table_obj, method, bbox = _extract_from_page(page, ref, rotated_map, pdf_type)
-
-        # ── Détection de faux positif (footer/bandeau au lieu de la vraie table) ──
-        if raw_table is not None and len(raw_table) <= 2:
-            cell_text = " ".join(str(c) for row in raw_table for c in row if c)
-            if FOOTER_PATTERN.search(cell_text):
-                logger.info(f"{ref.table_id}: false positive (footer) on page {effective_page}, trying neighbors...")
-                raw_table = None
-
-        # ── Fix look-ahead : si rien sur la page trouvée, essayer page+1 puis page-1 ──
-        if raw_table is None:
-            for delta in (1, -1):
-                cand_idx = (effective_page - 1) + delta
-                if 0 <= cand_idx < len(pdf.pages):
-                    cand_page = pdf.pages[cand_idx]
-                    cand_rotated = _get_rotated_text_map(cand_page)
-                    cand_table, cand_obj, cand_method, cand_bbox = _extract_from_page(
-                        cand_page, ref, cand_rotated, pdf_type
-                    )
-                    if cand_table is not None:
-                        page = cand_page
-                        rotated_map = cand_rotated
-                        raw_table, table_obj, method, bbox = cand_table, cand_obj, cand_method, cand_bbox
-                        effective_page = cand_idx + 1
-                        result["page"] = effective_page
-                        result["warnings"].append(f"page_shifted:{effective_page}")
-                        logger.info(f"{ref.table_id}: shifted from page {ref.page} to {effective_page}")
-                        break
 
         if raw_table is None:
             result["warnings"].append("no_table_found_on_page")
-            logger.warning(f"{ref.table_id}: no table found on page {ref.page} (or neighbors)")
+            logger.warning(f"{ref.table_id}: no table found on page {ref.page}")
             return result
 
         result["extraction_method"] = method
 
+        # ── Non-tables : Ordering information (pas une grille) ──────────────
+        # Ces entrées de la TOC sont des listes textuelles, pas des tableaux.
+        # On garde l'entrée mais avec rows vides + capture image.
+        if "ordering information" in ref.caption.lower():
+            result["headers"] = []
+            result["rows"] = []
+            result["extraction_confidence"] = "low"
+            result["empty_cell_ratio"] = 1.0
+            result["col_count"] = 0
+            result["warnings"] = ["non_table_captured:ordering_information"]
+            if SAVE_DEBUG_IMAGES:
+                out_path = output_base / family / pdf_name / f"{ref.table_id}.json"
+                _save_debug_image(page, bbox, out_path, "low")
+            logger.info(f"{ref.table_id}: non-table ordering info, captured")
+            return result
+
+        # ── Heuristiques de tracking ─────────────────────────────────────────
+        heuristics = {}
+
+        # ── Repérer la position y de la légende ─────────────────────────────
+        caption_y = None
+        if raw_table:
+            caption_y = _find_caption_y(page, ref.caption)
+
+        # ── [Fix Général] Filtrer les lignes au-dessus de la légende ─────────
+        # La stratégie text merge les tables adjacentes (ex: Table 8 I2C + Table 9 USART).
+        # On utilise les coordonnées y du finder pour ne garder que les lignes
+        # sous la légende. table_obj → None car ses coordonnées ne correspondent
+        # plus au raw_table filtré (l'expansion spatiale est moins critique pour
+        # les tables text-strategy sans bordures).
+        if raw_table and table_obj and hasattr(table_obj, 'rows'):
+            if caption_y is not None and len(table_obj.rows) == len(raw_table):
+                ys = [r.bbox[1] for r in table_obj.rows]
+                keep = [i for i, y in enumerate(ys) if y >= caption_y - 5]
+                if keep and len(keep) < len(raw_table):
+                    raw_table = [raw_table[i] for i in keep]
+                    table_obj = None
+                    logger.info(f"{ref.table_id}: filtered {len(keep)}/{len(ys)} rows below caption (y>{caption_y:.0f})")
+                elif not keep:
+                    # Toutes les lignes sont au-dessus de la légende (bleed complet)
+                    raw_table = []
+                    table_obj = None
+                    logger.info(f"{ref.table_id}: all {len(ys)} rows above caption, treated as empty")
+
+        # ── Détecter si la légende est en bas de page (→ table page suivante) ──
+        # Si la légende est dans les 25% inférieurs de la page, la table body
+        # commence probablement en haut de la page suivante. On forcera la
+        # vérification même si qq lignes résiduelles (footer, etc.) sont présentes.
+        caption_near_bottom = False
+        if caption_y is not None:
+            if caption_y > page.height * 0.75:
+                caption_near_bottom = True
+                heuristics["caption_near_bottom"] = True
+                heuristics["caption_y_ratio"] = round(caption_y / page.height, 3)
+
+        # ── [Fix] Si vide ou légende en bas → extraire depuis la page suivante ──
+        # Quand la table body est sur la page d'après (titre page N, corps page N+1),
+        # le filtrage ne laisse que 0-1 lignes. On vérifie la page immédiatement
+        # suivante uniquement (offset=1) — chercher plus loin risque de capturer
+        # une table complètement différente.
+        # Le mot-clé de légende donne un bonus modéré (+20) pour départager,
+        # sans dominer la qualité de base.
+        start_page = ref.page
+        n_non_empty = sum(1 for row in raw_table if any(str(c).strip() for c in row)) if raw_table else 0
+        should_try_next = (
+            n_non_empty == 0 or
+            (caption_near_bottom and method in ("pdfplumber", "pdfplumber_text") and n_non_empty < 5)
+        )
+        if should_try_next and ref.page < len(pdf.pages):
+                caption_keyword = ""
+                if ref.caption:
+                    parts = ref.caption.split(".")
+                    if len(parts) >= 2:
+                        cw = parts[-1].strip().split()
+                        if cw:
+                            caption_keyword = cw[0].lower()
+                pg_idx = ref.page  # page suivante (déjà +1 ci-dessous)
+                if pg_idx < len(pdf.pages):
+                    p = pdf.pages[pg_idx]
+                    # Crop à 70% : le body du tableau commence en haut de la page
+                    # suivante. Le bas de page (footer, autre contenu) est exclu
+                    # pour éviter les colonnes parasites (14+ au lieu de 7).
+                    crop = (p.bbox[0], p.bbox[1], p.bbox[2], p.height * 0.7)
+                    p_cropped = p.within_bbox(crop)
+                    r = _get_rotated_text_map(p_cropped)
+                    nxt_raw, nxt_obj, nxt_method, nxt_bbox = _extract_from_page(p_cropped, ref, r, pdf_type, caption_keyword)
+                    if nxt_raw:
+                        nq = _table_quality(nxt_raw)
+                        keyword_bonus = 0
+                        if caption_keyword:
+                            for row in nxt_raw:
+                                for c in row:
+                                    if c and caption_keyword in c.lower():
+                                        keyword_bonus = 20
+                                        break
+                                if keyword_bonus:
+                                    break
+                        nq_boosted = nq + keyword_bonus
+                        if nq_boosted >= 10.0:
+                            raw_table, table_obj, method, bbox = nxt_raw, nxt_obj, nxt_method, nxt_bbox
+                            page = pdf.pages[pg_idx]
+                            start_page = ref.page + 1
+                            heuristics["body_on_next_page"] = True
+                            heuristics["next_page_q_boosted"] = nq_boosted
+                            logger.info(f"{ref.table_id}: body on page {start_page}, re-extracted ({len(raw_table)} rows, {nxt_method}, q={nq_boosted:.0f})")
+
+        # ── Capturer le nombre de colonnes extraites ─────────────────────────
+        if raw_table:
+            heuristics["cols_extracted"] = max(len(r) for r in raw_table)
+
+        # ── [Fix] Troncature des tables suivantes (bleed) ────────────────────
+        # La stratégie texte capture tout le texte de la page, y compris les
+        # tables suivantes et le pied de page. On détecte les marqueurs de
+        # transition et on coupe raw_table à la première ligne concernée.
+        if method == "pdfplumber_text" and raw_table:
+            rows_before = len(raw_table)
+            raw_table = _truncate_at_next_table(raw_table, ref.table_id)
+            if len(raw_table) < rows_before:
+                heuristics["truncated_rows"] = rows_before - len(raw_table)
+
+        # ── [Fix 4b] Suppression lignes de bleed page header/footer ────────
+        # pdfplumber_text éclate les titres de section (ex: "Electrical
+        # characteristics") en 14+ colonnes. On supprime ces lignes avant
+        # _expand_spans_and_headers pour que l'expansion + _merge_fragmented_columns
+        # (étape 14) fonctionnent sur les vrais headers de la table.
+        if method == "pdfplumber_text" and raw_table:
+            rows_before = len(raw_table)
+            raw_table = _remove_bleed_rows(raw_table, method)
+            if len(raw_table) < rows_before:
+                heuristics["bleed_rows_removed"] = rows_before - len(raw_table)
+
+        # ── Vérification finale : table vide ──────────────────────────────────
         if not raw_table:
             result["warnings"].append("empty_raw_table")
             return result
@@ -959,19 +1022,21 @@ def extract_table_grid(
         result["warnings"].extend(span_warnings)
 
         # ── Fix 4 : Continuation multi-pages ──────────────────────────────────
-        merged_pages = [effective_page]
+        merged_pages = [start_page]
         if all_refs is not None:
             header_depth = len(raw_table) - len(rows_raw)
             first_cell_text = str(raw_table[0][0] or "").strip() if raw_table else ""
+            base_x0s = _get_col_x0s(table_obj) if table_obj else []
             c_pages, c_rows, target_cols, cont_x0s_list = find_continuations(
                 pdf,
-                effective_page,
+                start_page,
                 len(headers),
                 all_refs,
                 ref.table_id,
                 header_depth,
                 first_cell_text,
                 pdf_type=pdf_type,
+                base_col_x0s=base_x0s,
             )
             if c_pages and len(c_pages) > 1:
                 merged_pages = c_pages
@@ -1004,11 +1069,21 @@ def extract_table_grid(
                     insert_positions = sorted(set(insert_positions))[:n_insert]
 
                     # Insertion droite→gauche pour préserver les indices
+                    # La valeur insérée est copiée depuis le voisin gauche
+                    # (même logique que le header). Si pos=0 (pas de voisin
+                    # gauche), copier la valeur de l'ancienne colonne 0
+                    # (avant insertion de Fix 7).
                     for pos in sorted(insert_positions, reverse=True):
                         header_val = headers[pos - 1] if pos > 0 else headers[0]
                         headers = headers[:pos] + [header_val] + headers[pos:]
                         for r in range(len(rows_raw)):
-                            rows_raw[r] = rows_raw[r][:pos] + [""] + rows_raw[r][pos:]
+                            if pos > 0 and pos - 1 < len(rows_raw[r]):
+                                neighbor_val = rows_raw[r][pos - 1]
+                            elif pos == 0 and rows_raw[r]:
+                                neighbor_val = rows_raw[r][0]
+                            else:
+                                neighbor_val = ""
+                            rows_raw[r] = rows_raw[r][:pos] + [neighbor_val] + rows_raw[r][pos:]
 
                 rows_raw.extend([[_cell_str(c) for c in row] for row in c_rows])
                 result["warnings"].append(f"multi_page_merged:{len(merged_pages)}")
@@ -1026,7 +1101,9 @@ def extract_table_grid(
         # Exception Type 2 : si la 1ère colonne change vers une valeur jamais vue
         # → nouveau groupe → ne pas propager (ex: table_6 I/O → Notes évite
         # la propagation erronée entre groupes différents).
-        if rows_raw:
+        # Note : inactif pour pdfplumber_text (les cellules vides sont des
+        # trous structurels, pas des rowspan — Fix 6 les dupliquerait).
+        if rows_raw and result["extraction_method"] != "pdfplumber_text":
             n_cols = len(headers)
             for r in range(1, len(rows_raw)):
                 first_changed = False
@@ -1053,29 +1130,80 @@ def extract_table_grid(
         if pdf_type == 2:
             _ensure_no_empty_cells(rows_raw)
 
-        # ── Détection glyphes CID non mappés (avant nettoyage graphe) ──
-        _raw_hdr = " ".join(headers)
-        _raw_rows = " ".join(str(c) for row in rows_raw for c in row if c)
-        cid_detected = bool(CID_PATTERN.search(_raw_hdr) or CID_PATTERN.search(_raw_rows))
+        # ── Détection cellules vides après Fix 8 ─────────────────────────
+        # DOIT impérativement se trouver APRÈS Fix 8 (ligne 1033).
+        # Avant Fix 8, les cellules vides des continuations (rowspan)
+        # créent 30+ fausses alertes. Après Fix 8, seules les 1ères
+        # lignes (pas de ligne au-dessus pour copier) restent vides,
+        # ce qui est le vrai artefact pdfplumber_text (table_65).
+        had_empty_cells = bool(rows_raw) and any(
+            not cell or not str(cell).strip()
+            for row in rows_raw
+            for cell in row
+        )
 
         # ── Correction des glyphes ─────────────────────────────────────────────
         headers    = fix_headers(headers)
         rows_fixed = fix_rows(rows_raw)
 
+        rows_fixed = _deduplicate_rows(rows_fixed)
+
+        # ── [Fix] Suppression des lignes totalement vides ───────────────────
+        # Les artefacts pdfplumber_text créent parfois des lignes où toutes
+        # les cellules sont "" (ex: ligne séparatrice header/body mal capturée).
+        rows_fixed = [row for row in rows_fixed if any(c for c in row)]
+
+        # ── [Fix] Fusion des colonnes adjacentes identiques ─────────────────
+        headers, rows_fixed = _merge_identical_adjacent_columns(headers, rows_fixed)
+
+        # ── [Fix] Fusion des colonnes fragmentées (pdfplumber_text) ─────────
+        # Uniquement pour pdfplumber_text : les colonnes pdfplumber (bordures)
+        # sont déjà correctement détectées. Appliqué à toutes les tables,
+        # H2 (header minuscule) fusionnait les colonnes réelles
+        # (ex: "millimeters / Min" → collé à la gauche → 7 cols → 2 cols).
+        if result["extraction_method"] == "pdfplumber_text":
+            cols_before = len(headers)
+            headers, rows_fixed, merged = _merge_fragmented_columns(headers, rows_fixed)
+            if merged > 0:
+                heuristics["columns_initial"] = cols_before
+                heuristics["columns_merged"] = merged
+                heuristics["columns_final"] = len(headers)
+
+        # ── [Fix] Fusion header vide → droite (pdfplumber_text) ───────────
+        # Les colonnes à header vide entre deux colonnes réelles contiennent
+        # des fragments de texte qui appartiennent à la colonne de droite.
+        # (ex: "NRST i" + "nput lo" → partie de "Parameter").
+        if result["extraction_method"] == "pdfplumber_text":
+            cols_before_h = len(headers)
+            headers, rows_fixed, merged_h = _merge_empty_header_rightward(headers, rows_fixed)
+            if merged_h > 0:
+                heuristics["columns_initial"] = heuristics.get("columns_initial", cols_before_h)
+                heuristics["columns_merged"] = heuristics.get("columns_merged", 0) + merged_h
+                heuristics["columns_final"] = len(headers)
+
+        # ── [Fix] Suppression des footnotes trailing (pdfplumber_text) ──────
+        # Les notes de bas de tableau apparaissent en fin de données avec
+        # une 1ère cellule au format "N." (ex: "1.", "2.", "6.").
+        # Ne supprime qu'un bloc contigu à la fin.
+        if result["extraction_method"] == "pdfplumber_text" and rows_fixed:
+            rows_before_fn = len(rows_fixed)
+            rows_fixed, fn_removed = _remove_trailing_footnotes(rows_fixed)
+            if fn_removed > 0:
+                heuristics["footnote_rows_removed"] = fn_removed
+
         # ── Évaluation qualité ─────────────────────────────────────────────────
-        confidence, empty_ratio, _, warnings_eval = evaluate_table(headers, rows_fixed, cid_detected)
+        confidence, empty_ratio, _, warnings_eval = evaluate_table(headers, rows_fixed)
         result["warnings"].extend(warnings_eval)
 
-        # ── Self-check : détection d'ambiguïté résiduelle ──────────────────
-        # Si la table extraite est quasi-vide ou ne contient que des CID,
-        # on marque un doute (sans écraser "failed" déjà posé par le guard).
-        if empty_ratio >= 0.9 and result.get("status") is None:
-            _raw = " ".join(headers) + " ".join(str(c) for row in rows_fixed for c in row)
-            _cleaned = CID_PATTERN.sub("", _raw).strip()
-            if not _cleaned:
-                result["status"] = "review_needed"
+        # ── Marquage des tables avec cellules vides ────────────────────────────
+        # Même si Fix 8 a tout rempli, on garde la trace pour le rapport.
+        if had_empty_cells:
+            result["warnings"].append("has_empty_cells")
+            result["has_empty_cells"] = True
 
         # ── Remplissage du résultat ────────────────────────────────────────────
+        if heuristics:
+            result["heuristics"] = heuristics
         result.update({
             "headers":               headers,
             "rows":                  rows_fixed,
@@ -1088,14 +1216,258 @@ def extract_table_grid(
         # ── Image de debug ─────────────────────────────────────────────────────
         if SAVE_DEBUG_IMAGES:
             out_path = output_base / family / pdf_name / f"{ref.table_id}.json"
-            _save_debug_image(page, bbox, out_path, confidence)
+            _save_debug_image(page, bbox, out_path, confidence,
+                              has_empty_cells=had_empty_cells)
 
     logger.info(
-        f"{ref.table_id} | page={effective_page} | method={method} "
+        f"{ref.table_id} | page={ref.page} | method={method} "
         f"| confidence={confidence} | rows={len(result['rows'])} "
         f"| empty={result['empty_cell_ratio']:.2f}"
     )
     return result
+
+
+def _deduplicate_rows(rows: list[list[str]]) -> list[list[str]]:
+    """
+    Supprime les lignes consécutives strictement identiques.
+    Fixe les doublons créés par Fix 6 quand des lignes vides artificielles
+    (pdfplumber_text) reçoivent la valeur de la ligne au-dessus.
+    """
+    if not rows:
+        return rows
+    result = [rows[0]]
+    for row in rows[1:]:
+        if row != result[-1]:
+            result.append(row)
+    return result
+
+
+def _remove_bleed_rows(raw_table: list, method: str) -> list:
+    """
+    Supprime les lignes de bleed page header/footer en haut de raw_table.
+    Uniquement pour pdfplumber_text, 2 heuristiques séquentielles :
+      1. Sparsité (< 30% de remplissage) — supprime les lignes creuses
+         (ex: "Electrical characteristics" éclaté en 3/14 colonnes)
+      2. Préfixe (>80% des cellules partagent le même préfixe 4-car.)
+         (ex: "Elect" x14)
+    Appliqué avant _expand_spans_and_headers pour que l'expansion travaille
+    sur les vrais headers (Symbol/Parameter/...) et que l'étape 14 existante
+    (_merge_fragmented_columns) fusionne correctement les fragments.
+    """
+    if method != "pdfplumber_text" or not raw_table:
+        return raw_table
+    result = list(raw_table)
+    for _ in range(min(10, len(result))):
+        if not result or not result[0]:
+            break
+        row = result[0]
+        total = len(row)
+        non_empty = [str(c).strip() for c in row if c and str(c).strip()]
+        n_filled = len(non_empty)
+        fill_ratio = n_filled / total if total > 0 else 0
+        # Heuristique 1 : ligne vide ou très creuse (< 30% remplie)
+        if fill_ratio < 0.3:
+            logger.info(f"_remove_bleed_rows: sparse row removed ({n_filled}/{total} filled)")
+            result.pop(0)
+            continue
+        # Heuristique 2 : >80% des cellules partagent le même préfixe
+        if n_filled >= 3:
+            pref_counts = {}
+            for c in non_empty:
+                p = c[:4].lower() if len(c) >= 4 else c.lower()
+                pref_counts[p] = pref_counts.get(p, 0) + 1
+            max_p, max_n = max(pref_counts.items(), key=lambda x: x[1])
+            if max_n / n_filled > 0.8:
+                logger.info(f"_remove_bleed_rows: prefix bleed removed ({max_p} x{max_n}/{n_filled})")
+                result.pop(0)
+                continue
+        break
+    return result
+
+
+def _truncate_at_next_table(
+    raw_table: list[list],
+    table_id,
+) -> list[list]:
+    """
+    [Fix] Tronque raw_table dès qu'une ligne contient une table suivante
+    (ex: "Table 66." dans les données de la Table 65) ou un pied de page.
+    """
+    if not raw_table:
+        return raw_table
+    # Extraire le numéro de table (supporte "table_65", "65", 65)
+    if isinstance(table_id, int):
+        cur_id = table_id
+    else:
+        nums = re.findall(r'\d+', str(table_id))
+        cur_id = int(nums[0]) if nums else 0
+    cut_idx = len(raw_table)
+    for i, row in enumerate(raw_table):
+        text = "".join(str(c or "") for c in row)
+        # Ne couper que si "Table N." ou "Table N:" avec N > table_id actuelle
+        # (période/colon requis pour éviter les fausses références croisées)
+        m = re.search(r'\bTable\s+(\d+)[.:]', text)
+        if m and int(m.group(1)) > cur_id:
+            cut_idx = i
+            logger.info(f"_truncate_at_next_table: cut at row {i} (Table {m.group(1)})")
+            break
+        if re.search(r'\bpage\s+\d+/\d+\b', text):
+            cut_idx = i
+            logger.info(f"_truncate_at_next_table: cut at row {i} (footer)")
+            break
+        if re.search(r'\bDS\s+\d+\s*-\s*Rev\b', text):
+            cut_idx = i
+            logger.info(f"_truncate_at_next_table: cut at row {i} (DS footer)")
+            break
+    return raw_table[:cut_idx]
+
+
+def _merge_identical_adjacent_columns(
+    headers: list[str],
+    rows: list[list[str]],
+) -> tuple[list[str], list[list[str]]]:
+    """
+    [Fix] Fusionne les colonnes adjacentes dont tous les headers ET toutes
+    les cellules de données sont identiques. Supprime les colonnes en double
+    créées par les en-têtes spanning (ex: 17 colonnes → 11).
+    """
+    if not headers or not rows:
+        return headers, rows
+    cols = len(headers)
+    keep = [True] * cols
+    for c in range(cols - 1, 0, -1):
+        if c < len(headers) and headers[c] == headers[c-1]:
+            same = True
+            for r in range(len(rows)):
+                v1 = rows[r][c] if c < len(rows[r]) else ""
+                v2 = rows[r][c-1] if c-1 < len(rows[r]) else ""
+                if v1 != v2:
+                    same = False
+                    break
+            if same:
+                keep[c] = False
+                logger.info(f"_merge_identical_adjacent_columns: merged col {c} into {c-1}")
+    new_headers = [h for i, h in enumerate(headers) if keep[i]]
+    new_rows = [[cell for i, cell in enumerate(row) if keep[i]] for row in rows]
+    new_cols = len(new_headers)
+    if new_cols < cols:
+        logger.info(f"_merge_identical_adjacent_columns: {cols} → {new_cols} cols")
+    return new_headers, new_rows
+
+
+def _merge_fragmented_columns(
+    headers: list[str],
+    rows: list[list[str]],
+) -> tuple[list[str], list[list[str]], int]:
+    """
+    [Fix] Fusionne les colonnes fragmentées (pdfplumber_text) dans leur voisine
+    de gauche. Détecte les fragments par 4 heuristiques complémentaires :
+    1. Colonne vide/tres creuse (<=40% non-vide)
+    2. Header commence en minuscule = fragment de mot (ex: "ax" dans "M"/"ax")
+    3. 1ere cellule donnee commence en minuscule = continuation de mot
+       Guard : si le header droit est >=3 car. avec 1ère majuscule (ex: "Unit"),
+       c'est une colonne réelle → ne pas fusionner.
+    4. Cellules tres courtes (< 4 car.) — consecutif limite a 4
+       Guard identique à H3 pour protéger les colonnes réelles.
+
+    IMPORTANT : cette fonction est uniquement appelée pour les tables
+    pdfplumber_text (extraction sans bordures). Pour les tables pdfplumber
+    (bordures), les colonnes sont déjà correctement détectées et il ne
+    faut PAS les fusionner — sinon les tables mécaniques (7 colonnes
+    Symbol/mm/inches) sont écrasées en 2 colonnes (H2 traite "millimeters"
+    comme un fragment). Voir le garde-fou à la ligne 1084.
+    Retourne (headers, rows, merged_count).
+    """
+    if not headers or not rows:
+        return headers, rows, 0
+    cols = len(headers)
+    keep = [True] * cols
+    consec_merged = 0
+    for c in range(cols - 1, 0, -1):
+        if not keep[c]:
+            consec_merged += 1
+            continue
+        if consec_merged >= 4:
+            consec_merged = 0
+            continue
+        # Compter les valeurs non-vides dans cette colonne
+        n_non_empty = 0
+        first_non_empty = None
+        max_len = 0
+        for r in rows:
+            if c < len(r) and r[c] and str(r[c]).strip():
+                v = str(r[c]).strip()
+                n_non_empty += 1
+                if first_non_empty is None:
+                    first_non_empty = v
+                max_len = max(max_len, len(v))
+        total = len(rows)
+        ratio = n_non_empty / total if total > 0 else 0
+        # Heuristique 1 : colonne vide/creuse
+        if ratio < 0.4:
+            merge = True
+        # Heuristique 2 : header commence en minuscule = fragment de mot
+        # (ex: header "ax" dans "M"/"ax" → fusionner avec "M" → "Max")
+        elif c < len(headers) and headers[c] and headers[c].strip() and headers[c].strip()[0].islower():
+            merge = True
+        # Heuristique 3 : donnee commence en minuscule = continuation de mot
+        # Ex: 1ère cellule "v" (continuation de "~10 V") → fusionner
+        # Protection : si le header droit est ≥3 car. avec majuscule, c'est
+        # une colonne réelle (ex: "Unit") → NE PAS fusionner. Sans ce garde-fou,
+        # "Unit" serait collé à "Max(1) / 130 °C" → "Max(1) / 130 °CUnit".
+        # Testé sur stm32f048c6 et batch F0/U0 sans régression.
+        elif first_non_empty and first_non_empty[0].islower():
+            if c < len(headers) and headers[c] and headers[c].strip():
+                if len(headers[c].strip()) >= 3 and headers[c].strip()[0].isupper():
+                    merge = False
+                else:
+                    merge = True
+            else:
+                merge = True
+        # Heuristique 4 : cellules tres courtes (< 4 car.)
+        # Ex: données "mA", "V" — trop courtes pour être une colonne réelle
+        # Même garde-fou que H3 : header "Unit" protégé (≥3 car., majuscule)
+        elif max_len < 4:
+            if c < len(headers) and headers[c] and headers[c].strip():
+                if len(headers[c].strip()) >= 3 and headers[c].strip()[0].isupper():
+                    merge = False
+                else:
+                    merge = True
+            else:
+                merge = True
+        else:
+            merge = False
+        if merge:
+            # Fusion des en-tetes : concatenation sans espace (fragments de mot)
+            left_h = headers[c-1] if c-1 < len(headers) else ""
+            right_h = headers[c] if c < len(headers) else ""
+            if right_h and right_h.strip():
+                if left_h and left_h.strip():
+                    headers[c-1] = left_h + right_h
+                else:
+                    headers[c-1] = right_h
+            # Fusion des donnees : concatenation sans espace (fragments de mot)
+            for r in range(len(rows)):
+                if c < len(rows[r]):
+                    left_cell = rows[r][c-1] if c-1 < len(rows[r]) else ""
+                    right_cell = rows[r][c] if c < len(rows[r]) else ""
+                    if right_cell and right_cell.strip():
+                        if left_cell and left_cell.strip() and left_cell != right_cell:  # fix: evite duplication
+                            rows[r][c-1] = left_cell + right_cell
+                        else:
+                            rows[r][c-1] = right_cell
+            keep[c] = False
+            consec_merged += 1
+            logger.info(f"_merge_fragmented_columns: merged col {c} into {c-1} (r={ratio:.2f}, first='{first_non_empty}')")
+        else:
+            consec_merged = 0
+    merged = sum(1 for k in keep if not k)
+    new_headers = [h for i, h in enumerate(headers) if keep[i]]
+    new_rows = [[cell for i, cell in enumerate(row) if keep[i]] for row in rows]
+    new_cols = len(new_headers)
+    if new_cols < cols:
+        logger.info(f"_merge_fragmented_columns: {cols} → {new_cols} cols")
+    return new_headers, new_rows, merged
 
 
 def _filter_narrow_tables(
@@ -1113,26 +1485,48 @@ def _filter_narrow_tables(
     return [t for t, ft in filtered], [ft for t, ft in filtered]
 
 
+def _has_keyword(raw_table: list[list], keyword: str) -> bool:
+    """Vérifie si un mot-clé apparaît dans les cellules d'une table extraite."""
+    if not keyword or not raw_table:
+        return False
+    kw = keyword.lower()
+    return any(
+        kw in str(c).lower()
+        for row in raw_table for c in row if c is not None
+    )
+
+
 def _extract_from_page(
     page: Page,
     ref: TableRef,
     rotated_map: dict,
     pdf_type: int = 1,
+    caption_keyword: str = "",
 ) -> tuple[Optional[list], Optional[Any], str, Optional[tuple]]:
     """
-    Tente d'extraire la grille depuis la page avec pdfplumber.
-    Stratégie : "lines" (bordures réelles) → "text" (fallback interne).
-    pdf_type=2 : applique les réglages Type 2 + filtre les bandeaux.
+    Extrait la grille brute depuis une page via pdfplumber.
 
-    IMPORTANT : ne retourne JAMAIS un résultat garbage de la stratégie lignes
-    si la stratégie texte (tables sans bordures, très fréquentes chez STM32)
-    trouve un meilleur résultat. Les deux stratégies sont comparées par qualité.
+    Stratégie d'extraction (3 essais) :
+      1. "lines" (bordures réelles) → méthode pdfplumber
+         - Filtrage Type 2 : rejet des bandeaux < MIN_TABLE_WIDTH
+         - Sélection via _pick_best_table (proximité sous légende)
+         - Correction Fix 1 (texte rotatif)
+      2. "text" (fallback interne) → méthode pdfplumber_text
+         - Même sélection + filtrage
+         - Utilisé quand les bordures ne sont pas détectées
+      3. Sans finder (PDF sans bordures) → bbox = page entière
+         - Dernier recours pour les tables sans structure visible
+
+    caption_keyword : si fourni, la stratégie lines n'est acceptée que si
+                      ce mot-clé apparaît dans les cellules extraites
+                      (évite de capturer la mauvaise table).
+
     Retourne (raw_table, table_obj, method_name, bbox) ou (None, None, ..., None) si échec.
     """
     settings = PDFPLUMBER_TABLE_SETTINGS_TYPE2 if pdf_type == 2 else PDFPLUMBER_TABLE_SETTINGS
     fallback = PDFPLUMBER_TABLE_SETTINGS_FALLBACK_TYPE2 if pdf_type == 2 else PDFPLUMBER_TABLE_SETTINGS_FALLBACK
 
-    # ── Essai 1 : stratégie lignes ─────────────────────────────────────────────
+    # Essai 1 : stratégie lignes
     tables = page.extract_tables(settings)
     finder = page.debug_tablefinder(settings)
     best1 = best_ft1 = bbox1 = None
@@ -1141,14 +1535,15 @@ def _extract_from_page(
             tables, finder.tables = _filter_narrow_tables(tables, finder.tables)
         best1, best_ft1, bbox1 = _pick_best_table(page, tables, finder.tables, ref.caption)
         if best1 is not None:
+            # Fix 1 : corriger le texte rotatif dans la table choisie
             best1 = _apply_rotated_fix(page, best1, rotated_map, finder.tables)
 
     q1 = _table_quality(best1) if best1 else -1.0
     if q1 >= 2.0:
-        # La stratégie lignes a trouvé une table réaliste → l'utiliser
-        return best1, best_ft1, "pdfplumber", bbox1
+        if not caption_keyword or _has_keyword(best1, caption_keyword):
+            return best1, best_ft1, "pdfplumber", bbox1
 
-    # ── Essai 2 : stratégie texte (gère les tables sans bordures visibles) ────
+    # Essai 2 : stratégie texte
     tables_text = page.extract_tables(fallback)
     finder_text = page.debug_tablefinder(fallback)
     best2 = best_ft2 = bbox2 = None
@@ -1159,21 +1554,27 @@ def _extract_from_page(
         if best2 is not None:
             best2 = _apply_rotated_fix(page, best2, rotated_map, finder_text.tables)
 
+            # Le filtrage des lignes au-dessus de la légende est fait
+            # dans extract_table_grid (après _extract_from_page) pour que
+            # la continuation multi-pages fonctionne correctement.
+
     q2 = _table_quality(best2) if best2 else -1.0
 
-    # Retourner le meilleur des deux (tie-break : préférer lignes)
-    if best2 is not None and q2 >= q1:
+    def _kw_ok(raw):
+        return not caption_keyword or _has_keyword(raw, caption_keyword)
+
+    if best2 is not None and q2 >= q1 and _kw_ok(best2):
         return best2, best_ft2, "pdfplumber_text", bbox2
-    if best1 is not None:
+    if best1 is not None and _kw_ok(best1):
         return best1, best_ft1, "pdfplumber", bbox1
-    if best2 is not None:
+    if best2 is not None and _kw_ok(best2):
         return best2, best_ft2, "pdfplumber_text", bbox2
 
-    # ── Essai 3 : tables sans finder (PDF sans bordures nettes) ──────────────
+    # Essai 3 : tables sans finder (PDF sans bordures nettes → bbox=page entière)
     if tables:
         ft_dummy = [type("T", (), {"bbox": (0, 0, page.width, page.height)})()]
         best, best_ft, _ = _pick_best_table(page, tables, ft_dummy, ref.caption)
-        if best is not None:
+        if best is not None and _kw_ok(best):
             return best, best_ft, "pdfplumber", None
 
     return None, None, "pdfplumber", None
@@ -1223,3 +1624,83 @@ def _apply_rotated_fix(
         fixed_table.append(fixed_row)
 
     return fixed_table
+
+
+def _remove_trailing_footnotes(rows: list[list]) -> tuple[list[list], int]:
+    """
+    Supprime les lignes de footnotes en fin de tableau.
+    Heuristique : lignes trailing consécutives dont la 1ère cellule = N.
+    (ex: "1.", "2.", "6.") — motif typique des notes de bas de datasheet.
+    Ne supprime qu'un bloc contigu à la fin, minimum 2 lignes pour éviter
+    de toucher aux lignes de données légitimes (ex: "1." isolé = donnée).
+    """
+    if not rows:
+        return rows, 0
+    remove = 0
+    for i in range(len(rows) - 1, -1, -1):
+        first = str(rows[i][0]).strip() if rows[i] else ""
+        if re.match(r'^\d+\.', first):  # fix: sans $ pour matcher "1.The pull-up" et "6.3.16"
+            remove += 1
+        else:
+            break
+    if remove < 2:
+        return rows, 0
+    cleaned = rows[:-remove]
+    logger.info(f"_remove_trailing_footnotes: removed {remove} trailing footnote rows")
+    return cleaned, remove
+
+
+def _merge_empty_header_rightward(
+    headers: list[str],
+    rows: list[list[str]],
+) -> tuple[list[str], list[list[str]], int]:
+    """
+    Fusionne les colonnes à header vide vers la colonne réelle de droite.
+    Les colonnes à header vide entre deux colonnes réelles contiennent
+    des fragments de texte (ex: "NRST i" dans l'espace Symbol↔Parameter).
+    On les fusionne vers la droite pour reconstituer le texte complet.
+    Processed right-to-left pour préserver les indices.
+    """
+    if not headers or not rows:
+        return headers, rows, 0
+    cols = len(headers)
+    keep = [True] * cols
+    merged_count = 0
+
+    for c in range(cols - 1, -1, -1):
+        if not keep[c]:
+            continue
+        h_c = headers[c].strip() if c < len(headers) else ""
+        if h_c:
+            continue
+        # Trouver le voisin réel à droite
+        right_real = None
+        for t in range(c + 1, cols):
+            if keep[t] and t < len(headers) and headers[t] and headers[t].strip():
+                right_real = t
+                break
+        if right_real is None:
+            continue
+        # Fusionner : prepend les données de c dans right_real
+        for ri in range(len(rows)):
+            if c < len(rows[ri]) and rows[ri][c] and str(rows[ri][c]).strip():
+                val = str(rows[ri][c]).strip()
+                if right_real < len(rows[ri]):
+                    target = rows[ri][right_real] or ""
+                    if val != target:  # fix: evite duplication (ex: "Symbol"+"Symbol")
+                        rows[ri][right_real] = val + target if target else val
+        keep[c] = False
+        merged_count += 1
+        logger.info(
+            f"_merge_empty_header_rightward: col {c} (h='') → col {right_real} "
+            f"(h='{headers[right_real]}') [{merged_count}]"
+        )
+
+    new_headers = [h for i, h in enumerate(headers) if keep[i]]
+    new_rows = [[cell for i, cell in enumerate(row) if keep[i]] for row in rows]
+    if merged_count > 0:
+        logger.info(
+            f"_merge_empty_header_rightward: {cols} → {len(new_headers)} cols "
+            f"({merged_count} merged)"
+        )
+    return new_headers, new_rows, merged_count

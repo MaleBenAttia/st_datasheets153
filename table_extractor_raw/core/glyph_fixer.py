@@ -35,13 +35,23 @@ GLYPH_MAP: dict[str, str] = {
     "\u201d":  '"',
     "\u2018":  "'",
     "\u2019":  "'",
-    # Puces / flèches
     "\uf0d8":  "↑",
     "\uf0da":  "↓",
     "\uf0e0":  "→",
     # Exposants numériques inline (ex: "10-6" encodé en glyphes)
     # Traités séparément par _fix_superscripts()
 }
+
+# ── Patterns de détection CID / pieds de page ──────────────────────────────────
+
+# Détecte les fragments de texte CID (Character ID) — caractères de la Private
+# Use Area (U+E000–U+F8FF) non mappés par GLYPH_MAP. Ces fragments apparaissent
+# quand pdfplumber extrait du texte depuis des zones d'image ou des cadres
+# décoratifs (bordures, logos, etc.).
+CID_PATTERN = re.compile(r"[\ue000-\uf8ff]")
+
+# Détecte les pieds de page (numéros de page seuls sur une ligne)
+FOOTER_PATTERN = re.compile(r"^\s*\d+\s*$")
 
 # Séquences regex à corriger APRÈS la table de glyphes
 _REGEX_FIXES: list[tuple[str, str]] = [
