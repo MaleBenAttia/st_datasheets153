@@ -177,6 +177,30 @@ def _table_quality(table: list) -> float:
     return float(n_real) if n_real > 0 else -1.0
 
 
+def _is_image_table(raw_table: list) -> bool:
+    """Détecte si raw_table est un diagramme MCU (dimensions, broches)
+    et non un vrai tableau de données. Se base sur le ratio de cellules
+    purement numériques et l'absence de mots réels."""
+    if not raw_table or len(raw_table) < 2:
+        return False
+    numeric = 0
+    total = 0
+    has_words = False
+    for row in raw_table:
+        for cell in row:
+            s = str(cell or "").strip()
+            if not s:
+                continue
+            total += 1
+            if re.match(r'^-?[\d.,\s°\'"µ]+$', s):
+                numeric += 1
+            elif len(s) >= 3:
+                has_words = True
+    if total > 0 and numeric / total > 0.8 and not has_words:
+        return True
+    return False
+
+
 def _pick_best_table(
     page: Page,
     tables: list,
@@ -200,25 +224,32 @@ def _pick_best_table(
     caption_y = _find_caption_y(page, caption)
 
     if caption_y is not None and len(candidates) > 1:
-        # Garder seulement les tables sous la légende
         below = [(t, ft) for t, ft in candidates
-                 if ft.bbox[1] > caption_y - 20]  # -20 px de tolérance
+                 if ft.bbox[1] > caption_y - 20]
         if below:
-            # La plus proche (bord haut minimal)
-            best_t, best_ft = min(below, key=lambda x: x[1].bbox[1])
-            return best_t, best_ft, best_ft.bbox
-        # Si aucune n'est sous la légende, prendre la première quand même
-        best_t, best_ft = candidates[0]
+            sorted_candidates = sorted(below, key=lambda x: x[1].bbox[1])
+        else:
+            sorted_candidates = sorted(candidates, key=lambda x: x[1].bbox[1])
+    else:
+        sorted_candidates = sorted(candidates, key=lambda x: x[1].bbox[1])
+        if _table_quality(sorted_candidates[0][0]) < 0.5:
+            best_alt = max(candidates, key=lambda x: _table_quality(x[0]))
+            if _table_quality(best_alt[0]) > _table_quality(sorted_candidates[0][0]):
+                sorted_candidates = [best_alt] + [c for c in sorted_candidates if c != best_alt]
+
+    # Filtrer les fausses tables images (diagrammes MCU)
+    rejected_images = 0
+    for best_t, best_ft in sorted_candidates:
+        if _is_image_table(best_t):
+            rejected_images += 1
+            continue
         return best_t, best_ft, best_ft.bbox
 
-    # Fallback : la plus haute sur la page (plus fiable que la plus grande)
-    best_t, best_ft = min(candidates, key=lambda x: x[1].bbox[1])
-    
-    if _table_quality(best_t) < 0.5:
-        best_alt = max(candidates, key=lambda x: _table_quality(x[0]))
-        if _table_quality(best_alt[0]) > _table_quality(best_t):
-            best_t, best_ft = best_alt
-            
+    # Toutes les tables sont des images → log + retourner la meilleure quand même
+    if rejected_images:
+        logger.info(f"_pick_best_table: all {rejected_images}/{len(sorted_candidates)} "
+                    f"candidates rejected as image tables (returning first anyway)")
+    best_t, best_ft = sorted_candidates[0]
     return best_t, best_ft, best_ft.bbox
 
 
@@ -983,9 +1014,9 @@ def extract_table_grid(
                 pg_idx = ref.page  # page suivante (déjà +1 ci-dessous)
                 if pg_idx < len(pdf.pages):
                     p = pdf.pages[pg_idx]
-                    # Crop à 70% : le body du tableau commence en haut de la page
-                    # suivante. Le bas de page (footer, autre contenu) est exclu
-                    # pour éviter les colonnes parasites (14+ au lieu de 7).
+                    # Le body du tableau commence en haut de la page suivante.
+                    # Le bas de page (footer, autre contenu) est exclu pour
+                    # éviter les colonnes parasites (14+ au lieu de 7).
                     crop = (p.bbox[0], p.bbox[1], p.bbox[2], p.height * 0.7)
                     p_cropped = p.within_bbox(crop)
                     r = _get_rotated_text_map(p_cropped)
@@ -1003,14 +1034,11 @@ def extract_table_grid(
                                     break
                         nq_boosted = nq + keyword_bonus
                         if nq_boosted >= 10.0:
-                            # Vérification colonnes : si la page suivante a
-                            # significativement plus de colonnes que l'originale,
-                            # c'est probablement une table différente (TOC, etc.).
                             nxt_cols = max(len(r) for r in nxt_raw) if nxt_raw else 0
                             if orig_col_count > 0 and nxt_cols > orig_col_count * 2 + 5:
                                 logger.info(f"{ref.table_id}: body_on_next_page rejected "
                                             f"(cols {orig_col_count}→{nxt_cols})")
-                                nq_boosted = -1  # force rejet
+                                nq_boosted = -1
                             else:
                                 raw_table, table_obj, method, bbox = nxt_raw, nxt_obj, nxt_method, nxt_bbox
                                 page = pdf.pages[pg_idx]
@@ -1025,17 +1053,43 @@ def extract_table_grid(
             heuristics["cols_extracted"] = max(len(r) for r in raw_table)
 
         # ── [Fix] Suppression des lignes de titre débordant dans la grille ──
-        # Cas rare : le titre "Table N. ... (continued)" sur la page de
-        # continuation est capturé comme 1ère ligne par pdfplumber, créant
-        # N colonnes fragmentées (ex: 14 au lieu de 7).
-        if raw_table and raw_table[0]:
-            first_cell = str(raw_table[0][0]).strip()
-            m = re.match(r"(?:Table|Tableau)\s+(\d+)[\.:]", first_cell, re.IGNORECASE)
-            if m:
-                cur_id = int(re.findall(r'\d+', str(ref.table_id))[0])
-                if int(m.group(1)) == cur_id:
-                    raw_table = raw_table[1:]
-                    logger.info(f"{ref.table_id}: removed caption bleed row ({len(raw_table)} rows remaining)")
+        # Le titre "Table N. ... (continued)" peut apparaître n'importe où
+        # dans raw_table (pas seulement ligne 0) quand body_on_next_page crop
+        # 70 % ou que pdfplumber_text éclate la page. On scanne TOUTES les
+        # lignes et on supprime toute ligne dont UNE cellule matche
+        # "Table N." avec le bon numéro de table.
+        if raw_table:
+            cur_id = int(re.findall(r'\d+', str(ref.table_id))[0])
+            before = len(raw_table)
+            cleaned = []
+            for ri, row in enumerate(raw_table):
+                is_bleed = False
+                # Vérification cellule par cellule
+                for ci, cell in enumerate(row):
+                    cell_s = str(cell).strip()
+                    m = re.match(r"(?:Table|Tableau)\s+(\d+)[\.:]", cell_s, re.IGNORECASE)
+                    if m and int(m.group(1)) == cur_id:
+                        is_bleed = True
+                        break
+                    # Cas fragmenté : "Table 11" / "8." / "LQFP176..." sur 3 cellules
+                    if re.match(r"(?:Table|Tableau)\s+\d+\s*$", cell_s, re.IGNORECASE):
+                        combined = cell_s
+                        for k in range(1, 4):
+                            if ci + k >= len(row):
+                                break
+                            combined += str(row[ci + k]).strip()
+                            m2 = re.match(r"(?:Table|Tableau)\s+(\d+)[\.:]", combined, re.IGNORECASE)
+                            if m2:
+                                if int(m2.group(1)) == cur_id:
+                                    is_bleed = True
+                                break
+                        if is_bleed:
+                            break
+                if not is_bleed:
+                    cleaned.append(row)
+            if len(cleaned) < before:
+                raw_table = cleaned
+                logger.info(f"{ref.table_id}: removed {before - len(cleaned)} caption bleed rows ({len(raw_table)} rows remaining)")
 
         # ── [Fix] Troncature des tables suivantes (bleed) ────────────────────
         # La stratégie texte capture tout le texte de la page, y compris les
@@ -1216,11 +1270,11 @@ def extract_table_grid(
         headers, rows_fixed = _merge_identical_adjacent_columns(headers, rows_fixed)
 
         # ── [Fix] Fusion des colonnes fragmentées (pdfplumber_text) ─────────
-        # Uniquement pour pdfplumber_text : les colonnes pdfplumber (bordures)
-        # sont déjà correctement détectées. Appliqué à toutes les tables,
-        # H2 (header minuscule) fusionnait les colonnes réelles
-        # (ex: "millimeters / Min" → collé à la gauche → 7 cols → 2 cols).
-        if result["extraction_method"] == "pdfplumber_text":
+        # Réservé au Type 2 (Antenna House) : les PDFs Type 1 (Acrobat) ont
+        # un placement de mots suffisamment fiable pour que pdfplumber_text
+        # produise des colonnes déjà correctes. La fusion détruit les données
+        # Type 1 (ex: Min/Typ/Max des tables mécaniques → "MinTypMax").
+        if result["extraction_method"] == "pdfplumber_text" and pdf_type == 2:
             cols_before = len(headers)
             headers, rows_fixed, merged = _merge_fragmented_columns(headers, rows_fixed)
             if merged > 0:
@@ -1229,10 +1283,11 @@ def extract_table_grid(
                 heuristics["columns_final"] = len(headers)
 
         # ── [Fix] Fusion header vide → droite (pdfplumber_text) ───────────
-        # Les colonnes à header vide entre deux colonnes réelles contiennent
-        # des fragments de texte qui appartiennent à la colonne de droite.
-        # (ex: "NRST i" + "nput lo" → partie de "Parameter").
-        if result["extraction_method"] == "pdfplumber_text":
+        # Réservé au Type 2 (Antenna House) : les PDFs Type 1 (Acrobat) ont
+        # des colonnes pdfplumber_text déjà fiables. Le merge des headers
+        # vides détruit les colonnes réelles (ex: "millimeters" et "inches"
+        # dans 2 colonnes distinctes fusionnées en une seule).
+        if result["extraction_method"] == "pdfplumber_text" and pdf_type == 2:
             cols_before_h = len(headers)
             headers, rows_fixed, merged_h = _merge_empty_header_rightward(headers, rows_fixed)
             if merged_h > 0:
@@ -1250,8 +1305,31 @@ def extract_table_grid(
             if fn_removed > 0:
                 heuristics["footnote_rows_removed"] = fn_removed
 
+        # ── [Fix] Validateur post-merge anti-destruction ────────────────────
+        # Si après tous les merges, un header contient "Table" + un chiffre,
+        # c'est que le merge a collé la légende dans une cellule réelle.
+        # evaluate_table voit un ratio vide=0.0 et marque "high" → faux positif.
+        # On force low + warning pour signaler la corruption.
+        corrupted = False
+        if result["extraction_method"] == "pdfplumber_text":
+            for h in headers:
+                if re.search(r"Table\s+\d+", str(h), re.IGNORECASE):
+                    corrupted = True
+                    break
+            if not corrupted:
+                for row in rows_fixed[:5]:
+                    for c in row:
+                        if re.search(r"Table\s+\d+", str(c), re.IGNORECASE):
+                            corrupted = True
+                            break
+                    if corrupted:
+                        break
+
         # ── Évaluation qualité ─────────────────────────────────────────────────
         confidence, empty_ratio, _, warnings_eval = evaluate_table(headers, rows_fixed)
+        if corrupted:
+            warnings_eval.append("post_merge_corrupted")
+            confidence = "low"
         result["warnings"].extend(warnings_eval)
 
         # ── Marquage des tables avec cellules vides ────────────────────────────
@@ -1593,8 +1671,9 @@ def _extract_from_page(
         if pdf_type == 2:
             tables, finder.tables = _filter_narrow_tables(tables, finder.tables)
         best1, best_ft1, bbox1 = _pick_best_table(page, tables, finder.tables, ref.caption)
+        if best1 is not None and _is_image_table(best1):
+            best1 = best_ft1 = bbox1 = None
         if best1 is not None:
-            # Fix 1 : corriger le texte rotatif dans la table choisie
             best1 = _apply_rotated_fix(page, best1, rotated_map, finder.tables)
 
     q1 = _table_quality(best1) if best1 else -1.0
@@ -1610,6 +1689,8 @@ def _extract_from_page(
         if pdf_type == 2:
             tables_text, finder_text.tables = _filter_narrow_tables(tables_text, finder_text.tables)
         best2, best_ft2, bbox2 = _pick_best_table(page, tables_text, finder_text.tables, ref.caption)
+        if best2 is not None and _is_image_table(best2):
+            best2 = best_ft2 = bbox2 = None
         if best2 is not None:
             best2 = _apply_rotated_fix(page, best2, rotated_map, finder_text.tables)
 
@@ -1633,7 +1714,9 @@ def _extract_from_page(
     if tables:
         ft_dummy = [type("T", (), {"bbox": (0, 0, page.width, page.height)})()]
         best, best_ft, _ = _pick_best_table(page, tables, ft_dummy, ref.caption)
-        if best is not None and _kw_ok(best):
+        if best is not None and (_is_image_table(best) or not _kw_ok(best)):
+            best = None
+        if best is not None:
             return best, best_ft, "pdfplumber", None
 
     return None, None, "pdfplumber", None

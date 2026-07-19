@@ -122,6 +122,7 @@ class TableRef:
     table_id: str          # "table_12"
     caption:  str          # légende complète
     page:     int          # page de début (1-indexé)
+    dest_y: Optional[float] = None  # Y en pdfplumber coords (haut de la table sur page cible), depuis H2.0
 
 
 def detect_tables(pdf_path: str, pdf_type: int = 1) -> list[TableRef]:
@@ -246,7 +247,7 @@ def _from_toc_links(pdf_path: str, pdf: pdfplumber.PDF, pdf_type: int = 1) -> Op
             idnum_to_page[ref.idnum] = i
     
     pattern = re.compile(r'(?:Table|Tableau)\s+(\d+)[.:]\s+(.+)')
-    new_by_id: dict[str, tuple[str, int]] = {}
+    new_by_id: dict[str, tuple[str, int, Optional[float]]] = {}
     
     for lot_idx in lot_pages:
         page = pdf.pages[lot_idx]
@@ -272,6 +273,12 @@ def _from_toc_links(pdf_path: str, pdf: pdfplumber.PDF, pdf_type: int = 1) -> Op
             if page_idx is None:
                 continue
             
+            # Extraire le Y de destination (top de la table sur la page cible)
+            dest_y = None
+            if len(dest) >= 4 and isinstance(dest[3], (int, float)):
+                target_h = pdf.pages[page_idx].height
+                dest_y = target_h - dest[3]  # PDF → pdfplumber
+            
             y0, y1 = a['top'], a['bottom']
             matching = [l for l in lines if l['top'] >= y0 - 5 and l['bottom'] <= y1 + 5]
             text = ' '.join(l['text'] for l in matching)
@@ -279,18 +286,19 @@ def _from_toc_links(pdf_path: str, pdf: pdfplumber.PDF, pdf_type: int = 1) -> Op
             if m:
                 tid = 'table_%s' % m.group(1)
                 caption = _clean_caption(m.group(2))
-                new_by_id[tid] = (caption, page_idx + 1)
+                new_by_id[tid] = (caption, page_idx + 1, dest_y)
     
     if not new_by_id:
         logger.debug("H2.0: 0 tables from annotations, will fallback")
         return None
     
     refs = []
-    for tid, (caption, page_num) in sorted(new_by_id.items(), key=lambda x: x[1][1]):
+    for tid, (caption, page_num, dest_y) in sorted(new_by_id.items(), key=lambda x: x[1][1]):
         refs.append(TableRef(
             table_id=tid,
             caption=f"Table {tid.split('_')[1]}. {caption}",
             page=page_num,
+            dest_y=dest_y,
         ))
     
     return refs
