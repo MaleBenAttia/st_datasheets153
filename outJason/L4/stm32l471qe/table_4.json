@@ -1,0 +1,210 @@
+{
+  "table_id": "table_4",
+  "caption": "Table 4. STM32L471xx modes overview",
+  "pdf_name": "stm32l471qe",
+  "family": "L4",
+  "page": 24,
+  "merged_pages": [
+    24,
+    25,
+    26
+  ],
+  "headers": [
+    "Mode",
+    "Regulator (1)",
+    "CPU",
+    "Flash",
+    "SRAM",
+    "Clocks",
+    "DMA & Peripherals(2)",
+    "Wakeup source",
+    "Consumption(3)",
+    "Wakeup time"
+  ],
+  "rows": [
+    [
+      "Run",
+      "Range 1",
+      "Yes",
+      "ON(4)",
+      "ON",
+      "Any",
+      "All",
+      "N/A",
+      "112 µA/MHz",
+      "N/A"
+    ],
+    [
+      "Run",
+      "Range2",
+      "Yes",
+      "ON(4)",
+      "ON",
+      "Any",
+      "All except RNG",
+      "N/A",
+      "100 µA/MHz",
+      "N/A"
+    ],
+    [
+      "LPRun",
+      "LPR",
+      "Yes",
+      "ON(4)",
+      "ON",
+      "Any except PLL",
+      "All except RNG",
+      "N/A",
+      "136 µA/MHz",
+      "to Range 1: 4 µs to Range 2: 64 µs"
+    ],
+    [
+      "Sleep",
+      "Range 1",
+      "No",
+      "ON(4)",
+      "ON(5)",
+      "Any",
+      "All",
+      "Any interrupt or event",
+      "37 µA/MHz",
+      "6 cycles"
+    ],
+    [
+      "Sleep",
+      "Range 2",
+      "No",
+      "ON(4)",
+      "ON(5)",
+      "Any",
+      "All except RNG",
+      "Any interrupt or event",
+      "35 µA/MHz",
+      "6 cycles"
+    ],
+    [
+      "LPSleep",
+      "LPR",
+      "No",
+      "ON(4)",
+      "ON(5)",
+      "Any except PLL",
+      "All except RNG",
+      "Any interrupt or event",
+      "40 µA/MHz",
+      "6 cycles"
+    ],
+    [
+      "Stop 0",
+      "Range 1",
+      "No",
+      "Off",
+      "ON",
+      "LSE LSI",
+      "BOR, PVD, PVM RTC, IWDG COMPx (x=1,2) DAC1 OPAMPx (x=1,2) USARTx (x=1...5)(6) LPUART1(6) I2Cx (x=1...3)(7) LPTIMx (x=1,2) *** All other peripherals are frozen.",
+      "Reset pin, all I/Os BOR, PVD, PVM RTC, IWDG COMPx (x=1..2) USARTx (x=1...5)(6) LPUART1(6) I2Cx (x=1...3)(7) LPTIMx (x=1,2) SWPMI1(8)",
+      "108 µA",
+      "0.7 µs in SRAM 4.5 µs in Flash"
+    ],
+    [
+      "Stop 0",
+      "Range 2",
+      "No",
+      "Off",
+      "ON",
+      "LSE LSI",
+      "BOR, PVD, PVM RTC, IWDG COMPx (x=1,2) DAC1 OPAMPx (x=1,2) USARTx (x=1...5)(6) LPUART1(6) I2Cx (x=1...3)(7) LPTIMx (x=1,2) *** All other peripherals are frozen.",
+      "Reset pin, all I/Os BOR, PVD, PVM RTC, IWDG COMPx (x=1..2) USARTx (x=1...5)(6) LPUART1(6) I2Cx (x=1...3)(7) LPTIMx (x=1,2) SWPMI1(8)",
+      "108 µA",
+      "0.7 µs in SRAM 4.5 µs in Flash"
+    ],
+    [
+      "Stop 1",
+      "LPR",
+      "No",
+      "Off",
+      "ON",
+      "LSE LSI",
+      "BOR, PVD, PVM RTC, IWDG COMPx (x=1,2) DAC1 OPAMPx (x=1,2) USARTx (x=1...5)(6) LPUART1(6) I2Cx (x=1...3)(7) LPTIMx (x=1,2) *** All other peripherals are frozen.",
+      "Reset pin, all I/Os BOR, PVD, PVM RTC, IWDG COMPx (x=1..2) USARTx (x=1...5)(6) LPUART1(6) I2Cx (x=1...3)(7) LPTIMx (x=1,2) SWPMI1(8)",
+      "6.6 µA w/o RTC 6.9 µA w RTC",
+      "4 µs in SRAM 6 µs in Flash"
+    ],
+    [
+      "Stop 2",
+      "LPR",
+      "No",
+      "Off",
+      "ON",
+      "LSE LSI",
+      "BOR, PVD, PVM RTC, IWDG COMPx (x=1..2) I2C3(7) LPUART1(6) LPTIM1 *** All other peripherals are frozen.",
+      "Reset pin, all I/Os BOR, PVD, PVM RTC, IWDG COMPx (x=1..2) I2C3(7) LPUART1(6) LPTIM1",
+      "1.1 µA w/o RTC 1.4 µA w/RTC",
+      "5 µs in SRAM 7 µs in Flash"
+    ],
+    [
+      "Standby",
+      "LPR",
+      "Powered Off",
+      "Off",
+      "SRAM2 ON",
+      "LSE LSI",
+      "BOR, RTC, IWDG *** All other peripherals are powered off. *** I/O configuration can be floating, pull-up or pull-down",
+      "Reset pin 5 I/Os (WKUPx)(9) BOR, RTC, IWDG",
+      "0.35 µA w/o RTC 0.65 µA w/ RTC",
+      "14 µs"
+    ],
+    [
+      "Standby",
+      "OFF",
+      "Powered Off",
+      "Off",
+      "Powered Off",
+      "LSE LSI",
+      "BOR, RTC, IWDG *** All other peripherals are powered off. *** I/O configuration can be floating, pull-up or pull-down",
+      "Reset pin 5 I/Os (WKUPx)(9) BOR, RTC, IWDG",
+      "0.12 µA w/o RTC 0.42 µA w/ RTC",
+      "14 µs"
+    ],
+    [
+      "Shutdown",
+      "OFF",
+      "Powered Off",
+      "Off",
+      "Powered Off",
+      "LSE",
+      "RTC *** All other peripherals are powered off. *** I/O configuration can be floating, pull-up or pull- down(10)",
+      "Reset pin 5 I/Os (WKUPx)(9) RTC",
+      "0.03 µA w/o RTC 0.33 µA w/ RTC",
+      "256 µs"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 10,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 10
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:3",
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32l471qe",
+    "table_id": "table_4",
+    "is_continued": true,
+    "pages": [
+      24,
+      25,
+      26
+    ],
+    "rows_count": 13,
+    "cols_count": 10,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

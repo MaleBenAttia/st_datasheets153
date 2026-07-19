@@ -1,0 +1,122 @@
+{
+  "table_id": "table_82",
+  "caption": "Table 82. Document revision history",
+  "pdf_name": "stm32l151qd",
+  "family": "L1",
+  "page": 149,
+  "merged_pages": [
+    149,
+    150,
+    151,
+    152,
+    153,
+    154
+  ],
+  "headers": [
+    "Date",
+    "Revision",
+    "Changes"
+  ],
+  "rows": [
+    [
+      "03-Oct-2011",
+      "1",
+      "Initial release."
+    ],
+    [
+      "03-Feb-2012",
+      "2",
+      "Status of the document changed (datasheet instead of preliminary data). Updated low power features on page 1. Removed references to devices with 256 KB of Flash memory. GPIOF replaced with GIOPH. Added SDIO in Table 4: Ultra-low-power STM32L15xxD device features and peripheral counts on page 12 and in Table 19: ction input/output on page 86 (FSMC/SDIO instead of FSMC). Table 4: Ultra-low-power STM32L15xxD device features and peripheral counts: replaced STM32L15xWx with STM32L15xQx. Figure 1: Ultra-low-power STM32L162xC block diagram: updated legend. Modified Section 3.4: Clock management on page 20. Table 4: STM32L15xQD STM32L162QD UFBGA132 ballout: replaced STM32L15xWC/D with STM32L15xQD. Figure 3, Figure 3, Figure 4: updated titles. Table 14: STM32L15xxD pin definitions: updated title, updated pins PF0, PF1, PH2, PF12, PF13, PF14, PF15, PG0, PG1, PG12, PG15, PD0, and PD1. Table 19: ction input/output: Modified ction for PA13 and PA14; removed EVENT OUT for PH2. Figure 5: Memory map: removed the text \"APB memory space\". Modified Figure 8: Power supply scheme on page 46. Modified Table 2: Functionalities depending on the operating power supply range on page 15. Table 18: Current consumption in Run mode, code with data processing running from RAM: added footnote 3. Table 19: Current consumption in Sleep mode: updated condition for f ; added footnote 3. HSE Table 23: Typical and maximum current consumptions in Standby mode: modified max values. Table 64: USB DC electrical characteristics: removed two footnotes. Modified Table 38: Flash memory and data EEPROM characteristics on page 83. Table 73: Thermal characteristics: updated \"TBDs\" with values. Modified tables in Section 6.3.4: Supply current characteristics on page 54."
+    ],
+    [
+      "18-Apr-2012",
+      "3",
+      "Added WLCSP64 package. Section 3: Functional overview: changed '128 kHz' to '131 kHz' in section \"Low power run mode\". Section 3.17.1: General-purpose timers (TIM2, TIM3, TIM4, TIM5, TIM9, TIM10 and TIM11): changed 'six' to 'seven' synchronizable general-purpose timers. Table 14: STM32L15xxD pin definitions on page 52: updated name of reference manual in footnote 5. I2C updated: footnote 3. from Table 58 Note about I2C clock updated: footnote 2. from Table 58 modified. Note [non-robust] updated: footnote 2. from Table 68 modified. GPIOs high current capability updated: Section 3.6: GPIOs (general- purpose inputs/outputs) 'except for analog inputs' was removed."
+    ],
+    [
+      "15-Jun-2012",
+      "4",
+      "Changed maximum number of touch sensing channels to 34, and updated Table 4: Ultra-low-power STM32L15xxD device features and peripheral counts. Updated Section 3.10: ADC (analog-to-digital converter) to add Section 3.10.1: Temperature sensor and Section 3.10.2: Internal voltage reference (VREFINT). Removed caution note below Figure 8: Power supply scheme. Added note below Table 4: STM32L15xQD STM32L162QD UFBGA132 ballout. Modified Table 8: STM32L15xRDSTM32L162RD WLCSP64 ballout to match top view. Changed FSMC_LBAR into FSMC_NADV, and I2C1_SMBAI into I2C1_SMBA in Table 14: STM32L15xxD pin definitions. Modified PB10/11/12 for AFIO4 ction, and replaced LBAR by NADV for AFIO12 in Table 19: ction input/output. Updated Table 22: Typical and maximum current consumptions in Stop mode and added Note 6. Updated Table 23: Typical and maximum current consumptions in Standby mode. Updated t in Table : . WUSTOP Updated Table 27: Peripheral current consumption. Updated Table 60: SPI characteristics, added Note 1 and Note 3, and applied Note 2 to t , t , t , t , t , t , t , r(SCK) f(SCK) w(SCKH) w(SCKL) su(MI) su(SI) h(MI) and t . h(SI) Updated I maximum value in Table 38: Flash memory and data DD EEPROM characteristics."
+    ],
+    [
+      "25-Oct-2012",
+      "5",
+      "Updated Features Updated Figure 1: Ultra-low-power STM32L162xC block diagram Added Table 4: Functionalities depending on the working mode (from Run/active down to standby), and Table 3: ange depending on dynamic voltage scaling Updated Figure 3: STM32L162VC LQFP100 pinout Updated Table 14: STM32L15xxD pin definitions Added Note 2 in Table 15: Embedded reset and power control block characteristics Replaced TBD values in Table 30: Low-speed external user clock characteristics, Table 38: Flash memory and data EEPROM characteristics and Table 55: I/O AC characteristics Added Table 61: I2S characteristics, Figure 29: I2S slave timing diagram (Philips protocol)(1) and Figure 30: I2S master timing diagram (Philips protocol)(1) Added Table 62: SDIO characteristics Added Figure 31: SDIO timings Updated Section 6.3.9: FSMC characteristics Updated Table 72: Temperature sensor characteristics Added Figure 40: Thermal resistance"
+    ],
+    [
+      "01-Feb-2013",
+      "6",
+      "Removed AHB1/AHB2 and corrected typo on APB1/APB2 in Figure 1: Ultra-low-power STM32L162xC block diagram Updated \"OP amp\" line in Table 4: Functionalities depending on the working mode (from Run/active down to standby) Added IWDG and WWDG rows in Table 4: Functionalities depending on the working mode (from Run/active down to standby) Added OneNAND support in Section 3.8: FSMC (flexible static memory controller) The comment \"HSE = 16 MHz(2) (PLL ON for fHCLK above 16 MHz)\" replaced by \"fHSE = fHCLK up to 16 MHz included, fHSE = fHCLK/2 above 16 MHz (PLL ON)(2)\" in table Table 19: Current consumption in Sleep mode Updated Stop mode current to 1.5 µA in Ultra low power platform Replaced BGA132 by UFBGA132 in Table 4: Ultra-low-power STM32L15xxD device features and peripheral counts Replaced BGA132 by UFBGA132 in Figure 4: STM32L15xQD STM32L162QD UFBGA132 ballout Updated entire Section 7: Package characteristics"
+    ],
+    [
+      "07-Apr-2014",
+      "7",
+      "Updated current consumption in Section : Features. Updated Section 2.2: Ultra-low-power device continuum. Updated Table 3: Functionalities depending on the operating power supply range.. Added V = 1.71 to 1.8 V operating power supply range in Table 5: DD Functionalities depending on the working mode (from Run/active down to standby). Updated Section 3.10: LCD (liquid crystal display) to remove V rail LCD decoupling. Updated Section 3.16: Touch sensing. Updated Figure 9: Pin loading conditions. Updated Figure 10: Pin input voltage. Updated Figure 11: Power supply scheme. Updated Table 10: Voltage characteristics (added row). Updated Table 11: Current characteristics. Updated Table 13: General operating conditions. Removed figures \"Power supply and reference decoupling (V not connected to REF+ V ) and \"Power supply and reference decoupling (V connected DDA REF+ to V ). DDA Updated Table 15: Embedded internal reference voltage calibration values and moved inside Section 6.3.3: Embedded internal reference voltage. Updated Section 6.3.4: Supply current characteristics. Updated Table 17: Current consumption in Run mode, code with data processing running from Flash, Table 18: Current consumption in Run mode, code with data processing running from RAM, Table 19: Current consumption in Sleep mode, Table 20: Current consumption in Low- power run mode, Table 21: Current consumption in Low-power sleep mode, Table 22: Typical and maximum current consumptions in Stop mode, and Table 23: Typical and maximum current consumptions in Standby mode. Added Section 6.3.5: Wakeup time from low-power mode. Updated Section 6.3.6: External clock source characteristics. Moved Figure 14: High-speed external clock source AC timing diagram after Table 26: High-speed external user clock characteristics. Updated Figure 17: Typical application with a 32.768 kHz crystal. Updated Table 28: HSE oscillator characteristics. Updated Section 6.3.12: Electrical sensitivity characteristics (title). Updated Section 6.3.13: I/O current injection characteristics. Updated Table 49: I/O current injection susceptibility and added footnote. Updated conditions in Table 51: Output voltage characteristics. Updated Section 6.3.15: NRST pin characteristics.Updated Figure 27: Recommended NRST pin protection. Updated Table 53: NRST pin characteristics."
+    ],
+    [
+      "07-Apr-2014",
+      "7 (continued)",
+      "Updated Figure 28: I2C bus AC waveforms and measurement circuit. Updated \"SDA data hold time\" and \"SDA and SCL rise time\" values and added \"Pulse width of spikes that are suppressed by the analog filter\" row in Table 55: I2C characteristics. Updated Table 64: ADC characteristics and Table 65: ADC accuracy. Updated Table 67: DAC characteristics. Updated Table 69: Temperature sensor calibration values and moved inside Section 6.3.22: Temperature sensor characteristics. Removed note 4 in Table 70: Temperature sensor characteristics. Updated Table 78: LQFP64, 10 x 10 mm 64-pin low-profile quad flat package mechanical data and Table 79: UFBGA132, 7 x 7 mm, 132- ball ultra thin, fine-pitch ball grid array package mechanical data. Updated Section 8: Ordering information (title). Added Table 50: UFBGA132 recommended footprint.."
+    ],
+    [
+      "23-Oct-2014",
+      "8",
+      "Updated Section 3.18: Communication interfaces putting I2S characteristics inside. Updated DMIPS features in cover page and Section 2: Description. Updated max temperature at 105°C instead of 85°C in the whole datasheet. Updated currents consumption in Table 19: Current consumption in Sleep mode. Updated Table 24: Peripheral current consumption with new measured current values. Updated Table 66: Maximum source impedance R max adding note AIN 2."
+    ],
+    [
+      "04-Feb-2015",
+      "9",
+      "Updated Section 7: Package information with new package device marking. Updated Figure 8: Memory map."
+    ],
+    [
+      "02-Apr-2015",
+      "10",
+      "Updated Section 7: Package information with new package paragraph structure (paragraph title and heading level) and adding note for device orientation versus pin 1/ ball A1 identifier. Updated Figure 54: LQFP144 top view example and Figure 48: LQFP100 top view example removing gate mark. Added Figure 44: WLCSP64 recommended footprint and Table 81: WLCSP64, 0.4 mm pitch package recommended PCB design rules. Updated Table 8: STM32L151xD and STM32L152xD pin definitions ADC inputs. Updated Table 16: Embedded internal reference voltage temperature coefficient at 100ppm/°C. and table footnote 3: \"guaranteed by design\" changed by \"guaranteed by characterization results\". Updated Table 72: Comparator 2 characteristics new maximum threshold voltage temperature coefficient at 100ppm/°C."
+    ],
+    [
+      "10-Feb-2016",
+      "11",
+      "Updated cover page putting eight SPIs in the peripheral communication interface list. Updated Table 2: Ultra-low-power STM32L151xD and STM32L152xD device features and peripheral counts SPI and I2S lines. Updated Table 47: ESD absolute maximum ratings CDM class II by class III. Updated all the notes, removing 'not tested in production'. Updated Table 10: Voltage characteristics adding note about V REF- pin. Updated Table 5: Functionalities depending on the working mode (from Run/active down to standby) LSI and LSE functionalities putting \"Y\" in Standby mode."
+    ],
+    [
+      "19-Oct-2017",
+      "12",
+      "Updated Section 7: Package information adding information about other optional marking or inset/upset marks. Updated note 1 below all the package device marking figures. Updated Section 7: Package information replacing \"Marking of engineering samples\" by \"device marking\". Updated Nested vectored interrupt controller (NVIC) in Section 3.2: Arm® Cortex®-M3 core with MPU about process state automatically saved. Updated Table 3: Functionalities depending on the operating power supply range removing I/O operation column and adding note about GPIO speed. Updated Table 49: I/O current injection susceptibility note by 'injection is not possible'. Updated Figure 27: Recommended NRST pin protection note about the 0.1uF capacitor. Updated Table 67: DAC characteristics resistive load. Updated Section 3.1: Low-power modes Low-power run mode (MSI) RC oscillator clock. Updated Table 5: Functionalities depending on the working mode (from Run/active down to standby) disabling I2C functionality in Low- power Run and Low-power Sleep modes."
+    ],
+    [
+      "20-Sep-2021",
+      "13",
+      "Updated: – Cover features. – Section 1: Introduction adding reference to errata sheet. – Section 4: Pin descriptions. – Figure 36: ADC accuracy characteristics. – Section 7: Package information."
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 3,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 3
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:6"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32l151qd",
+    "table_id": "table_82",
+    "is_continued": true,
+    "pages": [
+      149,
+      150,
+      151,
+      152,
+      153,
+      154
+    ],
+    "rows_count": 14,
+    "cols_count": 3,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

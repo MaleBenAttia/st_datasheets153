@@ -1,0 +1,135 @@
+{
+  "table_id": "table_138",
+  "caption": "Table 138. Asynchronous multiplexed PSRAM/NOR read timings",
+  "pdf_name": "stm32u5g7vj",
+  "family": "U5",
+  "page": 288,
+  "merged_pages": [
+    288
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Min",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "t w(NE)",
+      "FMC_NE low time",
+      "3 × t - 1 HCLK",
+      "3 × t + 1 HCLK",
+      "ns"
+    ],
+    [
+      "t v(NOE_NE)",
+      "FMC_NEx low to FMC_NOE low",
+      "0",
+      "5",
+      "ns"
+    ],
+    [
+      "t w(NOE)",
+      "FMC_NOE low time",
+      "2 × t - 0.5 HCLK",
+      "2 × t + 0.5 HCLK",
+      "ns"
+    ],
+    [
+      "t h(NE_NOE)",
+      "FMC_NOE high to FMC_NE high hold time",
+      "t HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t v(A_NE)",
+      "FMC_NEx low to FMC_A valid",
+      "-",
+      "1.5",
+      "ns"
+    ],
+    [
+      "t v(NADV_NE)",
+      "FMC_NEx low to FMC_NADV low",
+      "0",
+      "1.5",
+      "ns"
+    ],
+    [
+      "t w(NADV)",
+      "FMC_NADV low time",
+      "t - 0.5 HCLK",
+      "t + 1 HCLK",
+      "ns"
+    ],
+    [
+      "t h(AD_NADV)",
+      "FMC_AD(address) valid hold time after FMC_NADV high)",
+      "t - 4 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t h(A_NOE)",
+      "Address hold time after FMC_NOE high",
+      "t - 1 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t su(Data_NE)",
+      "Data to FMC_NEx high setup time",
+      "t + 15 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t su(Data_NOE)",
+      "Data to FMC_NOE high setup time",
+      "15",
+      "-",
+      "ns"
+    ],
+    [
+      "t h(Data_NE)",
+      "Data hold time after FMC_NEx high",
+      "0",
+      "-",
+      "ns"
+    ],
+    [
+      "t h(Data_NOE)",
+      "Data hold time after FMC_NOE high",
+      "0",
+      "-",
+      "ns"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 5,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 5
+  },
+  "structured_json": null,
+  "warnings": [
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32u5g7vj",
+    "table_id": "table_138",
+    "is_continued": false,
+    "pages": [
+      288
+    ],
+    "rows_count": 13,
+    "cols_count": 5,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

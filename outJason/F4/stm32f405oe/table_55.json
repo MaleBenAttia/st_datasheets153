@@ -1,0 +1,256 @@
+{
+  "table_id": "table_55",
+  "caption": "Table 55. SPI dynamic characteristics",
+  "pdf_name": "stm32f405oe",
+  "family": "F4",
+  "page": 124,
+  "merged_pages": [
+    124,
+    125
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Min",
+    "Typ",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "f SCK",
+      "SPI clock frequency",
+      "Master mode, SPI1, 2.7V < V < 3.6V DD",
+      "-",
+      "-",
+      "42",
+      "MHz"
+    ],
+    [
+      "f SCK",
+      "SPI clock frequency",
+      "Slave mode, SPI1, 2.7V < V < 3.6V DD",
+      "-",
+      "-",
+      "42",
+      "MHz"
+    ],
+    [
+      "1/t c(SCK)",
+      "SPI clock frequency",
+      "Master mode, SPI1/2/3, 1.7V < V < 3.6V DD",
+      "-",
+      "-",
+      "21",
+      "MHz"
+    ],
+    [
+      "1/t c(SCK)",
+      "SPI clock frequency",
+      "Slave mode, SPI1/2/3, 1.7V < V < 3.6V DD",
+      "-",
+      "-",
+      "21",
+      "MHz"
+    ],
+    [
+      "Duty(SCK)",
+      "Duty cycle of SPI clock frequency",
+      "Slave mode",
+      "30",
+      "50",
+      "70",
+      "%"
+    ],
+    [
+      "t w(SCKH)",
+      "SCK high and low time",
+      "Master mode, SPI presc = 2, 2.7V < V < 3.6V DD",
+      "T -0.5 PCLK",
+      "T PCLK",
+      "T +0.5 PCLK",
+      "ns"
+    ],
+    [
+      "t w(SCKL)",
+      "SCK high and low time",
+      "Master mode, SPI presc = 2, 1.7V < V < 3.6V DD",
+      "T -2 PCLK",
+      "T PCLK",
+      "T +2 PCLK",
+      "ns"
+    ],
+    [
+      "t su(NSS)",
+      "NSS setup time",
+      "Slave mode, SPI presc = 2",
+      "4 x T PCLK",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t h(NSS)",
+      "NSS hold time",
+      "Slave mode, SPI presc = 2",
+      "2 x T PCLK",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t su(MI)",
+      "Data input setup time",
+      "Master mode",
+      "6.5",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t su(SI)",
+      "Data input setup time",
+      "Slave mode",
+      "2.5",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t h(MI)",
+      "Data input hold time",
+      "Master mode",
+      "2.5",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t h(SI)",
+      "Data input hold time",
+      "Slave mode",
+      "4",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t (2) a(SO)",
+      "Data output access time",
+      "Slave mode, SPI presc = 2",
+      "0",
+      "-",
+      "4 x T PCLK",
+      "ns"
+    ],
+    [
+      "t (3) dis(SO)",
+      "Data output disable time",
+      "Slave mode, SPI1, 2.7V < V < 3.6V DD",
+      "0",
+      "-",
+      "7.5",
+      "ns"
+    ],
+    [
+      "t (3) dis(SO)",
+      "Data output disable time",
+      "Slave mode, SPI1/2/3 1.7V < V < 3.6V DD",
+      "0",
+      "-",
+      "16.5",
+      "ns"
+    ],
+    [
+      "t v(SO) t h(SO)",
+      "Data output valid/hold time",
+      "Slave mode (after enable edge), SPI1, 2.7V < V < 3.6V DD",
+      "-",
+      "11",
+      "13",
+      "ns"
+    ],
+    [
+      "t v(SO) t h(SO)",
+      "Data output valid/hold time",
+      "Slave mode (after enable edge), SPI2/3, 2.7V < V < 3.6V DD",
+      "-",
+      "12",
+      "16.5",
+      "ns"
+    ],
+    [
+      "t v(SO) t h(SO)",
+      "Data output valid/hold time",
+      "Slave mode (after enable edge), SPI1, 1.7V < V < 3.6V DD",
+      "-",
+      "15.5",
+      "19",
+      "ns"
+    ],
+    [
+      "t v(SO) t h(SO)",
+      "Data output valid/hold time",
+      "Slave mode (after enable edge), SPI2/3, 1.7V < V < 3.6V DD",
+      "-",
+      "18",
+      "20.5",
+      "ns"
+    ],
+    [
+      "t v(MO)",
+      "Data output valid time",
+      "Master mode (after enable edge), SPI1, 2.7V < V < 3.6V DD",
+      "-",
+      "-",
+      "2.5",
+      "ns"
+    ],
+    [
+      "t v(MO)",
+      "Data output valid time",
+      "Master mode (after enable edge), SPI1/2/3, 1.7V < V < 3.6V DD",
+      "-",
+      "-",
+      "4.5",
+      "ns"
+    ],
+    [
+      "t h(MO)",
+      "Data output hold time",
+      "Master mode (after enable edge)",
+      "0",
+      "-",
+      "-",
+      "ns"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 7,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 7
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:2",
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f405oe",
+    "table_id": "table_55",
+    "is_continued": true,
+    "pages": [
+      124,
+      125
+    ],
+    "rows_count": 23,
+    "cols_count": 7,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

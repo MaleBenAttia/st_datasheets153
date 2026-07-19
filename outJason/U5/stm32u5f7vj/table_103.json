@@ -1,0 +1,539 @@
+{
+  "table_id": "table_103",
+  "caption": "Table 103. 14-bit ADC12 characteristics",
+  "pdf_name": "stm32u5f7vj",
+  "family": "U5",
+  "page": 249,
+  "merged_pages": [
+    249,
+    250,
+    251,
+    252
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Min",
+    "Typ",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "V DDA",
+      "Analog power supply for ADC ON",
+      "-",
+      "1.62",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V REF+",
+      "Positive reference voltage",
+      "V ≥ 2 V DDA",
+      "2",
+      "-",
+      "V DDA",
+      "V"
+    ],
+    [
+      "V REF+",
+      "Positive reference voltage",
+      "V < 2 V DDA",
+      "V DDA",
+      "V DDA",
+      "V DDA",
+      "V"
+    ],
+    [
+      "V REF-",
+      "Negative reference voltage",
+      "-",
+      "V SSA",
+      "V SSA",
+      "V SSA",
+      "V"
+    ],
+    [
+      "f ADC",
+      "ADC clock frequency",
+      "1.62 V ≤ V ≤ 3.6 V DDA",
+      "5(3)",
+      "-",
+      "55",
+      "MHz"
+    ],
+    [
+      "f ADC",
+      "ADC clock ratio",
+      "-",
+      "45",
+      "-",
+      "55",
+      "%"
+    ],
+    [
+      "f s",
+      "Sampling rate",
+      "Resolution = 14 bits",
+      "0.23",
+      "-",
+      "2.5",
+      "Msps"
+    ],
+    [
+      "f s",
+      "Sampling rate",
+      "Resolution = 12 bits",
+      "0.25",
+      "-",
+      "2.75",
+      "Msps"
+    ],
+    [
+      "f s",
+      "Sampling rate",
+      "Resolution = 10 bits",
+      "0.28",
+      "-",
+      "3.05",
+      "Msps"
+    ],
+    [
+      "f s",
+      "Sampling rate",
+      "Resolution = 8 bits",
+      "0.31",
+      "-",
+      "3.44",
+      "Msps"
+    ],
+    [
+      "t TRIG",
+      "External trigger period",
+      "Resolution = 14 bits",
+      "26",
+      "-",
+      "-",
+      "1/f ADC"
+    ],
+    [
+      "V (4) AIN",
+      "Conversion voltage range",
+      "-",
+      "0",
+      "-",
+      "V REF+",
+      "V"
+    ],
+    [
+      "V CIMV",
+      "Common mode input voltage",
+      "-",
+      "V /2 - 10% REF+",
+      "V /2 REF+",
+      "V /2 + 10% REF+",
+      "V"
+    ],
+    [
+      "R (5) AIN",
+      "External input impedance",
+      "Resolution = 14 bits T = 130 °C j",
+      "-",
+      "-",
+      "1000",
+      "Ω"
+    ],
+    [
+      "R (5) AIN",
+      "External input impedance",
+      "Resolution = 12 bits T = 130 °C j",
+      "-",
+      "-",
+      "1000",
+      "Ω"
+    ],
+    [
+      "R (5) AIN",
+      "External input impedance",
+      "Resolution = 10 bits T = 130 °C j",
+      "-",
+      "-",
+      "4700",
+      "Ω"
+    ],
+    [
+      "R (5) AIN",
+      "External input impedance",
+      "Resolution = 8 bits T = 130 °C j",
+      "-",
+      "-",
+      "22000",
+      "Ω"
+    ],
+    [
+      "C ADC",
+      "Internal sample-and- hold capacitor",
+      "-",
+      "-",
+      "5",
+      "-",
+      "pF"
+    ],
+    [
+      "t ADCVREG_ STUP",
+      "ADC LDO startup time",
+      "-",
+      "-",
+      "-",
+      "17",
+      "µs"
+    ],
+    [
+      "t STAB",
+      "ADC power-up time",
+      "LDO already started",
+      "(3 × 1/f ) + 1 conversion ADC",
+      "-",
+      "17",
+      "Cycle"
+    ],
+    [
+      "t CAL",
+      "Offset and linearity calibration time",
+      "-",
+      "31849",
+      "-",
+      "17",
+      "1/f ADC"
+    ],
+    [
+      "t OFF_CAL",
+      "Offset calibration time",
+      "-",
+      "885",
+      "-",
+      "17",
+      "1/f ADC"
+    ],
+    [
+      "t LATR",
+      "Trigger conversion latency for regular and injected channels, without aborting the conversion",
+      "PRESC = 0",
+      "3",
+      "-",
+      "17",
+      "1/f ADC"
+    ],
+    [
+      "t LATR",
+      "Trigger conversion latency for regular and injected channels, without aborting the conversion",
+      "PRESC = 1",
+      "7",
+      "-",
+      "17",
+      "1/f ADC"
+    ],
+    [
+      "t LATR",
+      "Trigger conversion latency for regular and injected channels, without aborting the conversion",
+      "PRESC = 2",
+      "13",
+      "-",
+      "17",
+      "1/f ADC"
+    ],
+    [
+      "t LATRINJ",
+      "Trigger conversion latency Injected channels aborting a regular conversion",
+      "PRESC = 0",
+      "4",
+      "-",
+      "17",
+      "1/f ADC"
+    ],
+    [
+      "t LATRINJ",
+      "Trigger conversion latency Injected channels aborting a regular conversion",
+      "PRESC = 1",
+      "9",
+      "-",
+      "17",
+      "1/f ADC"
+    ],
+    [
+      "t LATRINJ",
+      "Trigger conversion latency Injected channels aborting a regular conversion",
+      "PRESC = 2",
+      "17",
+      "-",
+      "17",
+      "1/f ADC"
+    ],
+    [
+      "t s",
+      "Sampling time",
+      "-",
+      "5",
+      "-",
+      "814",
+      "1/f ADC"
+    ],
+    [
+      "t CONV",
+      "Total conversion time (including sampling time)",
+      "Resolution = N bits",
+      "t + N + 3 s",
+      "-",
+      "814",
+      "1/f ADC"
+    ],
+    [
+      "I DDA_D(ADC)",
+      "ADC consumption on V Differential mode DDA",
+      "f = 2.5 Msps, s resolution = 14 bits",
+      "-",
+      "970",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDA_D(ADC)",
+      "ADC consumption on V Differential mode DDA",
+      "f = 1 Msps, s resolution = 14 bits",
+      "-",
+      "550",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDA_D(ADC)",
+      "ADC consumption on V Differential mode DDA",
+      "f = 10 ksps, s resolution = 14 bits",
+      "-",
+      "130",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDA_D(ADC)",
+      "ADC consumption on V Differential mode DDA",
+      "f = 2.5 Msps, s resolution = 12 bits",
+      "-",
+      "940",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDA_D(ADC)",
+      "ADC consumption on V Differential mode DDA",
+      "f = 2.5 Msps, s resolution = 10 bits",
+      "-",
+      "840",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDA_D(ADC)",
+      "ADC consumption on V Differential mode DDA",
+      "f = 2.5 Msps, s resolution = 8bits",
+      "-",
+      "730",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDV_D(ADC)",
+      "ADC consumption on V Differential mode REF+",
+      "f = 2.5 Msps, s resolution = 14 bits",
+      "-",
+      "140",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDV_D(ADC)",
+      "ADC consumption on V Differential mode REF+",
+      "f = 1 Msps, s resolution = 14 bits",
+      "-",
+      "80",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDV_D(ADC)",
+      "ADC consumption on V Differential mode REF+",
+      "f = 10 ksps, s resolution = 14 bits",
+      "-",
+      "13",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDV_D(ADC)",
+      "ADC consumption on V Differential mode REF+",
+      "f = 2.5 Msps, s resolution = 12 bits",
+      "-",
+      "140",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDV_D(ADC)",
+      "ADC consumption on V Differential mode REF+",
+      "f = 2.5 Msps, s resolution = 10 bits",
+      "-",
+      "140",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDV_D(ADC)",
+      "ADC consumption on V Differential mode REF+",
+      "f = 2.5 Msps, s resolution = 8bits",
+      "-",
+      "120",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDA_s(ADC)",
+      "ADC consumption on V Singe-ended DDA mode",
+      "f = 2.5 Msps, s resolution = 14 bits",
+      "-",
+      "980",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDA_s(ADC)",
+      "ADC consumption on V Singe-ended DDA mode",
+      "f = 1 Msps, s resolution = 14 bits",
+      "-",
+      "550",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDA_s(ADC)",
+      "ADC consumption on V Singe-ended DDA mode",
+      "f = 10 ksps, s resolution = 14 bits",
+      "-",
+      "130",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDA_s(ADC)",
+      "ADC consumption on V Singe-ended DDA mode",
+      "f = 2.5 Msps, s resolution = 12 bits",
+      "-",
+      "900",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDA_s(ADC)",
+      "ADC consumption on V Singe-ended DDA mode",
+      "f = 2.5 Msps, s resolution = 10 bits",
+      "-",
+      "840",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDA_s(ADC)",
+      "ADC consumption on V Singe-ended DDA mode",
+      "f = 2.5 Msps, s resolution = 8bits",
+      "-",
+      "770",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDV_s(ADC)",
+      "ADC consumption on V Single-ended REF+ mode",
+      "f = 2.5 Msps, s resolution = 14 bits",
+      "-",
+      "160",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDV_s(ADC)",
+      "ADC consumption on V Single-ended REF+ mode",
+      "f = 1 Msps, s resolution = 14 bits",
+      "-",
+      "90",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDV_s(ADC)",
+      "ADC consumption on V Single-ended REF+ mode",
+      "f = 10 ksps, s resolution = 14 bits",
+      "-",
+      "15",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDV_s(ADC)",
+      "ADC consumption on V Single-ended REF+ mode",
+      "f = 2.5 Msps, s resolution = 12 bits",
+      "-",
+      "150",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDV_s(ADC)",
+      "ADC consumption on V Single-ended REF+ mode",
+      "f = 2.5 Msps, s resolution = 10 bits",
+      "-",
+      "150",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDV_s(ADC)",
+      "ADC consumption on V Single-ended REF+ mode",
+      "f = 2.5 Msps, s resolution = 8bits",
+      "-",
+      "150",
+      "-",
+      "µA"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 7,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 7
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:4",
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32u5f7vj",
+    "table_id": "table_103",
+    "is_continued": true,
+    "pages": [
+      249,
+      250,
+      251,
+      252
+    ],
+    "rows_count": 54,
+    "cols_count": 7,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

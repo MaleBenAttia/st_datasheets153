@@ -1,0 +1,227 @@
+{
+  "table_id": "table_62",
+  "caption": "Table 62. DAC characteristics",
+  "pdf_name": "stm32f378cc",
+  "family": "F3",
+  "page": 99,
+  "merged_pages": [
+    99
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Conditions",
+    "Min",
+    "Typ",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "V DDA",
+      "Analog supply voltage",
+      "-",
+      "-",
+      "2.4",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V REF+",
+      "Reference supply voltage",
+      "V must always be below V REF+ DDA",
+      "V must always be below V REF+ DDA",
+      "2.4",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V SSA",
+      "Ground",
+      "V must always be below V REF+ DDA",
+      "-",
+      "0",
+      "-",
+      "0",
+      "V"
+    ],
+    [
+      "R (1) LOAD",
+      "Resistive load",
+      "DAC output buffer ON",
+      "Connected to V SSA",
+      "5",
+      "-",
+      "-",
+      "kΩ"
+    ],
+    [
+      "R (1) LOAD",
+      "Resistive load",
+      "DAC output buffer ON",
+      "Connected to V DDA",
+      "25",
+      "-",
+      "-",
+      "kΩ"
+    ],
+    [
+      "R (1) O",
+      "Output Impedance",
+      "DAC output buffer OFF",
+      "DAC output buffer OFF",
+      "-",
+      "-",
+      "15",
+      "kΩ"
+    ],
+    [
+      "C (1) LOAD",
+      "Capacitive load",
+      "Maximum capacitive load at DAC_OUT pin (when the buffer is ON).",
+      "Maximum capacitive load at DAC_OUT pin (when the buffer is ON).",
+      "-",
+      "-",
+      "50",
+      "pF"
+    ],
+    [
+      "DAC_OUT min(1)",
+      "Lower DAC_OUT voltage with buffer ON",
+      "It gives the maximum output excursion of the DAC. It corresponds to 12-bit input code (0x0E0) to (0xF1C) at V = 3.6V REF+ and (0x155) and (0xEAB) at V = REF+ 2.4V",
+      "It gives the maximum output excursion of the DAC. It corresponds to 12-bit input code (0x0E0) to (0xF1C) at V = 3.6V REF+ and (0x155) and (0xEAB) at V = REF+ 2.4V",
+      "0.2",
+      "-",
+      "-",
+      "V"
+    ],
+    [
+      "DAC_OUT max(1)",
+      "Higher DAC_OUT voltage with buffer ON",
+      "It gives the maximum output excursion of the DAC. It corresponds to 12-bit input code (0x0E0) to (0xF1C) at V = 3.6V REF+ and (0x155) and (0xEAB) at V = REF+ 2.4V",
+      "It gives the maximum output excursion of the DAC. It corresponds to 12-bit input code (0x0E0) to (0xF1C) at V = 3.6V REF+ and (0x155) and (0xEAB) at V = REF+ 2.4V",
+      "-",
+      "-",
+      "V – 0.2 DDA",
+      "V"
+    ],
+    [
+      "DAC_OUT min(1)",
+      "Lower DAC_OUT voltage with buffer OFF",
+      "It gives the maximum output excursion of the DAC.",
+      "It gives the maximum output excursion of the DAC.",
+      "-",
+      "0.5",
+      "-",
+      "mV"
+    ],
+    [
+      "DAC_OUT max(1)",
+      "Higher DAC_OUT voltage with buffer OFF",
+      "It gives the maximum output excursion of the DAC.",
+      "It gives the maximum output excursion of the DAC.",
+      "-",
+      "-",
+      "V – 1LSB REF+",
+      "V"
+    ],
+    [
+      "I (3) DDVREF+",
+      "DAC DC current consumption in quiescent mode (Standby mode)",
+      "With no load, worst code (0xF1C) at V = 3.6V in terms of DC REF+ consumption on the inputs",
+      "With no load, worst code (0xF1C) at V = 3.6V in terms of DC REF+ consumption on the inputs",
+      "-",
+      "-",
+      "220",
+      "µA"
+    ],
+    [
+      "I (3) DDA",
+      "DAC DC current consumption in quiescent mode(2)",
+      "With no load, middle code (0x800) on the inputs",
+      "With no load, middle code (0x800) on the inputs",
+      "-",
+      "-",
+      "380",
+      "µA"
+    ],
+    [
+      "I (3) DDA",
+      "DAC DC current consumption in quiescent mode(2)",
+      "With no load, worst code (0xF1C) at V = 3.6V in terms of DC REF+ consumption on the inputs",
+      "With no load, worst code (0xF1C) at V = 3.6V in terms of DC REF+ consumption on the inputs",
+      "-",
+      "-",
+      "480",
+      "µA"
+    ],
+    [
+      "DNL(3)",
+      "Differential non linearity Difference between two consecutive code-1LSB)",
+      "Given for the DAC in 10-bit configuration",
+      "Given for the DAC in 10-bit configuration",
+      "-",
+      "-",
+      "±0.5",
+      "LSB"
+    ],
+    [
+      "DNL(3)",
+      "Differential non linearity Difference between two consecutive code-1LSB)",
+      "Given for the DAC in 12-bit configuration",
+      "Given for the DAC in 12-bit configuration",
+      "-",
+      "-",
+      "±2",
+      "LSB"
+    ],
+    [
+      "INL(3)",
+      "Integral non linearity (difference between measured value at Code i and the value at Code i on a line drawn between Code 0 and last Code 1023)",
+      "Given for the DAC in 10-bit configuration",
+      "Given for the DAC in 10-bit configuration",
+      "-",
+      "-",
+      "±1",
+      "LSB"
+    ],
+    [
+      "INL(3)",
+      "Integral non linearity (difference between measured value at Code i and the value at Code i on a line drawn between Code 0 and last Code 1023)",
+      "Given for the DAC in 12-bit configuration",
+      "Given for the DAC in 12-bit configuration",
+      "-",
+      "-",
+      "±4",
+      "LSB"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 8,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 8
+  },
+  "structured_json": null,
+  "warnings": [
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f378cc",
+    "table_id": "table_62",
+    "is_continued": false,
+    "pages": [
+      99
+    ],
+    "rows_count": 18,
+    "cols_count": 8,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

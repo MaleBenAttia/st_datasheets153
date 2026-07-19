@@ -1,0 +1,202 @@
+{
+  "table_id": "table_102",
+  "caption": "Table 102. MDF characteristics",
+  "pdf_name": "stm32n645a0",
+  "family": "N6",
+  "page": 207,
+  "merged_pages": [
+    207,
+    208
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Min",
+    "Typ",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "f CKI",
+      "Input clock frequency via MDF_CKIx pin, in target SPI mode",
+      "1.65 < V < 3.6 V DD",
+      "-",
+      "-",
+      "25",
+      "MHz"
+    ],
+    [
+      "f CCKI",
+      "Input clock frequency via MDF_CCK[1:0] pin, in target SPI mode",
+      "1.65 < V < 3.6 V DD",
+      "-",
+      "-",
+      "25",
+      "MHz"
+    ],
+    [
+      "f CCKO",
+      "Output clock frequency, in controller SPI mode",
+      "1.65 < V < 3.6 V DD",
+      "-",
+      "-",
+      "25",
+      "MHz"
+    ],
+    [
+      "f CCKOLF",
+      "Output clock frequency, in LF_MASTER SPI mode",
+      "1.65 < V < 3.6 V DD",
+      "-",
+      "-",
+      "5",
+      "MHz"
+    ],
+    [
+      "f SYMB",
+      "Input symbol rate,in Manchester mode",
+      "1.65 < V < 3.6 V DD",
+      "-",
+      "-",
+      "20",
+      "MHz"
+    ],
+    [
+      "t , t HCKI LCKI",
+      "MDF_CKIx input clock high and low time",
+      "Target SPI mode",
+      "2 × T (2) mdf_proc_ck",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t , t HCCKI LCCKI",
+      "MDF_CCK[1:0] input clock high and low time",
+      "Target SPI mode",
+      "2 × T mdf_proc_c",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t , HCCKO t LCCKO",
+      "MDF_CCK[1:0] output clock high and low time",
+      "Controller SPI mode",
+      "2 × T mdf_proc_ck",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t , HCCKOLF t LCCKOLF",
+      "MDF_CCK[1:0] output clock high and low time",
+      "LF_MASTER SPI mode",
+      "T mdf_proc_ck",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t SUCKI",
+      "Data setup time w.r.t. MDF_CKIx input",
+      "Target SPI mode, measured on rising and falling edge",
+      "2.5",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t HDCKI",
+      "Data hold time w.r.t. MDF_CKIx input",
+      "Target SPI mode, measured on rising and falling edge",
+      "0",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t SUCCKI",
+      "Data setup time w.r.t. MDF_CCK[1:0] input",
+      "Target SPI mode, MDF_CCK[1:0] configured in input, measured on rising and falling edge",
+      "3",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t HDCCKI",
+      "Data hold time w.r.t. MDF_CCK[1:0] input",
+      "Target SPI mode, MDF_CCK[1:0] configured in input, measured on rising and falling edge",
+      "0",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t SUCCKO",
+      "Data setup time w.r.t. MDF_CCK[1:0] output",
+      "Controller SPI mode, MDF_CCK[1:0] configured in output, measured on rising and falling edge",
+      "3",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t HDCCKO",
+      "Data hold time w.r.t. MDF_CCK[1:0] output",
+      "Controller SPI mode, MDF_CCK[1:0] configured in output, measured on rising and falling edge",
+      "0",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t SUCCKOLF",
+      "Data setup time w.r.t. MDF_CCK[1:0] output",
+      "LF_MASTER SPI mode, MDF_CCK[1:0] configured in output, measured on rising and falling edge",
+      "14",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t HDCCKOLF",
+      "Data hold time w.r.t. MDF_CCK[1:0] output",
+      "LF_MASTER SPI mode, MDF_CCK[1:0] configured in output, measured on rising and falling edge",
+      "0",
+      "-",
+      "-",
+      "ns"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 7,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 7
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:2",
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32n645a0",
+    "table_id": "table_102",
+    "is_continued": true,
+    "pages": [
+      207,
+      208
+    ],
+    "rows_count": 17,
+    "cols_count": 7,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

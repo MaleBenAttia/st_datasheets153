@@ -1,0 +1,383 @@
+{
+  "table_id": "table_78",
+  "caption": "Table 78. Synchronous non-multiplexed PSRAM write timings",
+  "pdf_name": "stm32f215re",
+  "family": "F2",
+  "page": 140,
+  "merged_pages": [
+    141
+  ],
+  "headers": [
+    "",
+    "Symbol",
+    "",
+    "",
+    "Parameter",
+    "Min",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "",
+      "t",
+      "",
+      "",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    [
+      "",
+      "d(CLKL-",
+      "",
+      "",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    [
+      "",
+      "d(CLKL-",
+      "FSMC_CLK low",
+      "to",
+      "FSMC_NADV low",
+      "-",
+      "5",
+      "ns"
+    ],
+    [
+      "",
+      "NADVL)",
+      "FSMC_CLK low",
+      "to",
+      "FSMC_NADV low",
+      "-",
+      "5",
+      "ns"
+    ],
+    [
+      "",
+      "t",
+      "FSMC_CLK low",
+      "to",
+      "FSMC_NADV low",
+      "-",
+      "5",
+      "ns"
+    ],
+    [
+      "",
+      "d(CLKL-",
+      "FSMC_CLK low",
+      "to",
+      "FSMC_NADV low",
+      "-",
+      "5",
+      "ns"
+    ],
+    [
+      "",
+      "d(CLKL-",
+      "FSMC_CLK low",
+      "to",
+      "FSMC_NADV high",
+      "6",
+      "-",
+      "ns"
+    ],
+    [
+      "",
+      "NADVH)",
+      "FSMC_CLK low",
+      "to",
+      "FSMC_NADV high",
+      "6",
+      "-",
+      "ns"
+    ],
+    [
+      "",
+      "t d(CLKL-AV)",
+      "FSMC_CLK low",
+      "to",
+      "FSMC_Ax valid (x=16…25)",
+      "-",
+      "0",
+      "ns"
+    ],
+    [
+      "",
+      "t d(CLKL-AIV)",
+      "FSMC_CLK low",
+      "to",
+      "FSMC_Ax invalid (x=16…25)",
+      "8",
+      "-",
+      "ns"
+    ],
+    [
+      "t",
+      "d(CLKL-NWEL)",
+      "FSMC_CLK low",
+      "to",
+      "FSMC_NWE low",
+      "-",
+      "1",
+      "ns"
+    ],
+    [
+      "t",
+      "d(CLKL-NWEH)",
+      "FSMC_CLK low",
+      "to",
+      "FSMC_NWE high",
+      "1",
+      "-",
+      "ns"
+    ],
+    [
+      "t",
+      "t d(CLKL-Data)",
+      "FSMC_D[15:0] v",
+      "al",
+      "id data after FSMC_CLK low",
+      "-",
+      "2",
+      "ns"
+    ],
+    [
+      "t",
+      "t d(CLKL-NBLH)",
+      "FSMC_CLK low",
+      "to",
+      "FSMC_NBL high",
+      "2",
+      "-",
+      "ns"
+    ],
+    [
+      "1.",
+      "C = 30 pF. L",
+      "FSMC_CLK low",
+      "to",
+      "FSMC_NBL high",
+      "2",
+      "-",
+      "ns"
+    ],
+    [
+      "2.",
+      "Guaranteed b",
+      "y characterization r",
+      "es",
+      "ults, not tested in production.",
+      "2",
+      "-",
+      "ns"
+    ],
+    [
+      "P",
+      "C Card/Co",
+      "mpactFlash c",
+      "o",
+      "ntroller waveforms and tim",
+      "ings",
+      "-",
+      "ns"
+    ],
+    [
+      "F",
+      "igure 63 thro",
+      "ugh Figure 68 r",
+      "ep",
+      "resent synchronous waveform",
+      "s, with Table 79",
+      "and Tab",
+      "le 8"
+    ],
+    [
+      "p",
+      "roviding the c",
+      "orresponding ti",
+      "m",
+      "ings. The results shown in thes",
+      "e table are obta",
+      "ined wit",
+      "h th"
+    ],
+    [
+      "fo",
+      "llowing FSM",
+      "C configuration",
+      ":",
+      "ings. The results shown in thes",
+      "e table are obta",
+      "ined wit",
+      "h th"
+    ],
+    [
+      "•",
+      "COM.FSM",
+      "C_SetupTime",
+      "=",
+      "0x04;",
+      "e table are obta",
+      "ined wit",
+      "h th"
+    ],
+    [
+      "•",
+      "COM.FSM",
+      "C_WaitSetupT",
+      "i",
+      "me = 0x07;",
+      "e table are obta",
+      "ined wit",
+      "h th"
+    ],
+    [
+      "•",
+      "COM.FSM",
+      "C_HoldSetupT",
+      "i",
+      "me = 0x04;",
+      "e table are obta",
+      "ined wit",
+      "h th"
+    ],
+    [
+      "•",
+      "COM.FSM",
+      "C_HiZSetupTi",
+      "m",
+      "e = 0x00;",
+      "e table are obta",
+      "ined wit",
+      "h th"
+    ],
+    [
+      "•",
+      "ATT.FSM",
+      "C_SetupTime =",
+      "0",
+      "x04;",
+      "e table are obta",
+      "ined wit",
+      "h th"
+    ],
+    [
+      "•",
+      "ATT.FSM",
+      "C_WaitSetupTi",
+      "m",
+      "e = 0x07;",
+      "e table are obta",
+      "ined wit",
+      "h th"
+    ],
+    [
+      "•",
+      "ATT.FSM",
+      "C_HoldSetupTi",
+      "m",
+      "e = 0x04;",
+      "e table are obta",
+      "ined wit",
+      "h th"
+    ],
+    [
+      "•",
+      "ATT.FSM",
+      "C_HiZSetupTim",
+      "e",
+      "= 0x00;",
+      "e table are obta",
+      "ined wit",
+      "h th"
+    ],
+    [
+      "•",
+      "IO.FSMC",
+      "_SetupTime = 0",
+      "x",
+      "04;",
+      "e table are obta",
+      "ined wit",
+      "h th"
+    ],
+    [
+      "•",
+      "IO.FSMC",
+      "_WaitSetupTim",
+      "e",
+      "= 0x07;",
+      "e table are obta",
+      "ined wit",
+      "h th"
+    ],
+    [
+      "•",
+      "IO.FSMC",
+      "_HoldSetupTim",
+      "e",
+      "= 0x04;",
+      "e table are obta",
+      "ined wit",
+      "h th"
+    ],
+    [
+      "•",
+      "IO.FSMC",
+      "_HiZSetupTime",
+      "=",
+      "0x00;",
+      "e table are obta",
+      "ined wit",
+      "h th"
+    ],
+    [
+      "•",
+      "TCLRSet",
+      "upTime = 0;",
+      "=",
+      "0x00;",
+      "e table are obta",
+      "ined wit",
+      "h th"
+    ]
+  ],
+  "extraction_method": "pdfplumber_text",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.053,
+  "col_count": 8,
+  "status": null,
+  "has_empty_cells": true,
+  "heuristics": {
+    "caption_near_bottom": true,
+    "caption_y_ratio": 0.766,
+    "body_on_next_page": true,
+    "next_page_q_boosted": 190.0,
+    "cols_extracted": 8,
+    "bleed_rows_removed": 1
+  },
+  "structured_json": null,
+  "warnings": [
+    "vertical_merge_suspected",
+    "has_empty_cells"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f215re",
+    "table_id": "table_78",
+    "is_continued": false,
+    "pages": [
+      141
+    ],
+    "rows_count": 33,
+    "cols_count": 8,
+    "confidence": "high",
+    "empty_cell_ratio": 0.053
+  }
+}

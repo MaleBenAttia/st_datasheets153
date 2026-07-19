@@ -1,0 +1,123 @@
+{
+  "table_id": "table_61",
+  "caption": "Table 61. TIMx characteristics",
+  "pdf_name": "stm32f412ce",
+  "family": "F4",
+  "page": 127,
+  "merged_pages": [
+    127
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions(3)",
+    "Min",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "t res(TIM)",
+      "Timer resolution time",
+      "AHB/APBx prescaler=1 or 2 or 4, f = TIMxCLK 100 MHz",
+      "1",
+      "-",
+      "t TIMxCLK"
+    ],
+    [
+      "t res(TIM)",
+      "Timer resolution time",
+      "AHB/APBx prescaler=1 or 2 or 4, f = TIMxCLK 100 MHz",
+      "11.9",
+      "-",
+      "ns"
+    ],
+    [
+      "t res(TIM)",
+      "Timer resolution time",
+      "AHB/APBx prescaler>4, f = 100 MHz TIMxCLK",
+      "1",
+      "-",
+      "t TIMxCLK"
+    ],
+    [
+      "t res(TIM)",
+      "Timer resolution time",
+      "AHB/APBx prescaler>4, f = 100 MHz TIMxCLK",
+      "11.9",
+      "-",
+      "ns"
+    ],
+    [
+      "f EXT",
+      "Timer external clock frequency on CH1 to CH4",
+      "f = 100 MHz TIMxCLK",
+      "0",
+      "f /2 TIMxCLK",
+      "MHz"
+    ],
+    [
+      "f EXT",
+      "Timer external clock frequency on CH1 to CH4",
+      "f = 100 MHz TIMxCLK",
+      "0",
+      "50",
+      "MHz"
+    ],
+    [
+      "Res TIM",
+      "Timer resolution",
+      "f = 100 MHz TIMxCLK",
+      "-",
+      "16/32",
+      "bit"
+    ],
+    [
+      "t COUNTER",
+      "16-bit counter clock period when internal clock is selected",
+      "f = 100 MHz TIMxCLK",
+      "0.0119",
+      "780",
+      "µs"
+    ],
+    [
+      "t MAX_COUNT",
+      "Maximum possible count with 32-bit counter",
+      "-",
+      "-",
+      "65536 × 65536",
+      "t TIMxCLK"
+    ],
+    [
+      "t MAX_COUNT",
+      "Maximum possible count with 32-bit counter",
+      "f = 100 MHz TIMxCLK",
+      "-",
+      "51.1",
+      "S"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 6,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 6
+  },
+  "structured_json": null,
+  "warnings": [],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f412ce",
+    "table_id": "table_61",
+    "is_continued": false,
+    "pages": [
+      127
+    ],
+    "rows_count": 10,
+    "cols_count": 6,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

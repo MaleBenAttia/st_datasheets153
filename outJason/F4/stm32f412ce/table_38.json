@@ -1,0 +1,145 @@
+{
+  "table_id": "table_38",
+  "caption": "Table 38. Low-power mode wakeup timings(1)",
+  "pdf_name": "stm32f412ce",
+  "family": "F4",
+  "page": 105,
+  "merged_pages": [
+    105
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Min(1)",
+    "Typ(1)",
+    "Max(1)",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "t WUSLEEP",
+      "Wakeup from Sleep mode",
+      "-",
+      "-",
+      "4",
+      "6",
+      "clk cycles"
+    ],
+    [
+      "t WUSLEEPFDSM",
+      "Wakeup from Sleep mode",
+      "Flash memory in Deep power down mode",
+      "-",
+      "-",
+      "50.0",
+      "µs"
+    ],
+    [
+      "t WUSTOP",
+      "Wakeup from STOP mode Code execution on flash memory",
+      "Main regulator",
+      "-",
+      "12.9",
+      "15.0",
+      "µs"
+    ],
+    [
+      "t WUSTOP",
+      "Wakeup from STOP mode Code execution on flash memory",
+      "Main regulator, flash memory in Deep power down mode",
+      "-",
+      "104.9",
+      "120.0",
+      "µs"
+    ],
+    [
+      "t WUSTOP",
+      "Wakeup from STOP mode Code execution on flash memory",
+      "Wakeup from Stop mode, regulator in low power mode(2)",
+      "-",
+      "20.8",
+      "28.0",
+      "µs"
+    ],
+    [
+      "t WUSTOP",
+      "Wakeup from STOP mode Code execution on flash memory",
+      "Regulator in low power mode, flash memory in Deep power down mode(2)",
+      "-",
+      "112.9",
+      "130.0",
+      "µs"
+    ],
+    [
+      "t WUSTOP",
+      "Wakeup from STOP mode code execution on RAM(3)",
+      "Main regulator with flash memory in Stop mode or Deep power down",
+      "-",
+      "4.9",
+      "7.0",
+      "µs"
+    ],
+    [
+      "t WUSTOP",
+      "Wakeup from STOP mode code execution on RAM(3)",
+      "Wakeup from Stop mode, regulator in low power mode and the flash memory in Stop mode or Deep power down(2)",
+      "-",
+      "12.8",
+      "20.0",
+      "µs"
+    ],
+    [
+      "t WUSTDBY",
+      "Wakeup from Standby mode",
+      "-",
+      "-",
+      "316.8",
+      "400.0",
+      "µs"
+    ],
+    [
+      "t WUFLASH",
+      "Wakeup of flash memory",
+      "From Flash_Stop mode",
+      "-",
+      "316.8",
+      "11.0",
+      "µs"
+    ],
+    [
+      "t WUFLASH",
+      "Wakeup of flash memory",
+      "From Flash Deep power down mode",
+      "-",
+      "316.8",
+      "50.0",
+      "µs"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 7,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 7
+  },
+  "structured_json": null,
+  "warnings": [
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f412ce",
+    "table_id": "table_38",
+    "is_continued": false,
+    "pages": [
+      105
+    ],
+    "rows_count": 11,
+    "cols_count": 7,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

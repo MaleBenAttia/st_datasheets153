@@ -1,0 +1,349 @@
+{
+  "table_id": "table_59",
+  "caption": "Table 59. Comparator characteristics",
+  "pdf_name": "stm32f078cb",
+  "family": "F0",
+  "page": 88,
+  "merged_pages": [
+    88,
+    89
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Conditions",
+    "Min(1)",
+    "Typ",
+    "Max(1)",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "V DDA",
+      "Analog supply voltage",
+      "V scaler not in use REFINT",
+      "V scaler not in use REFINT",
+      "1.65",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V DDA",
+      "Analog supply voltage",
+      "V scaler in use REFINT",
+      "V scaler in use REFINT",
+      "2",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V IN",
+      "Comparator input voltage range",
+      "-",
+      "-",
+      "0",
+      "-",
+      "V DDA",
+      "-"
+    ],
+    [
+      "V SC",
+      "V scaler offset REFINT voltage",
+      "-",
+      "-",
+      "-",
+      "±5",
+      "±10",
+      "mV"
+    ],
+    [
+      "t S_SC",
+      "V scaler startup REFINT time from power down",
+      "First V scaler activation after device REFINT power on",
+      "First V scaler activation after device REFINT power on",
+      "-",
+      "-",
+      "1000 (2)",
+      "ms"
+    ],
+    [
+      "t S_SC",
+      "V scaler startup REFINT time from power down",
+      "Next activations",
+      "Next activations",
+      "-",
+      "-",
+      "0.2",
+      "ms"
+    ],
+    [
+      "t START",
+      "Comparator startup time",
+      "Startup time to reach propagation delay specification",
+      "Startup time to reach propagation delay specification",
+      "-",
+      "-",
+      "60",
+      "µs"
+    ],
+    [
+      "t D",
+      "Propagation delay for 200 mV step with 100 mV overdrive",
+      "Ultra-low power mode",
+      "Ultra-low power mode",
+      "-",
+      "2",
+      "4.5",
+      "µs"
+    ],
+    [
+      "t D",
+      "Propagation delay for 200 mV step with 100 mV overdrive",
+      "Low power mode",
+      "Low power mode",
+      "-",
+      "0.7",
+      "1.5",
+      "µs"
+    ],
+    [
+      "t D",
+      "Propagation delay for 200 mV step with 100 mV overdrive",
+      "Medium power mode",
+      "Medium power mode",
+      "-",
+      "0.3",
+      "0.6",
+      "µs"
+    ],
+    [
+      "t D",
+      "Propagation delay for 200 mV step with 100 mV overdrive",
+      "High speed mode",
+      "V ≥ 2.7 V DDA",
+      "-",
+      "50",
+      "100",
+      "ns"
+    ],
+    [
+      "t D",
+      "Propagation delay for 200 mV step with 100 mV overdrive",
+      "High speed mode",
+      "V < 2.7 V DDA",
+      "-",
+      "100",
+      "240",
+      "ns"
+    ],
+    [
+      "t D",
+      "Propagation delay for full range step with 100 mV overdrive",
+      "Ultra-low power mode",
+      "Ultra-low power mode",
+      "-",
+      "2",
+      "7",
+      "µs"
+    ],
+    [
+      "t D",
+      "Propagation delay for full range step with 100 mV overdrive",
+      "Low power mode",
+      "Low power mode",
+      "-",
+      "0.7",
+      "2.1",
+      "µs"
+    ],
+    [
+      "t D",
+      "Propagation delay for full range step with 100 mV overdrive",
+      "Medium power mode",
+      "Medium power mode",
+      "-",
+      "0.3",
+      "1.2",
+      "µs"
+    ],
+    [
+      "t D",
+      "Propagation delay for full range step with 100 mV overdrive",
+      "High speed mode",
+      "V ≥ 2.7 V DDA",
+      "-",
+      "90",
+      "180",
+      "ns"
+    ],
+    [
+      "t D",
+      "Propagation delay for full range step with 100 mV overdrive",
+      "High speed mode",
+      "V < 2.7 V DDA",
+      "-",
+      "110",
+      "300",
+      "ns"
+    ],
+    [
+      "V offset",
+      "Comparator offset error",
+      "-",
+      "-",
+      "-",
+      "±4",
+      "±10",
+      "mV"
+    ],
+    [
+      "dV /dT offset",
+      "Offset error temperature coefficient",
+      "-",
+      "-",
+      "-",
+      "18",
+      "-",
+      "µV/°C"
+    ],
+    [
+      "I DD(COMP)",
+      "COMP current consumption",
+      "Ultra-low power mode",
+      "Ultra-low power mode",
+      "-",
+      "1.2",
+      "1.5",
+      "µA"
+    ],
+    [
+      "I DD(COMP)",
+      "COMP current consumption",
+      "Low power mode",
+      "Low power mode",
+      "-",
+      "3",
+      "5",
+      "µA"
+    ],
+    [
+      "I DD(COMP)",
+      "COMP current consumption",
+      "Medium power mode",
+      "Medium power mode",
+      "-",
+      "10",
+      "15",
+      "µA"
+    ],
+    [
+      "I DD(COMP)",
+      "COMP current consumption",
+      "High speed mode",
+      "High speed mode",
+      "-",
+      "75",
+      "100",
+      "µA"
+    ],
+    [
+      "V hys",
+      "Comparator hysteresis",
+      "No hysteresis (COMPxHYST[1:0]=00)",
+      "-",
+      "-",
+      "0",
+      "-",
+      "mV"
+    ],
+    [
+      "V hys",
+      "Comparator hysteresis",
+      "Low hysteresis (COMPxHYST[1:0]=01)",
+      "High speed mode",
+      "3",
+      "8",
+      "13",
+      "mV"
+    ],
+    [
+      "V hys",
+      "Comparator hysteresis",
+      "Low hysteresis (COMPxHYST[1:0]=01)",
+      "All other power modes",
+      "5",
+      "8",
+      "10",
+      "mV"
+    ],
+    [
+      "V hys",
+      "Comparator hysteresis",
+      "Medium hysteresis (COMPxHYST[1:0]=10)",
+      "High speed mode",
+      "7",
+      "15",
+      "26",
+      "mV"
+    ],
+    [
+      "V hys",
+      "Comparator hysteresis",
+      "Medium hysteresis (COMPxHYST[1:0]=10)",
+      "All other power modes",
+      "9",
+      "15",
+      "19",
+      "mV"
+    ],
+    [
+      "V hys",
+      "Comparator hysteresis",
+      "High hysteresis (COMPxHYST[1:0]=11)",
+      "High speed mode",
+      "18",
+      "31",
+      "49",
+      "mV"
+    ],
+    [
+      "V hys",
+      "Comparator hysteresis",
+      "High hysteresis (COMPxHYST[1:0]=11)",
+      "All other power modes",
+      "19",
+      "31",
+      "40",
+      "mV"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 8,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 8
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:2"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f078cb",
+    "table_id": "table_59",
+    "is_continued": true,
+    "pages": [
+      88,
+      89
+    ],
+    "rows_count": 30,
+    "cols_count": 8,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

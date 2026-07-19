@@ -1,0 +1,152 @@
+{
+  "table_id": "table_63",
+  "caption": "Table 63. PLL configurations",
+  "pdf_name": "stm32f105r8",
+  "family": "F1",
+  "page": 101,
+  "merged_pages": [
+    101
+  ],
+  "headers": [
+    "Application",
+    "Crystal value in MHz (XT1)",
+    "PREDIV2",
+    "PLL2MUL",
+    "PLLSRC",
+    "PREDIV1",
+    "PLLMUL",
+    "USB prescaler (PLLVCO output)",
+    "PLL3MUL",
+    "I2Sn clock input",
+    "MCO (main clock output)"
+  ],
+  "rows": [
+    [
+      "Ethernet only",
+      "25",
+      "/5",
+      "PLL2ON x8",
+      "PLL2",
+      "/5",
+      "PLLON x9",
+      "NA",
+      "PLL3ON x10",
+      "NA",
+      "XT1 (MII) PLL3 (RMII)"
+    ],
+    [
+      "Ethernet + OTG",
+      "25",
+      "/5",
+      "PLL2ON x8",
+      "PLL2",
+      "/5",
+      "PLLON x9",
+      "/3",
+      "PLL3ON x10",
+      "NA",
+      "XT1 (MII) PLL3 (RMII)"
+    ],
+    [
+      "Ethernet + OTG + basic audio",
+      "25",
+      "/5",
+      "PLL2ON x8",
+      "PLL2",
+      "/5",
+      "PLLON x9",
+      "/3",
+      "PLL3ON x10",
+      "PLL",
+      "XT1 (MII) PLL3 (RMII)"
+    ],
+    [
+      "Ethernet + OTG + Audio class I2S(1)",
+      "14.7456",
+      "/4",
+      "PLL2ON x12",
+      "PLL2",
+      "/4",
+      "PLLON x6.5",
+      "/3",
+      "PLL3ON x20",
+      "PLL3 VCO Out",
+      "NA ETH PHY must use its own crystal"
+    ],
+    [
+      "OTG only",
+      "8",
+      "NA",
+      "PLL2OFF",
+      "XT1",
+      "/1",
+      "PLLON x9",
+      "/3",
+      "PLL3OFF",
+      "NA",
+      "NA"
+    ],
+    [
+      "OTG + basic audio",
+      "8",
+      "NA",
+      "PLL2OFF",
+      "XT1",
+      "/1",
+      "PLLON x9",
+      "/3",
+      "PLL3OFF",
+      "PLL",
+      "NA"
+    ],
+    [
+      "OTG + Audio class I2S(1)",
+      "14.7456",
+      "/4",
+      "PLL2ON x12",
+      "PLL2",
+      "/4",
+      "PLLON x6.5",
+      "/3",
+      "PLL3ON x20",
+      "PLL3 VCO Out",
+      "NA"
+    ],
+    [
+      "Audio class I2S only(1)",
+      "14.7456",
+      "/4",
+      "PLL2ON x12",
+      "PLL2",
+      "/4",
+      "PLLON x6.5",
+      "NA",
+      "PLL3ON x20",
+      "PLL3 VCO out",
+      "NA"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 11,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 11
+  },
+  "structured_json": null,
+  "warnings": [],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f105r8",
+    "table_id": "table_63",
+    "is_continued": false,
+    "pages": [
+      101
+    ],
+    "rows_count": 8,
+    "cols_count": 11,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

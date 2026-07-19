@@ -1,0 +1,86 @@
+{
+  "table_id": "table_102",
+  "caption": "Table 102. Switching characteristics for NAND flash memory write cycles",
+  "pdf_name": "stm32g473cb",
+  "family": "G4",
+  "page": 191,
+  "merged_pages": [
+    191
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Min",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "T w(NWE)",
+      "FMC_NWE low width",
+      "4 T -1 HCLK",
+      "4 T HCLK",
+      "ns"
+    ],
+    [
+      "T v(NWE-D)",
+      "FMC_NWE low to FMC_D[15-0] valid",
+      "0",
+      "-",
+      "ns"
+    ],
+    [
+      "T h(NWE-D)",
+      "FMC_NWE high to FMC_D[15-0] invalid",
+      "3 T - 1 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "T d(D-NWE)",
+      "FMC_D[15-0] valid before FMC_NWE high",
+      "5 T HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "T d(NCE_NWE)",
+      "FMC_NCE valid before FMC_NWE low",
+      "-",
+      "3 T HCLK",
+      "ns"
+    ],
+    [
+      "T h(NWE-ALE)",
+      "FMC_NWE high to FMC_ALE invalid",
+      "3 T HCLK",
+      "-",
+      "ns"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 5,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 5
+  },
+  "structured_json": null,
+  "warnings": [
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32g473cb",
+    "table_id": "table_102",
+    "is_continued": false,
+    "pages": [
+      191
+    ],
+    "rows_count": 6,
+    "cols_count": 5,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

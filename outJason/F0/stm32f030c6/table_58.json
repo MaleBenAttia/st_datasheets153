@@ -1,0 +1,181 @@
+{
+  "table_id": "table_58",
+  "caption": "Table 58. SPI characteristics",
+  "pdf_name": "stm32f030c6",
+  "family": "F0",
+  "page": 73,
+  "merged_pages": [
+    73
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Min",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "f SCK 1/t c(SCK)",
+      "SPI clock frequency",
+      "Master mode",
+      "-",
+      "18",
+      "MHz"
+    ],
+    [
+      "f SCK 1/t c(SCK)",
+      "SPI clock frequency",
+      "Slave mode",
+      "-",
+      "18",
+      "MHz"
+    ],
+    [
+      "t r(SCK) t f(SCK)",
+      "SPI clock rise and fall time",
+      "Capacitive load: C = 15 pF",
+      "-",
+      "6",
+      "ns"
+    ],
+    [
+      "t su(NSS)",
+      "NSS setup time",
+      "Slave mode",
+      "4Tpclk",
+      "-",
+      "ns"
+    ],
+    [
+      "t h(NSS)",
+      "NSS hold time",
+      "Slave mode",
+      "2Tpclk + 10",
+      "-",
+      "ns"
+    ],
+    [
+      "t w(SCKH) t w(SCKL)",
+      "SCK high and low time",
+      "Master mode, f = 36 MHz, PCLK presc = 4",
+      "Tpclk/2 -2",
+      "Tpclk/2 + 1",
+      "ns"
+    ],
+    [
+      "t su(MI) t su(SI)",
+      "Data input setup time",
+      "Master mode",
+      "4",
+      "-",
+      "ns"
+    ],
+    [
+      "t su(MI) t su(SI)",
+      "Data input setup time",
+      "Slave mode",
+      "5",
+      "-",
+      "ns"
+    ],
+    [
+      "t h(MI)",
+      "Data input hold time",
+      "Master mode",
+      "4",
+      "-",
+      "ns"
+    ],
+    [
+      "t h(SI)",
+      "Data input hold time",
+      "Slave mode",
+      "5",
+      "-",
+      "ns"
+    ],
+    [
+      "t (2) a(SO)",
+      "Data output access time",
+      "Slave mode, f = 20 MHz PCLK",
+      "0",
+      "3Tpclk",
+      "ns"
+    ],
+    [
+      "t (3) dis(SO)",
+      "Data output disable time",
+      "Slave mode",
+      "0",
+      "18",
+      "ns"
+    ],
+    [
+      "t v(SO)",
+      "Data output valid time",
+      "Slave mode (after enable edge)",
+      "-",
+      "22.5",
+      "ns"
+    ],
+    [
+      "t v(MO)",
+      "Data output valid time",
+      "Master mode (after enable edge)",
+      "-",
+      "6",
+      "ns"
+    ],
+    [
+      "t h(SO)",
+      "Data output hold time",
+      "Slave mode (after enable edge)",
+      "11.5",
+      "-",
+      "ns"
+    ],
+    [
+      "t h(MO)",
+      "Data output hold time",
+      "Master mode (after enable edge)",
+      "2",
+      "-",
+      "ns"
+    ],
+    [
+      "DuCy(SCK)",
+      "SPI slave input clock duty cycle",
+      "Slave mode",
+      "25",
+      "75",
+      "%"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 6,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 6
+  },
+  "structured_json": null,
+  "warnings": [
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f030c6",
+    "table_id": "table_58",
+    "is_continued": false,
+    "pages": [
+      73
+    ],
+    "rows_count": 17,
+    "cols_count": 6,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

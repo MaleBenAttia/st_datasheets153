@@ -1,0 +1,8816 @@
+[
+  {
+    "table_id": "table_1",
+    "caption": "Table 1. STM32L010C6 features and peripheral counts",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 10,
+    "merged_pages": [
+      10,
+      11
+    ],
+    "headers": [
+      "Feature and peripheral count",
+      "Feature and peripheral count",
+      "STM32L010C6"
+    ],
+    "rows": [
+      [
+        "Flash memory (Kbytes)",
+        "Flash memory (Kbytes)",
+        "32"
+      ],
+      [
+        "Data EEPROM (bytes)",
+        "Data EEPROM (bytes)",
+        "256"
+      ],
+      [
+        "RAM (Kbytes)",
+        "RAM (Kbytes)",
+        "8"
+      ],
+      [
+        "Timers",
+        "General-purpose",
+        "2"
+      ],
+      [
+        "Timers",
+        "LPTIM",
+        "1"
+      ],
+      [
+        "RTC/SYSTICK/IWDG/WWDG",
+        "RTC/SYSTICK/IWDG/WWDG",
+        "1/1/1/1"
+      ],
+      [
+        "Communication interfaces",
+        "SPI",
+        "1"
+      ],
+      [
+        "Communication interfaces",
+        "I2C",
+        "1"
+      ],
+      [
+        "Communication interfaces",
+        "USART",
+        "1"
+      ],
+      [
+        "Communication interfaces",
+        "LPUART",
+        "1"
+      ],
+      [
+        "GPIOs",
+        "GPIOs",
+        "38"
+      ],
+      [
+        "Clocks: HSE/LSE/HSI/MSI/LSI",
+        "Clocks: HSE/LSE/HSI/MSI/LSI",
+        "1/1/1/1/1"
+      ],
+      [
+        "12-bit synchronized ADC / Number of channels",
+        "12-bit synchronized ADC / Number of channels",
+        "1 / 10"
+      ],
+      [
+        "Maximum CPU frequency",
+        "Maximum CPU frequency",
+        "32 MHz"
+      ],
+      [
+        "Operating voltage range",
+        "Operating voltage range",
+        "1.8 to 3.6 V"
+      ],
+      [
+        "Operating temperatures",
+        "Operating temperatures",
+        "Ambient temperature: –40 to +85 °C Junction temperature: –40 to +105 °C"
+      ],
+      [
+        "Package",
+        "Package",
+        "LQFP48"
+      ],
+      [
+        "SWD",
+        "SWD",
+        "SWD"
+      ],
+      [
+        "CORTEX M0+ CPU Fmax:32MHz NVIC",
+        "CORTEX M0+ CPU Fmax:32MHz NVIC",
+        "CORTEX M0+ CPU Fmax:32MHz NVIC"
+      ],
+      [
+        "NVIC",
+        "NVIC",
+        "NVIC"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 3,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 3
+    },
+    "structured_json": null,
+    "warnings": [
+      "multi_page_merged:2"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_1",
+      "is_continued": true,
+      "pages": [
+        10,
+        11
+      ],
+      "rows_count": 20,
+      "cols_count": 3,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_2",
+    "caption": "Table 2. CPU frequency range depending on dynamic voltage scaling.",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 14,
+    "merged_pages": [
+      14
+    ],
+    "headers": [
+      "CPU frequency range (number of wait state)",
+      "Dynamic voltage scaling range"
+    ],
+    "rows": [
+      [
+        "16MHz to32 MHz (1ws) - 32kHz to16 MHz (0ws)",
+        "Range 1"
+      ],
+      [
+        "8MHz to 16MHz (1ws) - 32kHz to 8MHz (0ws)",
+        "Range 2"
+      ],
+      [
+        "32 kHz to 4.2MHz (0ws)",
+        "Range 3"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 2,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 2
+    },
+    "structured_json": null,
+    "warnings": [],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_2",
+      "is_continued": false,
+      "pages": [
+        14
+      ],
+      "rows_count": 3,
+      "cols_count": 2,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_3",
+    "caption": "Table 3. Functionalities depending on the working mode (from Run/active down to Standby)",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 15,
+    "merged_pages": [
+      15,
+      16
+    ],
+    "headers": [
+      "IP",
+      "Run/active",
+      "Sleep",
+      "Low-",
+      "Low-",
+      "Stop mode",
+      "Stop mode / Wakeup capability / Wakeup",
+      "Standby mode",
+      "Standby mode / Wakeup"
+    ],
+    "rows": [
+      [
+        "CPU",
+        "Y",
+        "-",
+        "Y",
+        "-",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "Flash memory",
+        "O",
+        "O",
+        "O",
+        "O",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "RAM",
+        "Y",
+        "Y",
+        "Y",
+        "Y",
+        "Y",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "Backup registers",
+        "Y",
+        "Y",
+        "Y",
+        "Y",
+        "Y",
+        "-",
+        "Y",
+        "-"
+      ],
+      [
+        "EEPROM",
+        "O",
+        "O",
+        "O",
+        "O",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "Brownout reset (BOR)",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      [
+        "DMA",
+        "O",
+        "O",
+        "O",
+        "O",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "Power-on/down reset (POR/PDR)",
+        "Y",
+        "Y",
+        "Y",
+        "Y",
+        "Y",
+        "Y",
+        "Y",
+        "Y"
+      ],
+      [
+        "High speed internal (HSI)",
+        "O",
+        "O",
+        "-",
+        "-",
+        "(3)",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "High speed external (HSE)",
+        "O",
+        "O",
+        "O",
+        "O",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "Low speed internal (LSI)",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "-",
+        "O",
+        "-"
+      ],
+      [
+        "Low speed external (LSE)",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "-",
+        "O",
+        "-"
+      ],
+      [
+        "Multispeed internal (MSI)",
+        "O",
+        "O",
+        "Y",
+        "Y",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "Interconnect controller",
+        "Y",
+        "Y",
+        "Y",
+        "Y",
+        "Y",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "RTC",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "-"
+      ],
+      [
+        "RTC tamper",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      [
+        "Auto wakeup (AWU)",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "-",
+        "O",
+        "O"
+      ],
+      [
+        "USART",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O(4)",
+        "O",
+        "-",
+        "-"
+      ],
+      [
+        "LPUART",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O(4)",
+        "O",
+        "-",
+        "-"
+      ],
+      [
+        "SPI",
+        "O",
+        "O",
+        "O",
+        "O",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "I2C",
+        "O",
+        "O",
+        "-",
+        "-",
+        "O(5)",
+        "O",
+        "-",
+        "-"
+      ],
+      [
+        "ADC",
+        "O",
+        "O",
+        "-",
+        "-",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "16-bit timers",
+        "O",
+        "O",
+        "O",
+        "O",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "LPTIM",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "-",
+        "-"
+      ],
+      [
+        "IWDG",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      [
+        "WWDG",
+        "O",
+        "O",
+        "O",
+        "O",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "SysTick timer",
+        "O",
+        "O",
+        "O",
+        "O",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "GPIOs",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "-",
+        "2 pins"
+      ],
+      [
+        "Wakeup time to Run mode",
+        "0 µs",
+        "6 CPU cycles",
+        "3 µs",
+        "7 CPU cycles",
+        "5µs",
+        "5µs",
+        "65µs",
+        "65µs"
+      ],
+      [
+        "Consumption V =1.8 to 3.6V (typ) DD",
+        "Down to 115µA/MHz (from Flash memory)",
+        "Down to 25µA/MHz (from Flash memory)",
+        "Down to 6.5µA",
+        "Down to 3.2µA",
+        "0.35µA (no RTC) V =1.8V DD",
+        "5µs",
+        "0.23µA (no RTC) V =1.8V DD",
+        "65µs"
+      ],
+      [
+        "Consumption V =1.8 to 3.6V (typ) DD",
+        "Down to 115µA/MHz (from Flash memory)",
+        "Down to 25µA/MHz (from Flash memory)",
+        "Down to 6.5µA",
+        "Down to 3.2µA",
+        "0.6µA (with RTC) V =1.8V DD",
+        "5µs",
+        "0.39µA (with RTC) V =1.8V DD",
+        "65µs"
+      ],
+      [
+        "Consumption V =1.8 to 3.6V (typ) DD",
+        "Down to 115µA/MHz (from Flash memory)",
+        "Down to 25µA/MHz (from Flash memory)",
+        "Down to 6.5µA",
+        "Down to 3.2µA",
+        "0.38µA (no RTC) V =3.0V DD",
+        "5µs",
+        "0.26µA (no RTC) V =3.0V DD",
+        "65µs"
+      ],
+      [
+        "Consumption V =1.8 to 3.6V (typ) DD",
+        "Down to 115µA/MHz (from Flash memory)",
+        "Down to 25µA/MHz (from Flash memory)",
+        "Down to 6.5µA",
+        "Down to 3.2µA",
+        "0.8µA (with RTC) V =3.0V DD",
+        "5µs",
+        "0.57µA (with RTC) V =3.0V DD",
+        "65µs"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 9,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 9
+    },
+    "structured_json": null,
+    "warnings": [
+      "dynamic_header_depth:3",
+      "multi_page_merged:2",
+      "vertical_merge_suspected"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_3",
+      "is_continued": true,
+      "pages": [
+        15,
+        16
+      ],
+      "rows_count": 33,
+      "cols_count": 9,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_4",
+    "caption": "Table 4. STM32L010C6 peripherals interconnect matrix.",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 16,
+    "merged_pages": [
+      16,
+      17
+    ],
+    "headers": [
+      "Interconnect source",
+      "Inter- connect destination",
+      "Interconnect action",
+      "Run",
+      "Sleep",
+      "Low- power run",
+      "Low- power sleep",
+      "Stop"
+    ],
+    "rows": [
+      [
+        "TIMx",
+        "TIMx",
+        "Timer triggered by other timer",
+        "Y",
+        "Y",
+        "Y",
+        "Y",
+        "-"
+      ],
+      [
+        "RTC",
+        "TIM21",
+        "Timer triggered by auto wakeup",
+        "Y",
+        "Y",
+        "Y",
+        "Y",
+        "-"
+      ],
+      [
+        "RTC",
+        "LPTIM1",
+        "Timer triggered by RTC event",
+        "Y",
+        "Y",
+        "Y",
+        "Y",
+        "Y"
+      ],
+      [
+        "All clocks",
+        "TIMx",
+        "Clock source used as input channel for RC measurement and trimming",
+        "Y",
+        "Y",
+        "Y",
+        "Y",
+        "-"
+      ],
+      [
+        "GPIO",
+        "TIMx",
+        "Timer input channel and trigger",
+        "Y",
+        "Y",
+        "Y",
+        "Y",
+        "-"
+      ],
+      [
+        "GPIO",
+        "LPTIM1",
+        "Timer input channel and trigger",
+        "Y",
+        "Y",
+        "Y",
+        "Y",
+        "Y"
+      ],
+      [
+        "GPIO",
+        "ADC",
+        "Conversion trigger",
+        "Y",
+        "Y",
+        "Y",
+        "Y",
+        "-"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 8,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 8
+    },
+    "structured_json": null,
+    "warnings": [
+      "multi_page_merged:2",
+      "vertical_merge_suspected"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_4",
+      "is_continued": true,
+      "pages": [
+        16,
+        17
+      ],
+      "rows_count": 7,
+      "cols_count": 8,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_5",
+    "caption": "Table 5. Features of general purpose timers",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 24,
+    "merged_pages": [
+      24
+    ],
+    "headers": [
+      "Timer",
+      "Counter resolution",
+      "Counter type",
+      "Prescaler factor",
+      "DMA request generation",
+      "Capture/compare channels",
+      "Complementary outputs"
+    ],
+    "rows": [
+      [
+        "TIM2",
+        "16-bit",
+        "Up, down, up/down",
+        "Any integer between 1 and 65536",
+        "Yes",
+        "4",
+        "No"
+      ],
+      [
+        "TIM21",
+        "16-bit",
+        "Up, down, up/down",
+        "Any integer between 1 and 65536",
+        "No",
+        "2",
+        "No"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 7,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 7
+    },
+    "structured_json": null,
+    "warnings": [],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_5",
+      "is_continued": false,
+      "pages": [
+        24
+      ],
+      "rows_count": 2,
+      "cols_count": 7,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_6",
+    "caption": "Table 6. I2C implementation.",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 26,
+    "merged_pages": [
+      26
+    ],
+    "headers": [
+      "I2C features(1)",
+      "I2C1"
+    ],
+    "rows": [
+      [
+        "7-bit addressing mode",
+        "X"
+      ],
+      [
+        "10-bit addressing mode",
+        "X"
+      ],
+      [
+        "Standard mode (up to 100 kbit/s)",
+        "X"
+      ],
+      [
+        "Fast mode (up to 400 kbit/s)",
+        "X"
+      ],
+      [
+        "Fast mode plus with 20mA output drive I/Os (up to 1Mbit/s)",
+        "-"
+      ],
+      [
+        "Independent clock",
+        "X"
+      ],
+      [
+        "SMBus",
+        "X"
+      ],
+      [
+        "Wakeup from Stop",
+        "X"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 2,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 2
+    },
+    "structured_json": null,
+    "warnings": [],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_6",
+      "is_continued": false,
+      "pages": [
+        26
+      ],
+      "rows_count": 8,
+      "cols_count": 2,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_7",
+    "caption": "Table 7. USART implementation",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 26,
+    "merged_pages": [
+      26,
+      27
+    ],
+    "headers": [
+      "USART modes/features(1)",
+      "USART2"
+    ],
+    "rows": [
+      [
+        "Hardware flow control for modem",
+        "X"
+      ],
+      [
+        "Continuous communication using DMA",
+        "X"
+      ],
+      [
+        "Multiprocessor communication",
+        "X"
+      ],
+      [
+        "Synchronous mode",
+        "-"
+      ],
+      [
+        "Smartcard mode",
+        "-"
+      ],
+      [
+        "Single-wire half-duplex communication",
+        "X"
+      ],
+      [
+        "IrDA SIR ENDEC block",
+        "-"
+      ],
+      [
+        "LIN mode",
+        "-"
+      ],
+      [
+        "Dual clock domain and wakeup from Stop mode",
+        "-"
+      ],
+      [
+        "Receiver timeout interrupt",
+        "-"
+      ],
+      [
+        "Modbus communication",
+        "-"
+      ],
+      [
+        "Auto baud rate detection (4 modes)",
+        "-"
+      ],
+      [
+        "Driver enable",
+        "X"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 2,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 2
+    },
+    "structured_json": null,
+    "warnings": [
+      "multi_page_merged:2",
+      "vertical_merge_suspected"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_7",
+      "is_continued": true,
+      "pages": [
+        26,
+        27
+      ],
+      "rows_count": 13,
+      "cols_count": 2,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_8",
+    "caption": "Table 8. SPI implementation.",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 27,
+    "merged_pages": [
+      27
+    ],
+    "headers": [
+      "SPI features(1)",
+      "SPI1"
+    ],
+    "rows": [
+      [
+        "Hardware CRC calculation",
+        "X"
+      ],
+      [
+        "I2S mode",
+        "-"
+      ],
+      [
+        "TI mode",
+        "X"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 2,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 2
+    },
+    "structured_json": null,
+    "warnings": [],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_8",
+      "is_continued": false,
+      "pages": [
+        27
+      ],
+      "rows_count": 3,
+      "cols_count": 2,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_9",
+    "caption": "Table 9. Legend/abbreviations used in the pinout table.",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 29,
+    "merged_pages": [
+      29
+    ],
+    "headers": [
+      "Name",
+      "Name",
+      "Abbreviation",
+      "Definition"
+    ],
+    "rows": [
+      [
+        "Pin name",
+        "Pin name",
+        "Unless otherwise specified in brackets below the pin name, the pin function during and after reset is the same as the actual pin name",
+        "Unless otherwise specified in brackets below the pin name, the pin function during and after reset is the same as the actual pin name"
+      ],
+      [
+        "Pin type",
+        "Pin type",
+        "S S",
+        "upply pin"
+      ],
+      [
+        "Pin type",
+        "Pin type",
+        "I In",
+        "put only pin"
+      ],
+      [
+        "Pin type",
+        "Pin type",
+        "I/O In",
+        "put/output pin"
+      ],
+      [
+        "I/O structure",
+        "I/O structure",
+        "FT 5",
+        "V tolerant I/O"
+      ],
+      [
+        "I/O structure",
+        "I/O structure",
+        "TTa 3",
+        ".3V tolerant I/O directly connected to the ADC"
+      ],
+      [
+        "I/O structure",
+        "I/O structure",
+        "TC S",
+        "tandard 3.3V I/O"
+      ],
+      [
+        "Notes",
+        "Notes",
+        "Unless otherwise specified by a note, all I/Os are set as analog inputs during and after reset.",
+        "Unless otherwise specified by a note, all I/Os are set as analog inputs during and after reset."
+      ],
+      [
+        "Pin functions",
+        "Alternate functions",
+        "Functions selected through GPIOx_AFR registers",
+        "Functions selected through GPIOx_AFR registers"
+      ],
+      [
+        "Pin functions",
+        "Additional functions",
+        "Functions directly selected/enabled through peripheral registers",
+        "Functions directly selected/enabled through peripheral registers"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 4,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 4
+    },
+    "structured_json": null,
+    "warnings": [],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_9",
+      "is_continued": false,
+      "pages": [
+        29
+      ],
+      "rows_count": 10,
+      "cols_count": 4,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_10",
+    "caption": "Table 10. Pin definitions.",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 30,
+    "merged_pages": [
+      30,
+      31,
+      32
+    ],
+    "headers": [
+      "Pin / LQFP48",
+      "Pin name",
+      "Pin type",
+      "I/O structure",
+      "Notes",
+      "Pin functions / Alternate functions",
+      "Pin functions / Additional functions"
+    ],
+    "rows": [
+      [
+        "1",
+        "PC0",
+        "I/O",
+        "FT",
+        "-",
+        "LPTIM1_IN1, EVENTOUT, LPUART1_RX",
+        "-"
+      ],
+      [
+        "2",
+        "PC13",
+        "I/O",
+        "FT",
+        "-",
+        "-",
+        "TAMP1/WKUP2"
+      ],
+      [
+        "3",
+        "PC14-OSC32_IN",
+        "I/O",
+        "TC",
+        "-",
+        "-",
+        "OSC32_IN"
+      ],
+      [
+        "4",
+        "PC15-OSC32_OUT",
+        "I/O",
+        "TC",
+        "-",
+        "-",
+        "OSC32_OUT"
+      ],
+      [
+        "5",
+        "PH0-OSC_IN",
+        "I/O",
+        "TC",
+        "-",
+        "-",
+        "OSC_IN"
+      ],
+      [
+        "6",
+        "PH1-OSC_OUT",
+        "I/O",
+        "TC",
+        "-",
+        "-",
+        "OSC_OUT"
+      ],
+      [
+        "7",
+        "NRST",
+        "I/O",
+        "-",
+        "(1)",
+        "-",
+        "-"
+      ],
+      [
+        "8",
+        "VSSA",
+        "S",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "9",
+        "VDDA",
+        "S",
+        "-",
+        "(2)",
+        "-",
+        "-"
+      ],
+      [
+        "10",
+        "PA0",
+        "I/O",
+        "TC",
+        "-",
+        "LPTIM1_IN1, TIM2_CH1, USART2_CTS, TIM2_ETR",
+        "ADC_IN0, RTC_TAMP2/WKUP1"
+      ],
+      [
+        "11",
+        "PA1",
+        "I/O",
+        "FT",
+        "-",
+        "EVENTOUT, LPTIM1_IN2, TIM2_CH2, I2C1_SMBA, USART2_RTS, TIM21_ETR",
+        "ADC_IN1"
+      ],
+      [
+        "12",
+        "PA2",
+        "I/O",
+        "TC",
+        "-",
+        "TIM21_CH1, TIM2_CH3, USART2_TX, LPUART1_TX",
+        "ADC_IN2, RTC_TAMP3/RTC_TS/ RTC_OUT/WKUP3"
+      ],
+      [
+        "13",
+        "PA3",
+        "I/O",
+        "FT",
+        "-",
+        "TIM21_CH2, TIM2_CH4, USART2_RX, LPUART1_RX",
+        "ADC_IN3"
+      ],
+      [
+        "14",
+        "PA4",
+        "I/O",
+        "TC",
+        "-",
+        "SPI1_NSS, LPTIM1_IN1, USART2_CK",
+        "ADC_IN4"
+      ],
+      [
+        "15",
+        "PA5",
+        "I/O",
+        "TC",
+        "-",
+        "SPI1_SCK, LPTIM1_IN2, TIM2_ETR, TIM2_CH1",
+        "ADC_IN5"
+      ],
+      [
+        "16",
+        "PA6",
+        "I/O",
+        "FT",
+        "-",
+        "SPI1_MISO, LPTIM1_ETR, LPUART1_CTS, EVENTOUT",
+        "ADC_IN6"
+      ],
+      [
+        "17",
+        "PA7",
+        "I/O",
+        "FT",
+        "-",
+        "SPI1_MOSI, LPTIM1_OUT, USART2_CTS, EVENTOUT",
+        "ADC_IN7"
+      ],
+      [
+        "18",
+        "PB0",
+        "I/O",
+        "FT",
+        "-",
+        "EVENTOUT, SPI1_MISO, USART2_RTS, TIM2_CH3",
+        "ADC_IN8, VREF_OUT"
+      ],
+      [
+        "19",
+        "PB1",
+        "I/O",
+        "FT",
+        "-",
+        "USART2_CK, SPI1_MOSI, LPUART1_RTS, TIM2_CH4",
+        "ADC_IN9, VREF_OUT"
+      ],
+      [
+        "20",
+        "PB2",
+        "I/O",
+        "FT",
+        "-",
+        "LPTIM1_OUT",
+        "-"
+      ],
+      [
+        "21",
+        "PB10",
+        "I/O",
+        "FT",
+        "-",
+        "TIM2_CH3, LPUART1_TX",
+        "-"
+      ],
+      [
+        "22",
+        "PB11",
+        "I/O",
+        "FT",
+        "-",
+        "EVENTOUT, TIM2_CH4, LPUART1_RX",
+        "-"
+      ],
+      [
+        "84PFQL",
+        "PB11",
+        "I/O",
+        "FT",
+        "-",
+        "Alternate functions",
+        "Additional functions"
+      ],
+      [
+        "23",
+        "VSS",
+        "S",
+        "-",
+        "(3)",
+        "-",
+        "-"
+      ],
+      [
+        "24",
+        "VDD",
+        "S",
+        "-",
+        "(4)",
+        "-",
+        "-"
+      ],
+      [
+        "25",
+        "PB12",
+        "I/O",
+        "FT",
+        "-",
+        "SPI1_NSS, EVENTOUT",
+        "-"
+      ],
+      [
+        "26",
+        "PB13",
+        "I/O",
+        "FT",
+        "-",
+        "SPI1_SCK, MCO, TIM21_CH1, LPUART1_CTS",
+        "-"
+      ],
+      [
+        "27",
+        "PB14",
+        "I/O",
+        "FT",
+        "-",
+        "SPI1_MISO, RTC_OUT, TIM21_CH2, LPUART1_RTS",
+        "-"
+      ],
+      [
+        "28",
+        "PB15",
+        "I/O",
+        "FT",
+        "-",
+        "SPI1_MOSI, RTC_REFIN",
+        "-"
+      ],
+      [
+        "29",
+        "PA8",
+        "I/O",
+        "FT",
+        "-",
+        "MCO, LPTIM1_IN1, EVENTOUT, USART2_CK, TIM2_CH1",
+        "-"
+      ],
+      [
+        "30",
+        "PA9",
+        "I/O",
+        "FT",
+        "-",
+        "MCO, I2C1_SCL, USART2_TX",
+        "-"
+      ],
+      [
+        "31",
+        "PA10",
+        "I/O",
+        "FT",
+        "-",
+        "I2C1_SDA, USART2_RX",
+        "-"
+      ],
+      [
+        "32",
+        "PA11",
+        "I/O",
+        "FT",
+        "-",
+        "SPI1_MISO, EVENTOUT, USART2_CTS, TIM21_CH2",
+        "-"
+      ],
+      [
+        "33",
+        "PA12",
+        "I/O",
+        "FT",
+        "-",
+        "SPI1_MOSI, EVENTOUT, USART2_RTS",
+        "-"
+      ],
+      [
+        "34",
+        "PA13",
+        "I/O",
+        "FT",
+        "-",
+        "SWDIO, LPTIM1_ETR, LPUART1_RX",
+        "-"
+      ],
+      [
+        "35",
+        "VSS",
+        "S",
+        "-",
+        "(3)",
+        "-",
+        "-"
+      ],
+      [
+        "36",
+        "VDD",
+        "S",
+        "-",
+        "(4)",
+        "-",
+        "-"
+      ],
+      [
+        "37",
+        "PA14",
+        "I/O",
+        "FT",
+        "-",
+        "SWCLK, LPTIM1_OUT, I2C1_SMBA, USART2_TX, LPUART1_TX",
+        "-"
+      ],
+      [
+        "38",
+        "PA15",
+        "I/O",
+        "FT",
+        "-",
+        "SPI1_NSS, TIM2_ETR, EVENTOUT, USART2_RX, TIM2_CH1",
+        "-"
+      ],
+      [
+        "39",
+        "PB3",
+        "I/O",
+        "FT",
+        "-",
+        "SPI1_SCK, TIM2_CH2, EVENTOUT",
+        "-"
+      ],
+      [
+        "40",
+        "PB4",
+        "I/O",
+        "FT",
+        "-",
+        "SPI1_MISO, EVENTOUT",
+        "-"
+      ],
+      [
+        "41",
+        "PB5",
+        "I/O",
+        "FT",
+        "-",
+        "SPI1_MOSI, LPTIM1_IN1, I2C1_SMBA",
+        "-"
+      ],
+      [
+        "42",
+        "PB6",
+        "I/O",
+        "FT",
+        "-",
+        "USART2_TX, I2C1_SCL, LPTIM1_ETR, TIM21_CH1",
+        "-"
+      ],
+      [
+        "43",
+        "PB7",
+        "I/O",
+        "FT",
+        "-",
+        "USART2_RX, I2C1_SDA, LPTIM1_IN2",
+        "VREF_PVD_IN"
+      ],
+      [
+        "84PFQL",
+        "PB7",
+        "I/O",
+        "FT",
+        "-",
+        "Alternate functions",
+        "Additional functions"
+      ],
+      [
+        "44",
+        "BOOT0",
+        "I",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "45",
+        "PB8",
+        "I/O",
+        "FT",
+        "-",
+        "I2C1_SCL",
+        "-"
+      ],
+      [
+        "46",
+        "PB9",
+        "I/O",
+        "FT",
+        "-",
+        "EVENTOUT, I2C1_SDA",
+        "-"
+      ],
+      [
+        "47",
+        "VSS",
+        "S",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "48",
+        "VDD",
+        "S",
+        "-",
+        "-",
+        "-",
+        "-"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 7,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 7
+    },
+    "structured_json": null,
+    "warnings": [
+      "dynamic_header_depth:2",
+      "multi_page_merged:3",
+      "vertical_merge_suspected"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_10",
+      "is_continued": true,
+      "pages": [
+        30,
+        31,
+        32
+      ],
+      "rows_count": 50,
+      "cols_count": 7,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_11",
+    "caption": "Table 11. Alternate functions",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 33,
+    "merged_pages": [
+      33,
+      34
+    ],
+    "headers": [
+      "Port",
+      "Port",
+      "AF0 / SPI1/USART2/",
+      "AF1 / SPI1/I2C1/",
+      "AF2 / LPTIM1/TIM2/",
+      "AF3 / I2C1/EVENTOUT",
+      "AF4 / I2C1/USART2/",
+      "AF5 / TIM2/TIM21",
+      "AF6 / LPUART1/"
+    ],
+    "rows": [
+      [
+        "Port A",
+        "PA1",
+        "EVENTOUT",
+        "LPTIM1_IN2",
+        "TIM2_CH2",
+        "I2C1_SMBA",
+        "USART2_RTS",
+        "TIM21_ETR",
+        "-"
+      ],
+      [
+        "Port A",
+        "PA2",
+        "TIM21_CH1",
+        "-",
+        "TIM2_CH3",
+        "-",
+        "USART2_TX",
+        "-",
+        "LPUART1_TX"
+      ],
+      [
+        "Port A",
+        "PA3",
+        "TIM21_CH2",
+        "-",
+        "TIM2_CH4",
+        "-",
+        "USART2_RX",
+        "-",
+        "LPUART1_RX"
+      ],
+      [
+        "Port A",
+        "PA4",
+        "SPI1_NSS",
+        "LPTIM1_IN1",
+        "-",
+        "-",
+        "USART2_CK",
+        "-",
+        "-"
+      ],
+      [
+        "Port A",
+        "PA5",
+        "SPI1_SCK",
+        "LPTIM1_IN2",
+        "TIM2_ETR",
+        "-",
+        "-",
+        "TIM2_CH1",
+        "-"
+      ],
+      [
+        "Port A",
+        "PA6",
+        "SPI1_MISO",
+        "LPTIM1_ETR",
+        "-",
+        "-",
+        "LPUART1_CTS",
+        "-",
+        "EVENTOUT"
+      ],
+      [
+        "Port A",
+        "PA7",
+        "SPI1_MOSI",
+        "LPTIM1_OUT",
+        "-",
+        "-",
+        "USART2_CTS",
+        "-",
+        "EVENTOUT"
+      ],
+      [
+        "Port A",
+        "PA8",
+        "MCO",
+        "-",
+        "LPTIM1_IN1",
+        "EVENTOUT",
+        "USART2_CK",
+        "TIM2_CH1",
+        "-"
+      ],
+      [
+        "Port A",
+        "PA9",
+        "MCO",
+        "I2C1_SCL",
+        "-",
+        "-",
+        "USART2_TX",
+        "-",
+        "-"
+      ],
+      [
+        "Port A",
+        "PA10",
+        "-",
+        "I2C1_SDA",
+        "-",
+        "-",
+        "USART2_RX",
+        "-",
+        "-"
+      ],
+      [
+        "Port A",
+        "PA11",
+        "SPI1_MISO",
+        "-",
+        "EVENTOUT",
+        "-",
+        "USART2_CTS",
+        "TIM21_CH2",
+        "-"
+      ],
+      [
+        "Port A",
+        "PA12",
+        "SPI1_MOSI",
+        "-",
+        "EVENTOUT",
+        "-",
+        "USART2_RTS",
+        "-",
+        "-"
+      ],
+      [
+        "Port A",
+        "PA13",
+        "SWDIO",
+        "LPTIM1_ETR",
+        "-",
+        "-",
+        "-",
+        "-",
+        "LPUART1_RX"
+      ],
+      [
+        "Port A",
+        "PA14",
+        "SWCLK",
+        "LPTIM1_OUT",
+        "-",
+        "I2C1_SMBA",
+        "USART2_TX",
+        "-",
+        "LPUART1_TX"
+      ],
+      [
+        "Port A",
+        "PA15",
+        "SPI1_NSS",
+        "-",
+        "TIM2_ETR",
+        "EVENTOUT",
+        "USART2_RX",
+        "TIM2_CH1",
+        "-"
+      ],
+      [
+        "Port B",
+        "PB0",
+        "EVENTOUT",
+        "SPI1_MISO",
+        "-",
+        "-",
+        "USART2_RTS",
+        "TIM2_CH3",
+        "-"
+      ],
+      [
+        "Port B",
+        "PB1",
+        "USART2_CK",
+        "SPI1_MOSI",
+        "-",
+        "-",
+        "LPUART1_RTS",
+        "TIM2_CH4",
+        "-"
+      ],
+      [
+        "Port B",
+        "PB2",
+        "-",
+        "-",
+        "LPTIM1_OUT",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "Port B",
+        "PB3",
+        "SPI1_SCK",
+        "-",
+        "TIM2_CH2",
+        "-",
+        "EVENTOUT",
+        "-",
+        "-"
+      ],
+      [
+        "Port B",
+        "PB4",
+        "SPI1_MISO",
+        "-",
+        "EVENTOUT",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "Port B",
+        "PB5",
+        "SPI1_MOSI",
+        "-",
+        "LPTIM1_IN1",
+        "I2C1_SMBA",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "Port B",
+        "PB6",
+        "USART2_TX",
+        "I2C1_SCL",
+        "LPTIM1_ETR",
+        "-",
+        "-",
+        "TIM21_CH1",
+        "-"
+      ],
+      [
+        "Port B",
+        "PB7",
+        "USART2_RX",
+        "I2C1_SDA",
+        "LPTIM1_IN2",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "Port B",
+        "PB8",
+        "-",
+        "-",
+        "-",
+        "-",
+        "I2C1_SCL",
+        "-",
+        "-"
+      ],
+      [
+        "Port B",
+        "PB9",
+        "-",
+        "-",
+        "EVENTOUT",
+        "-",
+        "I2C1_SDA",
+        "-",
+        "-"
+      ],
+      [
+        "Port B",
+        "PB10",
+        "-",
+        "-",
+        "TIM2_CH3",
+        "-",
+        "-",
+        "-",
+        "LPUART1_TX"
+      ],
+      [
+        "Port B",
+        "PB11",
+        "EVENTOUT",
+        "-",
+        "TIM2_CH4",
+        "-",
+        "-",
+        "-",
+        "LPUART1_RX"
+      ],
+      [
+        "Port B",
+        "PB12",
+        "SPI1_NSS",
+        "-",
+        "-",
+        "-",
+        "-",
+        "-",
+        "EVENTOUT"
+      ],
+      [
+        "Port B",
+        "PB13",
+        "SPI1_SCK",
+        "-",
+        "MCO",
+        "-",
+        "-",
+        "TIM21_CH1",
+        "LPUART1_CTS"
+      ],
+      [
+        "Port B",
+        "PB14",
+        "SPI1_MISO",
+        "-",
+        "RTC_OUT",
+        "-",
+        "-",
+        "TIM21_CH2",
+        "LPUART1_RTS"
+      ],
+      [
+        "Port B",
+        "PB15",
+        "SPI1_MOSI",
+        "-",
+        "RTC_REFIN",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "Port C",
+        "PC0",
+        "LPTIM1_IN1",
+        "-",
+        "EVENTOUT",
+        "-",
+        "-",
+        "-",
+        "LPUART1_RX"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 9,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 9
+    },
+    "structured_json": null,
+    "warnings": [
+      "dynamic_header_depth:2",
+      "multi_page_merged:2",
+      "vertical_merge_suspected"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_11",
+      "is_continued": true,
+      "pages": [
+        33,
+        34
+      ],
+      "rows_count": 32,
+      "cols_count": 9,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_12",
+    "caption": "Table 12. Voltage characteristics",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 38,
+    "merged_pages": [
+      38
+    ],
+    "headers": [
+      "Symbol",
+      "Ratings",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V -V DD SS",
+        "External main supply voltage (including V , V )(1) DDA DD",
+        "–0.3",
+        "4.0",
+        "V"
+      ],
+      [
+        "V (2) IN",
+        "Input voltage on FT pin",
+        "V -0.3 SS",
+        "V +4.0 DD",
+        "V"
+      ],
+      [
+        "V (2) IN",
+        "Input voltage on TC pins",
+        "V -0.3 SS",
+        "4.0",
+        "V"
+      ],
+      [
+        "V (2) IN",
+        "Input voltage on BOOT0",
+        "V SS",
+        "V +4.0 DD",
+        "V"
+      ],
+      [
+        "V (2) IN",
+        "Input voltage on any other pin",
+        "V -0.3 SS",
+        "4.0",
+        "V"
+      ],
+      [
+        "|∆V | DD",
+        "Variations between different V power pins DDx",
+        "-",
+        "50",
+        "mV"
+      ],
+      [
+        "|V -V | DDA DDx",
+        "Variations between any V and V power pins(3) DDx DDA",
+        "-",
+        "300",
+        "mV"
+      ],
+      [
+        "|∆V | SS",
+        "Variations between all different ground pins",
+        "-",
+        "50",
+        "mV"
+      ],
+      [
+        "V ESD(HBM)",
+        "Electrostatic discharge voltage (human body model)",
+        "see Section6.3.11",
+        "see Section6.3.11",
+        "V"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 5,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 5
+    },
+    "structured_json": null,
+    "warnings": [
+      "vertical_merge_suspected"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_12",
+      "is_continued": false,
+      "pages": [
+        38
+      ],
+      "rows_count": 9,
+      "cols_count": 5,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_13",
+    "caption": "Table 13. Current characteristics",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 39,
+    "merged_pages": [
+      39
+    ],
+    "headers": [
+      "Symbol",
+      "Ratings",
+      "Max.",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "ΣI (2) VDD",
+        "Total current into sum of all V power lines (source)(1) DD",
+        "105",
+        "mA"
+      ],
+      [
+        "ΣI (2) VSS",
+        "Total current out of sum of all V ground lines (sink)(1) SS",
+        "105",
+        "mA"
+      ],
+      [
+        "ΣI VDDIO2",
+        "Total current into sum of all V power lines (source) DDIO2",
+        "25",
+        "mA"
+      ],
+      [
+        "I VDD(PIN)",
+        "Maximum current into each V power pin (source)(1) DD",
+        "100",
+        "mA"
+      ],
+      [
+        "I VSS(PIN)",
+        "Maximum current out of each V ground pin (sink)(1) SS",
+        "100",
+        "mA"
+      ],
+      [
+        "I IO",
+        "Output current sunk by any I/O and control pin",
+        "16",
+        "mA"
+      ],
+      [
+        "I IO",
+        "Output current sourced by any I/O and control pin",
+        "-16",
+        "mA"
+      ],
+      [
+        "ΣI IO(PIN)",
+        "Total output current sunk by sum of all I/Os and control pins(2)",
+        "90",
+        "mA"
+      ],
+      [
+        "ΣI IO(PIN)",
+        "Total output current sourced by sum of all I/Os and control pins(2)",
+        "-90",
+        "mA"
+      ],
+      [
+        "I INJ(PIN)",
+        "Injected current on FT, RST and B pins",
+        "-5/+0(3)",
+        "mA"
+      ],
+      [
+        "I INJ(PIN)",
+        "Injected current on TC pin",
+        "±5(4)",
+        "mA"
+      ],
+      [
+        "ΣI INJ(PIN)",
+        "Total injected current (sum of all I/O and control pins)(5)",
+        "±25",
+        "mA"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 4,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 4
+    },
+    "structured_json": null,
+    "warnings": [
+      "vertical_merge_suspected"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_13",
+      "is_continued": false,
+      "pages": [
+        39
+      ],
+      "rows_count": 12,
+      "cols_count": 4,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_14",
+    "caption": "Table 14. Thermal characteristics.",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 39,
+    "merged_pages": [
+      39
+    ],
+    "headers": [
+      "Symbol",
+      "Ratings",
+      "Value",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "T STG",
+        "Storage temperature range",
+        "–65 to +150",
+        "°C"
+      ],
+      [
+        "T J",
+        "Maximum junction temperature",
+        "150",
+        "°C"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 4,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 4
+    },
+    "structured_json": null,
+    "warnings": [],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_14",
+      "is_continued": false,
+      "pages": [
+        39
+      ],
+      "rows_count": 2,
+      "cols_count": 4,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_15",
+    "caption": "Table 15. General operating conditions",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 40,
+    "merged_pages": [
+      40
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f HCLK",
+        "Internal AHB clock frequency",
+        "-",
+        "0",
+        "32",
+        "MHz"
+      ],
+      [
+        "f PCLK1",
+        "Internal APB1 clock frequency",
+        "-",
+        "0",
+        "32",
+        "MHz"
+      ],
+      [
+        "f PCLK2",
+        "Internal APB2 clock frequency",
+        "-",
+        "0",
+        "32",
+        "MHz"
+      ],
+      [
+        "V DD",
+        "Standard operating voltage",
+        "-",
+        "1.8",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DDA",
+        "Analog operating voltage (all features)",
+        "Must be the same voltage as V (1) DD",
+        "1.8",
+        "3.6",
+        "V"
+      ],
+      [
+        "V IN",
+        "Input voltage on FT and RST pins(2)",
+        "2.0V≤V ≤3.6V DD",
+        "–0.3",
+        "5.5",
+        "V"
+      ],
+      [
+        "V IN",
+        "Input voltage on FT and RST pins(2)",
+        "1.8V≤V ≤2.0V DD",
+        "–0.3",
+        "5.2",
+        "V"
+      ],
+      [
+        "V IN",
+        "Input voltage on BOOT0 pin",
+        "-",
+        "0",
+        "5.5",
+        "V"
+      ],
+      [
+        "V IN",
+        "Input voltage on TC pin",
+        "-",
+        "–0.3",
+        "V + 0.3 DD",
+        "V"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 85°C(3) A",
+        "LQFP48",
+        "-",
+        "351",
+        "mW"
+      ],
+      [
+        "TA",
+        "Temperature range",
+        "-",
+        "–40",
+        "85",
+        "°C"
+      ],
+      [
+        "TJ",
+        "Junction temperature range (range 6)",
+        "–40 °C≤T ≤85 ° A",
+        "–40",
+        "105",
+        "°C"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 6,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 6
+    },
+    "structured_json": null,
+    "warnings": [],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_15",
+      "is_continued": false,
+      "pages": [
+        40
+      ],
+      "rows_count": 12,
+      "cols_count": 6,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_16",
+    "caption": "Table 16. Embedded reset and power control block characteristics.",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 40,
+    "merged_pages": [
+      40,
+      41
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t (1) VDD",
+        "V rise time rate DD",
+        "BOR detector enabled",
+        "0",
+        "-",
+        "∞",
+        "µs/V"
+      ],
+      [
+        "t (1) VDD",
+        "V rise time rate DD",
+        "BOR detector disabled",
+        "0",
+        "-",
+        "1000",
+        "µs/V"
+      ],
+      [
+        "t (1) VDD",
+        "V fall time rate DD",
+        "BOR detector enabled",
+        "20",
+        "-",
+        "∞",
+        "µs/V"
+      ],
+      [
+        "t (1) VDD",
+        "V fall time rate DD",
+        "BOR detector disabled",
+        "0",
+        "-",
+        "1000",
+        "µs/V"
+      ],
+      [
+        "T (1) RSTTEMPO",
+        "Reset temporization",
+        "V rising, BOR enabled DD",
+        "-",
+        "2",
+        "3.3",
+        "ms"
+      ],
+      [
+        "V POR/PDR",
+        "Power on/power down reset threshold",
+        "Falling edge",
+        "1",
+        "1.5",
+        "1.8",
+        "V"
+      ],
+      [
+        "V POR/PDR",
+        "Power on/power down reset threshold",
+        "Rising edge",
+        "1.3",
+        "1.5",
+        "1.8",
+        "V"
+      ],
+      [
+        "V BOR0",
+        "Brownout reset threshold 0",
+        "Falling edge",
+        "1.67",
+        "1.7",
+        "1.74",
+        "V"
+      ],
+      [
+        "V BOR0",
+        "Brownout reset threshold 0",
+        "Rising edge",
+        "1.69",
+        "1.76",
+        "1.8",
+        "V"
+      ],
+      [
+        "V BOR1",
+        "Brownout reset threshold 1",
+        "Falling edge",
+        "1.87",
+        "1.93",
+        "1.97",
+        "V"
+      ],
+      [
+        "V BOR1",
+        "Brownout reset threshold 1",
+        "Rising edge",
+        "1.96",
+        "2.03",
+        "2.07",
+        "V"
+      ],
+      [
+        "V BOR2",
+        "Brownout reset threshold 2",
+        "Falling edge",
+        "2.22",
+        "2.30",
+        "2.35",
+        "V"
+      ],
+      [
+        "V BOR2",
+        "Brownout reset threshold 2",
+        "Rising edge",
+        "2.31",
+        "2.41",
+        "2.44",
+        "V"
+      ],
+      [
+        "V BOR3",
+        "Brownout reset threshold 3",
+        "Falling edge",
+        "2.45",
+        "2.55",
+        "2.6",
+        "V"
+      ],
+      [
+        "V BOR3",
+        "Brownout reset threshold 3",
+        "Rising edge",
+        "2.54",
+        "2.66",
+        "2.7",
+        "V"
+      ],
+      [
+        "V BOR4",
+        "Brownout reset threshold 4",
+        "Falling edge",
+        "2.68",
+        "2.8",
+        "2.85",
+        "V"
+      ],
+      [
+        "V BOR4",
+        "Brownout reset threshold 4",
+        "Rising edge",
+        "2.78",
+        "2.9",
+        "2.95",
+        "V"
+      ],
+      [
+        "V hyst",
+        "Hysteresis voltage",
+        "BOR0 threshold",
+        "-",
+        "40",
+        "-",
+        "mV"
+      ],
+      [
+        "V hyst",
+        "Hysteresis voltage",
+        "All BOR thresholds excepting BOR0",
+        "-",
+        "100",
+        "-",
+        "mV"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 7,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 7
+    },
+    "structured_json": null,
+    "warnings": [
+      "multi_page_merged:2",
+      "vertical_merge_suspected"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_16",
+      "is_continued": true,
+      "pages": [
+        40,
+        41
+      ],
+      "rows_count": 19,
+      "cols_count": 7,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_17",
+    "caption": "Table 17. Embedded internal reference voltage calibration values",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 41,
+    "merged_pages": [
+      41
+    ],
+    "headers": [
+      "Calibration value name",
+      "Description",
+      "Memory address"
+    ],
+    "rows": [
+      [
+        "VREFINT_CAL",
+        "Raw data acquired at temperature of 25°C, V = 3V DDA",
+        "0x1FF8 0078 - 0x1FF8 0079"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 3,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 3
+    },
+    "structured_json": null,
+    "warnings": [],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_17",
+      "is_continued": false,
+      "pages": [
+        41
+      ],
+      "rows_count": 1,
+      "cols_count": 3,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_18",
+    "caption": "Table 18. Embedded internal reference voltage.",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 41,
+    "merged_pages": [
+      41,
+      42
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V (2) REFINT out",
+        "Internal reference voltage",
+        "–40 °C < T < +85 °C J",
+        "1.202",
+        "1.224",
+        "1.242",
+        "V"
+      ],
+      [
+        "T VREFINT",
+        "Internal reference startup time",
+        "-",
+        "-",
+        "2",
+        "3",
+        "ms"
+      ],
+      [
+        "V VREF_MEAS",
+        "V voltage during V DDA REFINT factory measure",
+        "-",
+        "2.99",
+        "3",
+        "3.01",
+        "V"
+      ],
+      [
+        "A VREF_MEAS",
+        "Accuracy of factory-measured V value(3) REFINT",
+        "Including uncertainties due to ADC and V DDA values",
+        "-",
+        "-",
+        "±5",
+        "mV"
+      ],
+      [
+        "T (4) Coeff",
+        "Temperature coefficient",
+        "–40 °C < T < +85 °C J",
+        "-",
+        "25",
+        "100",
+        "ppm/°C"
+      ],
+      [
+        "T (4) Coeff",
+        "Temperature coefficient",
+        "0 °C < T < +50 °C J",
+        "-",
+        "-",
+        "20",
+        "ppm/°C"
+      ],
+      [
+        "A (4) Coeff",
+        "Long-term stability",
+        "1000 hours, T= 25 °C",
+        "-",
+        "-",
+        "1000",
+        "ppm"
+      ],
+      [
+        "V (4) DDCoeff",
+        "Voltage coefficient",
+        "3.0 V < V < 3.6 V DDA",
+        "-",
+        "-",
+        "2000",
+        "ppm/V"
+      ],
+      [
+        "T (4)(5) S_vrefint",
+        "ADC sampling time when reading the internal reference voltage",
+        "-",
+        "5",
+        "10",
+        "-",
+        "µs"
+      ],
+      [
+        "T (4) ADC_BUF",
+        "Startup time of reference voltage buffer for ADC",
+        "-",
+        "-",
+        "-",
+        "10",
+        "µs"
+      ],
+      [
+        "I (4) BUF_ADC",
+        "Consumption of reference voltage buffer for ADC",
+        "-",
+        "-",
+        "13.5",
+        "25",
+        "µA"
+      ],
+      [
+        "I (4) VREF_OUT",
+        "VREF_OUT output current(6)",
+        "-",
+        "-",
+        "-",
+        "1",
+        "µA"
+      ],
+      [
+        "C (4) VREF_OUT",
+        "VREF_OUT output load",
+        "-",
+        "-",
+        "-",
+        "50",
+        "pF"
+      ],
+      [
+        "I (4) LPBUF",
+        "Consumption of reference voltage buffer for VREF_OUT",
+        "-",
+        "-",
+        "730",
+        "1200",
+        "nA"
+      ],
+      [
+        "V (4) REFINT_DIV1",
+        "1/4 reference voltage",
+        "-",
+        "24",
+        "25",
+        "26",
+        "% V REFINT"
+      ],
+      [
+        "V (4) REFINT_DIV2",
+        "1/2 reference voltage",
+        "-",
+        "49",
+        "50",
+        "51",
+        "% V REFINT"
+      ],
+      [
+        "V (4) REFINT_DIV3",
+        "3/4 reference voltage",
+        "-",
+        "74",
+        "75",
+        "76",
+        "% V REFINT"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 7,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 7
+    },
+    "structured_json": null,
+    "warnings": [
+      "multi_page_merged:2"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_18",
+      "is_continued": true,
+      "pages": [
+        41,
+        42
+      ],
+      "rows_count": 17,
+      "cols_count": 7,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_19",
+    "caption": "Table 19. Current consumption in Run mode, code with data processing running from Flash memory",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 43,
+    "merged_pages": [
+      43
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "f HCLK (MHz)",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I (Run DD from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "f = f up to 16MHz HSE HCLK included, f =f /2 above HSE HCLK 16MHz (PLL ON)(1)",
+        "Range 3, V =1.2V CORE VOS[1:0]=11",
+        "1",
+        "140",
+        "200",
+        "µA"
+      ],
+      [
+        "I (Run DD from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "f = f up to 16MHz HSE HCLK included, f =f /2 above HSE HCLK 16MHz (PLL ON)(1)",
+        "Range 3, V =1.2V CORE VOS[1:0]=11",
+        "2",
+        "245",
+        "310",
+        "µA"
+      ],
+      [
+        "I (Run DD from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "f = f up to 16MHz HSE HCLK included, f =f /2 above HSE HCLK 16MHz (PLL ON)(1)",
+        "Range 3, V =1.2V CORE VOS[1:0]=11",
+        "4",
+        "460",
+        "540",
+        "µA"
+      ],
+      [
+        "I (Run DD from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "f = f up to 16MHz HSE HCLK included, f =f /2 above HSE HCLK 16MHz (PLL ON)(1)",
+        "Range 2, V =1.5V CORE VOS[1:0]=10,",
+        "4",
+        "0.56",
+        "0.63",
+        "mA"
+      ],
+      [
+        "I (Run DD from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "f = f up to 16MHz HSE HCLK included, f =f /2 above HSE HCLK 16MHz (PLL ON)(1)",
+        "Range 2, V =1.5V CORE VOS[1:0]=10,",
+        "8",
+        "1.1",
+        "1.2",
+        "mA"
+      ],
+      [
+        "I (Run DD from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "f = f up to 16MHz HSE HCLK included, f =f /2 above HSE HCLK 16MHz (PLL ON)(1)",
+        "Range 2, V =1.5V CORE VOS[1:0]=10,",
+        "16",
+        "2.1",
+        "2.3",
+        "mA"
+      ],
+      [
+        "I (Run DD from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "f = f up to 16MHz HSE HCLK included, f =f /2 above HSE HCLK 16MHz (PLL ON)(1)",
+        "Range 1, V =1.8V CORE VOS[1:0]=01",
+        "8",
+        "1.25",
+        "1.4",
+        "mA"
+      ],
+      [
+        "I (Run DD from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "f = f up to 16MHz HSE HCLK included, f =f /2 above HSE HCLK 16MHz (PLL ON)(1)",
+        "Range 1, V =1.8V CORE VOS[1:0]=01",
+        "16",
+        "2.5",
+        "2.7",
+        "mA"
+      ],
+      [
+        "I (Run DD from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "f = f up to 16MHz HSE HCLK included, f =f /2 above HSE HCLK 16MHz (PLL ON)(1)",
+        "Range 1, V =1.8V CORE VOS[1:0]=01",
+        "32",
+        "5",
+        "5.6",
+        "mA"
+      ],
+      [
+        "I (Run DD from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "MSI clock",
+        "Range 3, V =1.2V CORE VOS[1:0]=11",
+        "0.065",
+        "34.5",
+        "110",
+        "µA"
+      ],
+      [
+        "I (Run DD from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "MSI clock",
+        "Range 3, V =1.2V CORE VOS[1:0]=11",
+        "0.524",
+        "86",
+        "150",
+        "µA"
+      ],
+      [
+        "I (Run DD from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "MSI clock",
+        "Range 3, V =1.2V CORE VOS[1:0]=11",
+        "4.2",
+        "505",
+        "570",
+        "µA"
+      ],
+      [
+        "I (Run DD from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "HSI clock",
+        "Range 2, V =1.5V CORE VOS[1:0]=10,",
+        "16",
+        "2.1",
+        "2.4",
+        "mA"
+      ],
+      [
+        "I (Run DD from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "HSI clock",
+        "Range 1, V =1.8V CORE VOS[1:0]=01",
+        "32",
+        "5.1",
+        "5.7",
+        "mA"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 8,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 8
+    },
+    "structured_json": null,
+    "warnings": [
+      "vertical_merge_suspected"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_19",
+      "is_continued": false,
+      "pages": [
+        43
+      ],
+      "rows_count": 14,
+      "cols_count": 8,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_20",
+    "caption": "Table 20. Current consumption in Run mode vs code type, code with data processing running from Flash memory",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 44,
+    "merged_pages": [
+      44
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "Conditions",
+      "f HCLK",
+      "Typ",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I DD (Run from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "f = f up to HSE HCLK 16MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(1)",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "Dhrystone",
+        "4 MHz",
+        "460",
+        "µA"
+      ],
+      [
+        "I DD (Run from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "f = f up to HSE HCLK 16MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(1)",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "CoreMark",
+        "4 MHz",
+        "455",
+        "µA"
+      ],
+      [
+        "I DD (Run from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "f = f up to HSE HCLK 16MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(1)",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "Fibonacci",
+        "4 MHz",
+        "330",
+        "µA"
+      ],
+      [
+        "I DD (Run from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "f = f up to HSE HCLK 16MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(1)",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "while(1)",
+        "4 MHz",
+        "305",
+        "µA"
+      ],
+      [
+        "I DD (Run from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "f = f up to HSE HCLK 16MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(1)",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "while(1), prefetch OFF",
+        "4 MHz",
+        "320",
+        "µA"
+      ],
+      [
+        "I DD (Run from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "f = f up to HSE HCLK 16MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(1)",
+        "Range 1, V =1.8 V CORE VOS[1:0]=01",
+        "Dhrystone",
+        "32 MHz",
+        "5",
+        "mA"
+      ],
+      [
+        "I DD (Run from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "f = f up to HSE HCLK 16MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(1)",
+        "Range 1, V =1.8 V CORE VOS[1:0]=01",
+        "CoreMark",
+        "32 MHz",
+        "5.15",
+        "mA"
+      ],
+      [
+        "I DD (Run from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "f = f up to HSE HCLK 16MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(1)",
+        "Range 1, V =1.8 V CORE VOS[1:0]=01",
+        "Fibonacci",
+        "32 MHz",
+        "5",
+        "mA"
+      ],
+      [
+        "I DD (Run from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "f = f up to HSE HCLK 16MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(1)",
+        "Range 1, V =1.8 V CORE VOS[1:0]=01",
+        "while(1)",
+        "32 MHz",
+        "4.35",
+        "mA"
+      ],
+      [
+        "I DD (Run from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "f = f up to HSE HCLK 16MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(1)",
+        "Range 1, V =1.8 V CORE VOS[1:0]=01",
+        "while(1), prefetch OFF",
+        "32 MHz",
+        "3.85",
+        "mA"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 8,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 8
+    },
+    "structured_json": null,
+    "warnings": [
+      "vertical_merge_suspected"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_20",
+      "is_continued": false,
+      "pages": [
+        44
+      ],
+      "rows_count": 10,
+      "cols_count": 8,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_21",
+    "caption": "Table 21. Current consumption in Run mode, code with data processing running from RAM.",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 45,
+    "merged_pages": [
+      45
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "f HCLK (MHz)",
+      "Typ",
+      "Max(1)",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash memory switched OFF",
+        "f = f up to 16 MHz, HSE HCLK included f = f /2 above 16 MHz HSE HCLK (PLL ON)(2)",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "1",
+        "115",
+        "170",
+        "µA"
+      ],
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash memory switched OFF",
+        "f = f up to 16 MHz, HSE HCLK included f = f /2 above 16 MHz HSE HCLK (PLL ON)(2)",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "2",
+        "210",
+        "250",
+        "µA"
+      ],
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash memory switched OFF",
+        "f = f up to 16 MHz, HSE HCLK included f = f /2 above 16 MHz HSE HCLK (PLL ON)(2)",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "4",
+        "385",
+        "420",
+        "µA"
+      ],
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash memory switched OFF",
+        "f = f up to 16 MHz, HSE HCLK included f = f /2 above 16 MHz HSE HCLK (PLL ON)(2)",
+        "Range 2, V =1.5,V, CORE VOS[1:0]=10",
+        "4",
+        "0.48",
+        "0.6",
+        "mA"
+      ],
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash memory switched OFF",
+        "f = f up to 16 MHz, HSE HCLK included f = f /2 above 16 MHz HSE HCLK (PLL ON)(2)",
+        "Range 2, V =1.5,V, CORE VOS[1:0]=10",
+        "8",
+        "0.935",
+        "1.1",
+        "mA"
+      ],
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash memory switched OFF",
+        "f = f up to 16 MHz, HSE HCLK included f = f /2 above 16 MHz HSE HCLK (PLL ON)(2)",
+        "Range 2, V =1.5,V, CORE VOS[1:0]=10",
+        "16",
+        "1.8",
+        "2",
+        "mA"
+      ],
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash memory switched OFF",
+        "f = f up to 16 MHz, HSE HCLK included f = f /2 above 16 MHz HSE HCLK (PLL ON)(2)",
+        "Range 1, V =1.8V, CORE VOS[1:0]=01",
+        "8",
+        "1.1",
+        "1.3",
+        "mA"
+      ],
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash memory switched OFF",
+        "f = f up to 16 MHz, HSE HCLK included f = f /2 above 16 MHz HSE HCLK (PLL ON)(2)",
+        "Range 1, V =1.8V, CORE VOS[1:0]=01",
+        "16",
+        "2.1",
+        "2.3",
+        "mA"
+      ],
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash memory switched OFF",
+        "f = f up to 16 MHz, HSE HCLK included f = f /2 above 16 MHz HSE HCLK (PLL ON)(2)",
+        "Range 1, V =1.8V, CORE VOS[1:0]=01",
+        "32",
+        "4.5",
+        "4.7",
+        "mA"
+      ],
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash memory switched OFF",
+        "MSI clock",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "0.065",
+        "22",
+        "52",
+        "µA"
+      ],
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash memory switched OFF",
+        "MSI clock",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "0.524",
+        "70.5",
+        "91",
+        "µA"
+      ],
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash memory switched OFF",
+        "MSI clock",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "4.2",
+        "420",
+        "450",
+        "µA"
+      ],
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash memory switched OFF",
+        "HSI16 clock source (16 MHz)",
+        "Range 2, V =1.5V, CORE VOS[1:0]=10",
+        "16",
+        "1.95",
+        "2.2",
+        "mA"
+      ],
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash memory switched OFF",
+        "HSI16 clock source (16 MHz)",
+        "Range 1, V =1.8V, CORE VOS[1:0]=01",
+        "32",
+        "4.7",
+        "5.1",
+        "mA"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 8,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 8
+    },
+    "structured_json": null,
+    "warnings": [
+      "vertical_merge_suspected"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_21",
+      "is_continued": false,
+      "pages": [
+        45
+      ],
+      "rows_count": 14,
+      "cols_count": 8,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_22",
+    "caption": "Table 22. Current consumption in Run mode vs code type, code with data processing running from RAM.",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 46,
+    "merged_pages": [
+      46
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "Conditions",
+      "f HCLK",
+      "Typ",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash memory switched OFF",
+        "f = f up to 16 MHz, HSE HCLK included, f = f /2 above 16 MHz HSE HCLK (PLL ON)(2)",
+        "Range 3 V =1.2V CORE VOS[1:0]=11",
+        "Dhrystone",
+        "4 MHz",
+        "385",
+        "µA"
+      ],
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash memory switched OFF",
+        "f = f up to 16 MHz, HSE HCLK included, f = f /2 above 16 MHz HSE HCLK (PLL ON)(2)",
+        "Range 3 V =1.2V CORE VOS[1:0]=11",
+        "CoreMark",
+        "4 MHz",
+        "395",
+        "µA"
+      ],
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash memory switched OFF",
+        "f = f up to 16 MHz, HSE HCLK included, f = f /2 above 16 MHz HSE HCLK (PLL ON)(2)",
+        "Range 3 V =1.2V CORE VOS[1:0]=11",
+        "Fibonacci",
+        "4 MHz",
+        "360",
+        "µA"
+      ],
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash memory switched OFF",
+        "f = f up to 16 MHz, HSE HCLK included, f = f /2 above 16 MHz HSE HCLK (PLL ON)(2)",
+        "Range 3 V =1.2V CORE VOS[1:0]=11",
+        "while(1)",
+        "4 MHz",
+        "265",
+        "µA"
+      ],
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash memory switched OFF",
+        "f = f up to 16 MHz, HSE HCLK included, f = f /2 above 16 MHz HSE HCLK (PLL ON)(2)",
+        "Range 1 V =1.8V CORE VOS[1:0]=01",
+        "Dhrystone",
+        "32 MHz",
+        "4.5",
+        "mA"
+      ],
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash memory switched OFF",
+        "f = f up to 16 MHz, HSE HCLK included, f = f /2 above 16 MHz HSE HCLK (PLL ON)(2)",
+        "Range 1 V =1.8V CORE VOS[1:0]=01",
+        "CoreMark",
+        "32 MHz",
+        "4.65",
+        "mA"
+      ],
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash memory switched OFF",
+        "f = f up to 16 MHz, HSE HCLK included, f = f /2 above 16 MHz HSE HCLK (PLL ON)(2)",
+        "Range 1 V =1.8V CORE VOS[1:0]=01",
+        "Fibonacci",
+        "32 MHz",
+        "4.2",
+        "mA"
+      ],
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash memory switched OFF",
+        "f = f up to 16 MHz, HSE HCLK included, f = f /2 above 16 MHz HSE HCLK (PLL ON)(2)",
+        "Range 1 V =1.8V CORE VOS[1:0]=01",
+        "while(1)",
+        "32 MHz",
+        "3.05",
+        "mA"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 8,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 8
+    },
+    "structured_json": null,
+    "warnings": [
+      "vertical_merge_suspected"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_22",
+      "is_continued": false,
+      "pages": [
+        46
+      ],
+      "rows_count": 8,
+      "cols_count": 8,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_23",
+    "caption": "Table 23. Current consumption in Sleep mode",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 46,
+    "merged_pages": [
+      46,
+      47
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "f HCLK (MHz)",
+      "Typ",
+      "Max(1)",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I DD (Sleep)",
+        "Supply current in Sleep mode, Flash memory OFF",
+        "f = f up to 16MHz HSE HCLK included, f = f /2 above 16 HSE HCLK MHz (PLL ON)(2)",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "1",
+        "36.5",
+        "87",
+        "µA"
+      ],
+      [
+        "I DD (Sleep)",
+        "Supply current in Sleep mode, Flash memory OFF",
+        "f = f up to 16MHz HSE HCLK included, f = f /2 above 16 HSE HCLK MHz (PLL ON)(2)",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "2",
+        "58",
+        "100",
+        "µA"
+      ],
+      [
+        "I DD (Sleep)",
+        "Supply current in Sleep mode, Flash memory OFF",
+        "f = f up to 16MHz HSE HCLK included, f = f /2 above 16 HSE HCLK MHz (PLL ON)(2)",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "4",
+        "100",
+        "170",
+        "µA"
+      ],
+      [
+        "I DD (Sleep)",
+        "Supply current in Sleep mode, Flash memory OFF",
+        "f = f up to 16MHz HSE HCLK included, f = f /2 above 16 HSE HCLK MHz (PLL ON)(2)",
+        "Range 2, V =1.5 V, CORE VOS[1:0]=10",
+        "4",
+        "125",
+        "190",
+        "µA"
+      ],
+      [
+        "I DD (Sleep)",
+        "Supply current in Sleep mode, Flash memory OFF",
+        "f = f up to 16MHz HSE HCLK included, f = f /2 above 16 HSE HCLK MHz (PLL ON)(2)",
+        "Range 2, V =1.5 V, CORE VOS[1:0]=10",
+        "8",
+        "230",
+        "310",
+        "µA"
+      ],
+      [
+        "I DD (Sleep)",
+        "Supply current in Sleep mode, Flash memory OFF",
+        "f = f up to 16MHz HSE HCLK included, f = f /2 above 16 HSE HCLK MHz (PLL ON)(2)",
+        "Range 2, V =1.5 V, CORE VOS[1:0]=10",
+        "16",
+        "450",
+        "540",
+        "µA"
+      ],
+      [
+        "I DD (Sleep)",
+        "Supply current in Sleep mode, Flash memory OFF",
+        "f = f up to 16MHz HSE HCLK included, f = f /2 above 16 HSE HCLK MHz (PLL ON)(2)",
+        "Range 1, V =1.8 V, CORE VOS[1:0]=01",
+        "8",
+        "275",
+        "360",
+        "µA"
+      ],
+      [
+        "I DD (Sleep)",
+        "Supply current in Sleep mode, Flash memory OFF",
+        "f = f up to 16MHz HSE HCLK included, f = f /2 above 16 HSE HCLK MHz (PLL ON)(2)",
+        "Range 1, V =1.8 V, CORE VOS[1:0]=01",
+        "16",
+        "555",
+        "650",
+        "µA"
+      ],
+      [
+        "I DD (Sleep)",
+        "Supply current in Sleep mode, Flash memory OFF",
+        "f = f up to 16MHz HSE HCLK included, f = f /2 above 16 HSE HCLK MHz (PLL ON)(2)",
+        "Range 1, V =1.8 V, CORE VOS[1:0]=01",
+        "32",
+        "1350",
+        "1600",
+        "µA"
+      ],
+      [
+        "I DD (Sleep)",
+        "Supply current in Sleep mode, Flash memory OFF",
+        "MSI clock",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "0.065",
+        "17",
+        "43",
+        "µA"
+      ],
+      [
+        "I DD (Sleep)",
+        "Supply current in Sleep mode, Flash memory OFF",
+        "MSI clock",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "0.524",
+        "28",
+        "55",
+        "µA"
+      ],
+      [
+        "I DD (Sleep)",
+        "Supply current in Sleep mode, Flash memory OFF",
+        "MSI clock",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "4.2",
+        "115",
+        "190",
+        "µA"
+      ],
+      [
+        "I DD (Sleep)",
+        "Supply current in Sleep mode, Flash memory OFF",
+        "HSI16 clock source (16 MHz)",
+        "Range 2, V =1.5 V, CORE VOS[1:0]=10",
+        "16",
+        "585",
+        "690",
+        "µA"
+      ],
+      [
+        "I DD (Sleep)",
+        "Supply current in Sleep mode, Flash memory OFF",
+        "HSI16 clock source (16 MHz)",
+        "Range 1, V =1.8 V, CORE VOS[1:0]=01",
+        "32",
+        "1500",
+        "1700",
+        "µA"
+      ],
+      [
+        "I DD (Sleep)",
+        "Supply current in Sleep mode, Flash memory ON",
+        "f = f up to 16MHz HSE HCLK included, f = f /2 above HSE HCLK 16MHz (PLL ON)(2)",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "1",
+        "49",
+        "160",
+        "µA"
+      ],
+      [
+        "I DD (Sleep)",
+        "Supply current in Sleep mode, Flash memory ON",
+        "f = f up to 16MHz HSE HCLK included, f = f /2 above HSE HCLK 16MHz (PLL ON)(2)",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "2",
+        "69",
+        "190",
+        "µA"
+      ],
+      [
+        "I DD (Sleep)",
+        "Supply current in Sleep mode, Flash memory ON",
+        "f = f up to 16MHz HSE HCLK included, f = f /2 above HSE HCLK 16MHz (PLL ON)(2)",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "4",
+        "115",
+        "230",
+        "µA"
+      ],
+      [
+        "I DD (Sleep)",
+        "Supply current in Sleep mode, Flash memory ON",
+        "f = f up to 16MHz HSE HCLK included, f = f /2 above HSE HCLK 16MHz (PLL ON)(2)",
+        "Range 2, =1.5V, CORE VOS[1:0]=10",
+        "4",
+        "135",
+        "200",
+        "µA"
+      ],
+      [
+        "I DD (Sleep)",
+        "Supply current in Sleep mode, Flash memory ON",
+        "f = f up to 16MHz HSE HCLK included, f = f /2 above HSE HCLK 16MHz (PLL ON)(2)",
+        "Range 2, =1.5V, CORE VOS[1:0]=10",
+        "8",
+        "240",
+        "320",
+        "µA"
+      ],
+      [
+        "I DD (Sleep)",
+        "Supply current in Sleep mode, Flash memory ON",
+        "f = f up to 16MHz HSE HCLK included, f = f /2 above HSE HCLK 16MHz (PLL ON)(2)",
+        "Range 2, =1.5V, CORE VOS[1:0]=10",
+        "16",
+        "460",
+        "550",
+        "µA"
+      ],
+      [
+        "I DD (Sleep)",
+        "Supply current in Sleep mode, Flash memory ON",
+        "f = f up to 16MHz HSE HCLK included, f = f /2 above HSE HCLK 16MHz (PLL ON)(2)",
+        "Range 1, V =1.8 V, CORE VOS[1:0]=01",
+        "8",
+        "290",
+        "370",
+        "µA"
+      ],
+      [
+        "I DD (Sleep)",
+        "Supply current in Sleep mode, Flash memory ON",
+        "f = f up to 16MHz HSE HCLK included, f = f /2 above HSE HCLK 16MHz (PLL ON)(2)",
+        "Range 1, V =1.8 V, CORE VOS[1:0]=01",
+        "16",
+        "565",
+        "670",
+        "µA"
+      ],
+      [
+        "I DD (Sleep)",
+        "Supply current in Sleep mode, Flash memory ON",
+        "f = f up to 16MHz HSE HCLK included, f = f /2 above HSE HCLK 16MHz (PLL ON)(2)",
+        "Range 1, V =1.8 V, CORE VOS[1:0]=01",
+        "32",
+        "1350",
+        "1600",
+        "µA"
+      ],
+      [
+        "I DD (Sleep)",
+        "Supply current in Sleep mode, Flash memory ON",
+        "MSI clock",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "0.065",
+        "28",
+        "55",
+        "µA"
+      ],
+      [
+        "I DD (Sleep)",
+        "Supply current in Sleep mode, Flash memory ON",
+        "MSI clock",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "0.524",
+        "39.5",
+        "67",
+        "µA"
+      ],
+      [
+        "I DD (Sleep)",
+        "Supply current in Sleep mode, Flash memory ON",
+        "MSI clock",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "4.2",
+        "125",
+        "200",
+        "µA"
+      ],
+      [
+        "I DD (Sleep)",
+        "Supply current in Sleep mode, Flash memory ON",
+        "HSI16 clock source (16 MHz)",
+        "Range 2, V =1.5 V, CORE VOS[1:0]=10",
+        "16",
+        "600",
+        "700",
+        "µA"
+      ],
+      [
+        "I DD (Sleep)",
+        "Supply current in Sleep mode, Flash memory ON",
+        "HSI16 clock source (16 MHz)",
+        "Range 1, V =1.8 V, CORE VOS[1:0]=01",
+        "32",
+        "1500",
+        "1700",
+        "µA"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 8,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 8
+    },
+    "structured_json": null,
+    "warnings": [
+      "multi_page_merged:2",
+      "vertical_merge_suspected"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_23",
+      "is_continued": true,
+      "pages": [
+        46,
+        47
+      ],
+      "rows_count": 28,
+      "cols_count": 8,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_24",
+    "caption": "Table 24. Current consumption in Low-power run mode",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 48,
+    "merged_pages": [
+      48
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "Conditions",
+      "Typ",
+      "Max(1)",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I DD (LP run)",
+        "Supply current in Low-power run mode",
+        "All peripherals OFF, code executed from RAM, Flash memory switched OFF, V DD from 1.8V to 3.6V",
+        "MSI clock=65KHz f =32KHz HCLK",
+        "T = -40 °C to 25 °C A",
+        "6.3",
+        "8.4",
+        "µA"
+      ],
+      [
+        "I DD (LP run)",
+        "Supply current in Low-power run mode",
+        "All peripherals OFF, code executed from RAM, Flash memory switched OFF, V DD from 1.8V to 3.6V",
+        "MSI clock=65KHz f =32KHz HCLK",
+        "T = 85 °C A",
+        "9.15",
+        "13",
+        "µA"
+      ],
+      [
+        "I DD (LP run)",
+        "Supply current in Low-power run mode",
+        "All peripherals OFF, code executed from RAM, Flash memory switched OFF, V DD from 1.8V to 3.6V",
+        "MSI clock=65KHz f =65 KHz HCLK",
+        "T =-40 °C to 25 °C A",
+        "9.45",
+        "12",
+        "µA"
+      ],
+      [
+        "I DD (LP run)",
+        "Supply current in Low-power run mode",
+        "All peripherals OFF, code executed from RAM, Flash memory switched OFF, V DD from 1.8V to 3.6V",
+        "MSI clock=65KHz f =65 KHz HCLK",
+        "T = 85 °C A",
+        "12.5",
+        "15",
+        "µA"
+      ],
+      [
+        "I DD (LP run)",
+        "Supply current in Low-power run mode",
+        "All peripherals OFF, code executed from RAM, Flash memory switched OFF, V DD from 1.8V to 3.6V",
+        "MSI clock=131KHz f =131KHz HCLK",
+        "T = -40 °C to 25 °C A",
+        "17",
+        "20",
+        "µA"
+      ],
+      [
+        "I DD (LP run)",
+        "Supply current in Low-power run mode",
+        "All peripherals OFF, code executed from RAM, Flash memory switched OFF, V DD from 1.8V to 3.6V",
+        "MSI clock=131KHz f =131KHz HCLK",
+        "T = 55 °C A",
+        "19",
+        "21",
+        "µA"
+      ],
+      [
+        "I DD (LP run)",
+        "Supply current in Low-power run mode",
+        "All peripherals OFF, code executed from RAM, Flash memory switched OFF, V DD from 1.8V to 3.6V",
+        "MSI clock=131KHz f =131KHz HCLK",
+        "T = 85 °C A",
+        "20.5",
+        "24",
+        "µA"
+      ],
+      [
+        "I DD (LP run)",
+        "Supply current in Low-power run mode",
+        "All peripherals OFF, code executed from Flash memory, V DD from 1.8V to 3.6V",
+        "MSI clock=65KHz f =32KHz HCLK",
+        "T = -40 °C to 25 °C A",
+        "18.5",
+        "23",
+        "µA"
+      ],
+      [
+        "I DD (LP run)",
+        "Supply current in Low-power run mode",
+        "All peripherals OFF, code executed from Flash memory, V DD from 1.8V to 3.6V",
+        "MSI clock=65KHz f =32KHz HCLK",
+        "T = 85 °C A",
+        "23",
+        "27",
+        "µA"
+      ],
+      [
+        "I DD (LP run)",
+        "Supply current in Low-power run mode",
+        "All peripherals OFF, code executed from Flash memory, V DD from 1.8V to 3.6V",
+        "MSI clock=65KHz f =65KHz HCLK",
+        "T = -40 °C to 25 °C A",
+        "22.5",
+        "26",
+        "µA"
+      ],
+      [
+        "I DD (LP run)",
+        "Supply current in Low-power run mode",
+        "All peripherals OFF, code executed from Flash memory, V DD from 1.8V to 3.6V",
+        "MSI clock=65KHz f =65KHz HCLK",
+        "T = 85 °C A",
+        "27.5",
+        "31",
+        "µA"
+      ],
+      [
+        "I DD (LP run)",
+        "Supply current in Low-power run mode",
+        "All peripherals OFF, code executed from Flash memory, V DD from 1.8V to 3.6V",
+        "MSI clock=131KHz f =131KHz HCLK",
+        "T = -40 °C to 25 °C A",
+        "32",
+        "36",
+        "µA"
+      ],
+      [
+        "I DD (LP run)",
+        "Supply current in Low-power run mode",
+        "All peripherals OFF, code executed from Flash memory, V DD from 1.8V to 3.6V",
+        "MSI clock=131KHz f =131KHz HCLK",
+        "T = 55 °C A",
+        "35",
+        "37",
+        "µA"
+      ],
+      [
+        "I DD (LP run)",
+        "Supply current in Low-power run mode",
+        "All peripherals OFF, code executed from Flash memory, V DD from 1.8V to 3.6V",
+        "MSI clock=131KHz f =131KHz HCLK",
+        "T = 85 °C A",
+        "37.5",
+        "42",
+        "µA"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 8,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 8
+    },
+    "structured_json": null,
+    "warnings": [
+      "vertical_merge_suspected"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_24",
+      "is_continued": false,
+      "pages": [
+        48
+      ],
+      "rows_count": 14,
+      "cols_count": 8,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_25",
+    "caption": "Table 25. Current consumption in Low-power sleep mode",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 49,
+    "merged_pages": [
+      49
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "Conditions",
+      "Typ",
+      "Max(1)",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I DD (LP Sleep)",
+        "Supply current in Low-power sleep mode",
+        "All peripherals OFF, V from DD 1.8V to 3.6V",
+        "MSI clock=65KHz f =32KHz HCLK Flash OFF",
+        "T = -40 °C to 25°C A",
+        "3.2(2)",
+        "-",
+        "µA"
+      ],
+      [
+        "I DD (LP Sleep)",
+        "Supply current in Low-power sleep mode",
+        "All peripherals OFF, V from DD 1.8V to 3.6V",
+        "MSI clock=65KHz f =32KHz HCLK Flash ON",
+        "T = -40 °C to 25 °C A",
+        "13",
+        "19",
+        "µA"
+      ],
+      [
+        "I DD (LP Sleep)",
+        "Supply current in Low-power sleep mode",
+        "All peripherals OFF, V from DD 1.8V to 3.6V",
+        "MSI clock=65KHz f =32KHz HCLK Flash ON",
+        "T = 85 °C A",
+        "16",
+        "21",
+        "µA"
+      ],
+      [
+        "I DD (LP Sleep)",
+        "Supply current in Low-power sleep mode",
+        "All peripherals OFF, V from DD 1.8V to 3.6V",
+        "MSI clock=65KHz f =65 KHz HCLK Flash ON",
+        "T = -40 °C to 25 °C A",
+        "13.5",
+        "19",
+        "µA"
+      ],
+      [
+        "I DD (LP Sleep)",
+        "Supply current in Low-power sleep mode",
+        "All peripherals OFF, V from DD 1.8V to 3.6V",
+        "MSI clock=65KHz f =65 KHz HCLK Flash ON",
+        "T = 85 °C A",
+        "16.5",
+        "21",
+        "µA"
+      ],
+      [
+        "I DD (LP Sleep)",
+        "Supply current in Low-power sleep mode",
+        "All peripherals OFF, V from DD 1.8V to 3.6V",
+        "MSI clock=131KHz f =131KHz HCLK Flash ON",
+        "T = -40°C to 25°C A",
+        "15.5",
+        "21",
+        "µA"
+      ],
+      [
+        "I DD (LP Sleep)",
+        "Supply current in Low-power sleep mode",
+        "All peripherals OFF, V from DD 1.8V to 3.6V",
+        "MSI clock=131KHz f =131KHz HCLK Flash ON",
+        "T = 55°C A",
+        "17.5",
+        "22",
+        "µA"
+      ],
+      [
+        "I DD (LP Sleep)",
+        "Supply current in Low-power sleep mode",
+        "All peripherals OFF, V from DD 1.8V to 3.6V",
+        "MSI clock=131KHz f =131KHz HCLK Flash ON",
+        "T = 85°C A",
+        "18.5",
+        "23",
+        "µA"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 8,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 8
+    },
+    "structured_json": null,
+    "warnings": [
+      "vertical_merge_suspected"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_25",
+      "is_continued": false,
+      "pages": [
+        49
+      ],
+      "rows_count": 8,
+      "cols_count": 8,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_26",
+    "caption": "Table 26. Typical and maximum current consumptions in Stop mode.",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 50,
+    "merged_pages": [
+      50
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Typ",
+      "Max(1)",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I (Stop) DD",
+        "Supply current in Stop mode",
+        "T = –40°C to 25°C A",
+        "0.38",
+        "0.99",
+        "µA"
+      ],
+      [
+        "I (Stop) DD",
+        "Supply current in Stop mode",
+        "T = 55°C A",
+        "0.54",
+        "1.9",
+        "µA"
+      ],
+      [
+        "I (Stop) DD",
+        "Supply current in Stop mode",
+        "T = 85°C A",
+        "1.35",
+        "4.2",
+        "µA"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 6,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 6
+    },
+    "structured_json": null,
+    "warnings": [],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_26",
+      "is_continued": false,
+      "pages": [
+        50
+      ],
+      "rows_count": 3,
+      "cols_count": 6,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_27",
+    "caption": "Table 27. Typical and maximum current consumptions in Standby mode",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 50,
+    "merged_pages": [
+      50
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Typ",
+      "Max(1)",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I (Stop) DD",
+        "Supply current in Stop mode",
+        "T = –40°C to 25°C A",
+        "0.38",
+        "0.99",
+        "µA"
+      ],
+      [
+        "I (Stop) DD",
+        "Supply current in Stop mode",
+        "T = 55°C A",
+        "0.54",
+        "1.9",
+        "µA"
+      ],
+      [
+        "I (Stop) DD",
+        "Supply current in Stop mode",
+        "T = 85°C A",
+        "1.35",
+        "4.2",
+        "µA"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 6,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 6
+    },
+    "structured_json": null,
+    "warnings": [],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_27",
+      "is_continued": false,
+      "pages": [
+        50
+      ],
+      "rows_count": 3,
+      "cols_count": 6,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_28",
+    "caption": "Table 28. Average current consumption during wakeup",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 51,
+    "merged_pages": [
+      51
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "System frequency",
+      "Current consumption during wakeup",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I (wakeup from Stop) DD",
+        "Supply current during wakeup from Stop mode",
+        "HSI",
+        "1",
+        "mA"
+      ],
+      [
+        "I (wakeup from Stop) DD",
+        "Supply current during wakeup from Stop mode",
+        "HSI/4",
+        "0,7",
+        "mA"
+      ],
+      [
+        "I (wakeup from Stop) DD",
+        "Supply current during wakeup from Stop mode",
+        "MSI 4,2MHz",
+        "0,7",
+        "mA"
+      ],
+      [
+        "I (wakeup from Stop) DD",
+        "Supply current during wakeup from Stop mode",
+        "MSI 1,05MHz",
+        "0,4",
+        "mA"
+      ],
+      [
+        "I (wakeup from Stop) DD",
+        "Supply current during wakeup from Stop mode",
+        "MSI 65KHz",
+        "0,1",
+        "mA"
+      ],
+      [
+        "I (Reset) DD",
+        "Reset pin pulled down",
+        "-",
+        "0,21",
+        "mA"
+      ],
+      [
+        "I (Power up) DD",
+        "BOR ON",
+        "-",
+        "0,23",
+        "mA"
+      ],
+      [
+        "I (wakeup from Standby) DD",
+        "With fast wakeup set",
+        "MSI 2,1MHz",
+        "0,5",
+        "mA"
+      ],
+      [
+        "I (wakeup from Standby) DD",
+        "With fast wakeup disabled",
+        "MSI 2,1MHz",
+        "0,12",
+        "mA"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 5,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 5
+    },
+    "structured_json": null,
+    "warnings": [
+      "vertical_merge_suspected"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_28",
+      "is_continued": false,
+      "pages": [
+        51
+      ],
+      "rows_count": 9,
+      "cols_count": 5,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_29",
+    "caption": "Table 29. Peripheral current consumption in run or Sleep mode.",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 52,
+    "merged_pages": [
+      52
+    ],
+    "headers": [
+      "Peripheral",
+      "Peripheral",
+      "Typical consumption, V = 3.0 V, T = 25 °C / Range 1,",
+      "Typical consumption, V = 3.0 V, T = 25 °C / Range 2,",
+      "Typical consumption, V = 3.0 V, T = 25 °C / DD A / Range 3,",
+      "Typical consumption, V = 3.0 V, T = 25 °C / Low-power",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "APB1",
+        "WWDG",
+        "3",
+        "2",
+        "2",
+        "2",
+        "µA/MHz (f ) HCLK"
+      ],
+      [
+        "APB1",
+        "LPUART1",
+        "8",
+        "6.5",
+        "5.5",
+        "6",
+        "µA/MHz (f ) HCLK"
+      ],
+      [
+        "APB1",
+        "I2C1",
+        "11",
+        "9.5",
+        "7.5",
+        "9",
+        "µA/MHz (f ) HCLK"
+      ],
+      [
+        "APB1",
+        "LPTIM1",
+        "10",
+        "8.5",
+        "6.5",
+        "8",
+        "µA/MHz (f ) HCLK"
+      ],
+      [
+        "APB1",
+        "TIM2",
+        "10.5",
+        "8.5",
+        "7",
+        "9",
+        "µA/MHz (f ) HCLK"
+      ],
+      [
+        "APB1",
+        "USART2",
+        "14.5",
+        "12",
+        "9.5",
+        "11",
+        "µA/MHz (f ) HCLK"
+      ],
+      [
+        "APB2",
+        "ADC1(2)",
+        "5",
+        "5",
+        "3.5",
+        "4",
+        "µA/MHz (f ) HCLK"
+      ],
+      [
+        "APB2",
+        "SPI1",
+        "4",
+        "3",
+        "3",
+        "2.5",
+        "µA/MHz (f ) HCLK"
+      ],
+      [
+        "APB2",
+        "TIM21",
+        "7.5",
+        "6",
+        "5",
+        "5.5",
+        "µA/MHz (f ) HCLK"
+      ],
+      [
+        "APB2",
+        "DBGMCU",
+        "1.5",
+        "1",
+        "1",
+        "0.5",
+        "µA/MHz (f ) HCLK"
+      ],
+      [
+        "APB2",
+        "SYSCFG",
+        "2.5",
+        "2",
+        "2",
+        "1.5",
+        "µA/MHz (f ) HCLK"
+      ],
+      [
+        "Cortex-M0+ I/O port",
+        "GPIOA",
+        "3.5",
+        "3",
+        "2.5",
+        "2.5",
+        "µA/MHz (f ) HCLK"
+      ],
+      [
+        "Cortex-M0+ I/O port",
+        "GPIOB",
+        "3.5",
+        "2.5",
+        "2",
+        "2.5",
+        "µA/MHz (f ) HCLK"
+      ],
+      [
+        "Cortex-M0+ I/O port",
+        "GPIOC",
+        "8.5",
+        "6.5",
+        "5.5",
+        "7",
+        "µA/MHz (f ) HCLK"
+      ],
+      [
+        "Cortex-M0+ I/O port",
+        "GPIOH",
+        "1.5",
+        "1",
+        "1",
+        "0.5",
+        "µA/MHz (f ) HCLK"
+      ],
+      [
+        "AHB",
+        "CRC",
+        "1.5",
+        "1.1",
+        "1",
+        "1.2",
+        "µA/MHz (f ) HCLK"
+      ],
+      [
+        "AHB",
+        "FLASH(3)",
+        "0",
+        "0",
+        "0",
+        "0",
+        "µA/MHz (f ) HCLK"
+      ],
+      [
+        "AHB",
+        "DMA1",
+        "10",
+        "8",
+        "6",
+        "8.5",
+        "µA/MHz (f ) HCLK"
+      ],
+      [
+        "All enabled",
+        "All enabled",
+        "101",
+        "83",
+        "66",
+        "85",
+        "µA/MHz (f ) HCLK"
+      ],
+      [
+        "PWR",
+        "PWR",
+        "2.5",
+        "2",
+        "2",
+        "1",
+        "µA/MHz (f ) HCLK"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 7,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 7
+    },
+    "structured_json": null,
+    "warnings": [
+      "dynamic_header_depth:3",
+      "vertical_merge_suspected"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_29",
+      "is_continued": false,
+      "pages": [
+        52
+      ],
+      "rows_count": 20,
+      "cols_count": 7,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_30",
+    "caption": "Table 30. Peripheral current consumption in Stop and Standby mode",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 53,
+    "merged_pages": [
+      53
+    ],
+    "headers": [
+      "Symbol",
+      "Peripheral",
+      "Typical consumption, T = 25 °C / V =1.8V",
+      "Typical consumption, T = 25 °C / A / V =3.0V",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I DD(BOR)",
+        "-",
+        "0.7",
+        "1.2",
+        "µA"
+      ],
+      [
+        "I REFINT",
+        "-",
+        "1.3",
+        "1.4",
+        "µA"
+      ],
+      [
+        "-",
+        "LSE low drive(1)",
+        "0.1",
+        "0.1",
+        "µA"
+      ],
+      [
+        "-",
+        "LPTIM1(2), input 100Hz",
+        "0.01",
+        "0.02",
+        "µA"
+      ],
+      [
+        "-",
+        "LPTIM1, input 1MHz",
+        "6",
+        "6",
+        "µA"
+      ],
+      [
+        "-",
+        "LPUART1",
+        "0.2",
+        "0.2",
+        "µA"
+      ],
+      [
+        "-",
+        "RTC",
+        "0.2",
+        "0.2",
+        "µA"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 5,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 5
+    },
+    "structured_json": null,
+    "warnings": [
+      "dynamic_header_depth:3",
+      "vertical_merge_suspected"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_30",
+      "is_continued": false,
+      "pages": [
+        53
+      ],
+      "rows_count": 7,
+      "cols_count": 5,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_31",
+    "caption": "Table 31. Low-power mode wakeup timings",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 53,
+    "merged_pages": [
+      53,
+      54
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t WUSLEEP",
+        "Wakeup from Sleep mode",
+        "f = 32MHz HCLK",
+        "7",
+        "8",
+        "CPU cycles"
+      ],
+      [
+        "t WUSLEEP_LP",
+        "Wakeup from Low-power sleep mode, f = 262KHz HCLK",
+        "f = 262KHz HCLK Flash enabled",
+        "7",
+        "8",
+        "CPU cycles"
+      ],
+      [
+        "t WUSLEEP_LP",
+        "Wakeup from Low-power sleep mode, f = 262KHz HCLK",
+        "f = 262KHz HCLK Flash switched OFF",
+        "9",
+        "10",
+        "CPU cycles"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in Run mode",
+        "f = f = 4.2MHz HCLK MSI",
+        "5.1",
+        "8",
+        "µs"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in Run mode",
+        "f = f = 16MHz HCLK HSI",
+        "5.1",
+        "7",
+        "µs"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in Run mode",
+        "f = f /4 = 4MHz HCLK HSI",
+        "8.1",
+        "11",
+        "µs"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in Low-power mode",
+        "f = f = 4.2MHz HCLK MSI Voltage Range 1",
+        "5",
+        "8",
+        "µs"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in Low-power mode",
+        "f = f = 4.2MHz HCLK MSI Voltage Range 2",
+        "5",
+        "8",
+        "µs"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in Low-power mode",
+        "f = f = 4.2MHz HCLK MSI Voltage Range 3",
+        "5",
+        "8",
+        "µs"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in Low-power mode",
+        "f = f = 2.1MHz HCLK MSI",
+        "7.4",
+        "13",
+        "µs"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in Low-power mode",
+        "f = f = 1.05MHz HCLK MSI",
+        "14",
+        "23",
+        "µs"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in Low-power mode",
+        "f = f = 524KHz HCLK MSI",
+        "28",
+        "38",
+        "µs"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in Low-power mode",
+        "f = f = 262KHz HCLK MSI",
+        "51",
+        "65",
+        "µs"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in Low-power mode",
+        "f = f = 131KHz HCLK MSI",
+        "99",
+        "120",
+        "µs"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in Low-power mode",
+        "f = f = 65KHz HCLK MSI",
+        "196",
+        "260",
+        "µs"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in Low-power mode",
+        "f = f = 16MHz HCLK HSI",
+        "5.1",
+        "7",
+        "µs"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in Low-power mode",
+        "f = f /4 = 4MHz HCLK HSI",
+        "8.2",
+        "11",
+        "µs"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in Low-power mode, HSI kept running in Stop mode",
+        "f = f = 16MHz HCLK HSI",
+        "3.25",
+        "-",
+        "µs"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in Low-power mode, code running from RAM",
+        "f = f = 16MHz HCLK HSI",
+        "4.9",
+        "7",
+        "µs"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in Low-power mode, code running from RAM",
+        "f = f /4 = 4MHz HCLK HSI",
+        "7.9",
+        "10",
+        "µs"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in Low-power mode, code running from RAM",
+        "f = f = 4.2MHz HCLK MSI",
+        "4.8",
+        "8",
+        "µs"
+      ],
+      [
+        "t WUSTDBY",
+        "Wakeup from Standby mode, FWU bit = 1",
+        "f = f = 2.1MHz HCLK MSI",
+        "65",
+        "130",
+        "µs"
+      ],
+      [
+        "t WUSTDBY",
+        "Wakeup from Standby mode, FWU bit = 0",
+        "f = f = 2.1MHz HCLK MSI",
+        "2.2",
+        "3",
+        "ms"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 6,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 6
+    },
+    "structured_json": null,
+    "warnings": [
+      "multi_page_merged:2",
+      "vertical_merge_suspected"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_31",
+      "is_continued": true,
+      "pages": [
+        53,
+        54
+      ],
+      "rows_count": 23,
+      "cols_count": 6,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_32",
+    "caption": "Table 32. High-speed external user clock characteristics.",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 55,
+    "merged_pages": [
+      55
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f HSE_ext",
+        "User external clock source frequency",
+        "CSS is ON or PLL used",
+        "1",
+        "8",
+        "32",
+        "MHz"
+      ],
+      [
+        "f HSE_ext",
+        "User external clock source frequency",
+        "CSS is OFF, PLL not used",
+        "0",
+        "8",
+        "32",
+        "MHz"
+      ],
+      [
+        "V HSEH",
+        "CK_IN input pin high level voltage",
+        "-",
+        "0.7V DD",
+        "-",
+        "V DD",
+        "V"
+      ],
+      [
+        "V HSEL",
+        "CK_IN input pin low level voltage",
+        "-",
+        "V SS",
+        "-",
+        "0.3V DD",
+        "V"
+      ],
+      [
+        "t w(HSE) t w(HSE)",
+        "CK_IN high or low time",
+        "-",
+        "12",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t r(HSE) t f(HSE)",
+        "CK_IN rise or fall time",
+        "-",
+        "-",
+        "-",
+        "20",
+        "ns"
+      ],
+      [
+        "C in(HSE)",
+        "CK_IN input capacitance",
+        "-",
+        "-",
+        "2.6",
+        "-",
+        "pF"
+      ],
+      [
+        "DuCy (HSE)",
+        "Duty cycle",
+        "-",
+        "45",
+        "-",
+        "55",
+        "%"
+      ],
+      [
+        "I L",
+        "CK_IN input leakage current",
+        "V ≤V ≤V SS IN DD",
+        "-",
+        "-",
+        "±1",
+        "µA"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 7,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 7
+    },
+    "structured_json": null,
+    "warnings": [],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_32",
+      "is_continued": false,
+      "pages": [
+        55
+      ],
+      "rows_count": 9,
+      "cols_count": 7,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_33",
+    "caption": "Table 33. Low-speed external user clock characteristics.",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 56,
+    "merged_pages": [
+      56
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f LSE_ext",
+        "User external clock source frequency",
+        "-",
+        "-",
+        "32.768",
+        "1000",
+        "KHz"
+      ],
+      [
+        "V LSEH",
+        "OSC32_IN input pin high level voltage",
+        "-",
+        "0.7V DD",
+        "-",
+        "V DD",
+        "V"
+      ],
+      [
+        "V LSEL",
+        "OSC32_IN input pin low level voltage",
+        "-",
+        "V SS",
+        "-",
+        "0.3V DD",
+        "V"
+      ],
+      [
+        "t w(LSE) t w(LSE)",
+        "OSC32_IN high or low time",
+        "-",
+        "465",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t r(LSE) t f(LSE)",
+        "OSC32_IN rise or fall time",
+        "-",
+        "-",
+        "-",
+        "10",
+        "ns"
+      ],
+      [
+        "C IN(LSE)",
+        "OSC32_IN input capacitance",
+        "-",
+        "-",
+        "0.6",
+        "-",
+        "pF"
+      ],
+      [
+        "DuCy (LSE)",
+        "Duty cycle",
+        "-",
+        "45",
+        "-",
+        "55",
+        "%"
+      ],
+      [
+        "I L",
+        "OSC32_IN input leakage current",
+        "V ≤V ≤V SS IN DD",
+        "-",
+        "-",
+        "±1",
+        "µA"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 7,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 7
+    },
+    "structured_json": null,
+    "warnings": [],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_33",
+      "is_continued": false,
+      "pages": [
+        56
+      ],
+      "rows_count": 8,
+      "cols_count": 7,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_34",
+    "caption": "Table 34. HSE oscillator characteristics.",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 57,
+    "merged_pages": [
+      57
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f OSC_IN",
+        "Oscillator frequency",
+        "-",
+        "1",
+        "-",
+        "25",
+        "MHz"
+      ],
+      [
+        "R F",
+        "Feedback resistor",
+        "-",
+        "-",
+        "200",
+        "-",
+        "kΩ"
+      ],
+      [
+        "G m",
+        "Maximum critical crystal transconductance",
+        "Startup",
+        "-",
+        "-",
+        "700",
+        "µA/V"
+      ],
+      [
+        "t (2) SU(HSE)",
+        "Startup time",
+        "V is stabilized DD",
+        "-",
+        "2",
+        "-",
+        "s"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 7,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 7
+    },
+    "structured_json": null,
+    "warnings": [],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_34",
+      "is_continued": false,
+      "pages": [
+        57
+      ],
+      "rows_count": 4,
+      "cols_count": 7,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_35",
+    "caption": "Table 35. LSE oscillator characteristics",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 58,
+    "merged_pages": [
+      58
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions(2)",
+      "Min(2)",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f LSE",
+        "LSE oscillator frequency",
+        "-",
+        "-",
+        "32.768",
+        "-",
+        "KHz"
+      ],
+      [
+        "G m",
+        "Maximum critical crystal transconductance",
+        "LSEDRV[1:0]=00 lower driving capability",
+        "-",
+        "-",
+        "0.5",
+        "µA/V"
+      ],
+      [
+        "G m",
+        "Maximum critical crystal transconductance",
+        "LSEDRV[1:0]= 01 medium low driving capability",
+        "-",
+        "-",
+        "0.75",
+        "µA/V"
+      ],
+      [
+        "G m",
+        "Maximum critical crystal transconductance",
+        "LSEDRV[1:0] = 10 medium high driving capability",
+        "-",
+        "-",
+        "1.7",
+        "µA/V"
+      ],
+      [
+        "G m",
+        "Maximum critical crystal transconductance",
+        "LSEDRV[1:0]=11 higher driving capability",
+        "-",
+        "-",
+        "2.7",
+        "µA/V"
+      ],
+      [
+        "t SU(LSE) (3)",
+        "Startup time",
+        "V is stabilized DD",
+        "-",
+        "2",
+        "-",
+        "s"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 7,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 7
+    },
+    "structured_json": null,
+    "warnings": [
+      "vertical_merge_suspected"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_35",
+      "is_continued": false,
+      "pages": [
+        58
+      ],
+      "rows_count": 6,
+      "cols_count": 7,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_36",
+    "caption": "Table 36. 16MHz HSI16 oscillator characteristics.",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 59,
+    "merged_pages": [
+      59
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f HSI16",
+        "Frequency",
+        "V = 3.0 V DD",
+        "-",
+        "16",
+        "-",
+        "MHz"
+      ],
+      [
+        "(1)(2) TRIM",
+        "HSI16 user- trimmed resolution",
+        "Trimming code is not a multiple of 16",
+        "-",
+        "±0.4",
+        "0.7",
+        "%"
+      ],
+      [
+        "(1)(2) TRIM",
+        "HSI16 user- trimmed resolution",
+        "Trimming code is a multiple of 16",
+        "-",
+        "-",
+        "±1.5",
+        "%"
+      ],
+      [
+        "ACC HSI16 (2)",
+        "Accuracy of the factory-calibrated HSI16 oscillator",
+        "V = 3.0 V, T = 25°C DDA A",
+        "–1(3)",
+        "-",
+        "1(3)",
+        "%"
+      ],
+      [
+        "ACC HSI16 (2)",
+        "Accuracy of the factory-calibrated HSI16 oscillator",
+        "V = 3.0 V, T = 0 to 55°C DDA A",
+        "–1.5",
+        "-",
+        "1.5",
+        "%"
+      ],
+      [
+        "ACC HSI16 (2)",
+        "Accuracy of the factory-calibrated HSI16 oscillator",
+        "V = 3.0 V, T = –10 to 70°C DDA A",
+        "–2",
+        "-",
+        "2",
+        "%"
+      ],
+      [
+        "ACC HSI16 (2)",
+        "Accuracy of the factory-calibrated HSI16 oscillator",
+        "V = 3.0 V, T = –10 to 85°C DDA A",
+        "–2.5",
+        "-",
+        "2",
+        "%"
+      ],
+      [
+        "ACC HSI16 (2)",
+        "Accuracy of the factory-calibrated HSI16 oscillator",
+        "V = 1.8 V to 3.6 V DDA T = -40 to 85°C A",
+        "–5.45",
+        "-",
+        "3.25",
+        "%"
+      ],
+      [
+        "t (2) SU(HSI16)",
+        "HSI16 oscillator startup time",
+        "-",
+        "-",
+        "3.7",
+        "6",
+        "µs"
+      ],
+      [
+        "I (2) DD(HSI16)",
+        "HSI16 oscillator power consumption",
+        "-",
+        "-",
+        "100",
+        "140",
+        "µA"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 7,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 7
+    },
+    "structured_json": null,
+    "warnings": [],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_36",
+      "is_continued": false,
+      "pages": [
+        59
+      ],
+      "rows_count": 10,
+      "cols_count": 7,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_37",
+    "caption": "Table 37. LSI oscillator characteristics.",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 60,
+    "merged_pages": [
+      60
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f (1) LSI",
+        "LSI frequency",
+        "26",
+        "38",
+        "56",
+        "KHz"
+      ],
+      [
+        "D (2) LSI",
+        "LSI oscillator frequency drift 0°C≤T ≤85°C A",
+        "–10",
+        "-",
+        "4",
+        "%"
+      ],
+      [
+        "t (3) su(LSI)",
+        "LSI oscillator startup time",
+        "-",
+        "-",
+        "200",
+        "µs"
+      ],
+      [
+        "I (3) DD(LSI)",
+        "LSI oscillator power consumption",
+        "-",
+        "400",
+        "510",
+        "nA"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 6,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 6
+    },
+    "structured_json": null,
+    "warnings": [],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_37",
+      "is_continued": false,
+      "pages": [
+        60
+      ],
+      "rows_count": 4,
+      "cols_count": 6,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_38",
+    "caption": "Table 38. MSI oscillator characteristics",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 60,
+    "merged_pages": [
+      60,
+      61
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Condition",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f MSI",
+        "Frequency after factory calibration, done at V =3.3V and T = 25°C DD A",
+        "MSI range 0",
+        "65.5",
+        "-",
+        "KHz"
+      ],
+      [
+        "f MSI",
+        "Frequency after factory calibration, done at V =3.3V and T = 25°C DD A",
+        "MSI range 1",
+        "131",
+        "-",
+        "KHz"
+      ],
+      [
+        "f MSI",
+        "Frequency after factory calibration, done at V =3.3V and T = 25°C DD A",
+        "MSI range 2",
+        "262",
+        "-",
+        "KHz"
+      ],
+      [
+        "f MSI",
+        "Frequency after factory calibration, done at V =3.3V and T = 25°C DD A",
+        "MSI range 3",
+        "524",
+        "-",
+        "KHz"
+      ],
+      [
+        "f MSI",
+        "Frequency after factory calibration, done at V =3.3V and T = 25°C DD A",
+        "MSI range 4",
+        "1.05",
+        "-",
+        "MHz"
+      ],
+      [
+        "f MSI",
+        "Frequency after factory calibration, done at V =3.3V and T = 25°C DD A",
+        "MSI range 5",
+        "2.1",
+        "-",
+        "MHz"
+      ],
+      [
+        "f MSI",
+        "Frequency after factory calibration, done at V =3.3V and T = 25°C DD A",
+        "MSI range 6",
+        "4.2",
+        "-",
+        "MHz"
+      ],
+      [
+        "ACC MSI",
+        "Frequency error after factory calibration",
+        "-",
+        "±0.5",
+        "-",
+        "%"
+      ],
+      [
+        "D (1) TEMP(MSI)",
+        "MSI oscillator frequency drift 0°C≤T ≤85°C A",
+        "-",
+        "±3",
+        "-",
+        "%"
+      ],
+      [
+        "D (1) VOLT(MSI)",
+        "MSI oscillator frequency drift 1.8 V≤V ≤3.6 V, T = 25 °C DD A",
+        "-",
+        "-",
+        "2.5",
+        "%/V"
+      ],
+      [
+        "I (2) DD(MSI)",
+        "MSI oscillator power consumption",
+        "MSI range 0",
+        "0.75",
+        "-",
+        "µA"
+      ],
+      [
+        "I (2) DD(MSI)",
+        "MSI oscillator power consumption",
+        "MSI range 1",
+        "1",
+        "-",
+        "µA"
+      ],
+      [
+        "I (2) DD(MSI)",
+        "MSI oscillator power consumption",
+        "MSI range 2",
+        "1.5",
+        "-",
+        "µA"
+      ],
+      [
+        "I (2) DD(MSI)",
+        "MSI oscillator power consumption",
+        "MSI range 3",
+        "2.5",
+        "-",
+        "µA"
+      ],
+      [
+        "I (2) DD(MSI)",
+        "MSI oscillator power consumption",
+        "MSI range 4",
+        "4.5",
+        "-",
+        "µA"
+      ],
+      [
+        "I (2) DD(MSI)",
+        "MSI oscillator power consumption",
+        "MSI range 5",
+        "8",
+        "-",
+        "µA"
+      ],
+      [
+        "I (2) DD(MSI)",
+        "MSI oscillator power consumption",
+        "MSI range 6",
+        "15",
+        "-",
+        "µA"
+      ],
+      [
+        "t SU(MSI)",
+        "MSI oscillator startup time",
+        "MSI range 0",
+        "30",
+        "-",
+        "µs"
+      ],
+      [
+        "t SU(MSI)",
+        "MSI oscillator startup time",
+        "MSI range 1",
+        "20",
+        "-",
+        "µs"
+      ],
+      [
+        "t SU(MSI)",
+        "MSI oscillator startup time",
+        "MSI range 2",
+        "15",
+        "-",
+        "µs"
+      ],
+      [
+        "t SU(MSI)",
+        "MSI oscillator startup time",
+        "MSI range 3",
+        "10",
+        "-",
+        "µs"
+      ],
+      [
+        "t SU(MSI)",
+        "MSI oscillator startup time",
+        "MSI range 4",
+        "6",
+        "-",
+        "µs"
+      ],
+      [
+        "t SU(MSI)",
+        "MSI oscillator startup time",
+        "MSI range 5",
+        "5",
+        "-",
+        "µs"
+      ],
+      [
+        "t SU(MSI)",
+        "MSI oscillator startup time",
+        "MSI range 6, Voltage range 1 and 2",
+        "3.5",
+        "-",
+        "µs"
+      ],
+      [
+        "t SU(MSI)",
+        "MSI oscillator startup time",
+        "MSI range 6, Voltage range 3",
+        "5",
+        "-",
+        "µs"
+      ],
+      [
+        "t (2) STAB(MSI)",
+        "MSI oscillator stabilization time",
+        "MSI range 0",
+        "-",
+        "40",
+        "µs"
+      ],
+      [
+        "t (2) STAB(MSI)",
+        "MSI oscillator stabilization time",
+        "MSI range 1",
+        "-",
+        "20",
+        "µs"
+      ],
+      [
+        "t (2) STAB(MSI)",
+        "MSI oscillator stabilization time",
+        "MSI range 2",
+        "-",
+        "10",
+        "µs"
+      ],
+      [
+        "t (2) STAB(MSI)",
+        "MSI oscillator stabilization time",
+        "MSI range 3",
+        "-",
+        "4",
+        "µs"
+      ],
+      [
+        "t (2) STAB(MSI)",
+        "MSI oscillator stabilization time",
+        "MSI range 4",
+        "-",
+        "2.5",
+        "µs"
+      ],
+      [
+        "t (2) STAB(MSI)",
+        "MSI oscillator stabilization time",
+        "MSI range 5",
+        "-",
+        "2",
+        "µs"
+      ],
+      [
+        "t (2) STAB(MSI)",
+        "MSI oscillator stabilization time",
+        "MSI range 6, Voltage range 1 and 2",
+        "-",
+        "2",
+        "µs"
+      ],
+      [
+        "t (2) STAB(MSI)",
+        "MSI oscillator stabilization time",
+        "MSI range 3, Voltage range 3",
+        "-",
+        "3",
+        "µs"
+      ],
+      [
+        "f OVER(MSI)",
+        "MSI oscillator frequency overshoot",
+        "Any range to range 5",
+        "-",
+        "4",
+        "MHz"
+      ],
+      [
+        "f OVER(MSI)",
+        "MSI oscillator frequency overshoot",
+        "Any range to range 6",
+        "-",
+        "6",
+        "MHz"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 6,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 6
+    },
+    "structured_json": null,
+    "warnings": [
+      "multi_page_merged:2",
+      "vertical_merge_suspected"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_38",
+      "is_continued": true,
+      "pages": [
+        60,
+        61
+      ],
+      "rows_count": 35,
+      "cols_count": 6,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_39",
+    "caption": "Table 39. PLL characteristics.",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 61,
+    "merged_pages": [
+      62
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Value / Min",
+      "Value / Typ",
+      "Value / Max(1)",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f PLL_OUT",
+        "PLL output clock",
+        "2",
+        "-",
+        "32",
+        "MHz"
+      ],
+      [
+        "t LOCK",
+        "PLL input = 16 MHz PLL VCO = 96 MHz",
+        "-",
+        "115",
+        "160",
+        "µs"
+      ],
+      [
+        "Jitter",
+        "Cycle-to-cycle jitter",
+        "-",
+        "-",
+        "± 600",
+        "ps"
+      ],
+      [
+        "I (PLL) DDA",
+        "Current consumption on V DDA",
+        "-",
+        "220",
+        "450",
+        "µA"
+      ],
+      [
+        "I (PLL) DD",
+        "Current consumption on V DD",
+        "-",
+        "120",
+        "150",
+        "µA"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 6,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "caption_near_bottom": true,
+      "caption_y_ratio": 0.75,
+      "body_on_next_page": true,
+      "next_page_q_boosted": 36.0,
+      "cols_extracted": 6
+    },
+    "structured_json": null,
+    "warnings": [
+      "dynamic_header_depth:2"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_39",
+      "is_continued": false,
+      "pages": [
+        62
+      ],
+      "rows_count": 5,
+      "cols_count": 6,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_40",
+    "caption": "Table 40. RAM and hardware registers",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 62,
+    "merged_pages": [
+      62
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "VRM",
+        "Data retention mode(1)",
+        "Stop mode (or reset)",
+        "1.8",
+        "-",
+        "-",
+        "V"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 7,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 7
+    },
+    "structured_json": null,
+    "warnings": [],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_40",
+      "is_continued": false,
+      "pages": [
+        62
+      ],
+      "rows_count": 1,
+      "cols_count": 7,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_41",
+    "caption": "Table 41. Flash memory and data EEPROM characteristics",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 62,
+    "merged_pages": [
+      62
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max(1)",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V DD",
+        "Operating voltage Read / Write / Erase",
+        "-",
+        "1.8",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "t prog",
+        "Programming time for word or half-page",
+        "Erasing",
+        "-",
+        "3.28",
+        "3.94",
+        "ms"
+      ],
+      [
+        "t prog",
+        "Programming time for word or half-page",
+        "Programming",
+        "-",
+        "3.28",
+        "3.94",
+        "ms"
+      ],
+      [
+        "I DD",
+        "Average current during the whole programming / erase operation",
+        "T = 25 °C, V = 3.6V A DD",
+        "-",
+        "500",
+        "700",
+        "µA"
+      ],
+      [
+        "I DD",
+        "Maximum current (peak) during the whole programming / erase operation",
+        "T = 25 °C, V = 3.6V A DD",
+        "-",
+        "1.5",
+        "2.5",
+        "mA"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 7,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 7
+    },
+    "structured_json": null,
+    "warnings": [],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_41",
+      "is_continued": false,
+      "pages": [
+        62
+      ],
+      "rows_count": 5,
+      "cols_count": 7,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_42",
+    "caption": "Table 42. Flash memory and data EEPROM endurance and retention.",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 63,
+    "merged_pages": [
+      63
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Value / Min(1)",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "N (2) CYC",
+        "Cycling (erase / write) Program memory",
+        "T = –40°C to 85 °C A",
+        "10",
+        "kcycles"
+      ],
+      [
+        "N (2) CYC",
+        "Cycling (erase / write) EEPROM data memory",
+        "T = –40°C to 85 °C A",
+        "100",
+        "kcycles"
+      ],
+      [
+        "t (2) RET",
+        "Data retention (program memory) after 10 kcycles at T = 85 °C A",
+        "T = +85 °C RET",
+        "30",
+        "years"
+      ],
+      [
+        "t (2) RET",
+        "Data retention (EEPROM data memory) after 100 kcycles at T = 85 °C A",
+        "T = +85 °C RET",
+        "30",
+        "years"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 5,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 5
+    },
+    "structured_json": null,
+    "warnings": [
+      "dynamic_header_depth:2"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_42",
+      "is_continued": false,
+      "pages": [
+        63
+      ],
+      "rows_count": 4,
+      "cols_count": 5,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_43",
+    "caption": "Table 43. EMS characteristics",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 63,
+    "merged_pages": [
+      63
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Level/ Class"
+    ],
+    "rows": [
+      [
+        "V FESD",
+        "Voltage limits to be applied on any I/O pin to induce a functional disturbance",
+        "V = 3.3 V, T = +25 °C, DD A f = 32 MHz HCLK conforms to IEC 61000-4-2",
+        "3B"
+      ],
+      [
+        "V EFTB",
+        "Fast transient voltage burst limits to be applied through 100 pF on V and V pins to induce a DD SS functional disturbance",
+        "V = 3.3 V, T = +25 °C, DD A f = 32 MHz HCLK conforms to IEC 61000-4-4",
+        "4A"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 4,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 4
+    },
+    "structured_json": null,
+    "warnings": [],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_43",
+      "is_continued": false,
+      "pages": [
+        63
+      ],
+      "rows_count": 2,
+      "cols_count": 4,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_44",
+    "caption": "Table 44. EMI characteristics.",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 64,
+    "merged_pages": [
+      64
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Monitored frequency band",
+      "Max vs. frequency range (32 MHz voltage range 1)",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "S EMI",
+        "Peak level",
+        "V = 3.3 V, DD T =25°C, A compliant with IEC61967-2",
+        "0.1 to 30 MHz",
+        "–22",
+        "dBµV"
+      ],
+      [
+        "S EMI",
+        "Peak level",
+        "V = 3.3 V, DD T =25°C, A compliant with IEC61967-2",
+        "30 to 130 MHz",
+        "–7",
+        "dBµV"
+      ],
+      [
+        "S EMI",
+        "Peak level",
+        "V = 3.3 V, DD T =25°C, A compliant with IEC61967-2",
+        "130 MHz to 1GHz",
+        "–12",
+        "dBµV"
+      ],
+      [
+        "S EMI",
+        "Peak level",
+        "V = 3.3 V, DD T =25°C, A compliant with IEC61967-2",
+        "SAE EMI Level",
+        "1",
+        "-"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 6,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 6
+    },
+    "structured_json": null,
+    "warnings": [],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_44",
+      "is_continued": false,
+      "pages": [
+        64
+      ],
+      "rows_count": 4,
+      "cols_count": 6,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_45",
+    "caption": "Table 45. ESD absolute maximum ratings.",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 65,
+    "merged_pages": [
+      65
+    ],
+    "headers": [
+      "Symbol",
+      "Ratings",
+      "Conditions",
+      "Class",
+      "Maximum value(1)",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V ESD(HBM)",
+        "Electrostatic discharge voltage (human body model)",
+        "T = +25 °C, conforming A to ANSI/JEDEC JS-001",
+        "2",
+        "2000",
+        "V"
+      ],
+      [
+        "V ESD(CDM)",
+        "Electrostatic discharge voltage (charge device model)",
+        "T = +25 °C, conforming A to ANSI/ESD STM5.3.1",
+        "C4",
+        "500",
+        "V"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 6,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 6
+    },
+    "structured_json": null,
+    "warnings": [],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_45",
+      "is_continued": false,
+      "pages": [
+        65
+      ],
+      "rows_count": 2,
+      "cols_count": 6,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_46",
+    "caption": "Table 46. Electrical sensitivities",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 65,
+    "merged_pages": [
+      65
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Class"
+    ],
+    "rows": [
+      [
+        "LU",
+        "Static latch-up class",
+        "T = +85 °C conforming to JESD78A A",
+        "II level A"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 4,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 4
+    },
+    "structured_json": null,
+    "warnings": [],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_46",
+      "is_continued": false,
+      "pages": [
+        65
+      ],
+      "rows_count": 1,
+      "cols_count": 4,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_47",
+    "caption": "Table 47. I/O current injection susceptibility.",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 66,
+    "merged_pages": [
+      66
+    ],
+    "headers": [
+      "Symbol",
+      "Description",
+      "Functional susceptibility / Negative",
+      "Functional susceptibility / Positive",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I INJ",
+        "Injected current on BOOT0",
+        "–0",
+        "NA(1)",
+        "mA"
+      ],
+      [
+        "I INJ",
+        "Injected current on PA0, PA4, PA5, PA11, PA12, PC15, PH0 and PH1",
+        "–5",
+        "0",
+        "mA"
+      ],
+      [
+        "I INJ",
+        "Injected current on all FT pins",
+        "–5(2)",
+        "NA(1)",
+        "mA"
+      ],
+      [
+        "I INJ",
+        "Injected current on any other pin",
+        "–5(2)",
+        "+5",
+        "mA"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 5,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 5
+    },
+    "structured_json": null,
+    "warnings": [
+      "dynamic_header_depth:2"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_47",
+      "is_continued": false,
+      "pages": [
+        66
+      ],
+      "rows_count": 4,
+      "cols_count": 5,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_48",
+    "caption": "Table 48. I/O static characteristics",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 66,
+    "merged_pages": [
+      66,
+      67
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V IL",
+        "Input low level voltage",
+        "TC, FT, RST I/Os",
+        "-",
+        "-",
+        "0.3V DD",
+        "V"
+      ],
+      [
+        "V IL",
+        "Input low level voltage",
+        "BOOT0 pin",
+        "-",
+        "-",
+        "0.14V (1) DD",
+        "V"
+      ],
+      [
+        "V IH",
+        "Input high level voltage",
+        "All I/Os except BOOT0 pin",
+        "0.7 V DD",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "V hys",
+        "I/O Schmitt trigger voltage hysteresis (2)",
+        "Standard I/Os",
+        "-",
+        "10% V DD (3)",
+        "-",
+        "V"
+      ],
+      [
+        "V hys",
+        "I/O Schmitt trigger voltage hysteresis (2)",
+        "BOOT0 pin",
+        "-",
+        "0.01",
+        "-",
+        "V"
+      ],
+      [
+        "I lkg",
+        "Input leakage current (4)",
+        "V ≤V ≤V SS IN DD All I/Os except PA11, PA12 and BOOT0 pins",
+        "-",
+        "-",
+        "±50",
+        "nA"
+      ],
+      [
+        "I lkg",
+        "Input leakage current (4)",
+        "V ≤V ≤V SS IN DD PA11, PA12 pins",
+        "-",
+        "-",
+        "–50/+250",
+        "nA"
+      ],
+      [
+        "I lkg",
+        "Input leakage current (4)",
+        "V ≤V ≤5V All DD IN I/Os except PA11, PA12 and BOOT0 pins",
+        "-",
+        "-",
+        "200",
+        "nA"
+      ],
+      [
+        "I lkg",
+        "Input leakage current (4)",
+        "V ≤V ≤5V DD IN PA11, PA12 and BOOT0 pins",
+        "-",
+        "-",
+        "10",
+        "µA"
+      ],
+      [
+        "R PU",
+        "Weak pull-up equivalent resistor(5)",
+        "V IN=V SS",
+        "25",
+        "45",
+        "65",
+        "kΩ"
+      ],
+      [
+        "R PD",
+        "Weak pull-down equivalent resistor(5)",
+        "V IN = V DD",
+        "25",
+        "45",
+        "65",
+        "kΩ"
+      ],
+      [
+        "C IO",
+        "I/O pin capacitance",
+        "-",
+        "-",
+        "5",
+        "-",
+        "pF"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 7,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 7
+    },
+    "structured_json": null,
+    "warnings": [
+      "multi_page_merged:2"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_48",
+      "is_continued": true,
+      "pages": [
+        66,
+        67
+      ],
+      "rows_count": 12,
+      "cols_count": 7,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_49",
+    "caption": "Table 49. Output voltage characteristics",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 68,
+    "merged_pages": [
+      68
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V (1) OL",
+        "Output low level voltage for an I/O pin",
+        "CMOS port(2), I = +8mA IO 2.7V≤V ≤3.6V DD",
+        "-",
+        "0.4",
+        "V"
+      ],
+      [
+        "V (3) OH",
+        "Output high level voltage for an I/O pin",
+        "CMOS port(2), I = +8mA IO 2.7V≤V ≤3.6V DD",
+        "V - 0.4 DD",
+        "-",
+        "V"
+      ],
+      [
+        "V (1) OL",
+        "Output low level voltage for an I/O pin",
+        "TTL port(2), I = +8mA IO 2.7V≤V ≤3.6V DD",
+        "-",
+        "0.4",
+        "V"
+      ],
+      [
+        "V (3)(4) OH",
+        "Output high level voltage for an I/O pin",
+        "TTL port(2), I = –6mA IO 2.7V≤V ≤3.6V DD",
+        "2.4",
+        "-",
+        "V"
+      ],
+      [
+        "V (1)(4) OL",
+        "Output low level voltage for an I/O pin",
+        "I = +15 mA IO 2.7V≤V ≤3.6V DD",
+        "-",
+        "1.3",
+        "V"
+      ],
+      [
+        "V (3)(4) OH",
+        "Output high level voltage for an I/O pin",
+        "I = –15 mA IO 2.7V≤V ≤3.6V DD",
+        "V - 1.3 DD",
+        "-",
+        "V"
+      ],
+      [
+        "V (1)(4) OL",
+        "Output low level voltage for an I/O pin",
+        "I = +4 mA IO 1.8V≤V ≤3.6V DD",
+        "-",
+        "0.45",
+        "V"
+      ],
+      [
+        "V (3)(4) OH",
+        "Output high level voltage for an I/O pin",
+        "I = –4mA IO 1.8V≤V ≤3.6V DD",
+        "V - 0.45 DD",
+        "-",
+        "V"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 6,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 6
+    },
+    "structured_json": null,
+    "warnings": [
+      "vertical_merge_suspected"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_49",
+      "is_continued": false,
+      "pages": [
+        68
+      ],
+      "rows_count": 8,
+      "cols_count": 6,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_50",
+    "caption": "Table 50. I/O AC characteristics.",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 69,
+    "merged_pages": [
+      69,
+      70
+    ],
+    "headers": [
+      "OSPEEDRx [1:0] bit value(1)",
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max(3)",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "00",
+        "f max(IO)out",
+        "Maximum frequency(4)",
+        "C = 50pF, L V = 2.7 V to 3.6V DD",
+        "-",
+        "400",
+        "KHz"
+      ],
+      [
+        "00",
+        "f max(IO)out",
+        "Maximum frequency(4)",
+        "C = 50pF, L V = 1.8 V to 2.7 V DD",
+        "-",
+        "100",
+        "KHz"
+      ],
+      [
+        "00",
+        "t f(IO)out t r(IO)out",
+        "Output rise and fall time",
+        "C = 50pF, L V = 2.7 V to 3.6V DD",
+        "-",
+        "125",
+        "ns"
+      ],
+      [
+        "00",
+        "t f(IO)out t r(IO)out",
+        "Output rise and fall time",
+        "C = 50pF, L V = 1.8 V to 2.7 V DD",
+        "-",
+        "320",
+        "ns"
+      ],
+      [
+        "01",
+        "f max(IO)out",
+        "Maximum frequency(4)",
+        "C = 50pF, L V = 2.7 V to 3.6V DD",
+        "-",
+        "2",
+        "MHz"
+      ],
+      [
+        "01",
+        "f max(IO)out",
+        "Maximum frequency(4)",
+        "C = 50pF, L V = 1.8 V to 2.7 V DD",
+        "-",
+        "0.6",
+        "MHz"
+      ],
+      [
+        "01",
+        "t f(IO)out t r(IO)out",
+        "Output rise and fall time",
+        "C = 50pF, L V = 2.7 V to 3.6V DD",
+        "-",
+        "30",
+        "ns"
+      ],
+      [
+        "01",
+        "t f(IO)out t r(IO)out",
+        "Output rise and fall time",
+        "C = 50pF, L V = 1.8 V to 2.7 V DD",
+        "-",
+        "65",
+        "ns"
+      ],
+      [
+        "10",
+        "F max(IO)out",
+        "Maximum frequency(4)",
+        "C = 50 pF, L V = 2.7 V to 3.6V DD",
+        "-",
+        "10",
+        "MHz"
+      ],
+      [
+        "10",
+        "F max(IO)out",
+        "Maximum frequency(4)",
+        "C = 50pF, L V = 1.8 V to 2.7 V DD",
+        "-",
+        "2",
+        "MHz"
+      ],
+      [
+        "10",
+        "t f(IO)out t r(IO)out",
+        "Output rise and fall time",
+        "C = 50pF, L V = 2.7 V to 3.6V DD",
+        "-",
+        "13",
+        "ns"
+      ],
+      [
+        "10",
+        "t f(IO)out t r(IO)out",
+        "Output rise and fall time",
+        "C = 50pF, L V = 1.8 V to 2.7 V DD",
+        "-",
+        "28",
+        "ns"
+      ],
+      [
+        "11",
+        "F max(IO)out",
+        "Maximum frequency(4)",
+        "C = 30 pF, L V = 2.7 V to 3.6 V DD",
+        "-",
+        "35",
+        "MHz"
+      ],
+      [
+        "11",
+        "F max(IO)out",
+        "Maximum frequency(4)",
+        "C = 50pF, L V = 1.8 V to 2.7 V DD",
+        "-",
+        "10",
+        "MHz"
+      ],
+      [
+        "11",
+        "t f(IO)out t r(IO)out",
+        "Output rise and fall time",
+        "C = 30pF, L V = 2.7 V to 3.6V DD",
+        "-",
+        "6",
+        "ns"
+      ],
+      [
+        "11",
+        "t f(IO)out t r(IO)out",
+        "Output rise and fall time",
+        "C = 50pF, L V = 1.8 V to 2.7 V DD",
+        "-",
+        "17",
+        "ns"
+      ],
+      [
+        "-",
+        "t EXTIpw",
+        "Pulse width of external signals detected by the EXTI controller",
+        "-",
+        "8",
+        "-",
+        "ns"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 7,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 7
+    },
+    "structured_json": null,
+    "warnings": [
+      "multi_page_merged:2",
+      "vertical_merge_suspected"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_50",
+      "is_continued": true,
+      "pages": [
+        69,
+        70
+      ],
+      "rows_count": 17,
+      "cols_count": 7,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_51",
+    "caption": "Table 51. NRST pin characteristics",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 71,
+    "merged_pages": [
+      71
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V (1) IL(NRST)",
+        "NRST input low level voltage",
+        "-",
+        "-",
+        "-",
+        "0.3V DD",
+        "V"
+      ],
+      [
+        "V (1) IH(NRST)",
+        "NRST input high level voltage",
+        "-",
+        "0.39V + 0.59 DD",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "V (1) OL(NRST)",
+        "NRST output low level voltage",
+        "I = 2mA OL 2.7V < V < 3.6V DD",
+        "-",
+        "-",
+        "0.4",
+        "V"
+      ],
+      [
+        "V (1) OL(NRST)",
+        "NRST output low level voltage",
+        "I = 1.5mA OL 1.8V < V < 2.7V DD",
+        "-",
+        "-",
+        "0.4",
+        "V"
+      ],
+      [
+        "V (1) hys(NRST)",
+        "NRST Schmitt trigger voltage hysteresis",
+        "-",
+        "-",
+        "10%V (2) DD",
+        "-",
+        "mV"
+      ],
+      [
+        "R PU",
+        "Weak pull-up equivalent resistor(3)",
+        "V IN = V SS",
+        "25",
+        "45",
+        "65",
+        "kΩ"
+      ],
+      [
+        "V (1) F(NRST)",
+        "NRST input filtered pulse",
+        "-",
+        "-",
+        "-",
+        "50",
+        "ns"
+      ],
+      [
+        "V (1) NF(NRST)",
+        "NRST input not filtered pulse",
+        "-",
+        "350",
+        "-",
+        "-",
+        "ns"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 7,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 7
+    },
+    "structured_json": null,
+    "warnings": [],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_51",
+      "is_continued": false,
+      "pages": [
+        71
+      ],
+      "rows_count": 8,
+      "cols_count": 7,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_52",
+    "caption": "Table 52. ADC characteristics",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 72,
+    "merged_pages": [
+      72,
+      73
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V DDA",
+        "Analog supply voltage for ADC ON",
+        "-",
+        "-",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DDA",
+        "Analog supply voltage for ADC ON",
+        "-",
+        "1.8(1)",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "I DDA (ADC)",
+        "Current consumption of the ADC on V DDA",
+        "1.14Msps",
+        "-",
+        "200",
+        "-",
+        "µA"
+      ],
+      [
+        "I DDA (ADC)",
+        "Current consumption of the ADC on V DDA",
+        "10ksps",
+        "-",
+        "40",
+        "-",
+        "µA"
+      ],
+      [
+        "I DDA (ADC)",
+        "Current consumption of the ADC on V (2) DD",
+        "1.14Msps",
+        "-",
+        "70",
+        "-",
+        "µA"
+      ],
+      [
+        "I DDA (ADC)",
+        "Current consumption of the ADC on V (2) DD",
+        "10ksps",
+        "-",
+        "1",
+        "-",
+        "µA"
+      ],
+      [
+        "f ADC",
+        "ADC clock frequency",
+        "Voltage scaling Range 1",
+        "0.14",
+        "-",
+        "16",
+        "MHz"
+      ],
+      [
+        "f ADC",
+        "ADC clock frequency",
+        "Voltage scaling Range 2",
+        "0.14",
+        "-",
+        "8",
+        "MHz"
+      ],
+      [
+        "f ADC",
+        "ADC clock frequency",
+        "Voltage scaling Range 3",
+        "0.14",
+        "-",
+        "4",
+        "MHz"
+      ],
+      [
+        "f (3) S",
+        "Sampling rate",
+        "-",
+        "0.01",
+        "-",
+        "1.14",
+        "MHz"
+      ],
+      [
+        "f (3) TRIG",
+        "External trigger frequency",
+        "f = 16MHz, ADC 16-bit resolution",
+        "-",
+        "-",
+        "941",
+        "KHz"
+      ],
+      [
+        "f (3) TRIG",
+        "External trigger frequency",
+        "-",
+        "-",
+        "-",
+        "17",
+        "1/f ADC"
+      ],
+      [
+        "V AIN",
+        "Conversion voltage range",
+        "-",
+        "0",
+        "-",
+        "V DDA",
+        "V"
+      ],
+      [
+        "R (3) AIN",
+        "External input impedance",
+        "See Equation 1 and Table53 for details",
+        "-",
+        "-",
+        "50",
+        "kΩ"
+      ],
+      [
+        "R (3)(4) ADC",
+        "Sampling switch resistance",
+        "-",
+        "-",
+        "-",
+        "1",
+        "kΩ"
+      ],
+      [
+        "C (3) ADC",
+        "Internal sample and hold capacitor",
+        "-",
+        "-",
+        "-",
+        "8",
+        "pF"
+      ],
+      [
+        "t (3) CAL",
+        "Calibration time",
+        "f = 16 MHz ADC",
+        "5.2",
+        "5.2",
+        "5.2",
+        "µs"
+      ],
+      [
+        "t (3) CAL",
+        "Calibration time",
+        "-",
+        "83",
+        "83",
+        "83",
+        "1/f ADC"
+      ],
+      [
+        "W LATENCY",
+        "ADC_DR register write latency",
+        "ADC clock = HSI16",
+        "1.5 ADC cycles + 2 f cycles PCLK",
+        "-",
+        "1.5 ADC cycles + 3 f cycles PCLK",
+        "-"
+      ],
+      [
+        "W LATENCY",
+        "ADC_DR register write latency",
+        "ADC clock = PCLK/2",
+        "-",
+        "4.5",
+        "-",
+        "f PCLK cycle"
+      ],
+      [
+        "W LATENCY",
+        "ADC_DR register write latency",
+        "ADC clock = PCLK/4",
+        "-",
+        "8.5",
+        "-",
+        "f PCLK cycle"
+      ],
+      [
+        "t (3) latr",
+        "Trigger conversion latency",
+        "f = f /2 = 16MHz ADC PCLK",
+        "0.266",
+        "0.266",
+        "0.266",
+        "µs"
+      ],
+      [
+        "t (3) latr",
+        "Trigger conversion latency",
+        "f = f /2 ADC PCLK",
+        "8.5",
+        "8.5",
+        "8.5",
+        "1/f PCLK"
+      ],
+      [
+        "t (3) latr",
+        "Trigger conversion latency",
+        "f = f /4 = 8MHz ADC PCLK",
+        "0.516",
+        "0.516",
+        "0.516",
+        "µs"
+      ],
+      [
+        "t (3) latr",
+        "Trigger conversion latency",
+        "f = f /4 ADC PCLK",
+        "16.5",
+        "16.5",
+        "16.5",
+        "1/f PCLK"
+      ],
+      [
+        "t (3) latr",
+        "Trigger conversion latency",
+        "f = f = 16MHz ADC HSI16",
+        "0.252",
+        "-",
+        "0.260",
+        "µs"
+      ],
+      [
+        "Jitter ADC",
+        "ADC jitter on trigger conversion",
+        "f = f ADC HSI16",
+        "-",
+        "1",
+        "-",
+        "1/f HSI16"
+      ],
+      [
+        "t (3) S",
+        "Sampling time",
+        "f = 16MHz ADC",
+        "0.093",
+        "-",
+        "10.03",
+        "µs"
+      ],
+      [
+        "t (3) S",
+        "Sampling time",
+        "-",
+        "1.5",
+        "-",
+        "239.5",
+        "1/f ADC"
+      ],
+      [
+        "t (3) STAB",
+        "Power-up time",
+        "-",
+        "0",
+        "0",
+        "1",
+        "µs"
+      ],
+      [
+        "t (3) ConV",
+        "Total conversion time (including sampling time)",
+        "f = 16MHz ADC",
+        "0.875",
+        "-",
+        "10.81",
+        "µs"
+      ],
+      [
+        "t (3) ConV",
+        "Total conversion time (including sampling time)",
+        "-",
+        "14 to 173 (t for sampling +12.5 for S successive approximation)",
+        "-",
+        "10.81",
+        "1/f ADC"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 7,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 7
+    },
+    "structured_json": null,
+    "warnings": [
+      "multi_page_merged:2"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_52",
+      "is_continued": true,
+      "pages": [
+        72,
+        73
+      ],
+      "rows_count": 32,
+      "cols_count": 7,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_53",
+    "caption": "Table 53. R max for f = 16 MHz.",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 73,
+    "merged_pages": [
+      73
+    ],
+    "headers": [
+      "T (cycles)",
+      "t (µs)",
+      "R max for fast",
+      "R max for standard channels (kΩ) / AIN / V > 2.7V",
+      "R max for standard channels (kΩ) / V > 2.4V",
+      "R max for standard channels (kΩ) / V > 2.0V",
+      "R max for standard channels (kΩ) / V > 1.8V"
+    ],
+    "rows": [
+      [
+        "1.5",
+        "0.09",
+        "0.5",
+        "<0.1",
+        "NA",
+        "NA",
+        "NA"
+      ],
+      [
+        "3.5",
+        "0.22",
+        "1",
+        "0.2",
+        "<0.1",
+        "NA",
+        "NA"
+      ],
+      [
+        "7.5",
+        "0.47",
+        "2.5",
+        "1.7",
+        "1.5",
+        "<0.1",
+        "NA"
+      ],
+      [
+        "12.5",
+        "0.78",
+        "4",
+        "3.2",
+        "3",
+        "1",
+        "NA"
+      ],
+      [
+        "19.5",
+        "1.22",
+        "6.5",
+        "5.7",
+        "5.5",
+        "3.5",
+        "NA"
+      ],
+      [
+        "39.5",
+        "2.47",
+        "13",
+        "12.2",
+        "12",
+        "10",
+        "NA"
+      ],
+      [
+        "79.5",
+        "4.97",
+        "27",
+        "26.2",
+        "26",
+        "24",
+        "<0.1"
+      ],
+      [
+        "160.5",
+        "10.03",
+        "50",
+        "49.2",
+        "49",
+        "47",
+        "32"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 7,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 7
+    },
+    "structured_json": null,
+    "warnings": [
+      "dynamic_header_depth:3"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_53",
+      "is_continued": false,
+      "pages": [
+        73
+      ],
+      "rows_count": 8,
+      "cols_count": 7,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_54",
+    "caption": "Table 54. ADC accuracy.",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 74,
+    "merged_pages": [
+      74
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "ET",
+        "Total unadjusted error",
+        "1.8V < V < 3.6V, DDA Range 1, 2 and 3",
+        "-",
+        "2",
+        "4",
+        "LSB"
+      ],
+      [
+        "EO",
+        "Offset error",
+        "1.8V < V < 3.6V, DDA Range 1, 2 and 3",
+        "-",
+        "1",
+        "2.5",
+        "LSB"
+      ],
+      [
+        "EG",
+        "Gain error",
+        "1.8V < V < 3.6V, DDA Range 1, 2 and 3",
+        "-",
+        "1",
+        "2",
+        "LSB"
+      ],
+      [
+        "EL",
+        "Integral linearity error",
+        "1.8V < V < 3.6V, DDA Range 1, 2 and 3",
+        "-",
+        "1.5",
+        "2.5",
+        "LSB"
+      ],
+      [
+        "ED",
+        "Differential linearity error",
+        "1.8V < V < 3.6V, DDA Range 1, 2 and 3",
+        "-",
+        "1",
+        "1.5",
+        "LSB"
+      ],
+      [
+        "ENOB",
+        "Effective number of bits",
+        "1.8V < V < 3.6V, DDA Range 1, 2 and 3",
+        "10.2",
+        "11",
+        "-",
+        "bits"
+      ],
+      [
+        "ENOB",
+        "Effective number of bits (16-bit mode oversampling with ratio =256)(4)",
+        "1.8V < V < 3.6V, DDA Range 1, 2 and 3",
+        "11.3",
+        "12.1",
+        "-",
+        "bits"
+      ],
+      [
+        "SINAD",
+        "Signal-to-noise distortion",
+        "1.8V < V < 3.6V, DDA Range 1, 2 and 3",
+        "62",
+        "67.8",
+        "-",
+        "dB"
+      ],
+      [
+        "SNR",
+        "Signal-to-noise ratio",
+        "1.8V < V < 3.6V, DDA Range 1, 2 and 3",
+        "63",
+        "68",
+        "-",
+        "dB"
+      ],
+      [
+        "SNR",
+        "Signal-to-noise ratio (16-bit mode oversampling with ratio =256)(4)",
+        "1.8V < V < 3.6V, DDA Range 1, 2 and 3",
+        "70",
+        "76",
+        "-",
+        "dB"
+      ],
+      [
+        "THD",
+        "Total harmonic distortion",
+        "1.8V < V < 3.6V, DDA Range 1, 2 and 3",
+        "-",
+        "-81",
+        "-68.5",
+        "dB"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 7,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 7
+    },
+    "structured_json": null,
+    "warnings": [
+      "vertical_merge_suspected"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_54",
+      "is_continued": false,
+      "pages": [
+        74
+      ],
+      "rows_count": 11,
+      "cols_count": 7,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_55",
+    "caption": "Table 55. TIMx characteristics",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 75,
+    "merged_pages": [
+      75
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "-",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "f = 32 MHz TIMxCLK",
+        "31.25",
+        "-",
+        "ns"
+      ],
+      [
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "-",
+        "0",
+        "f /2 TIMxCLK",
+        "MHz"
+      ],
+      [
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "f = 32 MHz TIMxCLK",
+        "0",
+        "16",
+        "MHz"
+      ],
+      [
+        "Res TIM",
+        "Timer resolution",
+        "-",
+        "-",
+        "16",
+        "bit"
+      ],
+      [
+        "t COUNTER",
+        "16-bit counter clock period when internal clock is selected (timer's prescaler disabled)",
+        "-",
+        "1",
+        "65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t COUNTER",
+        "16-bit counter clock period when internal clock is selected (timer's prescaler disabled)",
+        "f = 32 MHz TIMxCLK",
+        "0.0312",
+        "2048",
+        "µs"
+      ],
+      [
+        "t MAX_COUNT",
+        "Maximum possible count",
+        "-",
+        "-",
+        "65536 × 65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t MAX_COUNT",
+        "Maximum possible count",
+        "f = 32 MHz TIMxCLK",
+        "-",
+        "134.2",
+        "s"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 6,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 6
+    },
+    "structured_json": null,
+    "warnings": [
+      "vertical_merge_suspected"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_55",
+      "is_continued": false,
+      "pages": [
+        75
+      ],
+      "rows_count": 9,
+      "cols_count": 6,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_56",
+    "caption": "Table 56. I2C analog filter characteristics.",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 76,
+    "merged_pages": [
+      76
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t AF",
+        "Maximum pulse width of spikes that are suppressed by the analog filter",
+        "Range 1",
+        "50(2)",
+        "100(3)",
+        "ns"
+      ],
+      [
+        "t AF",
+        "Maximum pulse width of spikes that are suppressed by the analog filter",
+        "Range 2",
+        "50(2)",
+        "-",
+        "ns"
+      ],
+      [
+        "t AF",
+        "Maximum pulse width of spikes that are suppressed by the analog filter",
+        "Range 3",
+        "50(2)",
+        "-",
+        "ns"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 6,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 6
+    },
+    "structured_json": null,
+    "warnings": [],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_56",
+      "is_continued": false,
+      "pages": [
+        76
+      ],
+      "rows_count": 3,
+      "cols_count": 6,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_57",
+    "caption": "Table 57. SPI characteristics in voltage Range",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 77,
+    "merged_pages": [
+      77
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Master mode",
+        "-",
+        "-",
+        "16",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Slave mode receiver",
+        "-",
+        "-",
+        "16",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Slave mode transmitter 1.71<V <3.6V DD",
+        "-",
+        "-",
+        "12(2)",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Slave mode transmitter 2.7<V <3.6V DD",
+        "-",
+        "-",
+        "16(2)",
+        "MHz"
+      ],
+      [
+        "Duty (SCK)",
+        "Duty cycle of SPI clock frequency",
+        "Slave mode",
+        "30",
+        "50",
+        "70",
+        "%"
+      ],
+      [
+        "t su(NSS)",
+        "NSS setup time",
+        "Slave mode, SPI presc = 2",
+        "4Tpclk",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(NSS)",
+        "NSS hold time",
+        "Slave mode, SPI presc = 2",
+        "2Tpclk",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t w(SCKH) t w(SCKL)",
+        "SCK high and low time",
+        "Master mode",
+        "Tpclk-2",
+        "Tpclk",
+        "Tpclk+2",
+        "ns"
+      ],
+      [
+        "t su(MI)",
+        "Data input setup time",
+        "Master mode",
+        "3",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(SI)",
+        "Data input setup time",
+        "Slave mode",
+        "3",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(MI)",
+        "Data input hold time",
+        "Master mode",
+        "3.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(SI)",
+        "Data input hold time",
+        "Slave mode",
+        "0",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t a(SO",
+        "Data output access time",
+        "Slave mode",
+        "15",
+        "-",
+        "36",
+        "ns"
+      ],
+      [
+        "t dis(SO)",
+        "Data output disable time",
+        "Slave mode",
+        "10",
+        "-",
+        "30",
+        "ns"
+      ],
+      [
+        "t v(SO)",
+        "Data output valid time",
+        "Slave mode, 1.71<V <3.6V DD",
+        "-",
+        "14",
+        "35",
+        "ns"
+      ],
+      [
+        "t v(SO)",
+        "Data output valid time",
+        "Slave mode, 2.7<V <3.6V DD",
+        "-",
+        "14",
+        "20",
+        "ns"
+      ],
+      [
+        "t v(MO)",
+        "Data output valid time",
+        "Master mode",
+        "-",
+        "4",
+        "6",
+        "ns"
+      ],
+      [
+        "t h(SO)",
+        "Data output hold time",
+        "Slave mode",
+        "10",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(MO)",
+        "Data output hold time",
+        "Master mode",
+        "3",
+        "-",
+        "-",
+        "ns"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 7,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 7
+    },
+    "structured_json": null,
+    "warnings": [
+      "vertical_merge_suspected"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_57",
+      "is_continued": false,
+      "pages": [
+        77
+      ],
+      "rows_count": 19,
+      "cols_count": 7,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_58",
+    "caption": "Table 58. SPI characteristics in voltage Range",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 78,
+    "merged_pages": [
+      78
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Master mode",
+        "-",
+        "-",
+        "8",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Slave mode transmitter 1.8V<V <3.6V DD",
+        "-",
+        "-",
+        "8",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Slave mode transmitter 2.7V<V <3.6V DD",
+        "-",
+        "-",
+        "8(2)",
+        "MHz"
+      ],
+      [
+        "Duty (SCK)",
+        "Duty cycle of SPI clock frequency",
+        "Slave mode",
+        "30",
+        "50",
+        "70",
+        "%"
+      ],
+      [
+        "t su(NSS)",
+        "NSS setup time",
+        "Slave mode, SPI presc = 2",
+        "4Tpclk",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(NSS)",
+        "NSS hold time",
+        "Slave mode, SPI presc = 2",
+        "2Tpclk",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t w(SCKH) t w(SCKL)",
+        "SCK high and low time",
+        "Master mode",
+        "Tpclk - 2",
+        "Tpclk",
+        "Tpclk + 2",
+        "ns"
+      ],
+      [
+        "t su(MI)",
+        "Data input setup time",
+        "Master mode",
+        "3",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(SI)",
+        "Data input setup time",
+        "Slave mode",
+        "3",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(MI)",
+        "Data input hold time",
+        "Master mode",
+        "6",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(SI)",
+        "Data input hold time",
+        "Slave mode",
+        "2",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t a(SO",
+        "Data output access time",
+        "Slave mode",
+        "18",
+        "-",
+        "52",
+        "ns"
+      ],
+      [
+        "t dis(SO)",
+        "Data output disable time",
+        "Slave mode",
+        "12",
+        "-",
+        "42",
+        "ns"
+      ],
+      [
+        "t v(SO)",
+        "Data output valid time",
+        "Slave mode",
+        "-",
+        "16",
+        "33",
+        "ns"
+      ],
+      [
+        "t v(SO)",
+        "Data output valid time",
+        "Master mode",
+        "-",
+        "4",
+        "6",
+        "ns"
+      ],
+      [
+        "t v(MO)",
+        "Data output hold time",
+        "Slave mode",
+        "11",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(SO)",
+        "Data output hold time",
+        "Master mode",
+        "3",
+        "-",
+        "-",
+        "ns"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 7,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 7
+    },
+    "structured_json": null,
+    "warnings": [
+      "vertical_merge_suspected"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_58",
+      "is_continued": false,
+      "pages": [
+        78
+      ],
+      "rows_count": 17,
+      "cols_count": 7,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_59",
+    "caption": "Table 59. SPI characteristics in voltage Range",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 79,
+    "merged_pages": [
+      79
+    ],
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Master mode",
+        "-",
+        "-",
+        "2",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Slave mode",
+        "-",
+        "-",
+        "2(2)",
+        "MHz"
+      ],
+      [
+        "Duty (SCK)",
+        "Duty cycle of SPI clock frequency",
+        "Slave mode",
+        "30",
+        "50",
+        "70",
+        "%"
+      ],
+      [
+        "t su(NSS)",
+        "NSS setup time",
+        "Slave mode, SPI presc = 2",
+        "4Tpclk",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(NSS)",
+        "NSS hold time",
+        "Slave mode, SPI presc = 2",
+        "2Tpclk",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t w(SCKH) t w(SCKL)",
+        "SCK high and low time",
+        "Master mode",
+        "Tpclk - 2",
+        "Tpclk",
+        "Tpclk + 2",
+        "ns"
+      ],
+      [
+        "t su(MI)",
+        "Data input setup time",
+        "Master mode",
+        "3",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(SI)",
+        "Data input setup time",
+        "Slave mode",
+        "3",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(MI)",
+        "Data input hold time",
+        "Master mode",
+        "16",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(SI)",
+        "Data input hold time",
+        "Slave mode",
+        "14",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t a(SO",
+        "Data output access time",
+        "Slave mode",
+        "30",
+        "-",
+        "70",
+        "ns"
+      ],
+      [
+        "t dis(SO)",
+        "Data output disable time",
+        "Slave mode",
+        "40",
+        "-",
+        "80",
+        "ns"
+      ],
+      [
+        "t v(SO)",
+        "Data output valid time",
+        "Slave mode",
+        "-",
+        "26.5",
+        "47",
+        "ns"
+      ],
+      [
+        "t v(SO)",
+        "Data output valid time",
+        "Master mode",
+        "-",
+        "4",
+        "6",
+        "ns"
+      ],
+      [
+        "t v(MO)",
+        "Data output hold time",
+        "Slave mode",
+        "20",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(SO)",
+        "Data output hold time",
+        "Master mode",
+        "3",
+        "-",
+        "-",
+        "ns"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 7,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 7
+    },
+    "structured_json": null,
+    "warnings": [
+      "vertical_merge_suspected"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_59",
+      "is_continued": false,
+      "pages": [
+        79
+      ],
+      "rows_count": 16,
+      "cols_count": 7,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_60",
+    "caption": "Table 60. LQFP48 - 48-pin, 7 x 7mm low-profile quad flat package mechanical data.",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 83,
+    "merged_pages": [
+      83
+    ],
+    "headers": [
+      "Symbol",
+      "millimeters / Min",
+      "millimeters / Typ",
+      "millimeters / Max",
+      "inches(1) / Min",
+      "inches(1) / Typ",
+      "inches(1) / Max"
+    ],
+    "rows": [
+      [
+        "A",
+        "-",
+        "-",
+        "1.600",
+        "-",
+        "-",
+        "0.0630"
+      ],
+      [
+        "A1",
+        "0.050",
+        "-",
+        "0.150",
+        "0.0020",
+        "-",
+        "0.0059"
+      ],
+      [
+        "A2",
+        "1.350",
+        "1.400",
+        "1.450",
+        "0.0531",
+        "0.0551",
+        "0.0571"
+      ],
+      [
+        "b",
+        "0.170",
+        "0.220",
+        "0.270",
+        "0.0067",
+        "0.0087",
+        "0.0106"
+      ],
+      [
+        "c",
+        "0.090",
+        "-",
+        "0.200",
+        "0.0035",
+        "-",
+        "0.0079"
+      ],
+      [
+        "D",
+        "8.800",
+        "9.000",
+        "9.200",
+        "0.3465",
+        "0.3543",
+        "0.3622"
+      ],
+      [
+        "D1",
+        "6.800",
+        "7.000",
+        "7.200",
+        "0.2677",
+        "0.2756",
+        "0.2835"
+      ],
+      [
+        "D3",
+        "-",
+        "5.500",
+        "-",
+        "-",
+        "0.2165",
+        "-"
+      ],
+      [
+        "E",
+        "8.800",
+        "9.000",
+        "9.200",
+        "0.3465",
+        "0.3543",
+        "0.3622"
+      ],
+      [
+        "E1",
+        "6.800",
+        "7.000",
+        "7.200",
+        "0.2677",
+        "0.2756",
+        "0.2835"
+      ],
+      [
+        "E3",
+        "-",
+        "5.500",
+        "-",
+        "-",
+        "0.2165",
+        "-"
+      ],
+      [
+        "e",
+        "-",
+        "0.500",
+        "-",
+        "-",
+        "0.0197",
+        "-"
+      ],
+      [
+        "L",
+        "0.450",
+        "0.600",
+        "0.750",
+        "0.0177",
+        "0.0236",
+        "0.0295"
+      ],
+      [
+        "L1",
+        "-",
+        "1.000",
+        "-",
+        "-",
+        "0.0394",
+        "-"
+      ],
+      [
+        "k",
+        "0°",
+        "3.5°",
+        "7°",
+        "0°",
+        "3.5°",
+        "7°"
+      ],
+      [
+        "ccc",
+        "-",
+        "-",
+        "0.080",
+        "-",
+        "-",
+        "0.0031"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 7,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 7
+    },
+    "structured_json": null,
+    "warnings": [
+      "dynamic_header_depth:2"
+    ],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_60",
+      "is_continued": false,
+      "pages": [
+        83
+      ],
+      "rows_count": 16,
+      "cols_count": 7,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_61",
+    "caption": "Table 61. Thermal characteristics.",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 86,
+    "merged_pages": [
+      86
+    ],
+    "headers": [
+      "symbol",
+      "Thermal resistance junction-ambient",
+      "Value",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "ϴ JA",
+        "LQFP48 - 7 x 7 mm / 0.5 mm pitch",
+        "57",
+        "°C/W"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 4,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 4
+    },
+    "structured_json": null,
+    "warnings": [],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_61",
+      "is_continued": false,
+      "pages": [
+        86
+      ],
+      "rows_count": 1,
+      "cols_count": 4,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  },
+  {
+    "table_id": "table_62",
+    "caption": "Table 62. Document revision history",
+    "pdf_name": "stm32l010c6",
+    "family": "L0",
+    "page": 88,
+    "merged_pages": [
+      88
+    ],
+    "headers": [
+      "Date",
+      "Revision",
+      "Changes"
+    ],
+    "rows": [
+      [
+        "8-Dec-2017",
+        "1",
+        "Initial release."
+      ],
+      [
+        "3-Sep-2018",
+        "2",
+        "Updated Introduction."
+      ],
+      [
+        "7-Aug-2019",
+        "3",
+        "Updated: – Figure1: STM32L010C6 block diagram – Table3: Functionalities depending on the working mode (from Run/active down to Standby) – Table29: Peripheral current consumption in run or Sleep mode – Device marking section"
+      ]
+    ],
+    "extraction_method": "pdfplumber",
+    "extraction_confidence": "high",
+    "empty_cell_ratio": 0.0,
+    "col_count": 3,
+    "status": null,
+    "has_empty_cells": false,
+    "heuristics": {
+      "cols_extracted": 3
+    },
+    "structured_json": null,
+    "warnings": [],
+    "datasheet_metaData": {
+      "pdf_name": "stm32l010c6",
+      "table_id": "table_62",
+      "is_continued": false,
+      "pages": [
+        88
+      ],
+      "rows_count": 3,
+      "cols_count": 3,
+      "confidence": "high",
+      "empty_cell_ratio": 0.0
+    }
+  }
+]

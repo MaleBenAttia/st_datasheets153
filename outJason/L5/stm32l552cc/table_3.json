@@ -1,0 +1,75 @@
+{
+  "table_id": "table_3",
+  "caption": "Table 3. Boot modes when TrustZone is disabled (TZEN=0)",
+  "pdf_name": "stm32l552cc",
+  "family": "L5",
+  "page": 24,
+  "merged_pages": [
+    24
+  ],
+  "headers": [
+    "nBOOT0 FLASH_ OPTR[27]",
+    "BOOT0 pin PH3",
+    "nSWBOOT0 FLASH_ OPTR[26]",
+    "Boot address option- bytes selection",
+    "Boot area",
+    "ST programmed default value"
+  ],
+  "rows": [
+    [
+      "-",
+      "0",
+      "1",
+      "NSBOOTADD0[24:0]",
+      "Boot address defined by user option bytes NSBOOTADD0[24:0]",
+      "Flash: 0x0800 0000"
+    ],
+    [
+      "-",
+      "1",
+      "1",
+      "NSBOOTADD1[24:0]",
+      "Boot address defined by user option bytes NSBOOTADD1[24:0]",
+      "System bootloader: 0x0BF9 0000"
+    ],
+    [
+      "1",
+      "-",
+      "0",
+      "NSBOOTADD0[24:0]",
+      "Boot address defined by user option bytes NSBOOTADD0[24:0]",
+      "Flash: 0x0800 0000"
+    ],
+    [
+      "0",
+      "-",
+      "0",
+      "NSBOOTADD1[24:0]",
+      "Boot address defined by user option bytes NSBOOTADD1[24:0]",
+      "System bootloader: 0x0BF9 0000"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 6,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 6
+  },
+  "structured_json": null,
+  "warnings": [],
+  "datasheet_metaData": {
+    "pdf_name": "stm32l552cc",
+    "table_id": "table_3",
+    "is_continued": false,
+    "pages": [
+      24
+    ],
+    "rows_count": 4,
+    "cols_count": 6,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

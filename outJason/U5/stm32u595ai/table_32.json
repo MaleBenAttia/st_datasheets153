@@ -1,0 +1,528 @@
+{
+  "table_id": "table_32",
+  "caption": "Table 32. General operating conditions",
+  "pdf_name": "stm32u595ai",
+  "family": "U5",
+  "page": 183,
+  "merged_pages": [
+    183,
+    184,
+    185
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Min",
+    "Typ",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "V DD",
+      "Standard operating voltage",
+      "IO_VDD_HSLV(1) = 0",
+      "1.71(2)",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V DD",
+      "Standard operating voltage",
+      "IO_VDD_HSLV = 1",
+      "1.71(2)",
+      "-",
+      "2.7",
+      "V"
+    ],
+    [
+      "V DDSMPS",
+      "Supply voltage for the internal SMPS step-down converter",
+      "-",
+      "V DD",
+      "V DD",
+      "V DD",
+      "V"
+    ],
+    [
+      "V DDIO2",
+      "Supply voltage for PG[15:2] I/Os",
+      "At least one I/O in PG[15:2] used, IO_VDDIO2_HSLV = 0",
+      "1.08",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V DDIO2",
+      "Supply voltage for PG[15:2] I/Os",
+      "At least one I/O in PG[15:2] used, IO_VDDIO2_HSLV = 1",
+      "1.08",
+      "-",
+      "2.7",
+      "V"
+    ],
+    [
+      "V DDIO2",
+      "Supply voltage for PG[15:2] I/Os",
+      "PG[15:2] I/Os not used",
+      "0",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V DDUSB",
+      "USB supply voltage",
+      "USB used",
+      "3.0",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V DDUSB",
+      "USB supply voltage",
+      "USB not used",
+      "0",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V DDA",
+      "Analog supply voltage",
+      "COMP used",
+      "1.58",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V DDA",
+      "Analog supply voltage",
+      "DAC or OPAMP used",
+      "1.60",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V DDA",
+      "Analog supply voltage",
+      "ADC used",
+      "1.62",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V DDA",
+      "Analog supply voltage",
+      "VREFBUF used (normal mode)",
+      "1.8",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V DDA",
+      "Analog supply voltage",
+      "ADC, DAC, COMP, OPAMP, and VREFBUF not used",
+      "0",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V BAT",
+      "Backup domain supply voltage",
+      "-",
+      "1.65(3)",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V IN",
+      "I/O input voltage",
+      "All I/Os except FT_c and TT_xx pins",
+      "-0.3",
+      "-",
+      "Min(min(V , V , V , DD DDA DDUSB V ) +3.6, 5.5)(4)(5) DDIO2",
+      "V"
+    ],
+    [
+      "V IN",
+      "I/O input voltage",
+      "Input voltage on FT_t pins in V mode BAT",
+      "-0.3",
+      "-",
+      "Min(min(V , V , BAT DDA V V ) + 3.6, DDUSB, DDIO2 5.5)(4)(5)",
+      "V"
+    ],
+    [
+      "V IN",
+      "I/O input voltage",
+      "FT_c I/Os",
+      "-0.3",
+      "-",
+      "5.0",
+      "V"
+    ],
+    [
+      "V IN",
+      "I/O input voltage",
+      "TT_xx I/Os",
+      "-0.3",
+      "-",
+      "V + 0.3 DDIOx",
+      "V"
+    ],
+    [
+      "I IO_SW",
+      "Sum of output current sourced by all I/Os powered by V (6) SW",
+      "-",
+      "-",
+      "-",
+      "3",
+      "mA"
+    ],
+    [
+      "V CORE",
+      "Internal regulator ON",
+      "Range 1",
+      "1.15",
+      "1.21",
+      "1.27",
+      "V"
+    ],
+    [
+      "V CORE",
+      "Internal regulator ON",
+      "Range 2",
+      "1.05",
+      "1.1",
+      "1.15",
+      "V"
+    ],
+    [
+      "V CORE",
+      "Internal regulator ON",
+      "Range 3",
+      "0.95",
+      "1.0",
+      "1.05",
+      "V"
+    ],
+    [
+      "V CORE",
+      "Internal regulator ON",
+      "Range 4",
+      "0.81",
+      "0.9",
+      "0.99",
+      "V"
+    ],
+    [
+      "f HCLK",
+      "AHB clock frequency",
+      "Range 1",
+      "-",
+      "-",
+      "160",
+      "MHz"
+    ],
+    [
+      "f HCLK",
+      "AHB clock frequency",
+      "Range 2",
+      "-",
+      "-",
+      "110",
+      "MHz"
+    ],
+    [
+      "f HCLK",
+      "AHB clock frequency",
+      "Range 3",
+      "-",
+      "-",
+      "55",
+      "MHz"
+    ],
+    [
+      "f HCLK",
+      "AHB clock frequency",
+      "Range 4",
+      "-",
+      "-",
+      "25",
+      "MHz"
+    ],
+    [
+      "f PCLKx (x = 1, 2, 3)",
+      "APB1, APB2, APB3 clock frequency",
+      "Range 1",
+      "-",
+      "-",
+      "160",
+      "MHz"
+    ],
+    [
+      "f PCLKx (x = 1, 2, 3)",
+      "APB1, APB2, APB3 clock frequency",
+      "Range 2",
+      "-",
+      "-",
+      "110",
+      "MHz"
+    ],
+    [
+      "f PCLKx (x = 1, 2, 3)",
+      "APB1, APB2, APB3 clock frequency",
+      "Range 3",
+      "-",
+      "-",
+      "55",
+      "MHz"
+    ],
+    [
+      "f PCLKx (x = 1, 2, 3)",
+      "APB1, APB2, APB3 clock frequency",
+      "Range 4",
+      "-",
+      "-",
+      "25",
+      "MHz"
+    ],
+    [
+      "P D",
+      "Power dissipation at T = 85 °C A for suffix 6(7)",
+      "LQFP64",
+      "See Section 6.9: Package thermal characteristics for application appropriate thermal resistance and package. The power dissipation is then calculated according ambient temperature (T ) and maximum A junction temperature (T ) and selected thermal J resistance.",
+      "-",
+      "25",
+      "mW"
+    ],
+    [
+      "P D",
+      "Power dissipation at T = 85 °C A for suffix 6(7)",
+      "LPQF100",
+      "See Section 6.9: Package thermal characteristics for application appropriate thermal resistance and package. The power dissipation is then calculated according ambient temperature (T ) and maximum A junction temperature (T ) and selected thermal J resistance.",
+      "-",
+      "25",
+      "mW"
+    ],
+    [
+      "P D",
+      "Power dissipation at T = 85 °C A for suffix 6(7)",
+      "UFBGA132",
+      "See Section 6.9: Package thermal characteristics for application appropriate thermal resistance and package. The power dissipation is then calculated according ambient temperature (T ) and maximum A junction temperature (T ) and selected thermal J resistance.",
+      "-",
+      "25",
+      "mW"
+    ],
+    [
+      "P D",
+      "Power dissipation at T = 85 °C A for suffix 6(7)",
+      "LQFP144",
+      "See Section 6.9: Package thermal characteristics for application appropriate thermal resistance and package. The power dissipation is then calculated according ambient temperature (T ) and maximum A junction temperature (T ) and selected thermal J resistance.",
+      "-",
+      "25",
+      "mW"
+    ],
+    [
+      "P D",
+      "Power dissipation at T = 85 °C A for suffix 6(7)",
+      "WLCSP150",
+      "See Section 6.9: Package thermal characteristics for application appropriate thermal resistance and package. The power dissipation is then calculated according ambient temperature (T ) and maximum A junction temperature (T ) and selected thermal J resistance.",
+      "-",
+      "25",
+      "mW"
+    ],
+    [
+      "P D",
+      "Power dissipation at T = 85 °C A for suffix 6(7)",
+      "TFBGA169",
+      "See Section 6.9: Package thermal characteristics for application appropriate thermal resistance and package. The power dissipation is then calculated according ambient temperature (T ) and maximum A junction temperature (T ) and selected thermal J resistance.",
+      "-",
+      "25",
+      "mW"
+    ],
+    [
+      "P D",
+      "Power dissipation at T = 85 °C A for suffix 6(7)",
+      "WLCSP208",
+      "See Section 6.9: Package thermal characteristics for application appropriate thermal resistance and package. The power dissipation is then calculated according ambient temperature (T ) and maximum A junction temperature (T ) and selected thermal J resistance.",
+      "-",
+      "25",
+      "mW"
+    ],
+    [
+      "P D",
+      "Power dissipation at T = 85 °C A for suffix 6(7)",
+      "TFBGA216",
+      "See Section 6.9: Package thermal characteristics for application appropriate thermal resistance and package. The power dissipation is then calculated according ambient temperature (T ) and maximum A junction temperature (T ) and selected thermal J resistance.",
+      "-",
+      "25",
+      "mW"
+    ],
+    [
+      "P D",
+      "Power dissipation at T = 125 °C A for suffix 3(7)",
+      "LQFP64",
+      "See Section 6.9: Package thermal characteristics for application appropriate thermal resistance and package. The power dissipation is then calculated according ambient temperature (T ) and maximum A junction temperature (T ) and selected thermal J resistance.",
+      "-",
+      "25",
+      "mW"
+    ],
+    [
+      "P D",
+      "Power dissipation at T = 125 °C A for suffix 3(7)",
+      "LPQF100",
+      "See Section 6.9: Package thermal characteristics for application appropriate thermal resistance and package. The power dissipation is then calculated according ambient temperature (T ) and maximum A junction temperature (T ) and selected thermal J resistance.",
+      "-",
+      "25",
+      "mW"
+    ],
+    [
+      "P D",
+      "Power dissipation at T = 125 °C A for suffix 3(7)",
+      "UFBGA132",
+      "See Section 6.9: Package thermal characteristics for application appropriate thermal resistance and package. The power dissipation is then calculated according ambient temperature (T ) and maximum A junction temperature (T ) and selected thermal J resistance.",
+      "-",
+      "25",
+      "mW"
+    ],
+    [
+      "P D",
+      "Power dissipation at T = 125 °C A for suffix 3(7)",
+      "LQFP144",
+      "See Section 6.9: Package thermal characteristics for application appropriate thermal resistance and package. The power dissipation is then calculated according ambient temperature (T ) and maximum A junction temperature (T ) and selected thermal J resistance.",
+      "-",
+      "25",
+      "mW"
+    ],
+    [
+      "P D",
+      "Power dissipation at T = 125 °C A for suffix 3(7)",
+      "WLCSP150",
+      "See Section 6.9: Package thermal characteristics for application appropriate thermal resistance and package. The power dissipation is then calculated according ambient temperature (T ) and maximum A junction temperature (T ) and selected thermal J resistance.",
+      "-",
+      "25",
+      "mW"
+    ],
+    [
+      "P D",
+      "Power dissipation at T = 125 °C A for suffix 3(7)",
+      "TFBGA169",
+      "See Section 6.9: Package thermal characteristics for application appropriate thermal resistance and package. The power dissipation is then calculated according ambient temperature (T ) and maximum A junction temperature (T ) and selected thermal J resistance.",
+      "-",
+      "25",
+      "mW"
+    ],
+    [
+      "P D",
+      "Power dissipation at T = 125 °C A for suffix 3(7)",
+      "WLCSP208",
+      "See Section 6.9: Package thermal characteristics for application appropriate thermal resistance and package. The power dissipation is then calculated according ambient temperature (T ) and maximum A junction temperature (T ) and selected thermal J resistance.",
+      "-",
+      "25",
+      "mW"
+    ],
+    [
+      "P D",
+      "Power dissipation at T = 125 °C A for suffix 3(7)",
+      "TFBGA216",
+      "See Section 6.9: Package thermal characteristics for application appropriate thermal resistance and package. The power dissipation is then calculated according ambient temperature (T ) and maximum A junction temperature (T ) and selected thermal J resistance.",
+      "-",
+      "25",
+      "mW"
+    ],
+    [
+      "TA",
+      "Ambient temperature for suffix 6",
+      "Maximum power dissipation",
+      "–40",
+      "-",
+      "85",
+      "°C"
+    ],
+    [
+      "TA",
+      "Ambient temperature for suffix 6",
+      "Low-power dissipation(8)",
+      "–40",
+      "-",
+      "105",
+      "°C"
+    ],
+    [
+      "TA",
+      "Ambient temperature for suffix 3",
+      "Maximum power dissipation",
+      "–40",
+      "-",
+      "125",
+      "°C"
+    ],
+    [
+      "TA",
+      "Ambient temperature for suffix 3",
+      "Low-power dissipation(8)",
+      "–40",
+      "-",
+      "130",
+      "°C"
+    ],
+    [
+      "TJ",
+      "Junction temperature range",
+      "Suffix 6 version",
+      "–40",
+      "-",
+      "105",
+      "°C"
+    ],
+    [
+      "TJ",
+      "Junction temperature range",
+      "Suffix 3 version",
+      "–40",
+      "-",
+      "130",
+      "°C"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 7,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 7
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:3",
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32u595ai",
+    "table_id": "table_32",
+    "is_continued": true,
+    "pages": [
+      183,
+      184,
+      185
+    ],
+    "rows_count": 53,
+    "cols_count": 7,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "table_id": "table_55",
+  "caption": "Table 55. TIMx characteristics",
+  "pdf_name": "stm32l010c6",
+  "family": "L0",
+  "page": 75,
+  "merged_pages": [
+    75
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Min",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "t res(TIM)",
+      "Timer resolution time",
+      "-",
+      "1",
+      "-",
+      "t TIMxCLK"
+    ],
+    [
+      "t res(TIM)",
+      "Timer resolution time",
+      "f = 32 MHz TIMxCLK",
+      "31.25",
+      "-",
+      "ns"
+    ],
+    [
+      "f EXT",
+      "Timer external clock frequency on CH1 to CH4",
+      "-",
+      "0",
+      "f /2 TIMxCLK",
+      "MHz"
+    ],
+    [
+      "f EXT",
+      "Timer external clock frequency on CH1 to CH4",
+      "f = 32 MHz TIMxCLK",
+      "0",
+      "16",
+      "MHz"
+    ],
+    [
+      "Res TIM",
+      "Timer resolution",
+      "-",
+      "-",
+      "16",
+      "bit"
+    ],
+    [
+      "t COUNTER",
+      "16-bit counter clock period when internal clock is selected (timer's prescaler disabled)",
+      "-",
+      "1",
+      "65536",
+      "t TIMxCLK"
+    ],
+    [
+      "t COUNTER",
+      "16-bit counter clock period when internal clock is selected (timer's prescaler disabled)",
+      "f = 32 MHz TIMxCLK",
+      "0.0312",
+      "2048",
+      "µs"
+    ],
+    [
+      "t MAX_COUNT",
+      "Maximum possible count",
+      "-",
+      "-",
+      "65536 × 65536",
+      "t TIMxCLK"
+    ],
+    [
+      "t MAX_COUNT",
+      "Maximum possible count",
+      "f = 32 MHz TIMxCLK",
+      "-",
+      "134.2",
+      "s"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 6,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 6
+  },
+  "structured_json": null,
+  "warnings": [
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32l010c6",
+    "table_id": "table_55",
+    "is_continued": false,
+    "pages": [
+      75
+    ],
+    "rows_count": 9,
+    "cols_count": 6,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "table_id": "table_18",
+  "caption": "Table 18. Features depending on the operating power supply range",
+  "pdf_name": "stm32f423ch",
+  "family": "F4",
+  "page": 85,
+  "merged_pages": [
+    85
+  ],
+  "headers": [
+    "Operating power supply range",
+    "ADC operation",
+    "Maximum Flash memory access frequency with no wait states (f ) Flashmax",
+    "Maximum Flash memory access frequency with wait states (1)(2)",
+    "I/O operation",
+    "Clock output frequency on I/O pins(3)",
+    "Possible Flash memory operations"
+  ],
+  "rows": [
+    [
+      "V =1.7 to DD 2.1 V(4)",
+      "Conversion time up to 1.2 Msps",
+      "16 MHz(5)",
+      "100 MHz with 6 wait states",
+      "– No I/O compensation",
+      "up to 30 MHz",
+      "8-bit erase and program operations only"
+    ],
+    [
+      "V = 2.1 to DD 2.4 V",
+      "Conversion time up to 1.2 Msps",
+      "18 MHz",
+      "100 MHz with 5 wait states",
+      "– No I/O compensation",
+      "up to 30 MHz",
+      "16-bit erase and program operations"
+    ],
+    [
+      "V = 2.4 to DD 2.7 V",
+      "Conversion time up to 2.4 Msps",
+      "20 MHz",
+      "100 MHz with 4 wait states",
+      "– I/O compensation works",
+      "up to 50 MHz",
+      "16-bit erase and program operations"
+    ],
+    [
+      "V = 2.7 to DD 3.6 V(6)",
+      "Conversion time up to 2.4 Msps",
+      "25 MHz",
+      "100 MHz with 3 wait states",
+      "– I/O compensation works",
+      "– up to 100 MHz when V = DD 3.0 to 3.6 V – up to 50 MHz when V = DD 2.7 to 3.0 V",
+      "32-bit erase and program operations"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 7,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 7
+  },
+  "structured_json": null,
+  "warnings": [],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f423ch",
+    "table_id": "table_18",
+    "is_continued": false,
+    "pages": [
+      85
+    ],
+    "rows_count": 4,
+    "cols_count": 7,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

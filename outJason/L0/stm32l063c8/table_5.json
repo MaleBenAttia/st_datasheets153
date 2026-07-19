@@ -1,0 +1,147 @@
+{
+  "table_id": "table_5",
+  "caption": "Table 5. STM32L0xx peripherals interconnect matrix",
+  "pdf_name": "stm32l063c8",
+  "family": "L0",
+  "page": 19,
+  "merged_pages": [
+    19
+  ],
+  "headers": [
+    "Interconnect source",
+    "Interconnect destination",
+    "Interconnect action",
+    "Run",
+    "Sleep",
+    "Low- power run",
+    "Low- power sleep",
+    "Stop"
+  ],
+  "rows": [
+    [
+      "COMPx",
+      "TIM2,TIM21, TIM22",
+      "Timer input channel, trigger from analog signals comparison",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "-"
+    ],
+    [
+      "COMPx",
+      "LPTIM",
+      "Timer input channel, trigger from analog signals comparison",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "Y"
+    ],
+    [
+      "TIMx",
+      "TIMx",
+      "Timer triggered by other timer",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "-"
+    ],
+    [
+      "RTC",
+      "TIM21",
+      "Timer triggered by Auto wake-up",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "-"
+    ],
+    [
+      "RTC",
+      "LPTIM",
+      "Timer triggered by RTC event",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "Y"
+    ],
+    [
+      "All clock source",
+      "TIMx",
+      "Clock source used as input channel for RC measurement and trimming",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "-"
+    ],
+    [
+      "USB",
+      "CRS/HSI48",
+      "the clock recovery system trims the HSI48 based on USB SOF",
+      "Y",
+      "Y",
+      "-",
+      "-",
+      "-"
+    ],
+    [
+      "GPIO",
+      "TIMx",
+      "Timer input channel and trigger",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "-"
+    ],
+    [
+      "GPIO",
+      "LPTIM",
+      "Timer input channel and trigger",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "Y"
+    ],
+    [
+      "GPIO",
+      "ADC,DAC",
+      "Conversion trigger",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "-"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 8,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 8
+  },
+  "structured_json": null,
+  "warnings": [
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32l063c8",
+    "table_id": "table_5",
+    "is_continued": false,
+    "pages": [
+      19
+    ],
+    "rows_count": 10,
+    "cols_count": 8,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

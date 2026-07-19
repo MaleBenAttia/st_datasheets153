@@ -1,0 +1,86 @@
+{
+  "table_id": "table_82",
+  "caption": "Table 82. Switching characteristics for NAND Flash write cycles",
+  "pdf_name": "stm32f215re",
+  "family": "F2",
+  "page": 149,
+  "merged_pages": [
+    149
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Min",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "t w(NWE)",
+      "FSMC_NWE low width",
+      "4T - 1 HCLK",
+      "4T + 3 HCLK",
+      "ns"
+    ],
+    [
+      "t v(NWE-D)",
+      "FSMC_NWE low to FSMC_D[15-0] valid",
+      "-",
+      "0",
+      "ns"
+    ],
+    [
+      "t h(NWE-D)",
+      "FSMC_NWE high to FSMC_D[15-0] invalid",
+      "3T HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t d(D-NWE)",
+      "FSMC_D[15-0] valid before FSMC_NWE high",
+      "5T HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t d(ALE-NWE)",
+      "FSMC_ALE valid before FSMC_NWE low",
+      "-",
+      "3T + 2 HCLK",
+      "ns"
+    ],
+    [
+      "t h(NWE-ALE)",
+      "FSMC_NWE high to FSMC_ALE invalid",
+      "3T - 2 HCLK",
+      "-",
+      "ns"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 5,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 5
+  },
+  "structured_json": null,
+  "warnings": [
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f215re",
+    "table_id": "table_82",
+    "is_continued": false,
+    "pages": [
+      149
+    ],
+    "rows_count": 6,
+    "cols_count": 5,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

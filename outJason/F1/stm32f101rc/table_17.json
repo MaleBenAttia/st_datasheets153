@@ -1,0 +1,108 @@
+{
+  "table_id": "table_17",
+  "caption": "Table 17. Typical and maximum current consumptions in Stop and Standby modes",
+  "pdf_name": "stm32f101rc",
+  "family": "F1",
+  "page": 45,
+  "merged_pages": [
+    45
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Typ(1) / V /",
+    "Typ(1) / V /",
+    "Typ(1) / V /V",
+    "Max / T =",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "I DD",
+      "Supply current in Stop mode",
+      "Regulator in Run mode, Low-speed and high-speed internal RC oscillators and high-speed oscillator OFF (no independent watchdog)",
+      "-",
+      "34.5",
+      "35",
+      "379",
+      "µA"
+    ],
+    [
+      "I DD",
+      "Supply current in Stop mode",
+      "Regulator in Low-power mode, Low-speed and high-speed internal RC oscillators and high-speed oscillator OFF (no independent watchdog)",
+      "-",
+      "24.5",
+      "25",
+      "365",
+      "µA"
+    ],
+    [
+      "I DD",
+      "Supply current in Standby mode",
+      "Low-speed internal RC oscillator and independent watchdog ON",
+      "-",
+      "3",
+      "3.8",
+      "-",
+      "µA"
+    ],
+    [
+      "I DD",
+      "Supply current in Standby mode",
+      "Low-speed internal RC oscillator ON, independent watchdog OFF",
+      "-",
+      "2.8",
+      "3.6",
+      "-",
+      "µA"
+    ],
+    [
+      "I DD",
+      "Supply current in Standby mode",
+      "Low-speed internal RC oscillator and independent watchdog OFF, low-speed oscillator and RTC OFF",
+      "-",
+      "1.9",
+      "2.1",
+      "5(2)",
+      "µA"
+    ],
+    [
+      "I DD_VBAT",
+      "Backup domain supply current",
+      "Low-speed oscillator and RTC ON",
+      "1.05",
+      "1.1",
+      "1.4",
+      "2(2)",
+      "µA"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 8,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 8
+  },
+  "structured_json": null,
+  "warnings": [
+    "dynamic_header_depth:2",
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f101rc",
+    "table_id": "table_17",
+    "is_continued": false,
+    "pages": [
+      45
+    ],
+    "rows_count": 6,
+    "cols_count": 8,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

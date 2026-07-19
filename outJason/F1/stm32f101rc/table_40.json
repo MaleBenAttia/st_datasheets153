@@ -1,0 +1,121 @@
+{
+  "table_id": "table_40",
+  "caption": "Table 40. Switching characteristics for NAND Flash read and write cycles",
+  "pdf_name": "stm32f101rc",
+  "family": "F1",
+  "page": 78,
+  "merged_pages": [
+    78
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Min",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "t (2) d(D-NWE)",
+      "FSMC_D[15:0] valid before FSMC_NWE high",
+      "5t + 12 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t (2) w(NOE)",
+      "FSMC_NOE low width",
+      "4t – 1.5 HCLK",
+      "4t + 1.5 HCLK",
+      "ns"
+    ],
+    [
+      "t (2) su(D-NOE)",
+      "FSMC_D[15:0] valid data before FSMC_NOE high",
+      "25",
+      "-",
+      "ns"
+    ],
+    [
+      "t (2) h(NOE-D)",
+      "FSMC_D[15:0] valid data after FSMC_NOE high",
+      "7",
+      "-",
+      "ns"
+    ],
+    [
+      "t (2) w(NWE)",
+      "FSMC_NWE low width",
+      "4t – 1 HCLK",
+      "4t + 2.5 HCLK",
+      "ns"
+    ],
+    [
+      "t (2) v(NWE-D)",
+      "FSMC_NWE low to FSMC_D[15:0] valid",
+      "-",
+      "0",
+      "ns"
+    ],
+    [
+      "t (2) h(NWE-D)",
+      "FSMC_NWE high to FSMC_D[15:0] invalid",
+      "2t + 4ns HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t (3) d(ALE-NWE)",
+      "FSMC_ALE valid before FSMC_NWE low",
+      "-",
+      "3t + 1.5 HCLK",
+      "ns"
+    ],
+    [
+      "t (3) h(NWE-ALE)",
+      "FSMC_NWE high to FSMC_ALE invalid",
+      "3t + 4.5 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t (3) d(ALE-NOE)",
+      "FSMC_ALE valid before FSMC_NOE low",
+      "-",
+      "3t + 2 HCLK",
+      "ns"
+    ],
+    [
+      "t (3) h(NOE-ALE)",
+      "FSMC_NWE high to FSMC_ALE invalid",
+      "3t + 4.5 HCLK",
+      "-",
+      "ns"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 5,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 5
+  },
+  "structured_json": null,
+  "warnings": [
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f101rc",
+    "table_id": "table_40",
+    "is_continued": false,
+    "pages": [
+      78
+    ],
+    "rows_count": 11,
+    "cols_count": 5,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

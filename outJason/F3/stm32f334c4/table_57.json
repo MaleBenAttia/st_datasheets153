@@ -1,0 +1,111 @@
+{
+  "table_id": "table_57",
+  "caption": "Table 57. HRTIM output response to external events 1 to 10 (Synchronous mode )",
+  "pdf_name": "stm32f334c4",
+  "family": "F3",
+  "page": 83,
+  "merged_pages": [
+    83,
+    84
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Min.",
+    "Typ.",
+    "Max.(2)",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "t LAT(DF)",
+      "Digital fault response latency",
+      "Propagation delay from HRTIM1_FLTx digital input to HRTIM_CHxy output pin",
+      "-",
+      "12",
+      "25",
+      "ns"
+    ],
+    [
+      "t W(FLT)",
+      "Minimum Fault pulse width",
+      "-",
+      "12.5",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t LAT(AF)",
+      "Analog fault response latency",
+      "Propagation delay from comparator COMPx_INP input pin to HRTIM_CHxy output pin",
+      "-",
+      "25",
+      "43",
+      "ns"
+    ],
+    [
+      "t LAT(AEEV)",
+      "Analog external event response latency",
+      "Propagation delay from COMPx_INP input pin to HRTIM_CHxy output pin (30pF load) (4)",
+      "-",
+      "81",
+      "94",
+      "ns"
+    ],
+    [
+      "t W(FLT)",
+      "Minimum external event pulse width",
+      "-",
+      "12.5",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "T JIT(EEV)",
+      "External event response jitter",
+      "Jitter of the delay from HRTIM1_EEVx digital input or COMPx_INP to HRTIM_CHxy output pin",
+      "-",
+      "-",
+      "1",
+      "t (5) HRTIM"
+    ],
+    [
+      "T JIT(PW)",
+      "Jitter on output pulse width in response to an external event",
+      "-",
+      "-",
+      "-",
+      "0",
+      "t (5) HRTIM"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 7,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 7
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:2"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f334c4",
+    "table_id": "table_57",
+    "is_continued": true,
+    "pages": [
+      83,
+      84
+    ],
+    "rows_count": 7,
+    "cols_count": 7,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

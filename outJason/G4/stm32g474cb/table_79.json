@@ -1,0 +1,255 @@
+{
+  "table_id": "table_79",
+  "caption": "Table 79. COMP characteristics",
+  "pdf_name": "stm32g474cb",
+  "family": "G4",
+  "page": 163,
+  "merged_pages": [
+    163
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Conditions",
+    "Min",
+    "Typ",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "V DDA",
+      "Analog supply voltage",
+      "-",
+      "-",
+      "1.62",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V IN",
+      "Comparator input voltage range",
+      "-",
+      "-",
+      "0",
+      "-",
+      "V DDA",
+      "V"
+    ],
+    [
+      "V (2) BG",
+      "Scaler input voltage",
+      "-",
+      "-",
+      "VREFINT",
+      "VREFINT",
+      "VREFINT",
+      "V"
+    ],
+    [
+      "V (3) SC",
+      "Scaler offset voltage",
+      "-",
+      "-",
+      "-",
+      "±5",
+      "±10",
+      "mV"
+    ],
+    [
+      "I (SCALER) DDA",
+      "Scaler static consumption from V DDA",
+      "BRG_EN=0 (bridge disable)",
+      "BRG_EN=0 (bridge disable)",
+      "-",
+      "200",
+      "300",
+      "nA"
+    ],
+    [
+      "I (SCALER) DDA",
+      "Scaler static consumption from V DDA",
+      "BRG_EN=1 (bridge enable)",
+      "BRG_EN=1 (bridge enable)",
+      "-",
+      "0.8",
+      "1",
+      "µA"
+    ],
+    [
+      "t START_SCALER",
+      "Scaler startup time",
+      "-",
+      "-",
+      "-",
+      "100",
+      "200",
+      "µs"
+    ],
+    [
+      "t START",
+      "Comparator startup time to reach propagation delay specification",
+      "-",
+      "-",
+      "-",
+      "-",
+      "5",
+      "µs"
+    ],
+    [
+      "t (4) D",
+      "Propagation delay (From COMP input pin to COMP output pin) for 200 mV step with 100 mV overdrive",
+      "50pF load on output",
+      "V < 2.7 V DDA",
+      "-",
+      "-",
+      "35",
+      "ns"
+    ],
+    [
+      "t (4) D",
+      "Propagation delay (From COMP input pin to COMP output pin) for 200 mV step with 100 mV overdrive",
+      "50pF load on output",
+      "V ≥2.7 V DDA",
+      "-",
+      "16.7",
+      "31",
+      "ns"
+    ],
+    [
+      "V (3) offset",
+      "Comparator offset error",
+      "Full V voltage range, full DDA temperature range",
+      "Full V voltage range, full DDA temperature range",
+      "-9",
+      "-6/+2",
+      "3",
+      "mV"
+    ],
+    [
+      "V hys",
+      "Comparator hysteresis",
+      "HYST[2:0] = 0",
+      "HYST[2:0] = 0",
+      "-",
+      "0",
+      "-",
+      "mV"
+    ],
+    [
+      "V hys",
+      "Comparator hysteresis",
+      "HYST[2:0] =1",
+      "HYST[2:0] =1",
+      "4",
+      "9",
+      "16",
+      "mV"
+    ],
+    [
+      "V hys",
+      "Comparator hysteresis",
+      "HYST[2:0] = 2",
+      "HYST[2:0] = 2",
+      "7",
+      "18",
+      "32",
+      "mV"
+    ],
+    [
+      "V hys",
+      "Comparator hysteresis",
+      "HYST[2:0] = 3",
+      "HYST[2:0] = 3",
+      "11",
+      "27",
+      "47",
+      "mV"
+    ],
+    [
+      "V hys",
+      "Comparator hysteresis",
+      "HYST[2:0] = 4",
+      "HYST[2:0] = 4",
+      "15",
+      "36",
+      "63",
+      "mV"
+    ],
+    [
+      "V hys",
+      "Comparator hysteresis",
+      "HYST[2:0] = 5",
+      "HYST[2:0] = 5",
+      "19",
+      "45",
+      "79",
+      "mV"
+    ],
+    [
+      "V hys",
+      "Comparator hysteresis",
+      "HYST[2:0] = 6",
+      "HYST[2:0] = 6",
+      "23",
+      "54",
+      "95",
+      "mV"
+    ],
+    [
+      "V hys",
+      "Comparator hysteresis",
+      "HYST[2:0] = 7",
+      "HYST[2:0] = 7",
+      "26",
+      "63",
+      "110",
+      "mV"
+    ],
+    [
+      "I (COMP) DDA",
+      "Comparator consumption from V DDA",
+      "Static",
+      "Static",
+      "-",
+      "450",
+      "720",
+      "µA"
+    ],
+    [
+      "I (COMP) DDA",
+      "Comparator consumption from V DDA",
+      "With 50 kHz ±100 mV overdrive square signal",
+      "With 50 kHz ±100 mV overdrive square signal",
+      "-",
+      "450",
+      "-",
+      "µA"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 8,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 8
+  },
+  "structured_json": null,
+  "warnings": [],
+  "datasheet_metaData": {
+    "pdf_name": "stm32g474cb",
+    "table_id": "table_79",
+    "is_continued": false,
+    "pages": [
+      163
+    ],
+    "rows_count": 21,
+    "cols_count": 8,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

@@ -1,0 +1,354 @@
+{
+  "table_id": "table_68",
+  "caption": "Table 68. ADC characteristics",
+  "pdf_name": "stm32u031c6",
+  "family": "U0",
+  "page": 82,
+  "merged_pages": [
+    82,
+    83
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions(1)",
+    "Min",
+    "Typ",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "VDDA",
+      "Analog supply voltage",
+      "-",
+      "1.62",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "VREF+",
+      "Positive reference voltage",
+      "-",
+      "VDDA",
+      "VDDA",
+      "VDDA",
+      "V"
+    ],
+    [
+      "fADC",
+      "ADC clock frequency",
+      "Range 1",
+      "0.14",
+      "-",
+      "35",
+      "MHz"
+    ],
+    [
+      "fADC",
+      "ADC clock frequency",
+      "Range 2",
+      "0.14",
+      "-",
+      "16",
+      "MHz"
+    ],
+    [
+      "fs",
+      "Sampling rate",
+      "12 bits",
+      "-",
+      "-",
+      "2.50",
+      "MSps"
+    ],
+    [
+      "fs",
+      "Sampling rate",
+      "10 bits",
+      "-",
+      "-",
+      "2.92",
+      "MSps"
+    ],
+    [
+      "fs",
+      "Sampling rate",
+      "8 bits",
+      "-",
+      "-",
+      "3.50",
+      "MSps"
+    ],
+    [
+      "fs",
+      "Sampling rate",
+      "6 bits",
+      "-",
+      "-",
+      "4.38",
+      "MSps"
+    ],
+    [
+      "fTRIG",
+      "External trigger frequency",
+      "fADC = 35 MHz; 12 bits",
+      "-",
+      "-",
+      "2.33",
+      "MHz"
+    ],
+    [
+      "fTRIG",
+      "External trigger frequency",
+      "12 bits",
+      "-",
+      "-",
+      "fADC/15",
+      "MHz"
+    ],
+    [
+      "VAIN(2)",
+      "Conversion voltage range",
+      "-",
+      "VSSA",
+      "-",
+      "VREF+",
+      "V"
+    ],
+    [
+      "RAIN",
+      "External input impedance",
+      "-",
+      "-",
+      "-",
+      "50",
+      "kΩ"
+    ],
+    [
+      "CADC",
+      "Internal sample and hold capacitor",
+      "-",
+      "-",
+      "5",
+      "-",
+      "pF"
+    ],
+    [
+      "tSTAB",
+      "ADC power-up time",
+      "-",
+      "2",
+      "2",
+      "2",
+      "Conversion cycle"
+    ],
+    [
+      "tCAL",
+      "Calibration time",
+      "fADC = 35 MHz",
+      "2.35",
+      "2.35",
+      "2.35",
+      "µs"
+    ],
+    [
+      "tCAL",
+      "Calibration time",
+      "-",
+      "82",
+      "82",
+      "82",
+      "1/fADC"
+    ],
+    [
+      "tLATR",
+      "Trigger conversion latency",
+      "CKMODE = 00",
+      "2",
+      "-",
+      "3",
+      "1/fADC"
+    ],
+    [
+      "tLATR",
+      "Trigger conversion latency",
+      "CKMODE = 01",
+      "6.5",
+      "6.5",
+      "6.5",
+      "1/fPCLK"
+    ],
+    [
+      "tLATR",
+      "Trigger conversion latency",
+      "CKMODE = 10",
+      "12.5",
+      "12.5",
+      "12.5",
+      "1/fPCLK"
+    ],
+    [
+      "tLATR",
+      "Trigger conversion latency",
+      "CKMODE = 11",
+      "3.5",
+      "3.5",
+      "3.5",
+      "1/fPCLK"
+    ],
+    [
+      "ts",
+      "Sampling time",
+      "fADC = 35 MHz; VDDA > 2V",
+      "0.043",
+      "-",
+      "4.59",
+      "µs"
+    ],
+    [
+      "ts",
+      "Sampling time",
+      "fADC = 35 MHz; VDDA > 2V",
+      "1.5",
+      "-",
+      "160.5",
+      "1/fADC"
+    ],
+    [
+      "ts",
+      "Sampling time",
+      "fADC = 35 MHz; VDDA < 2V",
+      "0.1",
+      "-",
+      "4.59",
+      "µs"
+    ],
+    [
+      "ts",
+      "Sampling time",
+      "fADC = 35 MHz; VDDA < 2V",
+      "3.5",
+      "-",
+      "160.5",
+      "1/fADC"
+    ],
+    [
+      "tADCVREG_STUP",
+      "ADC voltage regulator start-up time",
+      "-",
+      "-",
+      "-",
+      "20",
+      "µs"
+    ],
+    [
+      "tCONV",
+      "Total conversion time (including sampling time)",
+      "fADC = 35 MHz Resolution = 12 bits",
+      "0.40",
+      "-",
+      "4.95",
+      "µs"
+    ],
+    [
+      "tCONV",
+      "Total conversion time (including sampling time)",
+      "Resolution = 12 bits",
+      "ts + 12.5 cycles for successive approximation = 14 to 173",
+      "ts + 12.5 cycles for successive approximation = 14 to 173",
+      "ts + 12.5 cycles for successive approximation = 14 to 173",
+      "1/fADC"
+    ],
+    [
+      "tIDLE",
+      "Laps of time allowed between two conversions without rearm",
+      "-",
+      "-",
+      "-",
+      "100",
+      "µs"
+    ],
+    [
+      "IDDA(ADC)",
+      "ADC consumption from VDDA",
+      "fs = 2.5 MSps",
+      "-",
+      "410",
+      "-",
+      "µA"
+    ],
+    [
+      "IDDA(ADC)",
+      "ADC consumption from VDDA",
+      "fs = 1 MSps",
+      "-",
+      "164",
+      "-",
+      "-"
+    ],
+    [
+      "IDDA(ADC)",
+      "ADC consumption from VDDA",
+      "fs = 10 kSps",
+      "-",
+      "17",
+      "-",
+      "-"
+    ],
+    [
+      "IDDV(ADC)",
+      "ADC consumption from VREF+",
+      "fs = 2.5 MSps",
+      "-",
+      "65",
+      "-",
+      "µA"
+    ],
+    [
+      "IDDV(ADC)",
+      "ADC consumption from VREF+",
+      "fs = 1 MSps",
+      "-",
+      "26",
+      "-",
+      "-"
+    ],
+    [
+      "IDDV(ADC)",
+      "ADC consumption from VREF+",
+      "fs = 10 kSps",
+      "-",
+      "0.26",
+      "-",
+      "-"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 7,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 7
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:2"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32u031c6",
+    "table_id": "table_68",
+    "is_continued": true,
+    "pages": [
+      82,
+      83
+    ],
+    "rows_count": 34,
+    "cols_count": 7,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

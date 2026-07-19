@@ -1,0 +1,108 @@
+{
+  "table_id": "table_25",
+  "caption": "Table 25. Typical and maximum V consumption in Stop mode 54 DDA",
+  "pdf_name": "stm32f328c8",
+  "family": "F3",
+  "page": 54,
+  "merged_pages": [
+    54,
+    55
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Parameter",
+    "Conditions",
+    "Typ.@V (V = 1.8V) / 1.8 V",
+    "Typ.@V (V = 1.8V) / 2.0 V",
+    "Typ.@V (V = 1.8V) / 2.4 V",
+    "Typ.@V (V = 1.8V) / DDA DD / 2.7 V",
+    "Typ.@V (V = 1.8V) / 3.0 V",
+    "Typ.@V (V = 1.8V) / 3.3 V",
+    "Typ.@V (V = 1.8V) / 3.6 V",
+    "Max.(1) / T =",
+    "Max.(1) / T =",
+    "Max.(1) / T =",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "I DDA",
+      "Supply current in Stop mode",
+      "Supply current in Stop mode",
+      "All oscillators OFF",
+      "0.70",
+      "0.71",
+      "0.72",
+      "0.75",
+      "0.80",
+      "0.87",
+      "0.94",
+      "1.6",
+      "2.2",
+      "2.8",
+      "µA"
+    ],
+    [
+      "I DD_VBAT",
+      "Backup domain supply current",
+      "LSE & RTC ON; \"Xtal mode\" lower driving capability; LSEDRV[1: 0] = '00'",
+      "0.42",
+      "0.44",
+      "0.47",
+      "0.54",
+      "0.60",
+      "0.66",
+      "0.74",
+      "0.82",
+      "-",
+      "-",
+      "-",
+      "µA"
+    ],
+    [
+      "I DD_VBAT",
+      "Backup domain supply current",
+      "LSE & RTC ON; \"Xtal mode\" higher driving capability; LSEDRV[1: 0] = '11'",
+      "0.71",
+      "0.74",
+      "0.77",
+      "0.85",
+      "0.91",
+      "0.98",
+      "1.06",
+      "1.16",
+      "-",
+      "-",
+      "-",
+      "µA"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 15,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 14
+  },
+  "structured_json": null,
+  "warnings": [
+    "dynamic_header_depth:3",
+    "multi_page_merged:2"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f328c8",
+    "table_id": "table_25",
+    "is_continued": true,
+    "pages": [
+      54,
+      55
+    ],
+    "rows_count": 3,
+    "cols_count": 15,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

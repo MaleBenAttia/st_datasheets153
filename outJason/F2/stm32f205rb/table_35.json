@@ -1,0 +1,159 @@
+{
+  "table_id": "table_35",
+  "caption": "Table 35. PLLI2S (audio PLL) characteristics",
+  "pdf_name": "stm32f205rb",
+  "family": "F2",
+  "page": 94,
+  "merged_pages": [
+    94,
+    95
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Conditions",
+    "Min",
+    "Typ",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "f PLLI2S_IN",
+      "PLLI2S input clock(1)",
+      "-",
+      "-",
+      "0.95(2)",
+      "1",
+      "2.10(2)",
+      "MHz"
+    ],
+    [
+      "f PLLI2S_OUT",
+      "PLLI2S multiplier output clock",
+      "-",
+      "-",
+      "-",
+      "-",
+      "216",
+      "MHz"
+    ],
+    [
+      "f VCO_OUT",
+      "PLLI2S VCO output",
+      "-",
+      "-",
+      "192",
+      "-",
+      "432",
+      "MHz"
+    ],
+    [
+      "t LOCK",
+      "PLLI2S lock time",
+      "VCO freq = 192 MHz",
+      "VCO freq = 192 MHz",
+      "75",
+      "-",
+      "200",
+      "µs"
+    ],
+    [
+      "t LOCK",
+      "PLLI2S lock time",
+      "VCO freq = 432 MHz",
+      "VCO freq = 432 MHz",
+      "100",
+      "-",
+      "300",
+      "µs"
+    ],
+    [
+      "Jitter(3)",
+      "Master I2S clock jitter",
+      "Cycle to cycle at 12.288 MHz on 48 KHz period, N=432, R=5",
+      "RMS",
+      "-",
+      "90",
+      "-",
+      "ps"
+    ],
+    [
+      "Jitter(3)",
+      "Master I2S clock jitter",
+      "Cycle to cycle at 12.288 MHz on 48 KHz period, N=432, R=5",
+      "peak to peak",
+      "-",
+      "280",
+      "-",
+      "ps"
+    ],
+    [
+      "Jitter(3)",
+      "Master I2S clock jitter",
+      "Average frequency of 12.288 MHz N=432, R=5 on 1000 samples",
+      "Average frequency of 12.288 MHz N=432, R=5 on 1000 samples",
+      "-",
+      "90",
+      "-",
+      "ps"
+    ],
+    [
+      "Jitter(3)",
+      "WS I2S clock jitter",
+      "Cycle to cycle at 48 KHz on 1000 samples",
+      "Cycle to cycle at 48 KHz on 1000 samples",
+      "-",
+      "400",
+      "-",
+      "ps"
+    ],
+    [
+      "I (4) DD(PLLI2S)",
+      "I (4) DD(PLLI2S)",
+      "PLLI2S power consumption on V DD",
+      "VCO freq = 192 MHz VCO freq = 432 MHz",
+      "0.15 0.45",
+      "-",
+      "0.40 0.75",
+      "mA"
+    ],
+    [
+      "I (4) DDA(PLLI2S)",
+      "I (4) DDA(PLLI2S)",
+      "PLLI2S power consumption on V DDA",
+      "VCO freq = 192 MHz VCO freq = 432 MHz",
+      "0.30 0.55",
+      "-",
+      "0.40 0.85",
+      "mA"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 8,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 8
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:2"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f205rb",
+    "table_id": "table_35",
+    "is_continued": true,
+    "pages": [
+      94,
+      95
+    ],
+    "rows_count": 11,
+    "cols_count": 8,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

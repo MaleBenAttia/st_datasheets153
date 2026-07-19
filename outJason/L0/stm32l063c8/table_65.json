@@ -1,0 +1,319 @@
+{
+  "table_id": "table_65",
+  "caption": "Table 65. DAC characteristics",
+  "pdf_name": "stm32l063c8",
+  "family": "L0",
+  "page": 95,
+  "merged_pages": [
+    95,
+    96
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Conditions",
+    "Min",
+    "Typ",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "V DDA",
+      "Analog supply voltage",
+      "-",
+      "-",
+      "1.8",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "I (1) DDA",
+      "Current consumption on V DDA supply, V = 3.3 V DDA",
+      "No load, middle code (0x800)",
+      "No load, middle code (0x800)",
+      "-",
+      "340",
+      "340",
+      "µA"
+    ],
+    [
+      "I (1) DDA",
+      "Current consumption on V DDA supply, V = 3.3 V DDA",
+      "No load, worst code (0xF1C)",
+      "No load, worst code (0xF1C)",
+      "-",
+      "340",
+      "340",
+      "µA"
+    ],
+    [
+      "R (2) L",
+      "Resistive load",
+      "DAC output ON",
+      "R L connected to V SSA",
+      "5",
+      "-",
+      "-",
+      "kΩ"
+    ],
+    [
+      "R (2) L",
+      "Resistive load",
+      "DAC output ON",
+      "R L connected to V DDA",
+      "25",
+      "-",
+      "-",
+      "kΩ"
+    ],
+    [
+      "C (2) L",
+      "Capacitive load",
+      "DAC output buffer ON",
+      "DAC output buffer ON",
+      "-",
+      "-",
+      "50",
+      "pF"
+    ],
+    [
+      "R O",
+      "Output impedance",
+      "DAC output buffer OFF",
+      "DAC output buffer OFF",
+      "12",
+      "16",
+      "20",
+      "kΩ"
+    ],
+    [
+      "V DAC_OUT",
+      "Voltage on DAC_OUT output",
+      "DAC output buffer ON",
+      "DAC output buffer ON",
+      "0.2",
+      "-",
+      "V – 0.2 DDA",
+      "V"
+    ],
+    [
+      "DNL(1)",
+      "Differential non linearity(3)",
+      "C ≤ 50 pF, R ≥ 5 kΩ L L DAC output buffer ON",
+      "C ≤ 50 pF, R ≥ 5 kΩ L L DAC output buffer ON",
+      "-",
+      "1.5",
+      "3",
+      "LSB"
+    ],
+    [
+      "DNL(1)",
+      "Differential non linearity(3)",
+      "No R , C ≤ 50 pF LOAD L DAC output buffer OFF",
+      "No R , C ≤ 50 pF LOAD L DAC output buffer OFF",
+      "-",
+      "1.5",
+      "3",
+      "LSB"
+    ],
+    [
+      "INL(1)",
+      "Integral non linearity(4)",
+      "C ≤ 50 pF, R ≥ 5 kΩ L L DAC output buffer ON",
+      "C ≤ 50 pF, R ≥ 5 kΩ L L DAC output buffer ON",
+      "-",
+      "2",
+      "4",
+      "LSB"
+    ],
+    [
+      "INL(1)",
+      "Integral non linearity(4)",
+      "No R , C ≤ 50 pF LOAD L DAC output buffer OFF",
+      "No R , C ≤ 50 pF LOAD L DAC output buffer OFF",
+      "-",
+      "2",
+      "4",
+      "LSB"
+    ],
+    [
+      "Offset(1)",
+      "Offset error at code 0x800 (5)",
+      "C ≤ 50 pF, R ≥ 5 kΩ L L DAC output buffer ON",
+      "C ≤ 50 pF, R ≥ 5 kΩ L L DAC output buffer ON",
+      "-",
+      "±10",
+      "±25",
+      "LSB"
+    ],
+    [
+      "Offset(1)",
+      "Offset error at code 0x800 (5)",
+      "No R , C ≤ 50 pF LOAD L DAC output buffer OFF",
+      "No R , C ≤ 50 pF LOAD L DAC output buffer OFF",
+      "-",
+      "±5",
+      "±8",
+      "LSB"
+    ],
+    [
+      "Offset1(1)",
+      "Offset error at code 0x001(6)",
+      "No R , C ≤ 50 pF LOAD L DAC output buffer OFF",
+      "No R , C ≤ 50 pF LOAD L DAC output buffer OFF",
+      "-",
+      "±1.5",
+      "±5",
+      "LSB"
+    ],
+    [
+      "dOffset/dT(1)",
+      "Offset error temperature coefficient (code 0x800)",
+      "V = 3.3V DDA T = 0 to 50 °C A DAC output buffer OFF",
+      "V = 3.3V DDA T = 0 to 50 °C A DAC output buffer OFF",
+      "-20",
+      "-10",
+      "0",
+      "µV/°C"
+    ],
+    [
+      "dOffset/dT(1)",
+      "Offset error temperature coefficient (code 0x800)",
+      "V = 3.3V DDA T = 0 to 50 °C A DAC output buffer ON",
+      "V = 3.3V DDA T = 0 to 50 °C A DAC output buffer ON",
+      "0",
+      "20",
+      "50",
+      "µV/°C"
+    ],
+    [
+      "Gain(1)",
+      "Gain(1)",
+      "Gain error(7)",
+      "C ≤ 50 pF, R ≥ 5 kΩ L L DAC output buffer ON",
+      "-",
+      "+0.1 / -0.2%",
+      "+0.2 / -0.5%",
+      "%"
+    ],
+    [
+      "No R , C ≤ 50 pF LOAD L DAC output buffer OFF",
+      "No R , C ≤ 50 pF LOAD L DAC output buffer OFF",
+      "-",
+      "-",
+      "+0 / -0.2%",
+      "+0 / -0.2%",
+      "+0 / -0.4%",
+      "+0 / -0.4%"
+    ],
+    [
+      "dGain/dT(1)",
+      "dGain/dT(1)",
+      "Gain error temperature coefficient",
+      "V = 3.3V DDA T = 0 to 50 °C A DAC output buffer OFF",
+      "-10",
+      "-2",
+      "0",
+      "µV/°C"
+    ],
+    [
+      "V = 3.3V DDA T = 0 to 50 °C A DAC output buffer ON",
+      "V = 3.3V DDA T = 0 to 50 °C A DAC output buffer ON",
+      "-40",
+      "-40",
+      "-8",
+      "-8",
+      "0",
+      "0"
+    ],
+    [
+      "TUE(1)",
+      "TUE(1)",
+      "Total unadjusted error",
+      "C ≤ 50 pF, R ≥ 5 kΩ L L DAC output buffer ON",
+      "-",
+      "12",
+      "30",
+      "LSB"
+    ],
+    [
+      "No R , C ≤ 50 pF LOAD L DAC output buffer OFF",
+      "No R , C ≤ 50 pF LOAD L DAC output buffer OFF",
+      "-",
+      "-",
+      "8",
+      "8",
+      "12",
+      "12"
+    ],
+    [
+      "t SETTLING",
+      "t SETTLING",
+      "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes till DAC_OUT reaches final value ±1LSB",
+      "C ≤ 50 pF, R ≥ 5 kΩ L L",
+      "-",
+      "7",
+      "12",
+      "µs"
+    ],
+    [
+      "Update rate",
+      "Update rate",
+      "Max frequency for a correct DAC_OUT change (95% of final value) with 1 LSB variation in the input code",
+      "C ≤ 50 pF, R ≥ 5 kΩ L L",
+      "-",
+      "-",
+      "1",
+      "Msps"
+    ],
+    [
+      "t WAKEUP",
+      "t WAKEUP",
+      "Wakeup time from off state (setting the ENx bit in the DAC Control register)(8)",
+      "C ≤ 50 pF, R ≥ 5 kΩ L L",
+      "-",
+      "9",
+      "15",
+      "µs"
+    ],
+    [
+      "PSRR+",
+      "PSRR+",
+      "V supply rejection ratio DDA (static DC measurement)",
+      "C ≤ 50 pF, R ≥ 5 kΩ L L",
+      "-",
+      "-60",
+      "-35",
+      "dB"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 8,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 8
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:2"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32l063c8",
+    "table_id": "table_65",
+    "is_continued": true,
+    "pages": [
+      95,
+      96
+    ],
+    "rows_count": 27,
+    "cols_count": 8,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

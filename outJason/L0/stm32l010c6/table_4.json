@@ -1,0 +1,120 @@
+{
+  "table_id": "table_4",
+  "caption": "Table 4. STM32L010C6 peripherals interconnect matrix.",
+  "pdf_name": "stm32l010c6",
+  "family": "L0",
+  "page": 16,
+  "merged_pages": [
+    16,
+    17
+  ],
+  "headers": [
+    "Interconnect source",
+    "Inter- connect destination",
+    "Interconnect action",
+    "Run",
+    "Sleep",
+    "Low- power run",
+    "Low- power sleep",
+    "Stop"
+  ],
+  "rows": [
+    [
+      "TIMx",
+      "TIMx",
+      "Timer triggered by other timer",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "-"
+    ],
+    [
+      "RTC",
+      "TIM21",
+      "Timer triggered by auto wakeup",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "-"
+    ],
+    [
+      "RTC",
+      "LPTIM1",
+      "Timer triggered by RTC event",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "Y"
+    ],
+    [
+      "All clocks",
+      "TIMx",
+      "Clock source used as input channel for RC measurement and trimming",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "-"
+    ],
+    [
+      "GPIO",
+      "TIMx",
+      "Timer input channel and trigger",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "-"
+    ],
+    [
+      "GPIO",
+      "LPTIM1",
+      "Timer input channel and trigger",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "Y"
+    ],
+    [
+      "GPIO",
+      "ADC",
+      "Conversion trigger",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "-"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 8,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 8
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:2",
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32l010c6",
+    "table_id": "table_4",
+    "is_continued": true,
+    "pages": [
+      16,
+      17
+    ],
+    "rows_count": 7,
+    "cols_count": 8,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

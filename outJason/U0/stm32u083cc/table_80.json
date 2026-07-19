@@ -1,0 +1,672 @@
+{
+  "table_id": "table_80",
+  "caption": "Table 80. OPAMP characteristics",
+  "pdf_name": "stm32u083cc",
+  "family": "U0",
+  "page": 100,
+  "merged_pages": [
+    100,
+    101,
+    102
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Conditions",
+    "Min",
+    "Typ",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "VDDA",
+      "Analog supply voltage(1)",
+      "-",
+      "-",
+      "1.8",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "CMIR",
+      "Common mode input range",
+      "-",
+      "-",
+      "0",
+      "-",
+      "VDDA",
+      "V"
+    ],
+    [
+      "VIOFFSET",
+      "Input offset voltage",
+      "25 °C, No Load on output.",
+      "25 °C, No Load on output.",
+      "-",
+      "-",
+      "±1.5",
+      "mV"
+    ],
+    [
+      "VIOFFSET",
+      "Input offset voltage",
+      "All voltage/temperature",
+      "All voltage/temperature",
+      "-",
+      "-",
+      "±3",
+      "mV"
+    ],
+    [
+      "∆VIOFFSET",
+      "Input offset voltage drift",
+      "Normal mode",
+      "Normal mode",
+      "-",
+      "±5",
+      "-",
+      "μV/°C"
+    ],
+    [
+      "∆VIOFFSET",
+      "Input offset voltage drift",
+      "Low-power mode",
+      "Low-power mode",
+      "-",
+      "±10",
+      "-",
+      "μV/°C"
+    ],
+    [
+      "TRIMOFFSETP TRIMLPOFFSETP",
+      "Offset trim step at low common input voltage (0.1 ₓ VDDA)",
+      "-",
+      "-",
+      "-",
+      "0.8",
+      "1.1",
+      "mV"
+    ],
+    [
+      "TRIMOFFSETN TRIMLPOFFSETN",
+      "Offset trim step at high common input voltage (0.9 ₓ VDDA)",
+      "-",
+      "-",
+      "-",
+      "1",
+      "1.35",
+      "mV"
+    ],
+    [
+      "ILOAD",
+      "Drive current",
+      "Normal mode",
+      "VDDA ≥ 2 V",
+      "-",
+      "-",
+      "500",
+      "µA"
+    ],
+    [
+      "ILOAD",
+      "Drive current",
+      "Low-power mode",
+      "VDDA ≥ 2 V",
+      "-",
+      "-",
+      "100",
+      "µA"
+    ],
+    [
+      "ILOAD_PGA",
+      "Drive current in PGA mode",
+      "Normal mode",
+      "VDDA ≥ 2 V",
+      "-",
+      "-",
+      "450",
+      "µA"
+    ],
+    [
+      "ILOAD_PGA",
+      "Drive current in PGA mode",
+      "Low-power mode",
+      "VDDA ≥ 2 V",
+      "-",
+      "-",
+      "50",
+      "µA"
+    ],
+    [
+      "RLOAD",
+      "Resistive load (connected to VSSA or to VDDA)",
+      "Normal mode",
+      "VDDA < 2 V",
+      "4",
+      "-",
+      "-",
+      "kΩ"
+    ],
+    [
+      "RLOAD",
+      "Resistive load (connected to VSSA or to VDDA)",
+      "Low-power mode",
+      "VDDA < 2 V",
+      "20",
+      "-",
+      "-",
+      "kΩ"
+    ],
+    [
+      "RLOAD_PGA",
+      "Resistive load in PGA mode (connected to VSSA or to VDDA)",
+      "Normal mode",
+      "VDDA < 2 V",
+      "4.5",
+      "-",
+      "-",
+      "kΩ"
+    ],
+    [
+      "RLOAD_PGA",
+      "Resistive load in PGA mode (connected to VSSA or to VDDA)",
+      "Low-power mode",
+      "VDDA < 2 V",
+      "40",
+      "-",
+      "-",
+      "kΩ"
+    ],
+    [
+      "CLOAD",
+      "Capacitive load",
+      "-",
+      "-",
+      "-",
+      "-",
+      "50",
+      "pF"
+    ],
+    [
+      "CMRR",
+      "Common mode rejection ratio",
+      "Normal mode",
+      "Normal mode",
+      "-",
+      "-85",
+      "-",
+      "dB"
+    ],
+    [
+      "CMRR",
+      "Common mode rejection ratio",
+      "Low-power mode",
+      "Low-power mode",
+      "-",
+      "-90",
+      "-",
+      "dB"
+    ],
+    [
+      "PSRR",
+      "Power supply rejection ratio",
+      "Normal mode",
+      "CLOAD ≤ 50 pf, RLOAD ≥ 4 kΩ DC",
+      "70",
+      "85",
+      "-",
+      "dB"
+    ],
+    [
+      "PSRR",
+      "Power supply rejection ratio",
+      "Low-power mode",
+      "CLOAD ≤ 50 pf, RLOAD ≥ 20 kΩ DC",
+      "72",
+      "90",
+      "-",
+      "dB"
+    ],
+    [
+      "GBW",
+      "Gain Bandwidth Product",
+      "Normal mode",
+      "VDDA ≥ 2.4 V (OPA_RANGE = 1)",
+      "550",
+      "1600",
+      "2200",
+      "kHz"
+    ],
+    [
+      "GBW",
+      "Gain Bandwidth Product",
+      "Low-power mode",
+      "VDDA ≥ 2.4 V (OPA_RANGE = 1)",
+      "100",
+      "420",
+      "600",
+      "kHz"
+    ],
+    [
+      "GBW",
+      "Gain Bandwidth Product",
+      "Normal mode",
+      "VDDA < 2.4 V (OPA_RANGE = 0)",
+      "250",
+      "700",
+      "950",
+      "kHz"
+    ],
+    [
+      "GBW",
+      "Gain Bandwidth Product",
+      "Low-power mode",
+      "VDDA < 2.4 V (OPA_RANGE = 0)",
+      "40",
+      "180",
+      "280",
+      "kHz"
+    ],
+    [
+      "SR(2)",
+      "Slew rate (from 10 and 90% of output voltage)",
+      "Normal mode",
+      "VDDA ≥ 2.4 V",
+      "-",
+      "700",
+      "-",
+      "V/ms"
+    ],
+    [
+      "SR(2)",
+      "Slew rate (from 10 and 90% of output voltage)",
+      "Low-power mode",
+      "VDDA ≥ 2.4 V",
+      "-",
+      "180",
+      "-",
+      "V/ms"
+    ],
+    [
+      "SR(2)",
+      "Slew rate (from 10 and 90% of output voltage)",
+      "Normal mode",
+      "VDDA < 2.4 V",
+      "-",
+      "300",
+      "-",
+      "V/ms"
+    ],
+    [
+      "SR(2)",
+      "Slew rate (from 10 and 90% of output voltage)",
+      "Low-power mode",
+      "VDDA < 2.4 V",
+      "-",
+      "80",
+      "-",
+      "V/ms"
+    ],
+    [
+      "AO",
+      "Open loop gain",
+      "Normal mode",
+      "Normal mode",
+      "55",
+      "110",
+      "-",
+      "dB"
+    ],
+    [
+      "AO",
+      "Open loop gain",
+      "Low-power mode",
+      "Low-power mode",
+      "45",
+      "110",
+      "-",
+      "dB"
+    ],
+    [
+      "VOHSAT(2)",
+      "High saturation voltage",
+      "Normal mode",
+      "Iload = max or Rload = min Input at VDDA.",
+      "VDDA -100",
+      "-",
+      "-",
+      "mV"
+    ],
+    [
+      "VOHSAT(2)",
+      "High saturation voltage",
+      "Low-power mode",
+      "Low-power mode",
+      "VDDA -50",
+      "-",
+      "-",
+      "-"
+    ],
+    [
+      "VOLSAT(2)",
+      "Low saturation voltage",
+      "Normal mode",
+      "Iload = max or Rload = min Input at 0.",
+      "-",
+      "-",
+      "100",
+      "100"
+    ],
+    [
+      "VOLSAT(2)",
+      "Low saturation voltage",
+      "Low-power mode",
+      "Low-power mode",
+      "-",
+      "-",
+      "50",
+      "50"
+    ],
+    [
+      "φm",
+      "Phase margin",
+      "Normal mode",
+      "Normal mode",
+      "-",
+      "74",
+      "-",
+      "°"
+    ],
+    [
+      "φm",
+      "Phase margin",
+      "Low-power mode",
+      "Low-power mode",
+      "-",
+      "66",
+      "-",
+      "-"
+    ],
+    [
+      "GM",
+      "Gain margin",
+      "Normal mode",
+      "Normal mode",
+      "-",
+      "13",
+      "-",
+      "dB"
+    ],
+    [
+      "GM",
+      "Gain margin",
+      "Low-power mode",
+      "Low-power mode",
+      "-",
+      "20",
+      "-",
+      "-"
+    ],
+    [
+      "tWAKEUP",
+      "Wake up time from OFF state.",
+      "Normal mode",
+      "CLOAD ≤ 50 pf, RLOAD ≥ 4 kΩ follower configuration",
+      "-",
+      "5",
+      "10",
+      "µs"
+    ],
+    [
+      "tWAKEUP",
+      "Wake up time from OFF state.",
+      "Low-power mode",
+      "CLOAD ≤ 50 pf, RLOAD ≥ 20 kΩ follower configuration",
+      "-",
+      "10",
+      "30",
+      "30"
+    ],
+    [
+      "Ibias",
+      "OPAMP input bias current",
+      "General purpose input",
+      "General purpose input",
+      "-",
+      "-",
+      "-(3)",
+      "nA"
+    ],
+    [
+      "PGA gain(2)",
+      "Non inverting gain value",
+      "-",
+      "-",
+      "-",
+      "2",
+      "-",
+      "-"
+    ],
+    [
+      "PGA gain(2)",
+      "Non inverting gain value",
+      "-",
+      "-",
+      "-",
+      "4",
+      "-",
+      "-"
+    ],
+    [
+      "PGA gain(2)",
+      "Non inverting gain value",
+      "-",
+      "-",
+      "-",
+      "8",
+      "-",
+      "-"
+    ],
+    [
+      "PGA gain(2)",
+      "Non inverting gain value",
+      "-",
+      "-",
+      "-",
+      "16",
+      "-",
+      "-"
+    ],
+    [
+      "Rnetwork",
+      "R2/R1 internal resistance values in PGA mode(4)",
+      "PGA Gain = 2",
+      "PGA Gain = 2",
+      "-",
+      "80/80",
+      "-",
+      "kΩ/kΩ"
+    ],
+    [
+      "Rnetwork",
+      "R2/R1 internal resistance values in PGA mode(4)",
+      "PGA Gain = 4",
+      "PGA Gain = 4",
+      "-",
+      "120/ 40",
+      "-",
+      "-"
+    ],
+    [
+      "Rnetwork",
+      "R2/R1 internal resistance values in PGA mode(4)",
+      "PGA Gain = 8",
+      "PGA Gain = 8",
+      "-",
+      "140/ 20",
+      "-",
+      "-"
+    ],
+    [
+      "Rnetwork",
+      "R2/R1 internal resistance values in PGA mode(4)",
+      "PGA Gain = 16",
+      "PGA Gain = 16",
+      "-",
+      "150/ 10",
+      "-",
+      "-"
+    ],
+    [
+      "Delta R",
+      "Resistance variation (R1 or R2)",
+      "-",
+      "-",
+      "-15",
+      "-",
+      "15",
+      "%"
+    ],
+    [
+      "PGA gain error",
+      "PGA gain error",
+      "-",
+      "-",
+      "-1",
+      "-",
+      "1",
+      "%"
+    ],
+    [
+      "PGA BW",
+      "PGA bandwidth for different non inverting gain",
+      "Gain = 2",
+      "-",
+      "-",
+      "GBW/2",
+      "-",
+      "MHz"
+    ],
+    [
+      "PGA BW",
+      "PGA bandwidth for different non inverting gain",
+      "Gain = 4",
+      "-",
+      "-",
+      "GBW/4",
+      "-",
+      "-"
+    ],
+    [
+      "PGA BW",
+      "PGA bandwidth for different non inverting gain",
+      "Gain = 8",
+      "-",
+      "-",
+      "GBW/8",
+      "-",
+      "-"
+    ],
+    [
+      "PGA BW",
+      "PGA bandwidth for different non inverting gain",
+      "Gain = 16",
+      "-",
+      "-",
+      "GBW/16",
+      "-",
+      "-"
+    ],
+    [
+      "en",
+      "Voltage noise density",
+      "Normal mode",
+      "at 1 kHz, Output loaded with 4 kΩ",
+      "-",
+      "500",
+      "-",
+      "nV/√Hz"
+    ],
+    [
+      "en",
+      "Voltage noise density",
+      "Low-power mode",
+      "at 1 kHz, Output loaded with 20 kΩ",
+      "-",
+      "600",
+      "-",
+      "-"
+    ],
+    [
+      "en",
+      "Voltage noise density",
+      "Normal mode",
+      "at 10 kHz, Output loaded with 4 kΩ",
+      "-",
+      "180",
+      "-",
+      "-"
+    ],
+    [
+      "en",
+      "Voltage noise density",
+      "Low-power mode",
+      "at 10 kHz, Output loaded with 20 kΩ",
+      "-",
+      "290",
+      "-",
+      "-"
+    ],
+    [
+      "IDDA(OPAMP)(2)",
+      "OPAMP consumption from VDDA",
+      "Normal mode",
+      "no Load, quiescent mode",
+      "-",
+      "120",
+      "260",
+      "µA"
+    ],
+    [
+      "IDDA(OPAMP)(2)",
+      "OPAMP consumption from VDDA",
+      "Low-power mode",
+      "no Load, quiescent mode",
+      "-",
+      "45",
+      "100",
+      "µA"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 8,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 8
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:3",
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32u083cc",
+    "table_id": "table_80",
+    "is_continued": true,
+    "pages": [
+      100,
+      101,
+      102
+    ],
+    "rows_count": 62,
+    "cols_count": 8,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

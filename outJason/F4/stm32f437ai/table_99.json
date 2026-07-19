@@ -1,0 +1,222 @@
+{
+  "table_id": "table_99",
+  "caption": "Table 99. Switching characteristics for PC Card/CF read and write cycles in attribute/common space.",
+  "pdf_name": "stm32f437ai",
+  "family": "F4",
+  "page": 187,
+  "merged_pages": [
+    187,
+    188
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Min",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "t v(NCEx-A)",
+      "FMC_Ncex low to FMC_Ay valid",
+      "-",
+      "0",
+      "ns"
+    ],
+    [
+      "t h(NCEx_AI)",
+      "FMC_NCEx high to FMC_Ax invalid",
+      "0",
+      "-",
+      "ns"
+    ],
+    [
+      "t d(NREG-NCEx)",
+      "FMC_NCEx low to FMC_NREG valid",
+      "-",
+      "1",
+      "ns"
+    ],
+    [
+      "t h(NCEx-NREG)",
+      "FMC_NCEx high to FMC_NREG invalid",
+      "T -2 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t d(NCEx-NWE)",
+      "FMC_NCEx low to FMC_NWE low",
+      "-",
+      "5T HCLK",
+      "ns"
+    ],
+    [
+      "t w(NWE)",
+      "FMC_NWE low width",
+      "8T -0.5 HCLK",
+      "8T +0.5 HCLK",
+      "ns"
+    ],
+    [
+      "t d(NWE_NCEx)",
+      "FMC_NWE high to FMC_NCEx high",
+      "5T +1 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t V(NWE-D)",
+      "FMC_NWE low to FMC_D[15:0] valid",
+      "-",
+      "0",
+      "ns"
+    ],
+    [
+      "t h(NWE-D)",
+      "FMC_NWE high to FMC_D[15:0] invalid",
+      "9T -0.5 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t d(D-NWE)",
+      "FMC_D[15:0] valid before FMC_NWE high",
+      "13T -3 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t d(NCEx-NOE)",
+      "FMC_NCEx low to FMC_NOE low",
+      "-",
+      "5T HCLK",
+      "ns"
+    ],
+    [
+      "t w(NOE)",
+      "FMC_NOE low width",
+      "8 T -0.5 HCLK",
+      "8 T +0.5 HCLK",
+      "ns"
+    ],
+    [
+      "t d(NOE_NCEx)",
+      "FMC_NOE high to FMC_NCEx high",
+      "5T -1 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t su (D-NOE)",
+      "FMC_D[15:0] valid data before FMC_NOE high",
+      "T HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t h(NOE-D)",
+      "FMC_NOE high to FMC_D[15:0] invalid",
+      "0",
+      "-",
+      "ns"
+    ],
+    [
+      "tw(NIOWR)",
+      "FMC_NIOWR low width",
+      "8T -0.5 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "tv(NIOWR-D)",
+      "FMC_NIOWR low to FMC_D[15:0] valid",
+      "-",
+      "0",
+      "ns"
+    ],
+    [
+      "th(NIOWR-D)",
+      "FMC_NIOWR high to FMC_D[15:0] invalid",
+      "9T -2 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "td(NCE4_1-NIOWR)",
+      "FMC_NCE4_1 low to FMC_NIOWR valid",
+      "-",
+      "5T HCLK",
+      "ns"
+    ],
+    [
+      "th(NCEx-NIOWR)",
+      "FMC_NCEx high to FMC_NIOWR invalid",
+      "5T HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "td(NIORD-NCEx)",
+      "FMC_NCEx low to FMC_NIORD valid",
+      "-",
+      "5T HCLK",
+      "ns"
+    ],
+    [
+      "th(NCEx-NIORD)",
+      "FMC_NCEx high to FMC_NIORD) valid",
+      "6T +2 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "tw(NIORD)",
+      "FMC_NIORD low width",
+      "8T -0.5 HCLK",
+      "8T +0.5 HCLK",
+      "ns"
+    ],
+    [
+      "tsu(D-NIORD)",
+      "FMC_D[15:0] valid before FMC_NIORD high",
+      "T HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "td(NIORD-D)",
+      "FMC_D[15:0] valid after FMC_NIORD high",
+      "0",
+      "-",
+      "ns"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 5,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 5
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:2",
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f437ai",
+    "table_id": "table_99",
+    "is_continued": true,
+    "pages": [
+      187,
+      188
+    ],
+    "rows_count": 25,
+    "cols_count": 5,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

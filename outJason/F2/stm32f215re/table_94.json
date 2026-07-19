@@ -1,0 +1,154 @@
+{
+  "table_id": "table_94",
+  "caption": "Table 94. Document revision history",
+  "pdf_name": "stm32f215re",
+  "family": "F2",
+  "page": 168,
+  "merged_pages": [
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179
+  ],
+  "headers": [
+    "Date",
+    "Revision",
+    "Changes"
+  ],
+  "rows": [
+    [
+      "02-Feb-2010",
+      "1",
+      "Initial release."
+    ],
+    [
+      "13-Jul-2010",
+      "2",
+      "Updated datasheet status to PRELIMINARY DATA. Renamed high-speed SRAM, system SRAM. Added UFBGA176 package, and note 1 related to LQFP176 package in Table 2, Figure 12, and Table 93. Added information on ART accelerator and audio PLL (PLLI2S). Added Table 5: USART feature comparison. Several updates on Table 7: STM32F21x pin and ball definitions and Table 9: Alternate function mapping. ADC, DAC, oscillator, RTC_AF, WKUP and VBUS signals removed from alternate functions and moved to the \"other functions\" column in Table 7: STM32F21x pin and ball definitions. TRACESWO added in Figure 4: STM32F21x block diagram, Table 7: STM32F21x pin and ball definitions, and Table 9: Alternate function mapping. XTAL oscillator frequency updated on cover page, in Figure 4: STM32F21x block diagram and in Section 3.11: External interrupt/event controller (EXTI). Updated list of peripherals used for boot mode in Section 3.13: Boot modes. Added Regulator bypass mode in Section 3.16: Voltage regulator, and Section 6.3.4: Operating conditions at power-up / power-down (regulator OFF). Updated Section 3.17: Real-time clock (RTC), backup SRAM and backup registers. Added Note Note: in Section 3.18: Low-power modes. Added SPI TI protocol in Section 3.23: Serial peripheral interface (SPI). Updated Section 3.28: Universal serial bus on-the-go full-speed (OTG_FS), and Section 3.29: Universal serial bus on-the-go high-speed (OTG_HS). Added Section 6: Electrical characteristics, and Section 7.6: Thermal characteristics. Updated Table 89: LQFP176 - Low profile quad flat package 24 × 24 × 1.4 mm package mechanical data and Figure 83: LQFP176 - Low profile quad flat package 24 × 24 × 1.4 mm, package outline. Added Table 93: Main applications versus package for STM32F2xxx microcontrollers in A.1: Main applications versus package. Updated figures in Appendix A.2: USB OTG full speed (FS) interface solutions and A.3: USB OTG high speed (HS) interface solutions. Updated Figure 94: Audio player solution using PLL, PLLI2S, USB and 1 crystal and Figure 95: Audio PLL (PLLI2S) providing accurate I2S clock. Added random number generation feature. Added trademark for ART accelerator and updated Section 3.2: Adaptive real-time memory accelerator (ART Accelerator™)."
+    ],
+    [
+      "25-Nov-2010",
+      "3",
+      "Added WLCSP66 (64+2) package. Added note 1 related to LQFP176 on cover page. Update I/Os in Section : Features. Updated Table 5: Multi-AHB matrix. Added case of BOR inactivation using IRROFF on WLCSP devices in Section 3.15: Power supply supervisor. Reworked Section 3.16: Voltage regulator to clarify regulator off modes. Added Section 3.19: VBAT operation. Modified V pin in Table 7: STM32F21x pin and ball definitions, and DD_3 added note related to the FSMC_NL pin. Renamed BYPASS-REG REGOFF, and add IRROFF pin. Changed V to V , and V pin reserved for future use. SS_SA SS DD_SA Updated maximum HSE crystal frequency to 26 MHz. USART4/5 renamed UART4/5. USART4 pins renamed UART4 in Table 7: STM32F21x pin and ball definitions. Updated LIN and IrDA features for UART4/5 in Table 5: USART feature comparison. Section 6.2: Absolute maximum ratings: Updated V minimum and IN maximum values and note for non-five-volt tolerant pins in Table 10: Voltage characteristics. Updated I maximum values and related INJ(PIN) notes in Table 11: Current characteristics. Updated V minimum value in Table 13: General operating DDA conditions. Added Note 2 and updated Maximum CPU frequency in Table 14: Limitations depending on the operating power supply range; and added Figure 19: Number of wait states versus fCPU and VDD range. Renamed Brownout Low, medium and High reset thresholds, Renamed V /V /V , V /V /V in Table 18: Embedded BORL BORM BORH BOR1 BOR2 BOR3 reset and power control block characteristics. Changed f typical value in Table 32: LSI oscillator characteristics. LSI Added Figure 33: ACCLSI versus temperature. Changed f maximum value in Table 29: HSE 4-26 MHz oscillator OSC_IN characteristics. Changed f maximum value in Table 33: Main PLL characteristics, PLL_IN and updated jitter parameters in Table 34: PLLI2S (audio PLL) characteristics. Section 6.3.16: I/O port characteristics: updated V and V in Table 45: IH IL I/O static characteristics. Added Note 1 below Table 46: Output voltage characteristics. Updated R and R parameter description in Table 56: USB OTG FS PD PU DC electrical characteristics. Updated V minimum value in Table 65: ADC characteristics. REF+ Updated Table 70: Embedded internal reference voltage. Removed Ethernet and USB2 for 64-pin devices in Table 93: Main applications versus package for STM32F2xxx microcontrollers. Added A.2: USB OTG full speed (FS) interface solutions, removed \"OTG FS connection with external PHY\" figure, updated Figure 85, Figure 86, and Figure 87 to add STULPI01B."
+    ],
+    [
+      "22-Apr-2011",
+      "4",
+      "Changed datasheet status to \"Full Datasheet\". APB1 frequency changed form 36 MHz to 30 MHz. Introduced concept of SRAM1 and SRAM2. LQFP176 now in production. Removed WLCSP64+2 package. Updated Figure 3: Compatible board design between STM32F10x and STM32F2xx for LQFP144 package and Figure 2: Compatible board design between STM32F10x and STM32F2xx for LQFP100 package. Added camera interface for STM32F217Vx devices in Table 2: STM32F215xx and STM32F217xx: features and peripheral counts. Removed 16 MHz internal RC oscillator accuracy in Section 3.12: Clocks and startup. Updated Section 3.16: Voltage regulator. 2 Modified I S sampling frequency range in Section 3.12: Clocks and startup, Section 3.24: Inter-integrated sound (I2S), and Section 3.30: Audio PLL (PLLI2S). Updated Section 3.17: Real-time clock (RTC), backup SRAM and backup registers and description of TIM2 and TIM5 in Section 3.20.2: General-purpose timers (TIMx). Modified maximum baud rate (oversampling by 16) for USART1 in Table 5: USART feature comparison. Updated note related to RFU pin below Figure 10: STM32F21x LQFP100 pinout, Figure 11: STM32F21x LQFP144 pinout, Figure 12: STM32F21x LQFP176 pinout, Figure 13: STM32F21x UFBGA176 ballout, and Table 7: STM32F21x pin and ball definitions. Added RTC_50Hz as PB15 alternate function, and TT (3.6 V tolerant I/O) in Table 7: STM32F21x pin and ball definitions and Table 9: Alternate function mapping. PA15 added in Table 7: STM32F21x pin and ball definitions. In Table 7: STM32F21x pin and ball definitions, changed I2S2_CK and I2S3_CK to I2S2_SCK and I2S3_SCK, respectively. Removed ETH _RMII_TX_CLK for PC3/AF11 in Table 9: Alternate function mapping. Updated Table 10: Voltage characteristics and Table 11: Current characteristics. T updated to –65 to +150 in Table 12: Thermal characteristics. STG Added CEXT and ESR in Table 13: General operating conditions as well as Section 6.3.2: VCAP1/VCAP2 external capacitor. Modified Note 3 in Table 14: Limitations depending on the operating power supply range. Updated Table 16: Operating conditions at power-up / power-down (regulator ON), and Table 17: Operating conditions at power-up / power- down (regulator OFF). Updated notes below and added OSC_OUT pin in Figure 15: Pin loading conditions. and Figure 16: Pin input voltage. Updated V , V , V , V , T typical value, and PVD BOR1 BOR2 BOR3 RSTTEMPO I , added E and Note 2 in Table 18: Embedded reset and RUSH RUSH power control block characteristics."
+    ],
+    [
+      "22-Apr-2011",
+      "4 (continued)",
+      "Updated Typical and maximum current consumption conditions, as well as Table 20: Typical and maximum current consumption in Run mode, code with data processing running from Flash memory (ART accelerator disabled) and Table 19: Typical and maximum current consumption in Run mode, code with data processing running from Flash memory (ART accelerator enabled) or RAM. Added Figure 21, Figure 22, Figure 23, and Figure 24. Updated Table 21: Typical and maximum current consumption in Sleep mode, and added Figure 25 and Figure 26. Updated Table 23: Typical and maximum current consumptions in Standby mode and Table 24: Typical and maximum current consumptions in VBAT mode. Updated Table 22: Typical and maximum current consumptions in Stop mode. Added Figure 27: Typical current consumption vs. temperature in Stop mode. Updated Table 23: Typical and maximum current consumptions in Standby mode and Table 24: Typical and maximum current consumptions in VBAT mode. Updated On-chip peripheral current consumption conditions and Table 25: Peripheral current consumption. Updated t and t , and added Note 3 in Table 26: Low- WUSTDBY WUSTOP power mode wakeup timings. Maximum f and minimum t values updated in Table 27: HSE_ext w(HSE) High-speed external user clock characteristics. Updated C and g in Table 29: HSE 4-26 MHz oscillator characteristics. m Updated R , I , g , and t in Table 30: LSE oscillator F 2 m su(LSE) characteristics (fLSE = 32.768 kHz). Added Note 3 and updated ACC , IDD and t in Table 31: HSI (HSI) su(HSI) HSI oscillator characteristics. Added Figure 32: ACCHSI versus temperature Updated f , t and IDD in Table 32: LSI oscillator LSI su(LSI) (LSI) characteristics. Table 33: Main PLL characteristics: removed note 1, updated t , LOCK jitter, IDD and IDD , added Note 2 for f minimum and (PLL) A(PLL) PLL_IN maximum values. Table 34: PLLI2S (audio PLL) characteristics: removed note 1, updated t , jitter, IDD and IDD , added Note 2 for f LOCK (PLLI2S) A(PLLI2S) PLLI2S_IN minimum and maximum values. Added Note 1 in Table 35: SSCG parameters constraint. Updated Table 36: Flash memory characteristics. Modified Table 37: Flash memory programming and added Note 1 for t . Updated t prog prog and added Note 1 in Table 38: Flash memory programming with VPP. Modified Figure 38: Recommended NRST pin protection. Updated Table 41: EMI characteristics and EMI monitoring conditions in Section : Electromagnetic Interference (EMI). Added Note 2 related to V in Table 42: ESD absolute maximum ESD(HBM) ratings. Added Section 6.3.15: I/O current injection characteristics. Updated Table 45: I/O static characteristics. Modified maximum frequency values and conditions in Table 47: I/O AC characteristics."
+    ],
+    [
+      "22-Apr-2011",
+      "4 (continued)",
+      "Updated t in Table 49: Characteristics of TIMx connected to the res(TIM) APB1 domain. Modified t and f Table 50: Characteristics of res(TIM) EXT TIMx connected to the APB2 domain. Changed t to t , t to t , t to t , and w(SCKH) w(SCLH) w(SCKL) w(SCLL) r(SCK) r(SCL) t to t in Table 51: I2C characteristics and Figure 39: I2C bus f(SCK) f(SCL) AC waveforms and measurement circuit. Added Table 56: USB OTG FS DC electrical characteristics and updated Table 57: USB OTG FS electrical characteristics. Updated V minimum value in Table 61: Ethernet DC electrical DD characteristics. Updated Table 65: ADC characteristics and R equation. AIN Updated R equation. Updated Table 67: DAC characteristics. AIN Updated t in Table 68: Temperature sensor characteristics. START Updated Table 70: Embedded internal reference voltage. Modified FSMC_NOE waveform in Figure 55: Asynchronous non- multiplexed SRAM/PSRAM/NOR read waveforms. Shifted end of FSMC_NEx/NADV/addresses/NWE/NOE/NWAIT of a half FSMC_CLK period, changed t ) to t ,t to t d(CLKH-NExH d(CLKL-NExH) d(CLKH-AIV) d(CLKL- , t to t , and t to t , AIV) d(CLKH-NOEH) d(CLKL-NOEH) d(CLKH-NWEH) d(CLKL-NWEH) and updated data latency from 1 to 0 in Figure 59: Synchronous multiplexed NOR/PSRAM read timings, Figure 60: Synchronous multiplexed PSRAM write timings, Figure 61: Synchronous non- multiplexed NOR/PSRAM read timings, and Figure 62: Synchronous non-multiplexed PSRAM write timings, Changed t ) to t ,t to t , d(CLKH-NExH d(CLKL-NExH) d(CLKH-AIV) d(CLKL-AIV) t to t , t to t , and d(CLKH-NOEH) d(CLKL-NOEH) d(CLKH-NWEH) d(CLKL-NWEH) modified t minimum value in Table 75, Table 76, Table 77, and w(CLK) Table 78. Updated R typical value in Table 69: VBAT monitoring characteristics.Updated note 2 in Table 71, Table 72, Table 73, Table 74, Table 75, Table 76, Table 77, and Table 78. Modified t in Figure 68: PC Card/CompactFlash controller h(NIOWR-D) waveforms for I/O space write access. Modified FSMC_NCEx signal in Figure 69: NAND controller waveforms for read access, Figure 70: NAND controller waveforms for write access, Figure 71: NAND controller waveforms for common memory read access, and Figure 72: NAND controller waveforms for common memory write access. Specified Full speed (FS) mode for Figure 86: USB OTG HS peripheral- only connection in FS mode and Figure 87: USB OTG HS host-only connection in FS mode."
+    ],
+    [
+      "14-Jun-2011",
+      "5",
+      "Added SDIO in Table 2: STM32F215xx and STM32F217xx: features and peripheral counts. Updated V for 5V tolerant pins in Table 10: Voltage characteristics. IN Updated jitter parameters description in Table 33: Main PLL characteristics. Remove jitter values for system clock in Table 34: PLLI2S (audio PLL) characteristics. Updated Table 41: EMI characteristics. Update Note 2 in Table 51: I2C characteristics. Updated Avg_Slope typical value and T minimum value in S_temp Table 68: Temperature sensor characteristics. Updated T minimum value in Table 69: VBAT monitoring S_vbat characteristics. Updated T minimum value in Table 70: Embedded internal S_vrefint reference voltage. Added Software option in Section 8: Ordering information. In Table 93: Main applications versus package for STM32F2xxx microcontrollers, renamed USB1 and USB2, USB OTG FS and USB OTG HS, respectively; and removed USB OTG FS and camera interface for 64-pin package; added USB OTG HS on 64-pin package; and added Note 1 and Note 2. Updated disclaimer on cover page."
+    ],
+    [
+      "20-Dec-2011",
+      "6",
+      "Updated SDIO register addresses in Figure 14: Memory map. Updated Figure 3: Compatible board design between STM32F10x and STM32F2xx for LQFP144 package, Figure 2: Compatible board design between STM32F10x and STM32F2xx for LQFP100 package, Figure 1: Compatible board design between STM32F10x and STM32F2xx for LQFP64 package, and added Figure 4: Compatible board design between STM32F10xx and STM32F2xx for LQFP176 package. Updated Section 3.3: Memory protection unit. Updated Section 3.6: Embedded SRAM. Updated Section 3.28: Universal serial bus on-the-go full-speed (OTG_FS) to remove external FS OTG PHY support. In Table 7: STM32F21x pin and ball definitions: changed SPI2_MCK and SPI3_MCK to I2S2_MCK and I2S3_MCK, respectively. Added ETH _RMII_TX_EN alternate function to PG11. Added EVENTOUT in the list of alternate functions for I/O pin/balls. Removed OTG_FS_SDA, OTG_FS_SCL and OTG_FS_INTN alternate functions. In Table 9: Alternate function mapping: changed I2S3_SCK to I2S3_MCK for PC7/AF6, added FSMC_NCE3 for PG9, FSMC_NE3 for PG10, and FSMC_NCE2 for PD7. Removed OTG_FS_SDA, OTG_FS_SCL and OTG_FS_INTN alternate functions. Updated peripherals corresponding to AF12. Removed CEXT and ESR from Table 13: General operating conditions. Added maximum power consumption at T =25 °C in Table 22: Typical A and maximum current consumptions in Stop mode. Added CRYPTO, RNG, and HASH consumption in Table 25: Peripheral current consumption. Updated md minimum value in Table 35: SSCG parameters constraint. Added examples in Section 6.3.11: PLL spread spectrum clock generation (SSCG) characteristics. Updated Table 53: SPI characteristics and Table 54: I2S characteristics. Updated Figure 46: ULPI timing diagram and Table 60: ULPI timing. Updated Table 62: Dynamics characteristics: Ethernet MAC signals for SMI, Table 63: Dynamics characteristics: Ethernet MAC signals for RMII, and Table 64: Dynamics characteristics: Ethernet MAC signals for MII. Updated maximum f values in Table 65: ADC characteristics. S Section 6.3.25: FSMC characteristics: updated Table 71 toTable 82, changed C value to 30 pF, and modified FSMC configuration for L asynchronous timings and waveforms. Updated Figure 60: Synchronous multiplexed PSRAM write timings. UpdatedTable 83: DCMI characteristics. Updated Table 90: UFBGA176+25 - ultra thin fine pitch ball grid array 10 × 10 × 0.6 mm mechanical data."
+    ],
+    [
+      "20-Dec-2011",
+      "6 (continued)",
+      "Appendix A.2: USB OTG full speed (FS) interface solutions: updated Figure 85: USB OTG FS (full speed) host-only connection and added Note 2, updated Figure 86: OTG FS (full speed) connection dual-role with internal PHY and added Note 3 and Note 4, modified Figure 87: OTG HS (high speed) device connection, host and dual-role in high- speed mode with external PHY and added Note 2. Appendix A.3: USB OTG high speed (HS) interface solutions: removed figures USB OTG HS device-only connection in FS mode and USB OTG HS host-only connection in FS mode, updated Figure 87: OTG HS (high speed) device connection, host and dual-role in high- speed mode with external PHY. Added Appendix A.4: Ethernet interface solutions. Updated disclaimer on last page."
+    ],
+    [
+      "24-Apr-2012",
+      "7",
+      "Updated number of USB OTG HS and FS, added Note 1 related to FSMC and Note 3 related to SPI/I2S in Table 2: STM32F215xx and STM32F217xx: features and peripheral counts. Added Note 2 and update TIM5 in Figure 4: STM32F21x block diagram. Updated maximum number of maskable interrupts in Section 3.10: Nested vectored interrupt controller (NVIC). Removed STM32F215xx in Section 3.28: Universal serial bus on-the-go full-speed (OTG_FS). Removed support of I2C for OTG PHY in Section 3.29: Universal serial bus on-the-go high-speed (OTG_HS). Removed OTG_HS_SCL, OTG_HS_SDA, OTG_FS_INTN in Table 7: STM32F21x pin and ball definitions and Table 9: Alternate function mapping. PH10 alternate function TIM5_CH1_ETR renamed TIM5_CH1. Added Table 8: FSMC pin definition. Updated V in Table 18: Embedded reset and power control POR/PDR block characteristics. Updated V and V decoupling capacitor in Figure 17: Power DDA REF+ supply scheme. Updated typical values in Table 23: Typical and maximum current consumptions in Standby mode and Table 24: Typical and maximum current consumptions in VBAT mode. Updated Table 29: HSE 4-26 MHz oscillator characteristics and Table 30: LSE oscillator characteristics (fLSE = 32.768 kHz). Updated Table 36: Flash memory characteristics, Table 37: Flash memory programming, and Table 38: Flash memory programming with VPP. Updated Section : Output driving current. Updated Note 3 and removed note related to minimum hold time value in Table 51: I2C characteristics. Updated Table 63: Dynamics characteristics: Ethernet MAC signals for RMII. Updated C , I , and I in Table 65: ADC characteristics. ADC VREF+ VDDA Updated note concerning ADC accuracy vs. negative injection current below Table 66: ADC accuracy. Updated Figure 85: UFBGA176+25 - ultra thin fine pitch ball grid array 10 × 10 × 0.6 mm, package outline. Appendix A.1: Main applications versus package: removed number of address lines for FSMC/NAND in Table 93: Main applications versus package for STM32F2xxx microcontrollers. Appendix A.4: Ethernet interface solutions: updated Figure 92: Complete audio player solution 1 and Figure 93: Complete audio player solution 2."
+    ],
+    [
+      "29-Oct-2012",
+      "8",
+      "Removed Figure 4. Compatible board design between STM32F10xx and STM32F2xx for LQFP176 package. Updated number of AHB buses in Section 2: Description and Section 3.12: Clocks and startup. Updated Note 2 below Figure 4: STM32F21x block diagram. Changed System memory to System memory + OTP in Figure 14: Memory map. Added Note 1 below Table 15: VCAP1/VCAP2 operating conditions. Updated V and V decoupling capacitor in Figure 17: Power DDA REF+ supply scheme and updated Note 3. Changed simplex mode into half-duplex mode in Section 3.24: Inter- integrated sound (I2S). Replaced DAC1_OUT and DAC2_OUT by DAC_OUT1 and DAC_OUT2, respectively. Changed TIM2_CH1/TIM2_ETR into TIM2_CH1_ETR for PA0 and PA5 in Table 9: Alternate function mapping. Updated note applying to I (external clock and all peripheral disabled) DD in Table 20: Typical and maximum current consumption in Run mode, code with data processing running from Flash memory (ART accelerator disabled). Updated Note 3 below Table 21: Typical and maximum current consumption in Sleep mode. Removed f typical value in Table 27: High-speed external user HSE_ext clock characteristics. Updated master I2S clock jitter conditions and values in Table 34: PLLI2S (audio PLL) characteristics. Updated equations in Section 6.3.11: PLL spread spectrum clock generation (SSCG) characteristics. Swapped TTL and CMOS port conditions for V and V in Table 46: OL OH Output voltage characteristics. Updated V and V in IL(NRST) IH(NRST) Table 48: NRST pin characteristics. Updated Table 53: SPI characteristics and Table 54: I2S characteristics.Removed note 1 related to measurement points below Figure 41: SPI timing diagram - slave mode and CPHA = 1, Figure 42: SPI timing diagram - master mode, and Figure 43: I2S slave timing diagram (Philips protocol)(1). Updated t in Table 60: ULPI timing. HC Updated Figure 47: Ethernet SMI timing diagram, Table 62: Dynamics characteristics: Ethernet MAC signals for SMI and Table 63: Dynamics characteristics: Ethernet MAC signals for RMII. Update f in Table 65: ADC characteristics. Updated I description TRIG DDA in Table 67: DAC characteristics. Updated note below Figure 52: Power supply and reference decoupling (VREF+ not connected to VDDA) and Figure 53: Power supply and reference decoupling (VREF+ connected to VDDA). Replaced t by t in Table 75: Synchronous d(CLKL-NOEL) d(CLKH-NOEL) multiplexed NOR/PSRAM read timings, Table 77: Synchronous non- multiplexed NOR/PSRAM read timings, Figure 59: Synchronous multiplexed NOR/PSRAM read timings and Figure 61: Synchronous non-multiplexed NOR/PSRAM read timings."
+    ],
+    [
+      "29-Oct-2012",
+      "8 (continued)",
+      "Added Figure 84: LQFP176 recommended footprint. Added Note 2 below Figure 86: Regulator OFF/internal reset ON. Updated device subfamily in Table 93: Ordering information scheme. Remove reference to note 2 for USB IOTG FS in Table 93: Main applications versus package for STM32F2xxx microcontrollers."
+    ],
+    [
+      "04-Nov-2013",
+      "9",
+      "Updated Section 3.14: Power supply schemes, Section 3.15: Power supply supervisor, Section 3.16.1: Regulator ON and Section 3.16.2: Regulator OFF. Added Section 3.16.3: Regulator ON/OFF and internal reset ON/OFF availability. Restructured RTC features and added reference clock detection in Section 3.17: Real-time clock (RTC), backup SRAM and backup registers. Added note indicating the package view below Figure 9: STM32F21x LQFP64 pinout, Figure 10: STM32F21x LQFP100 pinout, Figure 11: STM32F21x LQFP144 pinout, and Figure 12: STM32F21x LQFP176 pinout. Added Table 6: Legend/abbreviations used in the pinout table. Table 7: STM32F21x pin and ball definitions: content reformatted, removed indexes on V and V , updated PA4, PA5, PA6, PC4, SS DD BOOT0; replaced DCMI_12 by DCMI_D12, ETH_MII_RX_D0 by ETH_MII_RXD0, ETH_MII_RX_D1 by ETH_MII_RXD1, ETH_RMII_RX_D0 by ETH_RMII_RXD0, and ETH_RMII_RX_D1 by ETH_RMII_RXD1 in . Table 9: Alternate function mapping: replaced FSMC_BLN1 by FSMC_NBL1, added EVENTOUT as AF15 alternated function for PC13, PC14, PC15, PH0, PH1, and PI8. Updated Figure 15: Pin loading conditions and Figure 16: Pin input voltage. Added V in Table 13: General operating conditions. IN Removed note applying to V minimum value in Table 18: POR/PDR Embedded reset and power control block characteristics. Updated notes related to C and C in Section : Low-speed external L1 L2 clock generated from a crystal/ceramic resonator. Updated conditions in Table 40: EMS characteristics. Updated Table 41: EMI characteristics. Updated V , V and V in Table 45: I/O static IL IH Hys characteristics. Added Section : Output driving current and updated Figure 37: I/O AC characteristics definition. Updated V and V in Table 48: NRST pin characteristics, IL(NRST) IH(NRST) updated Figure 37: I/O AC characteristics definition. Removed tests conditions in Section : I2C interface characteristics. Updated Table 51: I2C characteristics and Figure 39: I2C bus AC waveforms and measurement circuit. Updated I and I in Table 65: ADC characteristics. VREF+ VDDA Updated Offset comments in Table 67: DAC characteristics. Updated minimum t value in Table 77: Synchronous non- h(CLKH-DV) multiplexed NOR/PSRAM read timings."
+    ],
+    [
+      "04-Nov-2013",
+      "9 (continued)",
+      "Updated Figure 75: LQFP64 – 10 x 10 mm 64 pin low-profile quad flat package outline and Table 86: LQFP64 – 10 x 10 mm 64 pin low-profile quad flat package mechanical data. Updated Figure 77: LQFP100, 14 x 14 mm 100-pin low-profile quad flat package outline, Figure 80: LQFP144, 20 x 20 mm, 144-pin low-profile quad flat package outline, Figure 83: LQFP176 - Low profile quad flat package 24 × 24 × 1.4 mm, package outline. Updated Figure 85: UFBGA176+25 - ultra thin fine pitch ball grid array 10 × 10 × 0.6 mm, package outline and Figure 85: UFBGA176+25 - ultra thin fine pitch ball grid array 10 × 10 × 0.6 mm, package outline. Removed Appendix A Application block diagrams."
+    ],
+    [
+      "27-Oct-2014",
+      "10",
+      "Updated V voltage range in Figure 17: Power supply scheme. Added BAT caution note in Section 6.1.6: Power supply scheme. Updated V in Table 13: General operating conditions. IN Removed note 1 in Table 22: Typical and maximum current consumptions in Stop mode. Updated Table 44: I/O current injection susceptibility, Section 6.3.16: I/O port characteristics and Section 6.3.17: NRST pin characteristics. Removed note 3 in Table 68: Temperature sensor characteristics. Added Figure 79: LQFP100 marking (package top view) and Figure 82: LQFP144 marking (package top view)."
+    ],
+    [
+      "23-Feb-2016",
+      "11",
+      "Updated Section 1: Introduction. Updated Table 31: HSI oscillator characteristics and its footnotes. Updated Figure 34: PLL output clock waveforms in center spread mode, Figure 35: PLL output clock waveforms in down spread mode, Figure 52: Power supply and reference decoupling (VREF+ not connected to VDDA) and Figure 53: Power supply and reference decoupling (VREF+ connected to VDDA). Updated Section 7: Package information and its subsections."
+    ],
+    [
+      "07-Jul-2016",
+      "12",
+      "Updated Features and Section 2: Description. Updated figures 1, 2 and 3 in Section 2.1: Full compatibility throughout the family. Updated Device marking and Figure 79 in Section 7.2: LQFP100 package information. Updated Device marking and Figure 82 in Section 7.3: LQFP144 package information. Updated Section 7.5: UFBGA176+25 package information with introduction of Device marking and Figure 87. Updated Table 93: Ordering information scheme."
+    ],
+    [
+      "16-Aug-2016",
+      "13",
+      "Updated Figure 52: Power supply and reference decoupling (VREF+ not connected to VDDA). Updated title of Section 8: Ordering information."
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 3,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 3
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:12"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f215re",
+    "table_id": "table_94",
+    "is_continued": true,
+    "pages": [
+      168,
+      169,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178,
+      179
+    ],
+    "rows_count": 18,
+    "cols_count": 3,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

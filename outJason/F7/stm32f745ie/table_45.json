@@ -1,0 +1,179 @@
+{
+  "table_id": "table_45",
+  "caption": "Table 45. PLLI2S characteristics",
+  "pdf_name": "stm32f745ie",
+  "family": "F7",
+  "page": 135,
+  "merged_pages": [
+    135,
+    136
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Conditions",
+    "Min",
+    "Typ",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "f PLLI2S_IN",
+      "PLLI2S input clock(1)",
+      "-",
+      "-",
+      "0.95(2)",
+      "1",
+      "2.10",
+      "MHz"
+    ],
+    [
+      "f PLLI2SP_OUT",
+      "PLLI2S multiplier output clock for SPDIFRX",
+      "-",
+      "-",
+      "-",
+      "-",
+      "216",
+      "MHz"
+    ],
+    [
+      "f PLLI2SQ_OUT",
+      "PLLI2S multiplier output clock for SAI",
+      "-",
+      "-",
+      "-",
+      "-",
+      "216",
+      "MHz"
+    ],
+    [
+      "f PLLI2SR_OUT",
+      "PLLI2S multiplier output clock for I2S",
+      "-",
+      "-",
+      "-",
+      "-",
+      "216",
+      "MHz"
+    ],
+    [
+      "f VCO_OUT",
+      "PLLI2S VCO output",
+      "-",
+      "-",
+      "100",
+      "-",
+      "432",
+      "MHz"
+    ],
+    [
+      "t LOCK",
+      "PLLI2S lock time",
+      "VCO freq = 100 MHz",
+      "VCO freq = 100 MHz",
+      "75",
+      "-",
+      "200",
+      "µs"
+    ],
+    [
+      "t LOCK",
+      "PLLI2S lock time",
+      "VCO freq = 432 MHz",
+      "VCO freq = 432 MHz",
+      "100",
+      "-",
+      "300",
+      "µs"
+    ],
+    [
+      "Jitter(3)",
+      "Master I2S clock jitter",
+      "Cycle to cycle at 12.288 MHz on 48KHz period, N=432, R=5",
+      "RMS",
+      "-",
+      "90",
+      "-",
+      "µs"
+    ],
+    [
+      "Jitter(3)",
+      "Master I2S clock jitter",
+      "Cycle to cycle at 12.288 MHz on 48KHz period, N=432, R=5",
+      "peak to peak",
+      "-",
+      "±280",
+      "-",
+      "ps"
+    ],
+    [
+      "Jitter(3)",
+      "Master I2S clock jitter",
+      "Average frequency of 12.288 MHz N = 432, R = 5 on 1000 samples",
+      "peak to peak",
+      "-",
+      "90",
+      "-",
+      "ps"
+    ],
+    [
+      "Jitter(3)",
+      "WS I2S clock jitter",
+      "Cycle to cycle at 48 KHz on 1000 samples",
+      "peak to peak",
+      "-",
+      "400",
+      "-",
+      "ps"
+    ],
+    [
+      "I (4) DD(PLLI2S)",
+      "PLLI2S power consumption on V DD",
+      "VCO freq = 100 MHz VCO freq = 432 MHz",
+      "peak to peak",
+      "0.15 0.45",
+      "-",
+      "0.40 0.75",
+      "mA"
+    ],
+    [
+      "I (4) DDA(PLLI2S)",
+      "PLLI2S power consumption on V DDA",
+      "VCO freq = 100 MHz VCO freq = 432 MHz",
+      "peak to peak",
+      "0.30 0.55",
+      "-",
+      "0.40 0.85",
+      "mA"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 8,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 7
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:2"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f745ie",
+    "table_id": "table_45",
+    "is_continued": true,
+    "pages": [
+      135,
+      136
+    ],
+    "rows_count": 13,
+    "cols_count": 8,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

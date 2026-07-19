@@ -1,0 +1,245 @@
+{
+  "table_id": "table_70",
+  "caption": "Table 70. SDADC characteristics",
+  "pdf_name": "stm32f378cc",
+  "family": "F3",
+  "page": 105,
+  "merged_pages": [
+    105
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Min",
+    "Typ",
+    "Max",
+    "Unit",
+    "Note"
+  ],
+  "rows": [
+    [
+      "V DDSDx",
+      "Power supply",
+      "Slow mode (f = 1.5MHz) ADC",
+      "2.2",
+      "-",
+      "V DDA",
+      "V",
+      "-"
+    ],
+    [
+      "V DDSDx",
+      "Power supply",
+      "Normal mode (f = 6MHz) ADC",
+      "2.4",
+      "-",
+      "V DDA",
+      "V",
+      "-"
+    ],
+    [
+      "f ADC",
+      "SDADC clock frequency",
+      "Slow mode (f = 1.5MHz) ADC",
+      "0.5",
+      "1.5",
+      "1.65",
+      "MHz",
+      "-"
+    ],
+    [
+      "f ADC",
+      "SDADC clock frequency",
+      "Normal mode (f = 6MHz) ADC",
+      "0.5",
+      "6",
+      "6.3",
+      "MHz",
+      "-"
+    ],
+    [
+      "V REFSD+",
+      "Positive ref. voltage",
+      "-",
+      "1.1",
+      "-",
+      "V DDSDx",
+      "V",
+      "-"
+    ],
+    [
+      "V REFSD-",
+      "Negative ref. voltage",
+      "-",
+      "-",
+      "V SSA",
+      "-",
+      "V",
+      "-"
+    ],
+    [
+      "I DDSDx",
+      "Supply current (V = DDSDx 3.3 V)",
+      "Normal mode (f = 6MHz) ADC",
+      "-",
+      "800",
+      "1200",
+      "µA",
+      "-"
+    ],
+    [
+      "I DDSDx",
+      "Supply current (V = DDSDx 3.3 V)",
+      "Slow mode (f = 1.5MHz) ADC",
+      "-",
+      "-",
+      "600",
+      "µA",
+      "-"
+    ],
+    [
+      "I DDSDx",
+      "Supply current (V = DDSDx 3.3 V)",
+      "Standby",
+      "-",
+      "-",
+      "200",
+      "µA",
+      "-"
+    ],
+    [
+      "I DDSDx",
+      "Supply current (V = DDSDx 3.3 V)",
+      "Power down",
+      "-",
+      "-",
+      "2.5",
+      "µA",
+      "-"
+    ],
+    [
+      "I DDSDx",
+      "Supply current (V = DDSDx 3.3 V)",
+      "SD_ADC off",
+      "-",
+      "-",
+      "1",
+      "µA",
+      "-"
+    ],
+    [
+      "V AIN",
+      "Common input voltage range",
+      "Single ended mode (zero reference)",
+      "V REFSD-",
+      "-",
+      "V REFSD+ /gain",
+      "V",
+      "Voltage on AINP or AINN pin"
+    ],
+    [
+      "V AIN",
+      "Common input voltage range",
+      "Single ended offset mode",
+      "V REFSD-",
+      "-",
+      "V REFSD+/ (gain*2)",
+      "V",
+      "Voltage on AINP or AINN pin"
+    ],
+    [
+      "V AIN",
+      "Common input voltage range",
+      "Differential mode",
+      "V SSA",
+      "-",
+      "V DDSDx",
+      "V",
+      "Voltage on AINP or AINN pin"
+    ],
+    [
+      "V DIFF",
+      "Differential input voltage",
+      "Differential mode only",
+      "-V REFSD+/ (gain*2)",
+      "-",
+      "V / REFSD+ (gain*2)",
+      "-",
+      "Differential voltage between AINP and AINN"
+    ],
+    [
+      "f S",
+      "Sampling rate",
+      "Slow mode (f = 1.5MHz) ADC",
+      "-",
+      "4.166",
+      "-",
+      "kHz",
+      "f /360 ADC"
+    ],
+    [
+      "f S",
+      "Sampling rate",
+      "Slow mode one channel only (f = 1.5MHz) ADC",
+      "-",
+      "12.5",
+      "-",
+      "kHz",
+      "f /120 ADC"
+    ],
+    [
+      "f S",
+      "Sampling rate",
+      "Normal mode multiplexed channel (f = 6 MHz) ADC",
+      "-",
+      "16.66",
+      "-",
+      "kHz",
+      "f /360 ADC"
+    ],
+    [
+      "f S",
+      "Sampling rate",
+      "Normal mode one channel only, FAST= 1 (f = 6MHz) ADC",
+      "-",
+      "50",
+      "-",
+      "kHz",
+      "f /120 ADC"
+    ],
+    [
+      "t CONV",
+      "Conversio n time",
+      "-",
+      "-",
+      "1/fs",
+      "-",
+      "s",
+      "-"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 8,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 8
+  },
+  "structured_json": null,
+  "warnings": [],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f378cc",
+    "table_id": "table_70",
+    "is_continued": false,
+    "pages": [
+      105
+    ],
+    "rows_count": 20,
+    "cols_count": 8,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

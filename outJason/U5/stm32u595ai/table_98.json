@@ -1,0 +1,374 @@
+{
+  "table_id": "table_98",
+  "caption": "Table 98. 12-bit ADC4 characteristics",
+  "pdf_name": "stm32u595ai",
+  "family": "U5",
+  "page": 276,
+  "merged_pages": [
+    276,
+    277,
+    278
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Min",
+    "Typ",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "V DDA",
+      "Analog power supply for ADC ON",
+      "-",
+      "1.62",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V REF+",
+      "Positive reference voltage",
+      "-",
+      "1",
+      "-",
+      "V DDA",
+      "V"
+    ],
+    [
+      "V REF-",
+      "Negative reference voltage",
+      "-",
+      "V SSA",
+      "V SSA",
+      "V SSA",
+      "V"
+    ],
+    [
+      "f ADC",
+      "ADC clock frequency",
+      "1.62 V ≤ V ≤ 3.6 V DDA",
+      "0.14",
+      "-",
+      "55",
+      "MHz"
+    ],
+    [
+      "f ADC",
+      "ADC clock duty cycle",
+      "-",
+      "45",
+      "-",
+      "55",
+      "%"
+    ],
+    [
+      "f s",
+      "Sampling rate",
+      "Resolution = 12 bits",
+      "0.01",
+      "-",
+      "2.75",
+      "Msps"
+    ],
+    [
+      "f s",
+      "Sampling rate",
+      "Resolution = 10 bits",
+      "0.012",
+      "-",
+      "3.05",
+      "Msps"
+    ],
+    [
+      "f s",
+      "Sampling rate",
+      "Resolution = 8 bits",
+      "0.014",
+      "-",
+      "3.43",
+      "Msps"
+    ],
+    [
+      "f s",
+      "Sampling rate",
+      "Resolution = 6bits",
+      "0.0175",
+      "-",
+      "3.92",
+      "Msps"
+    ],
+    [
+      "t TRIG",
+      "External trigger period",
+      "Resolution = 12 bits",
+      "16",
+      "-",
+      "-",
+      "1/f ADC"
+    ],
+    [
+      "V (3) AIN",
+      "Conversion voltage range",
+      "-",
+      "0",
+      "-",
+      "V REF+",
+      "V"
+    ],
+    [
+      "R (4) AIN",
+      "External input impedance T = 130 °C j",
+      "Resolution = 12 bits",
+      "-",
+      "-",
+      "2.2",
+      "kΩ"
+    ],
+    [
+      "R (4) AIN",
+      "External input impedance T = 130 °C j",
+      "Resolution = 10 bits",
+      "-",
+      "-",
+      "6.8",
+      "kΩ"
+    ],
+    [
+      "R (4) AIN",
+      "External input impedance T = 130 °C j",
+      "Resolution = 8 bits",
+      "-",
+      "-",
+      "33.0",
+      "kΩ"
+    ],
+    [
+      "R (4) AIN",
+      "External input impedance T = 130 °C j",
+      "Resolution = 6 bits",
+      "-",
+      "-",
+      "47.0",
+      "kΩ"
+    ],
+    [
+      "C ADC",
+      "Internal sample and hold capacitor",
+      "-",
+      "-",
+      "5",
+      "-",
+      "pF"
+    ],
+    [
+      "t ADCVREG_ STUP",
+      "ADC LDO startup ready flag time",
+      "-",
+      "-",
+      "-",
+      "25",
+      "µs"
+    ],
+    [
+      "t STAB",
+      "ADC power-up time",
+      "LDO already started",
+      "(3 × 1/f ) + 1 conversion ADC",
+      "-",
+      "25",
+      "Cycle"
+    ],
+    [
+      "t OFF_CAL",
+      "Offset calibration time",
+      "-",
+      "-",
+      "123",
+      "-",
+      "1/f ADC"
+    ],
+    [
+      "t LATR",
+      "Trigger conversion latency",
+      "WAIT = 0, AUTOFF = 0, DPD = 0, f = HCLK ADC",
+      "4",
+      "123",
+      "-",
+      "1/f ADC"
+    ],
+    [
+      "t LATR",
+      "Trigger conversion latency",
+      "WAIT = 0, AUTOFF = 0, DPD = 0, f = HCLK/2 ADC",
+      "4",
+      "123",
+      "-",
+      "1/f ADC"
+    ],
+    [
+      "t LATR",
+      "Trigger conversion latency",
+      "WAIT = 0, AUTOFF = 0, DPD = 0, f = HCLK/4 ADC",
+      "3.75",
+      "123",
+      "-",
+      "1/f ADC"
+    ],
+    [
+      "t s",
+      "Sampling time",
+      "-",
+      "1.5",
+      "-",
+      "814.5",
+      "1/f ADC"
+    ],
+    [
+      "t CONV",
+      "Total conversion time (including sampling time)",
+      "Resolution = N bits, VREFPROTEN = 0",
+      "t + N + 0.5 s",
+      "-",
+      "814.5",
+      "1/f ADC"
+    ],
+    [
+      "t CONV",
+      "Total conversion time (including sampling time)",
+      "Resolution = N bits, VREFPROTEN = 1 VREFSECSMP = 0",
+      "t + N + 0.5 s",
+      "-",
+      "t + N + 1.5 s",
+      "1/f ADC"
+    ],
+    [
+      "t CONV",
+      "Total conversion time (including sampling time)",
+      "Resolution = N bits, VREFPROTEN = 1 VREFSECSMP = 1",
+      "t + N + 0.5 s",
+      "-",
+      "t + N + 2.5 s",
+      "1/f ADC"
+    ],
+    [
+      "I DDA(ADC)",
+      "ADC consumption on V DDA",
+      "f = 2.5 Msps s",
+      "-",
+      "360",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDA(ADC)",
+      "ADC consumption on V DDA",
+      "f = 1 Msps s",
+      "-",
+      "180",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDA(ADC)",
+      "ADC consumption on V DDA",
+      "f = 10 ksps s",
+      "-",
+      "10",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDA(ADC)",
+      "ADC consumption on V DDA",
+      "AUTOFF = 1, DPD = 0, no conversion",
+      "-",
+      "9",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDA(ADC)",
+      "ADC consumption on V DDA",
+      "AUTOFF = 1, DPD = 1, no conversion",
+      "-",
+      "0.1",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDV(ADC)",
+      "ADC consumption on V REF+",
+      "f = 2.5 Msps s",
+      "-",
+      "18",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDV(ADC)",
+      "ADC consumption on V REF+",
+      "f = 1 Msps s",
+      "-",
+      "10.2",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDV(ADC)",
+      "ADC consumption on V REF+",
+      "f = 10 ksps s",
+      "-",
+      "0.12",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDV(ADC)",
+      "ADC consumption on V REF+",
+      "AUTOFF = 1, DPD = 0, no conversion",
+      "-",
+      "0.01",
+      "-",
+      "µA"
+    ],
+    [
+      "I DDV(ADC)",
+      "ADC consumption on V REF+",
+      "AUTOFF = 1, DPD = 1, no conversion",
+      "-",
+      "0.01",
+      "-",
+      "µA"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 7,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 7
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:3"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32u595ai",
+    "table_id": "table_98",
+    "is_continued": true,
+    "pages": [
+      276,
+      277,
+      278
+    ],
+    "rows_count": 36,
+    "cols_count": 7,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "table_id": "table_4",
+  "caption": "Table 4. Interconnect of peripherals",
+  "pdf_name": "stm32u031c6",
+  "family": "U0",
+  "page": 15,
+  "merged_pages": [
+    15
+  ],
+  "headers": [
+    "Interconnect source",
+    "Interconnect destination",
+    "Interconnect action",
+    "nur rewop-woL nuR",
+    "peels peelS rewop-woL",
+    "Stop"
+  ],
+  "rows": [
+    [
+      "TIMx",
+      "TIMx",
+      "Timer synchronization or chaining",
+      "Y",
+      "Y",
+      "-"
+    ],
+    [
+      "TIMx",
+      "ADCx DACx",
+      "Conversion triggers",
+      "Y",
+      "Y",
+      "-"
+    ],
+    [
+      "TIMx",
+      "DMA",
+      "Memory-to-memory transfer trigger",
+      "Y",
+      "Y",
+      "-"
+    ],
+    [
+      "TIMx",
+      "COMPx",
+      "Comparator output blanking",
+      "Y",
+      "Y",
+      "-"
+    ],
+    [
+      "COMPx",
+      "TIM1, 2, 3",
+      "Timer input channel, trigger, break from analog signals comparison",
+      "Y",
+      "Y",
+      "-"
+    ],
+    [
+      "COMPx",
+      "LPTIMx",
+      "Low-power timer triggered by analog signals comparison",
+      "Y",
+      "Y",
+      "Y"
+    ],
+    [
+      "ADCx",
+      "TIM1",
+      "Timer triggered by analog watchdog",
+      "Y",
+      "Y",
+      "-"
+    ],
+    [
+      "RTC",
+      "TIM16",
+      "Timer input channel from RTC events",
+      "Y",
+      "Y",
+      "-"
+    ],
+    [
+      "RTC",
+      "LPTIMx",
+      "Low-power timer triggered by RTC alarms or tampers",
+      "Y",
+      "Y",
+      "Y"
+    ],
+    [
+      "All clock sources (internal and external)",
+      "TIM16",
+      "Clock source used as input channel for RC measurement and trimming",
+      "Y",
+      "Y",
+      "-"
+    ],
+    [
+      "CSS RAM (parity error) Flash memory (ECC error) COMPx PVD",
+      "TIM1, 15, 16",
+      "Timer break",
+      "Y",
+      "Y",
+      "-"
+    ],
+    [
+      "CPU (HardFault)",
+      "TIM1 15, 16",
+      "Timer break",
+      "Y",
+      "-",
+      "-"
+    ],
+    [
+      "GPIOs",
+      "TIMx",
+      "External trigger",
+      "Y",
+      "Y",
+      "-"
+    ],
+    [
+      "GPIOs",
+      "LPTIMx",
+      "External trigger",
+      "Y",
+      "Y",
+      "Y"
+    ],
+    [
+      "GPIOs",
+      "ADCx DACx",
+      "Conversion external trigger",
+      "Y",
+      "Y",
+      "-"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 6,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 6
+  },
+  "structured_json": null,
+  "warnings": [
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32u031c6",
+    "table_id": "table_4",
+    "is_continued": false,
+    "pages": [
+      15
+    ],
+    "rows_count": 15,
+    "cols_count": 6,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

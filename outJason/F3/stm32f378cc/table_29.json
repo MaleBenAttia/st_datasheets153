@@ -1,0 +1,104 @@
+{
+  "table_id": "table_29",
+  "caption": "Table 29. Typical and maximum V consumption in Stop mode",
+  "pdf_name": "stm32f378cc",
+  "family": "F3",
+  "page": 62,
+  "merged_pages": [
+    62,
+    63
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Typ@V (V = 1.8 V) / 1.8 V",
+    "Typ@V (V = 1.8 V) / 2.0 V",
+    "Typ@V (V = 1.8 V) / 2.4 V",
+    "Typ@V (V = 1.8 V) / DDA DD / 2.7 V",
+    "Typ@V (V = 1.8 V) / 3.0 V",
+    "Typ@V (V = 1.8 V) / 3.3 V",
+    "Typ@V (V = 1.8 V) / 3.6 V",
+    "Max(1) / T =",
+    "Max(1) / T =",
+    "Max(1) / T =",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "I DDA",
+      "Supply current in Stop mode",
+      "All oscillators OFF",
+      "0.74",
+      "0.76",
+      "0.78",
+      "0.81",
+      "0.86",
+      "0.92",
+      "1",
+      "8.8",
+      "10.1",
+      "11.6",
+      "µA"
+    ],
+    [
+      "I DD_ VBAT",
+      "Backup domain supply current",
+      "LSE & RTC ON; \"Xtal mode\" lower driving capability; LSEDRV[1:0] = '00'",
+      "0.50",
+      "0.52",
+      "0.55",
+      "0.63",
+      "0.70",
+      "0.87",
+      "0.95",
+      "1.1",
+      "1.6",
+      "2.2",
+      "µA"
+    ],
+    [
+      "I DD_ VBAT",
+      "Backup domain supply current",
+      "LSE & RTC ON; \"Xtal mode\" higher driving capability; LSEDRV[1:0] = '11'",
+      "0.85",
+      "0.90",
+      "0.93",
+      "1.02",
+      "1.10",
+      "1.27",
+      "1.38",
+      "1.6",
+      "2.4",
+      "3.0",
+      "µA"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 14,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 14
+  },
+  "structured_json": null,
+  "warnings": [
+    "dynamic_header_depth:3",
+    "multi_page_merged:2"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f378cc",
+    "table_id": "table_29",
+    "is_continued": true,
+    "pages": [
+      62,
+      63
+    ],
+    "rows_count": 3,
+    "cols_count": 14,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

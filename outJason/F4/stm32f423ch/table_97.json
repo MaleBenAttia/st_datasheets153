@@ -1,0 +1,156 @@
+{
+  "table_id": "table_97",
+  "caption": "Table 97. Synchronous multiplexed PSRAM write timings",
+  "pdf_name": "stm32f423ch",
+  "family": "F4",
+  "page": 170,
+  "merged_pages": [
+    170
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Min",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "t w(CLK)",
+      "FSMC_CLK period, V range= 2.7 to 3.6 V DD",
+      "2 * T - 0.5 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t d(CLKL-NExL)",
+      "FSMC_CLK low to FSMC_NEx low (x= 0...2)",
+      "-",
+      "2",
+      "ns"
+    ],
+    [
+      "t d(CLKH-NExH)",
+      "FSMC_CLK high to FSMC_NEx high (x= 0…2)",
+      "T + 0.5 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t d(CLKL-NADVL)",
+      "FSMC_CLK low to FSMC_NADV low",
+      "-",
+      "1",
+      "ns"
+    ],
+    [
+      "t d(CLKL-NADVH)",
+      "FSMC_CLK low to FSMC_NADV high",
+      "0",
+      "-",
+      "ns"
+    ],
+    [
+      "t d(CLKL-AV)",
+      "FSMC_CLK low to FSMC_Ax valid (x=16…25)",
+      "-",
+      "2.5",
+      "ns"
+    ],
+    [
+      "t d(CLKH-AIV)",
+      "FSMC_CLK high to FSMC_Ax invalid (x=16…25)",
+      "T HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t d(CLKL-NWEL)",
+      "FSMC_CLK low to FSMC_NWE low",
+      "-",
+      "1.5",
+      "ns"
+    ],
+    [
+      "t (CLKH-NWEH)",
+      "FSMC_CLK high to FSMC_NWE high",
+      "T + 0.5 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t d(CLKL-ADV)",
+      "FSMC_CLK low to FSMC_AD[15:0] valid",
+      "-",
+      "3",
+      "ns"
+    ],
+    [
+      "t d(CLKL-ADIV)",
+      "FSMC_CLK low to FSMC_AD[15:0] invalid",
+      "0",
+      "-",
+      "ns"
+    ],
+    [
+      "t d(CLKL-DATA)",
+      "FSMC_A/D[15:0] valid data after FSMC_CLK low",
+      "-",
+      "4",
+      "ns"
+    ],
+    [
+      "t d(CLKL-NBLL)",
+      "FSMC_CLK low to FSMC_NBL low",
+      "0",
+      "2",
+      "ns"
+    ],
+    [
+      "t d(CLKH-NBLH)",
+      "FSMC_CLK high to FSMC_NBL high",
+      "T + 0.5 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t su(NWAIT-CLKH)",
+      "FSMC_NWAIT valid before FSMC_CLK high",
+      "2",
+      "-",
+      "ns"
+    ],
+    [
+      "t h(CLKH-NWAIT)",
+      "FSMC_NWAIT valid after FSMC_CLK high",
+      "3.5",
+      "-",
+      "ns"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 5,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 5
+  },
+  "structured_json": null,
+  "warnings": [
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f423ch",
+    "table_id": "table_97",
+    "is_continued": false,
+    "pages": [
+      170
+    ],
+    "rows_count": 16,
+    "cols_count": 5,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

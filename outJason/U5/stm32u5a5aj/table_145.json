@@ -1,0 +1,283 @@
+{
+  "table_id": "table_145",
+  "caption": "Table 145. HSPI characteristics in DTR mode (with DQS)/HyperBus",
+  "pdf_name": "stm32u5a5aj",
+  "family": "U5",
+  "page": 334,
+  "merged_pages": [
+    334,
+    335
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Min",
+    "Typ",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "f (CLK)",
+      "HSPI clock frequency",
+      "1.71 V ≤ V ≤ 3.6 V DD Voltage range 1 C = 15 pF L",
+      "-",
+      "-",
+      "160",
+      "MHz"
+    ],
+    [
+      "f (CLK)",
+      "HSPI clock frequency",
+      "1.71 V ≤ V ≤ 3.6 V DD Voltage range 4 C = 15 pF L",
+      "-",
+      "-",
+      "25",
+      "MHz"
+    ],
+    [
+      "t w(CLKH)",
+      "HSPI clock high and low time (even division)",
+      "PRESCALER[7:0] = n (n = 0, 1, 3, 5,..255)",
+      "t /2 - 0.5 (CLK)",
+      "-",
+      "t /2 + 0.5 (CLK)",
+      "ns"
+    ],
+    [
+      "t w(CLKL)",
+      "HSPI clock high and low time (even division)",
+      "PRESCALER[7:0] = n (n = 0, 1, 3, 5,..255)",
+      "t /2 - 0.5 (CLK)",
+      "-",
+      "t /2 + 0.5 (CLK)",
+      "ns"
+    ],
+    [
+      "t w(CLKH)",
+      "HSPI clock high and low time (odd division)",
+      "PRESCALER[7:0] = n (n = 2, 4, 6,..254)",
+      "(n/2) × t (CLK) /(n+1) - 0.5",
+      "-",
+      "(n/2) × t (CLK) /(n+1) + 0.5",
+      "ns"
+    ],
+    [
+      "t w(CLKL)",
+      "HSPI clock high and low time (odd division)",
+      "PRESCALER[7:0] = n (n = 2, 4, 6,..254)",
+      "((n/2)+1) × t (CLK) /(n+1) - 0.5",
+      "-",
+      "((n/2)+1) × t (CLK) /(n+1) + 0.5",
+      "ns"
+    ],
+    [
+      "t v(CLK)",
+      "Clock valid time",
+      "-",
+      "-",
+      "-",
+      "t - 1.5 (CLK)",
+      "ns"
+    ],
+    [
+      "t h(CLK)",
+      "Clock hold time",
+      "-",
+      "t /2 + 1 (CLK)",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "V ODr(CLK)",
+      "CLK, NCLK crossing level on CLK rising edge",
+      "V = 1.8 V DD",
+      "860",
+      "-",
+      "890",
+      "mV"
+    ],
+    [
+      "V ODf(CLK)",
+      "CLK, NCLK crossing level on CLK falling edge",
+      "V = 1.8 V DD",
+      "720",
+      "-",
+      "740",
+      "mV"
+    ],
+    [
+      "t v(DQ)",
+      "Data input valid time",
+      "-",
+      "0",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t v(DS)",
+      "Data strobe input valid time",
+      "-",
+      "0",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t h(DS)",
+      "Data strobe input hold time",
+      "-",
+      "0",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t v(RWDS)",
+      "Data strobe output valid time",
+      "-",
+      "-",
+      "-",
+      "t (CLK)",
+      "ns"
+    ],
+    [
+      "t sr(DQ) t sf(DQ)",
+      "Data input setup time",
+      "Voltage range 1",
+      "1 - t /4 (CLK)",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t sr(DQ) t sf(DQ)",
+      "Data input setup time",
+      "Voltage Range 1, (prescaler = 0) with F(CLK) < 50 MHz",
+      "- 6.5",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t sr(DQ) t sf(DQ)",
+      "Data input setup time",
+      "Voltage range 4",
+      "0",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t hr(DQ) t hf(DQ)",
+      "Data input hold time",
+      "Voltage range 1",
+      "0.5 + t /4 (CLK)",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t hr(DQ) t hf(DQ)",
+      "Data input hold time",
+      "Voltage Range 1, (prescaler = 0) with F(CLK) < 50 MHz",
+      "6",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t hr(DQ) t hf(DQ)",
+      "Data input hold time",
+      "Voltage range 4",
+      "11.5",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t vr(OUT) t vf(OUT)",
+      "Data output valid time",
+      "Voltage range 1",
+      "-",
+      "t /4 + 0.5 (CLK)",
+      "t /4 + 1.5 (CLK)",
+      "ns"
+    ],
+    [
+      "t vr(OUT) t vf(OUT)",
+      "Data output valid time",
+      "Voltage Range 1, (prescaler = 0) with F(CLK) < 50 MHz",
+      "-",
+      "5",
+      "6.5",
+      "ns"
+    ],
+    [
+      "t vr(OUT) t vf(OUT)",
+      "Data output valid time",
+      "Voltage range 4",
+      "-",
+      "t /4 + 0.75 (CLK)",
+      "t /4 + 3 (CLK)",
+      "ns"
+    ],
+    [
+      "t hr(OUT) t hf(OUT)",
+      "Data output hold time",
+      "Voltage range 1",
+      "t /4 - 1 (CLK)",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t hr(OUT) t hf(OUT)",
+      "Data output hold time",
+      "Voltage Range 1, (prescaler = 0) with F(CLK) < 50 MHz",
+      "4.75",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t hr(OUT) t hf(OUT)",
+      "Data output hold time",
+      "Voltage range 4",
+      "t /4 - 2 (CLK)",
+      "-",
+      "-",
+      "ns"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 7,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 7
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:2",
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32u5a5aj",
+    "table_id": "table_145",
+    "is_continued": true,
+    "pages": [
+      334,
+      335
+    ],
+    "rows_count": 26,
+    "cols_count": 7,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

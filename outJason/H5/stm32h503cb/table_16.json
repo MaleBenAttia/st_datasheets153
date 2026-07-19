@@ -1,0 +1,346 @@
+{
+  "table_id": "table_16",
+  "caption": "Table 16. General operating conditions",
+  "pdf_name": "stm32h503cb",
+  "family": "H5",
+  "page": 74,
+  "merged_pages": [
+    74,
+    75
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Operating conditions",
+    "Min",
+    "Typ",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "V DD",
+      "Standard operating voltage",
+      "HSLV(1) = 0",
+      "1.71(2)",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V DD",
+      "Standard operating voltage",
+      "HSLV(1) = 1",
+      "1.71(2)",
+      "-",
+      "2.7",
+      "V"
+    ],
+    [
+      "V (3) DDIO2",
+      "PA8, PA9, PA15 and PB[3:8] I/Os supply voltage",
+      "At least one I/O in PA8, PA9, PA15 and PB[3:8] is used, HSLV(1) = 0",
+      "1.08",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V (3) DDIO2",
+      "PA8, PA9, PA15 and PB[3:8] I/Os supply voltage",
+      "At least one I/O in PA8, PA9, PA15 and PB[3:8] is used, HSLV(1) = 1",
+      "1.08",
+      "-",
+      "2.7",
+      "V"
+    ],
+    [
+      "V (3) DDIO2",
+      "PA8, PA9, PA15 and PB[3:8] I/Os supply voltage",
+      "PA8, PA9, PA15, and PB[3:8] are not used, HSLV(1) = 0",
+      "0",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V DDA",
+      "Analog supply voltage",
+      "COMP is used",
+      "1.62",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V DDA",
+      "Analog supply voltage",
+      "DAC is used",
+      "1.8",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V DDA",
+      "Analog supply voltage",
+      "OPAMP is used",
+      "2.0",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V DDA",
+      "Analog supply voltage",
+      "ADC is used",
+      "1.62",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V DDA",
+      "Analog supply voltage",
+      "ADC, DAC, OPAMP, and COMP are not used",
+      "0",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V BAT",
+      "Backup operating voltage",
+      "-",
+      "1.2",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V IN",
+      "I/O input voltage",
+      "All I/O except TT_xx",
+      "-0.3",
+      "-",
+      "min (min (V , DD V , V ) + DDA DDIO2 3.6V, 5.5 V)(4)(5)",
+      "V"
+    ],
+    [
+      "V IN",
+      "I/O input voltage",
+      "Input voltage on FT_t in VBAT mode",
+      "-0.3",
+      "-",
+      "min (min (V , BAT V , V ) + DDA DDIO2 3.6 V, 5.5 V)(4)(5)",
+      "V"
+    ],
+    [
+      "V IN",
+      "I/O input voltage",
+      "TT_xx I/O",
+      "-0.3",
+      "-",
+      "V + 0.3 DDIOx",
+      "V"
+    ],
+    [
+      "V CORE",
+      "Internal regulator ON",
+      "VOS0(6)",
+      "1.30",
+      "1.35",
+      "1.40",
+      "V"
+    ],
+    [
+      "V CORE",
+      "Internal regulator ON",
+      "VOS1",
+      "1.15",
+      "1.20",
+      "1.26",
+      "V"
+    ],
+    [
+      "V CORE",
+      "Internal regulator ON",
+      "VOS2",
+      "1.05",
+      "1.10",
+      "1.15",
+      "V"
+    ],
+    [
+      "V CORE",
+      "Internal regulator ON",
+      "VOS3",
+      "0.95",
+      "1.00",
+      "1.05",
+      "V"
+    ],
+    [
+      "V CORE",
+      "Regulator OFF: external VCORE voltage must be supplied from external regulator on VCAP pins.",
+      "VOS0(6)",
+      "1.32",
+      "1.35",
+      "1.40",
+      "V"
+    ],
+    [
+      "V CORE",
+      "Regulator OFF: external VCORE voltage must be supplied from external regulator on VCAP pins.",
+      "VOS1",
+      "1.17",
+      "1.20",
+      "1.26",
+      "V"
+    ],
+    [
+      "V CORE",
+      "Regulator OFF: external VCORE voltage must be supplied from external regulator on VCAP pins.",
+      "VOS2",
+      "1.07",
+      "1.10",
+      "1.15",
+      "V"
+    ],
+    [
+      "V CORE",
+      "Regulator OFF: external VCORE voltage must be supplied from external regulator on VCAP pins.",
+      "VOS3",
+      "0.97",
+      "1.00",
+      "1.05",
+      "V"
+    ],
+    [
+      "V CORE",
+      "Stop mode",
+      "SVOS3",
+      "-",
+      "1.0",
+      "-",
+      "V"
+    ],
+    [
+      "V CORE",
+      "Stop mode",
+      "SVOS4",
+      "-",
+      "0.9",
+      "-",
+      "V"
+    ],
+    [
+      "V CORE",
+      "Stop mode",
+      "SVOS5",
+      "-",
+      "0.74",
+      "-",
+      "V"
+    ],
+    [
+      "f HCLK",
+      "AHB clock frequency",
+      "VOS0(6)",
+      "-",
+      "-",
+      "250",
+      "MHz"
+    ],
+    [
+      "f HCLK",
+      "AHB clock frequency",
+      "VOS1",
+      "-",
+      "-",
+      "200",
+      "MHz"
+    ],
+    [
+      "f HCLK",
+      "AHB clock frequency",
+      "VOS2",
+      "-",
+      "-",
+      "150",
+      "MHz"
+    ],
+    [
+      "f HCLK",
+      "AHB clock frequency",
+      "VOS3",
+      "-",
+      "-",
+      "100",
+      "MHz"
+    ],
+    [
+      "f PCLKx (x=1,2,3)",
+      "APB1, APB2, APB3 clock frequency",
+      "VOS0(6)",
+      "-",
+      "-",
+      "250",
+      "MHz"
+    ],
+    [
+      "f PCLKx (x=1,2,3)",
+      "APB1, APB2, APB3 clock frequency",
+      "VOS1",
+      "-",
+      "-",
+      "200",
+      "MHz"
+    ],
+    [
+      "f PCLKx (x=1,2,3)",
+      "APB1, APB2, APB3 clock frequency",
+      "VOS2",
+      "-",
+      "-",
+      "150",
+      "MHz"
+    ],
+    [
+      "f PCLKx (x=1,2,3)",
+      "APB1, APB2, APB3 clock frequency",
+      "VOS3",
+      "-",
+      "-",
+      "100",
+      "MHz"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 7,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 7
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:2",
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32h503cb",
+    "table_id": "table_16",
+    "is_continued": true,
+    "pages": [
+      74,
+      75
+    ],
+    "rows_count": 33,
+    "cols_count": 7,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

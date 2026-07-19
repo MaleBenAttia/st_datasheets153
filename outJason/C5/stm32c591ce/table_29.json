@@ -1,0 +1,193 @@
+{
+  "table_id": "table_29",
+  "caption": "Table 29. Wake-up time from low-power modes.",
+  "pdf_name": "stm32c591ce",
+  "family": "C5",
+  "page": 70,
+  "merged_pages": [
+    70,
+    71
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Wakeup clock",
+    "fHCLK (MHz)",
+    "Typ",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "twu(Sleep)",
+      "Wakeup from Sleep",
+      "Instruction cache enabled or disabled",
+      "-",
+      "-",
+      "16",
+      "CPU clock cycles"
+    ],
+    [
+      "twu(Stop)",
+      "Wakeup from Stop 0",
+      "Flash memory in normal mode",
+      "HSI",
+      "144",
+      "3.6",
+      "µs"
+    ],
+    [
+      "twu(Stop)",
+      "Wakeup from Stop 0",
+      "Flash memory in low-power mode",
+      "HSI",
+      "144",
+      "7.3",
+      "µs"
+    ],
+    [
+      "twu(Stop)",
+      "Wakeup from Stop 0",
+      "Flash memory in normal mode",
+      "HSIDIV3",
+      "48",
+      "5.4",
+      "µs"
+    ],
+    [
+      "twu(Stop)",
+      "Wakeup from Stop 0",
+      "Flash memory in low-power mode",
+      "HSIDIV3",
+      "48",
+      "9.0",
+      "µs"
+    ],
+    [
+      "twu(Stop)",
+      "Wakeup from Stop 1(1)",
+      "Flash memory in normal mode",
+      "HSI",
+      "144",
+      "36.0",
+      "µs"
+    ],
+    [
+      "twu(Stop)",
+      "Wakeup from Stop 1(1)",
+      "Flash memory in low-power mode",
+      "HSI",
+      "144",
+      "39.8",
+      "µs"
+    ],
+    [
+      "twu(Stop)",
+      "Wakeup from Stop 1(1)",
+      "Flash memory in normal mode",
+      "HSIDIV3",
+      "48",
+      "39.0",
+      "µs"
+    ],
+    [
+      "twu(Stop)",
+      "Wakeup from Stop 1(1)",
+      "Flash memory in low-power mode",
+      "HSIDIV3",
+      "48",
+      "37.9",
+      "µs"
+    ],
+    [
+      "twu(Standby)(2)",
+      "Wakeup from Standby mode(1)",
+      "-",
+      "HSIDIV3",
+      "48",
+      "445",
+      "µs"
+    ],
+    [
+      "VHSEL",
+      "OSC_IN input pin low-level voltage",
+      "Digital mode (HSEYBYP = 1, HSEEXT = 1)",
+      "VSS",
+      "-",
+      "0.3 × VDD",
+      "V"
+    ],
+    [
+      "tw(HSEH) tw(HSEL)",
+      "OSC_IN high or low time",
+      "Digital mode (HSEYBYP = 1, HSEEXT = 1)",
+      "7",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "DuCyHSE",
+      "OSC_IN duty cycle",
+      "Digital mode (HSEYBYP = 1, HSEEXT = 1)",
+      "45",
+      "-",
+      "55",
+      "%"
+    ],
+    [
+      "VHSE_ext_PP",
+      "OSC_IN peak-to-peak amplitude",
+      "Analog mode (HSEBYP = 1, HSEEXT = 0)",
+      "0.2",
+      "-",
+      "2/3 VDD",
+      "V"
+    ],
+    [
+      "VHSE_ext",
+      "OSC_IN input range",
+      "OSC_IN input range",
+      "0",
+      "-",
+      "VDD",
+      "VDD"
+    ],
+    [
+      "tr(HSE), tf(HSE)",
+      "OSC_IN rise and fall time",
+      "OSC_IN rise and fall time",
+      "0.05 / fext_ext",
+      "-",
+      "0.3 / fext_ext",
+      "ns"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 7,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 7
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:2",
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32c591ce",
+    "table_id": "table_29",
+    "is_continued": true,
+    "pages": [
+      70,
+      71
+    ],
+    "rows_count": 16,
+    "cols_count": 7,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

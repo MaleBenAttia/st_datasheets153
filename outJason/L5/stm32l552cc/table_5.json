@@ -1,0 +1,64 @@
+{
+  "table_id": "table_5",
+  "caption": "Table 5. Boot space versus RDP protection",
+  "pdf_name": "stm32l552cc",
+  "family": "L5",
+  "page": 25,
+  "merged_pages": [
+    25,
+    26
+  ],
+  "headers": [
+    "RDP",
+    "TZEN = 1",
+    "TZEN = 0"
+  ],
+  "rows": [
+    [
+      "0",
+      "Any boot address",
+      "Any boot address"
+    ],
+    [
+      "0.5",
+      "Boot address only in: – RSS – or secure Flash: 0x0C00 0000 - 0x0C07 FFFF Otherwise boot address forced to RSS",
+      "N/A"
+    ],
+    [
+      "1",
+      "Boot address only in: – RSS – or secure Flash: 0x0C00 0000 - 0x0C07 FFFF Otherwise boot address forced to RSS",
+      "Any boot address"
+    ],
+    [
+      "2",
+      "Boot address only in: – RSS – or secure Flash: 0x0C00 0000 - 0x0C07 FFFF Otherwise boot address forced to RSS",
+      "If boot is configured for NSBOOTADD0 and NSBOOTADD0 in the range 0x0800 0000 - 0x0807 FFFF: boot at the address stored in NSBOOTADD0 If boot is configured for NSBOOTADD1 and NSBOOTADD1 in the range 0x0800 0000 - 0x0807 FFFF: boot at the address stored in NSBOOTADD1 Otherwise boot address is forced at 0x0800 0000"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 3,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 3
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:2"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32l552cc",
+    "table_id": "table_5",
+    "is_continued": true,
+    "pages": [
+      25,
+      26
+    ],
+    "rows_count": 4,
+    "cols_count": 3,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "table_id": "table_32",
+  "caption": "Table 32. Asynchronous non-multiplexed SRAM/PSRAM/NOR write timings",
+  "pdf_name": "stm32f101rc",
+  "family": "F1",
+  "page": 61,
+  "merged_pages": [
+    61,
+    62
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Min",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "t w(NE)",
+      "FSMC_NE low time",
+      "3t – 1 HCLK",
+      "3t + 2 HCLK",
+      "ns"
+    ],
+    [
+      "t v(NWE_NE)",
+      "FSMC_NEx low to FSMC_NWE low",
+      "t – 0.5 HCLK",
+      "t + 1.5 HCLK",
+      "ns"
+    ],
+    [
+      "t w(NWE)",
+      "FSMC_NWE low time",
+      "t – 0.5 HCLK",
+      "t + 1.5 HCLK",
+      "ns"
+    ],
+    [
+      "t h(NE_NWE)",
+      "FSMC_NWE high to FSMC_NE high hold time",
+      "t HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t v(A_NE)",
+      "FSMC_NEx low to FSMC_A valid",
+      "-",
+      "7.5",
+      "ns"
+    ],
+    [
+      "t h(A_NWE)",
+      "Address hold time after FSMC_NWE high",
+      "t HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t v(BL_NE)",
+      "FSMC_NEx low to FSMC_BL valid",
+      "-",
+      "1.5",
+      "ns"
+    ],
+    [
+      "t h(BL_NWE)",
+      "FSMC_BL hold time after FSMC_NWE high",
+      "t – 0.5 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t v(Data_NE)",
+      "FSMC_NEx low to Data valid",
+      "-",
+      "t + 7 HCLK",
+      "ns"
+    ],
+    [
+      "t h(Data_NWE)",
+      "Data hold time after FSMC_NWE high",
+      "t HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t v(NADV_NE)",
+      "FSMC_NEx low to FSMC_NADV low",
+      "-",
+      "5.5",
+      "ns"
+    ],
+    [
+      "t w(NADV)",
+      "FSMC_NADV low time",
+      "-",
+      "t + 1.5 HCLK",
+      "ns"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 5,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 5
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:2",
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f101rc",
+    "table_id": "table_32",
+    "is_continued": true,
+    "pages": [
+      61,
+      62
+    ],
+    "rows_count": 12,
+    "cols_count": 5,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

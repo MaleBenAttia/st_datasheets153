@@ -1,0 +1,149 @@
+{
+  "table_id": "table_57",
+  "caption": "Table 57. Switching characteristics for PC Card/CF read and write cycles in attribute/common space",
+  "pdf_name": "stm32f302rd",
+  "family": "F3",
+  "page": 103,
+  "merged_pages": [
+    103
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Min",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "t v(NCEx-A)",
+      "FMC_Ncex low to FMC_Ay valid",
+      "-",
+      "0",
+      "ns"
+    ],
+    [
+      "t h(NCEx_AI)",
+      "FMC_NCEx high to FMC_Ax invalid",
+      "2.5",
+      "-",
+      "ns"
+    ],
+    [
+      "t d(NREG-NCEx)",
+      "FMC_NCEx low to FMC_NREG valid",
+      "-",
+      "2",
+      "ns"
+    ],
+    [
+      "t h(NCEx-NREG)",
+      "FMC_NCEx high to FMC_NREG invalid",
+      "0",
+      "-",
+      "ns"
+    ],
+    [
+      "t d(NCEx-NWE)",
+      "FMC_NCEx low to FMC_NWE low",
+      "-",
+      "5THCLK+2",
+      "ns"
+    ],
+    [
+      "t w(NWE)",
+      "FMC_NWE low width",
+      "8THCLK",
+      "8THCLK+0.5",
+      "ns"
+    ],
+    [
+      "t d(NWE_NCEx)",
+      "FMC_NWE high to FMC_NCEx high",
+      "5THCLK-1",
+      "-",
+      "ns"
+    ],
+    [
+      "t v (NWE-D)",
+      "FMC_NWE low to FMC_D[15:0] valid",
+      "-",
+      "5",
+      "ns"
+    ],
+    [
+      "t h (NWE-D)",
+      "FMC_NWE high to FMC_D[15:0] invalid",
+      "4THCLK-1",
+      "-",
+      "ns"
+    ],
+    [
+      "t d (D-NWE)",
+      "FMC_D[15:0] valid before FMC_NWE high",
+      "13THCLK-3",
+      "-",
+      "ns"
+    ],
+    [
+      "t d(NCEx-NOE)",
+      "FMC_NCEx low to FMC_NOE low",
+      "-",
+      "5THCLK+2",
+      "ns"
+    ],
+    [
+      "t w(NOE)",
+      "FMC_NOE low width",
+      "8THCLK-1",
+      "8THCLK+2",
+      "ns"
+    ],
+    [
+      "t d(NOE_NCEx)",
+      "FMC_NOE high to FMC_NCEx high",
+      "5THCLK-1",
+      "-",
+      "ns"
+    ],
+    [
+      "t su (D-NOE)",
+      "FMC_D[15:0] valid data before FMC_NOE high",
+      "THCLK+2",
+      "-",
+      "ns"
+    ],
+    [
+      "t h(NOE-D)",
+      "FMC_N0E high to FMC_D[15:0] invalid",
+      "0",
+      "-",
+      "ns"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 5,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 5
+  },
+  "structured_json": null,
+  "warnings": [
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f302rd",
+    "table_id": "table_57",
+    "is_continued": false,
+    "pages": [
+      103
+    ],
+    "rows_count": 15,
+    "cols_count": 5,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

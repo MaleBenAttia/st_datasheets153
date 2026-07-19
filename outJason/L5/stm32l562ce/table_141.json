@@ -1,0 +1,156 @@
+{
+  "table_id": "table_141",
+  "caption": "Table 141. Synchronous multiplexed PSRAM write timings",
+  "pdf_name": "stm32l562ce",
+  "family": "L5",
+  "page": 295,
+  "merged_pages": [
+    295
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Min",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "tw(CLK)",
+      "FMC_CLK period, VDD range= 2.7 to 3.6 V",
+      "R*THCLK-0.5(2)",
+      "-",
+      "ns"
+    ],
+    [
+      "td(CLKL-NExL)",
+      "FMC_CLK low to FMC_NEx low (x=0..2)",
+      "-",
+      "2.5",
+      "ns"
+    ],
+    [
+      "td(CLKH-NExH)",
+      "FMC_CLK high to FMC_NEx high (x= 0…2)",
+      "R*THCLK/2+1(2)",
+      "-",
+      "ns"
+    ],
+    [
+      "td(CLKL-NADVL)",
+      "FMC_CLK low to FMC_NADV low",
+      "-",
+      "2.5",
+      "ns"
+    ],
+    [
+      "td(CLKL-NADVH)",
+      "FMC_CLK low to FMC_NADV high",
+      "2",
+      "-",
+      "ns"
+    ],
+    [
+      "td(CLKL-AV)",
+      "FMC_CLK low to FMC_Ax valid (x=16…25)",
+      "-",
+      "5.75",
+      "ns"
+    ],
+    [
+      "td(CLKH-AIV)",
+      "FMC_CLK high to FMC_Ax invalid (x=16…25)",
+      "R*THCLK/2+1(2)",
+      "-",
+      "ns"
+    ],
+    [
+      "td(CLKL-NWEL)",
+      "FMC_CLK low to FMC_NWE low",
+      "-",
+      "2",
+      "ns"
+    ],
+    [
+      "td(CLKH-NWEH)",
+      "FMC_CLK high to FMC_NWE high",
+      "R*THCLK/2+1(2)",
+      "-",
+      "ns"
+    ],
+    [
+      "td(CLKL-ADV)",
+      "FMC_CLK low to to FMC_AD[15:0] valid",
+      "-",
+      "3",
+      "ns"
+    ],
+    [
+      "td(CLKL-ADIV)",
+      "FMC_CLK low to FMC_AD[15:0] invalid",
+      "0",
+      "-",
+      "ns"
+    ],
+    [
+      "td(CLKL-DATA)",
+      "FMC_A/D[15:0] valid data after FMC_CLK low",
+      "-",
+      "3.5",
+      "ns"
+    ],
+    [
+      "td(CLKL-NBLL)",
+      "FMC_CLK low to FMC_NBL low",
+      "1",
+      "-",
+      "ns"
+    ],
+    [
+      "td(CLKH-NBLH)",
+      "FMC_CLK high to FMC_NBL high",
+      "R*THCLK/2+1.5(2)",
+      "-",
+      "ns"
+    ],
+    [
+      "tsu(NWAIT-CLKH)",
+      "FMC_NWAIT valid before FMC_CLK high",
+      "1.5",
+      "-",
+      "ns"
+    ],
+    [
+      "th(CLKH-NWAIT)",
+      "FMC_NWAIT valid after FMC_CLK high",
+      "4",
+      "-",
+      "ns"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 5,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 5
+  },
+  "structured_json": null,
+  "warnings": [
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32l562ce",
+    "table_id": "table_141",
+    "is_continued": false,
+    "pages": [
+      295
+    ],
+    "rows_count": 16,
+    "cols_count": 5,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "table_id": "table_40",
+  "caption": "Table 40. Low-power mode wakeup timings",
+  "pdf_name": "stm32f765bg",
+  "family": "F7",
+  "page": 133,
+  "merged_pages": [
+    133
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Typ(1)",
+    "Max(1)",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "t (2) WUSLEEP",
+      "Wakeup from Sleep",
+      "-",
+      "13",
+      "13",
+      "CPU clock cycles"
+    ],
+    [
+      "t (2) WUSTOP",
+      "Wakeup from Stop mode with MR/LP regulator in normal mode",
+      "Main regulator is ON",
+      "14",
+      "14.9",
+      "µs"
+    ],
+    [
+      "t (2) WUSTOP",
+      "Wakeup from Stop mode with MR/LP regulator in normal mode",
+      "Main regulator is ON and Flash memory in Deep power down mode",
+      "104.1",
+      "107.6",
+      "µs"
+    ],
+    [
+      "t (2) WUSTOP",
+      "Wakeup from Stop mode with MR/LP regulator in normal mode",
+      "Low power regulator is ON",
+      "21.4",
+      "24.2",
+      "µs"
+    ],
+    [
+      "t (2) WUSTOP",
+      "Wakeup from Stop mode with MR/LP regulator in normal mode",
+      "Low power regulator is ON and Flash memory in Deep power down mode",
+      "111.5",
+      "116.5",
+      "µs"
+    ],
+    [
+      "t (2) WUSTOP",
+      "Wakeup from Stop mode with MR/LP regulator in Under-drive mode",
+      "Main regulator in under-drive mode (Flash memory in Deep power-down mode)",
+      "107.4",
+      "113.2",
+      "µs"
+    ],
+    [
+      "t (2) WUSTOP",
+      "Wakeup from Stop mode with MR/LP regulator in Under-drive mode",
+      "Low power regulator in under-drive mode (Flash memory in Deep power-down mode )",
+      "112.7",
+      "120",
+      "µs"
+    ],
+    [
+      "tWUSTDBY (2)",
+      "Wakeup from Standby mode",
+      "Exit Standby mode on rising edge",
+      "308",
+      "313",
+      "µs"
+    ],
+    [
+      "tWUSTDBY (2)",
+      "Wakeup from Standby mode",
+      "Exit Standby mode on falling edge",
+      "307",
+      "313",
+      "µs"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 6,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 6
+  },
+  "structured_json": null,
+  "warnings": [
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f765bg",
+    "table_id": "table_40",
+    "is_continued": false,
+    "pages": [
+      133
+    ],
+    "rows_count": 9,
+    "cols_count": 6,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

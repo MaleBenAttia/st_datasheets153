@@ -1,0 +1,83 @@
+{
+  "table_id": "table_90",
+  "caption": "Table 90. Document revision history",
+  "pdf_name": "stm32l071c8",
+  "family": "L0",
+  "page": 144,
+  "merged_pages": [
+    144,
+    145,
+    146,
+    147
+  ],
+  "headers": [
+    "Date",
+    "Revision",
+    "Changes"
+  ],
+  "rows": [
+    [
+      "02-Sep-2015",
+      "1",
+      "Initial release"
+    ],
+    [
+      "26-Oct-2015",
+      "2",
+      "Changed confidentiality level to public. Updated datasheet status to \"production data\". Modified ultra-low-power platform features on cover page. In Table 15: STM32L071xxx pin definition: – changed pin name to VDDIO2 for the following pins: UFQFPN32 pin 24, LQFP48 pin 36, LQFP64 pin 48, UFBGA64 pin E5, WLCSP49 pin A1, LQFP100 pin 75 and UFBGA100 pin G11. – Added note related to UFQFPN32. In Section 6: Electrical characteristics, updated notes related to values guaranteed by characterization. Updated |ΔV | definition to include V in Table 22: Voltage SS REF- characteristics. Updated f and V maximum value, added V and V in TRIG AIN REF+ REF- Table 62: ADC characteristics. Added Section : Device marking for LQFP100. Updated Figure 42: UFBGA100 - 100-pin, 7 x 7 mm, 0.50 mm pitch, ultra fine pitch ball grid array package outline and Table 75: LQPF100 - 100-pin, 14 x 14 mm low-profile quad flat package mechanical data. Added Section : Device marking for LQFP100, Section : Device marking for LQFP64, Section : Device marking for TFBGA64 and Section : Device marking for WLCSP49. Updated Figure 60: UFQFPN48 marking example (package top view)."
+    ],
+    [
+      "22-Mar-2016",
+      "3",
+      "Updated number of SPIs on cover page and in Table 2: Ultra-low- power STM32L071xx device features and peripheral counts. Changed minimum comparator supply voltage to 1.65 V on cover page. Added number of fast and standard channels in Section 3.11: Analog-to-digital converter (ADC). Updated Section 3.15.2: Universal synchronous/asynchronous receiver transmitter (USART) and Section 3.15.4: Serial peripheral interface (SPI)/Inter-integrated sound (I2S) to mention the fact that USARTs with synchronous mode feature can be used as SPI master interfaces. Added baudrate allowing to wake up the MCU from Stop mode in Section 3.15.2: Universal synchronous/asynchronous receiver transmitter (USART) and Section 3.15.3: Low-power universal asynchronous receiver transmitter (LPUART). Changed V minimum value to 1.65 V in Table 25: General DDA operating conditions. Section 6.3.15: 12-bit ADC characteristics: – Table 62: ADC characteristics: Distinction made between V for fast and standard channels; DDA added note 1. Added note 4. related to R . ADC Updated f . and V maximum value. TRIG AIN Updated t and t . S CONV Added V . REF+ – Updated equation 1 description. – Updated Table 63: R max for f = 16 MHz for f = 16 MHz AIN ADC ADC and distinction made between fast and standard channels. Added Table 87: USART/LPUART characteristics."
+    ],
+    [
+      "14-Sep-2017",
+      "4",
+      "Memories and I/Os moved after Core in Features. Table 2: Ultra-low-power STM32L071xx device features and peripheral counts: changed number of USART for LQFP32/UFQFPN32 and added note 3. Removed column \"I/O operation\" from Table 3: Functionalities depending on the operating power supply range and added note related to GPIO speed. In Section 5: Memory mapping, replaced memory mapping schematic by reference to the reference manual. Update note related to PA11/12 below Figure 3: STM32L071xx LQFP100 pinout, Figure 4: STM32L071xx UFBGA100 ballout, Figure 5: STM32L071xx LQFP64 pinout, Figure 6: STM32L071xx UFBGA64/TFBGA64 ballout, Figure 7: STM32L071xx WLCSP49 ballout, Figure 8: STM32L071xx LQFP48 pinout and Figure 11: STM32L071xx UFQFPN32 pinout. Updated Figure 7: STM32L071xx WLCSP49 ballout. Added mission profile compliance with JEDEC JESD47 in Section 6.2: Absolute maximum ratings. Removed CRS from Table 39: Peripheral current consumption in Run or Sleep mode. Updated minimum and maximum values of I/O weak pull-up equivalent resistor (R ) and weak pull-down equivalent resistor PU (R ) in Table 58: I/O static characteristics. PD Updated minimum and maximum values of NRST weak pull-up equivalent resistor (R ) in Table 61: NRST pin characteristics. PU Added note 2. related to the position of the external capacitor below Figure 29: Recommended NRST pin protection. Updated R in Table 62: ADC characteristics. AIN Updated t maximum value for range 1 in Table 70: I2C analog filter AF characteristics. Removed Table 90: USART/LPUART characteristics. NSS timing waveforms updated in Figure 34: SPI timing diagram - slave mode and CPHA = 0 and Figure 35: SPI timing diagram - slave mode and CPHA = 1(1). Updated Figure 49: TFBGA64 – 64-ball, 5 x 5 mm, 0.5 mm pitch thin profile fine pitch ball grid array package outline. Added reference to optional marking or inset/upset marks in all package device marking sections. Updated note below marking schematics."
+    ],
+    [
+      "07-May-2018",
+      "5",
+      "Updated Arm logo and added Arm word mark notice in Section 1: Introduction. Removed Cortex logo. Updated Table 5: Functionalities depending on the working mode (from Run/active down to standby) to change I2C functionality to disabled in Low-power Run and Low-power Sleep modes. Section 4: Pin descriptions: – Changed PC14-OSC_IN into PC14-OSC32_IN in Figure 11: STM32L071xx UFQFPN32 pinout. – Extended Figure 6 to UFBGA64. – Added UFBGA64 in Table 15: STM32L071xxx pin definition (same pinout as TFBGA64 – Swapped E5 and E6 signals for UFBGA64/TFBGA64. – Changed USARTx_RTS, USARTx_RTS_DE into USARTx_RTS/USARTx_DE, and LPUART1_RTS, LPUART1_RTS_DE into LPUART1_RTS/LPUART1_DE in Table 15: STM32L071xxx pin definition and in all alternate function tables. Updated power dissipation (P ) in Table 25: General operating D conditions to add UFBGA64 package. Updated t maximum value for range 1 in Table 70: I2C analog filter AF characteristics. Added Section 7.4: UFBGA64 package information. Added UFBGA64 in Table 89: Thermal characteristics and Figure 67: Thermal resistance Updated Figure 64: UFQFPN32 - 32-pin, 5x5 mm, 0.5 mm pitch ultra thin fine pitch quad flat package outline and added note related to exposed pad; updated Table 88: UFQFPN32 - 32-pin, 5x5 mm, 0.5 mm pitch ultra thin fine pitch quad flat package mechanical data. Updated Figure 49: TFBGA64 – 64-ball, 5 x 5 mm, 0.5 mm pitch thin profile fine pitch ball grid array package outline, Figure 50: TFBGA64 – 64-ball, 5 x 5 mm, 0.5 mm pitch, thin profile fine pitch ball ,grid array recommended footprint and Figure 82: TFBGA64 recommended PCB design rules (0.5 mm pitch BGA)."
+    ],
+    [
+      "31-Aug-2018",
+      "6",
+      "Updated Table 15: STM32L071xxx pin definition."
+    ],
+    [
+      "14-Nov-2019",
+      "7",
+      "Added UFQFPN48 package. Removed R and R from Table 67: Comparator 1 10K 400K characteristics. Updated paragraph introducing all package marking schematics to add the new sentence \"The printed markings may differ depending on the supply chain.\""
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 3,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 3
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:4"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32l071c8",
+    "table_id": "table_90",
+    "is_continued": true,
+    "pages": [
+      144,
+      145,
+      146,
+      147
+    ],
+    "rows_count": 7,
+    "cols_count": 3,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

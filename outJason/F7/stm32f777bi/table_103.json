@@ -1,0 +1,128 @@
+{
+  "table_id": "table_103",
+  "caption": "Table 103. Asynchronous non-multiplexed SRAM/PSRAM/NOR write timings",
+  "pdf_name": "stm32f777bi",
+  "family": "F7",
+  "page": 193,
+  "merged_pages": [
+    193
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Min",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "t w(NE)",
+      "FMC_NE low time",
+      "3T -1 HCLK",
+      "3T + 1 HCLK",
+      "ns"
+    ],
+    [
+      "t v(NWE_NE)",
+      "FMC_NEx low to FMC_NWE low",
+      "T -1 HCLK",
+      "T + 0.5 HCLK",
+      "ns"
+    ],
+    [
+      "t w(NWE)",
+      "FMC_NWE low time",
+      "T -1.5 HCLK",
+      "T + 0.5 HCLK",
+      "ns"
+    ],
+    [
+      "t h(NE_NWE)",
+      "FMC_NWE high to FMC_NE high hold time",
+      "T HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t v(A_NE)",
+      "FMC_NEx low to FMC_A valid",
+      "-",
+      "0",
+      "ns"
+    ],
+    [
+      "t h(A_NWE)",
+      "Address hold time after FMC_NWE high",
+      "T -0.5 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t v(BL_NE)",
+      "FMC_NEx low to FMC_BL valid",
+      "-",
+      "0.5",
+      "ns"
+    ],
+    [
+      "t h(BL_NWE)",
+      "FMC_BL hold time after FMC_NWE high",
+      "T -0.5 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t v(Data_NE)",
+      "Data to FMC_NEx low to Data valid",
+      "-",
+      "T + 2 HCLK",
+      "ns"
+    ],
+    [
+      "t h(Data_NWE)",
+      "Data hold time after FMC_NWE high",
+      "T +0.5 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t v(NADV_NE)",
+      "FMC_NEx low to FMC_NADV low",
+      "-",
+      "0",
+      "ns"
+    ],
+    [
+      "t w(NADV)",
+      "FMC_NADV low time",
+      "-",
+      "T + 1 HCLK",
+      "ns"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 5,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 5
+  },
+  "structured_json": null,
+  "warnings": [
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f777bi",
+    "table_id": "table_103",
+    "is_continued": false,
+    "pages": [
+      193
+    ],
+    "rows_count": 12,
+    "cols_count": 5,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

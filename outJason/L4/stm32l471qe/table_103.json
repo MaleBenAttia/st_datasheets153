@@ -1,0 +1,79 @@
+{
+  "table_id": "table_103",
+  "caption": "Table 103. Switching characteristics for NAND Flash read cycles",
+  "pdf_name": "stm32l471qe",
+  "family": "L4",
+  "page": 205,
+  "merged_pages": [
+    205
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Min",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "T w(N0E)",
+      "FMC_NOE low width",
+      "4T -1 HCLK",
+      "4T +1 HCLK",
+      "ns"
+    ],
+    [
+      "T su(D-NOE)",
+      "FMC_D[15-0] valid data before FMC_NOE high",
+      "16",
+      "-",
+      "ns"
+    ],
+    [
+      "T h(NOE-D)",
+      "FMC_D[15-0] valid data after FMC_NOE high",
+      "6",
+      "-",
+      "ns"
+    ],
+    [
+      "T d(NCE-NOE)",
+      "FMC_NCE valid before FMC_NOE low",
+      "-",
+      "3T +1 HCLK",
+      "ns"
+    ],
+    [
+      "T h(NOE-ALE)",
+      "FMC_NOE high to FMC_ALE invalid",
+      "2T -2 HCLK",
+      "-",
+      "ns"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 5,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 5
+  },
+  "structured_json": null,
+  "warnings": [
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32l471qe",
+    "table_id": "table_103",
+    "is_continued": false,
+    "pages": [
+      205
+    ],
+    "rows_count": 5,
+    "cols_count": 5,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

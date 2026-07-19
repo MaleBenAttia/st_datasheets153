@@ -1,0 +1,137 @@
+{
+  "table_id": "table_6",
+  "caption": "Table 6. STM32L011x3/4 peripherals interconnect matrix.",
+  "pdf_name": "stm32l011d3",
+  "family": "L0",
+  "page": 19,
+  "merged_pages": [
+    19
+  ],
+  "headers": [
+    "Interconnect source",
+    "Interconnect destination",
+    "Interconnect action",
+    "Run",
+    "Sleep",
+    "Low- power run",
+    "Low- power sleep",
+    "Stop"
+  ],
+  "rows": [
+    [
+      "COMPx",
+      "TIM2,TIM21",
+      "Timer input channel, trigger from analog signals comparison",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "-"
+    ],
+    [
+      "COMPx",
+      "LPTIM1",
+      "Timer input channel, trigger from analog signals comparison",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "Y"
+    ],
+    [
+      "TIMx",
+      "TIMx",
+      "Timer triggered by other timer",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "-"
+    ],
+    [
+      "RTC",
+      "TIM21",
+      "Timer triggered by Auto wake-up",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "-"
+    ],
+    [
+      "RTC",
+      "LPTIM1",
+      "Timer triggered by RTC event",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "Y"
+    ],
+    [
+      "All clock source",
+      "TIMx",
+      "Clock source used as input channel for RC measurement and trimming",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "-"
+    ],
+    [
+      "GPIO",
+      "TIMx",
+      "Timer input channel and trigger",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "-"
+    ],
+    [
+      "GPIO",
+      "LPTIM1",
+      "Timer input channel and trigger",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "Y"
+    ],
+    [
+      "GPIO",
+      "ADC",
+      "Conversion trigger",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "-"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 8,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 8
+  },
+  "structured_json": null,
+  "warnings": [
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32l011d3",
+    "table_id": "table_6",
+    "is_continued": false,
+    "pages": [
+      19
+    ],
+    "rows_count": 9,
+    "cols_count": 8,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

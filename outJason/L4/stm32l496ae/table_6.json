@@ -1,0 +1,227 @@
+{
+  "table_id": "table_6",
+  "caption": "Table 6. STM32L496xx peripherals interconnect matrix",
+  "pdf_name": "stm32l496ae",
+  "family": "L4",
+  "page": 35,
+  "merged_pages": [
+    35,
+    36
+  ],
+  "headers": [
+    "Interconnect source",
+    "Interconnect destination",
+    "Interconnect action",
+    "Run",
+    "Sleep",
+    "Low-power run",
+    "Low-power sleep",
+    "Stop 0 / Stop 1",
+    "Stop 2"
+  ],
+  "rows": [
+    [
+      "TIMx",
+      "TIMx",
+      "Timers synchronization or chaining",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "-",
+      "-"
+    ],
+    [
+      "TIMx",
+      "ADCx DAC1 DFSDM1",
+      "Conversion triggers",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "-",
+      "-"
+    ],
+    [
+      "TIMx",
+      "DMA",
+      "Memory to memory transfer trigger",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "-",
+      "-"
+    ],
+    [
+      "TIMx",
+      "COMPx",
+      "Comparator output blanking",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "-",
+      "-"
+    ],
+    [
+      "TIM16/TIM17",
+      "IRTIM",
+      "Infrared interface output generation",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "-",
+      "-"
+    ],
+    [
+      "COMPx",
+      "TIM1, 8 TIM2, 3",
+      "Timer input channel, trigger, break from analog signals comparison",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "-",
+      "-"
+    ],
+    [
+      "COMPx",
+      "LPTIMERx",
+      "Low-power timer triggered by analog signals comparison",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "Y (1)"
+    ],
+    [
+      "ADCx",
+      "TIM1, 8",
+      "Timer triggered by analog watchdog",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "-",
+      "-"
+    ],
+    [
+      "RTC",
+      "TIM16",
+      "Timer input channel from RTC events",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "-",
+      "-"
+    ],
+    [
+      "RTC",
+      "LPTIMERx",
+      "Low-power timer triggered by RTC alarms or tampers",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "Y (1)"
+    ],
+    [
+      "All clocks sources (internal and external)",
+      "TIM2 TIM15, 16, 17",
+      "Clock source used as input channel for RC measurement and trimming",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "-",
+      "-"
+    ],
+    [
+      "USB",
+      "TIM2",
+      "Timer triggered by USB SOF",
+      "Y",
+      "Y",
+      "-",
+      "-",
+      "-",
+      "-"
+    ],
+    [
+      "CSS CPU (hard fault) RAM (parity error) Flash memory (ECC error) COMPx PVD DFSDM1 (analog watchdog, short circuit detection)",
+      "TIM1,8 TIM15,16,17",
+      "Timer break",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "-",
+      "-"
+    ],
+    [
+      "GPIO",
+      "TIMx",
+      "External trigger",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "-",
+      "-"
+    ],
+    [
+      "GPIO",
+      "LPTIMERx",
+      "External trigger",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "Y (1)"
+    ],
+    [
+      "GPIO",
+      "ADCx DAC1 DFSDM1",
+      "Conversion external trigger",
+      "Y",
+      "Y",
+      "Y",
+      "Y",
+      "-",
+      "-"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 9,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 9
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:2",
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32l496ae",
+    "table_id": "table_6",
+    "is_continued": true,
+    "pages": [
+      35,
+      36
+    ],
+    "rows_count": 16,
+    "cols_count": 9,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

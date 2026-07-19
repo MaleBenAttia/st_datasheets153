@@ -1,0 +1,346 @@
+{
+  "table_id": "table_91",
+  "caption": "Table 91. OCTOSPI characteristics in DTR mode (no DQS)",
+  "pdf_name": "stm32h5f4aj",
+  "family": "H5",
+  "page": 240,
+  "merged_pages": [
+    240,
+    241
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Min",
+    "Typ",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "F CLK",
+      "OCTOSPI clock frequency",
+      "1.71 V < V < 3.6 V, DD C = 15 pF L",
+      "-",
+      "-",
+      "100(4)",
+      "MHz"
+    ],
+    [
+      "F CLK",
+      "OCTOSPI clock frequency",
+      "2.7 V < V < 3.6 V, DD C = 15 pF L",
+      "-",
+      "-",
+      "125(4)/120(5)",
+      "MHz"
+    ],
+    [
+      "t w(CLKH)",
+      "OCTOSPI clock high and low time",
+      "PRESCALER[7:0] = n (= 0, 1, 3, 5, .., 255)",
+      "t / 2 - 0.5 (CLK)",
+      "-",
+      "t / 2 + 0.5 (CLK)",
+      "ns"
+    ],
+    [
+      "t w(CLKL)",
+      "OCTOSPI clock high and low time",
+      "PRESCALER[7:0] = n (= 0, 1, 3, 5, .., 255)",
+      "t / 2 - 0.5 (CLK)",
+      "-",
+      "t / 2 + 0.5 (CLK)",
+      "ns"
+    ],
+    [
+      "t w(CLKH)",
+      "OCTOSPI clock high and low time",
+      "PRESCALER[7:0] = n (= 2, 4, 6, 8, ..., 254)",
+      "(n / 2) * t / (CLK) (n + 1) - 0.5",
+      "-",
+      "(n / 2) * t / (CLK) (n + 1) + 0.5",
+      "ns"
+    ],
+    [
+      "t w(CLKL)",
+      "OCTOSPI clock high and low time",
+      "PRESCALER[7:0] = n (= 2, 4, 6, 8, ..., 254)",
+      "(n / 2 + 1) * t / (CLK) (n + 1) - 0.5",
+      "-",
+      "(n / 2 + 1) * t / (CLK) (n + 1) + 0.5",
+      "ns"
+    ],
+    [
+      "t sr(IN), t sf(IN)",
+      "Data input setup time",
+      "-",
+      "1.5",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t hr(IN), t hf(IN)",
+      "Data input hold time",
+      "-",
+      "4",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t vr(OUT) t vf(OUT)",
+      "Data output valid time",
+      "DHQC = 0",
+      "-",
+      "3.5",
+      "4",
+      "ns"
+    ],
+    [
+      "t vr(OUT) t vf(OUT)",
+      "Data output valid time",
+      "DHQC = 1, Prescaler [7:0] = 1, 2...",
+      "-",
+      "t / 4 (CLK) + 1",
+      "t / 4 + 1.5 (CLK)",
+      "ns"
+    ],
+    [
+      "t hr(OUT) t hf(OUT)",
+      "Data output hold time",
+      "DHQC = 0",
+      "1.5",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t hr(OUT) t hf(OUT)",
+      "Data output hold time",
+      "DHQC = 1, Prescaler [7:0] = 1, 2...",
+      "t / 4 - 1 (CLK)",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "F CLK",
+      "OCTOSPI clock frequency",
+      "1.71 V < V < 3.6 V, DD C = 15 pF L",
+      "-",
+      "-",
+      "125(3)(4)/110(5)",
+      "MHz"
+    ],
+    [
+      "F CLK",
+      "OCTOSPI clock frequency",
+      "2.7 V < V < 3.6 V, DD C = 15 pF L",
+      "-",
+      "-",
+      "125(3)(4)/120(5)",
+      "MHz"
+    ],
+    [
+      "t w(CLKH)",
+      "OCTOSPI clock high and low time",
+      "PRESCALER[7:0] = n = (0, 1, 3, 5, …, 255)",
+      "t /2 - 0.5 (CLK)",
+      "-",
+      "t /2 + 0.5 (CLK)",
+      "ns"
+    ],
+    [
+      "t w(CLKL)",
+      "OCTOSPI clock high and low time",
+      "PRESCALER[7:0] = n = (0, 1, 3, 5, …, 255)",
+      "t /2 - 0.5 (CLK)",
+      "-",
+      "t /2 + 0.5 (CLK)",
+      "ns"
+    ],
+    [
+      "t w(CLKH)",
+      "OCTOSPI clock high and low time",
+      "PRESCALER[7:0] = n = (2, 4, 6, 8, …, 254)",
+      "(n/2)*t / (CLK) (n+1) - 0.5",
+      "-",
+      "(n/2)*t / (CLK) (n+1) + 0.5",
+      "ns"
+    ],
+    [
+      "t w(CLKL)",
+      "OCTOSPI clock high and low time",
+      "PRESCALER[7:0] = n = (2, 4, 6, 8, …, 254)",
+      "(n/2+1)*t / (CLK) (n+1) - 0.5",
+      "-",
+      "(n/2+1)*t / (CLK) (n+1) + 0.5",
+      "ns"
+    ],
+    [
+      "t v(CLK)",
+      "Clock valid time",
+      "-",
+      "-",
+      "-",
+      "t + 2 (CLK)",
+      "ns"
+    ],
+    [
+      "t h(CLK)",
+      "Clock hold time",
+      "-",
+      "t /2 - 1 (CLK)",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "V (6) ODr(CLK)",
+      "CLK, NCLK crossing level on CLK rising edge",
+      "V = 1.8 V DD",
+      "1000",
+      "-",
+      "1080",
+      "mV"
+    ],
+    [
+      "V (6) ODf(CLK)",
+      "CLK, NCLK crossing level on CLK falling edge",
+      "V = 1.8 V DD",
+      "930",
+      "-",
+      "1040",
+      "mV"
+    ],
+    [
+      "t w(CS)",
+      "Chip select high time",
+      "-",
+      "3 * t (CLK)",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t v(DQ)",
+      "Data input valid time",
+      "-",
+      "3",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t v(DS)",
+      "Data strobe input valid time",
+      "-",
+      "1",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t h(DS)",
+      "Data strobe input hold time",
+      "-",
+      "0",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t v(RWDS)",
+      "Data strobe output valid time",
+      "-",
+      "-",
+      "-",
+      "3 * t (CLK)",
+      "ns"
+    ],
+    [
+      "t sr(DQ), t sf(DQ)",
+      "Data input setup time",
+      "-",
+      "-0.25",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t hr(DQ), t hf(DQ)",
+      "Data input hold time",
+      "-",
+      "3.5",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t vr(OUT) t vf(OUT)",
+      "Data output valid time",
+      "DHQC = 0",
+      "-",
+      "3",
+      "4",
+      "ns"
+    ],
+    [
+      "t vr(OUT) t vf(OUT)",
+      "Data output valid time",
+      "DHQC = 1, all prescaler values except 0",
+      "-",
+      "t /4 (CLK) + 0.5",
+      "t /4 + 1 (CLK)",
+      "ns"
+    ],
+    [
+      "t hr(OUT) t hf(OUT)",
+      "Data output hold time",
+      "DHQC = 0",
+      "1.5",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t hr(OUT) t hf(OUT)",
+      "Data output hold time",
+      "DHQC = 1, all prescaler values except 0",
+      "t /4 - 1 (CLK)",
+      "-",
+      "-",
+      "ns"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 7,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 7
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:2",
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32h5f4aj",
+    "table_id": "table_91",
+    "is_continued": true,
+    "pages": [
+      240,
+      241
+    ],
+    "rows_count": 33,
+    "cols_count": 7,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

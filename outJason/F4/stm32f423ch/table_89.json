@@ -1,0 +1,79 @@
+{
+  "table_id": "table_89",
+  "caption": "Table 89. Asynchronous non-multiplexed SRAM/PSRAM/NOR read - NWAIT timings",
+  "pdf_name": "stm32f423ch",
+  "family": "F4",
+  "page": 161,
+  "merged_pages": [
+    161
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Min",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "t w(NE)",
+      "FSMC_NE low time",
+      "7 * t + 1 HCLK",
+      "7 * t + 1 HCLK",
+      "ns"
+    ],
+    [
+      "t w(NOE)",
+      "FSMC_NWE low time",
+      "5 * t - 1 HCLK",
+      "5 * t + 1 HCLK",
+      "ns"
+    ],
+    [
+      "t w(NWAIT)",
+      "FSMC_NWAIT low time",
+      "t - 0.5 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t su(NWAIT_NE)",
+      "FSMC_NWAIT valid before FSMC_NEx high",
+      "5 * t + 1.5 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t h(NE_NWAIT)",
+      "FSMC_NEx hold time after FSMC_NWAIT invalid",
+      "4 * t + 1 HCLK",
+      "-",
+      "ns"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 5,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 5
+  },
+  "structured_json": null,
+  "warnings": [
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f423ch",
+    "table_id": "table_89",
+    "is_continued": false,
+    "pages": [
+      161
+    ],
+    "rows_count": 5,
+    "cols_count": 5,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

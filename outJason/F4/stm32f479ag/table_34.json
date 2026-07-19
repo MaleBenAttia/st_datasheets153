@@ -1,0 +1,107 @@
+{
+  "table_id": "table_34",
+  "caption": "Table 34. Low-power mode wakeup timings",
+  "pdf_name": "stm32f479ag",
+  "family": "F4",
+  "page": 113,
+  "merged_pages": [
+    113
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Typ(1)",
+    "Max(1)",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "t (2) WUSLEEP",
+      "Wakeup from Sleep",
+      "-",
+      "5",
+      "6",
+      "CPU clock cycles"
+    ],
+    [
+      "t (2) WUSTOP",
+      "Wakeup from Stop mode with MR/LP regulator in normal mode",
+      "Main regulator is ON",
+      "12.9",
+      "15.0",
+      "µs"
+    ],
+    [
+      "t (2) WUSTOP",
+      "Wakeup from Stop mode with MR/LP regulator in normal mode",
+      "Main regulator is ON and Flash memory in Deep power down mode",
+      "105",
+      "120",
+      "µs"
+    ],
+    [
+      "t (2) WUSTOP",
+      "Wakeup from Stop mode with MR/LP regulator in normal mode",
+      "Low power regulator is ON",
+      "22",
+      "28",
+      "µs"
+    ],
+    [
+      "t (2) WUSTOP",
+      "Wakeup from Stop mode with MR/LP regulator in normal mode",
+      "Low power regulator is ON and Flash memory in Deep power down mode",
+      "114",
+      "130",
+      "µs"
+    ],
+    [
+      "t (2) WUSTOP",
+      "Wakeup from Stop mode with MR/LP regulator in Under-drive mode",
+      "Main regulator in under-drive mode (Flash memory in Deep power-down mode)",
+      "107",
+      "114",
+      "µs"
+    ],
+    [
+      "t (2) WUSTOP",
+      "Wakeup from Stop mode with MR/LP regulator in Under-drive mode",
+      "Low power regulator in under-drive mode (Flash memory in Deep power-down mode)",
+      "115",
+      "121",
+      "µs"
+    ],
+    [
+      "t (2)(3) WUSTDBY",
+      "Wakeup from Standby mode",
+      "-",
+      "318",
+      "371",
+      "µs"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 6,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 6
+  },
+  "structured_json": null,
+  "warnings": [],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f479ag",
+    "table_id": "table_34",
+    "is_continued": false,
+    "pages": [
+      113
+    ],
+    "rows_count": 8,
+    "cols_count": 6,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

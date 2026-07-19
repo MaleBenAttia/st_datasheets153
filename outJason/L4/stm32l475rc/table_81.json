@@ -1,0 +1,123 @@
+{
+  "table_id": "table_81",
+  "caption": "Table 81. TIMx characteristics",
+  "pdf_name": "stm32l475rc",
+  "family": "L4",
+  "page": 168,
+  "merged_pages": [
+    168
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Min",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "t res(TIM)",
+      "Timer resolution time",
+      "-",
+      "1",
+      "-",
+      "t TIMxCLK"
+    ],
+    [
+      "t res(TIM)",
+      "Timer resolution time",
+      "f = 80 MHz TIMxCLK",
+      "12.5",
+      "-",
+      "ns"
+    ],
+    [
+      "f EXT",
+      "Timer external clock frequency on CH1 to CH4",
+      "-",
+      "0",
+      "f /2 TIMxCLK",
+      "MHz"
+    ],
+    [
+      "f EXT",
+      "Timer external clock frequency on CH1 to CH4",
+      "f = 80 MHz TIMxCLK",
+      "0",
+      "40",
+      "MHz"
+    ],
+    [
+      "Res TIM",
+      "Timer resolution",
+      "TIMx (except TIM2 and TIM5)",
+      "-",
+      "16",
+      "bit"
+    ],
+    [
+      "Res TIM",
+      "Timer resolution",
+      "TIM2 and TIM5",
+      "-",
+      "32",
+      "bit"
+    ],
+    [
+      "t COUNTER",
+      "16-bit counter clock period",
+      "-",
+      "1",
+      "65536",
+      "t TIMxCLK"
+    ],
+    [
+      "t COUNTER",
+      "16-bit counter clock period",
+      "f = 80 MHz TIMxCLK",
+      "0.0125",
+      "819.2",
+      "µs"
+    ],
+    [
+      "t MAX_COUNT",
+      "Maximum possible count with 32-bit counter",
+      "-",
+      "-",
+      "65536 × 65536",
+      "t TIMxCLK"
+    ],
+    [
+      "t MAX_COUNT",
+      "Maximum possible count with 32-bit counter",
+      "f = 80 MHz TIMxCLK",
+      "-",
+      "53.68",
+      "s"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 6,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 6
+  },
+  "structured_json": null,
+  "warnings": [],
+  "datasheet_metaData": {
+    "pdf_name": "stm32l475rc",
+    "table_id": "table_81",
+    "is_continued": false,
+    "pages": [
+      168
+    ],
+    "rows_count": 10,
+    "cols_count": 6,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

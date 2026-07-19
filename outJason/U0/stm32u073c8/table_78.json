@@ -1,0 +1,289 @@
+{
+  "table_id": "table_78",
+  "caption": "Table 78. VREFBUF characteristics",
+  "pdf_name": "stm32u073c8",
+  "family": "U0",
+  "page": 97,
+  "merged_pages": [
+    98
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Conditions",
+    "Min",
+    "Typ",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "VDDA",
+      "Analog supply voltage",
+      "Normal mode",
+      "VRS = 1",
+      "2.8",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "VDDA",
+      "Analog supply voltage",
+      "Degraded mode(1)",
+      "VRS = 0",
+      "1.65",
+      "-",
+      "2.4",
+      "V"
+    ],
+    [
+      "VDDA",
+      "Analog supply voltage",
+      "Degraded mode(1)",
+      "VRS = 1",
+      "1.65",
+      "-",
+      "2.8",
+      "V"
+    ],
+    [
+      "VREFBUF_ OUT",
+      "Voltage reference output",
+      "Iload = 100 µA T = 30 °C",
+      "VRS = 0",
+      "2.038",
+      "2.042",
+      "2.046",
+      "V"
+    ],
+    [
+      "VREFBUF_ OUT",
+      "Voltage reference output",
+      "Iload = 100 µA T = 30 °C",
+      "VRS = 1",
+      "2.497",
+      "2.5",
+      "2.503",
+      "V"
+    ],
+    [
+      "VREFBUF_ OUT",
+      "Voltage reference output",
+      "Iload = 100 µA T = 30 °C",
+      "VRS = 0",
+      "VDDA-150 mV",
+      "-",
+      "VDDA",
+      "V"
+    ],
+    [
+      "VREFBUF_ OUT",
+      "Voltage reference output",
+      "Iload = 100 µA T = 30 °C",
+      "VRS = 1",
+      "VDDA-150 mV",
+      "-",
+      "VDDA",
+      "V"
+    ],
+    [
+      "TRIM",
+      "Trim step resolution",
+      "-",
+      "-",
+      "-",
+      "±0.05",
+      "±0.1",
+      "%"
+    ],
+    [
+      "CL",
+      "Load capacitor",
+      "-",
+      "-",
+      "0.5",
+      "1",
+      "1.5",
+      "µF"
+    ],
+    [
+      "esr",
+      "Equivalent Serial Resistor of Cload",
+      "-",
+      "-",
+      "-",
+      "-",
+      "2",
+      "Ω"
+    ],
+    [
+      "Iload",
+      "Static load current",
+      "-",
+      "-",
+      "-",
+      "-",
+      "4",
+      "mA"
+    ],
+    [
+      "Iline_reg",
+      "Line regulation",
+      "2.8 V ≤ VDDA ≤ 3.6 V",
+      "Iload = 500 µA",
+      "-",
+      "200",
+      "1000",
+      "ppm/V"
+    ],
+    [
+      "Iline_reg",
+      "Line regulation",
+      "2.8 V ≤ VDDA ≤ 3.6 V",
+      "Iload = 4 mA",
+      "-",
+      "100",
+      "500",
+      "ppm/V"
+    ],
+    [
+      "Iload_reg",
+      "Load regulation",
+      "500 μA ≤ Iload ≤4 mA",
+      "Normal mode",
+      "-",
+      "50",
+      "500",
+      "ppm/mA"
+    ],
+    [
+      "TCoeff_vrefbuf",
+      "Temperature coefficient of VREFBUF(2)",
+      "-40 °C < TJ < +125 °C",
+      "-40 °C < TJ < +125 °C",
+      "-",
+      "-",
+      "50",
+      "ppm/ °C"
+    ],
+    [
+      "PSRR",
+      "Power supply rejection",
+      "DC",
+      "DC",
+      "40",
+      "60",
+      "-",
+      "dB"
+    ],
+    [
+      "PSRR",
+      "Power supply rejection",
+      "100 kHz",
+      "100 kHz",
+      "25",
+      "40",
+      "-",
+      "dB"
+    ],
+    [
+      "tSTART",
+      "Start-up time",
+      "CL = 0.5 µF(3)",
+      "CL = 0.5 µF(3)",
+      "-",
+      "300",
+      "350",
+      "µs"
+    ],
+    [
+      "tSTART",
+      "Start-up time",
+      "CL = 1.1 µF(3)",
+      "CL = 1.1 µF(3)",
+      "-",
+      "500",
+      "650",
+      "µs"
+    ],
+    [
+      "tSTART",
+      "Start-up time",
+      "CL = 1.5 µF(3)",
+      "CL = 1.5 µF(3)",
+      "-",
+      "650",
+      "800",
+      "µs"
+    ],
+    [
+      "IINRUSH",
+      "Control of maximum DC current drive on VREFBUF_OUT during start-up phase(4)",
+      "-",
+      "-",
+      "-",
+      "8",
+      "-",
+      "mA"
+    ],
+    [
+      "IDDA(VREFBUF)",
+      "VREFBUF consumption from VDDA",
+      "Iload = 0 µA",
+      "Iload = 0 µA",
+      "-",
+      "16",
+      "25",
+      "µA"
+    ],
+    [
+      "IDDA(VREFBUF)",
+      "VREFBUF consumption from VDDA",
+      "Iload = 500 µA",
+      "Iload = 500 µA",
+      "-",
+      "18",
+      "30",
+      "µA"
+    ],
+    [
+      "IDDA(VREFBUF)",
+      "VREFBUF consumption from VDDA",
+      "Iload = 4 mA",
+      "Iload = 4 mA",
+      "-",
+      "35",
+      "50",
+      "µA"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 8,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "caption_near_bottom": true,
+    "caption_y_ratio": 0.859,
+    "body_on_next_page": true,
+    "next_page_q_boosted": 170.0,
+    "cols_extracted": 8
+  },
+  "structured_json": null,
+  "warnings": [],
+  "datasheet_metaData": {
+    "pdf_name": "stm32u073c8",
+    "table_id": "table_78",
+    "is_continued": false,
+    "pages": [
+      98
+    ],
+    "rows_count": 24,
+    "cols_count": 8,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

@@ -1,0 +1,283 @@
+{
+  "table_id": "table_14",
+  "caption": "Table 14. General operating conditions",
+  "pdf_name": "stm32f401cd",
+  "family": "F4",
+  "page": 60,
+  "merged_pages": [
+    60,
+    61
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Min",
+    "Typ",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "f HCLK",
+      "Internal AHB clock frequency",
+      "Power Scale3: Regulator ON, VOS[1:0] bits in PWR_CR register = 0x01",
+      "0",
+      "-",
+      "60",
+      "MHz"
+    ],
+    [
+      "f HCLK",
+      "Internal AHB clock frequency",
+      "Power Scale2: Regulator ON, VOS[1:0] bits in PWR_CR register = 0x10",
+      "0",
+      "-",
+      "84",
+      "MHz"
+    ],
+    [
+      "f PCLK1",
+      "Internal APB1 clock frequency",
+      "-",
+      "0",
+      "-",
+      "42",
+      "MHz"
+    ],
+    [
+      "f PCLK2",
+      "Internal APB2 clock frequency",
+      "-",
+      "0",
+      "-",
+      "84",
+      "MHz"
+    ],
+    [
+      "V DD",
+      "Standard operating voltage",
+      "-",
+      "1.7(1)",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V DDA (2)(3)",
+      "Analog operating voltage (ADC limited to 1.2 M samples)",
+      "Must be the same potential as V (4) DD",
+      "1.7(1)",
+      "-",
+      "2.4",
+      "V"
+    ],
+    [
+      "V DDA (2)(3)",
+      "Analog operating voltage (ADC limited to 2.4 M samples)",
+      "Must be the same potential as V (4) DD",
+      "2.4",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V BAT",
+      "Backup operating voltage",
+      "-",
+      "1.65",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V 12",
+      "Regulator ON: 1.2 V internal voltage on V /V pins CAP_1 CAP_2",
+      "VOS[1:0] bits in PWR_CR register = 0x01 Max frequency 60 MHz",
+      "1.08(5)",
+      "1.14",
+      "1.20(5)",
+      "V"
+    ],
+    [
+      "V 12",
+      "Regulator ON: 1.2 V internal voltage on V /V pins CAP_1 CAP_2",
+      "VOS[1:0] bits in PWR_CR register = 0x10 Max frequency 84 MHz",
+      "1.20(5)",
+      "1.26",
+      "1.32(5)",
+      "V"
+    ],
+    [
+      "V 12",
+      "Regulator OFF: 1.2 V external voltage must be supplied on V /V pins CAP_1 CAP_2",
+      "Max. frequency 60 MHz.",
+      "1.1",
+      "1.14",
+      "1.2",
+      "V"
+    ],
+    [
+      "V 12",
+      "Regulator OFF: 1.2 V external voltage must be supplied on V /V pins CAP_1 CAP_2",
+      "Max. frequency 84 MHz.",
+      "1.2",
+      "1.26",
+      "1.32",
+      "V"
+    ],
+    [
+      "V IN",
+      "Input voltage on RST and FT pins(6)",
+      "2 V ≤ V ≤ 3.6 V DD",
+      "–0.3",
+      "-",
+      "5.5",
+      "V"
+    ],
+    [
+      "V IN",
+      "Input voltage on RST and FT pins(6)",
+      "V ≤ 2 V DD",
+      "–0.3",
+      "-",
+      "5.2",
+      "V"
+    ],
+    [
+      "V IN",
+      "Input voltage on BOOT0 pin",
+      "-",
+      "0",
+      "-",
+      "9",
+      "V"
+    ],
+    [
+      "P D",
+      "Maximum allowed package power dissipation for suffix 6 and 7(7)",
+      "UFQFPN48",
+      "-",
+      "-",
+      "625",
+      "mW"
+    ],
+    [
+      "P D",
+      "Maximum allowed package power dissipation for suffix 6 and 7(7)",
+      "WLCSP49",
+      "-",
+      "-",
+      "392",
+      "mW"
+    ],
+    [
+      "P D",
+      "Maximum allowed package power dissipation for suffix 6 and 7(7)",
+      "LQFP64",
+      "-",
+      "-",
+      "313",
+      "mW"
+    ],
+    [
+      "P D",
+      "Maximum allowed package power dissipation for suffix 6 and 7(7)",
+      "LQFP100",
+      "-",
+      "-",
+      "465",
+      "mW"
+    ],
+    [
+      "P D",
+      "Maximum allowed package power dissipation for suffix 6 and 7(7)",
+      "UFBGA100",
+      "-",
+      "-",
+      "323",
+      "mW"
+    ],
+    [
+      "TA",
+      "Ambient temperature for 6 suffix version",
+      "Maximum power dissipation",
+      "–40",
+      "-",
+      "85",
+      "°C"
+    ],
+    [
+      "TA",
+      "Ambient temperature for 6 suffix version",
+      "Low power dissipation(8)",
+      "–40",
+      "-",
+      "105",
+      "°C"
+    ],
+    [
+      "TA",
+      "Ambient temperature for 7 suffix version",
+      "Maximum power dissipation",
+      "–40",
+      "-",
+      "105",
+      "°C"
+    ],
+    [
+      "TA",
+      "Ambient temperature for 7 suffix version",
+      "Low power dissipation(8)",
+      "–40",
+      "-",
+      "125",
+      "°C"
+    ],
+    [
+      "TJ",
+      "Junction temperature range",
+      "6 suffix version",
+      "–40",
+      "-",
+      "105",
+      "°C"
+    ],
+    [
+      "TJ",
+      "Junction temperature range",
+      "7 suffix version",
+      "–40",
+      "-",
+      "125",
+      "°C"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 7,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 7
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:2",
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f401cd",
+    "table_id": "table_14",
+    "is_continued": true,
+    "pages": [
+      60,
+      61
+    ],
+    "rows_count": 26,
+    "cols_count": 7,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

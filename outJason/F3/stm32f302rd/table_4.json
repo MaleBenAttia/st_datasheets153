@@ -1,0 +1,99 @@
+{
+  "table_id": "table_4",
+  "caption": "Table 4. STM32F302xD/E peripheral interconnect matrix",
+  "pdf_name": "stm32f302rd",
+  "family": "F3",
+  "page": 18,
+  "merged_pages": [
+    18,
+    19
+  ],
+  "headers": [
+    "Interconnect source",
+    "Interconnect destination",
+    "Interconnect action"
+  ],
+  "rows": [
+    [
+      "TIMx",
+      "TIMx",
+      "Timers synchronization or chaining"
+    ],
+    [
+      "TIMx",
+      "ADCx DAC1",
+      "Conversion triggers"
+    ],
+    [
+      "TIMx",
+      "DMA",
+      "Memory to memory transfer trigger"
+    ],
+    [
+      "TIMx",
+      "Compx",
+      "Comparator output blanking"
+    ],
+    [
+      "COMPx",
+      "TIMx",
+      "Timer input: OCREF_CLR input, input capture"
+    ],
+    [
+      "ADCx",
+      "TIMx",
+      "Timer triggered by analog watchdog"
+    ],
+    [
+      "GPIO RTCCLK HSE/32 MC0",
+      "TIM16",
+      "Clock source used as input channel for HSI and LSI calibration"
+    ],
+    [
+      "CSS CPU (hard fault) COMPx GPIO",
+      "TIM1 TIM15, 16, 17",
+      "Timer break"
+    ],
+    [
+      "GPIO",
+      "TIMx",
+      "External trigger, timer break"
+    ],
+    [
+      "GPIO",
+      "ADCx DAC1",
+      "Conversion external trigger"
+    ],
+    [
+      "DAC1",
+      "COMPx",
+      "Comparator inverting input"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 3,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 3
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:2"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f302rd",
+    "table_id": "table_4",
+    "is_continued": true,
+    "pages": [
+      18,
+      19
+    ],
+    "rows_count": 11,
+    "cols_count": 3,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

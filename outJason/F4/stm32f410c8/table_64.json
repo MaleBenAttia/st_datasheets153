@@ -1,0 +1,247 @@
+{
+  "table_id": "table_64",
+  "caption": "Table 64. SPI dynamic characteristics",
+  "pdf_name": "stm32f410c8",
+  "family": "F4",
+  "page": 103,
+  "merged_pages": [
+    103,
+    104
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Min",
+    "Typ",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "f SCK 1/t c(SCK)",
+      "SPI clock frequency",
+      "Master full duplex/receiver mode, 2.7 V < V < 3.6 V DD SPI1/4/5",
+      "-",
+      "-",
+      "42",
+      "MHz"
+    ],
+    [
+      "f SCK 1/t c(SCK)",
+      "SPI clock frequency",
+      "Master full duplex/receiver mode, 3.0 V < V < 3.6 V DD SPI1/4/5",
+      "-",
+      "-",
+      "50",
+      "MHz"
+    ],
+    [
+      "f SCK 1/t c(SCK)",
+      "SPI clock frequency",
+      "Master transmitter mode 1.7 V < V < 3.6 V DD SPI1/4/5",
+      "-",
+      "-",
+      "50",
+      "MHz"
+    ],
+    [
+      "f SCK 1/t c(SCK)",
+      "SPI clock frequency",
+      "Master mode 1.7 V < V < 3.6 V DD SPI1/2/3/4/5",
+      "-",
+      "-",
+      "25",
+      "MHz"
+    ],
+    [
+      "f SCK 1/t c(SCK)",
+      "SPI clock frequency",
+      "Slave transmitter/full duplex mode 2.7 V < V < 3.6 V DD SPI1/4/5",
+      "-",
+      "-",
+      "38(2)",
+      "MHz"
+    ],
+    [
+      "f SCK 1/t c(SCK)",
+      "SPI clock frequency",
+      "Slave receiver mode, 1.8 V < V < 3.6 V DD SPI1/4/5",
+      "-",
+      "-",
+      "50",
+      "MHz"
+    ],
+    [
+      "f SCK 1/t c(SCK)",
+      "SPI clock frequency",
+      "Slave mode, 1.8 V < V < 3.6 V DD SPI1/2/3/4/5",
+      "-",
+      "-",
+      "25",
+      "MHz"
+    ],
+    [
+      "Duty(SCK)",
+      "Duty cycle of SPI clock frequency",
+      "Slave mode",
+      "30",
+      "50",
+      "70",
+      "%"
+    ],
+    [
+      "t w(SCKH) t w(SCKL)",
+      "SCK high and low time",
+      "Master mode, SPI presc = 2",
+      "T PCLK - 1.5",
+      "T PCLK",
+      "T PCLK +1.5",
+      "ns"
+    ],
+    [
+      "t su(NSS)",
+      "NSS setup time",
+      "Slave mode, SPI presc = 2",
+      "3T PCLK",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t h(NSS)",
+      "NSS hold time",
+      "Slave mode, SPI presc = 2",
+      "2T PCLK",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t su(MI)",
+      "Data input setup time",
+      "Master mode",
+      "4",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t su(SI)",
+      "Data input setup time",
+      "Slave mode",
+      "2.5",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t h(MI)",
+      "Data input hold time",
+      "Master mode",
+      "7.5",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t h(SI)",
+      "Data input hold time",
+      "Slave mode",
+      "3.5",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t ) a(SO",
+      "Data output access time",
+      "Slave mode",
+      "7",
+      "-",
+      "21",
+      "ns"
+    ],
+    [
+      "t dis(SO)",
+      "Data output disable time",
+      "Slave mode",
+      "5",
+      "-",
+      "12",
+      "ns"
+    ],
+    [
+      "t v(SO)",
+      "Data output valid time",
+      "Slave mode (after enable edge), 2.7 V < V < 3.6 V DD",
+      "-",
+      "11",
+      "13",
+      "ns"
+    ],
+    [
+      "t v(SO)",
+      "Data output valid time",
+      "Slave mode (after enable edge), 1.7 V < V < 3.6 V DD",
+      "-",
+      "11",
+      "18.5",
+      "ns"
+    ],
+    [
+      "t h(SO)",
+      "Data output hold time",
+      "Slave mode (after enable edge), 1.7 V < V < 3.6 V DD",
+      "8",
+      "-",
+      "-",
+      "ns"
+    ],
+    [
+      "t v(MO)",
+      "Data output valid time",
+      "Master mode (after enable edge)",
+      "-",
+      "4",
+      "6",
+      "ns"
+    ],
+    [
+      "t h(MO)",
+      "Data output hold time",
+      "Master mode (after enable edge)",
+      "0",
+      "-",
+      "-",
+      "ns"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 7,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 7
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:2",
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f410c8",
+    "table_id": "table_64",
+    "is_continued": true,
+    "pages": [
+      103,
+      104
+    ],
+    "rows_count": 22,
+    "cols_count": 7,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "table_id": "table_76",
+  "caption": "Table 76. Document revision history",
+  "pdf_name": "stm32f042c4",
+  "family": "F0",
+  "page": 114,
+  "merged_pages": [
+    114,
+    115,
+    116
+  ],
+  "headers": [
+    "Date",
+    "Revision",
+    "Changes"
+  ],
+  "rows": [
+    [
+      "25-Feb-2014",
+      "1",
+      "Initial release."
+    ],
+    [
+      "03-Apr-2014",
+      "2",
+      "Added the sample engineering sections for all the packages in the chapter Package information: Updated tables: – STM32F042x4/x6 USART implementation: added one table footnote. – STM32F042x pin definitions, – Current characteristics, – Typical and maximum current consumption from VDD supply at VDD = 3.6 V, – Typical and maximum current consumption from the VDDA supply, – Typical and maximum consumption in Stop and Standby modes, – Typical and maximum current consumption from the VBAT supply, – Typical current consumption, code executing from Flash, running from HSE 8 MHz crystal, – Flash memory characteristics, – I/O static characteristics, – I/O current injection susceptibility, – EMS characteristics, – EMI characteristics, Updated figures: – UFQFPN32 32-pin package pinout, – UQFPN28 28-pin package, – Power supply scheme, – TC and TTa I/O input characteristics, – Five volt tolerant (FT and FTf) I/O input characteristics. – LQFP48 marking example (package top view), – UFQFPN48 marking example (package top view), – WLCSP36 marking example (package top view), – LQFP32 marking example (package top view), – UFQFPN28 marking example (package top view), – UFQFPN32 marking example (package top view), – TSSOP20 marking example (package top view)"
+    ],
+    [
+      "26-Oct-2015",
+      "3",
+      "Cover page: number of I/Os and timers updated. Updates in Section 2: Description: – updated Figure 1: Block diagram Updates in Section 3: Functional overview: – updated Figure 2: Clock tree – addition of the number of complementary outputs for the advanced control timer and for TIM16, TIM17 general purpose timers in Table 7: Timer feature comparison – removal of USART2 from Figure 3.5.4: Low-power modes"
+    ],
+    [
+      "26-Oct-2015",
+      "3",
+      "– Table 9: STM32F042x4/x6 I2C implementation - adding 20 mA Updates in Section 4: Pinouts and pin descriptions – Table 12: Legend/abbreviations used in the pinout table - removing \"I\" pin type Updates in Section 5: Memory mapping: – Figure 10: STM32F042x6 memory map, x4 difference described in text Updates in Section 6: Electrical characteristics: – the condition \"Regulator in run mode, all oscillators OFF\" in Table 28: Typical and maximum consumption in Stop and Standby modes, – footnote for V max value in Table 18: Voltage characteristics, IN – footnote for max V in Table 21: General operating conditions, IN – t parameter definition in Table 25: Embedded internal START reference voltage – addition of t parameter in Table 25: Embedded internal START reference voltage, removal of -40°C to 85°C condition and the associated footnote – Table 26: Typical and maximum current consumption from VDD supply at VDD = 3.6 V: removing \"code executing from Flash or RAM\" – removal of the min value for t parameter in Table 57: TS START characteristics – the typical value for R parameter in Table 58: VBAT monitoring characteristics – removal of Res parameter line from Table 59: TIMx characteristics TM and putting all values in new Typ column, substitution of t COUNTER with t values defined as powers of two MAX_COUNT, – V class in Table 47: ESD absolute maximum ratings ESD(CDM) – reorganization of Table 64: I2S characteristics and filling max value of t v(SD_ST) – adding definition of levels in Figure 32: I2S master timing diagram (Philips protocol) Updates in Section 7: Package information: – heading and display of columns in Table 68: WLCSP36 package mechanical data., – Figure 38: UFQFPN48 package marking example – Figure 41: WLCSP36 package marking example – Figure 50: UFQFPN28 package marking example – Figure 41: WLCSP36 package marking example – Figure 51: TSSOP20 package outline - correcting GAGE to GAUGE – removing \"die 445\" from Table 74: Package thermal characteristics Updates in Section 8: Part numbering: – adding tray packing to options"
+    ],
+    [
+      "16-Dec-2015",
+      "4",
+      "Section 3: Functional overview: – Figure 2: Clock tree modified Section 4: Pinouts and pin descriptions: – Package pinout figures updated (look and feel) – Figure 5: WLCSP36 package pinout- now presented in top view – Table 13: STM32F042x pin definitions - note 3 added; CIMP1_OUT and USART4_CTS removed – Table 15: Alternate functions selected through GPIOB_AFR registers for port B - change of I2C2_SDA and I2C2_SCL to I2C1_SDA and I2C1_SCL Section 5: Memory mapping: – Table 17: STM32F042x4/x6 peripheral register boundary addresses - change of \"SYSCFG + COMP\" to \"SYSCFG\" Section 6: Electrical characteristics: – Table 50: I/O static characteristics- removed note – Section 6.3.16: 12-bit ADC characteristics - changed introductory sentence Section 7: Package information: – Figure 49: Recommended footprint for UFQFPN28 package distance between corner pads added"
+    ],
+    [
+      "10-Jan-2017",
+      "5",
+      "Section 6: Electrical characteristics: – Table 37: LSE oscillator characteristics (fLSE = 32.768 kHz) - information on configuring different drive capabilities removed. See the corresponding reference manual. – Table 25: Embedded internal reference voltage - V values REFINT – Figure 28: SPI timing diagram - slave mode and CPHA = 0 and Figure 29: SPI timing diagram - slave mode and CPHA = 1 enhanced and corrected Section 8: Ordering information: – The name of the section changed from the previous \"Part numbering\""
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 3,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 3
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:3"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f042c4",
+    "table_id": "table_76",
+    "is_continued": true,
+    "pages": [
+      114,
+      115,
+      116
+    ],
+    "rows_count": 6,
+    "cols_count": 3,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

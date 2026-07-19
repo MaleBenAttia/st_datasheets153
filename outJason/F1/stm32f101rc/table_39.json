@@ -1,0 +1,222 @@
+{
+  "table_id": "table_39",
+  "caption": "Table 39. Switching characteristics for PC Card/CF read and write cycles",
+  "pdf_name": "stm32f101rc",
+  "family": "F1",
+  "page": 75,
+  "merged_pages": [
+    75,
+    76
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Min",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "t v(NCEx-A) t v(NCE4_1-A)",
+      "FSMC_NCEx low (x = 4_1/4_2) to FSMC_Ay valid (y = 0...10) FSMC_NCE4_1 low (x = 4_1/4_2) to FSMC_Ay valid (y = 0...10)",
+      "-",
+      "0",
+      "ns"
+    ],
+    [
+      "t h(NCEx-AI) t h(NCE4_1-AI)",
+      "FSMC_NCEx high (x = 4_1/4_2) to FSMC_Ax invalid (x = 0...10) FSMC_NCE4_1 high (x = 4_1/4_2) to FSMC_Ax invalid (x = 0...10)",
+      "2.5",
+      "-",
+      "ns"
+    ],
+    [
+      "t d(NREG-NCEx) t d(NREG-NCE4_1)",
+      "FSMC_NCEx low to FSMC_NREG valid FSMC_NCE4_1 low to FSMC_NREG valid",
+      "-",
+      "5",
+      "ns"
+    ],
+    [
+      "t h(NCEx-NREG) t h(NCE4_1-NREG)",
+      "FSMC_NCEx high to FSMC_NREG invalid FSMC_NCE4_1 high to FSMC_NREG invalid",
+      "t + 3 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t d(NCE4_1-NOE)",
+      "FSMC_NCE4_1 low to FSMC_NOE low",
+      "-",
+      "5t + 2 HCLK",
+      "ns"
+    ],
+    [
+      "t w(NOE)",
+      "FSMC_NOE low width",
+      "8t –1.5 HCLK",
+      "8t + 1 HCLK",
+      "ns"
+    ],
+    [
+      "t d(NOE-NCE4_1",
+      "FSMC_NOE high to FSMC_NCE4_1 high",
+      "5t + 2 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t su(D-NOE)",
+      "FSMC_D[15:0] valid data before FSMC_NOE high",
+      "25",
+      "-",
+      "ns"
+    ],
+    [
+      "t h(NOE-D)",
+      "FSMC_D[15:0] valid data after FSMC_NOE high",
+      "15",
+      "-",
+      "ns"
+    ],
+    [
+      "t w(NWE)",
+      "FSMC_NWE low width",
+      "8t – 1 HCLK",
+      "8t + 2 HCLK",
+      "ns"
+    ],
+    [
+      "t d(NWE-NCE4_1)",
+      "FSMC_NWE high to FSMC_NCE4_1 high",
+      "5t + 2 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t d(NCE4_1-NWE)",
+      "FSMC_NCE4_1 low to FSMC_NWE low",
+      "-",
+      "5t + 1.5 HCLK",
+      "ns"
+    ],
+    [
+      "t v(NWE-D)",
+      "FSMC_NWE low to FSMC_D[15:0] valid",
+      "-",
+      "0",
+      "ns"
+    ],
+    [
+      "t h(NWE-D)",
+      "FSMC_NWE high to FSMC_D[15:0] invalid",
+      "11t HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t d(D-NWE)",
+      "FSMC_D[15:0] valid before FSMC_NWE high",
+      "13t HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t w(NIOWR)",
+      "FSMC_NIOWR low width",
+      "8t + 3 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t v(NIOWR-D)",
+      "FSMC_NIOWR low to FSMC_D[15:0] valid",
+      "-",
+      "5t +1 HCLK",
+      "ns"
+    ],
+    [
+      "t h(NIOWR-D)",
+      "FSMC_NIOWR high to FSMC_D[15:0] invalid",
+      "11t HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t d(NCE4_1-NIOWR)",
+      "FSMC_NCE4_1 low to FSMC_NIOWR valid",
+      "-",
+      "5t +3ns HCLK",
+      "ns"
+    ],
+    [
+      "t h(NCEx-NIOWR) t h(NCE4_1-NIOWR)",
+      "FSMC_NCEx high to FSMC_NIOWR invalid FSMC_NCE4_1 high to FSMC_NIOWR invalid",
+      "5t – 5 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t d(NIORD-NCEx) t d(NIORD-NCE4_1)",
+      "FSMC_NCEx low to FSMC_NIORD valid FSMC_NCE4_1 low to FSMC_NIORD valid",
+      "-",
+      "5t + 2.5 HCLK",
+      "ns"
+    ],
+    [
+      "t h(NCEx-NIORD) t h(NCE4_1-NIORD)",
+      "FSMC_NCEx high to FSMC_NIORD invalid FSMC_NCE4_1 high to FSMC_NIORD invalid",
+      "5t – 5 HCLK",
+      "-",
+      "ns"
+    ],
+    [
+      "t su(D-NIORD)",
+      "FSMC_D[15:0] valid before FSMC_NIORD high",
+      "4.5",
+      "-",
+      "ns"
+    ],
+    [
+      "t d(NIORD-D)",
+      "FSMC_D[15:0] valid after FSMC_NIORD high",
+      "9",
+      "-",
+      "ns"
+    ],
+    [
+      "t w(NIORD)",
+      "FSMC_NIORD low width",
+      "8t + 2 HCLK",
+      "-",
+      "ns"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 5,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 5
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:2",
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f101rc",
+    "table_id": "table_39",
+    "is_continued": true,
+    "pages": [
+      75,
+      76
+    ],
+    "rows_count": 25,
+    "cols_count": 5,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

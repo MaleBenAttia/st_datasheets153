@@ -1,0 +1,179 @@
+{
+  "table_id": "table_43",
+  "caption": "Table 43. Main PLL characteristics",
+  "pdf_name": "stm32f446mc",
+  "family": "F4",
+  "page": 107,
+  "merged_pages": [
+    107,
+    108
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Conditions",
+    "Min",
+    "Typ",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "f PLL_IN",
+      "PLL input clock(1)",
+      "-",
+      "-",
+      "0.95(2)",
+      "1",
+      "2.10",
+      "MHz"
+    ],
+    [
+      "f PLL_OUT",
+      "PLL multiplier output clock",
+      "-",
+      "-",
+      "12.5",
+      "-",
+      "180",
+      "MHz"
+    ],
+    [
+      "f PLL48_OUT",
+      "48 MHz PLL multiplier output clock",
+      "-",
+      "-",
+      "-",
+      "48",
+      "75",
+      "MHz"
+    ],
+    [
+      "f VCO_OUT",
+      "PLL VCO output",
+      "-",
+      "-",
+      "100",
+      "-",
+      "432",
+      "MHz"
+    ],
+    [
+      "t LOCK",
+      "PLL lock time",
+      "VCO frequency = 100 MHz",
+      "VCO frequency = 100 MHz",
+      "75",
+      "-",
+      "200",
+      "µs"
+    ],
+    [
+      "t LOCK",
+      "PLL lock time",
+      "VCO frequency = 432 MHz",
+      "VCO frequency = 432 MHz",
+      "100",
+      "-",
+      "300",
+      "µs"
+    ],
+    [
+      "Jitter(3)",
+      "Cycle-to-cycle jitter",
+      "System clock 120 MHz",
+      "RMS",
+      "-",
+      "25",
+      "-",
+      "ps"
+    ],
+    [
+      "Jitter(3)",
+      "Cycle-to-cycle jitter",
+      "System clock 120 MHz",
+      "Peak to peak",
+      "-",
+      "±150",
+      "-",
+      "ps"
+    ],
+    [
+      "Jitter(3)",
+      "Period Jitter",
+      "System clock 120 MHz",
+      "RMS",
+      "-",
+      "15",
+      "-",
+      "ps"
+    ],
+    [
+      "Jitter(3)",
+      "Period Jitter",
+      "System clock 120 MHz",
+      "Peak to peak",
+      "-",
+      "±200",
+      "-",
+      "ps"
+    ],
+    [
+      "Jitter(3)",
+      "Bit Time CAN jitter",
+      "Cycle to cycle at 1 MHz on 1000 samples",
+      "Peak to peak",
+      "-",
+      "330",
+      "-",
+      "ps"
+    ],
+    [
+      "I (4) DD(PLL)",
+      "PLL power consumption on V DD",
+      "VCO frequency = 100 MHz VCO frequency = 432 MHz",
+      "Peak to peak",
+      "0.15 0.45",
+      "-",
+      "0.40 0.75",
+      "mA"
+    ],
+    [
+      "I (4) DDA(PLL)",
+      "PLL power consumption on V DDA",
+      "VCO frequency = 100 MHz VCO frequency = 432 MHz",
+      "Peak to peak",
+      "0.30 0.55",
+      "-",
+      "0.40 0.85",
+      "mA"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 8,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 7
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:2"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f446mc",
+    "table_id": "table_43",
+    "is_continued": true,
+    "pages": [
+      107,
+      108
+    ],
+    "rows_count": 13,
+    "cols_count": 8,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

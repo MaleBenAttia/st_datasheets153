@@ -1,0 +1,155 @@
+{
+  "table_id": "table_45",
+  "caption": "Table 45. PLLISAI (audio and LCD-TFT PLL) characteristics",
+  "pdf_name": "stm32f437ai",
+  "family": "F4",
+  "page": 127,
+  "merged_pages": [
+    127
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Conditions",
+    "Min",
+    "Typ",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "f PLLSAI_IN",
+      "PLLSAI input clock(1)",
+      "-",
+      "-",
+      "0.95(2)",
+      "1",
+      "2.10",
+      "MHz"
+    ],
+    [
+      "f PLLSAI_OUT",
+      "PLLSAI multiplier output clock",
+      "-",
+      "-",
+      "-",
+      "-",
+      "216",
+      "MHz"
+    ],
+    [
+      "f VCO_OUT",
+      "PLLSAI VCO output",
+      "-",
+      "-",
+      "100",
+      "-",
+      "432",
+      "MHz"
+    ],
+    [
+      "t LOCK",
+      "PLLSAI lock time",
+      "VCO freq = 100MHz",
+      "VCO freq = 100MHz",
+      "75",
+      "-",
+      "200",
+      "µs"
+    ],
+    [
+      "t LOCK",
+      "PLLSAI lock time",
+      "VCO freq = 432MHz",
+      "VCO freq = 432MHz",
+      "100",
+      "-",
+      "300",
+      "µs"
+    ],
+    [
+      "Jitter(3)",
+      "Main SAI clock jitter",
+      "Cycle to cycle at 12.288MHz on 48KHz period, N=432, R=5",
+      "RMS",
+      "-",
+      "90",
+      "-",
+      "-"
+    ],
+    [
+      "Jitter(3)",
+      "Main SAI clock jitter",
+      "Cycle to cycle at 12.288MHz on 48KHz period, N=432, R=5",
+      "peak to peak",
+      "-",
+      "±280",
+      "-",
+      "ps"
+    ],
+    [
+      "Jitter(3)",
+      "Main SAI clock jitter",
+      "Average frequency of 12.288MHz N = 432, R = 5 on 1000 samples",
+      "Average frequency of 12.288MHz N = 432, R = 5 on 1000 samples",
+      "-",
+      "90",
+      "-",
+      "ps"
+    ],
+    [
+      "Jitter(3)",
+      "FS clock jitter",
+      "Cycle to cycle at 48KHz on 1000 samples",
+      "Cycle to cycle at 48KHz on 1000 samples",
+      "-",
+      "400",
+      "-",
+      "ps"
+    ],
+    [
+      "I (4) DD(PLLSAI)",
+      "PLLSAI power consumption on V DD",
+      "VCO freq = 100MHz VCO freq = 432MHz",
+      "VCO freq = 100MHz VCO freq = 432MHz",
+      "0.15 0.45",
+      "-",
+      "0.40 0.75",
+      "mA"
+    ],
+    [
+      "I (4) DDA(PLLSAI)",
+      "PLLSAI power consumption on V DDA",
+      "VCO freq = 100MHz VCO freq = 432MHz",
+      "VCO freq = 100MHz VCO freq = 432MHz",
+      "0.30 0.55",
+      "-",
+      "0.40 0.85",
+      "mA"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 8,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 8
+  },
+  "structured_json": null,
+  "warnings": [],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f437ai",
+    "table_id": "table_45",
+    "is_continued": false,
+    "pages": [
+      127
+    ],
+    "rows_count": 11,
+    "cols_count": 8,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

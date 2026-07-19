@@ -1,0 +1,83 @@
+{
+  "table_id": "table_134",
+  "caption": "Table 134. Document revision history",
+  "pdf_name": "stm32h757ai",
+  "family": "H7",
+  "page": 250,
+  "merged_pages": [
+    250,
+    251,
+    252,
+    253
+  ],
+  "headers": [
+    "Date",
+    "Revision",
+    "Changes"
+  ],
+  "rows": [
+    [
+      "16-May-2019",
+      "1",
+      "Initial release."
+    ],
+    [
+      "27-Mar-2023",
+      "2",
+      "Added reference to errata sheet ES0392 in Section 1: Introduction. Figure 1: STM32H757xI block diagram: changed APB1 and APB2 maximum frequency to 120 MHz, and WKUP[5:0] to WKUP[6:1]. Updated Figure 5: STM32H757xI bus matrix. Modified Section 3.5.1: Power supply scheme. Removed note to Section 3.5.3: Voltage regulator (SMPS step-down converter and LDO). Updated Section 3.24: Digital camera interface (DCMI) (modified supported format). Updated Figure 13: Power supply scheme (Backup domain and VDD domain blocks). Swapped 158 and 159 pin positions in Table 8: LQFP176 pinout on page 58. Added Full-duplex mode in Section 3.35: Serial peripheral interfaces (SPI)/integrated interchip sound interfaces (I2S). Updated number of microphones that can be supported by the SAI in Section 3.36: Serial audio interfaces (SAI). Removed FDCAN1_RXFD_MODE, FDCAN1_TXFD_MODE, FDCAN2_RXFD_MODE and FDCAN2_TXFD_MODE functions from Table 8: STM32H750xB pin/ball definition and all alternate function tables. Additional modifications made on Table 8: STM32H750xB pin/ball definition: – Added note to VDD50USB. – Added note to PB12 and PB13. – Change PB1 I/O structure to TT_A. – Replaced PI8 WKUP3 additional function by WKUP2. – Replaced PC13 WKUP2 additional function by WKUP3. Updated Figure 43: Typical connection diagram when using the ADC with FT/TT pins featuring analog switch function. Modified Table 68: EMI characteristics for fHSE = 8 MHz and fCPU = 400 MHz. Updated Section 6.2: Absolute maximum ratings introduction to device mission profile. Modified text in Section : I/O static current consumption. Changed fCPU2 to 100 MHz in Table 123: General operating conditions. Replaced Min VDD by Min VDDLDO in Table 24: Supply voltage and maximum frequency configuration. Removed note 1 from Table 43: Typical and maximum current consumption in Stop, LDO regulator ON and Table 45: Typical and maximum current consumption in Sleep mode, LDO regulator. Updated Table 51: High-speed external user clock characteristics. Updated UINST min value in Table 61: MIPI D-PHY characteristics."
+    ],
+    [
+      "27-Mar-2023",
+      "2 (continued)",
+      "In Table 65: Flash memory programming: removed reference to single bank configuration in title and added tERASE128KB typical and maximum values. Changed Ileak to Ilkg in Table 72: I/O static characteristics. Added reference to AN4899 in Section 6.3.18: I/O port characteristics. In Table 76: Output timing characteristics (HSLV ON): – modified conditions for tr/tf values (speeds 10 and 11) and Fmax value (speed 11) – changed capacitance value for speed 10 and tr/tf, and speed for 11 and tr/tf/Fmax Table 76: Output timing characteristics (HSLV ON). Updated tsu(DV-CLKH)/th(DV-CLKH) and tsu(NWAIT-CLKH)/th(NWAIT-CLKH) in Table 86: Synchronous multiplexed NOR/PSRAM read timings. Changed t(NWAIT-CLKH) to tsu(NWAIT-CLKH) and updated tsu(DV-CLKH)/th(DV- CLKH) and tsu(NWAIT-CLKH)/th(NWAIT-CLKH) in Table 88: Synchronous non- multiplexed NOR/PSRAM read timings. Updated tsu(SDCLKH _Data) and th(SDCLKH _Data) in Table 92: SDRAM read timings and Table 93: LPSDR SDRAM read timings. Replaced FMC_CLK by FMC_SDCLK in Section : SDRAM waveforms and timings. Updated ts(IN) and th(IN) in Table 96: QUADSPI characteristics in SDR mode and tsr(IN)/tsf(IN) and thr(IN)/thf(IN) in Table 97: QUADSPI characteristics in DDR mode. Added reference to AN5354 application note in note of Table 99: ADC characteristics. Updated Figure 42: ADC accuracy characteristics and Figure 43: Typical connection diagram when using the ADC with FT/TT pins featuring analog switch function. Changed VDAC_OUT maximum value to VREF+ -0.2 in Table 103: DAC accuracy. Updated TL maximum value in Table 105: Temperature sensor characteristics Changed temperature condition to 130 °C for TS_CAL2 in Table 106: Temperature sensor calibration values Updated DuCyCKOUT in Table 113: DFSDM measured timing - 1.62- 3.6 V. Updated Figure 51: USART timing diagram in SPI master mode and Figure 52: USART timing diagram in SPI slave mode. Updated Table 21: Current characteristics Updated Table 127: Dynamics characteristics: USB ULPI Updated tsu(MI) and th(MI) in Table 120: SPI dynamic characteristics. Updated VCORE max value in Table 123: General operating conditions Updated tISU, tIH, tISUD, tIHD and tOH in Table 124: Dynamics characteristics: SD / MMC characteristics, VDD = 2.7 to 3.6 V. Updated tISU, tIH in Table 125: Dynamics characteristics: eMMC characteristics VDD = 1.71V to 1.9V Added Section : USB OTG_FS characteristics."
+    ],
+    [
+      "27-Mar-2023",
+      "2 (continued)",
+      "Added Figure 80: UFBGA169 - Footprint example and Table 140: UFBGA169 - Example of PCB design rules (0.5 mm pitch BGA). Updated Figure 79: UFBGA169 - Outline, Section 7.9: LQFP176 package information (1T), and Section 7.13: TFBGA240+25 package information. Modified title for footprint figures and PCB design rules tables (examples instead of recommendations) Added Section 7.1: Device marking (device marking information removed from package sections and moved to this section) Added note related to the availability of tape and reel packing in Section 8: Ordering information. Updated information on pin count in Section 8: Ordering information Added Section 9: Important security notice"
+    ],
+    [
+      "19-Mar-2024",
+      "3",
+      "– Added SPI mode to USART on the cover page and in Section 6.3.35: Communication interfaces. – Updated Figure 1: STM32H757xI block diagram. – Updated Table 8: STM32H757xI pin/ball definition. – Updated Section 3.33: Universal synchronous/asynchronous receiver transmitter (USART). – Updated Section 3.4: Boot modes. – Added note to Section 6.2: Absolute maximum ratings. – Updated Table 23: General operating conditions. – Updated Figure 24: Typical application with a 32.768 kHz crystal. – Updated Table 33: Typical and maximum current consumption in Run mode, code with data processing running from ITCM for Arm Cortex- M7 and flash memory for Arm Cortex-M4, ART accelerator ON, SMPS regulator and Table 37: Typical and maximum current consumption in Run mode, code with data processing running from ITCM, only Arm Cortex-M7 running, SMPS regulator. – Updated Table 49: Peripheral current consumption in Run mode. – Updated Table 52: Low-speed external user clock characteristics. – Updated Table 59: PLL characteristics (wide VCO frequency range). – Updated Figure 36: NAND controller waveforms for read access and – Figure 37: NAND controller waveforms for write access. – Updated Table 99: ADC characteristics. – Updated Table 119: USART (SPI mode) characteristics, Figure 51: USART timing diagram in SPI master mode, and Figure 52: USART timing diagram in SPI slave mode. – Updated Figure 53: SPI timing diagram - slave mode and CPHA = 0, Figure 54: SPI timing diagram - slave mode and CPHA = 1, and Figure 55: SPI timing diagram - master mode. – Updated Figure 58: SAI master timing waveforms and Figure 59: SAI slave timing waveforms. – Updated pin count in Section 8: Ordering information."
+    ],
+    [
+      "25-Apr-2025",
+      "4",
+      "– In the context of I2C, replaced master and slave by controller and target, respectively. – Added ETH_TX_ER as alternate function for PA9 in Table 8: STM32H757xI pin/ball definition. – Added note on V maximum value and updated formula (input IN voltage on FT_xxx pins) in Table 10: Voltage characteristics. – Section 2: Description: updated DAC peripheral and external signals in Figure 1: STM32H757xI block diagram. – Section 5: Pinout, pin description and alternate functions: added TIM12 to Table 38: Port B alternate functions and Table 44: Port H alternate functions (mapped to AF2). – Changed f into f in Section 6.3.23: 16-bit ADC PCLK2 HCLK characteristics. – Updated Section 7.3: UFBGA169 package information (A0YV) and Section 7.6: TFBGA240+25 package information (A07U)."
+    ],
+    [
+      "13-Jan-2026",
+      "5",
+      "In the context of I2C, replaced master and slave by controller and target, respectively. Updated features on cover page. Updated Section 1: Introduction. Updated Table 2: STM32H757xI features and peripheral counts. Updated Figure 1: STM32H757xI block diagram. Updated Section 3.4: Boot modes. Updated Figure 6: WLCSP156 ballout. Updated Table 7: Legend/abbreviations used in the pinout table. Updated Table 8: STM32H757xI pin/ball definition. Updated Table 9: Alternate functions. Updated Figure 13: Power supply scheme. Updated Table 13: General operating conditions. Updated Table 15: VCAP operating conditions. Updated Figure 16: External components for SMPS step-down converter. Updated Section : Low-speed external user clock generated from an external source. Updated Figure 23: Typical application with an 8 MHz crystal. Updated Table 62: I/O static characteristics. Updated Figure 42: ADC accuracy characteristics. Updated Table 89: ADC characteristics. Updated Table 95: Temperature sensor characteristics. Updated Table 96: Temperature sensor calibration values. Updated Section : I2C interface characteristics. Updated Table 127: LQFP176 - Mechanical data. Updated Table 128: LQFP208 - Mechanical data. Updated Table 132: TFBGA240+25 - Example of PCB design rules."
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 3,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 3
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:4"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32h757ai",
+    "table_id": "table_134",
+    "is_continued": true,
+    "pages": [
+      250,
+      251,
+      252,
+      253
+    ],
+    "rows_count": 7,
+    "cols_count": 3,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

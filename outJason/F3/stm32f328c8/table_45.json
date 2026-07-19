@@ -1,0 +1,83 @@
+{
+  "table_id": "table_45",
+  "caption": "Table 45. I/O current injection susceptibility",
+  "pdf_name": "stm32f328c8",
+  "family": "F3",
+  "page": 73,
+  "merged_pages": [
+    73,
+    74
+  ],
+  "headers": [
+    "Symbol",
+    "Description",
+    "Functional susceptibility / Negative",
+    "Functional susceptibility / Positive",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "I INJ",
+      "Injected current on BOOT0",
+      "-0",
+      "NA",
+      "mA"
+    ],
+    [
+      "I INJ",
+      "Injected current on PB11, other TT, FT, FTf and NPOR pins",
+      "-5",
+      "NA",
+      "mA"
+    ],
+    [
+      "I INJ",
+      "Injected current onPC0, PC1, PC2, PC3 (TTa pins) and PF1 pin (FT pin).",
+      "0",
+      "+5",
+      "mA"
+    ],
+    [
+      "I INJ",
+      "Injected current on PA0, PA1, PA2, PA3, PA4, PA5, PA6, PA7, PB0, PB1, PB12, PB13, PB14, PB15 with induced leakage current on other pins from this group less than -100 µA or more than +900 µA",
+      "-5",
+      "+5",
+      "mA"
+    ],
+    [
+      "I INJ",
+      "Injected current on all other TC, TTa and RESET pins",
+      "– 5",
+      "+5",
+      "mA"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 5,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 5
+  },
+  "structured_json": null,
+  "warnings": [
+    "dynamic_header_depth:2",
+    "multi_page_merged:2",
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32f328c8",
+    "table_id": "table_45",
+    "is_continued": true,
+    "pages": [
+      73,
+      74
+    ],
+    "rows_count": 5,
+    "cols_count": 5,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

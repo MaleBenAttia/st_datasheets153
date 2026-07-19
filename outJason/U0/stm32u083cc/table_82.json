@@ -1,0 +1,123 @@
+{
+  "table_id": "table_82",
+  "caption": "Table 82. TIMx characteristics",
+  "pdf_name": "stm32u083cc",
+  "family": "U0",
+  "page": 103,
+  "merged_pages": [
+    103
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Min",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "tres(TIM)",
+      "Timer resolution time",
+      "-",
+      "1",
+      "-",
+      "tTIMxCLK"
+    ],
+    [
+      "tres(TIM)",
+      "Timer resolution time",
+      "fTIMxCLK = 48 MHz",
+      "20.8",
+      "-",
+      "ns"
+    ],
+    [
+      "fEXT",
+      "Timer external clock frequency on CH1 to CH4",
+      "-",
+      "0",
+      "fTIMxCLK/2",
+      "MHz"
+    ],
+    [
+      "fEXT",
+      "Timer external clock frequency on CH1 to CH4",
+      "fTIMxCLK = 48 MHz",
+      "0",
+      "24",
+      "MHz"
+    ],
+    [
+      "ResTIM",
+      "Timer resolution",
+      "TIMx (except TIM2)",
+      "-",
+      "16",
+      "bit"
+    ],
+    [
+      "ResTIM",
+      "Timer resolution",
+      "TIM2",
+      "-",
+      "32",
+      "bit"
+    ],
+    [
+      "tCOUNTER",
+      "16-bit counter clock period",
+      "-",
+      "1",
+      "65536",
+      "tTIMxCLK"
+    ],
+    [
+      "tCOUNTER",
+      "16-bit counter clock period",
+      "fTIMxCLK = 48 MHz",
+      "0.0208",
+      "1363.1",
+      "µs"
+    ],
+    [
+      "tMAX_COUNT",
+      "Maximum possible count with 32-bit counter",
+      "-",
+      "-",
+      "65536 × 65536",
+      "tTIMxCLK"
+    ],
+    [
+      "tMAX_COUNT",
+      "Maximum possible count with 32-bit counter",
+      "fTIMxCLK = 48 MHz",
+      "-",
+      "89.34",
+      "s"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 6,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 6
+  },
+  "structured_json": null,
+  "warnings": [],
+  "datasheet_metaData": {
+    "pdf_name": "stm32u083cc",
+    "table_id": "table_82",
+    "is_continued": false,
+    "pages": [
+      103
+    ],
+    "rows_count": 10,
+    "cols_count": 6,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

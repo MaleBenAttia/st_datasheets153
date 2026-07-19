@@ -1,0 +1,418 @@
+{
+  "table_id": "table_66",
+  "caption": "Table 66. ADC characteristics",
+  "pdf_name": "stm32g484ce",
+  "family": "G4",
+  "page": 138,
+  "merged_pages": [
+    138,
+    139
+  ],
+  "headers": [
+    "Symbol",
+    "Parameter",
+    "Conditions",
+    "Min",
+    "Typ",
+    "Max",
+    "Unit"
+  ],
+  "rows": [
+    [
+      "V DDA",
+      "Analog supply voltage",
+      "-",
+      "1.62",
+      "-",
+      "3.6",
+      "V"
+    ],
+    [
+      "V REF+",
+      "Positive reference voltage",
+      "V ≥ 2 V DDA",
+      "2",
+      "-",
+      "V DDA",
+      "V"
+    ],
+    [
+      "V REF+",
+      "Positive reference voltage",
+      "V < 2 V DDA",
+      "V DDA",
+      "V DDA",
+      "V DDA",
+      "V"
+    ],
+    [
+      "V REF-",
+      "Negative reference voltage",
+      "-",
+      "V SSA",
+      "V SSA",
+      "V SSA",
+      "V"
+    ],
+    [
+      "V CMIN",
+      "Input common mode",
+      "Differential",
+      "(V +V REF+ REF- )/2 - 0.18",
+      "(V + REF+ V )/2 REF-",
+      "(V + V REF+ REF- )/2 + 0.18",
+      "V"
+    ],
+    [
+      "f ADC",
+      "ADC clock frequency",
+      "Range 1, single ADC operation",
+      "0.14",
+      "-",
+      "60",
+      "MHz"
+    ],
+    [
+      "f ADC",
+      "ADC clock frequency",
+      "Range 2",
+      "-",
+      "-",
+      "26",
+      "MHz"
+    ],
+    [
+      "f ADC",
+      "ADC clock frequency",
+      "Range 1, all ADCs operation, single ended mode V ≥ 2.7 V DDA",
+      "0.14",
+      "-",
+      "52",
+      "MHz"
+    ],
+    [
+      "f ADC",
+      "ADC clock frequency",
+      "Range 1, all ADCs operation, single ended mode V ≥ 1.62 V DDA",
+      "0.14",
+      "-",
+      "42",
+      "MHz"
+    ],
+    [
+      "f ADC",
+      "ADC clock frequency",
+      "Range 1, all ADCs operation, differential mode V ≥ 1.62 V DDA",
+      "0.14",
+      "-",
+      "56",
+      "MHz"
+    ],
+    [
+      "f s",
+      "Sampling rate, continuous mode",
+      "For given resolution and sampling time cycles (t ) s",
+      "0.001",
+      "f / (sampling time ADC [cycles] + resolution [bits] + 0.5)",
+      "f / (sampling time ADC [cycles] + resolution [bits] + 0.5)",
+      "Msps"
+    ],
+    [
+      "T TRIG",
+      "External trigger period",
+      "Considering trigger conversion latency time (t or LATR t ) LATRINJ",
+      "-",
+      "-",
+      "1ms",
+      "-"
+    ],
+    [
+      "T TRIG",
+      "External trigger period",
+      "Resolution = 12 bits, f ADC=60 MHz",
+      "tconv + [t LATR or t ] LATRINJ",
+      "-",
+      "1ms",
+      "-"
+    ],
+    [
+      "V (3) AIN",
+      "Conversion voltage range",
+      "-",
+      "0",
+      "-",
+      "V REF+",
+      "V"
+    ],
+    [
+      "R (4) AIN",
+      "External input impedance",
+      "-",
+      "-",
+      "-",
+      "50",
+      "kΩ"
+    ],
+    [
+      "C ADC",
+      "Internal sample and hold capacitor",
+      "-",
+      "-",
+      "5",
+      "-",
+      "pF"
+    ],
+    [
+      "t STAB",
+      "Power-up time",
+      "-",
+      "1",
+      "5",
+      "-",
+      "conversion cycle"
+    ],
+    [
+      "t CAL",
+      "Calibration time",
+      "f = 60 MHz ADC",
+      "1.93",
+      "5",
+      "-",
+      "µs"
+    ],
+    [
+      "t CAL",
+      "Calibration time",
+      "-",
+      "116",
+      "5",
+      "-",
+      "1/f ADC"
+    ],
+    [
+      "t LATR",
+      "Trigger conversion latency Regular and injected channels without conversion abort",
+      "CKMODE = 00",
+      "1.5",
+      "2",
+      "2.5",
+      "1/f ADC"
+    ],
+    [
+      "t LATR",
+      "Trigger conversion latency Regular and injected channels without conversion abort",
+      "CKMODE = 01",
+      "-",
+      "-",
+      "2.0",
+      "1/f ADC"
+    ],
+    [
+      "t LATR",
+      "Trigger conversion latency Regular and injected channels without conversion abort",
+      "CKMODE = 10",
+      "-",
+      "-",
+      "2.25",
+      "1/f ADC"
+    ],
+    [
+      "t LATR",
+      "Trigger conversion latency Regular and injected channels without conversion abort",
+      "CKMODE = 11",
+      "-",
+      "-",
+      "2.125",
+      "1/f ADC"
+    ],
+    [
+      "t LATRINJ",
+      "Trigger conversion latency Injected channels aborting a regular conversion",
+      "CKMODE = 00",
+      "2.5",
+      "3",
+      "3.5",
+      "1/f ADC"
+    ],
+    [
+      "t LATRINJ",
+      "Trigger conversion latency Injected channels aborting a regular conversion",
+      "CKMODE = 01",
+      "-",
+      "-",
+      "3.0",
+      "1/f ADC"
+    ],
+    [
+      "t LATRINJ",
+      "Trigger conversion latency Injected channels aborting a regular conversion",
+      "CKMODE = 10",
+      "-",
+      "-",
+      "3.25",
+      "1/f ADC"
+    ],
+    [
+      "t LATRINJ",
+      "Trigger conversion latency Injected channels aborting a regular conversion",
+      "CKMODE = 11",
+      "-",
+      "-",
+      "3.125",
+      "1/f ADC"
+    ],
+    [
+      "t s",
+      "Sampling time",
+      "f = 60 MHz ADC",
+      "0.0416",
+      "-",
+      "10.675",
+      "µs"
+    ],
+    [
+      "t s",
+      "Sampling time",
+      "-",
+      "2.5",
+      "-",
+      "640.5",
+      "1/f ADC"
+    ],
+    [
+      "t ADCVREG_STUP",
+      "ADC voltage regulator start-up time",
+      "-",
+      "-",
+      "-",
+      "20",
+      "µs"
+    ],
+    [
+      "t CONV",
+      "Total conversion time (including sampling time)",
+      "f = 60 MHz ADC Resolution = 12 bits",
+      "0.25",
+      "-",
+      "10.883",
+      "µs"
+    ],
+    [
+      "t CONV",
+      "Total conversion time (including sampling time)",
+      "-",
+      "t [cycles] + resolution [bits] +0.5 = 15 to 653 s",
+      "-",
+      "10.883",
+      "1/f ADC"
+    ],
+    [
+      "I (ADC) DDA",
+      "ADC consumption from the V DDA supply",
+      "fs = 4 Msps",
+      "-",
+      "590",
+      "730",
+      "µA"
+    ],
+    [
+      "I (ADC) DDA",
+      "ADC consumption from the V DDA supply",
+      "fs = 1 Msps",
+      "-",
+      "160",
+      "220",
+      "µA"
+    ],
+    [
+      "I (ADC) DDA",
+      "ADC consumption from the V DDA supply",
+      "fs = 10 ksps",
+      "-",
+      "16",
+      "50",
+      "µA"
+    ],
+    [
+      "I (ADC) DDV_S",
+      "ADC consumption from the V REF+ single ended mode",
+      "fs = 4 Msps",
+      "-",
+      "110",
+      "140",
+      "µA"
+    ],
+    [
+      "I (ADC) DDV_S",
+      "ADC consumption from the V REF+ single ended mode",
+      "fs = 1 Msps",
+      "-",
+      "30",
+      "40",
+      "µA"
+    ],
+    [
+      "I (ADC) DDV_S",
+      "ADC consumption from the V REF+ single ended mode",
+      "fs = 10 ksps",
+      "-",
+      "0.6",
+      "2",
+      "µA"
+    ],
+    [
+      "I (ADC) DDV_D",
+      "ADC consumption from the V REF+ differential mode",
+      "fs = 4 Msps",
+      "-",
+      "220",
+      "270",
+      "µA"
+    ],
+    [
+      "I (ADC) DDV_D",
+      "ADC consumption from the V REF+ differential mode",
+      "fs = 1 Msps",
+      "-",
+      "60",
+      "70",
+      "µA"
+    ],
+    [
+      "I (ADC) DDV_D",
+      "ADC consumption from the V REF+ differential mode",
+      "fs = 10 ksps",
+      "-",
+      "1.3",
+      "3",
+      "µA"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 7,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 7
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:2",
+    "vertical_merge_suspected"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32g484ce",
+    "table_id": "table_66",
+    "is_continued": true,
+    "pages": [
+      138,
+      139
+    ],
+    "rows_count": 41,
+    "cols_count": 7,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "table_id": "table_6",
+  "caption": "Table 6. Operating mode summary",
+  "pdf_name": "stm32n645a0",
+  "family": "N6",
+  "page": 29,
+  "merged_pages": [
+    29
+  ],
+  "headers": [
+    "System",
+    "Entry",
+    "Wake-up",
+    "rotallicso metsyS",
+    "kcolc metsyS",
+    "kcolc larehpireP",
+    "kcolc UPC",
+    "rotaluger egatloV",
+    "PWR_ON"
+  ],
+  "rows": [
+    [
+      "Run",
+      "-",
+      "-",
+      "NO",
+      "NO",
+      "NO",
+      ")1(NO",
+      ")hgih/wol SOV( NO",
+      "1"
+    ],
+    [
+      "Sleep",
+      "WFI or return from ISR or WFE(2)",
+      "See Table 7",
+      "NO",
+      "NO",
+      ")3(FFO/NO",
+      ")1(NO",
+      ")hgih/wol SOV( NO",
+      "1"
+    ],
+    [
+      "Stop SVOS high",
+      "SVOS + SLEEPDEEP + WFI or return from ISR, WFE, or wake-up source cleared(4)",
+      "See Table 7",
+      ")5(FFO/NO",
+      "FFO",
+      ")3(FFO/NO",
+      "FFO",
+      ")hgih SOVS( NO",
+      "1"
+    ],
+    [
+      "Stop SVOS low",
+      "SLEEPDEEP + WFI or return from ISR, WFE, or wake-up source cleared(3)",
+      "See Table 7",
+      "FFO",
+      "FFO",
+      "FFO",
+      "FFO",
+      ")wol SOVS( NO",
+      "1"
+    ],
+    [
+      "Standby",
+      "PDDS + SLEEPDEEP + WFI or return from ISR, WFE, or wake-up source cleared(3)",
+      "WKUP pins rising or falling edge, RTC alarm (A or B), RTC wake-up event, RTC tamper events, RTC timestamp event, external reset in NRST pin, IWDG reset",
+      "FFO",
+      "FFO",
+      "FFO",
+      "FFO",
+      "FFO",
+      "0(6)"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 9,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 9
+  },
+  "structured_json": null,
+  "warnings": [],
+  "datasheet_metaData": {
+    "pdf_name": "stm32n645a0",
+    "table_id": "table_6",
+    "is_continued": false,
+    "pages": [
+      29
+    ],
+    "rows_count": 5,
+    "cols_count": 9,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "table_id": "table_136",
+  "caption": "Table 136. Document revision history",
+  "pdf_name": "stm32h730ab",
+  "family": "H7",
+  "page": 266,
+  "merged_pages": [
+    266,
+    267,
+    268,
+    269,
+    270
+  ],
+  "headers": [
+    "Date",
+    "Revision",
+    "Changes"
+  ],
+  "rows": [
+    [
+      "10-Jul-2020",
+      "1",
+      "Initial release."
+    ],
+    [
+      "03-Sep-2020",
+      "2",
+      "Renamed Section 3.31 into True random number generator (RNG). Replaced V by V in Section 6: Electrical characteristics. DDIOx DD Updated I in Table 10: Current characteristics and Table 17: Inrush IO current and inrush electric charge characteristics for LDO and SMPS. Removed Table 13: Supply voltage and maximum temperature configuration. Updated Table 27: Typical current consumption in Autonomous mode, Table 30: Typical and maximum current consumption in Standby mode and Table 31: Typical and maximum current consumption in VBAT mode. Added Section 6.3.16: I/O current injection characteristics. Removed reference to PI8 in Table 55: Output voltage characteristics for all I/Os except PC13, PC14 and PC15 and Table 56: Output voltage characteristics for PC13, PC14 and PC15. Added Section : Analog switch between ports Pxy_C and Pxy. Added Figure 83: LQFP176 - Footprint example and Figure 81: UFBGA169 - Footprint example."
+    ],
+    [
+      "07-Dec-2021",
+      "3",
+      "Added indication that patents apply to the devices in Section : Features. Table 1: STM32H730xB features and peripheral counts: – Changed number of general-purpose 32-bit timers to 4. – For LQFP100 and TFBGA100 packages, replaced 2 Octo-SPI/Quad- SPI interfaces by 1 and remove note – Changed number of SPI/I2S from 4/4 to 6/4 for UFBGA169. In Section 3.8.1: Power supply scheme, changed V power supply DD requirements. Section 3.8.3: Voltage regulator: Scale0 is available even without LDO. Section 3.37: Universal synchronous/asynchronous receiver transmitter (USART): changed USART communication speed to 17 Mbit/s. Table 7: STM32H730xB pin and ball descriptions: – for PA15(JTDI), replaced SPI3_NSS/I2S3_WS alternate function by SPI3_NSS(boot)/I2S3_WS. – Added Note 1.and Note 2.to the package pin/balls corresponding to Pxy and Pxy_C. Added V in Table 12: General operating conditions. BAT Moved LSI clock from backup domain to VDD domain in Figure 13: Power supply scheme. Modified Section 6.3.3: SMPS step-down converter including Figure 16: External components for SMPS step-down converter. Updated Table 18: Operating conditions at power-up/power-down title and added t . VCORE"
+    ],
+    [
+      "07-Dec-2021",
+      "3 (continued)",
+      "Section : On-chip peripheral current consumption: updated measurement conditions and Table 32: Peripheral current consumption in Run mode. Updated Table 34: High-speed external user clock characteristics. Changed unit for PLL long-term jitter in Table 42: PLL1 characteristics (wide VCO frequency range). Renamed parameter into I in Table 54: I/O static characteristics. ILEAK lkg Table 58: Output timing characteristics (HSLV ON): updated load capacitance condition for t/t and for speed = 10. r f Updated Figure 39: OCTOSPI SDR read/write timing diagram, Figure 40: OCTOSPI DTR mode timing diagram, Figure 41: OCTOSPI Hyperbus clock timing diagram, Figure 42: OCTOSPI Hyperbus read timing diagram and Figure 43: OCTOSPI Hyperbus write timing diagram. Table 83: 16-bit ADC characteristics: updated sampling rate for slow channels. Updated Figure 44: ADC accuracy characteristics and Figure 45: Typical connection diagram when using the ADC with FT/TT pins featuring analog switch function as well as notes below figure. Updated Figure 46: Power supply and reference decoupling (V not REF+ connected to V ). DDA Updated T max value in Table 92: Temperature sensor characteristics. L Changed temperature condition to 130 °C for TS_CAL2 in Table 93: Temperature sensor calibration values. Updated Figure 53: USART timing diagram in SPI master mode and Figure 54: USART timing diagram in SPI slave mode. Updated Figure 63: SD high-speed mode, Figure 64: SD default mode and Figure 65: SDMMC DDR mode. Updated Figure 69: Ethernet MII timing diagram. Updated Figure 72: LQFP100 - Outline(15), Table 132: LQFP176 - Mechanical data, Figure 75: TFBGA100 - Footprint example, Figure 82: LQFP176 - Outline(15) and Table 132: LQFP176 - Mechanical data."
+    ],
+    [
+      "17-Nov-2023",
+      "4",
+      "Updated document title. Updated Figure 1: STM32H730xB block diagram. In Table 1: STM32H730xB features and peripheral counts: changed the number of available Ethernet MII and SAI PDM interfaces. Updated description of USB regulator bypass in Section 3.8.1: Power supply scheme. Updated Section 3.39: Serial peripheral interface (SPI)/inter- integrated sound interfaces (I2S). Updated Section 3.40: Serial audio interfaces (SAI). Updated Table 7: STM32H730xB pin and ball descriptions (removed ADC3_INP16 additional function from PH5 pin). Added note to Chapter 6.2. Updated I definition in Table 10: Current characteristics. IO Updated V in Table 12: General operating conditions to cover the case IN of Pxy_C. In Table 13: Supply voltage and maximum temperature configuration, updated V minimum value for VOS0 power source and external DDLDO bypass. Updated Figure 80: UFBGA169 - Outline and Table 130: UFBGA169 - Mechanical data."
+    ],
+    [
+      "17-Nov-2023",
+      "4 (continued)",
+      "In Table 19: Reset and power control block characteristics: – renamed power-on/power-down reset threshold V into POR/PDR V . BOR0/POR/PDR – updated description of V . hyst_POR_PDR – renamed Hysteresis voltage for Power-on/power-down reset (including BOR0) into V . hyst_POR_PDR Updated measurement conditions for Typical and maximum current consumption parameters. Updated Section : High-speed external clock generated from a crystal/ceramic resonator. Updated Table 50: EMI characteristics for fHSE = 8 MHz and fCPU = 550 MHz. Updated Section : I/O static current consumption and Section : I/O dynamic current consumption. Updated V and V in Table 54: I/O static characteristics and Table 55: IH OH Output voltage characteristics for all I/Os except PC13, PC14 and PC15, respectively, to cover the case of Pxy_C I/Os. Updated note 2 in Table 57: Output timing characteristics (HSLV OFF) and Table 58: Output timing characteristics (HSLV ON). Reorganized Section 6.3.19: FMC characteristics and updated Figure 35: NAND controller waveforms for read access and Figure 36: NAND controller waveforms for write access. Updated t in Table 85: 16-bit ADC accuracy. TRIG Changed V maximum value (buffer ON) in Table 89: DAC DAC_OUT characteristics. Updated f maximum value in Table 101: DFSDM measured DFSDMCLK timing. In Table 110: USART (SPI mode) characteristics, changed t and w(SCKH) t into t and t , respectively. w(SCKL) w(CKH) w(CKL) Updated Figure 55: SPI timing diagram - slave mode and CPHA = 0, Figure 56: SPI timing diagram - slave mode and CPHA = 1 and Figure 57: SPI timing diagram - master mode. Updated Figure 60: SAI master timing waveforms and Figure 61: SAI slave timing waveforms. Section : Ethernet interface characteristics: – added constraints on Pxy_C I/Os. – updated typical t value in Table 121: Dynamics characteristics: d(TXEN) Ethernet MAC signals for MII. Added Section 7.1: Device marking, and removed device marking sections for all packages. Updated Table 135: Thermal characteristics with Θ , Θ , and Θ values JA JB JC for the UFBGA144 package. Changed SPIx_SS to SPIx_NSS in: – Figure 1: STM32H730xB block diagram. – Section 3.39: Serial peripheral interface (SPI)/inter- integrated sound interfaces (I2S). – Table 7: STM32H730xB pin and ball descriptions. – Table 8: STM32H730xB pin alternate functions. – Section : SPI interface characteristics."
+    ],
+    [
+      "22-May-2025",
+      "5",
+      "In the context of I2C, replaced master and slave by controller and target, respectively. Features – Replaced Dhrystone/DMIPS by Coremark score on cover page. – Updated USART/UART/LPUART feature, modified the number of SPIs Added reference to errata sheet ES0491 in Section 1: Introduction. Updated Figure 2: Power-up/power-down sequence and moved figure to Section 3.8.2: Power supply supervisor. Updated note 1 in Table 4: Timer feature comparison. Updated Figure 6: UFBGA144 ballout (without SMPS). Section 6: Electrical characteristics: – Updated maximum input voltage on FT_xxx pins and added note 5.in Table 9: Voltage characteristics. – Changed CoreMark values to 2778 in Table 26: Typical consumption in Run mode and corresponding performance versus code position. – Updated Figure 24: Typical application with a 32.768 kHz crystal. – Replaced f by f in Section 6.3.22: 16-bit ADC characteristics. PCLK2 HCLK – Updated gain error (EG) in Table 88: 12-bit ADC accuracy. – Updated Table 110: USART (SPI mode) characteristics conditions, as well as Figure 54: USART timing diagram in SPI slave mode and Figure 53: USART timing diagram in SPI master mode. – Updated Figure 55: SPI timing diagram - slave mode and CPHA = 0 and Figure 56: SPI timing diagram - slave mode and CPHA = 1. – Added Figure 30: Asynchronous multiplexed PSRAM/NOR write waveforms. Updated Section 7.6: UFBGA169 package information (A0YV)"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 3,
+  "status": null,
+  "has_empty_cells": false,
+  "heuristics": {
+    "cols_extracted": 3
+  },
+  "structured_json": null,
+  "warnings": [
+    "multi_page_merged:5"
+  ],
+  "datasheet_metaData": {
+    "pdf_name": "stm32h730ab",
+    "table_id": "table_136",
+    "is_continued": true,
+    "pages": [
+      266,
+      267,
+      268,
+      269,
+      270
+    ],
+    "rows_count": 7,
+    "cols_count": 3,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
+  }
+}
