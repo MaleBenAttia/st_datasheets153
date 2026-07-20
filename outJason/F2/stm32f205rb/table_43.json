@@ -5,34 +5,44 @@
   "family": "F2",
   "page": 100,
   "merged_pages": [
-    101
+    100
   ],
   "headers": [
     "Symbol",
-    "Parameter",
+    "Ratings",
     "Conditions",
-    "Class"
+    "Class",
+    "Maximum value(1)",
+    "Unit"
   ],
   "rows": [
     [
-      "LU",
-      "Static latch-up class",
-      "T +105 °C conforming to JESD78A A",
-      "II level A"
+      "V ESD(HBM)",
+      "Electrostatic discharge voltage (human body model)",
+      "T +25 °C A conforming to JESD22-A114",
+      "2",
+      "2000(2)",
+      "V"
+    ],
+    [
+      "V ESD(CDM)",
+      "Electrostatic discharge voltage (charge device model)",
+      "T +25 °C A conforming to JESD22-C101",
+      "II",
+      "500",
+      "V"
     ]
   ],
   "extraction_method": "pdfplumber",
   "extraction_confidence": "high",
   "empty_cell_ratio": 0.0,
-  "col_count": 4,
+  "col_count": 6,
   "status": null,
   "has_empty_cells": false,
   "heuristics": {
     "caption_near_bottom": true,
     "caption_y_ratio": 0.75,
-    "body_on_next_page": true,
-    "next_page_q_boosted": 28.0,
-    "cols_extracted": 4
+    "cols_extracted": 6
   },
   "structured_json": null,
   "warnings": [],
@@ -41,10 +51,10 @@
     "table_id": "table_43",
     "is_continued": false,
     "pages": [
-      101
+      100
     ],
-    "rows_count": 1,
-    "cols_count": 4,
+    "rows_count": 2,
+    "cols_count": 6,
     "confidence": "high",
     "empty_cell_ratio": 0.0
   }

@@ -5,6 +5,7 @@
   "family": "G0",
   "page": 66,
   "merged_pages": [
+    66,
     67
   ],
   "headers": [
@@ -14,6 +15,18 @@
     "Unit"
   ],
   "rows": [
+    [
+      "I VDD/VDDA ,VDDIO2",
+      "Current into VDD/VDDA and VDDIO2 power pins (source)(1)",
+      "100",
+      "mA"
+    ],
+    [
+      "I VSS/VSSA,VSS",
+      "Current out of VSS/VSSA and VSS ground pins (sink)(2)",
+      "100",
+      "mA"
+    ],
     [
       "I IO(PIN)",
       "Output current sunk by any I/O and control pin except FT_f",
@@ -72,22 +85,22 @@
   "heuristics": {
     "caption_near_bottom": true,
     "caption_y_ratio": 0.77,
-    "body_on_next_page": true,
-    "next_page_q_boosted": 48.0,
     "cols_extracted": 4
   },
   "structured_json": null,
   "warnings": [
+    "multi_page_merged:2",
     "vertical_merge_suspected"
   ],
   "datasheet_metaData": {
     "pdf_name": "stm32g0b1cb",
     "table_id": "table_22",
-    "is_continued": false,
+    "is_continued": true,
     "pages": [
+      66,
       67
     ],
-    "rows_count": 8,
+    "rows_count": 10,
     "cols_count": 4,
     "confidence": "high",
     "empty_cell_ratio": 0.0

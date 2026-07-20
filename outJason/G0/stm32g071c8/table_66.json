@@ -5,6 +5,7 @@
   "family": "G0",
   "page": 100,
   "merged_pages": [
+    100,
     101
   ],
   "headers": [
@@ -16,6 +17,22 @@
     "Unit"
   ],
   "rows": [
+    [
+      "R",
+      "Resistor bridge for V BAT",
+      "-",
+      "39",
+      "-",
+      "kΩ"
+    ],
+    [
+      "Q",
+      "Ratio on V measurement BAT",
+      "-",
+      "3",
+      "-",
+      "-"
+    ],
     [
       "Er(1)",
       "Error on Q",
@@ -42,20 +59,21 @@
   "heuristics": {
     "caption_near_bottom": true,
     "caption_y_ratio": 0.769,
-    "body_on_next_page": true,
-    "next_page_q_boosted": 38.0,
     "cols_extracted": 6
   },
   "structured_json": null,
-  "warnings": [],
+  "warnings": [
+    "multi_page_merged:2"
+  ],
   "datasheet_metaData": {
     "pdf_name": "stm32g071c8",
     "table_id": "table_66",
-    "is_continued": false,
+    "is_continued": true,
     "pages": [
+      100,
       101
     ],
-    "rows_count": 2,
+    "rows_count": 4,
     "cols_count": 6,
     "confidence": "high",
     "empty_cell_ratio": 0.0

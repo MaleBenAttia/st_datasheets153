@@ -5,44 +5,64 @@
   "family": "F1",
   "page": 48,
   "merged_pages": [
-    48
+    49
   ],
   "headers": [
     "Symbol",
-    "Parameter",
-    "Conditions",
-    "Class"
+    "Description",
+    "Functional susceptibility / Negative",
+    "Functional susceptibility / Positive",
+    "Unit"
   ],
   "rows": [
     [
-      "LU",
-      "Static latch-up class",
-      "T = +105 °C conforming to JESD78A A",
-      "II level A"
+      "I INJ",
+      "Injected current on OSC_IN32, OSC_OUT32, PA4, PA5, PC13",
+      "-0",
+      "+0",
+      "mA"
+    ],
+    [
+      "I INJ",
+      "Injected current on all FT pins",
+      "-5",
+      "+0",
+      "mA"
+    ],
+    [
+      "I INJ",
+      "Injected current on any other pin",
+      "-5",
+      "+5",
+      "mA"
     ]
   ],
   "extraction_method": "pdfplumber",
   "extraction_confidence": "high",
   "empty_cell_ratio": 0.0,
-  "col_count": 4,
+  "col_count": 5,
   "status": null,
   "has_empty_cells": false,
   "heuristics": {
     "caption_near_bottom": true,
     "caption_y_ratio": 0.808,
-    "cols_extracted": 4
+    "body_on_next_page": true,
+    "next_page_q_boosted": 17.0,
+    "cols_extracted": 5
   },
   "structured_json": null,
-  "warnings": [],
+  "warnings": [
+    "dynamic_header_depth:2"
+  ],
   "datasheet_metaData": {
     "pdf_name": "stm32f102c4",
     "table_id": "table_32",
     "is_continued": false,
     "pages": [
-      48
+      49
     ],
-    "rows_count": 1,
-    "cols_count": 4,
+    "rows_count": 3,
+    "cols_count": 5,
     "confidence": "high",
     "empty_cell_ratio": 0.0
   }

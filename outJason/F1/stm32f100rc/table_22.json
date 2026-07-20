@@ -5,6 +5,7 @@
   "family": "F1",
   "page": 51,
   "merged_pages": [
+    51,
     52
   ],
   "headers": [
@@ -17,6 +18,24 @@
     "Unit"
   ],
   "rows": [
+    [
+      "f OSC_IN",
+      "Oscillator frequency",
+      "-",
+      "4",
+      "8",
+      "24",
+      "MHz"
+    ],
+    [
+      "R F",
+      "Feedback resistor",
+      "-",
+      "-",
+      "200",
+      "-",
+      "kΩ"
+    ],
     [
       "C L1 C (3) L2",
       "Recommended load capacitance versus equivalent serial resistance of the crystal (R )(4) S",
@@ -63,20 +82,21 @@
   "heuristics": {
     "caption_near_bottom": true,
     "caption_y_ratio": 0.769,
-    "body_on_next_page": true,
-    "next_page_q_boosted": 55.0,
     "cols_extracted": 7
   },
   "structured_json": null,
-  "warnings": [],
+  "warnings": [
+    "multi_page_merged:2"
+  ],
   "datasheet_metaData": {
     "pdf_name": "stm32f100rc",
     "table_id": "table_22",
-    "is_continued": false,
+    "is_continued": true,
     "pages": [
+      51,
       52
     ],
-    "rows_count": 4,
+    "rows_count": 6,
     "cols_count": 7,
     "confidence": "high",
     "empty_cell_ratio": 0.0

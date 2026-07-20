@@ -52,6 +52,36 @@ except ImportError:
     generate_rag_for_pdf = None
 
 
+def _fix_missing_dashes(table: dict) -> dict:
+    """Remplace les cellules vides par '-' dans les colonnes Min/Max/Typ.
+
+    pdfplumber ne capture pas toujours le '-' quand il est rendu comme trait
+    vectoriel dans le PDF. On détecte les colonnes d'amplitude (Min, Max, Typ)
+    et on y remplace les "" par "-".
+    """
+    headers = table.get("headers", [])
+    rows = table.get("rows", [])
+    if not headers or not rows:
+        return table
+
+    # Colonnes typiquement numériques / à tirets
+    dash_col_keywords = ("min", "max", "typ", "pll")
+    dash_cols = {
+        i for i, h in enumerate(headers)
+        if any(kw in h.lower() for kw in dash_col_keywords)
+    }
+
+    if not dash_cols:
+        return table
+
+    for row in rows:
+        for ci in dash_cols:
+            if ci < len(row) and row[ci] == "":
+                row[ci] = "-"
+
+    return table
+
+
 def detect_pdf_type(pdf_path: str) -> int:
     """Détecte le type de PDF : 1 = Acrobat, 2 = Antenna House (XML)."""
     try:
@@ -150,6 +180,9 @@ def process_pdf(pdf_path: Path, family: str) -> dict:
 
             # ── Nettoyage des pieds de page (après le garde-fou) ─────────────────
             raw_dict = correct_footer_in_table(raw_dict)
+
+            # ── Correction des tirets manquants dans les colonnes Min/Max/Typ ────
+            raw_dict = _fix_missing_dashes(raw_dict)
 
             # Validation Pydantic
             table_obj = RawTable(**raw_dict)

@@ -8,35 +8,51 @@
     130
   ],
   "headers": [
-    "Electrical ch",
-    "aracteristics",
-    "",
-    "",
-    "",
-    "",
-    "STM3"
+    "Symbol",
+    "Description",
+    "Functional susceptibility / Negative",
+    "Functional susceptibility / Positive",
+    "Unit"
   ],
-  "rows": [],
-  "extraction_method": "pdfplumber_text",
-  "extraction_confidence": "low",
-  "empty_cell_ratio": 1.0,
-  "col_count": 7,
+  "rows": [
+    [
+      "I INJ",
+      "Injected current on pins PA4, PA5, PA11, and PA12",
+      "0",
+      "0",
+      "mA"
+    ],
+    [
+      "I INJ",
+      "Injected current on pins PC14, PC15, BOOT0, NRESET, PA8, PB3, PB4, PB5, PB6, PB7, PB8, and also PG15, PB9, PE0",
+      "0",
+      "N/A",
+      "mA"
+    ],
+    [
+      "I INJ",
+      "Injected current on all other pins",
+      "5",
+      "N/A",
+      "mA"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 5,
   "status": null,
-  "has_empty_cells": true,
+  "has_empty_cells": false,
   "heuristics": {
     "caption_near_bottom": true,
     "caption_y_ratio": 0.783,
     "body_on_next_page": true,
-    "next_page_q_boosted": 173.0,
-    "cols_extracted": 7,
-    "truncated_rows": 30,
-    "footnote_rows_removed": 14
+    "next_page_q_boosted": 17.0,
+    "cols_extracted": 5
   },
   "structured_json": null,
   "warnings": [
-    "few_data_rows:0",
-    "high_empty_ratio:1.00",
-    "has_empty_cells"
+    "dynamic_header_depth:2"
   ],
   "datasheet_metaData": {
     "pdf_name": "stm32h553cg",
@@ -45,9 +61,9 @@
     "pages": [
       130
     ],
-    "rows_count": 0,
-    "cols_count": 7,
-    "confidence": "low",
-    "empty_cell_ratio": 1.0
+    "rows_count": 3,
+    "cols_count": 5,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
   }
 }

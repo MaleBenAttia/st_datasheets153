@@ -8,174 +8,51 @@
     81
   ],
   "headers": [
-    "xC, STM32F1",
-    "01xD, S",
-    "TM32F10",
-    "1xE",
-    "",
-    "",
-    "Electrical",
-    "characteristics"
+    "Symbol",
+    "Description",
+    "Functional susceptibility / Negative",
+    "Functional susceptibility / Positive",
+    "Unit"
   ],
   "rows": [
     [
-      "I/O current",
-      "injecti",
-      "on cha",
-      "racteristics",
-      "",
-      "",
-      "Electrical",
-      "characteristics"
+      "I INJ",
+      "Injected current on OSC_IN32, OSC_OUT32, PA4, PA5, PC13",
+      "-0",
+      "+0",
+      "mA"
     ],
     [
-      "As a general",
-      "rule, curr",
-      "ent inject",
-      "ion to the I/O",
-      "pins, due to e",
-      "xterna",
-      "l voltage b",
-      "elow V or SS"
+      "I INJ",
+      "Injected current on all FT pins",
+      "-5",
+      "+0",
+      "mA"
     ],
     [
-      "above V (f DD",
-      "or standa",
-      "rd, 3 V-c",
-      "apable I/O pins",
-      ") should be a",
-      "voide",
-      "d during no",
-      "rmal product"
-    ],
-    [
-      "operation. Ho",
-      "wever, in",
-      "order to",
-      "give an indica",
-      "tion of the rob",
-      "ustne",
-      "ss of the m",
-      "icrocontroller in"
-    ],
-    [
-      "cases when a",
-      "bnormal",
-      "injection",
-      "accidentally ha",
-      "ppens, susce",
-      "ptibilit",
-      "y tests are",
-      "performed on a"
-    ],
-    [
-      "sample basis",
-      "during d",
-      "evice cha",
-      "racterization.",
-      "ppens, susce",
-      "ptibilit",
-      "y tests are",
-      "performed on a"
-    ],
-    [
-      "Functional",
-      "suscept",
-      "ibilty to",
-      "I/O current",
-      "injection",
-      "ptibilit",
-      "y tests are",
-      "performed on a"
-    ],
-    [
-      "While a simpl",
-      "e applica",
-      "tion is ex",
-      "ecuted on the",
-      "device, the d",
-      "evice i",
-      "s stressed",
-      "by injecting"
-    ],
-    [
-      "current into th",
-      "e I/O pin",
-      "s progra",
-      "mmed in floatin",
-      "g input mode",
-      ". Whil",
-      "e current is",
-      "injected into"
-    ],
-    [
-      "the I/O pin, o",
-      "ne at a ti",
-      "me, the d",
-      "evice is check",
-      "ed for function",
-      "al fail",
-      "ures.",
-      "injected into"
-    ],
-    [
-      "The failure is",
-      "indicated",
-      "by an o",
-      "ut of range par",
-      "ameter: ADC",
-      "error",
-      "above a ce",
-      "rtain limit (>5"
-    ],
-    [
-      "LSB TUE), ou",
-      "t of spec",
-      "current i",
-      "njection on ad",
-      "jacent pins or",
-      "other",
-      "functional",
-      "failure (for"
-    ],
-    [
-      "example rese",
-      "t, oscillat",
-      "or freque",
-      "ncy deviation)",
-      ".",
-      "other",
-      "functional",
-      "failure (for"
-    ],
-    [
-      "The test resul",
-      "ts are giv",
-      "en in Ta",
-      "ble45",
-      ".",
-      "other",
-      "functional",
-      "failure (for"
+      "I INJ",
+      "Injected current on any other pin",
+      "-5",
+      "+5",
+      "mA"
     ]
   ],
-  "extraction_method": "pdfplumber_text",
+  "extraction_method": "pdfplumber",
   "extraction_confidence": "high",
-  "empty_cell_ratio": 0.0179,
-  "col_count": 8,
+  "empty_cell_ratio": 0.0,
+  "col_count": 5,
   "status": null,
-  "has_empty_cells": true,
+  "has_empty_cells": false,
   "heuristics": {
     "caption_near_bottom": true,
     "caption_y_ratio": 0.809,
     "body_on_next_page": true,
-    "next_page_q_boosted": 162.0,
-    "cols_extracted": 8,
-    "truncated_rows": 18
+    "next_page_q_boosted": 17.0,
+    "cols_extracted": 5
   },
   "structured_json": null,
   "warnings": [
-    "has_empty_cells"
+    "dynamic_header_depth:2"
   ],
   "datasheet_metaData": {
     "pdf_name": "stm32f101rc",
@@ -184,9 +61,9 @@
     "pages": [
       81
     ],
-    "rows_count": 14,
-    "cols_count": 8,
+    "rows_count": 3,
+    "cols_count": 5,
     "confidence": "high",
-    "empty_cell_ratio": 0.0179
+    "empty_cell_ratio": 0.0
   }
 }

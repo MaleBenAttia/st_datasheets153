@@ -1,5 +1,5 @@
 {
-  "pdf": "C:\\Users\\user\\Desktop\\st_datasheets153\\DataSHEET\\C5\\stm32c542cc.pdf",
+  "pdf": "C:\\Users\\user\\Desktop\\STf\\DataSHEET\\C5\\stm32c542cc.pdf",
   "family": "C5",
   "pdf_name": "stm32c542cc",
   "tables_found": 83,
@@ -9,7 +9,971 @@
   "low": 0,
   "failed": 0,
   "errors": [],
-  "worst_tables": [],
+  "worst_tables": [
+    {
+      "table_id": "table_1",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "multi_page_merged:2"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 1. Device features and peripheral counts",
+      "page": 4,
+      "merged_pages": [
+        4,
+        5
+      ],
+      "col_count": 9,
+      "headers_preview": "[\"Peripherals\", \"Peripherals\", \"STM32C542FCP\", \"STM32C542FCU\", \"STM32C542ECU\", \"STM32C542KCT\", \"STM32C542KCU\", \"TCC245C23MTS UCC245C23MTS\", \"STM32C542RCT\"]",
+      "rows_count": 37,
+      "heuristics": {
+        "cols_extracted": 9
+      }
+    },
+    {
+      "table_id": "table_2",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "dynamic_header_depth:2"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 2. LPDMA1 and LPDMA2 channels implementation and usage.",
+      "page": 13,
+      "merged_pages": [
+        13
+      ],
+      "col_count": 4,
+      "headers_preview": "[\"Channel x\", \"Hardware parameters / dma_fifo_size[x]\", \"Hardware parameters / dma_addressing[x]\", \"Features\"]",
+      "rows_count": 1,
+      "heuristics": {
+        "caption_near_bottom": true,
+        "caption_y_ratio": 0.756,
+        "cols_extracted": 4
+      }
+    },
+    {
+      "table_id": "table_6",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "vertical_merge_suspected"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 6. Timer feature comparison.",
+      "page": 21,
+      "merged_pages": [
+        21
+      ],
+      "col_count": 8,
+      "headers_preview": "[\"Timer type\", \"Timer\", \"Counter resolution\", \"Counter type\", \"Prescaler factor\", \"DMA request generation\", \"Capture / compare channels\", \"Complementary outputs\"]",
+      "rows_count": 5,
+      "heuristics": {
+        "cols_extracted": 8
+      }
+    },
+    {
+      "table_id": "table_7",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "vertical_merge_suspected"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 7. I2C implementation",
+      "page": 26,
+      "merged_pages": [
+        26
+      ],
+      "col_count": 2,
+      "headers_preview": "[\"Features(1)\", \"I2C1\"]",
+      "rows_count": 7,
+      "heuristics": {
+        "cols_extracted": 2
+      }
+    },
+    {
+      "table_id": "table_8",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "vertical_merge_suspected"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 8. I3C peripheral controller/target features versus MIPI® v1.1",
+      "page": 28,
+      "merged_pages": [
+        28
+      ],
+      "col_count": 5,
+      "headers_preview": "[\"Features(1)\", \"MIPI® I3C v1.1\", \"I3C peripheral when controller\", \"I3C peripheral when target\", \"Comments\"]",
+      "rows_count": 19,
+      "heuristics": {
+        "cols_extracted": 5
+      }
+    },
+    {
+      "table_id": "table_12",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "dynamic_header_depth:2",
+        "multi_page_merged:7",
+        "vertical_merge_suspected"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 12. STM32C542xx pin/ball definition",
+      "page": 40,
+      "merged_pages": [
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46
+      ],
+      "col_count": 14,
+      "headers_preview": "[\"Pin number / TSSOP20\", \"Pin number / UFQFPN20\", \"Pin number / UFQFPN24\", \"Pin number / UFQFPN32\", \"Pin number / LQFP32\", \"Pin number / LQFP48\", \"Pin number / UFQFPN48\", \"Pin number / LQFP64\", \"Pin n",
+      "rows_count": 71,
+      "heuristics": {
+        "cols_extracted": 14
+      }
+    },
+    {
+      "table_id": "table_13",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "dynamic_header_depth:2",
+        "multi_page_merged:2",
+        "vertical_merge_suspected"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 13. Alternate functions.",
+      "page": 47,
+      "merged_pages": [
+        47,
+        48
+      ],
+      "col_count": 18,
+      "headers_preview": "[\"Port\", \"Port\", \"AF0 / SYS\", \"AF1 / LPTIM1/ TIM1/2\", \"AF2 / I3C1/ TIM1/8/12/15\", \"AF3 / I3C1/LPTIM1/ LPUART1/ TIM8\", \"AF4 / I2C1/2/I3C1/ LPTIM1/SPI1/ I2S1/TIM15/ USART1/2\", \"AF5 / I3C1/LPTIM1/ SPI1/I",
+      "rows_count": 54,
+      "heuristics": {
+        "cols_extracted": 18
+      }
+    },
+    {
+      "table_id": "table_15",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "vertical_merge_suspected"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 15. Current characteristics",
+      "page": 51,
+      "merged_pages": [
+        51
+      ],
+      "col_count": 4,
+      "headers_preview": "[\"Symbol\", \"Ratings\", \"Max\", \"Unit\"]",
+      "rows_count": 10,
+      "heuristics": {
+        "cols_extracted": 4
+      }
+    },
+    {
+      "table_id": "table_23",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "dynamic_header_depth:2",
+        "vertical_merge_suspected"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 23. Typical and maximum current consumption in Run mode",
+      "page": 55,
+      "merged_pages": [
+        55
+      ],
+      "col_count": 11,
+      "headers_preview": "[\"Symbol\", \"Parameter\", \"Conditions\", \"f / HCLK (MHz)\", \"f / Typ\", \"Max LDO / TJ = 30°C\", \"Max LDO / TJ = 90°C\", \"Max LDO / TJ = 110°C\", \"Max LDO / TJ = 130°C\", \"Max LDO / TJ = 140°C\", \"Max LDO / Unit",
+      "rows_count": 8,
+      "heuristics": {
+        "cols_extracted": 11
+      }
+    },
+    {
+      "table_id": "table_24",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "dynamic_header_depth:2",
+        "vertical_merge_suspected"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 24. Typical current consumption in Run mode with CoreMark running from flash memory and SRAM.",
+      "page": 55,
+      "merged_pages": [
+        55
+      ],
+      "col_count": 9,
+      "headers_preview": "[\"Symbol\", \"Parameter\", \"Conditions / Peripheral\", \"SYSCLK / source\", \"fHCLK / (MHz)\", \"Typ\", \"Unit\", \"Typ\", \"Unit\"]",
+      "rows_count": 7,
+      "heuristics": {
+        "cols_extracted": 9
+      }
+    },
+    {
+      "table_id": "table_25",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "dynamic_header_depth:2"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 25. Typical and maximum current consumption in Sleep mode",
+      "page": 55,
+      "merged_pages": [
+        55
+      ],
+      "col_count": 11,
+      "headers_preview": "[\"Symbol\", \"Parameter\", \"Conditions\", \"(MHz)\", \"Typ\", \"Max / TJ = 30°C\", \"Max / TJ = 90°C\", \"Max / TJ = 110°C\", \"Max / TJ = 130°C\", \"Max / TJ = 140°C\", \"Max / Unit\"]",
+      "rows_count": 4,
+      "heuristics": {
+        "caption_near_bottom": true,
+        "caption_y_ratio": 0.759,
+        "cols_extracted": 11
+      }
+    },
+    {
+      "table_id": "table_26",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "dynamic_header_depth:2",
+        "vertical_merge_suspected"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 26. Typical and maximum current consumption in Stop mode",
+      "page": 56,
+      "merged_pages": [
+        56
+      ],
+      "col_count": 11,
+      "headers_preview": "[\"Symbol\", \"Parameter\", \"Conditions\", \"Conditions\", \"Typ\", \"Max / TJ = 30°C\", \"Max / TJ = 90°C\", \"Max / TJ = 110°C\", \"Max / TJ = 130°C\", \"Max / TJ = 140°C\", \"Max / Unit\"]",
+      "rows_count": 6,
+      "heuristics": {
+        "cols_extracted": 11
+      }
+    },
+    {
+      "table_id": "table_27",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "dynamic_header_depth:2"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 27. Typical and maximum HSIKERON current consumption in Stop mode",
+      "page": 56,
+      "merged_pages": [
+        56
+      ],
+      "col_count": 11,
+      "headers_preview": "[\"Symbol\", \"Parameter\", \"Conditions\", \"Conditions\", \"Typ\", \"Max / TJ = 30°C\", \"Max / TJ = 90°C\", \"Max / TJ = 110°C\", \"Max / TJ = 130°C\", \"Max / TJ = 140°C\", \"Max / Unit\"]",
+      "rows_count": 2,
+      "heuristics": {
+        "cols_extracted": 11
+      }
+    },
+    {
+      "table_id": "table_28",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "dynamic_header_depth:2"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 28. Typical and maximum current consumption in Standby mode",
+      "page": 56,
+      "merged_pages": [
+        56
+      ],
+      "col_count": 12,
+      "headers_preview": "[\"Symbol\", \"Parameter\", \"RTC and / LSE (1)\", \"Typ / 2.7 V\", \"Typ / 3 V\", \"Typ / 3.3 V\", \"Max / TJ = 30°C\", \"Max / TJ = 90°C\", \"Max / TJ = 110°C\", \"Max / TJ = 130°C\", \"Max / TJ = 140°C\", \"Max / Unit\"]",
+      "rows_count": 4,
+      "heuristics": {
+        "cols_extracted": 12
+      }
+    },
+    {
+      "table_id": "table_29",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "multi_page_merged:2",
+        "vertical_merge_suspected"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 29. Peripheral current consumption measured in Sleep mode.",
+      "page": 57,
+      "merged_pages": [
+        57,
+        58
+      ],
+      "col_count": 4,
+      "headers_preview": "[\"Bus\", \"Peripheral\", \"IDD(Typ)\", \"Unit\"]",
+      "rows_count": 44,
+      "heuristics": {
+        "cols_extracted": 4
+      }
+    },
+    {
+      "table_id": "table_30",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "multi_page_merged:2",
+        "vertical_merge_suspected"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 30. Wake-up time from low-power modes.",
+      "page": 59,
+      "merged_pages": [
+        59,
+        60
+      ],
+      "col_count": 7,
+      "headers_preview": "[\"Symbol\", \"Parameter\", \"Conditions\", \"Wakeup clock\", \"fHCLK (MHz)\", \"Typ\", \"Unit\"]",
+      "rows_count": 15,
+      "heuristics": {
+        "cols_extracted": 7
+      }
+    },
+    {
+      "table_id": "table_32",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "multi_page_merged:2",
+        "vertical_merge_suspected"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 32. High-speed external user clock characteristics.",
+      "page": 59,
+      "merged_pages": [
+        59,
+        60
+      ],
+      "col_count": 7,
+      "headers_preview": "[\"Symbol\", \"Parameter\", \"Conditions\", \"Min\", \"Typ\", \"Max\", \"Unit\"]",
+      "rows_count": 9,
+      "heuristics": {
+        "caption_near_bottom": true,
+        "caption_y_ratio": 0.77,
+        "cols_extracted": 7
+      }
+    },
+    {
+      "table_id": "table_34",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "vertical_merge_suspected"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 34. 4-50 MHz HSE oscillator characteristics",
+      "page": 62,
+      "merged_pages": [
+        62
+      ],
+      "col_count": 7,
+      "headers_preview": "[\"Symbol\", \"Parameter\", \"Operating conditions(1)\", \"Min\", \"Typ\", \"Max\", \"Unit\"]",
+      "rows_count": 10,
+      "heuristics": {
+        "cols_extracted": 7
+      }
+    },
+    {
+      "table_id": "table_35",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "vertical_merge_suspected"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 35. LSE oscillator characteristics (f = 32.768 kHz).",
+      "page": 63,
+      "merged_pages": [
+        63
+      ],
+      "col_count": 7,
+      "headers_preview": "[\"Symbol\", \"Parameter\", \"Operating conditions(1)\", \"Min\", \"Typ\", \"Max\", \"Unit\"]",
+      "rows_count": 6,
+      "heuristics": {
+        "cols_extracted": 7
+      }
+    },
+    {
+      "table_id": "table_37",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "multi_page_merged:2",
+        "vertical_merge_suspected"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 37. PSI oscillator characteristics",
+      "page": 66,
+      "merged_pages": [
+        66,
+        67
+      ],
+      "col_count": 7,
+      "headers_preview": "[\"Symbol\", \"Parameter\", \"Conditions\", \"Min(1)\", \"Typ\", \"Max\", \"Unit\"]",
+      "rows_count": 31,
+      "heuristics": {
+        "cols_extracted": 7
+      }
+    },
+    {
+      "table_id": "table_43",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "vertical_merge_suspected"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 43. EMI characteristics for f = 8 MHz and f = 144 MHz.",
+      "page": 70,
+      "merged_pages": [
+        70
+      ],
+      "col_count": 6,
+      "headers_preview": "[\"Symbol\", \"Parameter\", \"Conditions\", \"Monitored frequency band\", \"Value\", \"Unit\"]",
+      "rows_count": 5,
+      "heuristics": {
+        "cols_extracted": 6
+      }
+    },
+    {
+      "table_id": "table_44",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "vertical_merge_suspected"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 44. ESD absolute maximum ratings.",
+      "page": 70,
+      "merged_pages": [
+        70
+      ],
+      "col_count": 7,
+      "headers_preview": "[\"Symbol\", \"Ratings\", \"Conditions\", \"Packages\", \"Class\", \"Maximum value(1)\", \"Unit\"]",
+      "rows_count": 7,
+      "heuristics": {
+        "cols_extracted": 7
+      }
+    },
+    {
+      "table_id": "table_45",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "dynamic_header_depth:2"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 45. Electrical sensitivities.",
+      "page": 70,
+      "merged_pages": [
+        71
+      ],
+      "col_count": 5,
+      "headers_preview": "[\"Symbol\", \"Description\", \"Functional susceptibility / Negative injection\", \"Functional susceptibility / Positive injection\", \"Unit\"]",
+      "rows_count": 3,
+      "heuristics": {
+        "caption_near_bottom": true,
+        "caption_y_ratio": 0.82,
+        "body_on_next_page": true,
+        "next_page_q_boosted": 17.0,
+        "cols_extracted": 5
+      }
+    },
+    {
+      "table_id": "table_46",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "dynamic_header_depth:2"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 46. I/O current injection susceptibility.",
+      "page": 71,
+      "merged_pages": [
+        71
+      ],
+      "col_count": 5,
+      "headers_preview": "[\"Symbol\", \"Description\", \"Functional susceptibility / Negative injection\", \"Functional susceptibility / Positive injection\", \"Unit\"]",
+      "rows_count": 3,
+      "heuristics": {
+        "cols_extracted": 5
+      }
+    },
+    {
+      "table_id": "table_48",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "vertical_merge_suspected"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 48. Output voltage characteristics (all I/Os except PC14 and PC15).",
+      "page": 74,
+      "merged_pages": [
+        74
+      ],
+      "col_count": 6,
+      "headers_preview": "[\"Symbol\", \"Parameter\", \"Conditions(2)\", \"Min\", \"Max\", \"Unit\"]",
+      "rows_count": 7,
+      "heuristics": {
+        "cols_extracted": 6
+      }
+    },
+    {
+      "table_id": "table_50",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "vertical_merge_suspected"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 50. Output AC characteristics (all I/Os except PC13)",
+      "page": 75,
+      "merged_pages": [
+        75
+      ],
+      "col_count": 7,
+      "headers_preview": "[\"Speed\", \"Symbol\", \"Parameter\", \"conditions\", \"Min\", \"Max\", \"Unit\"]",
+      "rows_count": 24,
+      "heuristics": {
+        "cols_extracted": 7
+      }
+    },
+    {
+      "table_id": "table_55",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "vertical_merge_suspected"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 55. Temperature sensor characteristics",
+      "page": 82,
+      "merged_pages": [
+        82
+      ],
+      "col_count": 6,
+      "headers_preview": "[\"Symbol\", \"Parameter\", \"Min\", \"Typ\", \"Max\", \"Unit\"]",
+      "rows_count": 9,
+      "heuristics": {
+        "cols_extracted": 6
+      }
+    },
+    {
+      "table_id": "table_57",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "multi_page_merged:2"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 57. DAC characteristics",
+      "page": 82,
+      "merged_pages": [
+        82,
+        83
+      ],
+      "col_count": 8,
+      "headers_preview": "[\"Symbol\", \"Parameter\", \"Conditions\", \"Conditions\", \"Min\", \"Typ\", \"Max\", \"Unit\"]",
+      "rows_count": 37,
+      "heuristics": {
+        "cols_extracted": 8
+      }
+    },
+    {
+      "table_id": "table_58",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "multi_page_merged:2",
+        "vertical_merge_suspected"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 58. DAC accuracy.",
+      "page": 85,
+      "merged_pages": [
+        85,
+        86
+      ],
+      "col_count": 8,
+      "headers_preview": "[\"Symbol\", \"Parameter\", \"Conditions\", \"Conditions\", \"Min\", \"Typ\", \"Max\", \"Unit\"]",
+      "rows_count": 40,
+      "heuristics": {
+        "cols_extracted": 8
+      }
+    },
+    {
+      "table_id": "table_62",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "vertical_merge_suspected"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 62. IWDG min/max timeout period at 32 kHz (LSI).",
+      "page": 89,
+      "merged_pages": [
+        89
+      ],
+      "col_count": 5,
+      "headers_preview": "[\"Prescaler divider\", \"PR[2:0] bits\", \"Min timeout RL[11:0] = 0x000\", \"Max timeout RL[11:0] = 0xFFF\", \"Unit\"]",
+      "rows_count": 7,
+      "heuristics": {
+        "cols_extracted": 5
+      }
+    },
+    {
+      "table_id": "table_63",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "vertical_merge_suspected"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 63. WWDG min/max timeout value at 144 MHz (PCLK)",
+      "page": 89,
+      "merged_pages": [
+        89
+      ],
+      "col_count": 5,
+      "headers_preview": "[\"Prescaler\", \"WDGTB\", \"Min timeout values\", \"Max timeout value\", \"Unit\"]",
+      "rows_count": 8,
+      "heuristics": {
+        "cols_extracted": 5
+      }
+    },
+    {
+      "table_id": "table_67",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "vertical_merge_suspected"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 67. SPI characteristics.",
+      "page": 92,
+      "merged_pages": [
+        92
+      ],
+      "col_count": 8,
+      "headers_preview": "[\"Symbol\", \"Parameter\", \"Conditions\", \"Conditions\", \"Min\", \"Typ\", \"Max\", \"Unit\"]",
+      "rows_count": 19,
+      "heuristics": {
+        "cols_extracted": 8
+      }
+    },
+    {
+      "table_id": "table_68",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "vertical_merge_suspected"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 68. I2S characteristics",
+      "page": 95,
+      "merged_pages": [
+        95
+      ],
+      "col_count": 6,
+      "headers_preview": "[\"Symbol\", \"Parameter\", \"Conditions\", \"Min\", \"Max\", \"Unit\"]",
+      "rows_count": 15,
+      "heuristics": {
+        "cols_extracted": 6
+      }
+    },
+    {
+      "table_id": "table_72",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "dynamic_header_depth:2",
+        "multi_page_merged:2"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 72. TSSOP20 - Mechanical data.",
+      "page": 98,
+      "merged_pages": [
+        98,
+        99
+      ],
+      "col_count": 7,
+      "headers_preview": "[\"Symbol\", \"Millimeters / Min\", \"Millimeters / Typ\", \"Millimeters / Max\", \"Inches(1) / Min\", \"Inches(1) / Typ\", \"Inches(1) / Max\"]",
+      "rows_count": 13,
+      "heuristics": {
+        "cols_extracted": 7
+      }
+    },
+    {
+      "table_id": "table_73",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "dynamic_header_depth:2"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 73. UFQFPN20 - Mechanical data.",
+      "page": 101,
+      "merged_pages": [
+        101
+      ],
+      "col_count": 7,
+      "headers_preview": "[\"Symbol\", \"Millimeters / Min\", \"Millimeters / Typ\", \"Millimeters / Max\", \"Inches / Min\", \"Inches / Typ\", \"Inches / Max\"]",
+      "rows_count": 13,
+      "heuristics": {
+        "cols_extracted": 7
+      }
+    },
+    {
+      "table_id": "table_74",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "dynamic_header_depth:2"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 74. UFQFPN24 - Mechanical data.",
+      "page": 104,
+      "merged_pages": [
+        104
+      ],
+      "col_count": 7,
+      "headers_preview": "[\"Symbol\", \"Millimeters / Min\", \"Millimeters / Typ\", \"Millimeters / Max\", \"Inches(1) / Min\", \"Inches(1) / Typ\", \"Inches(1) / Max\"]",
+      "rows_count": 14,
+      "heuristics": {
+        "cols_extracted": 7
+      }
+    },
+    {
+      "table_id": "table_75",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "dynamic_header_depth:2"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 75. LQFP32 - Mechanical data",
+      "page": 106,
+      "merged_pages": [
+        106
+      ],
+      "col_count": 7,
+      "headers_preview": "[\"Symbol\", \"Millimeters / Min\", \"Millimeters / Typ\", \"Millimeters / Max\", \"Inches(14.) / Min\", \"Inches(14.) / Typ\", \"Inches(14.) / Max\"]",
+      "rows_count": 26,
+      "heuristics": {
+        "cols_extracted": 7
+      }
+    },
+    {
+      "table_id": "table_76",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "dynamic_header_depth:2"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 76. UFQFPN32 - Mechanical data.",
+      "page": 109,
+      "merged_pages": [
+        109
+      ],
+      "col_count": 7,
+      "headers_preview": "[\"Symbol\", \"Millimeters(1) / Min\", \"Millimeters(1) / Typ\", \"Millimeters(1) / Max\", \"Inches(2) / Min\", \"Inches(2) / Typ\", \"Inches(2) / Max\"]",
+      "rows_count": 13,
+      "heuristics": {
+        "cols_extracted": 7
+      }
+    },
+    {
+      "table_id": "table_79",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "dynamic_header_depth:2"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 79. LQFP48 - Mechanical data",
+      "page": 112,
+      "merged_pages": [
+        112
+      ],
+      "col_count": 7,
+      "headers_preview": "[\"Symbol\", \"millimeters / Min\", \"millimeters / Typ\", \"millimeters / Max\", \"inches(14.) / Min\", \"inches(14.) / Typ\", \"inches(14.) / Max\"]",
+      "rows_count": 26,
+      "heuristics": {
+        "cols_extracted": 7
+      }
+    },
+    {
+      "table_id": "table_80",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "dynamic_header_depth:2"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 80. UFQFPN48 - Mechanical data.",
+      "page": 115,
+      "merged_pages": [
+        115
+      ],
+      "col_count": 6,
+      "headers_preview": "[\"Symbol\", \"Millimeters / Min\", \"Millimeters / Typ Max\", \"Inches (1) / Min\", \"Inches (1) / Typ\", \"Inches (1) / Max\"]",
+      "rows_count": 17,
+      "heuristics": {
+        "cols_extracted": 6
+      }
+    },
+    {
+      "table_id": "table_81",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "dynamic_header_depth:2"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 81. LQFP64 - Mechanical data",
+      "page": 117,
+      "merged_pages": [
+        117
+      ],
+      "col_count": 7,
+      "headers_preview": "[\"Symbol\", \"millimeters / Min\", \"millimeters / Typ\", \"millimeters / Max\", \"inches(14.) / Min\", \"inches(14.) / Typ\", \"inches(14.) / Max\"]",
+      "rows_count": 26,
+      "heuristics": {
+        "cols_extracted": 7
+      }
+    },
+    {
+      "table_id": "table_82",
+      "confidence": "high",
+      "empty_cell_ratio": 0.0,
+      "has_empty_cells": false,
+      "warnings": [
+        "dynamic_header_depth:2",
+        "vertical_merge_suspected"
+      ],
+      "extraction_method": "pdfplumber",
+      "status": null,
+      "caption": "Table 82. Package thermal characteristics.",
+      "page": 119,
+      "merged_pages": [
+        119
+      ],
+      "col_count": 7,
+      "headers_preview": "[\"Symbol\", \"Definition\", \"Parameter\", \"Value / Junction-ambient ΘJA\", \"Value / Junction-board ΘJB\", \"Value / Junction-case ΘJC\", \"Value / Unit\"]",
+      "rows_count": 8,
+      "heuristics": {
+        "cols_extracted": 7
+      }
+    }
+  ],
   "drawing_failed": 0,
   "bug_suspected": 0
 }

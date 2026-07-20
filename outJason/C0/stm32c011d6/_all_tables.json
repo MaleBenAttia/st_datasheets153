@@ -120,7 +120,7 @@
         "2"
       ],
       [
-        "secafretni .mmoC",
+        "Comm. interfaces",
         "SPI [I2S](1)",
         "1 [1] + 2 extra through USARTs",
         "1 [1] + 2 extra through USARTs",
@@ -129,7 +129,7 @@
         "1 [1] + 2 extra through USARTs"
       ],
       [
-        "secafretni .mmoC",
+        "Comm. interfaces",
         "I2C",
         "1",
         "1",
@@ -138,7 +138,7 @@
         "1"
       ],
       [
-        "secafretni .mmoC",
+        "Comm. interfaces",
         "USART",
         "2",
         "2",
@@ -938,13 +938,13 @@
       [
         "Pin type",
         "Pin type",
-        "S",
+        "SO8N",
         "Supply pin"
       ],
       [
         "Pin type",
         "Pin type",
-        "I",
+        "I/O structure",
         "Input only pin"
       ],
       [
@@ -1057,7 +1057,7 @@
         "PC14-OSCX_IN (PC14)",
         "I/O",
         "FT_f",
-        "-",
+        "Pin type",
         "USART1_TX, TIM1_ETR, TIM1_BKIN2, IR_OUT, USART2_RTS_DE_CK, TIM17_CH1, TIM3_CH2, I2C1_SDA, EVENTOUT",
         "OSCX_IN"
       ],
@@ -1069,7 +1069,7 @@
         "PC15- OSCX_OUT (PC15)",
         "I/O",
         "FT",
-        "-",
+        "Pin type",
         "OSC32_EN, OSC_EN, TIM1_ETR, TIM3_CH3",
         "OSCX_OUT"
       ],
@@ -1079,11 +1079,11 @@
         "4",
         "2",
         "VDD/VDDA",
-        "S",
-        "-",
-        "-",
-        "-",
-        "-"
+        "SO8N",
+        "Pin type",
+        "Pin type",
+        "Pin type",
+        "Pin type"
       ],
       [
         "3",
@@ -1091,11 +1091,11 @@
         "5",
         "3",
         "VSS/VSSA",
-        "S",
-        "-",
-        "-",
-        "-",
-        "-"
+        "SO8N",
+        "Pin type",
+        "Pin type",
+        "Pin type",
+        "Pin type"
       ],
       [
         "4",
@@ -1117,7 +1117,7 @@
         "PA0",
         "I/O",
         "FT_a",
-        "-",
+        "Pin type",
         "USART2_CTS, TIM16_CH1, USART1_TX, TIM1_CH1",
         "ADC_IN0, WKUP1"
       ],
@@ -1129,7 +1129,7 @@
         "PA0",
         "I/O",
         "FT_a",
-        "-",
+        "Pin type",
         "USART2_CTS, TIM16_CH1, USART1_TX, TIM1_CH1",
         "ADC_IN0, WKUP1"
       ],
@@ -1378,21 +1378,21 @@
     "rows": [
       [
         "PA0",
-        "-",
+        "6x/4x110C23MTS",
         "USART2_CTS",
         "TIM16_CH1",
-        "-",
+        "6x/4x110C23MTS",
         "USART1_TX",
         "TIM1_CH1",
-        "-",
-        "-"
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS"
       ],
       [
         "PA1",
         "SPI1_SCK/I2S1_ CK",
         "USART2_RTS_ DE_CK",
         "TIM17_CH1",
-        "-",
+        "6x/4x110C23MTS",
         "USART1_RX",
         "TIM1_CH2",
         "I2C1_SMBA",
@@ -1404,20 +1404,20 @@
         "USART2_TX",
         "TIM16_CH1N",
         "TIM3_ETR",
-        "-",
+        "6x/4x110C23MTS",
         "TIM1_CH3",
-        "-",
-        "-"
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS"
       ],
       [
         "PA3",
-        "-",
+        "6x/4x110C23MTS",
         "USART2_RX",
         "TIM1_CH1N",
-        "-",
-        "-",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
         "TIM1_CH4",
-        "-",
+        "6x/4x110C23MTS",
         "EVENTOUT"
       ],
       [
@@ -1425,10 +1425,10 @@
         "SPI1_NSS/I2S1_ WS",
         "USART2_TX",
         "TIM1_CH2N",
-        "-",
+        "6x/4x110C23MTS",
         "TIM14_CH1",
         "TIM17_CH1N",
-        "-",
+        "6x/4x110C23MTS",
         "EVENTOUT"
       ],
       [
@@ -1436,10 +1436,10 @@
         "SPI1_SCK/I2S1_ CK",
         "USART2_RX",
         "TIM1_CH3N",
-        "-",
-        "-",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
         "TIM1_CH1",
-        "-",
+        "6x/4x110C23MTS",
         "EVENTOUT"
       ],
       [
@@ -1447,32 +1447,32 @@
         "SPI1_MISO/I2S1 _MCK",
         "TIM3_CH1",
         "TIM1_BKIN",
-        "-",
-        "-",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
         "TIM16_CH1",
-        "-",
-        "-"
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS"
       ],
       [
         "PA7",
         "SPI1_MOSI/I2S1 _SD",
         "TIM3_CH2",
         "TIM1_CH1N",
-        "-",
+        "6x/4x110C23MTS",
         "TIM14_CH1",
         "TIM17_CH1",
-        "-",
-        "-"
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS"
       ],
       [
         "PA8",
         "MCO",
         "USART2_TX",
         "TIM1_CH1",
-        "-",
-        "-",
-        "-",
-        "-",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
         "EVENTOUT"
       ],
       [
@@ -1481,18 +1481,18 @@
         "USART1_TX",
         "TIM1_CH2",
         "TIM3_ETR",
-        "-",
-        "-",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
         "I2C1_SCL",
         "EVENTOUT"
       ],
       [
         "PA10",
-        "-",
+        "6x/4x110C23MTS",
         "USART1_RX",
         "TIM1_CH3",
         "MCO2",
-        "-",
+        "6x/4x110C23MTS",
         "TIM17_BKIN",
         "I2C1_SDA",
         "EVENTOUT"
@@ -1502,43 +1502,43 @@
         "SPI1_MISO/I2S1 _MCK",
         "USART1_CTS",
         "TIM1_CH4",
-        "-",
-        "-",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
         "TIM1_BKIN2",
-        "-",
-        "-"
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS"
       ],
       [
         "PA12",
         "SPI1_MOSI/I2S1 _SD",
         "USART1_RTS_ DE_CK",
         "TIM1_ETR",
-        "-",
-        "-",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
         "I2S_CKIN",
-        "-",
-        "-"
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS"
       ],
       [
         "PA13",
         "SWDIO",
         "IR_OUT",
-        "-",
+        "6x/4x110C23MTS",
         "TIM3_ETR",
         "USART2_RX",
-        "-",
-        "-",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
         "EVENTOUT"
       ],
       [
         "PA14",
         "SWCLK",
         "USART2_TX",
-        "-",
-        "-",
-        "-",
-        "-",
-        "-",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
         "EVENTOUT"
       ]
     ],
@@ -1607,9 +1607,9 @@
         "TIM1_CH1",
         "MCO2",
         "USART1_RTS_ DE_CK",
-        "-",
-        "-",
-        "-"
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS"
       ]
     ],
     "extraction_method": "pdfplumber",
@@ -1674,8 +1674,8 @@
         "TIM1_CH4",
         "TIM17_CH1N",
         "TIM3_CH4",
-        "-",
-        "-",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
         "I2C1_SDA",
         "EVENTOUT"
       ]
@@ -1738,14 +1738,14 @@
       ],
       [
         "PB7",
-        "-",
+        "6x/4x110C23MTS",
         "USART2_CTS",
         "TIM16_CH1",
         "TIM3_CH1",
-        "-",
-        "-",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
         "I2C1_SCL",
-        "-"
+        "6x/4x110C23MTS"
       ]
     ],
     "extraction_method": "pdfplumber",
@@ -1798,11 +1798,11 @@
         "USART1_TX",
         "TIM1_ETR",
         "TIM1_BKIN2",
-        "-",
-        "-",
-        "-",
-        "-",
-        "-"
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS"
       ],
       [
         "PC15",
@@ -1810,10 +1810,10 @@
         "OSC_EN",
         "TIM1_ETR",
         "TIM3_CH3",
-        "-",
-        "-",
-        "-",
-        "-"
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS"
       ]
     ],
     "extraction_method": "pdfplumber",
@@ -1862,15 +1862,26 @@
     ],
     "rows": [
       [
+        "PC14",
+        "IR_OUT",
+        "USART2_RTS_ DE_CK",
+        "TIM17_CH1",
+        "TIM3_CH2",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
+        "I2C1_SDA",
+        "EVENTOUT"
+      ],
+      [
         "PF2",
         "MCO",
         "TIM1_CH4",
-        "-",
-        "-",
-        "-",
-        "-",
-        "-",
-        "-"
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS"
       ]
     ],
     "extraction_method": "pdfplumber",
@@ -1895,7 +1906,7 @@
       "pages": [
         33
       ],
-      "rows_count": 1,
+      "rows_count": 2,
       "cols_count": 9,
       "confidence": "high",
       "empty_cell_ratio": 0.0
@@ -1926,12 +1937,12 @@
         "PF2",
         "MCO",
         "TIM1_CH4",
-        "-",
-        "-",
-        "-",
-        "-",
-        "-",
-        "-"
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS",
+        "6x/4x110C23MTS"
       ]
     ],
     "extraction_method": "pdfplumber",
@@ -2344,409 +2355,174 @@
     "family": "C0",
     "page": 37,
     "merged_pages": [
+      37,
       38
     ],
     "headers": [
       "Symbol",
-      "",
-      "Parame",
-      "ter",
-      "",
-      "Cond",
-      "ition",
-      "s",
-      "M",
-      "in",
+      "Parameter",
+      "Conditions",
+      "Min",
       "Typ",
-      "",
       "Max",
-      "Un"
+      "Unit"
     ],
     "rows": [
       [
-        "V PDR",
-        "Power-down res",
-        "et thresh",
-        "old",
-        "",
-        "Cond",
+        "t (1) RSTTEMPO",
+        "POR temporization when V crosses V DD POR",
+        "V rising DD",
         "-",
-        "s",
-        "1.",
-        "88",
+        "270",
+        "500",
+        "µs"
+      ],
+      [
+        "V (1) POR",
+        "Power-on reset threshold",
+        "-",
+        "1.9",
+        "1.94",
+        "1.98",
+        "V"
+      ],
+      [
+        "V (1) PDR",
+        "Power-down reset threshold",
+        "-",
+        "1.88",
         "1.92",
-        "",
         "1.96",
         "V"
       ],
       [
-        "V PDR",
-        "Power-down res",
-        "et thresh",
-        "old",
-        "",
-        "V DD",
-        "rising",
-        "s",
-        "2.",
-        "05",
+        "V BOR1",
+        "Brownout reset threshold 1",
+        "V rising DD",
+        "2.05",
         "2.10",
-        "",
         "2.18",
         "V"
       ],
       [
         "V BOR1",
-        "Brownout reset",
-        "threshold",
-        "1",
-        "",
-        "V DD",
-        "rising",
-        "s",
-        "2.",
-        "05",
-        "2.10",
-        "",
-        "2.18",
-        "V"
-      ],
-      [
-        "V BOR1",
-        "Brownout reset",
-        "threshold",
-        "1",
-        "",
-        "V DD",
-        "falling",
-        "s",
-        "1.",
-        "95",
+        "Brownout reset threshold 1",
+        "V falling DD",
+        "1.95",
         "2.00",
-        "",
         "2.08",
         "V"
       ],
       [
-        "V BOR1",
-        "Brownout reset",
-        "threshold",
-        "1",
-        "",
-        "V DD",
-        "rising",
-        "s",
-        "2.",
-        "20",
+        "V BOR2",
+        "Brownout reset threshold 2",
+        "V rising DD",
+        "2.20",
         "2.31",
-        "",
         "2.38",
         "V"
       ],
       [
         "V BOR2",
-        "Brownout reset",
-        "threshold",
-        "2",
-        "",
-        "V DD",
-        "rising",
-        "s",
-        "2.",
-        "20",
-        "2.31",
-        "",
-        "2.38",
-        "V"
-      ],
-      [
-        "V BOR2",
-        "Brownout reset",
-        "threshold",
-        "2",
-        "",
-        "V DD",
-        "falling",
-        "s",
-        "2.",
-        "10",
+        "Brownout reset threshold 2",
+        "V falling DD",
+        "2.10",
         "2.21",
-        "",
         "2.28",
         "V"
       ],
       [
-        "V BOR2",
-        "Brownout reset",
-        "threshold",
-        "2",
-        "",
-        "V DD",
-        "rising",
-        "s",
-        "2.",
-        "50",
+        "V BOR3",
+        "Brownout reset threshold 3",
+        "V rising DD",
+        "2.50",
         "2.62",
-        "",
         "2.68",
         "V"
       ],
       [
         "V BOR3",
-        "Brownout reset",
-        "threshold",
-        "3",
-        "",
-        "V DD",
-        "rising",
-        "s",
-        "2.",
-        "50",
-        "2.62",
-        "",
-        "2.68",
-        "V"
-      ],
-      [
-        "V BOR3",
-        "Brownout reset",
-        "threshold",
-        "3",
-        "",
-        "V DD",
-        "falling",
-        "s",
-        "2.",
-        "40",
+        "Brownout reset threshold 3",
+        "V falling DD",
+        "2.40",
         "2.52",
-        "",
         "2.58",
         "V"
       ],
       [
-        "V BOR3",
-        "Brownout reset",
-        "threshold",
-        "3",
-        "",
-        "V DD",
-        "rising",
-        "s",
-        "2.",
-        "80",
+        "V BOR4",
+        "Brownout reset threshold 4",
+        "V rising DD",
+        "2.80",
         "2.91",
-        "",
         "3.00",
         "V"
       ],
       [
         "V BOR4",
-        "Brownout reset",
-        "threshold",
-        "4",
-        "",
-        "V DD",
-        "rising",
-        "s",
-        "2.",
-        "80",
-        "2.91",
-        "",
-        "3.00",
-        "V"
-      ],
-      [
-        "V BOR4",
-        "Brownout reset",
-        "threshold",
-        "4",
-        "",
-        "V DD",
-        "falling",
-        "s",
-        "2.",
-        "70",
+        "Brownout reset threshold 4",
+        "V falling DD",
+        "2.70",
         "2.81",
-        "",
         "2.90",
         "V"
       ],
       [
-        "hyst_POR_PDR",
-        "Hysteresis of V P",
-        "and V OR",
-        "PDR",
-        "",
-        "V DD",
+        "V hyst_POR_PDR",
+        "Hysteresis of V and V POR PDR",
         "-",
-        "s",
         "-",
-        "70",
         "20",
-        "",
         "-",
-        "m"
+        "mV"
       ],
       [
         "V hyst_BOR",
-        "Hysteresis of V B",
-        "ORx",
-        "PDR",
-        "",
-        "V DD",
+        "Hysteresis of V BORx",
         "-",
-        "s",
         "-",
-        "70",
         "100",
-        "",
         "-",
-        "m"
+        "mV"
       ],
       [
-        "(1)",
-        "Hysteresis of V B",
-        "ORx",
-        "PDR",
-        "",
-        "V DD",
+        "I (1) DD(BOR)",
+        "BOR consumption from V DD",
         "-",
-        "s",
         "-",
-        "70",
-        "100",
-        "",
-        "-",
-        "m"
-      ],
-      [
-        "I DD(BOR)",
-        "BOR consumpti",
-        "on from V",
-        "DD",
-        "",
-        "V DD",
-        "-",
-        "s",
-        "-",
-        "70",
         "2.2",
-        "",
         "2.5",
         "µA"
-      ],
-      [
-        "pecified by design.",
-        "Not tested in prod",
-        "uction.",
-        "DD",
-        "",
-        "V DD",
-        "-",
-        "s",
-        "-",
-        "70",
-        "2.2",
-        "",
-        "2.5",
-        "µA"
-      ],
-      [
-        ".4 Embe",
-        "dded volta",
-        "ge refe",
-        "rence",
-        "",
-        "V DD",
-        "-",
-        "s",
-        "-",
-        "70",
-        "2.2",
-        "",
-        "2.5",
-        "µA"
-      ],
-      [
-        "The pa",
-        "rameters given",
-        "in Table",
-        "26 are derived",
-        "fr",
-        "om tests",
-        "perf",
-        "orme",
-        "d",
-        "unde",
-        "r th",
-        "e a",
-        "mbient",
-        "µA"
-      ],
-      [
-        "temper",
-        "ature and supp",
-        "ly voltag",
-        "e conditions su",
-        "m",
-        "marized",
-        "in Ta",
-        "ble 2",
-        "3:",
-        "Gen",
-        "era",
-        "l op",
-        "eratin",
-        "g"
-      ],
-      [
-        "conditi",
-        "ons.",
-        "ly voltag",
-        "e conditions su",
-        "m",
-        "marized",
-        "in Ta",
-        "ble 2",
-        "3:",
-        "Gen",
-        "era",
-        "l op",
-        "eratin",
-        "g"
       ]
     ],
-    "extraction_method": "pdfplumber_text",
+    "extraction_method": "pdfplumber",
     "extraction_confidence": "high",
-    "empty_cell_ratio": 0.1234,
-    "col_count": 14,
+    "empty_cell_ratio": 0.0,
+    "col_count": 7,
     "status": null,
-    "has_empty_cells": true,
+    "has_empty_cells": false,
     "heuristics": {
       "caption_near_bottom": true,
       "caption_y_ratio": 0.777,
-      "body_on_next_page": true,
-      "next_page_q_boosted": 267.0,
-      "cols_extracted": 14,
-      "truncated_rows": 25,
-      "bleed_rows_removed": 1
+      "cols_extracted": 7
     },
     "structured_json": null,
     "warnings": [
-      "vertical_merge_suspected",
-      "has_empty_cells"
+      "multi_page_merged:2",
+      "vertical_merge_suspected"
     ],
     "datasheet_metaData": {
       "pdf_name": "stm32c011d6",
       "table_id": "table_25",
-      "is_continued": false,
+      "is_continued": true,
       "pages": [
+        37,
         38
       ],
-      "rows_count": 22,
-      "cols_count": 14,
+      "rows_count": 14,
+      "cols_count": 7,
       "confidence": "high",
-      "empty_cell_ratio": 0.1234
+      "empty_cell_ratio": 0.0
     }
   },
   {
@@ -5789,7 +5565,6 @@
     "family": "C0",
     "page": 50,
     "merged_pages": [
-      50,
       51
     ],
     "headers": [
@@ -5848,18 +5623,17 @@
     "heuristics": {
       "caption_near_bottom": true,
       "caption_y_ratio": 0.75,
+      "body_on_next_page": true,
+      "next_page_q_boosted": 27.0,
       "cols_extracted": 7
     },
     "structured_json": null,
-    "warnings": [
-      "multi_page_merged:2"
-    ],
+    "warnings": [],
     "datasheet_metaData": {
       "pdf_name": "stm32c011d6",
       "table_id": "table_37",
-      "is_continued": true,
+      "is_continued": false,
       "pages": [
-        50,
         51
       ],
       "rows_count": 4,
@@ -6265,15 +6039,15 @@
         "LSI frequency",
         "V = 2 V to 3.6 V, T = -40 to 125 °C DD A",
         "29.5(1)",
-        "-",
+        "Frequency [MHz]",
         "34(1)",
         "kHz"
       ],
       [
         "t (2) SU(LSI)",
         "LSI oscillator start-up time",
-        "-",
-        "-",
+        "Frequency [MHz]",
+        "Frequency [MHz]",
         "80",
         "130",
         "μs"
@@ -6282,7 +6056,7 @@
         "t (2) STAB(LSI)",
         "LSI oscillator stabilization time",
         "5% of final frequency",
-        "-",
+        "Frequency [MHz]",
         "125",
         "180",
         "μs"
@@ -6290,8 +6064,8 @@
       [
         "I (2) DD(LSI)",
         "LSI oscillator power consumption",
-        "-",
-        "-",
+        "Frequency [MHz]",
+        "Frequency [MHz]",
         "110",
         "180",
         "nA"
@@ -6345,7 +6119,7 @@
         "t prog",
         "Word programming time",
         "64 bits",
-        "-",
+        "Frequency [MHz]",
         "85.0",
         "125.0",
         "µs"
@@ -6354,7 +6128,7 @@
         "t prog_row",
         "Row (32 double word) programming time",
         "Normal programming",
-        "-",
+        "Frequency [MHz]",
         "2.7",
         "4.6",
         "ms"
@@ -6363,7 +6137,7 @@
         "t prog_row",
         "Row (32 double word) programming time",
         "Fast programming",
-        "-",
+        "Frequency [MHz]",
         "1.7",
         "2.8",
         "ms"
@@ -6372,7 +6146,7 @@
         "t prog_page",
         "Page (2 Kbyte) programming time",
         "Normal programming",
-        "-",
+        "Frequency [MHz]",
         "21.8",
         "36.6",
         "ms"
@@ -6381,7 +6155,7 @@
         "t prog_page",
         "Page (2 Kbyte) programming time",
         "Fast programming",
-        "-",
+        "Frequency [MHz]",
         "13.7",
         "22.4",
         "ms"
@@ -6389,8 +6163,8 @@
       [
         "t ERASE",
         "Page (2 Kbyte) erase time",
-        "-",
-        "-",
+        "Frequency [MHz]",
+        "Frequency [MHz]",
         "22.0",
         "40.0",
         "ms"
@@ -9315,8 +9089,8 @@
       [
         "f MCK",
         "I2S main clock output",
-        "-",
-        "-",
+        "SCK OutputSCK Output",
+        "SCK OutputSCK Output",
         "48",
         "MHz"
       ],
@@ -9324,7 +9098,7 @@
         "f CK",
         "I2S clock frequency",
         "Master TX",
-        "-",
+        "SCK OutputSCK Output",
         "12",
         "MHz"
       ],
@@ -9332,7 +9106,7 @@
         "f CK",
         "I2S clock frequency",
         "Master RX",
-        "-",
+        "SCK OutputSCK Output",
         "12",
         "MHz"
       ],
@@ -9340,7 +9114,7 @@
         "f CK",
         "I2S clock frequency",
         "Slave TX",
-        "-",
+        "SCK OutputSCK Output",
         "15",
         "MHz"
       ],
@@ -9348,7 +9122,7 @@
         "f CK",
         "I2S clock frequency",
         "Slave RX",
-        "-",
+        "SCK OutputSCK Output",
         "48",
         "MHz"
       ],
@@ -9356,7 +9130,7 @@
         "t v(WS)",
         "WS valid time",
         "Master mode",
-        "-",
+        "SCK OutputSCK Output",
         "5",
         "ns"
       ],
@@ -9365,7 +9139,7 @@
         "WS hold time",
         "Master mode",
         "2",
-        "-",
+        "SCK OutputSCK Output",
         "ns"
       ],
       [
@@ -9373,7 +9147,7 @@
         "WS setup time",
         "Slave mode",
         "3.5",
-        "-",
+        "SCK OutputSCK Output",
         "ns"
       ],
       [
@@ -9381,7 +9155,7 @@
         "WS hold time",
         "Slave mode",
         "1",
-        "-",
+        "SCK OutputSCK Output",
         "ns"
       ],
       [
@@ -9389,7 +9163,7 @@
         "Data input setup time",
         "Master receiver",
         "5",
-        "-",
+        "SCK OutputSCK Output",
         "ns"
       ],
       [
@@ -9397,7 +9171,7 @@
         "Data input setup time",
         "Slave receiver",
         "2.5",
-        "-",
+        "SCK OutputSCK Output",
         "ns"
       ],
       [
@@ -9405,7 +9179,7 @@
         "Data input hold time",
         "Master receiver",
         "1.5",
-        "-",
+        "SCK OutputSCK Output",
         "ns"
       ],
       [
@@ -9413,14 +9187,14 @@
         "Data input hold time",
         "Slave receiver",
         "1",
-        "-",
+        "SCK OutputSCK Output",
         "ns"
       ],
       [
         "t v(SD_ST)",
         "Data output valid time",
         "Slave transmitter (after enable edge)",
-        "-",
+        "SCK OutputSCK Output",
         "19.5",
         "ns"
       ],
@@ -9428,7 +9202,7 @@
         "t v(SD_MT)",
         "Data output valid time",
         "Master transmitter (after enable edge)",
-        "-",
+        "SCK OutputSCK Output",
         "5",
         "ns"
       ],

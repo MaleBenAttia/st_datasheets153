@@ -9,268 +9,66 @@
   ],
   "headers": [
     "Symbol",
-    "",
-    "Param",
-    "eter",
-    "Con",
-    "ditions",
+    "Parameter",
+    "Conditions",
     "Min",
     "Typ",
-    "Max Uni"
+    "Max",
+    "Unit"
   ],
   "rows": [
     [
-      "Symbol",
-      "O",
-      "SC32_IN input pin",
-      "high le",
-      "vel",
-      "ditions",
-      "Min",
-      "Typ",
-      "Max Uni"
+      "f LSE_ext",
+      "User external clock source frequency",
+      "-",
+      "-",
+      "32.768",
+      "1000",
+      "kHz"
     ],
     [
-      "V",
-      "O",
-      "SC32_IN input pin",
-      "high le",
-      "vel",
-      "- 0.7",
-      "V",
+      "V LSEH",
+      "OSC32_IN input pin high level voltage",
       "-",
+      "0.7 V DDIO1",
+      "-",
+      "V DDIO1",
       "V"
     ],
     [
-      "LSEH",
-      "v",
-      "oltage",
-      "high le",
-      "vel",
-      "- 0.7",
-      "DDIO1",
-      "-",
-      "DDIO1 V"
-    ],
-    [
       "V LSEL",
-      "O",
-      "SC32_IN input pin",
-      "low lev",
-      "el voltage",
+      "OSC32_IN input pin low level voltage",
       "-",
       "V SS",
-      "- 0",
-      ".3 V DDIO1"
+      "-",
+      "0.3 V DDIO1",
+      "V"
     ],
     [
-      "w(LSEH)/",
-      "O",
-      "SC32_IN high or l",
-      "ow time",
-      "el voltage",
+      "t w(LSEH)/ t w(LSEL)",
+      "OSC32_IN high or low time",
       "-",
       "250",
       "-",
-      "- ns"
-    ],
-    [
-      "t w(LSEL)",
-      "O",
-      "SC32_IN high or l",
-      "ow time",
-      "el voltage",
       "-",
-      "250",
-      "-",
-      "- ns"
-    ],
-    [
-      "Specified",
-      "by",
-      "design – Not tested",
-      "in produ",
-      "ction.",
-      "-",
-      "250",
-      "-",
-      "- ns"
-    ],
-    [
-      "Specified",
-      "by",
-      "Figu",
-      "re 15.",
-      "Low-speed ext",
-      "ernal clock s",
-      "ource A",
-      "C timing dia",
-      "gram"
-    ],
-    [
-      "Specified",
-      "by",
-      "Figu",
-      "re 15.",
-      "Low-speed ext",
-      "tw(LS",
-      "EH)",
-      "C timing dia",
-      "gram"
-    ],
-    [
-      "Specified",
-      "by",
-      "VLSEH",
-      "re 15.",
-      "Low-speed ext",
-      "tw(LS",
-      "EH)",
-      "C timing dia",
-      "gram"
-    ],
-    [
-      "Specified",
-      "by",
-      "90%",
-      "re 15.",
-      "Low-speed ext",
-      "tw(LS",
-      "EH)",
-      "C timing dia",
-      "gram"
-    ],
-    [
-      "Specified",
-      "by",
-      "10%",
-      "re 15.",
-      "Low-speed ext",
-      "tw(LS",
-      "EH)",
-      "C timing dia",
-      "gram"
-    ],
-    [
-      "Specified",
-      "by",
-      "VLSEL",
-      "re 15.",
-      "Low-speed ext",
-      "tw(LS",
-      "EH)",
-      "C timing dia",
-      "gram"
-    ],
-    [
-      "Specified",
-      "by",
-      "t",
-      "re 15.",
-      "Low-speed ext",
-      "tw(LS",
-      "EH)",
-      "C timing dia",
-      "t"
-    ],
-    [
-      "Specified",
-      "by",
-      "r",
-      "(LSE)",
-      "t",
-      "f(LSE)",
-      "t",
-      "C timing dia",
-      "t"
-    ],
-    [
-      "Specified",
-      "by",
-      "r",
-      "(LSE)",
-      "t",
-      "f(LSE)",
-      "w",
-      "(LSEL)",
-      "t"
-    ],
-    [
-      "Specified",
-      "by",
-      "r",
-      "(LSE)",
-      "TLSE",
-      "f(LSE)",
-      "w",
-      "(LSEL)",
-      "t"
-    ],
-    [
-      "Specified",
-      "by",
-      "r",
-      "(LSE)",
-      "TLSE",
-      "f(LSE)",
-      "w",
-      "(LSEL)",
-      "MS19215V2"
-    ],
-    [
-      "Specified",
-      "by",
-      "High-speed ex",
-      "terna",
-      "l clock gener",
-      "ated from a",
-      "crystal",
-      "/ceramic re",
-      "sonator"
-    ],
-    [
-      "Specified",
-      "by",
-      "The high-speed",
-      "externa",
-      "l (HSE) clock c",
-      "an be supplie",
-      "d with a",
-      "4 to 48 MHz",
-      "crystal/ceramic"
-    ],
-    [
-      "Specified",
-      "by",
-      "resonator oscillat",
-      "or. All",
-      "the information",
-      "given in this p",
-      "aragrap",
-      "h are based",
-      "on design"
+      "ns"
     ]
   ],
-  "extraction_method": "pdfplumber_text",
+  "extraction_method": "pdfplumber",
   "extraction_confidence": "high",
   "empty_cell_ratio": 0.0,
-  "col_count": 9,
+  "col_count": 7,
   "status": null,
-  "has_empty_cells": true,
+  "has_empty_cells": false,
   "heuristics": {
     "caption_near_bottom": true,
     "caption_y_ratio": 0.75,
     "body_on_next_page": true,
-    "next_page_q_boosted": 165.0,
-    "cols_extracted": 9,
-    "truncated_rows": 12,
-    "bleed_rows_removed": 1
+    "next_page_q_boosted": 27.0,
+    "cols_extracted": 7
   },
   "structured_json": null,
-  "warnings": [
-    "vertical_merge_suspected",
-    "has_empty_cells"
-  ],
+  "warnings": [],
   "datasheet_metaData": {
     "pdf_name": "stm32c031c4",
     "table_id": "table_38",
@@ -278,8 +76,8 @@
     "pages": [
       56
     ],
-    "rows_count": 21,
-    "cols_count": 9,
+    "rows_count": 4,
+    "cols_count": 7,
     "confidence": "high",
     "empty_cell_ratio": 0.0
   }

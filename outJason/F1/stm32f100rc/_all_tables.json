@@ -457,57 +457,57 @@
       [
         "1",
         "1",
-        "-",
+        "",
         "PE2",
         "I/O",
         "FT",
         "PE2",
         "TRACECK/ FSMC_A23",
-        "-"
+        ""
       ],
       [
         "2",
         "2",
-        "-",
+        "",
         "PE3",
         "I/O",
         "FT",
         "PE3",
         "TRACED0/FSMC_A19",
-        "-"
+        ""
       ],
       [
         "3",
         "3",
-        "-",
+        "",
         "PE4",
         "I/O",
         "FT",
         "PE4",
         "TRACED1/FSMC_A20",
-        "-"
+        ""
       ],
       [
         "4",
         "4",
-        "-",
+        "",
         "PE5",
         "I/O",
         "FT",
         "PE5",
         "TRACED2/FSMC_A21",
-        "-"
+        ""
       ],
       [
         "5",
         "5",
-        "-",
+        "",
         "PE6",
         "I/O",
         "FT",
         "PE6",
         "TRACED3/FSMC_A22",
-        "-"
+        ""
       ],
       [
         "6",
@@ -515,10 +515,10 @@
         "1",
         "V BAT",
         "S",
-        "-",
+        "",
         "V BAT",
-        "-",
-        "-"
+        "",
+        ""
       ],
       [
         "7",
@@ -526,10 +526,10 @@
         "2",
         "PC13-TAMPER- RTC(5)",
         "I/O",
-        "-",
+        "",
         "PC13(6)",
         "TAMPER-RTC",
-        "-"
+        ""
       ],
       [
         "8",
@@ -537,10 +537,10 @@
         "3",
         "PC14- OSC32_IN(5)",
         "I/O",
-        "-",
+        "",
         "PC14(6)",
         "OSC32_IN",
-        "-"
+        ""
       ],
       [
         "9",
@@ -548,54 +548,54 @@
         "4",
         "PC15- OSC32_OUT(5)",
         "I/O",
-        "-",
+        "",
         "PC15(6)",
         "OSC32_OUT",
-        "-"
+        ""
       ],
       [
         "10",
-        "-",
-        "-",
+        "",
+        "",
         "PF0",
         "I/O",
         "FT",
         "PF0",
         "FSMC_A0",
-        "-"
+        ""
       ],
       [
         "11",
-        "-",
-        "-",
+        "",
+        "",
         "PF1",
         "I/O",
         "FT",
         "PF1",
         "FSMC_A1",
-        "-"
+        ""
       ],
       [
         "12",
-        "-",
-        "-",
+        "",
+        "",
         "PF2",
         "I/O",
         "FT",
         "PF2",
         "FSMC_A2",
-        "-"
+        ""
       ],
       [
         "13",
-        "-",
-        "-",
+        "",
+        "",
         "PF3",
         "I/O",
         "FT",
         "PF3",
         "FSMC_A3",
-        "-"
+        ""
       ],
       [
         "441PFQL",
@@ -2096,10 +2096,10 @@
     ],
     "extraction_method": "pdfplumber",
     "extraction_confidence": "high",
-    "empty_cell_ratio": 0.0,
+    "empty_cell_ratio": 0.0231,
     "col_count": 9,
     "status": null,
-    "has_empty_cells": false,
+    "has_empty_cells": true,
     "heuristics": {
       "cols_extracted": 9
     },
@@ -2107,7 +2107,8 @@
     "warnings": [
       "dynamic_header_depth:2",
       "multi_page_merged:6",
-      "vertical_merge_suspected"
+      "vertical_merge_suspected",
+      "has_empty_cells"
     ],
     "datasheet_metaData": {
       "pdf_name": "stm32f100rc",
@@ -2124,7 +2125,7 @@
       "rows_count": 149,
       "cols_count": 9,
       "confidence": "high",
-      "empty_cell_ratio": 0.0
+      "empty_cell_ratio": 0.0231
     }
   },
   {
@@ -4838,6 +4839,7 @@
     "family": "F1",
     "page": 51,
     "merged_pages": [
+      51,
       52
     ],
     "headers": [
@@ -4850,6 +4852,24 @@
       "Unit"
     ],
     "rows": [
+      [
+        "f OSC_IN",
+        "Oscillator frequency",
+        "-",
+        "4",
+        "8",
+        "24",
+        "MHz"
+      ],
+      [
+        "R F",
+        "Feedback resistor",
+        "-",
+        "-",
+        "200",
+        "-",
+        "kΩ"
+      ],
       [
         "C L1 C (3) L2",
         "Recommended load capacitance versus equivalent serial resistance of the crystal (R )(4) S",
@@ -4896,20 +4916,21 @@
     "heuristics": {
       "caption_near_bottom": true,
       "caption_y_ratio": 0.769,
-      "body_on_next_page": true,
-      "next_page_q_boosted": 55.0,
       "cols_extracted": 7
     },
     "structured_json": null,
-    "warnings": [],
+    "warnings": [
+      "multi_page_merged:2"
+    ],
     "datasheet_metaData": {
       "pdf_name": "stm32f100rc",
       "table_id": "table_22",
-      "is_continued": false,
+      "is_continued": true,
       "pages": [
+        51,
         52
       ],
-      "rows_count": 4,
+      "rows_count": 6,
       "cols_count": 7,
       "confidence": "high",
       "empty_cell_ratio": 0.0
@@ -6913,44 +6934,64 @@
     "family": "F1",
     "page": 69,
     "merged_pages": [
-      69
+      70
     ],
     "headers": [
       "Symbol",
-      "Parameter",
-      "Conditions",
-      "Class"
+      "Description",
+      "Functional susceptibility / Negative",
+      "Functional susceptibility / Positive",
+      "Unit"
     ],
     "rows": [
       [
-        "LU",
-        "Static latch-up class",
-        "T = +105 °C conforming to JESD78 A",
-        "II level A"
+        "I INJ",
+        "Injected current on OSC_IN32, OSC_OUT32, PA4, PA5, PC13",
+        "-0",
+        "+0",
+        "mA"
+      ],
+      [
+        "I INJ",
+        "Injected current on all FT pins",
+        "-5",
+        "+0",
+        "mA"
+      ],
+      [
+        "I INJ",
+        "Injected current on any other pin",
+        "-5",
+        "+5",
+        "mA"
       ]
     ],
     "extraction_method": "pdfplumber",
     "extraction_confidence": "high",
     "empty_cell_ratio": 0.0,
-    "col_count": 4,
+    "col_count": 5,
     "status": null,
     "has_empty_cells": false,
     "heuristics": {
       "caption_near_bottom": true,
       "caption_y_ratio": 0.808,
-      "cols_extracted": 4
+      "body_on_next_page": true,
+      "next_page_q_boosted": 17.0,
+      "cols_extracted": 5
     },
     "structured_json": null,
-    "warnings": [],
+    "warnings": [
+      "dynamic_header_depth:2"
+    ],
     "datasheet_metaData": {
       "pdf_name": "stm32f100rc",
       "table_id": "table_41",
       "is_continued": false,
       "pages": [
-        69
+        70
       ],
-      "rows_count": 1,
-      "cols_count": 4,
+      "rows_count": 3,
+      "cols_count": 5,
       "confidence": "high",
       "empty_cell_ratio": 0.0
     }
@@ -9107,20 +9148,20 @@
     "rows": [
       [
         "A",
-        "-",
-        "-",
+        "",
+        "",
         "1.600",
-        "-",
-        "-",
+        "",
+        "",
         "0.0630"
       ],
       [
         "A1",
         "0.050",
-        "-",
+        "",
         "0.150",
         "0.0020",
-        "-",
+        "",
         "0.0059"
       ],
       [
@@ -9142,12 +9183,12 @@
         "0.0106"
       ],
       [
-        "c",
+        "",
         "0.090",
-        "-",
+        "",
         "0.200",
         "0.0035",
-        "-",
+        "",
         "0.0079"
       ],
       [
@@ -9170,12 +9211,12 @@
       ],
       [
         "D3",
-        "-",
+        "",
         "12.000",
-        "-",
-        "-",
+        "",
+        "",
         "0.4724",
-        "-"
+        ""
       ],
       [
         "E",
@@ -9252,17 +9293,18 @@
     ],
     "extraction_method": "pdfplumber",
     "extraction_confidence": "high",
-    "empty_cell_ratio": 0.0,
+    "empty_cell_ratio": 0.1161,
     "col_count": 7,
     "status": null,
-    "has_empty_cells": false,
+    "has_empty_cells": true,
     "heuristics": {
       "cols_extracted": 7
     },
     "structured_json": null,
     "warnings": [
       "dynamic_header_depth:2",
-      "multi_page_merged:2"
+      "multi_page_merged:2",
+      "has_empty_cells"
     ],
     "datasheet_metaData": {
       "pdf_name": "stm32f100rc",
@@ -9275,7 +9317,7 @@
       "rows_count": 16,
       "cols_count": 7,
       "confidence": "high",
-      "empty_cell_ratio": 0.0
+      "empty_cell_ratio": 0.1161
     }
   },
   {
@@ -9300,20 +9342,20 @@
     "rows": [
       [
         "A",
-        "-",
-        "-",
+        "",
+        "",
         "1.600",
-        "-",
-        "-",
+        "",
+        "",
         "0.0630"
       ],
       [
         "A1",
         "0.050",
-        "-",
+        "",
         "0.150",
         "0.0020",
-        "-",
+        "",
         "0.0059"
       ],
       [
@@ -9335,67 +9377,67 @@
         "0.0106"
       ],
       [
-        "c",
+        "",
         "0.090",
-        "-",
+        "",
         "0.200",
         "0.0035",
-        "-",
+        "",
         "0.0079"
       ],
       [
         "D",
-        "-",
+        "",
         "12.000",
-        "-",
-        "-",
+        "",
+        "",
         "0.4724",
-        "-"
+        ""
       ],
       [
         "D1",
-        "-",
+        "",
         "10.000",
-        "-",
-        "-",
+        "",
+        "",
         "0.3937",
-        "-"
+        ""
       ],
       [
         "D3",
-        "-",
+        "",
         "7.500",
-        "-",
-        "-",
+        "",
+        "",
         "0.2953",
-        "-"
+        ""
       ],
       [
         "E",
-        "-",
+        "",
         "12.000",
-        "-",
-        "-",
+        "",
+        "",
         "0.4724",
-        "-"
+        ""
       ],
       [
         "E1",
-        "-",
+        "",
         "10.000",
-        "-",
-        "-",
+        "",
+        "",
         "0.3937",
-        "-"
+        ""
       ],
       [
         "E3",
-        "-",
+        "",
         "7.500",
-        "-",
-        "-",
+        "",
+        "",
         "0.2953",
-        "-"
+        ""
       ],
       [
         "e",
@@ -9445,17 +9487,18 @@
     ],
     "extraction_method": "pdfplumber",
     "extraction_confidence": "high",
-    "empty_cell_ratio": 0.0,
+    "empty_cell_ratio": 0.2946,
     "col_count": 7,
     "status": null,
-    "has_empty_cells": false,
+    "has_empty_cells": true,
     "heuristics": {
       "cols_extracted": 7
     },
     "structured_json": null,
     "warnings": [
       "dynamic_header_depth:2",
-      "multi_page_merged:2"
+      "multi_page_merged:2",
+      "has_empty_cells"
     ],
     "datasheet_metaData": {
       "pdf_name": "stm32f100rc",
@@ -9468,7 +9511,7 @@
       "rows_count": 16,
       "cols_count": 7,
       "confidence": "high",
-      "empty_cell_ratio": 0.0
+      "empty_cell_ratio": 0.2946
     }
   },
   {

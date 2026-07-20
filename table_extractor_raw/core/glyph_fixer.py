@@ -100,7 +100,9 @@ def fix_text(text: str) -> str:
     # Étape 4 : nettoyage des glyphes CID non décodables (police sans ToUnicode)
     if CID_PATTERN.search(text):
         text = CID_PATTERN.sub("", text).strip()
-        if len(text) < 2:
+        if text in ("-", "–", "−", "\u2212"):
+            text = "-"
+        elif len(text) < 2:
             text = ""
 
     return text.strip()

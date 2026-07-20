@@ -1408,12 +1408,48 @@ def extract_table_grid(
     return result
 
 
+def _is_likely_reversed(cell: str) -> bool:
+    """True si le texte semble être lu à l'envers (vertical dans le PDF).
+
+    L'ancienne heuristique (cell[0].islower() and rev[0].isupper()) produisait
+    des faux positifs sur du texte normal comme "de 5 V" ou "du Mode X".
+    On renforce la détection avec plusieurs critères.
+    """
+    rev = cell[::-1]
+
+    # Le texte inversé doit commencer par Maj + minuscule (pattern "Timers")
+    if not (rev[0].isupper() and len(rev) > 1 and rev[1].islower()):
+        return False
+
+    # L'original doit commencer par minuscule (sinon pas besoin d'inverser)
+    if not cell[0].islower():
+        return False
+
+    # Exclure les textes avec motif "chiffre + espace + lettre" (ex: "de 5 V")
+    if re.search(r'\d\s+[A-Za-z]', cell):
+        return False
+
+    # La version inversée doit avoir au moins autant de lettres
+    cell_alpha = sum(1 for c in cell if c.isalpha())
+    rev_alpha = sum(1 for c in rev if c.isalpha())
+    if rev_alpha < cell_alpha:
+        return False
+
+    # Après la 1ère lettre, la version inversée ne doit pas avoir d'autres majuscules
+    rest = rev[1:]
+    rest_upper = sum(1 for c in rest if c.isupper())
+    if rest_upper > 0:
+        return False
+
+    return True
+
+
 def _fix_reversed_cells(rows: list[list]) -> list[list]:
     """Corrige le texte inversé dans les cellules dues au rendu vertical.
-    
+
     Quand une cellule fusionnée contient du texte écrit verticalement (rotation 90°),
     pdfplumber peut lire les caractères dans l'ordre inverse. On détecte ça en
-    vérifiant si le texte inversé caractère-par-caractère semble plus naturel.
+    vérifiant si le texte inversé semble plus naturel.
     """
     if not rows:
         return rows
@@ -1421,10 +1457,8 @@ def _fix_reversed_cells(rows: list[list]) -> list[list]:
     for row in rows:
         fixed_row = []
         for cell in row:
-            if isinstance(cell, str) and len(cell) >= 5:
-                rev = cell[::-1]
-                if cell[0].islower() and rev[0].isupper():
-                    cell = rev
+            if isinstance(cell, str) and len(cell) >= 5 and _is_likely_reversed(cell):
+                cell = cell[::-1]
             fixed_row.append(cell)
         fixed.append(fixed_row)
     return fixed

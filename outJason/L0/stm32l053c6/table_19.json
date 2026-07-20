@@ -7,19 +7,34 @@
   "merged_pages": [
     49
   ],
-  "headers": [],
-  "rows": [],
-  "extraction_method": "pdfplumber_text",
-  "extraction_confidence": "failed",
-  "empty_cell_ratio": 1.0,
-  "col_count": 0,
-  "status": "failed",
+  "headers": [
+    "Port",
+    "Port",
+    "AF0 / LPUART1",
+    "AF1 / LCD"
+  ],
+  "rows": [
+    [
+      "Port D",
+      "PD2",
+      "LPUART1_RTS/LPUART1_DE",
+      "LCD_COM7/LCD_SEG31"
+    ]
+  ],
+  "extraction_method": "pdfplumber",
+  "extraction_confidence": "high",
+  "empty_cell_ratio": 0.0,
+  "col_count": 4,
+  "status": null,
   "has_empty_cells": false,
-  "heuristics": {},
+  "heuristics": {
+    "caption_near_bottom": true,
+    "caption_y_ratio": 0.751,
+    "cols_extracted": 4
+  },
   "structured_json": null,
   "warnings": [
-    "empty_raw_table",
-    "unresolved:likely_mechanical_drawing_not_extractable_as_text"
+    "dynamic_header_depth:2"
   ],
   "datasheet_metaData": {
     "pdf_name": "stm32l053c6",
@@ -28,9 +43,9 @@
     "pages": [
       49
     ],
-    "rows_count": 0,
-    "cols_count": 0,
-    "confidence": "failed",
-    "empty_cell_ratio": 1.0
+    "rows_count": 1,
+    "cols_count": 4,
+    "confidence": "high",
+    "empty_cell_ratio": 0.0
   }
 }

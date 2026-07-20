@@ -616,3 +616,9 @@ RagJason/
 ---
 
 *Document généré automatiquement le 20 juillet 2026 — couvre le pipeline complet de l'extraction PDF à la génération des chunks RAG.*
+
+python app.py --all --workers 30
+
+# Rapports
+python table_extractor_raw\generate_debug_report.py
+python table_extractor_raw\bug_report.py

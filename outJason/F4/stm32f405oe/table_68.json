@@ -20,8 +20,8 @@
       "ET",
       "Total unadjusted error",
       "f = 60 MHz, PCLK2 f = 30 MHz, R < 10 kΩ, ADC AIN V = 1.8(2) to 3.6 V DDA",
-      "±2",
-      "±5",
+      "(2/2n)*V",
+      "(5/2n)*VREF+",
       "LSB"
     ],
     [
@@ -29,7 +29,7 @@
       "Offset error",
       "f = 60 MHz, PCLK2 f = 30 MHz, R < 10 kΩ, ADC AIN V = 1.8(2) to 3.6 V DDA",
       "±1.5",
-      "±2.5",
+      "(5/2n)*VREF+",
       "LSB"
     ],
     [
@@ -37,15 +37,15 @@
       "Gain error",
       "f = 60 MHz, PCLK2 f = 30 MHz, R < 10 kΩ, ADC AIN V = 1.8(2) to 3.6 V DDA",
       "±1.5",
-      "±3",
+      "(3/2n)*V",
       "LSB"
     ],
     [
       "ED",
       "Differential linearity error",
       "f = 60 MHz, PCLK2 f = 30 MHz, R < 10 kΩ, ADC AIN V = 1.8(2) to 3.6 V DDA",
-      "±1",
-      "±2",
+      "(1/2n)*VREF+",
+      "(2/2n)*V",
       "LSB"
     ],
     [
@@ -53,7 +53,7 @@
       "Integral linearity error",
       "f = 60 MHz, PCLK2 f = 30 MHz, R < 10 kΩ, ADC AIN V = 1.8(2) to 3.6 V DDA",
       "±1.5",
-      "±3",
+      "(3/2n)*V",
       "LSB"
     ]
   ],

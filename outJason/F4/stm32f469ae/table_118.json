@@ -5,18 +5,37 @@
   "family": "F4",
   "page": 202,
   "merged_pages": [
+    202,
     203
   ],
   "headers": [
-    "",
-    "Min.",
-    "Typ.",
-    "Max.",
-    "Min.",
-    "Typ.",
-    "Max."
+    "Symbol",
+    "millimeters / Min.",
+    "millimeters / Typ.",
+    "millimeters / Max.",
+    "inches(1) / Min.",
+    "inches(1) / Typ.",
+    "inches(1) / Max."
   ],
   "rows": [
+    [
+      "A",
+      "0.460",
+      "0.530",
+      "0.600",
+      "0.0181",
+      "0.0209",
+      "0.0236"
+    ],
+    [
+      "A1",
+      "0.050",
+      "0.080",
+      "0.110",
+      "0.0020",
+      "0.0031",
+      "0.0043"
+    ],
     [
       "A2",
       "0.400",
@@ -133,43 +152,33 @@
       "-",
       "-",
       "0.0020"
-    ],
-    [
-      "Values in inches",
-      "are converte",
-      "d from mm and rou",
-      "nded to 4 decim",
-      "al digits.",
-      "-",
-      "0.0020"
     ]
   ],
-  "extraction_method": "pdfplumber_text",
+  "extraction_method": "pdfplumber",
   "extraction_confidence": "high",
   "empty_cell_ratio": 0.0,
   "col_count": 7,
   "status": null,
-  "has_empty_cells": true,
+  "has_empty_cells": false,
   "heuristics": {
     "caption_near_bottom": true,
     "caption_y_ratio": 0.761,
-    "body_on_next_page": true,
-    "next_page_q_boosted": 130.0,
-    "cols_extracted": 7,
-    "bleed_rows_removed": 3
+    "cols_extracted": 7
   },
   "structured_json": null,
   "warnings": [
-    "has_empty_cells"
+    "dynamic_header_depth:2",
+    "multi_page_merged:2"
   ],
   "datasheet_metaData": {
     "pdf_name": "stm32f469ae",
     "table_id": "table_118",
-    "is_continued": false,
+    "is_continued": true,
     "pages": [
+      202,
       203
     ],
-    "rows_count": 14,
+    "rows_count": 15,
     "cols_count": 7,
     "confidence": "high",
     "empty_cell_ratio": 0.0

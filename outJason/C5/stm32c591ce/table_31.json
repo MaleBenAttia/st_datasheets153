@@ -5,6 +5,7 @@
   "family": "C5",
   "page": 70,
   "merged_pages": [
+    70,
     71
   ],
   "headers": [
@@ -17,6 +18,33 @@
     "Unit"
   ],
   "rows": [
+    [
+      "fHSE_ext",
+      "User external clock source frequency",
+      "Digital mode (HSEYBYP = 1, HSEEXT = 1)",
+      "-",
+      "-",
+      "50",
+      "MHz"
+    ],
+    [
+      "fHSE_ext",
+      "User external clock source frequency",
+      "Analolog mode (HSEYBYP = 1, HSEEXT = 0)",
+      "4",
+      "-",
+      "50",
+      "MHz"
+    ],
+    [
+      "VHSEH",
+      "OSC_IN input pin high-level voltage",
+      "Digital mode (HSEYBYP = 1, HSEEXT = 1)",
+      "0.7 × VDD",
+      "-",
+      "VDD",
+      "V"
+    ],
     [
       "VHSEL",
       "OSC_IN input pin low-level voltage",
@@ -56,16 +84,16 @@
     [
       "VHSE_ext",
       "OSC_IN input range",
-      "Analog mode (HSEBYP = 1, HSEEXT = 0)",
+      "OSC_IN input range",
       "0",
       "-",
       "VDD",
-      "V"
+      "VDD"
     ],
     [
       "tr(HSE), tf(HSE)",
       "OSC_IN rise and fall time",
-      "Analog mode (HSEBYP = 1, HSEEXT = 0)",
+      "OSC_IN rise and fall time",
       "0.05 / fext_ext",
       "-",
       "0.3 / fext_ext",
@@ -81,22 +109,22 @@
   "heuristics": {
     "caption_near_bottom": true,
     "caption_y_ratio": 0.825,
-    "body_on_next_page": true,
-    "next_page_q_boosted": 46.0,
     "cols_extracted": 7
   },
   "structured_json": null,
   "warnings": [
+    "multi_page_merged:2",
     "vertical_merge_suspected"
   ],
   "datasheet_metaData": {
     "pdf_name": "stm32c591ce",
     "table_id": "table_31",
-    "is_continued": false,
+    "is_continued": true,
     "pages": [
+      70,
       71
     ],
-    "rows_count": 6,
+    "rows_count": 9,
     "cols_count": 7,
     "confidence": "high",
     "empty_cell_ratio": 0.0
