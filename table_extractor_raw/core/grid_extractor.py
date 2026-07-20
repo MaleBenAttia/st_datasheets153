@@ -997,12 +997,15 @@ def extract_table_grid(
         # une table complètement différente.
         # Le mot-clé de légende donne un bonus modéré (+20) pour départager,
         # sans dominer la qualité de base.
+        # Seuil n_non_empty < 3 : les cas à 3-4 lignes sont des faux positifs
+        # (légende mi-page avec extraction partielle). 0-2 = vraie page suivante.
         start_page = ref.page
         n_non_empty = sum(1 for row in raw_table if any(str(c).strip() for c in row)) if raw_table else 0
         should_try_next = (
             n_non_empty == 0 or
-            (caption_near_bottom and method in ("pdfplumber", "pdfplumber_text") and n_non_empty < 5)
+            (caption_near_bottom and method in ("pdfplumber", "pdfplumber_text") and n_non_empty < 3)
         )
+        saved_pre_body = []
         if should_try_next and ref.page < len(pdf.pages):
                 caption_keyword = ""
                 if ref.caption:
@@ -1020,7 +1023,7 @@ def extract_table_grid(
                     crop = (p.bbox[0], p.bbox[1], p.bbox[2], p.height * 0.7)
                     p_cropped = p.within_bbox(crop)
                     r = _get_rotated_text_map(p_cropped)
-                    nxt_raw, nxt_obj, nxt_method, nxt_bbox = _extract_from_page(p_cropped, ref, r, pdf_type, caption_keyword)
+                    nxt_raw, nxt_obj, nxt_method, nxt_bbox = _extract_from_page(p_cropped, ref, r, pdf_type, "")
                     if nxt_raw:
                         nq = _table_quality(nxt_raw)
                         keyword_bonus = 0
@@ -1040,6 +1043,8 @@ def extract_table_grid(
                                             f"(cols {orig_col_count}→{nxt_cols})")
                                 nq_boosted = -1
                             else:
+                                # Sauvegarde des lignes de la page N avant remplacement
+                                saved_pre_body = raw_table
                                 raw_table, table_obj, method, bbox = nxt_raw, nxt_obj, nxt_method, nxt_bbox
                                 page = pdf.pages[pg_idx]
                                 start_page = ref.page + 1
@@ -1120,6 +1125,17 @@ def extract_table_grid(
         # ── Fix 2 & 5 : Headers structurels et Propagation globale ─────────────
         headers, rows_raw, span_warnings = _expand_spans_and_headers(raw_table, table_obj, page, pdf_type)
         result["warnings"].extend(span_warnings)
+
+        # ── [Fix] Fusion des lignes de la page N avec la page N+1 ─────────────
+        # Quand body_on_next_page remplace raw_table, les lignes de la page
+        # originale (page N) sont perdues. On les réinsère ici en utilisant
+        # le même header_depth que la page N+1 (même structure de table).
+        if saved_pre_body:
+            hd = len(raw_table) - len(rows_raw)
+            extra = saved_pre_body[hd:]
+            if extra:
+                rows_raw = extra + rows_raw
+                logger.info(f"body_on_next_page: merged {len(extra)} rows from page {ref.page}")
 
         # ── Fix 4 : Continuation multi-pages ──────────────────────────────────
         merged_pages = [start_page]
@@ -1231,17 +1247,6 @@ def extract_table_grid(
             _ensure_no_empty_cells(rows_raw)
 
         # ── Détection cellules vides après Fix 8 ─────────────────────────
-        # DOIT impérativement se trouver APRÈS Fix 8 (ligne 1033).
-        # Avant Fix 8, les cellules vides des continuations (rowspan)
-        # créent 30+ fausses alertes. Après Fix 8, seules les 1ères
-        # lignes (pas de ligne au-dessus pour copier) restent vides,
-        # ce qui est le vrai artefact pdfplumber_text (table_65).
-        had_empty_cells = bool(rows_raw) and any(
-            not cell or not str(cell).strip()
-            for row in rows_raw
-            for cell in row
-        )
-
         # ── Correction des glyphes ─────────────────────────────────────────────
         headers    = fix_headers(headers)
         rows_fixed = fix_rows(rows_raw)
@@ -1252,6 +1257,9 @@ def extract_table_grid(
         # Les artefacts pdfplumber_text créent parfois des lignes où toutes
         # les cellules sont "" (ex: ligne séparatrice header/body mal capturée).
         rows_fixed = [row for row in rows_fixed if any(c for c in row)]
+
+        # ── [Fix] Correction texte inversé (cellules fusionnées verticales) ─
+        rows_fixed = _fix_reversed_cells(rows_fixed)
 
         # ── [Fix] Suppression des lignes header résiduelles dans les données ─
         # Cas rare : _expand_spans_and_headers peut laisser des lignes header
@@ -1270,11 +1278,11 @@ def extract_table_grid(
         headers, rows_fixed = _merge_identical_adjacent_columns(headers, rows_fixed)
 
         # ── [Fix] Fusion des colonnes fragmentées (pdfplumber_text) ─────────
-        # Réservé au Type 2 (Antenna House) : les PDFs Type 1 (Acrobat) ont
-        # un placement de mots suffisamment fiable pour que pdfplumber_text
-        # produise des colonnes déjà correctes. La fusion détruit les données
-        # Type 1 (ex: Min/Typ/Max des tables mécaniques → "MinTypMax").
-        if result["extraction_method"] == "pdfplumber_text" and pdf_type == 2:
+        # S'applique à TOUS les pdfplumber_text (Type 1 et Type 2) car
+        # l'extraction sans bordures fragmente toujours les mots, quel que
+        # soit le type de PDF. Les 4 heuristiques (H1-H4) protègent les
+        # vraies colonnes ("Min", "Typ", "Max", "Unit").
+        if result["extraction_method"] == "pdfplumber_text":
             cols_before = len(headers)
             headers, rows_fixed, merged = _merge_fragmented_columns(headers, rows_fixed)
             if merged > 0:
@@ -1283,11 +1291,10 @@ def extract_table_grid(
                 heuristics["columns_final"] = len(headers)
 
         # ── [Fix] Fusion header vide → droite (pdfplumber_text) ───────────
-        # Réservé au Type 2 (Antenna House) : les PDFs Type 1 (Acrobat) ont
-        # des colonnes pdfplumber_text déjà fiables. Le merge des headers
-        # vides détruit les colonnes réelles (ex: "millimeters" et "inches"
-        # dans 2 colonnes distinctes fusionnées en une seule).
-        if result["extraction_method"] == "pdfplumber_text" and pdf_type == 2:
+        # S'applique à TOUS les pdfplumber_text : les colonnes-pont à
+        # header vide apparaissent dans tous les types de PDF quand
+        # l'extraction texte est utilisée (pas de bordures pour délimiter).
+        if result["extraction_method"] == "pdfplumber_text":
             cols_before_h = len(headers)
             headers, rows_fixed, merged_h = _merge_empty_header_rightward(headers, rows_fixed)
             if merged_h > 0:
@@ -1304,6 +1311,36 @@ def extract_table_grid(
             rows_fixed, fn_removed = _remove_trailing_footnotes(rows_fixed)
             if fn_removed > 0:
                 heuristics["footnote_rows_removed"] = fn_removed
+
+        # ── [Fix] Suppression des lignes de fuite post-merge ──────────────
+        # Après fusion des colonnes, les références à d'autres tables
+        # deviennent visibles (ex: "Table26", "Table 23:"). On refait
+        # une passe de nettoyage pour les lignes résiduelles qui :
+        # 1. Référencent une autre table (même sans espace/point)
+        # 2. Commencent par une minuscule (continuation parasite)
+        if result["extraction_method"] == "pdfplumber_text" and rows_fixed:
+            rows_before_bleed = len(rows_fixed)
+            rows_fixed, bleed_removed = _remove_bleed_rows_bottom(rows_fixed, ref.table_id)
+            if bleed_removed > 0:
+                heuristics["post_merge_bleed_removed"] = bleed_removed
+
+        # ── [Fix] Suppression des lignes footnote (N) résiduelles ──────────
+        # Après les merges, certaines notes de bas de tableau comme "(1)"
+        # peuvent rester sous forme de ligne complète (1ère cellule = "(1)").
+        # _remove_trailing_footnotes les rate car elles utilisent (N) au lieu
+        # de N., et _remove_bleed_rows_bottom les rate car une ligne de données
+        # réelle (ex: "I DD(BOR)") bloque le scan bottom-up avant d'atteindre
+        # la ligne footnote (1). Ce filtre parcourt TOUTES les lignes (pas
+        # seulement celles de fin) et supprime toute ligne dont la 1ère cellule
+        # est exactement (N) — format typique des notes de bas de datasheet.
+        if result["extraction_method"] == "pdfplumber_text" and rows_fixed:
+            before = len(rows_fixed)
+            rows_fixed = [r for r in rows_fixed
+                          if not re.match(r'^\(\d+\)$', str(r[0]).strip())]
+            fn_removed = before - len(rows_fixed)
+            if fn_removed > 0:
+                heuristics["footnote_paren_removed"] = fn_removed
+                logger.info(f"Removed {fn_removed} footnote (N) rows")
 
         # ── [Fix] Validateur post-merge anti-destruction ────────────────────
         # Si après tous les merges, un header contient "Table" + un chiffre,
@@ -1333,8 +1370,15 @@ def extract_table_grid(
         result["warnings"].extend(warnings_eval)
 
         # ── Marquage des tables avec cellules vides ────────────────────────────
-        # Même si Fix 8 a tout rempli, on garde la trace pour le rapport.
-        if had_empty_cells:
+        # Détecte les vrais vides dans la sortie FINALE (rows_fixed) après
+        # tous les Fix. Les cellules vides temporaires des colonnes fragmentées
+        # (merge, header leak, propagation) ne comptent pas.
+        has_empty_final = bool(rows_fixed) and any(
+            not cell or not str(cell).strip()
+            for row in rows_fixed
+            for cell in row
+        )
+        if has_empty_final:
             result["warnings"].append("has_empty_cells")
             result["has_empty_cells"] = True
 
@@ -1354,7 +1398,7 @@ def extract_table_grid(
         if SAVE_DEBUG_IMAGES:
             out_path = output_base / family / pdf_name / f"{ref.table_id}.json"
             _save_debug_image(page, bbox, out_path, confidence,
-                              has_empty_cells=had_empty_cells)
+                              has_empty_cells=result.get("has_empty_cells", False))
 
     logger.info(
         f"{ref.table_id} | page={ref.page} | method={method} "
@@ -1362,6 +1406,28 @@ def extract_table_grid(
         f"| empty={result['empty_cell_ratio']:.2f}"
     )
     return result
+
+
+def _fix_reversed_cells(rows: list[list]) -> list[list]:
+    """Corrige le texte inversé dans les cellules dues au rendu vertical.
+    
+    Quand une cellule fusionnée contient du texte écrit verticalement (rotation 90°),
+    pdfplumber peut lire les caractères dans l'ordre inverse. On détecte ça en
+    vérifiant si le texte inversé caractère-par-caractère semble plus naturel.
+    """
+    if not rows:
+        return rows
+    fixed = []
+    for row in rows:
+        fixed_row = []
+        for cell in row:
+            if isinstance(cell, str) and len(cell) >= 5:
+                rev = cell[::-1]
+                if cell[0].islower() and rev[0].isupper():
+                    cell = rev
+            fixed_row.append(cell)
+        fixed.append(fixed_row)
+    return fixed
 
 
 def _deduplicate_rows(rows: list[list[str]]) -> list[list[str]]:
@@ -1422,6 +1488,55 @@ def _remove_bleed_rows(raw_table: list, method: str) -> list:
     return result
 
 
+def _remove_bleed_rows_bottom(rows: list[list[str]], table_id: str) -> tuple[list[list[str]], int]:
+    """
+    Supprime les lignes de fuite en BAS du tableau APRÈS la fusion des
+    colonnes. Détecte les lignes qui référencent une autre table ou qui
+    commencent par une minuscule (continuation de texte parasite).
+    Également : 1ère cellule non-alphanumérique (ex: ".4 Embe", "(1)")
+    → continuation ou footnote parasite. Exclut '+' (symboles comme +3.3V).
+    Retourne (rows_nettoyées, nb_supprimées).
+    """
+    if not rows:
+        return rows, 0
+    cut = len(rows)
+    for i in range(len(rows) - 1, -1, -1):
+        text = "".join(str(c or "") for c in rows[i])
+        if not text.strip():
+            cut = i
+            continue
+        # Référence à une autre table (ex: "Table 26", "Table26")
+        m = re.search(r'\bTable\s*(\d+)', text, re.IGNORECASE)
+        if m:
+            nums = re.findall(r'\d+', str(table_id))
+            cur_id = int(nums[0]) if nums else 0
+            if int(m.group(1)) != cur_id:
+                cut = i
+                logger.info(f"_remove_bleed_rows_bottom: cut at row {i} (ref Table {m.group(1)}, cur={cur_id})")
+                continue
+        # Première cellule commence par minuscule → continuation parasite
+        # (ex: "pecified by design." → 'p' minuscule = fragment de "Specified")
+        first = str(rows[i][0]).strip() if rows[i] else ""
+        if first and first[0].islower():
+            cut = i
+            logger.info(f"_remove_bleed_rows_bottom: cut at row {i} (lowercase first cell '{first[:20]}')")
+            continue
+        # Première cellule commence par un caractère non-alphanumérique
+        # (ex: ".4 Embe", "(1)") → continuation ou footnote parasite
+        # Exclut '+' car certains Symboles peuvent commencer par '+' (ex: +3.3V).
+        # Cet ajout complète la détection minuscule pour les cas où le premier
+        # caractère est un point, une parenthèse, etc. (continuations de texte).
+        if first and not first[0].isalnum() and not first[0] == '+':
+            cut = i
+            logger.info(f"_remove_bleed_rows_bottom: cut at row {i} (non-alnum first cell '{first[:20]}')")
+            continue
+        break
+    removed = len(rows) - cut
+    if removed > 0:
+        logger.info(f"_remove_bleed_rows_bottom: removed {removed} trailing bleed rows")
+    return rows[:cut], removed
+
+
 def _truncate_at_next_table(
     raw_table: list[list],
     table_id,
@@ -1441,9 +1556,10 @@ def _truncate_at_next_table(
     cut_idx = len(raw_table)
     for i, row in enumerate(raw_table):
         text = "".join(str(c or "") for c in row)
-        # Ne couper que si "Table N." ou "Table N:" avec N > table_id actuelle
-        # (période/colon requis pour éviter les fausses références croisées)
-        m = re.search(r'\bTable\s+(\d+)[.:]', text)
+        # Couper si "Table N.", "Table N:", ou "TableN" (sans espace)
+        # avec N > table_id actuelle. Le pattern large \bTable\s*(\d+)
+        # capture aussi "Table26" (fréquent dans les PDFs scannés).
+        m = re.search(r'\bTable\s*(\d+)', text)
         if m and int(m.group(1)) > cur_id:
             cut_idx = i
             logger.info(f"_truncate_at_next_table: cut at row {i} (Table {m.group(1)})")
@@ -1507,6 +1623,15 @@ def _merge_fragmented_columns(
     4. Cellules tres courtes (< 4 car.) — consecutif limite a 4
        Guard identique à H3 pour protéger les colonnes réelles.
 
+    Détection des header leaks : pendant la fusion des données, toute cellule
+    identique à l'en-tête original de sa colonne est considérée comme un
+    "header leak" (fragment d'en-tête qui a coulé dans les données) et n'est
+    PAS fusionnée. Ex: colonne "s" (suffixe de "Conditions") avec données "s"
+    dans toutes les lignes → ignorée.
+
+    Espace intelligent : lowercase+lowercase → pas d'espace (fragments de mot,
+    ex: "ris"+"ing" = "rising"). Sinon → espace (ex: "V DD"+"rising" = "V DD rising").
+
     IMPORTANT : cette fonction est uniquement appelée pour les tables
     pdfplumber_text (extraction sans bordures). Pour les tables pdfplumber
     (bordures), les colonnes sont déjà correctement détectées et il ne
@@ -1519,14 +1644,25 @@ def _merge_fragmented_columns(
         return headers, rows, 0
     cols = len(headers)
     keep = [True] * cols
+    # Sauvegarde des headers originaux pour la détection des header leaks
+    # pendant la fusion. Sans cette copie, les fusions successives (droite→
+    # gauche) modifient headers[] et faussent la comparaison donnée==header.
+    orig_headers = list(headers)
     consec_merged = 0
     for c in range(cols - 1, 0, -1):
         if not keep[c]:
             consec_merged += 1
             continue
         if consec_merged >= 4:
-            consec_merged = 0
-            continue
+            # Si la colonne courante est un fragment clair (header minuscule),
+            # on permet la fusion même après 4 fusions consécutives de colonnes
+            # vides. Sans ce passe-droit, "itionsMinTypMax" (col 3, header 'i'
+            # minuscule) serait sauté après les 4 colonnes vides 7,6,5,4.
+            if c < len(headers) and headers[c] and headers[c].strip() and headers[c].strip()[0].islower():
+                pass
+            else:
+                consec_merged = 0
+                continue
         # Compter les valeurs non-vides dans cette colonne
         n_non_empty = 0
         first_non_empty = None
@@ -1549,13 +1685,12 @@ def _merge_fragmented_columns(
             merge = True
         # Heuristique 3 : donnee commence en minuscule = continuation de mot
         # Ex: 1ère cellule "v" (continuation de "~10 V") → fusionner
-        # Protection : si le header droit est ≥3 car. avec majuscule, c'est
-        # une colonne réelle (ex: "Unit") → NE PAS fusionner. Sans ce garde-fou,
-        # "Unit" serait collé à "Max(1) / 130 °C" → "Max(1) / 130 °CUnit".
-        # Testé sur stm32f048c6 et batch F0/U0 sans régression.
+        # Protection : si le header droit est ≥2 car. avec majuscule, c'est
+        # une colonne réelle (ex: "Unit", "Un") → NE PAS fusionner. Sans ce
+        # garde-fou, "Un" (fragment de "Unit") serait collé à "Max" → "MaxUn".
         elif first_non_empty and first_non_empty[0].islower():
             if c < len(headers) and headers[c] and headers[c].strip():
-                if len(headers[c].strip()) >= 3 and headers[c].strip()[0].isupper():
+                if len(headers[c].strip()) >= 2 and headers[c].strip()[0].isupper():
                     merge = False
                 else:
                     merge = True
@@ -1563,10 +1698,10 @@ def _merge_fragmented_columns(
                 merge = True
         # Heuristique 4 : cellules tres courtes (< 4 car.)
         # Ex: données "mA", "V" — trop courtes pour être une colonne réelle
-        # Même garde-fou que H3 : header "Unit" protégé (≥3 car., majuscule)
+        # Même garde-fou que H3 : header "Unit", "Un" protégé (≥2 car., majuscule)
         elif max_len < 4:
             if c < len(headers) and headers[c] and headers[c].strip():
-                if len(headers[c].strip()) >= 3 and headers[c].strip()[0].isupper():
+                if len(headers[c].strip()) >= 2 and headers[c].strip()[0].isupper():
                     merge = False
                 else:
                     merge = True
@@ -1575,24 +1710,40 @@ def _merge_fragmented_columns(
         else:
             merge = False
         if merge:
-            # Fusion des en-tetes : concatenation sans espace (fragments de mot)
             left_h = headers[c-1] if c-1 < len(headers) else ""
             right_h = headers[c] if c < len(headers) else ""
+            # Utilise orig_headers pour la détection header leak, car headers
+            # est modifié par les fusions des colonnes de droite déjà traitées.
+            # Ex: col 5 "s" + col 6 "Min" → headers[5]="sMin", mais le header
+            # original de la col 5 était "s" → droit_h_str="s" pour la détection.
+            left_h_str = (orig_headers[c-1] or "").strip() if c-1 < len(orig_headers) else ""
+            right_h_str = (orig_headers[c] or "").strip() if c < len(orig_headers) else ""
             if right_h and right_h.strip():
                 if left_h and left_h.strip():
                     headers[c-1] = left_h + right_h
                 else:
                     headers[c-1] = right_h
-            # Fusion des donnees : concatenation sans espace (fragments de mot)
+            # Fusion des données AVEC détection des header leaks
+            # Header leak = donnée identique à l'en-tête de sa colonne
+            # (ex: colonne "s" contient "s" dans toutes les lignes = pas une vraie donnée)
+            # Quand un header leak est détecté, la cellule est ignorée lors de la fusion.
+            # ESPACE INTELLIGENT : lowercase+lowercase → pas d'espace (fragment de mot),
+            # sinon → espace (mots séparés, ex: "V DD"+"rising" → "V DD rising")
             for r in range(len(rows)):
                 if c < len(rows[r]):
                     left_cell = rows[r][c-1] if c-1 < len(rows[r]) else ""
                     right_cell = rows[r][c] if c < len(rows[r]) else ""
                     if right_cell and right_cell.strip():
-                        if left_cell and left_cell.strip() and left_cell != right_cell:  # fix: evite duplication
-                            rows[r][c-1] = left_cell + right_cell
-                        else:
-                            rows[r][c-1] = right_cell
+                        is_right_leak = right_cell.strip() == right_h_str
+                        is_left_leak = left_cell.strip() == left_h_str
+                        if not is_right_leak:
+                            if left_cell and left_cell.strip() and not is_left_leak and left_cell != right_cell:
+                                if left_cell[-1].islower() and right_cell[0].islower():
+                                    rows[r][c-1] = left_cell + right_cell
+                                else:
+                                    rows[r][c-1] = left_cell + " " + right_cell
+                            else:
+                                rows[r][c-1] = right_cell
             keep[c] = False
             consec_merged += 1
             logger.info(f"_merge_fragmented_columns: merged col {c} into {c-1} (r={ratio:.2f}, first='{first_non_empty}')")
@@ -1753,18 +1904,16 @@ def _apply_rotated_fix(
         fixed_row = []
         for col_idx, cell in enumerate(row):
             if cell and isinstance(cell, str):
-                # We need to map this cell string to the rotated_map.
-                # Since matching by exact reversed text didn't work robustly (spacing etc),
-                # Let's just check if reversed text matches WITHOUT any spaces.
-                reversed_text = cell[::-1].replace(" ", "").replace("\n", "")
+                cell_clean = re.sub(r'[^a-zA-Z0-9]', '', cell[::-1])
                 
                 for (rx0, ry0, rx1, ry1), corrected in rotated_map.items():
-                    if corrected.replace(" ", "") == reversed_text:
+                    corrected_clean = re.sub(r'[^a-zA-Z0-9]', '', corrected)
+                    if corrected_clean == cell_clean or corrected_clean.startswith(cell_clean):
                         cell = corrected
                         break
             fixed_row.append(cell)
         fixed_table.append(fixed_row)
-
+    
     return fixed_table
 
 
@@ -1830,7 +1979,18 @@ def _merge_empty_header_rightward(
                 if right_real < len(rows[ri]):
                     target = rows[ri][right_real] or ""
                     if val != target:  # fix: evite duplication (ex: "Symbol"+"Symbol")
-                        rows[ri][right_real] = val + target if target else val
+                        if target:
+                            # Ajouter un espace si la jointure n'est pas un
+                            # fragment de mot. Règle : si val finit par une
+                            # lettre minuscule ET target commence par une
+                            # lettre minuscule, c'est un fragment de mot
+                            # (ex: "res"+"et"→"reset") → pas d'espace.
+                            if val[-1].isalpha() and target[0].isalpha() and val[-1].islower() and target[0].islower():
+                                rows[ri][right_real] = val + target
+                            else:
+                                rows[ri][right_real] = val + " " + target
+                        else:
+                            rows[ri][right_real] = val
         keep[c] = False
         merged_count += 1
         logger.info(

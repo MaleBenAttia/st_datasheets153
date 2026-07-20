@@ -186,6 +186,16 @@ def process_pdf(pdf_path: Path, family: str) -> dict:
                 "confidence": conf,
                 "empty_cell_ratio": table_json["empty_cell_ratio"],
                 "has_empty_cells": table_json.get("has_empty_cells", False),
+                "warnings": table_json.get("warnings", []),
+                "extraction_method": table_json.get("extraction_method", ""),
+                "status": table_json.get("status"),
+                "caption": table_json.get("caption", "")[:120],
+                "page": table_json.get("page", 0),
+                "merged_pages": table_json.get("merged_pages", []),
+                "col_count": table_json.get("col_count", 0),
+                "headers_preview": json.dumps(table_json.get("headers", []), ensure_ascii=False)[:200],
+                "rows_count": len(table_json.get("rows", [])),
+                "heuristics": table_json.get("heuristics", {}),
             })
 
             logger.info(f"  [OK] {ref.table_id} -> {out_file.name} [{conf}]")
@@ -215,7 +225,10 @@ def process_pdf(pdf_path: Path, family: str) -> dict:
     # ── Rapport de synthèse ────────────────────────────────────────────────────
     # Toutes les tables problématiques : non-high + high avec cellules vides
     worst = sorted(
-        [t for t in extracted_tables if t["confidence"] != "high" or t.get("has_empty_cells")],
+        [t for t in extracted_tables
+         if t["confidence"] != "high"
+         or t.get("has_empty_cells")
+         or t.get("warnings")],
         key=lambda t: t["empty_cell_ratio"],
         reverse=True
     )
