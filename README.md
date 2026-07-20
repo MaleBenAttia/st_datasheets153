@@ -64,6 +64,7 @@ st_datasheets153/
 |
 |-- app.py                      # Point d'entree CLI (wrapper principal)
 |-- check_quality.py            # Audit qualite des JSON extraits
+|-- generate_debug_report.py    # Consolidation debug multi-datasheet
 |-- rag_transformer.py          # Transformation JSON -> chunks RAG
 |-- .gitignore                  # Fichiers/dossiers exclus du versioning
 |-- README.md                   # Ce fichier
@@ -81,6 +82,7 @@ st_datasheets153/
 |   |   |-- glyph_fixer.py      #     Correction des glyphes Unicode
 |   |   |-- ordering.py         #     Pages "Ordering information" (non-grille)
 |   |   |-- schema.py           #     Modele Pydantic de validation
+|   |-- generate_debug_report.py #     Consolidation debug multi-datasheet
 |
 |-- DataSHEET/                  # === PDFs SOURCES (non versionnes) ===
 |   |-- C0/                     #   Famille C0 (stm32c011d6.pdf, ...)
@@ -95,6 +97,8 @@ st_datasheets153/
 |   |   |-- ...
 |   |   |-- _all_tables.json    #     Toutes les tables du PDF
 |   |   |-- _run_report.json    #     Rapport d'execution du PDF
+|   |-- _debug_report_all.json  #     Rapport debug consolide (genere)
+|   |-- _debug_report_all.txt   #     Rapport debug lisible (genere)
 |
 |-- RagJason/                   # === CHUNKS RAG (generes) ===
 |   |-- stm32c011d6.json        #     Un fichier par datasheet
@@ -175,6 +179,19 @@ extrait les mots-cles, et genere un fichier JSON par datasheet.
 - Tables a confiance medium ou low
 - Tables vides (0 lignes)
 - Taux de cellules vides anormalement eleve (> 30%)
+
+### Rapport de debug consolide (generate_debug_report.py)
+
+```powershell
+# --- Generer le rapport debug pour toutes les datasheets deja extraites ---
+.\venv\Scripts\python.exe table_extractor_raw\generate_debug_report.py
+```
+
+**Sortie :**
+- `outJason/_debug_report_all.json` — donnees exhaustives par datasheet + tableau
+- `outJason/_debug_report_all.txt` — version texte lisible (top worst, warnings, stats)
+
+Chaque entree dans `global_worst_tables` contient : `warnings`, `extraction_method`, `headers_preview`, `rows_count`, `caption`, `heuristics`, `col_count`, `page`, `merged_pages`.
 
 ### Consolidation des stats (aggregate_stats.py)
 
@@ -278,9 +295,23 @@ L'extraction sans bordures (`pdfplumber_text`) place les mots par
 position geometrique, ce qui eclate souvent un mot unique sur 2-3
 colonnes (ex: `"Par"` + `"ameter"` → `"Parameter"`). `_merge_fragmented_columns()`
 detecte les fragments par 4 heuristiques : colonne vide, header minuscule,
-donnees minuscules, cellules tres courtes. La concatenation se fait
-**sans espace** (fragments de mot) avec un guard `left_cell != right_cell`
-pour eviter la duplication.
+donnees minuscules, cellules tres courtes.
+
+**Header leak detection (Fix 17) :** pendant la fusion des donnees, toute
+cellule identique a l'en-tete original de sa colonne est ignoree. Ex :
+colonne `"s"` (suffixe de `"Conditions"`) contient `"s"` dans toutes les
+lignes → c'est un fragment d'en-tete qui a coule dans les donnees, pas une
+valeur reelle. Sans ce filtre, la fusion cree `"Cond-s"` au lieu de `"-"`.
+Les headers originaux sont sauvegardes (`orig_headers`) avant les fusions
+pour garantir que la detection reste correcte meme apres des fusions en
+cascade (droite vers gauche).
+
+**Espace intelligent :** la concatenation detecte automatiquement si les
+deux fragments sont des morceaux d'un meme mot (lowercase+lowercase →
+pas d'espace, ex: `"ris"+"ing"` = `"rising"`) ou des mots distincts
+(sinon → espace, ex: `"V DD"+"rising"` = `"V DD rising"`).
+
+**Guard** `left_cell != right_cell` pour eviter la duplication.
 
 ### Fusion des colonnes-pont a header vide (Fix 11)
 
@@ -357,6 +388,35 @@ Certains textes pivotes dans le PDF sont encodes a l'envers par le
 moteur PDF (ex: "sremiT" au lieu de "Timers"). Le pipeline :
 - **Conserve** le texte original intact dans `raw_json` (fidelite)
 - **Ajoute** la version corrigee dans le champ `document` du RAG (recherche)
+
+### Correction robuste du texte inverse dans les cellules fusionnees (Fix 20)
+
+Quand une cellule fusionnee contient du texte ecrit verticalement (rotation 90°),
+pdfplumber peut lire les caracteres dans l'ordre inverse (`"secafretni .mmoC"`
+au lieu de `"Comm. interfaces"`). Deux corrections s'appliquent :
+
+1. **Matching ameliore dans `_apply_rotated_fix()`** : au lieu d'une egalite
+   stricte sans espaces, utilise `re.sub(r'[^a-zA-Z0-9]', '', ...)` +
+   `startswith()` pour matcher meme quand le texte corrige est une abreviation
+   du texte original (ex: `"Comm.interfaces"` vs `"Communicationinterfaces"`).
+
+2. **Post-processing `_fix_reversed_cells()`** : apres toute l'extraction,
+   detecte les cellules inversees caractere-par-caractere via la regle :
+   - Si le premier caractere est minuscule ET le dernier est majuscule →
+     la cellule est probablement inversee → on la retablit.
+
+### Debug enrichi dans le rapport d'extraction
+
+Chaque table extraite contient desormais les champs de debug suivants dans
+`_run_report.json` :
+- `warnings` : liste des alertes (dynamic_header_depth, vertical_merge_suspected, multi_page_merged)
+- `extraction_method` : methode utilisee
+- `headers_preview` : apercu des 5 premiers headers
+- `heuristics` : informations sur les colonnes extraites
+- `rows_count`, `caption`, `col_count`, `page`, `merged_pages`
+
+Le champ `worst` de `_run_report.json` est elargi a toutes les tables ayant
+au moins un warning (pas seulement les confiances non-high).
 
 ### Selection robuste de la table sur la page
 
@@ -533,10 +593,16 @@ Chaque table extraite produit un fichier JSON individuel :
 | `extraction_confidence`  | string   | "high", "medium", ou "low"                       |
 | `structured_json`        | dict/null | Donnees structurees pour pages non-grille (ordering info, etc.) |
 | `empty_cell_ratio`       | float    | Ratio de cellules vides (0.0 = parfait)          |
+| `warnings`               | string[] | Alertes : "dynamic_header_depth:N", "vertical_merge_suspected", "multi_page_merged:N" |
+
+**Debug enrichi dans `_run_report.json` :** chaque table contient aussi
+`headers_preview` (5 premiers headers), `heuristics` (infos extraction),
+`rows_count`, `col_count`, `page`, `merged_pages`. Le champ `worst_tables`
+liste toutes les tables avec au moins un warning.
 
 ---
-
-## Format de sortie RAG (RagJason)
+ 
+ ## Format de sortie RAG (RagJason)
 
 Chaque fichier dans `RagJason/` contient un array d'objets chunk :
 

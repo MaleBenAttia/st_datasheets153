@@ -167,14 +167,18 @@ Ordre d'appel interne (les "Fix") :
 | 12 | — | `evaluate_table()` | `:909` | Confidence + warnings |
 | 13 | — | Assemblage dict final | `:913-920` | headers, rows, merged_pages, confidence... |
 | 14 | — | `_save_debug_image()` | `:923-925` | PNG debug (si SAVE_DEBUG_IMAGES) |
-| 15 | Fix 9 | `_remove_trailing_footnotes()` | `:1624` | Supprime les lignes de footnotes `"1."`, `"2."` en fin de tableau |
-| 16 | Fix 10 | `_merge_fragmented_columns()` | `:1353` | Fusionne les colonnes fragmentées (pdfplumber_text) : heuristiques minuscule, concat sans espace, guard duplication |
-| 17 | Fix 11 | `_merge_empty_header_rightward()` | `:1648` | Fusionne les colonnes à header vide vers la droite (bridge columns), guard `val != target` |
+| 15 | Fix 9 | `_remove_trailing_footnotes()` | `:1846` | Supprime les lignes de footnotes `"1."`, `"2."` en fin de tableau |
+| 16 | Fix 10 | `_merge_fragmented_columns()` | `:1566` | Fusionne les colonnes fragmentées (pdfplumber_text) : heuristiques minuscule, concat avec espace intelligent, guard duplication, détection header leak |
+| 17 | Fix 11 | `_merge_empty_header_rightward()` | `:1866` | Fusionne les colonnes à header vide vers la droite (bridge columns), guard `val != target` |
 | 18 | Fix 12 | Caption bleed row removal | `:1033` | Suppression 1ère ligne si `"Table N."` match table_id (continuation) |
 | 19 | Fix 13 | `extract_ordering_info()` | `:890` | Parsing texte pages "Ordering information" → structured_json |
 | 20 | Fix 14 | Header residual cleanup | `:1204` | Suppression lignes header dupliquées dans rows_fixed (footnotes) |
 | 21 | Fix 15 | body_on_next_page column check | `:1009` | Rejet si `nxt_cols > orig_col_count * 2 + 5` (TOC misdetection) |
 | 22 | Fix 16 | `result["extraction_method"]` sync | `:1018` | Synchronisation method après body_on_next_page |
+| 23 | Fix 17 | Détection header leaks dans `_merge_fragmented_columns()` | `:1662` | Ignore les cellules données identiques à l'en-tête de leur colonne (fragments d'en-tête qui coulent dans les données). Ex: colonne "s" (suffixe de "Conditions") → données "s" ignorées |
+| 24 | Fix 18 | Extension `_remove_bleed_rows_bottom()` | `:1481` | Nouvelle heuristique : 1ère cellule non-alphanumérique (`.4 Embe`, `(1)`) → suppression ligne parasite |
+| 25 | Fix 19 | Filtre footnote `(N)` post-merge | `:1319` | Supprime toute ligne dont la 1ère cellule est exactement `(1)`, `(2)`, etc. (notes de bas de tableau non capturées par les autres filtres) |
+| 26 | Fix 20 | `_apply_rotated_fix()` + `_fix_reversed_cells()` | `:1876` + `:1411` | Correction robuste du texte inversé dans cellules fusionnées verticales. Matching `re.sub(r'[^a-zA-Z0-9]', '', ...)` + `startswith()` pour gérer abréviations (`Comm.interfaces` vs `Communicationinterfaces`). Post-processing basé sur `1er_caractère_minuscule && dernier_majuscule`. |
 
 ### `_extract_from_page()` — `grid_extractor.py:950-995`
 
@@ -542,58 +546,64 @@ RagJason/
 | `check_quality.py` | Audit console : total, continued, medium/low, empty>30%, rows==0 |
 | `classify_pdfs.py` | Classe chaque PDF du corpus en Type 1/2 via `pdfinfo` + `pdftotext` ; sortie console/JSON/CSV |
 | `app.py` | Thin wrapper CLI qui appelle `table_extractor_raw/main.py` via subprocess |
+| `generate_debug_report.py` | Lit `outJason/**/_run_report.json` déjà produits et consolide en `_debug_report_all.json` + `_debug_report_all.txt` (par datasheet, par famille, global) |
 
 ---
 
 ## 12. Référence rapide (`file:line`)
 
 | Concern | Fichier | Ligne |
-|---|---|---|---|---|
+|---|---|---|---|---|---|
 | CLI group (`--pdf`, `--family`, `--all`) | `main.py` | `:224-227` |
-| `detect_pdf_type()` | `main.py` | `:43-52` |
-| `process_pdf()` | `main.py` | `:67-216` |
+| `detect_pdf_type()` | `main.py` | `:55` |
+| `process_pdf()` | `main.py` | `:78-216` |
 | Appel RAG automatique | `main.py` | `:182-190` |
-| `TableRef` dataclass | `toc_detector.py` | `:110-116` |
-| `detect_tables()` dispatch H2.0→H2.1→H2.5 | `toc_detector.py` | `:121-143` |
-| `_find_lot_pages()` (multi-pages LOT) | `toc_detector.py` | `:152-198` |
-| `_from_toc_links()` (H2.0 annotations) | `toc_detector.py` | `:206-296` |
-| `_clean_caption()` (nettoyage points) | `toc_detector.py` | `:113-118` |
-| `_from_toc()` (H2.1-H2.4 texte) | `toc_detector.py` | `:299-423` |
-| `_from_toc_reverse()` (Type 2) | `toc_detector.py` | `:277-290` |
-| `_from_inline_scan()` (H2.5 fallback) | `toc_detector.py` | `:446-470` |
-| `extract_table_grid()` | `grid_extractor.py` | `:817-1289` |
-| `_extract_from_page()` (3 tentatives) | `grid_extractor.py` | `:1371-1463` |
-| `_find_caption_y()` (avec split("(")) | `grid_extractor.py` | `:124-157` |
-| `_expand_spans_and_headers()` | `grid_extractor.py` | `:458-706` |
-| Fill-down (étape 3b) | `grid_extractor.py` | `:665-674` |
-| `_build_final_headers()` | `grid_extractor.py` | `:735-780` |
-| `_propagate_spans_type2()` | `grid_extractor.py` | `:301-372` |
-| Fix 7 (insertion split colonnes) | `grid_extractor.py` | `:863-889` |
-| Fix 6 (propagation verticale) | `grid_extractor.py` | `:907-925` |
-| Fix 8 (`_ensure_no_empty_cells`) | `grid_extractor.py` | `:243-271` (def), `:931` (appel) |
-| Fix 9 (`_remove_trailing_footnotes`) | `grid_extractor.py` | `:1624-1645` |
-| Fix 10 (`_merge_fragmented_columns`) | `grid_extractor.py` | `:1353-1465` |
-| Fix 11 (`_merge_empty_header_rightward`) | `grid_extractor.py` | `:1648-1702` |
-| Fix 12 (caption bleed row removal) | `grid_extractor.py` | `:1033` |
-| Fix 13 (`extract_ordering_info`) | `grid_extractor.py` | `:890`, `ordering.py` `:66` |
-| Fix 14 (header residual cleanup) | `grid_extractor.py` | `:1204` |
-| Fix 15 (body_on_next_page col check) | `grid_extractor.py` | `:1009` |
-| Fix 16 (`result["extraction_method"]` sync) | `grid_extractor.py` | `:1018` |
+| `TableRef` dataclass | `toc_detector.py` | `:120-126` |
+| `detect_tables()` dispatch H2.0→H2.1→H2.5 | `toc_detector.py` | `:128-150` |
+| `_find_lot_pages()` (multi-pages LOT) | `toc_detector.py` | `:160-208` |
+| `_from_toc_links()` (H2.0 annotations) | `toc_detector.py` | `:220-312` |
+| `_clean_caption()` (nettoyage points) | `toc_detector.py` | `:112-117` |
+| `_from_toc()` (H2.1-H2.4 texte) | `toc_detector.py` | `:315-435` |
+| `_from_toc_reverse()` (Type 2) | `toc_detector.py` | `:439-452` |
+| `_from_inline_scan()` (H2.5 fallback) | `toc_detector.py` | `:455-485` |
+| `extract_table_grid()` | `grid_extractor.py` | `:848-1326` |
+| `_extract_from_page()` (3 tentatives) | `grid_extractor.py` | `:1787-1870` |
+| `_find_caption_y()` (avec split("(")) | `grid_extractor.py` | `:125-158` |
+| `_expand_spans_and_headers()` | `grid_extractor.py` | `:490-742` |
+| Fill-down (étape 3b) | `grid_extractor.py` | `:702-712` |
+| `_build_final_headers()` | `grid_extractor.py` | `:788-836` |
+| `_propagate_spans_type2()` | `grid_extractor.py` | `:365-437` |
+| Fix 7 (insertion split colonnes) | `grid_extractor.py` | `:895-922` |
+| Fix 6 (propagation verticale) | `grid_extractor.py` | `:940-958` |
+| Fix 8 (`_ensure_no_empty_cells`) | `grid_extractor.py` | `:300-328` (def), `:964` (appel) |
+| Fix 9 (`_remove_trailing_footnotes`) | `grid_extractor.py` | `:1920-1940` |
+| Fix 10 (`_merge_fragmented_columns`) | `grid_extractor.py` | `:1611-1762` |
+| Fix 11 (`_merge_empty_header_rightward`) | `grid_extractor.py` | `:1944-2010` |
+| Fix 12 (caption bleed row removal) | `grid_extractor.py` | `:1067` |
+| Fix 13 (`extract_ordering_info`) | `grid_extractor.py` | `:920`, `ordering.py` `:66` |
+| Fix 14 (header residual cleanup) | `grid_extractor.py` | `:1240` |
+| Fix 15 (body_on_next_page col check) | `grid_extractor.py` | `:1042` |
+| Fix 16 (`result["extraction_method"]` sync) | `grid_extractor.py` | `:1051` |
+| Fix 17 (header leak dans `_merge_fragmented_columns`) | `grid_extractor.py` | `:1700-1733` |
+| Fix 18 (extension `_remove_bleed_rows_bottom`) | `grid_extractor.py` | `:1491-1494` |
+| Fix 19 (filtre footnote `(N)` post-merge) | `grid_extractor.py` | `:1355-1366` |
+| Fix 20 (`_apply_rotated_fix` + `_fix_reversed_cells`) | `grid_extractor.py` | `:1876` + `:1411` |
 | `extract_ordering_info()` | `ordering.py` | `:66-221` |
-| Caption row filter (toutes méthodes) | `grid_extractor.py` | `:900-919` |
-| `_fill_horizontal()` | `grid_extractor.py` | `:211-223` |
-| `_fill_vertical()` | `grid_extractor.py` | `:226-240` |
-| `_remove_trailing_footnotes()` | `grid_extractor.py` | `:1624-1645` |
-| `_merge_fragmented_columns()` | `grid_extractor.py` | `:1353-1465` |
-| `_merge_empty_header_rightward()` | `grid_extractor.py` | `:1648-1702` |
-| `_is_continuation_page()` | `continuation.py` | `:50-141` |
-| `find_continuations()` | `continuation.py` | `:221-315` |
-| `target_cols` formula | `continuation.py` | `:306` |
-| `_get_col_x0s()` | `continuation.py` | `:28-47` |
+| Caption row filter (toutes méthodes) | `grid_extractor.py` | `:935-955` |
+| `_fill_horizontal()` | `grid_extractor.py` | `:268-280` |
+| `_fill_vertical()` | `grid_extractor.py` | `:283-297` |
+| `_remove_trailing_footnotes()` | `grid_extractor.py` | `:1920-1940` |
+| `_merge_fragmented_columns()` | `grid_extractor.py` | `:1611-1762` |
+| `_merge_empty_header_rightward()` | `grid_extractor.py` | `:1944-2010` |
+| `_remove_bleed_rows_bottom()` | `grid_extractor.py` | `:1491-1536` |
+| `_is_continuation_page()` | `continuation.py` | `:51-142` |
+| `find_continuations()` | `continuation.py` | `:226-320` |
+| `target_cols` formula | `continuation.py` | `:311` |
+| `_get_col_x0s()` | `continuation.py` | `:29-48` |
 | `RawTable` schema | `schema.py` | `:10-36` |
 | `datasheet_metaData` ajout | `main.py` | `:137-146` |
 | `GLYPH_MAP` | `glyph_fixer.py` | `:17-44` |
-| `fix_text()` | `glyph_fixer.py` | `:58-80` |
+| `fix_text()` | `glyph_fixer.py` | `:78-100` |
 | `evaluate_table()` | `quality_flags.py` | `:43-105` |
 | `get_category()` | `rag_transformer.py` | `:52-67` |
 | `extract_keywords()` | `rag_transformer.py` | `:74-133` |
@@ -605,4 +615,4 @@ RagJason/
 
 ---
 
-*Document généré automatiquement le 19 juillet 2026 — couvre le pipeline complet de l'extraction PDF à la génération des chunks RAG.*
+*Document généré automatiquement le 20 juillet 2026 — couvre le pipeline complet de l'extraction PDF à la génération des chunks RAG.*
