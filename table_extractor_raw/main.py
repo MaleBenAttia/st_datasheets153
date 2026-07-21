@@ -40,11 +40,12 @@ REPO_ROOT = Path(__file__).parent.parent
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from config import OUTPUT_DIR, LOG_DIR
+from config import OUTPUT_DIR, LOG_DIR, RAG_DIR
 from core.toc_detector import detect_tables
 from core.grid_extractor import extract_table_grid
 from core.glyph_fixer import correct_footer_in_table
 from core.schema import RawTable
+from build_rag_selective import process_pdf as build_rag_pdf
 
 try:
     from rag_transformer import generate_rag_for_pdf
@@ -246,15 +247,13 @@ def process_pdf(pdf_path: Path, family: str) -> dict:
         encoding="utf-8"
     )
 
-    # ── Génération automatique RagJason (un fichier par datasheet) ─────────────
-    if generate_rag_for_pdf is not None:
-        try:
-            n_rag = generate_rag_for_pdf(
-                all_tables_json, family, pdf_name, REPO_ROOT / "RagJason"
-            )
-            logger.info(f"RagJason: {n_rag} chunks -> RagJason/{family}/{pdf_name}.json")
-        except Exception as e:
-            logger.error(f"RagJason generation failed: {e}")
+    # ── Génération Rag_selective (schéma allégé, text_helper) ──────────────
+    try:
+        n_selective = build_rag_pdf(pdf_name, family, out_dir, RAG_DIR)
+        if n_selective > 0:
+            logger.info(f"Rag_selective: {n_selective} tables -> Rag_selective/{family}/{pdf_name}/")
+    except Exception as e:
+        logger.error(f"Rag_selective generation failed: {e}")
 
     # ── Rapport de synthèse ────────────────────────────────────────────────────
     # Toutes les tables problématiques : non-high + high avec cellules vides

@@ -37,7 +37,7 @@ from config import (
     DEBUG_IMAGE_DPI,
     OUTPUT_DIR,
 )
-from core.toc_detector import TableRef
+from core.toc_detector import TableRef, get_section_at
 from core.glyph_fixer import CID_PATTERN, FOOTER_PATTERN, fix_headers, fix_rows
 from core.quality_flags import evaluate_table
 from core.continuation import find_continuations, _get_col_x0s
@@ -319,6 +319,8 @@ def _detect_vector_dashes(
                 continue
 
             cell_bbox = finder_row.cells[c_idx]
+            if cell_bbox is None:
+                continue
             x0, top, x1, bottom = cell_bbox
             margin = 3
 
@@ -963,6 +965,9 @@ def extract_table_grid(
         "caption":               ref.caption,
         "pdf_name":              pdf_name,
         "family":                family,
+        "url":       f"https://www.st.com/resource/en/datasheet/{pdf_name}.pdf",
+        "url_table": f"https://www.st.com/resource/en/datasheet/{pdf_name}.pdf#page={ref.page}",
+        "section":               ref.section,
         "page":                  ref.page,
         "merged_pages":          [ref.page],
         "headers":               [],
@@ -986,6 +991,15 @@ def extract_table_grid(
 
         # ── Extraire la grille ─────────────────────────────────────────────────
         raw_table, table_obj, method, bbox = _extract_from_page(page, ref, rotated_map, pdf_type)
+
+        # ── Raffinement section par position Y ────────────────────────────────
+        # Utilise le cache Y-position construit par _assign_sections pour
+        # associer la table à la section précise (même page avec plusieurs sections)
+        caption_y = _find_caption_y(page, ref.caption)
+        if caption_y is not None:
+            y_section = get_section_at(pdf_path, ref.page, caption_y)
+            if y_section:
+                result["section"] = y_section
 
         if raw_table is None:
             result["warnings"].append("no_table_found_on_page")
@@ -1118,21 +1132,31 @@ def extract_table_grid(
                                     break
                         nq_boosted = nq + keyword_bonus
                         if nq_boosted >= 10.0:
-                            nxt_cols = max(len(r) for r in nxt_raw) if nxt_raw else 0
-                            if orig_col_count > 0 and nxt_cols > orig_col_count * 2 + 5:
+                            # ── Garde-fou : page suivante contient une AUTRE table ? ──
+                            nxt_text = " ".join(w["text"] for w in p.extract_words()).lower()
+                            cur_num = int(ref.table_id.split("_")[1])
+                            other_tables = re.findall(r"table\s+(\d+)", nxt_text)
+                            other_nums = [int(n) for n in other_tables if n.isdigit()]
+                            if any(n != cur_num for n in other_nums):
                                 logger.info(f"{ref.table_id}: body_on_next_page rejected "
-                                            f"(cols {orig_col_count}→{nxt_cols})")
+                                            f"(page {pg_idx + 1} has a different table)")
                                 nq_boosted = -1
                             else:
-                                # Sauvegarde des lignes de la page N avant remplacement
-                                saved_pre_body = raw_table
-                                raw_table, table_obj, method, bbox = nxt_raw, nxt_obj, nxt_method, nxt_bbox
-                                page = pdf.pages[pg_idx]
-                                start_page = ref.page + 1
-                                result["extraction_method"] = method
-                                heuristics["body_on_next_page"] = True
-                                heuristics["next_page_q_boosted"] = nq_boosted
-                                logger.info(f"{ref.table_id}: body on page {start_page}, re-extracted ({len(raw_table)} rows, {nxt_method}, q={nq_boosted:.0f})")
+                                nxt_cols = max(len(r) for r in nxt_raw) if nxt_raw else 0
+                                if orig_col_count > 0 and nxt_cols > orig_col_count * 2 + 5:
+                                    logger.info(f"{ref.table_id}: body_on_next_page rejected "
+                                                f"(cols {orig_col_count}→{nxt_cols})")
+                                    nq_boosted = -1
+                                else:
+                                    # Sauvegarde des lignes de la page N avant remplacement
+                                    saved_pre_body = raw_table
+                                    raw_table, table_obj, method, bbox = nxt_raw, nxt_obj, nxt_method, nxt_bbox
+                                    page = pdf.pages[pg_idx]
+                                    start_page = ref.page + 1
+                                    result["extraction_method"] = method
+                                    heuristics["body_on_next_page"] = True
+                                    heuristics["next_page_q_boosted"] = nq_boosted
+                                    logger.info(f"{ref.table_id}: body on page {start_page}, re-extracted ({len(raw_table)} rows, {nxt_method}, q={nq_boosted:.0f})")
 
         # ── Capturer le nombre de colonnes extraites ─────────────────────────
         if raw_table:

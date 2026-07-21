@@ -20,6 +20,13 @@ class RawTable(BaseModel):
     page:         int            = Field(..., description="Page de début (1-indexé)")
     merged_pages: list[int]      = Field(default_factory=list, description="Toutes les pages si table multi-pages")
 
+    # ── URLs ──────────────────────────────────────────────────────────────────
+    url:       str = Field("", description="URL datasheet sur st.com")
+    url_table: str = Field("", description="URL directe vers la page de la table")
+
+    # ── Section ───────────────────────────────────────────────────────────────
+    section: str = Field("", description="Titre de la section du datasheet contenant la table")
+
     # ── Contenu brut ───────────────────────────────────────────────────────────
     headers: list[str]       = Field(default_factory=list, description="Ligne d'en-tête (après correction glyphes)")
     rows:    list[list[str]] = Field(default_factory=list, description="Lignes de données (après correction glyphes)")

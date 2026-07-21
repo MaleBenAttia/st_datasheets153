@@ -15,6 +15,26 @@ import pypdf
 
 logger = logging.getLogger(__name__)
 
+# ── Cache des sections par position Y ───────────────────────────────────────────
+# _SECTION_CACHE[pdf_path][page_num] = [(y_top, "5.3.6 Supply current characteristics"), ...]
+_SECTION_CACHE: dict[str, dict[int, list[tuple[float, str]]]] = {}
+
+
+def get_section_at(pdf_path: str, page: int, y_top: float) -> str:
+    """Retourne la section la plus proche au-dessus de y_top sur la page donnée.
+
+    Parcourt les headings Y-triés : prend le dernier heading avec y <= y_top.
+    """
+    cache = _SECTION_CACHE.get(pdf_path, {})
+    headings = cache.get(page, [])
+    best = ""
+    for hy, label in headings:
+        if hy <= y_top:
+            best = label
+        else:
+            break
+    return best
+
 # ══════════════════════════════════════════════════════════════════════════════
 # Cache des mappings ST→actual (évite de rescanner le PDF pour chaque entrée)
 # ══════════════════════════════════════════════════════════════════════════════
@@ -108,6 +128,13 @@ INLINE_CAPTION_PATTERN = re.compile(
     re.IGNORECASE,
 )
 
+# Pattern de titre de section dans un datasheet STM32
+# Ex: "5.3.6 Supply current characteristics"
+# Rejette les entrées de TOC (contiennent "...." ou un numéro de page à la fin)
+SECTION_HEADING_PATTERN = re.compile(
+    r"^(\d+(?:\.\d+){1,3})\s+([A-Z][A-Za-z\s\-,/°µΩ()]+)$",
+)
+
 
 def _clean_caption(text: str) -> str:
     """Supprime les points de remplissage du TOC et le numéro de page en fin."""
@@ -123,6 +150,7 @@ class TableRef:
     caption:  str          # légende complète
     page:     int          # page de début (1-indexé)
     dest_y: Optional[float] = None  # Y en pdfplumber coords (haut de la table sur page cible), depuis H2.0
+    section: str = ""      # Titre de la section contenant la table (ex: "5.3.6 Supply current characteristics")
 
 
 def detect_tables(pdf_path: str, pdf_type: int = 1) -> list[TableRef]:
@@ -132,13 +160,14 @@ def detect_tables(pdf_path: str, pdf_type: int = 1) -> list[TableRef]:
     2. H2.1-H2.4 : regex texte sur les pages LOT
     3. H2.5 : scan inline fallback page par page
 
-    Retourne une liste de TableRef triée par page.
+    Retourne une liste de TableRef triée par page, avec le champ section renseigné.
     """
     with pdfplumber.open(pdf_path) as pdf:
         # Tentative 1 : H2.0 annotations PDF
         refs = _from_toc_links(pdf_path, pdf, pdf_type)
         if refs:
             logger.info("H2.0 (annotations): %d tables detected", len(refs))
+            _assign_sections(pdf_path, pdf, refs)
             return refs
 
         # Tentative 2 : H2.1-H2.4 regex texte
@@ -148,13 +177,113 @@ def detect_tables(pdf_path: str, pdf_type: int = 1) -> list[TableRef]:
             refs = _from_toc(pdf)
         if refs:
             logger.info("H2.1-H2.4 (text regex): %d tables detected", len(refs))
+            _assign_sections(pdf_path, pdf, refs)
             return refs
 
         # Tentative 3 : H2.5 inline scan
         logger.info("No TOC found, scanning pages for inline captions")
         refs = _from_inline_scan(pdf)
         logger.info("H2.5 (inline scan): %d tables detected", len(refs))
+        _assign_sections(pdf_path, pdf, refs)
         return refs
+
+
+def _assign_sections(pdf_path: str, pdf: pdfplumber.PDF, refs: list[TableRef]) -> None:
+    """
+    Construit le cache Y-position des sections ET assigne chaque table
+    à sa section (fallback page-level).
+
+    1. Ignore les pages du sommaire (List of Tables)
+    2. Scanne les pages avec extract_text_lines() pour capturer
+       les titres de section + leur position Y
+    3. Stocke le tout dans _SECTION_CACHE[pdf_path] pour raffinement
+       Y-position dans grid_extractor.py
+    4. Assigne chaque table à la section active sur sa page (fallback)
+    """
+    if not refs:
+        return
+
+    # 1. Trouver les pages de TOC à ignorer
+    lot_pages = set()
+    for pg_idx in range(len(pdf.pages)):
+        text = (pdf.pages[pg_idx].extract_text() or "")[:1500].lower()
+        if any(p.search(text) for p in TOC_SECTION_PATTERNS):
+            lot_pages.add(pg_idx + 1)
+            for k in range(pg_idx + 1, min(pg_idx + 15, len(pdf.pages))):
+                t = (pdf.pages[k].extract_text() or "")[:500].lower()
+                if re.search(r"table\s+\d+\.", t) or any(p.search(t) for p in TOC_SECTION_PATTERNS):
+                    lot_pages.add(k + 1)
+                else:
+                    break
+            break
+
+    # 2. Construire le cache Y-position
+    y_cache: dict[int, list[tuple[float, str]]] = {}
+
+    for pg_idx, page in enumerate(pdf.pages):
+        pgnum = pg_idx + 1
+        if pgnum in lot_pages:
+            continue
+
+        lines = page.extract_text_lines() or []
+        for line_info in lines:
+            text = line_info["text"].strip()
+            top = line_info["top"]
+            if "..." in text or ". ." in text:
+                continue
+            m = SECTION_HEADING_PATTERN.match(text)
+            if m:
+                sec_num = m.group(1)
+                sec_title = m.group(2).strip().rstrip(".")
+                sec_title = re.sub(r'\s{2,}', ' ', sec_title)
+                if sec_title:
+                    label = f"{sec_num} {sec_title}"
+                    y_cache.setdefault(pgnum, []).append((top, label))
+
+    _SECTION_CACHE[pdf_path] = y_cache
+
+    # 3. Trier les headings par Y pour chaque page
+    for page_headings in y_cache.values():
+        page_headings.sort(key=lambda x: x[0])
+
+    # 4. Fallback page-level : construire la hiérarchie des sections
+    sections: list[tuple[str, str, int]] = []
+
+    for pg_idx, page in enumerate(pdf.pages):
+        pgnum = pg_idx + 1
+        if pgnum in lot_pages:
+            continue
+
+        text = page.extract_text() or ""
+        for line in text.splitlines():
+            line = line.strip()
+            if "..." in line or ". ." in line:
+                continue
+            m = SECTION_HEADING_PATTERN.match(line)
+            if m:
+                sec_num = m.group(1)
+                sec_title = m.group(2).strip().rstrip(".")
+                sec_title = re.sub(r'\s{2,}', ' ', sec_title)
+                if sec_title:
+                    sections.append((sec_num, sec_title, pgnum))
+
+    # 5. Ajouter "General purpose / Overview" avant la 1ère section
+    first_sec_page = sections[0][2] if sections else len(pdf.pages) + 1
+    if first_sec_page > 1:
+        sections.insert(0, ("", "General purpose / Overview", 1))
+
+    # 6. Ajouter la page de fin pour chaque section
+    section_ranges: list[tuple[str, str, int, int]] = []
+    for i, (num, title, start) in enumerate(sections):
+        end = sections[i + 1][2] - 1 if i + 1 < len(sections) else len(pdf.pages)
+        section_ranges.append((num, title, start, end))
+
+    # 7. Assigner chaque table à sa section (fallback page-level)
+    for ref in refs:
+        for s_num, s_title, s_start, s_end in section_ranges:
+            if s_start <= ref.page <= s_end:
+                ref.section = f"{s_num} {s_title}" if s_num else s_title
+                break
 
 
 def _find_lot_pages(pdf: pdfplumber.PDF, pdf_type: int = 1) -> list[int]:

@@ -15,6 +15,7 @@ from pathlib import Path
 ROOT_DIR   = Path(__file__).parent
 OUTPUT_DIR = ROOT_DIR.parent / "outJason"
 LOG_DIR    = ROOT_DIR / "logs"
+RAG_DIR    = ROOT_DIR.parent / "Rag_selective"
 
 # ── Seuils qualité (déclenchent le fallback ou le flag) ───────────────────────
 MIN_DATA_ROWS          = 1     # une seule ligne de données est valide (ex: Calibration values)
