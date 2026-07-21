@@ -81,6 +81,7 @@ st_datasheets153/
 |   |   |-- quality_flags.py    #     Evaluation de la confiance
 |   |   |-- glyph_fixer.py      #     Correction des glyphes Unicode
 |   |   |-- ordering.py         #     Pages "Ordering information" (non-grille)
+|   |   |-- page1_features.py   #     Extraction features page 1 (core, flash, timers, packages)
 |   |   |-- schema.py           #     Modele Pydantic de validation
 |   |-- generate_debug_report.py #     Consolidation debug multi-datasheet
 |
@@ -341,6 +342,45 @@ family, Pin count, Package, ...) avec codes et significations. Le module
 8 categories possibles + des chunks RAG optimises. Reserve au Type 1
 (Acrobat). Les resultats sont stockes dans le champ `structured_json` du
 modele `RawTable`.
+
+### Extraction des caracteristiques page 1 (page1_features.py)
+
+Le module `page1_features.py` extrait automatiquement les caracteristiques
+techniques de la page de garde de chaque datasheet : cœur, frequence, flash,
+SRAM, tension, temperature, packages, part numbers, timers, ADC, DMA,
+interfaces de communication et securite.
+
+**Methode :** le texte de la page 1 (et eventuellement page 2 si le sommaire
+est decale) est extrait via pdfplumber, puis analyse par regex pour chaque
+champ. Deux types de regex sont utilisees :
+
+1. **Recherche plein texte** (`.search()` sur tout le texte) pour `core`,
+   `freq`, `flash`, `ram`, `voltage`, `temperature`, `coremark`, `dma`
+2. **Scan ligne par ligne** pour `timers`, `ADC`, `comm. interfaces`,
+   `security` — ces champs apparaissent dans des listes a puces
+
+**Packages avec dimensions :** les noms de packages et leurs dimensions
+`(X × Y mm)` sont souvent sur des lignes differentes dans pdfplumber.
+Le parser les associe automatiquement par position pour produire
+`"SO8N (4.9×6 mm)"`, `"TSSOP20 (6.4×4.4 mm)"`, etc.
+
+**Format Type 1 / Type 2 :** les patterns regex sont compatibles avec les
+deux formats de PDF. Le Type 2 (Antenna House) utilise des puces differentes
+et des unites avec espaces (`-40 °C` au lieu de `-40°C`), geres par des
+quantificateurs `\s?` optionnels.
+
+**Correctifs appliques :**
+| # | Probleme | Cause | Correctif |
+|---|----------|-------|-----------|
+| 1 | **Timers null** | `re.match()` au lieu de `.search()` + filtre watchdog trop agressif | `.search()` + conservation des lignes avec count timers |
+| 2 | **Flash incorrect (Type 2)** | `1-Kbyte cache` capture avant `64-Kbyte flash` | `finditer()` + selection du max |
+| 3 | **Temperature vide (Type 2)** | Format `-40 °C to 85/125 °C` non gere | Regex flexible avec `\s?` et `C?` optionnels |
+| 4 | **Packages sans dimensions** | Dimensions sur ligne separee | Association positionnelle nom↔dimension |
+| 5 | **Comm. interfaces incompletes** | Nombres en toutes lettres (`One I2C`) non captures | Alternative textuelle `(?:One|Two|Three...)` |
+
+**Sortie :** `outJason/<family>/<pdf_name>/features.json` contenant
+tous les champs structures, un champ `missing_fields` pour les donnees
+absentes de la datasheet, et un niveau de confiance `high`/`medium`.
 
 ### Nettoyage des lignes header residuelles dans les donnees (Fix 14)
 

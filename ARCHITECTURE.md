@@ -12,6 +12,10 @@ DataSHEET/<family>/<pdf>.pdf
         │
         ▼  main.py  (CLI: --pdf │ --family │ --all)
 ┌──────────────────────────────────────────────────────────────┐
+│  ÉTAPE 0 — Features page 1    page1_features.py              │
+│      → features.json  (core, flash, timers, packages, ...)   │
+│      ↓ (indépendant, ne bloque pas l'extraction)             │
+│                                                                │
 │  ÉTAPE 1 — Détection           toc_detector.py                 │
 │      → list[TableRef]  (table_id, caption, page)              │
 │                                                                │
@@ -98,7 +102,112 @@ flowchart TD
 
 ---
 
-## 3. Étape 1 — Détection (`toc_detector.py`)
+## 3. Étape 0 — Features page 1 (`page1_features.py`)
+
+### Objectif
+
+Extraire automatiquement les caractéristiques techniques de la page de
+garde de chaque datasheet : cœur, fréquence, flash, SRAM, tension,
+température, packages, part numbers, timers, ADC, DMA, interfaces de
+communication et sécurité.
+
+**Indépendant** du pipeline d'extraction des tables : si cette étape
+échoue, les tables sont tout de même extraites.
+
+### `_parse_header_footer()` — `page1_features.py:176-204`
+
+Extrait le titre, la référence document (`DS13866`), la révision
+(`Rev 5`) et la date (`February 2026`) depuis le pied de page du PDF.
+
+- Type 1 : `TYPE1_FOOTER_RE` = `"February 2026  DS13866  Rev 5  1/1"`
+- Type 2 : `TYPE2_FOOTER_RE` = `"DS14581 - Rev 2 - March 2024"`
+- Titre : première ligne substantielle ne correspondant pas aux motifs
+  de bruit (`Datasheet`, `DS`, `Rev`, puces, etc.)
+
+### `_parse_packages()` — `page1_features.py:207-224`
+
+Extrait les noms de packages (`SO8N`, `TSSOP20`, `UFQFPN20`, ...) et
+leurs dimensions associées. Les dimensions sont souvent sur une ligne
+différente dans le texte pdfplumber — le parser les associe par position
+pour produire `"SO8N (4.9×6 mm)"`.
+
+### `_parse_part_numbers()` — `page1_features.py:226-237`
+
+Extrait les références produit (`STM32C011D6`, `STM32C011F4`, ...) via
+`PART_RE` = `r'STM32[A-Z0-9]{6,}'`. Filtre les `x` génériques et les
+chaînes trop courtes.
+
+### `_parse_features_bullets()` — `page1_features.py:240-363`
+
+Analyse le texte de la page 1 avec deux stratégies :
+
+#### Recherche plein texte (`.search()` sur tout le texte)
+
+| Champ | Regex | Exemple match |
+|-------|-------|---------------|
+| `core` | `Cortex[®\\s]*-(Cortex-M0+)` | `Cortex®-M0+` |
+| `fpu` | `with FPU\|floating point unit` | `with FPU` |
+| `max_frequency_mhz` | `(?:frequency up to\|up to) (\d+) MHz` | `frequency up to 48 MHz` |
+| `flash_kb` | `(\d+(?:\.\d+)?) -? (K\|M)bytes .*? flash` | `64-Kbyte flash` (prend le max si plusieurs) |
+| `ram_kb` | `(\d+(?:\.\d+)?) -? (K\|M)bytes .*? SRAM` | `12-Kbyte SRAM` |
+| `voltage` | `(\d+\.?\d*) V (?:to\|-) (\d+\.?\d*) V` | `2.0 V to 3.6 V` |
+| `temperature` | `(-?\d+) °C?\s*to\s*(-?\d+)°C?` + compounds | `-40°C to 85°C/105°C/125°C` ou `-40 °C to 85/125 °C` |
+| `coremark` | `(\d+\.?\d*) CoreMark` | `134 CoreMark` |
+| `dma` | `(\d+)-? (channel\|channels) (DMA\|LPDMA)` | `7-channel DMA controller` |
+
+#### Scan ligne par ligne (itère `text.splitlines()`)
+
+| Champ | Logique | Exemple |
+|-------|---------|---------|
+| `timers` | `.search()` + count timers + accepte watchdog/RTC si présence d'un count | `• 8 timers: 16-bit for advanced motor control, two watchdogs` |
+| `adc` | `.search()` pattern `\d+-bit.*ADC` | `• 12-bit, 0.4 µs ADC (up to 13 ext. channels)` |
+| `comm. interfaces` | `.search()` interfaces (I2C, USART, SPI...) + nombre optionnel (chiffre ou lettre) | `• One I2C-bus interface`, `• Two USARTs with master/slave` |
+| `security` | `.search()` mots-clés (SESIP, PSA, secure boot, tamper...) | `• SESIP3 and PSA Level 3 target certification` |
+
+### Gestion des formats Type 1 / Type 2
+
+Les deux types de PDF ont des différences de formatage sur la page 1 :
+
+| Aspect | Type 1 (Acrobat) | Type 2 (Antenna House) |
+|--------|------------------|------------------------|
+| Puces | `•` | `•` (identique) |
+| Température | `-40°C to 85°C/105°C/125°C` | `-40 °C to 85/125 °C` (espaces, °C optionnel) |
+| Packages | `SO8N (4.9×6 mm)` sur 2 lignes | `TSSOP20 (6.4 x 4.4 mm)` sur 1 ligne |
+| Timer line | `• 8 timers: 16-bit...` | `9 timers, RTC, and 2 watchdogs` (sans puce) |
+| Comm. interfaces | `• One I2C-bus interface` | `• 3x I2C interfaces supporting Fast-mode` |
+
+### Sortie — `features.json`
+
+```json
+{
+  "pdf_name": "stm32c011d6",
+  "family": "C0",
+  "core": "Cortex-M0+",
+  "max_frequency_mhz": 48,
+  "flash_kb": 32,
+  "ram_kb": 6,
+  "voltage_min_v": 2.0,
+  "voltage_max_v": 3.6,
+  "operating_temp_c": ["-40°C to 85°C", "-40°C to 105°C", "-40°C to 125°C"],
+  "packages": ["SO8N (4.9×6 mm)", "WLCSP12 (1.70×1.42 mm)", "TSSOP20 (6.4×4.4 mm)", "UFQFPN20 (3×3 mm)"],
+  "part_numbers": ["STM32C011D6", "STM32C011F4", "STM32C011F6", "STM32C011J4", "STM32C011J6"],
+  "communication_interfaces": ["• One I2C-bus interface..."],
+  "adc": "• 12-bit, 0.4 µs ADC (up to 13 ext. channels)",
+  "timers": "• 8 timers: 16-bit for advanced motor control",
+  "dma_channels": 3,
+  "security": ["SESIP3 and PSA Level 3 target certification"],
+  "extraction_meta": {
+    "source_pages": [1],
+    "extraction_method": "regex_type1",
+    "confidence": "high",
+    "missing_fields": ["coremark"]
+  }
+}
+```
+
+---
+
+## 4. Étape 1 — Détection (`toc_detector.py`)
 
 ### `TableRef` — `toc_detector.py:40-45`
 ```python
