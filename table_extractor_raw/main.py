@@ -53,19 +53,20 @@ except ImportError:
 
 
 def _fix_missing_dashes(table: dict) -> dict:
-    """Remplace les cellules vides par '-' dans les colonnes Min/Max/Typ.
+    """Remplace les cellules vides par '-' dans les colonnes à dash attendu.
 
-    pdfplumber ne capture pas toujours le '-' quand il est rendu comme trait
-    vectoriel dans le PDF. On détecte les colonnes d'amplitude (Min, Max, Typ)
-    et on y remplace les "" par "-".
+    La détection vectorielle (page.chars + page.lines) a déjà été faite dans
+    grid_extractor._detect_vector_dashes.  Ce fallback ne touche que les
+    cellules encore vides, après cette détection.
     """
     headers = table.get("headers", [])
     rows = table.get("rows", [])
     if not headers or not rows:
         return table
 
-    # Colonnes typiquement numériques / à tirets
-    dash_col_keywords = ("min", "max", "typ", "pll")
+    # Mêmes mots-clés que _detect_vector_dashes dans grid_extractor
+    dash_col_keywords = ("parameter", "conditions", "symbol", "ratings",
+                         "min", "typ", "max", "unit", "value")
     dash_cols = {
         i for i, h in enumerate(headers)
         if any(kw in h.lower() for kw in dash_col_keywords)

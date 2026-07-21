@@ -45,6 +45,10 @@ from core.ordering import extract_ordering_info
 
 logger = logging.getLogger(__name__)
 
+# ── Constantes pour la détection vectorielle des dashs ──────────────────────────
+DASH_COL_KEYWORDS = ("parameter", "conditions", "symbol", "ratings",
+                     "min", "typ", "max", "unit", "value")
+DASH_CHARS = frozenset({"-", "–", "−", "\u2212", "\uf02d"})
 
 # ══════════════════════════════════════════════════════════════════════════════
 # FIX 1 — Texte vertical inversé
@@ -263,6 +267,83 @@ def _cell_str(cell) -> str:
         return ""
     # Fix 4 : normaliser les \n internes dans les cellules de data
     return _normalize_newlines_in_cell(str(cell)).strip()
+
+
+def _detect_vector_dashes(
+    raw_table: list[list[str | None]],
+    finder_table: Any,
+    page: Page,
+) -> list[list[str | None]]:
+    """
+    Détecte les tirets '-' rendus comme traits vectoriels (non capturés par
+    pdfplumber) dans les colonnes à dash attendu (Parameter, Conditions,
+    Symbol, Ratings, Min, Typ, Max, Unit, Value).
+
+    Pour chaque cellule vide de ces colonnes :
+      1. Vérifie page.chars dans la bbox de la cellule → dash-like char ?
+      2. Vérifie page.lines dans la bbox → courte horizontale vectorielle ?
+    Si une des deux vérifications trouve un dash → la cellule reçoit "-".
+    Sinon elle reste "" (vraiment vide).
+
+    Retourne la table corrigée (modifiée in-place).
+    """
+    if not raw_table or not finder_table or not hasattr(finder_table, 'rows'):
+        return raw_table
+
+    headers_raw = raw_table[0] if raw_table else []
+    dash_cols = set()
+    for i, h in enumerate(headers_raw):
+        if h and isinstance(h, str) and any(kw in h.lower() for kw in DASH_COL_KEYWORDS):
+            dash_cols.add(i)
+
+    if not dash_cols:
+        return raw_table
+
+    n_rows = min(len(raw_table), len(finder_table.rows))
+
+    for r_idx in range(n_rows):
+        finder_row = finder_table.rows[r_idx]
+        raw_row = raw_table[r_idx]
+
+        if not hasattr(finder_row, 'cells'):
+            continue
+
+        n_cols = min(len(raw_row), len(finder_row.cells))
+
+        for c_idx in range(n_cols):
+            if c_idx not in dash_cols:
+                continue
+
+            cell_val = raw_row[c_idx]
+            if cell_val is not None and cell_val != "":
+                continue
+
+            cell_bbox = finder_row.cells[c_idx]
+            x0, top, x1, bottom = cell_bbox
+            margin = 3
+
+            found = False
+            for ch in page.chars:
+                if (ch["x0"] >= x0 - margin and ch["x1"] <= x1 + margin
+                        and ch["top"] >= top - margin and ch["bottom"] <= bottom + margin
+                        and ch["text"] in DASH_CHARS):
+                    found = True
+                    break
+
+            if not found:
+                for line in page.lines:
+                    if (line["x0"] >= x0 - margin and line["x1"] <= x1 + margin
+                            and line["top"] >= top - margin and line["bottom"] <= bottom + margin
+                            and line.get("height", line["bottom"] - line["top"]) <= 4
+                            and (line["x1"] - line["x0"]) > 3
+                            and (line["x1"] - line["x0"]) < (x1 - x0) * 0.9):
+                        found = True
+                        break
+
+            if found:
+                raw_table[r_idx][c_idx] = "-"
+
+    return raw_table
 
 
 def _fill_horizontal(rows: list[list[str]]) -> None:
@@ -1860,6 +1941,7 @@ def _extract_from_page(
             best1 = best_ft1 = bbox1 = None
         if best1 is not None:
             best1 = _apply_rotated_fix(page, best1, rotated_map, finder.tables)
+            best1 = _detect_vector_dashes(best1, best_ft1, page)
 
     q1 = _table_quality(best1) if best1 else -1.0
     if q1 >= 2.0:
@@ -1878,6 +1960,7 @@ def _extract_from_page(
             best2 = best_ft2 = bbox2 = None
         if best2 is not None:
             best2 = _apply_rotated_fix(page, best2, rotated_map, finder_text.tables)
+            best2 = _detect_vector_dashes(best2, best_ft2, page)
 
             # Le filtrage des lignes au-dessus de la légende est fait
             # dans extract_table_grid (après _extract_from_page) pour que

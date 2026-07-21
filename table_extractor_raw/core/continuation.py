@@ -9,7 +9,7 @@ Exporte : find_continuations(), _get_col_x0s()
 """
 from __future__ import annotations
 import logging
-from typing import Optional
+from typing import Any, Optional
 
 import pdfplumber
 from pdfplumber.page import Page
@@ -53,7 +53,7 @@ def _is_continuation_page(
     expected_col_count: int,
     current_table_id: str,
     pdf_type: int = 1,
-) -> tuple[bool, Optional[list], Optional[list[float]]]:
+) -> tuple[bool, Optional[list], Optional[list[float]], Optional[Any]]:
     """
     Vérifie si la page contient la suite de la table en cours.
 
@@ -84,7 +84,7 @@ def _is_continuation_page(
     finder = page.debug_tablefinder(settings)
 
     if not tables or not finder.tables:
-        return False, None, None
+        return False, None, None, None
 
     # Filtrer les bandeaux décoratifs (Type 2)
     if pdf_type == 2:
@@ -99,7 +99,7 @@ def _is_continuation_page(
     # Prendre la table la plus haute sur la page
     candidates = [(t, ft) for t, ft in zip(tables, finder.tables) if t and len(t) >= 1]
     if not candidates:
-        return False, None
+        return False, None, None, None
 
     top_table, top_ft = min(candidates, key=lambda x: x[1].bbox[1])
 
@@ -108,18 +108,18 @@ def _is_continuation_page(
         col_count = len(top_table[0])
         # Si la table a beaucoup plus de colonnes qu'attendu → pas la bonne table
         if col_count > expected_col_count + 2:
-            return False, None, None
+            return False, None, None, None
         # Doit avoir au moins expected - 2 colonnes (évite les petites tables
         # de note de bas de page qui auraient aussi "(continued)")
         if col_count < max(2, expected_col_count - 2):
-            return False, None, None
-        return True, top_table, _get_col_x0s(top_ft)
+            return False, None, None, None
+        return True, top_table, _get_col_x0s(top_ft), top_ft
 
     # ── Sans "(continued)" : heuristique de position ──────────────────────────
     # La table doit être proche du haut de la page.
     # Seuil élevé (300) car certaines pages ont un en-tête de ~2 cm.
     if top_ft.bbox[1] > 300:
-        return False, None, None
+        return False, None, None, None
 
     # Vérifier qu'il n'y a pas une AUTRE légende de table avant celle-ci
     for w in words:
@@ -132,14 +132,14 @@ def _is_continuation_page(
                 pass  # OK, c'est notre table qui continue
             else:
                 # C'est une nouvelle table différente → stopper
-                return False, None, None
+                return False, None, None, None
 
     # Vérifier le nombre de colonnes (tolérance ±2)
     col_count = len(top_table[0])
     if abs(col_count - expected_col_count) > 2:
-        return False, None, None
+        return False, None, None, None
 
-    return True, top_table, _get_col_x0s(top_ft)
+    return True, top_table, _get_col_x0s(top_ft), top_ft
 
 
 def _expand_cont_row(row: list, expected_col_count: int) -> list:
@@ -266,7 +266,7 @@ def find_continuations(
         if current_page > next_table_page:
             break
 
-        is_cont, table_data, cont_x0s = _is_continuation_page(
+        is_cont, table_data, cont_x0s, top_ft = _is_continuation_page(
             pdf.pages[current_page - 1], expected_col_count, current_table_id, pdf_type
         )
         if not is_cont:
@@ -303,6 +303,10 @@ def find_continuations(
 
         merged_pages.append(current_page)
         logger.info(f"    -> found continuation on page {current_page} ({len(table_data)} rows)")
+
+        # ── Détection vectorielle des dashs sur la page de continuation ──────
+        from core.grid_extractor import _detect_vector_dashes
+        table_data = _detect_vector_dashes(table_data, top_ft, pdf.pages[current_page - 1])
 
         # Collecter les x0s des colonnes de cette page de continuation
         if cont_x0s:
