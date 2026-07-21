@@ -21,9 +21,10 @@ _SECTION_CACHE: dict[str, dict[int, list[tuple[float, str]]]] = {}
 
 
 def get_section_at(pdf_path: str, page: int, y_top: float) -> str:
-    """Retourne la section la plus proche au-dessus de y_top sur la page donnée.
+    """Retourne la section la plus proche au-dessus de y_top.
 
-    Parcourt les headings Y-triés : prend le dernier heading avec y <= y_top.
+    Cherche d'abord sur la page courante (par Y-position).
+    Si rien trouvé, remonte page par page vers l'arrière.
     """
     cache = _SECTION_CACHE.get(pdf_path, {})
     headings = cache.get(page, [])
@@ -33,7 +34,14 @@ def get_section_at(pdf_path: str, page: int, y_top: float) -> str:
             best = label
         else:
             break
-    return best
+    if best:
+        return best
+    # Cross-page backward walk
+    for pgn in range(page - 1, 0, -1):
+        prev = cache.get(pgn, [])
+        if prev:
+            return prev[-1][1]
+    return ""
 
 # ══════════════════════════════════════════════════════════════════════════════
 # Cache des mappings ST→actual (évite de rescanner le PDF pour chaque entrée)
@@ -132,7 +140,7 @@ INLINE_CAPTION_PATTERN = re.compile(
 # Ex: "5.3.6 Supply current characteristics"
 # Rejette les entrées de TOC (contiennent "...." ou un numéro de page à la fin)
 SECTION_HEADING_PATTERN = re.compile(
-    r"^(\d+(?:\.\d+){1,3})\s+([A-Z][A-Za-z\s\-,/°µΩ()]+)$",
+    r"^(\d+(?:\.\d+){0,3})\s+([A-Z][A-Za-z\s\-,/°µΩ()]+)$",
 )
 
 
@@ -203,6 +211,10 @@ def _assign_sections(pdf_path: str, pdf: pdfplumber.PDF, refs: list[TableRef]) -
     if not refs:
         return
 
+    TABLE_CONTENT_RE = re.compile(
+        r'\b(Yes|No|N/A|NA|Enabled|Disabled)\b', re.IGNORECASE
+    )
+
     # 1. Trouver les pages de TOC à ignorer
     lot_pages = set()
     for pg_idx in range(len(pdf.pages)):
@@ -236,7 +248,7 @@ def _assign_sections(pdf_path: str, pdf: pdfplumber.PDF, refs: list[TableRef]) -
                 sec_num = m.group(1)
                 sec_title = m.group(2).strip().rstrip(".")
                 sec_title = re.sub(r'\s{2,}', ' ', sec_title)
-                if sec_title:
+                if sec_title and not TABLE_CONTENT_RE.search(sec_title):
                     label = f"{sec_num} {sec_title}"
                     y_cache.setdefault(pgnum, []).append((top, label))
 
@@ -246,8 +258,8 @@ def _assign_sections(pdf_path: str, pdf: pdfplumber.PDF, refs: list[TableRef]) -
     for page_headings in y_cache.values():
         page_headings.sort(key=lambda x: x[0])
 
-    # 4. Fallback page-level : construire la hiérarchie des sections
-    sections: list[tuple[str, str, int]] = []
+    # 4. Fallback page-level : dernier heading avec page ≤ page de la table
+    all_headings: list[tuple[str, int]] = []  # (label, page)
 
     for pg_idx, page in enumerate(pdf.pages):
         pgnum = pg_idx + 1
@@ -264,26 +276,20 @@ def _assign_sections(pdf_path: str, pdf: pdfplumber.PDF, refs: list[TableRef]) -
                 sec_num = m.group(1)
                 sec_title = m.group(2).strip().rstrip(".")
                 sec_title = re.sub(r'\s{2,}', ' ', sec_title)
-                if sec_title:
-                    sections.append((sec_num, sec_title, pgnum))
+                if sec_title and not TABLE_CONTENT_RE.search(sec_title):
+                    all_headings.append((f"{sec_num} {sec_title}", pgnum))
 
-    # 5. Ajouter "General purpose / Overview" avant la 1ère section
-    first_sec_page = sections[0][2] if sections else len(pdf.pages) + 1
-    if first_sec_page > 1:
-        sections.insert(0, ("", "General purpose / Overview", 1))
-
-    # 6. Ajouter la page de fin pour chaque section
-    section_ranges: list[tuple[str, str, int, int]] = []
-    for i, (num, title, start) in enumerate(sections):
-        end = sections[i + 1][2] - 1 if i + 1 < len(sections) else len(pdf.pages)
-        section_ranges.append((num, title, start, end))
-
-    # 7. Assigner chaque table à sa section (fallback page-level)
+    # 5. Assigner chaque table
     for ref in refs:
-        for s_num, s_title, s_start, s_end in section_ranges:
-            if s_start <= ref.page <= s_end:
-                ref.section = f"{s_num} {s_title}" if s_num else s_title
+        best = ""
+        for label, s_page in all_headings:
+            if s_page <= ref.page:
+                best = label
+            else:
                 break
+        if not best and all_headings:
+            best = "General purpose / Overview"
+        ref.section = best
 
 
 def _find_lot_pages(pdf: pdfplumber.PDF, pdf_type: int = 1) -> list[int]:
