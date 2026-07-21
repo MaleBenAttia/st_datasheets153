@@ -155,6 +155,23 @@ def process_pdf(pdf_path: Path, family: str) -> dict:
     summary["tables_found"] = len(refs)
     logger.info(f"Detected {len(refs)} tables")
 
+    # ── Étape 1b : Features extraction (indépendante, n'affecte pas les tables) ──
+    features_path = out_dir / "features.json"
+    if not features_path.exists():
+        try:
+            from core.page1_features import extract_features_page_range
+            features = extract_features_page_range(str(pdf_path))
+            features_path.write_text(
+                json.dumps(features, ensure_ascii=False, indent=2),
+                encoding="utf-8"
+            )
+            logger.info(f"Features saved: {features_path.name} "
+                        f"({len(features.get('packages', []))} pkgs, "
+                        f"{len(features.get('part_numbers', []))} PNs, "
+                        f"pages={features.get('extraction_meta', {}).get('source_pages', [])})")
+        except Exception as e:
+            logger.warning(f"Features extraction skipped: {e}")
+
     if not refs:
         logger.warning("No tables detected — PDF may have no table index")
         return summary
