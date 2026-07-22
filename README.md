@@ -106,6 +106,13 @@ st_datasheets153/
 |   |-- stm32f103rc.json
 |   |-- stm32g081cb.json
 |
+|-- Rag_selective/              # === RAG SELECTIVE (generes) ===
+|   |-- <family>/<pdf_name>/
+|   |   |-- features.json       #     Format standardise (features + features_content)
+|   |   |-- _all_tables.json    #     features en position 0 + tables
+|   |   |-- table_1.json        #     Tables individuelles
+|   |   |-- ...
+|
 |-- global_extraction_stats.json  # Rapport de sante global (genere)
 ```
 
@@ -405,9 +412,13 @@ Le module `build_rag_selective.py` genere un format RAG simplifie dans
 ```json
 {
   "features": {
+    "pdf_name": "stm32u031c6",
     "family": "U0",
+    "page": 1,
+    "merged_pages": [1],
     "url": "https://www.st.com/resource/en/datasheet/stm32u031c6.pdf",
-    "text_helper": "DS14581 Rev 2 (March 2024). 32-bit Arm Cortex-M0+..."
+    "url_table": "https://www.st.com/resource/en/datasheet/stm32u031c6.pdf#page=1",
+    "text_helper": "pdf_name: stm32u031c6. DS14581 Rev 2 (March 2024). 32-bit Arm Cortex-M0+..."
   },
   "features_content": {
     "doc_ref": "DS14581",
@@ -422,9 +433,9 @@ Le module `build_rag_selective.py` genere un format RAG simplifie dans
 ```
 
 **Avantages :**
-- `features` : metadonnees minales pour embedding vectoriel
+- `features` : structure identique au format `table` (pdf_name, page, merged_pages, url, url_table)
 - `features_content` : donnees completes pour retrieval
-- `text_helper` : texte dense genere automatiquement
+- `text_helper` : commence par `pdf_name:` pour ameliorer le retrieval par composant
 - Features en position 0 dans `_all_tables.json` (avant toutes les tables)
 
 ### Nettoyage des lignes header residuelles dans les donnees (Fix 14)
@@ -813,4 +824,59 @@ results = collection.query(
     n_results=3,
     where={"pdf_name": {"$eq": "stm32f103rc"}}
 )
+```
+
+---
+
+## Commandes de lancement
+
+### Extraction complete (outJason + Rag_selective)
+
+```bash
+# Un seul PDF (ideal pour tester)
+python table_extractor_raw/main.py --pdf DataSHEET/C0/stm32c011d6.pdf
+python table_extractor_raw/main.py --pdf DataSHEET/U0/stm32u031c6.pdf
+
+# Toute une famille
+python table_extractor_raw/main.py --family C0
+python table_extractor_raw/main.py --family U0 --workers 6
+python table_extractor_raw/main.py --family C5 --workers 6
+
+# Tous les 185 PDFs
+python table_extractor_raw/main.py --all --workers 8
+
+# Echantillon aleatoire
+python table_extractor_raw/main.py --random 60 --workers 8
+```
+
+### Workers (parallelisme)
+
+| Workers | Recommandation |
+|---------|----------------|
+| `--workers 1` | Defaut, extraction sequentielle |
+| `--workers 4` | Mini, stable sur tout PC |
+| `--workers 6` | Recommande pour testing |
+| `--workers 8` | Max stable, necessite 16+ Go RAM |
+
+### Pipeline complet (extraction + stats + RAG)
+
+```bash
+# Tout-en-un pour une famille
+python table_extractor_raw/main.py --family C5 --workers 6
+
+# Tout-en-un pour tous les PDFs
+python table_extractor_raw/main.py --all --workers 8
+```
+
+### Verification qualite
+
+```bash
+# Rapport qualite global
+python check_quality.py
+
+# Rapport debug consolide
+python table_extractor_raw/generate_debug_report.py
+
+# Stats globales
+python aggregate_stats.py
 ```

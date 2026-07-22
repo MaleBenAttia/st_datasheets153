@@ -182,6 +182,7 @@ Les deux types de PDF ont des différences de formatage sur la page 1 :
 
 ### Sortie — `features.json`
 
+**outJason (brut) :**
 ```json
 {
   "pdf_name": "stm32c011d6",
@@ -207,6 +208,22 @@ Les deux types de PDF ont des différences de formatage sur la page 1 :
     "confidence": "high",
     "missing_fields": ["coremark"]
   }
+}
+```
+
+**Rag_selective (standardise) :**
+```json
+{
+  "features": {
+    "pdf_name": "stm32c011d6",
+    "family": "C0",
+    "page": 1,
+    "merged_pages": [1],
+    "url": "https://www.st.com/resource/en/datasheet/stm32c011d6.pdf",
+    "url_table": "https://www.st.com/resource/en/datasheet/stm32c011d6.pdf#page=1",
+    "text_helper": "pdf_name: stm32c011d6. DS13866 Rev 5 (February 2026). Arm Cortex-M0+..."
+  },
+  "features_content": { ... }
 }
 ```
 
