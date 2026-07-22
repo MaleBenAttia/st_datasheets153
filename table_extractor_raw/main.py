@@ -167,7 +167,7 @@ def process_pdf(pdf_path: Path, family: str) -> dict:
             )
             logger.info(f"Features saved: {features_path.name} "
                         f"({len(features.get('packages', []))} pkgs, "
-                        f"{len(features.get('part_numbers', []))} PNs, "
+                        f"device_summary={'yes' if features.get('device_summary') else 'no'}, "
                         f"pages={features.get('extraction_meta', {}).get('source_pages', [])})")
         except Exception as e:
             logger.warning(f"Features extraction skipped: {e}")

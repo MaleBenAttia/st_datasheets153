@@ -131,17 +131,26 @@ leurs dimensions associées. Les dimensions sont souvent sur une ligne
 différente dans le texte pdfplumber — le parser les associe par position
 pour produire `"SO8N (4.9×6 mm)"`.
 
-### `_parse_part_numbers()` — `page1_features.py:226-237`
+### `_parse_device_summary()` — `page1_features.py:235-275`
 
-Extrait les références produit (`STM32C011D6`, `STM32C011F4`, ...) via
-`PART_RE` = `r'STM32[A-Z0-9]{6,}'`. Filtre les `x` génériques et les
-chaînes trop courtes.
+Extrait la table **Device summary** (Reference / Part number) depuis la
+page 1 du PDF.
 
-### `_parse_features_bullets()` — `page1_features.py:240-363`
+**Étape 1 (primaire)** : ouvre le PDF avec pdfplumber, appelle
+`page.extract_tables()`, cherche la table dont les headers contiennent
+`"Reference"` et `"Part number"`. Retourne un dict `{headers, rows}`.
 
-Analyse le texte de la page 1 avec deux stratégies :
+**Étape 2 (fallback)** : si pdfplumber ne trouve pas la table, utilise
+la regex `PART_RE` = `r'STM32[A-Z0-9]{6,}'` sur tout le texte et
+construit un Device summary minimal `{headers: ["Part number"], rows: [[pn], ...]}`.
 
-#### Recherche plein texte (`.search()` sur tout le texte)
+**Pourquoi cette approche ?** La regex brute capture des faux positifs
+(ex: `STM32` dans un bloc de texte générique). La grille pdfplumber garantit
+que seuls les vrais part numbers de la colonne "Part number" sont extraits.
+
+### `_parse_features_bullets()` — `page1_features.py:278-327`
+
+Analyse le texte de la page 1 par recherche plein texte :
 
 | Champ | Regex | Exemple match |
 |-------|-------|---------------|
@@ -153,16 +162,10 @@ Analyse le texte de la page 1 avec deux stratégies :
 | `voltage` | `(\d+\.?\d*) V (?:to\|-) (\d+\.?\d*) V` | `2.0 V to 3.6 V` |
 | `temperature` | `(-?\d+) °C?\s*to\s*(-?\d+)°C?` + compounds | `-40°C to 85°C/105°C/125°C` ou `-40 °C to 85/125 °C` |
 | `coremark` | `(\d+\.?\d*) CoreMark` | `134 CoreMark` |
-| `dma` | `(\d+)-? (channel\|channels) (DMA\|LPDMA)` | `7-channel DMA controller` |
 
-#### Scan ligne par ligne (itère `text.splitlines()`)
-
-| Champ | Logique | Exemple |
-|-------|---------|---------|
-| `timers` | `.search()` + count timers + accepte watchdog/RTC si présence d'un count | `• 8 timers: 16-bit for advanced motor control, two watchdogs` |
-| `adc` | `.search()` pattern `\d+-bit.*ADC` | `• 12-bit, 0.4 µs ADC (up to 13 ext. channels)` |
-| `comm. interfaces` | `.search()` interfaces (I2C, USART, SPI...) + nombre optionnel (chiffre ou lettre) | `• One I2C-bus interface`, `• Two USARTs with master/slave` |
-| `security` | `.search()` mots-clés (SESIP, PSA, secure boot, tamper...) | `• SESIP3 and PSA Level 3 target certification` |
+Les champs `communication_interfaces`, `adc`, `timers`, `dma_channels`,
+`security` ont été retirés du modèle `DeviceFeatures` car leurs données
+étaient trop bruitées (lignes mélangées avec d'autres puces).
 
 ### Gestion des formats Type 1 / Type 2
 
@@ -190,12 +193,13 @@ Les deux types de PDF ont des différences de formatage sur la page 1 :
   "voltage_max_v": 3.6,
   "operating_temp_c": ["-40°C to 85°C", "-40°C to 105°C", "-40°C to 125°C"],
   "packages": ["SO8N (4.9×6 mm)", "WLCSP12 (1.70×1.42 mm)", "TSSOP20 (6.4×4.4 mm)", "UFQFPN20 (3×3 mm)"],
-  "part_numbers": ["STM32C011D6", "STM32C011F4", "STM32C011F6", "STM32C011J4", "STM32C011J6"],
-  "communication_interfaces": ["• One I2C-bus interface..."],
-  "adc": "• 12-bit, 0.4 µs ADC (up to 13 ext. channels)",
-  "timers": "• 8 timers: 16-bit for advanced motor control",
-  "dma_channels": 3,
-  "security": ["SESIP3 and PSA Level 3 target certification"],
+  "device_summary": {
+    "headers": ["Reference", "Part number"],
+    "rows": [
+      ["STM32C011x4",  "STM32C011F4, STM32C011J4"],
+      ["STM32C011x6",  "STM32C011F6, STM32C011J6, STM32C011D6"]
+    ]
+  },
   "extraction_meta": {
     "source_pages": [1],
     "extraction_method": "regex_type1",
@@ -669,6 +673,12 @@ RagJason/
 | Appel RAG automatique | `main.py` | `:182-190` |
 | `TableRef` dataclass | `toc_detector.py` | `:120-126` |
 | `detect_tables()` dispatch H2.0→H2.1→H2.5 | `toc_detector.py` | `:128-150` |
+| `_detect_pdf_type()` | `page1_features.py` | `:82` |
+| `_parse_header_footer()` | `page1_features.py` | `:177` |
+| `_parse_packages()` | `page1_features.py` | `:208` |
+| `_parse_device_summary()` | `page1_features.py` | `:235` |
+| `_parse_features_bullets()` | `page1_features.py` | `:278` |
+| `extract_features_page_range()` | `page1_features.py` | `:332` |
 | `_find_lot_pages()` (multi-pages LOT) | `toc_detector.py` | `:160-208` |
 | `_from_toc_links()` (H2.0 annotations) | `toc_detector.py` | `:220-312` |
 | `_clean_caption()` (nettoyage points) | `toc_detector.py` | `:112-117` |

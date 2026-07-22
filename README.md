@@ -347,22 +347,36 @@ modele `RawTable`.
 
 Le module `page1_features.py` extrait automatiquement les caracteristiques
 techniques de la page de garde de chaque datasheet : cœur, frequence, flash,
-SRAM, tension, temperature, packages, part numbers, timers, ADC, DMA,
-interfaces de communication et securite.
+SRAM, tension, temperature, packages, et le **Device summary** (table
+Reference / Part number).
 
 **Methode :** le texte de la page 1 (et eventuellement page 2 si le sommaire
 est decale) est extrait via pdfplumber, puis analyse par regex pour chaque
-champ. Deux types de regex sont utilisees :
+champ. Deux approches :
 
 1. **Recherche plein texte** (`.search()` sur tout le texte) pour `core`,
-   `freq`, `flash`, `ram`, `voltage`, `temperature`, `coremark`, `dma`
-2. **Scan ligne par ligne** pour `timers`, `ADC`, `comm. interfaces`,
-   `security` — ces champs apparaissent dans des listes a puces
+   `freq`, `flash`, `ram`, `voltage`, `temperature`, `coremark`
+2. **Extraction de la table Device summary** par ouverture PDF directe
+   avec pdfplumber (`page.extract_tables()`) → cherche les headers
+   `"Reference"` et `"Part number"` → retourne `{headers, rows}`
 
 **Packages avec dimensions :** les noms de packages et leurs dimensions
 `(X × Y mm)` sont souvent sur des lignes differentes dans pdfplumber.
 Le parser les associe automatiquement par position pour produire
 `"SO8N (4.9×6 mm)"`, `"TSSOP20 (6.4×4.4 mm)"`, etc.
+
+**Device summary :** la table `Reference / Part number` est extraite
+directement depuis la page 1 du PDF via pdfplumber. Exemple :
+```json
+"device_summary": {
+  "headers": ["Reference", "Part number"],
+  "rows": [
+    ["STM32C011x4",  "STM32C011F4, STM32C011J4"],
+    ["STM32C011x6",  "STM32C011F6, STM32C011J6, STM32C011D6"]
+  ]
+}
+```
+Fallback regex `STM32[A-Z0-9]{6,}` si pdfplumber ne trouve pas la table.
 
 **Format Type 1 / Type 2 :** les patterns regex sont compatibles avec les
 deux formats de PDF. Le Type 2 (Antenna House) utilise des puces differentes
@@ -372,11 +386,11 @@ quantificateurs `\s?` optionnels.
 **Correctifs appliques :**
 | # | Probleme | Cause | Correctif |
 |---|----------|-------|-----------|
-| 1 | **Timers null** | `re.match()` au lieu de `.search()` + filtre watchdog trop agressif | `.search()` + conservation des lignes avec count timers |
+| 1 | **Part numbers inexacts** | Regex brute `STM32XXXXXX` capturait des faux positifs | Extraction via la grille pdfplumber de la table Device summary |
 | 2 | **Flash incorrect (Type 2)** | `1-Kbyte cache` capture avant `64-Kbyte flash` | `finditer()` + selection du max |
 | 3 | **Temperature vide (Type 2)** | Format `-40 °C to 85/125 °C` non gere | Regex flexible avec `\s?` et `C?` optionnels |
 | 4 | **Packages sans dimensions** | Dimensions sur ligne separee | Association positionnelle nom↔dimension |
-| 5 | **Comm. interfaces incompletes** | Nombres en toutes lettres (`One I2C`) non captures | Alternative textuelle `(?:One|Two|Three...)` |
+| 5 | **Champs bruités supprimés** | `comm. interfaces`, `adc`, `timers`, `dma`, `security` mélangés | Retirés du modèle `DeviceFeatures` |
 
 **Sortie :** `outJason/<family>/<pdf_name>/features.json` contenant
 tous les champs structures, un champ `missing_fields` pour les donnees

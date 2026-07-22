@@ -17,6 +17,7 @@ logger = logging.getLogger("page1_features")
 
 # ── Regex patterns ──────────────────────────────────────────────────────────
 
+# Packages: captures name + optional inline dimensions (e.g. "TSSOP20 (6.4 x 4.4 mm)")
 PACKAGE_RE = re.compile(
     r'(?P<name>(?:LQFP|UFQFPN|TSSOP|UFBGA|WLCSP|VFBGA|SO\d*N?|TFBGA|UQFN|LFBGA|QFN)\d*)'
     r'(?:\s*\(([^)]+)\))?',
@@ -24,8 +25,10 @@ PACKAGE_RE = re.compile(
 )
 # Exclude false positives like SO7816 (from ISO7816 interface) — SO package ends with N or digit < 4 chars
 _PACKAGE_SO_FP = re.compile(r'^SO\d{4,}$', re.IGNORECASE)
+# Dimensions on separate line (e.g. "(4.9x6 mm)") — matched by position to package names
 _DIMENSION_RE = re.compile(r'\((\d+\.?\d*\s*[×x]\s*\d+\.?\d*\s*mm)\)')
 
+# Footer patterns for doc ref, revision and date
 TYPE1_FOOTER_RE = re.compile(
     r'(\w+\s+\d{4})\s+(DS\d+)\s+Rev\s+(\d+)\s+\d+/\d+\s*$', re.MULTILINE
 )
@@ -33,6 +36,7 @@ TYPE2_FOOTER_RE = re.compile(
     r'(DS\d+)\s*-\s*Rev\s+(\d+)\s*-\s*(\w+\s+\d{4})', re.MULTILINE
 )
 
+# Page range detection: stop scanning when these markers appear
 END_MARKERS = [
     re.compile(r'^Contents$', re.IGNORECASE),
     re.compile(r'^Table of Contents$', re.IGNORECASE),
@@ -41,6 +45,7 @@ END_MARKERS = [
     re.compile(r'^1\.\s+\w'),
 ]
 
+# Full-text regexes — search entire text for these specs
 CORE_RE = re.compile(r'Cortex[®\s]*-([A-Z0-9+]+)')
 FPU_RE = re.compile(r'(?:with\s+)?FPU|floating\s+point\s+unit', re.IGNORECASE)
 FREQ_RE = re.compile(r'(?:frequency\s+up\s+to|up\s+to)\s+(\d+)\s*MHz', re.IGNORECASE)
@@ -53,7 +58,11 @@ TEMP_RE = re.compile(
 )
 COREMARK_RE = re.compile(r'(\d+\.?\d*)\s*CoreMark', re.IGNORECASE)
 DMA_RE = re.compile(r'(?:(\d+)\s*-?\s*(?:channel|channels)\s+(?:DMA|LPDMA)|(?:DMA|LPDMA).*?(\d+)\s*(?:channel|channels))', re.IGNORECASE)
+
+# Part number fallback: used when pdfplumber table extraction fails
 PART_RE = re.compile(r'STM32[A-Z0-9]{6,}')
+
+# Line-by-line regexes (currently unused in output, kept for potential re-enable)
 TIMER_LINE_RE = re.compile(r'(?:(\d+)\s*[x×]\s+\d+-bit\s+timers?|(?:Up\s+to\s+)?(\d+)\s*timers?\b)', re.IGNORECASE)
 ADC_LINE_RE = re.compile(r'(?:\d+\s*-?\s*bits?.*ADC|\d+-bit.*ADC|ADC.*\d+\s*-?\s*bits?)', re.IGNORECASE)
 COMM_INTF_RE = re.compile(
@@ -109,7 +118,7 @@ class DeviceFeatures(BaseModel):
     operating_temp_c: list[str] = []
     coremark: Optional[float] = None
     packages: list[str] = []
-    part_numbers: list[str] = []
+    device_summary: Optional[dict] = None
     extraction_meta: ExtractionMeta
 
 
@@ -138,12 +147,12 @@ def _get_page_text(pdf_path: str, page: int) -> str:
 # ── Page range detection (100% dynamic, no type-based rules) ──────────────
 
 def detect_features_page_range(pdf_path: str) -> list[int]:
+    """Scanne les premières pages jusqu'à trouver Contents/Introduction."""
     total = _get_pdf_page_count(pdf_path)
     for p in range(1, min(total, MAX_SCAN_PAGES) + 1):
         text = _get_page_text(pdf_path, p)
         if not text:
             continue
-        # Scan all lines for end markers (header may precede Contents/Introduction)
         for line in text.splitlines():
             stripped = line.strip()
             if not stripped:
@@ -154,6 +163,7 @@ def detect_features_page_range(pdf_path: str) -> list[int]:
 
 
 def _extract_text_for_pages(pdf_path: str, pages: list[int]) -> str:
+    """Concatène le texte pdfplumber des pages demandées."""
     if not pages:
         return ""
     try:
@@ -173,6 +183,7 @@ def _extract_text_for_pages(pdf_path: str, pages: list[int]) -> str:
 # ── Parsers ─────────────────────────────────────────────────────────────────
 
 def _parse_header_footer(text: str, pdf_type: int) -> dict:
+    """Extrait doc_ref, revision, date et title depuis le footer du PDF."""
     result = {"doc_ref": None, "revision": None, "date": None, "title": None}
 
     if pdf_type == 1:
@@ -204,8 +215,14 @@ def _parse_header_footer(text: str, pdf_type: int) -> dict:
 
 
 def _parse_packages(text: str) -> list[str]:
+    """
+    Extrait les noms de packages et leurs dimensions associées.
+
+    Les noms (SO8N, TSSOP20, ...) et les dimensions ((4.9x6 mm), ...)
+    sont souvent sur des lignes séparées dans pdfplumber. On les associe
+    par position (premier nom ↔ premier tuple de dimensions, etc.).
+    """
     seen = set()
-    packages = []
     pkg_list = []
     for m in PACKAGE_RE.finditer(text):
         name = m.group("name")
@@ -221,16 +238,52 @@ def _parse_packages(text: str) -> list[str]:
 
     dims_list = [(m.start(), m.group(1)) for m in _DIMENSION_RE.finditer(text)]
 
+    packages = []
     for i, (pos, name) in enumerate(pkg_list):
-        dims = None
-        if i < len(dims_list):
-            dims = dims_list[i][1]
+        dims = dims_list[i][1] if i < len(dims_list) else None
         entry = f"{name} ({dims})" if dims else name
         packages.append(entry)
     return packages
 
 
-def _parse_part_numbers(text: str) -> list[str]:
+def _parse_device_summary(pdf_path: str, text: str) -> dict | None:
+    """
+    Extrait la table Device summary (Reference / Part number) depuis la page 1.
+
+    Étape 1 : Ouvre le PDF avec pdfplumber, cherche la table dont les headers
+    contiennent "Reference" et "Part number" → retourne headers + rows.
+
+    Étape 2 (fallback) : Si pdfplumber ne trouve pas la table, utilise la
+    regex PART_RE sur tout le texte pour extraire les STM32XXXXXX et construit
+    un device summary minimal {headers: ["Part number"], rows: [[pn], ...]}.
+    """
+    try:
+        with pdfplumber.open(pdf_path) as pdf:
+            if len(pdf.pages) < 1:
+                raise ValueError("no pages")
+            p = pdf.pages[0]
+            tables = p.extract_tables()
+            for table in tables:
+                if not table or len(table) < 2:
+                    continue
+                headers = table[0]
+                if not headers:
+                    continue
+                h_low = [h.strip().lower() if h else "" for h in headers]
+                if "reference" not in h_low and "part number" not in h_low:
+                    continue
+                clean_headers = [h.strip() if h else "" for h in headers]
+                clean_rows = []
+                for row in table[1:]:
+                    clean_row = [(c or "").replace("\n", " ").strip() for c in row]
+                    if any(c for c in clean_row):
+                        clean_rows.append(clean_row)
+                if clean_rows:
+                    return {"headers": clean_headers, "rows": clean_rows}
+    except Exception:
+        pass
+
+    # Fallback regex
     seen = set()
     parts = []
     for m in PART_RE.finditer(text):
@@ -240,10 +293,14 @@ def _parse_part_numbers(text: str) -> list[str]:
         if pn not in seen:
             seen.add(pn)
             parts.append(pn)
-    return sorted(parts)
+    if parts:
+        parts = sorted(parts)
+        return {"headers": ["Part number"], "rows": [[p] for p in parts]}
+    return None
 
 
 def _parse_features_bullets(text: str) -> dict:
+    """Extrait core, freq, flash, ram, voltage, temperature, coremark depuis le texte."""
     result = {
         "core": None, "fpu": False,
         "max_frequency_mhz": None, "flash_kb": None, "ram_kb": None,
@@ -262,6 +319,7 @@ def _parse_features_bullets(text: str) -> dict:
     if m:
         result["max_frequency_mhz"] = int(m.group(1))
 
+    # flash: plusieurs matchs possibles (cache + flash) → on prend le max
     flash_matches = list(FLASH_RE.finditer(text))
     if flash_matches:
         def _flash_val(m):
@@ -282,6 +340,7 @@ def _parse_features_bullets(text: str) -> dict:
         result["voltage_min_v"] = float(m.group(1))
         result["voltage_max_v"] = float(m.group(2))
 
+    # Temperature: supporte -40°C to 85°C/105°C/125°C et -40 °C to 85/125 °C
     for m in TEMP_RE.finditer(text):
         groups = [m.group(i) for i in range(1, 6) if m.group(i)]
         if len(groups) >= 2:
@@ -292,12 +351,24 @@ def _parse_features_bullets(text: str) -> dict:
         result["operating_temp_c"] = temps
         break
 
+    m = COREMARK_RE.search(text)
+    if m:
+        result["coremark"] = float(m.group(1))
+
     return result
 
 
 # ── Main entry point ────────────────────────────────────────────────────────
 
 def extract_features_page_range(pdf_path: str) -> dict:
+    """
+    Point d'entrée principal.
+
+    1. Détecte les pages de features (page 1..N avant Contents)
+    2. Extrait le texte via pdfplumber
+    3. Parse header/footer, packages, device_summary, features bullets
+    4. Valide et retourne le dict DeviceFeatures
+    """
     p = Path(pdf_path)
     pdf_name = p.stem
     family = p.parent.name
@@ -308,7 +379,7 @@ def extract_features_page_range(pdf_path: str) -> dict:
 
     header = _parse_header_footer(full_text, pdf_type_val)
     pkgs = _parse_packages(full_text)
-    parts = _parse_part_numbers(full_text)
+    device_summary = _parse_device_summary(str(p), full_text)
     features = _parse_features_bullets(full_text)
 
     extraction_method = f"regex_type{pdf_type_val}"
@@ -351,7 +422,7 @@ def extract_features_page_range(pdf_path: str) -> dict:
         operating_temp_c=features["operating_temp_c"],
         coremark=features["coremark"],
         packages=pkgs,
-        part_numbers=parts,
+        device_summary=device_summary,
         extraction_meta=meta,
     )
 
@@ -359,6 +430,10 @@ def extract_features_page_range(pdf_path: str) -> dict:
 
 
 def extract_and_save(pdf_path: str, output_dir: str | Path) -> dict:
+    """
+    Wrapper qui lit/crée features.json dans output_dir.
+    Si le fichier existe déjà, le retourne sans re-extraire (cache).
+    """
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     out_path = output_dir / "features.json"
