@@ -880,14 +880,10 @@ def _build_final_headers(
     - header_depth == 1 : lecture directe de la ligne 0.
     - header_depth >= 2 : fusion « Parent / Enfant » sur les lignes d'en-tête.
 
-    RÈGLE DE PROPAGATION : si la cellule parente (ligne 0) est vide/None pour
-    une colonne donnée (cellule fusionnée horizontalement dans le PDF), on
-    réutilise le dernier libellé parent connu.
-
-    Ex. Table 2 :
-      row0 = ["Peripheral", "", "STM32C031_", None, None, None, ...]
-      row1 = ["", "",         "_F4",        "_F6", "_G4", "_G6", ...]
-    → headers = ["Peripheral", "", "STM32C031_ / _F4", "STM32C031_ / _F6", ...]
+    RÈGLE DE PROPAGATION :
+    - None (cellule fusionnée) → réutiliser last_parent
+    - '' (cellule vide, pas fusionnée) → pas de parent
+    - '(N)' (footnote marker) → ignoré comme parent
     """
     if header_depth == 1:
         return [
@@ -896,12 +892,13 @@ def _build_final_headers(
         ]
 
     final: list[str] = []
-    last_parent: str = ""  # dernier label parent vu (propagation horizontale)
+    last_parent: str = ""
 
     for c in range(cols):
         parts: list[str] = []
         for r in range(header_depth):
-            val = str(table[r][c] or "").strip()
+            original = table[r][c]
+            val = str(original or "").strip()
             if "\n" in val:
                 if pdf_type == 2:
                     val = val.replace("\n", " ").strip()
@@ -910,15 +907,16 @@ def _build_final_headers(
             val = _normalize_newlines_in_cell(val).strip()
 
             if r == 0:
-                # Niveau parent : mettre à jour last_parent si non vide,
-                # sinon réutiliser le dernier parent connu (cellule fusionnée).
-                if val:
+                if original is None:
+                    effective = last_parent
+                elif val and not re.match(r'^\(\d+\)$', val):
                     last_parent = val
-                effective = last_parent
+                    effective = val
+                else:
+                    effective = ""
             else:
                 effective = val
 
-            # Ajouter uniquement si non vide et non doublon du niveau précédent
             if effective and (not parts or parts[-1] != effective):
                 parts.append(effective)
 
