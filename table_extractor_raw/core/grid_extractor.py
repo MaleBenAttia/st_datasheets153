@@ -631,6 +631,7 @@ def _expand_spans_and_headers(
 
     # ── 1. Division spatiale des en-têtes compressés (Table 2 style) ────────
     inserted_rows = 0
+    rev_fallback = None
     if page is not None and table_obj is not None and hasattr(table_obj, "rows") and len(table_obj.rows) > 0 and len(grid_col_centers) == cols:
         compressed_c = -1
         cell_bbox = None
@@ -660,6 +661,12 @@ def _expand_spans_and_headers(
                         cell_bbox = c_cell_bbox
                         span_cols = c_span_cols
                         break
+                    # Fallback : texte inversé avec parties séparées par espace
+                    cell_val = str(table[0][c] or "")
+                    if ' ' in cell_val and _is_likely_reversed(cell_val):
+                        parts = cell_val.split(' ')
+                        if len(parts) >= 2 and len(parts) <= len(c_span_cols) and all(p.strip() for p in parts):
+                            rev_fallback = (c, c_cell_bbox, c_span_cols, cell_val, parts)
         
         if compressed_c != -1 and cell_bbox is not None:
             c = compressed_c
@@ -707,6 +714,22 @@ def _expand_spans_and_headers(
                 raw_table.insert(1, new_row)
                 rows += 1
                 inserted_rows += 1
+        
+        if rev_fallback is not None:
+            c, _, c_span_cols, cell_val, parts = rev_fallback
+            rev_parts = [p[::-1].strip() for p in parts]
+            parent_text = rev_parts[0]
+            new_row = [None] * cols
+            for idx, c2 in enumerate(c_span_cols):
+                if idx == 0:
+                    continue
+                new_row[c2] = rev_parts[idx] if idx < len(rev_parts) else ""
+            table[0][c] = parent_text
+            raw_table[0][c] = parent_text
+            table.insert(1, new_row)
+            raw_table.insert(1, new_row)
+            rows += 1
+            inserted_rows += 1
 
     # ── 2. Identifier les colonnes fantômes ────────────────────────────────────
     ghost_cols: set[int] = set()
@@ -1352,6 +1375,12 @@ def extract_table_grid(
         # ── Détection cellules vides après Fix 8 ─────────────────────────
         # ── Correction des glyphes ─────────────────────────────────────────────
         headers    = fix_headers(headers)
+        for i in range(len(headers)):
+            if _is_likely_reversed(headers[i]):
+                if ' ' in headers[i]:
+                    headers[i] = ' '.join(p[::-1].strip() for p in headers[i].split(' '))
+                else:
+                    headers[i] = headers[i][::-1].strip()
         rows_fixed = fix_rows(rows_raw)
 
         rows_fixed = _deduplicate_rows(rows_fixed)
@@ -1525,12 +1554,8 @@ def _is_likely_reversed(cell: str) -> bool:
 
     rev = clean[::-1]
 
-    # Le texte inversé doit commencer par Maj + minuscule (pattern "Timers")
-    if not (rev[0].isupper() and len(rev) > 1 and rev[1].islower()):
-        return False
-
-    # Exclure les textes avec motif "chiffre + espace + lettre" (ex: "de 5 V")
-    if re.search(r'\d\s+[A-Za-z]', clean):
+    # Le texte inversé doit commencer par Maj (acronyme comme "STM" ou mot comme "Port")
+    if not (rev and rev[0].isupper() and len(rev) > 1):
         return False
 
     # La version inversée doit avoir au moins autant de lettres
@@ -1547,6 +1572,17 @@ def _is_likely_reversed(cell: str) -> bool:
                 count += 1
         return count
 
+    def _initial_upper_run(text: str) -> int:
+        """Longueur de la séquence majuscule au début du texte.
+        Ex: "STM32..." → 3, "Port A" → 1, "Timers" → 1"""
+        count = 0
+        for c in text:
+            if c.isupper():
+                count += 1
+            else:
+                break
+        return count
+
     clean_mid = _mid_word_uppers(clean)
     rev_mid = _mid_word_uppers(rev)
 
@@ -1554,9 +1590,17 @@ def _is_likely_reversed(cell: str) -> bool:
     if rev_mid > clean_mid:
         return False
 
-    # Si l'original commence par majuscule, l'inversé doit être parfait
-    # (zéro majuscule en milieu de mot)
-    if not clean[0].islower() and rev_mid > 0:
+    # Si l'inversé a une plus longue séquence majuscule au début, c'est un
+    # part number STM32 (ex: "STM32C5A3KxT" a "STM" soit 3, l'inversé
+    # "TxK3A5C23MTS" a "T" soit 1)
+    clean_init = _initial_upper_run(clean)
+    rev_init = _initial_upper_run(rev)
+    if rev_init > clean_init:
+        return True
+
+    # Si l'original commence par majuscule et les deux versions ont autant
+    # de majuscules en milieu de mot, c'est symétrique → pas inversé
+    if not clean[0].islower() and rev_mid >= clean_mid:
         return False
 
     return True

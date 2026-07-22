@@ -478,28 +478,40 @@ Le moteur gere les entrees de TOC dont le titre est trop long et se
 retrouve coupe sur deux lignes dans le PDF, grace a une machine a etats
 avec buffer d'accumulation.
 
-### Correction des textes inverses
+### Correction des textes inverses (Fix 20 — ameliore)
 
 Certains textes pivotes dans le PDF sont encodes a l'envers par le
-moteur PDF (ex: "sremiT" au lieu de "Timers"). Le pipeline :
-- **Conserve** le texte original intact dans `raw_json` (fidelite)
-- **Ajoute** la version corrigee dans le champ `document` du RAG (recherche)
+moteur PDF (ex: `"sremiT"` au lieu de `"Timers"`, `"A troP"`
+au lieu de `"Port A"`, `"TxC3A5C23MTS"` au lieu de `"STM32C5A3MxT"`).
+Le pipeline applique 3 couches de correction :
 
-### Correction robuste du texte inverse dans les cellules fusionnees (Fix 20)
+1. **`_apply_rotated_fix()`** — corrige les caracteres `upright=False` (rotation
+   90°) en regroupant les chars par bande x et les re-triant par y decroissant.
+   Utilise `startswith()` tolerant pour les abreviations.
 
-Quand une cellule fusionnee contient du texte ecrit verticalement (rotation 90°),
-pdfplumber peut lire les caracteres dans l'ordre inverse (`"secafretni .mmoC"`
-au lieu de `"Comm. interfaces"`). Deux corrections s'appliquent :
+2. **`_is_likely_reversed()` heuristique** — detecte le texte inversé sans
+   s'appuyer sur les caracteres bruts (qui varient selon le moteur PDF) :
+   - `_mid_word_uppers()` : compare le nombre de majuscules en milieu de mot
+     entre l'original et le reverse. Un original avec debut minuscule mais
+     autant/moins de majuscules mid-word que le reverse → inversé.
+     Gere `"A troP"` (original commence par majuscule) → `"Port A"`.
+   - `_initial_upper_run()` : mesure la sequence de majuscules consecutives
+     en debut de mot. Les part numbers STM32 inversés (`"TxC3A5C23MTS"`) ont
+     1 seule majuscule (`T`) alors que la version correcte (`"STM32C5A3CxT"`)
+     en a 3 (`STM`) → distinction fiable.
+   - Suppression de la regex `\d\s+[A-Za-z]` qui bloquait les part numbers
+     contenant des chiffres suivis de lettres.
 
-1. **Matching ameliore dans `_apply_rotated_fix()`** : au lieu d'une egalite
-   stricte sans espaces, utilise `re.sub(r'[^a-zA-Z0-9]', '', ...)` +
-   `startswith()` pour matcher meme quand le texte corrige est une abreviation
-   du texte original (ex: `"Comm.interfaces"` vs `"Communicationinterfaces"`).
+3. **Correction des headers** — `_fix_reversed_cells()` est appliqué aux
+   lignes de donnees ET aux en-tetes (ligne 1377+). Pour les headers
+   contenant plusieurs parties separes par espace (cellules mergees),
+   chaque partie est inversee individuellement.
 
-2. **Post-processing `_fix_reversed_cells()`** : apres toute l'extraction,
-   detecte les cellules inversees caractere-par-caractere via la regle :
-   - Si le premier caractere est minuscule ET le dernier est majuscule →
-     la cellule est probablement inversee → on la retablit.
+**Cellules mergees avec texte inverse (colspan > 1) :** le detecteur de
+compression (`_expand_spans_and_headers`) utilise un fallback dedie :
+quand `extract_words()` ne trouve pas de mots multi-lignes (cas des chars
+upright=False), il detecte le texte inverse avec parties espacees et
+eclate la cellule mergee en colonnes separees via `rev_fallback`.
 
 ### Debug enrichi dans le rapport d'extraction
 
@@ -619,6 +631,7 @@ Type 2 (16 PDFs, Producer = Antenna House, format "nouvelle generation")
 | 7 | **Continuation limitee a 10 pages** | Table_7 s'etend sur 20 pages (48→67) | `MAX_CONTINUATION_PAGES` : 10 → 30, importe dans `continuation.py` |
 | 8 | **Colonnes supplementaires en continuation Type 2** | La page de continuation peut diviser une colonne en 2 sous-colonnes (ex: `Name` → `Name` + `Name sub`) | `_get_col_x0s()` : detection automatique des colonnes supplémentaires par comparaison des x0 geometriques → elargissement des headers et rows page 1 |
 | 9 | **Propagation inter-groupes erronee (Type 2)** | Fix 6 remplissait les cellules d'un nouveau groupe depuis le groupe precedent (ex: `I/O structure` → `Notes` dans table_6) | Heuristique "groupe connu" : si la 1ere colonne change vers une valeur jamais vue dans cette colonne → nouveau groupe → ne pas propager |
+| 10 | **Continuation rejetee pour colonne fantome en milieu de page** | La page de continuation a 9 colonnes (dont une fantome a x0=117 entre les colonnes 0 et 1) mais `_min_drift()` ne testait que le skip en debut de liste → drift 68.4px > seuil → continuation ignoree | `_min_drift()` revisite : ignore toute position dans la plus longue liste (pas seulement le debut). Pour 9 vs 8, test chaque index 0..8 comme position fantome potentielle. |
 
 ### Script de classification
 

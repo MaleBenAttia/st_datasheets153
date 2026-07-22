@@ -223,6 +223,31 @@ def _reduce_cont_row(row: list, expected_col_count: int) -> list:
     return best_row
 
 
+def _min_drift(cols_a: list[float], cols_b: list[float]) -> float:
+    """
+    Calcule le drift minimum entre deux listes de x0 de colonnes en essayant
+    d'ignorer toute position dans la plus longue liste. Gère les colonnes
+    fantômes à n'importe quelle position (début, milieu ou fin).
+
+    Ex: base=[42.5,185.1,233.2,...] cont=[42.5,116.7,185.1,233.2,...]
+        skip position 1 (116.7) → base aligné avec cont privé de l'index 1
+        → drift=0.0
+    """
+    shorter, longer = sorted([cols_a, cols_b], key=len)
+    n_diff = len(longer) - len(shorter)
+    if n_diff == 0:
+        return max(abs(longer[i] - shorter[i]) for i in range(len(shorter)))
+    best = float("inf")
+    for skip in range(len(longer)):
+        aligned = list(longer[:skip]) + list(longer[skip+1:])
+        if len(aligned) != len(shorter):
+            continue
+        drift = max(abs(aligned[i] - shorter[i]) for i in range(len(shorter)))
+        if drift < best:
+            best = drift
+    return best
+
+
 def find_continuations(
     pdf: pdfplumber.PDF,
     start_page_num: int,
@@ -273,24 +298,11 @@ def find_continuations(
             break
 
         # ── Vérification de la dérive des colonnes ─────────────────────────────
-        # Si la géométrie des colonnes diffère trop de la page de base,
-        # la continuation est structurellement différente (mauvaise détection).
+        # Utilise un alignement glissant pour tolérer les colonnes fantômes
+        # (pdfplumber détecte parfois une colonne None supplémentaire).
         if base_col_x0s and cont_x0s and len(base_col_x0s) >= 2:
-            if len(cont_x0s) == len(base_col_x0s):
-                drift = max(
-                    abs(cont_x0s[i] - base_col_x0s[i])
-                    for i in range(len(base_col_x0s))
-                )
-            elif len(cont_x0s) == len(base_col_x0s) + 1:
-                drift = max(
-                    abs(cont_x0s[i] - base_col_x0s[i])
-                    for i in range(len(base_col_x0s))
-                )
-            elif len(cont_x0s) + 1 == len(base_col_x0s):
-                drift = max(
-                    abs(cont_x0s[i] - base_col_x0s[i])
-                    for i in range(len(cont_x0s))
-                )
+            if abs(len(cont_x0s) - len(base_col_x0s)) <= 1:
+                drift = _min_drift(cont_x0s, base_col_x0s)
             else:
                 drift = float("inf")
 
