@@ -131,18 +131,19 @@ leurs dimensions associées. Les dimensions sont souvent sur une ligne
 différente dans le texte pdfplumber — le parser les associe par position
 pour produire `"SO8N (4.9×6 mm)"`.
 
-### `_parse_device_summary()` — `page1_features.py:235-275`
+### `_parse_device_summary()` — `page1_features.py:235-330`
 
 Extrait la table **Device summary** (Reference / Part number) depuis la
 page 1 du PDF.
 
-**Étape 1 (primaire)** : ouvre le PDF avec pdfplumber, appelle
-`page.extract_tables()`, cherche la table dont les headers contiennent
+**Type 1 (Acrobat)** : cherche la table dont les headers contiennent
 `"Reference"` et `"Part number"`. Retourne un dict `{headers, rows}`.
 
-**Étape 2 (fallback)** : si pdfplumber ne trouve pas la table, utilise
-la regex `PART_RE` = `r'STM32[A-Z0-9]{6,}'` sur tout le texte et
-construit un Device summary minimal `{headers: ["Part number"], rows: [[pn], ...]}`.
+**Type 2 (Antenna House)** : detecte le bandeau header `"Product summary"`
+ou `"Device summary"` et appelle `_parse_device_summary_type2()`.
+Nettoyage des artefacts "S" du bandeau bleu + correction préfixe STM32.
+
+**Fallback** : regex `PART_RE` = `r'STM32[A-Z0-9]{6,}'` sur tout le texte.
 
 **Pourquoi cette approche ?** La regex brute capture des faux positifs
 (ex: `STM32` dans un bloc de texte générique). La grille pdfplumber garantit
@@ -629,6 +630,40 @@ RagJason/
 └── H7/stm32h7a3ag.json           # 179 chunks
 ```
 
+### `Rag_selective/` — format RAG selective (features + tables)
+
+```
+Rag_selective/
+├── C0/stm32c011d6/
+│   ├── features.json             # features + features_content
+│   ├── _all_tables.json          # features en position 0 + tables
+│   ├── table_1.json
+│   └── ...
+├── U0/stm32u031c6/
+│   ├── features.json             # Type 2 supporté
+│   └── _all_tables.json
+└── ...
+```
+
+**Format `features.json` :**
+```json
+{
+  "features": {
+    "family": "U0",
+    "url": "https://www.st.com/resource/en/datasheet/stm32u031c6.pdf",
+    "text_helper": "DS14581 Rev 2 (March 2024). 32-bit Arm Cortex-M0+..."
+  },
+  "features_content": {
+    "doc_ref": "DS14581",
+    "revision": "Rev 2",
+    "core": "Cortex-M0+",
+    "flash_kb": 64,
+    "ram_kb": 12,
+    "device_summary": { "headers": [...], "rows": [...] }
+  }
+}
+```
+
 ### Schéma d'un chunk RAG (exemple concret)
 
 ```json
@@ -677,6 +712,7 @@ RagJason/
 | `_parse_header_footer()` | `page1_features.py` | `:177` |
 | `_parse_packages()` | `page1_features.py` | `:208` |
 | `_parse_device_summary()` | `page1_features.py` | `:235` |
+| `_parse_device_summary_type2()` | `page1_features.py` | `:318` |
 | `_parse_features_bullets()` | `page1_features.py` | `:278` |
 | `extract_features_page_range()` | `page1_features.py` | `:332` |
 | `_find_lot_pages()` (multi-pages LOT) | `toc_detector.py` | `:160-208` |

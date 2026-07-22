@@ -56,7 +56,6 @@ TEMP_RE = re.compile(
     r'(-?\d+)\s*°C?\s*to\s*(-?\d+)(?:\s*°C?)?(?:\s*/\s*(-?\d+)(?:\s*°C?)?)?(?:\s*/\s*(-?\d+)(?:\s*°C?)?)?(?:\s*/\s*(-?\d+)(?:\s*°C?)?)?',
     re.IGNORECASE
 )
-COREMARK_RE = re.compile(r'(\d+\.?\d*)\s*CoreMark', re.IGNORECASE)
 DMA_RE = re.compile(r'(?:(\d+)\s*-?\s*(?:channel|channels)\s+(?:DMA|LPDMA)|(?:DMA|LPDMA).*?(\d+)\s*(?:channel|channels))', re.IGNORECASE)
 
 # Part number fallback: used when pdfplumber table extraction fails
@@ -108,6 +107,8 @@ class DeviceFeatures(BaseModel):
     revision: Optional[str] = None
     date: Optional[str] = None
     title: Optional[str] = None
+    url_pdf: Optional[str] = None
+    page: Optional[int] = None
     core: Optional[str] = None
     fpu: bool = False
     max_frequency_mhz: Optional[int] = None
@@ -116,7 +117,6 @@ class DeviceFeatures(BaseModel):
     voltage_min_v: Optional[float] = None
     voltage_max_v: Optional[float] = None
     operating_temp_c: list[str] = []
-    coremark: Optional[float] = None
     packages: list[str] = []
     device_summary: Optional[dict] = None
     extraction_meta: ExtractionMeta
@@ -199,17 +199,32 @@ def _parse_header_footer(text: str, pdf_type: int) -> dict:
             result["revision"] = f"Rev {m.group(2)}"
             result["date"] = m.group(3).strip()
 
-    # Title: first substantial line not matching noise patterns
+    # Title: first substantial line(s) not matching noise patterns
+    # Handle multi-line titles (e.g. "Arm Cortex -M0+ ... RAM ," on line 1, "2 x USART ... V" on line 2)
+    title_lines = []
+    title_started = False
     for line in text.splitlines():
         line = line.strip()
-        if len(line) < 10:
+        if not title_started:
+            # Look for the actual title (contains product description keywords)
+            if any(kw in line for kw in ("Arm", "Cortex", "MCU", "MPU")):
+                title_started = True
+                title_lines.append(line)
             continue
-        if any(x in line for x in ("Datasheet - production", "Datasheet\n", "DS", "Rev", "page", "Features", "/")):
-            continue
-        if line.startswith(("•", "-", "–", "Table", "Product", "1", "2", "3")):
-            continue
-        result["title"] = line
-        break
+        # Title started, collect subsequent lines until noise
+        if len(line) < 5:
+            break
+        if any(x in line for x in ("Datasheet", "DS", "Rev", "page")):
+            break
+        if line.startswith(("•", "-", "–", "Table", "Product")):
+            break
+        if line == "Features":
+            break
+        title_lines.append(line)
+        if len(title_lines) >= 3:
+            break
+    if title_lines:
+        result["title"] = " ".join(title_lines)
 
     return result
 
@@ -250,12 +265,9 @@ def _parse_device_summary(pdf_path: str, text: str) -> dict | None:
     """
     Extrait la table Device summary (Reference / Part number) depuis la page 1.
 
-    Étape 1 : Ouvre le PDF avec pdfplumber, cherche la table dont les headers
-    contiennent "Reference" et "Part number" → retourne headers + rows.
-
-    Étape 2 (fallback) : Si pdfplumber ne trouve pas la table, utilise la
-    regex PART_RE sur tout le texte pour extraire les STM32XXXXXX et construit
-    un device summary minimal {headers: ["Part number"], rows: [[pn], ...]}.
+    Type 1 (Acrobat) : headers contiennent "Reference" / "Part number".
+    Type 2 (Antenna House) : bandeau header (Product summary / Device summary),
+        pas de headers explicites — 2 colonnes visuelles (Reference | Part number).
     """
     try:
         with pdfplumber.open(pdf_path) as pdf:
@@ -269,17 +281,24 @@ def _parse_device_summary(pdf_path: str, text: str) -> dict | None:
                 headers = table[0]
                 if not headers:
                     continue
+                h_text = " ".join(h.strip().lower() for h in headers if h)
                 h_low = [h.strip().lower() if h else "" for h in headers]
-                if "reference" not in h_low and "part number" not in h_low:
-                    continue
-                clean_headers = [h.strip() if h else "" for h in headers]
-                clean_rows = []
-                for row in table[1:]:
-                    clean_row = [(c or "").replace("\n", " ").strip() for c in row]
-                    if any(c for c in clean_row):
-                        clean_rows.append(clean_row)
-                if clean_rows:
-                    return {"headers": clean_headers, "rows": clean_rows}
+
+                # Type 1 : headers contiennent "reference" / "part number"
+                if "reference" in h_low or "part number" in h_low:
+                    clean_headers = [h.strip() if h else "" for h in headers]
+                    clean_rows = []
+                    for row in table[1:]:
+                        clean_row = [(c or "").replace("\n", " ").strip() for c in row]
+                        if any(c for c in clean_row):
+                            clean_rows.append(clean_row)
+                    if clean_rows:
+                        return {"headers": clean_headers, "rows": clean_rows}
+
+                # Type 2 : bandeau header (Product summary / Device summary)
+                type2_keywords = ("product summary", "device summary", "product status")
+                if any(kw in h_text for kw in type2_keywords):
+                    return _parse_device_summary_type2(table)
     except Exception:
         pass
 
@@ -299,13 +318,66 @@ def _parse_device_summary(pdf_path: str, text: str) -> dict | None:
     return None
 
 
+def _parse_device_summary_type2(table: list) -> dict:
+    """
+    Parse un tableau device_summary Type 2 (Antenna House).
+
+    Structure :
+    - Row 0 : Bandeau header (Product summary / Device summary) — ignoré
+    - Row 1+ : [reference_artefacts, part_numbers_multi_lignes]
+
+    Les artefacts (caractères "S" du bandeau bleu) sont nettoyés.
+    Les part numbers multi-lignes sont regroupés par référence.
+    """
+    headers = ["Reference", "Part number"]
+    rows = []
+
+    for row in table[1:]:  # Skip header band
+        if not row or len(row) < 2:
+            continue
+        ref_raw = (row[0] or "").strip()
+        pns_raw = (row[1] or "").strip()
+
+        if not ref_raw or not pns_raw:
+            continue
+
+        # Nettoyer la référence : supprimer artefacts "S" isolés du bandeau
+        ref_lines = [l.strip() for l in ref_raw.split("\n") if l.strip()]
+        ref_clean = " ".join(ref_lines)
+        # Supprimer les "S" isolés (artefacts du bandeau bleu)
+        ref_clean = re.sub(r'\bS\b', '', ref_clean).strip()
+        ref_clean = re.sub(r'\s+', ' ', ref_clean).strip()
+
+        if not ref_clean:
+            continue
+
+        # Nettoyer les part numbers : collapse whitespace, remplacer \n par ", "
+        pns_clean = " ".join(pns_raw.split())
+        pns_clean = pns_clean.replace("\n", ", ")
+        # Supprimer artefacts "S" isolés au début ou après virgule
+        pns_clean = re.sub(r'(?:^|,\s*)S\b', lambda m: m.group(0).replace('S', ''), pns_clean)
+        pns_clean = re.sub(r'\s+', ' ', pns_clean).strip(", ")
+        # Nettoyer virgules en double
+        pns_clean = re.sub(r',\s*,', ',', pns_clean).strip(", ")
+
+        # Corriger les part numbers qui manquent le préfixe "STM"
+        # Si la référence commence par "STM32", les part numbers doivent aussi
+        if ref_clean.startswith("STM32") and pns_clean and not pns_clean.startswith("STM"):
+            pns_clean = re.sub(r'(?<!\w)TM32', 'STM32', pns_clean)
+
+        if ref_clean and pns_clean:
+            rows.append([ref_clean, pns_clean])
+
+    return {"headers": headers, "rows": rows}
+
+
 def _parse_features_bullets(text: str) -> dict:
-    """Extrait core, freq, flash, ram, voltage, temperature, coremark depuis le texte."""
+    """Extrait core, freq, flash, ram, voltage, temperature depuis le texte."""
     result = {
         "core": None, "fpu": False,
         "max_frequency_mhz": None, "flash_kb": None, "ram_kb": None,
         "voltage_min_v": None, "voltage_max_v": None,
-        "operating_temp_c": [], "coremark": None,
+        "operating_temp_c": [],
     }
 
     m = CORE_RE.search(text)
@@ -351,10 +423,6 @@ def _parse_features_bullets(text: str) -> dict:
         result["operating_temp_c"] = temps
         break
 
-    m = COREMARK_RE.search(text)
-    if m:
-        result["coremark"] = float(m.group(1))
-
     return result
 
 
@@ -386,7 +454,7 @@ def extract_features_page_range(pdf_path: str) -> dict:
 
     missing_fields = []
     for field in ["core", "max_frequency_mhz", "flash_kb", "ram_kb",
-                   "voltage_min_v", "voltage_max_v", "coremark"]:
+                   "voltage_min_v", "voltage_max_v"]:
         if features.get(field) is None:
             missing_fields.append(field)
 
@@ -412,6 +480,8 @@ def extract_features_page_range(pdf_path: str) -> dict:
         revision=header.get("revision"),
         date=header.get("date"),
         title=header.get("title"),
+        url_pdf=f"https://www.st.com/resource/en/datasheet/{pdf_name}.pdf",
+        page=pages[0] if pages else 1,
         core=features["core"],
         fpu=features["fpu"],
         max_frequency_mhz=features["max_frequency_mhz"],
@@ -420,7 +490,6 @@ def extract_features_page_range(pdf_path: str) -> dict:
         voltage_min_v=features["voltage_min_v"],
         voltage_max_v=features["voltage_max_v"],
         operating_temp_c=features["operating_temp_c"],
-        coremark=features["coremark"],
         packages=pkgs,
         device_summary=device_summary,
         extraction_meta=meta,

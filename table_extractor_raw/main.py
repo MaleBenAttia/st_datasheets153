@@ -258,9 +258,23 @@ def process_pdf(pdf_path: Path, family: str) -> dict:
             summary["failed"] += 1
 
     # ── Sauvegarde du fichier global _all_tables.json ──────────────────────────
+    # Construire le contenu avec features en premier
+    features_data = None
+    features_path = out_dir / "features.json"
+    if features_path.exists():
+        try:
+            features_data = json.loads(features_path.read_text(encoding="utf-8"))
+        except Exception:
+            pass
+    
+    all_output = []
+    if features_data:
+        all_output.append({"features": features_data})
+    all_output.extend(all_tables_json)
+    
     all_path = out_dir / "_all_tables.json"
     all_path.write_text(
-        json.dumps(all_tables_json, ensure_ascii=False, indent=2),
+        json.dumps(all_output, ensure_ascii=False, indent=2),
         encoding="utf-8"
     )
 

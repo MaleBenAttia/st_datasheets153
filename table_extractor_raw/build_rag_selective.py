@@ -379,6 +379,75 @@ def transform_table(
         return None
 
 
+def transform_features(features: dict) -> dict:
+    """Transforme features.json au format RAG simplifié."""
+    pdf_name = features.get("pdf_name", "")
+    family = features.get("family", "")
+    
+    # Générer url_pdf si vide
+    url_pdf = features.get("url_pdf", "")
+    if not url_pdf:
+        url_pdf = f"https://www.st.com/resource/en/datasheet/{pdf_name}.pdf"
+    
+    # Construire le text_helper avec TOUTES les données
+    parts = []
+    doc_ref = features.get("doc_ref", "")
+    revision = features.get("revision", "")
+    date = features.get("date", "")
+    if doc_ref:
+        parts.append(f"{doc_ref} {revision} ({date})")
+    
+    title = features.get("title", "")
+    if title:
+        parts.append(title)
+    
+    if family:
+        parts.append(f"family: {family}")
+    if features.get("core"):
+        parts.append(f"core: {features['core']}")
+    if features.get("max_frequency_mhz"):
+        parts.append(f"freq: {features['max_frequency_mhz']} MHz")
+    if features.get("flash_kb"):
+        parts.append(f"flash: {features['flash_kb']} KB")
+    if features.get("ram_kb"):
+        parts.append(f"ram: {features['ram_kb']} KB")
+    if features.get("voltage_min_v") and features.get("voltage_max_v"):
+        parts.append(f"voltage: {features['voltage_min_v']}-{features['voltage_max_v']} V")
+    if features.get("packages"):
+        pkg_names = [p.split(" (")[0] for p in features["packages"]]
+        parts.append(f"packages: {', '.join(pkg_names)}")
+    if features.get("operating_temp_c"):
+        parts.append(f"temps: {'/'.join(features['operating_temp_c'])}")
+    
+    text_helper = ". ".join(parts)
+    if len(text_helper) > 300:
+        text_helper = text_helper[:297] + "..."
+    
+    return {
+        "features": {
+            "family": family,
+            "url": url_pdf,
+            "text_helper": text_helper,
+        },
+        "features_content": {
+            "doc_ref": doc_ref,
+            "revision": revision,
+            "date": date,
+            "title": title,
+            "core": features.get("core"),
+            "fpu": features.get("fpu", False),
+            "max_frequency_mhz": features.get("max_frequency_mhz"),
+            "flash_kb": features.get("flash_kb"),
+            "ram_kb": features.get("ram_kb"),
+            "voltage_min_v": features.get("voltage_min_v"),
+            "voltage_max_v": features.get("voltage_max_v"),
+            "operating_temp_c": features.get("operating_temp_c", []),
+            "packages": features.get("packages", []),
+            "device_summary": features.get("device_summary"),
+        }
+    }
+
+
 # ═══════════════════════════════════════════════════════════════════════════════════
 #  Logging helpers
 # ═══════════════════════════════════════════════════════════════════════════════════
@@ -419,6 +488,15 @@ def process_pdf(
     if not table_files:
         logger.warning(f"No table_*.json found in {src_dir}")
         return 0
+
+    # Lire features.json depuis outJason/
+    features_path = src_dir / "features.json"
+    features_data = None
+    if features_path.exists():
+        try:
+            features_data = json.loads(features_path.read_text(encoding="utf-8"))
+        except Exception as e:
+            logger.warning(f"Failed to read features.json: {e}")
 
     dest_dir = rag_base / family / pdf_name
     dest_dir.mkdir(parents=True, exist_ok=True)
@@ -516,17 +594,43 @@ def process_pdf(
     if pdf is not None:
         pdf.close()
 
+    # ── Écrire features.json dans Rag_selective/ ──────────────────────────
+    if features_data:
+        try:
+            transformed_features = transform_features(features_data)
+            features_out_path = dest_dir / "features.json"
+            features_out_path.write_text(
+                json.dumps(transformed_features, ensure_ascii=False, indent=2),
+                encoding="utf-8",
+            )
+        except Exception as e:
+            logger.warning(f"Failed to write features.json to Rag_selective: {e}")
+
     # ── _all_tables.json par PDF ────────────────────────────────────────────
     if transformed:
         all_path = dest_dir / "_all_tables.json"
+        
+        # Construire le contenu avec features en premier
+        ds_entry = {
+            "pdf_name": pdf_name,
+            "family": family,
+            "url": f"https://www.st.com/resource/en/datasheet/{pdf_name}.pdf",
+        }
+        
+        # Ajouter les features en premier (avant les tables)
+        if features_data:
+            try:
+                ds_entry["features"] = transform_features(features_data)
+            except Exception as e:
+                logger.warning(f"Failed to add features to _all_tables.json: {e}")
+        
+        # Ajouter les tables après les features
+        ds_entry["tables_count"] = len(transformed)
+        ds_entry["tables"] = transformed
+        
+        all_data = {"datasheets": [ds_entry]}
         all_path.write_text(
-            json.dumps({"datasheets": [{
-                "pdf_name": pdf_name,
-                "family": family,
-                "url": f"https://www.st.com/resource/en/datasheet/{pdf_name}.pdf",
-                "tables_count": len(transformed),
-                "tables": transformed,
-            }]}, ensure_ascii=False, indent=2),
+            json.dumps(all_data, ensure_ascii=False, indent=2),
             encoding="utf-8",
         )
 

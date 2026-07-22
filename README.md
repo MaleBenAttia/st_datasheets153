@@ -391,10 +391,41 @@ quantificateurs `\s?` optionnels.
 | 3 | **Temperature vide (Type 2)** | Format `-40 °C to 85/125 °C` non gere | Regex flexible avec `\s?` et `C?` optionnels |
 | 4 | **Packages sans dimensions** | Dimensions sur ligne separee | Association positionnelle nom↔dimension |
 | 5 | **Champs bruités supprimés** | `comm. interfaces`, `adc`, `timers`, `dma`, `security` mélangés | Retirés du modèle `DeviceFeatures` |
+| 6 | **Device summary Type 2** | Bandeau "Product summary" sans headers explicites | `_parse_device_summary_type2()` : nettoyage artefacts "S" + correction préfixe STM32 |
 
 **Sortie :** `outJason/<family>/<pdf_name>/features.json` contenant
 tous les champs structures, un champ `missing_fields` pour les donnees
 absentes de la datasheet, et un niveau de confiance `high`/`medium`.
+
+### Transformation RAG selective (`build_rag_selective.py`)
+
+Le module `build_rag_selective.py` genere un format RAG simplifie dans
+`Rag_selective/` avec une structure standardisee :
+
+```json
+{
+  "features": {
+    "family": "U0",
+    "url": "https://www.st.com/resource/en/datasheet/stm32u031c6.pdf",
+    "text_helper": "DS14581 Rev 2 (March 2024). 32-bit Arm Cortex-M0+..."
+  },
+  "features_content": {
+    "doc_ref": "DS14581",
+    "revision": "Rev 2",
+    "date": "March 2024",
+    "core": "Cortex-M0+",
+    "flash_kb": 64,
+    "ram_kb": 12,
+    "device_summary": { ... }
+  }
+}
+```
+
+**Avantages :**
+- `features` : metadonnees minales pour embedding vectoriel
+- `features_content` : donnees completes pour retrieval
+- `text_helper` : texte dense genere automatiquement
+- Features en position 0 dans `_all_tables.json` (avant toutes les tables)
 
 ### Nettoyage des lignes header residuelles dans les donnees (Fix 14)
 
