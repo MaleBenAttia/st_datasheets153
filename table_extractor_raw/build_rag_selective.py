@@ -310,6 +310,7 @@ def _resolve_section_from_page(
 def transform_table(
     raw_json: dict,
     section: str = "",
+    features_data: dict = None,
 ) -> Optional[dict]:
     try:
         table_id = raw_json.get("table_id", "")
@@ -353,24 +354,27 @@ def transform_table(
             text_helper = text_helper[:297] + "..."
 
         return {
-            "table": {
-                "table_id": table_id,
-                "caption": caption,
-                "pdf_name": pdf_name,
-                "family": family,
-                "page": page,
-                "merged_pages": merged_pages,
-                "url": url,
-                "url_table": url_table,
-                "section": section,
-                "rows_count": rows_count,
-                "cols_count": cols_count,
-                "text_helper": text_helper,
-            },
-            "table_content": {
-                "headers": headers,
-                "rows": rows,
-            },
+            "table": [
+                ["table_id", table_id],
+                ["title", caption],
+                ["pdf_name", pdf_name],
+                ["family", family],
+                ["doc_ref", features_data.get("doc_ref", "") if features_data else ""],
+                ["revision", features_data.get("revision", "") if features_data else ""],
+                ["date", features_data.get("date", "") if features_data else ""],
+                ["page", page],
+                ["merged_pages", merged_pages],
+                ["url", url],
+                ["url_table", url_table],
+                ["section", section],
+                ["rows_count", rows_count],
+                ["cols_count", cols_count],
+                ["text_helper", text_helper],
+            ],
+            "table_content": [
+                headers,
+                rows,
+            ],
         }
     except Exception as e:
         logger.error(f"transform_table failed for {raw_json.get('table_id', '?')}: {e}")
@@ -422,31 +426,31 @@ def transform_features(features: dict) -> dict:
         text_helper = text_helper[:297] + "..."
     
     return {
-        "features": {
-            "pdf_name": pdf_name,
-            "family": family,
-            "page": 1,
-            "merged_pages": [1],
-            "url": url_pdf,
-            "url_table": f"{url_pdf}#page=1",
-            "text_helper": text_helper,
-        },
-        "features_content": {
-            "doc_ref": doc_ref,
-            "revision": revision,
-            "date": date,
-            "title": title,
-            "core": features.get("core"),
-            "fpu": features.get("fpu", False),
-            "max_frequency_mhz": features.get("max_frequency_mhz"),
-            "flash_kb": features.get("flash_kb"),
-            "ram_kb": features.get("ram_kb"),
-            "voltage_min_v": features.get("voltage_min_v"),
-            "voltage_max_v": features.get("voltage_max_v"),
-            "operating_temp_c": features.get("operating_temp_c", []),
-            "packages": features.get("packages", []),
-            "device_summary": features.get("device_summary"),
-        }
+        "features": [
+            ["pdf_name", pdf_name],
+            ["family", family],
+            ["page", 1],
+            ["merged_pages", [1]],
+            ["url", url_pdf],
+            ["url_table", f"{url_pdf}#page=1"],
+            ["text_helper", text_helper],
+        ],
+        "features_content": [
+            ["doc_ref", doc_ref],
+            ["revision", revision],
+            ["date", date],
+            ["title", title],
+            ["core", features.get("core")],
+            ["fpu", features.get("fpu", False)],
+            ["max_frequency_mhz", features.get("max_frequency_mhz")],
+            ["flash_kb", features.get("flash_kb")],
+            ["ram_kb", features.get("ram_kb")],
+            ["voltage_min_v", features.get("voltage_min_v")],
+            ["voltage_max_v", features.get("voltage_max_v")],
+            ["operating_temp_c", features.get("operating_temp_c", [])],
+            ["packages", features.get("packages", [])],
+            ["device_summary", features.get("device_summary")],
+        ]
     }
 
 
@@ -576,7 +580,7 @@ def process_pdf(
             raw = json.loads(fpath.read_text(encoding="utf-8"))
             tid = raw.get("table_id", "")
             section = table_sections.get(tid, raw.get("section", ""))
-            result = transform_table(raw, section=section)
+            result = transform_table(raw, section=section, features_data=features_data)
             if result is None:
                 errors += 1
                 _log_error(f"transform returned None for {fpath.name}")
@@ -627,7 +631,6 @@ def process_pdf(
                 logger.warning(f"Failed to add features to _all_tables.json: {e}")
         
         # Ajouter les tables après les features
-        ds_entry["tables_count"] = len(transformed)
         ds_entry["tables"] = transformed
         
         all_data = {"datasheets": [ds_entry]}
