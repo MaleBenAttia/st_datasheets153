@@ -245,11 +245,16 @@ def _find_caption_y(page, caption: str) -> Optional[float]:
     return None
 
 
-def _build_section_cache(pdf) -> dict[int, list[tuple[float, str]]]:
+def _build_section_cache(pdf, pdf_type: int = 1) -> dict[int, list[tuple[float, str]]]:
     cache: dict[int, list[tuple[float, str]]] = {}
     TABLE_CONTENT_RE = re.compile(
         r'\b(Yes|No|N/A|NA|Enabled|Disabled)\b', re.IGNORECASE
     )
+    # Extraire les numéros de section valides depuis le Contents
+    from core.toc_detector import _extract_toc_section_numbers, _section_in_whitelist
+    toc_whitelist = _extract_toc_section_numbers(pdf, pdf_type)
+    seen_nums: set[str] = set()
+
     for pg_idx, page in enumerate(pdf.pages):
         pgnum = pg_idx + 1
         lines = page.extract_text_lines() or []
@@ -265,6 +270,13 @@ def _build_section_cache(pdf) -> dict[int, list[tuple[float, str]]]:
                 sec_title = re.sub(r'\s{2,}', ' ', sec_title)
                 if not sec_title or TABLE_CONTENT_RE.search(sec_title):
                     continue
+                # Filtrer : ne garder que les sections du TOC
+                if not _section_in_whitelist(sec_num, toc_whitelist):
+                    continue
+                # Dédupliquer : ne garder que la 1ère occurrence
+                if sec_num in seen_nums:
+                    continue
+                seen_nums.add(sec_num)
                 label = f"{sec_num} {sec_title}"
                 cache.setdefault(pgnum, []).append((top, label))
     for headings in cache.values():
@@ -523,7 +535,13 @@ def process_pdf(
     if pdf_path:
         try:
             pdf = pdfplumber.open(str(pdf_path))
-            section_cache = _build_section_cache(pdf)
+            # Détecter le type de PDF pour le filtrage des sections
+            try:
+                producer = (pdf.metadata or {}).get("Producer", "")
+                pdf_type_val = 2 if "antenna" in producer.lower() else 1
+            except Exception:
+                pdf_type_val = 1
+            section_cache = _build_section_cache(pdf, pdf_type_val)
             bookmarks = get_bookmarks(str(pdf_path))
             toc_entries = get_toc_from_contents_page(str(pdf_path))
         except Exception as e:

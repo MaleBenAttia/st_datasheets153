@@ -175,7 +175,7 @@ def detect_tables(pdf_path: str, pdf_type: int = 1) -> list[TableRef]:
         refs = _from_toc_links(pdf_path, pdf, pdf_type)
         if refs:
             logger.info("H2.0 (annotations): %d tables detected", len(refs))
-            _assign_sections(pdf_path, pdf, refs)
+            _assign_sections(pdf_path, pdf, refs, pdf_type)
             return refs
 
         # Tentative 2 : H2.1-H2.4 regex texte
@@ -185,18 +185,19 @@ def detect_tables(pdf_path: str, pdf_type: int = 1) -> list[TableRef]:
             refs = _from_toc(pdf)
         if refs:
             logger.info("H2.1-H2.4 (text regex): %d tables detected", len(refs))
-            _assign_sections(pdf_path, pdf, refs)
+            _assign_sections(pdf_path, pdf, refs, pdf_type)
             return refs
 
         # Tentative 3 : H2.5 inline scan
         logger.info("No TOC found, scanning pages for inline captions")
         refs = _from_inline_scan(pdf)
         logger.info("H2.5 (inline scan): %d tables detected", len(refs))
-        _assign_sections(pdf_path, pdf, refs)
+        _assign_sections(pdf_path, pdf, refs, pdf_type)
         return refs
 
 
-def _assign_sections(pdf_path: str, pdf: pdfplumber.PDF, refs: list[TableRef]) -> None:
+def _assign_sections(pdf_path: str, pdf: pdfplumber.PDF, refs: list[TableRef],
+                     pdf_type: int = 1) -> None:
     """
     Construit le cache Y-position des sections ET assigne chaque table
     à sa section (fallback page-level).
@@ -204,9 +205,10 @@ def _assign_sections(pdf_path: str, pdf: pdfplumber.PDF, refs: list[TableRef]) -
     1. Ignore les pages du sommaire (List of Tables)
     2. Scanne les pages avec extract_text_lines() pour capturer
        les titres de section + leur position Y
-    3. Stocke le tout dans _SECTION_CACHE[pdf_path] pour raffinement
+    3. Filtre par whitelist TOC (numéros de section valides)
+    4. Stocke le tout dans _SECTION_CACHE[pdf_path] pour raffinement
        Y-position dans grid_extractor.py
-    4. Assigne chaque table à la section active sur sa page (fallback)
+    5. Assigne chaque table à la section active sur sa page (fallback)
     """
     if not refs:
         return
@@ -229,8 +231,12 @@ def _assign_sections(pdf_path: str, pdf: pdfplumber.PDF, refs: list[TableRef]) -
                     break
             break
 
-    # 2. Construire le cache Y-position
+    # 1b. Extraire les numéros de section valides depuis le Contents
+    toc_whitelist = _extract_toc_section_numbers(pdf, pdf_type)
+
+    # 2. Construire le cache Y-position (1ère occurrence par numéro de section)
     y_cache: dict[int, list[tuple[float, str]]] = {}
+    seen_section_nums: set[str] = set()
 
     for pg_idx, page in enumerate(pdf.pages):
         pgnum = pg_idx + 1
@@ -249,6 +255,13 @@ def _assign_sections(pdf_path: str, pdf: pdfplumber.PDF, refs: list[TableRef]) -
                 sec_title = m.group(2).strip().rstrip(".")
                 sec_title = re.sub(r'\s{2,}', ' ', sec_title)
                 if sec_title and not TABLE_CONTENT_RE.search(sec_title):
+                    # Filtrer : ne garder que les sections du TOC
+                    if not _section_in_whitelist(sec_num, toc_whitelist):
+                        continue
+                    # Dédupliquer : ne garder que la 1ère occurrence
+                    if sec_num in seen_section_nums:
+                        continue
+                    seen_section_nums.add(sec_num)
                     label = f"{sec_num} {sec_title}"
                     y_cache.setdefault(pgnum, []).append((top, label))
 
@@ -260,6 +273,7 @@ def _assign_sections(pdf_path: str, pdf: pdfplumber.PDF, refs: list[TableRef]) -
 
     # 4. Fallback page-level : dernier heading avec page ≤ page de la table
     all_headings: list[tuple[str, int]] = []  # (label, page)
+    seen_fallback: set[str] = set()
 
     for pg_idx, page in enumerate(pdf.pages):
         pgnum = pg_idx + 1
@@ -277,6 +291,13 @@ def _assign_sections(pdf_path: str, pdf: pdfplumber.PDF, refs: list[TableRef]) -
                 sec_title = m.group(2).strip().rstrip(".")
                 sec_title = re.sub(r'\s{2,}', ' ', sec_title)
                 if sec_title and not TABLE_CONTENT_RE.search(sec_title):
+                    # Filtrer : ne garder que les sections du TOC
+                    if not _section_in_whitelist(sec_num, toc_whitelist):
+                        continue
+                    # Dédupliquer : ne garder que la 1ère occurrence
+                    if sec_num in seen_fallback:
+                        continue
+                    seen_fallback.add(sec_num)
                     all_headings.append((f"{sec_num} {sec_title}", pgnum))
 
     # 5. Assigner chaque table
@@ -290,6 +311,66 @@ def _assign_sections(pdf_path: str, pdf: pdfplumber.PDF, refs: list[TableRef]) -
         if not best and all_headings:
             best = "General purpose / Overview"
         ref.section = best
+
+
+def _extract_toc_section_numbers(pdf: pdfplumber.PDF, pdf_type: int = 1) -> set[str]:
+    """
+    Extrait tous les numéros de section valides depuis la page 'Contents'.
+    Utilisé pour filtrer les faux positifs (images/dessins contenant du
+    texte qui matche SECTION_HEADING_PATTERN).
+
+    Type 1 (Acrobat) : scanne les 10 premières pages.
+    Type 2 (Antenna House) : scanne les 10 dernières pages.
+    """
+    total = len(pdf.pages)
+    CONTENTS_RE = re.compile(r'\bcontents\b', re.IGNORECASE)
+    # Pattern TOC : "1.2.3 Title text ...... 42"
+    TOC_NUM_RE = re.compile(r'^(\d+(?:\.\d+)*)\s+')
+
+    if pdf_type == 2:
+        scan_indices = list(range(max(0, total - 10), total))
+    else:
+        scan_indices = list(range(min(10, total)))
+
+    section_numbers: set[str] = set()
+
+    for pg_idx in scan_indices:
+        text = pdf.pages[pg_idx].extract_text() or ""
+        lines = text.splitlines()
+        on_contents_page = False
+
+        for line in lines:
+            stripped = line.strip()
+            if not stripped:
+                continue
+            if CONTENTS_RE.search(stripped):
+                on_contents_page = True
+                continue
+            if on_contents_page:
+                # Arrêter si on sort de la page Contents (nouveau titre de page)
+                if re.match(r'^(?:Table|Figure|List)\s', stripped, re.IGNORECASE):
+                    break
+                m = TOC_NUM_RE.match(stripped)
+                if m:
+                    num = m.group(1)
+                    section_numbers.add(num)
+
+    if section_numbers:
+        logger.debug(f"TOC section numbers: {len(section_numbers)} found (type={pdf_type})")
+    return section_numbers
+
+
+def _section_in_whitelist(sec_num: str, whitelist: set[str]) -> bool:
+    """Vérifie si un numéro de section est dans la whitelist TOC.
+    Vérifie le numéro exact ET ses parents (ex: '5.3.6' → '5.3' → '5')."""
+    if not whitelist:
+        return True  # pas de whitelist → tout est valide
+    parts = sec_num.split('.')
+    for i in range(len(parts), 0, -1):
+        candidate = '.'.join(parts[:i])
+        if candidate in whitelist:
+            return True
+    return False
 
 
 def _find_lot_pages(pdf: pdfplumber.PDF, pdf_type: int = 1) -> list[int]:
