@@ -341,14 +341,12 @@ def transform_table(
             preview_str = ", ".join(preview)
             if n_headers > 5:
                 preview_str += f", +{n_headers - 5} autres"
-            parts.append(f" {cols_count} colonne(s) : {preview_str}.")
+            parts.append(f" {preview_str}.")
         else:
-            parts.append(f" {cols_count} colonne(s).")
+            parts.append(".")
 
-        parts.append(f" {rows_count} ligne(s)")
         if rows_count == 0:
             parts.append(" (table vide)")
-        parts.append(".")
 
         text_helper = "".join(parts)
         if len(text_helper) > 300:
@@ -390,7 +388,7 @@ def transform_features(features: dict) -> dict:
         url_pdf = f"https://www.st.com/resource/en/datasheet/{pdf_name}.pdf"
     
     # Construire le text_helper avec TOUTES les données
-    parts = []
+    parts = [f"pdf_name: {pdf_name}"]
     doc_ref = features.get("doc_ref", "")
     revision = features.get("revision", "")
     date = features.get("date", "")
@@ -425,8 +423,12 @@ def transform_features(features: dict) -> dict:
     
     return {
         "features": {
+            "pdf_name": pdf_name,
             "family": family,
+            "page": 1,
+            "merged_pages": [1],
             "url": url_pdf,
+            "url_table": f"{url_pdf}#page=1",
             "text_helper": text_helper,
         },
         "features_content": {
