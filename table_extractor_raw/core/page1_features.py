@@ -110,11 +110,6 @@ class DeviceFeatures(BaseModel):
     coremark: Optional[float] = None
     packages: list[str] = []
     part_numbers: list[str] = []
-    communication_interfaces: list[str] = []
-    adc: Optional[str] = None
-    timers: Optional[str] = None
-    dma_channels: Optional[int] = None
-    security: list[str] = []
     extraction_meta: ExtractionMeta
 
 
@@ -254,8 +249,6 @@ def _parse_features_bullets(text: str) -> dict:
         "max_frequency_mhz": None, "flash_kb": None, "ram_kb": None,
         "voltage_min_v": None, "voltage_max_v": None,
         "operating_temp_c": [], "coremark": None,
-        "communication_interfaces": [], "adc": None,
-        "timers": None, "dma_channels": None, "security": [],
     }
 
     m = CORE_RE.search(text)
@@ -299,75 +292,6 @@ def _parse_features_bullets(text: str) -> dict:
         result["operating_temp_c"] = temps
         break
 
-    m = COREMARK_RE.search(text)
-    if m:
-        result["coremark"] = float(m.group(1))
-
-    m = DMA_RE.search(text)
-    if m:
-        val = m.group(1) or m.group(2)
-        if val:
-            result["dma_channels"] = int(val)
-
-    seen_timer = False
-    seen_adc = False
-    seen_comm = set()
-    in_features = False
-    skip_header_lines = True
-
-    for line in text.splitlines():
-        line = line.strip()
-        if not line:
-            continue
-
-        # Skip header/tagline lines before "Features" section
-        low = line.lower()
-        if skip_header_lines:
-            if "features" in low and len(line) < 30:
-                in_features = True
-                skip_header_lines = False
-                continue
-            if any(kw in low for kw in ("datasheet", "description")):
-                continue
-            if line.startswith("•") or line.startswith("arm") or line.startswith("stm32"):
-                pass  # arm/stm32 lines before Features are the title
-            # Tagline detection: skip lines that are comma-separated tech specs before Features
-            if not in_features and "mcu" in low and "," in line:
-                continue
-            if not in_features and not line.startswith("•"):
-                continue
-
-        in_features = True
-        skip_header_lines = False
-
-        if not seen_adc and ADC_LINE_RE.search(line):
-            result["adc"] = line.rstrip(".,;").strip()
-            seen_adc = True
-
-        timer_match = TIMER_LINE_RE.search(line)
-        if timer_match and not seen_timer:
-            lowline = low
-            timer_count = timer_match.group(1) or timer_match.group(2)
-            if timer_count:
-                # Si la ligne a un count timers, c'est une ligne timers même
-                # si elle mentionne watchdog/RTC/SysTick en prime
-                result["timers"] = line.rstrip(".,;").strip()
-                seen_timer = True
-
-        comm_match = COMM_INTF_RE.search(line)
-        if comm_match:
-            if "communication" not in low:
-                preview = line[:80].strip().rstrip(".,;")
-                if preview not in seen_comm:
-                    seen_comm.add(preview)
-                    result["communication_interfaces"].append(preview)
-
-        sec_match = SECURITY_KW_RE.search(line)
-        if sec_match:
-            entry = line.strip().lstrip("•-– ").rstrip(".,;")
-            if entry and entry not in result["security"]:
-                result["security"].append(entry)
-
     return result
 
 
@@ -391,18 +315,13 @@ def extract_features_page_range(pdf_path: str) -> dict:
 
     missing_fields = []
     for field in ["core", "max_frequency_mhz", "flash_kb", "ram_kb",
-                   "voltage_min_v", "voltage_max_v", "coremark",
-                   "dma_channels", "adc", "timers"]:
+                   "voltage_min_v", "voltage_max_v", "coremark"]:
         if features.get(field) is None:
             missing_fields.append(field)
 
     low_confidence_fields = []
-    if not features.get("communication_interfaces"):
-        missing_fields.append("communication_interfaces")
     if not features.get("operating_temp_c"):
         missing_fields.append("operating_temp_c")
-    if not features.get("security"):
-        missing_fields.append("security")
 
     meta = ExtractionMeta(
         source_pages=pages,
@@ -433,11 +352,6 @@ def extract_features_page_range(pdf_path: str) -> dict:
         coremark=features["coremark"],
         packages=pkgs,
         part_numbers=parts,
-        communication_interfaces=features["communication_interfaces"],
-        adc=features["adc"],
-        timers=features["timers"],
-        dma_channels=features["dma_channels"],
-        security=features["security"],
         extraction_meta=meta,
     )
 
