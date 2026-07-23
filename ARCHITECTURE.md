@@ -39,6 +39,40 @@ DataSHEET/<family>/<pdf>.pdf
 
 ---
 
+## 0.1 Filtrage par tables spécifiques (`--tables`)
+
+Le pipeline accepte un filtre optionnel `--tables` pour ne traiter que certaines tables d'un PDF.
+
+```bash
+python table_extractor_raw/main.py --pdf DataSHEET/C5/stm32c532cb.pdf --tables 2,5,10,11
+```
+
+### Flux
+
+```
+detect_tables() → liste complète des TableRef (88)
+       ↓
+    [--tables filter] → garde seulement table_2, table_5, table_10, table_11 (4)
+       ↓
+    boucle d'extraction sur les 4 refs seulement
+       ↓
+    features.json (indépendant, toujours extrait)
+       ↓
+     outJason/ : 4 JSONs + _all_tables.json (features + 4 tables) + _run_report.json (stats/erreurs)
+        ↓
+     Rag_selective/ : 4 tables transformées, nommées {doc_ref}_{revision}_{table_id}.json
+```
+
+**Implémentation** : `main.py:160-166` — après `detect_tables()`, filtre les refs par ensemble d'IDs autorisés.
+
+**Comportement** :
+- `--tables` sans `--pdf` → warning ignoré
+- IDs invalides (inexistants dans le PDF) → simplement ignorés
+- Le rapport `_run_report.json` liste les **worst_tables** avec warnings/erreurs, même sur un sous-ensemble filtré
+- `features.json` est toujours extrait (indépendant du filtre)
+
+---
+
 ## 1. Types de PDF
 
 Le système distingue deux types de PDF qui déterminent toute la logique en aval :
@@ -180,19 +214,25 @@ Les deux types de PDF ont des différences de formatage sur la page 1 :
 | Timer line | `• 8 timers: 16-bit...` | `9 timers, RTC, and 2 watchdogs` (sans puce) |
 | Comm. interfaces | `• One I2C-bus interface` | `• 3x I2C interfaces supporting Fast-mode` |
 
-### Extraction des notes `(N)` et légendes (Type 2 uniquement, Fix 21)
+### Extraction des notes `(N)` et légendes (Type 1 + Type 2, Fix 21)
 
-Dans les tableaux Type 2, les notes sont référencées dans les cellules et les en-têtes via le marqueur `(N)` (ex: `"Features(1)"`). Le texte `"1. X = supported."` se trouve en bas de la page de début du tableau, potentiellement sur plusieurs lignes ou sur la page suivante.
+Les notes sont référencées dans les cellules et les en-têtes via le marqueur `(N)` (ex: `"Features(1)"`). Le texte `"1. X = supported."` se trouve en bas de la page de début du tableau, potentiellement sur plusieurs lignes ou sur la page suivante.
+
+**Type 1 — 3 patterns :**
+- **Pattern A** : `(N)` markers dans les cellules → `extract_footnotes_from_pages()` (identique Type 2)
+- **Pattern B** : `Notes:` heading avec lignes numérotées → `extract_notes_type1()` dédiée
+- **Pattern C** : "See list of notes in the notes section" → non géré
 
 **Fonctions :**
 | Fonction | Fichier:Ligne | Rôle |
 |---|---|---|
 | `extract_footnotes_from_pages()` | `:2211` | Scanne contenu rows + headers pour marqueurs `(N)`, lit texte de page(s) via `page_text_cache` pour les lignes `N. ...` |
+| `extract_notes_type1()` | `:2383` | Type 1 Pattern B : détecte "Notes:" heading et extrait les lignes numérotées suivantes |
 | `extract_legend_from_page()` | `:2267` | Texte descriptif entre caption et headers. 3 filtres : header-words, titre ≤5 mots uppercase, identifiants techniques |
 
 **Stockage :** `heuristics._notes` (liste de str), `heuristics._legend` (str)
 
-**Performance :** `page_text_cache` (dict `{num_page: texte}`) construit UNE SEULE fois dans `main.py:179` avant la boucle d'extraction → 1 ouverture PDF au lieu de 88.
+**Performance :** `page_text_cache` (dict `{num_page: texte}`) construit UNE SEULE fois dans `main.py` avant la boucle d'extraction → 1 ouverture PDF au lieu de 88. Construit pour **tous** les types de PDF maintenant.
 
 **Filtres légende (élimination faux positifs) :**
 1. **Header fragment** : tous les mots significatifs dans les headers → rejeté (ex: `"I3C I3C"` rejeté car "I3C" header)
@@ -245,6 +285,10 @@ Dans les tableaux Type 2, les notes sont référencées dans les cellules et les
   "features_content": { ... }
 }
 ```
+
+Les métadonnées `doc_ref`, `revision`, `packages`, `core`, `max_frequency_mhz`,
+`family` sont reprises de `features_data` et injectées dans les formats
+"une seule table" et "document complet" de `Rag_selective/`.
 
 ---
 
@@ -328,8 +372,8 @@ Ordre d'appel interne (les "Fix") :
 | 23 | Fix 17 | Détection header leaks dans `_merge_fragmented_columns()` | `:1662` | Ignore les cellules données identiques à l'en-tête de leur colonne (fragments d'en-tête qui coulent dans les données). Ex: colonne "s" (suffixe de "Conditions") → données "s" ignorées |
 | 24 | Fix 18 | Extension `_remove_bleed_rows_bottom()` | `:1481` | Nouvelle heuristique : 1ère cellule non-alphanumérique (`.4 Embe`, `(1)`) → suppression ligne parasite |
 | 25 | Fix 19 | Filtre footnote `(N)` post-merge | `:1319` | Supprime toute ligne dont la 1ère cellule est exactement `(1)`, `(2)`, etc. (notes de bas de tableau non capturées par les autres filtres) |
-| 26 | Fix 20 | `_apply_rotated_fix()` + `_fix_reversed_cells()` | `:1876` + `:1411` | Correction robuste du texte inversé dans cellules fusionnées verticales. Matching `re.sub(r'[^a-zA-Z0-9]', '', ...)` + `startswith()` pour gérer abréviations (`Comm.interfaces` vs `Communicationinterfaces`). Post-processing basé sur `1er_caractère_minuscule && dernier_majuscule`. |
-| 27 | Fix 21 | `extract_footnotes_from_pages()` + `extract_legend_from_page()` | `:2211` + `:2267` | Extraction notes `(N)` depuis texte de page et légendes entre caption/headers. Stocké dans `heuristics._notes` / `heuristics._legend`. Type 2 uniquement, utilise `page_text_cache` construit une fois. 3 filtres anti-faux-positifs pour légendes. |
+| 26 | Fix 20 | `_apply_rotated_fix()` + `_is_likely_reversed()` + `_fix_reversed_cells()` | `:1876` + `:1543` + `:1621` | Correction robuste du texte inversé dans cellules fusionnées verticales. Matching `re.sub(r'[^a-zA-Z0-9]', '', ...)` + `startswith()` pour gérer abréviations (`Comm.interfaces` vs `Communicationinterfaces`). Post-processing basé sur `1er_caractère_minuscule && dernier_majuscule`. Nouvelle heuristique parenthèses : `\)\d+\(` dans l'original + `\(\d+\)` dans le reverse → inversé. Guard : si l'original a déjà `(N)` correct, il n'est PAS inversé (évite faux positif `"V (1) IL"` → `"LI)1(V"`). |
+| 27 | Fix 21 | `extract_footnotes_from_pages()` + `extract_legend_from_page()` + `extract_notes_type1()` | `:2211` + `:2267` + `:2383` | Extraction notes `(N)` depuis texte de page et légendes entre caption/headers. Stocké dans `heuristics._notes` / `heuristics._legend`. **Type 1 + Type 2** (page_text_cache construit pour tous les types). Type 1 Pattern B : `extract_notes_type1()` détecte "Notes:" heading + lignes numérotées dans le texte de page. 3 filtres anti-faux-positifs pour légendes. |
 
 ### `_extract_from_page()` — `grid_extractor.py:950-995`
 
@@ -414,28 +458,63 @@ def _ensure_no_empty_cells(rows):
 
 ## 5. Continuation (`continuation.py`)
 
-### `_is_continuation_page()` — `continuation.py:50-141`
+### `_is_continuation_page()` — `continuation.py:149-251`
 
-Détecte si une page N+1 est la suite logique d'une table :
+Détecte si une page N+1 est la suite logique d'une table. Utilise **3
+stratégies** en parallèle et choisit la meilleure :
 
-1. **Detection de titre** : texte contient `"table {num}"` ET `"continued"` / `"(suite)"` (`:74-78`)
-2. **Extraction table** : prend la **plus haute** de la page (`:103`)
-3. **Filtres** :
-   - `col_count > expected + 2` → rejette (trop de colonnes)
-   - `col_count < max(2, expected - 2)` → rejette (note de bas de page) (`:105-115`)
-4. **Sans titre (heuristique)** : `bbox[1] ≤ 300` + pas d'autre caption au-dessus (`:120-134`)
+1. **Detection de titre** (regex) : `_CONTINUED_RE` = `(?:continued|cont['’]?d|cont\.|\(suite\))` (`:31-34`) — variantes `cont'd`, `(cont.)`, `(suite)`
+2. **3 stratégies** collectées dans `good[]` :
+   - **Essai 1 — `lines`** : settings pdfplumber standard (stratégie lignes)
+   - **Essai 2 — `text`** : settings fallback (stratégie texte, utilisé si `(continued)` présent mais lines échoue)
+   - **Essai 3 — `text_grid`** : `_build_text_grid()` (`:64-118`) — grille construite depuis les mots (x0→colonnes). Fallback ultime quand pdfplumber ne trouve aucune table
+3. **`_pick_best_continuation()`** (`:121-144`) : classe les stratégies par :
+   - `method_rank` : `lines` (0) > `text` (1) > `text_grid` (2)
+   - `col_diff` : proximité du nombre de colonnes attendu
+   - `-len(table_data)` : plus de lignes = mieux
+4. **Filtres** (quand titre `(continued)` présent) :
+   - `col_count < max(2, expected - 4)` → rejette (note de bas de page) (`:185`)
+   - Dérive des colonnes **ignorée** : le titre `(continued)` est une preuve suffisante, même si la géométrie diffère (ex: lignes de bordure manquantes en continuation → pdfplumber détecte moins de colonnes)
+5. **Sans titre (heuristique)** : `bbox[1] ≤ 300` + pas d'autre caption au-dessus (`:194-210`)
 
-### `find_continuations()` — `continuation.py:221-315`
+**Retour** : 5 valeurs `(is_cont, table_data, cont_x0s, top_ft, has_title)` — `has_title` informe `find_continuations()` que le titre était présent, permettant de sauter le drift check.
+
+### `_build_text_grid()` — `continuation.py:64-118`
+
+Fallback ultime quand pdfplumber ne détecte aucune table :
+
+1. Groupe les mots par `top` (Y) → lignes
+2. Saute la ligne `"Table X ... (continued)"`
+3. Saute les 25% inférieurs de la page (notes de bas de page)
+4. Clusterise les x0 en colonnes (seuil 12px)
+5. Assigne chaque mot à sa colonne → grille `[ligne][colonne]`
+
+### `find_continuations()` — `continuation.py:319-477`
 
 ```python
 target_cols = max(expected_col_count, min(max_cont_cols, expected_col_count + 1))
 ```
 
-- Scanne pages suivantes ; s'arrête avant la table suivante différente (`:245-252`)
-- Drop lignes d'en-tête répétées (match `first_cell_text` ou mots-clés) (`:268-293`)
+- Scanne pages suivantes ; s'arrête avant la table suivante différente (`:352-355`)
+- **Drift check ignoré** si `has_title=True` (`:415`) — le titre `(continued)` prime sur la géométrie
+- Drop lignes d'en-tête répétées (match `first_cell_text` ou mots-clés `_HEADER_KEYWORDS`) (`:439-458`)
 - Ajuste les lignes à `target_cols` via :
-  - `_expand_cont_row()` (`:144`) : distribue valeurs réelles également
-  - `_reduce_cont_row()` (`:183`) : supprime colonnes les plus vides (recherche combinatoire)
+  - `_expand_cont_row()` (`:254`) : distribue valeurs réelles également
+  - `_reduce_cont_row()` (`:293`) : supprime colonnes les plus vides (recherche combinatoire)
+
+### `MAX_CONT_COL_DRIFT` — `config.py:27`
+
+```python
+MAX_CONT_COL_DRIFT = 200  # augmenté de 60→200 pour tolérer les
+                          # stratégies mixtes lines→text entre page 1 et continuation
+```
+
+### Changements récents
+
+| Date | Problème | Correctif |
+|------|----------|-----------|
+| 2026-07-23 | **Table 2 C0** : continuation page 11 non détectée — lignes de bordure manquantes → pdfplumber 8 colonnes au lieu de 12 → `col_count < expected - 2 = 10` → rejet | `expected - 2` → `expected - 4`, drift ignoré si `(continued)` présent, 3 stratégies (lines → text → text_grid) |
+| 2026-07-23 | **Drift 76px** rejette continuation entre lines (page 10) et text (page 11) | `has_title` flag → skip drift check, `MAX_CONT_COL_DRIFT` 60→200 |
 
 ---
 
@@ -669,18 +748,59 @@ RagJason/
 
 ### `Rag_selective/` — format RAG selective (features + tables)
 
+Les fichiers tables utilisent le format **"une seule table"** (un objet par fichier).
+Le fichier `_all_tables.json` utilise le format **"document complet"** (array d'objets).
+
+**Fichiers tables :** `{doc_ref}_{revision}_{table_id}.json` (ex:
+`DS14720_Rev_3_table_50.json`). Fallback sur `{pdf_name}_{table_id}.json`
+si `doc_ref`/`revision` manquants.
+
+**`_all_tables.json` :** `{doc_ref}_{revision}__all_tables.json` (ex:
+`DS14720_Rev_3__all_tables.json`).
+
 ```
 Rag_selective/
 ├── C0/stm32c011d6/
 │   ├── features.json             # features + features_content
-│   ├── _all_tables.json          # features en position 0 + tables
-│   ├── table_1.json
+│   ├── DS13866_Rev_5__all_tables.json  # array d'objets "document complet"
+│   ├── DS13866_Rev_5_table_1.json      # format "une seule table"
 │   └── ...
 ├── U0/stm32u031c6/
 │   ├── features.json             # Type 2 supporté
-│   └── _all_tables.json
+│   └── DS14581_Rev_2__all_tables.json
 └── ...
 ```
+
+**Format "une seule table" :**
+```json
+{
+  "table_id": "table_50",
+  "document": "DS14720 Rev 3 - Table 50. I/O static characteristics",
+  "rev": "Rev 3",
+  "table_number": "50",
+  "title": "Table 50. I/O static characteristics",
+  "page": 72,
+  "section": "5.3.13 I/O port characteristics",
+  "section_title": "I/O port characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32c091kb.pdf#page=72",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c091kb.pdf",
+  "text_helper": "Table 50. I/O static characteristics — section ...",
+  "table_content": {
+    "headers": ["Symbol", "Parameter", "Conditions", "Min", "Typ", "Max", "Unit"],
+    "rows": [["V (1) IL", "I/O input low level voltage", ...]],
+    "notes": ["2. Specified by design...", ...],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}
+```
+
+**Format "document complet" (`_all_tables.json`) :** comme ci-dessus mais avec
+les métadonnées features en tête : `references`, `package`, `family`, `core`,
+`frequency` (extraits de `features_data`).
 
 **Format `features.json` :**
 ```json
@@ -779,7 +899,7 @@ Rag_selective/
 | Fix 17 (header leak dans `_merge_fragmented_columns`) | `grid_extractor.py` | `:1700-1733` |
 | Fix 18 (extension `_remove_bleed_rows_bottom`) | `grid_extractor.py` | `:1491-1494` |
 | Fix 19 (filtre footnote `(N)` post-merge) | `grid_extractor.py` | `:1355-1366` |
-| Fix 20 (`_apply_rotated_fix` + `_fix_reversed_cells`) | `grid_extractor.py` | `:1876` + `:1411` |
+| Fix 20 (`_apply_rotated_fix` + `_is_likely_reversed` + `_fix_reversed_cells`) | `grid_extractor.py` | `:1876` + `:1543` + `:1621` |
 | `extract_ordering_info()` | `ordering.py` | `:66-221` |
 | Caption row filter (toutes méthodes) | `grid_extractor.py` | `:935-955` |
 | `_fill_horizontal()` | `grid_extractor.py` | `:268-280` |
@@ -788,10 +908,12 @@ Rag_selective/
 | `_merge_fragmented_columns()` | `grid_extractor.py` | `:1611-1762` |
 | `_merge_empty_header_rightward()` | `grid_extractor.py` | `:1944-2010` |
 | `_remove_bleed_rows_bottom()` | `grid_extractor.py` | `:1491-1536` |
-| `_is_continuation_page()` | `continuation.py` | `:51-142` |
-| `find_continuations()` | `continuation.py` | `:226-320` |
-| `target_cols` formula | `continuation.py` | `:311` |
-| `_get_col_x0s()` | `continuation.py` | `:29-48` |
+| `_is_continuation_page()` | `continuation.py` | `:149-251` |
+| `_build_text_grid()` | `continuation.py` | `:64-118` |
+| `_pick_best_continuation()` | `continuation.py` | `:121-144` |
+| `find_continuations()` | `continuation.py` | `:319-477` |
+| `target_cols` formula | `continuation.py` | `:467` |
+| `_get_col_x0s()` | `continuation.py` | `:42-61` |
 | `RawTable` schema | `schema.py` | `:10-36` |
 | `datasheet_metaData` ajout | `main.py` | `:137-146` |
 | `GLYPH_MAP` | `glyph_fixer.py` | `:17-44` |

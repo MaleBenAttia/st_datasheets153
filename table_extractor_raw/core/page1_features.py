@@ -77,11 +77,14 @@ SECURITY_KW_RE = re.compile(
 MAX_SCAN_PAGES = 10
 
 
-def _detect_pdf_type(pdf_path: str) -> int:
+def _detect_pdf_type(pdf_path: str, pdf=None) -> int:
     """Détecte le type de PDF : 1 = Acrobat, 2 = Antenna House."""
     try:
-        with pdfplumber.open(pdf_path) as pdf:
+        if pdf is not None:
             producer = (pdf.metadata or {}).get("Producer", "")
+        else:
+            with pdfplumber.open(pdf_path) as _pdf:
+                producer = (_pdf.metadata or {}).get("Producer", "")
         return 2 if "antenna" in producer.lower() else 1
     except Exception:
         return 1
@@ -124,21 +127,26 @@ class DeviceFeatures(BaseModel):
 
 # ── Helpers ─────────────────────────────────────────────────────────────────
 
-def _get_pdf_page_count(pdf_path: str) -> int:
+def _get_pdf_page_count(pdf_path: str, pdf=None) -> int:
     try:
-        with pdfplumber.open(pdf_path) as pdf:
+        if pdf is not None:
             return len(pdf.pages)
+        with pdfplumber.open(pdf_path) as _pdf:
+            return len(_pdf.pages)
     except Exception:
         return 999
 
 
-def _get_page_text(pdf_path: str, page: int) -> str:
+def _get_page_text(pdf_path: str, page: int, pdf=None) -> str:
     try:
-        with pdfplumber.open(pdf_path) as pdf:
+        if pdf is not None:
             if page < 1 or page > len(pdf.pages):
                 return ""
-            text = pdf.pages[page - 1].extract_text()
-            return text or ""
+            return pdf.pages[page - 1].extract_text() or ""
+        with pdfplumber.open(pdf_path) as _pdf:
+            if page < 1 or page > len(_pdf.pages):
+                return ""
+            return _pdf.pages[page - 1].extract_text() or ""
     except Exception as e:
         logger.warning(f"pdfplumber page {page} failed: {e}")
         return ""
@@ -146,11 +154,11 @@ def _get_page_text(pdf_path: str, page: int) -> str:
 
 # ── Page range detection (100% dynamic, no type-based rules) ──────────────
 
-def detect_features_page_range(pdf_path: str) -> list[int]:
+def detect_features_page_range(pdf_path: str, pdf=None) -> list[int]:
     """Scanne les premières pages jusqu'à trouver Contents/Introduction."""
-    total = _get_pdf_page_count(pdf_path)
+    total = _get_pdf_page_count(pdf_path, pdf=pdf)
     for p in range(1, min(total, MAX_SCAN_PAGES) + 1):
-        text = _get_page_text(pdf_path, p)
+        text = _get_page_text(pdf_path, p, pdf=pdf)
         if not text:
             continue
         for line in text.splitlines():
@@ -162,16 +170,24 @@ def detect_features_page_range(pdf_path: str) -> list[int]:
     return [1]
 
 
-def _extract_text_for_pages(pdf_path: str, pages: list[int]) -> str:
+def _extract_text_for_pages(pdf_path: str, pages: list[int], pdf=None) -> str:
     """Concatène le texte pdfplumber des pages demandées."""
     if not pages:
         return ""
     try:
-        with pdfplumber.open(pdf_path) as pdf:
+        if pdf is not None:
             parts = []
             for p in pages:
                 if 1 <= p <= len(pdf.pages):
                     text = pdf.pages[p - 1].extract_text()
+                    if text:
+                        parts.append(text)
+            return "\n\n".join(parts)
+        with pdfplumber.open(pdf_path) as _pdf:
+            parts = []
+            for p in pages:
+                if 1 <= p <= len(_pdf.pages):
+                    text = _pdf.pages[p - 1].extract_text()
                     if text:
                         parts.append(text)
             return "\n\n".join(parts)
@@ -309,7 +325,7 @@ def _parse_packages(text: str) -> list[str]:
     return packages
 
 
-def _parse_device_summary(pdf_path: str, text: str) -> dict | None:
+def _parse_device_summary(pdf_path: str, text: str, pdf=None) -> dict | None:
     """
     Extrait la table Device summary (Reference / Part number) depuis la page 1.
 
@@ -318,10 +334,17 @@ def _parse_device_summary(pdf_path: str, text: str) -> dict | None:
         pas de headers explicites — 2 colonnes visuelles (Reference | Part number).
     """
     try:
-        with pdfplumber.open(pdf_path) as pdf:
-            if len(pdf.pages) < 1:
+        _local_pdf = pdf
+        if _local_pdf is None:
+            import pdfplumber as _pplib
+            _local_pdf = _pplib.open(pdf_path)
+            _close_local = True
+        else:
+            _close_local = False
+        try:
+            if len(_local_pdf.pages) < 1:
                 raise ValueError("no pages")
-            p = pdf.pages[0]
+            p = _local_pdf.pages[0]
             tables = p.extract_tables()
             for table in tables:
                 if not table or len(table) < 2:
@@ -347,6 +370,9 @@ def _parse_device_summary(pdf_path: str, text: str) -> dict | None:
                 type2_keywords = ("product summary", "device summary", "product status")
                 if any(kw in h_text for kw in type2_keywords):
                     return _parse_device_summary_type2(table)
+        finally:
+            if _close_local:
+                _local_pdf.close()
     except Exception:
         pass
 
@@ -476,7 +502,7 @@ def _parse_features_bullets(text: str) -> dict:
 
 # ── Main entry point ────────────────────────────────────────────────────────
 
-def _extract_packages_from_pdf(pdf_path: str) -> list[str]:
+def _extract_packages_from_pdf(pdf_path: str, pdf=None) -> list[str]:
     """
     Extrait les packages de TOUTES les pages en utilisant extract_words()
     pour reconstituer correctement le texte même si chaque caractère est
@@ -522,8 +548,15 @@ def _extract_packages_from_pdf(pdf_path: str) -> list[str]:
     page_of: dict[str, int] = {}
 
     try:
-        with pdfplumber.open(pdf_path) as pdf:
-            for pg_idx, page in enumerate(pdf.pages):
+        _local_pdf = pdf
+        if _local_pdf is None:
+            import pdfplumber as _pplib
+            _local_pdf = _pplib.open(pdf_path)
+            _close_local = True
+        else:
+            _close_local = False
+        try:
+            for pg_idx, page in enumerate(_local_pdf.pages):
                 text = _page_text_from_words(page)
                 if not text:
                     continue
@@ -537,6 +570,9 @@ def _extract_packages_from_pdf(pdf_path: str) -> list[str]:
                     elif has_dim and not _has_real_dim(seen[name]):
                         seen[name] = entry
                         page_of[name] = pg_idx + 1
+        finally:
+            if _close_local:
+                _local_pdf.close()
     except Exception as e:
         logger.warning(f"Package extraction from PDF failed: {e}")
 
@@ -544,7 +580,7 @@ def _extract_packages_from_pdf(pdf_path: str) -> list[str]:
     return [entry for _, entry in sorted_pkgs]
 
 
-def extract_features_page_range(pdf_path: str) -> dict:
+def extract_features_page_range(pdf_path: str, pdf=None) -> dict:
     """
     Point d'entrée principal.
 
@@ -556,15 +592,15 @@ def extract_features_page_range(pdf_path: str) -> dict:
     p = Path(pdf_path)
     pdf_name = p.stem
     family = p.parent.name
-    pdf_type_val = _detect_pdf_type(str(p))
+    pdf_type_val = _detect_pdf_type(str(p), pdf=pdf)
 
-    pages = detect_features_page_range(str(p))
-    full_text = _extract_text_for_pages(str(p), pages)
+    pages = detect_features_page_range(str(p), pdf=pdf)
+    full_text = _extract_text_for_pages(str(p), pages, pdf=pdf)
 
     header = _parse_header_footer(full_text, pdf_type_val)
     # Packages : scanner TOUTES les pages page par page
-    pkgs = _extract_packages_from_pdf(str(p))
-    device_summary = _parse_device_summary(str(p), full_text)
+    pkgs = _extract_packages_from_pdf(str(p), pdf=pdf)
+    device_summary = _parse_device_summary(str(p), full_text, pdf=pdf)
     features = _parse_features_bullets(full_text)
 
     extraction_method = f"regex_type{pdf_type_val}"

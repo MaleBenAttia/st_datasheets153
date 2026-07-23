@@ -59,23 +59,22 @@ def _st_to_actual_page(pdf: pdfplumber.PDF, st_page: int) -> int:
     if cache_id not in _ST_MAPPING_CACHE:
         _ST_MAPPING_CACHE.clear()
         counters: dict[str, int] = {}
+        footer_mappings: dict[str, dict[int, int]] = {}
 
         for pgnum, page in enumerate(pdf.pages):
             text = page.extract_text() or ""
             for m in re.finditer(r"(\d+)/(\d{3})\b", text):
                 counters[m.group(2)] = counters.get(m.group(2), 0) + 1
+            footer = text[-300:] if len(text) > 300 else text
+            for m in re.finditer(r"(\d+)/(\d{3})\b", footer):
+                total = m.group(2)
+                st = int(m.group(1))
+                footer_mappings.setdefault(total, {})[st] = pgnum + 1
 
-        total_strs = [t for t, c in counters.items() if c >= 3]
         combined: dict[int, int] = {}
-
-        for total_str in total_strs:
-            for pgnum, page in enumerate(pdf.pages):
-                text = page.extract_text() or ""
-                footer = text[-300:] if len(text) > 300 else text
-                m = re.search(r"(\d+)/" + total_str + r"\b", footer)
-                if m:
-                    st = int(m.group(1))
-                    combined[st] = pgnum + 1  # le dernier total gagne en cas de conflit
+        for total_str, c in counters.items():
+            if c >= 3 and total_str in footer_mappings:
+                combined.update(footer_mappings[total_str])
 
         _ST_MAPPING_CACHE[cache_id] = combined
 
@@ -161,7 +160,7 @@ class TableRef:
     section: str = ""      # Titre de la section contenant la table (ex: "5.3.6 Supply current characteristics")
 
 
-def detect_tables(pdf_path: str, pdf_type: int = 1) -> list[TableRef]:
+def detect_tables(pdf_path: str, pdf_type: int = 1, pdf=None) -> list[TableRef]:
     """
     Détecte toutes les tables d'un PDF via :
     1. H2.0 : annotations PDF (liens /Link → /GoTo) sur toutes les pages LOT
@@ -170,7 +169,10 @@ def detect_tables(pdf_path: str, pdf_type: int = 1) -> list[TableRef]:
 
     Retourne une liste de TableRef triée par page, avec le champ section renseigné.
     """
-    with pdfplumber.open(pdf_path) as pdf:
+    _own_pdf = pdf is None
+    if _own_pdf:
+        pdf = pdfplumber.open(pdf_path)
+    try:
         # Tentative 1 : H2.0 annotations PDF
         refs = _from_toc_links(pdf_path, pdf, pdf_type)
         if refs:
@@ -194,6 +196,9 @@ def detect_tables(pdf_path: str, pdf_type: int = 1) -> list[TableRef]:
         logger.info("H2.5 (inline scan): %d tables detected", len(refs))
         _assign_sections(pdf_path, pdf, refs, pdf_type)
         return refs
+    finally:
+        if _own_pdf:
+            pdf.close()
 
 
 def _assign_sections(pdf_path: str, pdf: pdfplumber.PDF, refs: list[TableRef],
@@ -234,15 +239,18 @@ def _assign_sections(pdf_path: str, pdf: pdfplumber.PDF, refs: list[TableRef],
     # 1b. Extraire les numéros de section valides depuis le Contents
     toc_whitelist = _extract_toc_section_numbers(pdf, pdf_type)
 
-    # 2. Construire le cache Y-position (1ère occurrence par numéro de section)
+    # 2. Construire cache Y-position + fallback en UNE SEULE passe
     y_cache: dict[int, list[tuple[float, str]]] = {}
     seen_section_nums: set[str] = set()
+    all_headings: list[tuple[str, int]] = []
+    seen_fallback: set[str] = set()
 
     for pg_idx, page in enumerate(pdf.pages):
         pgnum = pg_idx + 1
         if pgnum in lot_pages:
             continue
 
+        # Pass 1 : Y-position (extract_text_lines)
         lines = page.extract_text_lines() or []
         for line_info in lines:
             text = line_info["text"].strip()
@@ -255,31 +263,15 @@ def _assign_sections(pdf_path: str, pdf: pdfplumber.PDF, refs: list[TableRef],
                 sec_title = m.group(2).strip().rstrip(".")
                 sec_title = re.sub(r'\s{2,}', ' ', sec_title)
                 if sec_title and not TABLE_CONTENT_RE.search(sec_title):
-                    # Filtrer : ne garder que les sections du TOC
                     if not _section_in_whitelist(sec_num, toc_whitelist):
                         continue
-                    # Dédupliquer : ne garder que la 1ère occurrence
                     if sec_num in seen_section_nums:
                         continue
                     seen_section_nums.add(sec_num)
                     label = f"{sec_num} {sec_title}"
                     y_cache.setdefault(pgnum, []).append((top, label))
 
-    _SECTION_CACHE[pdf_path] = y_cache
-
-    # 3. Trier les headings par Y pour chaque page
-    for page_headings in y_cache.values():
-        page_headings.sort(key=lambda x: x[0])
-
-    # 4. Fallback page-level : dernier heading avec page ≤ page de la table
-    all_headings: list[tuple[str, int]] = []  # (label, page)
-    seen_fallback: set[str] = set()
-
-    for pg_idx, page in enumerate(pdf.pages):
-        pgnum = pg_idx + 1
-        if pgnum in lot_pages:
-            continue
-
+        # Pass 2 : fallback page-level (extract_text — chars déjà en cache)
         text = page.extract_text() or ""
         for line in text.splitlines():
             line = line.strip()
@@ -291,14 +283,18 @@ def _assign_sections(pdf_path: str, pdf: pdfplumber.PDF, refs: list[TableRef],
                 sec_title = m.group(2).strip().rstrip(".")
                 sec_title = re.sub(r'\s{2,}', ' ', sec_title)
                 if sec_title and not TABLE_CONTENT_RE.search(sec_title):
-                    # Filtrer : ne garder que les sections du TOC
                     if not _section_in_whitelist(sec_num, toc_whitelist):
                         continue
-                    # Dédupliquer : ne garder que la 1ère occurrence
                     if sec_num in seen_fallback:
                         continue
                     seen_fallback.add(sec_num)
                     all_headings.append((f"{sec_num} {sec_title}", pgnum))
+
+    _SECTION_CACHE[pdf_path] = y_cache
+
+    # 3. Trier les headings par Y pour chaque page
+    for page_headings in y_cache.values():
+        page_headings.sort(key=lambda x: x[0])
 
     # 5. Assigner chaque table
     for ref in refs:

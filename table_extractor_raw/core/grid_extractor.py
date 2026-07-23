@@ -957,6 +957,7 @@ def extract_table_grid(
     output_base: Path,
     all_refs: list[TableRef] = None,
     pdf_type: int = 1,
+    pdf=None,
 ) -> dict:
     """
     Extrait la grille d'une table identifiée par `ref`.
@@ -1000,7 +1001,10 @@ def extract_table_grid(
         "warnings":              [],
     }
 
-    with pdfplumber.open(pdf_path) as pdf:
+    _own_pdf = pdf is None
+    if _own_pdf:
+        pdf = pdfplumber.open(pdf_path)
+    try:
         if ref.page < 1 or ref.page > len(pdf.pages):
             result["warnings"].append(f"page_out_of_range:{ref.page}")
             return result
@@ -1532,6 +1536,10 @@ def extract_table_grid(
             _save_debug_image(page, bbox, out_path, confidence,
                               has_empty_cells=result.get("has_empty_cells", False))
 
+    finally:
+        if _own_pdf:
+            pdf.close()
+
     logger.info(
         f"{ref.table_id} | page={ref.page} | method={method} "
         f"| confidence={confidence} | rows={len(result['rows'])} "
@@ -1590,12 +1598,27 @@ def _is_likely_reversed(cell: str) -> bool:
     if rev_mid > clean_mid:
         return False
 
+    # Si le texte original a déjà "(N)" correctement orienté, il n'est PAS
+    # inversé. Ex: "V (1) IL" est déjà correct, ne pas le transformer en
+    # "LI )1( V" (faux positif). Doit être AVANT rev_init>clean_init.
+    has_correct_parens = bool(re.search(r'\(\d+\)', clean))
+    if has_correct_parens:
+        return False
+
     # Si l'inversé a une plus longue séquence majuscule au début, c'est un
     # part number STM32 (ex: "STM32C5A3KxT" a "STM" soit 3, l'inversé
     # "TxK3A5C23MTS" a "T" soit 1)
     clean_init = _initial_upper_run(clean)
     rev_init = _initial_upper_run(rev)
     if rev_init > clean_init:
+        return True
+
+    # Heuristique parenthèses inversées : si l'original a ")N(" et le
+    # reverse a "(N)", c'est un marqueur de footnote inversé → inversé.
+    # Ex: "LI )1( V" (original a ")1(" , reverse "V (1) IL" a "(1)")
+    rev_parens = bool(re.search(r'\(\d+\)', rev))
+    clean_parens_inv = bool(re.search(r'\)\d+\(', clean))
+    if rev_parens and clean_parens_inv:
         return True
 
     # Si l'original commence par majuscule et les deux versions ont autant
@@ -1613,16 +1636,19 @@ def _fix_reversed_cells(rows: list[list]) -> list[list]:
     pdfplumber peut lire les caractères dans l'ordre inverse. On détecte ça en
     vérifiant si le texte inversé semble plus naturel.
     """
+    SPACE_AROUND_PARENS = re.compile(r'\s*([()])\s*')
+
     if not rows:
         return rows
     fixed = []
     for row in rows:
         fixed_row = []
-        for cell in row:
+        for col_idx, cell in enumerate(row):
             if isinstance(cell, str) and len(cell) >= 5:
                 clean = cell.replace("\n", "")
                 if _is_likely_reversed(clean):
                     cell = clean[::-1]
+                    cell = SPACE_AROUND_PARENS.sub(r'\1', cell)
             fixed_row.append(cell)
         fixed.append(fixed_row)
     return fixed
@@ -2360,3 +2386,89 @@ def extract_legend_from_page(
             legend_lines.append(line)
 
     return legend_lines
+
+
+def extract_notes_type1(
+    rows: list[list],
+    caption: str,
+    page_text_cache: dict[int, str],
+    pages: list[int],
+) -> list[str]:
+    """Extrait les notes pour Type 1 sans marqueurs (N) dans les cellules.
+
+    Deux stratégies :
+    1. Cherche un heading 'Notes:' ou 'Note:' dans le texte de page,
+       puis collecte les lignes N. ... consécutives en dessous.
+    2. Fallback: lignes N. ... isolées en fin de page.
+
+    Retourne ['1. ...', '2. ...'] ou [] si aucune note trouvée.
+    """
+    if not rows or not caption:
+        return []
+
+    scan_pages = set(pages)
+    if pages:
+        scan_pages.add(max(pages) + 1)
+
+    notes: dict[str, str] = {}
+    NOTES_HEADING_RE = re.compile(r'^Notes?\s*:?\s*$', re.I)
+    NOTE_LINE_RE = re.compile(r'^(\d+)\.\s+(.+)')
+    SECTION_RE = re.compile(r'^\d+(?:\.\d+){1,3}\s')
+
+    for pg_num in sorted(scan_pages):
+        text = page_text_cache.get(pg_num)
+        if not text:
+            continue
+        lines = text.split("\n")
+
+        # Stratégie 1: chercher "Notes:" heading
+        found_heading = False
+        for i, line in enumerate(lines):
+            if NOTES_HEADING_RE.match(line.strip()):
+                found_heading = True
+                # Collecter les lignes N. ... après le heading
+                j = i + 1
+                while j < len(lines):
+                    nxt = lines[j].strip()
+                    m = NOTE_LINE_RE.match(nxt)
+                    if m:
+                        num = m.group(1)
+                        note_parts = [m.group(2)]
+                        if j + 1 < len(lines):
+                            nxt2 = lines[j + 1].strip()
+                            if (nxt2 and not NOTE_LINE_RE.match(nxt2)
+                                    and not SECTION_RE.match(nxt2)
+                                    and not re.match(r'^Table\s+\d+', nxt2, re.I)
+                                    and not re.match(r'^Figure\s+\d+', nxt2, re.I)
+                                    and len(nxt2) < 150):
+                                note_parts.append(nxt2)
+                                j += 1
+                        full = " ".join(note_parts)
+                        if num not in notes:
+                            notes[num] = f"{num}. {full}"
+                        j += 1
+                    else:
+                        break
+
+        # Stratégie 2: lignes N. ... en fin de page (fallback)
+        # Cherche dans les 20 dernières lignes de la page
+        if not found_heading:
+            start = max(0, len(lines) - 20)
+            for i in range(start, len(lines)):
+                line = lines[i].strip()
+                m = NOTE_LINE_RE.match(line)
+                if m and int(m.group(1)) <= 30:  # notes numérotées jusqu'à 30
+                    num = m.group(1)
+                    note_parts = [m.group(2)]
+                    if i + 1 < len(lines):
+                        nxt = lines[i + 1].strip()
+                        if (nxt and not NOTE_LINE_RE.match(nxt)
+                                and not SECTION_RE.match(nxt)
+                                and not re.match(r'^Table\s+\d+', nxt, re.I)
+                                and len(nxt) < 150):
+                            note_parts.append(nxt)
+                    full = " ".join(note_parts)
+                    if num not in notes:
+                        notes[num] = f"{num}. {full}"
+
+    return [notes[k] for k in sorted(notes, key=int)]

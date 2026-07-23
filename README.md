@@ -83,6 +83,7 @@ st_datasheets153/
 |   |   |-- ordering.py         #     Pages "Ordering information" (non-grille)
 |   |   |-- page1_features.py   #     Extraction features page 1 (core, flash, timers, packages)
 |   |   |-- schema.py           #     Modele Pydantic de validation
+|   |-- build_rag_selective.py  #     Transformation outJason/ → Rag_selective/ (format simplifié)
 |   |-- generate_debug_report.py #     Consolidation debug multi-datasheet
 |
 |-- DataSHEET/                  # === PDFs SOURCES (non versionnes) ===
@@ -110,8 +111,8 @@ st_datasheets153/
 |   |-- <family>/<pdf_name>/
 |   |   |-- features.json       #     Format standardise (features + features_content)
 |   |   |-- _all_tables.json    #     features en position 0 + tables
-|   |   |-- table_1.json        #     Tables individuelles
-|   |   |-- ...
+|   |   |-- DS14720_Rev_3_table_50.json  #  Nomme {doc_ref}_{revision}_{table_id}.json
+|   |   |-- ...                          #  Fallback: {pdf_name}_{table_id}.json
 |
 |-- global_extraction_stats.json  # Rapport de sante global (genere)
 ```
@@ -229,6 +230,25 @@ Chaque entree dans `global_worst_tables` contient : `warnings`, `extraction_meth
 .\venv\Scripts\python.exe app.py --all ; .\venv\Scripts\python.exe aggregate_stats.py ; .\venv\Scripts\python.exe rag_transformer.py
 ```
 
+### Extraction ciblée par tables (--tables)
+
+Extraction de tables spécifiques uniquement (idéal pour déboguer ou tester une table problématique sans extraire tout le PDF).
+
+```powershell
+# Extraire seulement les tables 2, 5, 10 et 11 d'un PDF
+.\venv\Scripts\python.exe app.py --pdf DataSHEET/C5/stm32c532cb.pdf --tables 2,5,10,11
+
+# Même pipeline complet, même qualité, seulement les IDs demandés
+# → outJason/C5/stm32c532cb/ table_2.json, table_5.json, table_10.json, table_11.json
+# → Rag_selective/C5/stm32c532cb/ DS14581_Rev_2_table_2.json, ... (nommés {doc_ref}_{revision}_{table_id}.json)
+# → features.json extrait indépendamment
+# → _all_tables.json avec features + les 4 tables
+# → _run_report.json avec les stats sur les 4 tables
+#   (les warnings/erreurs sont mis en évidence dans le rapport)
+```
+
+**Note :** `--tables` ne fonctionne qu'avec `--pdf` (un seul PDF à la fois). Les IDs sont les numéros de table (`table_2` → `2`, `table_10` → `10`).
+
 ### Test rapide (3 datasheets)
 
 ```powershell
@@ -264,7 +284,7 @@ base sur les lignes tracees dans le PDF.
 | 2 | **Textes rotatifs**              | Mapping des mots verticaux (90 degres) dans la bonne colonne    |
 | 3 | **En-tetes structurels**         | Detection dynamique de la profondeur (1 a 3 lignes)             |
 | 4 | **Grille X calculee**            | Centres de colonnes calcules mathematiquement                   |
-| 5 | **Continuation multi-pages**     | Fusion des tableaux etales sur 2+ pages                         |
+| 5 | **Continuation multi-pages**     | Fusion des tableaux etales sur 2+ pages — 3 strategies (lines → texte → grille mots), drift contourne quand le titre `"(continued)"` est present |
 | 6 | **Propagation horizontale**      | Remplissage des cellules fusionnees (colspan)                   |
 | 7 | **Propagation verticale**        | Remplissage des cellules fusionnees (rowspan + fill-down)       |
 | 8 | **Detection couleur (Type 2)**   | Comptage des lignes d'en-tete via fond bleu fonce du PDF        |
@@ -288,14 +308,21 @@ via deux mecanismes :
    introuvable, prend la table la plus haute sur la page (pas la plus
    grande), evitant de confondre avec une table voisine plus volumineuse
 
-### Extraction des notes `(N)` et légendes en Type 2 (Fix 21)
+### Extraction des notes `(N)` et légendes (Type 1 + Type 2, Fix 21)
 
-Pour les tableaux Type 2 (Antenna House), les notes sont référencees dans les cellules et les headers via le marqueur `(N)`. Par exemple, `"Features(1)"` dans un header signifie que la note `"1. X = supported."` doit etre associee. Deux fonctions ont ete ajoutees :
+Pour les tableaux, les notes sont référencees dans les cellules et les headers via le marqueur `(N)`. Par exemple, `"Features(1)"` dans un header signifie que la note `"1. X = supported."` doit etre associee.
 
+**Type 1 — 3 patterns :**
+- **Pattern A** : `(N)` markers dans les cellules → `extract_footnotes_from_pages()` (identique Type 2)
+- **Pattern B** : `Notes:` heading avec lignes numérotées → `extract_notes_type1()` dédiée
+- **Pattern C** : "See list of notes in the notes section" → non géré
+
+**Fonctions :**
 - **`extract_footnotes_from_pages(rows, headers, page_text_cache, pages)`** : scanne les rows ET les headers pour trouver les marqueurs `(N)`, puis lit le texte de la/les page(s) correspondante(s) pour extraire les lignes `N. ...`. `page_text_cache` est un dict `{num_page: texte}` construit une seule fois pour eviter d'ouvrir le PDF 88 fois.
+- **`extract_notes_type1(rows, caption, page_text_cache, pages)`** : Type 1 Pattern B — détecte le heading "Notes:" dans le texte de page et extrait les lignes numérotées qui suivent.
 - **`extract_legend_from_page(table_parsed, headers, page_text_cache, pages, caption)`** : capture le texte descriptif situe entre le caption et les en-tetes de colonne. Applique 3 filtres pour eliminer les faux positifs (fragments d'en-tetes, titres courts, identifiants techniques majuscules).
 
-Stockes dans `heuristics._notes` (liste de str) et `heuristics._legend` (str). Le cache de pages est construit dans `main.py` avant la boucle d'extraction (Type 2 seulement).
+Stockes dans `heuristics._notes` (liste de str) et `heuristics._legend` (str). Le cache de pages est construit dans `main.py` avant la boucle d'extraction pour **tous** les types de PDF.
 
 Nettoyage des footnotes en fin de tableau (Fix 9)
 
@@ -447,6 +474,63 @@ Le module `build_rag_selective.py` genere un format RAG simplifie dans
 - `text_helper` : commence par `pdf_name:` pour ameliorer le retrieval par composant
 - Features en position 0 dans `_all_tables.json` (avant toutes les tables)
 
+**Fichiers tables :** nommés `{doc_ref}_{revision}_{table_id}.json` (ex: `DS14720_Rev_3_table_50.json`). Fallback sur `{pdf_name}_{table_id}.json` si `doc_ref`/`revision` absents.
+
+**Structure d'un fichier table (format "une seule table") :**
+```json
+{
+  "table_id": "table_50",
+  "document": "DS14720 Rev 3 - Table 50. I/O static characteristics",
+  "rev": "Rev 3",
+  "table_number": "50",
+  "title": "Table 50. I/O static characteristics",
+  "page": 72,
+  "section": "5.3.13 I/O port characteristics",
+  "section_title": "I/O port characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32c091kb.pdf#page=72",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c091kb.pdf",
+  "text_helper": "Table 50. I/O static characteristics — section 5.3.13...",
+  "table_content": {
+    "headers": ["Symbol", "Parameter", "Conditions", "Min", "Typ", "Max", "Unit"],
+    "rows": [["V (1) IL", "I/O input low level voltage", ...]],
+    "notes": ["2. Specified by design...", "3. ..."],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}
+```
+
+**Fichier `_all_tables.json` (format "document complet") :**
+```json
+[
+  {
+    "document": "DS14720 Rev 3 - stm32c091kb - Table 50. I/O static characteristics",
+    "rev": "Rev 3",
+    "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c091kb.pdf",
+    "references": "DS14720",
+    "package": "TSSOP20, LQFP32, ...",
+    "family": "C0",
+    "core": "Cortex-M0+",
+    "frequency": "48",
+    "table_id": "table_50",
+    "table_number": "50",
+    "title": "Table 50. I/O static characteristics",
+    "page": 72,
+    "section": "5.3.13 I/O port characteristics",
+    "section_title": "I/O port characteristics",
+    "semantic_type": "",
+    "tags": [],
+    "url": "https://...pdf#page=72",
+    "text_helper": "...",
+    "table_content": { "headers": [...], "rows": [...], "notes": [...], "legend": "", "semantic_type": "", "semantic": {} }
+  }
+]
+```
+Les `_all_tables.json` sont nommés `{doc_ref}_{revision}__all_tables.json` (ex: `DS14720_Rev_3__all_tables.json`). Les métadonnées features (`core`, `frequency`, `family`, `package`, `references`) sont présentes dans chaque objet, extraites de `features_data`.
+
 ### Nettoyage des lignes header residuelles dans les donnees (Fix 14)
 
 Apres `_expand_spans_and_headers()`, des lignes header peuvent rester
@@ -504,17 +588,21 @@ Le pipeline applique 3 couches de correction :
      entre l'original et le reverse. Un original avec debut minuscule mais
      autant/moins de majuscules mid-word que le reverse → inversé.
      Gere `"A troP"` (original commence par majuscule) → `"Port A"`.
-   - `_initial_upper_run()` : mesure la sequence de majuscules consecutives
+    - `_initial_upper_run()` : mesure la sequence de majuscules consecutives
      en debut de mot. Les part numbers STM32 inversés (`"TxC3A5C23MTS"`) ont
      1 seule majuscule (`T`) alors que la version correcte (`"STM32C5A3CxT"`)
      en a 3 (`STM`) → distinction fiable.
+   - **Heuristique parenthèses** : si l'original a `\)\d+\(` (ex: `"LI)1(V"`)
+     et le reverse a `\(\d+\)`, c'est un marqueur de footnote inversé → True.
+     **Guard** : si l'original a déjà `(N)` correctement orienté (ex: `"V (1) IL"`),
+     la cellule est déjà à l'endroit → retourne False (évite le faux positif).
    - Suppression de la regex `\d\s+[A-Za-z]` qui bloquait les part numbers
      contenant des chiffres suivis de lettres.
 
 3. **Correction des headers** — `_fix_reversed_cells()` est appliqué aux
-   lignes de donnees ET aux en-tetes (ligne 1377+). Pour les headers
-   contenant plusieurs parties separes par espace (cellules mergees),
-   chaque partie est inversee individuellement.
+    lignes de donnees ET aux en-tetes. Pour les headers
+    contenant plusieurs parties separes par espace (cellules mergees),
+    chaque partie est inversee individuellement.
 
 **Cellules mergees avec texte inverse (colspan > 1) :** le detecteur de
 compression (`_expand_spans_and_headers`) utilise un fallback dedie :
@@ -903,3 +991,4 @@ python table_extractor_raw/generate_debug_report.py
 # Stats globales
 python aggregate_stats.py
 ```
+python app.py --pdf DataSHEET/C0/stm32c091kb.pdf --tables 40,50,69,70,12,13,17

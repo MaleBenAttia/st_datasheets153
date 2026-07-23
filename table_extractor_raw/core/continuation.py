@@ -9,6 +9,7 @@ Exporte : find_continuations(), _get_col_x0s()
 """
 from __future__ import annotations
 import logging
+import re
 from typing import Any, Optional
 
 import pdfplumber
@@ -18,12 +19,24 @@ from core.toc_detector import TableRef
 from config import (
     PDFPLUMBER_TABLE_SETTINGS,
     PDFPLUMBER_TABLE_SETTINGS_TYPE2,
+    PDFPLUMBER_TABLE_SETTINGS_FALLBACK,
+    PDFPLUMBER_TABLE_SETTINGS_FALLBACK_TYPE2,
     MIN_TABLE_WIDTH,
     MAX_CONTINUATION_PAGES,
     MAX_CONT_COL_DRIFT,
 )
 
 logger = logging.getLogger(__name__)
+
+_CONTINUED_RE = re.compile(
+    r"(?:continued|cont['’]?d|cont\.|\(suite\))",
+    re.IGNORECASE,
+)
+_HEADER_KEYWORDS = {
+    "symbol", "parameter", "pin", "name", "peripheral",
+    "features", "condition", "conditions", "min", "max",
+    "unit", "typ", "value", "speed",
+}
 
 
 def _get_col_x0s(table_obj) -> list[float]:
@@ -48,98 +61,194 @@ def _get_col_x0s(table_obj) -> list[float]:
     return result
 
 
+def _build_text_grid(
+    words: list[dict],
+    page: Page,
+    current_table_num: str,
+) -> Optional[list[list[str]]]:
+    """Fallback texte quand pdfplumber ne détecte pas de lignes de tableau.
+
+    1. Groupe les mots par position verticale (ligne).
+    2. Saute la ligne "Table X ... (continued)".
+    3. Saute les notes de bas de page (25% inférieurs).
+    4. Détermine les colonnes par clustering des x0.
+    5. Assigne chaque mot à sa colonne et retourne une grille.
+    """
+    lines: dict[float, list[dict]] = {}
+    for w in words:
+        key = round(w["top"], 0)
+        lines.setdefault(key, []).append(w)
+
+    sorted_ys = sorted(lines.keys())
+    data_lines: list[list[dict]] = []
+    for y in sorted_ys:
+        line_words = sorted(lines[y], key=lambda w: w["x0"])
+        line_text = " ".join(w["text"] for w in line_words).lower()
+        if current_table_num and f"table {current_table_num}" in line_text:
+            if _CONTINUED_RE.search(line_text):
+                continue
+        if y > page.height * 0.75:
+            continue
+        data_lines.append(line_words)
+
+    if len(data_lines) < 2:
+        return None
+
+    all_x0s = sorted({round(w["x0"], 0) for line in data_lines for w in line})
+    cols: list[float] = []
+    for x in all_x0s:
+        if cols and abs(x - cols[-1]) < 12:
+            continue
+        cols.append(x)
+
+    if len(cols) < 2:
+        return None
+
+    grid: list[list[str]] = []
+    for line_words in data_lines:
+        row = [""] * len(cols)
+        for w in line_words:
+            col_idx = min(range(len(cols)), key=lambda i: abs(w["x0"] - cols[i]))
+            if row[col_idx]:
+                row[col_idx] += " " + w["text"]
+            else:
+                row[col_idx] = w["text"]
+        grid.append(row)
+
+    return grid
+
+
+def _pick_best_continuation(
+    candidates: list[tuple[list[list], Any, str, Optional[list[float]]]],
+    expected_col_count: int,
+) -> Optional[tuple[list[list], Any, str, Optional[list[float]]]]:
+    """Parmi les stratégies ayant réussi, choisir la meilleure.
+
+    Ordre de préférence :
+    1. lines (géométrique) si le nb de colonnes est raisonnable (diff ≤ 4)
+    2. text (fallback texte pdfplumber)
+    3. text_grid (grille construite depuis les mots)
+    """
+    if not candidates:
+        return None
+    _METHOD_RANK = {"lines": 0, "text": 1, "text_grid": 2}
+    scored = []
+    for table_data, top_ft, method, cont_x0s in candidates:
+        col_count = max(len(r) for r in table_data) if table_data else 0
+        col_diff = abs(col_count - expected_col_count)
+        if method == "lines" and col_diff <= 4:
+            rank = 0
+        else:
+            rank = _METHOD_RANK.get(method, 9)
+        scored.append((rank, col_diff, -len(table_data), table_data, top_ft, method, cont_x0s))
+    scored.sort()
+    _, _, _, table_data, top_ft, method, cont_x0s = scored[0]
+    return table_data, top_ft, method, cont_x0s
+
+
 def _is_continuation_page(
     page: Page,
     expected_col_count: int,
     current_table_id: str,
     pdf_type: int = 1,
-) -> tuple[bool, Optional[list], Optional[list[float]], Optional[Any]]:
-    """
-    Vérifie si la page contient la suite de la table en cours.
-
-    Critères :
-    1. Le texte de la page mentionne "Table X ... (continued)" avec le bon numéro
-       OU la table démarre en haut de la page sans autre légende avant elle.
-    2. Une table est présente sur la page.
-    3. Le nombre de colonnes est cohérent (tolérance ±2 pour les cellules fusionnées
-       dans les en-têtes multi-niveaux, ex: Table 2).
-    """
+) -> tuple[bool, Optional[list], Optional[list[float]], Optional[Any], bool]:
     current_table_num = current_table_id.split("_")[1] if "_" in current_table_id else ""
 
-    # ── Extraire les mots de la page ──────────────────────────────────────────
     words = page.extract_words()
-
-    # ── Détecter "(continued)" explicite ──────────────────────────────────────
-    # STM32 écrit "Table X. ... (continued)" en titre de page de continuation.
     page_text = " ".join(w["text"] for w in words).lower()
+
+    # ── Détection "Table X ... (continued)" par regex ─────────────────────────
     has_continued_title = (
         current_table_num
         and f"table {current_table_num}" in page_text
-        and ("continued" in page_text or "(suite)" in page_text)
+        and bool(_CONTINUED_RE.search(page_text))
     )
 
-    # ── Extraire les tables ───────────────────────────────────────────────────
     settings = PDFPLUMBER_TABLE_SETTINGS_TYPE2 if pdf_type == 2 else PDFPLUMBER_TABLE_SETTINGS
-    tables = page.extract_tables(settings)
-    finder = page.debug_tablefinder(settings)
+    fallback_settings = PDFPLUMBER_TABLE_SETTINGS_FALLBACK_TYPE2 if pdf_type == 2 else PDFPLUMBER_TABLE_SETTINGS_FALLBACK
 
-    if not tables or not finder.tables:
-        return False, None, None, None
+    def _extract(settings_dict) -> tuple[Optional[list], Optional[Any]]:
+        tt = page.extract_tables(settings_dict)
+        ff = page.debug_tablefinder(settings_dict)
+        if not tt or not ff.tables:
+            return None, None
+        if pdf_type == 2:
+            filtered = [
+                (t, ft) for t, ft in zip(tt, ff.tables)
+                if ft.bbox[2] - ft.bbox[0] >= MIN_TABLE_WIDTH
+            ]
+            if filtered:
+                tt = [t for t, ft in filtered]
+                ff.tables = [ft for t, ft in filtered]
+        candidates_list = [(t, ft) for t, ft in zip(tt, ff.tables) if t and len(t) >= 1]
+        if not candidates_list:
+            return None, None
+        top_table, top_ft = min(candidates_list, key=lambda x: x[1].bbox[1])
+        return top_table, top_ft
 
-    # Filtrer les bandeaux décoratifs (Type 2)
-    if pdf_type == 2:
-        filtered = [
-            (t, ft) for t, ft in zip(tables, finder.tables)
-            if ft.bbox[2] - ft.bbox[0] >= MIN_TABLE_WIDTH
-        ]
-        if filtered:
-            tables = [t for t, ft in filtered]
-            finder.tables = [ft for t, ft in filtered]
+    # ── Collecter tous les résultats valides ──────────────────────────────────
+    good: list[tuple[list[list], Any, str, Optional[list[float]]]] = []
 
-    # Prendre la table la plus haute sur la page
-    candidates = [(t, ft) for t, ft in zip(tables, finder.tables) if t and len(t) >= 1]
-    if not candidates:
-        return False, None, None, None
+    # Essai 1 : settings principaux (stratégie lignes)
+    top_table, top_ft = _extract(settings)
+    if top_table and top_ft:
+        good.append((top_table, top_ft, "lines", _get_col_x0s(top_ft)))
 
-    top_table, top_ft = min(candidates, key=lambda x: x[1].bbox[1])
+    # Essai 2 : settings fallback (stratégie texte)
+    top_table2, top_ft2 = _extract(fallback_settings)
+    if top_table2 and top_ft2:
+        good.append((top_table2, top_ft2, "text", _get_col_x0s(top_ft2)))
 
+    # Essai 3 : grille construite depuis les mots (fallback ultime)
     if has_continued_title:
-        # Si "(continued)" est détecté, on fait confiance au titre : c'est la bonne table.
-        col_count = len(top_table[0])
-        # Si la table a beaucoup plus de colonnes qu'attendu → pas la bonne table
-        if col_count > expected_col_count + 2:
-            return False, None, None, None
-        # Doit avoir au moins expected - 2 colonnes (évite les petites tables
-        # de note de bas de page qui auraient aussi "(continued)")
-        if col_count < max(2, expected_col_count - 2):
-            return False, None, None, None
-        return True, top_table, _get_col_x0s(top_ft), top_ft
+        text_grid = _build_text_grid(words, page, current_table_num)
+        if text_grid:
+            good.append((text_grid, None, "text_grid", None))
+
+    if not good:
+        return False, None, None, None, has_continued_title
+
+    # ── Si "(continued)" détecté : pivoter ────────────────────────────────────
+    if has_continued_title:
+        best = _pick_best_continuation(good, expected_col_count)
+        if best:
+            table_data, ft, method, x0s = best
+            col_count = max(len(r) for r in table_data) if table_data else 0
+            if col_count < max(2, expected_col_count - 4):
+                logger.info(
+                    f"  continuation page {page.page_number}: col_count={col_count} "
+                    f"too low (expected ~{expected_col_count}), skipping"
+                )
+                return False, None, None, None, True
+            logger.info(
+                f"  continuation page {page.page_number}: {method} strategy, "
+                f"{len(table_data)} rows, {col_count} cols"
+            )
+            return True, table_data, x0s, ft, True
 
     # ── Sans "(continued)" : heuristique de position ──────────────────────────
-    # La table doit être proche du haut de la page.
-    # Seuil élevé (300) car certaines pages ont un en-tête de ~2 cm.
-    if top_ft.bbox[1] > 300:
-        return False, None, None, None
+    # Prendre le premier résultat des stratégies lignes/texte
+    if not good:
+        return False, None, None, None, False
+    table_data, top_ft, method, x0s = good[0]
 
-    # Vérifier qu'il n'y a pas une AUTRE légende de table avant celle-ci
+    if top_ft is not None and top_ft.bbox[1] > 300:
+        return False, None, None, None, False
+
     for w in words:
         if "Table" in w["text"] and w["top"] < top_ft.bbox[1]:
             line_words = [ow for ow in words if abs(ow["top"] - w["top"]) < 3]
             line_text = " ".join(ow["text"] for ow in line_words).lower()
-
-            # Si la légende contient notre numéro de table → c'est la continuation
             if current_table_num and f"table {current_table_num}" in line_text:
-                pass  # OK, c'est notre table qui continue
+                pass
             else:
-                # C'est une nouvelle table différente → stopper
-                return False, None, None, None
+                return False, None, None, None, False
 
-    # Vérifier le nombre de colonnes (tolérance ±2)
-    col_count = len(top_table[0])
+    col_count = max(len(r) for r in table_data) if table_data else 0
     if abs(col_count - expected_col_count) > 2:
-        return False, None, None, None
+        return False, None, None, None, False
 
-    return True, top_table, _get_col_x0s(top_ft), top_ft
+    return True, table_data, x0s, top_ft, False
 
 
 def _expand_cont_row(row: list, expected_col_count: int) -> list:
@@ -291,16 +400,19 @@ def find_continuations(
         if current_page > next_table_page:
             break
 
-        is_cont, table_data, cont_x0s, top_ft = _is_continuation_page(
+        is_cont, table_data, cont_x0s, top_ft, has_title = _is_continuation_page(
             pdf.pages[current_page - 1], expected_col_count, current_table_id, pdf_type
         )
         if not is_cont:
             break
 
         # ── Vérification de la dérive des colonnes ─────────────────────────────
-        # Utilise un alignement glissant pour tolérer les colonnes fantômes
-        # (pdfplumber détecte parfois une colonne None supplémentaire).
-        if base_col_x0s and cont_x0s and len(base_col_x0s) >= 2:
+        # Ignorée quand le titre "(continued)" est présent sur la page : le titre
+        # est une preuve suffisante que c'est la même table, même si la géométrie
+        # des colonnes diffère (ex : lignes de bordures manquantes en continuation
+        # → pdfplumber détecte moins de colonnes, mais _expand_spans_and_headers
+        # les reconstituera à partir de la bbox des cellules fusionnées).
+        if not has_title and base_col_x0s and cont_x0s and len(base_col_x0s) >= 2:
             if abs(len(cont_x0s) - len(base_col_x0s)) <= 1:
                 drift = _min_drift(cont_x0s, base_col_x0s)
             else:
@@ -327,14 +439,6 @@ def find_continuations(
         # ── Supprimer l'en-tête répété ────────────────────────────────────────
         if len(table_data) > 0:
             row0_cell0 = str(table_data[0][0] or "").strip()
-
-            header_keywords = {
-                "symbol", "parameter", "pin", "name", "peripheral",
-                "features", "condition", "conditions", "min", "max",
-                "unit", "typ", "value", "speed"
-            }
-
-            # Méthode 1 : la 1ère cellule correspond au premier texte de la page 1
             if row0_cell0 and first_cell_text and row0_cell0 == first_cell_text:
                 skip = 0
                 for row in table_data:
@@ -344,20 +448,18 @@ def find_continuations(
                     else:
                         break
                 data_rows = table_data[skip:]
-
             else:
                 row0 = [str(c or "").lower() for c in table_data[0]]
-                if any(cell in header_keywords for cell in row0):
+                if any(cell in _HEADER_KEYWORDS for cell in row0):
                     data_rows = table_data[1:]
                 else:
                     data_rows = table_data
+        else:
+            data_rows = []
 
-            # Mettre à jour max_cont_cols
+        if data_rows:
             for row in data_rows:
                 max_cont_cols = max(max_cont_cols, len(row))
-
-            # Collecter les lignes brutes (sans expand/reduce) pour les traiter
-            # toutes avec le même target_cols final
             all_data_rows.extend(data_rows)
 
         current_page += 1

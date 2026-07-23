@@ -7,6 +7,7 @@ Usage:
     python main.py --family C0 --workers 4
     python main.py --all --workers 8
     python main.py --random 20 --workers 8
+    python main.py --pdf DataSHEET/C5/stm32c532cb.pdf --tables 2,5,10,11
 """
 from __future__ import annotations
 import argparse
@@ -42,7 +43,7 @@ if str(REPO_ROOT) not in sys.path:
 
 from config import OUTPUT_DIR, LOG_DIR, RAG_DIR
 from core.toc_detector import detect_tables
-from core.grid_extractor import extract_table_grid, extract_footnotes_from_pages, extract_legend_from_page
+from core.grid_extractor import extract_table_grid, extract_footnotes_from_pages, extract_legend_from_page, extract_notes_type1
 from core.glyph_fixer import correct_footer_in_table
 import pdfplumber
 from core.schema import RawTable
@@ -108,15 +109,16 @@ logging.basicConfig(
 logger = logging.getLogger("main")
 
 
-def process_pdf(pdf_path: Path, family: str) -> dict:
+def process_pdf(pdf_path: Path, family: str, table_ids: list[int] | None = None) -> dict:
     """
     Traite un PDF complet :
     1. Détecte le type (Acrobat vs Antenna House) via detect_pdf_type
     2. Détecte les tables (TOC ou scan) via detect_tables
-    3. Extrait chaque table via extract_table_grid (pipeline complet)
-    4. Valide via Pydantic (RawTable schema)
-    5. Sauvegarde en JSON + image debug si nécessaire
-    6. Génère le chunks RAG (optionnel)
+    3. Filtre par table_ids si spécifié (ex: [2, 5, 10, 11])
+    4. Extrait chaque table via extract_table_grid (pipeline complet)
+    5. Valide via Pydantic (RawTable schema)
+    6. Sauvegarde en JSON + image debug si nécessaire
+    7. Génère le chunks RAG (optionnel)
 
     Retourne un résumé du run pour ce PDF.
     """
@@ -145,9 +147,12 @@ def process_pdf(pdf_path: Path, family: str) -> dict:
     pdf_type = detect_pdf_type(str(pdf_path))
     logger.info(f"PDF type: {pdf_type} ({'Antenna House' if pdf_type == 2 else 'Acrobat'})")
 
+    # ── Ouverture unique du PDF ────────────────────────────────────────────────
+    pdf = pdfplumber.open(str(pdf_path))
+
     # ── Étape 1 : détection ────────────────────────────────────────────────────
     try:
-        refs = detect_tables(str(pdf_path), pdf_type=pdf_type)
+        refs = detect_tables(str(pdf_path), pdf_type=pdf_type, pdf=pdf)
     except Exception as e:
         logger.error(f"TOC detection failed: {e}")
         summary["errors"].append(f"toc_detection:{e}")
@@ -156,12 +161,20 @@ def process_pdf(pdf_path: Path, family: str) -> dict:
     summary["tables_found"] = len(refs)
     logger.info(f"Detected {len(refs)} tables")
 
+    # ── Filtrage par IDs de tables spécifiques (--tables) ────────────────────────
+    if table_ids is not None:
+        allowed = {f"table_{tid}" for tid in table_ids}
+        refs = [r for r in refs if r.table_id in allowed]
+        logger.info(f"  --tables filter: kept {len(refs)}/{summary['tables_found']} "
+                    f"({', '.join(r.table_id for r in refs)})")
+        summary["tables_found"] = len(refs)
+
     # ── Étape 1b : Features extraction (indépendante, n'affecte pas les tables) ──
     features_path = out_dir / "features.json"
     if not features_path.exists():
         try:
             from core.page1_features import extract_features_page_range
-            features = extract_features_page_range(str(pdf_path))
+            features = extract_features_page_range(str(pdf_path), pdf=pdf)
             features_path.write_text(
                 json.dumps(features, ensure_ascii=False, indent=2),
                 encoding="utf-8"
@@ -177,12 +190,10 @@ def process_pdf(pdf_path: Path, family: str) -> dict:
         logger.warning("No tables detected — PDF may have no table index")
         return summary
 
-    # ── Cache de textes (Type 2 seulement, pour notes/légendes) ────────────────
+    # ── Cache de textes (pour notes/légendes, tous types) ─────────────────────
     page_text_cache: dict[int, str] = {}
-    if pdf_type == 2:
-        with pdfplumber.open(str(pdf_path)) as pdf:
-            for i in range(len(pdf.pages)):
-                page_text_cache[i + 1] = pdf.pages[i].extract_text() or ""
+    for i in range(len(pdf.pages)):
+        page_text_cache[i + 1] = pdf.pages[i].extract_text() or ""
 
     # ── Étape 2 : extraction ───────────────────────────────────────────────────
     extracted_tables = []
@@ -197,6 +208,7 @@ def process_pdf(pdf_path: Path, family: str) -> dict:
                 output_base=OUTPUT_DIR,
                 all_refs=refs,
                 pdf_type=pdf_type,
+                pdf=pdf,
             )
 
             # ── Garde-fou : dessins mécaniques/PCB détectés comme tableaux vides ──
@@ -211,24 +223,30 @@ def process_pdf(pdf_path: Path, family: str) -> dict:
             # ── Correction des tirets manquants dans les colonnes Min/Max/Typ ────
             raw_dict = _fix_missing_dashes(raw_dict)
 
-            # ── Notes et légendes (Type 2 seulement) ──────────────────────────────
-            if pdf_type == 2 and page_text_cache:
+            # ── Notes et légendes (tous types) ───────────────────────────────────
+            if page_text_cache:
                 pages = raw_dict.get("merged_pages", [raw_dict.get("page", 1)])
-                notes = extract_footnotes_from_pages(
-                    raw_dict.get("rows", []),
-                    raw_dict.get("headers", []),
-                    page_text_cache,
-                    pages,
-                )
-                if notes:
-                    raw_dict.setdefault("heuristics", {})["_notes"] = notes
+                rows = raw_dict.get("rows", [])
+                headers = raw_dict.get("headers", [])
+                caption = raw_dict.get("caption", "")
 
-                legend = extract_legend_from_page(
-                    raw_dict.get("caption", ""),
-                    raw_dict.get("headers", []),
-                    page_text_cache,
-                    pages,
-                )
+                # Pattern A: marqueurs (N) dans les cellules (Type 1 & 2)
+                notes = extract_footnotes_from_pages(rows, headers, page_text_cache, pages)
+
+                # Pattern B: Notes: heading ou notes sans marqueurs (Type 1)
+                if not notes:
+                    notes = extract_notes_type1(rows, caption, page_text_cache, pages)
+
+                if notes:
+                    # Format: préfixe doc_ref/revision si disponible
+                    doc_ref = raw_dict.get("doc_ref", "")
+                    revision = raw_dict.get("revision", "")
+                    prefix = f"[{doc_ref} {revision}] " if doc_ref and revision else ""
+                    raw_dict.setdefault("heuristics", {})["_notes"] = [
+                        f"{prefix}{n}" if prefix else n for n in notes
+                    ]
+
+                legend = extract_legend_from_page(caption, headers, page_text_cache, pages)
                 if legend:
                     raw_dict.setdefault("heuristics", {})["_legend"] = legend
 
@@ -309,11 +327,14 @@ def process_pdf(pdf_path: Path, family: str) -> dict:
 
     # ── Génération Rag_selective (schéma allégé, text_helper) ──────────────
     try:
-        n_selective = build_rag_pdf(pdf_name, family, out_dir, RAG_DIR)
+        n_selective = build_rag_pdf(pdf_name, family, out_dir, RAG_DIR, pdf=pdf)
         if n_selective > 0:
             logger.info(f"Rag_selective: {n_selective} tables -> Rag_selective/{family}/{pdf_name}/")
     except Exception as e:
         logger.error(f"Rag_selective generation failed: {e}")
+
+    # ── Fermeture du PDF ────────────────────────────────────────────────────────
+    pdf.close()
 
     # ── Rapport de synthèse ────────────────────────────────────────────────────
     # Toutes les tables problématiques : non-high + high avec cellules vides
@@ -413,18 +434,24 @@ def main():
 
     parser.add_argument("--workers", type=int, default=None,
                         help="Nombre de workers parallèles (défaut = nombre de cœurs CPU)")
+    parser.add_argument("--tables", type=str, default=None,
+                        help="IDs de tables spécifiques, ex: 2,5,10,11 (avec --pdf uniquement)")
 
     # Chemin racine des PDFs — sous-dossier DataSHEET du repo
     DATASHEETS_ROOT = Path(__file__).parent.parent / "DataSHEET"
 
     args = parser.parse_args()
     workers = args.workers or os.cpu_count() or 1
+    table_ids = [int(x.strip()) for x in args.tables.split(",")] if args.tables else None
+
+    if args.tables and not args.pdf:
+        logger.warning("--tables est ignoré sans --pdf (utilisable uniquement avec un seul PDF)")
 
     if args.pdf:
         # Un seul PDF — déduire la famille depuis le dossier parent
         pdf_path = args.pdf.resolve()
         family = pdf_path.parent.name
-        process_pdf(pdf_path, family)
+        process_pdf(pdf_path, family, table_ids=table_ids)
 
     elif args.family:
         family_dir = DATASHEETS_ROOT / args.family

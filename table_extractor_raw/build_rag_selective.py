@@ -86,42 +86,37 @@ def get_bookmarks(pdf_path: str) -> list[tuple[int, str]]:
 #  Source B — Page "Contents" parsée
 # ═══════════════════════════════════════════════════════════════════════════════════
 
-def get_toc_from_contents_page(pdf_path: str, max_scan_pages: int = 15) -> list[tuple[int, str]]:
+def get_toc_from_contents_page(pdf, max_scan_pages: int = 15) -> list[tuple[int, str]]:
     """
     Scanne le DÉBUT du PDF (premières pages) + la FIN (dernières pages) à la
     recherche de la page "Contents" et en extrait les lignes de section avec
     numéros de page.
 
-    Les datasheets Type 1 (Acrobat) ont le sommaire au début,
-    les Type 2 (Antenna House) l'ont à la fin.
-
-    Convertit les numéros ST en index PDF réels via _st_to_actual_page.
-    Retourne [(page_num_pdf, "X.Y Title"), ...] trié par page.
+    Reçoit un objet pdfplumber.PDF déjà ouvert (évite une réouverture coûteuse).
     """
     from core.toc_detector import _st_to_actual_page
 
     entries: list[tuple[int, str]] = []
+    n_pages = len(pdf.pages)
 
-    with pdfplumber.open(pdf_path) as pdf:
-        # Pages à scanner : début + fin
-        scan_pages = set(range(min(max_scan_pages, len(pdf.pages))))
-        scan_pages.update(
-            range(max(0, len(pdf.pages) - max_scan_pages), len(pdf.pages))
-        )
+    scan_pages = set(range(min(max_scan_pages, n_pages)))
+    scan_pages.update(
+        range(max(0, n_pages - max_scan_pages), n_pages)
+    )
 
-        for pg_idx in sorted(scan_pages):
-            page = pdf.pages[pg_idx]
-            text = page.extract_text() or ""
-            if "Contents" not in text:
-                continue
-            for line in text.split("\n"):
-                m = TOC_LINE_PATTERN.match(line.strip())
-                if m:
-                    num = m.group(1)
-                    title = m.group(2).strip()
-                    st_page = int(m.group(3))
-                    actual_page = _st_to_actual_page(pdf, st_page)
-                    entries.append((actual_page, f"{num} {title}"))
+    for pg_idx in sorted(scan_pages):
+        page = pdf.pages[pg_idx]
+        text = page.extract_text() or ""
+        if "Contents" not in text:
+            continue
+        for line in text.split("\n"):
+            m = TOC_LINE_PATTERN.match(line.strip())
+            if m:
+                num = m.group(1)
+                title = m.group(2).strip()
+                st_page = int(m.group(3))
+                actual_page = _st_to_actual_page(pdf, st_page)
+                entries.append((actual_page, f"{num} {title}"))
 
     return sorted(entries, key=lambda x: x[0])
 
@@ -220,12 +215,15 @@ def get_section_dual(
 #  Section detection Y-position (fallback interne, gardé tel quel)
 # ═══════════════════════════════════════════════════════════════════════════════════
 
+_page_words_cache: dict[int, list] = {}
+
 def _find_caption_y(page, caption: str) -> Optional[float]:
+    page_id = id(page)
+    if page_id not in _page_words_cache:
+        _page_words_cache[page_id] = page.extract_words() or []
+    words = _page_words_cache[page_id]
     caption_words = caption.lower().split()[:5]
-    if not caption_words:
-        return None
-    words = page.extract_words()
-    if not words:
+    if not caption_words or not words:
         return None
     for idx, word in enumerate(words):
         w_clean = word["text"].lower().split("(")[0].rstrip(".,:;!?")
@@ -245,18 +243,25 @@ def _find_caption_y(page, caption: str) -> Optional[float]:
     return None
 
 
-def _build_section_cache(pdf, pdf_type: int = 1) -> dict[int, list[tuple[float, str]]]:
+def _build_section_cache(pdf, pdf_type: int = 1, table_pages: set[int] | None = None) -> dict[int, list[tuple[float, str]]]:
     cache: dict[int, list[tuple[float, str]]] = {}
     TABLE_CONTENT_RE = re.compile(
         r'\b(Yes|No|N/A|NA|Enabled|Disabled)\b', re.IGNORECASE
     )
-    # Extraire les numéros de section valides depuis le Contents
     from core.toc_detector import _extract_toc_section_numbers, _section_in_whitelist
     toc_whitelist = _extract_toc_section_numbers(pdf, pdf_type)
     seen_nums: set[str] = set()
 
-    for pg_idx, page in enumerate(pdf.pages):
+    if table_pages:
+        min_pg = max(1, min(table_pages) - 20)
+        max_pg = max(table_pages)
+        page_range = range(min_pg - 1, max_pg)
+    else:
+        page_range = range(len(pdf.pages))
+
+    for pg_idx in page_range:
         pgnum = pg_idx + 1
+        page = pdf.pages[pg_idx]
         lines = page.extract_text_lines() or []
         for line_info in lines:
             text = line_info["text"].strip()
@@ -270,10 +275,8 @@ def _build_section_cache(pdf, pdf_type: int = 1) -> dict[int, list[tuple[float, 
                 sec_title = re.sub(r'\s{2,}', ' ', sec_title)
                 if not sec_title or TABLE_CONTENT_RE.search(sec_title):
                     continue
-                # Filtrer : ne garder que les sections du TOC
                 if not _section_in_whitelist(sec_num, toc_whitelist):
                     continue
-                # Dédupliquer : ne garder que la 1ère occurrence
                 if sec_num in seen_nums:
                     continue
                 seen_nums.add(sec_num)
@@ -319,78 +322,156 @@ def _resolve_section_from_page(
 #  Transformation — fonction pure, testable isolément
 # ═══════════════════════════════════════════════════════════════════════════════════
 
+def _section_title(section: str) -> str:
+    """Extract the title part after the section number.
+    Ex: "5.3.13 I/O port characteristics" → "I/O port characteristics"
+    """
+    if not section:
+        return ""
+    m = re.match(r'^[\d.]+\s+(.*)', section)
+    return m.group(1).strip() if m else section
+
+
+def _text_helper(caption: str, section: str, headers: list, rows_count: int) -> str:
+    """Build text helper string."""
+    parts = [caption]
+    if section:
+        parts.append(f" — section {section}")
+    parts.append(".")
+    if headers:
+        preview = headers[:5]
+        preview_str = ", ".join(preview)
+        if len(headers) > 5:
+            preview_str += f", +{len(headers) - 5} autres"
+        parts.append(f" {preview_str}.")
+    else:
+        parts.append(".")
+    if rows_count == 0:
+        parts.append(" (table vide)")
+    text_helper = "".join(parts)
+    if len(text_helper) > 300:
+        text_helper = text_helper[:297] + "..."
+    return text_helper
+
+
 def transform_table(
     raw_json: dict,
     section: str = "",
     features_data: dict = None,
 ) -> Optional[dict]:
+    """Format \"une seule table\" pour Rag_selective/."""
     try:
         table_id = raw_json.get("table_id", "")
         caption = raw_json.get("caption", "")
         pdf_name = raw_json.get("pdf_name", "")
-        family = raw_json.get("family", "")
         merged_pages = raw_json.get("merged_pages", [])
         page = raw_json.get("page", merged_pages[0] if merged_pages else 1)
         headers = raw_json.get("headers", [])
         rows = raw_json.get("rows", [])
 
-        url = f"https://www.st.com/resource/en/datasheet/{pdf_name}.pdf"
-        url_table = f"{url}#page={page}"
-
         if not section:
             section = raw_json.get("section", "") or ""
 
-        rows_count = len(rows)
-        cols_count = len(headers)
+        doc_ref = features_data.get("doc_ref", "") if features_data else ""
+        revision = features_data.get("revision", "") if features_data else ""
+        url = f"https://www.st.com/resource/en/datasheet/{pdf_name}.pdf"
+        url_table = f"{url}#page={page}"
+        table_number = table_id.replace("table_", "")
 
-        parts = [caption]
-        if section:
-            parts.append(f" — section {section}")
-        parts.append(".")
+        heuristics = raw_json.get("heuristics", {}) or {}
+        notes = heuristics.get("_notes", [])
+        legend = heuristics.get("_legend", "")
 
-        n_headers = len(headers)
-        if n_headers > 0:
-            preview = headers[:5]
-            preview_str = ", ".join(preview)
-            if n_headers > 5:
-                preview_str += f", +{n_headers - 5} autres"
-            parts.append(f" {preview_str}.")
-        else:
-            parts.append(".")
-
-        if rows_count == 0:
-            parts.append(" (table vide)")
-
-        text_helper = "".join(parts)
-        if len(text_helper) > 300:
-            text_helper = text_helper[:297] + "..."
+        document = f"{doc_ref} {revision} - {caption}" if doc_ref and revision else caption
 
         return {
-            "table": [
-                ["table_id", table_id],
-                ["title", caption],
-                ["pdf_name", pdf_name],
-                ["family", family],
-                ["doc_ref", features_data.get("doc_ref", "") if features_data else ""],
-                ["revision", features_data.get("revision", "") if features_data else ""],
-                ["date", features_data.get("date", "") if features_data else ""],
-                ["page", page],
-                ["merged_pages", merged_pages],
-                ["url", url],
-                ["url_table", url_table],
-                ["section", section],
-                ["rows_count", rows_count],
-                ["cols_count", cols_count],
-                ["text_helper", text_helper],
-            ],
-            "table_content": [
-                ["headers", headers],
-                ["rows", rows],
-            ],
+            "table_id": table_id,
+            "document": document,
+            "rev": revision,
+            "table_number": table_number,
+            "title": caption,
+            "page": page,
+            "section": section,
+            "section_title": _section_title(section),
+            "semantic_type": "",
+            "tags": [],
+            "url": url_table,
+            "url_pdf": url,
+            "text_helper": _text_helper(caption, section, headers, len(rows)),
+            "table_content": {
+                "headers": headers,
+                "rows": rows,
+                "notes": notes,
+                "legend": legend,
+                "semantic_type": "",
+                "semantic": {},
+            },
         }
     except Exception as e:
         logger.error(f"transform_table failed for {raw_json.get('table_id', '?')}: {e}")
         return None
+
+
+def _build_complete_doc(
+    raw_json: dict,
+    section: str,
+    features_data: dict,
+    pdf_name: str,
+) -> dict:
+    """Format \"document complet\" pour _all_tables.json."""
+    table_id = raw_json.get("table_id", "")
+    caption = raw_json.get("caption", "")
+    merged_pages = raw_json.get("merged_pages", [])
+    page = raw_json.get("page", merged_pages[0] if merged_pages else 1)
+    headers = raw_json.get("headers", [])
+    rows = raw_json.get("rows", [])
+
+    doc_ref = features_data.get("doc_ref", "") if features_data else ""
+    revision = features_data.get("revision", "") if features_data else ""
+    family = features_data.get("family", "") if features_data else ""
+    core = features_data.get("core", "") if features_data else ""
+    freq = features_data.get("max_frequency_mhz", "") if features_data else ""
+    packages = features_data.get("packages", []) if features_data else []
+    package_str = ", ".join(packages)
+
+    url = f"https://www.st.com/resource/en/datasheet/{pdf_name}.pdf"
+    url_table = f"{url}#page={page}"
+    table_number = table_id.replace("table_", "")
+
+    heuristics = raw_json.get("heuristics", {}) or {}
+    notes = heuristics.get("_notes", [])
+    legend = heuristics.get("_legend", "")
+
+    document = f"{doc_ref} {revision} - {pdf_name} - {caption}" if doc_ref and revision else f"{pdf_name} - {caption}"
+
+    return {
+        "document": document,
+        "rev": revision,
+        "url_pdf": url,
+        "references": doc_ref,
+        "package": package_str,
+        "family": family,
+        "core": core,
+        "frequency": str(freq),
+        "table_id": table_id,
+        "table_number": table_number,
+        "title": caption,
+        "page": page,
+        "section": section,
+        "section_title": _section_title(section),
+        "semantic_type": "",
+        "tags": [],
+        "url": url_table,
+        "text_helper": _text_helper(caption, section, headers, len(rows)),
+        "table_content": {
+            "headers": headers,
+            "rows": rows,
+            "notes": notes,
+            "legend": legend,
+            "semantic_type": "",
+            "semantic": {},
+        },
+    }
 
 
 def transform_features(features: dict) -> dict:
@@ -493,6 +574,7 @@ def process_pdf(
     family: str,
     out_dir: Path,
     rag_base: Path = RAG_DIR,
+    pdf=None,
 ) -> int:
     src_dir = out_dir
     if not src_dir.exists():
@@ -525,25 +607,33 @@ def process_pdf(
     )
 
     # Initialiser les sources + fallback
-    pdf = None
     section_cache: dict[int, list[tuple[float, str]]] = {}
     bookmarks: list[tuple[int, str]] = []
     toc_entries: list[tuple[int, str]] = []
     table_sections: dict[str, str] = {}
     section_results: dict[str, dict] = {}
 
+    _own_pdf = False
     if pdf_path:
         try:
-            pdf = pdfplumber.open(str(pdf_path))
-            # Détecter le type de PDF pour le filtrage des sections
+            if pdf is None:
+                pdf = pdfplumber.open(str(pdf_path))
+                _own_pdf = True
             try:
                 producer = (pdf.metadata or {}).get("Producer", "")
                 pdf_type_val = 2 if "antenna" in producer.lower() else 1
             except Exception:
                 pdf_type_val = 1
-            section_cache = _build_section_cache(pdf, pdf_type_val)
+            table_pages = set()
+            for f in table_files:
+                try:
+                    raw = json.loads(f.read_text(encoding="utf-8"))
+                    table_pages.add(raw.get("page", 1))
+                except Exception:
+                    pass
+            section_cache = _build_section_cache(pdf, pdf_type_val, table_pages or None)
             bookmarks = get_bookmarks(str(pdf_path))
-            toc_entries = get_toc_from_contents_page(str(pdf_path))
+            toc_entries = get_toc_from_contents_page(pdf)
         except Exception as e:
             logger.warning(f"Failed initialisation for {pdf_path}: {e}")
 
@@ -590,7 +680,8 @@ def process_pdf(
                                             "source": "none", "alt_section": ""}
 
     # ── Transformation + écriture ──────────────────────────────────────────
-    transformed = []
+    transformed_single = []
+    transformed_complete = []
     errors = 0
 
     for fpath in table_files:
@@ -598,25 +689,31 @@ def process_pdf(
             raw = json.loads(fpath.read_text(encoding="utf-8"))
             tid = raw.get("table_id", "")
             section = table_sections.get(tid, raw.get("section", ""))
-            result = transform_table(raw, section=section, features_data=features_data)
-            if result is None:
+
+            single = transform_table(raw, section=section, features_data=features_data)
+            if single is None:
                 errors += 1
                 _log_error(f"transform returned None for {fpath.name}")
                 continue
 
-            out_path = dest_dir / fpath.name
+            complete = _build_complete_doc(raw, section, features_data, pdf_name)
+
+            doc_ref = features_data.get("doc_ref", "") if features_data else ""
+            revision_raw = features_data.get("revision", "") if features_data else ""
+            revision_clean = revision_raw.replace(" ", "_")
+            name_prefix = f"{doc_ref}_{revision_clean}" if doc_ref and revision_clean else pdf_name
+            out_name = f"{name_prefix}_{fpath.stem}.json"
+            out_path = dest_dir / out_name
             out_path.write_text(
-                json.dumps(result, ensure_ascii=False, indent=2),
+                json.dumps(single, ensure_ascii=False, indent=2),
                 encoding="utf-8",
             )
-            transformed.append(result)
+            transformed_single.append(single)
+            transformed_complete.append(complete)
 
         except Exception as e:
             errors += 1
             _log_error(f"{fpath.name}: {e}")
-
-    if pdf is not None:
-        pdf.close()
 
     # ── Écrire features.json dans Rag_selective/ ──────────────────────────
     if features_data:
@@ -631,29 +728,15 @@ def process_pdf(
             logger.warning(f"Failed to write features.json to Rag_selective: {e}")
 
     # ── _all_tables.json par PDF ────────────────────────────────────────────
-    if transformed:
-        all_path = dest_dir / "_all_tables.json"
-        
-        # Construire le contenu avec features en premier
-        ds_entry = {
-            "pdf_name": pdf_name,
-            "family": family,
-            "url": f"https://www.st.com/resource/en/datasheet/{pdf_name}.pdf",
-        }
-        
-        # Ajouter les features en premier (avant les tables)
-        if features_data:
-            try:
-                ds_entry["features"] = transform_features(features_data)
-            except Exception as e:
-                logger.warning(f"Failed to add features to _all_tables.json: {e}")
-        
-        # Ajouter les tables après les features
-        ds_entry["tables"] = transformed
-        
-        all_data = {"datasheets": [ds_entry]}
+    if transformed_complete:
+        doc_ref = features_data.get("doc_ref", "") if features_data else ""
+        revision_raw = features_data.get("revision", "") if features_data else ""
+        revision_clean = revision_raw.replace(" ", "_")
+        name_prefix = f"{doc_ref}_{revision_clean}" if doc_ref and revision_clean else pdf_name
+        all_name = f"{name_prefix}__all_tables.json"
+        all_path = dest_dir / all_name
         all_path.write_text(
-            json.dumps(all_data, ensure_ascii=False, indent=2),
+            json.dumps(transformed_complete, ensure_ascii=False, indent=2),
             encoding="utf-8",
         )
 
@@ -663,9 +746,13 @@ def process_pdf(
 
     logger.info(
         f"Rag_selective/{family}/{pdf_name}: "
-        f"{len(transformed)} tables, {errors} errors"
+        f"{len(transformed_single)} tables, {errors} errors"
     )
-    return len(transformed)
+
+    if _own_pdf and pdf is not None:
+        pdf.close()
+
+    return len(transformed_single)
 
 
 def _print_section_report(pdf_name: str, results: dict[str, dict]) -> None:
