@@ -42,8 +42,9 @@ if str(REPO_ROOT) not in sys.path:
 
 from config import OUTPUT_DIR, LOG_DIR, RAG_DIR
 from core.toc_detector import detect_tables
-from core.grid_extractor import extract_table_grid
+from core.grid_extractor import extract_table_grid, extract_footnotes_from_pages, extract_legend_from_page
 from core.glyph_fixer import correct_footer_in_table
+import pdfplumber
 from core.schema import RawTable
 from build_rag_selective import process_pdf as build_rag_pdf
 
@@ -176,6 +177,13 @@ def process_pdf(pdf_path: Path, family: str) -> dict:
         logger.warning("No tables detected — PDF may have no table index")
         return summary
 
+    # ── Cache de textes (Type 2 seulement, pour notes/légendes) ────────────────
+    page_text_cache: dict[int, str] = {}
+    if pdf_type == 2:
+        with pdfplumber.open(str(pdf_path)) as pdf:
+            for i in range(len(pdf.pages)):
+                page_text_cache[i + 1] = pdf.pages[i].extract_text() or ""
+
     # ── Étape 2 : extraction ───────────────────────────────────────────────────
     extracted_tables = []
     all_tables_json = []
@@ -202,6 +210,27 @@ def process_pdf(pdf_path: Path, family: str) -> dict:
 
             # ── Correction des tirets manquants dans les colonnes Min/Max/Typ ────
             raw_dict = _fix_missing_dashes(raw_dict)
+
+            # ── Notes et légendes (Type 2 seulement) ──────────────────────────────
+            if pdf_type == 2 and page_text_cache:
+                pages = raw_dict.get("merged_pages", [raw_dict.get("page", 1)])
+                notes = extract_footnotes_from_pages(
+                    raw_dict.get("rows", []),
+                    raw_dict.get("headers", []),
+                    page_text_cache,
+                    pages,
+                )
+                if notes:
+                    raw_dict.setdefault("heuristics", {})["_notes"] = notes
+
+                legend = extract_legend_from_page(
+                    raw_dict.get("caption", ""),
+                    raw_dict.get("headers", []),
+                    page_text_cache,
+                    pages,
+                )
+                if legend:
+                    raw_dict.setdefault("heuristics", {})["_legend"] = legend
 
             # Validation Pydantic
             table_obj = RawTable(**raw_dict)

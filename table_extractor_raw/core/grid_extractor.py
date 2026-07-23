@@ -2206,3 +2206,157 @@ def _merge_empty_header_rightward(
             f"({merged_count} merged)"
         )
     return new_headers, new_rows, merged_count
+
+
+def extract_footnotes_from_pages(
+    rows: list[list],
+    headers: list[str],
+    page_text_cache: dict[int, str],
+    pages: list[int],
+) -> list[str]:
+    """Extrait les notes de bas de tableau (1. ..., 2. ...) correspondant aux
+    marqueurs (N) dans les cellules ET les headers.
+    Utilise page_text_cache (dict page_num->text) au lieu d'ouvrir le PDF.
+    Retourne ['1. X = supported.', '2. Wake-up supported from Stop mode.', ...]."""
+    markers: set[str] = set()
+    for cell in headers:
+        for m in re.finditer(r'\((\d+)\)', str(cell)):
+            markers.add(m.group(1))
+    for row in rows:
+        for cell in row:
+            for m in re.finditer(r'\((\d+)\)', str(cell)):
+                markers.add(m.group(1))
+    if not markers:
+        return []
+
+    scan_pages = set(pages)
+    if pages:
+        scan_pages.add(max(pages) + 1)
+
+    notes: dict[str, str] = {}
+    SECTION_RE = re.compile(r'^\d+(?:\.\d+){1,3}\s')
+    for pg_num in scan_pages:
+        text = page_text_cache.get(pg_num)
+        if not text:
+            continue
+        lines = text.split("\n")
+        i = 0
+        while i < len(lines):
+            line = lines[i].strip()
+            m = re.match(r'^(\d+)\.\s+(.+)', line)
+            if m and m.group(1) in markers:
+                num = m.group(1)
+                note_parts = [m.group(2)]
+                if i + 1 < len(lines):
+                    nxt = lines[i + 1].strip()
+                    if (nxt and not re.match(r'^\d+\.\s+', nxt)
+                            and not SECTION_RE.match(nxt)
+                            and not re.match(r'^Table\s+\d+', nxt, re.I)
+                            and not re.match(r'^Figure\s+\d+', nxt, re.I)
+                            and len(nxt) < 150):
+                        note_parts.append(nxt)
+                        i += 1
+                full = " ".join(note_parts)
+                if num not in notes:
+                    notes[num] = f"{num}. {full}"
+            i += 1
+
+    return [notes[k] for k in sorted(notes, key=int)]
+
+
+def extract_legend_from_page(
+    caption: str,
+    headers: list[str],
+    page_text_cache: dict[int, str],
+    pages: list[int],
+) -> list[str]:
+    """Extrait la légende : texte entre le titre du tableau (caption) et la
+    première ligne d'en-têtes (headers). Ne contient jamais de numérotation.
+    Retourne ['Specified by design...', 'Clocked by HSI...', ...]."""
+    if not caption or not headers:
+        return []
+
+    # Extraire le numéro de table depuis le caption
+    m_table = re.match(r'Table\s+(\d+)', caption, re.I)
+    if not m_table:
+        return []
+    table_num = m_table.group(1)
+
+    # Premier header pour repérer la limite basse
+    first_header_words = headers[0].strip().split()[:2]
+    if not first_header_words:
+        return []
+
+    legend_lines: list[str] = []
+    NOTE_RE = re.compile(r'^\d+\.\s')
+    SECTION_RE = re.compile(r'^\d+(?:\.\d+){1,3}\s')
+
+    for pg_num in pages:
+        text = page_text_cache.get(pg_num)
+        if not text:
+            continue
+        lines = text.split("\n")
+        # Trouver la ligne du caption "Table X."
+        caption_idx = None
+        for idx, line in enumerate(lines):
+            if re.match(rf'^Table\s+{table_num}\b', line.strip(), re.I):
+                caption_idx = idx
+                break
+        if caption_idx is None:
+            continue
+
+        # Trouver la ligne du premier header
+        header_idx = None
+        for idx in range(caption_idx + 1, len(lines)):
+            line = lines[idx].strip()
+            if all(w in line for w in first_header_words):
+                header_idx = idx
+                break
+
+        if header_idx is None or header_idx <= caption_idx + 1:
+            continue
+
+        # Construire l'ensemble des mots significatifs des headers
+        # pour détecter les fragments d'en-têtes multi-lignes
+        header_words: set[str] = set()
+        for h in headers:
+            for w in h.split():
+                if len(w) >= 2:
+                    header_words.add(w.lower().strip("(),./"))
+
+        # Tout ce qui est entre caption et header, sans numérotation
+        for idx in range(caption_idx + 1, header_idx):
+            line = lines[idx].strip()
+            if not line:
+                continue
+            if NOTE_RE.match(line):
+                continue
+            if SECTION_RE.match(line):
+                continue
+            if re.match(r'^Table\s+\d+', line, re.I):
+                continue
+            if re.match(r'^Figure\s+\d+', line, re.I):
+                continue
+
+            # Filtre 1 : fragment d'en-tête — tous les mots apparaissent dans les headers
+            # ex: "I3C I3C" (I3C est dans le header), "SPI2S1, SPI2S2, SPI2S3"
+            words = line.split()
+            sig_words = [w.lower().strip("(),./") for w in words if len(w) >= 2]
+            if sig_words and all(w in header_words for w in sig_words):
+                continue
+
+            # Filtre 2 : titre court — ≤5 mots, tous commencent par majuscule
+            # ex: "Max LDO", "Conditions", "HSE HCLK", "Level/", "Operating"
+            if len(words) <= 5 and all(w[0].isupper() for w in words if w):
+                continue
+
+            # Filtre 3 : identifiants majuscules — tous les tokens sont des
+            # identifiants techniques (AF0, I3C, HSE, HCLK, etc.)
+            # ex: "AF0 AF1 AF2 AF3 AF4 AF5 AF6 AF7 AF8 AF9 AF10 AF11 AF12 AF13 AF14 AF15"
+            if all(re.match(r'^[A-Z][A-Z0-9]*[,./()]?$', w.strip("(),./"))
+                   for w in words if len(w) >= 2):
+                continue
+
+            legend_lines.append(line)
+
+    return legend_lines

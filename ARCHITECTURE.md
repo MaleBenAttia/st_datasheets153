@@ -180,6 +180,25 @@ Les deux types de PDF ont des différences de formatage sur la page 1 :
 | Timer line | `• 8 timers: 16-bit...` | `9 timers, RTC, and 2 watchdogs` (sans puce) |
 | Comm. interfaces | `• One I2C-bus interface` | `• 3x I2C interfaces supporting Fast-mode` |
 
+### Extraction des notes `(N)` et légendes (Type 2 uniquement, Fix 21)
+
+Dans les tableaux Type 2, les notes sont référencées dans les cellules et les en-têtes via le marqueur `(N)` (ex: `"Features(1)"`). Le texte `"1. X = supported."` se trouve en bas de la page de début du tableau, potentiellement sur plusieurs lignes ou sur la page suivante.
+
+**Fonctions :**
+| Fonction | Fichier:Ligne | Rôle |
+|---|---|---|
+| `extract_footnotes_from_pages()` | `:2211` | Scanne contenu rows + headers pour marqueurs `(N)`, lit texte de page(s) via `page_text_cache` pour les lignes `N. ...` |
+| `extract_legend_from_page()` | `:2267` | Texte descriptif entre caption et headers. 3 filtres : header-words, titre ≤5 mots uppercase, identifiants techniques |
+
+**Stockage :** `heuristics._notes` (liste de str), `heuristics._legend` (str)
+
+**Performance :** `page_text_cache` (dict `{num_page: texte}`) construit UNE SEULE fois dans `main.py:179` avant la boucle d'extraction → 1 ouverture PDF au lieu de 88.
+
+**Filtres légende (élimination faux positifs) :**
+1. **Header fragment** : tous les mots significatifs dans les headers → rejeté (ex: `"I3C I3C"` rejeté car "I3C" header)
+2. **Titre court** : ≤5 mots, tous uppercase → rejeté (ex: `"POWER SUPPLY"`)
+3. **Identifiants techniques** : tous les mots sont des identifiants connus → rejeté (ex: `"AF0 AF1..."`)
+
 ### Sortie — `features.json`
 
 **outJason (brut) :**
@@ -310,6 +329,7 @@ Ordre d'appel interne (les "Fix") :
 | 24 | Fix 18 | Extension `_remove_bleed_rows_bottom()` | `:1481` | Nouvelle heuristique : 1ère cellule non-alphanumérique (`.4 Embe`, `(1)`) → suppression ligne parasite |
 | 25 | Fix 19 | Filtre footnote `(N)` post-merge | `:1319` | Supprime toute ligne dont la 1ère cellule est exactement `(1)`, `(2)`, etc. (notes de bas de tableau non capturées par les autres filtres) |
 | 26 | Fix 20 | `_apply_rotated_fix()` + `_fix_reversed_cells()` | `:1876` + `:1411` | Correction robuste du texte inversé dans cellules fusionnées verticales. Matching `re.sub(r'[^a-zA-Z0-9]', '', ...)` + `startswith()` pour gérer abréviations (`Comm.interfaces` vs `Communicationinterfaces`). Post-processing basé sur `1er_caractère_minuscule && dernier_majuscule`. |
+| 27 | Fix 21 | `extract_footnotes_from_pages()` + `extract_legend_from_page()` | `:2211` + `:2267` | Extraction notes `(N)` depuis texte de page et légendes entre caption/headers. Stocké dans `heuristics._notes` / `heuristics._legend`. Type 2 uniquement, utilise `page_text_cache` construit une fois. 3 filtres anti-faux-positifs pour légendes. |
 
 ### `_extract_from_page()` — `grid_extractor.py:950-995`
 

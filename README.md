@@ -288,7 +288,16 @@ via deux mecanismes :
    introuvable, prend la table la plus haute sur la page (pas la plus
    grande), evitant de confondre avec une table voisine plus volumineuse
 
-### Nettoyage des footnotes en fin de tableau (Fix 9)
+### Extraction des notes `(N)` et légendes en Type 2 (Fix 21)
+
+Pour les tableaux Type 2 (Antenna House), les notes sont référencees dans les cellules et les headers via le marqueur `(N)`. Par exemple, `"Features(1)"` dans un header signifie que la note `"1. X = supported."` doit etre associee. Deux fonctions ont ete ajoutees :
+
+- **`extract_footnotes_from_pages(rows, headers, page_text_cache, pages)`** : scanne les rows ET les headers pour trouver les marqueurs `(N)`, puis lit le texte de la/les page(s) correspondante(s) pour extraire les lignes `N. ...`. `page_text_cache` est un dict `{num_page: texte}` construit une seule fois pour eviter d'ouvrir le PDF 88 fois.
+- **`extract_legend_from_page(table_parsed, headers, page_text_cache, pages, caption)`** : capture le texte descriptif situe entre le caption et les en-tetes de colonne. Applique 3 filtres pour eliminer les faux positifs (fragments d'en-tetes, titres courts, identifiants techniques majuscules).
+
+Stockes dans `heuristics._notes` (liste de str) et `heuristics._legend` (str). Le cache de pages est construit dans `main.py` avant la boucle d'extraction (Type 2 seulement).
+
+Nettoyage des footnotes en fin de tableau (Fix 9)
 
 Les footnotes en fin de tableau (ex: `"1.The pull-up resistor..."`) sont
 automatiquement supprimees via `_remove_trailing_footnotes()`. Heuristique :
@@ -632,6 +641,7 @@ Type 2 (16 PDFs, Producer = Antenna House, format "nouvelle generation")
 | 8 | **Colonnes supplementaires en continuation Type 2** | La page de continuation peut diviser une colonne en 2 sous-colonnes (ex: `Name` → `Name` + `Name sub`) | `_get_col_x0s()` : detection automatique des colonnes supplémentaires par comparaison des x0 geometriques → elargissement des headers et rows page 1 |
 | 9 | **Propagation inter-groupes erronee (Type 2)** | Fix 6 remplissait les cellules d'un nouveau groupe depuis le groupe precedent (ex: `I/O structure` → `Notes` dans table_6) | Heuristique "groupe connu" : si la 1ere colonne change vers une valeur jamais vue dans cette colonne → nouveau groupe → ne pas propager |
 | 10 | **Continuation rejetee pour colonne fantome en milieu de page** | La page de continuation a 9 colonnes (dont une fantome a x0=117 entre les colonnes 0 et 1) mais `_min_drift()` ne testait que le skip en debut de liste → drift 68.4px > seuil → continuation ignoree | `_min_drift()` revisite : ignore toute position dans la plus longue liste (pas seulement le debut). Pour 9 vs 8, test chaque index 0..8 comme position fantome potentielle. |
+| 11 | **Notes (`_notes`) et légendes (`_legend`) absentes** | Les notes `1. X = supported.` en bas de tableaux et les légendes entre caption et headers n'étaient pas capturées | `extract_footnotes_from_pages()` scanne headers + rows pour les marqueurs `(N)`, extrait les lignes `N. ...` du texte de page. `extract_legend_from_page()` capture le texte descriptif entre caption et headers. Stockés dans `heuristics._notes` et `heuristics._legend`. Type 2 uniquement (cache de textes `page_text_cache`). |
 
 ### Script de classification
 
