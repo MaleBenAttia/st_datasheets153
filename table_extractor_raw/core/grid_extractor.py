@@ -1562,8 +1562,10 @@ def _is_likely_reversed(cell: str) -> bool:
 
     rev = clean[::-1]
 
-    # Le texte inversé doit commencer par Maj (acronyme comme "STM" ou mot comme "Port")
-    if not (rev and rev[0].isupper() and len(rev) > 1):
+    # Le texte inversé doit commencer par Maj OU par un chiffre (ex: "2.0 to 3.6 V")
+    if not (rev and len(rev) > 1):
+        return False
+    if not (rev[0].isupper() or rev[0].isdigit()):
         return False
 
     # La version inversée doit avoir au moins autant de lettres
@@ -1591,6 +1593,14 @@ def _is_likely_reversed(cell: str) -> bool:
                 break
         return count
 
+    # Heuristique "ot" inversé : "NN ot NN" (ex: "6.3 ot 0.2") → "NN to NN"
+    if re.search(r'\d+[.\s]*ot\s+\d+', clean):
+        return True
+
+    # Heuristique C° vs °C : "NNN C°" est anormal (ex: "031 C°")
+    if re.search(r'\d+\s*C\s*°(?!C)', clean):
+        return True
+
     clean_mid = _mid_word_uppers(clean)
     rev_mid = _mid_word_uppers(rev)
 
@@ -1603,6 +1613,11 @@ def _is_likely_reversed(cell: str) -> bool:
     # "LI )1( V" (faux positif). Doit être AVANT rev_init>clean_init.
     has_correct_parens = bool(re.search(r'\(\d+\)', clean))
     if has_correct_parens:
+        return False
+
+    # Si le texte contient déjà "to NN" (ex: "2.0 to 3.6") ou "°C" correct,
+    # il est déjà à l'endroit → ne pas laisser rev_init>clean_init le fausser
+    if re.search(r'\d+[.\s]*to\s+\d+', clean) or re.search(r'°\s*C', clean):
         return False
 
     # Si l'inversé a une plus longue séquence majuscule au début, c'est un
