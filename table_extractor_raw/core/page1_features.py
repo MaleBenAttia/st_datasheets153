@@ -229,35 +229,83 @@ def _parse_header_footer(text: str, pdf_type: int) -> dict:
     return result
 
 
+# Pattern pour dimensions sans parenthèses (ex: "14 x 14 mm")
+_PLAIN_DIMENSION_RE = re.compile(r'(\d+\.?\d*\s*[×x]\s*\d+\.?\d*\s*mm)')
+
+
 def _parse_packages(text: str) -> list[str]:
     """
     Extrait les noms de packages et leurs dimensions associées.
 
-    Les noms (SO8N, TSSOP20, ...) et les dimensions ((4.9x6 mm), ...)
-    sont souvent sur des lignes séparées dans pdfplumber. On les associe
-    par position (premier nom ↔ premier tuple de dimensions, etc.).
+    Pour chaque nom de package trouvé :
+    1. Si des dimensions inline sont capturées dans PACKAGE_RE, les utiliser
+    2. Sinon, chercher la dimension la plus proche après le nom (≤ 200 car.)
+       - D'abord les dimensions parenthésées (format standard)
+       - Puis les dimensions sans parenthèses (ex: "14 x 14 mm")
+    3. Déduplication par nom de package
     """
     seen = set()
-    pkg_list = []
+    packages = []
+
+    dims_all = [(m.start(), m.group(1)) for m in _DIMENSION_RE.finditer(text)]
+    plain_dims = [(m.start(), m.group(1)) for m in _PLAIN_DIMENSION_RE.finditer(text)]
+
+    def _is_valid_dim(text: str) -> bool:
+        """Vérifie si un texte ressemble à une dimension (contient x et mm)."""
+        return bool(re.search(r'\d+\s*[×x]\s*\d+\s*mm', text, re.IGNORECASE))
+
+    def _normalize_dim(dim: str) -> str:
+        """Normalise '14x14mm' -> '14 x 14 mm', '5x5mm' -> '5 x 5 mm', etc."""
+        m = re.match(r'(\d+\.?\d*)\s*[×x]\s*(\d+\.?\d*)\s*mm', dim, re.IGNORECASE)
+        if m:
+            return f"{m.group(1)} x {m.group(2)} mm"
+        return dim
+
+    pkg_positions = [(m.start(), m.end()) for m in PACKAGE_RE.finditer(text)
+                     if len(m.group("name")) >= 4
+                     and any(c.isdigit() for c in m.group("name"))]
+
     for m in PACKAGE_RE.finditer(text):
         name = m.group("name")
         if not name or len(name) < 4:
             continue
         if _PACKAGE_SO_FP.match(name):
             continue
+        if not any(c.isdigit() for c in name):
+            continue
         key = name.upper()
         if key in seen:
             continue
         seen.add(key)
-        pkg_list.append((m.start(), name))
 
-    dims_list = [(m.start(), m.group(1)) for m in _DIMENSION_RE.finditer(text)]
+        end = m.end()
+        inline = m.group(2)
+        if inline and _is_valid_dim(inline):
+            packages.append(f"{name} ({_normalize_dim(inline)})")
+            continue
 
-    packages = []
-    for i, (pos, name) in enumerate(pkg_list):
-        dims = dims_list[i][1] if i < len(dims_list) else None
-        entry = f"{name} ({dims})" if dims else name
-        packages.append(entry)
+        def _dim_not_owned_by_other_pkg(dpos: int) -> bool:
+            for ps, pe in pkg_positions:
+                if ps > end and ps < dpos:
+                    return False
+            return True
+
+        best_dims = None
+        for dpos, dims in dims_all:
+            if dpos >= end and dpos - end <= 200 and _dim_not_owned_by_other_pkg(dpos):
+                best_dims = _normalize_dim(dims)
+                break
+        if not best_dims:
+            for dpos, dims in plain_dims:
+                if dpos >= end and dpos - end <= 200 and _dim_not_owned_by_other_pkg(dpos):
+                    best_dims = _normalize_dim(dims)
+                    break
+
+        if best_dims:
+            packages.append(f"{name} ({best_dims})")
+        else:
+            packages.append(name)
+
     return packages
 
 
@@ -428,6 +476,74 @@ def _parse_features_bullets(text: str) -> dict:
 
 # ── Main entry point ────────────────────────────────────────────────────────
 
+def _extract_packages_from_pdf(pdf_path: str) -> list[str]:
+    """
+    Extrait les packages de TOUTES les pages en utilisant extract_words()
+    pour reconstituer correctement le texte même si chaque caractère est
+    un objet texte positionné individuellement.
+
+    Fusion : si un package apparaît sur plusieurs pages, on garde la
+    version AVEC dimensions (même si trouvée plus tard).
+    """
+    def _has_real_dim(entry: str) -> bool:
+        return bool(re.search(r'\d+\s*[×x]\s*\d+\s*mm', entry, re.IGNORECASE))
+
+    def _page_text_from_words(page) -> str:
+        """Reconstitue le texte d'une page à partir des mots/charactères.
+        Si une ligne contient surtout des caractères isolés (mot d'1 lettre),
+        on les joint sans espaces pour reconstituer les vrais mots.
+        """
+        words = page.extract_words()
+        if not words:
+            return ""
+
+        # Grouper par Y arrondi
+        lines: dict[int, list[tuple[float, str]]] = {}
+        for w in words:
+            y_key = round(w["top"], 0)
+            lines.setdefault(y_key, []).append((w["x0"], w["text"]))
+
+        text_lines = []
+        for y_pos in sorted(lines):
+            chars = sorted(lines[y_pos], key=lambda x: x[0])
+            words_on_line = [c[1] for c in chars]
+
+            # Si la plupart des mots sont des caractères uniques → joindre
+            single_chars = sum(1 for w in words_on_line if len(w) == 1)
+            if single_chars >= len(words_on_line) * 0.6 and len(words_on_line) > 3:
+                line_text = "".join(words_on_line)
+            else:
+                line_text = " ".join(words_on_line)
+            text_lines.append(line_text)
+
+        return "\n".join(text_lines)
+
+    seen: dict[str, str] = {}
+    page_of: dict[str, int] = {}
+
+    try:
+        with pdfplumber.open(pdf_path) as pdf:
+            for pg_idx, page in enumerate(pdf.pages):
+                text = _page_text_from_words(page)
+                if not text:
+                    continue
+                pkgs_on_page = _parse_packages(text)
+                for entry in pkgs_on_page:
+                    name = entry.split(" (")[0].upper()
+                    has_dim = _has_real_dim(entry)
+                    if name not in seen:
+                        seen[name] = entry
+                        page_of[name] = pg_idx + 1
+                    elif has_dim and not _has_real_dim(seen[name]):
+                        seen[name] = entry
+                        page_of[name] = pg_idx + 1
+    except Exception as e:
+        logger.warning(f"Package extraction from PDF failed: {e}")
+
+    sorted_pkgs = sorted(seen.items(), key=lambda x: (page_of[x[0]], x[0]))
+    return [entry for _, entry in sorted_pkgs]
+
+
 def extract_features_page_range(pdf_path: str) -> dict:
     """
     Point d'entrée principal.
@@ -446,7 +562,8 @@ def extract_features_page_range(pdf_path: str) -> dict:
     full_text = _extract_text_for_pages(str(p), pages)
 
     header = _parse_header_footer(full_text, pdf_type_val)
-    pkgs = _parse_packages(full_text)
+    # Packages : scanner TOUTES les pages page par page
+    pkgs = _extract_packages_from_pdf(str(p))
     device_summary = _parse_device_summary(str(p), full_text)
     features = _parse_features_bullets(full_text)
 

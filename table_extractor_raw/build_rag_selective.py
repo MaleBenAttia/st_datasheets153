@@ -384,8 +384,8 @@ def transform_table(
                 ["text_helper", text_helper],
             ],
             "table_content": [
-                headers,
-                rows,
+                ["headers", headers],
+                ["rows", rows],
             ],
         }
     except Exception as e:
