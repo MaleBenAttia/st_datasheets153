@@ -132,7 +132,8 @@ flowchart TD
 7. Écriture `out_dir / f"{ref.table_id}.json"` + append `all_tables_json` (`:149-153`)
 8. Écriture `_all_tables.json` (`:176-180`)
 9. **RAG** : `generate_rag_for_pdf(all_tables_json, family, pdf_name, REPO_ROOT/"RagJason")` (`:182-190`)
-10. Écriture `_run_report.json` avec top-5 `worst_tables` (`:210-214`)
+10. Écriture `_reversed_debug.json` avec toutes les cellules >=5 car. vérifiées par `_is_likely_reversed()` (drift, raison, correction) (`:200-206`)
+11. Écriture `_run_report.json` avec top-5 `worst_tables` (`:210-214`)
 
 ---
 
@@ -372,7 +373,7 @@ Ordre d'appel interne (les "Fix") :
 | 23 | Fix 17 | Détection header leaks dans `_merge_fragmented_columns()` | `:1662` | Ignore les cellules données identiques à l'en-tête de leur colonne (fragments d'en-tête qui coulent dans les données). Ex: colonne "s" (suffixe de "Conditions") → données "s" ignorées |
 | 24 | Fix 18 | Extension `_remove_bleed_rows_bottom()` | `:1481` | Nouvelle heuristique : 1ère cellule non-alphanumérique (`.4 Embe`, `(1)`) → suppression ligne parasite |
 | 25 | Fix 19 | Filtre footnote `(N)` post-merge | `:1319` | Supprime toute ligne dont la 1ère cellule est exactement `(1)`, `(2)`, etc. (notes de bas de tableau non capturées par les autres filtres) |
-| 26 | Fix 20 | `_apply_rotated_fix()` + `_is_likely_reversed()` + `_fix_reversed_cells()` | `:1876` + `:1543` + `:1621` | Correction robuste du texte inversé dans cellules fusionnées verticales. Matching `re.sub(r'[^a-zA-Z0-9]', '', ...)` + `startswith()` pour gérer abréviations (`Comm.interfaces` vs `Communicationinterfaces`). Post-processing basé sur `1er_caractère_minuscule && dernier_majuscule`. Nouvelle heuristique parenthèses : `\)\d+\(` dans l'original + `\(\d+\)` dans le reverse → inversé. Guard : si l'original a déjà `(N)` correct, il n'est PAS inversé (évite faux positif `"V (1) IL"` → `"LI)1(V"`). |
+| 26 | Fix 20 | `_is_likely_reversed()` + `_fix_reversed_cells()` | `:1692` + `:1812` | Correction texte inversé basée sur **dérive de casse** (uppercase drift). `drift < -0.5` et `rev_init > clean_init` capturent les textes retournés verticalement. Guards explicites pour acronymes `SRAM (Kbytes)`, plages tension `2.7 V - 3.6 V`, bit-width `12-bit ADC channels`. `_reversed_debug.json` logue toutes les cellules >=5 car. avec drift, raison et correction. |
 | 27 | Fix 21 | `extract_footnotes_from_pages()` + `extract_legend_from_page()` + `extract_notes_type1()` | `:2211` + `:2267` + `:2383` | Extraction notes `(N)` depuis texte de page et légendes entre caption/headers. Stocké dans `heuristics._notes` / `heuristics._legend`. **Type 1 + Type 2** (page_text_cache construit pour tous les types). Type 1 Pattern B : `extract_notes_type1()` détecte "Notes:" heading + lignes numérotées dans le texte de page. 3 filtres anti-faux-positifs pour légendes. |
 
 ### `_extract_from_page()` — `grid_extractor.py:950-995`
@@ -694,6 +695,7 @@ MIN_TABLE_WIDTH          = 40    # Type 2 : rejette bandeaux étroits
 SAVE_DEBUG_IMAGES         = True
 SAVE_IMAGES_ONLY_ON_ISSUE = True
 DEBUG_IMAGE_DPI           = 150
+# _reversed_debug.json : toujours généré (aucun flag, indépendant de DEBUG_EMPTY_ROWS)
 ```
 
 ### Settings pdfplumber — `config.py:29-69`
@@ -727,7 +729,8 @@ outJason/
 │       ├── ...
 │       ├── table_71.json
 │       ├── _all_tables.json      # array des 71 tables
-│       └── _run_report.json      # stats (71/71 high)
+│       ├── _run_report.json      # stats (71/71 high)
+│       ├── _reversed_debug.json  # debug texte inversé (toutes cellules >=5 car.)
 │       └── debug_images/         # (optionnel, si confiance≠high)
 ├── G0/
 │   └── stm32g071c8/

@@ -43,7 +43,7 @@ if str(REPO_ROOT) not in sys.path:
 
 from config import OUTPUT_DIR, LOG_DIR, RAG_DIR
 from core.toc_detector import detect_tables
-from core.grid_extractor import extract_table_grid, extract_footnotes_from_pages, extract_legend_from_page, extract_notes_type1
+from core.grid_extractor import extract_table_grid, extract_footnotes_from_pages, extract_legend_from_page, extract_notes_type1, _reset_reversed_debug, _get_reversed_debug_entries
 from core.glyph_fixer import correct_footer_in_table
 import pdfplumber
 from core.schema import RawTable
@@ -194,6 +194,9 @@ def process_pdf(pdf_path: Path, family: str, table_ids: list[int] | None = None)
     page_text_cache: dict[int, str] = {}
     for i in range(len(pdf.pages)):
         page_text_cache[i + 1] = pdf.pages[i].extract_text() or ""
+
+    # ── Reset buffer debug cellules inversées ──────────────────────────────────
+    _reset_reversed_debug()
 
     # ── Étape 2 : extraction ───────────────────────────────────────────────────
     extracted_tables = []
@@ -370,6 +373,23 @@ def process_pdf(pdf_path: Path, family: str, table_ids: list[int] | None = None)
         f"| drawings={n_mech} bugs?={n_bug} "
         f"| {elapsed:.1f}s ==="
     )
+
+    # ── Sauvegarde du debug des cellules inversées ──────────────────────────
+    entries = _get_reversed_debug_entries()
+    if entries:
+        debug_data = {
+            "pdf_name": pdf_name,
+            "family": family,
+            "tables_checked": len({e["table_id"] for e in entries}),
+            "cells_checked": len(entries),
+            "cells_reversed": sum(1 for e in entries if e["reversed"]),
+            "entries": entries,
+        }
+        debug_path = out_dir / "_reversed_debug.json"
+        debug_path.write_text(
+            json.dumps(debug_data, ensure_ascii=False, indent=2),
+            encoding="utf-8"
+        )
 
     # Sauvegarde du rapport de synthèse
     report_path = out_dir / "_run_report.json"

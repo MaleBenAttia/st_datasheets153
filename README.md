@@ -586,11 +586,14 @@ Le pipeline applique 3 couches de correction :
 
 2. **`_is_likely_reversed()` heuristique** — detecte le texte inversé sans
    s'appuyer sur les caracteres bruts (qui varient selon le moteur PDF) :
+   - **Dérive de casse (uppercase drift)** : mesure si les majuscules sont
+     clusterisées au début du texte (drift < 0) ou à la fin (drift > 0).
+     `drift < -0.5` + guard part number → inversé. Gère `"ISL f"` → `"f LSI"`.
    - `_mid_word_uppers()` : compare le nombre de majuscules en milieu de mot
      entre l'original et le reverse. Un original avec debut minuscule mais
      autant/moins de majuscules mid-word que le reverse → inversé.
      Gere `"A troP"` (original commence par majuscule) → `"Port A"`.
-    - `_initial_upper_run()` : mesure la sequence de majuscules consecutives
+   - `_initial_upper_run()` : mesure la sequence de majuscules consecutives
      en debut de mot. Les part numbers STM32 inversés (`"TxC3A5C23MTS"`) ont
      1 seule majuscule (`T`) alors que la version correcte (`"STM32C5A3CxT"`)
      en a 3 (`STM`) → distinction fiable.
@@ -598,8 +601,10 @@ Le pipeline applique 3 couches de correction :
      et le reverse a `\(\d+\)`, c'est un marqueur de footnote inversé → True.
      **Guard** : si l'original a déjà `(N)` correctement orienté (ex: `"V (1) IL"`),
      la cellule est déjà à l'endroit → retourne False (évite le faux positif).
-   - Suppression de la regex `\d\s+[A-Za-z]` qui bloquait les part numbers
-     contenant des chiffres suivis de lettres.
+   - **Guards faux positifs** : acronymes `SRAM (Kbytes)`, plages tension
+     `2.7 V - 3.6 V`, bit-width `12-bit ADC channels` sont exclus.
+   - **Debug** : `_reversed_debug.json` généré par datasheet listant toutes
+     les cellules >=5 car. avec drift, raison (reversed ou non) et correction.
 
 3. **Correction des headers** — `_fix_reversed_cells()` est appliqué aux
     lignes de donnees ET aux en-tetes. Pour les headers

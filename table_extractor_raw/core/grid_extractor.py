@@ -24,6 +24,15 @@ import sys
 from pathlib import Path
 from typing import Any, Optional
 
+# ── Buffer debug cellules inversées ─────────────────────────────────────────
+_reversed_debug_entries: list[dict] = []
+
+def _reset_reversed_debug() -> None:
+    _reversed_debug_entries.clear()
+
+def _get_reversed_debug_entries() -> list[dict]:
+    return list(_reversed_debug_entries)
+
 import pdfplumber
 from pdfplumber.page import Page
 
@@ -1487,7 +1496,7 @@ def extract_table_grid(
         rows_fixed = [row for row in rows_fixed if any(c for c in row)]
 
         # ── [Fix] Correction texte inversé (cellules fusionnées verticales) ─
-        rows_fixed = _fix_reversed_cells(rows_fixed)
+        rows_fixed = _fix_reversed_cells(rows_fixed, table_id=ref.table_id)
 
         # ── [Fix] Suppression des lignes header résiduelles dans les données ─
         # Cas rare : _expand_spans_and_headers peut laisser des lignes header
@@ -1687,27 +1696,50 @@ def _is_likely_reversed(cell: str) -> bool:
     Compare la distribution des majuscules entre l'original et l'inversé
     pour détecter les textes inversés même quand l'original commence
     par une majuscule (ex: "A troP" → "Port A").
+
+    Approche : mesure la dérive de casse (uppercase drift) — si les
+    majuscules sont clusterisées au début du texte, le texte a de fortes
+    chances d'être inversé, même si la version corrigée commence par
+    minuscule (ex: "ISL f" → "f LSI", correct = "f LSI").
     """
     clean = cell.replace("\n", "")
     if len(clean) < 5:
         return False
 
     rev = clean[::-1]
-
-    # Le texte inversé doit commencer par Maj OU par un chiffre (ex: "2.0 to 3.6 V")
     if not (rev and len(rev) > 1):
         return False
-    if not (rev[0].isupper() or rev[0].isdigit()):
+
+    # ── Dérive de casse (uppercase drift) ────────────────────────────
+    # Si les majuscules sont clusterisées au début (drift < 0),
+    # le texte est probablement inversé.
+    # Ex: "ISL f" → upper [0,1,2], lower [4] → drift = 1.0-4.0 = -3.0
+    # Ex: "f LSI" → upper [2,3,4], lower [0] → drift = 3.0-0.0 = 3.0
+    upper_pos = [i for i, c in enumerate(clean) if c.isupper()]
+    lower_pos = [i for i, c in enumerate(clean) if c.islower()]
+    drift = 0.0
+    if upper_pos and lower_pos:
+        avg_upper = sum(upper_pos) / len(upper_pos)
+        avg_lower = sum(lower_pos) / len(lower_pos)
+        drift = avg_upper - avg_lower
+
+    # Si drift >= 0 (majuscules PAS clusterisées au début) ET l'inversé
+    # ne commence pas par Maj/chiffre → texte normal, pas inversé.
+    # Remplace l'ancien guard fixe rev[0].isupper() qui bloquait
+    # les cas où la version correcte commence par minuscule.
+    if drift >= 0 and not (rev[0].isupper() or rev[0].isdigit()):
         return False
 
-    # La version inversée doit avoir au moins autant de lettres
-    cell_alpha = sum(1 for c in clean if c.isalpha())
-    rev_alpha = sum(1 for c in rev if c.isalpha())
-    if rev_alpha < cell_alpha:
-        return False
+    # ── Heuristiques rapides ─────────────────────────────────────────
+    # "ot" inversé → "to" (ex: "6.3 ot 0.2")
+    if re.search(r'\d+[.\s]*ot\s+\d+', clean):
+        return True
+    # "C°" inversé → "°C" (ex: "031 C°")
+    if re.search(r'\d+\s*C\s*°(?!C)', clean):
+        return True
 
-    # Compter les majuscules en milieu de mot (ni position 0, ni après espace)
     def _mid_word_uppers(text: str) -> int:
+        """Compte les majuscules en milieu de mot (ni position 0, ni après espace)."""
         count = 0
         for i, c in enumerate(text):
             if c.isupper() and i > 0 and not text[i - 1].isspace():
@@ -1725,13 +1757,11 @@ def _is_likely_reversed(cell: str) -> bool:
                 break
         return count
 
-    # Heuristique "ot" inversé : "NN ot NN" (ex: "6.3 ot 0.2") → "NN to NN"
-    if re.search(r'\d+[.\s]*ot\s+\d+', clean):
-        return True
-
-    # Heuristique C° vs °C : "NNN C°" est anormal (ex: "031 C°")
-    if re.search(r'\d+\s*C\s*°(?!C)', clean):
-        return True
+    # La version inversée doit avoir au moins autant de lettres
+    cell_alpha = sum(1 for c in clean if c.isalpha())
+    rev_alpha = sum(1 for c in rev if c.isalpha())
+    if rev_alpha < cell_alpha:
+        return False
 
     clean_mid = _mid_word_uppers(clean)
     rev_mid = _mid_word_uppers(rev)
@@ -1740,62 +1770,86 @@ def _is_likely_reversed(cell: str) -> bool:
     if rev_mid > clean_mid:
         return False
 
-    # Si le texte original a déjà "(N)" correctement orienté, il n'est PAS
-    # inversé. Ex: "V (1) IL" est déjà correct, ne pas le transformer en
-    # "LI )1( V" (faux positif). Doit être AVANT rev_init>clean_init.
-    has_correct_parens = bool(re.search(r'\(\d+\)', clean))
-    if has_correct_parens:
+    # Si le texte original a déjà "(N)" correctement orienté → pas inversé
+    # Ex: "V (1) IL" est déjà correct
+    if re.search(r'\(\d+\)', clean):
         return False
 
-    # Si le texte contient déjà "to NN" (ex: "2.0 to 3.6") ou "°C" correct,
-    # il est déjà à l'endroit → ne pas laisser rev_init>clean_init le fausser
+    # Si le texte contient déjà "to NN" ou "°C" correct → pas inversé
     if re.search(r'\d+[.\s]*to\s+\d+', clean) or re.search(r'°\s*C', clean):
         return False
 
-    # Si l'inversé a une plus longue séquence majuscule au début, c'est un
-    # part number STM32 (ex: "STM32C5A3KxT" a "STM" soit 3, l'inversé
-    # "TxK3A5C23MTS" a "T" soit 1)
+    # ── Motivations communes de faux positifs ──────────────────────────
+    # Acronyme suivi d'une parenthèse (ex: "SRAM (Kbytes)")
+    if re.search(r'\([A-Za-z]+\)', clean):
+        return False
+    # Plage de tension (ex: "2.7 V - 3.6 V")
+    if re.search(r'\d+\.\d+\s*V\s*[-–]\s*\d+\.\d+\s*V', clean):
+        return False
+    # Bit-width suivi d'acronyme (ex: "12-bit ADC channels")
+    if re.search(r'\d+-bit\s+[A-Z]', clean):
+        return False
+
+    # Si l'inversé a une plus longue séquence majuscule au début → inversé
+    # Sauf si l'original commence par minuscule ou chiffre
+    # (ex: "f LSI" → l'original commence bien par minuscule)
     clean_init = _initial_upper_run(clean)
     rev_init = _initial_upper_run(rev)
-    if rev_init > clean_init:
+    if rev_init > clean_init and not clean[0].islower() and not clean[0].isdigit():
         return True
 
-    # Heuristique parenthèses inversées : si l'original a ")N(" et le
-    # reverse a "(N)", c'est un marqueur de footnote inversé → inversé.
-    # Ex: "LI )1( V" (original a ")1(" , reverse "V (1) IL" a "(1)")
-    rev_parens = bool(re.search(r'\(\d+\)', rev))
-    clean_parens_inv = bool(re.search(r'\)\d+\(', clean))
-    if rev_parens and clean_parens_inv:
+    # Parenthèses inversées ")N(" → inversé
+    if re.search(r'\(\d+\)', rev) and re.search(r'\)\d+\(', clean):
+        return True
+
+    # Drift négatif : majuscules clusterisées au début → inversé
+    # Capture les cas où l'inversé commence par minuscule
+    # (ex: "ISL f" → "f LSI", drift = -3.0).
+    # Garde-fou : les part numbers STM32 ("STM32C5A3KxT", drift = -5.0)
+    # ont aussi un drift négatif mais ne sont PAS inversés.
+    if drift < -0.5 and not re.match(r'^[A-Z]+\d+[A-Z]', clean):
         return True
 
     # Si l'original commence par majuscule et les deux versions ont autant
-    # de majuscules en milieu de mot, c'est symétrique → pas inversé
+    # de majuscules en milieu de mot → symétrique → pas inversé
+    # Sauf si drift < 0 (déjà capturé ci-dessus)
     if not clean[0].islower() and rev_mid >= clean_mid:
         return False
 
-    return True
+    return False
 
 
-def _fix_reversed_cells(rows: list[list]) -> list[list]:
-    """Corrige le texte inversé dans les cellules dues au rendu vertical.
-
-    Quand une cellule fusionnée contient du texte écrit verticalement (rotation 90°),
-    pdfplumber peut lire les caractères dans l'ordre inverse. On détecte ça en
-    vérifiant si le texte inversé semble plus naturel.
-    """
+def _fix_reversed_cells(rows: list[list], table_id: str = "") -> list[list]:
     SPACE_AROUND_PARENS = re.compile(r'\s*([()])\s*')
 
     if not rows:
         return rows
     fixed = []
-    for row in rows:
+    for row_idx, row in enumerate(rows):
         fixed_row = []
         for col_idx, cell in enumerate(row):
             if isinstance(cell, str) and len(cell) >= 5:
                 clean = cell.replace("\n", "")
-                if _is_likely_reversed(clean):
-                    cell = clean[::-1]
-                    cell = SPACE_AROUND_PARENS.sub(r'\1', cell)
+                is_rev = _is_likely_reversed(clean)
+                corrected = None
+                if is_rev:
+                    corrected = clean[::-1]
+                    corrected = SPACE_AROUND_PARENS.sub(r'\1', corrected)
+                    cell = corrected
+                upper_pos = [i for i, c in enumerate(clean) if c.isupper()]
+                lower_pos = [i for i, c in enumerate(clean) if c.islower()]
+                drift_v = 0.0
+                if upper_pos and lower_pos:
+                    drift_v = (sum(upper_pos) / len(upper_pos)) - (sum(lower_pos) / len(lower_pos))
+                _reversed_debug_entries.append({
+                    "table_id": table_id,
+                    "col": col_idx,
+                    "row": row_idx,
+                    "original": clean,
+                    "reversed": is_rev,
+                    "drift": round(drift_v, 2),
+                    "corrected": corrected,
+                })
             fixed_row.append(cell)
         fixed.append(fixed_row)
     return fixed
