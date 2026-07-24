@@ -36,8 +36,9 @@ def get_section_at(pdf_path: str, page: int, y_top: float) -> str:
             break
     if best:
         return best
-    # Cross-page backward walk
-    for pgn in range(page - 1, 0, -1):
+    # Cross-page backward walk (max 5 pages to avoid false assignments
+    # from unrelated sections in early parts of the document)
+    for pgn in range(page - 1, max(page - 6, 0), -1):
         prev = cache.get(pgn, [])
         if prev:
             return prev[-1][1]
@@ -139,7 +140,7 @@ INLINE_CAPTION_PATTERN = re.compile(
 # Ex: "5.3.6 Supply current characteristics"
 # Rejette les entrées de TOC (contiennent "...." ou un numéro de page à la fin)
 SECTION_HEADING_PATTERN = re.compile(
-    r"^(\d+(?:\.\d+){0,3})\s+([A-Z][A-Za-z\s\-,/°µΩ()]+)$",
+    r"^(\d+(?:\.\d+){0,3})\s+(?!(?:REF|TYP|MIN|MAX|BSC)$)([A-Z][A-Za-z\s\-,/°µΩ()]+)$",
 )
 
 
@@ -296,15 +297,21 @@ def _assign_sections(pdf_path: str, pdf: pdfplumber.PDF, refs: list[TableRef],
     for page_headings in y_cache.values():
         page_headings.sort(key=lambda x: x[0])
 
-    # 5. Assigner chaque table
+    # 5. Assigner chaque table avec limite d'écart de page
+    MAX_PAGE_GAP = 20
     for ref in refs:
         best = ""
+        best_page = 0
         for label, s_page in all_headings:
             if s_page <= ref.page:
                 best = label
+                best_page = s_page
             else:
                 break
-        if not best and all_headings:
+        if best:
+            if ref.page - best_page > MAX_PAGE_GAP:
+                best = "General purpose / Overview"
+        elif all_headings:
             best = "General purpose / Overview"
         ref.section = best
 
