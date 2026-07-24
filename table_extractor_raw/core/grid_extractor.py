@@ -1544,6 +1544,15 @@ def extract_table_grid(
         # ── Suppression des lignes de texte de section parasites ──
         rows_fixed, sec_removed = _remove_section_bleed_rows(rows_fixed, ref.table_id)
 
+        # ── [Fix] Padding de toutes les lignes au nombre de colonnes des headers ──
+        # Certaines lignes arrivent avec moins d'items que len(headers) à cause des
+        # cellules fusionnées (colspan) dans le PDF. Ce padding normalise l'output
+        # pour garantir un nombre de colonnes cohérent.
+        hc = len(headers)
+        for i, row in enumerate(rows_fixed):
+            while len(row) < hc:
+                row.append("")
+
         # ── Remplissage du résultat ────────────────────────────────────────────
         if heuristics:
             result["heuristics"] = heuristics
@@ -1807,17 +1816,41 @@ def _remove_section_bleed_rows(rows: list[list[str]], table_id: str) -> tuple[li
 
     Les datasheets ont du texte de section (3.5 Boot mode, 3.6 CRC, ...)
     qui suit le tableau sur la meme page. pdfplumber les capture comme
-    des lignes de tableau. Detection : 1ere cellule = numero de section.
+    des lignes de tableau.
+
+    Detection (3 signaux combines pour une couverture radicale) :
+      1. 1ere cellule = numero de section (ex: "3.5", "1.1.2")
+      2. 1ere cellule commence par minuscule (continuation de paragraphe)
+      3. Cellule col 1+ commence par minuscule (fragment de prose,
+         ex: "verview" pour "Functional overview")
     """
     if not rows:
         return rows, 0
     cut = len(rows)
     for i, row in enumerate(rows):
         first = str(row[0]).strip() if row else ""
-        if re.match(r'^\d+\.\d+', first):
+        # Pattern 1: section number (ex: "3.5", "1.1.2")
+        if re.match(r'^\d+(?:\.\d+)+', first):
             cut = i
             logger.info(f"_remove_section_bleed_rows: cut at row {i} ('{first}')")
             break
+        # Pattern 2: first cell starts lowercase (paragraph continuation)
+        if first and re.match(r'^[a-z]', first):
+            cut = i
+            logger.info(f"_remove_section_bleed_rows: cut at row {i} (lowercase first)")
+            break
+        # Pattern 3: any cell in col 1+ starts lowercase (prose fragment)
+        if len(row) >= 2:
+            found = False
+            for cell in row[1:]:
+                stripped = str(cell).strip()
+                if stripped and re.match(r'^[a-z]', stripped):
+                    found = True
+                    break
+            if found:
+                cut = i
+                logger.info(f"_remove_section_bleed_rows: cut at row {i} (lowercase col 1+)")
+                break
     removed = len(rows) - cut
     if removed > 0:
         logger.info(f"_remove_section_bleed_rows: removed {removed} trailing section bleed rows")
@@ -1874,6 +1907,11 @@ def _merge_identical_adjacent_columns(
     if not headers or not rows:
         return headers, rows
     cols = len(headers)
+    # [Fix] Skip les petites tables (≤10 cols) : le merge identique est trop
+    # agressif et fusionne des colonnes distinctes (ex: Table 4 a deux colonnes
+    # "Interconnect source" avec valeurs identiques mais concepts différents).
+    if cols <= 10:
+        return headers, rows
     keep = [True] * cols
     for c in range(cols - 1, 0, -1):
         if c < len(headers) and headers[c] == headers[c-1]:
