@@ -1541,6 +1541,9 @@ def extract_table_grid(
                     new_rows.append(row)
             rows_fixed = new_rows
 
+        # ── Suppression des lignes de texte de section parasites ──
+        rows_fixed, sec_removed = _remove_section_bleed_rows(rows_fixed, ref.table_id)
+
         # ── Remplissage du résultat ────────────────────────────────────────────
         if heuristics:
             result["heuristics"] = heuristics
@@ -1796,6 +1799,28 @@ def _remove_bleed_rows_bottom(rows: list[list[str]], table_id: str) -> tuple[lis
     removed = len(rows) - cut
     if removed > 0:
         logger.info(f"_remove_bleed_rows_bottom: removed {removed} trailing bleed rows")
+    return rows[:cut], removed
+
+
+def _remove_section_bleed_rows(rows: list[list[str]], table_id: str) -> tuple[list[list[str]], int]:
+    """Supprime les lignes de texte de section parasites sous le tableau.
+
+    Les datasheets ont du texte de section (3.5 Boot mode, 3.6 CRC, ...)
+    qui suit le tableau sur la meme page. pdfplumber les capture comme
+    des lignes de tableau. Detection : 1ere cellule = numero de section.
+    """
+    if not rows:
+        return rows, 0
+    cut = len(rows)
+    for i, row in enumerate(rows):
+        first = str(row[0]).strip() if row else ""
+        if re.match(r'^\d+\.\d+', first):
+            cut = i
+            logger.info(f"_remove_section_bleed_rows: cut at row {i} ('{first}')")
+            break
+    removed = len(rows) - cut
+    if removed > 0:
+        logger.info(f"_remove_section_bleed_rows: removed {removed} trailing section bleed rows")
     return rows[:cut], removed
 
 
