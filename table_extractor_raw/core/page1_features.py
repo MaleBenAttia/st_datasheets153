@@ -127,6 +127,29 @@ class DeviceFeatures(BaseModel):
 
 # ── Helpers ─────────────────────────────────────────────────────────────────
 
+def _expand_device_summary_rows(ds: dict | None) -> dict | None:
+    """Explose les part numbers sur leur propre ligne.
+
+    Ex: ["STM32C011x4", "STM32C011F4, STM32C011J4"]
+      → ["STM32C011x4", "STM32C011F4"]
+        ["STM32C011x4", "STM32C011J4"]
+    """
+    if not ds or "rows" not in ds or not ds["rows"]:
+        return ds
+    headers = ds.get("headers", [])
+    expanded = []
+    for row in ds["rows"]:
+        if len(row) < 2:
+            expanded.append(row)
+            continue
+        ref = row[0]
+        pns_raw = row[1]
+        parts = [p.strip() for p in re.split(r'[,;]\s*|\n+', pns_raw) if p.strip()]
+        for p in parts:
+            expanded.append([ref, p])
+    return {"headers": headers, "rows": expanded}
+
+
 def _get_pdf_page_count(pdf_path: str, pdf=None) -> int:
     try:
         if pdf is not None:
@@ -364,7 +387,7 @@ def _parse_device_summary(pdf_path: str, text: str, pdf=None) -> dict | None:
                         if any(c for c in clean_row):
                             clean_rows.append(clean_row)
                     if clean_rows:
-                        return {"headers": clean_headers, "rows": clean_rows}
+                        return _expand_device_summary_rows({"headers": clean_headers, "rows": clean_rows})
 
                 # Type 2 : bandeau header (Product summary / Device summary)
                 type2_keywords = ("product summary", "device summary", "product status")
@@ -442,7 +465,7 @@ def _parse_device_summary_type2(table: list) -> dict:
         if ref_clean and pns_clean:
             rows.append([ref_clean, pns_clean])
 
-    return {"headers": headers, "rows": rows}
+    return _expand_device_summary_rows({"headers": headers, "rows": rows})
 
 
 def _parse_features_bullets(text: str) -> dict:
