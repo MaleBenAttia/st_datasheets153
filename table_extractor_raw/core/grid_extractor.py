@@ -657,6 +657,17 @@ def _expand_spans_and_headers(
                         if not placed:
                             lines_words.append([w])
                     if len(lines_words) >= 2:
+                        # Ne pas traiter comme header compressé si c'est du
+                        # wrapping de texte (phrase qui continue sur 2 lignes).
+                        # Un vrai header compressé a un séparateur (_, /, \)
+                        # ou la 2e ligne commence par une Maj.
+                        parent_text = " ".join(w['text'] for w in lines_words[0])
+                        child_text = " ".join(w['text'] for w in lines_words[1])
+                        if parent_text and child_text:
+                            last_char = parent_text[-1]
+                            is_separator = last_char in ('_', '/', '\\', '-', '|')
+                            if not is_separator and child_text[0].islower():
+                                continue  # wrapping, pas un header compressé
                         compressed_c = c
                         cell_bbox = c_cell_bbox
                         span_cols = c_span_cols
@@ -923,10 +934,7 @@ def _build_final_headers(
             original = table[r][c]
             val = str(original or "").strip()
             if "\n" in val:
-                if pdf_type == 2:
-                    val = val.replace("\n", " ").strip()
-                else:
-                    val = val.split("\n")[0].strip()
+                val = val.replace("\n", " ").strip()
             val = _normalize_newlines_in_cell(val).strip()
 
             if r == 0:
@@ -1517,6 +1525,21 @@ def extract_table_grid(
         if has_empty_final:
             result["warnings"].append("has_empty_cells")
             result["has_empty_cells"] = True
+
+        # ── Expansion Device summary : chaque part number sur sa propre ligne ──
+        if "device summary" in ref.caption.lower():
+            new_rows = []
+            for row in rows_fixed:
+                if len(row) >= 2:
+                    ref_val = row[0]
+                    parts = [p.strip() for p in re.split(r'[,;]\s*|\n+', row[1]) if p.strip()]
+                    for p in parts:
+                        new_row = list(row)
+                        new_row[1] = p
+                        new_rows.append(new_row)
+                else:
+                    new_rows.append(row)
+            rows_fixed = new_rows
 
         # ── Remplissage du résultat ────────────────────────────────────────────
         if heuristics:
