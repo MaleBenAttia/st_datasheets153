@@ -16,6 +16,8 @@ Pipeline : _extract_from_page → _expand_spans_and_headers → (continuation)
            → Fix 6 propagation → glyphe → qualité
 """
 from __future__ import annotations
+import datetime
+import json
 import logging
 import re
 import sys
@@ -35,6 +37,7 @@ from config import (
     SAVE_DEBUG_IMAGES,
     SAVE_IMAGES_ONLY_ON_ISSUE,
     DEBUG_IMAGE_DPI,
+    DEBUG_EMPTY_ROWS,
     OUTPUT_DIR,
 )
 from core.toc_detector import TableRef, get_section_at
@@ -443,6 +446,81 @@ def _save_debug_image(
         logger.debug(f"Debug image saved: {img_path}")
     except Exception as e:
         logger.warning(f"Could not save debug image: {e}")
+
+
+def _save_empty_rows_debug(
+    page: Page,
+    ref: Any,
+    pdf_type: int,
+    extraction_method: str,
+    raw_table: list | None,
+    bbox: tuple | None,
+    settings: dict,
+    pdf_path: str,
+    output_base: Path,
+    family: str,
+    pdf_name: str,
+    caption_y: float | None = None,
+    caption_near_bottom: bool = False,
+    n_non_empty: int = 0,
+    should_try_next: bool = False,
+    warnings_list: list | None = None,
+    heuristics_dict: dict | None = None,
+    pdf: Any = None,
+    table_obj: Any = None,
+    nxt_attempt: dict | None = None,
+) -> None:
+    """Sauvegarde un debug complet quand une table a 0 lignes.
+
+    Capture : image pleine page + metadata JSON pour analyse.
+    """
+    try:
+        dbg_dir = output_base / family / pdf_name / "dbg_empty"
+        dbg_dir.mkdir(parents=True, exist_ok=True)
+
+        tbl_id = ref.table_id if hasattr(ref, "table_id") else str(ref)
+        timestamp = datetime.datetime.now().strftime("%H%M%S")
+
+        # Image pleine page
+        img = page.to_image(resolution=DEBUG_IMAGE_DPI)
+        img_path = dbg_dir / f"{tbl_id}_page{ref.page}_{timestamp}.png"
+        img.save(str(img_path))
+
+        # Texte de la page
+        page_text = page.extract_text() or ""
+
+        # Metadata
+        meta = {
+            "table_id": tbl_id,
+            "caption": ref.caption if hasattr(ref, "caption") else "",
+            "page": ref.page if hasattr(ref, "page") else 0,
+            "section": ref.section if hasattr(ref, "section") else "",
+            "pdf_type": pdf_type,
+            "extraction_method": extraction_method,
+            "bbox": bbox,
+            "page_width": page.width,
+            "page_height": page.height,
+            "settings": settings,
+            "caption_y": caption_y,
+            "caption_y_ratio": round(caption_y / page.height, 3) if caption_y else None,
+            "caption_near_bottom": caption_near_bottom,
+            "n_non_empty_raw": n_non_empty,
+            "should_try_next": should_try_next,
+            "raw_table": raw_table,
+            "warnings": warnings_list or [],
+            "heuristics": heuristics_dict or {},
+            "nxt_attempt": nxt_attempt,
+            "page_text_first_1000": page_text[:1000] if page_text else "",
+            "pdf_path": pdf_path,
+            "pdf_name": pdf_name,
+            "family": family,
+        }
+        meta_path = dbg_dir / f"{tbl_id}_page{ref.page}_{timestamp}.json"
+        with open(meta_path, "w", encoding="utf-8") as f:
+            json.dump(meta, f, indent=2, ensure_ascii=False, default=str)
+        logger.info(f"Empty rows debug saved: {img_path} / {meta_path}")
+    except Exception as e:
+        logger.warning(f"Could not save empty rows debug: {e}")
 
 
 def _propagate_spans_type2(
@@ -1037,6 +1115,15 @@ def extract_table_grid(
         if raw_table is None:
             result["warnings"].append("no_table_found_on_page")
             logger.warning(f"{ref.table_id}: no table found on page {ref.page}")
+            if DEBUG_EMPTY_ROWS:
+                _settings = PDFPLUMBER_TABLE_SETTINGS_TYPE2 if pdf_type == 2 else PDFPLUMBER_TABLE_SETTINGS
+                _save_empty_rows_debug(
+                    page=page, ref=ref, pdf_type=pdf_type,
+                    extraction_method=method, raw_table=None, bbox=None,
+                    settings=_settings, pdf_path=pdf_path,
+                    output_base=output_base, family=family, pdf_name=pdf_name,
+                    warnings_list=result["warnings"],
+                )
             return result
 
         result["extraction_method"] = method
@@ -1345,14 +1432,13 @@ def extract_table_grid(
                 # Fix 8 : remplir horizontalement les lignes de continuation
                 # (les cellules fusionnées horizontalement ne sont pas propagées
                 # dans les pages de continuation, contrairement à la page 1).
-                if pdf_type == 2:
-                    _fill_horizontal(rows_raw)
+                _fill_horizontal(rows_raw)
 
         # ── Fix 6 : Propagation descendante des cellules vides ─────────────
         # Les cellules fusionnées verticalement (rowspan) apparaissent comme ""
         # dans les lignes de continuation et parfois même sur la 1ère page.
         # Règle : si une cellule est "", on copie la valeur de la ligne du dessus.
-        # Exception Type 2 : si la 1ère colonne change vers une valeur jamais vue
+        # Exception : si la 1ère colonne change vers une valeur jamais vue
         # → nouveau groupe → ne pas propager (ex: table_6 I/O → Notes évite
         # la propagation erronée entre groupes différents).
         # Note : inactif pour pdfplumber_text (les cellules vides sont des
@@ -1362,27 +1448,25 @@ def extract_table_grid(
             for r in range(1, len(rows_raw)):
                 first_changed = False
                 seen_before = False
-                if pdf_type == 2:
-                    cur_first = (rows_raw[r][0] or "").strip() if len(rows_raw[r]) > 0 else ""
-                    prev_first = (rows_raw[r-1][0] or "").strip() if len(rows_raw[r-1]) > 0 else ""
-                    first_changed = cur_first != prev_first
-                    if first_changed:
-                        seen_before = any(
-                            (rows_raw[r2][0] or "").strip() == cur_first
-                            for r2 in range(r)
-                        )
+                cur_first = (rows_raw[r][0] or "").strip() if len(rows_raw[r]) > 0 else ""
+                prev_first = (rows_raw[r-1][0] or "").strip() if len(rows_raw[r-1]) > 0 else ""
+                first_changed = cur_first != prev_first
+                if first_changed:
+                    seen_before = any(
+                        (rows_raw[r2][0] or "").strip() == cur_first
+                        for r2 in range(r)
+                    )
                 for c in range(min(n_cols, len(rows_raw[r]))):
                     if rows_raw[r][c] == "" and c < len(rows_raw[r-1]) and rows_raw[r-1][c] != "":
-                        if first_changed and not seen_before:
+                        if cur_first and first_changed and not seen_before:
                             continue
                         rows_raw[r][c] = rows_raw[r-1][c]
 
-        # ── Fix 8 (Type 2) : garantie zéro cellule vide ──────────────────
+        # ── Fix 8 : garantie zéro cellule vide ──────────────────────────
         # Remplit horizontalement puis verticalement toute cellule résiduelle.
         # Même les cellules vraiment vides dans le PDF reçoivent le dernier
         # voisin connu (règle "remete le père").
-        if pdf_type == 2:
-            _ensure_no_empty_cells(rows_raw)
+        _ensure_no_empty_cells(rows_raw)
 
         # ── Détection cellules vides après Fix 8 ─────────────────────────
         # ── Correction des glyphes ─────────────────────────────────────────────
@@ -1570,6 +1654,19 @@ def extract_table_grid(
             out_path = output_base / family / pdf_name / f"{ref.table_id}.json"
             _save_debug_image(page, bbox, out_path, confidence,
                               has_empty_cells=result.get("has_empty_cells", False))
+
+        # ── Debug table vide ─────────────────────────────────────────────────
+        if DEBUG_EMPTY_ROWS and not rows_fixed:
+            _settings = PDFPLUMBER_TABLE_SETTINGS_TYPE2 if pdf_type == 2 else PDFPLUMBER_TABLE_SETTINGS
+            _save_empty_rows_debug(
+                page=page, ref=ref, pdf_type=pdf_type,
+                extraction_method=method, raw_table=raw_table, bbox=bbox,
+                settings=_settings, pdf_path=pdf_path,
+                output_base=output_base, family=family, pdf_name=pdf_name,
+                caption_y=caption_y, caption_near_bottom=caption_near_bottom,
+                n_non_empty=n_non_empty, should_try_next=should_try_next,
+                warnings_list=result["warnings"], heuristics_dict=heuristics,
+            )
 
     finally:
         if _own_pdf:
@@ -1769,11 +1866,16 @@ def _remove_bleed_rows_bottom(rows: list[list[str]], table_id: str) -> tuple[lis
     commencent par une minuscule (continuation de texte parasite).
     Également : 1ère cellule non-alphanumérique (ex: ".4 Embe", "(1)")
     → continuation ou footnote parasite. Exclut '+' (symboles comme +3.3V).
+    Également exclut '/', '.', '-' (Prescaler /4, decimal values .5, dash -40).
+
+    Pour Type 2 (Antenna House), les Prescaler values commencent par "/",
+    les valeurs negatives par "-", et les unites comme ".5" par ".".
     Retourne (rows_nettoyées, nb_supprimées).
     """
     if not rows:
         return rows, 0
     cut = len(rows)
+    ALLOWED_NONALNUM = frozenset({'+', '/', '.', '-'})
     for i in range(len(rows) - 1, -1, -1):
         text = "".join(str(c or "") for c in rows[i])
         if not text.strip():
@@ -1790,17 +1892,24 @@ def _remove_bleed_rows_bottom(rows: list[list[str]], table_id: str) -> tuple[lis
                 continue
         # Première cellule commence par minuscule → continuation parasite
         # (ex: "pecified by design." → 'p' minuscule = fragment de "Specified")
+        # Exclut les motifs Type 2 valides comme "x = 0 to 7"
         first = str(rows[i][0]).strip() if rows[i] else ""
         if first and first[0].islower():
-            cut = i
-            logger.info(f"_remove_bleed_rows_bottom: cut at row {i} (lowercase first cell '{first[:20]}')")
-            continue
+            if re.search(r'=', first):
+                pass  # valeur d'affectation (ex: "x = 0 to 7")
+            elif len(first) <= 4:
+                pass  # trop court (ex: "aaa", "tVDD")
+            elif re.search(r'\d', first):
+                pass  # contient chiffre (ex: "fCK" est rare, mais OK)
+            else:
+                cut = i
+                logger.info(f"_remove_bleed_rows_bottom: cut at row {i} (lowercase first cell '{first[:20]}')")
+                continue
         # Première cellule commence par un caractère non-alphanumérique
         # (ex: ".4 Embe", "(1)") → continuation ou footnote parasite
-        # Exclut '+' car certains Symboles peuvent commencer par '+' (ex: +3.3V).
-        # Cet ajout complète la détection minuscule pour les cas où le premier
-        # caractère est un point, une parenthèse, etc. (continuations de texte).
-        if first and not first[0].isalnum() and not first[0] == '+':
+        # Exclut '+' (symboles comme +3.3V), '/' (Prescaler /4, /8),
+        # '.' (decimal values .5, .25), '-' (negative -40, ranges)
+        if first and not first[0].isalnum() and first[0] not in ALLOWED_NONALNUM:
             cut = i
             logger.info(f"_remove_bleed_rows_bottom: cut at row {i} (non-alnum first cell '{first[:20]}')")
             continue
@@ -1823,6 +1932,12 @@ def _remove_section_bleed_rows(rows: list[list[str]], table_id: str) -> tuple[li
       2. 1ere cellule commence par minuscule (continuation de paragraphe)
       3. Cellule col 1+ commence par minuscule (fragment de prose,
          ex: "verview" pour "Functional overview")
+
+    Pour Type 2 (Antenna House), P2 et P3 sont trop agressifs car les
+    unites (ms, mA), les parametres (tVDD) et les Prescaler (x = 0 to 7)
+    commencent aussi par minuscule. On exclut :
+      - P2 : si le texte semble etre une valeur (chiffre, operateur)
+      - P3 : sauf pour la derniere colonne (unite, toujours minuscule)
     """
     if not rows:
         return rows, 0
@@ -1835,22 +1950,51 @@ def _remove_section_bleed_rows(rows: list[list[str]], table_id: str) -> tuple[li
             logger.info(f"_remove_section_bleed_rows: cut at row {i} ('{first}')")
             break
         # Pattern 2: first cell starts lowercase (paragraph continuation)
+        # Exclut les motifs Type 2 valides : valeur avec espace/chiffre/apostrophe
         if first and re.match(r'^[a-z]', first):
-            cut = i
-            logger.info(f"_remove_section_bleed_rows: cut at row {i} (lowercase first)")
-            break
-        # Pattern 3: any cell in col 1+ starts lowercase (prose fragment)
-        if len(row) >= 2:
-            found = False
-            for cell in row[1:]:
-                stripped = str(cell).strip()
-                if stripped and re.match(r'^[a-z]', stripped):
-                    found = True
-                    break
-            if found:
+            # Exclure si c'est une donnee Type 2 typique :
+            # - contient "= " (ex: "x = 0 to 7")
+            # - contient un chiffre (ex: "tVDD" non-chiffree OK, "x = 0 to 7" OK)
+            # - contient "'" suivi de lettres (ex: "re-design", "specified by")
+            # - contient "(" → nom de parametre (ex: "twu(Sleep)", "tres(TIM)")
+            # - contient "_" → nom de parametre (ex: "fHSE_ext", "fLSE_ext")
+            if re.search(r'=', first):
+                pass  # valeur d'affectation, PAS une prose
+            elif len(first) <= 6:
+                pass  # trop court pour etre une prose (ex: "tprog", "aaa")
+            elif re.search(r'\d', first):
+                pass  # contient un chiffre = valeur technique, pas prose
+            elif re.search(r'[(_]', first):
+                pass  # contient ( ou _ = nom de parametre, pas prose
+            else:
                 cut = i
-                logger.info(f"_remove_section_bleed_rows: cut at row {i} (lowercase col 1+)")
+                logger.info(f"_remove_section_bleed_rows: cut at row {i} (lowercase first)")
                 break
+        # Pattern 3: any cell in col 1+ starts lowercase (prose fragment)
+        # Exclut la DERNIERE colonne (toujours l'unite, toujours minuscule: ms, mA, V, °C)
+        # Exclut les lignes de continuation (1ere cellule identique a la ligne precedente)
+        # Exclut aussi si la 1ere cellule est vide (continuation row) ou commence par
+        # majuscule → ligne header/donnees
+        if len(row) >= 2 and first and not re.match(r'^[A-Z]', first):
+            # Ligne de continuation apres merge vertical → pas du section bleed
+            is_continuation = (
+                i > 0 and rows[i-1] and len(rows[i-1]) > 0
+                and str(rows[i-1][0]).strip() == first
+            )
+            if not is_continuation:
+                found = False
+                for ci, cell in enumerate(row[1:], start=1):
+                    # Ignorer la derniere colonne (unite)
+                    if ci == len(row) - 1:
+                        continue
+                    stripped = str(cell).strip()
+                    if stripped and re.match(r'^[a-z]', stripped):
+                        found = True
+                        break
+                if found:
+                    cut = i
+                    logger.info(f"_remove_section_bleed_rows: cut at row {i} (lowercase col 1+)")
+                    break
     removed = len(rows) - cut
     if removed > 0:
         logger.info(f"_remove_section_bleed_rows: removed {removed} trailing section bleed rows")

@@ -9,6 +9,8 @@ l'indexation vectorielle (RAG avec ChromaDB, Qdrant, Pinecone, etc.).
 
 **Chiffres cles :** 185 datasheets, 20 familles STM32, extraction 100 % high
 confidence, 0 erreur, 0 valeur null, extraction de l'ordering information pour les PDFs Type 1.
+Famille C5 (Type 2) : 0 tables vides apres correction des heuristiques de section bleed
+et propagation verticale.
 
 ---
 
@@ -286,7 +288,7 @@ base sur les lignes tracees dans le PDF.
 | 4 | **Grille X calculee**            | Centres de colonnes calcules mathematiquement                   |
 | 5 | **Continuation multi-pages**     | Fusion des tableaux etales sur 2+ pages — 3 strategies (lines → texte → grille mots), drift contourne quand le titre `"(continued)"` est present |
 | 6 | **Propagation horizontale**      | Remplissage des cellules fusionnees (colspan)                   |
-| 7 | **Propagation verticale**        | Remplissage des cellules fusionnees (rowspan + fill-down)       |
+| 7 | **Propagation verticale**        | Remplissage des cellules fusionnees (rowspan + fill-down). Detetection de nouveau groupe : si la 1ere colonne change vers une valeur jamais vue, la propagation est bloquee entre groupes (ex: table_6 I/O → Notes). Les lignes de continuation (1ere cellule vide) sont toujours propagees. |
 | 8 | **Detection couleur (Type 2)**   | Comptage des lignes d'en-tete via fond bleu fonce du PDF        |
 
 ### Extraction Spatiale des En-tetes (avance)
@@ -730,6 +732,7 @@ Type 2 (16 PDFs, Producer = Antenna House, format "nouvelle generation")
 | 9 | **Propagation inter-groupes erronee (Type 2)** | Fix 6 remplissait les cellules d'un nouveau groupe depuis le groupe precedent (ex: `I/O structure` → `Notes` dans table_6) | Heuristique "groupe connu" : si la 1ere colonne change vers une valeur jamais vue dans cette colonne → nouveau groupe → ne pas propager |
 | 10 | **Continuation rejetee pour colonne fantome en milieu de page** | La page de continuation a 9 colonnes (dont une fantome a x0=117 entre les colonnes 0 et 1) mais `_min_drift()` ne testait que le skip en debut de liste → drift 68.4px > seuil → continuation ignoree | `_min_drift()` revisite : ignore toute position dans la plus longue liste (pas seulement le debut). Pour 9 vs 8, test chaque index 0..8 comme position fantome potentielle. |
 | 11 | **Notes (`_notes`) et légendes (`_legend`) absentes** | Les notes `1. X = supported.` en bas de tableaux et les légendes entre caption et headers n'étaient pas capturées | `extract_footnotes_from_pages()` scanne headers + rows pour les marqueurs `(N)`, extrait les lignes `N. ...` du texte de page. `extract_legend_from_page()` capture le texte descriptif entre caption et headers. Stockés dans `heuristics._notes` et `heuristics._legend`. Type 2 uniquement (cache de textes `page_text_cache`). |
+| 12 | **Tables vides Type 2 (Antenna House)** | 42 tables Type 2 produisaient 0 lignes à cause de 3 root causes : (a) `_remove_section_bleed_rows` supprimait toutes les lignes via P2 (lowercase first cell) et P3 (lowercase col 1+) sur des données valides (`twu(Sleep)`, `fHSE_ext`, `source`, `fTIMxCLK = 144 MHz`) ; (b) `_remove_bleed_rows_bottom` supprimait les Prescaler `/4`, `.`, `-` et les lignes `x = 0 to 7` ; (c) Fix 6 (propagation verticale) sautait les lignes de continuation vides | **P2/P3** : exceptions ajoutées pour `(`, `_`, chiffres, mots ≤6 chars, 1ère cellule vide/majuscule, lignes de continuation (première cellule identique à la précédente). **Bottom bleed** : `ALLOWED_NONALNUM = {'+', '/', '.', '-'}`. **Fix 6** : propagation autorisée quand `cur_first=""`. **Pipeline unifié** : retrait de tous les `if pdf_type == 2` sur `_fill_horizontal`, Fix 6 exception, et `_ensure_no_empty_cells`. **Résultat** : 82/82 tables C5 → 0 tables vides (était 42). |
 
 ### Script de classification
 
