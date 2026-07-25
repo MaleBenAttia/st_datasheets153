@@ -1786,16 +1786,105 @@ def _is_likely_reversed(cell: str) -> bool:
     # Plage de tension (ex: "2.7 V - 3.6 V")
     if re.search(r'\d+\.\d+\s*V\s*[-–]\s*\d+\.\d+\s*V', clean):
         return False
-    # Bit-width suivi d'acronyme (ex: "12-bit ADC channels")
+    # Bit-width suivi d'acronyme (ex: "12-bit ADC channels", "32-bit timer")
     if re.search(r'\d+-bit\s+[A-Z]', clean):
+        return False
+    # Acronyme avec trait d'union (ex: "Octo-SPI interface", "I2C-bus")
+    if re.search(r'[A-Za-z]+-[A-Z]{2,}', clean):
+        return False
+    # Acronyme suivi d'un mot d'au moins 2 lettres (ex: "DMA support",
+    # "DHUK and BHK key selection"). Exclut les textes courts type
+    # "ISL f" (1 seule lettre apres l'espace) qui sont vraiment inverses.
+    if len(clean) >= 8 and re.match(r'^[A-Z]{2,}\s+[a-z]{2,}', clean):
+        return False
+    # Paramètre courte : une lettre + espace + mot en majuscules (ex: "V HSEH", "R AIN", "C ADC")
+    if re.match(r'^[A-Z]\s+[A-Z]', clean):
+        return False
+    # Paramètre courte : une lettre + espace + mot en minuscules (ex: "V rising", "V falling")
+    if re.match(r'^[A-Z]\s+[a-z]', clean):
+        return False
+    # Date (ex: "02-Dec-2024")
+    if re.match(r'\d{1,2}-[A-Z][a-z]{2}-\d{4}', clean):
+        return False
+    # Symbole : une lettre + espace + signe/unité (ex: "V = 3 V DD")
+    if re.match(r'^[A-Z]\s*[=<>]', clean):
+        return False
+    # Symbole : [lettre] [space] [lettre] (ex: "T STG", "S EMI", "N END", "V DDA")
+    if re.match(r'^[A-Z]\s+[A-Z]{2,4}$', clean):
+        return False
+    # Symbole : [lettre] [space] [lettre/num] (ex: "I INJ", "V FTB", "V FESD")
+    if re.match(r'^[A-Z]\s+[A-Z0-9/_]+\s*$', clean):
+        return False
+    if re.match(r'^[A-Z]\s*[=<>]', clean):
+        return False
+    # Symbole : [lettre] [space] [lettre] (ex: "T STG", "S EMI", "N END", "V DDA")
+    if re.match(r'^[A-Z]\s+[A-Z]{2,4}$', clean):
+        return False
+    # Symbole : [lettre] [space] [lettre/num] (ex: "I INJ", "V FTB", "V FESD")
+    if re.match(r'^[A-Z]\s+[A-Z0-9/_]+\s*$', clean):
+        return False
+    # Identifiant technique 100% majuscules + chiffres + underscore
+    # (ex: "I3C1_SDA", "PWR_CSTOP", "RTC_REFIN").
+    # Un vrai texte inversé contiendrait des minuscules.
+    if re.match(r'^[A-Z0-9_]+$', clean):
+        return False
+    # Deux acronymes consécutifs suivis d'un mot minuscule
+    # (ex: "HDR DDR message"). Texte normal, pas inversé.
+    if re.match(r'^[A-Z]{2,}\s+[A-Z]{2,}\s+[a-z]', clean):
+        return False
+    # Acronyme CamelCase suivi d'au moins un autre mot
+    # (ex: "IrDA SIR ENDEC block" → IrD = CamelCase).
+    # Un vrai texte inversé ne commencerait pas par Maj+min+Maj.
+    if re.match(r'^[A-Z][a-z]+[A-Z]', clean):
+        return False
+    # Acronyme court + mot minuscule (ex: "LIN mode", "HSE startup").
+    # Requiert len < 15 car les textes longs passent déjà par le guard
+    # ^[A-Z]{2,}\s+[a-z]{2,} ci-dessus.
+    if len(clean) < 15 and re.match(r'^[A-Z]{2,4}\s+[a-z]{2,}', clean):
+        return False
+    # Commence par un caractère non-alphanumérique (ex: ΣIVDD, ~0.5 LSB).
+    # Ces cellules sont des artefacts d'extraction, pas du texte inversé.
+    if clean and not clean[0].isalnum():
+        return False
+    # "I/O" (Input/Output) suivi d'un espace → pas inversé
+    if re.match(r'^I/O\s', clean):
+        return False
+    # Phrase en casse normale : Maj + minuscules + espace (ex: "Propagation delay...",
+    # "With 50 kHz..."). Un texte inversé ne commencerait pas par Maj+min+espace.
+    if re.match(r'^[A-Z][a-z]{2,}\s', clean):
+        return False
+    # Paramètre technique (majuscules/chiffres/underscore) suivi d'au moins
+    # 2 lettres minuscules (ex: "OSC_IN input pin low-level voltage").
+    # Exclut "ISL f" (1 seule lettre minuscule après l'espace) qui est vraiment inversé.
+    if re.match(r'^[A-Z0-9_]+[\s:]+[a-z]{2,}', clean):
+        return False
+    # Paramètre en casse mixte avec underscore (ex: "Vhyst_POR_PDR", "Vhyst_PVD")
+    if re.match(r'^[A-Z][a-z]+_[A-Z]', clean):
+        return False
+    # Paramètre technique avec 2+ underscores (ex: "VHSE_ext_PP")
+    # Structure typique : MAJ_min_MAJ, improbable dans un texte inversé.
+    if clean.count('_') >= 2 and re.search(r'[a-z]', clean):
+        return False
+    # Préfixe "f" minuscule (fréquence) suivi d'un acronyme (ex: "fHSE_ext", "fLSE_ext")
+    if re.match(r'^[a-z][A-Z]{2,}', clean):
+        return False
+    # Chevrons avec paramètre (ex: "MODE<2:0>_V12=111 BUFFER OFF")
+    if re.search(r'<[A-Za-z0-9:]+>', clean):
+        return False
+    # Opérateur arithmétique (ex: "315*Ton/ (Ton+Toff)")
+    if re.search(r'[\*\+]\(?[A-Za-z]', clean):
+        return False
+    # Inégalité de tension (ex: "2.7 V < VDD < 3.6 V")
+    if re.search(r'<\s*[A-Z]+\s*<', clean):
         return False
 
     # Si l'inversé a une plus longue séquence majuscule au début → inversé
     # Sauf si l'original commence par minuscule ou chiffre
     # (ex: "f LSI" → l'original commence bien par minuscule)
+    # Requiert diff >= 2 pour éviter les faux positifs "V rising DD" (diff=1)
     clean_init = _initial_upper_run(clean)
     rev_init = _initial_upper_run(rev)
-    if rev_init > clean_init and not clean[0].islower() and not clean[0].isdigit():
+    if rev_init > clean_init + 1 and not clean[0].islower() and not clean[0].isdigit():
         return True
 
     # Parenthèses inversées ")N(" → inversé
