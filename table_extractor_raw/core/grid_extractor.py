@@ -1198,10 +1198,27 @@ def extract_table_grid(
                     table_obj = None
                     logger.info(f"{ref.table_id}: filtered {len(keep)}/{len(ys)} rows below caption (y>{caption_y:.0f})")
                 elif not keep:
-                    # Toutes les lignes sont au-dessus de la légende (bleed complet)
-                    raw_table = []
-                    table_obj = None
-                    logger.info(f"{ref.table_id}: all {len(ys)} rows above caption, treated as empty")
+                    # Toutes les lignes sont au-dessus de la légende → ré-extraire
+                    # sous la légende sur la MÊME page (pas la page suivante).
+                    # Cas typique : 2 tables par page, pdfplumber a fusionné les deux.
+                    re_extracted = False
+                    if caption_y is not None and len(page.bbox) == 4:
+                        crop = (page.bbox[0], caption_y - 5, page.bbox[2], page.bbox[3])
+                        if crop[1] < crop[3]:
+                            p_cropped = page.within_bbox(crop)
+                            r_cropped = _get_rotated_text_map(p_cropped)
+                            nxt_raw, nxt_obj, nxt_method, nxt_bbox = _extract_from_page(
+                                p_cropped, ref, r_cropped, pdf_type, ""
+                            )
+                            if nxt_raw and len(nxt_raw) >= 2:
+                                raw_table, table_obj, method, bbox = nxt_raw, nxt_obj, nxt_method, nxt_bbox
+                                logger.info(f"{ref.table_id}: re-extracted below caption on same page "
+                                            f"({len(raw_table)} rows, {nxt_method})")
+                                re_extracted = True
+                    if not re_extracted:
+                        raw_table = []
+                        table_obj = None
+                        logger.info(f"{ref.table_id}: all {len(ys)} rows above caption, treated as empty")
 
         # ── Détecter si la légende est en bas de page (→ table page suivante) ──
         # Si la légende est dans les 25% inférieurs de la page, la table body
@@ -1266,7 +1283,7 @@ def extract_table_grid(
                             cur_num = int(ref.table_id.split("_")[1])
                             other_tables = re.findall(r"table\s+(\d+)", nxt_text)
                             other_nums = [int(n) for n in other_tables if n.isdigit()]
-                            if any(n != cur_num for n in other_nums):
+                            if other_nums and cur_num not in other_nums:
                                 logger.info(f"{ref.table_id}: body_on_next_page rejected "
                                             f"(page {pg_idx + 1} has a different table)")
                                 nq_boosted = -1
@@ -1377,6 +1394,7 @@ def extract_table_grid(
             header_depth = len(raw_table) - len(rows_raw)
             first_cell_text = str(raw_table[0][0] or "").strip() if raw_table else ""
             base_x0s = _get_col_x0s(table_obj) if table_obj else []
+            base_bottom = table_obj.bbox[3] if table_obj else None
             c_pages, c_rows, target_cols, cont_x0s_list = find_continuations(
                 pdf,
                 start_page,
@@ -1387,6 +1405,8 @@ def extract_table_grid(
                 first_cell_text,
                 pdf_type=pdf_type,
                 base_col_x0s=base_x0s,
+                base_header=headers,
+                base_bbox_bottom=base_bottom,
             )
             if c_pages and len(c_pages) > 1:
                 merged_pages = c_pages
@@ -1637,6 +1657,45 @@ def extract_table_grid(
         # ── Suppression des lignes de texte de section parasites ──
         rows_fixed, sec_removed = _remove_section_bleed_rows(rows_fixed, ref.table_id)
 
+        # ── Nettoyage des lignes d'en-tête résiduelles et split inter-tables ──
+        # Certaines pages ont des sous-tableaux fusionnés avec leur propre
+        # ligne d'en-tête (ex: table_40). Si d'autres tables partagent la même
+        # page, la première ligne d'en-tête résiduelle marque la frontière entre
+        # deux tables : on garde les lignes AVANT (table courante) et on ignore
+        # les lignes APRÈS (qui appartiennent à la table suivante).
+        # Sinon on supprime simplement toutes les lignes d'en-tête.
+        _HEADER_KW = {"symbol", "parameter", "conditions", "condition", "min", "max", "typ", "unit", "value", "speed", "features"}
+        other_tables = [r for r in all_refs if r.page == ref.page and r.table_id != ref.table_id] if all_refs else []
+        split_idx = None
+        if other_tables:
+            for i, row in enumerate(rows_fixed):
+                if len(row) >= 3:
+                    all_header = True
+                    for cell in row:
+                        txt = str(cell).strip().lower()
+                        if not txt or not any(kw in txt for kw in _HEADER_KW):
+                            all_header = False
+                            break
+                    if all_header:
+                        split_idx = i
+                        break
+        if split_idx is not None:
+            rows_fixed = rows_fixed[:split_idx]
+        else:
+            cleaned: list[list[str]] = []
+            for row in rows_fixed:
+                if len(row) >= 3:
+                    all_header = True
+                    for cell in row:
+                        txt = str(cell).strip().lower()
+                        if not txt or not any(kw in txt for kw in _HEADER_KW):
+                            all_header = False
+                            break
+                    if all_header:
+                        continue
+                cleaned.append(row)
+            rows_fixed = cleaned
+
         # ── [Fix] Padding de toutes les lignes au nombre de colonnes des headers ──
         # Certaines lignes arrivent avec moins d'items que len(headers) à cause des
         # cellules fusionnées (colspan) dans le PDF. Ce padding normalise l'output
@@ -1645,6 +1704,21 @@ def extract_table_grid(
         for i, row in enumerate(rows_fixed):
             while len(row) < hc:
                 row.append("")
+
+        # ── [Fix] Remplacer codes commande par noms STM32 dans headers ──────
+        # Certains datasheets mettent des codes commande (Q3H0X546N) au lieu
+        # des noms de devices STM32 dans la ligne d'en-tête. On pioche le nom
+        # depuis la légende de la table.
+        import re as _re
+        _oc_pat = _re.compile(r'Q3H0[A-Z0-9]+')
+        _stm32_pat = _re.compile(r'(STM32[A-Za-z0-9]+)')
+        _stm32_m = _stm32_pat.search(ref.caption) if ref.caption else None
+        if _stm32_m:
+            _stm32_name = _stm32_m.group(1)
+            for _i, _h in enumerate(headers):
+                if _h and _oc_pat.search(_h):
+                    _oc = _oc_pat.search(_h).group()
+                    headers[_i] = f"{_stm32_name} ({_oc})"
 
         # ── Remplissage du résultat ────────────────────────────────────────────
         if heuristics:
@@ -1765,6 +1839,8 @@ def _is_likely_reversed(cell: str) -> bool:
 
     clean_mid = _mid_word_uppers(clean)
     rev_mid = _mid_word_uppers(rev)
+    clean_init = _initial_upper_run(clean)
+    rev_init = _initial_upper_run(rev)
 
     # La version inversée ne doit pas avoir PLUS de majuscules en milieu de mot
     if rev_mid > clean_mid:
@@ -1835,8 +1911,14 @@ def _is_likely_reversed(cell: str) -> bool:
     # Acronyme CamelCase suivi d'au moins un autre mot
     # (ex: "IrDA SIR ENDEC block" → IrD = CamelCase).
     # Un vrai texte inversé ne commencerait pas par Maj+min+Maj.
+    # Exception : si l'inversé a une séquence majuscule initiale plus longue
+    # suivie d'un chiffre (ex: "TxC3A5C23MTS" → "STM32C5A3CxT"),
+    # c'est un part number inversé, pas un acronyme CamelCase.
     if re.match(r'^[A-Z][a-z]+[A-Z]', clean):
-        return False
+        if rev_init > clean_init + 1 and rev_init < len(rev) and rev[rev_init].isdigit():
+            pass  # part number inversé (ex: "TxC3A5C23MTS" → "STM32C5A3CxT")
+        else:
+            return False
     # Acronyme court + mot minuscule (ex: "LIN mode", "HSE startup").
     # Requiert len < 15 car les textes longs passent déjà par le guard
     # ^[A-Z]{2,}\s+[a-z]{2,} ci-dessus.
@@ -1877,13 +1959,81 @@ def _is_likely_reversed(cell: str) -> bool:
     # Inégalité de tension (ex: "2.7 V < VDD < 3.6 V")
     if re.search(r'<\s*[A-Z]+\s*<', clean):
         return False
+    # Deux mots en majuscules séparés par un espace (ex: "TRIMOFFSETP TRIMLPOFFSETP")
+    if re.match(r'^[A-Z0-9]{2,}\s+[A-Z0-9]{2,}$', clean):
+        return False
+    # Paramètre suivi d'un tiret et d'une valeur numérique (ex: "VDDA -100 mV")
+    if re.match(r'^[A-Z0-9_]+\s+[-–]\s*\d+', clean):
+        return False
+    # Acronyme avec parenthèse multi-mot (ex: "PKA (ECDSA signature verification)")
+    if re.match(r'^[A-Z]{2,}\s+\([A-Za-z]+\s+', clean):
+        return False
+    # Code de commande/package avec slash (ex: "Bx/8x170C23MTS", "C092xB/xC")
+    if re.search(r'[A-Z][a-z]/[A-Za-z0-9]', clean) or re.search(r'[A-Z]\d+[a-z][A-Z]/', clean):
+        return False
+    # Les deux versions commencent par minuscule → symétrique → pas inversé
+    if clean and rev and clean[0].islower() and rev[0].islower():
+        return False
+    # Parenthèse multi-mot (ex: "(parity error)")
+    if re.search(r'\([A-Za-z]+\s+[A-Za-z]+\)', clean):
+        return False
+    # Séparateur " / " (ex: "RTC / RNG / AES / VREFBUF")
+    if re.search(r'\s/\s', clean):
+        return False
+    # Trois mots ou plus en majuscules (ex: "USER TRIM COVERAGE")
+    if re.match(r'^[A-Z][A-Z0-9\s]{5,}$', clean):
+        return False
+    # "A/D", "I/O" etc (acronyme avec slash)
+    if re.search(r'A/[A-Z]', clean):
+        return False
+    # Formule "f = f ..." (ex: "f = f HCLK HSI48/HSIDIV")
+    if re.search(r'f\s*=\s*f\s', clean):
+        return False
+    # "V . CORE" pattern (lettre + espace + point + espace + lettre)
+    if re.search(r'\b[A-Z]\s\.\s[A-Z]', clean):
+        return False
+    # Texte se terminant par un point (ex: "g to I/O control registers.")
+    if clean.endswith('.'):
+        return False
+    # Nom de pin avec tiret (ex: "PF2-NRST")
+    if re.match(r'^[A-Z0-9]+-[A-Z0-9]+$', clean):
+        return False
+    # Valeur numérique avec unité (ex: "48MHz", "16MHz")
+    if re.match(r'^\d+[A-Za-z]+$', clean):
+        return False
+    # Plage de tension avec "to" (ex: "2.0 V to 3.6 V")
+    if re.search(r'\d+\.\d+\s*V\s+to\s', clean):
+        return False
+    # Majuscule + minuscule + espace (ex: "Hz internal RC (LSI")
+    if re.match(r'^[A-Z][a-z]{1,}\s', clean):
+        return False
+    # Parenthèse ouvrante suivie de minuscule (ex: "CD (binar")
+    if re.search(r'\([a-z]', clean):
+        return False
+    # Chiffre + V + minuscule (ex: "6 V operatin", "2.0 V corr")
+    if re.match(r'^\d+(\.\d+)?\s+V\s+[a-z]', clean):
+        return False
+    # Formule avec nombre décimal + lettre + espace + majuscule (ex: "0.39x D 2 or")
+    if re.search(r'\d+\.\d+[a-z]\s+[A-Z]', clean):
+        return False
+    # Formule avec nombre décimal + lettre + majuscule collée (ex: "0.3xVdd")
+    if re.search(r'\d+\.\d+[a-z][A-Z]', clean):
+        return False
+
+    # Texte inversé : une seule majuscule en toute dernière position + l'inversé commence
+    # par une majuscule + minuscules (ex: "sremiT" → "Timers", "secafretni.mmoC" → "Comm.interfaces")
+    if len(upper_pos) == 1 and upper_pos[0] == len(clean) - 1:
+        if rev[0].isupper() and len(rev) > 1 and rev[1].islower():
+            return True
+
+    # Texte inversé tout-minuscules + l'inversé commence par Maj+min (ex: "gnirotinom" → "Monitoring")
+    if not upper_pos and rev[0].isupper() and len(rev) > 1 and rev[1].islower():
+        return True
 
     # Si l'inversé a une plus longue séquence majuscule au début → inversé
     # Sauf si l'original commence par minuscule ou chiffre
     # (ex: "f LSI" → l'original commence bien par minuscule)
     # Requiert diff >= 2 pour éviter les faux positifs "V rising DD" (diff=1)
-    clean_init = _initial_upper_run(clean)
-    rev_init = _initial_upper_run(rev)
     if rev_init > clean_init + 1 and not clean[0].islower() and not clean[0].isdigit():
         return True
 
@@ -2101,14 +2251,19 @@ def _remove_section_bleed_rows(rows: list[list[str]], table_id: str) -> tuple[li
             # - contient "'" suivi de lettres (ex: "re-design", "specified by")
             # - contient "(" → nom de parametre (ex: "twu(Sleep)", "tres(TIM)")
             # - contient "_" → nom de parametre (ex: "fHSE_ext", "fLSE_ext")
+            # - contient " " + majuscule → newline→space artifact (ex: "t\nWUSLEEP")
             if re.search(r'=', first):
                 pass  # valeur d'affectation, PAS une prose
             elif len(first) <= 6:
                 pass  # trop court pour etre une prose (ex: "tprog", "aaa")
+            elif re.search(r'[a-z][A-Z]', first):
+                pass  # camelCase technique (ex: "trLSE", "tfLSE", "tVDD")
             elif re.search(r'\d', first):
                 pass  # contient un chiffre = valeur technique, pas prose
             elif re.search(r'[(_]', first):
                 pass  # contient ( ou _ = nom de parametre, pas prose
+            elif re.match(r'^[a-z]\s+[A-Z]', first):
+                pass  # newline→space artifact (ex: "t\nWUSLEEP" → "t WUSLEEP")
             else:
                 cut = i
                 logger.info(f"_remove_section_bleed_rows: cut at row {i} (lowercase first)")
@@ -2132,6 +2287,8 @@ def _remove_section_bleed_rows(rows: list[list[str]], table_id: str) -> tuple[li
                         continue
                     stripped = str(cell).strip()
                     if stripped and re.match(r'^[a-z]', stripped):
+                        if re.search(r'[(_\d]', stripped):
+                            continue
                         found = True
                         break
                 if found:
@@ -2437,8 +2594,9 @@ def _extract_from_page(
         if best1 is not None and _is_image_table(best1):
             best1 = best_ft1 = bbox1 = None
         if best1 is not None:
-            best1 = _apply_rotated_fix(page, best1, rotated_map, finder.tables)
+            best1 = _apply_rotated_fix(page, best1, rotated_map, best_ft1)
             best1 = _detect_vector_dashes(best1, best_ft1, page)
+            best1, best_ft1 = _merge_compatible_tables(best1, best_ft1, tables, finder.tables)
 
     q1 = _table_quality(best1) if best1 else -1.0
     if q1 >= 2.0:
@@ -2456,8 +2614,9 @@ def _extract_from_page(
         if best2 is not None and _is_image_table(best2):
             best2 = best_ft2 = bbox2 = None
         if best2 is not None:
-            best2 = _apply_rotated_fix(page, best2, rotated_map, finder_text.tables)
+            best2 = _apply_rotated_fix(page, best2, rotated_map, best_ft2)
             best2 = _detect_vector_dashes(best2, best_ft2, page)
+            best2, best_ft2 = _merge_compatible_tables(best2, best_ft2, tables_text, finder_text.tables)
 
             # Le filtrage des lignes au-dessus de la légende est fait
             # dans extract_table_grid (après _extract_from_page) pour que
@@ -2487,47 +2646,109 @@ def _extract_from_page(
     return None, None, "pdfplumber", None
 
 
+def _merge_compatible_tables(
+    raw_table: list,
+    table_obj: Any,
+    all_tables: list,
+    all_finder: list,
+) -> tuple[list, Any]:
+    """
+    Fusionne les tables pdfplumber adjacentes compatibles.
+
+    Pdfplumber peut diviser une table logique (ex: "Table 2. Device features")
+    en plusieurs tables physiques suite à des bordures interrompues,
+    changements de fond, ou sauts de ligne horizontale.
+    Cette fonction réassemble les fragments qui ont le même nombre de colonnes
+    et sont situés directement l'un en-dessous de l'autre.
+    """
+    if not raw_table or not table_obj or not all_tables or not all_finder:
+        return raw_table, table_obj
+
+    ncols = len(raw_table[0])
+
+    try:
+        idx = next(i for i, ft in enumerate(all_finder) if ft is table_obj)
+    except StopIteration:
+        return raw_table, table_obj
+
+    merged = list(raw_table)
+    current_ft = table_obj
+    current_bottom = current_ft.bbox[3]
+
+    for i in range(idx + 1, len(all_finder)):
+        ft = all_finder[i]
+        t = all_tables[i]
+        if t is None or len(t) < 2:
+            break
+        if len(t[0]) != ncols:
+            break
+        gap = ft.bbox[1] - current_bottom
+        if gap < 0 or gap > 50:
+            break
+        if abs(ft.bbox[0] - current_ft.bbox[0]) > 15:
+            break
+        rows_to_add = list(t)
+        if rows_to_add and merged and rows_to_add[0] == merged[-1]:
+            rows_to_add = rows_to_add[1:]
+        merged.extend(rows_to_add)
+        current_ft = ft
+        current_bottom = ft.bbox[3]
+
+    return merged, current_ft
+
+
 def _apply_rotated_fix(
     page: Page,
     raw_table: list,
     rotated_map: dict,
-    finder_tables: list,
+    finder_table: Any,
 ) -> list:
     """
     [Fix 1] Pour chaque cellule, si elle est dans une zone de texte rotatif,
     remplacer son texte par la version correctement ordonnée.
 
-    On utilise les bboxes de cellule du finder pour la localisation.
+    Utilise le bbox du finder_table pour la validation spatiale :
+    - N'applique la correction que si la zone de texte rotatif CHEVAUCHE
+      physiquement la cellule cible.
+    - Requiert au moins 3 caractères de correspondance pour éviter les
+      faux positifs (ex: "C" ne doit pas matcher "C230MTS").
     """
-    if not rotated_map:
+    if not rotated_map or finder_table is None:
         return raw_table
 
-    # Récupérer les cellules du finder pour avoir les bboxes
-    try:
-        finder_cells = {}
-        for ft in finder_tables:
-            for cell in ft.cells:
-                # cell = (x0, top, x1, bottom) dans pdfplumber
-                finder_cells[(round(cell[0]), round(cell[1]))] = cell
-    except Exception:
-        return raw_table
-
-    # Appliquer la correction
     fixed_table = []
     for row_idx, row in enumerate(raw_table):
         fixed_row = []
         for col_idx, cell in enumerate(row):
             if cell and isinstance(cell, str):
                 cell_clean = re.sub(r'[^a-zA-Z0-9]', '', cell[::-1])
-                
+                if len(cell_clean) < 3:
+                    fixed_row.append(cell)
+                    continue
+
+                cell_bbox = None
+                try:
+                    if (row_idx < len(finder_table.rows) and
+                            col_idx < len(finder_table.rows[row_idx].cells)):
+                        cell_bbox = finder_table.rows[row_idx].cells[col_idx]
+                except (IndexError, AttributeError):
+                    pass
+
                 for (rx0, ry0, rx1, ry1), corrected in rotated_map.items():
+                    if cell_bbox is not None:
+                        cx0, cy0, cx1, cy1 = cell_bbox
+                        overlap_x = max(0, min(rx1, cx1) - max(rx0, cx0))
+                        overlap_y = max(0, min(ry1, cy1) - max(ry0, cy0))
+                        if overlap_x <= 0 or overlap_y <= 0:
+                            continue
+
                     corrected_clean = re.sub(r'[^a-zA-Z0-9]', '', corrected)
                     if corrected_clean == cell_clean or corrected_clean.startswith(cell_clean):
                         cell = corrected
                         break
             fixed_row.append(cell)
         fixed_table.append(fixed_row)
-    
+
     return fixed_table
 
 

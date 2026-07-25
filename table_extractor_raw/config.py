@@ -24,10 +24,10 @@ MAX_COL_VARIANCE       = 0.40  # tolérance accrue pour les sous-lignes fusionn�
 
 # ── Continuation multi-pages ──────────────────────────────────────────────────
 MAX_CONTINUATION_PAGES = 30    # sécurité anti-boucle infinie
-MAX_CONT_COL_DRIFT    = 200   # seuil de dérive x0 (px) pour accepter la suite d'une table
-                               # 60 était trop serré : les stratégies lines vs text donnent des
-                               # x0 différents sur la même table. 200 couvre les shifts de mise
-                               # en page inter-pages ET les différences de stratégie d'extraction.
+MAX_CONT_COL_DRIFT    = 50    # seuil de dérive x0 (px) pour accepter la suite d'une table
+                               # 50 : les fausses continuations (table différente) ont des drifts
+                               # > 55px ; les vraies continuations (même table) ont des drifts < 31px.
+                               # 200 était trop permissif (captait des tables adjacentes).
 
 # ── Type 2 (Antenna House / XML-based) ────────────────────────────────────────
 MIN_TABLE_WIDTH = 40      # en dessous = bandeau décoratif / marge → rejeter

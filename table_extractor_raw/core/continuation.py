@@ -146,11 +146,45 @@ def _pick_best_continuation(
     return table_data, top_ft, method, cont_x0s
 
 
+def _remove_adjacent_duplicates(headers: list[str]) -> list[str]:
+    result: list[str] = []
+    for h in headers:
+        h_norm = str(h).strip().lower()
+        if not result or result[-1] != h_norm:
+            result.append(h_norm)
+    return result
+
+
+def _headers_differ(
+    cont_first_row: list | None,
+    base_header: list[str] | None,
+    threshold: float = 0.33,
+) -> bool:
+    if not base_header or not cont_first_row:
+        return False
+    # Normaliser les deux côtés : supprimer les doublons adjacents
+    # (ex: ["Conditions","Conditions"] → ["Conditions"])
+    # pour gérer les colonnes scindées avec le même en-tête.
+    base_norm = set(_remove_adjacent_duplicates(base_header))
+    cont_norm = set(_remove_adjacent_duplicates(cont_first_row))
+    # Comparaison ensembliste (Jaccard) : intersection / union.
+    # Plus robuste que l'alignement index par index : deux tables
+    # différentes avec des colonnes en commun (ex: Symbol, Parameter)
+    # mais des structures distinctes ne sont pas confondues.
+    intersection = base_norm & cont_norm
+    union = base_norm | cont_norm
+    if len(union) < 2:
+        return False
+    dissimilarity = 1.0 - len(intersection) / len(union)
+    return dissimilarity > threshold
+
+
 def _is_continuation_page(
     page: Page,
     expected_col_count: int,
     current_table_id: str,
     pdf_type: int = 1,
+    base_header: list[str] | None = None,
 ) -> tuple[bool, Optional[list], Optional[list[float]], Optional[Any], bool]:
     current_table_num = current_table_id.split("_")[1] if "_" in current_table_id else ""
 
@@ -236,17 +270,46 @@ def _is_continuation_page(
         return False, None, None, None, False
 
     for w in words:
-        if "Table" in w["text"] and w["top"] < top_ft.bbox[1]:
+        if "Table" in w["text"] and top_ft.bbox[1] - 50 < w["top"] < top_ft.bbox[1]:
             line_words = [ow for ow in words if abs(ow["top"] - w["top"]) < 3]
             line_text = " ".join(ow["text"] for ow in line_words).lower()
             if current_table_num and f"table {current_table_num}" in line_text:
                 pass
             else:
-                return False, None, None, None, False
+                logger.info(
+                    f"  page {page.page_number}: found \"{line_text.strip()}\" near table, "
+                    f"allowing header-check pass-through"
+                )
 
     col_count = max(len(r) for r in table_data) if table_data else 0
     if abs(col_count - expected_col_count) > 2:
-        return False, None, None, None, False
+        # pdfplumber fusionne parfois des colonnes identiques adjacentes
+        # dans la page de continuation (ex: 6× "Conditions" → 1× "Conditions").
+        # Si les ensembles d'en-têtes (après dédup) sont identiques, la
+        # table est bien une continuation — accepter malgré le diff.
+        if base_header and table_data:
+            base_set = set(_remove_adjacent_duplicates(base_header))
+            cont_set = set(_remove_adjacent_duplicates(table_data[0]))
+            if base_set == cont_set:
+                logger.info(
+                    f"  page {page.page_number}: col_count={col_count} vs "
+                    f"expected={expected_col_count}, but headers match, accepting"
+                )
+            else:
+                return False, None, None, None, False
+        else:
+            return False, None, None, None, False
+
+    # ── Vérification du contenu de l'en-tête ───────────────────────────────
+    # Si la page N+1 a un en-tête différent de la table de base, c'est que
+    # la table trouvée n'est pas la continuation mais une table différente.
+    if base_header and table_data:
+        if _headers_differ(table_data[0], base_header):
+            logger.info(
+                f"  page {page.page_number}: header mismatch with base table, "
+                f"rejecting continuation"
+            )
+            return False, None, None, None, False
 
     return True, table_data, x0s, top_ft, False
 
@@ -285,6 +348,42 @@ def _expand_cont_row(row: list, expected_col_count: int) -> list:
 
     for i, val in enumerate(real_values):
         count = slots_per_value + (1 if i < remainder else 0)
+        result.extend([val] * count)
+
+    return result[:expected_col_count]
+
+
+def _expand_cont_row_by_x0s(
+    row: list,
+    expected_col_count: int,
+    base_x0s: list[float],
+    cont_x0s: list[float],
+) -> list:
+    """
+    Expand a row by matching continuation column x0s to base column x0s.
+    When pdfplumber merges adjacent identical columns (e.g. 6× "Conditions"
+    → 1× "Conditions") in the continuation, the merged column's x0 range
+    covers multiple base column x0s. This function detects such merges and
+    duplicates the value across the correct number of base columns.
+
+    Example:
+      base_x0s = [42, 98, 185, 215, 245, 275, 305, 335, 420, 450, 480, 510]
+      cont_x0s = [42, 98, 185, 420, 450, 480, 510]
+      → span counts: [1, 1, 6, 1, 1, 1, 1]
+      → row len 7 → expanded to 12
+    """
+    if len(row) >= expected_col_count:
+        return row
+
+    next_cx0s = list(cont_x0s[1:]) + [float("inf")]
+    span_counts: list[int] = []
+    for cx0, nxt in zip(cont_x0s, next_cx0s):
+        count = sum(1 for bx0 in base_x0s if cx0 - 1 <= bx0 < nxt)
+        span_counts.append(max(count, 1))
+
+    result: list[str] = []
+    for ci, count in enumerate(span_counts):
+        val = str(row[ci]) if ci < len(row) else ""
         result.extend([val] * count)
 
     return result[:expected_col_count]
@@ -368,6 +467,8 @@ def find_continuations(
     max_pages: int = MAX_CONTINUATION_PAGES,
     pdf_type: int = 1,
     base_col_x0s: list[float] | None = None,
+    base_header: list[str] | None = None,
+    base_bbox_bottom: float | None = None,
 ) -> tuple[list[int], list[list[str]], int, list[list[float]]]:
     """
     Cherche les pages suivantes contenant la suite de la table.
@@ -395,13 +496,28 @@ def find_continuations(
     next_ref = min(next_refs, key=lambda r: r.page) if next_refs else None
     next_table_page = next_ref.page if next_ref else float('inf')
 
+    # Si d'autres tables partagent la même page ET la table courante ne remplit
+    # pas la page (bbox bas < 85% de la hauteur), ignorer la continuation.
+    if base_bbox_bottom is not None:
+        same_page_others = [r for r in all_refs if r.page == start_page_num and r.table_id != current_table_id]
+        if same_page_others:
+            page_height = pdf.pages[start_page_num - 1].height
+            fill_threshold = page_height * 0.85
+            if base_bbox_bottom < fill_threshold:
+                logger.info(
+                    f"  table {current_table_id} ends at y={base_bbox_bottom:.0f} "
+                    f"(threshold={fill_threshold:.0f}), other tables on same page, skipping continuation"
+                )
+                return merged_pages, [], expected_col_count, []
+
     while current_page <= len(pdf.pages) and len(merged_pages) < max_pages:
         # Ne pas dépasser la page de la table suivante
         if current_page > next_table_page:
             break
 
         is_cont, table_data, cont_x0s, top_ft, has_title = _is_continuation_page(
-            pdf.pages[current_page - 1], expected_col_count, current_table_id, pdf_type
+            pdf.pages[current_page - 1], expected_col_count, current_table_id,
+            pdf_type, base_header=base_header,
         )
         if not is_cont:
             break
@@ -419,11 +535,20 @@ def find_continuations(
                 drift = float("inf")
 
             if drift > MAX_CONT_COL_DRIFT:
-                logger.warning(
-                    f"  -> page {current_page}: column drift {drift:.1f}px "
-                    f"({len(cont_x0s)} cols vs {len(base_col_x0s)} base), skipping"
+                # Si les en-têtes correspondent, le drift géométrique peut être
+                # causé par des colonnes scindées/fusionnées (ex: "Conditions"
+                # dédoublé). Tolérer le drift quand les en-têtes matchent.
+                headers_match = (
+                    base_header is not None and table_data is not None
+                    and table_data
+                    and not _headers_differ(table_data[0], base_header, threshold=0.5)
                 )
-                break
+                if not headers_match:
+                    logger.warning(
+                        f"  -> page {current_page}: column drift {drift:.1f}px "
+                        f"({len(cont_x0s)} cols vs {len(base_col_x0s)} base), skipping"
+                    )
+                    break
 
         merged_pages.append(current_page)
         logger.info(f"    -> found continuation on page {current_page} ({len(table_data)} rows)")
@@ -450,7 +575,7 @@ def find_continuations(
                 data_rows = table_data[skip:]
             else:
                 row0 = [str(c or "").lower() for c in table_data[0]]
-                if any(cell in _HEADER_KEYWORDS for cell in row0):
+                if any(any(kw in cell for kw in _HEADER_KEYWORDS) for cell in row0):
                     data_rows = table_data[1:]
                 else:
                     data_rows = table_data
@@ -469,7 +594,10 @@ def find_continuations(
     extra_rows = []
     for row in all_data_rows:
         if len(row) < target_cols:
-            row = _expand_cont_row(row, target_cols)
+            if base_col_x0s and all_col_x0s:
+                row = _expand_cont_row_by_x0s(row, target_cols, base_col_x0s, all_col_x0s[0])
+            else:
+                row = _expand_cont_row(row, target_cols)
         elif len(row) > target_cols:
             row = _reduce_cont_row(row, target_cols)
         extra_rows.append(row)

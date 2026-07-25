@@ -10,7 +10,8 @@ l'indexation vectorielle (RAG avec ChromaDB, Qdrant, Pinecone, etc.).
 **Chiffres cles :** 185 datasheets, 20 familles STM32, extraction 100 % high
 confidence, 0 erreur, 0 valeur null, extraction de l'ordering information pour les PDFs Type 1.
 Famille C5 (Type 2) : 0 tables vides apres correction des heuristiques de section bleed
-et propagation verticale.
+et propagation verticale. 55/56 familles testees sans echec apres corrections
+continuation (Jaccard, expansion x0, guard body_on_next_page, re-extract sous caption).
 
 ---
 
@@ -286,10 +287,12 @@ base sur les lignes tracees dans le PDF.
 | 2 | **Textes rotatifs**              | Mapping des mots verticaux (90 degres) dans la bonne colonne    |
 | 3 | **En-tetes structurels**         | Detection dynamique de la profondeur (1 a 3 lignes)             |
 | 4 | **Grille X calculee**            | Centres de colonnes calcules mathematiquement                   |
-| 5 | **Continuation multi-pages**     | Fusion des tableaux etales sur 2+ pages — 3 strategies (lines → texte → grille mots), drift contourne quand le titre `"(continued)"` est present |
+| 5 | **Continuation multi-pages**     | Fusion des tableaux etales sur 2+ pages — 3 strategies (lines → texte → grille mots), drift contourne quand le titre `"(continued)"` est present. Corrections 2025 : comparaison Jaccard des en-tetes (vs index par index), expansion x0 pour colonnes fusionnees, acceptation continuation si en-tetes identiques meme si `col_count` differe |
 | 6 | **Propagation horizontale**      | Remplissage des cellules fusionnees (colspan)                   |
 | 7 | **Propagation verticale**        | Remplissage des cellules fusionnees (rowspan + fill-down). Detetection de nouveau groupe : si la 1ere colonne change vers une valeur jamais vue, la propagation est bloquee entre groupes (ex: table_6 I/O → Notes). Les lignes de continuation (1ere cellule vide) sont toujours propagees. |
 | 8 | **Detection couleur (Type 2)**   | Comptage des lignes d'en-tete via fond bleu fonce du PDF        |
+| 9 | **Re-extract sous caption**     | Quand le filtre caption supprime toutes les lignes (2 tables/page), re-extraction depuis la meme page recadree sous `caption_y`. Guard body_on_next_page relaxe : accepte la page suivante si la table cible y figure, meme cohabitant avec d'autres tables |
+| 10 | **Headers STM32 normalises**   | Detection des codes commande `Q3H0...` dans les en-tetes → remplacement par `"STM32xx (Q3H0...)"` en extrayant le nom du device depuis la legende |
 
 ### Extraction Spatiale des En-tetes (avance)
 
