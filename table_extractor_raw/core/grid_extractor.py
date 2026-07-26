@@ -44,8 +44,6 @@ from config import (
     PDFPLUMBER_TABLE_SETTINGS_TYPE2,
     PDFPLUMBER_TABLE_SETTINGS_FALLBACK_TYPE2,
     MIN_TABLE_WIDTH,
-    SAVE_DEBUG_IMAGES,
-    SAVE_IMAGES_ONLY_ON_ISSUE,
     DEBUG_IMAGE_DPI,
     DEBUG_EMPTY_ROWS,
     OUTPUT_DIR,
@@ -487,21 +485,19 @@ def _ensure_no_empty_cells(rows: list[list[str]]) -> None:
         )
 
 
-def _save_debug_image(
+def _save_table_crop(
     page: Page,
     table_bbox: Optional[tuple],
-    output_path: Path,
-    confidence: str,
-    has_empty_cells: bool = False,
-) -> None:
-    """Sauvegarde un crop de la zone de la table pour debug visuel."""
+    output_base: Path,
+    table_id: str,
+    family: str,
+    pdf_name: str,
+) -> str | None:
+    """Sauvegarde un crop de la zone de la table dans debug/ et retourne le chemin relatif."""
     try:
-        if SAVE_IMAGES_ONLY_ON_ISSUE and confidence == "high" and not has_empty_cells:
-            return
-
-        img_dir = output_path.parent / "debug_images"
-        img_dir.mkdir(parents=True, exist_ok=True)
-        img_path = img_dir / f"{output_path.stem}.png"
+        debug_dir = output_base / family / pdf_name / "debug"
+        debug_dir.mkdir(parents=True, exist_ok=True)
+        img_path = debug_dir / f"{table_id}.png"
 
         if table_bbox:
             cropped = page.crop(table_bbox)
@@ -510,9 +506,10 @@ def _save_debug_image(
             img = page.to_image(resolution=DEBUG_IMAGE_DPI)
 
         img.save(str(img_path))
-        logger.debug(f"Debug image saved: {img_path}")
+        return str(img_path.relative_to(output_base.parent))
     except Exception as e:
-        logger.warning(f"Could not save debug image: {e}")
+        logger.warning(f"Could not save table crop: {e}")
+        return None
 
 
 def _save_empty_rows_debug(
@@ -1238,6 +1235,9 @@ def extract_table_grid(
         if raw_table is None:
             result["warnings"].append("no_table_found_on_page")
             logger.warning(f"{ref.table_id}: no table found on page {ref.page}")
+            crop_path = _save_table_crop(page, bbox, output_base, ref.table_id, family, pdf_name)
+            if crop_path:
+                result.setdefault("debug", {})["crop_path"] = crop_path
             if DEBUG_EMPTY_ROWS:
                 _settings = PDFPLUMBER_TABLE_SETTINGS_TYPE2 if pdf_type == 2 else PDFPLUMBER_TABLE_SETTINGS
                 _save_empty_rows_debug(
@@ -1283,9 +1283,9 @@ def extract_table_grid(
             else:
                 result["extraction_confidence"] = "low"
                 result["warnings"] = ["non_table_captured:ordering_information"]
-            if SAVE_DEBUG_IMAGES:
-                out_path = output_base / family / pdf_name / f"{ref.table_id}.json"
-                _save_debug_image(page, bbox, out_path, "low")
+            crop_path = _save_table_crop(page, bbox, output_base, ref.table_id, family, pdf_name)
+            if crop_path:
+                result.setdefault("debug", {})["crop_path"] = crop_path
             logger.info(f"{ref.table_id}: non-table ordering info, captured")
             return result
 
@@ -1504,6 +1504,9 @@ def extract_table_grid(
         # ── Vérification finale : table vide ──────────────────────────────────
         if not raw_table:
             result["warnings"].append("empty_raw_table")
+            crop_path = _save_table_crop(page, bbox, output_base, ref.table_id, family, pdf_name)
+            if crop_path:
+                result.setdefault("debug", {})["crop_path"] = crop_path
             return result
 
         # ── Fix 2 & 5 : Headers structurels et Propagation globale ─────────────
@@ -1906,11 +1909,10 @@ def extract_table_grid(
             "col_count":             len(headers),
         })
 
-        # ── Image de debug ─────────────────────────────────────────────────────
-        if SAVE_DEBUG_IMAGES:
-            out_path = output_base / family / pdf_name / f"{ref.table_id}.json"
-            _save_debug_image(page, bbox, out_path, confidence,
-                              has_empty_cells=result.get("has_empty_cells", False))
+        # ── Image crop debug ──────────────────────────────────────────────────
+        crop_path = _save_table_crop(page, bbox, output_base, ref.table_id, family, pdf_name)
+        if crop_path:
+            result.setdefault("debug", {})["crop_path"] = crop_path
 
         # ── Debug table vide ─────────────────────────────────────────────────
         if DEBUG_EMPTY_ROWS and not rows_fixed:

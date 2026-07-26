@@ -123,9 +123,8 @@ def _row_content_matches(a: list, b: list, min_compare: int = 2) -> bool:
 
 def _deduplicate_table_boundaries(all_tables: list[dict], out_dir: Path) -> int:
     """
-    Supprime les rows et _notes de table N qui existent aussi dans N+1 ou N+2.
-    - rows: match exact (même nombre cols) ou sous-séquence (cols différentes)
-    - _notes: match exact (liste identique), supprime de N si trouvé dans N+1/N+2
+    Supprime les rows de table N qui existent aussi dans N+1 ou N+2.
+    Match exact (même nombre cols) ou sous-séquence (cols différentes).
     Met à jour datasheet_metaData et ré-écrit les JSONs modifiés.
     """
     sorted_tables = sorted(
@@ -133,7 +132,6 @@ def _deduplicate_table_boundaries(all_tables: list[dict], out_dir: Path) -> int:
         key=lambda t: int(re.findall(r'\d+', t.get("table_id", "0"))[0])
     )
     removed_rows = 0
-    cleared_notes = 0
     modified_ids: set[str] = set()
 
     for i in range(len(sorted_tables)):
@@ -166,28 +164,11 @@ def _deduplicate_table_boundaries(all_tables: list[dict], out_dir: Path) -> int:
                     modified_ids.add(cur["table_id"])
                     cur.setdefault("heuristics", {})["_dedup_rows_removed"] = n_removed
 
-        # ── Notes dedup ──────────────────────────────────────────────────
-        cur_notes = cur.get("heuristics", {}).get("_notes")
-        if cur_notes:
-            for j in range(1, 3):
-                if i + j < len(sorted_tables):
-                    nxt = sorted_tables[i + j]
-                    nxt_notes = nxt.get("heuristics", {}).get("_notes")
-                    if nxt_notes and cur_notes == nxt_notes:
-                        n_notes = len(cur_notes)
-                        del cur["heuristics"]["_notes"]
-                        cleared_notes += n_notes
-                        modified_ids.add(cur["table_id"])
-                        cur["heuristics"]["_dedup_notes_removed"] = n_notes
-                        break
-
-    total = removed_rows + cleared_notes
+    total = removed_rows
     if total > 0:
         parts = []
         if removed_rows:
             parts.append(f"{removed_rows} duplicate rows")
-        if cleared_notes:
-            parts.append(f"{cleared_notes} duplicated notes entries")
         logger.info(f"  [dedup] removed {' and '.join(parts)} across table boundaries")
         for table_json in all_tables:
             tid = table_json["table_id"]
@@ -201,7 +182,7 @@ def _deduplicate_table_boundaries(all_tables: list[dict], out_dir: Path) -> int:
                 json.dumps(table_json, ensure_ascii=False, indent=2),
                 encoding="utf-8"
             )
-    return removed_rows, cleared_notes
+    return removed_rows
 
 
 def process_pdf(pdf_path: Path, family: str, table_ids: list[int] | None = None) -> dict:
@@ -364,6 +345,10 @@ def process_pdf(pdf_path: Path, family: str, table_ids: list[int] | None = None)
                 "empty_cell_ratio": round(table_json["empty_cell_ratio"], 4)
             }
 
+            # Debug crop path (non inclus dans le schéma RawTable)
+            if "debug" in raw_dict:
+                table_json["debug"] = raw_dict["debug"]
+
             # Sauvegarde JSON individuelle
             out_file = out_dir / f"{ref.table_id}.json"
             out_file.write_text(
@@ -403,9 +388,8 @@ def process_pdf(pdf_path: Path, family: str, table_ids: list[int] | None = None)
             summary["failed"] += 1
 
     # ── [Dedup] Suppression des rows dupliquées entre tables adjacentes ────────
-    dedup_rows, dedup_notes = _deduplicate_table_boundaries(all_tables_json, out_dir)
+    dedup_rows = _deduplicate_table_boundaries(all_tables_json, out_dir)
     summary["dedup_rows_removed"] = dedup_rows
-    summary["dedup_notes_removed"] = dedup_notes
 
     # ── Sauvegarde du fichier global _all_tables.json ──────────────────────────
     # Construire le contenu avec features en premier
