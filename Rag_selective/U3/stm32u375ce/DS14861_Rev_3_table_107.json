@@ -1,0 +1,243 @@
+{
+  "table_id": "table_107",
+  "document": "DS14861 Rev 3 - Table 107. ADF characteristics",
+  "rev": "Rev 3",
+  "table_number": "107",
+  "title": "Table 107. ADF characteristics",
+  "page": 167,
+  "section": "5.3.26 ADF characteristics",
+  "section_title": "ADF characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf#page=167",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf",
+  "text_helper": "Table 107. ADF characteristics — section 5.3.26 ADF characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "fCCKI",
+        "Input clock frequency via ADF_CCK[1:0] pin, in SLAVE SPI mode",
+        "1.71 ≤ VDD ≤ 3.6 V",
+        "-",
+        "-",
+        "25",
+        "MHz"
+      ],
+      [
+        "fCCKO",
+        "Output clock frequency in MASTER SPI mode",
+        "1.71 ≤ VDD ≤ 3.6 V",
+        "-",
+        "-",
+        "25",
+        "MHz"
+      ],
+      [
+        "fCCKOLF",
+        "Output clock frequency in LF_MASTER SPI mode",
+        "1.71 ≤ VDD ≤ 3.6 V",
+        "-",
+        "-",
+        "5",
+        "MHz"
+      ],
+      [
+        "fSYMB",
+        "Input symbol rate in Manchester mode",
+        "1.71 ≤ VDD ≤ 3.6 V",
+        "-",
+        "-",
+        "20",
+        "MHz"
+      ],
+      [
+        "tHCCKI tLCCKI",
+        "ADF_CCK[1:0] input clock high and low time",
+        "In SLAVE SPI mode",
+        "2 × Tadf_proc_ck(1)",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "tHCCKO tLCCKO",
+        "ADF_CCK[1:0] output clock high and low time",
+        "In MASTER SPI mode",
+        "2 × Tadf_proc_ck",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "tHCCKOLF tLCCKOLF",
+        "ADF_CCK[1:0] output clock high and low time",
+        "In LF_MASTER SPI mode",
+        "Tadf_proc_ck",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "tSUCCKI",
+        "Data setup time with respect to ADF_CCK[1:0] input",
+        "In SLAVE SPI mode: ADF_CCK[1:0] configured in input, measured on rising and falling edge",
+        "4.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "tHDCCKI",
+        "Data hold time with respect to ADF_CCK[1:0] input",
+        "In SLAVE SPI mode: ADF_CCK[1:0] configured in input, measured on rising and falling edge",
+        "1.0",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "tSUCCKO",
+        "Data setup time with respect to ADF_CCK[1:0] output",
+        "In MASTER SPI mode: ADF_CCK[1:0] configured in output, measured on rising and falling edge",
+        "4.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "tHDCCKO",
+        "Data hold time with respect to ADF_CCK[1:0] output",
+        "In MASTER SPI mode: ADF_CCK[1:0] configured in output, measured on rising and falling edge",
+        "0.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "tSUCCKOLF",
+        "Data setup time with respect to ADF_CCK[1:0] output",
+        "In LF_MASTER SPI mode: ADF_CCK[1:0] configured in output, measured on rising and falling edge",
+        "15",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "tHDCCKOLF",
+        "Data hold time with respect to ADF_CCK[1:0] output",
+        "In LF_MASTER SPI mode: ADF_CCK[1:0] configured in output, measured on rising and falling edge",
+        "0",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "tRes(TIM)",
+        "Timer resolution time",
+        "Timer resolution time",
+        "-",
+        "1",
+        "-",
+        "-"
+      ],
+      [
+        "None",
+        "None",
+        "None",
+        "fTIMxCLK = 96 MHz",
+        "10.4",
+        "-",
+        "-"
+      ],
+      [
+        "fEXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "Timer external clock frequency on CH1 to CH4",
+        "-",
+        "0",
+        "fTIMxCLK/4",
+        "fTIMxCLK/4"
+      ],
+      [
+        "None",
+        "None",
+        "None",
+        "fTIMxCLK = 96 MHz",
+        "0",
+        "24",
+        "24"
+      ],
+      [
+        "Res(TIM)",
+        "Timer resolution",
+        "Timer resolution",
+        "TIMx (except TIM2/TIM3/TIM4)",
+        "-",
+        "16",
+        "16"
+      ],
+      [
+        "None",
+        "None",
+        "None",
+        "TIM2/TIM3/TIM4",
+        "-",
+        "32",
+        "32"
+      ],
+      [
+        "tCOUNTER",
+        "16-bit counter clock period",
+        "16-bit counter clock period",
+        "-",
+        "1",
+        "65536",
+        "65536"
+      ],
+      [
+        "None",
+        "None",
+        "None",
+        "fTIMxCLK = 96 MHz",
+        "0.010",
+        "682.7",
+        "682.7"
+      ],
+      [
+        "tMAX_COUNT",
+        "Maximum possible count with 32‑bit counter",
+        "Maximum possible count with 32‑bit counter",
+        "-",
+        "-",
+        "65536 × 65536",
+        "65536 × 65536"
+      ],
+      [
+        "None",
+        "None",
+        "None",
+        "fTIMxCLK = 96 MHz",
+        "-",
+        "44.739",
+        "44.739"
+      ]
+    ],
+    "notes": [
+      "1. Tadf_proc_ck is the period of the ADF processing clock."
+    ],
+    "legend": [
+      "Evaluated by characterization and not tested in production."
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

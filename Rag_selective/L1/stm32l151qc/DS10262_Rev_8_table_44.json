@@ -1,0 +1,225 @@
+{
+  "table_id": "table_44",
+  "document": "DS10262 Rev 8 - Table 44. I/O AC characteristics",
+  "rev": "Rev 8",
+  "table_number": "44",
+  "title": "Table 44. I/O AC characteristics",
+  "page": 91,
+  "section": "6.3.13 I/O port characteristics",
+  "section_title": "I/O port characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l151qc.pdf#page=91",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l151qc.pdf",
+  "text_helper": "Table 44. I/O AC characteristics — section 6.3.13 I/O port characteristics. OSPEEDRx [1:0] bit value(1), Symbol, Parameter, Conditions, Min, +2 autres.",
+  "table_content": {
+    "headers": [
+      "OSPEEDRx [1:0] bit value(1)",
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max(2)",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "00",
+        "f max(IO)out",
+        "Maximum frequency(3)",
+        "C = 50 pF, V = 2.7 V to 3.6 V L DD",
+        "-",
+        "400",
+        "kHz"
+      ],
+      [
+        "00",
+        "f max(IO)out",
+        "Maximum frequency(3)",
+        "C = 50 pF, V = 1.65 V to 2.7 V L DD",
+        "-",
+        "400",
+        "kHz"
+      ],
+      [
+        "00",
+        "t f(IO)out t r(IO)out",
+        "Output rise and fall time",
+        "C = 50 pF, V = 2.7 V to 3.6 V L DD",
+        "-",
+        "625",
+        "ns"
+      ],
+      [
+        "00",
+        "t f(IO)out t r(IO)out",
+        "Output rise and fall time",
+        "C = 50 pF, V = 1.65 V to 2.7 V L DD",
+        "-",
+        "625",
+        "ns"
+      ],
+      [
+        "01",
+        "f max(IO)out",
+        "Maximum frequency(3)",
+        "C = 50 pF, V = 2.7 V to 3.6 V L DD",
+        "-",
+        "2",
+        "MHz"
+      ],
+      [
+        "01",
+        "f max(IO)out",
+        "Maximum frequency(3)",
+        "C = 50 pF, V = 1.65 V to 2.7 V L DD",
+        "-",
+        "1",
+        "MHz"
+      ],
+      [
+        "01",
+        "t f(IO)out t r(IO)out",
+        "Output rise and fall time",
+        "C = 50 pF, V = 2.7 V to 3.6 V L DD",
+        "-",
+        "125",
+        "ns"
+      ],
+      [
+        "01",
+        "t f(IO)out t r(IO)out",
+        "Output rise and fall time",
+        "C = 50 pF, V = 1.65 V to 2.7 V L DD",
+        "-",
+        "250",
+        "ns"
+      ],
+      [
+        "10",
+        "F max(IO)out",
+        "Maximum frequency(3)",
+        "C = 50 pF, V = 2.7 V to 3.6 V L DD",
+        "-",
+        "10",
+        "MHz"
+      ],
+      [
+        "10",
+        "F max(IO)out",
+        "Maximum frequency(3)",
+        "C = 50 pF, V = 1.65 V to 2.7 V L DD",
+        "-",
+        "2",
+        "MHz"
+      ],
+      [
+        "10",
+        "t f(IO)out t r(IO)out",
+        "Output rise and fall time",
+        "C = 50 pF, V = 2.7 V to 3.6 V L DD",
+        "-",
+        "25",
+        "ns"
+      ],
+      [
+        "10",
+        "t f(IO)out t r(IO)out",
+        "Output rise and fall time",
+        "C = 50 pF, V = 1.65 V to 2.7 V L DD",
+        "-",
+        "125",
+        "ns"
+      ],
+      [
+        "11",
+        "F max(IO)out",
+        "Maximum frequency(3)",
+        "C = 30 pF, V = 2.7 V to 3.6 V L DD",
+        "-",
+        "50",
+        "MHz"
+      ],
+      [
+        "11",
+        "F max(IO)out",
+        "Maximum frequency(3)",
+        "C = 50 pF, V = 1.65 V to 2.7 V L DD",
+        "-",
+        "8",
+        "MHz"
+      ],
+      [
+        "11",
+        "t f(IO)out t r(IO)out",
+        "Output rise and fall time",
+        "C = 30 pF, V = 2.7 V to 3.6 V L DD",
+        "-",
+        "5",
+        "ns"
+      ],
+      [
+        "11",
+        "t f(IO)out t r(IO)out",
+        "Output rise and fall time",
+        "C = 50 pF, V = 1.65 V to 2.7 V L DD",
+        "-",
+        "30",
+        "ns"
+      ],
+      [
+        "-",
+        "t EXTIpw",
+        "Pulse width of external signals detected by the EXTI controller",
+        "-",
+        "8",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. The I/O speed is configured using the OSPEEDRx[1:0] bits. Refer to the STM32L151xx, STM32L152xx and STM32L162xx reference manual for a description of GPIO Port configuration register.",
+      "2. Guaranteed by design.",
+      "3. The maximum frequency is defined in Figure 18. DS10262 Rev 8 91/134"
+    ],
+    "legend": [
+      "Unless otherwise specified, the parameters given in Table 44 are derived from tests",
+      "performed under the conditions summarized in Table 13.",
+      "C = 50 pF, V = 2.7 V to 3.6 V - 400",
+      "f Maximum frequency(3) L DD kHz",
+      "max(IO)out",
+      "C = 50 pF, V = 1.65 V to 2.7 V - 400",
+      "00",
+      "t f(IO)out Output rise and fall time C L = 50 pF, V DD = 2.7 V to 3.6 V - 625 ns",
+      "t r(IO)out C = 50 pF, V = 1.65 V to 2.7 V - 625",
+      "C = 50 pF, V = 2.7 V to 3.6 V - 2",
+      "f Maximum frequency(3) L DD MHz",
+      "max(IO)out",
+      "C = 50 pF, V = 1.65 V to 2.7 V - 1",
+      "01",
+      "C = 50 pF, V = 2.7 V to 3.6 V - 125",
+      "t f(IO)out Output rise and fall time L DD ns",
+      "t r(IO)out C L = 50 pF, V DD = 1.65 V to 2.7 V - 250",
+      "C = 50 pF, V = 2.7 V to 3.6 V - 10",
+      "F Maximum frequency(3) L DD MHz",
+      "max(IO)out",
+      "C = 50 pF, V = 1.65 V to 2.7 V - 2",
+      "10",
+      "t f(IO)out Output rise and fall time C L = 50 pF, V DD = 2.7 V to 3.6 V - 25 ns",
+      "t r(IO)out C L = 50 pF, V DD = 1.65 V to 2.7 V - 125",
+      "C = 30 pF, V = 2.7 V to 3.6 V - 50",
+      "F Maximum frequency(3) L DD MHz",
+      "max(IO)out",
+      "C = 50 pF, V = 1.65 V to 2.7 V - 8",
+      "11",
+      "t f(IO)out Output rise and fall time C L = 30 pF, V DD = 2.7 V to 3.6 V - 5",
+      "t r(IO)out C L = 50 pF, V DD = 1.65 V to 2.7 V - 30",
+      "ns",
+      "Pulse width of external",
+      "- t signals detected by the - 8 -",
+      "EXTI controller"
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,298 @@
+{
+  "table_id": "table_84",
+  "document": "DS11449 Rev 8 - Table 84. VREFBUF characteristics",
+  "rev": "Rev 8",
+  "table_number": "84",
+  "title": "Table 84. VREFBUF characteristics",
+  "page": 172,
+  "section": "6.3.20 Voltage reference buffer characteristics",
+  "section_title": "Voltage reference buffer characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l433cb.pdf#page=172",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l433cb.pdf",
+  "text_helper": "Table 84. VREFBUF characteristics — section 6.3.20 Voltage reference buffer characteristics. Symbol, Parameter, Conditions, Conditions, Min, +3 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V DDA",
+        "Analog supply voltage",
+        "Normal mode",
+        "V = 0 RS",
+        "2.4",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DDA",
+        "Analog supply voltage",
+        "Normal mode",
+        "V = 1 RS",
+        "2.8",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DDA",
+        "Analog supply voltage",
+        "Degraded mode(2)",
+        "V = 0 RS",
+        "1.65",
+        "-",
+        "2.4",
+        "V"
+      ],
+      [
+        "V DDA",
+        "Analog supply voltage",
+        "Degraded mode(2)",
+        "V = 1 RS",
+        "1.65",
+        "-",
+        "2.8",
+        "V"
+      ],
+      [
+        "V REFBUF_ OUT",
+        "Voltage reference output",
+        "Normal mode",
+        "V = 0 RS",
+        "2.046(3)",
+        "2.048",
+        "2.049(3)",
+        "V"
+      ],
+      [
+        "V REFBUF_ OUT",
+        "Voltage reference output",
+        "Normal mode",
+        "V = 1 RS",
+        "2.498(3)",
+        "2.5",
+        "2.502(3)",
+        "V"
+      ],
+      [
+        "V REFBUF_ OUT",
+        "Voltage reference output",
+        "Degraded mode(2)",
+        "V = 0 RS",
+        "V -150 mV DDA",
+        "-",
+        "V DDA",
+        "V"
+      ],
+      [
+        "V REFBUF_ OUT",
+        "Voltage reference output",
+        "Degraded mode(2)",
+        "V = 1 RS",
+        "V -150 mV DDA",
+        "-",
+        "V DDA",
+        "V"
+      ],
+      [
+        "TRIM",
+        "Trim step resolution",
+        "-",
+        "-",
+        "-",
+        "±0.05",
+        "±0.1",
+        "%"
+      ],
+      [
+        "CL",
+        "Load capacitor",
+        "-",
+        "-",
+        "0.5",
+        "1",
+        "1.5",
+        "µF"
+      ],
+      [
+        "esr",
+        "Equivalent Serial Resistor of Cload",
+        "-",
+        "-",
+        "-",
+        "-",
+        "2",
+        "Ω"
+      ],
+      [
+        "I load",
+        "Static load current",
+        "-",
+        "-",
+        "-",
+        "-",
+        "4",
+        "mA"
+      ],
+      [
+        "I line_reg",
+        "Line regulation",
+        "2.8 V ≤ V ≤ 3.6 V DDA",
+        "I = 500 µA load",
+        "-",
+        "200",
+        "1000",
+        "ppm/V"
+      ],
+      [
+        "I line_reg",
+        "Line regulation",
+        "2.8 V ≤ V ≤ 3.6 V DDA",
+        "I = 4 mA load",
+        "-",
+        "100",
+        "500",
+        "ppm/V"
+      ],
+      [
+        "I load_reg",
+        "Load regulation",
+        "daol Am 4≤ I ≤ Aμ 005",
+        "Normal mode",
+        "-",
+        "50",
+        "500",
+        "Am/mpp"
+      ],
+      [
+        "T Coeff",
+        "Temperature coefficient",
+        "-40 °C < T < +125 °C J",
+        "-40 °C < T < +125 °C J",
+        "-",
+        "-",
+        "T coeff_ vrefint + 50",
+        "ppm/ °C"
+      ],
+      [
+        "T Coeff",
+        "Temperature coefficient",
+        "0 °C < T < +50 °C J",
+        "0 °C < T < +50 °C J",
+        "-",
+        "-",
+        "T coeff_ + vrefint 50",
+        "ppm/ °C"
+      ],
+      [
+        "PSRR",
+        "Power supply rejection",
+        "DC",
+        "DC",
+        "40",
+        "60",
+        "-",
+        "dB"
+      ],
+      [
+        "PSRR",
+        "Power supply rejection",
+        "100 kHz",
+        "100 kHz",
+        "25",
+        "40",
+        "-",
+        "dB"
+      ],
+      [
+        "t START",
+        "Start-up time",
+        "CL = 0.5 µF(4)",
+        "CL = 0.5 µF(4)",
+        "-",
+        "300",
+        "350",
+        "µs"
+      ],
+      [
+        "t START",
+        "Start-up time",
+        "CL = 1.1 µF(4)",
+        "CL = 1.1 µF(4)",
+        "-",
+        "500",
+        "650",
+        "µs"
+      ],
+      [
+        "t START",
+        "Start-up time",
+        "CL = 1.5 µF(4)",
+        "CL = 1.5 µF(4)",
+        "-",
+        "650",
+        "800",
+        "µs"
+      ],
+      [
+        "I INRUSH",
+        "Control of maximum DC current drive on VREFBUF_ OUT during start-up phase (5)",
+        "-",
+        "-",
+        "-",
+        "8",
+        "-",
+        "mA"
+      ],
+      [
+        "I (VREF DDA BUF)",
+        "VREFBUF consumption from V DDA",
+        "I = 0 µA load",
+        "I = 0 µA load",
+        "-",
+        "16",
+        "25",
+        "µA"
+      ],
+      [
+        "None",
+        "None",
+        "I = 500 µA load",
+        "I = 500 µA load",
+        "-",
+        "18",
+        "30",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "I = 4 mA load",
+        "I = 4 mA load",
+        "-",
+        "35",
+        "50",
+        "None"
+      ]
+    ],
+    "notes": [
+      "2. In degraded mode, the voltage reference buffer can not maintain accurately the output voltage which will follow (V - DDA",
+      "3. Guaranteed by test in production.",
+      "4. The capacitive load must include a 100 nF capacitor in order to cut-off the high frequency noise.",
+      "5. To correctly control the VREFBUF inrush current during start-up phase and scaling change, the V voltage should be in DDA"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

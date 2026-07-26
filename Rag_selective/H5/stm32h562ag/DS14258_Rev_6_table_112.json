@@ -1,0 +1,206 @@
+{
+  "table_id": "table_112",
+  "document": "DS14258 Rev 6 - Table 112. USART characteristics",
+  "rev": "Rev 6",
+  "table_number": "112",
+  "title": "Table 112. USART characteristics",
+  "page": 222,
+  "section": "5.3.33 Communication interfaces",
+  "section_title": "Communication interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h562ag.pdf#page=222",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h562ag.pdf",
+  "text_helper": "Table 112. USART characteristics — section 5.3.33 Communication interfaces. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f CK",
+        "USART clock frequency",
+        "Master receiver 1.71 V < V < 3.6 V DD",
+        "-",
+        "-",
+        "31",
+        "MHz"
+      ],
+      [
+        "f CK",
+        "USART clock frequency",
+        "Master transmitter 1.71 V < V < 3.6 V DD",
+        "-",
+        "-",
+        "31/6(2)",
+        "MHz"
+      ],
+      [
+        "f CK",
+        "USART clock frequency",
+        "Master transmitter 2.7 V < V < 3.6 V DD",
+        "-",
+        "-",
+        "31/6(2)",
+        "MHz"
+      ],
+      [
+        "f CK",
+        "USART clock frequency",
+        "Slave receiver 1.71 V < V < 3.6 V DD",
+        "-",
+        "-",
+        "83",
+        "MHz"
+      ],
+      [
+        "f CK",
+        "USART clock frequency",
+        "Slave transmitter 1.71 V < V < 3.6 V DD",
+        "-",
+        "-",
+        "32/6(2)",
+        "MHz"
+      ],
+      [
+        "f CK",
+        "USART clock frequency",
+        "Slave transmitter 2.7 V < V < 3.6 V DD",
+        "-",
+        "-",
+        "35/6(2)",
+        "MHz"
+      ],
+      [
+        "t su(NSS)",
+        "NSS setup time",
+        "Slave mode",
+        "t (3) + 3.5 ker",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(NSS)",
+        "NSS hold time",
+        "Slave mode",
+        "2.5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t w(SCKH) t w(SCKL)",
+        "CK high and low time",
+        "Master mode",
+        "1/f /2 -1 ck",
+        "1/f /2 ck",
+        "1/f /2 +1 ck",
+        "1/f /2 +1 ck"
+      ],
+      [
+        "t su(RX)",
+        "Data input setup time",
+        "Master mode",
+        "13",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t su(RX)",
+        "Data input setup time",
+        "Slave mode",
+        "3.5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t h(RX)",
+        "Data input hold time",
+        "Master mode",
+        "0.5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t h(RX)",
+        "Data input hold time",
+        "Slave mode",
+        "1.5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t v(TX)",
+        "Data output valid time",
+        "Slave mode, 1.71 V < V < 3.6 V DD",
+        "-",
+        "11.5",
+        "15.5/71(2)",
+        "15.5/71(2)"
+      ],
+      [
+        "t v(TX)",
+        "Data output valid time",
+        "Slave mode, 2.7 V < V < 3.6 V DD",
+        "-",
+        "-",
+        "14/35(2)",
+        "14/35(2)"
+      ],
+      [
+        "t v(TX)",
+        "Data output valid time",
+        "Slave mode, 1.71 V < V < 3.6 V DD",
+        "-",
+        "2.5",
+        "3/52(2)",
+        "3/52(2)"
+      ],
+      [
+        "t v(TX)",
+        "Data output valid time",
+        "Slave mode, 2.7 V < V < 3.6 V DD",
+        "-",
+        "-",
+        "3/22(2)",
+        "3/22(2)"
+      ],
+      [
+        "t h(TX)",
+        "Data output hold time",
+        "Slave mode",
+        "7.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(TX)",
+        "Data output hold time",
+        "Master mode",
+        "0",
+        "-",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "2. Measurement points are done at 50% V . DD",
+      "3. Spikes with widths below t are filtered. AF(min)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

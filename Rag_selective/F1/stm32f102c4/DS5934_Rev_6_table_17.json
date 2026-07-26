@@ -1,0 +1,137 @@
+{
+  "table_id": "table_17",
+  "document": "DS5934 Rev 6 - Table 17. Typical current consumption in Sleep mode, code running from Flash memory or RAM 38 Table 18. Peripheral current consumption",
+  "rev": "Rev 6",
+  "table_number": "17",
+  "title": "Table 17. Typical current consumption in Sleep mode, code running from Flash memory or RAM 38 Table 18. Peripheral current consumption",
+  "page": 39,
+  "section": "5.3.5 Supply current characteristics",
+  "section_title": "Supply current characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f102c4.pdf#page=39",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f102c4.pdf",
+  "text_helper": "Table 17. Typical current consumption in Sleep mode, code running from Flash memory or RAM 38 Table 18. Peripheral current consumption — section 5.3.5 Supply current characteristics. Peripheral, Peripheral, µA/MHz.",
+  "table_content": {
+    "headers": [
+      "Peripheral",
+      "Peripheral",
+      "µA/MHz"
+    ],
+    "rows": [
+      [
+        "AHB (up to 48 MHz)",
+        "DMA1",
+        "15.97"
+      ],
+      [
+        "AHB (up to 48 MHz)",
+        "CRC",
+        "1.67"
+      ],
+      [
+        "AHB (up to 48 MHz)",
+        "BusMatrix(2)",
+        "8.33"
+      ],
+      [
+        "APB1 (up to 24 MHz)",
+        "APB1-Bridge",
+        "7.22"
+      ],
+      [
+        "APB1 (up to 24 MHz)",
+        "TIM2",
+        "33.33"
+      ],
+      [
+        "APB1 (up to 24 MHz)",
+        "TIM3",
+        "33.61"
+      ],
+      [
+        "APB1 (up to 24 MHz)",
+        "USART2",
+        "12.78"
+      ],
+      [
+        "APB1 (up to 24 MHz)",
+        "I2C1",
+        "10.83"
+      ],
+      [
+        "APB1 (up to 24 MHz)",
+        "USB",
+        "16.94"
+      ],
+      [
+        "APB1 (up to 24 MHz)",
+        "WWDG",
+        "3.33"
+      ],
+      [
+        "APB1 (up to 24 MHz)",
+        "PWR",
+        "1.94"
+      ],
+      [
+        "APB1 (up to 24 MHz)",
+        "BKP",
+        "2.78"
+      ],
+      [
+        "APB1 (up to 24 MHz)",
+        "IWDG",
+        "1.39"
+      ],
+      [
+        "APB2 (up to 48 MHz)",
+        "APB2-Bridge",
+        "3.33"
+      ],
+      [
+        "APB2 (up to 48 MHz)",
+        "GPIOA",
+        "7.50"
+      ],
+      [
+        "APB2 (up to 48 MHz)",
+        "GPIOB",
+        "6.81"
+      ],
+      [
+        "APB2 (up to 48 MHz)",
+        "GPIOC",
+        "7.22"
+      ],
+      [
+        "APB2 (up to 48 MHz)",
+        "GPIOD",
+        "6.94"
+      ],
+      [
+        "APB2 (up to 48 MHz)",
+        "SPI1",
+        "4.86"
+      ],
+      [
+        "APB2 (up to 48 MHz)",
+        "USART1",
+        "12.78"
+      ],
+      [
+        "APB2 (up to 48 MHz)",
+        "ADC1(3) (4)",
+        "15.54"
+      ]
+    ],
+    "notes": [
+      "2. The BusMatrix is automatically active when at least one master is ON.",
+      "3. Specific conditions for ADC: f = 48 MHz, f = f /2, f = f , f = f /4. HCLK APB1 HCLK APB2 HCLK ADCCLK APB2",
+      "4. When ADON bit in the ADC_CR2 register is set to 1, there is an additional current consumption of 0.68mA. When the ADC is enabled there is an additional current consumption of 0.06 mA."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

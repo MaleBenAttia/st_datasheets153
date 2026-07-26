@@ -1,0 +1,93 @@
+{
+  "table_id": "table_50",
+  "document": "DS9866 Rev 8 - Table 50. I/O current injection susceptibility",
+  "rev": "Rev 8",
+  "table_number": "50",
+  "title": "Table 50. I/O current injection susceptibility",
+  "page": 76,
+  "section": "6.3.13 I/O current injection characteristics",
+  "section_title": "I/O current injection characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f303c6.pdf#page=76",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f303c6.pdf",
+  "text_helper": "Table 50. I/O current injection susceptibility — section 6.3.13 I/O current injection characteristics. Symbol, Description, Functional susceptibility / Negative injection, Functional susceptibility / Positive injection, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Description",
+      "Functional susceptibility / Negative injection",
+      "Functional susceptibility / Positive injection",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I INJ",
+        "Injected current on BOOT0",
+        "– 0",
+        "NA (Injection is not possible)",
+        "mA"
+      ],
+      [
+        "I INJ",
+        "Injected current on PC0, PC1, PC2, PC3 (TTa pins) and PF1 pin (FT pin)",
+        "-0",
+        "+5",
+        "mA"
+      ],
+      [
+        "I INJ",
+        "Injected current on PA0, PA1, PA2, PA3, PA4, PA5, PA6, PA7, PC4, PC5, PB0, PB1, PB2, PB12, PB13, PB14, PB15 with induced leakage current on other pins from this group less than -100 µA or more than +900 µA",
+        "-5",
+        "+5",
+        "mA"
+      ],
+      [
+        "I INJ",
+        "Injected current on PB11, other TT, FT, and FTf pins",
+        "– 5",
+        "Injection is not possible",
+        "mA"
+      ],
+      [
+        "I INJ",
+        "Injected current on all other TC, TTa and RESET pins",
+        "– 5",
+        "+5",
+        "mA"
+      ],
+      [
+        "I INJ",
+        "Injected current on PB0, PB1, PB2, PB12, PB13, PB14, PB15 with induced leakage current on other pins from this group less than -50 µA",
+        "– 5",
+        "-",
+        "mA"
+      ],
+      [
+        "I INJ",
+        "Injected current on PC0, PC1, PC2, PC3, PA0, PA1, PA2, PA3, PA4, PA5, PA6, PA7, PC4, PC5, PB2, PB0, PB1, PB12, PB13, PB14, PB15 with induced leakage current on other pins from this group less than 400 µA",
+        "-",
+        "+5",
+        "+5"
+      ],
+      [
+        "I INJ",
+        "Injected current on any other FT and FTf pins",
+        "– 5",
+        "NA (Injection is not possible)",
+        "NA (Injection is not possible)"
+      ],
+      [
+        "I INJ",
+        "Injected current on any other pins",
+        "– 5",
+        "+5",
+        "+5"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

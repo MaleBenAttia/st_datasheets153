@@ -1,0 +1,77 @@
+{
+  "table_id": "table_12",
+  "document": "DS8626 Rev 12 - Table 12. Current characteristics",
+  "rev": "Rev 12",
+  "table_number": "12",
+  "title": "Table 12. Current characteristics",
+  "page": 81,
+  "section": "6.2 Absolute maximum ratings",
+  "section_title": "Absolute maximum ratings",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f405oe.pdf#page=81",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f405oe.pdf",
+  "text_helper": "Table 12. Current characteristics — section 6.2 Absolute maximum ratings. Symbol, Ratings, Max., Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Ratings",
+      "Max.",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I VDD",
+        "Total current into V power lines (source)(1) DD",
+        "240",
+        "mA"
+      ],
+      [
+        "I VSS",
+        "Total current out of V ground lines (sink)(1) SS",
+        "240",
+        "mA"
+      ],
+      [
+        "I IO",
+        "Output current sunk by any I/O and control pin",
+        "25",
+        "mA"
+      ],
+      [
+        "I IO",
+        "Output current source by any I/Os and control pin",
+        "25",
+        "mA"
+      ],
+      [
+        "I (2) INJ(PIN)",
+        "Injected current on five-volt tolerant I/O(3)",
+        "–5/+0",
+        "mA"
+      ],
+      [
+        "I (2) INJ(PIN)",
+        "Injected current on any other pin(4)",
+        "±5",
+        "mA"
+      ],
+      [
+        "ΣI (4) INJ(PIN)",
+        "Total injected current (sum of all I/O and control pins)(5)",
+        "±25",
+        "mA"
+      ]
+    ],
+    "notes": [
+      "1. All main power (V , V ) and ground (V , V ) pins must always be connected to the external power DD DDA SS SSA",
+      "2. Negative injection disturbs the analog performance of the device. See note in Section 6.3.21: 12-bit ADC characteristics.",
+      "3. Positive injection is not possible on these I/Os. A negative injection is induced by V <V . I must IN SS INJ(PIN)",
+      "4. A positive injection is induced by V >V while a negative injection is induced by V <V . I must IN DD IN SS INJ(PIN)",
+      "5. When several inputs are submitted to a current injection, the maximum ΣI INJ(PIN)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,306 @@
+{
+  "table_id": "table_66",
+  "document": "DS15135 Rev 1 - Table 66. USART (SPI mode) characteristics.",
+  "rev": "Rev 1",
+  "table_number": "66",
+  "title": "Table 66. USART (SPI mode) characteristics.",
+  "page": 90,
+  "section": "5.3.25 USART characteristics",
+  "section_title": "USART characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=90",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
+  "text_helper": "Table 66. USART (SPI mode) characteristics. — section 5.3.25 USART characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "fCK",
+        "USART clock frequency",
+        "Master transmitter mode, 2.7 V ≤ VDD ≤ 3.6 V",
+        "-",
+        "-",
+        "18",
+        "Unit"
+      ],
+      [
+        "fCK",
+        "USART clock frequency",
+        "Slave receiver mode, 2.7 V ≤ VDD ≤ 3.6 V",
+        "-",
+        "-",
+        "48",
+        "Unit"
+      ],
+      [
+        "fCK",
+        "USART clock frequency",
+        "Slave transmitter mode, 2.7 V ≤ VDD ≤ 3.6 V",
+        "-",
+        "-",
+        "27",
+        "Unit"
+      ],
+      [
+        "tsu(NSS)",
+        "NSS setup time",
+        "Slave mode",
+        "tker(1) + 2",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "th(NSS)",
+        "NSS hold time",
+        "Slave mode",
+        "2",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "tw(CKH)",
+        "CK high and low time",
+        "Master mode",
+        "1/ fCK /2-1",
+        "1/ fCK /2",
+        "1/ fCK /2+1",
+        "ns"
+      ],
+      [
+        "tw(CKL)",
+        "CK high and low time",
+        "Master mode",
+        "1/ fCK /2-1",
+        "1/ fCK /2",
+        "1/ fCK /2+1",
+        "ns"
+      ],
+      [
+        "tsu(RX)",
+        "Data input setup time",
+        "Master mode",
+        "18",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "tsu(RX)",
+        "Data input setup time",
+        "Slave mode",
+        "2.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "th(RX)",
+        "Data input hold time",
+        "Master mode",
+        "0.5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "th(RX)",
+        "th(RX)",
+        "Slave mode",
+        "1",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "tv(TX)",
+        "Data output valid time",
+        "Slave mode",
+        "2.7 V ≤ VDD ≤ 3.6 V",
+        "-",
+        "13.5",
+        "18"
+      ],
+      [
+        "tv(TX)",
+        "Master mod",
+        "e 2.7 V ≤ VDD ≤ 3.6 V",
+        "-",
+        "2",
+        "2.5",
+        "2.5"
+      ],
+      [
+        "th(TX)",
+        "Data output hold time",
+        "Slave mode",
+        "9",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "th(TX)",
+        "Data output hold time",
+        "Master mode",
+        "0.5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "fSCK",
+        "SPI clock frequency",
+        "Slave receiver mode, 2.7 V ≤ VDD ≤ 3.6 V",
+        "-",
+        "-",
+        "100",
+        "100"
+      ],
+      [
+        "fSCK",
+        "SPI clock frequency",
+        "Slave transmitter mode, 2.7 V ≤ VDD ≤ 3.6 V",
+        "-",
+        "-",
+        "32",
+        "32"
+      ],
+      [
+        "th(NSS)",
+        "NSS hold time",
+        "Slave mode",
+        "1",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "tw(SCKH)",
+        "SCK high and low time",
+        "Master mode",
+        "TSCK(1) - 1",
+        "TSCK(1)",
+        "TSCK(1)+ 1",
+        "TSCK(1)+ 1"
+      ],
+      [
+        "tw(SCKL)",
+        "tw(SCKL)",
+        "tw(SCKL)",
+        "tw(SCKL)",
+        "tw(SCKL)",
+        "tw(SCKL)",
+        "tw(SCKL)"
+      ],
+      [
+        "tsu(MI)",
+        "Data input setup time",
+        "DRDS = 1",
+        "13 - TSCK(1)/2",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "tsu(SI)",
+        "tsu(SI)",
+        "Slave mode",
+        "2",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "th(MI)",
+        "Data input hold time",
+        "DRDS = 1",
+        "TSCK(1)/2 - 8",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "th(SI)",
+        "th(SI)",
+        "Slave mode",
+        "1.5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "ta(SO)",
+        "Data output access time",
+        "Slave mode",
+        "11",
+        "13.5",
+        "15.5",
+        "15.5"
+      ],
+      [
+        "tdis(SO)",
+        "Data output disable time",
+        "Slave mode",
+        "8.5",
+        "10.5",
+        "12.5",
+        "12.5"
+      ],
+      [
+        "tv(SO)",
+        "Data output valid time",
+        "Slave mode, 2.7 V ≤ VDD ≤ 3.6 V",
+        "-",
+        "12",
+        "15.5",
+        "15.5"
+      ],
+      [
+        "tv(MO)",
+        "Data output valid time",
+        "Master mode",
+        "-",
+        "1.5",
+        "2",
+        "2"
+      ],
+      [
+        "th(SO)",
+        "Data output hold time",
+        "Slave mode (after enable edge)",
+        "8",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "th(MO)",
+        "Data output hold time",
+        "Master mode (after enable edge)",
+        "0",
+        "-",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "1. Spikes with widths below tAF(min) are filtered."
+    ],
+    "legend": [
+      "Evaluated by characterization - Not tested in production."
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

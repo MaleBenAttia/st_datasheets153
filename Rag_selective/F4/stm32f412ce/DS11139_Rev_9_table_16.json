@@ -1,0 +1,429 @@
+{
+  "table_id": "table_16",
+  "document": "DS11139 Rev 9 - Table 16. General operating conditions",
+  "rev": "Rev 9",
+  "table_number": "16",
+  "title": "Table 16. General operating conditions",
+  "page": 81,
+  "section": "6.3.1 General operating conditions",
+  "section_title": "General operating conditions",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f412ce.pdf#page=81",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f412ce.pdf",
+  "text_helper": "Table 16. General operating conditions — section 6.3.1 General operating conditions. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f HCLK",
+        "Internal AHB clock frequency",
+        "Power Scale3: Regulator ON, VOS[1:0] bits in PWR_CR register = 0x01",
+        "0",
+        "-",
+        "64",
+        "MHz"
+      ],
+      [
+        "f HCLK",
+        "Internal AHB clock frequency",
+        "Power Scale2: Regulator ON, VOS[1:0] bits in PWR_CR register = 0x10",
+        "0",
+        "-",
+        "84",
+        "MHz"
+      ],
+      [
+        "f HCLK",
+        "Internal AHB clock frequency",
+        "Power Scale1: Regulator ON, VOS[1:0] bits in PWR_CR register = 0x11",
+        "0",
+        "-",
+        "100",
+        "MHz"
+      ],
+      [
+        "f PCLK1",
+        "Internal APB1 clock frequency",
+        "-",
+        "0",
+        "-",
+        "50",
+        "MHz"
+      ],
+      [
+        "f PCLK2",
+        "Internal APB2 clock frequency",
+        "-",
+        "0",
+        "-",
+        "100",
+        "MHz"
+      ],
+      [
+        "V DD",
+        "Standard operating voltage",
+        "-",
+        "1.7(1)",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V (2)(3) DDA",
+        "Analog operating voltage (ADC limited to 1.2 M samples)",
+        "Must be the same potential as V (4) DD",
+        "1.7(1)",
+        "-",
+        "2.4",
+        "V"
+      ],
+      [
+        "V (2)(3) DDA",
+        "Analog operating voltage (ADC limited to 2.4 M samples)",
+        "Must be the same potential as V (4) DD",
+        "2.4",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DDUSB",
+        "USB supply voltage (supply voltage for PA11 and PA12 pins)",
+        "USB not used",
+        "1.7",
+        "3.3",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DDUSB",
+        "USB supply voltage (supply voltage for PA11 and PA12 pins)",
+        "USB used(5)",
+        "3.0",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V BAT",
+        "Backup operating voltage",
+        "-",
+        "1.65",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V 12",
+        "Regulator ON: 1.2 V internal voltage on VCAP_1/VCAP_2 pins",
+        "VOS[1:0] bits in PWR_CR register = 0x01 Max frequency 64 MHz",
+        "1.08(6)",
+        "1.14",
+        "1.20(6)",
+        "V"
+      ],
+      [
+        "V 12",
+        "Regulator ON: 1.2 V internal voltage on VCAP_1/VCAP_2 pins",
+        "VOS[1:0] bits in PWR_CR register = 0x10 Max frequency 84 MHz",
+        "1.20(6)",
+        "1.26",
+        "1.32(6)",
+        "V"
+      ],
+      [
+        "V 12",
+        "Regulator ON: 1.2 V internal voltage on VCAP_1/VCAP_2 pins",
+        "VOS[1:0] bits in PWR_CR register = 0x11 Max frequency 100 MHz",
+        "1.26",
+        "1.32",
+        "1.38",
+        "V"
+      ],
+      [
+        "V 12",
+        "Regulator OFF: 1.2 V external voltage must be supplied on VCAP_1/VCAP_2 pins",
+        "Max frequency 64 MHz",
+        "1.10",
+        "1.14",
+        "1.20",
+        "V"
+      ],
+      [
+        "V 12",
+        "Regulator OFF: 1.2 V external voltage must be supplied on VCAP_1/VCAP_2 pins",
+        "Max frequency 84 MHz",
+        "1.20",
+        "1.26",
+        "1.32",
+        "V"
+      ],
+      [
+        "V 12",
+        "Regulator OFF: 1.2 V external voltage must be supplied on VCAP_1/VCAP_2 pins",
+        "Max frequency 100 MHz",
+        "1.26",
+        "1.32",
+        "1.38",
+        "V"
+      ],
+      [
+        "V IN",
+        "Input voltage on RST, FT and TC pins(7)",
+        "2 V ≤ V ≤ 3.6 V DD",
+        "-0.3",
+        "-",
+        "5.5",
+        "V"
+      ],
+      [
+        "V IN",
+        "Input voltage on RST, FT and TC pins(7)",
+        "V ≤ 2 V DD",
+        "-0.3",
+        "-",
+        "5.2",
+        "V"
+      ],
+      [
+        "V IN",
+        "Input voltage on BOOT0 pin",
+        "-",
+        "0",
+        "-",
+        "9",
+        "V"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 85°C for range 6 or A T = 105°C for range 7(8) A",
+        "UFQFPN48",
+        "-",
+        "-",
+        "625",
+        "mW"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 85°C for range 6 or A T = 105°C for range 7(8) A",
+        "WLCSP64",
+        "-",
+        "-",
+        "392",
+        "392"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 85°C for range 6 or A T = 105°C for range 7(8) A",
+        "LQFP64",
+        "-",
+        "-",
+        "425",
+        "425"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 85°C for range 6 or A T = 105°C for range 7(8) A",
+        "LQFP100",
+        "-",
+        "-",
+        "465",
+        "465"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 85°C for range 6 or A T = 105°C for range 7(8) A",
+        "LQFP144",
+        "-",
+        "-",
+        "571",
+        "571"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 85°C for range 6 or A T = 105°C for range 7(8) A",
+        "UFBGA100",
+        "-",
+        "-",
+        "351",
+        "351"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 85°C for range 6 or A T = 105°C for range 7(8) A",
+        "UFBGA144",
+        "-",
+        "-",
+        "416",
+        "416"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 125 °C for range 3(8) A",
+        "UFQFPN48",
+        "-",
+        "-",
+        "156",
+        "156"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 125 °C for range 3(8) A",
+        "WLCSP64",
+        "-",
+        "-",
+        "98",
+        "98"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 125 °C for range 3(8) A",
+        "LQFP64",
+        "-",
+        "-",
+        "106",
+        "106"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 125 °C for range 3(8) A",
+        "LQFP100",
+        "-",
+        "-",
+        "116",
+        "116"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 125 °C for range 3(8) A",
+        "LQFP144",
+        "-",
+        "-",
+        "142",
+        "142"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 125 °C for range 3(8) A",
+        "UFBGA100",
+        "-",
+        "-",
+        "88",
+        "88"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 125 °C for range 3(8) A",
+        "UFBGA144",
+        "-",
+        "-",
+        "104",
+        "104"
+      ],
+      [
+        "T A",
+        "Ambient temperature for range 6",
+        "Maximum power dissipation",
+        "-40",
+        "-",
+        "85",
+        "°C"
+      ],
+      [
+        "T A",
+        "Ambient temperature for range 6",
+        "Low power dissipation(9)",
+        "-40",
+        "-",
+        "105",
+        "105"
+      ],
+      [
+        "T A",
+        "Ambient temperature for range 7",
+        "Maximum power dissipation",
+        "-40",
+        "-",
+        "105",
+        "105"
+      ],
+      [
+        "T A",
+        "Ambient temperature for range 7",
+        "Low power dissipation(9)",
+        "-40",
+        "-",
+        "125",
+        "125"
+      ],
+      [
+        "T A",
+        "Ambient temperature for range 3",
+        "Maximum power dissipation",
+        "-40",
+        "-",
+        "110",
+        "110"
+      ],
+      [
+        "T A",
+        "Ambient temperature for range 3",
+        "Low power dissipation(9)",
+        "-40",
+        "-",
+        "130",
+        "130"
+      ],
+      [
+        "TJ",
+        "Junction temperature range",
+        "Range 6",
+        "-40",
+        "-",
+        "105",
+        "105"
+      ],
+      [
+        "TJ",
+        "Junction temperature range",
+        "Range 7",
+        "-40",
+        "-",
+        "125",
+        "125"
+      ],
+      [
+        "TJ",
+        "Junction temperature range",
+        "Range 3",
+        "-40",
+        "-",
+        "130",
+        "130"
+      ]
+    ],
+    "notes": [
+      "1. V /V minimum value of 1.7 V with the use of an external power supply supervisor (refer to Section 3.18.2: Internal DD DDA",
+      "2. When the ADC is used, refer to Table 72: ADC characteristics.",
+      "3. If V pin is present, it must respect the following condition: V -V + < 1.2 V. REF+ DDA REF",
+      "4. It is recommended to power V and V from the same source. A maximum difference of 300 mV between V and DD DDA DD",
+      "5. Only the DM (P ) and DP (P ) pads are supplied through V . For application where the V (P ) is directly A11 A12 DDUSB BUS A9",
+      "6. Guaranteed by test in production",
+      "7. To sustain a voltage higher than V +0.3, the internal Pull-up and Pull-Down resistors must be disabled DD",
+      "8. If T is lower, higher P values are allowed as long as T does not exceed T . A D J Jmax",
+      "9. In low power dissipation state, T can be extended to this range as long as T does not exceed T . A J Jmax"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

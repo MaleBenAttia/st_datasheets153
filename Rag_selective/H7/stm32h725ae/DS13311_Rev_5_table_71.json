@@ -1,0 +1,65 @@
+{
+  "table_id": "table_71",
+  "document": "DS13311 Rev 5 - Table 71. Synchronous non-multiplexed PSRAM write timings",
+  "rev": "Rev 5",
+  "table_number": "71",
+  "title": "Table 71. Synchronous non-multiplexed PSRAM write timings",
+  "page": 178,
+  "section": "6.3.19 FMC characteristics",
+  "section_title": "FMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h725ae.pdf#page=178",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h725ae.pdf",
+  "text_helper": "Table 71. Synchronous non-multiplexed PSRAM write timings — section 6.3.19 FMC characteristics. Symbol, Parameter, Parameter, Min, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t (CLK)",
+        "FMC_CLK period",
+        "FMC_CLK period",
+        "2T –0.5 fmc_ker_ck",
+        "-",
+        "ns"
+      ],
+      [
+        "t (CLKH-NExH)",
+        "FMC_CLK high to FMC_NEx high (x= 0…2)",
+        "FMC_CLK high to FMC_NEx high (x= 0…2)",
+        "T +1.5 fmc_ker_ck",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKH-NWEH)",
+        "FMC_CLK high to FMC_NWE high",
+        "FMC_CLK high to FMC_NWE high",
+        "T +1 fmc_ker_ck",
+        "-",
+        "ns"
+      ],
+      [
+        ")ataD-LKLC(d t",
+        "FMC_D[15:0] valid data after FMC_CLK low",
+        "FMC_D[15:0] valid data after FMC_CLK low",
+        "-",
+        "3.5",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization results. 178/283 DS13311 Rev 5"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

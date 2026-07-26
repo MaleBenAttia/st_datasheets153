@@ -1,0 +1,207 @@
+{
+  "table_id": "table_48",
+  "document": "DS9773 Rev 5 - Table 48. I/O AC characteristics",
+  "rev": "Rev 5",
+  "table_number": "48",
+  "title": "Table 48. I/O AC characteristics",
+  "page": 65,
+  "section": "6.3.14 I/O port characteristics",
+  "section_title": "I/O port characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f030c6.pdf#page=65",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f030c6.pdf",
+  "text_helper": "Table 48. I/O AC characteristics — section 6.3.14 I/O port characteristics. OSPEEDRy [1:0] value(1), Symbol, Parameter, Conditions, Min, +2 autres.",
+  "table_content": {
+    "headers": [
+      "OSPEEDRy [1:0] value(1)",
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "x0",
+        "f max(IO)out",
+        "Maximum frequency(3)",
+        "≥ C = 50 pF, V 2.4 V L DDIOx",
+        "-",
+        "2",
+        "MHz"
+      ],
+      [
+        "x0",
+        "t f(IO)out",
+        "Output fall time",
+        "≥ C = 50 pF, V 2.4 V L DDIOx",
+        "-",
+        "125",
+        "ns"
+      ],
+      [
+        "x0",
+        "t r(IO)out",
+        "Output rise time",
+        "≥ C = 50 pF, V 2.4 V L DDIOx",
+        "-",
+        "125",
+        "ns"
+      ],
+      [
+        "01",
+        "f max(IO)out",
+        "Maximum frequency(3)",
+        "≥ C = 50 pF, V 2.4 V L DDIOx",
+        "-",
+        "10",
+        "MHz"
+      ],
+      [
+        "01",
+        "t f(IO)out",
+        "Output fall time",
+        "≥ C = 50 pF, V 2.4 V L DDIOx",
+        "-",
+        "25",
+        "ns"
+      ],
+      [
+        "01",
+        "t r(IO)out",
+        "Output rise time",
+        "≥ C = 50 pF, V 2.4 V L DDIOx",
+        "-",
+        "25",
+        "ns"
+      ],
+      [
+        "11",
+        "f max(IO)out",
+        "Maximum frequency(3)",
+        "≥ C = 30 pF, V 2.7 V L DDIOx",
+        "-",
+        "50",
+        "MHz"
+      ],
+      [
+        "11",
+        "f max(IO)out",
+        "Maximum frequency(3)",
+        "≥ C = 50 pF, V 2.7 V L DDIOx",
+        "-",
+        "30",
+        "MHz"
+      ],
+      [
+        "11",
+        "f max(IO)out",
+        "Maximum frequency(3)",
+        "≤ < C = 50 pF, 2.4 V V 2.7 V L DDIOx",
+        "-",
+        "20",
+        "MHz"
+      ],
+      [
+        "11",
+        "t f(IO)out",
+        "Output fall time",
+        "≥ C = 30 pF, V 2.7 V L DDIOx",
+        "-",
+        "5",
+        "ns"
+      ],
+      [
+        "11",
+        "t f(IO)out",
+        "Output fall time",
+        "≥ C = 50 pF, V 2.7 V L DDIOx",
+        "-",
+        "8",
+        "ns"
+      ],
+      [
+        "11",
+        "t f(IO)out",
+        "Output fall time",
+        "≤ < C = 50 pF, 2.4 V V 2.7 V L DDIOx",
+        "-",
+        "12",
+        "ns"
+      ],
+      [
+        "11",
+        "t r(IO)out",
+        "Output rise time",
+        "≥ C = 30 pF, V 2.7 V L DDIOx",
+        "-",
+        "5",
+        "ns"
+      ],
+      [
+        "11",
+        "t r(IO)out",
+        "Output rise time",
+        "≥ C = 50 pF, V 2.7 V L DDIOx",
+        "-",
+        "8",
+        "ns"
+      ],
+      [
+        "11",
+        "t r(IO)out",
+        "Output rise time",
+        "≤ < C = 50 pF, 2.4 V V 2.7 V L DDIOx",
+        "-",
+        "12",
+        "ns"
+      ],
+      [
+        "Fm+ configuration (4)",
+        "f max(IO)out",
+        "Maximum frequency(3)",
+        "≥ C = 50 pF, V 2.4 V L DDIOx",
+        "-",
+        "2",
+        "MHz"
+      ],
+      [
+        "Fm+ configuration (4)",
+        "t f(IO)out",
+        "Output fall time",
+        "≥ C = 50 pF, V 2.4 V L DDIOx",
+        "-",
+        "12",
+        "ns"
+      ],
+      [
+        "Fm+ configuration (4)",
+        "t r(IO)out",
+        "Output rise time",
+        "≥ C = 50 pF, V 2.4 V L DDIOx",
+        "-",
+        "34",
+        "ns"
+      ],
+      [
+        "-",
+        "t EXTIpw",
+        "Pulse width of external signals detected by the EXTI controller",
+        "-",
+        "10",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. The I/O speed is configured using the OSPEEDRx[1:0] bits. Refer to the STM32F0xxxx RM0360 reference manual for a description of GPIO Port configuration register.",
+      "3. The maximum frequency is defined in Figure 21.",
+      "4. When Fm+ configuration is set, the I/O speed control is bypassed. Refer to the STM32F0xxxx reference manual RM0360 for a detailed description of Fm+ I/O configuration."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,275 @@
+{
+  "table_id": "table_63",
+  "document": "DS9405 Rev 13 - Table 63. SPI dynamic characteristics",
+  "rev": "Rev 13",
+  "table_number": "63",
+  "title": "Table 63. SPI dynamic characteristics",
+  "page": 143,
+  "section": "6.3.20 Communications interfaces",
+  "section_title": "Communications interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f427ag.pdf#page=143",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f427ag.pdf",
+  "text_helper": "Table 63. SPI dynamic characteristics — section 6.3.20 Communications interfaces. Symbol, Parameter, Conditions, Conditions, Min, +3 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Master mode, SPI1/4/5/6, 2.7V≤V ≤3.6V DD",
+        "Master mode, SPI1/4/5/6, 2.7V≤V ≤3.6V DD",
+        "-",
+        "-",
+        "45",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Slave mode, SPI1/4/5/6, 2.7V≤V ≤3.6V DD",
+        "Receiver",
+        "-",
+        "-",
+        "45",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Slave mode, SPI1/4/5/6, 2.7V≤V ≤3.6V DD",
+        "Transmitter/ full-duplex",
+        "-",
+        "-",
+        "38(2)",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Master mode, SPI1/2/3/4/5/6, 1.7V≤V ≤3.6V DD",
+        "Master mode, SPI1/2/3/4/5/6, 1.7V≤V ≤3.6V DD",
+        "-",
+        "-",
+        "22.5",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Slave mode, SPI1/2/3/4/5/6, 1.7V≤V ≤3.6V DD",
+        "Slave mode, SPI1/2/3/4/5/6, 1.7V≤V ≤3.6V DD",
+        "-",
+        "-",
+        "22.5",
+        "MHz"
+      ],
+      [
+        "Duty(SCK)",
+        "Duty cycle of SPI clock frequency",
+        "Slave mode",
+        "Slave mode",
+        "30",
+        "50",
+        "70",
+        "%"
+      ],
+      [
+        "t w(SCKH)",
+        "SCK high and low time",
+        "Master mode, SPI presc = 2, 2.7V≤V ≤3.6V DD",
+        "Master mode, SPI presc = 2, 2.7V≤V ≤3.6V DD",
+        "T -0.5 PCLK",
+        "T PCLK",
+        "KLCP 5.0+ T",
+        "ns"
+      ],
+      [
+        "t w(SCKL)",
+        "None",
+        "Master mode, SPI presc = 2, 1.7V≤V ≤3.6V DD",
+        "Master mode, SPI presc = 2, 1.7V≤V ≤3.6V DD",
+        "T -2 PCLK",
+        "T PCLK",
+        "KLCP 2+ T",
+        "None"
+      ],
+      [
+        "t su(NSS)",
+        "NSS setup time",
+        "Slave mode, SPI presc = 2",
+        "Slave mode, SPI presc = 2",
+        "4T PCLK",
+        "-",
+        "-",
+        "None"
+      ],
+      [
+        "t h(NSS)",
+        "NSS hold time",
+        "Slave mode, SPI presc = 2",
+        "Slave mode, SPI presc = 2",
+        "2T PCLK",
+        "None",
+        "None",
+        "None"
+      ],
+      [
+        "t su(MI)",
+        "Data input setup time",
+        "Master mode",
+        "Master mode",
+        "3",
+        "-",
+        "-",
+        "None"
+      ],
+      [
+        "t su(SI)",
+        "None",
+        "Slave mode",
+        "Slave mode",
+        "0",
+        "-",
+        "-",
+        "None"
+      ],
+      [
+        "t h(MI)",
+        "Data input hold time",
+        "Master mode",
+        "Master mode",
+        "0.5",
+        "-",
+        "-",
+        "None"
+      ],
+      [
+        "t h(SI)",
+        "None",
+        "Slave mode",
+        "Slave mode",
+        "2",
+        "-",
+        "-",
+        "None"
+      ],
+      [
+        "t ) a(SO",
+        "Data output access time",
+        "Slave mode, SPI presc = 2",
+        "Slave mode, SPI presc = 2",
+        "0",
+        "-",
+        "4T PCLK",
+        "None"
+      ],
+      [
+        "t dis(SO)",
+        "Data output disable time",
+        "Slave mode, SPI1/4/5/6, 2.7V≤V ≤3.6V DD",
+        "Slave mode, SPI1/4/5/6, 2.7V≤V ≤3.6V DD",
+        "0",
+        "-",
+        "8.5",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "Slave mode, SPI1/2/3/4/5/6 and 1.7V≤V ≤3.6V DD",
+        "Slave mode, SPI1/2/3/4/5/6 and 1.7V≤V ≤3.6V DD",
+        "0",
+        "-",
+        "16.5",
+        "None"
+      ],
+      [
+        "t v(SO) t h(SO)",
+        "Data output valid/hold time",
+        "Slave mode (after enable edge), SPI1/4/5/6 and 2.7V ≤ V ≤ 3.6V DD",
+        "Slave mode (after enable edge), SPI1/4/5/6 and 2.7V ≤ V ≤ 3.6V DD",
+        "-",
+        "11",
+        "13",
+        "ns"
+      ],
+      [
+        "None",
+        "None",
+        "Slave mode (after enable edge), SPI2/3, 2.7V≤V ≤3.6V DD",
+        "Slave mode (after enable edge), SPI2/3, 2.7V≤V ≤3.6V DD",
+        "-",
+        "14",
+        "15",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "Slave mode (after enable edge), SPI1/4/5/6, 1.7V≤V ≤3.6V DD",
+        "Slave mode (after enable edge), SPI1/4/5/6, 1.7V≤V ≤3.6V DD",
+        "-",
+        "15.5",
+        "19",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "Slave mode (after enable edge), SPI2/3, 1.7V≤V ≤3.6V DD",
+        "Slave mode (after enable edge), SPI2/3, 1.7V≤V ≤3.6V DD",
+        "-",
+        "15.5",
+        "17.5",
+        "None"
+      ],
+      [
+        "t v(MO)",
+        "Data output valid time",
+        "Master mode (after enable edge), SPI1/4/5/6, 2.7V≤V ≤3.6V DD",
+        "Master mode (after enable edge), SPI1/4/5/6, 2.7V≤V ≤3.6V DD",
+        "-",
+        "-",
+        "2.5",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "Master mode (after enable edge), SPI1/2/3/4/5/6, 1.7V≤V ≤3.6V DD",
+        "Master mode (after enable edge), SPI1/2/3/4/5/6, 1.7V≤V ≤3.6V DD",
+        "-",
+        "-",
+        "4.5",
+        "None"
+      ],
+      [
+        "t h(MO)",
+        "Data output hold time",
+        "Master mode (after enable edge)",
+        "Master mode (after enable edge)",
+        "0",
+        "-",
+        "-",
+        "None"
+      ]
+    ],
+    "notes": [
+      "2. The maximum frequency in Slave transmitter mode is determined by the sum of t and t which has to fit into SCK v(SO) su(MI),"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

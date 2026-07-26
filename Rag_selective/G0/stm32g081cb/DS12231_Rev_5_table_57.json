@@ -1,0 +1,75 @@
+{
+  "table_id": "table_57",
+  "document": "DS12231 Rev 5 - Table 57. Analog switch booster characteristics",
+  "rev": "Rev 5",
+  "table_number": "57",
+  "title": "Table 57. Analog switch booster characteristics",
+  "page": 88,
+  "section": "5.3.17 Analog switch booster",
+  "section_title": "Analog switch booster",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32g081cb.pdf#page=88",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g081cb.pdf",
+  "text_helper": "Table 57. Analog switch booster characteristics — section 5.3.17 Analog switch booster. Symbol, Parameter, Min, Typ, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V DD",
+        "Supply voltage",
+        "1.62 V",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "t SU(BOOST)",
+        "Booster startup time",
+        "-",
+        "-",
+        "240",
+        "µs"
+      ],
+      [
+        "I DD(BOOST)",
+        "Booster consumption for 1.62 V ≤ V ≤ 2.0 V DD",
+        "-",
+        "-",
+        "250",
+        "µA"
+      ],
+      [
+        "I DD(BOOST)",
+        "Booster consumption for 2.0 V ≤ V ≤ 2.7 V DD",
+        "-",
+        "-",
+        "500",
+        "µA"
+      ],
+      [
+        "I DD(BOOST)",
+        "Booster consumption for 2.7 V ≤ V ≤ 3.6 V DD",
+        "-",
+        "-",
+        "900",
+        "µA"
+      ]
+    ],
+    "notes": [
+      "1. Specified by design. Not tested in production.",
+      "2. I/O analog switch voltage booster must be enabled (BOOSTEN = 1 in the SYSCFG_CFGR1) when V < 2.4 V and DDA",
+      "3. This requirement is granted when the incoming clock (PCLK or ADC asynchronous clock) is divided by two or more in the ADC. For other cases, refer to the reference manual section ADC clock for information on how to fulfill this requirement."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

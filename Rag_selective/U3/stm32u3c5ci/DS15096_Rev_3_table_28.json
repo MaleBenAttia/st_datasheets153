@@ -1,0 +1,63 @@
+{
+  "table_id": "table_28",
+  "document": "DS15096 Rev 3 - Table 28. Operating conditions at power-up/power-down.",
+  "rev": "Rev 3",
+  "table_number": "28",
+  "title": "Table 28. Operating conditions at power-up/power-down.",
+  "page": 109,
+  "section": "5.3.2 Operating conditions at power-up/power-down",
+  "section_title": "Operating conditions at power-up/power-down",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u3c5ci.pdf#page=109",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u3c5ci.pdf",
+  "text_helper": "Table 28. Operating conditions at power-up/power-down. — section 5.3.2 Operating conditions at power-up/power-down. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "tVDD",
+        "VDD rise‑time rate",
+        "-",
+        "0",
+        "∞",
+        "µs/V"
+      ],
+      [
+        "tVDD",
+        "VDD fall‑time rate",
+        "ULPMEN = 0",
+        "20",
+        "∞",
+        "µs/V"
+      ],
+      [
+        "tVDD",
+        "VDD fall‑time rate",
+        "Standby mode, BOR level 0 selected with ULPMEN = 1",
+        "250",
+        "∞",
+        "ms/V"
+      ]
+    ],
+    "notes": [
+      "1. HSLV means high-speed low-voltage mode (refer to the product reference manual).",
+      "2. When RESET is released, the functionality is guaranteed down to VBORx min.",
+      "3. This formula has to be applied only on the power supplies related to the I/O structure described by the pin definition table. The maximum I/O input voltage is the smallest value between Min (VDD, VDDA, VDDUSB, VDDIO2) + 3.6 V, and 5.5 V.",
+      "4. For operation with voltage higher than Min (VDD, VDDA, VDDUSB, VDDIO2) + 0.3 V, the internal pull‑up and pull‑down resistors must be disabled.",
+      "5. The I/Os powered by VSW are: PC13, PC14, PC15",
+      "6. If TA is lower, higher PD values are allowed as long as TJ does not exceed TJmax (see Section 6.11: Package thermal characteristics).",
+      "7. In low‑power dissipation state, TA can be extended to this range as long as TJ does not exceed TJ max (see Section 6.11: Package thermal characteristics)."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

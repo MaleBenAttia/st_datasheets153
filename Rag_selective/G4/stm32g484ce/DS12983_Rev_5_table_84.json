@@ -1,0 +1,154 @@
+{
+  "table_id": "table_84",
+  "document": "DS12983 Rev 5 - Table 84. TIMx characteristics",
+  "rev": "Rev 5",
+  "table_number": "84",
+  "title": "Table 84. TIMx characteristics",
+  "page": 169,
+  "section": "5.3.26 Timer characteristics",
+  "section_title": "Timer characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32g484ce.pdf#page=169",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g484ce.pdf",
+  "text_helper": "Table 84. TIMx characteristics — section 5.3.26 Timer characteristics. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "-",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "f = 170 MHz TIMxCLK",
+        "5.88",
+        "-",
+        "ns"
+      ],
+      [
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "-",
+        "0",
+        "f /2 TIMxCLK",
+        "MHz"
+      ],
+      [
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "f = 170 MHz TIMxCLK",
+        "0",
+        "85",
+        "MHz"
+      ],
+      [
+        "Res TIM",
+        "Timer resolution",
+        "TIMx (except TIM2 and TIM5)",
+        "-",
+        "16",
+        "bit"
+      ],
+      [
+        "Res TIM",
+        "Timer resolution",
+        "TIM2 and TIM5",
+        "-",
+        "32",
+        "bit"
+      ],
+      [
+        "t COUNTER",
+        "16-bit counter clock period",
+        "-",
+        "1",
+        "65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t COUNTER",
+        "16-bit counter clock period",
+        "f = 170 MHz TIMxCLK",
+        "0.00588",
+        "385.5",
+        "µs"
+      ],
+      [
+        "t MAX_COUNT",
+        "Maximum possible count with 32-bit counter",
+        "-",
+        "-",
+        "65536 × 65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t MAX_COUNT",
+        "Maximum possible count with 32-bit counter",
+        "f = 170 MHz TIMxCLK",
+        "-",
+        "25.26",
+        "s"
+      ],
+      [
+        "f ENC",
+        "Encoder frequency on TI1 and TI2 input pins",
+        "-",
+        "0",
+        "f /4 TIMxCLK",
+        "MHz"
+      ],
+      [
+        "f ENC",
+        "Encoder frequency on TI1 and TI2 input pins",
+        "f = 170MHz TIMxCLK",
+        "0",
+        "42.5",
+        "MHz"
+      ],
+      [
+        "t W(INDEX)",
+        "Index pulsewidth on ETR input",
+        "-",
+        "2",
+        "-",
+        "Tck"
+      ],
+      [
+        "t W(TI1, TI2)",
+        "Min pulsewidth on TI1 and TI2 inputs in all encoder modes except directional clock x1",
+        "-",
+        "2",
+        "-",
+        "Tck"
+      ],
+      [
+        "t W(TI1, TI2)",
+        "Min pulsewidth on TI1 and TI2 inputs in directional clock x1",
+        "-",
+        "3",
+        "-",
+        "Tck"
+      ]
+    ],
+    "notes": [
+      "1. TIMx is used as a general term in which x stands for 1,2,3,4,5,6,7,8,15,16, 17 or 20. ,",
+      "2. Guaranteed by design - Not tested in production. DS12983 Rev 5 169/235"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

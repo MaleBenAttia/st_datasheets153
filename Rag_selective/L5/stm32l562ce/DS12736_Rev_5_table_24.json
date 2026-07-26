@@ -1,0 +1,101 @@
+{
+  "table_id": "table_24",
+  "document": "DS12736 Rev 5 - Table 24. Voltage characteristics",
+  "rev": "Rev 5",
+  "table_number": "24",
+  "title": "Table 24. Voltage characteristics",
+  "page": 147,
+  "section": "5.2 Absolute maximum ratings",
+  "section_title": "Absolute maximum ratings",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l562ce.pdf#page=147",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l562ce.pdf",
+  "text_helper": "Table 24. Voltage characteristics — section 5.2 Absolute maximum ratings. Symbol, Ratings, Ratings, Min, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Ratings",
+      "Ratings",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V - V DDX SS",
+        "External main supply voltage (including V , DD V , V , V , V ,V , DDA DDIO2 DDUSB BAT DDSMPS V ) REF+",
+        "External main supply voltage (including V , DD V , V , V , V ,V , DDA DDIO2 DDUSB BAT DDSMPS V ) REF+",
+        "-0.3",
+        "4.0",
+        "V"
+      ],
+      [
+        "V - V DD12 SS",
+        "External SMPS supply voltage",
+        "All ranges 0/1/2",
+        "-0.3",
+        "1.4",
+        "V"
+      ],
+      [
+        "V (2) IN",
+        "Input voltage on FT_xxx pins except FT_c pins",
+        "Input voltage on FT_xxx pins except FT_c pins",
+        "V -0.3 SS",
+        "Min(Min(V , V , DD DDA V , V DDIO2 DDUSB, V ) + 4.0, DDSMPS 6.0)(3)(4)",
+        "V"
+      ],
+      [
+        "V (2) IN",
+        "Input voltage on FT_c pins",
+        "Input voltage on FT_c pins",
+        "V -0.3 SS",
+        "5.5",
+        "V"
+      ],
+      [
+        "V (2) IN",
+        "Input voltage on any other pins",
+        "Input voltage on any other pins",
+        "V -0.3 SS",
+        "4.0(5)",
+        "V"
+      ],
+      [
+        "V - V REF+ DDA",
+        "Allowed voltage difference for V > V REF+ DDA",
+        "Allowed voltage difference for V > V REF+ DDA",
+        "Allowed voltage difference for V > V REF+ DDA",
+        "-",
+        "0.4"
+      ],
+      [
+        "|∆V | DDx",
+        "Variations between different V power DDX pins of the same domain",
+        "Variations between different V power DDX pins of the same domain",
+        "Variations between different V power DDX pins of the same domain",
+        "-",
+        "50"
+      ],
+      [
+        "|V -V | SSx SS",
+        "Variations between all the different ground pins(6)",
+        "Variations between all the different ground pins(6)",
+        "Variations between all the different ground pins(6)",
+        "-",
+        "50"
+      ]
+    ],
+    "notes": [
+      "2. V maximum must always be respected. Refer to Table 25: Current characteristics for the maximum IN",
+      "3. This formula has to be applied only on the power supplies related to the I/O structure described in the pin definition table.",
+      "4. To sustain a voltage higher than 4 V the internal pull-up/pull-down resistors must be disabled.",
+      "5. When an FT_a pin is used by an analog peripheral such as ADC, the maximum V is 4 V. IN",
+      "6. Include VREF- pin."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

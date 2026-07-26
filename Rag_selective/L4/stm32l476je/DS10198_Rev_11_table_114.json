@@ -1,0 +1,89 @@
+{
+  "table_id": "table_114",
+  "document": "DS10198 Rev 11 - Table 114. Synchronous multiplexed PSRAM write timings",
+  "rev": "Rev 11",
+  "table_number": "114",
+  "title": "Table 114. Synchronous multiplexed PSRAM write timings",
+  "page": 226,
+  "section": "6.3.29 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l476je.pdf#page=226",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l476je.pdf",
+  "text_helper": "Table 114. Synchronous multiplexed PSRAM write timings — section 6.3.29 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t w(CLK)",
+        "FMC_CLK period",
+        "2T -1 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NADVL)",
+        "FMC_CLK low to FMC_NADV low",
+        "-",
+        "2.5",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NADVH)",
+        "FMC_CLK low to FMC_NADV high",
+        "1",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKH-NWEH)",
+        "FMC_CLK high to FMC_NWE high",
+        "KLCH 1+ T",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-ADV)",
+        "FMC_CLK low to FMC_AD[15:0] valid",
+        "-",
+        "4",
+        "ns"
+      ],
+      [
+        "t d(CLKL-ADIV)",
+        "FMC_CLK low to FMC_AD[15:0] invalid",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-DATA)",
+        "FMC_A/D[15:0] valid data after FMC_CLK low",
+        "-",
+        "5.5",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NBLL)",
+        "FMC_CLK low to FMC_NBL low",
+        "-",
+        "2.5",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. CL = 30 pF.",
+      "2. Guaranteed by characterization results. 226/270 DS10198 Rev 11"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

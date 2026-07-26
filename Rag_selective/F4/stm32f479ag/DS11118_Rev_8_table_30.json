@@ -1,0 +1,111 @@
+{
+  "table_id": "table_30",
+  "document": "DS11118 Rev 8 - Table 30. Typical and maximum current consumption in Standby mode",
+  "rev": "Rev 8",
+  "table_number": "30",
+  "title": "Table 30. Typical and maximum current consumption in Standby mode",
+  "page": 105,
+  "section": "5.3.7 Supply current characteristics",
+  "section_title": "Supply current characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f479ag.pdf#page=105",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f479ag.pdf",
+  "text_helper": "Table 30. Typical and maximum current consumption in Standby mode — section 5.3.7 Supply current characteristics. Symbol, Parameter, Conditions, Typ(1) / T = 25 °C A / V = DD 1.7 V, Typ(1) / T = 25 °C A / V = DD 2.4 V, +5 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Typ(1) / T = 25 °C A / V = DD 1.7 V",
+      "Typ(1) / T = 25 °C A / V = DD 2.4 V",
+      "Typ(1) / T = 25 °C A / V = DD 3.3 V",
+      "Max(2) / T = A 25 °C / V = 3.3 V DD",
+      "Max(2) / T = A 85 °C / V = 3.3 V DD",
+      "Max(2) / T = A 105 °C / V = 3.3 V DD",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I DD_STBY",
+        "Supply current in Standby mode",
+        "Backup SRAM ON, RTC and LSE oscillator OFF",
+        "1.7",
+        "2.5",
+        "2.9",
+        "6(3)",
+        "18",
+        "35(3)",
+        "µA"
+      ],
+      [
+        "I DD_STBY",
+        "Supply current in Standby mode",
+        "Backup SRAM OFF, RTC and LSE oscillator OFF",
+        "1.0",
+        "1.8",
+        "2.20",
+        "5(3)",
+        "15",
+        "30(3)",
+        "µA"
+      ],
+      [
+        "I DD_STBY",
+        "Supply current in Standby mode",
+        "Backup SRAM OFF, RTC ON and LSE oscillator in Power Drive mode",
+        "1.7",
+        "2.7",
+        "3.2",
+        "7",
+        "20",
+        "39",
+        "µA"
+      ],
+      [
+        "I DD_STBY",
+        "Supply current in Standby mode",
+        "Backup SRAM ON, RTC ON and LSE oscillator in Power Drive mode",
+        "2.4",
+        "3.4",
+        "4.0",
+        "8",
+        "25",
+        "48",
+        "µA"
+      ],
+      [
+        "I DD_STBY",
+        "Supply current in Standby mode",
+        "Backup SRAM ON, RTC ON and LSE oscillator in High Drive mode",
+        "3.2",
+        "4.2",
+        "4.8",
+        "10",
+        "29",
+        "57",
+        "µA"
+      ],
+      [
+        "I DD_STBY",
+        "Supply current in Standby mode",
+        "Backup SRAM OFF, RTC ON and LSE oscillator in High Drive mode",
+        "2.5",
+        "3.5",
+        "4.1",
+        "8",
+        "25",
+        "48",
+        "µA"
+      ]
+    ],
+    "notes": [
+      "1. PDR is off for V =1.7 V. When the PDR is OFF (internal reset OFF), the typical current consumption is reduced by DD",
+      "2. Based on characterization, not tested in production unless otherwise specified.",
+      "3. Based on characterization, tested in production. DS11118 Rev 8 105/225"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

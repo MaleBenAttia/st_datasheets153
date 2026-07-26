@@ -1,0 +1,125 @@
+{
+  "table_id": "table_68",
+  "document": "DS11139 Rev 9 - Table 68. QSPI dynamic characteristics in DDR mode",
+  "rev": "Rev 9",
+  "table_number": "68",
+  "title": "Table 68. QSPI dynamic characteristics in DDR mode",
+  "page": 137,
+  "section": "6.3.19 Communications interfaces",
+  "section_title": "Communications interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f412ce.pdf#page=137",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f412ce.pdf",
+  "text_helper": "Table 68. QSPI dynamic characteristics in DDR mode — section 6.3.19 Communications interfaces. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f SCK 1/t c(SCK)",
+        "QSPI clock frequency",
+        "Write mode 1.71 V≤V ≤3.6 V DD C = 15 pF load",
+        "-",
+        "-",
+        "80",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "QSPI clock frequency",
+        "Read mode 2.7 V<V <3.6 V DD C = 15 pF load",
+        "-",
+        "-",
+        "80",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "QSPI clock frequency",
+        "1.71 V≤V ≤3.6 V DD",
+        "-",
+        "-",
+        "50",
+        "MHz"
+      ],
+      [
+        "t w(CKH)",
+        "QSPI clock high and low",
+        "-",
+        "(T / 2)-1 (CK)",
+        "-",
+        "T / 2 (CK)",
+        "ns"
+      ],
+      [
+        "t w(CKL)",
+        "t w(CKL)",
+        "t w(CKL)",
+        "T / 2) (CK)",
+        "-",
+        "(T / 2)+1 (CK)",
+        "(T / 2)+1 (CK)"
+      ],
+      [
+        "t s(IN)",
+        "Data input setup time",
+        "-",
+        "0",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t h(IN)",
+        "Data input hold time",
+        "-",
+        "4",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t v(OUT)",
+        "Data output valid time",
+        "2.7 V<V <3.6 V DD",
+        "-",
+        "8",
+        "10.5",
+        "10.5"
+      ],
+      [
+        "t v(OUT)",
+        "Data output valid time",
+        "1.71 V<V <3.6 V DD",
+        "-",
+        "8",
+        "13",
+        "13"
+      ],
+      [
+        "t h(OUT)",
+        "Data output hold time",
+        "-",
+        "7.5",
+        "-",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization results, not tested in production.",
+      "2. Measured from 10% to 90% of the data signal. For more detailed informations, refer to USB Specification - Chapter 7 (version 2.0)."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

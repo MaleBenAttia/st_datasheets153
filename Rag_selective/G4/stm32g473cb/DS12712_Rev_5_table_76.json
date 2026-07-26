@@ -1,0 +1,91 @@
+{
+  "table_id": "table_76",
+  "document": "DS12712 Rev 5 - Table 76. TS characteristics",
+  "rev": "Rev 5",
+  "table_number": "76",
+  "title": "Table 76. TS characteristics",
+  "page": 163,
+  "section": "5.3.23 Temperature sensor characteristics",
+  "section_title": "Temperature sensor characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32g473cb.pdf#page=163",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g473cb.pdf",
+  "text_helper": "Table 76. TS characteristics — section 5.3.23 Temperature sensor characteristics. Symbol, Parameter, Min, Typ, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "T (1) L",
+        "V linearity with temperature TS",
+        "-",
+        "±1",
+        "±2",
+        "°C"
+      ],
+      [
+        "Avg_Slope(1)",
+        "Average slope",
+        "2.3",
+        "2.5",
+        "2.7",
+        "mV/°C"
+      ],
+      [
+        "V 30",
+        "Voltage at 30°C (±5 °C)(2)",
+        "0.742",
+        "0.76",
+        "0.785",
+        "V"
+      ],
+      [
+        "t (1) START-RUN",
+        "Start-up time in Run mode (start-up of buffer)",
+        "-",
+        "8",
+        "15",
+        "µs"
+      ],
+      [
+        "t (3) START_CONT",
+        "Start-up time when entering in continuous mode",
+        "-",
+        "70",
+        "120",
+        "µs"
+      ],
+      [
+        "t (1) S_temp",
+        "ADC sampling time when reading the temperature",
+        "5",
+        "-",
+        "-",
+        "µs"
+      ],
+      [
+        "I DD(TS)(1)",
+        "Temperature sensor consumption from VDD, when selected by ADC",
+        "-",
+        "4.7",
+        "7",
+        "µA"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by design - Not tested in production.",
+      "2. Measured at V = 3.0 V ±10 mV. The V ADC conversion result is stored in the TS_CAL1 byte. Refer DDA 30",
+      "3. Continuous mode means RUN mode or Temperature Sensor ON."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

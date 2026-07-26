@@ -1,0 +1,67 @@
+{
+  "table_id": "table_144",
+  "document": "DS12737 Rev 6 - Table 144. Switching characteristics for NAND Flash read cycles",
+  "rev": "Rev 6",
+  "table_number": "144",
+  "title": "Table 144. Switching characteristics for NAND Flash read cycles",
+  "page": 296,
+  "section": "1.5 Ns",
+  "section_title": "Ns",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l552cc.pdf#page=296",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l552cc.pdf",
+  "text_helper": "Table 144. Switching characteristics for NAND Flash read cycles — section 1.5 Ns. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "Tw(N0E)",
+        "FMC_NOE low width",
+        "4THCLK - 0.5",
+        "4THCLK+0.5",
+        "ns"
+      ],
+      [
+        "Tsu(D-NOE)",
+        "FMC_D[15-0] valid data before FMC_NOE high",
+        "14",
+        "-",
+        "ns"
+      ],
+      [
+        "Th(NOE-D)",
+        "FMC_D[15-0] valid data after FMC_NOE high",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "Td(ALE-NOE)",
+        "FMC_ALE valid before FMC_NOE low",
+        "-",
+        "3THCLK-1",
+        "ns"
+      ],
+      [
+        "Th(NOE-ALE)",
+        "FMC_NWE high to FMC_ALE invalid",
+        "3THCLK-0.5",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization results, not tested in production. 296/340 DS12737 Rev 6"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

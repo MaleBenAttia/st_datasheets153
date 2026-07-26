@@ -1,0 +1,50 @@
+{
+  "table_id": "table_3",
+  "document": "DS14121 Rev 5 - Table 3. STM32H573xx boot mode when TrustZone is disabled (TZEN = 0xC3)",
+  "rev": "Rev 5",
+  "table_number": "3",
+  "title": "Table 3. STM32H573xx boot mode when TrustZone is disabled (TZEN = 0xC3)",
+  "page": 25,
+  "section": "3.7 Boot modes",
+  "section_title": "Boot modes",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h573ai.pdf#page=25",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h573ai.pdf",
+  "text_helper": "Table 3. STM32H573xx boot mode when TrustZone is disabled (TZEN = 0xC3) — section 3.7 Boot modes. PRODUCT_STATE, BOOT0 pin, BOOT_UBE FLASH_OP TSR[29:22], Boot address option-byte selection, Boot area, +1 autres.",
+  "table_content": {
+    "headers": [
+      "PRODUCT_STATE",
+      "BOOT0 pin",
+      "BOOT_UBE FLASH_OP TSR[29:22]",
+      "Boot address option-byte selection",
+      "Boot area",
+      "ST programmed default value"
+    ],
+    "rows": [
+      [
+        "Open",
+        "0",
+        "NA",
+        "NSBOOTADD[31:8]",
+        "Boot address defined by user option byte NSBOOTADD[31:8]",
+        "Flash: 0x0800 0000"
+      ],
+      [
+        "Open",
+        "1",
+        "NA",
+        "NA",
+        "Bootloader",
+        "Bootloader"
+      ]
+    ],
+    "notes": [],
+    "legend": [
+      "disabled (TZEN = 0xC3) and enabled (TZEN = 0xB4).",
+      "Ta b le 3. STM32H573xx boot mode when TrustZone is disabled (TZEN = 0xC3)"
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

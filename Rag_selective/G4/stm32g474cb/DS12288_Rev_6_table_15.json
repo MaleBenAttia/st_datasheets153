@@ -1,0 +1,101 @@
+{
+  "table_id": "table_15",
+  "document": "DS12288 Rev 6 - Table 15. Current characteristics",
+  "rev": "Rev 6",
+  "table_number": "15",
+  "title": "Table 15. Current characteristics",
+  "page": 83,
+  "section": "5.2 Absolute maximum ratings",
+  "section_title": "Absolute maximum ratings",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32g474cb.pdf#page=83",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g474cb.pdf",
+  "text_helper": "Table 15. Current characteristics — section 5.2 Absolute maximum ratings. Symbol, Ratings, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Ratings",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "∑IV DD",
+        "Total current into sum of all V power lines (source)(1) DD",
+        "150",
+        "mA"
+      ],
+      [
+        "∑IV SS",
+        "Total current out of sum of all V ground lines (sink)(1) SS",
+        "150",
+        "mA"
+      ],
+      [
+        "IV DD(PIN)",
+        "Maximum current into each V power pin (source)(1) DD",
+        "100",
+        "mA"
+      ],
+      [
+        "IV SS(PIN)",
+        "Maximum current out of each V ground pin (sink)(1) SS",
+        "100",
+        "mA"
+      ],
+      [
+        "I IO(PIN)",
+        "Output current sunk by any I/O and control pin except FT_f",
+        "20",
+        "mA"
+      ],
+      [
+        "I IO(PIN)",
+        "Output current sunk by any FT_f pin",
+        "20",
+        "mA"
+      ],
+      [
+        "I IO(PIN)",
+        "Output current sourced by any I/O and control pin",
+        "20",
+        "mA"
+      ],
+      [
+        "∑I IO(PIN)",
+        "Total output current sunk by sum of all I/Os and control pins(2)",
+        "100",
+        "mA"
+      ],
+      [
+        "∑I IO(PIN)",
+        "Total output current sourced by sum of all I/Os and control pins(2)",
+        "100",
+        "mA"
+      ],
+      [
+        "I (3) INJ(PIN)",
+        "Injected current on FT_xxx, TT_xx, NRST pins",
+        "-5/0(4)",
+        "mA"
+      ],
+      [
+        "∑|I | INJ(PIN)",
+        "Total injected current (sum of all I/Os and control pins)(5)",
+        "±25",
+        "mA"
+      ]
+    ],
+    "notes": [
+      "1. All main power (V , V , V ) and ground (V , V ) pins must always be connected to the external DD DDA BAT SS SSA",
+      "2. V maximum must always be respected. Refer to Table 15: Current characteristics for the maximum IN",
+      "3. This formula has to be applied only on the power supplies related to the IO structure described in the pin definition table.",
+      "4. To sustain a voltage higher than 4 V the internal pull-up/pull-down resistors must be disabled.",
+      "5. Include VREF- pin."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

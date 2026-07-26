@@ -1,0 +1,571 @@
+{
+  "table_id": "table_102",
+  "document": "DS15097 Rev 3 - Table 102. DAC characteristics",
+  "rev": "Rev 3",
+  "table_number": "102",
+  "title": "Table 102. DAC characteristics",
+  "page": 168,
+  "section": "5.3.22 Digital-to-analog converter characteristics",
+  "section_title": "Digital-to-analog converter characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u3b5cg.pdf#page=168",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u3b5cg.pdf",
+  "text_helper": "Table 102. DAC characteristics — section 5.3.22 Digital-to-analog converter characteristics. Symbol, Parameter, Conditions, Conditions, Min, +3 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "VDDA",
+        "Analog supply voltage for DAC ON",
+        "-",
+        "-",
+        "1.6",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "VREF+",
+        "Positive reference voltage",
+        "-",
+        "-",
+        "1.6",
+        "-",
+        "VDDA",
+        "V"
+      ],
+      [
+        "VREF-",
+        "Negative reference voltage",
+        "-",
+        "-",
+        "-",
+        "VSSA",
+        "-",
+        "V"
+      ],
+      [
+        "RL",
+        "Resistive load",
+        "DAC output buffer ON",
+        "connected to VSSA",
+        "5",
+        "-",
+        "-",
+        "kΩ"
+      ],
+      [
+        "RL",
+        "Resistive load",
+        "DAC output buffer ON",
+        "connected to VDDA",
+        "25",
+        "-",
+        "-",
+        "kΩ"
+      ],
+      [
+        "RO",
+        "Output impedance",
+        "DAC output buffer OFF",
+        "DAC output buffer OFF",
+        "10",
+        "13",
+        "16",
+        "kΩ"
+      ],
+      [
+        "RBON",
+        "Output impedance sample and hold mode, output buffer ON",
+        "VDDA = 2.7 V",
+        "VDDA = 2.7 V",
+        "-",
+        "-",
+        "1.5",
+        "kΩ"
+      ],
+      [
+        "RBON",
+        "Output impedance sample and hold mode, output buffer ON",
+        "VDDA = 2.0 V",
+        "VDDA = 2.0 V",
+        "-",
+        "-",
+        "2.5",
+        "kΩ"
+      ],
+      [
+        "RBOFF",
+        "Output impedance sample and hold mode, output buffer OFF",
+        "VDDA = 2.7 V",
+        "VDDA = 2.7 V",
+        "-",
+        "-",
+        "16.5",
+        "kΩ"
+      ],
+      [
+        "RBOFF",
+        "Output impedance sample and hold mode, output buffer OFF",
+        "VDDA = 2.0 V",
+        "VDDA = 2.0 V",
+        "-",
+        "-",
+        "17.5",
+        "kΩ"
+      ],
+      [
+        "CL",
+        "Capacitive load",
+        "DAC output buffer OFF",
+        "DAC output buffer OFF",
+        "-",
+        "-",
+        "50",
+        "pF"
+      ],
+      [
+        "CSH",
+        "Capacitive load",
+        "Sample and hold mode",
+        "Sample and hold mode",
+        "-",
+        "0.1",
+        "1",
+        "µF"
+      ],
+      [
+        "VDAC_OUT",
+        "Voltage on DAC_OUT output",
+        "DAC output buffer ON",
+        "DAC output buffer ON",
+        "0.2",
+        "-",
+        "VDDA - 0.2",
+        "V"
+      ],
+      [
+        "VDAC_OUT",
+        "Voltage on DAC_OUT output",
+        "DAC output buffer OFF",
+        "DAC output buffer OFF",
+        "0",
+        "-",
+        "VREF+",
+        "V"
+      ],
+      [
+        "tSETTLING",
+        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ± 0.5 LSB, ± 1 LSB, ± 2 LSB, ± 4 LSB, or ± 8 LSB)",
+        "Normal mode DAC output buffer ON CL ≥ 50 pF, RL ≤ 5 kΩ",
+        "± 0.5 LSB",
+        "-",
+        "2.05",
+        "3.05",
+        "µs"
+      ],
+      [
+        "tSETTLING",
+        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ± 0.5 LSB, ± 1 LSB, ± 2 LSB, ± 4 LSB, or ± 8 LSB)",
+        "Normal mode DAC output buffer ON CL ≥ 50 pF, RL ≤ 5 kΩ",
+        "± 1 LSB",
+        "-",
+        "1.90",
+        "3",
+        "µs"
+      ],
+      [
+        "tSETTLING",
+        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ± 0.5 LSB, ± 1 LSB, ± 2 LSB, ± 4 LSB, or ± 8 LSB)",
+        "Normal mode DAC output buffer ON CL ≥ 50 pF, RL ≤ 5 kΩ",
+        "± 2 LSB",
+        "-",
+        "1.85",
+        "2.85",
+        "µs"
+      ],
+      [
+        "tSETTLING",
+        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ± 0.5 LSB, ± 1 LSB, ± 2 LSB, ± 4 LSB, or ± 8 LSB)",
+        "Normal mode DAC output buffer ON CL ≥ 50 pF, RL ≤ 5 kΩ",
+        "± 4 LSB",
+        "-",
+        "1.80",
+        "2.8",
+        "µs"
+      ],
+      [
+        "tSETTLING",
+        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ± 0.5 LSB, ± 1 LSB, ± 2 LSB, ± 4 LSB, or ± 8 LSB)",
+        "Normal mode DAC output buffer ON CL ≥ 50 pF, RL ≤ 5 kΩ",
+        "± 8 LSB",
+        "-",
+        "1.75",
+        "2.65",
+        "µs"
+      ],
+      [
+        "tSETTLING",
+        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ± 0.5 LSB, ± 1 LSB, ± 2 LSB, ± 4 LSB, or ± 8 LSB)",
+        "Normal mode DAC output buffer OFF, ± 1 LSB, CL = 10 pF",
+        "Normal mode DAC output buffer OFF, ± 1 LSB, CL = 10 pF",
+        "-",
+        "1.7",
+        "3",
+        "µs"
+      ],
+      [
+        "tWAKEUP(1)",
+        "Wake-up time from off state (setting the ENx bit in the DAC control register) until the final value ± 1 LSB",
+        "Normal mode DAC output buffer ON CL ≤ 50 pF, RL = 5 kΩ",
+        "Normal mode DAC output buffer ON CL ≤ 50 pF, RL = 5 kΩ",
+        "-",
+        "4.2",
+        "7.5",
+        "µs"
+      ],
+      [
+        "tWAKEUP(1)",
+        "Wake-up time from off state (setting the ENx bit in the DAC control register) until the final value ± 1 LSB",
+        "Normal mode DAC output buffer OFF, CL ≤ 10 pF",
+        "Normal mode DAC output buffer OFF, CL ≤ 10 pF",
+        "-",
+        "2",
+        "5",
+        "µs"
+      ],
+      [
+        "PSRR",
+        "DC VDDA supply rejection ratio",
+        "Normal mode DAC output buffer ON CL ≤ 50 pF, RL = 5 kΩ",
+        "Normal mode DAC output buffer ON CL ≤ 50 pF, RL = 5 kΩ",
+        "-",
+        "-80",
+        "-28",
+        "dB"
+      ],
+      [
+        "tSAMP",
+        "Sampling time in sample and hold mode, CSH = 100 nF (code transition between the lowest input code and the highest input code when DACOUT reaches the final value ± 1 LSB)",
+        "DAC_OUT pin connected",
+        "DAC output buffer ON, CSH = 100 nF",
+        "-",
+        "0.7",
+        "1.9",
+        "ms"
+      ],
+      [
+        "tSAMP",
+        "Sampling time in sample and hold mode, CSH = 100 nF (code transition between the lowest input code and the highest input code when DACOUT reaches the final value ± 1 LSB)",
+        "DAC_OUT pin connected",
+        "DAC output buffer OFF, CSH = 100 nF",
+        "-",
+        "10.5",
+        "15",
+        "ms"
+      ],
+      [
+        "tSAMP",
+        "Sampling time in sample and hold mode, CSH = 100 nF (code transition between the lowest input code and the highest input code when DACOUT reaches the final value ± 1 LSB)",
+        "DAC_OUT pin not connected (internal connection only)",
+        "DAC output buffer OFF",
+        "-",
+        "2",
+        "8",
+        "µs"
+      ],
+      [
+        "Ileak",
+        "Output leakage current",
+        "-",
+        "-",
+        "-",
+        "-",
+        "(2)",
+        "nA"
+      ],
+      [
+        "CIint",
+        "Internal sample and hold capacitor",
+        "-",
+        "-",
+        "7",
+        "9.2",
+        "11",
+        "pF"
+      ],
+      [
+        "tTRIM",
+        "Middle code offset trim time",
+        "DAC output buffer ON",
+        "DAC output buffer ON",
+        "50",
+        "-",
+        "-",
+        "µs"
+      ],
+      [
+        "Voffset",
+        "Middle code offset for 1 trim code step",
+        "VREF+ = 3.6 V",
+        "VREF+ = 3.6 V",
+        "-",
+        "1520",
+        "-",
+        "µV"
+      ],
+      [
+        "Voffset",
+        "Middle code offset for 1 trim code step",
+        "VREF+ = 1.6 V",
+        "VREF+ = 1.6 V",
+        "-",
+        "680",
+        "-",
+        "µV"
+      ],
+      [
+        "IDDA(DAC)",
+        "DAC consumption from VDDA",
+        "DAC output buffer ON",
+        "No load, middle code (0x800)",
+        "-",
+        "330",
+        "510",
+        "µA"
+      ],
+      [
+        "IDDA(DAC)",
+        "DAC consumption from VDDA",
+        "DAC output buffer ON",
+        "No load, worst code (0xF1C)",
+        "-",
+        "470",
+        "680",
+        "680"
+      ],
+      [
+        "IDDA(DAC)",
+        "DAC consumption from VDDA",
+        "DAC output buffer OFF",
+        "No load, middle/worst code (0x800)",
+        "-",
+        "-",
+        "0.3",
+        "0.3"
+      ],
+      [
+        "IDDA(DAC)",
+        "DAC consumption from VDDA",
+        "Sample and hold mode, CSH = 100 nF",
+        "Sample and hold mode, CSH = 100 nF",
+        "-",
+        "330 × TON(3) /(TON + TOFF)",
+        "680 × TON /(TON + TOFF) (3)",
+        "680 × TON /(TON + TOFF) (3)"
+      ],
+      [
+        "IDDV(DAC)",
+        "DAC consumption from VREF+",
+        "DAC output buffer ON",
+        "No load, middle code (0x800)",
+        "-",
+        "170",
+        "240",
+        "240"
+      ],
+      [
+        "IDDV(DAC)",
+        "DAC consumption from VREF+",
+        "DAC output buffer ON",
+        "No load, worst code (0x0E4)",
+        "-",
+        "300",
+        "400",
+        "400"
+      ],
+      [
+        "IDDV(DAC)",
+        "DAC consumption from VREF+",
+        "DAC output buffer OFF",
+        "No load, middle/worst code (0x800)",
+        "-",
+        "145",
+        "180",
+        "180"
+      ],
+      [
+        "IDDV(DAC)",
+        "DAC consumption from VREF+",
+        "Sample and hold mode, buffer ON, CSH = 100 nF (worst code)",
+        "Sample and hold mode, buffer ON, CSH = 100 nF (worst code)",
+        "-",
+        "170 × TON /(TON + TOFF) (3)",
+        "400 × TON /(TON + TOFF) (3)",
+        "400 × TON /(TON + TOFF) (3)"
+      ],
+      [
+        "IDDV(DAC)",
+        "DAC consumption from VREF+",
+        "Sample and hold mode, buffer OFF, CSH = 100 nF (worst code)",
+        "Sample and hold mode, buffer OFF, CSH = 100 nF (worst code)",
+        "-",
+        "145 × TON /(TON + TOFF) (3)",
+        "180 × TON /(TON + TOFF) (3)",
+        "180 × TON /(TON + TOFF) (3)"
+      ],
+      [
+        "DNL",
+        "Differential nonlinearity(1)",
+        "DAC output buffer OFF",
+        "DAC output buffer OFF",
+        "-",
+        "-",
+        "± 2",
+        "± 2"
+      ],
+      [
+        "INL",
+        "Integral nonlinearity(2)",
+        "DAC output buffer OFF, CL ≤ 50 pF, no RL",
+        "DAC output buffer OFF, CL ≤ 50 pF, no RL",
+        "-",
+        "-",
+        "± 4",
+        "± 4"
+      ],
+      [
+        "Offset1",
+        "Offset error at code 0x001(3)",
+        "DAC output buffer OFF, CL ≤ 50 pF, no RL",
+        "DAC output buffer OFF, CL ≤ 50 pF, no RL",
+        "-",
+        "-",
+        "± 5",
+        "± 5"
+      ],
+      [
+        "OffsetCal",
+        "Offset error at code 0x800(2) after calibration",
+        "DAC output buffer ON, CL ≤ 50 pF, RL ≥ 5 kΩ",
+        "VREF+ = 3.6 V",
+        "-",
+        "-",
+        "± 5",
+        "± 5"
+      ],
+      [
+        "OffsetCal",
+        "Offset error at code 0x800(2) after calibration",
+        "DAC output buffer ON, CL ≤ 50 pF, RL ≥ 5 kΩ",
+        "VREF+ = 1.6 V",
+        "-",
+        "-",
+        "± 5",
+        "± 5"
+      ],
+      [
+        "Gain",
+        "Gain error(4)",
+        "DAC output buffer OFF, CL ≤ 50 pF, no RL",
+        "DAC output buffer OFF, CL ≤ 50 pF, no RL",
+        "-",
+        "-",
+        "± 0.5",
+        "± 0.5"
+      ],
+      [
+        "TUE",
+        "Total unadjusted error",
+        "DAC output buffer ON, CL ≤ 50 pF, RL ≥ 5 kΩ, after calibration",
+        "DAC output buffer ON, CL ≤ 50 pF, RL ≥ 5 kΩ, after calibration",
+        "-",
+        "-",
+        "± 14",
+        "± 14"
+      ],
+      [
+        "SNR",
+        "Signal-to-noise ratio(5)",
+        "DAC output buffer OFF, CL ≤ 50 pF, no RL, 1 kHz, BW = 500 kHz",
+        "DAC output buffer OFF, CL ≤ 50 pF, no RL, 1 kHz, BW = 500 kHz",
+        "-",
+        "72",
+        "-",
+        "-"
+      ],
+      [
+        "THD",
+        "Total harmonic distortion(5)",
+        "DAC output buffer ON, CL ≤ 50 pF, RL ≥ 5 kΩ, 1 kHz",
+        "DAC output buffer ON, CL ≤ 50 pF, RL ≥ 5 kΩ, 1 kHz",
+        "-",
+        "-79",
+        "-",
+        "-"
+      ],
+      [
+        "THD",
+        "Total harmonic distortion(5)",
+        "DAC output buffer OFF, CL ≤ 50 pF, no RL, 1 kHz",
+        "DAC output buffer OFF, CL ≤ 50 pF, no RL, 1 kHz",
+        "-",
+        "-81",
+        "-",
+        "-"
+      ],
+      [
+        "SINAD",
+        "Signal-to-noise and distortion ratio(5)",
+        "DAC output buffer ON, CL ≤ 50 pF, RL ≥ 5 kΩ, 1 kHz",
+        "DAC output buffer ON, CL ≤ 50 pF, RL ≥ 5 kΩ, 1 kHz",
+        "-",
+        "70.1",
+        "-",
+        "-"
+      ],
+      [
+        "SINAD",
+        "Signal-to-noise and distortion ratio(5)",
+        "DAC output buffer OFF, CL ≤ 50 pF, no RL, 1 kHz",
+        "DAC output buffer OFF, CL ≤ 50 pF, no RL, 1 kHz",
+        "-",
+        "71.5",
+        "-",
+        "-"
+      ],
+      [
+        "ENOB",
+        "Effective number of bits",
+        "DAC output buffer OFF, CL ≤ 50 pF, no RL, 1 kHz",
+        "DAC output buffer OFF, CL ≤ 50 pF, no RL, 1 kHz",
+        "-",
+        "11.6",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "1. In buffered mode, the output can overshoot above the final value for low input code (starting from the minimum value).",
+      "2. Refer to Table 86. I/O static characteristics.",
+      "3. TON is the refresh phase duration. TOFF is the hold phase duration (see the product reference manual for more details).",
+      "4. Difference between the ideal transfer-function slope and the measured slope computed from code 0x000 and 0xFFF when the buffer is OFF, and from code giving 0.2 V and (VREF+ - 0.2 V) when the buffer is ON.",
+      "5. Signal is -0.5 dBFS with Fsampling = 1 MHz. DS15097 - Rev 3 page 170/239"
+    ],
+    "legend": [
+      "Specified by design and not tested in production."
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

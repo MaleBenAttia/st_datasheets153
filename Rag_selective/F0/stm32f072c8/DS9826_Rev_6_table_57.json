@@ -1,0 +1,98 @@
+{
+  "table_id": "table_57",
+  "document": "DS9826 Rev 6 - Table 57. ADC characteristics",
+  "rev": "Rev 6",
+  "table_number": "57",
+  "title": "Table 57. ADC characteristics",
+  "page": 84,
+  "section": "6.3.15 NRST pin characteristics",
+  "section_title": "NRST pin characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f072c8.pdf#page=84",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f072c8.pdf",
+  "text_helper": "Table 57. ADC characteristics — section 6.3.15 NRST pin characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V DDA",
+        "Analog supply voltage for ADC ON",
+        "-",
+        "2.4",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "I DDA (ADC)",
+        "Current consumption of the ADC(1)",
+        "V = 3.3 V DDA",
+        "-",
+        "0.9",
+        "-",
+        "mA"
+      ],
+      [
+        "f ADC",
+        "ADC clock frequency",
+        "-",
+        "0.6",
+        "-",
+        "14",
+        "MHz"
+      ],
+      [
+        "f (2) S",
+        "Sampling rate",
+        "12-bit resolution",
+        "0.043",
+        "-",
+        "1",
+        "MHz"
+      ],
+      [
+        "f (2) TRIG",
+        "External trigger frequency",
+        "f = 14 MHz, ADC 12-bit resolution",
+        "-",
+        "-",
+        "823",
+        "kHz"
+      ],
+      [
+        "f (2) TRIG",
+        "External trigger frequency",
+        "12-bit resolution",
+        "-",
+        "-",
+        "17",
+        "1/f ADC"
+      ],
+      [
+        "V AIN",
+        "Conversion voltage range",
+        "-",
+        "0",
+        "-",
+        "V DDA",
+        "V"
+      ]
+    ],
+    "notes": [
+      "1. Data based on design simulation only. Not tested in production.",
+      "2. The pull-up is designed with a true resistance in series with a switchable PMOS. This PMOS contribution to the series resistance is minimal (~10% order)."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

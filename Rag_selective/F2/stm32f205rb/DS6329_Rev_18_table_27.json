@@ -1,0 +1,75 @@
+{
+  "table_id": "table_27",
+  "document": "DS6329 Rev 18 - Table 27. Low-power mode wakeup timings",
+  "rev": "Rev 18",
+  "table_number": "27",
+  "title": "Table 27. Low-power mode wakeup timings",
+  "page": 87,
+  "section": "6.3.7 Wakeup time from Low-power mode",
+  "section_title": "Wakeup time from Low-power mode",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f205rb.pdf#page=87",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f205rb.pdf",
+  "text_helper": "Table 27. Low-power mode wakeup timings — section 6.3.7 Wakeup time from Low-power mode. Symbol, Parameter, Min(1), Typ(1), Max(1), +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min(1)",
+      "Typ(1)",
+      "Max(1)",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t (2) WUSLEEP",
+        "Wakeup from Sleep mode",
+        "-",
+        "1",
+        "-",
+        "µs"
+      ],
+      [
+        "t (2) WUSTOP",
+        "Wakeup from Stop mode (regulator in Run mode)",
+        "-",
+        "13",
+        "-",
+        "µs"
+      ],
+      [
+        "t (2) WUSTOP",
+        "Wakeup from Stop mode (regulator in Low-power mode)",
+        "-",
+        "17",
+        "40",
+        "µs"
+      ],
+      [
+        "t (2) WUSTOP",
+        "Wakeup from Stop mode (regulator in Low-power mode and Flash memory in Deep power down mode)",
+        "-",
+        "110",
+        "-",
+        "µs"
+      ],
+      [
+        "t (2)(3) WUSTDBY",
+        "Wakeup from Standby mode",
+        "260",
+        "375",
+        "480",
+        "µs"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by design, not tested in production. Low-speed external user clock generated from an external source",
+      "2. EN1 bit is set in DAC_CR register.",
+      "3. EN2 bit is set in DAC_CR register."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "table_id": "table_48",
+  "document": "DS11581 Rev 7 - Table 48. PLLI2S (audio PLL) characteristics",
+  "rev": "Rev 7",
+  "table_number": "48",
+  "title": "Table 48. PLLI2S (audio PLL) characteristics",
+  "page": 114,
+  "section": "6.3.10 PLL characteristics",
+  "section_title": "PLL characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f413cg.pdf#page=114",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f413cg.pdf",
+  "text_helper": "Table 48. PLLI2S (audio PLL) characteristics — section 6.3.10 PLL characteristics. Symbol, Parameter, Conditions, Conditions, Min, +3 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f PLL_IN",
+        "PLL input clock(1)",
+        "-",
+        "-",
+        "0.95(2)",
+        "1",
+        "2.10",
+        "MHz"
+      ],
+      [
+        "f PLLI2SQ_OUT",
+        "48 MHz PLLI2SQ multiplier output clock",
+        "-",
+        "-",
+        "-",
+        "48",
+        "75",
+        "MHz"
+      ],
+      [
+        "f PLLI2SR_OUT",
+        "PLLI2SR multiplier output clock for I2S and SAI",
+        "-",
+        "-",
+        "-",
+        "-",
+        "216",
+        "MHz"
+      ],
+      [
+        "f VCO_OUT",
+        "PLLI2S VCO output",
+        "-",
+        "-",
+        "100",
+        "-",
+        "432",
+        "MHz"
+      ],
+      [
+        "t LOCK",
+        "PLLI2S lock time",
+        "VCO freq = 100 MHz",
+        "VCO freq = 100 MHz",
+        "75",
+        "-",
+        "200",
+        "µs"
+      ],
+      [
+        "t LOCK",
+        "PLLI2S lock time",
+        "VCO freq = 432 MHz",
+        "VCO freq = 432 MHz",
+        "100",
+        "-",
+        "300",
+        "µs"
+      ],
+      [
+        "Jitter(3)",
+        "Master I2S clock jitter",
+        "Cycle to cycle at 12.288 MHz on 48 kHz period, N=432, R=5",
+        "RMS",
+        "-",
+        "90",
+        "-",
+        "µs"
+      ],
+      [
+        "Jitter(3)",
+        "Master I2S clock jitter",
+        "Cycle to cycle at 12.288 MHz on 48 kHz period, N=432, R=5",
+        "peak to peak",
+        "-",
+        "±280",
+        "-",
+        "ps"
+      ],
+      [
+        "Jitter(3)",
+        "Master I2S clock jitter",
+        "Average frequency of 12.288 MHz N = 432, R = 5 on 1000 samples",
+        "Average frequency of 12.288 MHz N = 432, R = 5 on 1000 samples",
+        "-",
+        "90",
+        "-",
+        "ps"
+      ],
+      [
+        "Jitter(3)",
+        "rettij kcolc S2I SW",
+        "Cycle to cycle at 48 KHz on 1000 samples",
+        "Cycle to cycle at 48 KHz on 1000 samples",
+        "-",
+        "400",
+        "-",
+        "ps"
+      ],
+      [
+        "I (4) DD(PLLI2S)",
+        "PLLI2S power consumption on V DD",
+        "VCO freq = 100 MHz VCO freq = 432 MHz",
+        "VCO freq = 100 MHz VCO freq = 432 MHz",
+        "0.15 0.45",
+        "-",
+        "0.40 0.75",
+        "mA"
+      ],
+      [
+        "I (4) DDA(PLLI2S)",
+        "PLLI2S power consumption on V DDA",
+        "VCO freq = 100 MHz VCO freq = 432 MHz",
+        "VCO freq = 100 MHz VCO freq = 432 MHz",
+        "0.30 0.55",
+        "-",
+        "0.40 0.85",
+        "mA"
+      ]
+    ],
+    "notes": [
+      "1. Take care of using the appropriate division factor M to have the specified PLL input clock values.",
+      "2. Guaranteed by design.",
+      "3. Value given with main PLL running.",
+      "4. Guaranteed by characterization results. 114/203 DS11581 Rev 7"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "table_id": "table_27",
+  "document": "DS5319 Rev 20 - Table 27. PLL characteristics",
+  "rev": "Rev 20",
+  "table_number": "27",
+  "title": "Table 27. PLL characteristics",
+  "page": 56,
+  "section": "5.3.8 PLL characteristics",
+  "section_title": "PLL characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f103c8.pdf#page=56",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f103c8.pdf",
+  "text_helper": "Table 27. PLL characteristics — section 5.3.8 PLL characteristics. Symbol, Parameter, Value / Min(1), Value / Typ, Value / Max(1), +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Value / Min(1)",
+      "Value / Typ",
+      "Value / Max(1)",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f PLL_IN",
+        "PLL input clock(2)",
+        "1",
+        "8.0",
+        "25",
+        "MHz"
+      ],
+      [
+        "f PLL_IN",
+        "PLL input clock duty cycle",
+        "40",
+        "-",
+        "60",
+        "%"
+      ],
+      [
+        "f PLL_OUT",
+        "PLL multiplier output clock",
+        "16",
+        "-",
+        "72",
+        "MHz"
+      ],
+      [
+        "t LOCK",
+        "PLL lock time",
+        "-",
+        "-",
+        "200",
+        "µs"
+      ],
+      [
+        "Jitter",
+        "Cycle-to-cycle jitter",
+        "-",
+        "-",
+        "300",
+        "ps"
+      ]
+    ],
+    "notes": [
+      "1. The wakeup times are measured from the wakeup event to the point in which the user application code reads the first instruction.",
+      "2. Take care of using the appropriate multiplier factors so as to have PLL input clock values compatible with the range defined by f ."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

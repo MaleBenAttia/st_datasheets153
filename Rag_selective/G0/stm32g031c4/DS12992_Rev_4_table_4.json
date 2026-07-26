@@ -1,0 +1,127 @@
+{
+  "table_id": "table_4",
+  "document": "DS12992 Rev 4 - Table 4. Interconnect of peripherals",
+  "rev": "Rev 4",
+  "table_number": "4",
+  "title": "Table 4. Interconnect of peripherals",
+  "page": 20,
+  "section": "3.8 Interconnect of peripherals",
+  "section_title": "Interconnect of peripherals",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32g031c4.pdf#page=20",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g031c4.pdf",
+  "text_helper": "Table 4. Interconnect of peripherals — section 3.8 Interconnect of peripherals. Interconnect source, Interconnect destination, Interconnect action, nur rewop-woL nuR, peels peelS rewop-woL, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Interconnect source",
+      "Interconnect destination",
+      "Interconnect action",
+      "nur rewop-woL nuR",
+      "peels peelS rewop-woL",
+      "Stop"
+    ],
+    "rows": [
+      [
+        "TIMx",
+        "TIMx",
+        "Timer synchronization or chaining",
+        "Y",
+        "Y",
+        "-"
+      ],
+      [
+        "TIMx",
+        "ADCx",
+        "Conversion triggers",
+        "Y",
+        "Y",
+        "-"
+      ],
+      [
+        "TIMx",
+        "DMA",
+        "Memory-to-memory transfer trigger",
+        "Y",
+        "Y",
+        "-"
+      ],
+      [
+        "ADCx",
+        "TIM1",
+        "Timer triggered by analog watchdog",
+        "Y",
+        "Y",
+        "-"
+      ],
+      [
+        "RTC",
+        "TIM16",
+        "Timer input channel from RTC events",
+        "Y",
+        "Y",
+        "-"
+      ],
+      [
+        "RTC",
+        "LPTIMERx",
+        "Low-power timer triggered by RTC alarms or tampers",
+        "Y",
+        "Y",
+        "Y"
+      ],
+      [
+        "All clock sources (internal and external)",
+        "TIM14,16,17",
+        "Clock source used as input channel for RC measurement and trimming",
+        "Y",
+        "Y",
+        "-"
+      ],
+      [
+        "CSS RAM (parity error) Flash memory (ECC error) PVD",
+        "TIM1,16,17",
+        "Timer break",
+        "Y",
+        "Y",
+        "-"
+      ],
+      [
+        "CPU (hard fault)",
+        "TIM1,16,17",
+        "Timer break",
+        "Y",
+        "-",
+        "-"
+      ],
+      [
+        "GPIO",
+        "TIMx",
+        "External trigger",
+        "Y",
+        "Y",
+        "-"
+      ],
+      [
+        "GPIO",
+        "LPTIMERx",
+        "External trigger",
+        "Y",
+        "Y",
+        "Y"
+      ],
+      [
+        "GPIO",
+        "ADC",
+        "Conversion external trigger",
+        "Y",
+        "Y",
+        "-"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "table_id": "table_38",
+  "document": "DS8576 Rev 13 - Table 38. Asynchronous non-multiplexed SRAM/PSRAM/NOR write timings",
+  "rev": "Rev 13",
+  "table_number": "38",
+  "title": "Table 38. Asynchronous non-multiplexed SRAM/PSRAM/NOR write timings",
+  "page": 92,
+  "section": "6.3.10 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l151qd.pdf#page=92",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l151qd.pdf",
+  "text_helper": "Table 38. Asynchronous non-multiplexed SRAM/PSRAM/NOR write timings — section 6.3.10 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t w(NE)",
+        "FSMC_NE low time",
+        "2*T -3 HCLK",
+        "2*T +2 HCLK",
+        "ns"
+      ],
+      [
+        "t v(NWE_NE)",
+        "FSMC_NEx low to FSMC_NWE low",
+        "0.5",
+        "1",
+        "ns"
+      ],
+      [
+        "t w(NWE)",
+        "FSMC_NWE low time",
+        "T - 2 HCLK",
+        "KLCH 3 + T",
+        "ns"
+      ],
+      [
+        "t v(A_NE)",
+        "FSMC_NEx low to FSMC_A valid",
+        "-",
+        "0",
+        "ns"
+      ],
+      [
+        "t h(BL_NWE)",
+        "FSMC_BL hold time after FSMC_NWE high",
+        "T - 4 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(Data_NE)",
+        "FSMC_NEx low to Data valid",
+        "-",
+        "T HCLK",
+        "ns"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

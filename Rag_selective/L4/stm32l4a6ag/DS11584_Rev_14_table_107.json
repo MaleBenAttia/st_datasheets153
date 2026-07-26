@@ -1,0 +1,103 @@
+{
+  "table_id": "table_107",
+  "document": "DS11584 Rev 14 - Table 107. Asynchronous non-multiplexed SRAM/PSRAM/NOR write timings",
+  "rev": "Rev 14",
+  "table_number": "107",
+  "title": "Table 107. Asynchronous non-multiplexed SRAM/PSRAM/NOR write timings",
+  "page": 228,
+  "section": "6.3.29 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l4a6ag.pdf#page=228",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l4a6ag.pdf",
+  "text_helper": "Table 107. Asynchronous non-multiplexed SRAM/PSRAM/NOR write timings — section 6.3.29 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t v(NWE_NE)",
+        "FMC_NEx low to FMC_NWE low",
+        "T -1 HCLK",
+        "KLCH 1+ T",
+        "ns"
+      ],
+      [
+        "t w(NWE)",
+        "FMC_NWE low time",
+        "T -1.5 HCLK",
+        "KLCH 5.0 + T",
+        "ns"
+      ],
+      [
+        "t h(NE_NWE)",
+        "FMC_NWE high to FMC_NE high hold time",
+        "T HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(A_NE)",
+        "FMC_NEx low to FMC_A valid",
+        "-",
+        "0",
+        "ns"
+      ],
+      [
+        "t h(A_NWE)",
+        "Address hold time after FMC_NWE high",
+        "T -0.5 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(BL_NWE)",
+        "FMC_BL hold time after FMC_NWE high",
+        "T -0.5 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(Data_NE)",
+        "Data to FMC_NEx low to Data valid",
+        "-",
+        "KLCH 3+ T",
+        "ns"
+      ],
+      [
+        "t h(Data_NWE)",
+        "Data hold time after FMC_NWE high",
+        "KLCH 5.0+ T",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(NADV_NE)",
+        "FMC_NEx low to FMC_NADV low",
+        "-",
+        "0",
+        "ns"
+      ],
+      [
+        "t w(NADV)",
+        "FMC_NADV low time",
+        "-",
+        "KLCH 1+ T",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. CL = 30 pF.",
+      "2. Guaranteed by characterization results. 228/281 DS11584 Rev 14"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

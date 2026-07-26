@@ -1,0 +1,197 @@
+{
+  "table_id": "table_108",
+  "document": "DS15168 Rev 1 - Table 108. USART characteristics",
+  "rev": "Rev 1",
+  "table_number": "108",
+  "title": "Table 108. USART characteristics",
+  "page": 187,
+  "section": "5.3.32 Communication interfaces",
+  "section_title": "Communication interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h543ce.pdf#page=187",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h543ce.pdf",
+  "text_helper": "Table 108. USART characteristics — section 5.3.32 Communication interfaces. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f CK",
+        "USART clock frequency",
+        "Master receiver 1.71 V < V < 3.6 V DD",
+        "-",
+        "-",
+        "31",
+        "MHz"
+      ],
+      [
+        "f CK",
+        "USART clock frequency",
+        "Master transmitter 1.71 V < V < 3.6 V DD",
+        "-",
+        "-",
+        "31/6(2)",
+        "MHz"
+      ],
+      [
+        "f CK",
+        "USART clock frequency",
+        "Master transmitter 2.7 V < V < 3.6 V DD",
+        "-",
+        "-",
+        "31/6(2)",
+        "MHz"
+      ],
+      [
+        "f CK",
+        "USART clock frequency",
+        "Slave receiver 1.71 V < V < 3.6 V DD",
+        "-",
+        "-",
+        "83",
+        "MHz"
+      ],
+      [
+        "f CK",
+        "USART clock frequency",
+        "Slave transmitter 1.71 V < V < 3.6 V DD",
+        "-",
+        "-",
+        "32/6(2)",
+        "MHz"
+      ],
+      [
+        "f CK",
+        "USART clock frequency",
+        "Slave transmitter 2.7 V < V < 3.6 V DD",
+        "-",
+        "-",
+        "35/6(2)",
+        "MHz"
+      ],
+      [
+        "t h(NSS)",
+        "NSS hold time",
+        "Slave mode",
+        "2.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t w(SCKH) t w(SCKL)",
+        "CK high and low time",
+        "Master mode",
+        "1/f /2 -1 ck",
+        "1/f /2 ck",
+        "1/f /2 +1 ck",
+        "ns"
+      ],
+      [
+        "t su(RX)",
+        "Data input setup time",
+        "Master mode",
+        "13",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(RX)",
+        "Data input setup time",
+        "Slave mode",
+        "3.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(RX)",
+        "Data input hold time",
+        "Master mode",
+        "0.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(RX)",
+        "Data input hold time",
+        "Slave mode",
+        "1.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(TX)",
+        "Data output valid time",
+        "Slave mode, 1.71 V < V < 3.6 V DD",
+        "-",
+        "11.5",
+        "15.5/71(2)",
+        "ns"
+      ],
+      [
+        "t v(TX)",
+        "Data output valid time",
+        "Slave mode, 2.7 V < V < 3.6 V DD",
+        "-",
+        "11.5",
+        "14/35(2)",
+        "ns"
+      ],
+      [
+        "t v(TX)",
+        "Data output valid time",
+        "Slave mode, 1.71 V < V < 3.6 V DD",
+        "-",
+        "2.5",
+        "3/52(2)",
+        "ns"
+      ],
+      [
+        "t v(TX)",
+        "Data output valid time",
+        "Slave mode, 2.7 V < V < 3.6 V DD",
+        "-",
+        "2.5",
+        "3/22(2)",
+        "ns"
+      ],
+      [
+        "t h(TX)",
+        "Data output hold time",
+        "Slave mode",
+        "7.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(TX)",
+        "Data output hold time",
+        "Master mode",
+        "0",
+        "-",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "2. For PB14 with OSPEEDRy[1:0] = 01.",
+      "3. T is the usart_ker_ck_pres clock period. ker"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

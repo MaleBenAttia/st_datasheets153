@@ -1,0 +1,204 @@
+{
+  "table_id": "table_26",
+  "document": "DS10086 Rev 5 - Table 26. Typical and maximum current consumption in Sleep mode",
+  "rev": "Rev 5",
+  "table_number": "26",
+  "title": "Table 26. Typical and maximum current consumption in Sleep mode",
+  "page": 68,
+  "section": "6.3.6 Supply current characteristics",
+  "section_title": "Supply current characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f401cd.pdf#page=68",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f401cd.pdf",
+  "text_helper": "Table 26. Typical and maximum current consumption in Sleep mode — section 6.3.6 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK (MHz), Typ, +4 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "f HCLK (MHz)",
+      "Typ",
+      "Max(1) / T = A 25 °C",
+      "Max(1) / T = A 85 °C",
+      "Max(1) / T = A 105 °C",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "External clock, all peripherals enabled(2)(3)",
+        "84",
+        "16.6",
+        "17.4",
+        "18.4",
+        "19.5",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "External clock, all peripherals enabled(2)(3)",
+        "60",
+        "10.8",
+        "11.2",
+        "12.3",
+        "13.3",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "External clock, all peripherals enabled(2)(3)",
+        "40",
+        "8.3",
+        "9.0",
+        "10.0",
+        "11.0",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "External clock, all peripherals enabled(2)(3)",
+        "30",
+        "6.8",
+        "7.1",
+        "8.1",
+        "9.1",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "External clock, all peripherals enabled(2)(3)",
+        "20",
+        "5.9",
+        "6.1",
+        "7.1",
+        "8.1",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "External clock, all peripherals disabled(3)(4)",
+        "84",
+        "5.3",
+        "6.1",
+        "7.1",
+        "8.2",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "External clock, all peripherals disabled(3)(4)",
+        "60",
+        "3.7",
+        "4.1",
+        "5.1",
+        "6.1",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "External clock, all peripherals disabled(3)(4)",
+        "40",
+        "2.9",
+        "3.1",
+        "4.1",
+        "5.1",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "External clock, all peripherals disabled(3)(4)",
+        "30",
+        "2.7",
+        "3.1",
+        "4.1",
+        "5.1",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "External clock, all peripherals disabled(3)(4)",
+        "20",
+        "2.7",
+        "3.1",
+        "4.1",
+        "5.1",
+        "mA"
+      ],
+      [
+        "I DD_STO P",
+        "Main regulator usage",
+        "Main regulator usage",
+        "Flash in Stop mode, all oscillators OFF, no independent watchdog",
+        "Flash in Stop mode, all oscillators OFF, no independent watchdog",
+        "109",
+        "135",
+        "440",
+        "650"
+      ],
+      [
+        "None",
+        "Low power regulator usage",
+        "Low power regulator usage",
+        "None",
+        "None",
+        "41",
+        "65",
+        "310",
+        "530(2)"
+      ],
+      [
+        "None",
+        "Main regulator usage",
+        "Main regulator usage",
+        "Flash in Deep power down mode, all oscillators OFF, no independent watchdog",
+        "Flash in Deep power down mode, all oscillators OFF, no independent watchdog",
+        "72",
+        "95",
+        "345",
+        "530"
+      ],
+      [
+        "None",
+        "Low power regulator usage",
+        "Low power regulator usage",
+        "None",
+        "None",
+        "12",
+        "36",
+        "260",
+        "510(2)"
+      ],
+      [
+        "None",
+        "Low power low voltage regulator usage",
+        "Low power low voltage regulator usage",
+        "None",
+        "None",
+        "10",
+        "27",
+        "230",
+        "460"
+      ]
+    ],
+    "notes": [
+      "1. Evaluated by characterization, unless otherwise specified.",
+      "2. Add an additional power consumption of 1.6 mA per ADC for the analog part. In applications, this consumption occurs only while the ADC is ON (ADON bit is set in the ADC_CR2 register).",
+      "3. When the ADC is ON (ADON bit set in the ADC_CR2), add an additional power consumption of 1.6mA per ADC for the analog part.",
+      "4. Same current consumption for f at 30 MHz and 20 MHz due to VCO running slower at 30 MHz. HCLK"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

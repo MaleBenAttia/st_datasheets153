@@ -1,0 +1,230 @@
+{
+  "table_id": "table_33",
+  "document": "DS9716 Rev 11 - Table 33. Peripheral current consumption",
+  "rev": "Rev 11",
+  "table_number": "33",
+  "title": "Table 33. Peripheral current consumption",
+  "page": 73,
+  "section": "6.3.6 Supply current characteristics",
+  "section_title": "Supply current characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f401cb.pdf#page=73",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f401cb.pdf",
+  "text_helper": "Table 33. Peripheral current consumption — section 6.3.6 Supply current characteristics. Peripheral, Peripheral, I (typ) DD, Unit.",
+  "table_content": {
+    "headers": [
+      "Peripheral",
+      "Peripheral",
+      "I (typ) DD",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "AHB1 (up to 84 MHz)",
+        "GPIOA",
+        "1.55",
+        "µA/MHz"
+      ],
+      [
+        "AHB1 (up to 84 MHz)",
+        "GPIOB",
+        "1.55",
+        "µA/MHz"
+      ],
+      [
+        "AHB1 (up to 84 MHz)",
+        "GPIOC",
+        "1.55",
+        "µA/MHz"
+      ],
+      [
+        "AHB1 (up to 84 MHz)",
+        "GPIOD",
+        "1.55",
+        "µA/MHz"
+      ],
+      [
+        "AHB1 (up to 84 MHz)",
+        "GPIOE",
+        "1.55",
+        "µA/MHz"
+      ],
+      [
+        "AHB1 (up to 84 MHz)",
+        "GPIOH",
+        "1.55",
+        "µA/MHz"
+      ],
+      [
+        "AHB1 (up to 84 MHz)",
+        "CRC",
+        "0.36",
+        "µA/MHz"
+      ],
+      [
+        "AHB1 (up to 84 MHz)",
+        "DMA1",
+        "20.24",
+        "µA/MHz"
+      ],
+      [
+        "AHB1 (up to 84 MHz)",
+        "DMA2",
+        "21.07",
+        "µA/MHz"
+      ],
+      [
+        "APB1 (up to 42 MHz)",
+        "TIM2",
+        "11.19",
+        "µA/MHz"
+      ],
+      [
+        "APB1 (up to 42 MHz)",
+        "TIM3",
+        "8.57",
+        "µA/MHz"
+      ],
+      [
+        "APB1 (up to 42 MHz)",
+        "TIM4",
+        "8.33",
+        "µA/MHz"
+      ],
+      [
+        "APB1 (up to 42 MHz)",
+        "TIM5",
+        "11.19",
+        "µA/MHz"
+      ],
+      [
+        "APB1 (up to 42 MHz)",
+        "PWR",
+        "0.71",
+        "µA/MHz"
+      ],
+      [
+        "APB1 (up to 42 MHz)",
+        "USART2",
+        "3.33",
+        "µA/MHz"
+      ],
+      [
+        "APB1 (up to 42 MHz)",
+        "I2C1/2/3",
+        "3.10",
+        "µA/MHz"
+      ],
+      [
+        "APB1 (up to 42 MHz)",
+        "SPI2(1)",
+        "2.62",
+        "µA/MHz"
+      ],
+      [
+        "APB1 (up to 42 MHz)",
+        "SPI3(1)",
+        "2.86",
+        "µA/MHz"
+      ],
+      [
+        "APB1 (up to 42 MHz)",
+        "I2S2",
+        "1.90",
+        "µA/MHz"
+      ],
+      [
+        "APB1 (up to 42 MHz)",
+        "I2S3",
+        "1.67",
+        "µA/MHz"
+      ],
+      [
+        "APB1 (up to 42 MHz)",
+        "WWDG",
+        "0.71",
+        "µA/MHz"
+      ],
+      [
+        "AHB2 (up to 84 MHz)",
+        "OTG_FS",
+        "23.93",
+        "µA/MHz"
+      ],
+      [
+        "APB2 (up to 84 MHz)",
+        "TIM1",
+        "5.71",
+        "µA/MHz"
+      ],
+      [
+        "APB2 (up to 84 MHz)",
+        "TIM9",
+        "2.86",
+        "2.86"
+      ],
+      [
+        "APB2 (up to 84 MHz)",
+        "TIM10",
+        "1.79",
+        "1.79"
+      ],
+      [
+        "APB2 (up to 84 MHz)",
+        "TIM11",
+        "2.02",
+        "2.02"
+      ],
+      [
+        "APB2 (up to 84 MHz)",
+        "ADC1(2)",
+        "2.98",
+        "2.98"
+      ],
+      [
+        "APB2 (up to 84 MHz)",
+        "SPI1",
+        "1.19",
+        "1.19"
+      ],
+      [
+        "APB2 (up to 84 MHz)",
+        "USART1",
+        "3.10",
+        "3.10"
+      ],
+      [
+        "APB2 (up to 84 MHz)",
+        "USART6",
+        "2.86",
+        "2.86"
+      ],
+      [
+        "APB2 (up to 84 MHz)",
+        "SDIO",
+        "5.95",
+        "5.95"
+      ],
+      [
+        "APB2 (up to 84 MHz)",
+        "SPI4",
+        "1.31",
+        "1.31"
+      ],
+      [
+        "APB2 (up to 84 MHz)",
+        "SYSCFG",
+        "0.71",
+        "0.71"
+      ]
+    ],
+    "notes": [
+      "1. I2SMOD bit set in SPI_I2SCFGR register, and then the I2SE bit set to enable I2S peripheral.",
+      "2. When the ADC is ON (ADON bit set in the ADC_CR2 register), add an additional power consumption of 1.6 mA for the analog part."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

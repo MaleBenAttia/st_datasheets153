@@ -1,0 +1,40 @@
+{
+  "table_id": "table_119",
+  "document": "DS14972 Rev 1 - Table 119. I2C analog filter characteristics",
+  "rev": "Rev 1",
+  "table_number": "119",
+  "title": "Table 119. I2C analog filter characteristics",
+  "page": 272,
+  "section": "5.3.38 Communication interfaces",
+  "section_title": "Communication interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h5f4aj.pdf#page=272",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h5f4aj.pdf",
+  "text_helper": "Table 119. I2C analog filter characteristics — section 5.3.38 Communication interfaces. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t AF",
+        "Maximum pulse width of spikes suppressed by analog filter",
+        "50(3)",
+        "160(4)",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "3. The maximum timer frequency on APB1 or APB2 is up to 250 MHz, by setting the TIMPRE bit in the RCC_CFGR register, if APBx prescaler is 1 or 2 or 4, then TIMxCLK = rcc_hclk1, otherwise TIMxCLK = 4 x F or",
+      "4. Spikes with widths above t are not filtered. AF(max)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

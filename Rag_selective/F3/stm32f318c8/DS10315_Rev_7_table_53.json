@@ -1,0 +1,71 @@
+{
+  "table_id": "table_53",
+  "document": "DS10315 Rev 7 - Table 53. NPOR pin characteristics",
+  "rev": "Rev 7",
+  "table_number": "53",
+  "title": "Table 53. NPOR pin characteristics",
+  "page": 80,
+  "section": "6.3.15 NPOR pin characteristics",
+  "section_title": "NPOR pin characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f318c8.pdf#page=80",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f318c8.pdf",
+  "text_helper": "Table 53. NPOR pin characteristics — section 6.3.15 NPOR pin characteristics. Symbol(1), Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol(1)",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "VIL(NPOR)",
+        "NPOR Input low level voltage",
+        "-",
+        "-",
+        "-",
+        "0.475 V - 0.2 DDA",
+        "V"
+      ],
+      [
+        "VIH(NPOR)",
+        "NPOR Input low level voltage",
+        "-",
+        "0.5 V +0.2 DDA",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "Vhys(NPOR)",
+        "NPOR Schmitt trigger voltage hysteresis",
+        "-",
+        "-",
+        "100",
+        "-",
+        "mV"
+      ],
+      [
+        "RPU",
+        "Weak pull-up equivalent resistor(2)",
+        "V = V IN SS",
+        "25",
+        "40",
+        "55",
+        "kΩ"
+      ]
+    ],
+    "notes": [
+      "1. The reset network protects the device against parasitic resets. 0.1 uF capacitor must be placed as close as possible to the chip.",
+      "2. The user must ensure that the level on the NRST pin can go below the V max level specified in IL(NRST)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

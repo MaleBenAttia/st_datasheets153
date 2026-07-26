@@ -1,0 +1,92 @@
+{
+  "table_id": "table_38",
+  "document": "DS9896 Rev 8 - Table 38. Low-power mode wakeup timings",
+  "rev": "Rev 8",
+  "table_number": "38",
+  "title": "Table 38. Low-power mode wakeup timings",
+  "page": 72,
+  "section": "6.3.6 Wakeup time from low-power mode",
+  "section_title": "Wakeup time from low-power mode",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f302c6.pdf#page=72",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f302c6.pdf",
+  "text_helper": "Table 38. Low-power mode wakeup timings — section 6.3.6 Wakeup time from low-power mode. Symbol, Parameter, Conditions, Typ @V DD, V = V / 2.0 V, Typ @V DD, V = V / 2.4 V, +6 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Typ @V DD, V = V / 2.0 V",
+      "Typ @V DD, V = V / 2.4 V",
+      "Typ @V DD, V = V / 2.7 V",
+      "Typ @V DD, V = V / DD / 3 V",
+      "Typ @V DD, V = V / DDA / 3.3 V",
+      "Typ @V DD, V = V / 3.6 V",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode",
+        "Regulator in run mode",
+        "4.5",
+        "4.2",
+        "4.1",
+        "4.0",
+        "3.8",
+        "3.8",
+        "4.5",
+        "µs"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode",
+        "Regulator in low-power mode",
+        "8.2",
+        "7.0",
+        "6.4",
+        "6.0",
+        "5.7",
+        "5.5",
+        "9.0",
+        "µs"
+      ],
+      [
+        "t (1) WUSTANDBY",
+        "Wakeup from Standby mode",
+        "LSI and IWDG OFF",
+        "72.8",
+        "63.4",
+        "59.2",
+        "56.1",
+        "53.1",
+        "51.3",
+        "103",
+        "µs"
+      ],
+      [
+        "t WUSLEEP",
+        "Wakeup from Sleep mode",
+        "-",
+        "6",
+        "6",
+        "6",
+        "6",
+        "6",
+        "6",
+        "-",
+        "CPU clock cycles"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization results. 72/139 DS9896 Rev 8"
+    ],
+    "legend": [
+      "Typ @VDD, V"
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

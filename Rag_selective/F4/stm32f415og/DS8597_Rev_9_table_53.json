@@ -1,0 +1,107 @@
+{
+  "table_id": "table_53",
+  "document": "DS8597 Rev 9 - Table 53. Characteristics of TIMx connected to the APB2 domain",
+  "rev": "Rev 9",
+  "table_number": "53",
+  "title": "Table 53. Characteristics of TIMx connected to the APB2 domain",
+  "page": 125,
+  "section": "5.3.18 TIM timer characteristics",
+  "section_title": "TIM timer characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f415og.pdf#page=125",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f415og.pdf",
+  "text_helper": "Table 53. Characteristics of TIMx connected to the APB2 domain — section 5.3.18 TIM timer characteristics. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APB2 prescaler distinct from 1, f = TIMxCLK 168 MHz",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APB2 prescaler distinct from 1, f = TIMxCLK 168 MHz",
+        "5.95",
+        "-",
+        "ns"
+      ],
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APB2 prescaler = 1, f = 84 MHz TIMxCLK",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APB2 prescaler = 1, f = 84 MHz TIMxCLK",
+        "11.9",
+        "-",
+        "ns"
+      ],
+      [
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "f = TIMxCLK 168 MHz APB2 = 84 MHz",
+        "0",
+        "f /2 TIMxCLK",
+        "MHz"
+      ],
+      [
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "f = TIMxCLK 168 MHz APB2 = 84 MHz",
+        "0",
+        "84",
+        "MHz"
+      ],
+      [
+        "Res TIM",
+        "Timer resolution",
+        "f = TIMxCLK 168 MHz APB2 = 84 MHz",
+        "-",
+        "16",
+        "bit"
+      ],
+      [
+        "t COUNTER",
+        "16-bit counter clock period when internal clock is selected",
+        "f = TIMxCLK 168 MHz APB2 = 84 MHz",
+        "1",
+        "65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t MAX_COUNT",
+        "Maximum possible count",
+        "f = TIMxCLK 168 MHz APB2 = 84 MHz",
+        "-",
+        "32768",
+        "t TIMxCLK"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by design.",
+      "2. Spikes with widths below t are filtered. AF(min)",
+      "3. Spikes with widths above t are not filtered AF(max)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

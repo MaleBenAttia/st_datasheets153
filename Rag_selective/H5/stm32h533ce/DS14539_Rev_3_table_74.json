@@ -1,0 +1,54 @@
+{
+  "table_id": "table_74",
+  "document": "DS14539 Rev 3 - Table 74. Asynchronous multiplexed PSRAM/NOR read-NWAIT timings",
+  "rev": "Rev 3",
+  "table_number": "74",
+  "title": "Table 74. Asynchronous multiplexed PSRAM/NOR read-NWAIT timings",
+  "page": 151,
+  "section": "5.3.17 FMC characteristics",
+  "section_title": "FMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h533ce.pdf#page=151",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h533ce.pdf",
+  "text_helper": "Table 74. Asynchronous multiplexed PSRAM/NOR read-NWAIT timings — section 5.3.17 FMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t w(NOE)",
+        "FMC_NOE low time",
+        "6 T - 1 fmc_ker_ck",
+        "6 T + 1 fmc_ker_ck",
+        "ns"
+      ],
+      [
+        "t su(NWAIT_NE)",
+        "FMC_NWAIT valid before FMC_NEx high",
+        "5 T +10 fmc_ker_ck",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(NE_NWAIT)",
+        "FMC_NEx hold time after FMC_NWAIT invalid",
+        "4 T +10 fmc_ker_ck",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. Evaluated by characterization - Not tested in production.",
+      "2. NWAIT pulse width is equal to one fmc_ker_ck cycle. DS14539 Rev 3 151/231"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

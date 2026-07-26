@@ -1,0 +1,73 @@
+{
+  "table_id": "table_108",
+  "document": "DS14121 Rev 5 - Table 108. Voltage booster for analog switch characteristics",
+  "rev": "Rev 5",
+  "table_number": "108",
+  "title": "Table 108. Voltage booster for analog switch characteristics",
+  "page": 222,
+  "section": "5.3.29 Voltage booster for analog switch",
+  "section_title": "Voltage booster for analog switch",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h573ai.pdf#page=222",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h573ai.pdf",
+  "text_helper": "Table 108. Voltage booster for analog switch characteristics — section 5.3.29 Voltage booster for analog switch. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V DD",
+        "Supply voltage",
+        "-",
+        "1.71",
+        "2.6",
+        "3.6",
+        "V"
+      ],
+      [
+        "t SU(BOOST)",
+        "Booster startup time",
+        "-",
+        "-",
+        "-",
+        "50",
+        "µs"
+      ],
+      [
+        "I DD(BOOST)",
+        "Booster consumption",
+        "1.71 V ≤ V ≤ 2.7 V DD",
+        "-",
+        "-",
+        "125",
+        "µA"
+      ],
+      [
+        "I DD(BOOST)",
+        "Booster consumption",
+        "2.7 V < V < 3.6 V DD",
+        "-",
+        "-",
+        "250",
+        "µA"
+      ]
+    ],
+    "notes": [
+      "1. Specified by design - Not tested in production, unless otherwise specified.",
+      "2. In degraded mode, the voltage reference buffer cannot accurately maintain the output voltage (V −drop voltage). DDA",
+      "3. Evaluated by characterization - Not tested in production.",
+      "4. To properly control V I current during the startup phase and the change of scaling, V voltage must be in REFBUF INRUSH DDA"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

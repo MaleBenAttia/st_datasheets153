@@ -1,0 +1,78 @@
+{
+  "table_id": "table_37",
+  "document": "DS11581 Rev 7 - Table 37. Typical and maximum current consumptions in V mode 98 BAT",
+  "rev": "Rev 7",
+  "table_number": "37",
+  "title": "Table 37. Typical and maximum current consumptions in V mode 98 BAT",
+  "page": 98,
+  "section": "6.3.6 Supply current characteristics",
+  "section_title": "Supply current characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f413cg.pdf#page=98",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f413cg.pdf",
+  "text_helper": "Table 37. Typical and maximum current consumptions in V mode 98 BAT — section 6.3.6 Supply current characteristics. Symbol, Parameter, Conditions(1), Typ / T = 25 °C A / V = BAT 1.7 V, Typ / T = 25 °C A / V = BAT 2.4 V, +6 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions(1)",
+      "Typ / T = 25 °C A / V = BAT 1.7 V",
+      "Typ / T = 25 °C A / V = BAT 2.4 V",
+      "Typ / T = 25 °C A / V = BAT 3.3 V",
+      "Typ / T = 25 °C A / V = BAT 3.6 V",
+      "Max(2) / T = A 85 °C / V = 3.6 V BAT",
+      "Max(2) / T = A 105 °C / V = 3.6 V BAT",
+      "Max(2) / T = A 125 °C / V = 3.6 V BAT",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I DD_VBAT",
+        "Backup domain supply current",
+        "Low-speed oscillator (LSE in low-drive mode) and RTC ON",
+        "0.74",
+        "0.84",
+        "1.04",
+        "1.24",
+        "3.00",
+        "5.00",
+        "10.00",
+        "µA"
+      ],
+      [
+        "I DD_VBAT",
+        "Backup domain supply current",
+        "Low-speed oscillator (LSE in high-drive mode) and RTC ON",
+        "1.51",
+        "1.64",
+        "1.89",
+        "2.00",
+        "3.80",
+        "5.80",
+        "11.60",
+        "µA"
+      ],
+      [
+        "I DD_VBAT",
+        "Backup domain supply current",
+        "RTC and LSE OFF",
+        "0.03",
+        "0.03",
+        "0.04",
+        "0.04",
+        "2.00",
+        "4.00",
+        "8.00",
+        "µA"
+      ]
+    ],
+    "notes": [
+      "1. When the PDR is OFF (internal reset is OFF), the typical current consumption is reduced by 1.2 µA.",
+      "2. Guaranteed by characterization, not tested in production unless otherwise specified."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

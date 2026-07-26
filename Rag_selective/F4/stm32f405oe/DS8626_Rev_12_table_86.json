@@ -1,0 +1,72 @@
+{
+  "table_id": "table_86",
+  "document": "DS8626 Rev 12 - Table 86. Switching characteristics for NAND flash write cycles",
+  "rev": "Rev 12",
+  "table_number": "86",
+  "title": "Table 86. Switching characteristics for NAND flash write cycles",
+  "page": 162,
+  "section": "6.3.26 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f405oe.pdf#page=162",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f405oe.pdf",
+  "text_helper": "Table 86. Switching characteristics for NAND flash write cycles — section 6.3.26 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t w(NWE)",
+        "FSMC_NWE low width",
+        "4T –1 HCLK",
+        "4T + 3 HCLK",
+        "ns"
+      ],
+      [
+        "t v(NWE-D)",
+        "FSMC_NWE low to FSMC_D[15-0] valid",
+        "-",
+        "0",
+        "ns"
+      ],
+      [
+        "t h(NWE-D)",
+        "FSMC_NWE high to FSMC_D[15-0] invalid",
+        "3T –2 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(D-NWE)",
+        "FSMC_D[15-0] valid before FSMC_NWE high",
+        "5T –3 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(ALE-NWE)",
+        "FSMC_ALE valid before FSMC_NWE low",
+        "-",
+        "3T HCLK",
+        "ns"
+      ],
+      [
+        "t h(NWE-ALE)",
+        "FSMC_NWE high to FSMC_ALE invalid",
+        "3T –2 HCLK",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

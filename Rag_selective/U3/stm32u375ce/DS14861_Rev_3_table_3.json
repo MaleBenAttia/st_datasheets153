@@ -1,0 +1,172 @@
+{
+  "table_id": "table_3",
+  "document": "DS14861 Rev 3 - Table 3. Access status versus protection level and execution modes when TZEN = 1.",
+  "rev": "Rev 3",
+  "table_number": "3",
+  "title": "Table 3. Access status versus protection level and execution modes when TZEN = 1.",
+  "page": 12,
+  "section": "3.4.2 Privilege protection",
+  "section_title": "Privilege protection",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf#page=12",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf",
+  "text_helper": "Table 3. Access status versus protection level and execution modes when TZEN = 1. — section 3.4.2 Privilege protection. Area, RDP level, User execution / (boot, User execution / from flash, User execution / memory), +3 autres.",
+  "table_content": {
+    "headers": [
+      "Area",
+      "RDP level",
+      "User execution / (boot",
+      "User execution / from flash",
+      "User execution / memory)",
+      "Debug/boot from RAM/bootloader(1)",
+      "Debug/boot from RAM/bootloader(1)",
+      "Debug/boot from RAM/bootloader(1)"
+    ],
+    "rows": [
+      [
+        "Area",
+        "RDP level",
+        "Read",
+        "Write",
+        "Erase",
+        "Read",
+        "Write",
+        "Erase"
+      ],
+      [
+        "Flash main memory",
+        "1",
+        "Yes",
+        "Yes",
+        "Yes",
+        "No",
+        "No",
+        "No(4)"
+      ],
+      [
+        "Flash main memory",
+        "2",
+        "Yes",
+        "Yes",
+        "Yes",
+        "N/A",
+        "N/A",
+        "N/A"
+      ],
+      [
+        "System memory(2)",
+        "1",
+        "Yes",
+        "No",
+        "No",
+        "Yes",
+        "No",
+        "No"
+      ],
+      [
+        "System memory(2)",
+        "2",
+        "Yes",
+        "No",
+        "No",
+        "N/A",
+        "N/A",
+        "N/A"
+      ],
+      [
+        "Option bytes(3)",
+        "1",
+        "Yes",
+        "Yes(4)",
+        "N/A",
+        "Yes",
+        "Yes(4)",
+        "N/A"
+      ],
+      [
+        "Option bytes(3)",
+        "2",
+        "Yes",
+        "No(5)",
+        "N/A",
+        "N/A",
+        "N/A",
+        "N/A"
+      ],
+      [
+        "OTP",
+        "1",
+        "Yes",
+        "Yes(6)",
+        "N/A",
+        "Yes",
+        "Yes(6)",
+        "N/A"
+      ],
+      [
+        "OTP",
+        "2",
+        "Yes",
+        "Yes(6)",
+        "N/A",
+        "N/A",
+        "N/A",
+        "N/A"
+      ],
+      [
+        "Backup registers",
+        "1",
+        "Yes",
+        "Yes",
+        "N/A",
+        "No",
+        "No",
+        "N/A(7)"
+      ],
+      [
+        "Backup registers",
+        "2",
+        "Yes",
+        "Yes",
+        "N/A",
+        "N/A",
+        "N/A",
+        "N/A"
+      ],
+      [
+        "SRAM2",
+        "1",
+        "Yes",
+        "Yes",
+        "N/A",
+        "No",
+        "No",
+        "N/A(8)"
+      ],
+      [
+        "SRAM2",
+        "2",
+        "Yes",
+        "Yes",
+        "N/A",
+        "N/A",
+        "N/A",
+        "N/A"
+      ]
+    ],
+    "notes": [
+      "1. When the protection level 2 is active, the debug port, the boot from RAM and the boot from system memory are disabled.",
+      "2. The system memory is only read-accessible, whatever the protection level (0, 1 or 2) and execution mode.",
+      "3. Option bytes are only accessible through the flash registers interface and OPTSTRT bit.",
+      "4. The flash main memory is erased when the RDP option byte changes from level 1 to level 0.",
+      "5. SWAP_BANK option bit can be modified.",
+      "6. OTP can only be written once.",
+      "7. The backup registers are erased when RDP changes from level 1 to level 0.",
+      "8. All SRAMs are erased when RDP changes from level 1 to level 0. The whole nonvolatile memory embeds the error correction code (ECC) feature supporting:"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

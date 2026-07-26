@@ -1,0 +1,92 @@
+{
+  "table_id": "table_2",
+  "document": "DS15096 Rev 3 - Table 2. Access status versus protection level and execution modes when TZEN = 0.",
+  "rev": "Rev 3",
+  "table_number": "2",
+  "title": "Table 2. Access status versus protection level and execution modes when TZEN = 0.",
+  "page": 11,
+  "section": "3.4 Embedded flash memory",
+  "section_title": "Embedded flash memory",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u3c5ci.pdf#page=11",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u3c5ci.pdf",
+  "text_helper": "Table 2. Access status versus protection level and execution modes when TZEN = 0. — section 3.4 Embedded flash memory. Area, RDP level, User execution / (boot, User execution / from flash, User execution / memory), +3 autres.",
+  "table_content": {
+    "headers": [
+      "Area",
+      "RDP level",
+      "User execution / (boot",
+      "User execution / from flash",
+      "User execution / memory)",
+      "Debug/boot from RAM/bootloader(1)",
+      "Debug/boot from RAM/bootloader(1)",
+      "Debug/boot from RAM/bootloader(1)"
+    ],
+    "rows": [
+      [
+        "Flash main memory",
+        "1",
+        "Yes",
+        "Yes",
+        "Yes",
+        "No",
+        "No",
+        "No(2)"
+      ],
+      [
+        "System memory(3)",
+        "1",
+        "Yes",
+        "No",
+        "No",
+        "Yes",
+        "No",
+        "No"
+      ],
+      [
+        "System memory(3)",
+        "2",
+        "Yes",
+        "No",
+        "No",
+        "N/A",
+        "N/A",
+        "N/A"
+      ],
+      [
+        "Option bytes(4)",
+        "1",
+        "Yes",
+        "Yes(2)",
+        "N/A",
+        "Yes",
+        "Yes(2)",
+        "N/A"
+      ],
+      [
+        "Option bytes(4)",
+        "2",
+        "Yes",
+        "No(5)",
+        "N/A",
+        "N/A",
+        "N/A",
+        "N/A"
+      ]
+    ],
+    "notes": [
+      "1. When the protection level 2 is active, the debug port, the boot from RAM and the boot from system memory are disabled.",
+      "2. The flash main memory is erased when the RDP option byte changes from level 1 to level 0.",
+      "3. The system memory is only read-accessible, whatever the protection level (0, 1 or 2) and execution mode.",
+      "4. Option bytes are only accessible through the flash memory interface registers and OPSTRT bit.",
+      "5. SWAP_BANK option bit can be modified.",
+      "6. OTP can only be written once.",
+      "7. The backup registers are erased when RDP changes from level 1 to level 0.",
+      "8. All SRAMs (except SRAM4) are erased when RDP changes from level 1 to level 0. DS15096 - Rev 3 page 11/241"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

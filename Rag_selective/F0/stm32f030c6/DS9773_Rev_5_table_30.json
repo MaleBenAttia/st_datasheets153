@@ -1,0 +1,57 @@
+{
+  "table_id": "table_30",
+  "document": "DS9773 Rev 5 - Table 30. Low-power mode wakeup timings",
+  "rev": "Rev 5",
+  "table_number": "30",
+  "title": "Table 30. Low-power mode wakeup timings",
+  "page": 52,
+  "section": "6.3.6 Wakeup time from low-power mode",
+  "section_title": "Wakeup time from low-power mode",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f030c6.pdf#page=52",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f030c6.pdf",
+  "text_helper": "Table 30. Low-power mode wakeup timings — section 6.3.6 Wakeup time from low-power mode. Symbol, Parameter, Conditions, Typ @VDD = VDDA / = 3.3 V, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Typ @VDD = VDDA / = 3.3 V",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode",
+        "Regulator in run mode",
+        "2.8",
+        "5",
+        "µs"
+      ],
+      [
+        "t WUSTANDBY",
+        "Wakeup from Standby mode",
+        "-",
+        "51",
+        "-",
+        "µs"
+      ],
+      [
+        "t WUSLEEP",
+        "Wakeup from Sleep mode",
+        "-",
+        "selcyc KLCSYS 4",
+        "-",
+        "µs"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by design, not tested in production. Figure 15. High-speed external clock source AC timing diagram"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

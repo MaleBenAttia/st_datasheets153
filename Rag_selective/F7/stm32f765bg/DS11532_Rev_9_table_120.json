@@ -1,0 +1,151 @@
+{
+  "table_id": "table_120",
+  "document": "DS11532 Rev 9 - Table 120. QUADSPI characteristics in DDR mode",
+  "rev": "Rev 9",
+  "table_number": "120",
+  "title": "Table 120. QUADSPI characteristics in DDR mode",
+  "page": 210,
+  "section": "6.3.31 Quad-SPI interface characteristics",
+  "section_title": "Quad-SPI interface characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f765bg.pdf#page=210",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f765bg.pdf",
+  "text_helper": "Table 120. QUADSPI characteristics in DDR mode — section 6.3.31 Quad-SPI interface characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "Fck1/t (CK)",
+        "QUADSPI clock frequency",
+        "2.7 V<V <3.6 V DD CL=20 pF",
+        "-",
+        "-",
+        "80",
+        "MHz"
+      ],
+      [
+        "Fck1/t (CK)",
+        "QUADSPI clock frequency",
+        "1.8 V<V <3.6 V DD CL=15 pF",
+        "-",
+        "-",
+        "80",
+        "MHz"
+      ],
+      [
+        "Fck1/t (CK)",
+        "QUADSPI clock frequency",
+        "1.71 V<V <3.6 V DD CL=10 pF",
+        "-",
+        "-",
+        "80",
+        "MHz"
+      ],
+      [
+        "t w(CKH)",
+        "QUADSPI clock high and low time",
+        "-",
+        "t /2 - 1 (CK)",
+        "-",
+        "t /2 (CK)",
+        "ns"
+      ],
+      [
+        "t w(CKL)",
+        "t w(CKL)",
+        "t w(CKL)",
+        "t /2 (CK)",
+        "-",
+        "t /2 (CK) + 1",
+        "t /2 (CK) + 1"
+      ],
+      [
+        "t , s(IN) t sf(IN)",
+        "Data input setup time",
+        "1.71 V<V <3.6 V DD",
+        "1.75",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t , hr(IN) t hf(IN)",
+        "Data input hold time",
+        "2.7 V<V <3.6 V DD",
+        "1",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t , hr(IN) t hf(IN)",
+        "Data input hold time",
+        "1.71 V<V <3.6 V DD",
+        "2",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t , vr(OUT) t vf(OUT)",
+        "Data output valid time",
+        "2.7 V<V <3.6 V DD",
+        "-",
+        "8.5",
+        "10",
+        "10"
+      ],
+      [
+        "t , vr(OUT) t vf(OUT)",
+        "Data output valid time",
+        "1.71 V<V <3.6 V DD DHHC=0",
+        "-",
+        "8",
+        "12",
+        "12"
+      ],
+      [
+        "t , vr(OUT) t vf(OUT)",
+        "Data output valid time",
+        "DHHC=1 Pres=1, 2...",
+        "-",
+        "T /2 + HCLK 1.5",
+        "T /2 HCLK + 2.5",
+        "T /2 HCLK + 2.5"
+      ],
+      [
+        "t , hr(OUT) t hf(OUT)",
+        "Data output hold time",
+        "DHHC=0",
+        "7.5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t , hr(OUT) t hf(OUT)",
+        "Data output hold time",
+        "DHHC=1 Pres=1, 2...",
+        "T /2 HCLK + 0.5",
+        "-",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization results."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "table_id": "table_107",
+  "document": "DS12983 Rev 5 - Table 107. Switching characteristics for NAND flash memory write cycles",
+  "rev": "Rev 5",
+  "table_number": "107",
+  "title": "Table 107. Switching characteristics for NAND flash memory write cycles",
+  "page": 196,
+  "section": "5.3.28 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32g484ce.pdf#page=196",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g484ce.pdf",
+  "text_helper": "Table 107. Switching characteristics for NAND flash memory write cycles — section 5.3.28 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "T w(NWE)",
+        "FMC_NWE low width",
+        "4 T -1 HCLK",
+        "4 T HCLK",
+        "ns"
+      ],
+      [
+        "T v(NWE-D)",
+        "FMC_NWE low to FMC_D[15-0] valid",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "T h(NWE-D)",
+        "FMC_NWE high to FMC_D[15-0] invalid",
+        "3 T - 1 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "T d(D-NWE)",
+        "FMC_D[15-0] valid before FMC_NWE high",
+        "5 T HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "T d(NCE_NWE)",
+        "FMC_NCE valid before FMC_NWE low",
+        "-",
+        "3 T HCLK",
+        "ns"
+      ],
+      [
+        "T h(NWE-ALE)",
+        "FMC_NWE high to FMC_ALE invalid",
+        "3 T HCLK",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. CL = 30 pF.",
+      "2. Guaranteed by characterization results."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

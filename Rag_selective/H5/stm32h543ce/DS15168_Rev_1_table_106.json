@@ -1,0 +1,70 @@
+{
+  "table_id": "table_106",
+  "document": "DS15168 Rev 1 - Table 106. LPTIMx characteristics",
+  "rev": "Rev 1",
+  "table_number": "106",
+  "title": "Table 106. LPTIMx characteristics",
+  "page": 186,
+  "section": "5.3.31 Low-power timer characteristics",
+  "section_title": "Low-power timer characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h543ce.pdf#page=186",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h543ce.pdf",
+  "text_helper": "Table 106. LPTIMx characteristics — section 5.3.31 Low-power timer characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "1",
+        "-",
+        "t lptim_ker_ck"
+      ],
+      [
+        "f lptim_ker_ck",
+        "Timer kernel clock",
+        "0",
+        "250",
+        "MHz"
+      ],
+      [
+        "f EXT",
+        "Timer external clock frequency on Input1 and Input2",
+        "0",
+        "f /3 lptim_ker_ck",
+        "MHz"
+      ],
+      [
+        "Res TIM",
+        "Timer resolution",
+        "-",
+        "16",
+        "bit"
+      ],
+      [
+        "t MAX_COUNT",
+        "Maximum possible count",
+        "-",
+        "65535",
+        "t lptim_ker_ck"
+      ]
+    ],
+    "notes": [
+      "1. Evaluated by characterization - Not tested in production.",
+      "2. Measurement points are done at 50% V . DD",
+      "3. Spikes with widths below t are filtered. AF(min)",
+      "4. Spikes with widths above t are not filtered. AF(max)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

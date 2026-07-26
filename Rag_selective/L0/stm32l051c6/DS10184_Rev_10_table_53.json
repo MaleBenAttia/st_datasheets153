@@ -1,0 +1,61 @@
+{
+  "table_id": "table_53",
+  "document": "DS10184 Rev 10 - Table 53. I/O current injection susceptibility",
+  "rev": "Rev 10",
+  "table_number": "53",
+  "title": "Table 53. I/O current injection susceptibility",
+  "page": 78,
+  "section": "6.3.12 I/O current injection characteristics",
+  "section_title": "I/O current injection characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l051c6.pdf#page=78",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l051c6.pdf",
+  "text_helper": "Table 53. I/O current injection susceptibility — section 6.3.12 I/O current injection characteristics. Symbol, Description, Functional susceptibility / Negative injection, Functional susceptibility / Positive injection, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Description",
+      "Functional susceptibility / Negative injection",
+      "Functional susceptibility / Positive injection",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I INJ",
+        "Injected current on BOOT0",
+        "-0",
+        "NA(1)",
+        "mA"
+      ],
+      [
+        "I INJ",
+        "Injected current on PA0, PA4, PA5, PA11, PA12, PC15, PH0 and PH1",
+        "-5",
+        "0",
+        "mA"
+      ],
+      [
+        "I INJ",
+        "Injected current on any other FT, FTf pins",
+        "-5 (2)",
+        "NA(1)",
+        "mA"
+      ],
+      [
+        "I INJ",
+        "Injected current on any other pins",
+        "-5 (2)",
+        "+5",
+        "mA"
+      ]
+    ],
+    "notes": [
+      "1. Current injection is not possible.",
+      "2. It is recommended to add a Schottky diode (pin to ground) to analog pins which may potentially inject negative currents."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

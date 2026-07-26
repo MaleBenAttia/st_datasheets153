@@ -1,0 +1,53 @@
+{
+  "table_id": "table_84",
+  "document": "DS12736 Rev 5 - Table 84. Regulator modes transition times",
+  "rev": "Rev 5",
+  "table_number": "84",
+  "title": "Table 84. Regulator modes transition times",
+  "page": 217,
+  "section": "5.3.6 Supply current characteristics",
+  "section_title": "Supply current characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l562ce.pdf#page=217",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l562ce.pdf",
+  "text_helper": "Table 84. Regulator modes transition times — section 5.3.6 Supply current characteristics. Symbol, Symbol, Parameter, Conditions, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t WULPRUN",
+        "t WULPRUN",
+        "Wakeup time from Low- power run mode to Run mode(2)",
+        "Code run with MSI 2 MHz",
+        "5",
+        "7",
+        "μs"
+      ],
+      [
+        "t VOST",
+        "t VOST",
+        "Regulator transition time from Range 2 to Range 1 or Range 1 to Range 2(3)",
+        "Code run with MSI 24 MHz",
+        "20",
+        "40",
+        "μs"
+      ]
+    ],
+    "notes": [
+      "2. Time until REGLPF flag is cleared in PWR_SR2.",
+      "3. Time until VOSF flag is cleared in PWR_SR2."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

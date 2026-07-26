@@ -1,0 +1,362 @@
+{
+  "table_id": "table_21",
+  "document": "DS14121 Rev 5 - Table 21. General operating conditions",
+  "rev": "Rev 5",
+  "table_number": "21",
+  "title": "Table 21. General operating conditions",
+  "page": 131,
+  "section": "5.3.1 General operating conditions",
+  "section_title": "General operating conditions",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h573ai.pdf#page=131",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h573ai.pdf",
+  "text_helper": "Table 21. General operating conditions — section 5.3.1 General operating conditions. Symbol, Parameter, Operating conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Operating conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V DD",
+        "Standard operating voltage",
+        "HSLV(1) = 0",
+        "1.71(2)",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DD",
+        "Standard operating voltage",
+        "HSLV(1) = 1",
+        "1.71(2)",
+        "-",
+        "2.7",
+        "V"
+      ],
+      [
+        "V DDSMPS",
+        "Supply voltage for the internal SMPS step-down converter",
+        "V DD",
+        "V DD",
+        "-",
+        "V DD",
+        "V"
+      ],
+      [
+        "V DDIO2",
+        "PB8, PB9, PD6, PD7, PG[9:14] I/Os supply voltage",
+        "At least one I/O in PB8, PB9, PD6, PD7, PG[9:14] is used, HSLV(1) = 0",
+        "1.08",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DDIO2",
+        "PB8, PB9, PD6, PD7, PG[9:14] I/Os supply voltage",
+        "At least one I/O in PB8, PB9, PD6, PD7, PG[9:14] is used, HSLV(1) = 1",
+        "1.08",
+        "-",
+        "2.7",
+        "2.7"
+      ],
+      [
+        "V DDIO2",
+        "PB8, PB9, PD6, PD7, PG[9:14] I/Os supply voltage",
+        "PB8, PB9, PD6, PD7, PG[9:14] are not used",
+        "0",
+        "0",
+        "3.6",
+        "3.6"
+      ],
+      [
+        "V DDUSB",
+        "USB supply voltage",
+        "USB is used",
+        "3.0",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DDUSB",
+        "USB supply voltage",
+        "USB is not used",
+        "0",
+        "-",
+        "3.6",
+        "3.6"
+      ],
+      [
+        "V DDA",
+        "Analog supply voltage",
+        "ADC is used",
+        "1.62",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DDA",
+        "Analog supply voltage",
+        "DAC is used",
+        "1.8",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "V DDA",
+        "Analog supply voltage",
+        "VREFBUF is used",
+        "2.1",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "V DDA",
+        "Analog supply voltage",
+        "ADC, DAC, and VREFBUF are not used",
+        "0",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "V BAT",
+        "Backup domain supply voltage",
+        "-",
+        "1.2",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V IN",
+        "I/O input voltage",
+        "All I/Os except FT_c and TT_xx",
+        "-0.3",
+        "-",
+        "min (min (V , DD V , DDA V , DDUSB V ) DDIO2 + 3.6V, 5.5 V) (3)(4)",
+        "V"
+      ],
+      [
+        "V IN",
+        "I/O input voltage",
+        "Input voltage on FT_t in VBAT mode",
+        "-0.3",
+        "-",
+        "min (min (V , BAT V , DDA V , DDUSB V ) DDIO2 + 3.6 V, 5.5 V) (3)(4)",
+        "min (min (V , BAT V , DDA V , DDUSB V ) DDIO2 + 3.6 V, 5.5 V) (3)(4)"
+      ],
+      [
+        "V IN",
+        "I/O input voltage",
+        "FT_c I/O",
+        "-0.3",
+        "-",
+        "5.0",
+        "5.0"
+      ],
+      [
+        "V IN",
+        "I/O input voltage",
+        "TT_xx I/O",
+        "-0.3",
+        "-",
+        "V + DDIOx 0.3",
+        "V + DDIOx 0.3"
+      ],
+      [
+        "V CORE",
+        "Internal regulator ON",
+        "VOS0(5) (max frequency for AHB and APB: 250 MHz)",
+        "1.30",
+        "1.35",
+        "1.40",
+        "V"
+      ],
+      [
+        "V CORE",
+        "Internal regulator ON",
+        "VOS1 (max frequency for AHB and APB: 200 MHz)",
+        "1.15",
+        "1.20",
+        "1.26",
+        "1.26"
+      ],
+      [
+        "V CORE",
+        "Internal regulator ON",
+        "VOS2 (max frequency for AHB and APB: 150 MHz)",
+        "1.05",
+        "1.10",
+        "1.15",
+        "1.15"
+      ],
+      [
+        "V CORE",
+        "Internal regulator ON",
+        "VOS3 (max frequency for AHB and APB: 100 MHz)",
+        "0.95",
+        "1.00",
+        "1.05",
+        "1.05"
+      ],
+      [
+        "V CORE",
+        "Regulator OFF: external V voltage CORE must be supplied from external regulator on VCAP pins",
+        "VOS0(5)",
+        "1.32",
+        "1.35",
+        "1.40",
+        "V"
+      ],
+      [
+        "V CORE",
+        "Regulator OFF: external V voltage CORE must be supplied from external regulator on VCAP pins",
+        "VOS1",
+        "1.17",
+        "1.20",
+        "1.26",
+        "1.26"
+      ],
+      [
+        "V CORE",
+        "Regulator OFF: external V voltage CORE must be supplied from external regulator on VCAP pins",
+        "VOS2",
+        "1.07",
+        "1.10",
+        "1.15",
+        "1.15"
+      ],
+      [
+        "V CORE",
+        "Regulator OFF: external V voltage CORE must be supplied from external regulator on VCAP pins",
+        "VOS3",
+        "0.97",
+        "1.00",
+        "1.05",
+        "1.05"
+      ],
+      [
+        "V CORE",
+        "Stop mode",
+        "SVOS3",
+        "-",
+        "1.0",
+        "-",
+        "V"
+      ],
+      [
+        "V CORE",
+        "Stop mode",
+        "SVOS4",
+        "-",
+        "0.9",
+        "-",
+        "-"
+      ],
+      [
+        "V CORE",
+        "Stop mode",
+        "SVOS5",
+        "-",
+        "0.74",
+        "-",
+        "-"
+      ],
+      [
+        "f HCLK",
+        "AHB clock frequency",
+        "VOS0(5)",
+        "-",
+        "-",
+        "250",
+        "MHz"
+      ],
+      [
+        "f HCLK",
+        "AHB clock frequency",
+        "VOS1",
+        "-",
+        "-",
+        "200",
+        "200"
+      ],
+      [
+        "f HCLK",
+        "AHB clock frequency",
+        "VOS2",
+        "-",
+        "-",
+        "150",
+        "150"
+      ],
+      [
+        "f HCLK",
+        "AHB clock frequency",
+        "VOS3",
+        "-",
+        "-",
+        "100",
+        "100"
+      ],
+      [
+        "f PCLKx (x=1,2,3)",
+        "APB1, APB2, APB3 clock frequency",
+        "VOS0(5)",
+        "-",
+        "-",
+        "250",
+        "MHz"
+      ],
+      [
+        "f PCLKx (x=1,2,3)",
+        "APB1, APB2, APB3 clock frequency",
+        "VOS1",
+        "-",
+        "-",
+        "200",
+        "200"
+      ],
+      [
+        "f PCLKx (x=1,2,3)",
+        "APB1, APB2, APB3 clock frequency",
+        "VOS2",
+        "-",
+        "-",
+        "150",
+        "150"
+      ],
+      [
+        "f PCLKx (x=1,2,3)",
+        "APB1, APB2, APB3 clock frequency",
+        "VOS3",
+        "-",
+        "-",
+        "100",
+        "100"
+      ]
+    ],
+    "notes": [
+      "1. All main power (VDD, VDDA, VDDIO2, and VBAT) and ground (VSS, VSSA) pins must always be connected to the external power supplies, in the allowed range.",
+      "2. This current consumption must be correctly distributed over all I/Os and control pins. The total output current must not be sunk/sourced between two consecutive power supply pins referring to high pin count",
+      "3. Positive injection (when V > V ) is not possible on these I/Os, and does not occur for input voltages IN DDIOx",
+      "4. A negative injection is induced by V < V . I must never be exceeded. Refer to Table 18 for the IN SS INJ(PIN)",
+      "5. When several inputs are submitted to a current injection, the maximum ∑|I | is the absolute sum of INJ(PIN)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

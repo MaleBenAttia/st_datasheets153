@@ -1,0 +1,44 @@
+{
+  "table_id": "table_124",
+  "document": "DS9484 Rev 14 - Table 124. Limitations depending on the operating power supply range.",
+  "rev": "Rev 14",
+  "table_number": "124",
+  "title": "Table 124. Limitations depending on the operating power supply range.",
+  "page": 227,
+  "section": "7.10 Thermal characteristics",
+  "section_title": "Thermal characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f437ai.pdf#page=227",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f437ai.pdf",
+  "text_helper": "Table 124. Limitations depending on the operating power supply range. — section 7.10 Thermal characteristics. Operating power supply range, ADC operation, Maximum Flash memory access frequency with no wait states (f ) Flashmax, Maximum Flash memory access frequency with wait states (1)(2), I/O op...",
+  "table_content": {
+    "headers": [
+      "Operating power supply range",
+      "ADC operation",
+      "Maximum Flash memory access frequency with no wait states (f ) Flashmax",
+      "Maximum Flash memory access frequency with wait states (1)(2)",
+      "I/O operation",
+      "Possible Flash memory operations"
+    ],
+    "rows": [
+      [
+        "V =1.7 to DD 2.1V(3)",
+        "Conversion time up to 1.2Msps",
+        "20MHz(4)",
+        "168MHz with 8 wait states and over-drive OFF",
+        "– No I/O compensation",
+        "8-bit erase and program operations only"
+      ]
+    ],
+    "notes": [
+      "1. Applicable only when the code is executed from Flash memory. When the code is executed from RAM, no wait state is required.",
+      "2. Thanks to the ART accelerator and the 128-bit Flash memory, the number of wait states given here does not impact the execution speed from Flash memory since the ART accelerator allows to achieve a",
+      "3. V /V minimum value of 1.7V, with the use of an external power supply supervisor (refer to DD DDA",
+      "4. Prefetch is not available. Refer to AN3430 application note for details on how to adjust performance and power."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

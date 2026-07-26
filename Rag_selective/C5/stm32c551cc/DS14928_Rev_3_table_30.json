@@ -1,0 +1,253 @@
+{
+  "table_id": "table_30",
+  "document": "DS14928 Rev 3 - Table 30. Wake-up time from low-power modes.",
+  "rev": "Rev 3",
+  "table_number": "30",
+  "title": "Table 30. Wake-up time from low-power modes.",
+  "page": 63,
+  "section": "5.3.7 Wake-up time from low-power modes and voltage scaling transition times",
+  "section_title": "Wake-up time from low-power modes and voltage scaling transition times",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32c551cc.pdf#page=63",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c551cc.pdf",
+  "text_helper": "Table 30. Wake-up time from low-power modes. — section 5.3.7 Wake-up time from low-power modes and voltage scaling transition times. Symbol, Parameter, Conditions, Wakeup clock, fHCLK (MHz), +3 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Wakeup clock",
+      "fHCLK (MHz)",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "twu(Sleep)",
+        "Wakeup from Sleep",
+        "Instruction cache enabled or disabled",
+        "-",
+        "-",
+        "16",
+        "16",
+        "CPU clock cycles"
+      ],
+      [
+        "twu(Stop)",
+        "Wakeup from Stop 0",
+        "Flash memory in normal mode",
+        "HSI",
+        "144",
+        "3.6",
+        "5",
+        "µs"
+      ],
+      [
+        "twu(Stop)",
+        "Wakeup from Stop 0",
+        "Flash memory in low-power mode",
+        "HSI",
+        "144",
+        "7.2",
+        "11",
+        "µs"
+      ],
+      [
+        "twu(Stop)",
+        "Wakeup from Stop 0",
+        "Flash memory in normal mode",
+        "HSIDIV3",
+        "48",
+        "5.1",
+        "7",
+        "µs"
+      ],
+      [
+        "twu(Stop)",
+        "Wakeup from Stop 0",
+        "Flash memory in low-power mode",
+        "HSIDIV3",
+        "48",
+        "8.6",
+        "13.5",
+        "µs"
+      ],
+      [
+        "twu(Stop)",
+        "Wakeup from Stop 1(1)",
+        "Flash memory in normal mode",
+        "HSI",
+        "144",
+        "37.0",
+        "49",
+        "µs"
+      ],
+      [
+        "twu(Stop)",
+        "Wakeup from Stop 1(1)",
+        "Flash memory in low-power mode",
+        "HSI",
+        "144",
+        "40.5",
+        "58",
+        "µs"
+      ],
+      [
+        "twu(Stop)",
+        "Wakeup from Stop 1(1)",
+        "Flash memory in normal mode",
+        "HSIDIV3",
+        "48",
+        "39.0",
+        "53",
+        "µs"
+      ],
+      [
+        "twu(Stop)",
+        "Wakeup from Stop 1(1)",
+        "Flash memory in low-power mode",
+        "HSIDIV3",
+        "48",
+        "42.0",
+        "61",
+        "µs"
+      ],
+      [
+        "twu(Standby)",
+        "Wakeup from Standby mode(1)",
+        "-",
+        "HSIDIV3",
+        "48",
+        "445",
+        "-",
+        "µs"
+      ],
+      [
+        "VHSE_ext_PP(2)",
+        "VHSE_ext_PP(2)",
+        "OSC_IN peak-to-peak amplitude",
+        "Analog mode (HSEBYP = 1, HSEEXT = 0)",
+        "Analog mode (HSEBYP = 1, HSEEXT = 0)",
+        "0.2",
+        "-",
+        "2/3 VDD"
+      ],
+      [
+        "VHSE_ext",
+        "VHSE_ext",
+        "OSC_IN input range",
+        "None",
+        "None",
+        "0",
+        "-",
+        "VDD"
+      ],
+      [
+        "tr(HSE), tf(HSE)",
+        "tr(HSE), tf(HSE)",
+        "OSC_IN rise and fall time",
+        "None",
+        "None",
+        "0.05 / fext_ext",
+        "-",
+        "0.3 / fext_ext"
+      ],
+      [
+        "fLSE_ext",
+        "fLSE_ext",
+        "User external clock source frequency",
+        "External digital/analog clock",
+        "External digital/analog clock",
+        "-",
+        "32.768",
+        "1000"
+      ],
+      [
+        "VLSEH",
+        "VLSEH",
+        "Digital OSC_IN input high level",
+        "External digital clock",
+        "External digital clock",
+        "0.7 VDD",
+        "-",
+        "VDD"
+      ],
+      [
+        "VLSEL",
+        "VLSEL",
+        "OSC32_IN input pin low level voltage",
+        "External digital clock",
+        "External digital clock",
+        "VSS",
+        "-",
+        "0.3 VDD"
+      ],
+      [
+        "tw(LSEH)/tw(LSEL)",
+        "tw(LSEH)/tw(LSEL)",
+        "OSC32_IN high or low time",
+        "External digital clock",
+        "External digital clock",
+        "250",
+        "-",
+        "-"
+      ],
+      [
+        "Vlsw_H",
+        "Vlsw_H",
+        "Analog low swing OSC_IN high level",
+        "External analog low swing clock",
+        "External analog low swing clock",
+        "0.6",
+        "0.6",
+        "1.225"
+      ],
+      [
+        "Vlsw_L",
+        "Vlsw_L",
+        "Analog low swing OSC_IN low level",
+        "External analog low swing clock",
+        "External analog low swing clock",
+        "0.35",
+        "0.35",
+        "0.8"
+      ],
+      [
+        "VlswLSE (VLSEH - VLSEL)",
+        "VlswLSE (VLSEH - VLSEL)",
+        "Analog low swing OSC_IN peak-to- peak amplitude",
+        "External analog low swing clock",
+        "External analog low swing clock",
+        "0.2",
+        "0.2",
+        "0.875"
+      ],
+      [
+        "DuCyLSE",
+        "DuCyLSE",
+        "Analog low swing OSC_IN duty cycle",
+        "External analog Low Swing Clock",
+        "External analog Low Swing Clock",
+        "45",
+        "50",
+        "55"
+      ],
+      [
+        "trLSE/tfLSE",
+        "trLSE/tfLSE",
+        "Analog low swing OSC_IN rise and fall time",
+        "Externala analog low swing clock 10 % to 90 %",
+        "Externala analog low swing clock 10 % to 90 %",
+        "-",
+        "100",
+        "200"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

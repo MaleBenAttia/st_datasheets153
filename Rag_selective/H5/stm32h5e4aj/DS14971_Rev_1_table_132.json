@@ -1,0 +1,172 @@
+{
+  "table_id": "table_132",
+  "document": "DS14971 Rev 1 - Table 132. Dynamic characteristics: SD/MMC, VDD = 2.7 to 3.6 V",
+  "rev": "Rev 1",
+  "table_number": "132",
+  "title": "Table 132. Dynamic characteristics: SD/MMC, VDD = 2.7 to 3.6 V",
+  "page": 284,
+  "section": "5.3.38 Communication interfaces",
+  "section_title": "Communication interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h5e4aj.pdf#page=284",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h5e4aj.pdf",
+  "text_helper": "Table 132. Dynamic characteristics: SD/MMC, VDD = 2.7 to 3.6 V — section 5.3.38 Communication interfaces. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f PP",
+        "Clock frequency in data transfer mode",
+        "-",
+        "0",
+        "-",
+        "130(2)/104(2)(3)",
+        "MHz"
+      ],
+      [
+        "t W(CKL)",
+        "Clock low time",
+        "f = 52 PP MHz",
+        "8.5",
+        "9.5",
+        "-",
+        "ns"
+      ],
+      [
+        "t W(CKH)",
+        "Clock high time",
+        "f = 52 PP MHz",
+        "8.5",
+        "9.5",
+        "-",
+        "ns"
+      ],
+      [
+        "CMD, D inputs (referenced to CK) in eMMC legacy/SDR/DDR and SD HS/SDR(4)/DDR(4) mode",
+        "CMD, D inputs (referenced to CK) in eMMC legacy/SDR/DDR and SD HS/SDR(4)/DDR(4) mode",
+        "CMD, D inputs (referenced to CK) in eMMC legacy/SDR/DDR and SD HS/SDR(4)/DDR(4) mode",
+        "CMD, D inputs (referenced to CK) in eMMC legacy/SDR/DDR and SD HS/SDR(4)/DDR(4) mode",
+        "CMD, D inputs (referenced to CK) in eMMC legacy/SDR/DDR and SD HS/SDR(4)/DDR(4) mode",
+        "CMD, D inputs (referenced to CK) in eMMC legacy/SDR/DDR and SD HS/SDR(4)/DDR(4) mode",
+        "CMD, D inputs (referenced to CK) in eMMC legacy/SDR/DDR and SD HS/SDR(4)/DDR(4) mode"
+      ],
+      [
+        "t ISU",
+        "Input setup time HS",
+        "-",
+        "3",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t IH",
+        "Input hold time HS",
+        "-",
+        "1.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t (5) IDW",
+        "Input valid window (variable window)",
+        "-",
+        "4.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "CMD, D outputs (referenced to CK) in eMMC legacy/SDR/DDR and SD HS/SDR(4)/DDR(4) mode",
+        "CMD, D outputs (referenced to CK) in eMMC legacy/SDR/DDR and SD HS/SDR(4)/DDR(4) mode",
+        "CMD, D outputs (referenced to CK) in eMMC legacy/SDR/DDR and SD HS/SDR(4)/DDR(4) mode",
+        "CMD, D outputs (referenced to CK) in eMMC legacy/SDR/DDR and SD HS/SDR(4)/DDR(4) mode",
+        "CMD, D outputs (referenced to CK) in eMMC legacy/SDR/DDR and SD HS/SDR(4)/DDR(4) mode",
+        "CMD, D outputs (referenced to CK) in eMMC legacy/SDR/DDR and SD HS/SDR(4)/DDR(4) mode",
+        "CMD, D outputs (referenced to CK) in eMMC legacy/SDR/DDR and SD HS/SDR(4)/DDR(4) mode"
+      ],
+      [
+        "t OH",
+        "Output hold time HS",
+        "-",
+        "(Tker / 2) - 0.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "CMD, D inputs (referenced to CK) in SD default mode",
+        "CMD, D inputs (referenced to CK) in SD default mode",
+        "CMD, D inputs (referenced to CK) in SD default mode",
+        "CMD, D inputs (referenced to CK) in SD default mode",
+        "CMD, D inputs (referenced to CK) in SD default mode",
+        "CMD, D inputs (referenced to CK) in SD default mode",
+        "CMD, D inputs (referenced to CK) in SD default mode"
+      ],
+      [
+        "t ISUD",
+        "Input setup time SD",
+        "-",
+        "3",
+        "CMD, D inputs (referenced to CK) in SD default mode",
+        "-",
+        "ns"
+      ],
+      [
+        "t IHD",
+        "Input hold time SD",
+        "-",
+        "1.5",
+        "CMD, D inputs (referenced to CK) in SD default mode",
+        "-",
+        "ns"
+      ],
+      [
+        "CMD, D outputs (referenced to CK) in SD default mode",
+        "CMD, D outputs (referenced to CK) in SD default mode",
+        "CMD, D outputs (referenced to CK) in SD default mode",
+        "CMD, D outputs (referenced to CK) in SD default mode",
+        "CMD, D outputs (referenced to CK) in SD default mode",
+        "CMD, D outputs (referenced to CK) in SD default mode",
+        "CMD, D outputs (referenced to CK) in SD default mode"
+      ],
+      [
+        "t OVD",
+        "Output valid default time SD",
+        "-",
+        "-",
+        "1",
+        "2",
+        "ns"
+      ],
+      [
+        "t OHD",
+        "Output hold default time SD",
+        "-",
+        "0",
+        "-",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "2. C applied is 20 pF. L",
+      "3. Maximum speed for LQFP100 and LQFP100-SMPS packages.",
+      "4. For SD 1.8 V support, an external voltage converter is needed.",
+      "5. The minimum window of time where the data needs to be stable for proper sampling in tuning mode."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

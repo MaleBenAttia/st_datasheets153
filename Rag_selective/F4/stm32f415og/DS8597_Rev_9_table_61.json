@@ -1,0 +1,113 @@
+{
+  "table_id": "table_61",
+  "document": "DS8597 Rev 9 - Table 61. USB HS clock timing parameters",
+  "rev": "Rev 9",
+  "table_number": "61",
+  "title": "Table 61. USB HS clock timing parameters",
+  "page": 133,
+  "section": "5.3.19 Communications interfaces",
+  "section_title": "Communications interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f415og.pdf#page=133",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f415og.pdf",
+  "text_helper": "Table 61. USB HS clock timing parameters — section 5.3.19 Communications interfaces. Parameter, Parameter, Symbol, Min, Nominal, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Parameter",
+      "Parameter",
+      "Symbol",
+      "Min",
+      "Nominal",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f value to guarantee proper operation of HCLK USB HS interface",
+        "f value to guarantee proper operation of HCLK USB HS interface",
+        "-",
+        "30",
+        "-",
+        "-",
+        "MHz"
+      ],
+      [
+        "Frequency (first transition)",
+        "8-bit ±10%",
+        "F START_8BIT",
+        "54",
+        "60",
+        "66",
+        "MHz"
+      ],
+      [
+        "Frequency (steady state) ±500 ppm",
+        "Frequency (steady state) ±500 ppm",
+        "F STEADY",
+        "59.97",
+        "60",
+        "60.03",
+        "MHz"
+      ],
+      [
+        "Duty cycle (first transition)",
+        "8-bit ±10%",
+        "D START_8BIT",
+        "40",
+        "50",
+        "60",
+        "%"
+      ],
+      [
+        "Duty cycle (steady state) ±500 ppm",
+        "Duty cycle (steady state) ±500 ppm",
+        "D STEADY",
+        "49.975",
+        "50",
+        "50.025",
+        "%"
+      ],
+      [
+        "Time to reach the steady state frequency and duty cycle after the first transition",
+        "Time to reach the steady state frequency and duty cycle after the first transition",
+        "T STEADY",
+        "-",
+        "-",
+        "1.4",
+        "ms"
+      ],
+      [
+        "Clock startup time after the de-assertion of SuspendM",
+        "Peripheral",
+        "T START_DEV",
+        "-",
+        "-",
+        "5.6",
+        "ms"
+      ],
+      [
+        "Clock startup time after the de-assertion of SuspendM",
+        "Host",
+        "T START_HOST",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "PHY preparation time after the first transition of the input clock",
+        "PHY preparation time after the first transition of the input clock",
+        "T PREP",
+        "-",
+        "-",
+        "-",
+        "µs"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

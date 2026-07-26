@@ -1,0 +1,135 @@
+{
+  "table_id": "table_37",
+  "document": "DS11144 Rev 8 - Table 37. Low-power mode wakeup timings",
+  "rev": "Rev 8",
+  "table_number": "37",
+  "title": "Table 37. Low-power mode wakeup timings",
+  "page": 77,
+  "section": "6.3.7 Wakeup time from low-power modes",
+  "section_title": "Wakeup time from low-power modes",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f410c8.pdf#page=77",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f410c8.pdf",
+  "text_helper": "Table 37. Low-power mode wakeup timings — section 6.3.7 Wakeup time from low-power modes. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t (2) WUSLEEP",
+        "Wakeup from Sleep mode",
+        "-",
+        "-",
+        "4",
+        "6",
+        "CPU clock cycles"
+      ],
+      [
+        "t (2) WUSLEEPFDSM",
+        "Wakeup from Sleep mode",
+        "Flash memory in Deep power down mode",
+        "-",
+        "-",
+        "40,0",
+        "µs"
+      ],
+      [
+        "t (2) WUSTOP",
+        "Wakeup from Stop mode, code execution from Flash memory",
+        "Main regulator",
+        "-",
+        "12.9",
+        "15.0",
+        "µs"
+      ],
+      [
+        "t (2) WUSTOP",
+        "Wakeup from Stop mode, code execution from Flash memory",
+        "Main regulator, Flash memory in Deep power down mode",
+        "-",
+        "104.9",
+        "115.0",
+        "µs"
+      ],
+      [
+        "t (2) WUSTOP",
+        "Wakeup from Stop mode, code execution from Flash memory",
+        "Regulator in low-power mode(3)",
+        "-",
+        "20.8",
+        "25.0",
+        "µs"
+      ],
+      [
+        "t (2) WUSTOP",
+        "Wakeup from Stop mode, code execution from Flash memory",
+        "Regulator in low-power mode, Flash memory in Deep power down mode",
+        "-",
+        "112.9",
+        "120.0",
+        "µs"
+      ],
+      [
+        "t (2) WUSTOP",
+        "Wakeup from Stop mode, code execution from RAM",
+        "Main regulator, Flash memory in Stop or Deep power down mode",
+        "-",
+        "4.9",
+        "7.0",
+        "µs"
+      ],
+      [
+        "t (2) WUSTOP",
+        "Wakeup from Stop mode, code execution from RAM",
+        "Regulator in low-power mode, Flash memory in Stop or Deep power down mode(3)",
+        "-",
+        "12.8",
+        "20.0",
+        "µs"
+      ],
+      [
+        "t (2)(4) WUSTDBY",
+        "Wakeup from Standby mode",
+        "-",
+        "-",
+        "316.8",
+        "350.0",
+        "µs"
+      ],
+      [
+        "t WUFLASH",
+        "Wakeup of Flash memory",
+        "From Flash_Stop mode",
+        "-",
+        "-",
+        "10.0",
+        "µs"
+      ],
+      [
+        "t WUFLASH",
+        "Wakeup of Flash memory",
+        "From Flash Deep power down mode",
+        "-",
+        "-",
+        "40.0",
+        "µs"
+      ]
+    ],
+    "notes": [
+      "2. The wakeup times are measured from the wakeup event to the point in which the application code reads the first instruction.",
+      "3. The specification is valid for wakeup from regulator in low power mode or in low power low voltage mode, since the timing difference is negligible.",
+      "4. t maximum value is given at - 40 °C. WUSTDBY"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

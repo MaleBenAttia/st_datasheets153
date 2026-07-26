@@ -1,0 +1,89 @@
+{
+  "table_id": "table_25",
+  "document": "DS10212 Rev 6 - Table 25. Embedded internal reference voltage",
+  "rev": "Rev 6",
+  "table_number": "25",
+  "title": "Table 25. Embedded internal reference voltage",
+  "page": 54,
+  "section": "6.3.3 Embedded reference voltage",
+  "section_title": "Embedded reference voltage",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f078cb.pdf#page=54",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f078cb.pdf",
+  "text_helper": "Table 25. Embedded internal reference voltage — section 6.3.3 Embedded reference voltage. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V REFINT",
+        "Internal reference voltage",
+        "–40 °C < T < +105 °C A",
+        "1.2",
+        "1.23",
+        "1.25",
+        "V"
+      ],
+      [
+        "t START",
+        "ADC_IN17 buffer startup time",
+        "-",
+        "-",
+        "-",
+        "10(1)",
+        "µs"
+      ],
+      [
+        "t S_vrefint",
+        "ADC sampling time when reading the internal reference voltage",
+        "-",
+        "4(1)",
+        "-",
+        "-",
+        "µs"
+      ],
+      [
+        "∆V REFINT",
+        "Internal reference voltage spread over the temperature range",
+        "V = 3 V DDA",
+        "-",
+        "-",
+        "10(1)",
+        "mV"
+      ],
+      [
+        "T Coeff",
+        "Temperature coefficient",
+        "-",
+        "- 100(1)",
+        "-",
+        "100(1)",
+        "ppm/°C"
+      ],
+      [
+        "T VREFINT_RDY (2)",
+        "Internal reference voltage temporization",
+        "-",
+        "1.5",
+        "2.5",
+        "4.5",
+        "ms"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by design, not tested in production.",
+      "2. Guaranteed by design, not tested in production. This parameter is the latency between the time when pin NPOR is set to 1 by the application and the time when the VREFINTRDYF status bit is set to 1 by the"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

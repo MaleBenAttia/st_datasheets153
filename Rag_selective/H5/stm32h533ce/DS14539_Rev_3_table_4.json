@@ -1,0 +1,119 @@
+{
+  "table_id": "table_4",
+  "document": "DS14539 Rev 3 - Table 4. STM32H533xx boot mode when TrustZone is enabled (TZEN = 0xB4)",
+  "rev": "Rev 3",
+  "table_number": "4",
+  "title": "Table 4. STM32H533xx boot mode when TrustZone is enabled (TZEN = 0xB4)",
+  "page": 24,
+  "section": "3.8 Global TrustZone controller (GTZC)",
+  "section_title": "Global TrustZone controller (GTZC)",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h533ce.pdf#page=24",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h533ce.pdf",
+  "text_helper": "Table 4. STM32H533xx boot mode when TrustZone is enabled (TZEN = 0xB4) — section 3.8 Global TrustZone controller (GTZC). PRODUCT_STATE, BOOT0 pin, BOOT_UBE FLASH_OP TSR[29:22], Boot address option-byte selection, Boot area, +1 autres.",
+  "table_content": {
+    "headers": [
+      "PRODUCT_STATE",
+      "BOOT0 pin",
+      "BOOT_UBE FLASH_OP TSR[29:22]",
+      "Boot address option-byte selection",
+      "Boot area",
+      "ST programmed default value"
+    ],
+    "rows": [
+      [
+        "Open",
+        "0",
+        "NA",
+        "NSBOOTADD[31:8]",
+        "Boot address defined by user option byte NSBOOTADD[31:8]",
+        "Flash: 0x0800 0000"
+      ],
+      [
+        "Open",
+        "1",
+        "NA",
+        "NA",
+        "Bootloader",
+        "Bootloader"
+      ],
+      [
+        "Provisioning",
+        "x",
+        "NA",
+        "NA",
+        "RSS",
+        "RSS"
+      ],
+      [
+        "Provisioned, Closed, Locked",
+        "x",
+        "NA",
+        "NSBOOTADD[31:8]",
+        "Boot address defined by user option byte NSBOOTADD[31:8]",
+        "Flash: 0x0800 0000"
+      ],
+      [
+        "PRODUCT_STATE",
+        "BOOT0 pin",
+        "BOOT_UBE FLASH_OP TSR[29:22]",
+        "Boot address option-byte selection",
+        "Boot area",
+        "ST programmed default value"
+      ],
+      [
+        "Open",
+        "0",
+        "x",
+        "SECBOOTADD [31:8]",
+        "Boot address defined by user option byte SECBOOTADD[31:8]",
+        "Flash: 0x0C00 0000"
+      ],
+      [
+        "-",
+        "1",
+        "0xB4",
+        "NA",
+        "Bootloader",
+        "Bootloader"
+      ],
+      [
+        "-",
+        "1",
+        "0xC3",
+        "NA",
+        "ST-iROT",
+        "ST-iROT"
+      ],
+      [
+        "Provisioning",
+        "x",
+        "NA",
+        "NA",
+        "RSS",
+        "RSS"
+      ],
+      [
+        "Provisioned, TZ_Closed, Closed, Locked",
+        "x x",
+        "0xC3",
+        "ST-iROT",
+        "ST-iROT",
+        "ST-iROT"
+      ],
+      [
+        "Provisioned, TZ_Closed, Closed, Locked",
+        "x x",
+        "0xB4",
+        "SECBOOTADD [31:8]",
+        "Boot address defined by user option byte SECBOOTADD[31:8]",
+        "Flash: 0x0C00 0000"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

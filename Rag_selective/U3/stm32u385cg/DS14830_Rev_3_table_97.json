@@ -1,0 +1,121 @@
+{
+  "table_id": "table_97",
+  "document": "DS14830 Rev 3 - Table 97. 12-bit ADC accuracy",
+  "rev": "Rev 3",
+  "table_number": "97",
+  "title": "Table 97. 12-bit ADC accuracy",
+  "page": 157,
+  "section": "5.3.17 Analog switches booster",
+  "section_title": "Analog switches booster",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u385cg.pdf#page=157",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u385cg.pdf",
+  "text_helper": "Table 97. 12-bit ADC accuracy — section 5.3.17 Analog switches booster. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "ET",
+        "Total unadjusted error",
+        "-",
+        "-",
+        "±3",
+        "±7.5",
+        "LSB"
+      ],
+      [
+        "EO",
+        "Offset error",
+        "-",
+        "-",
+        "±2",
+        "±5.5",
+        "LSB"
+      ],
+      [
+        "EG",
+        "Gain error",
+        "-",
+        "-",
+        "±2",
+        "±6.5",
+        "LSB"
+      ],
+      [
+        "ED",
+        "Differential linearity error",
+        "-",
+        "-",
+        "-0.9/+1",
+        "-0.9/+1.5",
+        "LSB"
+      ],
+      [
+        "EL",
+        "Integral linearity error",
+        "-",
+        "-",
+        "±2",
+        "±3.5",
+        "LSB"
+      ],
+      [
+        "ENOB",
+        "Effective number of bits",
+        "-",
+        "9.9",
+        "10.9",
+        "-",
+        "bits"
+      ],
+      [
+        "SINAD",
+        "Signal-to-noise and distortion ratio",
+        "-",
+        "61.4",
+        "67.4",
+        "-",
+        "dB"
+      ],
+      [
+        "SNR",
+        "Signal-to-noise ratio",
+        "-",
+        "61.6",
+        "67.5",
+        "-",
+        "dB"
+      ],
+      [
+        "THD",
+        "Total harmonic distortion",
+        "-",
+        "-",
+        "-74",
+        "-70",
+        "dB"
+      ]
+    ],
+    "notes": [
+      "1. The tolerance is 1 LSB",
+      "2. The maximum value of RAIN is obtained in a worst-case scenario: channel conversion in scan mode with channel i connected to VREF+ and channel i + 1 connected to VREF-."
+    ],
+    "legend": [
+      "ADC DC accuracy values are measured after internal calibration. Resolution = 12 bits, no oversampling.",
+      "The I/O analog switch voltage booster is enable when VDDA < 2.4 V (BOOSTEN = 1 in the SYSCFG_CFGR1 when VDDA < 2.4 V). It is disable",
+      "when VDDA ≥ 2.4 V.",
+      "Evaluated by characterization. Not tested in production."
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

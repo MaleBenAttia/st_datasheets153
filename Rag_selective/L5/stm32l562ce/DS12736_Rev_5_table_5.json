@@ -1,0 +1,51 @@
+{
+  "table_id": "table_5",
+  "document": "DS12736 Rev 5 - Table 5. Boot space versus RDP protection",
+  "rev": "Rev 5",
+  "table_number": "5",
+  "title": "Table 5. Boot space versus RDP protection",
+  "page": 27,
+  "section": "3.6 Boot modes",
+  "section_title": "Boot modes",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l562ce.pdf#page=27",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l562ce.pdf",
+  "text_helper": "Table 5. Boot space versus RDP protection — section 3.6 Boot modes. RDP, TZEN = 1, TZEN = 0.",
+  "table_content": {
+    "headers": [
+      "RDP",
+      "TZEN = 1",
+      "TZEN = 0"
+    ],
+    "rows": [
+      [
+        "0",
+        "Any boot address",
+        "Any boot address"
+      ],
+      [
+        "0.5",
+        "Boot address only in: – RSS – or secure Flash: 0x0C00 0000 - 0x0C07 FFFF Otherwise boot address forced to RSS",
+        "N/A"
+      ],
+      [
+        "1",
+        "1",
+        "Any boot address"
+      ],
+      [
+        "2",
+        "2",
+        "If boot is configured for NSBOOTADD0 and NSBOOTADD0 in the range 0x0800 0000 - 0x0807 FFFF: boot at the address stored in NSBOOTADD0 If boot is configured for NSBOOTADD1 and NSBOOTADD1 in the range 0x0800 0000 - 0x0807 FFFF: boot at the address stored in NSBOOTADD1 Otherwise boot address is forced at 0x0800 0000"
+      ]
+    ],
+    "notes": [
+      "1. MPCBB: block-based memory protection controller This sub-block controls secure states of all blocks (256-byte pages) of the associated",
+      "2. TZIC: TrustZone illegal access controller This sub-block gathers all illegal access events in the system and generates a secure"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

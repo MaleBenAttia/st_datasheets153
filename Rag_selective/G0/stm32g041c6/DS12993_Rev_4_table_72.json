@@ -1,0 +1,160 @@
+{
+  "table_id": "table_72",
+  "document": "DS12993 Rev 4 - Table 72. USART characteristics in SPI mode",
+  "rev": "Rev 4",
+  "table_number": "72",
+  "title": "Table 72. USART characteristics in SPI mode",
+  "page": 95,
+  "section": "5.3.23 Characteristics of communication interfaces",
+  "section_title": "Characteristics of communication interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32g041c6.pdf#page=95",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g041c6.pdf",
+  "text_helper": "Table 72. USART characteristics in SPI mode — section 5.3.23 Characteristics of communication interfaces. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f CK",
+        "USART clock frequency",
+        "Master mode",
+        "-",
+        "-",
+        "8",
+        "MHz"
+      ],
+      [
+        "f CK",
+        "USART clock frequency",
+        "Slave mode",
+        "-",
+        "-",
+        "21",
+        "MHz"
+      ],
+      [
+        "t su(NSS)",
+        "NSS setup time",
+        "Slave mode",
+        "T (1) + 2 ker",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(NSS)",
+        "NSS hold time",
+        "Slave mode",
+        "2",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t w(CKH)",
+        "CK high time",
+        "Master mode",
+        "1 / f / 2 CK - 1",
+        "1 / f / 2 CK",
+        "1 / f / 2 CK + 1",
+        "ns"
+      ],
+      [
+        "t w(CKL)",
+        "CK low time",
+        "CK low time",
+        "CK low time",
+        "CK low time",
+        "CK low time",
+        "ns"
+      ],
+      [
+        "t su(RX)",
+        "Data input setup time",
+        "Master mode",
+        "T (1) + 2 ker",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(RX)",
+        "Data input setup time",
+        "Slave mode",
+        "3",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(RX)",
+        "Data input hold time",
+        "Master mode",
+        "2",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(RX)",
+        "Data input hold time",
+        "Slave mode",
+        "1",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(TX)",
+        "Data output valid time",
+        "Master mode",
+        "-",
+        "1",
+        "2",
+        "ns"
+      ],
+      [
+        "t v(TX)",
+        "Data output valid time",
+        "Slave mode",
+        "-",
+        "10",
+        "19",
+        "ns"
+      ],
+      [
+        "t h(TX)",
+        "Data output hold time",
+        "Master mode",
+        "0",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(TX)",
+        "Data output hold time",
+        "Slave mode",
+        "7",
+        "-",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. T ker is the usart_ker_ck_pres clock period"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

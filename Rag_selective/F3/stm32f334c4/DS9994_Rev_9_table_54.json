@@ -1,0 +1,170 @@
+{
+  "table_id": "table_54",
+  "document": "DS9994 Rev 9 - Table 54. HRTIM1 characteristics",
+  "rev": "Rev 9",
+  "table_number": "54",
+  "title": "Table 54. HRTIM1 characteristics",
+  "page": 82,
+  "section": "6.3.16 High-resolution timer (HRTIM)",
+  "section_title": "High-resolution timer (HRTIM)",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f334c4.pdf#page=82",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f334c4.pdf",
+  "text_helper": "Table 54. HRTIM1 characteristics — section 6.3.16 High-resolution timer (HRTIM). Symbol, Parameter, Conditions, Min., Typ., +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min.",
+      "Typ.",
+      "Max.",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "T A",
+        "Timer ambient temperature range",
+        "f =144MHz (1) HRTIM",
+        "-40",
+        "-",
+        "105",
+        "°C"
+      ],
+      [
+        "T A",
+        "Timer ambient temperature range",
+        "f =128MHz (2) HRTIM",
+        "-10",
+        "-",
+        "105",
+        "°C"
+      ],
+      [
+        "f HRTIM",
+        "HRTIM input clock for DLL calibration",
+        "As per T conditions A",
+        "128",
+        "-",
+        "144",
+        "MHz"
+      ],
+      [
+        "t HRTIM",
+        "HRTIM input clock for DLL calibration",
+        "As per T conditions A",
+        "6.9",
+        "-",
+        "7.8",
+        "ns"
+      ],
+      [
+        "t RES(HRTIM)",
+        "Timer resolution time",
+        "f =144MHz (1), TA from - HRTIM 40 to 105°C",
+        "-",
+        "217",
+        "-",
+        "ps"
+      ],
+      [
+        "t RES(HRTIM)",
+        "Timer resolution time",
+        "f =128MHz (2),TA from -10 HRTIM to 105°C",
+        "-",
+        "244",
+        "-",
+        "ps"
+      ],
+      [
+        "Res HRTIM",
+        "Timer resolution",
+        "-",
+        "-",
+        "-",
+        "16",
+        "bit"
+      ],
+      [
+        "t DTG",
+        "Dead time generator clock period",
+        "-",
+        "0.125",
+        "-",
+        "16",
+        "t HRTIM"
+      ],
+      [
+        "t DTG",
+        "Dead time generator clock period",
+        "f =144MHz (1) HRTIM",
+        "0.868",
+        "-",
+        "111.10",
+        "ns"
+      ],
+      [
+        "|t t DTR| / |DTF| max",
+        "Dead time range (absolute value)",
+        "-",
+        "-",
+        "-",
+        "511",
+        "t DTG"
+      ],
+      [
+        "|t t DTR| / |DTF| max",
+        "Dead time range (absolute value)",
+        "f =144MHz (1) HRTIM",
+        "-",
+        "-",
+        "56.77",
+        "µs"
+      ],
+      [
+        "f CHPFRQ",
+        "Chopper stage clock frequency",
+        "-",
+        "1/256",
+        "-",
+        "1/16",
+        "f HRTIM"
+      ],
+      [
+        "f CHPFRQ",
+        "Chopper stage clock frequency",
+        "f =144MHz (1) HRTIM",
+        "0.562",
+        "-",
+        "9",
+        "MHz"
+      ],
+      [
+        "t 1STPW",
+        "Chopper first pulse length",
+        "-",
+        "16",
+        "-",
+        "256",
+        "t HRTIM"
+      ],
+      [
+        "t 1STPW",
+        "Chopper first pulse length",
+        "f =144MHz (1) HRTIM",
+        "0.111",
+        "-",
+        "1.77",
+        "µs"
+      ]
+    ],
+    "notes": [
+      "1. The reset network protects the device against parasitic resets.",
+      "2. The user must ensure that the level on the NRST pin can go below the V max level specified in IL(NRST)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

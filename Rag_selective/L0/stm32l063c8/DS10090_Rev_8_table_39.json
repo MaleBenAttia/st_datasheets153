@@ -1,0 +1,95 @@
+{
+  "table_id": "table_39",
+  "document": "DS10090 Rev 8 - Table 39. Peripheral current consumption in Stop and Standby mode",
+  "rev": "Rev 8",
+  "table_number": "39",
+  "title": "Table 39. Peripheral current consumption in Stop and Standby mode",
+  "page": 71,
+  "section": "6.3.3 Embedded internal reference voltage",
+  "section_title": "Embedded internal reference voltage",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l063c8.pdf#page=71",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l063c8.pdf",
+  "text_helper": "Table 39. Peripheral current consumption in Stop and Standby mode — section 6.3.3 Embedded internal reference voltage. Symbol, Peripheral, Typical consumption, T = 25 °C / V =1.8 V DD, Typical consumption, T = 25 °C / A / V =3.0 V DD, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Peripheral",
+      "Typical consumption, T = 25 °C / V =1.8 V DD",
+      "Typical consumption, T = 25 °C / A / V =3.0 V DD",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I DD(PVD / BOR)",
+        "-",
+        "0.7",
+        "1.2",
+        "µA"
+      ],
+      [
+        "I REFINT",
+        "-",
+        "-",
+        "1.4",
+        "µA"
+      ],
+      [
+        "-",
+        "LSE Low drive(2)",
+        "0,1",
+        "0,1",
+        "µA"
+      ],
+      [
+        "-",
+        "LPTIM1, Input 100 Hz",
+        "0,01",
+        "0,01",
+        "µA"
+      ],
+      [
+        "-",
+        "LPTIM1, Input 1 MHz",
+        "6",
+        "6",
+        "µA"
+      ],
+      [
+        "-",
+        "LPUART1",
+        "0,2",
+        "0,2",
+        "µA"
+      ],
+      [
+        "-",
+        "RTC",
+        "0,3",
+        "0,48",
+        "µA"
+      ],
+      [
+        "-",
+        "LCD1 (static duty)",
+        "0,15",
+        "0,15",
+        "µA"
+      ],
+      [
+        "-",
+        "LCD1 (1/8 duty)",
+        "1,6",
+        "2,6",
+        "µA"
+      ]
+    ],
+    "notes": [
+      "2. LSE Low drive consumption is the difference between an external clock on OSC32_IN and a quartz between OSC32_IN and OSC32_OUT.-"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

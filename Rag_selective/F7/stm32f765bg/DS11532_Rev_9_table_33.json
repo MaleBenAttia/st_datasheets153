@@ -1,0 +1,192 @@
+{
+  "table_id": "table_33",
+  "document": "DS11532 Rev 9 - Table 33. Typical and maximum current consumption in Sleep mode, regulator ON",
+  "rev": "Rev 9",
+  "table_number": "33",
+  "title": "Table 33. Typical and maximum current consumption in Sleep mode, regulator ON",
+  "page": 123,
+  "section": "6.3.7 Supply current characteristics",
+  "section_title": "Supply current characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f765bg.pdf#page=123",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f765bg.pdf",
+  "text_helper": "Table 33. Typical and maximum current consumption in Sleep mode, regulator ON — section 6.3.7 Supply current characteristics. Symbol, Parameter, Conditions, f (MHz) HCLK, Typ, +4 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "f (MHz) HCLK",
+      "Typ",
+      "Max(1) / T = 25 °C A",
+      "Max(1) / T = 85 °C A",
+      "Max(1) / T = 105 °C A",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "All peripherals enabled(2)",
+        "216",
+        "128",
+        "144(3)",
+        "190(3)",
+        "-",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "All peripherals enabled(2)",
+        "200",
+        "119",
+        "134",
+        "180",
+        "214",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "All peripherals enabled(2)",
+        "180",
+        "105",
+        "118(3)",
+        "153(3)",
+        "178(3)",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "All peripherals enabled(2)",
+        "168",
+        "93",
+        "105",
+        "136",
+        "156",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "All peripherals enabled(2)",
+        "144",
+        "72",
+        "80",
+        "107",
+        "124",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "All peripherals enabled(2)",
+        "60",
+        "33",
+        "39",
+        "65",
+        "82",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "All peripherals enabled(2)",
+        "25",
+        "17",
+        "21",
+        "47",
+        "65",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "All peripherals disabled",
+        "216",
+        "18",
+        "25(3)",
+        "71(3)",
+        "-",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "All peripherals disabled",
+        "200",
+        "17",
+        "24",
+        "70",
+        "112",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "All peripherals disabled",
+        "180",
+        "14",
+        "20(3)",
+        "54(3)",
+        "75(3)",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "All peripherals disabled",
+        "168",
+        "13",
+        "18",
+        "49",
+        "69",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "All peripherals disabled",
+        "144",
+        "10",
+        "14",
+        "40",
+        "58",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "All peripherals disabled",
+        "60",
+        "6",
+        "10",
+        "36",
+        "53",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "All peripherals disabled",
+        "25",
+        "4",
+        "8",
+        "34",
+        "51",
+        "mA"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization results.",
+      "2. When analog peripheral blocks such as ADCs, DACs, HSE, LSE, HSI, or LSI are ON, an additional power consumption should be considered.",
+      "3. When the ADC is ON (ADON bit set in the ADC_CR2 register), add an additional power consumption of 1.73 mA per ADC for the analog part."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

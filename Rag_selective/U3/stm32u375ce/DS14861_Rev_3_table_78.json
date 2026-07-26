@@ -1,0 +1,224 @@
+{
+  "table_id": "table_78",
+  "document": "DS14861 Rev 3 - Table 78. LSI oscillator characteristics",
+  "rev": "Rev 3",
+  "table_number": "78",
+  "title": "Table 78. LSI oscillator characteristics",
+  "page": 139,
+  "section": "5.3.9 Internal clock timing characteristics",
+  "section_title": "Internal clock timing characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf#page=139",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf",
+  "text_helper": "Table 78. LSI oscillator characteristics — section 5.3.9 Internal clock timing characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "fLSI",
+        "LSI frequency",
+        "VDD = 3.0 V, TJ = 30 °C, LSIPREDIV = 0",
+        "31.4",
+        "32.0",
+        "32.6",
+        "kHz"
+      ],
+      [
+        "fLSI",
+        "LSI frequency",
+        "VDD = 3.0 V, TJ = 30 °C, LSIPREDIV = 1",
+        "0.245",
+        "0.25",
+        "0.255",
+        "kHz"
+      ],
+      [
+        "fLSI",
+        "LSI frequency",
+        "1.71 V ≤ VDD ≤ 3.6, TJ = –40 to 110 °C LSIPREDIV = 0(1)",
+        "30.4",
+        "32.0",
+        "33.6",
+        "kHz"
+      ],
+      [
+        "DuCy(LSI)",
+        "LSI duty cycle",
+        "LSIPREDIV = 1",
+        "-",
+        "50",
+        "-",
+        "%"
+      ],
+      [
+        "tSU(LSI)(2)",
+        "LSI oscillator startup time",
+        "-",
+        "-",
+        "230",
+        "260",
+        "μs"
+      ],
+      [
+        "tSTAB(LSI)(2)",
+        "LSI oscillator stabilization time",
+        "5% of final frequency",
+        "-",
+        "230",
+        "260",
+        "μs"
+      ],
+      [
+        "IDD(LSI)(2)",
+        "LSI oscillator power consumption",
+        "LSIPREDIV = 0",
+        "-",
+        "140",
+        "255",
+        "nA"
+      ],
+      [
+        "IDD(LSI)(2)",
+        "LSI oscillator power consumption",
+        "LSIPREDIV = 1",
+        "-",
+        "130",
+        "240",
+        "nA"
+      ],
+      [
+        "tprog",
+        "tprog",
+        "64‑bit programming time",
+        "Normal mode",
+        "72.8",
+        "72.8",
+        "80.8"
+      ],
+      [
+        "None",
+        "None",
+        "None",
+        "Burst mode",
+        "42.2",
+        "42.2",
+        "46.8"
+      ],
+      [
+        "tprog_page",
+        "tprog_page",
+        "One 4‑Kbyte page programming time",
+        "fAHB = 96 MHz, normal mode",
+        "37.2",
+        "37.2",
+        "41.3"
+      ],
+      [
+        "None",
+        "None",
+        "None",
+        "fAHB = 96 MHz, burst mode",
+        "21.6",
+        "21.6",
+        "24.0"
+      ],
+      [
+        "tprog_bank",
+        "tprog_bank",
+        "One 512‑Kbyte bank programming time",
+        "fAHB = 96 MHz, normal mode",
+        "4767.3",
+        "4767.3",
+        "5291.7"
+      ],
+      [
+        "None",
+        "None",
+        "None",
+        "fAHB = 96 MHz, burst mode",
+        "2764.9",
+        "2764.9",
+        "3069"
+      ],
+      [
+        "tERASE",
+        "tERASE",
+        "One 4‑Kbyte page erase time",
+        "10 k endurance cycles",
+        "11.8",
+        "11.8",
+        "13.1"
+      ],
+      [
+        "tME",
+        "tME",
+        "Mass erase time (one bank)",
+        "10 k endurance cycles",
+        "11.9",
+        "11.9",
+        "13.2"
+      ],
+      [
+        "None",
+        "None",
+        "Mass erase time (two banks)",
+        "None",
+        "23.9",
+        "23.9",
+        "26.5"
+      ],
+      [
+        "IDD(2)",
+        "IDD(2)",
+        "Average consumption from VDD",
+        "Write mode",
+        "1.4",
+        "1.4",
+        "-"
+      ],
+      [
+        "None",
+        "None",
+        "None",
+        "Erase mode",
+        "1.7",
+        "1.7",
+        "-"
+      ],
+      [
+        "None",
+        "None",
+        "Maximum current (peak)",
+        "Write mode",
+        "4.0",
+        "4.0",
+        "-"
+      ],
+      [
+        "None",
+        "None",
+        "None",
+        "Erase mode",
+        "6.4",
+        "6.4",
+        "-"
+      ]
+    ],
+    "notes": [
+      "1. Specified by design. Not tested in production.",
+      "2. Evaluated by characterization. Not tested in production."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

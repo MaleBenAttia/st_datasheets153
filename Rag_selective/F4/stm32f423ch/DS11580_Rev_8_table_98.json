@@ -1,0 +1,89 @@
+{
+  "table_id": "table_98",
+  "document": "DS11580 Rev 8 - Table 98. Synchronous non-multiplexed NOR/PSRAM read timings",
+  "rev": "Rev 8",
+  "table_number": "98",
+  "title": "Table 98. Synchronous non-multiplexed NOR/PSRAM read timings",
+  "page": 171,
+  "section": "6.3.26 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f423ch.pdf#page=171",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f423ch.pdf",
+  "text_helper": "Table 98. Synchronous non-multiplexed NOR/PSRAM read timings — section 6.3.26 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t w(CLK)",
+        "FSMC_CLK period",
+        "2T – 0.5 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t (CLKL-NExL)",
+        "FSMC_CLK low to FSMC_NEx low (x=0..2)",
+        "-",
+        "2",
+        "ns"
+      ],
+      [
+        "t d(CLKH-NExH)",
+        "FSMC_CLK high to FSMC_NEx high (x= 0…2)",
+        "KLCH 5.0+ T",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NOEL)",
+        "FSMC_CLK low to FSMC_NOE low",
+        "-",
+        "1.5",
+        "ns"
+      ],
+      [
+        "t d(CLKH-NOEH)",
+        "FSMC_CLK high to FSMC_NOE high",
+        "T - 0.5 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(DV-CLKH)",
+        "FSMC_D[15:0] valid data before FSMC_CLK high",
+        "1.5",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(CLKH-DV)",
+        "FSMC_D[15:0] valid data after FSMC_CLK high",
+        "3.5",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(NWAIT-CLKH)",
+        "FSMC_NWAIT valid before FSMC_CLK high",
+        "2.5",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. C = 30 pF. L",
+      "2. Guaranteed by characterization results. DS11580 Rev 8 171/210"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

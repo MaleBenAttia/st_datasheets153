@@ -1,0 +1,74 @@
+{
+  "table_id": "table_142",
+  "document": "DS12737 Rev 6 - Table 142. Synchronous non-multiplexed NOR/PSRAM read timings",
+  "rev": "Rev 6",
+  "table_number": "142",
+  "title": "Table 142. Synchronous non-multiplexed NOR/PSRAM read timings",
+  "page": 292,
+  "section": "1.5 Ns",
+  "section_title": "Ns",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l552cc.pdf#page=292",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l552cc.pdf",
+  "text_helper": "Table 142. Synchronous non-multiplexed NOR/PSRAM read timings — section 1.5 Ns. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "td(CLKH-NExH)",
+        "FMC_CLK high to FMC_NEx high (x= 0…2)",
+        "R*THCLK/2+1(2)",
+        "-",
+        "ns"
+      ],
+      [
+        "td(CLKL-NOEL)",
+        "FMC_CLK low to FMC_NOE low",
+        "-",
+        "2",
+        "ns"
+      ],
+      [
+        "td(CLKH-NOEH)",
+        "FMC_CLK high to FMC_NOE high",
+        "R*THCLK/2+1(2)",
+        "-",
+        "ns"
+      ],
+      [
+        "tsu(DV-CLKH)",
+        "FMC_D[15:0] valid data before FMC_CLK high",
+        "2",
+        "-",
+        "ns"
+      ],
+      [
+        "th(CLKH-DV)",
+        "FMC_D[15:0] valid data after FMC_CLK high",
+        "4",
+        "-",
+        "ns"
+      ],
+      [
+        "tsu(NWAIT- CLKH)",
+        "FMC_NWAIT valid before FMC_CLK high",
+        "1.5",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "2. Clock ratio R = (HCLK period /FMC_CLK period). 292/340 DS12737 Rev 6"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

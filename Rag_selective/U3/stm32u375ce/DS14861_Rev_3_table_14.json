@@ -1,0 +1,163 @@
+{
+  "table_id": "table_14",
+  "document": "DS14861 Rev 3 - Table 14. I3C peripheral controller/target features versus MIPI® v1.1",
+  "rev": "Rev 3",
+  "table_number": "14",
+  "title": "Table 14. I3C peripheral controller/target features versus MIPI® v1.1",
+  "page": 47,
+  "section": "3.32 Tamper and backup registers (TAMP)",
+  "section_title": "Tamper and backup registers (TAMP)",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf#page=47",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf",
+  "text_helper": "Table 14. I3C peripheral controller/target features versus MIPI® v1.1 — section 3.32 Tamper and backup registers (TAMP). Feature, MIPI® I3C / v1.1, I3C peripheral / When controller, I3C peripheral / When target, Comments.",
+  "table_content": {
+    "headers": [
+      "Feature",
+      "MIPI® I3C / v1.1",
+      "I3C peripheral / When controller",
+      "I3C peripheral / When target",
+      "Comments"
+    ],
+    "rows": [
+      [
+        "I3C SDR message",
+        "X",
+        "X",
+        "X",
+        "-"
+      ],
+      [
+        "Legacy I2C message (Fm/Fm+)",
+        "X",
+        "X",
+        "-",
+        "Mandatory when the controller and the I3C bus is mixed with (external) legacy I2C target(s)"
+      ],
+      [
+        "HDR DDR message",
+        "X",
+        "-",
+        "-",
+        "Optional in MIPI v1.1"
+      ],
+      [
+        "HDR-TSL/TSP, HDR-BT",
+        "X",
+        "-",
+        "-",
+        "Optional in MIPI v1.1"
+      ],
+      [
+        "Dynamic address assignment",
+        "X",
+        "X",
+        "X",
+        "-"
+      ],
+      [
+        "Static address",
+        "X",
+        "X",
+        "-",
+        "No (intended) support of the peripheral as a target on an I2C bus"
+      ],
+      [
+        "Grouped addressing",
+        "X",
+        "X",
+        "-",
+        "Optional in MIPI v1.1"
+      ],
+      [
+        "CCCs",
+        "X",
+        "X",
+        "X",
+        "Mandatory and some optional CCCs are supported"
+      ],
+      [
+        "Error detection and recovery",
+        "X",
+        "X",
+        "X",
+        "-"
+      ],
+      [
+        "In-band interrupt (with MDB)",
+        "X",
+        "X",
+        "X",
+        "-"
+      ],
+      [
+        "Secondary controller",
+        "X",
+        "X",
+        "X",
+        "-"
+      ],
+      [
+        "Hot-join mechanism",
+        "X",
+        "X",
+        "X",
+        "-"
+      ],
+      [
+        "Target reset",
+        "X",
+        "X",
+        "X",
+        "-"
+      ],
+      [
+        "Synchronous timing control",
+        "X",
+        "X",
+        "-",
+        "Optional in MIPI v1.1"
+      ],
+      [
+        "Asynchronous timing control 0",
+        "X",
+        "X",
+        "-",
+        "Mandatory in MIPI v1.1 when controller Optional in MIPI V1.1 when target"
+      ],
+      [
+        "Asynchronous timing control 1,2,3",
+        "X",
+        "-",
+        "-",
+        "Optional in MIPI v1.1"
+      ],
+      [
+        "Device to device tunneling",
+        "X",
+        "X",
+        "-",
+        "Optional in MIPI v1.1"
+      ],
+      [
+        "Multilane data transfer",
+        "X",
+        "-",
+        "-",
+        "Optional in MIPI v1.1"
+      ],
+      [
+        "Monitoring device early termination",
+        "X",
+        "-",
+        "-",
+        "Optional in MIPI v1.1"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

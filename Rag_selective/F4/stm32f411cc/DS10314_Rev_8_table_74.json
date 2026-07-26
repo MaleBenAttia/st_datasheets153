@@ -1,0 +1,80 @@
+{
+  "table_id": "table_74",
+  "document": "DS10314 Rev 8 - Table 74. Embedded internal reference voltage",
+  "rev": "Rev 8",
+  "table_number": "74",
+  "title": "Table 74. Embedded internal reference voltage",
+  "page": 121,
+  "section": "6.3.23 Embedded reference voltage",
+  "section_title": "Embedded reference voltage",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f411cc.pdf#page=121",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f411cc.pdf",
+  "text_helper": "Table 74. Embedded internal reference voltage — section 6.3.23 Embedded reference voltage. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V REFINT",
+        "Internal reference voltage",
+        "- 40 °C < T < + 125 °C A",
+        "1.18",
+        "1.21",
+        "1.24",
+        "V"
+      ],
+      [
+        "T (1) S_vrefint",
+        "ADC sampling time when reading the internal reference voltage",
+        "-",
+        "10",
+        "-",
+        "-",
+        "µs"
+      ],
+      [
+        "V (2) RERINT_s",
+        "Internal reference voltage spread over the temperature range",
+        "V = 3V ± 10mV DD",
+        "-",
+        "3",
+        "5",
+        "mV"
+      ],
+      [
+        "T (2) Coeff",
+        "Temperature coefficient",
+        "-",
+        "-",
+        "30",
+        "50",
+        "ppm/°C"
+      ],
+      [
+        "t (2) START",
+        "Startup time",
+        "-",
+        "-",
+        "6",
+        "10",
+        "µs"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by design - Not tested in production.",
+      "2. Shortest sampling time can be determined in the application by multiple iterations."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

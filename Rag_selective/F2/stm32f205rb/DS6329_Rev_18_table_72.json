@@ -1,0 +1,110 @@
+{
+  "table_id": "table_72",
+  "document": "DS6329 Rev 18 - Table 72. Asynchronous non-multiplexed SRAM/PSRAM/NOR read timings",
+  "rev": "Rev 18",
+  "table_number": "72",
+  "title": "Table 72. Asynchronous non-multiplexed SRAM/PSRAM/NOR read timings",
+  "page": 129,
+  "section": "6.3.25 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f205rb.pdf#page=129",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f205rb.pdf",
+  "text_helper": "Table 72. Asynchronous non-multiplexed SRAM/PSRAM/NOR read timings — section 6.3.25 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t w(NE)",
+        "FSMC_NE low time",
+        "2 T – 0.5 HCLK",
+        "2 T + 0.5 HCLK",
+        "ns"
+      ],
+      [
+        "t v(NOE_NE)",
+        "FSMC_NEx low to FSMC_NOE low",
+        "0.5",
+        "2.5",
+        "ns"
+      ],
+      [
+        "t w(NOE)",
+        "FSMC_NOE low time",
+        "2 T - 1 HCLK",
+        "2 T + 0.5 HCLK",
+        "ns"
+      ],
+      [
+        "t v(A_NE)",
+        "FSMC_NEx low to FSMC_A valid",
+        "-",
+        "4",
+        "ns"
+      ],
+      [
+        "t h(A_NOE)",
+        "Address hold time after FSMC_NOE high",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(BL_NOE)",
+        "FSMC_BL hold time after FSMC_NOE high",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(Data_NE)",
+        "Data to FSMC_NEx high setup time",
+        "KLCH 5.0 + T",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(Data_NOE)",
+        "Data to FSMC_NOEx high setup time",
+        "KLCH 5.0 + T",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(Data_NOE)",
+        "Data hold time after FSMC_NOE high",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(NADV_NE)",
+        "FSMC_NEx low to FSMC_NADV low",
+        "-",
+        "2.5",
+        "ns"
+      ],
+      [
+        "t ) w(NADV",
+        "FSMC_NADV low time",
+        "-",
+        "T – 0.5 HCLK",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. C = 30 pF. L",
+      "2. Guaranteed by characterization results, not tested in production. DS6329 Rev 18 129/181"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

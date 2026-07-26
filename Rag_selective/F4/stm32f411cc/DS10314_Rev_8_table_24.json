@@ -1,0 +1,211 @@
+{
+  "table_id": "table_24",
+  "document": "DS10314 Rev 8 - Table 24. Typical and maximum current consumption in run mode, code with data processing",
+  "rev": "Rev 8",
+  "table_number": "24",
+  "title": "Table 24. Typical and maximum current consumption in run mode, code with data processing",
+  "page": 73,
+  "section": "6.3.6 Supply current characteristics",
+  "section_title": "Supply current characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f411cc.pdf#page=73",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f411cc.pdf",
+  "text_helper": "Table 24. Typical and maximum current consumption in run mode, code with data processing — section 6.3.6 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK (MHz), Typ, +5 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "f HCLK (MHz)",
+      "Typ",
+      "Max(1) / T = A 25 °C",
+      "Max(1) / T = A 85 °C",
+      "Max(1) / T = A 105 °C",
+      "Max(1) / T = A 125 °C",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock, PLL ON(2), all peripherals enabled(3)(4)",
+        "100",
+        "29.5",
+        "31.5",
+        "32.3",
+        "33.3",
+        "34.7",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock, PLL ON(2), all peripherals enabled(3)(4)",
+        "84",
+        "25.5",
+        "27.1",
+        "27.9",
+        "28.9",
+        "30.2",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock, PLL ON(2), all peripherals enabled(3)(4)",
+        "64",
+        "18.6",
+        "19.8",
+        "20.4",
+        "21.2",
+        "22.4",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock, PLL ON(2), all peripherals enabled(3)(4)",
+        "50",
+        "15.2",
+        "16.4",
+        "16.9",
+        "17.7",
+        "18.7",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock, PLL ON(2), all peripherals enabled(3)(4)",
+        "20",
+        "7.6",
+        "8.4",
+        "8.8",
+        "9.5",
+        "10.5",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "HSI, PLL OFF(2), all peripherals enabled(3)",
+        "16",
+        "4.8",
+        "5.2",
+        "5.7",
+        "6.5",
+        "7.5",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "HSI, PLL OFF(2), all peripherals enabled(3)",
+        "1",
+        "0.9",
+        "1.3",
+        "1.6",
+        "2.4",
+        "3.4",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock, PLL ON(2) all peripherals disabled(3)",
+        "100",
+        "20.4",
+        "21.8",
+        "22.7",
+        "23.8",
+        "25.1",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock, PLL ON(2) all peripherals disabled(3)",
+        "84",
+        "18.4",
+        "19.2(5)",
+        "20.9",
+        "21.1",
+        "22.4",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock, PLL ON(2) all peripherals disabled(3)",
+        "64",
+        "13.5",
+        "14.5",
+        "15.2",
+        "15.9",
+        "17.2",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock, PLL ON(2) all peripherals disabled(3)",
+        "50",
+        "11.3",
+        "12.2",
+        "12.8",
+        "13.6",
+        "14.7",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock, PLL ON(2) all peripherals disabled(3)",
+        "20",
+        "5.6",
+        "6.4",
+        "6.7",
+        "7.4",
+        "8.5",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "HSI, PLL OFF(2), all peripherals disabled(3)",
+        "16",
+        "3.6",
+        "4.1",
+        "4.5",
+        "5.2",
+        "6.3",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "HSI, PLL OFF(2), all peripherals disabled(3)",
+        "1",
+        "0.9",
+        "1.2",
+        "1.6",
+        "2.3",
+        "3.4",
+        "mA"
+      ]
+    ],
+    "notes": [
+      "1. Evaluated by characterization - Not tested in production.",
+      "2. Refer to Table 41 and RM0383 for the possible PLL VCO setting",
+      "3. Add an additional power consumption of 1.6 mA per ADC for the analog part. In applications, this consumption occurs only while the ADC is ON (ADON bit is set in the ADC_CR2 register).",
+      "4. When the ADC is ON (ADON bit set in the ADC_CR2), add an additional power consumption of 1.6mA per ADC for the analog part.",
+      "5. Guaranteed by test in production. DS10314 Rev 8 73/151"
+    ],
+    "legend": [
+      "(ART accelerator disabled) running from flash memory - V = 3.6 V"
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "table_id": "table_16",
+  "document": "DS5319 Rev 20 - Table 16. Typical and maximum current consumptions in Stop and Standby modes",
+  "rev": "Rev 20",
+  "table_number": "16",
+  "title": "Table 16. Typical and maximum current consumptions in Stop and Standby modes",
+  "page": 44,
+  "section": "16 MHz",
+  "section_title": "MHz",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f103c8.pdf#page=44",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f103c8.pdf",
+  "text_helper": "Table 16. Typical and maximum current consumptions in Stop and Standby modes — section 16 MHz. Symbol, Parameter, Conditions, Typ(1) / V /V DD BAT = 2.0 V, Typ(1) / V /V DD BAT = 2.4 V, +4 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Typ(1) / V /V DD BAT = 2.0 V",
+      "Typ(1) / V /V DD BAT = 2.4 V",
+      "Typ(1) / V /V DD BAT = 3.3 V",
+      "Max / T = A 85 °C",
+      "Max / T = A 105 °C",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I DD",
+        "Supply current in Stop mode",
+        "Regulator in Run mode, low-speed and high-speed internal RC oscillators and high-speed oscillator OFF (no independent watchdog)",
+        "-",
+        "23.5",
+        "24",
+        "200",
+        "370",
+        "µA"
+      ],
+      [
+        "I DD",
+        "Supply current in Stop mode",
+        "Regulator in Low-power mode, low- speed and high-speed internal RC oscillators and high-speed oscillator OFF (no independent watchdog)",
+        "-",
+        "13.5",
+        "14",
+        "180",
+        "340",
+        "µA"
+      ],
+      [
+        "I DD",
+        "Supply current in Standby mode",
+        "Low-speed internal RC oscillator and independent watchdog ON",
+        "-",
+        "2.6",
+        "3.4",
+        "-",
+        "-",
+        "µA"
+      ],
+      [
+        "I DD",
+        "Supply current in Standby mode",
+        "Low-speed internal RC oscillator ON, independent watchdog OFF",
+        "-",
+        "2.4",
+        "3.2",
+        "-",
+        "-",
+        "µA"
+      ],
+      [
+        "I DD",
+        "Supply current in Standby mode",
+        "Low-speed internal RC oscillator and independent watchdog OFF, low-speed oscillator and RTC OFF",
+        "-",
+        "1.7",
+        "2",
+        "4",
+        "5",
+        "µA"
+      ],
+      [
+        "I DD_VBAT",
+        "Backup domain supply current",
+        "Low-speed oscillator and RTC ON",
+        "0.9",
+        "1.1",
+        "1.4",
+        "1.9(2)",
+        "2.2",
+        "µA"
+      ]
+    ],
+    "notes": [
+      "1. Typical values are measured at T = 25°C. A",
+      "2. Evaluated by characterization, not tested in production, unless otherwise specified."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

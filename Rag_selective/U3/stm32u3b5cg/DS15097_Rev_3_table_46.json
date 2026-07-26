@@ -1,0 +1,76 @@
+{
+  "table_id": "table_46",
+  "document": "DS15097 Rev 3 - Table 46. Current consumption during wake-up from Stop 1 mode on LDO.",
+  "rev": "Rev 3",
+  "table_number": "46",
+  "title": "Table 46. Current consumption during wake-up from Stop 1 mode on LDO.",
+  "page": 119,
+  "section": "5.3.6 Supply current characteristics",
+  "section_title": "Supply current characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u3b5cg.pdf#page=119",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u3b5cg.pdf",
+  "text_helper": "Table 46. Current consumption during wake-up from Stop 1 mode on LDO. — section 5.3.6 Supply current characteristics. Symbol, Parameter, Conditions / -, Conditions / VDD, Typ / 25°C, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions / -",
+      "Conditions / VDD",
+      "Typ / 25°C",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "QDD (wake-up from Stop 1)",
+        "Electrical charge consumed during wake-up from Stop 1 mode",
+        "Wake-up clock is MSI 48 MHz",
+        "3.0 V",
+        "12",
+        "nAs"
+      ],
+      [
+        "QDD (wake-up from Stop 1)",
+        "Electrical charge consumed during wake-up from Stop 1 mode",
+        "Wake-up clock is HSI 16 MHz",
+        "3.0 V",
+        "12",
+        "nAs"
+      ],
+      [
+        "QDD (wake-up from Stop 1)",
+        "Electrical charge consumed during wake-up from Stop 1 mode",
+        "Wake-up clock is MSI 3 MHz",
+        "3.0 V",
+        "18",
+        "nAs"
+      ],
+      [
+        "QDD (wake-up from Stop 1)",
+        "Electrical charge consumed during wake-up from Stop 1 mode",
+        "Wake-up clock is HSI 16 MHz",
+        "Wake-up clock is HSI 16 MHz",
+        "6",
+        "6"
+      ],
+      [
+        "QDD (wake-up from Stop 1)",
+        "Electrical charge consumed during wake-up from Stop 1 mode",
+        "Wake-up clock is MSI 3 MHz",
+        "Wake-up clock is MSI 3 MHz",
+        "10",
+        "10"
+      ]
+    ],
+    "notes": [
+      "1. RTC with default configuration but RTC_CALR.LPCAL = 1",
+      "2. Evaluated by characterization. Not tested in production. DS15097 - Rev 3 page 119/239",
+      "3. SRAM3 total consumption is 5× IDD(SRAM3_64kB).",
+      "4. Evaluated by characterization. Not tested in production. DS15097 - Rev 3 page 121/239"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

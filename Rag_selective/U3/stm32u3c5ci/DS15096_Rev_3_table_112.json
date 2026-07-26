@@ -1,0 +1,145 @@
+{
+  "table_id": "table_112",
+  "document": "DS15096 Rev 3 - Table 112. OCTOSPI characteristics in DTR mode (no DQS)",
+  "rev": "Rev 3",
+  "table_number": "112",
+  "title": "Table 112. OCTOSPI characteristics in DTR mode (no DQS)",
+  "page": 182,
+  "section": "5.3.28 OCTOSPI characteristics",
+  "section_title": "OCTOSPI characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u3c5ci.pdf#page=182",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u3c5ci.pdf",
+  "text_helper": "Table 112. OCTOSPI characteristics in DTR mode (no DQS) — section 5.3.28 OCTOSPI characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f(CLK)",
+        "OCTOSPI clock frequency",
+        "Fp 51 = LC 1 egnar egatloV V 6.3 ≤ XOIDDV ≤ V 17.1",
+        "-",
+        "-",
+        "48(1)",
+        "MHz"
+      ],
+      [
+        "f(CLK)",
+        "OCTOSPI clock frequency",
+        "Fp 51 = LC 2 egnar egatloV V 6.3 ≤ XOIDDV ≤ V 17.1",
+        "-",
+        "-",
+        "24(1)",
+        "MHz"
+      ],
+      [
+        "f(CLK)",
+        "OCTOSPI clock frequency",
+        "Fp 51 = LC V 23.1 ≤ 2OIDDV ≤ V 80.1",
+        "-",
+        "-",
+        "15(1)",
+        "MHz"
+      ],
+      [
+        "tw(CLKH)",
+        "OCTOSPI clock high and low time (odd division)",
+        "PRESCALER[7:0] = n (n = 2, 4, 6,..254)",
+        "(n/2) × t(CLK)/ (n+1) - 0.5",
+        "-",
+        "(n/2) × t(CLK)/ (n+1) + 0.5",
+        "(n/2) × t(CLK)/ (n+1) + 0.5"
+      ],
+      [
+        "tw(CLKL)",
+        "tw(CLKL)",
+        "tw(CLKL)",
+        "((n/2)+1) × t(CLK)/(n+1) - 0.5",
+        "-",
+        "((n/2)+1) × t(CLK)/(n+1) + 0.5",
+        "((n/2)+1) × t(CLK)/(n+1) + 0.5"
+      ],
+      [
+        "tsr(IN) tsf(IN)",
+        "Data input setup time",
+        "Voltage range 1",
+        "3.5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "tsr(IN) tsf(IN)",
+        "Data input setup time",
+        "Voltage range 2",
+        "5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "thr(IN) thf(IN)",
+        "Data input hold time",
+        "Voltage range 1",
+        "3.5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "thr(IN) thf(IN)",
+        "Data input hold time",
+        "Voltage range 2",
+        "4",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "tvr(OUT) tvf(OUT)",
+        "Data output valid time, DHQC = 0",
+        "Voltage range 1",
+        "-",
+        "10",
+        "15.5",
+        "15.5"
+      ],
+      [
+        "tvr(OUT) tvf(OUT)",
+        "Data output valid time, DHQC = 0",
+        "Voltage range 2",
+        "-",
+        "14",
+        "23",
+        "23"
+      ],
+      [
+        "tvr(OUT) tvf(OUT)",
+        "Data output valid time, DHQC = 1",
+        "Voltage range 1 All prescaler values (except 0)",
+        "-",
+        "t(CLK)/4 + 1",
+        "t(CLK)/4 + 3.5",
+        "t(CLK)/4 + 3.5"
+      ]
+    ],
+    "notes": [
+      "1. Maximum frequency values are given for a RWDS to DQ skew of maximum ±1.0 ns."
+    ],
+    "legend": [
+      "Measured values in this table apply to Octo- and Quad-SPI data modes. Delay block bypassed.",
+      "Evaluated by characterization. Not tested in production."
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

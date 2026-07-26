@@ -1,0 +1,129 @@
+{
+  "table_id": "table_20",
+  "document": "DS10086 Rev 5 - Table 20. Typical and maximum current consumption, code with data processing (ART",
+  "rev": "Rev 5",
+  "table_number": "20",
+  "title": "Table 20. Typical and maximum current consumption, code with data processing (ART",
+  "page": 65,
+  "section": "6.3.6 Supply current characteristics",
+  "section_title": "Supply current characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f401cd.pdf#page=65",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f401cd.pdf",
+  "text_helper": "Table 20. Typical and maximum current consumption, code with data processing (ART — section 6.3.6 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK (MHz), Typ / T = A 25 °C, +4 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "f HCLK (MHz)",
+      "Typ / T = A 25 °C",
+      "Max(1) / T = 25 °C A",
+      "Max(1) / T =85 °C A",
+      "Max(1) / T =105 °C A",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock, all peripherals enabled(2)(3)",
+        "84",
+        "21.8",
+        "23.1",
+        "24.1",
+        "25.3(4)",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock, all peripherals enabled(2)(3)",
+        "60",
+        "15.8",
+        "16.5",
+        "17.5",
+        "18.7",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock, all peripherals enabled(2)(3)",
+        "40",
+        "11.4",
+        "11.9",
+        "12.9",
+        "13.9",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock, all peripherals enabled(2)(3)",
+        "20",
+        "6.0",
+        "6.3",
+        "7.3",
+        "8.3",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock, all peripherals disabled(3)",
+        "84",
+        "12.7",
+        "13.5",
+        "14.5",
+        "16.3(4)",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock, all peripherals disabled(3)",
+        "60",
+        "9.2",
+        "10.5",
+        "11.5",
+        "12.8",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock, all peripherals disabled(3)",
+        "40",
+        "6.7",
+        "7.1",
+        "8.1",
+        "9.1",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock, all peripherals disabled(3)",
+        "20",
+        "3.6",
+        "3.8",
+        "4.8",
+        "5.8",
+        "mA"
+      ]
+    ],
+    "notes": [
+      "1. Evaluated by characterization, unless otherwise specified",
+      "2. When analog peripheral blocks such as ADC, HSE, LSE, HSI, or LSI are ON, an additional power consumption has to be considered.",
+      "3. When the ADC is ON (ADON bit set in the ADC_CR2 register), add an additional power consumption of 1.6 mA for the analog part.",
+      "4. Tested in production. DS10086 Rev 5 65/137"
+    ],
+    "legend": [
+      "accelerator disabled) running from SRAM - V = 1.7 V"
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

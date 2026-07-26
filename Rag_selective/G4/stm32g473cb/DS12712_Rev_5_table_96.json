@@ -1,0 +1,61 @@
+{
+  "table_id": "table_96",
+  "document": "DS12712 Rev 5 - Table 96. Asynchronous multiplexed PSRAM/NOR write-NWAIT timings",
+  "rev": "Rev 5",
+  "table_number": "96",
+  "title": "Table 96. Asynchronous multiplexed PSRAM/NOR write-NWAIT timings",
+  "page": 182,
+  "section": "5.3.27 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32g473cb.pdf#page=182",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g473cb.pdf",
+  "text_helper": "Table 96. Asynchronous multiplexed PSRAM/NOR write-NWAIT timings — section 5.3.27 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t w(NE)",
+        "FMC_NE low time",
+        "9 T - 1 HCLK",
+        "9 T + 1 HCLK",
+        "ns"
+      ],
+      [
+        "t w(NWE)",
+        "FMC_NWE low time",
+        "6 T - 1 HCLK",
+        "6 T + 0.5 HCLK",
+        "ns"
+      ],
+      [
+        "t su(NWAIT_NE)",
+        "FMC_NWAIT valid before FMC_NEx high",
+        "7 T + 17 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(NE_NWAIT)",
+        "FMC_NEx hold time after FMC_NWAIT invalid",
+        "5 T + 17 HCLK",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. CL = 30 pF.",
+      "2. Guaranteed by characterization results."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

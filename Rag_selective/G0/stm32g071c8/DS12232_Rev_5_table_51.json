@@ -1,0 +1,239 @@
+{
+  "table_id": "table_51",
+  "document": "DS12232 Rev 5 - Table 51. I/O static characteristics",
+  "rev": "Rev 5",
+  "table_number": "51",
+  "title": "Table 51. I/O static characteristics",
+  "page": 81,
+  "section": "5.3.14 I/O port characteristics",
+  "section_title": "I/O port characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32g071c8.pdf#page=81",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g071c8.pdf",
+  "text_helper": "Table 51. I/O static characteristics — section 5.3.14 I/O port characteristics. Symbol, Parameter, Conditions, Conditions, Min, +3 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V (1) IL",
+        "I/O input low level voltage",
+        "All except FT_c",
+        "1.62 V < V < 3.6 V DDIO1",
+        "-",
+        "-",
+        "0.3 x V DDIO1 (2)",
+        "V"
+      ],
+      [
+        "V (1) IL",
+        "I/O input low level voltage",
+        "All except FT_c",
+        "1.62 V < V < 3.6 V DDIO1",
+        "-",
+        "-",
+        "0.39 x V DDIO1 - 0.06 (3)",
+        "V"
+      ],
+      [
+        "V (1) IL",
+        "I/O input low level voltage",
+        "FT_c",
+        "2.7 V < V < 3.6 V DDIO1",
+        "-",
+        "-",
+        "0.3 x V DDIO1",
+        "V"
+      ],
+      [
+        "V (1) IL",
+        "I/O input low level voltage",
+        "FT_c",
+        "1.62 V < V < 2.7 V DDIO1",
+        "-",
+        "-",
+        "0.25 x V DDIO1",
+        "V"
+      ],
+      [
+        "V (1) IH",
+        "I/O input high level voltage",
+        "All except FT_c",
+        "1.62 V < V < 3.6 V DDIO1",
+        "0.7 x V (2) DDIO1",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "V (1) IH",
+        "I/O input high level voltage",
+        "All except FT_c",
+        "1.62 V < V < 3.6 V DDIO1",
+        "0.49 x V DDIO1 + 0.26(3)",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "V (1) IH",
+        "I/O input high level voltage",
+        "FT_c",
+        "1.62 V < V < 3.6 V DDIO1",
+        "0.7 x V DDIO1",
+        "-",
+        "5",
+        "V"
+      ],
+      [
+        "V (3) hys",
+        "I/O input hysteresis",
+        "TT_xx, FT_xx, RST",
+        "1.62 V < V < 3.6 V DDIO1",
+        "-",
+        "200",
+        "-",
+        "mV"
+      ],
+      [
+        "I lkg",
+        "Input leakage current(3)",
+        "FT_c",
+        "0 < V ≤ V IN DDIO1",
+        "-",
+        "-",
+        "2000",
+        "nA"
+      ],
+      [
+        "I lkg",
+        "Input leakage current(3)",
+        "FT_c",
+        "V < V ≤ 5 V DDIO1 IN",
+        "-",
+        "-",
+        "3000(4)",
+        "nA"
+      ],
+      [
+        "I lkg",
+        "Input leakage current(3)",
+        "FT_d",
+        "0 < V ≤ V IN DDIO1",
+        "-",
+        "-",
+        "4500",
+        "nA"
+      ],
+      [
+        "I lkg",
+        "Input leakage current(3)",
+        "FT_d",
+        "V < V ≤ 5.5 V DDIO1 IN",
+        "-",
+        "-",
+        "9000(4)",
+        "nA"
+      ],
+      [
+        "I lkg",
+        "Input leakage current(3)",
+        "Other FT_xx",
+        "0 < V ≤ V IN DDIO1",
+        "-",
+        "-",
+        "±70",
+        "nA"
+      ],
+      [
+        "I lkg",
+        "Input leakage current(3)",
+        "Other FT_xx",
+        "V ≤ V ≤ V + 1 V DDIO1 IN DDIO1",
+        "-",
+        "-",
+        "600(4)",
+        "nA"
+      ],
+      [
+        "I lkg",
+        "Input leakage current(3)",
+        "Other FT_xx",
+        "V +1 V < V ≤ 5.5 V DDIO1 IN",
+        "-",
+        "-",
+        "150(4)",
+        "nA"
+      ],
+      [
+        "I lkg",
+        "Input leakage current(3)",
+        "TT_a",
+        "0 < V ≤ V IN DDIO1",
+        "-",
+        "-",
+        "±150",
+        "nA"
+      ],
+      [
+        "I lkg",
+        "Input leakage current(3)",
+        "TT_a",
+        "V < V ≤ DDIO1 IN V + 0.3 V DDIO1",
+        "-",
+        "-",
+        "2000(4)",
+        "nA"
+      ],
+      [
+        "R PU",
+        "Weak pull-up equivalent resistor (5)",
+        "V = V IN SS",
+        "V = V IN SS",
+        "25",
+        "40",
+        "55",
+        "kΩ"
+      ],
+      [
+        "R PD",
+        "Weak pull-down equivalent resistor(5)",
+        "V = V IN DDIO1",
+        "V = V IN DDIO1",
+        "25",
+        "40",
+        "55",
+        "kΩ"
+      ],
+      [
+        "C IO",
+        "I/O pin capacitance",
+        "-",
+        "-",
+        "-",
+        "5",
+        "-",
+        "pF"
+      ]
+    ],
+    "notes": [
+      "1. Refer to Figure 21: I/O input characteristics.",
+      "2. Tested in production.",
+      "3. Specified by design. Not tested in production.",
+      "4. This value represents the pad leakage of the I/O itself. The total product pad leakage is provided by this formula: I = 10 µA + [number of I/Os where V is applied on the pad] ₓ I (Max).",
+      "5. Pull-up and pull-down resistors are designed with a true resistance in series with a switchable PMOS/NMOS. This PMOS/NMOS contribution to the series resistance is minimal (~10% order)."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

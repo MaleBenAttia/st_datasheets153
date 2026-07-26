@@ -1,0 +1,118 @@
+{
+  "table_id": "table_112",
+  "document": "DS14861 Rev 3 - Table 112. OCTOSPI characteristics in DTR mode (no DQS)",
+  "rev": "Rev 3",
+  "table_number": "112",
+  "title": "Table 112. OCTOSPI characteristics in DTR mode (no DQS)",
+  "page": 169,
+  "section": "5.3.28 OCTOSPI characteristics",
+  "section_title": "OCTOSPI characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf#page=169",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf",
+  "text_helper": "Table 112. OCTOSPI characteristics in DTR mode (no DQS) — section 5.3.28 OCTOSPI characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f(CLK)",
+        "OCTOSPI clock frequency",
+        "1.71 V < VDDIOX < 3.6 V Voltage range 1 CL = 15 pF",
+        "-",
+        "-",
+        "48(1)",
+        "MHz"
+      ],
+      [
+        "f(CLK)",
+        "OCTOSPI clock frequency",
+        "1.71 V < VDDIOX < 3.6 V Voltage range 2 CL = 15 pF",
+        "-",
+        "-",
+        "24(1)",
+        "MHz"
+      ],
+      [
+        "f(CLK)",
+        "OCTOSPI clock frequency",
+        "Fp 51 = LC V 23.1 ≤ 2OIDDV ≤ V 80.1",
+        "-",
+        "-",
+        "15(1)",
+        "MHz"
+      ],
+      [
+        "tww(CLKH)",
+        "OCTOSPI clock high and low time (odd division)",
+        "PRESCALER[7:0] = n (n = 2, 4, 6,..254)",
+        "(n/2) × t(CLK)/ (n+1) - 0.5",
+        "-",
+        "(n/2) × t(CLK)/ (n+1) + 0.5",
+        "(n/2) × t(CLK)/ (n+1) + 0.5"
+      ],
+      [
+        "tw(CLKL)",
+        "tw(CLKL)",
+        "tw(CLKL)",
+        "((n/2)+1) × t(CLK)/(n+1) - 0.5",
+        "-",
+        "((n/2)+1) × t(CLK)/(n+1) + 0.5",
+        "((n/2)+1) × t(CLK)/(n+1) + 0.5"
+      ],
+      [
+        "tsr(IN) tsf(IN)",
+        "Data input setup time",
+        "Voltage range 1",
+        "3",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "tsr(IN) tsf(IN)",
+        "Data input setup time",
+        "Voltage range 2",
+        "5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "thr(IN) thf(IN)",
+        "Data input hold time",
+        "Voltage range 1",
+        "3.5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "thr(IN) thf(IN)",
+        "Data input hold time",
+        "Voltage range 2",
+        "4",
+        "-",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "1. Activating DHQC is mandatory to reach this frequency."
+    ],
+    "legend": [
+      "Measured values in this table apply to Octo- and Quad-SPI data modes. Delay block bypassed.",
+      "Evaluated by characterization. Not tested in production."
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

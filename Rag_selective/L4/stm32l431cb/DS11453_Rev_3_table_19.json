@@ -1,0 +1,77 @@
+{
+  "table_id": "table_19",
+  "document": "DS11453 Rev 3 - Table 19. Voltage characteristics",
+  "rev": "Rev 3",
+  "table_number": "19",
+  "title": "Table 19. Voltage characteristics",
+  "page": 86,
+  "section": "6.2 Absolute maximum ratings",
+  "section_title": "Absolute maximum ratings",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l431cb.pdf#page=86",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l431cb.pdf",
+  "text_helper": "Table 19. Voltage characteristics — section 6.2 Absolute maximum ratings. Symbol, Ratings, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Ratings",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V - V DDX SS",
+        "External main supply voltage (including V , V , V ) DD DDA BAT",
+        "-0.3",
+        "4.0",
+        "V"
+      ],
+      [
+        "V (2) IN",
+        "Input voltage on FT_xxx pins",
+        "V -0.3 SS",
+        "min (V , V ) + 4.0(3)(4) DD DDA",
+        "V"
+      ],
+      [
+        "V (2) IN",
+        "Input voltage on TT_xx pins",
+        "V -0.3 SS",
+        "4.0",
+        "V"
+      ],
+      [
+        "V (2) IN",
+        "Input voltage on any other pins",
+        "V -0.3 SS",
+        "4.0",
+        "V"
+      ],
+      [
+        "|∆V | DDx",
+        "Variations between different V power DDX pins of the same domain",
+        "-",
+        "50",
+        "mV"
+      ],
+      [
+        "|V -V | SSx SS",
+        "Variations between all the different ground pins(5)",
+        "-",
+        "50",
+        "mV"
+      ]
+    ],
+    "notes": [
+      "2. V maximum must always be respected. Refer to Table 20: Current characteristics for the maximum allowed injected IN",
+      "3. This formula has to be applied only on the power supplies related to the IO structure described in the pin definition table.",
+      "4. To sustain a voltage higher than 4 V the internal pull-up/pull-down resistors must be disabled. 86/208 DS11453 Rev 3",
+      "5. Include VREF- pin."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

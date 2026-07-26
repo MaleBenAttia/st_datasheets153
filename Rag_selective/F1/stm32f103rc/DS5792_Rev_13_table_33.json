@@ -1,0 +1,131 @@
+{
+  "table_id": "table_33",
+  "document": "DS5792 Rev 13 - Table 33. Asynchronous multiplexed PSRAM/NOR read timings.",
+  "rev": "Rev 13",
+  "table_number": "33",
+  "title": "Table 33. Asynchronous multiplexed PSRAM/NOR read timings.",
+  "page": 69,
+  "section": "5.3.10 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f103rc.pdf#page=69",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f103rc.pdf",
+  "text_helper": "Table 33. Asynchronous multiplexed PSRAM/NOR read timings. — section 5.3.10 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t w(NE)",
+        "FSMC_NE low time",
+        "7t – 2 HCLK",
+        "7t + 2 HCLK",
+        "ns"
+      ],
+      [
+        "t v(NOE_NE)",
+        "FSMC_NEx low to FSMC_NOE low",
+        "3t – 0.5 HCLK",
+        "3t + 1.5 HCLK",
+        "ns"
+      ],
+      [
+        "t w(NOE)",
+        "FSMC_NOE low time",
+        "4t – 1 HCLK",
+        "4t + 2 HCLK",
+        "ns"
+      ],
+      [
+        "t h(NE_NOE)",
+        "FSMC_NOE high to FSMC_NE high hold time",
+        "–1",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(A_NE)",
+        "FSMC_NEx low to FSMC_A valid",
+        "-",
+        "0",
+        "ns"
+      ],
+      [
+        "t w(NADV)",
+        "FSMC_NADV low time",
+        "t –1.5 HCLK",
+        "t + 1.5 HCLK",
+        "ns"
+      ],
+      [
+        "t h(AD_NADV)",
+        "FSMC_AD (address) valid hold time after FSMC_NADV high",
+        "t HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(A_NOE)",
+        "Address hold time after FSMC_NOE high",
+        "t -2 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(BL_NOE)",
+        "FSMC_BL hold time after FSMC_NOE high",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(BL_NE)",
+        "FSMC_NEx low to FSMC_BL valid",
+        "-",
+        "0",
+        "ns"
+      ],
+      [
+        "t su(Data_NE)",
+        "Data to FSMC_NEx high setup time",
+        "2t + 24 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(Data_NOE)",
+        "Data to FSMC_NOE high setup time",
+        "2t + 25 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(Data_NE)",
+        "Data hold time after FSMC_NEx high",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(Data_NOE)",
+        "Data hold time after FSMC_NOE high",
+        "0",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. C = 15 pF. L",
+      "2. Guaranteed by characterization results. DS5792 Rev 13 69/143"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

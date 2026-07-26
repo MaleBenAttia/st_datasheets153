@@ -1,0 +1,157 @@
+{
+  "table_id": "table_51",
+  "document": "DS10315 Rev 7 - Table 51. I/O AC characteristics",
+  "rev": "Rev 7",
+  "table_number": "51",
+  "title": "Table 51. I/O AC characteristics",
+  "page": 78,
+  "section": "1.3 Tested in production",
+  "section_title": "Tested in production",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f318c8.pdf#page=78",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f318c8.pdf",
+  "text_helper": "Table 51. I/O AC characteristics — section 1.3 Tested in production. OSPEEDRy [1:0] value(1), Symbol, Parameter, Conditions, Min, +2 autres.",
+  "table_content": {
+    "headers": [
+      "OSPEEDRy [1:0] value(1)",
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "x0",
+        "f max(IO)out",
+        "Maximum frequency(2)",
+        "C = 50 pF, V = 1.65 V to 1.95 V L DD",
+        "-",
+        "1",
+        "MHz"
+      ],
+      [
+        "x0",
+        "t f(IO)out",
+        "Output high to low level fall time",
+        "C = 50 pF, V = 1.65 V to 1.95 V L DD",
+        "-",
+        "125(3)",
+        "ns"
+      ],
+      [
+        "x0",
+        "t r(IO)out",
+        "Output low to high level rise time",
+        "C = 50 pF, V = 1.65 V to 1.95 V L DD",
+        "-",
+        "125(3)",
+        "ns"
+      ],
+      [
+        "01",
+        "f max(IO)out",
+        "Maximum frequency(2)",
+        "C = 50 pF, V = 1.65 V to 1.95 V L DD",
+        "-",
+        "4(3)",
+        "MHz"
+      ],
+      [
+        "01",
+        "t f(IO)out",
+        "Output high to low level fall time",
+        "C = 50 pF, V = 1.65 V to 1.95 V L DD",
+        "-",
+        "62.5(3)",
+        "ns"
+      ],
+      [
+        "01",
+        "t r(IO)out",
+        "Output low to high level rise time",
+        "C = 50 pF, V = 1.65 V to 1.95 V L DD",
+        "-",
+        "25(3)",
+        "ns"
+      ],
+      [
+        "11",
+        "f max(IO)out",
+        "Maximum frequency(2)",
+        "C = 50 pF, V = 1.65 V to 1.95 V L DD",
+        "-",
+        "10(3)",
+        "MHz"
+      ],
+      [
+        "11",
+        "t f(IO)out",
+        "Output high to low level fall time",
+        "C = 50 pF, V = 1.65 V to 1.95 V L DD",
+        "-",
+        "25(3)",
+        "ns"
+      ],
+      [
+        "11",
+        "t r(IO)out",
+        "Output low to high level rise time",
+        "C = 50 pF, V = 1.65 V to 1.95 V L DD",
+        "-",
+        "25(3)",
+        "ns"
+      ],
+      [
+        "FM+ configuration(4)",
+        "f max(IO)out",
+        "Maximum frequency(2)",
+        "C = 50 pF, V = 1.65 V to 1.95 V L DD",
+        "-",
+        "0.5(3)(4)",
+        "MHz"
+      ],
+      [
+        "FM+ configuration(4)",
+        "t f(IO)out",
+        "Output high to low level fall time",
+        "C = 50 pF, V = 1.65 V to 1.95 V L DD",
+        "-",
+        "16(4)",
+        "ns"
+      ],
+      [
+        "FM+ configuration(4)",
+        "t r(IO)out",
+        "Output low to high level rise time",
+        "C = 50 pF, V = 1.65 V to 1.95 V L DD",
+        "-",
+        "44(3)(4)",
+        "ns"
+      ],
+      [
+        "-",
+        "t EXTIpw",
+        "Pulse width of external signals detected by the EXTI controller",
+        "-",
+        "10",
+        "-'",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. The I/O speed is configured using the OSPEEDRx[1:0] bits. Refer to the RM0366 reference manual for a description of GPIO Port configuration register.",
+      "2. The maximum frequency is defined in Figure 20.",
+      "3. Guaranteed by design.",
+      "4. The I/O speed configuration is bypassed in FM+ I/O mode. Refer to the STM32F318C8 STM32F318K8 reference manual RM0366 for a description of FM+ I/O mode configuration."
+    ],
+    "legend": [
+      "Unless otherwise specified, the parameters given are derived from tests performed under",
+      "ambient temperature and V supply voltage conditions summarized in Table 21."
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "table_id": "table_105",
+  "document": "DS14539 Rev 3 - Table 105. LPTIMx characteristics",
+  "rev": "Rev 3",
+  "table_number": "105",
+  "title": "Table 105. LPTIMx characteristics",
+  "page": 185,
+  "section": "5.3.31 Low-power timer characteristics",
+  "section_title": "Low-power timer characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h533ce.pdf#page=185",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h533ce.pdf",
+  "text_helper": "Table 105. LPTIMx characteristics — section 5.3.31 Low-power timer characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "1",
+        "-",
+        "t lptim_ker_ck"
+      ],
+      [
+        "f lptim_ker_ck",
+        "Timer kernel clock",
+        "0",
+        "250",
+        "MHz"
+      ],
+      [
+        "f EXT",
+        "Timer external clock frequency on Input1 and Input2",
+        "0",
+        "f / 3 lptim_ker_ck",
+        "MHz"
+      ],
+      [
+        "Res TIM",
+        "Timer resolution",
+        "-",
+        "16",
+        "bit"
+      ],
+      [
+        "t MAX_COUNT",
+        "Maximum possible count",
+        "-",
+        "65535",
+        "t lptim_ker_ck"
+      ]
+    ],
+    "notes": [
+      "1. TIMx is used as a general term to refer to the TIM1 to TIM17 timers.",
+      "2. Specified by design - Not tested in production.",
+      "3. The maximum timer frequency on APB1 or APB2 is up to 250 MHz, by setting the TIMPRE bit in the RCC_CFGR register, if APBx prescaler is 1 or 2 or 4, then TIMxCLK = rcc_hclk1, otherwise TIMxCLK = 4 x F or",
+      "4. Spikes with widths above t are not filtered. AF(max)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

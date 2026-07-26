@@ -1,0 +1,69 @@
+{
+  "table_id": "table_18",
+  "document": "DS9405 Rev 13 - Table 18. Limitations depending on the operating power supply range",
+  "rev": "Rev 13",
+  "table_number": "18",
+  "title": "Table 18. Limitations depending on the operating power supply range",
+  "page": 97,
+  "section": "6.3.1 General operating conditions",
+  "section_title": "General operating conditions",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f427ag.pdf#page=97",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f427ag.pdf",
+  "text_helper": "Table 18. Limitations depending on the operating power supply range — section 6.3.1 General operating conditions. Operating power supply range, ADC operation, Maximum Flash memory access frequency with no wait states (f ) Flashmax, Maximum HCLK frequency vs Flash memory wait states (1)(2), I/O op...",
+  "table_content": {
+    "headers": [
+      "Operating power supply range",
+      "ADC operation",
+      "Maximum Flash memory access frequency with no wait states (f ) Flashmax",
+      "Maximum HCLK frequency vs Flash memory wait states (1)(2)",
+      "I/O operation",
+      "Possible Flash memory operations"
+    ],
+    "rows": [
+      [
+        "V =1.7 to DD 2.1V(3)",
+        "Conversion time up to 1.2Msps",
+        "20MHz(4)",
+        "168MHz with 8 wait states and over-drive OFF",
+        "No I/O compensation",
+        "8-bit erase and program operations only"
+      ],
+      [
+        "V = 2.1 to DD 2.4V",
+        "Conversion time up to 1.2Msps",
+        "22MHz",
+        "NO evird-revo dna setats tiaw 8 htiw zHM081",
+        "No I/O compensation",
+        "16-bit erase and program operations"
+      ],
+      [
+        "V = 2.4 to DD 2.7V",
+        "Conversion time up to 2.4Msps",
+        "24MHz",
+        "NO evird-revo dna setats tiaw 7 htiw zHM081",
+        "I/O compensation works",
+        "16-bit erase and program operations"
+      ],
+      [
+        "V = 2.7 to DD 3.6V(5)",
+        "Conversion time up to 2.4Msps",
+        "30MHz",
+        "NO evird-revo dna setats tiaw 5 htiw zHM081",
+        "I/O compensation works",
+        "32-bit erase and program operations"
+      ]
+    ],
+    "notes": [
+      "1. Applicable only when the code is executed from flash memory. When the code is executed from RAM, no wait state is required.",
+      "2. Thanks to the ART accelerator and the 128-bit flash memory, the number of wait states given here does not impact the execution speed from flash memory since the ART accelerator allows to achieve a performance equivalent to 0 wait state",
+      "3. The V V minimum value of 1.7V is obtained with the use of an external power supply supervisor (refer to DD/ DDA",
+      "4. Prefetch is not available.",
+      "5. The voltage range for USB full speed PHYs can drop down to 2.7V. However, the electrical characteristics of D- and D+ pins are degraded between 2.7 and 3V."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

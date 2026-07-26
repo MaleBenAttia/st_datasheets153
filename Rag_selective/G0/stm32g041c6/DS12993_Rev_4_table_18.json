@@ -1,0 +1,69 @@
+{
+  "table_id": "table_18",
+  "document": "DS12993 Rev 4 - Table 18. Voltage characteristics",
+  "rev": "Rev 4",
+  "table_number": "18",
+  "title": "Table 18. Voltage characteristics",
+  "page": 47,
+  "section": "5.2 Absolute maximum ratings",
+  "section_title": "Absolute maximum ratings",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32g041c6.pdf#page=47",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g041c6.pdf",
+  "text_helper": "Table 18. Voltage characteristics — section 5.2 Absolute maximum ratings. Symbol, Ratings, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Ratings",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V DD",
+        "External supply voltage",
+        "-0.3",
+        "4.0",
+        "V"
+      ],
+      [
+        "V BAT",
+        "External supply voltage on VBAT pin",
+        "-0.3",
+        "4.0",
+        "V"
+      ],
+      [
+        "V REF+",
+        "External voltage on VREF+ pin",
+        "-0.3",
+        "Min(V + 0.4, 4.0) DD",
+        "V"
+      ],
+      [
+        "V (1) IN",
+        "Input voltage on FT_xx",
+        "-0.3",
+        "V + 4.0(2)(3) DD",
+        "V"
+      ],
+      [
+        "V (1) IN",
+        "Input voltage on any other pin",
+        "-0.3",
+        "4.0",
+        "V"
+      ]
+    ],
+    "notes": [
+      "1. All main power (VDD/VDDA, VBAT) and ground (VSS/VSSA) pins must always be connected to the external power supplies, in the permitted range.",
+      "2. A positive injection is induced by V > V while a negative injection is induced by V < V . I must never be IN DDIO1 IN SS INJ(PIN)",
+      "3. Positive injection is not possible on these I/Os and does not occur for input voltages lower than the specified maximum value."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

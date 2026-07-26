@@ -1,0 +1,169 @@
+{
+  "table_id": "table_45",
+  "document": "DS13195 Rev 8 - Table 45. Peripheral current consumption in Stop, Standby and V mode 104 BAT",
+  "rev": "Rev 8",
+  "table_number": "45",
+  "title": "Table 45. Peripheral current consumption in Stop, Standby and V mode 104 BAT",
+  "page": 104,
+  "section": "6.3.7 Supply current characteristics",
+  "section_title": "Supply current characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h7a3ag.pdf#page=104",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h7a3ag.pdf",
+  "text_helper": "Table 45. Peripheral current consumption in Stop, Standby and V mode 104 BAT — section 6.3.7 Supply current characteristics. Symbol, Parameter, Conditions, Typ / 3.3 V, Max (3.6 V) / TJ = 25 °C, +4 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Typ / 3.3 V",
+      "Max (3.6 V) / TJ = 25 °C",
+      "Max (3.6 V) / TJ= 85 °C",
+      "Max (3.6 V) / TJ = 105 °C",
+      "Max (3.6 V) / TJ = 130 °C",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "IDD",
+        "RTC+LSE low drive",
+        "-",
+        "0.77",
+        "1.0",
+        "1.2",
+        "1.3",
+        "2.0",
+        "µA"
+      ],
+      [
+        "IDD",
+        "RTC+LSE medium- low drive",
+        "-",
+        "0.87",
+        "1.1",
+        "1.3",
+        "1.4",
+        "2.1",
+        "µA"
+      ],
+      [
+        "IDD",
+        "RTC+LSE medium- high drive",
+        "-",
+        "1.03",
+        "1.3",
+        "1.5",
+        "1.6",
+        "2.3",
+        "µA"
+      ],
+      [
+        "IDD",
+        "RTC+LSE High drive",
+        "-",
+        "1.38",
+        "1.6",
+        "1.8",
+        "1.9",
+        "2.6",
+        "µA"
+      ],
+      [
+        "IDD",
+        "Backup SRAM",
+        "-",
+        "1.10",
+        "1.4",
+        "2.0",
+        "3.2",
+        "7.0",
+        "µA"
+      ],
+      [
+        "fHSE_ext",
+        "fHSE_ext",
+        "User external clock source frequency",
+        "External digital/analog clock",
+        "External digital/analog clock",
+        "External digital/analog clock",
+        "4",
+        "25",
+        "50"
+      ],
+      [
+        "VHSEH",
+        "VHSEH",
+        "Digital OSC_IN input high- level voltage",
+        "External digital clock",
+        "External digital clock",
+        "External digital clock",
+        "0.7 VDD",
+        "-",
+        "VDD"
+      ],
+      [
+        "VHSEL",
+        "VHSEL",
+        "Digital OSC_IN input low-level voltage",
+        "None",
+        "None",
+        "None",
+        "VSS",
+        "-",
+        "0.3 VDD"
+      ],
+      [
+        "tW(HSEH)/tW(HSEL)(2)",
+        "tW(HSEH)/tW(HSEL)(2)",
+        "Digital OSC_IN input high or low time",
+        "External digital clock",
+        "External digital clock",
+        "External digital clock",
+        "7",
+        "-",
+        "-"
+      ],
+      [
+        "VlswHSE (VHSEH-VHSEL)(3)",
+        "VlswHSE (VHSEH-VHSEL)(3)",
+        "Analog low-swing OSC_IN peak-to-peak amplitude",
+        "External analog low- swing clock",
+        "External analog low- swing clock",
+        "External analog low- swing clock",
+        "0.2",
+        "-",
+        "2/3 VDD"
+      ],
+      [
+        "DuCyHSE",
+        "DuCyHSE",
+        "Analog low-swing OSC_IN duty cycle",
+        "None",
+        "None",
+        "None",
+        "45",
+        "50",
+        "55"
+      ],
+      [
+        "tr(HSE)/tf(HSE)",
+        "tr(HSE)/tf(HSE)",
+        "Analog low-swing OSC_IN rise and fall times",
+        "External analog low- swing clock, 10% to 90%",
+        "External analog low- swing clock, 10% to 90%",
+        "External analog low- swing clock, 10% to 90%",
+        "0.05 / fHSE_ext",
+        "-",
+        "0.3 / fHSE_ext"
+      ]
+    ],
+    "notes": [
+      "2. Measures done at −40 °C in the worst conditions.",
+      "3. The wakeup times are measured from the wakeup event to the point in which the application code reads the first instruction."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

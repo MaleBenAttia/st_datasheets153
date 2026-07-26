@@ -1,0 +1,89 @@
+{
+  "table_id": "table_37",
+  "document": "DS5792 Rev 13 - Table 37. Synchronous non-multiplexed NOR/PSRAM read timings.",
+  "rev": "Rev 13",
+  "table_number": "37",
+  "title": "Table 37. Synchronous non-multiplexed NOR/PSRAM read timings.",
+  "page": 75,
+  "section": "5.3.10 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f103rc.pdf#page=75",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f103rc.pdf",
+  "text_helper": "Table 37. Synchronous non-multiplexed NOR/PSRAM read timings. — section 5.3.10 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t d(CLKL-NExL)",
+        "FSMC_CLK low to FSMC_NEx low (x = 0...2)",
+        "-",
+        "1.5",
+        "ns"
+      ],
+      [
+        "t d(CLKL-AV)",
+        "FSMC_CLK low to FSMC_Ax valid (x = 0...25)",
+        "-",
+        "0",
+        "ns"
+      ],
+      [
+        "t d(CLKL-AIV)",
+        "FSMC_CLK low to FSMC_Ax invalid (x = 0...25)",
+        "4",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NOEL)",
+        "FSMC_CLK low to FSMC_NOE low",
+        "-",
+        "1.5",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NOEH)",
+        "FSMC_CLK low to FSMC_NOE high",
+        "1.5",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(DV-CLKH)",
+        "FSMC_D[15:0] valid data before FSMC_CLK high",
+        "6.5",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(CLKH-DV)",
+        "FSMC_D[15:0] valid data after FSMC_CLK high",
+        "7",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(NWAITV-CLKH)",
+        "FSMC_NWAIT valid before FSMC_SMCLK high",
+        "7",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. C = 15 pF. L",
+      "2. Guaranteed by characterization results. DS5792 Rev 13 75/143"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

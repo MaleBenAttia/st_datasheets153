@@ -1,0 +1,83 @@
+{
+  "table_id": "table_92",
+  "document": "DS11449 Rev 8 - Table 92. IWDG min/max timeout period at 32 kHz (LSI)",
+  "rev": "Rev 8",
+  "table_number": "92",
+  "title": "Table 92. IWDG min/max timeout period at 32 kHz (LSI)",
+  "page": 181,
+  "section": "6.3.26 Timer characteristics",
+  "section_title": "Timer characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l433cb.pdf#page=181",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l433cb.pdf",
+  "text_helper": "Table 92. IWDG min/max timeout period at 32 kHz (LSI) — section 6.3.26 Timer characteristics. Prescaler divider, PR[2:0] bits, Min timeout RL[11:0]= 0x000, Max timeout RL[11:0]= 0xFFF, Unit.",
+  "table_content": {
+    "headers": [
+      "Prescaler divider",
+      "PR[2:0] bits",
+      "Min timeout RL[11:0]= 0x000",
+      "Max timeout RL[11:0]= 0xFFF",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "/4",
+        "0",
+        "0.125",
+        "512",
+        "ms"
+      ],
+      [
+        "/8",
+        "1",
+        "0.250",
+        "1024",
+        "ms"
+      ],
+      [
+        "/16",
+        "2",
+        "0.500",
+        "2048",
+        "ms"
+      ],
+      [
+        "/32",
+        "3",
+        "1.0",
+        "4096",
+        "ms"
+      ],
+      [
+        "/64",
+        "4",
+        "2.0",
+        "8192",
+        "ms"
+      ],
+      [
+        "/128",
+        "5",
+        "4.0",
+        "16384",
+        "ms"
+      ],
+      [
+        "/256",
+        "6 or 7",
+        "8.0",
+        "32768",
+        "ms"
+      ]
+    ],
+    "notes": [
+      "1. TIMx is used as a general term in which x stands for 1,2,3,4,5,6,7,8,15,16 or 17. ,",
+      "2. Spikes with widths below t are filtered. AF(min)",
+      "3. Spikes with widths above t are not filtered AF(max)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

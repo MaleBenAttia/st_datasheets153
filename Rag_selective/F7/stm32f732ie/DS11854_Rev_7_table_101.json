@@ -1,0 +1,74 @@
+{
+  "table_id": "table_101",
+  "document": "DS11854 Rev 7 - Table 101. Synchronous multiplexed NOR/PSRAM read timings",
+  "rev": "Rev 7",
+  "table_number": "101",
+  "title": "Table 101. Synchronous multiplexed NOR/PSRAM read timings",
+  "page": 183,
+  "section": "6.3.30 FMC characteristics",
+  "section_title": "FMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f732ie.pdf#page=183",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f732ie.pdf",
+  "text_helper": "Table 101. Synchronous multiplexed NOR/PSRAM read timings — section 6.3.30 FMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t d(CLKH_NExH)",
+        "FMC_CLK high to FMC_NEx high (x= 0…2)",
+        "Thclk + 0.5",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKH-NOEH)",
+        "FMC_CLK high to FMC_NOE high",
+        "Thclk - 0.5",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-ADV)",
+        "FMC_CLK low to FMC_AD[15:0] valid",
+        "-",
+        "2",
+        "ns"
+      ],
+      [
+        "t su(ADV-CLKH)",
+        "FMC_A/D[15:0] valid data before FMC_CLK high",
+        "1.5",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(CLKH-ADV)",
+        "FMC_A/D[15:0] valid data after FMC_CLK high",
+        "3",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(NWAIT-CLKH)",
+        "FMC_NWAIT valid before FMC_CLK high",
+        "3",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization results. DS11854 Rev 7 183/227"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

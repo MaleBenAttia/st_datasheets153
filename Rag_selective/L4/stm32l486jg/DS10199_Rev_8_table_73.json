@@ -1,0 +1,88 @@
+{
+  "table_id": "table_73",
+  "document": "DS10199 Rev 8 - Table 73. NRST pin characteristics",
+  "rev": "Rev 8",
+  "table_number": "73",
+  "title": "Table 73. NRST pin characteristics",
+  "page": 167,
+  "section": "6.3.15 NRST pin characteristics",
+  "section_title": "NRST pin characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l486jg.pdf#page=167",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l486jg.pdf",
+  "text_helper": "Table 73. NRST pin characteristics — section 6.3.15 NRST pin characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V IL(NRST)",
+        "NRST input low level voltage",
+        "-",
+        "-",
+        "-",
+        "0.3ₓV DDIOx",
+        "V"
+      ],
+      [
+        "V IH(NRST)",
+        "NRST input high level voltage",
+        "-",
+        "0.7ₓV DDIOx",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "V hys(NRST)",
+        "NRST Schmitt trigger voltage hysteresis",
+        "-",
+        "-",
+        "200",
+        "-",
+        "mV"
+      ],
+      [
+        "R PU",
+        "Weak pull-up equivalent resistor(2)",
+        "V = V IN SS",
+        "25",
+        "40",
+        "55",
+        "kΩ"
+      ],
+      [
+        "V F(NRST)",
+        "NRST input filtered pulse",
+        "-",
+        "-",
+        "-",
+        "70",
+        "ns"
+      ],
+      [
+        "V NF(NRST)",
+        "NRST input not filtered pulse",
+        "1.71 V ≤ V ≤ 3.6 V DD",
+        "350",
+        "-",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "2. The user must ensure that the level on the NRST pin can go below the V max level specified in IL(NRST)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

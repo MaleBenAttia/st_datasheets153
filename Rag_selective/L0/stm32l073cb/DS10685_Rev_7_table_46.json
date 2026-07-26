@@ -1,0 +1,89 @@
+{
+  "table_id": "table_46",
+  "document": "DS10685 Rev 7 - Table 46. LSE oscillator characteristics",
+  "rev": "Rev 7",
+  "table_number": "46",
+  "title": "Table 46. LSE oscillator characteristics",
+  "page": 90,
+  "section": "6.3.6 External clock source characteristics",
+  "section_title": "External clock source characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l073cb.pdf#page=90",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l073cb.pdf",
+  "text_helper": "Table 46. LSE oscillator characteristics — section 6.3.6 External clock source characteristics. Symbol, Parameter, Conditions(2), Min(2), Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions(2)",
+      "Min(2)",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f LSE",
+        "LSE oscillator frequency",
+        "Conditions(2)",
+        "-",
+        "32.768",
+        "-",
+        "kHz"
+      ],
+      [
+        "G m",
+        "Maximum critical crystal transconductance",
+        "LSEDRV[1:0]=00 lower driving capability",
+        "-",
+        "-",
+        "0.5",
+        "µA/V"
+      ],
+      [
+        "G m",
+        "Maximum critical crystal transconductance",
+        "LSEDRV[1:0]= 01 medium low driving capability",
+        "-",
+        "-",
+        "0.75",
+        "µA/V"
+      ],
+      [
+        "G m",
+        "Maximum critical crystal transconductance",
+        "LSEDRV[1:0] = 10 medium high driving capability",
+        "-",
+        "-",
+        "1.7",
+        "µA/V"
+      ],
+      [
+        "G m",
+        "Maximum critical crystal transconductance",
+        "LSEDRV[1:0]=11 higher driving capability",
+        "-",
+        "-",
+        "2.7",
+        "µA/V"
+      ],
+      [
+        "t (3) SU(LSE)",
+        "Startup time",
+        "V is stabilized DD",
+        "-",
+        "2",
+        "-",
+        "s"
+      ]
+    ],
+    "notes": [
+      "2. Refer to the note and caution paragraphs below the table, and to the application note AN2867 “Oscillator design guide for ST microcontrollers”.",
+      "3. Guaranteed by characterization results. t is the startup time measured from the moment it is enabled (by software) SU(LSE)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

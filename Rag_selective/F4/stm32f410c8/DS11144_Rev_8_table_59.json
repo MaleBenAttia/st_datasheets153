@@ -1,0 +1,113 @@
+{
+  "table_id": "table_59",
+  "document": "DS11144 Rev 8 - Table 59. TIMx characteristics",
+  "rev": "Rev 8",
+  "table_number": "59",
+  "title": "Table 59. TIMx characteristics",
+  "page": 97,
+  "section": "6.3.18 TIM timer characteristics",
+  "section_title": "TIM timer characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f410c8.pdf#page=97",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f410c8.pdf",
+  "text_helper": "Table 59. TIMx characteristics — section 6.3.18 TIM timer characteristics. Symbol, Parameter, Conditions(3), Min, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions(3)",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APBx prescaler=1 or 2 or 4, f = 100 MHz TIMxCLK",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APBx prescaler=1 or 2 or 4, f = 100 MHz TIMxCLK",
+        "11.9",
+        "-",
+        "ns"
+      ],
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APBx prescaler>4, f = TIMxCLK 100 MHz",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APBx prescaler>4, f = TIMxCLK 100 MHz",
+        "11.9",
+        "-",
+        "ns"
+      ],
+      [
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "f = 100 MHz TIMxCLK",
+        "0",
+        "f /2 TIMxCLK",
+        "MHz"
+      ],
+      [
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "f = 100 MHz TIMxCLK",
+        "0",
+        "50",
+        "MHz"
+      ],
+      [
+        "Res TIM",
+        "Timer resolution",
+        "f = 100 MHz TIMxCLK",
+        "-",
+        "16/32",
+        "bit"
+      ],
+      [
+        "t COUNTER",
+        "16-bit counter clock period when internal clock is selected",
+        "f = 100 MHz TIMxCLK",
+        "0.0119",
+        "780",
+        "µs"
+      ],
+      [
+        "t MAX_COUNT",
+        "Maximum possible count with 32-bit counter",
+        "-",
+        "-",
+        "65536 × 65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t MAX_COUNT",
+        "Maximum possible count with 32-bit counter",
+        "f = 100 MHz TIMxCLK",
+        "-",
+        "51.1",
+        "S"
+      ]
+    ],
+    "notes": [
+      "3. The maximum timer frequency on APB1 is 50 MHz and on APB2 is up to 100 MHz, by setting the TIMPRE bit in the RCC_DCKCFGR register, if APBx prescaler is 1 or 2 or 4, then TIMxCLK = HCKL, otherwise"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

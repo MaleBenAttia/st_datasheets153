@@ -1,0 +1,110 @@
+{
+  "table_id": "table_40",
+  "document": "DS5792 Rev 13 - Table 40. Switching characteristics for NAND Flash read and write cycles",
+  "rev": "Rev 13",
+  "table_number": "40",
+  "title": "Table 40. Switching characteristics for NAND Flash read and write cycles",
+  "page": 85,
+  "section": "5.3.10 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f103rc.pdf#page=85",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f103rc.pdf",
+  "text_helper": "Table 40. Switching characteristics for NAND Flash read and write cycles — section 5.3.10 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t (2) d(D-NWE)",
+        "FSMC_D[15:0] valid before FSMC_NWE high",
+        "5t + 12 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t (2) w(NOE)",
+        "FSMC_NWE low width",
+        "4t HCLK-1.5",
+        "4t HCLK+1.5",
+        "ns"
+      ],
+      [
+        "t (2) su(D-NOE)",
+        "FSMC_D[15:0] valid data before FSMC_NOE high",
+        "25",
+        "-",
+        "ns"
+      ],
+      [
+        "t (2) h(NOE-D)",
+        "FSMC_D[15:0] valid data after FSMC_NOE high",
+        "7",
+        "-",
+        "-"
+      ],
+      [
+        "t (2) w(NWE)",
+        "FSMC_NWE low width",
+        "4t HCLK-1",
+        "4t HCLK+1",
+        "ns"
+      ],
+      [
+        "t (2) v(NWE-D)",
+        "FSMC_NWE low to FSMC_D[15:0] valid",
+        "-",
+        "0",
+        "ns"
+      ],
+      [
+        "t (2) h(NWE-D)",
+        "FSMC_NWE high to FSMC_D[15:0] invalid",
+        "2t + 4 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t (3) d(ALE-NWE)",
+        "FSMC_ALE valid before FSMC_NWE low",
+        "-",
+        "3t + 1.5 HCLK",
+        "ns"
+      ],
+      [
+        "t (3) h(NWE-ALE)",
+        "FSMC_NWE high to FSMC_ALE invalid",
+        "3t + 4.5 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t (3) d(ALE-NOE)",
+        "FSMC_ALE valid before FSMC_NOE low",
+        "-",
+        "3t + 2 HCLK",
+        "ns"
+      ],
+      [
+        "t (3) h(NOE-ALE)",
+        "FSMC_NWE high to FSMC_ALE invalid",
+        "3t + 4.5 HCLK",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "2. Guaranteed by characterization results.",
+      "3. Guaranteed by design. DS5792 Rev 13 85/143"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

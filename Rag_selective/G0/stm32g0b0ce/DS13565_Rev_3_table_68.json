@@ -1,0 +1,146 @@
+{
+  "table_id": "table_68",
+  "document": "DS13565 Rev 3 - Table 68. I2S characteristics",
+  "rev": "Rev 3",
+  "table_number": "68",
+  "title": "Table 68. I2S characteristics",
+  "page": 86,
+  "section": "5.3.21 Characteristics of communication interfaces",
+  "section_title": "Characteristics of communication interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32g0b0ce.pdf#page=86",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g0b0ce.pdf",
+  "text_helper": "Table 68. I2S characteristics — section 5.3.21 Characteristics of communication interfaces. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f MCK",
+        "I2S main clock output",
+        "f = 256 x Fs; (Fs = audio sampling MCK frequency) Fs = 8 kHz; Fs = 192 kHz; min max",
+        "2.048",
+        "49.152",
+        "MHz"
+      ],
+      [
+        "f CK",
+        "I2S clock frequency",
+        "Master data",
+        "-",
+        "64xFs",
+        "MHz"
+      ],
+      [
+        "f CK",
+        "I2S clock frequency",
+        "Slave data",
+        "-",
+        "64xFs",
+        "MHz"
+      ],
+      [
+        "D CK",
+        "I2S clock frequency duty cycle",
+        "Slave receiver",
+        "30",
+        "70",
+        "%"
+      ],
+      [
+        "t v(WS)",
+        "WS valid time",
+        "Master mode",
+        "-",
+        "8",
+        "ns"
+      ],
+      [
+        "t h(WS)",
+        "WS hold time",
+        "Master mode",
+        "2",
+        "-",
+        "-"
+      ],
+      [
+        "t su(WS)",
+        "WS setup time",
+        "Slave mode",
+        "4",
+        "-",
+        "-"
+      ],
+      [
+        "t h(WS)",
+        "WS hold time",
+        "Slave mode",
+        "2",
+        "-",
+        "-"
+      ],
+      [
+        "t su(SD_MR)",
+        "Data input setup time",
+        "Master receiver",
+        "4",
+        "-",
+        "-"
+      ],
+      [
+        "t su(SD_SR)",
+        "t su(SD_SR)",
+        "Slave receiver",
+        "5",
+        "-",
+        "-"
+      ],
+      [
+        "t h(SD_MR)",
+        "Data input hold time",
+        "Master receiver",
+        "4.5",
+        "-",
+        "-"
+      ],
+      [
+        "t h(SD_SR)",
+        "t h(SD_SR)",
+        "Slave receiver",
+        "2",
+        "-",
+        "-"
+      ],
+      [
+        "t v(SD_ST)",
+        "Data output valid time - slave transmitter",
+        "after enable edge; 2.7 < V < 3.6V DD",
+        "-",
+        "16",
+        "16"
+      ],
+      [
+        "t v(SD_ST)",
+        "Data output valid time - slave transmitter",
+        "after enable edge; V (min) < V < 3.6V DD DD",
+        "after enable edge; V (min) < V < 3.6V DD DD",
+        "23",
+        "23"
+      ]
+    ],
+    "notes": [
+      "1. Based on characterization results, not tested in production. Figure 25. I2S slave timing diagram (Philips protocol)",
+      "2. LSB transmit/receive of the previously transmitted byte. No LSB transmit/receive is sent before the first byte."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

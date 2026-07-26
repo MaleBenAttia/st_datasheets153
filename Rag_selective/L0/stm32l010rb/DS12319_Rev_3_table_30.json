@@ -1,0 +1,84 @@
+{
+  "table_id": "table_30",
+  "document": "DS12319 Rev 3 - Table 30. Peripheral current consumption in Stop and Standby mode",
+  "rev": "Rev 3",
+  "table_number": "30",
+  "title": "Table 30. Peripheral current consumption in Stop and Standby mode",
+  "page": 54,
+  "section": "6.3.4 Supply current characteristics",
+  "section_title": "Supply current characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l010rb.pdf#page=54",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l010rb.pdf",
+  "text_helper": "Table 30. Peripheral current consumption in Stop and Standby mode — section 6.3.4 Supply current characteristics. Symbol, Peripheral, Typical consumption, T = 25 °C / V =1.8V DD, Typical consumption, T = 25 °C / A / V =3.0V DD, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Peripheral",
+      "Typical consumption, T = 25 °C / V =1.8V DD",
+      "Typical consumption, T = 25 °C / A / V =3.0V DD",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I DD(BOR)",
+        "-",
+        "0.7",
+        "1.2",
+        "µA"
+      ],
+      [
+        "I REFINT",
+        "-",
+        "1.25",
+        "1.7",
+        "µA"
+      ],
+      [
+        "-",
+        "LSE low drive(1)",
+        "0.11",
+        "0.16",
+        "µA"
+      ],
+      [
+        "-",
+        "LPTIM1(2), input 100Hz",
+        "0.01",
+        "0.02",
+        "µA"
+      ],
+      [
+        "-",
+        "LPTIM1, input 1MHz",
+        "11",
+        "12",
+        "µA"
+      ],
+      [
+        "-",
+        "LPUART1",
+        "0.025",
+        "0.5",
+        "µA"
+      ],
+      [
+        "-",
+        "RTC",
+        "0.16",
+        "0.3",
+        "µA"
+      ]
+    ],
+    "notes": [
+      "1. LSE low drive consumption is the difference between an external clock on OSC32_IN and a quartz between OSC32_IN and OSC32_OUT.",
+      "2. LPTIM peripheral cannot operate in Standby mode."
+    ],
+    "legend": [
+      "Typical consumption, T = 25°C"
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "table_id": "table_110",
+  "document": "DS15168 Rev 1 - Table 110. I3C push-pull measured timings",
+  "rev": "Rev 1",
+  "table_number": "110",
+  "title": "Table 110. I3C push-pull measured timings",
+  "page": 189,
+  "section": "5.3.32 Communication interfaces",
+  "section_title": "Communication interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h543ce.pdf#page=189",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h543ce.pdf",
+  "text_helper": "Table 110. I3C push-pull measured timings — section 5.3.32 Communication interfaces. Symbol, Symbol, Parameter, Conditions, Min, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t SU_OD",
+        "t SU_OD",
+        "SDA data setup time during open drain mode",
+        "Controller 1.71 V < V < 3.6 V DD",
+        "18(1)",
+        "ns"
+      ],
+      [
+        "t SU_OD",
+        "t SU_OD",
+        "SDA data setup time during open drain mode",
+        "Controller 1.08 V < V < 1.32 V DDIO2",
+        "24(1)",
+        "ns"
+      ],
+      [
+        "t SCO",
+        "t SCO",
+        "Clock in to data out for target",
+        "Target 1.71 V < V < 3.6 V DD",
+        "9",
+        "ns"
+      ],
+      [
+        "t SCO",
+        "t SCO",
+        "Clock in to data out for target",
+        "Target 1.2 V < V < 1.32 V DDIO2",
+        "14(1)",
+        "ns"
+      ],
+      [
+        "t SCO",
+        "t SCO",
+        "Clock in to data out for target",
+        "Target 1.08 V < V < 1.2 V DDIO2",
+        "16.5",
+        "ns"
+      ],
+      [
+        "f SCK 1/t SCK",
+        "Master receiver mode 1.71 V < V < 2.7 V DD",
+        "-",
+        "-",
+        "110/3(2)/88(3)",
+        "110/3(2)/88(3)"
+      ],
+      [
+        "f SCK 1/t SCK",
+        "Master receiver mode 1.08 V < V < 1.32 V DDIO2",
+        "-",
+        "-",
+        "44",
+        "44"
+      ],
+      [
+        "f SCK 1/t SCK",
+        "Master receiver mode 1.08 V < V < 1.32 V DDIO2",
+        "Master transmitter mode 2.7 V < V < 3.6 V DD",
+        "Master transmitter mode 2.7 V < V < 3.6 V DD",
+        "125/3(2)/100(3)",
+        "125/3(2)/100(3)"
+      ],
+      [
+        "f SCK 1/t SCK",
+        "Master transmitter mode 1.71 V < V < 2.7 V DD",
+        "-",
+        "-",
+        "120/3(2)/96(3)",
+        "120/3(2)/96(3)"
+      ],
+      [
+        "f SCK 1/t SCK",
+        "Master transmitter mode 1.71 V < V < 2.7 V DD",
+        "Master transmitter mode 1.08 V < V < 1.32 V DDIO2",
+        "Master transmitter mode 1.08 V < V < 1.32 V DDIO2",
+        "44",
+        "44"
+      ],
+      [
+        "f SCK 1/t SCK",
+        "Slave receiver mode 1.08 V < V < 3.6 V DD",
+        "-",
+        "-",
+        "125",
+        "125"
+      ],
+      [
+        "f SCK 1/t SCK",
+        "Slave transmitter mode 1.08 V < V < 3.6 V DD",
+        "-",
+        "-",
+        "43/6(4)",
+        "43/6(4)"
+      ],
+      [
+        "f SCK 1/t SCK",
+        "Slave transmitter mode 1.71 V < V < 2.7 V DD",
+        "-",
+        "-",
+        "41/6(4)",
+        "41/6(4)"
+      ],
+      [
+        "f SCK 1/t SCK",
+        "Slave transmitter mode 1.08 V < V < 1.32 V DDIO2",
+        "-",
+        "-",
+        "23",
+        "23"
+      ],
+      [
+        "t su(SI)",
+        "Slave mode",
+        "2",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t h(SI)",
+        "Slave mode",
+        "1.5",
+        "-",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "1. SDA data setup time in open-drain mode must be at least 3 ns, as required by the MIPI specification.",
+      "2. When using PB13.",
+      "3. Maximum speed for LQFP100.",
+      "4. When using PB14."
+    ],
+    "legend": [
+      "duration in the I3C_TIMINGR0 register. For t this can be mitigated by enabling and",
+      "adjusting the clock stall time both on the address ACK phase and on the data read Tbit",
+      "phase in the I3C_TIMINGR2 register. This can also be mitigated by increasing the SCL low",
+      "duration in the I3C_TIMINGR0 register. For further details, refer to AN5879."
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

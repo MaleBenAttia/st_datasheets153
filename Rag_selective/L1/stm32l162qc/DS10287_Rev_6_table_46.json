@@ -1,0 +1,161 @@
+{
+  "table_id": "table_46",
+  "document": "DS10287 Rev 6 - Table 46. TIMx characteristics",
+  "rev": "Rev 6",
+  "table_number": "46",
+  "title": "Table 46. TIMx characteristics",
+  "page": 92,
+  "section": "6.3.15 TIM timer characteristics",
+  "section_title": "TIM timer characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l162qc.pdf#page=92",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l162qc.pdf",
+  "text_helper": "Table 46. TIMx characteristics — section 6.3.15 TIM timer characteristics. Symbol, Symbol, Parameter, Conditions, Min, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t res(TIM)",
+        "t res(TIM)",
+        "Timer resolution time",
+        "-",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "t res(TIM)",
+        "t res(TIM)",
+        "Timer resolution time",
+        "f = 32 MHz TIMxCLK",
+        "31.25",
+        "-",
+        "ns"
+      ],
+      [
+        "f EXT",
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "-",
+        "0",
+        "f /2 TIMxCLK",
+        "MHz"
+      ],
+      [
+        "f EXT",
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "f = 32 MHz TIMxCLK",
+        "0",
+        "16",
+        "MHz"
+      ],
+      [
+        "Res TIM",
+        "Res TIM",
+        "Timer resolution",
+        "-",
+        "-",
+        "16",
+        "bit"
+      ],
+      [
+        "t COUNTER",
+        "t COUNTER",
+        "16-bit counter clock period when internal clock is selected (timer's prescaler disabled)",
+        "-",
+        "1",
+        "65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t COUNTER",
+        "t COUNTER",
+        "16-bit counter clock period when internal clock is selected (timer's prescaler disabled)",
+        "f = 32 MHz TIMxCLK",
+        "0.0312",
+        "2048",
+        "µs"
+      ],
+      [
+        "t MAX_COUNT",
+        "t MAX_COUNT",
+        "Maximum possible count",
+        "-",
+        "-",
+        "65536 × 65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t MAX_COUNT",
+        "t MAX_COUNT",
+        "Maximum possible count",
+        "f = 32 MHz TIMxCLK",
+        "-",
+        "134.2",
+        "s"
+      ],
+      [
+        "t w(SCLH)",
+        "SCL clock high time",
+        "4.0",
+        "-",
+        "0.6",
+        "-",
+        "-"
+      ],
+      [
+        "t h(SDA)",
+        "SDA data hold time",
+        "-",
+        "3450(3)",
+        "-",
+        "900(3)",
+        "900(3)"
+      ],
+      [
+        "t r(SDA) t r(SCL)",
+        "SDA and SCL rise time",
+        "-",
+        "1000",
+        "-",
+        "300",
+        "300"
+      ],
+      [
+        "t f(SDA) t f(SCL)",
+        "SDA and SCL fall time",
+        "-",
+        "300",
+        "-",
+        "300",
+        "300"
+      ],
+      [
+        "t su(STA)",
+        "Repeated Start condition setup time",
+        "4.7",
+        "-",
+        "0.6",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "3. The maximum Data hold time has only to be met if the interface does not stretch the low period of SCL signal.",
+      "4. The minimum width of the spikes filtered by the analog filter is above t . SP(max)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

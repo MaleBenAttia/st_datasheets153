@@ -1,0 +1,161 @@
+{
+  "table_id": "table_40",
+  "document": "DS5319 Rev 20 - Table 40. TIMx characteristics",
+  "rev": "Rev 20",
+  "table_number": "40",
+  "title": "Table 40. TIMx characteristics",
+  "page": 67,
+  "section": "5.3.15 TIM timer characteristics",
+  "section_title": "TIM timer characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f103c8.pdf#page=67",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f103c8.pdf",
+  "text_helper": "Table 40. TIMx characteristics — section 5.3.15 TIM timer characteristics. Symbol, Symbol, Parameter, Conditions, Min, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t res(TIM)",
+        "t res(TIM)",
+        "Timer resolution time",
+        "-",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "t res(TIM)",
+        "t res(TIM)",
+        "Timer resolution time",
+        "f = 72 MHz TIMxCLK",
+        "13.9",
+        "-",
+        "ns"
+      ],
+      [
+        "f EXT",
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "-",
+        "0",
+        "f /2 TIMxCLK",
+        "MHz"
+      ],
+      [
+        "f EXT",
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "f = 72 MHz TIMxCLK",
+        "0",
+        "36",
+        "MHz"
+      ],
+      [
+        "Res TIM",
+        "Res TIM",
+        "Timer resolution",
+        "-",
+        "-",
+        "16",
+        "bit"
+      ],
+      [
+        "t COUNTER",
+        "t COUNTER",
+        "16-bit counter clock period when internal clock is selected",
+        "-",
+        "1",
+        "65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t COUNTER",
+        "t COUNTER",
+        "16-bit counter clock period when internal clock is selected",
+        "f = 72 MHz TIMxCLK",
+        "0.0139",
+        "910",
+        "µs"
+      ],
+      [
+        "t MAX_COUNT",
+        "t MAX_COUNT",
+        "Maximum possible count",
+        "-",
+        "-",
+        "65536 × 65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t MAX_COUNT",
+        "t MAX_COUNT",
+        "Maximum possible count",
+        "f = 72 MHz TIMxCLK",
+        "-",
+        "59.6",
+        "s"
+      ],
+      [
+        "t w(SCLH)",
+        "SCL clock high time",
+        "4.0",
+        "-",
+        "0.6",
+        "0.6",
+        "0.6"
+      ],
+      [
+        "t h(SDA)",
+        "SDA data hold time",
+        "-",
+        "3450(3)",
+        "-",
+        "900(3)",
+        "900(3)"
+      ],
+      [
+        "t r(SDA) t r(SCL)",
+        "SDA and SCL rise time",
+        "-",
+        "1000",
+        "-",
+        "300",
+        "300"
+      ],
+      [
+        "t f(SDA) t f(SCL)",
+        "SDA and SCL fall time",
+        "-",
+        "300",
+        "-",
+        "300",
+        "300"
+      ],
+      [
+        "t su(STA)",
+        "Repeated Start condition setup time",
+        "4.7",
+        "-",
+        "0.6",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "3. The user must ensure that the level on the NRST pin can go below the V max level specified in IL(NRST)",
+      "4. The minimum width of the spikes filtered by the analog filter is above t (max). SP"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

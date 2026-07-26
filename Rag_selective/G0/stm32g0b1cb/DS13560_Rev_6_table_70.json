@@ -1,0 +1,92 @@
+{
+  "table_id": "table_70",
+  "document": "DS13560 Rev 6 - Table 70. TS characteristics",
+  "rev": "Rev 6",
+  "table_number": "70",
+  "title": "Table 70. TS characteristics",
+  "page": 113,
+  "section": "5.3.22 Temperature sensor characteristics",
+  "section_title": "Temperature sensor characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32g0b1cb.pdf#page=113",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g0b1cb.pdf",
+  "text_helper": "Table 70. TS characteristics — section 5.3.22 Temperature sensor characteristics. Symbol, Parameter, Min, Typ, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "T (1) L",
+        "V linearity with temperature TS",
+        "-",
+        "±1",
+        "±2",
+        "°C"
+      ],
+      [
+        "Avg_Slope(2)",
+        "Average slope",
+        "2.3",
+        "2.5",
+        "2.7",
+        "mV/°C"
+      ],
+      [
+        "V 30",
+        "Voltage at 30°C (±5 °C)(3)",
+        "0.742",
+        "0.76",
+        "0.785",
+        "V"
+      ],
+      [
+        "t (1) START(TS_BUF)",
+        "Sensor Buffer Start-up time in continuous mode(4)",
+        "-",
+        "8",
+        "15",
+        "µs"
+      ],
+      [
+        "t (1) START",
+        "Start-up time when entering in continuous mode(4)",
+        "-",
+        "70",
+        "120",
+        "µs"
+      ],
+      [
+        "t (1) S_temp",
+        "ADC sampling time when reading the temperature",
+        "5",
+        "-",
+        "-",
+        "µs"
+      ],
+      [
+        "I (1) DD(TS)",
+        "Temperature sensor consumption from V , when DD selected by ADC",
+        "-",
+        "4.7",
+        "7",
+        "µA"
+      ]
+    ],
+    "notes": [
+      "1. Specified by design. Not tested in production.",
+      "2. Refer to Table 27: Embedded internal voltage reference.",
+      "3. Measured at V = 3.0 V ±10 mV. The V ADC conversion result is stored in the TS_CAL1 byte. DDA 30",
+      "4. Continuous mode means Run/Sleep modes, or temperature sensor enable in Low-power run/Low-power sleep modes."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

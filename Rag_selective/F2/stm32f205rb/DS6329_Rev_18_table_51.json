@@ -1,0 +1,123 @@
+{
+  "table_id": "table_51",
+  "document": "DS6329 Rev 18 - Table 51. Characteristics of TIMx connected to the APB2 domain",
+  "rev": "Rev 18",
+  "table_number": "51",
+  "title": "Table 51. Characteristics of TIMx connected to the APB2 domain",
+  "page": 108,
+  "section": "6.3.18 TIM timer characteristics",
+  "section_title": "TIM timer characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f205rb.pdf#page=108",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f205rb.pdf",
+  "text_helper": "Table 51. Characteristics of TIMx connected to the APB2 domain — section 6.3.18 TIM timer characteristics. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APB2 prescaler distinct from 1, f = TIMxCLK 120 MHz",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APB2 prescaler distinct from 1, f = TIMxCLK 120 MHz",
+        "8.3",
+        "-",
+        "ns"
+      ],
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APB2 prescaler = 1, f = 60 MHz TIMxCLK",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APB2 prescaler = 1, f = 60 MHz TIMxCLK",
+        "16.7",
+        "-",
+        "ns"
+      ],
+      [
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "f = 120 MHz TIMxCLK APB2 = 60 MHz",
+        "0",
+        "f /2 TIMxCLK",
+        "MHz"
+      ],
+      [
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "f = 120 MHz TIMxCLK APB2 = 60 MHz",
+        "0",
+        "60",
+        "60"
+      ],
+      [
+        "Res TIM",
+        "Timer resolution",
+        "Timer resolution",
+        "-",
+        "16",
+        "bit"
+      ],
+      [
+        "t COUNTER",
+        "16-bit counter clock period when internal clock is selected",
+        "16-bit counter clock period when internal clock is selected",
+        "1",
+        "65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t COUNTER",
+        "16-bit counter clock period when internal clock is selected",
+        "16-bit counter clock period when internal clock is selected",
+        "0.0083",
+        "546",
+        "µs"
+      ],
+      [
+        "t MAX_COUNT",
+        "Maximum possible count",
+        "Maximum possible count",
+        "-",
+        "65536 × 65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t MAX_COUNT",
+        "Maximum possible count",
+        "Maximum possible count",
+        "-",
+        "35.79",
+        "s"
+      ]
+    ],
+    "notes": [
+      "1. TIMx is used as a general term to refer to the TIM2, TIM3, TIM4, TIM5, TIM6, TIM7, and TIM12 timers.",
+      "2. R = external pull-up resistor. P",
+      "3. V is the I2C bus power supply. DD_I2C"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

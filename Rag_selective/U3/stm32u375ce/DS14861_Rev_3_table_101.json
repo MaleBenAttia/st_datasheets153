@@ -1,0 +1,224 @@
+{
+  "table_id": "table_101",
+  "document": "DS14861 Rev 3 - Table 101. V charging characteristics",
+  "rev": "Rev 3",
+  "table_number": "101",
+  "title": "Table 101. V charging characteristics",
+  "page": 156,
+  "section": "5.3.21 V monitoring characteristics",
+  "section_title": "V monitoring characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf#page=156",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf",
+  "text_helper": "Table 101. V charging characteristics — section 5.3.21 V monitoring characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "RBC",
+        "Battery charging resistor",
+        "VBRS = 0",
+        "-",
+        "5",
+        "-",
+        "kΩ"
+      ],
+      [
+        "RBC",
+        "Battery charging resistor",
+        "VBRS = 1",
+        "-",
+        "1.5",
+        "-",
+        "kΩ"
+      ],
+      [
+        "VREF+",
+        "Positive reference voltage",
+        "-",
+        "1.6",
+        "-",
+        "VDDA",
+        "VDDA"
+      ],
+      [
+        "VREF-",
+        "Negative reference voltage",
+        "-",
+        "-",
+        "VSSA",
+        "-",
+        "-"
+      ],
+      [
+        "RL",
+        "Resistive load",
+        "connected to VDDA",
+        "25",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "RO",
+        "Output impedance",
+        "DAC output buffer OFF",
+        "10",
+        "13",
+        "16",
+        "16"
+      ],
+      [
+        "RBON",
+        "Output impedance sample and hold mode, output buffer ON",
+        "VDDA = 2.7 V",
+        "-",
+        "-",
+        "1.5",
+        "1.5"
+      ],
+      [
+        "RBON",
+        "Output impedance sample and hold mode, output buffer ON",
+        "VDDA = 2.0 V",
+        "-",
+        "-",
+        "2.5",
+        "2.5"
+      ],
+      [
+        "RBOFF",
+        "Output impedance sample and hold mode, output buffer OFF",
+        "VDDA = 2.7 V",
+        "-",
+        "-",
+        "16.5",
+        "16.5"
+      ],
+      [
+        "RBOFF",
+        "Output impedance sample and hold mode, output buffer OFF",
+        "VDDA = 2.0 V",
+        "-",
+        "-",
+        "17.5",
+        "17.5"
+      ],
+      [
+        "CSH",
+        "CSH",
+        "Sample and hold mode",
+        "-",
+        "0.1",
+        "1",
+        "µF"
+      ],
+      [
+        "VDAC_OUT",
+        "Voltage on DAC_OUT output",
+        "DAC output buffer OFF",
+        "0",
+        "-",
+        "VREF+",
+        "VREF+"
+      ],
+      [
+        "tSETTLING",
+        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ± 0.5 LSB, ± 1 LSB, ± 2 LSB, ± 4 LSB, or ± 8 LSB)",
+        "± 1 LSB",
+        "-",
+        "1.90",
+        "3",
+        "3"
+      ],
+      [
+        "tSETTLING",
+        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ± 0.5 LSB, ± 1 LSB, ± 2 LSB, ± 4 LSB, or ± 8 LSB)",
+        "± 2 LSB",
+        "-",
+        "1.85",
+        "2.85",
+        "2.85"
+      ],
+      [
+        "tSETTLING",
+        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ± 0.5 LSB, ± 1 LSB, ± 2 LSB, ± 4 LSB, or ± 8 LSB)",
+        "± 4 LSB",
+        "-",
+        "1.80",
+        "2.8",
+        "2.8"
+      ],
+      [
+        "tSETTLING",
+        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ± 0.5 LSB, ± 1 LSB, ± 2 LSB, ± 4 LSB, or ± 8 LSB)",
+        "± 8 LSB",
+        "-",
+        "1.75",
+        "2.65",
+        "2.65"
+      ],
+      [
+        "tSETTLING",
+        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ± 0.5 LSB, ± 1 LSB, ± 2 LSB, ± 4 LSB, or ± 8 LSB)",
+        "Normal mode DAC output buffer OFF, ± 1 LSB, CL = 10 pF",
+        "-",
+        "1.7",
+        "3",
+        "3"
+      ],
+      [
+        "tWAKEUP(1)",
+        "Wake-up time from off state (setting the ENx bit in the DAC control register) until the final value ± 1 LSB",
+        "Normal mode DAC output buffer ON CL ≤ 50 pF, RL = 5 kΩ",
+        "-",
+        "4.2",
+        "7.5",
+        "7.5"
+      ],
+      [
+        "tWAKEUP(1)",
+        "Wake-up time from off state (setting the ENx bit in the DAC control register) until the final value ± 1 LSB",
+        "Normal mode DAC output buffer OFF, CL ≤ 10 pF",
+        "-",
+        "2",
+        "5",
+        "5"
+      ],
+      [
+        "tSAMP",
+        "Sampling time in sample and hold mode, CSH = 100 nF (code transition between the lowest input code and the highest input code when DACOUT reaches the final value ± 1 LSB)",
+        "DAC output buffer OFF, CSH = 100 nF",
+        "-",
+        "10.5",
+        "15",
+        "15"
+      ],
+      [
+        "Voffset",
+        "Middle code offset for 1 trim code step",
+        "VREF+ = 1.6 V",
+        "-",
+        "680",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "1. Evaluated by characterization. Not tested in production.",
+      "2. Measured at VREF+ = VDDA = 3.0 V ± 10 mV. The V30 A/D conversion result is stored in the TS_CAL1 byte. Refer to Table 10. Temperature sensor calibration values."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

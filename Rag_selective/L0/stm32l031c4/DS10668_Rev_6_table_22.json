@@ -1,0 +1,40 @@
+{
+  "table_id": "table_22",
+  "document": "DS10668 Rev 6 - Table 22. Embedded internal reference voltage calibration values",
+  "rev": "Rev 6",
+  "table_number": "22",
+  "title": "Table 22. Embedded internal reference voltage calibration values",
+  "page": 55,
+  "section": "6.3.3 Embedded internal reference voltage",
+  "section_title": "Embedded internal reference voltage",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l031c4.pdf#page=55",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l031c4.pdf",
+  "text_helper": "Table 22. Embedded internal reference voltage calibration values — section 6.3.3 Embedded internal reference voltage. Calibration value name, Description, Memory address.",
+  "table_content": {
+    "headers": [
+      "Calibration value name",
+      "Description",
+      "Memory address"
+    ],
+    "rows": [
+      [
+        "VREFINT_CAL",
+        "Raw data acquired at temperature of 25 °C, V = 3V DDA",
+        "0x1FF8 0078 - 0x1FF8 0079"
+      ]
+    ],
+    "notes": [
+      "1. Refer to Table35: Peripheral current consumption in Stop and Standby mode for the value of the internal reference current consumption (I ).",
+      "2. Guaranteed by test in production.",
+      "3. The internal V value is individually measured in production and stored in dedicated EEPROM bytes. REF",
+      "4. Guaranteed by design.",
+      "5. Shortest sampling time can be determined in the application by multiple iterations.",
+      "6. To guarantee less than 1% VREF_OUT deviation. DS10668 Rev 6 55/126"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

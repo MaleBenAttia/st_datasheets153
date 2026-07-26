@@ -1,0 +1,60 @@
+{
+  "table_id": "table_137",
+  "document": "DS12737 Rev 6 - Table 137. Asynchronous multiplexed PSRAM/NOR read-NWAIT timings",
+  "rev": "Rev 6",
+  "table_number": "137",
+  "title": "Table 137. Asynchronous multiplexed PSRAM/NOR read-NWAIT timings",
+  "page": 284,
+  "section": "1.5 Ns",
+  "section_title": "Ns",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l552cc.pdf#page=284",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l552cc.pdf",
+  "text_helper": "Table 137. Asynchronous multiplexed PSRAM/NOR read-NWAIT timings — section 1.5 Ns. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "tw(NE)",
+        "FMC_NE low time",
+        "8THCLK-0.5",
+        "9THCLK+1",
+        "Ns"
+      ],
+      [
+        "tw(NOE)",
+        "FMC_NOE low time",
+        "5THCLK -0.5",
+        "6THCLK +1",
+        "Ns"
+      ],
+      [
+        "tsu(NWAIT_NE)",
+        "FMC_NWAIT valid before FMC_NEx high",
+        "5THCLK+12",
+        "-",
+        "Ns"
+      ],
+      [
+        "th(NE_NWAIT)",
+        "FMC_NEx hold time after FMC_NWAIT invalid",
+        "4THCLK+11",
+        "-",
+        "Ns"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization results, not tested in production."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

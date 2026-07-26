@@ -1,0 +1,103 @@
+{
+  "table_id": "table_4",
+  "document": "DS12325 Rev 3 - Table 4. STM32L010K8/R8 peripherals interconnect matrix",
+  "rev": "Rev 3",
+  "table_number": "4",
+  "title": "Table 4. STM32L010K8/R8 peripherals interconnect matrix",
+  "page": 16,
+  "section": "3.2 Interconnect matrix",
+  "section_title": "Interconnect matrix",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l010k8.pdf#page=16",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l010k8.pdf",
+  "text_helper": "Table 4. STM32L010K8/R8 peripherals interconnect matrix — section 3.2 Interconnect matrix. Interconnect source, Inter- connect destination, Interconnect action, Run, Sleep, +3 autres.",
+  "table_content": {
+    "headers": [
+      "Interconnect source",
+      "Inter- connect destination",
+      "Interconnect action",
+      "Run",
+      "Sleep",
+      "Low- power run",
+      "Low- power sleep",
+      "Stop"
+    ],
+    "rows": [
+      [
+        "TIMx",
+        "TIMx",
+        "Timer triggered by other timer",
+        "Y",
+        "Y",
+        "Y",
+        "Y",
+        "-"
+      ],
+      [
+        "RTC",
+        "TIM21",
+        "Timer triggered by auto wakeup",
+        "Y",
+        "Y",
+        "Y",
+        "Y",
+        "-"
+      ],
+      [
+        "RTC",
+        "LPTIM1",
+        "Timer triggered by RTC event",
+        "Y",
+        "Y",
+        "Y",
+        "Y",
+        "Y"
+      ],
+      [
+        "All clocks",
+        "TIMx",
+        "Clock source used as input channel for RC measurement and trimming",
+        "Y",
+        "Y",
+        "Y",
+        "Y",
+        "-"
+      ],
+      [
+        "GPIO",
+        "TIMx",
+        "Timer input channel and trigger",
+        "Y",
+        "Y",
+        "Y",
+        "Y",
+        "-"
+      ],
+      [
+        "GPIO",
+        "LPTIM1",
+        "Timer input channel and trigger",
+        "Y",
+        "Y",
+        "Y",
+        "Y",
+        "Y"
+      ],
+      [
+        "GPIO",
+        "ADC",
+        "Conversion trigger",
+        "Y",
+        "Y",
+        "Y",
+        "Y",
+        "-"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

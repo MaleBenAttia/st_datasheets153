@@ -1,0 +1,200 @@
+{
+  "table_id": "table_50",
+  "document": "DS9994 Rev 9 - Table 50. I/O static characteristics",
+  "rev": "Rev 9",
+  "table_number": "50",
+  "title": "Table 50. I/O static characteristics",
+  "page": 76,
+  "section": "6.3.14 I/O port characteristics",
+  "section_title": "I/O port characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f334c4.pdf#page=76",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f334c4.pdf",
+  "text_helper": "Table 50. I/O static characteristics — section 6.3.14 I/O port characteristics. Symbol, Parameter, Conditions, Min., Typ., +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min.",
+      "Typ.",
+      "Max.",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V IL",
+        "Low-level input voltage",
+        "TT, TC and TTa I/O",
+        "-",
+        "-",
+        "0.3 V +0.07 (1) DD",
+        "V"
+      ],
+      [
+        "V IL",
+        "Low-level input voltage",
+        "FT and FTf I/O",
+        "-",
+        "-",
+        "0.475 V -0.2 (1) DD",
+        "V"
+      ],
+      [
+        "V IL",
+        "Low-level input voltage",
+        "BOOT0",
+        "-",
+        "-",
+        "0.3 V –0.3 (1) DD",
+        "V"
+      ],
+      [
+        "V IL",
+        "Low-level input voltage",
+        "All I/Os except BOOT0",
+        "-",
+        "-",
+        "0.3 V (2) DD",
+        "V"
+      ],
+      [
+        "V IH",
+        "High-level input voltage",
+        "TTa and TT I/O",
+        "0.445 V +0.398 (1) DD",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "V IH",
+        "High-level input voltage",
+        "FT and FTf I/O",
+        "0.5 V (1) DD+0.2",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "V IH",
+        "High-level input voltage",
+        "BOOT0",
+        "0.2 V +0.95 (1) DD",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "V IH",
+        "High-level input voltage",
+        "All I/Os except BOOT0",
+        "0.7 V (2) DD",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "V hys",
+        "Schmitt trigger hysteresis",
+        "TT, TC and TTa I/O",
+        "-",
+        "200 (1)",
+        "-",
+        "mV"
+      ],
+      [
+        "V hys",
+        "Schmitt trigger hysteresis",
+        "FT and FTf I/O",
+        "-",
+        "100 (1)",
+        "-",
+        "-"
+      ],
+      [
+        "V hys",
+        "Schmitt trigger hysteresis",
+        "BOOT0",
+        "-",
+        "300 (1)",
+        "-",
+        "-"
+      ],
+      [
+        "I lkg",
+        "Input leakage current (3)",
+        "TC, FT, TT, FTf and TTa I/O in digital mode V ≤ V ≤ V SS IN DD",
+        "-",
+        "-",
+        "±0.1",
+        "µA"
+      ],
+      [
+        "I lkg",
+        "Input leakage current (3)",
+        "TTa I/O in digital mode V ≤ V ≤ V DD IN DDA",
+        "-",
+        "-",
+        "1",
+        "1"
+      ],
+      [
+        "I lkg",
+        "Input leakage current (3)",
+        "TTa I/O in analog mode V ≤ V ≤ V SS IN DDA",
+        "-",
+        "-",
+        "±0.2",
+        "±0.2"
+      ],
+      [
+        "I lkg",
+        "Input leakage current (3)",
+        "FT and FTf I/O(4) V ≤ V ≤ 5 V DD IN",
+        "-",
+        "-",
+        "10",
+        "10"
+      ],
+      [
+        "R PU",
+        "Weak pull-up equivalent resistor(5)",
+        "V = V IN SS",
+        "25",
+        "40",
+        "55",
+        "kΩ"
+      ],
+      [
+        "R PD",
+        "Weak pull-down equivalent resistor(5)",
+        "V = V IN DD",
+        "25",
+        "40",
+        "55",
+        "kΩ"
+      ],
+      [
+        "C IO",
+        "I/O pin capacitance",
+        "-",
+        "-",
+        "5",
+        "-",
+        "pF"
+      ]
+    ],
+    "notes": [
+      "1. Data based on design simulation.",
+      "2. Tested in production.",
+      "3. Leakage could be higher than the maximum value. If negative current is injected on adjacent pins. Refer to Table 49: I/O current injection susceptibility.",
+      "4. To sustain a voltage higher than V DD",
+      "5. Pull-up and pull-down resistors are designed with a true resistance in series with a switchable PMOS/NMOS. This PMOS/NMOS contribution to the series resistance is minimum (~10% order)."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

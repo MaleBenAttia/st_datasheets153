@@ -1,0 +1,213 @@
+{
+  "table_id": "table_122",
+  "document": "DS14830 Rev 3 - Table 122. SAI characteristics.",
+  "rev": "Rev 3",
+  "table_number": "122",
+  "title": "Table 122. SAI characteristics.",
+  "page": 184,
+  "section": "5.3.35 SAI characteristics",
+  "section_title": "SAI characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u385cg.pdf#page=184",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u385cg.pdf",
+  "text_helper": "Table 122. SAI characteristics. — section 5.3.35 SAI characteristics. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "fMCK",
+        "SAI main clock output",
+        "-",
+        "-",
+        "50",
+        "MHz"
+      ],
+      [
+        "fSCK",
+        "SAI clock frequency(1)",
+        "Master transmitter, 2.7 V ≤ VDDIOX ≤ 3.6 V",
+        "-",
+        "28.5",
+        "MHz"
+      ],
+      [
+        "fSCK",
+        "SAI clock frequency(1)",
+        "Master transmitter, 1.71 V ≤ VDDIOX ≤ 3.6 V",
+        "-",
+        "28.5/19.5(2)(3)",
+        "MHz"
+      ],
+      [
+        "fSCK",
+        "SAI clock frequency(1)",
+        "Master receiver, 1.71 V ≤ VDDIOX ≤ 3.6 V",
+        "-",
+        "31/21.5(3)",
+        "MHz"
+      ],
+      [
+        "fSCK",
+        "SAI clock frequency(1)",
+        "Slave transmitter, 2.7 V ≤ VDDIOX ≤ 3.6 V",
+        "-",
+        "30",
+        "MHz"
+      ],
+      [
+        "fSCK",
+        "SAI clock frequency(1)",
+        "Slave transmitter, 1.71 V ≤ VDDIOX ≤ 3.6 V",
+        "-",
+        "30/20.5(2)",
+        "MHz"
+      ],
+      [
+        "fSCK",
+        "SAI clock frequency(1)",
+        "Slave receiver, 1.71 V ≤ VDDIOX ≤ 3.6 V",
+        "-",
+        "50",
+        "MHz"
+      ],
+      [
+        "tv(FS)",
+        "FS valid time",
+        "Master mode, 2.7 V ≤ VDDIOX ≤ 3.6 V",
+        "-",
+        "16",
+        "ns"
+      ],
+      [
+        "tv(FS)",
+        "FS valid time",
+        "Master mode 1.71 V ≤ VDDIOX ≤ 3.6 V",
+        "-",
+        "16/23(3)",
+        "16/23(3)"
+      ],
+      [
+        "th(FS)",
+        "FS hold time",
+        "Master mode",
+        "8",
+        "-",
+        "-"
+      ],
+      [
+        "tsu(FS)",
+        "FS setup time",
+        "Slave mode",
+        "1.5",
+        "-",
+        "-"
+      ],
+      [
+        "th(FS)",
+        "FS hold time",
+        "Slave mode",
+        "1",
+        "-",
+        "-"
+      ],
+      [
+        "tsu(SD_A_MR)",
+        "Data input setup time",
+        "Master receiver",
+        "2.5",
+        "-",
+        "-"
+      ],
+      [
+        "tsu(SD_B_SR)",
+        "tsu(SD_B_SR)",
+        "Slave receiver",
+        "2",
+        "-",
+        "-"
+      ],
+      [
+        "th(SD_A_MR)",
+        "Data input hold time",
+        "Master receiver",
+        "1.5",
+        "-",
+        "-"
+      ],
+      [
+        "th(SD_B_SR)",
+        "th(SD_B_SR)",
+        "Slave receiver",
+        "1",
+        "-",
+        "-"
+      ],
+      [
+        "tv(SD_B_ST)",
+        "Data output valid time",
+        "Slave transmitter (after enable edge), 2.7 V ≤ VDDIOX ≤ 3.6 V",
+        "-",
+        "16.5",
+        "16.5"
+      ],
+      [
+        "tv(SD_B_ST)",
+        "Data output valid time",
+        "Slave transmitter (after enable edge), 1.71 V ≤ VDDIOX ≤ 3.6 V",
+        "-",
+        "16.5/24(2)",
+        "16.5/24(2)"
+      ],
+      [
+        "th(SD_B_ST)",
+        "Data output hold time",
+        "Slave transmitter (after enable edge)",
+        "7.5",
+        "-",
+        "-"
+      ],
+      [
+        "tv(SD_A_MT)",
+        "Data output valid time",
+        "Master transmitter (after enable edge), 2.7 V ≤ VDDIOX ≤ 3.6 V",
+        "-",
+        "17.5",
+        "17.5"
+      ],
+      [
+        "tv(SD_A_MT)",
+        "Data output valid time",
+        "Master transmitter (after enable edge), 1.71 V ≤ VDDIOX ≤ 3.6 V",
+        "-",
+        "17.5/25.5(2)",
+        "17.5/25.5(2)"
+      ],
+      [
+        "th(SD_A_MT)",
+        "Data output hold time",
+        "Master transmitter (after enable edge)",
+        "7",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "1. APB clock frequency that must be at least twice SAI clock frequency.",
+      "2. When using PE6/PA10/PA13/PE7",
+      "3. When using PE4/PA9/PA14"
+    ],
+    "legend": [
+      "Evaluated by characterization. Not tested in production."
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

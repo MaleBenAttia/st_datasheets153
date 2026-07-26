@@ -1,0 +1,187 @@
+{
+  "table_id": "table_72",
+  "document": "DS10090 Rev 8 - Table 72. SPI characteristics in voltage Range 1",
+  "rev": "Rev 8",
+  "table_number": "72",
+  "title": "Table 72. SPI characteristics in voltage Range 1",
+  "page": 100,
+  "section": "6.3.20 Communications interfaces",
+  "section_title": "Communications interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l063c8.pdf#page=100",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l063c8.pdf",
+  "text_helper": "Table 72. SPI characteristics in voltage Range 1 — section 6.3.20 Communications interfaces. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Master mode",
+        "-",
+        "-",
+        "16",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Slave mode receiver",
+        "-",
+        "-",
+        "16",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Slave mode Transmitter 1.71<V <3.6V DD",
+        "-",
+        "-",
+        "12(2)",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Slave mode Transmitter 2.7<V <3.6V DD",
+        "-",
+        "-",
+        "16(2)",
+        "MHz"
+      ],
+      [
+        "t h(NSS)",
+        "NSS hold time",
+        "Slave mode, SPI presc = 2",
+        "2*Tpclk",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t w(SCKH) t w(SCKL)",
+        "SCK high and low time",
+        "Master mode",
+        "Tpclk-2",
+        "Tpclk",
+        "Tpclk+ 2",
+        "Tpclk+ 2"
+      ],
+      [
+        "t su(MI)",
+        "Data input setup time",
+        "Master mode",
+        "0",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t su(SI)",
+        "t su(SI)",
+        "Slave mode",
+        "3",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t h(MI)",
+        "Data input hold time",
+        "Master mode",
+        "7",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t h(SI)",
+        "t h(SI)",
+        "Slave mode",
+        "3.5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t a(SO",
+        "Data output access time",
+        "Slave mode",
+        "15",
+        "-",
+        "36",
+        "36"
+      ],
+      [
+        "t dis(SO)",
+        "Data output disable time",
+        "Slave mode",
+        "10",
+        "-",
+        "30",
+        "30"
+      ],
+      [
+        "t v(SO)",
+        "Data output valid time",
+        "Slave mode 1.65 V<V <3.6 V DD",
+        "-",
+        "18",
+        "41",
+        "41"
+      ],
+      [
+        "t v(SO)",
+        "Data output valid time",
+        "Slave mode 2.7 V<V <3.6 V DD",
+        "-",
+        "18",
+        "25",
+        "25"
+      ],
+      [
+        "t v(MO)",
+        "t v(MO)",
+        "Master mode",
+        "-",
+        "4",
+        "7",
+        "7"
+      ],
+      [
+        "t h(SO)",
+        "Data output hold time",
+        "Slave mode",
+        "10",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t h(MO)",
+        "t h(MO)",
+        "Master mode",
+        "0",
+        "-",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "2. Spikes with widths below t are filtered. AF(min)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

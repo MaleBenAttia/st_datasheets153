@@ -1,0 +1,161 @@
+{
+  "table_id": "table_50",
+  "document": "DS5792 Rev 13 - Table 50. TIMx characteristics",
+  "rev": "Rev 13",
+  "table_number": "50",
+  "title": "Table 50. TIMx characteristics",
+  "page": 95,
+  "section": "5.3.16 TIM timer characteristics",
+  "section_title": "TIM timer characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f103rc.pdf#page=95",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f103rc.pdf",
+  "text_helper": "Table 50. TIMx characteristics — section 5.3.16 TIM timer characteristics. Symbol, Symbol, Parameter, Conditions, Min, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t res(TIM)",
+        "t res(TIM)",
+        "Timer resolution time",
+        "-",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "t res(TIM)",
+        "t res(TIM)",
+        "Timer resolution time",
+        "f = 72 MHz TIMxCLK",
+        "13.9",
+        "-",
+        "ns"
+      ],
+      [
+        "f EXT",
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "-",
+        "0",
+        "f /2 TIMxCLK",
+        "MHz"
+      ],
+      [
+        "f EXT",
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "f = 72 MHz TIMxCLK",
+        "0",
+        "36",
+        "MHz"
+      ],
+      [
+        "Res TIM",
+        "Res TIM",
+        "Timer resolution",
+        "-",
+        "-",
+        "16",
+        "bit"
+      ],
+      [
+        "t COUNTER",
+        "t COUNTER",
+        "16-bit counter clock period when internal clock is selected",
+        "-",
+        "1",
+        "65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t COUNTER",
+        "t COUNTER",
+        "16-bit counter clock period when internal clock is selected",
+        "f = 72 MHz TIMxCLK",
+        "0.0139",
+        "910",
+        "µs"
+      ],
+      [
+        "t MAX_COUNT",
+        "t MAX_COUNT",
+        "Maximum possible count",
+        "-",
+        "-",
+        "65536 × 65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t MAX_COUNT",
+        "t MAX_COUNT",
+        "Maximum possible count",
+        "f = 72 MHz TIMxCLK",
+        "-",
+        "59.6",
+        "s"
+      ],
+      [
+        "t w(SCLH)",
+        "SCL clock high time",
+        "4.0",
+        "-",
+        "0.6",
+        "-",
+        "-"
+      ],
+      [
+        "t h(SDA)",
+        "SDA data hold time",
+        "-",
+        "3450(3)",
+        "-",
+        "900(3)",
+        "900(3)"
+      ],
+      [
+        "t r(SDA) t r(SCL)",
+        "SDA and SCL rise time",
+        "-",
+        "1000",
+        "-",
+        "300",
+        "300"
+      ],
+      [
+        "t f(SDA) t f(SCL)",
+        "SDA and SCL fall time",
+        "-",
+        "300",
+        "-",
+        "300",
+        "300"
+      ],
+      [
+        "t su(STA)",
+        "Repeated Start condition setup time",
+        "4.7",
+        "-",
+        "0.6",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "3. The device must internally provide a hold time of at least 300ns for the SDA signal in order to bridge the undefined region on the falling edge of SCL.",
+      "4. The minimum width of the spikes filtered by the analog filter is above t (max). SP"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

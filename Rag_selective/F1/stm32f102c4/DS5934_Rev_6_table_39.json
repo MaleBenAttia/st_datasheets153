@@ -1,0 +1,145 @@
+{
+  "table_id": "table_39",
+  "document": "DS5934 Rev 6 - Table 39. I2C characteristics.",
+  "rev": "Rev 6",
+  "table_number": "39",
+  "title": "Table 39. I2C characteristics.",
+  "page": 58,
+  "section": "5.3.16 Communications interfaces",
+  "section_title": "Communications interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f102c4.pdf#page=58",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f102c4.pdf",
+  "text_helper": "Table 39. I2C characteristics. — section 5.3.16 Communications interfaces. Symbol, Parameter, Standard mode I2C(1)(2) / Min, Standard mode I2C(1)(2) / Max, Fast mode I2C(1)(2) / Min, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Standard mode I2C(1)(2) / Min",
+      "Standard mode I2C(1)(2) / Max",
+      "Fast mode I2C(1)(2) / Min",
+      "Fast mode I2C(1)(2) / Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t w(SCLL)",
+        "SCL clock low time",
+        "4.7",
+        "-",
+        "1.3",
+        "-",
+        "µs"
+      ],
+      [
+        "t w(SCLH)",
+        "SCL clock high time",
+        "4.0",
+        "-",
+        "0.6",
+        "-",
+        "µs"
+      ],
+      [
+        "t su(SDA)",
+        "SDA setup time",
+        "250",
+        "-",
+        "100",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(SDA)",
+        "SDA data hold time",
+        "-",
+        "3450(3)",
+        "-",
+        "900(3)",
+        "ns"
+      ],
+      [
+        "t r(SDA) t r(SCL)",
+        "SDA and SCL rise time",
+        "-",
+        "1000",
+        "-",
+        "300",
+        "ns"
+      ],
+      [
+        "t f(SDA) t f(SCL)",
+        "SDA and SCL fall time",
+        "-",
+        "300",
+        "-",
+        "300",
+        "ns"
+      ],
+      [
+        "t h(STA)",
+        "Start condition hold time",
+        "4.0",
+        "-",
+        "0.6",
+        "-",
+        "µs"
+      ],
+      [
+        "t su(STA)",
+        "Repeated Start condition setup time",
+        "4.7",
+        "-",
+        "0.6",
+        "-",
+        "µs"
+      ],
+      [
+        "t su(STO)",
+        "Stop condition setup time",
+        "4.0",
+        "-",
+        "0.6",
+        "-",
+        "µs"
+      ],
+      [
+        "t w(STO:STA)",
+        "Stop to Start condition time (bus free)",
+        "4.7",
+        "-",
+        "1.3",
+        "-",
+        "µs"
+      ],
+      [
+        "t SP",
+        "Pulse width of spikes that are suppressed by the analog filter",
+        "0",
+        "50(4)",
+        "0",
+        "50(4)",
+        "ns"
+      ],
+      [
+        "C b",
+        "Capacitive load for each bus line",
+        "-",
+        "400",
+        "-",
+        "400",
+        "pF"
+      ]
+    ],
+    "notes": [
+      "1. Values guaranteed by design, not tested in production.",
+      "2. f must be at least 2 MHz to achieve standard mode I2C frequencies. It must be at least 4MHz to a P c C h L i K e 1 ve fast mode I2C frequencies. It must be a multiple of 10MHz to reach the 400kHz maximum I2C fast",
+      "3. The maximum Data hold time has only to be met if the interface does not stretch the low period of the SCL signal.",
+      "4. The analog filter minimum filtered spikes is above t to ensure that spikes width up to t are SP(max) SP(max)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

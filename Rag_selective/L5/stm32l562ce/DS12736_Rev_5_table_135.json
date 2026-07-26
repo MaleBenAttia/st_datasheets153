@@ -1,0 +1,60 @@
+{
+  "table_id": "table_135",
+  "document": "DS12736 Rev 5 - Table 135. Asynchronous non-multiplexed SRAM/PSRAM/NOR write-NWAIT timings",
+  "rev": "Rev 5",
+  "table_number": "135",
+  "title": "Table 135. Asynchronous non-multiplexed SRAM/PSRAM/NOR write-NWAIT timings",
+  "page": 288,
+  "section": "5.3.30 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l562ce.pdf#page=288",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l562ce.pdf",
+  "text_helper": "Table 135. Asynchronous non-multiplexed SRAM/PSRAM/NOR write-NWAIT timings — section 5.3.30 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "tw(NE)",
+        "FMC_NE low time",
+        "9THCLK-0.5",
+        "9THCLK+1.5",
+        "ns"
+      ],
+      [
+        "tw(NWE)",
+        "FMC_NWE low time",
+        "6THCLK-0.5",
+        "6THCLK+1",
+        "ns"
+      ],
+      [
+        "tsu(NWAIT_ NE)",
+        "FMC_NWAIT valid before FMC_NEx high",
+        "7THCLK+13",
+        "-",
+        "ns"
+      ],
+      [
+        "th(NE_NWA IT)",
+        "FMC_NEx hold time after FMC_NWAIT invalid",
+        "5THCLK+13",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [],
+    "legend": [
+      "timings(1)"
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

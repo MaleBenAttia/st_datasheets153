@@ -1,0 +1,100 @@
+{
+  "table_id": "table_101",
+  "document": "DS10741 Rev 3 - Table 101. Synchronous non-multiplexed NOR/PSRAM read timings",
+  "rev": "Rev 3",
+  "table_number": "101",
+  "title": "Table 101. Synchronous non-multiplexed NOR/PSRAM read timings",
+  "page": 201,
+  "section": "6.3.28 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l471qe.pdf#page=201",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l471qe.pdf",
+  "text_helper": "Table 101. Synchronous non-multiplexed NOR/PSRAM read timings — section 6.3.28 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t w(CLK)",
+        "FMC_CLK period",
+        "2T HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NExL)",
+        "FMC_CLK low to FMC_NEx low (x=0..2)",
+        "-",
+        "2.5",
+        "ns"
+      ],
+      [
+        "t d(CLKH-NExH)",
+        "FMC_CLK high to FMC_NEx high (x= 0…2)",
+        "T -0.5 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NADVH)",
+        "FMC_CLK low to FMC_NADV high",
+        "0.5",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-AV)",
+        "FMC_CLK low to FMC_Ax valid (x=16…25)",
+        "-",
+        "3.5",
+        "ns"
+      ],
+      [
+        "t d(CLKH-AIV)",
+        "FMC_CLK high to FMC_Ax invalid (x=16…25)",
+        "T HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NOEL)",
+        "FMC_CLK low to FMC_NOE low",
+        "-",
+        "2",
+        "ns"
+      ],
+      [
+        "t d(CLKH-NOEH)",
+        "FMC_CLK high to FMC_NOE high",
+        "T -0.5 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(DV-CLKH)",
+        "FMC_D[15:0] valid data before FMC_CLK high",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(CLKH-DV)",
+        "FMC_D[15:0] valid data after FMC_CLK high",
+        "5",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

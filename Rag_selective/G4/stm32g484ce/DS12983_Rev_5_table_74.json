@@ -1,0 +1,457 @@
+{
+  "table_id": "table_74",
+  "document": "DS12983 Rev 5 - Table 74. DAC 1MSPS characteristics",
+  "rev": "Rev 5",
+  "table_number": "74",
+  "title": "Table 74. DAC 1MSPS characteristics",
+  "page": 153,
+  "section": "5.3.20 Digital-to-Analog converter characteristics",
+  "section_title": "Digital-to-Analog converter characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32g484ce.pdf#page=153",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g484ce.pdf",
+  "text_helper": "Table 74. DAC 1MSPS characteristics — section 5.3.20 Digital-to-Analog converter characteristics. Symbol, Parameter, Conditions, Conditions, Min, +3 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V DDA",
+        "Analog supply voltage for DAC ON",
+        "DAC output buffer OFF, DAC_OUT pin not connected (internal connection only)",
+        "DAC output buffer OFF, DAC_OUT pin not connected (internal connection only)",
+        "1.71",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DDA",
+        "Analog supply voltage for DAC ON",
+        "Other modes",
+        "Other modes",
+        "1.80",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V REF+",
+        "Positive reference voltage",
+        "DAC output buffer OFF, DAC_OUT pin not connected (internal connection only)",
+        "DAC output buffer OFF, DAC_OUT pin not connected (internal connection only)",
+        "1.71",
+        "-",
+        "V DDA",
+        "V"
+      ],
+      [
+        "V REF+",
+        "Positive reference voltage",
+        "Other modes",
+        "Other modes",
+        "1.80",
+        "-",
+        "V DDA",
+        "V"
+      ],
+      [
+        "R L",
+        "Resistive load",
+        "DAC output buffer ON",
+        "connected to V SSA",
+        "5",
+        "-",
+        "-",
+        "kΩ"
+      ],
+      [
+        "R L",
+        "Resistive load",
+        "DAC output buffer ON",
+        "connected to V DDA",
+        "25",
+        "-",
+        "-",
+        "kΩ"
+      ],
+      [
+        "R O",
+        "Output Impedance",
+        "DAC output buffer OFF",
+        "DAC output buffer OFF",
+        "9.6",
+        "11.7",
+        "13.8",
+        "kΩ"
+      ],
+      [
+        "R BON",
+        "Output impedance sample and hold mode, output buffer ON",
+        "V = 2.7 V DD",
+        "V = 2.7 V DD",
+        "-",
+        "-",
+        "2",
+        "kΩ"
+      ],
+      [
+        "R BON",
+        "Output impedance sample and hold mode, output buffer ON",
+        "V = 2.0 V DD",
+        "V = 2.0 V DD",
+        "-",
+        "-",
+        "3.5",
+        "kΩ"
+      ],
+      [
+        "R BOFF",
+        "Output impedance sample and hold mode, output buffer OFF",
+        "V = 2.7 V DD",
+        "V = 2.7 V DD",
+        "-",
+        "-",
+        "16.5",
+        "kΩ"
+      ],
+      [
+        "R BOFF",
+        "Output impedance sample and hold mode, output buffer OFF",
+        "V = 2.0 V DD",
+        "V = 2.0 V DD",
+        "-",
+        "-",
+        "18.0",
+        "kΩ"
+      ],
+      [
+        "C L",
+        "Capacitive load",
+        "DAC output buffer ON",
+        "DAC output buffer ON",
+        "-",
+        "-",
+        "50",
+        "pF"
+      ],
+      [
+        "C SH",
+        "Capacitive load",
+        "Sample and hold mode",
+        "Sample and hold mode",
+        "-",
+        "0.1",
+        "1",
+        "µF"
+      ],
+      [
+        "V DAC_OUT",
+        "Voltage on DAC_OUT output",
+        "DAC output buffer ON",
+        "DAC output buffer ON",
+        "0.2",
+        "-",
+        "V REF+ – 0.2",
+        "V"
+      ],
+      [
+        "V DAC_OUT",
+        "Voltage on DAC_OUT output",
+        "DAC output buffer OFF",
+        "DAC output buffer OFF",
+        "0",
+        "-",
+        "V REF+",
+        "V"
+      ],
+      [
+        "t SETTLING",
+        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches final value)",
+        "Normal mode DAC output buffer ON CL ≤ 50 pF, RL ≥ 5 kΩ",
+        "±0.5 LSB",
+        "-",
+        "1.7",
+        "3",
+        "µs"
+      ],
+      [
+        "t SETTLING",
+        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches final value)",
+        "Normal mode DAC output buffer ON CL ≤ 50 pF, RL ≥ 5 kΩ",
+        "±1 LSB",
+        "-",
+        "1.6",
+        "2.9",
+        "µs"
+      ],
+      [
+        "t SETTLING",
+        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches final value)",
+        "Normal mode DAC output buffer ON CL ≤ 50 pF, RL ≥ 5 kΩ",
+        "±2 LSB",
+        "-",
+        "1.55",
+        "2.85",
+        "µs"
+      ],
+      [
+        "t SETTLING",
+        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches final value)",
+        "Normal mode DAC output buffer ON CL ≤ 50 pF, RL ≥ 5 kΩ",
+        "±4 LSB",
+        "-",
+        "1.48",
+        "2.8",
+        "µs"
+      ],
+      [
+        "t SETTLING",
+        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches final value)",
+        "Normal mode DAC output buffer ON CL ≤ 50 pF, RL ≥ 5 kΩ",
+        "±8 LSB",
+        "-",
+        "1.4",
+        "2.75",
+        "µs"
+      ],
+      [
+        "t SETTLING",
+        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches final value)",
+        "Normal mode DAC output buffer OFF, ±1LSB, CL = 10 pF",
+        "Normal mode DAC output buffer OFF, ±1LSB, CL = 10 pF",
+        "-",
+        "2",
+        "2.5",
+        "µs"
+      ],
+      [
+        "t (2) WAKEUP",
+        "Wakeup time from off state (setting the ENx bit in the DAC Control register) until final value ±1 LSB",
+        "Normal mode DAC output buffer ON CL ≤ 50 pF, RL ≥ 5 kΩ",
+        "Normal mode DAC output buffer ON CL ≤ 50 pF, RL ≥ 5 kΩ",
+        "-",
+        "4.2",
+        "7.5",
+        "µs"
+      ],
+      [
+        "t (2) WAKEUP",
+        "Wakeup time from off state (setting the ENx bit in the DAC Control register) until final value ±1 LSB",
+        "Normal mode DAC output buffer OFF, CL ≤ 10 pF",
+        "Normal mode DAC output buffer OFF, CL ≤ 10 pF",
+        "-",
+        "2",
+        "5",
+        "µs"
+      ],
+      [
+        "PSRR",
+        "V supply rejection ratio DDA",
+        "Normal mode DAC output buffer ON CL ≤ 50 pF, RL = 5 kΩ, DC",
+        "Normal mode DAC output buffer ON CL ≤ 50 pF, RL = 5 kΩ, DC",
+        "-",
+        "-80",
+        "-28",
+        "dB"
+      ],
+      [
+        "T W_to_W",
+        "Minimal time between two consecutive writes into the DAC_DORx register to guarantee a correct DAC_OUT for a small variation of the input code (1 LSB) DAC_MCR:MODEx[2:0] = 000 or 001 DAC_MCR:MODEx[2:0] = 010 or 011",
+        "Fp 01 ≤ LC Ωk 5 ≥ LR ,Fp 05 ≤ LC",
+        "Fp 01 ≤ LC Ωk 5 ≥ LR ,Fp 05 ≤ LC",
+        "1 1.4",
+        "-",
+        "-",
+        "µs"
+      ],
+      [
+        "t SAMP",
+        "Sampling time in sample and hold mode (code transition between the lowest input code and the highest input code when DACOUT reaches final value ±1LSB)",
+        "DAC_OUT pin connected",
+        "DAC output buffer ON, C = 100 nF SH",
+        "-",
+        "0.7",
+        "3.5",
+        "ms"
+      ],
+      [
+        "t SAMP",
+        "Sampling time in sample and hold mode (code transition between the lowest input code and the highest input code when DACOUT reaches final value ±1LSB)",
+        "DAC_OUT pin connected",
+        "DAC output buffer OFF, C = 100 nF SH",
+        "-",
+        "10.5",
+        "18",
+        "18"
+      ],
+      [
+        "t SAMP",
+        "Sampling time in sample and hold mode (code transition between the lowest input code and the highest input code when DACOUT reaches final value ±1LSB)",
+        "DAC_OUT pin not connected (internal connection only)",
+        "DAC output buffer OFF",
+        "-",
+        "2",
+        "3.5",
+        "µs"
+      ],
+      [
+        "I leak",
+        "Output leakage current",
+        "Sample and hold mode, DAC_OUT pin connected",
+        "Sample and hold mode, DAC_OUT pin connected",
+        "-",
+        "-",
+        "-(3)",
+        "nA"
+      ],
+      [
+        "CI int",
+        "Internal sample and hold capacitor",
+        "-",
+        "-",
+        "5.2",
+        "7",
+        "8.8",
+        "pF"
+      ],
+      [
+        "t TRIM",
+        "Middle code offset trim time",
+        "DAC output buffer ON",
+        "DAC output buffer ON",
+        "50",
+        "-",
+        "-",
+        "µs"
+      ],
+      [
+        "V offset",
+        "Middle code offset for 1 trim code step",
+        "V = 3.6 V REF+",
+        "V = 3.6 V REF+",
+        "-",
+        "1500",
+        "-",
+        "µV"
+      ],
+      [
+        "V offset",
+        "Middle code offset for 1 trim code step",
+        "V = 1.8 V REF+",
+        "V = 1.8 V REF+",
+        "-",
+        "750",
+        "-",
+        "-"
+      ],
+      [
+        "I (DAC) DDA",
+        "DAC consumption from V DDA",
+        "DAC output buffer ON",
+        "No load, middle code (0x800)",
+        "-",
+        "315",
+        "500",
+        "µA"
+      ],
+      [
+        "I (DAC) DDA",
+        "DAC consumption from V DDA",
+        "DAC output buffer ON",
+        "No load, worst code (0xF1C)",
+        "-",
+        "450",
+        "670",
+        "670"
+      ],
+      [
+        "I (DAC) DDA",
+        "DAC consumption from V DDA",
+        "DAC output buffer OFF",
+        "No load, middle code (0x800)",
+        "-",
+        "-",
+        "0.2",
+        "0.2"
+      ],
+      [
+        "I (DAC) DDA",
+        "DAC consumption from V DDA",
+        "Sample and hold mode, C = SH 100 nF",
+        "Sample and hold mode, C = SH 100 nF",
+        "-",
+        "315 ₓ Ton/(Ton +Toff) (4)",
+        "670 ₓ Ton/(Ton +Toff) (4)",
+        "670 ₓ Ton/(Ton +Toff) (4)"
+      ],
+      [
+        "I (DAC) DDV",
+        "DAC consumption from V REF+",
+        "DAC output buffer ON",
+        "No load, middle code (0x800)",
+        "-",
+        "185",
+        "240",
+        "µA"
+      ],
+      [
+        "I (DAC) DDV",
+        "DAC consumption from V REF+",
+        "DAC output buffer ON",
+        "No load, worst code (0xF1C)",
+        "-",
+        "340",
+        "400",
+        "400"
+      ],
+      [
+        "I (DAC) DDV",
+        "DAC consumption from V REF+",
+        "DAC output buffer OFF",
+        "No load, middle code (0x800)",
+        "-",
+        "155",
+        "205",
+        "205"
+      ],
+      [
+        "I (DAC) DDV",
+        "DAC consumption from V REF+",
+        "Sample and hold mode, buffer ON, C = 100 nF, worst case SH",
+        "Sample and hold mode, buffer ON, C = 100 nF, worst case SH",
+        "-",
+        "185 ₓ Ton/(Ton +Toff) (4)",
+        "400 ₓ Ton/(Ton +Toff) (4)",
+        "400 ₓ Ton/(Ton +Toff) (4)"
+      ],
+      [
+        "I (DAC) DDV",
+        "DAC consumption from V REF+",
+        "Sample and hold mode, buffer OFF, C = 100 nF, worst case SH",
+        "Sample and hold mode, buffer OFF, C = 100 nF, worst case SH",
+        "-",
+        "155 ₓ Ton/(Ton +Toff) (4)",
+        "205 ₓ Ton/(Ton +Toff) (4)",
+        "205 ₓ Ton/(Ton +Toff) (4)"
+      ]
+    ],
+    "notes": [
+      "2. In buffered mode, the output can overshoot above the final value for low input code (starting from min value).",
+      "3. Refer to Table 54: I/O static characteristics.",
+      "4. Ton is the Refresh phase duration. Toff is the Hold phase duration. Refer to the reference manual RM0440 \"STM32G4 Series advanced Arm®-based 32-bit MCUs\" for more details."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

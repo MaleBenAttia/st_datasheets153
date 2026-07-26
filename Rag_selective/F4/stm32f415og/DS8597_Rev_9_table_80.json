@@ -1,0 +1,100 @@
+{
+  "table_id": "table_80",
+  "document": "DS8597 Rev 9 - Table 80. Synchronous multiplexed PSRAM write timings",
+  "rev": "Rev 9",
+  "table_number": "80",
+  "title": "Table 80. Synchronous multiplexed PSRAM write timings",
+  "page": 153,
+  "section": "5.3.26 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f415og.pdf#page=153",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f415og.pdf",
+  "text_helper": "Table 80. Synchronous multiplexed PSRAM write timings — section 5.3.26 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t d(CLKL-NExL)",
+        "FSMC_CLK low to FSMC_NEx low (x=0..2)",
+        "-",
+        "1",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NADVL)",
+        "FSMC_CLK low to FSMC_NADV low",
+        "-",
+        "0",
+        "ns"
+      ],
+      [
+        "t d(CLKL- NADVH)",
+        "FSMC_CLK low to FSMC_NADV high",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-AIV)",
+        "FSMC_CLK low to FSMC_Ax invalid (x=16…25)",
+        "8",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NWEL)",
+        "FSMC_CLK low to FSMC_NWE low",
+        "-",
+        "0.5",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NWEH)",
+        "FSMC_CLK low to FSMC_NWE high",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-ADIV)",
+        "FSMC_CLK low to FSMC_AD[15:0] invalid",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-DATA)",
+        "FSMC_A/D[15:0] valid data after FSMC_CLK low",
+        "-",
+        "3",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NBLH)",
+        "FSMC_CLK low to FSMC_NBL high",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(NWAIT- CLKH)",
+        "FSMC_NWAIT valid before FSMC_CLK high",
+        "4",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

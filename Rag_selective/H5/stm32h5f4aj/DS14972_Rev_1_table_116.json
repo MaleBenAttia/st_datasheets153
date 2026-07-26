@@ -1,0 +1,68 @@
+{
+  "table_id": "table_116",
+  "document": "DS14972 Rev 1 - Table 116. TIMx characteristics",
+  "rev": "Rev 1",
+  "table_number": "116",
+  "title": "Table 116. TIMx characteristics",
+  "page": 271,
+  "section": "5.3.36 Timer characteristics",
+  "section_title": "Timer characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h5f4aj.pdf#page=271",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h5f4aj.pdf",
+  "text_helper": "Table 116. TIMx characteristics — section 5.3.36 Timer characteristics. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "-",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "f = 250 MHz TIMxCLK",
+        "4",
+        "-",
+        "ns"
+      ],
+      [
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "f = 250 MHz TIMxCLK",
+        "0",
+        "f /4 TIMxCLK",
+        "MHz"
+      ],
+      [
+        "Res TIM",
+        "Timer resolution",
+        "-",
+        "-",
+        "16 / 32",
+        "bit"
+      ]
+    ],
+    "notes": [
+      "1. TIMx is used as a general term to refer to the TIM1 to TIM17 timers.",
+      "2. Specified by design - Not tested in production.",
+      "3. Spikes with widths below t are filtered. AF(min)",
+      "4. Spikes with widths above t are not filtered. AF(max)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

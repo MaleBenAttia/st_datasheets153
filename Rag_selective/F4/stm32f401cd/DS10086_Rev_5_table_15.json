@@ -1,0 +1,75 @@
+{
+  "table_id": "table_15",
+  "document": "DS10086 Rev 5 - Table 15. Features depending on the operating power supply range",
+  "rev": "Rev 5",
+  "table_number": "15",
+  "title": "Table 15. Features depending on the operating power supply range",
+  "page": 61,
+  "section": "6.3.1 General operating conditions",
+  "section_title": "General operating conditions",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f401cd.pdf#page=61",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f401cd.pdf",
+  "text_helper": "Table 15. Features depending on the operating power supply range — section 6.3.1 General operating conditions. Operating power supply range, ADC operation, Maximum Flash memory access frequency without wait states (f ) Flashmax, Maximum Flash memory access frequency with wait states (1)(2), I/O o...",
+  "table_content": {
+    "headers": [
+      "Operating power supply range",
+      "ADC operation",
+      "Maximum Flash memory access frequency without wait states (f ) Flashmax",
+      "Maximum Flash memory access frequency with wait states (1)(2)",
+      "I/O operation",
+      "Clock output frequency on I/O pins(3)",
+      "Possible Flash memory operations"
+    ],
+    "rows": [
+      [
+        "V =1.7 to DD 2.1 V(4)",
+        "Conversion time up to 1.2 Msps",
+        "20 MHz(5)",
+        "84 MHz with 4 wait states",
+        "No I/O compensation",
+        "Up to 30 MHz",
+        "8-bit erase and program operations only"
+      ],
+      [
+        "V = 2.1 to DD 2.4 V",
+        "Conversion time up to 1.2 Msps",
+        "22 MHz",
+        "84 MHz with 3 wait states",
+        "No I/O compensation",
+        "Up to 30 MHz",
+        "16-bit erase and program operations"
+      ],
+      [
+        "V = 2.4 to DD 2.7 V",
+        "Conversion time up to 2.4 Msps",
+        "24 MHz",
+        "84 MHz with 3 wait states",
+        "I/O compensation works",
+        "Up to 48 MHz",
+        "16-bit erase and program operations"
+      ],
+      [
+        "V = 2.7 to DD 3.6 V(6)",
+        "Conversion time up to 2.4 Msps",
+        "30 MHz",
+        "84 MHz with 2 wait states",
+        "I/O compensation works",
+        "– Up to 84 MHz when V = DD 3.0 to 3.6 V – Up to 48 MHz when V = DD 2.7 to 3.0 V",
+        "32-bit erase and program operations"
+      ]
+    ],
+    "notes": [
+      "1. V /V minimum value of 1.7 V with the use of an external power supply supervisor (refer to Section 3.14.2: Internal DD DDA",
+      "2. When the ADC is used, refer to Table 66: ADC characteristics.",
+      "3. If V pin is present, it must respect the following condition: V -V < 1.2 V. REF+ DDA REF+",
+      "4. It is recommended to power V and V from the same source. A maximum difference of 300 mV between V and DD DDA DD",
+      "5. Evaluated by test in production",
+      "6. To sustain a voltage higher than VDD+0.3, the internal Pull-up and Pull-Down resistors must be disabled"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

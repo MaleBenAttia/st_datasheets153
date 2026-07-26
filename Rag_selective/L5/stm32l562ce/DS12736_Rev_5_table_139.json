@@ -1,0 +1,60 @@
+{
+  "table_id": "table_139",
+  "document": "DS12736 Rev 5 - Table 139. Asynchronous multiplexed PSRAM/NOR write-NWAIT timings",
+  "rev": "Rev 5",
+  "table_number": "139",
+  "title": "Table 139. Asynchronous multiplexed PSRAM/NOR write-NWAIT timings",
+  "page": 291,
+  "section": "1.5 Ns",
+  "section_title": "Ns",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l562ce.pdf#page=291",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l562ce.pdf",
+  "text_helper": "Table 139. Asynchronous multiplexed PSRAM/NOR write-NWAIT timings — section 1.5 Ns. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "tw(NE)",
+        "FMC_NE low time",
+        "10THCLK-0.5",
+        "10THCLK+1",
+        "ns"
+      ],
+      [
+        "tw(NWE)",
+        "FMC_NWE low time",
+        "7THCLK-0.5",
+        "7THCLK+0.5",
+        "ns"
+      ],
+      [
+        "tsu(NWAIT_NE)",
+        "FMC_NWAIT valid before FMC_NEx high",
+        "7THCLK+11.5",
+        "-",
+        "ns"
+      ],
+      [
+        "th(NE_NWAIT)",
+        "FMC_NEx hold time after FMC_NWAIT invalid",
+        "5THCLK+12.5",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization results, not tested in production. Synchronous waveforms and timings"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "table_id": "table_8",
+  "document": "DS5792 Rev 13 - Table 8. Current characteristics",
+  "rev": "Rev 13",
+  "table_number": "8",
+  "title": "Table 8. Current characteristics",
+  "page": 43,
+  "section": "5.2 Absolute maximum ratings",
+  "section_title": "Absolute maximum ratings",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f103rc.pdf#page=43",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f103rc.pdf",
+  "text_helper": "Table 8. Current characteristics — section 5.2 Absolute maximum ratings. Symbol, Ratings, Max., Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Ratings",
+      "Max.",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I VDD",
+        "Total current into V /V power lines (source)(1) DD DDA",
+        "150",
+        "mA"
+      ],
+      [
+        "I VSS",
+        "Total current out of V ground lines (sink)(1) SS",
+        "150",
+        "mA"
+      ],
+      [
+        "I IO",
+        "Output current sunk by any I/O and control pin",
+        "25",
+        "mA"
+      ],
+      [
+        "I IO",
+        "Output current source by any I/Os and control pin",
+        "- 25",
+        "mA"
+      ],
+      [
+        "I (2) INJ(PIN)",
+        "Injected current on five volt tolerant pins(3)",
+        "-5/+0",
+        "mA"
+      ],
+      [
+        "I (2) INJ(PIN)",
+        "Injected current on any other pin(4)",
+        "± 5",
+        "mA"
+      ],
+      [
+        "ΣI INJ(PIN)",
+        "Total injected current (sum of all I/O and control pins)(5)",
+        "± 25",
+        "mA"
+      ]
+    ],
+    "notes": [
+      "1. All main power (V , V ) and ground (V , V ) pins must always be connected to the external power DD DDA SS SSA",
+      "2. V maximum must always be respected. Refer to Table8: Current characteristics for the maximum IN",
+      "3. Include V pin. REF-",
+      "4. A positive injection is induced by V >V while a negative injection is induced by V <V . I must IN DD IN SS INJ(PIN)",
+      "5. When several inputs are submitted to a current injection, the maximum ΣI is the absolute sum of the INJ(PIN)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

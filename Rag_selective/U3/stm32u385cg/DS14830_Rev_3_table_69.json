@@ -1,0 +1,154 @@
+{
+  "table_id": "table_69",
+  "document": "DS14830 Rev 3 - Table 69. Regulator mode transition times",
+  "rev": "Rev 3",
+  "table_number": "69",
+  "title": "Table 69. Regulator mode transition times",
+  "page": 131,
+  "section": "5.3.7 Wake-up time from low-power modes and voltage scaling transition times",
+  "section_title": "Wake-up time from low-power modes and voltage scaling transition times",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u385cg.pdf#page=131",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u385cg.pdf",
+  "text_helper": "Table 69. Regulator mode transition times — section 5.3.7 Wake-up time from low-power modes and voltage scaling transition times. Symbol, Parameter, Conditions, Typ (3 V, 30 °C), Max(1) (3 V), +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Typ (3 V, 30 °C)",
+      "Max(1) (3 V)",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "tLDO(2)",
+        "SMPS to LDO transition time",
+        "Range 2 (EPOD booster OFF)",
+        "17.9",
+        "21",
+        "µs"
+      ],
+      [
+        "tLDO(2)",
+        "SMPS to LDO transition time",
+        "Range 2 (EPOD booster ON)",
+        "16.6",
+        "21",
+        "µs"
+      ],
+      [
+        "tLDO(2)",
+        "SMPS to LDO transition time",
+        "Range 1 (with EPOD booster ON)",
+        "15.6",
+        "19",
+        "µs"
+      ],
+      [
+        "tSMPS(2)",
+        "LDO to SMPS transition time",
+        "Range 2 (EPOD booster OFF)",
+        "14.6",
+        "17",
+        "µs"
+      ],
+      [
+        "tSMPS(2)",
+        "LDO to SMPS transition time",
+        "Range 2 (EPOD booster ON)",
+        "13.4",
+        "16",
+        "µs"
+      ],
+      [
+        "tSMPS(2)",
+        "LDO to SMPS transition time",
+        "Range 1 (with EPOD booster ON)",
+        "16.5",
+        "19",
+        "µs"
+      ],
+      [
+        "tVOST (without EPOD booster)",
+        "Range 1 to range 2",
+        "LDO",
+        "5.3",
+        "8.7",
+        "µs"
+      ],
+      [
+        "tVOST (without EPOD booster)",
+        "Range 1 to range 2",
+        "SMPS",
+        "3.6",
+        "4.7",
+        "µs"
+      ],
+      [
+        "tVOST (without EPOD booster)",
+        "Range 2 to range 1",
+        "LDO",
+        "19.5",
+        "22",
+        "µs"
+      ],
+      [
+        "tVOST (without EPOD booster)",
+        "Range 2 to range 1",
+        "SMPS",
+        "26.2",
+        "31",
+        "µs"
+      ],
+      [
+        "tVOST (with EPOD booster)",
+        "Range 1 to range 2",
+        "LDO",
+        "4.4",
+        "7.3",
+        "µs"
+      ],
+      [
+        "tVOST (with EPOD booster)",
+        "Range 1 to range 2",
+        "SMPS",
+        "2.8",
+        "3.7",
+        "µs"
+      ],
+      [
+        "tVOST (with EPOD booster)",
+        "Range 2 to range 1",
+        "LDO",
+        "18.9",
+        "23",
+        "µs"
+      ],
+      [
+        "tVOST (with EPOD booster)",
+        "Range 2 to range 1",
+        "SMPS",
+        "25.1",
+        "23",
+        "µs"
+      ],
+      [
+        "tWUUSART/ tWULPUART",
+        "Wake-up time needed to calculate the maximum USART/LPUART baudrate allowing to wake up from Stop mode when USART/LPUART clock source is HSI16/MSI",
+        "Wake-up time needed to calculate the maximum USART/LPUART baudrate allowing to wake up from Stop mode when USART/LPUART clock source is HSI16/MSI",
+        "Wake-up time needed to calculate the maximum USART/LPUART baudrate allowing to wake up from Stop mode when USART/LPUART clock source is HSI16/MSI",
+        "Wake-up time needed to calculate the maximum USART/LPUART baudrate allowing to wake up from Stop mode when USART/LPUART clock source is HSI16/MSI",
+        "-"
+      ]
+    ],
+    "notes": [
+      "1. Evaluated by characterization and not tested in production. Temperature range from -40°C to 110°C",
+      "2. Time to PWR_SVMSR.REGS change DS14830 - Rev 3 page 131/232"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

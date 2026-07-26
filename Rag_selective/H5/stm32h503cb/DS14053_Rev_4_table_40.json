@@ -1,0 +1,153 @@
+{
+  "table_id": "table_40",
+  "document": "DS14053 Rev 4 - Table 40. HSI oscillator characteristics",
+  "rev": "Rev 4",
+  "table_number": "40",
+  "title": "Table 40. HSI oscillator characteristics",
+  "page": 101,
+  "section": "5.3.8 Internal clock source characteristics",
+  "section_title": "Internal clock source characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h503cb.pdf#page=101",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h503cb.pdf",
+  "text_helper": "Table 40. HSI oscillator characteristics — section 5.3.8 Internal clock source characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f HSI",
+        "HSI frequency",
+        "V =3.3 V, T =30 °C DD J",
+        "63.7(2)",
+        "64(2)",
+        "64.3(2)",
+        "MHz"
+      ],
+      [
+        "TRIM",
+        "User trimming step",
+        "Trimming is not a multiple of 32(3)",
+        "-",
+        "0.24",
+        "0.32",
+        "%"
+      ],
+      [
+        "TRIM",
+        "User trimming step",
+        "Trimming is 128, 256 and 384(3)",
+        "-5.2",
+        "-1.8",
+        "-",
+        "%"
+      ],
+      [
+        "TRIM",
+        "User trimming step",
+        "Trimming is 64, 192, 320 and 488(3)",
+        "-1.4",
+        "-0.8",
+        "-",
+        "%"
+      ],
+      [
+        "TRIM",
+        "User trimming step",
+        "Other trimming are a multiple of 32 (not including multiple of 64 and 128)(3)",
+        "-0.6",
+        "-0.25",
+        "-",
+        "%"
+      ],
+      [
+        "DuCy(HSI)",
+        "Duty cycle",
+        "-",
+        "45",
+        "-",
+        "55",
+        "%"
+      ],
+      [
+        "∆ (HSI) VDD",
+        "HSI oscillator frequency drift with V (reference is 3.3 V) DD",
+        "V = 1.71 to 3.6 V DD",
+        "-0.12",
+        "-",
+        "0.03",
+        "%"
+      ],
+      [
+        "∆ (HSI) TEMP",
+        "HSI oscillator frequency drift with V (reference is 64 DD MHz)",
+        "T = -20 to 105 °C J",
+        "-1(4)",
+        "-",
+        "1(4)",
+        "%"
+      ],
+      [
+        "∆ (HSI) TEMP",
+        "HSI oscillator frequency drift with V (reference is 64 DD MHz)",
+        "T = -40 to 130 °C J",
+        "-2(4)",
+        "-",
+        "1(4)",
+        "%"
+      ],
+      [
+        "t (HSI) su",
+        "HSI oscillator start-up time",
+        "-",
+        "-",
+        "1.4",
+        "2",
+        "μs"
+      ],
+      [
+        "t (HSI) stab",
+        "HSI oscillator stabilization time",
+        "at 1% of target frequency",
+        "-",
+        "4",
+        "8",
+        "μs"
+      ],
+      [
+        "t (HSI) stab",
+        "HSI oscillator stabilization time",
+        "at 5% of target frequency",
+        "-",
+        "-",
+        "4",
+        "μs"
+      ],
+      [
+        "I (HSI) DD",
+        "HSI oscillator power consumption",
+        "-",
+        "-",
+        "300",
+        "450",
+        "μA"
+      ]
+    ],
+    "notes": [
+      "2. Calibrated during manufacturing tests.",
+      "3. Trimming value of HSICAL[8:0]",
+      "4. Evaluated by characterization. Not tested in production. DS14053 Rev 4 101/172"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

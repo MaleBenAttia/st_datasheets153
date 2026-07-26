@@ -1,0 +1,60 @@
+{
+  "table_id": "table_4",
+  "document": "DS10693 Rev 11 - Table 4. Regulator ON/OFF and internal reset ON/OFF availability",
+  "rev": "Rev 11",
+  "table_number": "4",
+  "title": "Table 4. Regulator ON/OFF and internal reset ON/OFF availability",
+  "page": 28,
+  "section": "3.17.3 Regulator ON/OFF and internal reset ON/OFF availability",
+  "section_title": "Regulator ON/OFF and internal reset ON/OFF availability",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f446mc.pdf#page=28",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f446mc.pdf",
+  "text_helper": "Table 4. Regulator ON/OFF and internal reset ON/OFF availability — section 3.17.3 Regulator ON/OFF and internal reset ON/OFF availability. Package, Regulator ON, Regulator OFF, Internal reset ON, Internal reset OFF.",
+  "table_content": {
+    "headers": [
+      "Package",
+      "Regulator ON",
+      "Regulator OFF",
+      "Internal reset ON",
+      "Internal reset OFF"
+    ],
+    "rows": [
+      [
+        "LQFP64 / LQFP100",
+        "Yes",
+        "No",
+        "Yes",
+        "No"
+      ],
+      [
+        "LQFP144",
+        "Yes",
+        "No",
+        "Yes PDR_ON set to V DD",
+        "Yes PDR_ON set to Vss"
+      ],
+      [
+        "UFBGA144",
+        "Yes BYPASS_REG set to Vss",
+        "Yes BYPASS_REG set to V DD",
+        "Yes PDR_ON set to V DD",
+        "Yes PDR_ON set to Vss"
+      ],
+      [
+        "WLCSP81",
+        "Yes BYPASS_REG set to Vss",
+        "Yes BYPASS_REG set to V DD",
+        "Yes PDR_ON set to V DD",
+        "Yes PDR_ON set to Vss"
+      ]
+    ],
+    "notes": [
+      "1. This figure is valid whatever the internal reset mode (ON or OFF)."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

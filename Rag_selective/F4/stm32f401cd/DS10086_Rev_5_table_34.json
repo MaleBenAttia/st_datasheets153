@@ -1,0 +1,126 @@
+{
+  "table_id": "table_34",
+  "document": "DS10086 Rev 5 - Table 34. Low-power mode wake-up timings(1)",
+  "rev": "Rev 5",
+  "table_number": "34",
+  "title": "Table 34. Low-power mode wake-up timings(1)",
+  "page": 75,
+  "section": "6.3.7 Wake-up time from low-power modes",
+  "section_title": "Wake-up time from low-power modes",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f401cd.pdf#page=75",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f401cd.pdf",
+  "text_helper": "Table 34. Low-power mode wake-up timings(1) — section 6.3.7 Wake-up time from low-power modes. Symbol, Symbol, Parameter, Min(1), Typ(1), +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Symbol",
+      "Parameter",
+      "Min(1)",
+      "Typ(1)",
+      "Max(1)",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t (2) WUSLEEP",
+        "t (2) WUSLEEP",
+        "Wake-up from Sleep mode",
+        "-",
+        "4",
+        "6",
+        "CPU clock cycle"
+      ],
+      [
+        "t (2) WUSTOP",
+        "t (2) WUSTOP",
+        "Wake-up from Stop mode, usage of main regulator",
+        "-",
+        "13.5",
+        "14.5",
+        "µs"
+      ],
+      [
+        "t (2) WUSTOP",
+        "t (2) WUSTOP",
+        "Wake-up from Stop mode, usage of main regulator, flash memory in Deep power down mode",
+        "-",
+        "105",
+        "111",
+        "µs"
+      ],
+      [
+        "t (2) WUSTOP",
+        "t (2) WUSTOP",
+        "Wake-up from Stop mode, regulator in low power mode",
+        "-",
+        "21",
+        "33",
+        "µs"
+      ],
+      [
+        "t (2) WUSTOP",
+        "t (2) WUSTOP",
+        "Wake-up from Stop mode, regulator in low power mode, flash memory in Deep power down mode",
+        "-",
+        "113",
+        "130",
+        "µs"
+      ],
+      [
+        "t (2)(3) WUSTDBY",
+        "t (2)(3) WUSTDBY",
+        "Wake-up from Standby mode",
+        "-",
+        "314",
+        "407",
+        "µs"
+      ],
+      [
+        "V HSEH",
+        "OSC_IN input pin high level voltage",
+        "OSC_IN input pin high level voltage",
+        "0.7V DD",
+        "-",
+        "V DD",
+        "V"
+      ],
+      [
+        "V HSEL",
+        "OSC_IN input pin low level voltage",
+        "OSC_IN input pin low level voltage",
+        "V SS",
+        "-",
+        "0.3V DD",
+        "0.3V DD"
+      ],
+      [
+        "t w(HSE) t w(HSE)",
+        "OSC_IN high or low time(1)",
+        "OSC_IN high or low time(1)",
+        "5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t r(HSE) t f(HSE)",
+        "OSC_IN rise or fall time(1)",
+        "OSC_IN rise or fall time(1)",
+        "-",
+        "-",
+        "10",
+        "10"
+      ]
+    ],
+    "notes": [
+      "1. I2SMOD bit set in SPI_I2SCFGR register, and then the I2SE bit set to enable I2S peripheral.",
+      "2. When the ADC is ON (ADON bit set in the ADC_CR2 register), add an additional power consumption of 1.6 mA for the analog part.",
+      "3. t maximum value is given at –40 °C. WUSTDBY"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

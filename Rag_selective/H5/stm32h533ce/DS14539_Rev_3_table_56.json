@@ -1,0 +1,66 @@
+{
+  "table_id": "table_56",
+  "document": "DS14539 Rev 3 - Table 56. I/O current injection susceptibility",
+  "rev": "Rev 3",
+  "table_number": "56",
+  "title": "Table 56. I/O current injection susceptibility",
+  "page": 130,
+  "section": "5.3.13 I/O current injection characteristics",
+  "section_title": "I/O current injection characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h533ce.pdf#page=130",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h533ce.pdf",
+  "text_helper": "Table 56. I/O current injection susceptibility — section 5.3.13 I/O current injection characteristics. Symbol, Description, Functional susceptibility / Negative injection, Functional susceptibility / Positive injection, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Description",
+      "Functional susceptibility / Negative injection",
+      "Functional susceptibility / Positive injection",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I INJ",
+        "Injected current on pins PC14, PC15, PB6, PB8, PE8",
+        "0",
+        "0",
+        "mA"
+      ],
+      [
+        "I INJ",
+        "Injected current on PB5, PB8, PC5, PD10, PE4, PF6, PH1",
+        "5",
+        "0",
+        "mA"
+      ],
+      [
+        "I INJ",
+        "Injected current on PA4, PA5, PB2, PD8",
+        "0",
+        "N/A",
+        "mA"
+      ],
+      [
+        "I INJ",
+        "Injected current on all other pins",
+        "5",
+        "N/A",
+        "mA"
+      ]
+    ],
+    "notes": [
+      "1. Evaluated by characterization - Not tested in production.",
+      "2. Compliant with CMOS requirements.",
+      "3. Specified by design - Not tested in production.",
+      "4. This parameter represents the pad leakage of the I/O itself. The total product pad leakage is provided by the following formula: I = 10 μA + [number of I/Os where V is applied on the pad] ₓ I .",
+      "5. V must be lower than Max(V ) + 3.6 V. IN DDXXX",
+      "6. The pull-up and pull-down resistors are designed with a true resistance in series with a switchable PMOS/NMOS. This PMOS/NMOS contribution to the series resistance is minimal (~10%).",
+      "7. Max(V ) is the maximum value of all the I/O supplies. DDXXX"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

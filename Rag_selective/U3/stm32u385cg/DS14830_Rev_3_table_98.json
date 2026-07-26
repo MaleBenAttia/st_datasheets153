@@ -1,0 +1,100 @@
+{
+  "table_id": "table_98",
+  "document": "DS14830 Rev 3 - Table 98. Temperature sensor characteristics",
+  "rev": "Rev 3",
+  "table_number": "98",
+  "title": "Table 98. Temperature sensor characteristics",
+  "page": 159,
+  "section": "5.3.19 Temperature sensor characteristics",
+  "section_title": "Temperature sensor characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u385cg.pdf#page=159",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u385cg.pdf",
+  "text_helper": "Table 98. Temperature sensor characteristics — section 5.3.19 Temperature sensor characteristics. Symbol, Symbol, Parameter, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "TL(1)",
+        "TL(1)",
+        "VSENSE linearity with temperature",
+        "-",
+        "-",
+        "1.3",
+        "°C"
+      ],
+      [
+        "Avg_Slope(1)",
+        "Avg_Slope(1)",
+        "Average slope",
+        "2",
+        "2.5",
+        "3.0",
+        "mV/°C"
+      ],
+      [
+        "V30(2)",
+        "V30(2)",
+        "Voltage at 30°C (± 5°C)",
+        "700",
+        "752",
+        "800",
+        "mV"
+      ],
+      [
+        "Delta(Vcontinuous - Vsampling)(3)",
+        "Delta(Vcontinuous - Vsampling)(3)",
+        "Difference of voltage between continuous and sampling modes(4)",
+        "-",
+        "-",
+        "–10/+4",
+        "mV"
+      ],
+      [
+        "tSTART (TS_BUF)(3)",
+        "tSTART (TS_BUF)(3)",
+        "Sensor buffer startup time",
+        "-",
+        "1",
+        "10",
+        "µs"
+      ],
+      [
+        "tS_temp(3)",
+        "tS_temp(3)",
+        "ADC sampling time when reading the temperature",
+        "13",
+        "-",
+        "-",
+        "µs"
+      ],
+      [
+        "IDD(TS)(3)",
+        "IDD(TS)(3)",
+        "Temperature sensor consumption from VDD, when selected by ADC",
+        "-",
+        "14",
+        "20",
+        "µA"
+      ]
+    ],
+    "notes": [
+      "1. In buffered mode, the output can overshoot above the final value for low input code (starting from the minimum value).",
+      "2. Refer to Table 86. I/O static characteristics.",
+      "3. TON is the refresh phase duration. TOFF is the hold phase duration (see the product reference manual for more details).",
+      "4. The temperature sensor is in continuous mode when the regulator is in range 1. The temperature sensor is in sampling mode when the regulator is in range 2, or when the device is in Stop 1 mode."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

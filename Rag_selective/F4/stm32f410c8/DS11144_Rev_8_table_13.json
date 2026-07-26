@@ -1,0 +1,101 @@
+{
+  "table_id": "table_13",
+  "document": "DS11144 Rev 8 - Table 13. Current characteristics",
+  "rev": "Rev 8",
+  "table_number": "13",
+  "title": "Table 13. Current characteristics",
+  "page": 51,
+  "section": "6.2 Absolute maximum ratings",
+  "section_title": "Absolute maximum ratings",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f410c8.pdf#page=51",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f410c8.pdf",
+  "text_helper": "Table 13. Current characteristics — section 6.2 Absolute maximum ratings. Symbol, Ratings, Max., Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Ratings",
+      "Max.",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "ΣI VDD",
+        "Total current into sum of all V power lines (source)(1) DD_x",
+        "160",
+        "mA"
+      ],
+      [
+        "SSV I Σ",
+        "Total current out of sum of all V ground lines (sink)(1) SS_x",
+        "-160",
+        "mA"
+      ],
+      [
+        "I VDD",
+        "Maximum current into each V power line (source)(1) DD_x",
+        "100",
+        "mA"
+      ],
+      [
+        "I VSS",
+        "Maximum current out of each V ground line (sink)(1) SS_x",
+        "-100",
+        "mA"
+      ],
+      [
+        "I IO",
+        "Output current sunk by any I/O and control pin",
+        "25",
+        "mA"
+      ],
+      [
+        "I IO",
+        "Output current sourced by any I/O and control pin",
+        "-25",
+        "mA"
+      ],
+      [
+        "ΣI IO",
+        "Total output current sunk by sum of all I/O and control pins (2)",
+        "120",
+        "mA"
+      ],
+      [
+        "ΣI IO",
+        "Total output current sourced by sum of all I/Os and control pins(2)",
+        "-120",
+        "mA"
+      ],
+      [
+        "I (3) INJ(PIN)",
+        "Injected current on FT and TC pins (4)",
+        "–5/+0",
+        "mA"
+      ],
+      [
+        "I (3) INJ(PIN)",
+        "Injected current on NRST and B pins (4)",
+        "–5/+0",
+        "mA"
+      ],
+      [
+        "ΣI INJ(PIN)",
+        "Total injected current (sum of all I/O and control pins)(5)",
+        "±25",
+        "mA"
+      ]
+    ],
+    "notes": [
+      "1. All main power (V , V ) and ground (V , V ) pins must always be connected to the external power supply, in the DD DDA SS SSA",
+      "2. This current consumption must be correctly distributed over all I/Os and control pins.",
+      "3. Negative injection disturbs the analog performance of the device. See note in Section 6.3.20: 12-bit ADC characteristics.",
+      "4. Positive injection is not possible on these I/Os and does not occur for input voltages lower than the specified maximum value.",
+      "5. When several inputs are submitted to a current injection, the maximum ΣI is the absolute sum of the positive and INJ(PIN)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

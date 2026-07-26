@@ -1,0 +1,95 @@
+{
+  "table_id": "table_25",
+  "document": "DS15096 Rev 3 - Table 25. Current characteristics",
+  "rev": "Rev 3",
+  "table_number": "25",
+  "title": "Table 25. Current characteristics",
+  "page": 107,
+  "section": "5.2 Absolute maximum ratings",
+  "section_title": "Absolute maximum ratings",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u3c5ci.pdf#page=107",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u3c5ci.pdf",
+  "text_helper": "Table 25. Current characteristics — section 5.2 Absolute maximum ratings. Symbol, Ratings, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Ratings",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "∑IVDD",
+        "Total current into sum of all VDD power lines (source)(1)",
+        "150",
+        "mA"
+      ],
+      [
+        "∑IVSS",
+        "Total current out of sum of all VSS ground lines (sink)(1)",
+        "150",
+        "mA"
+      ],
+      [
+        "IVDD",
+        "Maximum current into each VDD power pin (source)(1)",
+        "100",
+        "mA"
+      ],
+      [
+        "IVSS",
+        "Maximum current out of each VSS ground pin (sink)(1)",
+        "100",
+        "mA"
+      ],
+      [
+        "IIO",
+        "Output current sunk by any I/O and control pin",
+        "20",
+        "mA"
+      ],
+      [
+        "IIO",
+        "Output current sourced by any I/O and control pin",
+        "20",
+        "mA"
+      ],
+      [
+        "∑I(PIN)",
+        "Total output current sunk by sum of all I/Os and control pins(2)",
+        "120",
+        "mA"
+      ],
+      [
+        "∑I(PIN)",
+        "Total output current sourced by sum of all I/Os and control pins(2)",
+        "120",
+        "mA"
+      ],
+      [
+        "IINJ(PIN)(3)(4)",
+        "Injected current on FT_xx, TT_xx, RST pins",
+        "-5/+0",
+        "mA"
+      ],
+      [
+        "∑IINJ(PIN)",
+        "Total injected current (sum of all I/Os and control pins)(5)",
+        "±25",
+        "mA"
+      ]
+    ],
+    "notes": [
+      "1. If HSLV = 0.",
+      "2. VDDIO1 or VDDIO2 or VSW. VDDIO1 = VDD.",
+      "3. HSLV = High-speed low-voltage mode. Refer to General-purpose I/Os (GPIO) section of RM0487.",
+      "4. VIN maximum must always be respected. Refer to Table 25 for the maximum allowed injected current values.",
+      "5. This formula has to be applied only on the power supplies related to the I/O structure described in the pin definition table."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

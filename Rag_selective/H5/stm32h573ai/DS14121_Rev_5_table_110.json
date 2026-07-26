@@ -1,0 +1,79 @@
+{
+  "table_id": "table_110",
+  "document": "DS14121 Rev 5 - Table 110. TIMx characteristics",
+  "rev": "Rev 5",
+  "table_number": "110",
+  "title": "Table 110. TIMx characteristics",
+  "page": 224,
+  "section": "5.3.31 Timer characteristics",
+  "section_title": "Timer characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h573ai.pdf#page=224",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h573ai.pdf",
+  "text_helper": "Table 110. TIMx characteristics — section 5.3.31 Timer characteristics. Symbol, Parameter, Conditions(3), Min, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions(3)",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APBx prescaler = 1, 2, or 4, f = 250 MHz TIMxCLK",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APBx prescaler > 4, f = 125 MHz TIMxCLK",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "f = 250 MHz TIMxCLK",
+        "0",
+        "f / 2 TIMxCLK",
+        "MHz"
+      ],
+      [
+        "Res TIM",
+        "Timer resolution",
+        "f = 250 MHz TIMxCLK",
+        "-",
+        "16 / 32",
+        "bit"
+      ],
+      [
+        "t MAX_COUNT",
+        "Maximum possible count with 32-bit counter",
+        "-",
+        "-",
+        "65536 × 65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t AF",
+        "Maximum pulse width of spikes suppressed by analog filter",
+        "Maximum pulse width of spikes suppressed by analog filter",
+        "Maximum pulse width of spikes suppressed by analog filter",
+        "50(3)",
+        "160(4)"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "table_id": "table_91",
+  "document": "DS14861 Rev 3 - Table 91. Output AC characteristics for FT_o and PC13 I/Os",
+  "rev": "Rev 3",
+  "table_number": "91",
+  "title": "Table 91. Output AC characteristics for FT_o and PC13 I/Os",
+  "page": 149,
+  "section": "5.3.14 I/O port characteristics",
+  "section_title": "I/O port characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf#page=149",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf",
+  "text_helper": "Table 91. Output AC characteristics for FT_o and PC13 I/Os — section 5.3.14 I/O port characteristics. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "Fmax",
+        "Maximum frequency",
+        "CL = 50 pF, 2.7 V ≤ VSW ≤ 3.6 V, VDD off",
+        "-",
+        "0.5",
+        "MHz"
+      ],
+      [
+        "Fmax",
+        "Maximum frequency",
+        "CL = 50 pF, 1.58 V ≤ VSW < 2.7 V, VDD off",
+        "-",
+        "0.25",
+        "MHz"
+      ],
+      [
+        "tr/tf",
+        "Output rise and fall time",
+        "CL = 50 pF, 2.7 V ≤ VSW ≤ 3.6 V, VDD off",
+        "-",
+        "400",
+        "ns"
+      ],
+      [
+        "tr/tf",
+        "Output rise and fall time",
+        "CL = 50 pF, 1.58 V ≤ VSW < 2.7 V, VDD off",
+        "-",
+        "900",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. Very high speed config 11 has the same characteritics as High speed config 10.",
+      "2. Compensation system enabled.",
+      "3. The I/O frequency is actually limited by the device maximum frequency (96 MHz)."
+    ],
+    "legend": [
+      "Specified by design and not tested in production."
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

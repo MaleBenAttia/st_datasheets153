@@ -1,0 +1,74 @@
+{
+  "table_id": "table_54",
+  "document": "DS12535 Rev 2 - Table 54. I/O current injection susceptibility",
+  "rev": "Rev 2",
+  "table_number": "54",
+  "title": "Table 54. I/O current injection susceptibility",
+  "page": 126,
+  "section": "6.3.16 I/O current injection characteristics",
+  "section_title": "I/O current injection characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f750n8.pdf#page=126",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f750n8.pdf",
+  "text_helper": "Table 54. I/O current injection susceptibility — section 6.3.16 I/O current injection characteristics. Symbol, Description, Functional susceptibility / Negative injection, Functional susceptibility / Positive injection, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Description",
+      "Functional susceptibility / Negative injection",
+      "Functional susceptibility / Positive injection",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I INJ",
+        "Injected current on BOOT pin",
+        "-0",
+        "NA",
+        "mA"
+      ],
+      [
+        "I INJ",
+        "Injected current on NRST pin",
+        "-0",
+        "NA",
+        "mA"
+      ],
+      [
+        "I INJ",
+        "Injected current on PA0, PC0 pins",
+        "-0",
+        "NA",
+        "mA"
+      ],
+      [
+        "I INJ",
+        "Injected current on any other FT pin",
+        "-5",
+        "NA",
+        "mA"
+      ],
+      [
+        "I INJ",
+        "Injected current on any other pins",
+        "-5",
+        "+5",
+        "mA"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by design.",
+      "2. Tested in production.",
+      "3. With a minimum of 200 mV.",
+      "4. Leakage could be higher than the maximum value, if negative current is injected on adjacent pins, Refer to Table 54: I/O current injection susceptibility",
+      "5. To sustain a voltage higher than VDD +0.3 V, the internal pull-up/pull-down resistors must be disabled. Leakage could be higher than the maximum value, if negative current is injected on adjacent pins.Refer to Table 54: I/O current injection",
+      "6. Pull-up resistors are designed with a true resistance in series with a switchable PMOS. This PMOS contribution to the series resistance is minimum (~10% order).",
+      "7. Pull-down resistors are designed with a true resistance in series with a switchable NMOS. This NMOS contribution to the series resistance is minimum (~10% order).",
+      "8. Hysteresis voltage between Schmitt trigger switching levels. Guaranteed by characterization results. All I/Os are CMOS and TTL compliant (no software configuration required). Their"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

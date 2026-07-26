@@ -1,0 +1,58 @@
+{
+  "table_id": "table_35",
+  "document": "DS5319 Rev 20 - Table 35. I/O current injection susceptibility",
+  "rev": "Rev 20",
+  "table_number": "35",
+  "title": "Table 35. I/O current injection susceptibility",
+  "page": 60,
+  "section": "5.3.12 I/O current injection characteristics",
+  "section_title": "I/O current injection characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f103c8.pdf#page=60",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f103c8.pdf",
+  "text_helper": "Table 35. I/O current injection susceptibility — section 5.3.12 I/O current injection characteristics. Symbol, Description, Functional susceptibility / Negative injection, Functional susceptibility / Positive injection, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Description",
+      "Functional susceptibility / Negative injection",
+      "Functional susceptibility / Positive injection",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I INJ",
+        "Injected current on OSC_IN32, OSC_OUT32, PA4, PA5, PC13",
+        "-0",
+        "+0",
+        "mA"
+      ],
+      [
+        "I INJ",
+        "Injected current on all FT pins",
+        "-5",
+        "+0",
+        "mA"
+      ],
+      [
+        "I INJ",
+        "Injected current on any other pin",
+        "-5",
+        "+5",
+        "mA"
+      ]
+    ],
+    "notes": [
+      "1. Data based on design simulation.",
+      "2. Tested in production.",
+      "3. FT = 5 V tolerant. To sustain a voltage higher than V + 0.3 V the internal pull-up/pull-down resistors must be disabled. DD",
+      "4. Hysteresis voltage between Schmitt trigger switching levels. Evaluated by characterization, not tested in production, unless otherwise specified.",
+      "5. With a minimum of 100 mV.",
+      "6. Leakage can be higher than Max if negative current is injected on adjacent pins. DS5319 Rev 20 61/115"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

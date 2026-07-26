@@ -1,0 +1,72 @@
+{
+  "table_id": "table_62",
+  "document": "DS12288 Rev 6 - Table 62. HRTIM output response to external events 1 to 10 (Synchronous mode )",
+  "rev": "Rev 6",
+  "table_number": "62",
+  "title": "Table 62. HRTIM output response to external events 1 to 10 (Synchronous mode )",
+  "page": 136,
+  "section": "5.3.17 Extended interrupt and event controller input (EXTI) characteristics",
+  "section_title": "Extended interrupt and event controller input (EXTI) characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32g474cb.pdf#page=136",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g474cb.pdf",
+  "text_helper": "Table 62. HRTIM output response to external events 1 to 10 (Synchronous mode ) — section 5.3.17 Extended interrupt and event controller input (EXTI) characteristics. Symbol, Parameter, Conditions, Min., Typ., +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min.",
+      "Typ.",
+      "Max.(2)",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t LAT(DEEV)",
+        "Digital external event response latency",
+        "Propagation delay from HRTIM1_EEVx digital input to HRTIM_CHxy output pin (30pF load) (3)",
+        "-",
+        "56",
+        "66",
+        "ns"
+      ],
+      [
+        "t LAT(AEEV)",
+        "Analog external event response latency",
+        "Propagation delay from COMPx_INP input pin to HRTIM_CHxy output pin (30pF load) (3)",
+        "-",
+        "62",
+        "76",
+        "ns"
+      ],
+      [
+        "t W(EEV)",
+        "Minimum external event pulse width",
+        "-",
+        "7",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "T JIT(EEV)",
+        "External event response jitter",
+        "Jitter of the delay from HRTIM1_EEVx digital input or COMPx_INP to HRTIM_CHxy output pin",
+        "-",
+        "-",
+        "1",
+        "t (4) HRTIM"
+      ]
+    ],
+    "notes": [
+      "2. Data based on characterization results, not tested in production.",
+      "3. This parameter is given for f = 170 MHz. HRTIM",
+      "4. T = 1 / f with f = 170 MHz. HRTIM HRTIM HRTIM"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

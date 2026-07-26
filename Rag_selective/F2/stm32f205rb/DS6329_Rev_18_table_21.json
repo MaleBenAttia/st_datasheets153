@@ -1,0 +1,220 @@
+{
+  "table_id": "table_21",
+  "document": "DS6329 Rev 18 - Table 21. Typical and maximum current consumption in Run mode, code with data processing",
+  "rev": "Rev 18",
+  "table_number": "21",
+  "title": "Table 21. Typical and maximum current consumption in Run mode, code with data processing",
+  "page": 78,
+  "section": "6.3.6 Supply current characteristics",
+  "section_title": "Supply current characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f205rb.pdf#page=78",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f205rb.pdf",
+  "text_helper": "Table 21. Typical and maximum current consumption in Run mode, code with data processing — section 6.3.6 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK, Typ / T = 25 °C A, +3 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "f HCLK",
+      "Typ / T = 25 °C A",
+      "Max(1) / T = 85 °C A",
+      "Max(1) / T = 105 °C A",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock(2), all peripherals enabled(3)",
+        "120 MHz",
+        "61",
+        "81",
+        "93",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock(2), all peripherals enabled(3)",
+        "90 MHz",
+        "48",
+        "68",
+        "80",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock(2), all peripherals enabled(3)",
+        "60 MHz",
+        "33",
+        "53",
+        "65",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock(2), all peripherals enabled(3)",
+        "30 MHz",
+        "18",
+        "38",
+        "50",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock(2), all peripherals enabled(3)",
+        "25 MHz",
+        "14",
+        "34",
+        "46",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock(2), all peripherals enabled(3)",
+        "16 MHz(4)",
+        "10",
+        "30",
+        "42",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock(2), all peripherals enabled(3)",
+        "8 MHz",
+        "6",
+        "26",
+        "38",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock(2), all peripherals enabled(3)",
+        "4 MHz",
+        "4",
+        "24",
+        "36",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock(2), all peripherals enabled(3)",
+        "2 MHz",
+        "3",
+        "23",
+        "35",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock(2), all peripherals disabled",
+        "120 MHz",
+        "33",
+        "54",
+        "66",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock(2), all peripherals disabled",
+        "90 MHz",
+        "27",
+        "47",
+        "59",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock(2), all peripherals disabled",
+        "60 MHz",
+        "19",
+        "39",
+        "51",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock(2), all peripherals disabled",
+        "30 MHz",
+        "11",
+        "31",
+        "43",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock(2), all peripherals disabled",
+        "25 MHz",
+        "8",
+        "28",
+        "41",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock(2), all peripherals disabled",
+        "16 MHz(4)",
+        "6",
+        "26",
+        "38",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock(2), all peripherals disabled",
+        "8 MHz",
+        "4",
+        "24",
+        "36",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock(2), all peripherals disabled",
+        "4 MHz",
+        "3",
+        "23",
+        "35",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock(2), all peripherals disabled",
+        "2 MHz",
+        "2",
+        "23",
+        "34",
+        "mA"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization results, tested in production at V max and f max with peripherals enabled. DD HCLK",
+      "2. External clock is 4 MHz and PLL is on when f > 25 MHz. HCLK",
+      "3. When the ADC is on (ADON bit set in the ADC_CR2 register), add an additional power consumption of 1.6 mA per ADC for the analog part.",
+      "4. In this case HCLK = system clock/2. 78/181 DS6329 Rev 18"
+    ],
+    "legend": [
+      "running from Flash memory (ART accelerator disabled)"
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "table_id": "table_4",
+  "document": "DS15096 Rev 3 - Table 4. Boot modes when TrustZone® is disabled (TZEN = 0)",
+  "rev": "Rev 3",
+  "table_number": "4",
+  "title": "Table 4. Boot modes when TrustZone® is disabled (TZEN = 0)",
+  "page": 13,
+  "section": "3.6 Boot modes",
+  "section_title": "Boot modes",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u3c5ci.pdf#page=13",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u3c5ci.pdf",
+  "text_helper": "Table 4. Boot modes when TrustZone® is disabled (TZEN = 0) — section 3.6 Boot modes. NBOOT0, BOOT0 pin, NSWBOOT0, Boot address option-byte selection, Boot area, +1 autres.",
+  "table_content": {
+    "headers": [
+      "NBOOT0",
+      "BOOT0 pin",
+      "NSWBOOT0",
+      "Boot address option-byte selection",
+      "Boot area",
+      "ST programmed default value"
+    ],
+    "rows": [
+      [
+        "-",
+        "0",
+        "1",
+        "ADD[24:0] in FLASH_BOOT0R",
+        "Nonsecure boot base address 0 defined by user option bytes in FLASH_BOOT0R",
+        "Flash: 0x0800 0000"
+      ],
+      [
+        "-",
+        "1",
+        "1",
+        "ADD[24:0] in FLASH_BOOT1R",
+        "Nonsecure boot base address 0 defined by user option bytes in FLASH_BOOT1R",
+        "Bootloader: 0x0BF8 F000"
+      ],
+      [
+        "1",
+        "-",
+        "0",
+        "ADD[24:0] in FLASH_BOOT0R",
+        "Nonsecure boot base address 0 defined by user option bytes in FLASH_BOOT0R",
+        "Flash: 0x0800 0000"
+      ],
+      [
+        "0",
+        "-",
+        "0",
+        "ADD[24:0] in FLASH_BOOT1R",
+        "Nonsecure boot base address 0 defined by user option bytes in FLASH_BOOT1R",
+        "Bootloader: 0x0BF8 F000"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

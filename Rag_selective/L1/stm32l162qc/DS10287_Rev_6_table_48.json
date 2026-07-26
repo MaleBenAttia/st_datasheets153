@@ -1,0 +1,56 @@
+{
+  "table_id": "table_48",
+  "document": "DS10287 Rev 6 - Table 48. SCL frequency (f = 32 MHz, V = VDD_I2C = 3.3 V) 94 PCLK1 DD",
+  "rev": "Rev 6",
+  "table_number": "48",
+  "title": "Table 48. SCL frequency (f = 32 MHz, V = VDD_I2C = 3.3 V) 94 PCLK1 DD",
+  "page": 94,
+  "section": "6.3.16 Communications interfaces",
+  "section_title": "Communications interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l162qc.pdf#page=94",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l162qc.pdf",
+  "text_helper": "Table 48. SCL frequency (f = 32 MHz, V = VDD_I2C = 3.3 V) 94 PCLK1 DD — section 6.3.16 Communications interfaces. f (kHz) SCL, I2C_CCR value R = 4.7 kΩ P.",
+  "table_content": {
+    "headers": [
+      "f (kHz) SCL",
+      "I2C_CCR value R = 4.7 kΩ P"
+    ],
+    "rows": [
+      [
+        "400",
+        "0x801B"
+      ],
+      [
+        "300",
+        "0x8024"
+      ],
+      [
+        "200",
+        "0x8035"
+      ],
+      [
+        "100",
+        "0x00A0"
+      ],
+      [
+        "50",
+        "0x0140"
+      ],
+      [
+        "20",
+        "0x0320"
+      ]
+    ],
+    "notes": [
+      "1. R = External pull-up resistance, f = I2C speed. P SCL",
+      "2. For speeds around 200 kHz, the tolerance on the achieved speed is of ±5%. For other speed ranges, the tolerance on the achieved speed is ±2%. These variations depend on the accuracy of the external",
+      "3. The maximum SPI clock frequency in slave transmitter mode is given for an SPI slave input clock duty cycle (DuCy(SCK)) ranging between 40 to 60%.",
+      "4. Measurement points are done at CMOS levels: 0.3V DD and 0.7V DD."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

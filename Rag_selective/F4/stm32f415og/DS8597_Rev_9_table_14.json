@@ -1,0 +1,293 @@
+{
+  "table_id": "table_14",
+  "document": "DS8597 Rev 9 - Table 14. General operating conditions",
+  "rev": "Rev 9",
+  "table_number": "14",
+  "title": "Table 14. General operating conditions",
+  "page": 82,
+  "section": "5.3.1 General operating conditions",
+  "section_title": "General operating conditions",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f415og.pdf#page=82",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f415og.pdf",
+  "text_helper": "Table 14. General operating conditions — section 5.3.1 General operating conditions. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f HCLK",
+        "Internal AHB clock frequency",
+        "VOS bit in PWR_CR register = 0(1)",
+        "0",
+        "-",
+        "144",
+        "MHz"
+      ],
+      [
+        "f HCLK",
+        "Internal AHB clock frequency",
+        "VOS bit in PWR_CR register= 1",
+        "0",
+        "-",
+        "168",
+        "MHz"
+      ],
+      [
+        "f PCLK1",
+        "Internal APB1 clock frequency",
+        "-",
+        "0",
+        "-",
+        "42",
+        "MHz"
+      ],
+      [
+        "f PCLK2",
+        "Internal APB2 clock frequency",
+        "-",
+        "0",
+        "-",
+        "84",
+        "MHz"
+      ],
+      [
+        "V DD",
+        "Standard operating voltage",
+        "-",
+        "1.8(2)",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V (3)(4) DDA",
+        "Analog operating voltage (ADC limited to 1.2 M samples)",
+        "Must be the same potential as V (5) DD",
+        "1.8(2)",
+        "-",
+        "2.4",
+        "V"
+      ],
+      [
+        "V (3)(4) DDA",
+        "Analog operating voltage (ADC limited to 1.4 M samples)",
+        "Must be the same potential as V (5) DD",
+        "2.4",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V BAT",
+        "Backup operating voltage",
+        "-",
+        "1.65",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V 12",
+        "Regulator ON: 1.2 V internal voltage on V /V pins CAP_1 CAP_2",
+        "VOS bit in PWR_CR register = 0(1) Max frequency 144MHz",
+        "1.08",
+        "1.14",
+        "1.20",
+        "V"
+      ],
+      [
+        "V 12",
+        "Regulator ON: 1.2 V internal voltage on V /V pins CAP_1 CAP_2",
+        "VOS bit in PWR_CR register= 1 Max frequency 168MHz",
+        "1.20",
+        "1.26",
+        "1.32",
+        "V"
+      ],
+      [
+        "V 12",
+        "Regulator OFF: 1.2 V external voltage must be supplied from external regulator on V /V pins CAP_1 CAP_2",
+        "Max frequency 144MHz",
+        "1.10",
+        "1.14",
+        "1.20",
+        "V"
+      ],
+      [
+        "V 12",
+        "Regulator OFF: 1.2 V external voltage must be supplied from external regulator on V /V pins CAP_1 CAP_2",
+        "Max frequency 168MHz",
+        "1.20",
+        "1.26",
+        "1.30",
+        "V"
+      ],
+      [
+        "V IN",
+        "Input voltage on RST and FT pins(6)",
+        "2 V ≤ V ≤ 3.6 V DD",
+        "–0.3",
+        "-",
+        "5.5",
+        "V"
+      ],
+      [
+        "V IN",
+        "Input voltage on RST and FT pins(6)",
+        "V ≤ 2 V DD",
+        "–0.3",
+        "-",
+        "5.2",
+        "5.2"
+      ],
+      [
+        "V IN",
+        "Input voltage on TTa pins",
+        "-",
+        "–0.3",
+        "-",
+        "V + DDA 0.3",
+        "V + DDA 0.3"
+      ],
+      [
+        "V IN",
+        "Input voltage on B pin",
+        "-",
+        "-",
+        "-",
+        "5.5",
+        "5.5"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 85 °C A for suffix 6 or T = 105 °C for A suffix 7(7)",
+        "LQFP64",
+        "-",
+        "-",
+        "435",
+        "mW"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 85 °C A for suffix 6 or T = 105 °C for A suffix 7(7)",
+        "LQFP100",
+        "-",
+        "-",
+        "465",
+        "465"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 85 °C A for suffix 6 or T = 105 °C for A suffix 7(7)",
+        "LQFP144",
+        "-",
+        "-",
+        "500",
+        "500"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 85 °C A for suffix 6 or T = 105 °C for A suffix 7(7)",
+        "LQFP176",
+        "-",
+        "-",
+        "526",
+        "526"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 85 °C A for suffix 6 or T = 105 °C for A suffix 7(7)",
+        "UFBGA176",
+        "-",
+        "-",
+        "513",
+        "513"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 85 °C A for suffix 6 or T = 105 °C for A suffix 7(7)",
+        "WLCSP90",
+        "-",
+        "-",
+        "543",
+        "543"
+      ],
+      [
+        "TA",
+        "Ambient temperature for 6 suffix version",
+        "Maximum power dissipation",
+        "–40",
+        "-",
+        "85",
+        "°C"
+      ],
+      [
+        "TA",
+        "Ambient temperature for 6 suffix version",
+        "Low-power dissipation(8)",
+        "–40",
+        "-",
+        "105",
+        "105"
+      ],
+      [
+        "TA",
+        "Ambient temperature for 7 suffix version",
+        "Maximum power dissipation",
+        "–40",
+        "-",
+        "105",
+        "°C"
+      ],
+      [
+        "TA",
+        "Ambient temperature for 7 suffix version",
+        "Low-power dissipation(8)",
+        "–40",
+        "-",
+        "125",
+        "125"
+      ],
+      [
+        "TJ",
+        "Junction temperature range",
+        "6 suffix version",
+        "–40",
+        "-",
+        "105",
+        "°C"
+      ],
+      [
+        "TJ",
+        "Junction temperature range",
+        "7 suffix version",
+        "–40",
+        "-",
+        "125",
+        "125"
+      ]
+    ],
+    "notes": [
+      "1. All main power (V , V ) and ground (V , V ) pins must always be connected to the external power DD DDA SS SSA",
+      "2. Negative injection disturbs the analog performance of the device. See note in Section 5.3.21: 12-bit ADC characteristics.",
+      "3. Positive injection is not possible on these I/Os. A negative injection is induced by V <V . I must IN SS INJ(PIN)",
+      "4. A positive injection is induced by V >V while a negative injection is induced by V <V . I must IN DD IN SS INJ(PIN)",
+      "5. When several inputs are submitted to a current injection, the maximum ΣI INJ(PIN)",
+      "6. To sustain a voltage higher than V +0.3, the internal pull-up and pull-down resistors must be disabled. DD",
+      "7. If T is lower, higher P values are allowed as long as T does not exceed T . A D J Jmax",
+      "8. In low-power dissipation state, T can be extended to this range as long as T does not exceed T . A J Jmax"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

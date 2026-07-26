@@ -1,0 +1,100 @@
+{
+  "table_id": "table_81",
+  "document": "DS6329 Rev 18 - Table 81. Switching characteristics for PC Card/CF read and write cycles in I/O space",
+  "rev": "Rev 18",
+  "table_number": "81",
+  "title": "Table 81. Switching characteristics for PC Card/CF read and write cycles in I/O space",
+  "page": 143,
+  "section": "6.3.25 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f205rb.pdf#page=143",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f205rb.pdf",
+  "text_helper": "Table 81. Switching characteristics for PC Card/CF read and write cycles in I/O space — section 6.3.25 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t w(NIOWR)",
+        "FSMC_NIOWR low width",
+        "8T - 0.5 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(NIOWR-D)",
+        "FSMC_NIOWR low to FSMC_D[15:0] valid",
+        "-",
+        "5T - 1 HCLK",
+        "ns"
+      ],
+      [
+        "t h(NIOWR-D)",
+        "FSMC_NIOWR high to FSMC_D[15:0] invalid",
+        "8T - 3 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(NCE4_1-NIOWR)",
+        "FSMC_NCE4_1 low to FSMC_NIOWR valid",
+        "-",
+        "5T + 1.5 HCLK",
+        "ns"
+      ],
+      [
+        "t h(NCEx-NIOWR)",
+        "FSMC_NCEx high to FSMC_NIOWR invalid",
+        "5T HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(NIORD-NCEx)",
+        "FSMC_NCEx low to FSMC_NIORD valid",
+        "-",
+        "5T + 1 HCLK",
+        "ns"
+      ],
+      [
+        "t h(NCEx-NIORD)",
+        "FSMC_NCEx high to FSMC_NIORD) valid",
+        "5T – 0.5 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t w(NIORD)",
+        "FSMC_NIORD low width",
+        "8T + 1 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(D-NIORD)",
+        "FSMC_D[15:0] valid before FSMC_NIORD high",
+        "9.5",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(NIORD-D)",
+        "FSMC_D[15:0] valid after FSMC_NIORD high",
+        "0",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

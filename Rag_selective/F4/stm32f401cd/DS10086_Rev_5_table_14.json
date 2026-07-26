@@ -1,0 +1,275 @@
+{
+  "table_id": "table_14",
+  "document": "DS10086 Rev 5 - Table 14. General operating conditions",
+  "rev": "Rev 5",
+  "table_number": "14",
+  "title": "Table 14. General operating conditions",
+  "page": 60,
+  "section": "6.3.1 General operating conditions",
+  "section_title": "General operating conditions",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f401cd.pdf#page=60",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f401cd.pdf",
+  "text_helper": "Table 14. General operating conditions — section 6.3.1 General operating conditions. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f HCLK",
+        "Internal AHB clock frequency",
+        "Power Scale3: Regulator ON, VOS[1:0] bits in PWR_CR register = 0x01",
+        "0",
+        "-",
+        "60",
+        "MHz"
+      ],
+      [
+        "f HCLK",
+        "Internal AHB clock frequency",
+        "Power Scale2: Regulator ON, VOS[1:0] bits in PWR_CR register = 0x10",
+        "0",
+        "-",
+        "84",
+        "MHz"
+      ],
+      [
+        "f PCLK1",
+        "Internal APB1 clock frequency",
+        "-",
+        "0",
+        "-",
+        "42",
+        "MHz"
+      ],
+      [
+        "f PCLK2",
+        "Internal APB2 clock frequency",
+        "-",
+        "0",
+        "-",
+        "84",
+        "MHz"
+      ],
+      [
+        "V DD",
+        "Standard operating voltage",
+        "-",
+        "1.7(1)",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DDA (2)(3)",
+        "Analog operating voltage (ADC limited to 1.2 M samples)",
+        "Must be the same potential as V (4) DD",
+        "1.7(1)",
+        "-",
+        "2.4",
+        "V"
+      ],
+      [
+        "V DDA (2)(3)",
+        "Analog operating voltage (ADC limited to 2.4 M samples)",
+        "Must be the same potential as V (4) DD",
+        "2.4",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V BAT",
+        "Backup operating voltage",
+        "-",
+        "1.65",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V 12",
+        "Regulator ON: 1.2 V internal voltage on V /V pins CAP_1 CAP_2",
+        "VOS[1:0] bits in PWR_CR register = 0x01 Max frequency 60 MHz",
+        "1.08(5)",
+        "1.14",
+        "1.20(5)",
+        "V"
+      ],
+      [
+        "V 12",
+        "Regulator ON: 1.2 V internal voltage on V /V pins CAP_1 CAP_2",
+        "VOS[1:0] bits in PWR_CR register = 0x10 Max frequency 84 MHz",
+        "1.20(5)",
+        "1.26",
+        "1.32(5)",
+        "V"
+      ],
+      [
+        "V 12",
+        "Regulator OFF: 1.2 V external voltage must be supplied on V /V pins CAP_1 CAP_2",
+        "Max. frequency 60 MHz.",
+        "1.1",
+        "1.14",
+        "1.2",
+        "V"
+      ],
+      [
+        "V 12",
+        "Regulator OFF: 1.2 V external voltage must be supplied on V /V pins CAP_1 CAP_2",
+        "Max. frequency 84 MHz.",
+        "1.2",
+        "1.26",
+        "1.32",
+        "V"
+      ],
+      [
+        "V IN",
+        "Input voltage on RST and FT pins(6)",
+        "2 V ≤ V ≤ 3.6 V DD",
+        "–0.3",
+        "-",
+        "5.5",
+        "V"
+      ],
+      [
+        "V IN",
+        "Input voltage on RST and FT pins(6)",
+        "V ≤ 2 V DD",
+        "–0.3",
+        "-",
+        "5.2",
+        "V"
+      ],
+      [
+        "V IN",
+        "Input voltage on BOOT0 pin",
+        "-",
+        "0",
+        "-",
+        "9",
+        "V"
+      ],
+      [
+        "P D",
+        "Maximum allowed package power dissipation for suffix 6 and 7(7)",
+        "UFQFPN48",
+        "-",
+        "-",
+        "625",
+        "mW"
+      ],
+      [
+        "P D",
+        "Maximum allowed package power dissipation for suffix 6 and 7(7)",
+        "WLCSP49",
+        "-",
+        "-",
+        "392",
+        "mW"
+      ],
+      [
+        "P D",
+        "Maximum allowed package power dissipation for suffix 6 and 7(7)",
+        "LQFP64",
+        "-",
+        "-",
+        "313",
+        "mW"
+      ],
+      [
+        "P D",
+        "Maximum allowed package power dissipation for suffix 6 and 7(7)",
+        "LQFP100",
+        "-",
+        "-",
+        "465",
+        "mW"
+      ],
+      [
+        "P D",
+        "Maximum allowed package power dissipation for suffix 6 and 7(7)",
+        "UFBGA100",
+        "-",
+        "-",
+        "323",
+        "mW"
+      ],
+      [
+        "TA",
+        "Ambient temperature for 6 suffix version",
+        "Maximum power dissipation",
+        "–40",
+        "-",
+        "85",
+        "°C"
+      ],
+      [
+        "TA",
+        "Ambient temperature for 6 suffix version",
+        "Low power dissipation(8)",
+        "–40",
+        "-",
+        "105",
+        "105"
+      ],
+      [
+        "TA",
+        "Ambient temperature for 7 suffix version",
+        "Maximum power dissipation",
+        "–40",
+        "-",
+        "105",
+        "105"
+      ],
+      [
+        "TA",
+        "Ambient temperature for 7 suffix version",
+        "Low power dissipation(8)",
+        "–40",
+        "-",
+        "125",
+        "125"
+      ],
+      [
+        "TJ",
+        "Junction temperature range",
+        "6 suffix version",
+        "–40",
+        "-",
+        "105",
+        "105"
+      ],
+      [
+        "TJ",
+        "Junction temperature range",
+        "7 suffix version",
+        "–40",
+        "-",
+        "125",
+        "125"
+      ]
+    ],
+    "notes": [
+      "1. V /V minimum value of 1.7 V with the use of an external power supply supervisor (refer to Section 3.14.2: Internal DD DDA",
+      "2. When the ADC is used, refer to Table 66: ADC characteristics.",
+      "3. If V pin is present, it must respect the following condition: V -V < 1.2 V. REF+ DDA REF+",
+      "4. It is recommended to power V and V from the same source. A maximum difference of 300 mV between V and DD DDA DD",
+      "5. Evaluated by test in production",
+      "6. To sustain a voltage higher than VDD+0.3, the internal Pull-up and Pull-Down resistors must be disabled",
+      "7. If T is lower, higher P values are allowed as long as T does not exceed T . A D J Jmax",
+      "8. In low power dissipation state, T can be extended to this range as long as T does not exceed T . A J Jmax"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

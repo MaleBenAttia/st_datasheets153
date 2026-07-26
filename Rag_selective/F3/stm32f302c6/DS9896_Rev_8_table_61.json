@@ -1,0 +1,169 @@
+{
+  "table_id": "table_61",
+  "document": "DS9896 Rev 8 - Table 61. SPI characteristics",
+  "rev": "Rev 8",
+  "table_number": "61",
+  "title": "Table 61. SPI characteristics",
+  "page": 95,
+  "section": "6.3.17 Communications interfaces",
+  "section_title": "Communications interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f302c6.pdf#page=95",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f302c6.pdf",
+  "text_helper": "Table 61. SPI characteristics — section 6.3.17 Communications interfaces. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Master mode",
+        "-",
+        "-",
+        "18",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Slave mode",
+        "-",
+        "-",
+        "18",
+        "MHz"
+      ],
+      [
+        "t su(NSS)",
+        "NSS setup time",
+        "Slave mode, SPI presc = 2",
+        "4*Tpcl k",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(NSS)",
+        "NSS hold time",
+        "Slave mode, SPI presc = 2",
+        "2*Tpcl k",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t w(SCKH) t w(SCKL)",
+        "SCK high and low time",
+        "Master mode, f = 36 PCLK MHz, presc = 4",
+        "Tpclk- 2",
+        "Tpclk",
+        "Tpclk+ 2",
+        "ns"
+      ],
+      [
+        "t su(MI) t su(SI)",
+        "Data input setup time",
+        "Master mode",
+        "0",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(MI) t su(SI)",
+        "Data input setup time",
+        "Slave mode",
+        "1",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(MI)",
+        "Data input hold time",
+        "Master mode",
+        "6.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(SI)",
+        "Data input hold time",
+        "Slave mode",
+        "2.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t a(SO)",
+        "Data output access time",
+        "Slave mode",
+        "8",
+        "-",
+        "40",
+        "ns"
+      ],
+      [
+        "t dis(SO)",
+        "Data output disable time",
+        "Slave mode",
+        "8",
+        "-",
+        "14",
+        "ns"
+      ],
+      [
+        "t v(SO)",
+        "Data output valid time",
+        "Slave mode",
+        "-",
+        "12",
+        "27",
+        "ns"
+      ],
+      [
+        "t v(MO)",
+        "Data output valid time",
+        "Master mode",
+        "-",
+        "1.5",
+        "4",
+        "ns"
+      ],
+      [
+        "t h(SO)",
+        "Data output hold time",
+        "Slave mode",
+        "7.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(MO)",
+        "Data output hold time",
+        "Master mode",
+        "0",
+        "-",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization results. DS9896 Rev 8 95/139"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

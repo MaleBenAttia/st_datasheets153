@@ -1,0 +1,71 @@
+{
+  "table_id": "table_71",
+  "document": "DS13268 Rev 4 - Table 71. DAC 15MSPS accuracy",
+  "rev": "Rev 4",
+  "table_number": "71",
+  "title": "Table 71. DAC 15MSPS accuracy",
+  "page": 143,
+  "section": "5.3.19 Digital-to-Analog converter characteristics",
+  "section_title": "Digital-to-Analog converter characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32g4a1ce.pdf#page=143",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g4a1ce.pdf",
+  "text_helper": "Table 71. DAC 15MSPS accuracy — section 5.3.19 Digital-to-Analog converter characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "DNL",
+        "Differential non linearity (2)",
+        "-",
+        "-2",
+        "-",
+        "2",
+        "LSB"
+      ],
+      [
+        "INL",
+        "Integral non linearity(3)",
+        "LR on ,Fp 05 ≤ LC",
+        "-5",
+        "-",
+        "5",
+        "LSB"
+      ],
+      [
+        "TUE",
+        "Total unadjusted error",
+        "LR on ,Fp 05 ≤ LC",
+        "-5",
+        "-",
+        "5",
+        "LSB"
+      ],
+      [
+        "DCS",
+        "Dynamic code spike",
+        "Spike amplitude on DAC voltage when DAC output value is decreasing",
+        "-",
+        "0",
+        "4",
+        "LSB"
+      ]
+    ],
+    "notes": [
+      "2. Difference between two consecutive codes - 1 LSB.",
+      "3. Difference between measured value at code i and the value at code i on a line drawn between code 0 and last code 4095. Offset error is included."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

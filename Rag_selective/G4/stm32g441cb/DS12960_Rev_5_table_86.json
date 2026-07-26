@@ -1,0 +1,81 @@
+{
+  "table_id": "table_86",
+  "document": "DS12960 Rev 5 - Table 86. USB electrical characteristics",
+  "rev": "Rev 5",
+  "table_number": "86",
+  "title": "Table 86. USB electrical characteristics",
+  "page": 159,
+  "section": "5.3.26 Communication interfaces characteristics",
+  "section_title": "Communication interfaces characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32g441cb.pdf#page=159",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g441cb.pdf",
+  "text_helper": "Table 86. USB electrical characteristics — section 5.3.26 Communication interfaces characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V DD",
+        "USB transceiver operating voltage",
+        "USB transceiver operating voltage",
+        "3.0(2)",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "t Crystal_less",
+        "USB crystal less operation temperature",
+        "USB crystal less operation temperature",
+        "-15",
+        "-",
+        "85",
+        "°C"
+      ],
+      [
+        "R PUI",
+        "Embedded USB_DP pull-up value during idle",
+        "Embedded USB_DP pull-up value during idle",
+        "900",
+        "1250",
+        "1500",
+        "Ω"
+      ],
+      [
+        "R PUR",
+        "Embedded USB_PD pull-up value during reception",
+        "Embedded USB_PD pull-up value during reception",
+        "1400",
+        "2300",
+        "3200",
+        "Ω"
+      ],
+      [
+        "Z (3) sDRV",
+        "Output driver impedance(4)",
+        "Driving high and low",
+        "28",
+        "36",
+        "44",
+        "Ω"
+      ]
+    ],
+    "notes": [
+      "2. The device USB functionality is ensured down to 2.7 V but not the full USB electrical characteristics, which are degraded in the 2.7-to-3.0 V voltage range.",
+      "3. Guarantee by design.",
+      "4. No external termination series resistors are required on USB_PD (D+) and USB_DM (D-); the matching impedance is already included in the embedded driver."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

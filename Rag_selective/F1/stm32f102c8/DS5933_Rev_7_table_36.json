@@ -1,0 +1,202 @@
+{
+  "table_id": "table_36",
+  "document": "DS5933 Rev 7 - Table 36. I/O AC characteristics",
+  "rev": "Rev 7",
+  "table_number": "36",
+  "title": "Table 36. I/O AC characteristics",
+  "page": 55,
+  "section": "5.3.13 I/O port characteristics",
+  "section_title": "I/O port characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f102c8.pdf#page=55",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f102c8.pdf",
+  "text_helper": "Table 36. I/O AC characteristics — section 5.3.13 I/O port characteristics. MODEx [1:0] bit value(1), Symbol, Parameter, Conditions, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "MODEx [1:0] bit value(1)",
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "10",
+        "f max(IO)out",
+        "Maximum frequency(2)",
+        "C = 50 pF, V = 2 V to 3.6 V L DD",
+        "2",
+        "MHz"
+      ],
+      [
+        "10",
+        "t f(IO)out",
+        "Output high to low level fall time",
+        "C = 50 pF, V = 2 V to 3.6 V L DD",
+        "125(3)",
+        "ns"
+      ],
+      [
+        "10",
+        "t r(IO)out",
+        "Output low to high level rise time",
+        "C = 50 pF, V = 2 V to 3.6 V L DD",
+        "125(3)",
+        "ns"
+      ],
+      [
+        "01",
+        "f max(IO)out",
+        "Maximum frequency(2)",
+        "C = 50 pF, V = 2 V to 3.6 V L DD",
+        "10",
+        "MHz"
+      ],
+      [
+        "01",
+        "t f(IO)out",
+        "Output high to low level fall time",
+        "C = 50 pF, V = 2 V to 3.6 V L DD",
+        "25(3)",
+        "ns"
+      ],
+      [
+        "01",
+        "t r(IO)out",
+        "Output low to high level rise time",
+        "C = 50 pF, V = 2 V to 3.6 V L DD",
+        "25(3)",
+        "ns"
+      ],
+      [
+        "11",
+        "F max(IO)out",
+        "Maximum Frequency(2)",
+        "C = 30 pF, V = 2.7 V to 3.6 V L DD",
+        "50",
+        "MHz"
+      ],
+      [
+        "11",
+        "F max(IO)out",
+        "Maximum Frequency(2)",
+        "C = 50 pF, V = 2.7 V to 3.6 V L DD",
+        "30",
+        "MHz"
+      ],
+      [
+        "11",
+        "F max(IO)out",
+        "Maximum Frequency(2)",
+        "C = 50 pF, V = 2 V to 2.7 V L DD",
+        "20",
+        "MHz"
+      ],
+      [
+        "11",
+        "t f(IO)out",
+        "Output high to low level fall time",
+        "C = 30 pF, V = 2.7 V to 3.6 V L DD",
+        "5(3)",
+        "ns"
+      ],
+      [
+        "11",
+        "t f(IO)out",
+        "Output high to low level fall time",
+        "C = 50 pF, V = 2.7 V to 3.6 V L DD",
+        "8(3)",
+        "ns"
+      ],
+      [
+        "11",
+        "t f(IO)out",
+        "Output high to low level fall time",
+        "C = 50 pF, V = 2 V to 2.7 V L DD",
+        "12(3)",
+        "ns"
+      ],
+      [
+        "11",
+        "t r(IO)out",
+        "Output low to high level rise time",
+        "C = 30 pF, V = 2.7 V to 3.6 V L DD",
+        "5(3)",
+        "ns"
+      ],
+      [
+        "11",
+        "t r(IO)out",
+        "Output low to high level rise time",
+        "C = 50 pF, V = 2.7 V to 3.6 V L DD",
+        "8(3)",
+        "ns"
+      ],
+      [
+        "11",
+        "t r(IO)out",
+        "Output low to high level rise time",
+        "C = 50 pF, V = 2 V to 2.7 V L DD",
+        "12(3)",
+        "ns"
+      ],
+      [
+        "-",
+        "t EXTIpw",
+        "Pulse width of external signals detected by the EXTI controller",
+        "-",
+        "10",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by design, not tested in production.",
+      "2. The pull-up is designed with a true resistance in series with a switchable PMOS. This PMOS contribution to the series resistance must be minimum (~10%).",
+      "3. Guaranteed by design, not tested in production. DS5933 Rev 7 55/81"
+    ],
+    "legend": [
+      "Unless otherwise specified, the parameters given in Table 36 are derived from tests",
+      "performed under ambient temperature and V supply voltage conditions summarized in",
+      "f Maximum frequency(2) C = 50 pF, V = 2 V to 3.6 V 2 MHz",
+      "max(IO)out L DD",
+      "Output high to low level fall",
+      "t 125(3)",
+      "10 f(IO)out time",
+      "C = 50 pF, V = 2 V to 3.6 V ns",
+      "Output low to high level rise",
+      "t 125(3)",
+      "r(IO)out time",
+      "f Maximum frequency(2) C = 50 pF, V = 2 V to 3.6 V 10 MHz",
+      "max(IO)out L DD",
+      "Output high to low level fall",
+      "t 25(3)",
+      "01 f(IO)out time",
+      "C = 50 pF, V = 2 V to 3.6 V ns",
+      "Output low to high level rise",
+      "t 25(3)",
+      "r(IO)out time",
+      "C = 30 pF, V = 2.7 V to 3.6 V 50 MHz",
+      "F Maximum Frequency(2) C = 50 pF, V = 2.7 V to 3.6 V 30 MHz",
+      "max(IO)out L DD",
+      "C = 50 pF, V = 2 V to 2.7 V 20 MHz",
+      "C = 30 pF, V = 2.7 V to 3.6 V 5(3)",
+      "Output high to low level fall",
+      "11 t C = 50 pF, V = 2.7 V to 3.6 V 8(3)",
+      "f(IO)out time L DD",
+      "C = 50 pF, V = 2 V to 2.7 V 12(3)",
+      "ns",
+      "C = 30 pF, V = 2.7 V to 3.6 V 5(3)",
+      "Output low to high level rise",
+      "t C = 50 pF, V = 2.7 V to 3.6 V 8(3)",
+      "r(IO)out time L DD",
+      "C = 50 pF, V = 2 V to 2.7 V 12(3)",
+      "Pulse width of external",
+      "- t signals detected by the EXTI - 10 ns",
+      "controller"
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

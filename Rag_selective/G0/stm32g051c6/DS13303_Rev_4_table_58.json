@@ -1,0 +1,76 @@
+{
+  "table_id": "table_58",
+  "document": "DS13303 Rev 4 - Table 58. Analog switch booster characteristics",
+  "rev": "Rev 4",
+  "table_number": "58",
+  "title": "Table 58. Analog switch booster characteristics",
+  "page": 79,
+  "section": "5.3.17 Analog switch booster",
+  "section_title": "Analog switch booster",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32g051c6.pdf#page=79",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g051c6.pdf",
+  "text_helper": "Table 58. Analog switch booster characteristics — section 5.3.17 Analog switch booster. Symbol, Parameter, Min, Typ, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V DD",
+        "Supply voltage",
+        "1.62 V",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "t SU(BOOST)",
+        "Booster startup time",
+        "-",
+        "-",
+        "240",
+        "µs"
+      ],
+      [
+        "I DD(BOOST)",
+        "Booster consumption for 1.62 V ≤ V ≤ 2.0 V DD",
+        "-",
+        "-",
+        "250",
+        "µA"
+      ],
+      [
+        "I DD(BOOST)",
+        "Booster consumption for 2.0 V ≤ V ≤ 2.7 V DD",
+        "-",
+        "-",
+        "500",
+        "500"
+      ],
+      [
+        "I DD(BOOST)",
+        "Booster consumption for 2.7 V ≤ V ≤ 3.6 V DD",
+        "-",
+        "-",
+        "900",
+        "900"
+      ]
+    ],
+    "notes": [
+      "1. Specified by design. Not tested in production.",
+      "2. I/O analog switch voltage booster must be enabled (BOOSTEN = 1 in the SYSCFG_CFGR1) when V < 2.4 V and DDA",
+      "3. The external capacitor on NRST must be placed as close as possible to the device.",
+      "4. V REF+ is internally connected to V DDA on some packages.Refer to Section 4: Pinouts, pin description and alternate functions for further details."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

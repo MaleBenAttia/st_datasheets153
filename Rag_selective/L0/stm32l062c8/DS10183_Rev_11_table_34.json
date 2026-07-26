@@ -1,0 +1,233 @@
+{
+  "table_id": "table_34",
+  "document": "DS10183 Rev 11 - Table 34. Peripheral current consumption in Stop and Standby mode",
+  "rev": "Rev 11",
+  "table_number": "34",
+  "title": "Table 34. Peripheral current consumption in Stop and Standby mode",
+  "page": 63,
+  "section": "6.3.3 Embedded internal reference voltage",
+  "section_title": "Embedded internal reference voltage",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l062c8.pdf#page=63",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l062c8.pdf",
+  "text_helper": "Table 34. Peripheral current consumption in Stop and Standby mode — section 6.3.3 Embedded internal reference voltage. Symbol, Symbol, Peripheral, Typical consumption, T = 25 °C / V =1.8 V DD, Typical consumption, T = 25 °C / A / V =3.0 V DD, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Symbol",
+      "Peripheral",
+      "Typical consumption, T = 25 °C / V =1.8 V DD",
+      "Typical consumption, T = 25 °C / A / V =3.0 V DD",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I DD(PVD / BOR)",
+        "I DD(PVD / BOR)",
+        "-",
+        "0.7",
+        "1.2",
+        "µA"
+      ],
+      [
+        "I REFINT",
+        "I REFINT",
+        "-",
+        "-",
+        "1.4",
+        "µA"
+      ],
+      [
+        "-",
+        "-",
+        "LSE Low drive(2)",
+        "0,1",
+        "0,1",
+        "µA"
+      ],
+      [
+        "-",
+        "-",
+        "LPTIM1, Input 100 Hz",
+        "0,01",
+        "0,01",
+        "µA"
+      ],
+      [
+        "-",
+        "-",
+        "LPTIM1, Input 1 MHz",
+        "6",
+        "6",
+        "µA"
+      ],
+      [
+        "-",
+        "-",
+        "LPUART1",
+        "0,2",
+        "0,2",
+        "µA"
+      ],
+      [
+        "-",
+        "-",
+        "RTC",
+        "0,3",
+        "0,48",
+        "µA"
+      ],
+      [
+        "t WUSLEEP_LP",
+        "Wakeup from Low-power sleep mode, f = 262 kHz HCLK",
+        "f = 262 kHz HCLK Flash memory enabled",
+        "7",
+        "8",
+        "8"
+      ],
+      [
+        "t WUSLEEP_LP",
+        "Wakeup from Low-power sleep mode, f = 262 kHz HCLK",
+        "f = 262 kHz HCLK Flash memory switched OFF",
+        "9",
+        "10",
+        "10"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in Run mode",
+        "f = f = 16 MHz HCLK HSI",
+        "4.9",
+        "7",
+        "7"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in Run mode",
+        "f = f /4 = 4 MHz HCLK HSI",
+        "8.0",
+        "11",
+        "11"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in low- power mode",
+        "f = f = 4.2 MHz HCLK MSI Voltage range 1",
+        "5.0",
+        "8",
+        "8"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in low- power mode",
+        "f = f = 4.2 MHz HCLK MSI Voltage range 2",
+        "5.0",
+        "8",
+        "8"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in low- power mode",
+        "f = f = 4.2 MHz HCLK MSI Voltage range 3",
+        "5.0",
+        "8",
+        "8"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in low- power mode",
+        "f = f = 2.1 MHz HCLK MSI",
+        "7.3",
+        "13",
+        "13"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in low- power mode",
+        "f = f = 1.05 MHz HCLK MSI",
+        "13",
+        "23",
+        "23"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in low- power mode",
+        "f = f = 524 kHz HCLK MSI",
+        "28",
+        "38",
+        "38"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in low- power mode",
+        "f = f = 262 kHz HCLK MSI",
+        "51",
+        "65",
+        "65"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in low- power mode",
+        "f = f = 131 kHz HCLK MSI",
+        "100",
+        "120",
+        "120"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in low- power mode",
+        "f = MSI = 65 kHz HCLK",
+        "190",
+        "260",
+        "260"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in low- power mode",
+        "f = f = 16 MHz HCLK HSI",
+        "4.9",
+        "7",
+        "7"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in low- power mode",
+        "f = f /4 = 4 MHz HCLK HSI",
+        "8.0",
+        "11",
+        "11"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in low- power mode, code running from RAM",
+        "f = f = 16 MHz HCLK HSI",
+        "4.9",
+        "7",
+        "7"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in low- power mode, code running from RAM",
+        "f = f /4 = 4 MHz HCLK HSI",
+        "7.9",
+        "10",
+        "10"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in low- power mode, code running from RAM",
+        "f = f = 4.2 MHz HCLK MSI",
+        "4.7",
+        "8",
+        "8"
+      ]
+    ],
+    "notes": [
+      "2. HSI oscillator is OFF for this measure."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

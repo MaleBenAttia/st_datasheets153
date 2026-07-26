@@ -1,0 +1,167 @@
+{
+  "table_id": "table_43",
+  "document": "DS9405 Rev 13 - Table 43. Main PLL characteristics",
+  "rev": "Rev 13",
+  "table_number": "43",
+  "title": "Table 43. Main PLL characteristics",
+  "page": 124,
+  "section": "6.3.11 PLL characteristics",
+  "section_title": "PLL characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f427ag.pdf#page=124",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f427ag.pdf",
+  "text_helper": "Table 43. Main PLL characteristics — section 6.3.11 PLL characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f PLL_IN",
+        "PLL input clock(1)",
+        "-",
+        "0.95(2)",
+        "1",
+        "2.10",
+        "MHz"
+      ],
+      [
+        "f PLL_OUT",
+        "PLL multiplier output clock",
+        "-",
+        "24",
+        "-",
+        "180",
+        "MHz"
+      ],
+      [
+        "f PLL48_OUT",
+        "48 MHz PLL multiplier output clock",
+        "-",
+        "-",
+        "48",
+        "75",
+        "MHz"
+      ],
+      [
+        "f VCO_OUT",
+        "PLL VCO output",
+        "-",
+        "100",
+        "-",
+        "432",
+        "MHz"
+      ],
+      [
+        "t LOCK",
+        "PLL lock time",
+        "VCO freq = 100MHz",
+        "75",
+        "-",
+        "200",
+        "µs"
+      ],
+      [
+        "t LOCK",
+        "PLL lock time",
+        "VCO freq = 432MHz",
+        "100",
+        "-",
+        "300",
+        "µs"
+      ],
+      [
+        "Jitter(3)",
+        "Cycle-to-cycle jitter",
+        "System clock 120MHz",
+        "RMS",
+        "25",
+        "-",
+        "ps"
+      ],
+      [
+        "Jitter(3)",
+        "Cycle-to-cycle jitter",
+        "peak to peak",
+        "-",
+        "±150",
+        "-",
+        "-"
+      ],
+      [
+        "Jitter(3)",
+        "Period Jitter",
+        "RMS",
+        "-",
+        "15",
+        "-",
+        "-"
+      ],
+      [
+        "Jitter(3)",
+        "Period Jitter",
+        "peak to peak",
+        "-",
+        "±200",
+        "-",
+        "-"
+      ],
+      [
+        "Jitter(3)",
+        "Main clock output (MCO) for RMII Ethernet",
+        "Cycle to cycle at 50 MHz on 1000 samples",
+        "-",
+        "32",
+        "-",
+        "-"
+      ],
+      [
+        "Jitter(3)",
+        "Main clock output (MCO) for MII Ethernet",
+        "Cycle to cycle at 25 MHz on 1000 samples",
+        "-",
+        "40",
+        "-",
+        "-"
+      ],
+      [
+        "Jitter(3)",
+        "Bit Time CAN jitter",
+        "Cycle to cycle at 1 MHz on 1000 samples",
+        "-",
+        "330",
+        "-",
+        "-"
+      ],
+      [
+        "I (4) DD(PLL)",
+        "PLL power consumption on VDD",
+        "VCO freq = 100MHz VCO freq = 432MHz",
+        "0.15 0.45",
+        "-",
+        "0.40 0.75",
+        "mA"
+      ],
+      [
+        "I (4) DDA(PLL)",
+        "PLL power consumption on VDDA",
+        "VCO freq = 100MHz VCO freq = 432MHz",
+        "0.30 0.55",
+        "-",
+        "0.40 0.85",
+        "mA"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

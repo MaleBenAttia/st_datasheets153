@@ -1,0 +1,345 @@
+{
+  "table_id": "table_55",
+  "document": "DS10262 Rev 8 - Table 55. ADC characteristics",
+  "rev": "Rev 8",
+  "table_number": "55",
+  "title": "Table 55. ADC characteristics",
+  "page": 102,
+  "section": "6.3.16 Communications interfaces",
+  "section_title": "Communications interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l151qc.pdf#page=102",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l151qc.pdf",
+  "text_helper": "Table 55. ADC characteristics — section 6.3.16 Communications interfaces. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V DDA",
+        "Power supply",
+        "-",
+        "1.8",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V REF+",
+        "Positive reference voltage",
+        "-",
+        "1.8(1)",
+        "-",
+        "V DDA",
+        "V"
+      ],
+      [
+        "V REF-",
+        "Negative reference voltage",
+        "-",
+        "-",
+        "V SSA",
+        "-",
+        "V"
+      ],
+      [
+        "I VDDA",
+        "Current on the V input pin DDA",
+        "-",
+        "-",
+        "1000",
+        "1450",
+        "µA"
+      ],
+      [
+        "I (2) VREF",
+        "Current on the V input pin REF",
+        "Peak",
+        "-",
+        "400",
+        "700",
+        "µA"
+      ],
+      [
+        "I (2) VREF",
+        "Current on the V input pin REF",
+        "Average",
+        "--",
+        "400",
+        "450",
+        "µA"
+      ],
+      [
+        "V AIN",
+        "Conversion voltage range(3)",
+        "-",
+        "0(4)",
+        "-",
+        "V REF+",
+        "V"
+      ],
+      [
+        "f S",
+        "12-bit sampling rate",
+        "Direct channels",
+        "-",
+        "-",
+        "1",
+        "Msps"
+      ],
+      [
+        "f S",
+        "12-bit sampling rate",
+        "Multiplexed channels",
+        "-",
+        "-",
+        "0.76",
+        "Msps"
+      ],
+      [
+        "f S",
+        "10-bit sampling rate",
+        "Direct channels",
+        "-",
+        "-",
+        "1.07",
+        "Msps"
+      ],
+      [
+        "f S",
+        "10-bit sampling rate",
+        "Multiplexed channels",
+        "-",
+        "-",
+        "0.8",
+        "Msps"
+      ],
+      [
+        "f S",
+        "8-bit sampling rate",
+        "Direct channels",
+        "-",
+        "-",
+        "1.23",
+        "Msps"
+      ],
+      [
+        "f S",
+        "8-bit sampling rate",
+        "Multiplexed channels",
+        "-",
+        "-",
+        "0.89",
+        "Msps"
+      ],
+      [
+        "f S",
+        "6-bit sampling rate",
+        "Direct channels",
+        "-",
+        "-",
+        "1.45",
+        "Msps"
+      ],
+      [
+        "f S",
+        "6-bit sampling rate",
+        "Multiplexed channels",
+        "-",
+        "-",
+        "1",
+        "Msps"
+      ],
+      [
+        "t (5) S",
+        "Sampling time",
+        "Direct channels 2.4 V ≤ V ≤ 3.6 V DDA",
+        "0.25",
+        "-",
+        "-",
+        "µs"
+      ],
+      [
+        "t (5) S",
+        "Sampling time",
+        "Multiplexed channels 2.4 V ≤ V ≤ 3.6 V DDA",
+        "0.56",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t (5) S",
+        "Sampling time",
+        "Direct channels 1.8 V ≤ V ≤ 2.4 V DDA",
+        "0.56",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t (5) S",
+        "Sampling time",
+        "Multiplexed channels 1.8 V ≤ V ≤ 2.4 V DDA",
+        "1",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t (5) S",
+        "Sampling time",
+        "-",
+        "4",
+        "-",
+        "384",
+        "1/f ADC"
+      ],
+      [
+        "t CONV",
+        "Total conversion time (including sampling time)",
+        "f = 16 MHz ADC",
+        "1",
+        "-",
+        "24.75",
+        "µs"
+      ],
+      [
+        "t CONV",
+        "Total conversion time (including sampling time)",
+        "-",
+        "4 to 384 (sampling phase) +12 (successive approximation)",
+        "4 to 384 (sampling phase) +12 (successive approximation)",
+        "4 to 384 (sampling phase) +12 (successive approximation)",
+        "1/f ADC"
+      ],
+      [
+        "C ADC",
+        "Internal sample and hold capacitor",
+        "Direct channels",
+        "-",
+        "16",
+        "-",
+        "pF"
+      ],
+      [
+        "C ADC",
+        "Internal sample and hold capacitor",
+        "Multiplexed channels",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "f TRIG",
+        "External trigger frequency Regular sequencer",
+        "12-bit conversions",
+        "-",
+        "-",
+        "Tconv+1",
+        "1/f ADC"
+      ],
+      [
+        "f TRIG",
+        "External trigger frequency Regular sequencer",
+        "6/8/10-bit conversions",
+        "-",
+        "-",
+        "Tconv",
+        "1/f ADC"
+      ],
+      [
+        "f TRIG",
+        "External trigger frequency Injected sequencer",
+        "12-bit conversions",
+        "-",
+        "-",
+        "Tconv+2",
+        "1/f ADC"
+      ],
+      [
+        "f TRIG",
+        "External trigger frequency Injected sequencer",
+        "6/8/10-bit conversions",
+        "-",
+        "-",
+        "Tconv+1",
+        "1/f ADC"
+      ],
+      [
+        "R (6) AIN",
+        "Signal source impedance",
+        "-",
+        "-",
+        "-",
+        "50",
+        "kΩ"
+      ],
+      [
+        "t lat",
+        "Injection trigger conversion latency",
+        "f = 16 MHz ADC",
+        "219",
+        "-",
+        "281",
+        "ns"
+      ],
+      [
+        "t lat",
+        "Injection trigger conversion latency",
+        "-",
+        "3.5",
+        "-",
+        "4.5",
+        "1/f ADC"
+      ],
+      [
+        "t latr",
+        "Regular trigger conversion latency",
+        "f = 16 MHz ADC",
+        "156",
+        "-",
+        "219",
+        "ns"
+      ],
+      [
+        "t latr",
+        "Regular trigger conversion latency",
+        "-",
+        "2.5",
+        "-",
+        "3.5",
+        "1/f ADC"
+      ],
+      [
+        "t STAB",
+        "Power-up time",
+        "-",
+        "-",
+        "-",
+        "3.5",
+        "µs"
+      ]
+    ],
+    "notes": [
+      "1. ADC DC accuracy values are measured after internal calibration.",
+      "2. ADC accuracy vs. negative injection current: Injecting a negative current on any analog input pins must be avoided as this significantly reduces the accuracy of the conversion being performed on another analog input. It is recommended to add a",
+      "3. Guaranteed by characterization results. 104/134 DS10262 Rev 8",
+      "4. V or V must be tied to ground. SSA REF-",
+      "5. Minimum sampling time is reached for an external input impedance limited to a value as defined in Table 57: Maximum source impedance R max.",
+      "6. External impedance has another high value limitation when using short sampling time as defined in Table 57: Maximum source impedance R max."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

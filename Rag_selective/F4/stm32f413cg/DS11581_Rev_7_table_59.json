@@ -1,0 +1,184 @@
+{
+  "table_id": "table_59",
+  "document": "DS11581 Rev 7 - Table 59. I/O static characteristics",
+  "rev": "Rev 7",
+  "table_number": "59",
+  "title": "Table 59. I/O static characteristics",
+  "page": 122,
+  "section": "6.3.16 I/O port characteristics",
+  "section_title": "I/O port characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f413cg.pdf#page=122",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f413cg.pdf",
+  "text_helper": "Table 59. I/O static characteristics — section 6.3.16 I/O port characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V IL",
+        "FT, TTa, TC and NRST I/O input low level voltage",
+        "1.7 V≤ V ≤ 3.6 V DD",
+        "-",
+        "-",
+        "0.3V (1) DD",
+        "V"
+      ],
+      [
+        "V IL",
+        "BOOT0 I/O input low level voltage",
+        "1.75 V≤ V ≤ 3.6 V, DD -40 °C≤ T ≤ 125 °C A",
+        "-",
+        "-",
+        "0.1V +0.1(2) DD",
+        "V"
+      ],
+      [
+        "V IL",
+        "BOOT0 I/O input low level voltage",
+        "1.7 V≤ V ≤ 3.6 V, DD 0 °C≤ T ≤ 125 °C A",
+        "-",
+        "-",
+        "0.1V +0.1(2) DD",
+        "V"
+      ],
+      [
+        "V (3) IH",
+        "FT, TTa, TC and NRST I/O input high level voltage(7)",
+        "1.7 V≤ V ≤ 3.6 V DD",
+        "0.7V (1) DD",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "V (3) IH",
+        "BOOT0 I/O input high level voltage",
+        "1.75 V≤ V ≤ 3.6 V, DD -40 °C≤ T ≤ 125 °C A",
+        "0.17V +0.7(2) DD",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "V (3) IH",
+        "BOOT0 I/O input high level voltage",
+        "1.7 V≤ V ≤ 3.6 V, DD 0 °C≤ T ≤ 125 °C A",
+        "0.17V +0.7(2) DD",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "V (4) HYS",
+        "FT, TTa, TC and NRST I/O input hysteresis",
+        "1.7 V≤ V ≤ 3.6 V DD",
+        "10% V (2)(5) DD",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "V (4) HYS",
+        "BOOT0 I/O input hysteresis",
+        "1.75 V≤ V ≤ 3.6 V, DD -40 °C≤ T ≤ 125 °C A",
+        "0.1",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "V (4) HYS",
+        "BOOT0 I/O input hysteresis",
+        "1.75 V≤ V ≤ 3.6 V, DD -40 °C≤ T ≤ 125 °C A",
+        "1.7 V≤ V ≤ 3.6 V, DD 0 °C≤ T ≤ 125 °C A",
+        "1.7 V≤ V ≤ 3.6 V, DD 0 °C≤ T ≤ 125 °C A",
+        "1.7 V≤ V ≤ 3.6 V, DD 0 °C≤ T ≤ 125 °C A",
+        "1.7 V≤ V ≤ 3.6 V, DD 0 °C≤ T ≤ 125 °C A"
+      ],
+      [
+        "I lkg",
+        "I/O input leakage current (6)",
+        "V ≤ V ≤ V SS IN DD",
+        "-",
+        "-",
+        "±1",
+        "µA"
+      ],
+      [
+        "I lkg",
+        "I/O FT/TC input leakage current (7)",
+        "V = 5 V IN",
+        "-",
+        "-",
+        "3",
+        "3"
+      ],
+      [
+        "R PU",
+        "Weak pull-up equivalent resistor",
+        "All pins except for PA10 (OTG_FS_ID)",
+        "V = V IN SS",
+        "40",
+        "50",
+        "kΩ"
+      ],
+      [
+        "R PU",
+        "PA10 (OTG_FS_ID)",
+        "-",
+        "7",
+        "10",
+        "14",
+        "14"
+      ],
+      [
+        "R PD",
+        "Weak pull-down equivalent resistor",
+        "All pins except for PA10 (OTG_FS_ID)",
+        "V = V IN DD",
+        "30",
+        "40",
+        "50"
+      ],
+      [
+        "R PD",
+        "PA10 (OTG_FS_ID)",
+        "-",
+        "7",
+        "10",
+        "14",
+        "14"
+      ],
+      [
+        "C IO",
+        "I/O pin capacitance",
+        "-",
+        "-",
+        "5",
+        "-",
+        "pF"
+      ]
+    ],
+    "notes": [
+      "1. NA = not applicable. Note: It is recommended to add a Schottky diode (pin to ground) to analog pins which may",
+      "2. Guaranteed by design.",
+      "3. Pull-down resistors are designed with a true resistance in series with a switchable NMOS. This NMOS contribution to the series resistance is minimum (~10% order).",
+      "4. Hysteresis voltage between Schmitt trigger switching levels. Guaranteed by characterization results.",
+      "5. With a minimum of 200 mV.",
+      "6. Leakage could be higher than the maximum value, if negative current is injected on adjacent pins, Refer to Table 58: I/O current injection susceptibility",
+      "7. To sustain a voltage higher than VDD +0.3 V, the internal pull-up/pull-down resistors must be disabled. Leakage could be higher than the maximum value, if negative current is injected on adjacent pins.Refer to Table 58: I/O current injection"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

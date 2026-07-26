@@ -1,0 +1,224 @@
+{
+  "table_id": "table_81",
+  "document": "DS11854 Rev 7 - Table 81. SPI dynamic characteristics",
+  "rev": "Rev 7",
+  "table_number": "81",
+  "title": "Table 81. SPI dynamic characteristics",
+  "page": 163,
+  "section": "6.3.29 Communications interfaces",
+  "section_title": "Communications interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f732ie.pdf#page=163",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f732ie.pdf",
+  "text_helper": "Table 81. SPI dynamic characteristics — section 6.3.29 Communications interfaces. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Master mode SPI1,4,5 2.7≤VDD≤3.6",
+        "-",
+        "-",
+        "54(2)",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Master mode SPI1,4,5 1.71≤VDD≤3.6",
+        "-",
+        "-",
+        "27",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Master transmitter mode SPI1,4,5 1.71≤VDD≤3.6",
+        "-",
+        "-",
+        "54",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Slave receiver mode SPI1,4,5 1.71≤VDD≤3.6",
+        "-",
+        "-",
+        "54",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Slave mode transmitter/full duplex SPI1,4,5 2.7≤VDD≤3.6",
+        "-",
+        "-",
+        "50(3)",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Slave mode transmitter/full duplex SPI1,4,5 1.71≤VDD≤3.6",
+        "-",
+        "-",
+        "37(3)",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Master & Slave mode SPI2,3 1.71≤VDD≤3.6",
+        "-",
+        "-",
+        "27",
+        "MHz"
+      ],
+      [
+        "tsu(NSS)",
+        "NSS setup time",
+        "Slave mode, SPI presc = 2",
+        "4xTpclk",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "th(NSS)",
+        "NSS hold time",
+        "Slave mode, SPI presc = 2",
+        "2xTpclk",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "tw(SCKH) tw(SCKL)",
+        "SCK high and low time",
+        "Master mode",
+        "Tpclk-1",
+        "Tpclk",
+        "Tpclk+1",
+        "ns"
+      ],
+      [
+        "tsu(MI)",
+        "Data input setup time",
+        "Master mode",
+        "5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "tsu(SI)",
+        "tsu(SI)",
+        "Slave mode",
+        "2",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "th(MI)",
+        "Data input hold time",
+        "Master mode",
+        "3",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "th(SI)",
+        "th(SI)",
+        "Slave mode",
+        "1",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "ta(SO)",
+        "Data output access time",
+        "Slave mode",
+        "7",
+        "9",
+        "21",
+        "21"
+      ],
+      [
+        "tdis(SO)",
+        "Data output disable time",
+        "Slave mode",
+        "5",
+        "7",
+        "12",
+        "12"
+      ],
+      [
+        "tv(SO)",
+        "Data output valid time",
+        "Slave mode 2.7≤VDD≤3.6V",
+        "-",
+        "6.5",
+        "10",
+        "10"
+      ],
+      [
+        "tv(SO)",
+        "Data output valid time",
+        "Slave mode 1.71≤VDD≤3.6V",
+        "-",
+        "6.5",
+        "13.5",
+        "13.5"
+      ],
+      [
+        "tv(MO)",
+        "tv(MO)",
+        "Master mode",
+        "-",
+        "2",
+        "3",
+        "3"
+      ],
+      [
+        "th(SO)",
+        "Data output hold time",
+        "Slave mode 1.71≤VDD≤3.6V",
+        "4.5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "th(MO)",
+        "th(MO)",
+        "Master mode",
+        "0",
+        "-",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "2. Excepting SPI1 with SCK IO=PA5. In this configuration, the maximum achievable frequency is 40 MHz.",
+      "3. Maximum frequency of the slave transmitter is determined by sum of Tv(SO) and Tsu(MI) intervals which has to fit into SCK level phase preceding the SCK sampling edge.This value can be achieved when it communicates with a Master having"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

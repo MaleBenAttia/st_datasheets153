@@ -1,0 +1,61 @@
+{
+  "table_id": "table_36",
+  "document": "DS5792 Rev 13 - Table 36. Synchronous multiplexed PSRAM write timings.",
+  "rev": "Rev 13",
+  "table_number": "36",
+  "title": "Table 36. Synchronous multiplexed PSRAM write timings.",
+  "page": 74,
+  "section": "5.3.10 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f103rc.pdf#page=74",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f103rc.pdf",
+  "text_helper": "Table 36. Synchronous multiplexed PSRAM write timings. — section 5.3.10 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t d(CLKL-NExL)",
+        "FSMC_CLK low to FSMC_Nex low (x = 0...2)",
+        "-",
+        "2",
+        "ns"
+      ],
+      [
+        "t d(CLKL-ADV)",
+        "FSMC_CLK low to FSMC_AD[15:0] valid",
+        "-",
+        "12",
+        "ns"
+      ],
+      [
+        "t d(CLKL-ADIV)",
+        "FSMC_CLK low to FSMC_AD[15:0] invalid",
+        "3",
+        "-",
+        "ns"
+      ],
+      [
+        ")ataD-LKLC(d t",
+        "FSMC_A/D[15:0] valid after FSMC_CLK low",
+        "-",
+        "6",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. C = 15 pF. L",
+      "2. Guaranteed by characterization results. 74/143 DS5792 Rev 13"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

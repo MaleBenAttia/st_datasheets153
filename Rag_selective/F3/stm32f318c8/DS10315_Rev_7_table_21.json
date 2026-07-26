@@ -1,0 +1,211 @@
+{
+  "table_id": "table_21",
+  "document": "DS10315 Rev 7 - Table 21. General operating conditions",
+  "rev": "Rev 7",
+  "table_number": "21",
+  "title": "Table 21. General operating conditions",
+  "page": 49,
+  "section": "6.3.1 General operating conditions",
+  "section_title": "General operating conditions",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f318c8.pdf#page=49",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f318c8.pdf",
+  "text_helper": "Table 21. General operating conditions — section 6.3.1 General operating conditions. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f HCLK",
+        "Internal AHB clock frequency",
+        "-",
+        "0",
+        "72",
+        "MHz"
+      ],
+      [
+        "f PCLK1",
+        "Internal APB1 clock frequency",
+        "-",
+        "0",
+        "36",
+        "MHz"
+      ],
+      [
+        "f PCLK2",
+        "Internal APB2 clock frequency",
+        "-",
+        "0",
+        "72",
+        "MHz"
+      ],
+      [
+        "V DD",
+        "Standard operating voltage",
+        "-",
+        "1.65",
+        "1.95",
+        "V"
+      ],
+      [
+        "V DDA",
+        "Analog operating voltage (OPAMP and DAC not used)",
+        "Must have a potential equal to or higher than V DD",
+        "1.65",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DDA",
+        "Analog operating voltage (OPAMP and DAC used)",
+        "Must have a potential equal to or higher than V DD",
+        "2.4",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DDA",
+        "Analog operating voltage",
+        "Must have a potential equal to or higher than V DD",
+        "1.8",
+        "3.6",
+        "V"
+      ],
+      [
+        "V BAT",
+        "Backup operating voltage",
+        "-",
+        "1.65",
+        "3.6",
+        "V"
+      ],
+      [
+        "V IN",
+        "I/O input voltage",
+        "TC I/O",
+        "–0.3",
+        "V +0.3 DD",
+        "V"
+      ],
+      [
+        "V IN",
+        "I/O input voltage",
+        "TT I/O(1)",
+        "-0.3",
+        "3.6",
+        "V"
+      ],
+      [
+        "V IN",
+        "I/O input voltage",
+        "TTa I/O pins and POR pin",
+        "–0.3",
+        "ADD 3.0+ V",
+        "V"
+      ],
+      [
+        "V IN",
+        "I/O input voltage",
+        "FT and FTf I/O(1)",
+        "–0.3",
+        "5.2",
+        "V"
+      ],
+      [
+        "V IN",
+        "I/O input voltage",
+        "BOOT0",
+        "0",
+        "5.2",
+        "V"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 85 °C for suffix 6 or A T = 105 °C for suffix 7(2) A",
+        "WLCSP49",
+        "-",
+        "408",
+        "mW"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 85 °C for suffix 6 or A T = 105 °C for suffix 7(2) A",
+        "LQFP48",
+        "-",
+        "364",
+        "mW"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 85 °C for suffix 6 or A T = 105 °C for suffix 7(2) A",
+        "UFQFPN32",
+        "-",
+        "540",
+        "mW"
+      ],
+      [
+        "TA",
+        "Ambient temperature for 6 suffix version",
+        "Maximum power dissipation",
+        "–40",
+        "85",
+        "°C"
+      ],
+      [
+        "TA",
+        "Ambient temperature for 6 suffix version",
+        "Low power dissipation(3)",
+        "–40",
+        "105",
+        "°C"
+      ],
+      [
+        "TA",
+        "Ambient temperature for 7 suffix version",
+        "Maximum power dissipation",
+        "–40",
+        "105",
+        "°C"
+      ],
+      [
+        "TA",
+        "Ambient temperature for 7 suffix version",
+        "Low power dissipation(3)",
+        "–40",
+        "125",
+        "°C"
+      ],
+      [
+        "TJ",
+        "Junction temperature range",
+        "6 suffix version",
+        "–40",
+        "105",
+        "°C"
+      ],
+      [
+        "TJ",
+        "Junction temperature range",
+        "7 suffix version",
+        "–40",
+        "125",
+        "°C"
+      ]
+    ],
+    "notes": [
+      "1. To sustain a voltage higher than V +0.3 V, the internal pull-up/pull-down resistors must be disabled. DD",
+      "2. If T is lower, higher P values are allowed as long as T does not exceed T . See Table 75: Package A D J Jmax",
+      "3. In low power dissipation state, T can be extended to this range as long as T does not exceed T . See A J Jmax"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

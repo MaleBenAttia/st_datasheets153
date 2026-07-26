@@ -1,0 +1,82 @@
+{
+  "table_id": "table_42",
+  "document": "DS14861 Rev 3 - Table 42. Flash banks static power consumption, when supplied by LDO/SMPS",
+  "rev": "Rev 3",
+  "table_number": "42",
+  "title": "Table 42. Flash banks static power consumption, when supplied by LDO/SMPS",
+  "page": 108,
+  "section": "5.3.6 Supply current characteristics",
+  "section_title": "Supply current characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf#page=108",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf",
+  "text_helper": "Table 42. Flash banks static power consumption, when supplied by LDO/SMPS — section 5.3.6 Supply current characteristics. Symbol, Symbol, Parameter, Typ / 25°C, Typ / 55°C, +7 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Symbol",
+      "Parameter",
+      "Typ / 25°C",
+      "Typ / 55°C",
+      "Typ / 85°C",
+      "Typ / 105°C",
+      "Max / 30°C",
+      "Max / 55°C",
+      "Max / 85°C",
+      "Max / 105°C",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "IDD (Flash_Bank1)(1)",
+        "IDD (Flash_Bank1)(1)",
+        "Flash bank 1 static consumption in normal mode (PD1 = 1 vs. PD1 = 0)",
+        "18",
+        "19",
+        "21",
+        "25",
+        "25",
+        "26",
+        "29",
+        "35",
+        "µA"
+      ],
+      [
+        "IDD (Flash_Bank2)(1)",
+        "IDD (Flash_Bank2)(1)",
+        "Flash bank 2 static consumption in normal mode (PD2 = 1 vs. PD2 = 0)",
+        "18",
+        "18",
+        "20",
+        "23",
+        "25",
+        "25",
+        "28",
+        "32",
+        "µA"
+      ],
+      [
+        "IDD (Flash_Bank_LPM)(2)",
+        "IDD (Flash_Bank_LPM)(2)",
+        "One Flash bank additional static consumption in normal mode versus low-power mode (LPM = 0 vs. LPM = 1)",
+        "10",
+        "11",
+        "11",
+        "15",
+        "14",
+        "15",
+        "15",
+        "21",
+        "µA"
+      ]
+    ],
+    "notes": [
+      "1. The typical value is measured at VDD = 1.8 V. The maximum value is for 1.71 V ≤ VDD ≤ 3.6 V and is at VDD = 1.71 V in Run/Sleep mode on SMPS.",
+      "2. If no bank is in power-down, the flash memory additional static consumption in normal mode versus low-power mode is 2 x IDD(Flash_Bank_LPM)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

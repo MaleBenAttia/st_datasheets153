@@ -1,0 +1,152 @@
+{
+  "table_id": "table_35",
+  "document": "DS12535 Rev 2 - Table 35. Low-power mode wake-up timings",
+  "rev": "Rev 2",
+  "table_number": "35",
+  "title": "Table 35. Low-power mode wake-up timings",
+  "page": 109,
+  "section": "6.3.8 Wake-up time from low-power modes",
+  "section_title": "Wake-up time from low-power modes",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f750n8.pdf#page=109",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f750n8.pdf",
+  "text_helper": "Table 35. Low-power mode wake-up timings — section 6.3.8 Wake-up time from low-power modes. Symbol, Parameter, Parameter, Conditions, Typ(1), +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Parameter",
+      "Conditions",
+      "Typ(1)",
+      "Max(1)",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t (2) WUSLEEP",
+        "Wake up from Sleep",
+        "Wake up from Sleep",
+        "-",
+        "13",
+        "13",
+        "CPU clock cycles"
+      ],
+      [
+        "t (2) WUSTOP",
+        "Wake up from Stop mode with MR/LP regulator in normal mode",
+        "Wake up from Stop mode with MR/LP regulator in normal mode",
+        "Main regulator is ON",
+        "14",
+        "14.9",
+        "µs"
+      ],
+      [
+        "t (2) WUSTOP",
+        "Wake up from Stop mode with MR/LP regulator in normal mode",
+        "Wake up from Stop mode with MR/LP regulator in normal mode",
+        "Main regulator is ON and flash memory in Deep power down mode",
+        "104.1",
+        "107.6",
+        "µs"
+      ],
+      [
+        "t (2) WUSTOP",
+        "Wake up from Stop mode with MR/LP regulator in normal mode",
+        "Wake up from Stop mode with MR/LP regulator in normal mode",
+        "Low power regulator is ON",
+        "21.4",
+        "24.2",
+        "µs"
+      ],
+      [
+        "t (2) WUSTOP",
+        "Wake up from Stop mode with MR/LP regulator in normal mode",
+        "Wake up from Stop mode with MR/LP regulator in normal mode",
+        "Low power regulator is ON and flash memory in Deep power down mode",
+        "111.5",
+        "116.5",
+        "µs"
+      ],
+      [
+        "t (2) WUSTOP",
+        "Wake up from Stop mode with MR/LP regulator in Under-drive mode",
+        "Wake up from Stop mode with MR/LP regulator in Under-drive mode",
+        "Main regulator in under-drive mode (flash memory in Deep power-down mode)",
+        "107.4",
+        "113.2",
+        "µs"
+      ],
+      [
+        "t (2) WUSTOP",
+        "Wake up from Stop mode with MR/LP regulator in Under-drive mode",
+        "Wake up from Stop mode with MR/LP regulator in Under-drive mode",
+        "Low power regulator in under-drive mode (flash memory in Deep power-down mode )",
+        "112.7",
+        "120",
+        "µs"
+      ],
+      [
+        "tWUSTDBY (2)",
+        "Wake up from Standby mode",
+        "Wake up from Standby mode",
+        "Exit Standby mode on rising edge",
+        "308",
+        "313",
+        "µs"
+      ],
+      [
+        "tWUSTDBY (2)",
+        "Wake up from Standby mode",
+        "Wake up from Standby mode",
+        "Exit Standby mode on falling edge",
+        "307",
+        "313",
+        "µs"
+      ],
+      [
+        "V HSEH",
+        "OSC_IN input pin high level voltage",
+        "OSC_IN input pin high level voltage",
+        "0.7V DD",
+        "-",
+        "V DD",
+        "V"
+      ],
+      [
+        "V HSEL",
+        "OSC_IN input pin low level voltage",
+        "OSC_IN input pin low level voltage",
+        "V SS",
+        "-",
+        "0.3V DD",
+        "0.3V DD"
+      ],
+      [
+        "t w(HSE) t w(HSE)",
+        "OSC_IN high or low time(1)",
+        "OSC_IN high or low time(1)",
+        "5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t r(HSE) t f(HSE)",
+        "OSC_IN rise or fall time(1)",
+        "OSC_IN rise or fall time(1)",
+        "-",
+        "-",
+        "10",
+        "10"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization results.",
+      "2. The wake-up times are measured from the wake-up event to the point in which the application code reads the first DS12535 Rev 2 109/198"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

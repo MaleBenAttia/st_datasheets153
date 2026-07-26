@@ -1,0 +1,170 @@
+{
+  "table_id": "table_51",
+  "document": "DS13303 Rev 4 - Table 51. I/O static characteristics",
+  "rev": "Rev 4",
+  "table_number": "51",
+  "title": "Table 51. I/O static characteristics",
+  "page": 73,
+  "section": "5.3.14 I/O port characteristics",
+  "section_title": "I/O port characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32g051c6.pdf#page=73",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g051c6.pdf",
+  "text_helper": "Table 51. I/O static characteristics — section 5.3.14 I/O port characteristics. Symbol, Parameter, Conditions, Conditions, Min, +3 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V (1) IL",
+        "I/O input low level voltage",
+        "All",
+        "1.62 V < V < 3.6 V DDIO1",
+        "-",
+        "-",
+        "0.3 x V DDIO1 (2)",
+        "V"
+      ],
+      [
+        "V (1) IL",
+        "I/O input low level voltage",
+        "All",
+        "1.62 V < V < 3.6 V DDIO1",
+        "-",
+        "-",
+        "0.39 x V DDIO1 - 0.06 (3)",
+        "V"
+      ],
+      [
+        "V (1) IH",
+        "I/O input high level voltage",
+        "All",
+        "1.62 V < V < 3.6 V DDIO1",
+        "0.7 x V (2) DDIO1",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "V (1) IH",
+        "I/O input high level voltage",
+        "All",
+        "1.62 V < V < 3.6 V DDIO1",
+        "0.49 x V DDIO1 + 0.26(3)",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "V (3) hys",
+        "I/O input hysteresis",
+        "FT_xx, NRST",
+        "1.62 V < V < 3.6 V DDIO1",
+        "-",
+        "200",
+        "-",
+        "mV"
+      ],
+      [
+        "I lkg",
+        "Input leakage current(3)",
+        "All except FT_e, TT_a",
+        "0 < V ≤ V IN DDIO1",
+        "-",
+        "-",
+        "±70",
+        "nA"
+      ],
+      [
+        "I lkg",
+        "Input leakage current(3)",
+        "All except FT_e, TT_a",
+        "V ≤ V ≤ V +1 V DDIO1 IN DDIO1",
+        "-",
+        "-",
+        "600(4)",
+        "nA"
+      ],
+      [
+        "I lkg",
+        "Input leakage current(3)",
+        "All except FT_e, TT_a",
+        "V +1 V < V ≤ 5.5 V(3) DDIO1 IN",
+        "-",
+        "-",
+        "150(4)",
+        "nA"
+      ],
+      [
+        "I lkg",
+        "Input leakage current(3)",
+        "FT_e (5)",
+        "0 < V ≤ V IN DDIO1",
+        "-",
+        "-",
+        "5",
+        "µA"
+      ],
+      [
+        "I lkg",
+        "Input leakage current(3)",
+        "TT_a",
+        "V < V ≤ DDIO1 IN V + 0.3 V DDIO1",
+        "-",
+        "-",
+        "2000(4)",
+        "nA"
+      ],
+      [
+        "R PU",
+        "Weak pull-up equivalent resistor (6)",
+        "V = V IN SS",
+        "V = V IN SS",
+        "25",
+        "40",
+        "55",
+        "kΩ"
+      ],
+      [
+        "R PD",
+        "Weak pull-down equivalent resistor(6)",
+        "V = VDDIO1 IN",
+        "V = VDDIO1 IN",
+        "25",
+        "40",
+        "55",
+        "kΩ"
+      ],
+      [
+        "C IO",
+        "I/O pin capacitance",
+        "-",
+        "-",
+        "-",
+        "5",
+        "-",
+        "pF"
+      ]
+    ],
+    "notes": [
+      "1. Refer to Figure 20: I/O input characteristics.",
+      "2. Tested in production.",
+      "3. Guaranteed by design.",
+      "4. This value represents the pad leakage of the I/O itself. The total product pad leakage is provided by this formula: I = 10 µA + [number of I/Os where V is applied on the pad] ₓ I (Max).",
+      "5. FT_e with diode enabled. Input leakage current of FT_e I/Os with the diode disabled is the same as standard I/Os.",
+      "6. Pull-up and pull-down resistors are designed with a true resistance in series with a switchable PMOS/NMOS. This PMOS/NMOS contribution to the series resistance is minimal (~10% order)."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

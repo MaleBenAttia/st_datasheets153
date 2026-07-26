@@ -1,0 +1,131 @@
+{
+  "table_id": "table_15",
+  "document": "DS11532 Rev 9 - Table 15. Current characteristics",
+  "rev": "Rev 9",
+  "table_number": "15",
+  "title": "Table 15. Current characteristics",
+  "page": 108,
+  "section": "6.2 Absolute maximum ratings",
+  "section_title": "Absolute maximum ratings",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f765bg.pdf#page=108",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f765bg.pdf",
+  "text_helper": "Table 15. Current characteristics — section 6.2 Absolute maximum ratings. Symbol, Ratings, Max., Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Ratings",
+      "Max.",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "ΣI VDD",
+        "Total current into sum of all V power lines (source)(1) DD_x",
+        "420",
+        "mA"
+      ],
+      [
+        "SSV I Σ",
+        "Total current out of sum of all V ground lines (sink)(1) SS_x",
+        "-420",
+        "mA"
+      ],
+      [
+        "BSUDDV I Σ",
+        "Total current into V power line (source) DDUSB",
+        "25",
+        "mA"
+      ],
+      [
+        "CMMDSDDV I Σ",
+        "Total current into V power line (source) DDSDMMC",
+        "60",
+        "mA"
+      ],
+      [
+        "I VDD",
+        "Maximum current into each V power line (source)(1) DD_x",
+        "100",
+        "mA"
+      ],
+      [
+        "I VDDSDMMC",
+        "Maximum current into V power line (source): PG[12:9], PD[7:6] DDSDMMC",
+        "100",
+        "mA"
+      ],
+      [
+        "I VSS",
+        "Maximum current out of each V ground line (sink)(1) SS_x",
+        "-100",
+        "mA"
+      ],
+      [
+        "I IO",
+        "Output current sunk by any I/O and control pin",
+        "25",
+        "mA"
+      ],
+      [
+        "I IO",
+        "Output current sourced by any I/Os and control pin",
+        "-25",
+        "mA"
+      ],
+      [
+        "ΣI IO",
+        "Total output current sunk by sum of all I/O and control pins (2)",
+        "120",
+        "mA"
+      ],
+      [
+        "ΣI IO",
+        "Total output current sunk by sum of all USB I/Os",
+        "25",
+        "mA"
+      ],
+      [
+        "ΣI IO",
+        "Total output current sunk by sum of all SDMMC I/Os",
+        "120",
+        "mA"
+      ],
+      [
+        "ΣI IO",
+        "Total output current sourced by sum of all I/Os and control pins except USB I/Os(2)",
+        "-120",
+        "mA"
+      ],
+      [
+        "I INJ(PIN)",
+        "Injected current on FT, FTf, RST and B pins (3)",
+        "-5/+0",
+        "mA"
+      ],
+      [
+        "I INJ(PIN)",
+        "Injected current on TTa pins(4)",
+        "±5",
+        "mA"
+      ],
+      [
+        "ΣI (4) INJ(PIN)",
+        "Total injected current (sum of all I/O and control pins)(5)",
+        "±25",
+        "mA"
+      ]
+    ],
+    "notes": [
+      "1. Applicable only for STM32F7x9 sales types.",
+      "2. All main power (V DD , V DDA , V DDSDMMC, V DDUSB, V DDDSI) and ground (V SS , V SSA ) pins must always be connected to the external power supply, in the permitted range.",
+      "3. V maximum value must always be respected. Refer to Table 15 for the values of the maximum allowed injected current. IN",
+      "4. This formula has to be applied on power supplies related to the IO structure described by the pin definition table.",
+      "5. To sustain a voltage higher than 4 V the internal pull-up/pull-down resistors must be disabled."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

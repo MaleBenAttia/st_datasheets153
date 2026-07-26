@@ -1,0 +1,74 @@
+{
+  "table_id": "table_141",
+  "document": "DS12737 Rev 6 - Table 141. Synchronous multiplexed PSRAM write timings",
+  "rev": "Rev 6",
+  "table_number": "141",
+  "title": "Table 141. Synchronous multiplexed PSRAM write timings",
+  "page": 290,
+  "section": "1.5 Ns",
+  "section_title": "Ns",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l552cc.pdf#page=290",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l552cc.pdf",
+  "text_helper": "Table 141. Synchronous multiplexed PSRAM write timings — section 1.5 Ns. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "tw(CLK)",
+        "FMC_CLK period, VDD range= 2.7 to 3.6 V",
+        "R*THCLK-0.5(2)",
+        "-",
+        "ns"
+      ],
+      [
+        "td(CLKL-AV)",
+        "FMC_CLK low to FMC_Ax valid (x=16…25)",
+        "-",
+        "5.75",
+        "ns"
+      ],
+      [
+        "td(CLKH-AIV)",
+        "FMC_CLK high to FMC_Ax invalid (x=16…25)",
+        "R*THCLK/2+1(2)",
+        "-",
+        "ns"
+      ],
+      [
+        "td(CLKL-ADV)",
+        "FMC_CLK low to to FMC_AD[15:0] valid",
+        "-",
+        "3",
+        "ns"
+      ],
+      [
+        "td(CLKL-ADIV)",
+        "FMC_CLK low to FMC_AD[15:0] invalid",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "td(CLKL-DATA)",
+        "FMC_A/D[15:0] valid data after FMC_CLK low",
+        "-",
+        "3.5",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "2. Clock ratio R = (HCLK period /FMC_CLK period). 290/340 DS12737 Rev 6"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

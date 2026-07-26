@@ -1,0 +1,115 @@
+{
+  "table_id": "table_42",
+  "document": "DS14121 Rev 5 - Table 42. Low-speed external user clock characteristics",
+  "rev": "Rev 5",
+  "table_number": "42",
+  "title": "Table 42. Low-speed external user clock characteristics",
+  "page": 154,
+  "section": "5.3.8 External clock source characteristics",
+  "section_title": "External clock source characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h573ai.pdf#page=154",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h573ai.pdf",
+  "text_helper": "Table 42. Low-speed external user clock characteristics — section 5.3.8 External clock source characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f LSE_ext",
+        "User external clock source frequency",
+        "External digital/analog clock",
+        "-",
+        "32.768",
+        "1000",
+        "kHz"
+      ],
+      [
+        "V LSEH",
+        "Digital OSC32_IN input high-level voltage",
+        "External digital clock",
+        "0.7 V DD",
+        "-",
+        "V DD",
+        "V"
+      ],
+      [
+        "V LSEL",
+        "Digital OSC32_IN input low-level voltage",
+        "External digital clock",
+        "V SS",
+        "-",
+        "0.3 V DD",
+        "V"
+      ],
+      [
+        "t t w(LSEH)/w(LSEL)",
+        "Digital OSC_IN input high or low time",
+        "External digital clock",
+        "250",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "V isw_H",
+        "Analog low-swing OSC_IN high-level voltage",
+        "External analog low swing clock",
+        "0.6",
+        "-",
+        "1.225",
+        "V"
+      ],
+      [
+        "V isw_L",
+        "Analog low-swing OSC_IN low-level voltage",
+        "Analog low-swing OSC_IN low-level voltage",
+        "0.35",
+        "-",
+        "0.8",
+        "0.8"
+      ],
+      [
+        "V iswLSE (V -V ) LSEH LSEL",
+        "Analog low-swing OSC_IN peak-to-peak amplitude",
+        "Analog low-swing OSC_IN peak-to-peak amplitude",
+        "0.5",
+        "-",
+        "0.875",
+        "0.875"
+      ],
+      [
+        "DuCy LSE",
+        "Analog low-swing OSC_IN duty cycle",
+        "Analog low-swing OSC_IN duty cycle",
+        "45",
+        "50",
+        "55",
+        "%"
+      ],
+      [
+        "t /t r(LSE) f(LSE)",
+        "Analog low-swing OSC_IN rise and fall times",
+        "External analog low swing clock, 10% to 90%",
+        "-",
+        "100",
+        "200",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. R value depends on the crystal characteristics. EXT"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

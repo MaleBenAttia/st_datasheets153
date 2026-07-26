@@ -1,0 +1,75 @@
+{
+  "table_id": "table_34",
+  "document": "DS5944 Rev 11 - Table 34. Synchronous multiplexed NOR/PSRAM read timings",
+  "rev": "Rev 11",
+  "table_number": "34",
+  "title": "Table 34. Synchronous multiplexed NOR/PSRAM read timings",
+  "page": 63,
+  "section": "5.3.10 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f100rc.pdf#page=63",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f100rc.pdf",
+  "text_helper": "Table 34. Synchronous multiplexed NOR/PSRAM read timings — section 5.3.10 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t d(CLKH-NOEL)",
+        "FSMC_CLK high to FSMC_NOE low",
+        "-",
+        "1",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NOEH)",
+        "FSMC_CLK low to FSMC_NOE high",
+        "0.5",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-ADIV)",
+        "FSMC_CLK low to FSMC_AD[15:0] invalid",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(ADV-CLKH)",
+        "FSMC_A/D[15:0] valid data before FSMC_CLK high",
+        "6",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(CLKH-ADV)",
+        "FSMC_A/D[15:0] valid data after FSMC_CLK high",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(NWAITV-CLKH)",
+        "FSMC_NWAIT valid before FSMC_CLK high",
+        "8",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. C = 15 pF. L",
+      "2. Preliminary values. DS5944 Rev 11 63/107"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

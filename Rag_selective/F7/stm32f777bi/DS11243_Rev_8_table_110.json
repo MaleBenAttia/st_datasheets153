@@ -1,0 +1,81 @@
+{
+  "table_id": "table_110",
+  "document": "DS11243 Rev 8 - Table 110. Synchronous multiplexed PSRAM write timings",
+  "rev": "Rev 8",
+  "table_number": "110",
+  "title": "Table 110. Synchronous multiplexed PSRAM write timings",
+  "page": 201,
+  "section": "6.3.30 FMC characteristics",
+  "section_title": "FMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f777bi.pdf#page=201",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f777bi.pdf",
+  "text_helper": "Table 110. Synchronous multiplexed PSRAM write timings — section 6.3.30 FMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t d(CLKL-NADVL)",
+        "FMC_CLK low to FMC_NADV low",
+        "-",
+        "1",
+        "ns"
+      ],
+      [
+        "t d(CLKL-AV)",
+        "FMC_CLK low to FMC_Ax valid (x=16…25)",
+        "-",
+        "2 .5",
+        "ns"
+      ],
+      [
+        "t (CLKH-NWEH)",
+        "FMC_CLK high to FMC_NWE high",
+        "KLCH 5.0 + T",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-ADV)",
+        "FMC_CLK low to FMC_AD[15:0] valid",
+        "-",
+        "3",
+        "ns"
+      ],
+      [
+        "t d(CLKL-ADIV)",
+        "FMC_CLK low to FMC_AD[15:0] invalid",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-DATA)",
+        "FMC_A/D[15:0] valid data after FMC_CLK low",
+        "-",
+        "3.5",
+        "ns"
+      ],
+      [
+        "t d(CLKH-NBLH)",
+        "FMC_CLK high to FMC_NBL high",
+        "KLCH 5.0 + T",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization results. DS11243 Rev 8 201/255"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

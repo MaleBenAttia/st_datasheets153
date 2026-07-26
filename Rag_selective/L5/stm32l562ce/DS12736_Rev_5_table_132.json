@@ -1,0 +1,114 @@
+{
+  "table_id": "table_132",
+  "document": "DS12736 Rev 5 - Table 132. Asynchronous non-multiplexed SRAM/PSRAM/NOR read timings",
+  "rev": "Rev 5",
+  "table_number": "132",
+  "title": "Table 132. Asynchronous non-multiplexed SRAM/PSRAM/NOR read timings",
+  "page": 286,
+  "section": "5.3.30 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l562ce.pdf#page=286",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l562ce.pdf",
+  "text_helper": "Table 132. Asynchronous non-multiplexed SRAM/PSRAM/NOR read timings — section 5.3.30 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "tw(NE)",
+        "FMC_NE low time",
+        "3THCLK– 0.5",
+        "3 THCLK+1",
+        "ns"
+      ],
+      [
+        "tv(NOE_NE)",
+        "FMC_NEx low to FMC_NOE low",
+        "0",
+        "1",
+        "ns"
+      ],
+      [
+        "tw(NOE)",
+        "FMC_NOE low time",
+        "2THCLK -0.5",
+        "2THCLK + 1",
+        "ns"
+      ],
+      [
+        "th(NE_NOE)",
+        "FMC_NOE high to FMC_NE high hold time",
+        "THCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "tv(A_NE)",
+        "FMC_NEx low to FMC_A valid",
+        "-",
+        "1",
+        "ns"
+      ],
+      [
+        "th(A_NOE)",
+        "Address hold time after FMC_NOE high",
+        "2THCLK-1",
+        "-",
+        "ns"
+      ],
+      [
+        "tsu(Data_NE)",
+        "Data to FMC_NEx high setup time",
+        "THCLK +14",
+        "-",
+        "ns"
+      ],
+      [
+        "tsu(Data_NOE)",
+        "Data to FMC_NOEx high setup time",
+        "14",
+        "-",
+        "ns"
+      ],
+      [
+        "th(Data_NOE)",
+        "Data hold time after FMC_NOE high",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "th(Data_NE)",
+        "Data hold time after FMC_NEx high",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "tv(NADV_NE)",
+        "FMC_NEx low to FMC_NADV low",
+        "-",
+        "0",
+        "ns"
+      ],
+      [
+        "tw(NADV)",
+        "FMC_NADV low time",
+        "-",
+        "THCLK+1.5",
+        "ns"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

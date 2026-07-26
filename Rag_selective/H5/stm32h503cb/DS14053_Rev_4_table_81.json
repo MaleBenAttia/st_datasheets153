@@ -1,0 +1,52 @@
+{
+  "table_id": "table_81",
+  "document": "DS14053 Rev 4 - Table 81. I3C push-pull measured timing",
+  "rev": "Rev 4",
+  "table_number": "81",
+  "title": "Table 81. I3C push-pull measured timing",
+  "page": 141,
+  "section": "5.3.27 Communication interfaces",
+  "section_title": "Communication interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h503cb.pdf#page=141",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h503cb.pdf",
+  "text_helper": "Table 81. I3C push-pull measured timing — section 5.3.27 Communication interfaces. Symbol, Parameter, Conditions, I3C open drain mode / (specification) / Min, I3C open drain mode / Max, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "I3C open drain mode / (specification) / Min",
+      "I3C open drain mode / Max",
+      "Timing measurements",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t SU_OD",
+        "SDA data setup time during open drain mode",
+        "Controller 1.08 V ≤ V (1) ≤ 1.32 V DDIO2",
+        "3",
+        "-",
+        "23",
+        "ns"
+      ],
+      [
+        "t SU_OD",
+        "SDA data setup time during open drain mode",
+        "Controller 1.71 V ≤ V ≤ 3.6 V DD",
+        "3",
+        "-",
+        "16.5",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. On WLCSP25, the I3C is mapped on port A/B I/Os, which is supplied by VDDIO2 with specification down to 1.08 V. The I3C is tested at this value."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

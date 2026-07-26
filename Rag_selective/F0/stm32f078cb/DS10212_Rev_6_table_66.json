@@ -1,0 +1,170 @@
+{
+  "table_id": "table_66",
+  "document": "DS10212 Rev 6 - Table 66. SPI characteristics",
+  "rev": "Rev 6",
+  "table_number": "66",
+  "title": "Table 66. SPI characteristics",
+  "page": 92,
+  "section": "6.3.21 Communication interfaces",
+  "section_title": "Communication interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f078cb.pdf#page=92",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f078cb.pdf",
+  "text_helper": "Table 66. SPI characteristics — section 6.3.21 Communication interfaces. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Master mode",
+        "-",
+        "18",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Slave mode",
+        "-",
+        "18",
+        "MHz"
+      ],
+      [
+        "t r(SCK) t f(SCK)",
+        "SPI clock rise and fall time",
+        "Capacitive load: C = 15 pF",
+        "-",
+        "6",
+        "ns"
+      ],
+      [
+        "t su(NSS)",
+        "NSS setup time",
+        "Slave mode",
+        "4Tpclk",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(NSS)",
+        "NSS hold time",
+        "Slave mode",
+        "01 + klcpT2",
+        "-",
+        "ns"
+      ],
+      [
+        "t w(SCKH) t w(SCKL)",
+        "SCK high and low time",
+        "Master mode, f = 36 MHz, PCLK presc = 4",
+        "Tpclk/2 -2",
+        "Tpclk/2 + 1",
+        "ns"
+      ],
+      [
+        "t su(MI) t su(SI)",
+        "Data input setup time",
+        "Master mode",
+        "4",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(MI) t su(SI)",
+        "Data input setup time",
+        "Slave mode",
+        "5",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(MI)",
+        "Data input hold time",
+        "Master mode",
+        "4",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(SI)",
+        "Data input hold time",
+        "Slave mode",
+        "5",
+        "-",
+        "ns"
+      ],
+      [
+        "t (2) a(SO)",
+        "Data output access time",
+        "Slave mode, f = 20 MHz PCLK",
+        "0",
+        "3Tpclk",
+        "ns"
+      ],
+      [
+        "t (3) dis(SO)",
+        "Data output disable time",
+        "Slave mode",
+        "0",
+        "18",
+        "ns"
+      ],
+      [
+        "t v(SO)",
+        "Data output valid time",
+        "Slave mode (after enable edge)",
+        "-",
+        "22.5",
+        "ns"
+      ],
+      [
+        "t v(MO)",
+        "Data output valid time",
+        "Master mode (after enable edge)",
+        "-",
+        "6",
+        "ns"
+      ],
+      [
+        "t h(SO)",
+        "Data output hold time",
+        "Slave mode (after enable edge)",
+        "11.5",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(MO)",
+        "Data output hold time",
+        "Master mode (after enable edge)",
+        "2",
+        "-",
+        "ns"
+      ],
+      [
+        "DuCy(SCK)",
+        "SPI slave input clock duty cycle",
+        "Slave mode",
+        "25",
+        "75",
+        "%"
+      ]
+    ],
+    "notes": [
+      "2. Spikes with widths below t are filtered. AF(min)",
+      "3. Spikes with widths above t are not filtered AF(max)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

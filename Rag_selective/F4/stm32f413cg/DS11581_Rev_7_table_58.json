@@ -1,0 +1,73 @@
+{
+  "table_id": "table_58",
+  "document": "DS11581 Rev 7 - Table 58. I/O current injection susceptibility",
+  "rev": "Rev 7",
+  "table_number": "58",
+  "title": "Table 58. I/O current injection susceptibility",
+  "page": 122,
+  "section": "6.3.15 I/O current injection characteristics",
+  "section_title": "I/O current injection characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f413cg.pdf#page=122",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f413cg.pdf",
+  "text_helper": "Table 58. I/O current injection susceptibility — section 6.3.15 I/O current injection characteristics. Symbol, Description, Functional susceptibility / Negative injection, Functional susceptibility / Positive injection, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Description",
+      "Functional susceptibility / Negative injection",
+      "Functional susceptibility / Positive injection",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I INJ",
+        "Injected current on BOOT0, PDR_ON, BYPASS_REG",
+        "- 0",
+        "0",
+        "mA"
+      ],
+      [
+        "I INJ",
+        "Injected current on NRST",
+        "- 0",
+        "NA",
+        "mA"
+      ],
+      [
+        "I INJ",
+        "Injected current on PE6, PC13, PC14, PC15, PF0, PF1, PF2, PC0, PC1, PC2, PC3",
+        "- 0",
+        "NA",
+        "mA"
+      ],
+      [
+        "I INJ",
+        "Injected current on any other FT and FTf pins",
+        "- 5",
+        "NA",
+        "mA"
+      ],
+      [
+        "I INJ",
+        "Injected current on any other pins",
+        "- 5",
+        "+ 5",
+        "mA"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by test in production.",
+      "2. Guaranteed by design.",
+      "3. Pull-down resistors are designed with a true resistance in series with a switchable NMOS. This NMOS contribution to the series resistance is minimum (~10% order).",
+      "4. Hysteresis voltage between Schmitt trigger switching levels. Guaranteed by characterization results.",
+      "5. With a minimum of 200 mV.",
+      "6. Leakage could be higher than the maximum value, if negative current is injected on adjacent pins, Refer to Table 58: I/O current injection susceptibility",
+      "7. To sustain a voltage higher than VDD +0.3 V, the internal pull-up/pull-down resistors must be disabled. Leakage could be higher than the maximum value, if negative current is injected on adjacent pins.Refer to Table 58: I/O current injection"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

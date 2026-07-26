@@ -1,0 +1,73 @@
+{
+  "table_id": "table_21",
+  "document": "DS10697 Rev 4 - Table 21. Embedded reset and power control block characteristics",
+  "rev": "Rev 4",
+  "table_number": "21",
+  "title": "Table 21. Embedded reset and power control block characteristics",
+  "page": 40,
+  "section": "6.3.3 Embedded reset and power control block characteristics",
+  "section_title": "Embedded reset and power control block characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f070c6.pdf#page=40",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f070c6.pdf",
+  "text_helper": "Table 21. Embedded reset and power control block characteristics — section 6.3.3 Embedded reset and power control block characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V (1) POR/PDR",
+        "Power on/power down reset threshold",
+        "Falling edge(2)",
+        "1.80",
+        "1.88",
+        "1.96(3)",
+        "V"
+      ],
+      [
+        "V (1) POR/PDR",
+        "Power on/power down reset threshold",
+        "Rising edge",
+        "1.84(3)",
+        "1.92",
+        "2.00",
+        "V"
+      ],
+      [
+        "V PDRhyst",
+        "PDR hysteresis",
+        "-",
+        "-",
+        "40",
+        "-",
+        "mV"
+      ],
+      [
+        "t (4) RSTTEMPO",
+        "Reset temporization",
+        "-",
+        "1.50",
+        "2.50",
+        "4.50",
+        "ms"
+      ]
+    ],
+    "notes": [
+      "1. If T is lower, higher P values are allowed as long as T does not exceed T . A D J Jmax",
+      "2. In low power dissipation state, T can be extended to this range as long as T does not exceed T (see Section 7.5: A J Jmax",
+      "3. Data based on characterization results, not tested in production.",
+      "4. Guaranteed by design, not tested in production."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

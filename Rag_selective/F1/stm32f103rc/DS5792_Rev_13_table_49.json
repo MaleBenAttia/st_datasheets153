@@ -1,0 +1,89 @@
+{
+  "table_id": "table_49",
+  "document": "DS5792 Rev 13 - Table 49. NRST pin characteristics",
+  "rev": "Rev 13",
+  "table_number": "49",
+  "title": "Table 49. NRST pin characteristics",
+  "page": 94,
+  "section": "5.3.15 NRST pin characteristics",
+  "section_title": "NRST pin characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f103rc.pdf#page=94",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f103rc.pdf",
+  "text_helper": "Table 49. NRST pin characteristics — section 5.3.15 NRST pin characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V (1) IL(NRST)",
+        "NRST Input low level voltage",
+        "-",
+        "–0.5",
+        "-",
+        "0.8",
+        "V"
+      ],
+      [
+        "V (1) IH(NRST)",
+        "NRST Input high level voltage",
+        "-",
+        "2",
+        "-",
+        "V +0.5 DD",
+        "V"
+      ],
+      [
+        "V hys(NRST)",
+        "NRST Schmitt trigger voltage hysteresis",
+        "-",
+        "-",
+        "200",
+        "-",
+        "mV"
+      ],
+      [
+        "R PU",
+        "Weak pull-up equivalent resistor(2)",
+        "V = V IN SS",
+        "30",
+        "40",
+        "50",
+        "kΩ"
+      ],
+      [
+        "V (1) F(NRST)",
+        "NRST Input filtered pulse",
+        "-",
+        "-",
+        "-",
+        "100",
+        "ns"
+      ],
+      [
+        "V (1) NF(NRST)",
+        "NRST Input not filtered pulse",
+        "-",
+        "300",
+        "-",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by design.",
+      "2. The pull-up is designed with a true resistance in series with a switchable PMOS. This PMOS contribution to the series resistance must be minimum (~10% order)."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

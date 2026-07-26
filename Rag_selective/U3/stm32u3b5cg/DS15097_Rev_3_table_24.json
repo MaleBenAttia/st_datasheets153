@@ -1,0 +1,106 @@
+{
+  "table_id": "table_24",
+  "document": "DS15097 Rev 3 - Table 24. Voltage characteristics",
+  "rev": "Rev 3",
+  "table_number": "24",
+  "title": "Table 24. Voltage characteristics",
+  "page": 104,
+  "section": "5.2 Absolute maximum ratings",
+  "section_title": "Absolute maximum ratings",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u3b5cg.pdf#page=104",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u3b5cg.pdf",
+  "text_helper": "Table 24. Voltage characteristics — section 5.2 Absolute maximum ratings. Symbol, Ratings, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Ratings",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "VDDX - VSS",
+        "External main supply voltage (including VDD(1)(2)(3), VDDSMPS, VDDA, VDDUSB, VDDIO2(1)(2)(3), VBAT, VREF+)",
+        "-0.3",
+        "4.0",
+        "V"
+      ],
+      [
+        "VDDIOx(2) - VSS",
+        "I/O supply when HSLV(3) = 0",
+        "-0.3",
+        "4.0",
+        "V"
+      ],
+      [
+        "VDDIOx(2) - VSS",
+        "I/O supply when HSLV = 1",
+        "-0.3",
+        "2.75",
+        "V"
+      ],
+      [
+        "VIN(4)",
+        "Input voltage on FT_xx pins",
+        "VSS - 0.3",
+        "Min (min (VDD, VDDA, VDDUSB, VDDIO2) + 4.0, 6.0)(5) (6)",
+        "Min (min (VDD, VDDA, VDDUSB, VDDIO2) + 4.0, 6.0)(5) (6)"
+      ],
+      [
+        "VIN(4)",
+        "Input voltage on PC13 and FT_o pins in VBAT mode",
+        "VSS - 0.3",
+        "4.0",
+        "4.0"
+      ],
+      [
+        "VIN(4)",
+        "Input voltage on any other pins",
+        "VSS - 0.3",
+        "4.0",
+        "4.0"
+      ],
+      [
+        "VREF+ - VDDA",
+        "Allowed voltage difference for VREF+ > VDDA",
+        "-",
+        "0.4",
+        "0.4"
+      ],
+      [
+        "∆VDDx",
+        "Variations between different VDDx power pins of the same domain",
+        "-",
+        "50.0",
+        "mV"
+      ],
+      [
+        "VSSx - VSS",
+        "Variations between all the different ground pins(7)",
+        "-",
+        "50.0",
+        "50.0"
+      ]
+    ],
+    "notes": [
+      "1. If HSLV = 0.",
+      "2. VDDIO1 or VDDIO2 or VSW. VDDIO1 = VDD.",
+      "3. HSLV = High-speed low-voltage mode. Refer to General-purpose I/Os (GPIO) section of RM0487.",
+      "4. VIN maximum must always be respected. Refer to Table 25 for the maximum allowed injected current values.",
+      "5. This formula has to be applied only on the power supplies related to the I/O structure described in the pin definition table.",
+      "6. To sustain a voltage higher than 4 V, the internal pull‑up/pull‑down resistors must be disabled.",
+      "7. Including VREF- pin."
+    ],
+    "legend": [
+      "All main power (VDD, VDDSMPS, VDDA, VDDUSB, VDDIO2, VBAT) and ground (VSS, VSSA) pins must always be connected to the external",
+      "power supply, in the permitted range.",
+      "The I/O structure options listed in this table can be a concatenation of options including the option explicitly listed. For instance, TT_a refers to",
+      "any TT I/O with _a option. TT_xx refers to any TT I/O and FT_xx refers to any FT I/O."
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

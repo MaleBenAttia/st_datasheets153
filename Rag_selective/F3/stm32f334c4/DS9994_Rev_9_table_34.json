@@ -1,0 +1,90 @@
+{
+  "table_id": "table_34",
+  "document": "DS9994 Rev 9 - Table 34. Low-power mode wakeup timings",
+  "rev": "Rev 9",
+  "table_number": "34",
+  "title": "Table 34. Low-power mode wakeup timings",
+  "page": 66,
+  "section": "6.3.6 Wakeup time from low-power mode",
+  "section_title": "Wakeup time from low-power mode",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f334c4.pdf#page=66",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f334c4.pdf",
+  "text_helper": "Table 34. Low-power mode wakeup timings — section 6.3.6 Wakeup time from low-power mode. Symbol, Parameter, Conditions, Typ. @V DD, V = V / 2.0 V, Typ. @V DD, V = V / 2.4 V, +6 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Typ. @V DD, V = V / 2.0 V",
+      "Typ. @V DD, V = V / 2.4 V",
+      "Typ. @V DD, V = V / 2.7 V",
+      "Typ. @V DD, V = V / DD / 3 V",
+      "Typ. @V DD, V = V / DDA / 3.3 V",
+      "Typ. @V DD, V = V / 3.6 V",
+      "Max.",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode",
+        "Regulator in run mode",
+        "4.3",
+        "4.1",
+        "4.0",
+        "3.9",
+        "3.8",
+        "3.7",
+        "4.5",
+        "µs"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode",
+        "Regulator in low-power mode",
+        "7.8",
+        "6.7",
+        "6.1",
+        "5.9",
+        "5.5",
+        "5.3",
+        "9",
+        "µs"
+      ],
+      [
+        "t (1) WUSTANDBY",
+        "Wakeup from Standby mode",
+        "LSI and IWDG OFF",
+        "74.4",
+        "64.3",
+        "60.0",
+        "56.9",
+        "54.3",
+        "51.1",
+        "103",
+        "µs"
+      ],
+      [
+        "t WUSLEEP",
+        "Wakeup from Sleep mode",
+        "-",
+        "6",
+        "6",
+        "6",
+        "6",
+        "6",
+        "6",
+        "-",
+        "CPU clock cycles"
+      ]
+    ],
+    "notes": [],
+    "legend": [
+      "Typ. @VDD, V"
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

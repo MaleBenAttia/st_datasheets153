@@ -1,0 +1,225 @@
+{
+  "table_id": "table_91",
+  "document": "DS14121 Rev 5 - Table 91. OCTOSPI characteristics in DTR mode (with DQS) / HyperBus",
+  "rev": "Rev 5",
+  "table_number": "91",
+  "title": "Table 91. OCTOSPI characteristics in DTR mode (with DQS) / HyperBus",
+  "page": 203,
+  "section": "5.3.19 Octo-SPI interface characteristics",
+  "section_title": "Octo-SPI interface characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h573ai.pdf#page=203",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h573ai.pdf",
+  "text_helper": "Table 91. OCTOSPI characteristics in DTR mode (with DQS) / HyperBus — section 5.3.19 Octo-SPI interface characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "F CLK",
+        "OCTOSPI clock frequency",
+        "1.71 V < V < 1.9 V, DD C = 15 pF L",
+        "-",
+        "-",
+        "125(3)(4)",
+        "MHz"
+      ],
+      [
+        "F CLK",
+        "OCTOSPI clock frequency",
+        "2.7 V < V < 3.6 V, DD C = 15 pF L",
+        "-",
+        "-",
+        "125(3)(5)",
+        "MHz"
+      ],
+      [
+        "t w(CLKH)",
+        "OCTOSPI clock high and low time",
+        "PRESCALER[7:0] = n = (0, 1, 3, 5, …, 255)",
+        "t /2 - 0.5 (CLK)",
+        "-",
+        "t /2 + 0.5 (CLK)",
+        "ns"
+      ],
+      [
+        "t w(CLKL)",
+        "OCTOSPI clock high and low time",
+        "PRESCALER[7:0] = n = (0, 1, 3, 5, …, 255)",
+        "t /2 - 0.5 (CLK)",
+        "-",
+        "t /2 + 0.5 (CLK)",
+        "ns"
+      ],
+      [
+        "t w(CLKH)",
+        "OCTOSPI clock high and low time",
+        "PRESCALER[7:0] = n = (2, 4, 6, 8, …, 254)",
+        "(n/2)*t / (CLK) (n+1) - 0.5",
+        "-",
+        "(n/2)*t / (CLK) (n+1) + 0.5",
+        "ns"
+      ],
+      [
+        "t w(CLKL)",
+        "OCTOSPI clock high and low time",
+        "PRESCALER[7:0] = n = (2, 4, 6, 8, …, 254)",
+        "(n/2+1)*t / (CLK) (n+1) - 0.5",
+        "-",
+        "(n/2+1)*t / (CLK) (n+1) + 0.5",
+        "ns"
+      ],
+      [
+        "t v(CLK)",
+        "Clock valid time",
+        "-",
+        "-",
+        "-",
+        "t + 2 (CLK)",
+        "ns"
+      ],
+      [
+        "t h(CLK)",
+        "Clock hold time",
+        "-",
+        "t /2 - 1 (CLK)",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t (5) ODr(CLK)",
+        "CLK, NCLK crossing level on CLK rising edge",
+        "V = 1.8 V DD",
+        "890",
+        "-",
+        "1300",
+        "mV"
+      ],
+      [
+        "t (5) ODf(CLK)",
+        "CLK, NCLK crossing level on CLK falling edge",
+        "V = 1.8 V DD",
+        "790",
+        "-",
+        "1080",
+        "mV"
+      ],
+      [
+        "t w(CS)",
+        "Chip select high time",
+        "-",
+        "3 * t (CLK)",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(DQ)",
+        "Data input valid time",
+        "-",
+        "3",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(DS)",
+        "Data strobe input valid time",
+        "-",
+        "1",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(DS)",
+        "Data strobe input hold time",
+        "-",
+        "0",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(RWDS)",
+        "Data strobe output valid time",
+        "-",
+        "-",
+        "-",
+        "3 * t (CLK)",
+        "ns"
+      ],
+      [
+        "t sr(DQ), t sf(DQ)",
+        "Data input setup time",
+        "-",
+        "-0.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t hr(DQ), t hf(DQ)",
+        "Data input hold time",
+        "-",
+        "2",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t vr(OUT) t vf(OUT)",
+        "Data output valid time",
+        "DHQC = 0",
+        "-",
+        "2.5",
+        "3.5",
+        "ns"
+      ],
+      [
+        "t vr(OUT) t vf(OUT)",
+        "Data output valid time",
+        "0 tpecxe seulav relacserp lla ,1 = CQHD",
+        "-",
+        "t /4 (CLK) + 0.5",
+        "t /4 + 1 (CLK)",
+        "ns"
+      ],
+      [
+        "t hr(OUT) t hf(OUT)",
+        "Data output hold time",
+        "DHQC = 0",
+        "1.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t hr(OUT) t hf(OUT)",
+        "Data output hold time",
+        "0 tpecxe seulav relacserp lla ,1 = CQHD",
+        "t /4 - 1 (CLK)",
+        "-",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "3. Maximum frequency value are given for a maximum RWDS to DQ skew of ± 1.0 ns.",
+      "4. DHQC must be set to reach the mentioned frequency.",
+      "5. It is recommended that PF10/PB5, PB4/PB5, and PA3/PB5 are in line with crossing specification. DS14121 Rev 5 203/279"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

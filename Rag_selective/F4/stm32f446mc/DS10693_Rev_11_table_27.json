@@ -1,0 +1,158 @@
+{
+  "table_id": "table_27",
+  "document": "DS10693 Rev 11 - Table 27. Typical and maximum current consumptions in Stop mode",
+  "rev": "Rev 11",
+  "table_number": "27",
+  "title": "Table 27. Typical and maximum current consumptions in Stop mode",
+  "page": 88,
+  "section": "6.3.7 Supply current characteristics",
+  "section_title": "Supply current characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f446mc.pdf#page=88",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f446mc.pdf",
+  "text_helper": "Table 27. Typical and maximum current consumptions in Stop mode — section 6.3.7 Supply current characteristics. Symbol, Symbol, Parameter, Conditions, Typ / T = A 25 °C, +4 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Typ / T = A 25 °C",
+      "Max / V = 3.6 V DD / T = A 25 °C(1)",
+      "Max / V = 3.6 V DD / T = A 85 °C",
+      "Max / V = 3.6 V DD / T = A 105 °C(1)",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I DD_STOP_NM (normal mode)",
+        "I DD_STOP_NM (normal mode)",
+        "Supply current in Stop mode with voltage regulator in main regulator mode",
+        "Flash memory in Stop mode, all oscillators OFF, no independent watchdog",
+        "0.234",
+        "1.2",
+        "10",
+        "16",
+        "mA"
+      ],
+      [
+        "I DD_STOP_NM (normal mode)",
+        "I DD_STOP_NM (normal mode)",
+        "Supply current in Stop mode with voltage regulator in main regulator mode",
+        "Flash memory in Deep power down mode, all oscillators OFF, no independent watchdog",
+        "0.205",
+        "1",
+        "9.5",
+        "15",
+        "mA"
+      ],
+      [
+        "I DD_STOP_NM (normal mode)",
+        "I DD_STOP_NM (normal mode)",
+        "Supply current in Stop mode with voltage regulator in Low power regulator mode",
+        "Flash memory in Stop mode, all oscillators OFF, no independent watchdog",
+        "0.15",
+        "0.95",
+        "8.5",
+        "14",
+        "mA"
+      ],
+      [
+        "I DD_STOP_NM (normal mode)",
+        "I DD_STOP_NM (normal mode)",
+        "Supply current in Stop mode with voltage regulator in Low power regulator mode",
+        "Flash memory in Deep power down mode, all oscillators OFF, no independent watchdog",
+        "0.121",
+        "0.9",
+        "6",
+        "12",
+        "mA"
+      ],
+      [
+        "I DD_STOP_UD (under- M drive mode)",
+        "I DD_STOP_UD (under- M drive mode)",
+        "Supply current in Stop mode with voltage regulator in main regulator and under-drive mode",
+        "Flash memory in Deep power down mode, main regulator in under-drive mode, all oscillators OFF, no independent watchdog",
+        "0.119",
+        "0.4",
+        "3",
+        "5",
+        "mA"
+      ],
+      [
+        "I DD_STOP_UD (under- M drive mode)",
+        "I DD_STOP_UD (under- M drive mode)",
+        "Supply current in Stop mode with voltage regulator in Low power regulator and under-drive mode",
+        "Flash memory in Deep power down mode, Low power regulator in under-drive mode, all oscillators OFF, no independent watchdog",
+        "0.055",
+        "0.35",
+        "3",
+        "5",
+        "mA"
+      ],
+      [
+        "I DD_STBY",
+        "Backup SRAM OFF, RTC ON and LSE oscillator in low power mode",
+        "1.81",
+        "2.81",
+        "3.33",
+        "6",
+        "17",
+        "31",
+        "31"
+      ],
+      [
+        "I DD_STBY",
+        "Backup SRAM ON, RTC ON and LSE oscillator in high drive mode",
+        "3.32",
+        "4.33",
+        "4.95",
+        "8",
+        "21",
+        "37",
+        "37"
+      ],
+      [
+        "I DD_STBY",
+        "Backup SRAM OFF, RTC ON and LSE oscillator in high drive mode",
+        "2.57",
+        "3.59",
+        "4.16",
+        "7",
+        "18",
+        "32",
+        "32"
+      ],
+      [
+        "I DD_STBY",
+        "Backup SRAM ON, RTC and LSE OFF",
+        "2.03",
+        "2.73",
+        "3.5",
+        "6(3)",
+        "19",
+        "35(3)",
+        "35(3)"
+      ],
+      [
+        "I DD_STBY",
+        "Backup SRAM OFF, RTC and LSE OFF",
+        "1.28",
+        "1.97",
+        "2.03",
+        "5(3)",
+        "16",
+        "30(3)",
+        "30(3)"
+      ]
+    ],
+    "notes": [
+      "1. Data based on characterization, tested in production. 88/197 DS10693 Rev 11",
+      "3. Tested in production. DS10693 Rev 11 89/197"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

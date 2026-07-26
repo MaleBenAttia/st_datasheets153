@@ -1,0 +1,161 @@
+{
+  "table_id": "table_68",
+  "document": "DS11581 Rev 7 - Table 68. I2S dynamic characteristics",
+  "rev": "Rev 7",
+  "table_number": "68",
+  "title": "Table 68. I2S dynamic characteristics",
+  "page": 136,
+  "section": "6.3.19 Communications interfaces",
+  "section_title": "Communications interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f413cg.pdf#page=136",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f413cg.pdf",
+  "text_helper": "Table 68. I2S dynamic characteristics — section 6.3.19 Communications interfaces. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f MCK",
+        "I2S Main clock output",
+        "-",
+        "256 * 8K",
+        "256 * Fs(2)",
+        "MHz"
+      ],
+      [
+        "f CK",
+        "I2S clock frequency",
+        "Master data: 32 bits",
+        "-",
+        "64 * Fs",
+        "MHz"
+      ],
+      [
+        "f CK",
+        "I2S clock frequency",
+        "Slave data: 32 bits",
+        "-",
+        "64 * Fs",
+        "MHz"
+      ],
+      [
+        "D CK",
+        "I2S clock frequency duty cycle",
+        "Slave receiver",
+        "30",
+        "70",
+        "%"
+      ],
+      [
+        "t v(WS)",
+        "WS valid time",
+        "Master mode",
+        "-",
+        "3.5",
+        "ns"
+      ],
+      [
+        "t h(WS)",
+        "WS hold time",
+        "Master mode",
+        "1.5",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(WS)",
+        "WS setup time",
+        "Slave mode",
+        "2.5",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(WS)",
+        "WS hold time",
+        "Slave mode",
+        "0.5",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(SD_MR)",
+        "Data input setup time",
+        "Master receiver",
+        "3",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(SD_SR)",
+        "Data input setup time",
+        "Slave receiver",
+        "2.5",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(SD_MR)",
+        "Data input hold time",
+        "Master receiver",
+        "5",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(SD_SR)",
+        "Data input hold time",
+        "Slave receiver",
+        "1.5",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(SD_ST)",
+        "Data output valid time",
+        "Slave transmitter (after enable edge)",
+        "-",
+        "15",
+        "ns"
+      ],
+      [
+        "t v(SD_MT)",
+        "Data output valid time",
+        "Master transmitter (after enable edge)",
+        "-",
+        "6",
+        "ns"
+      ],
+      [
+        "t h(SD_ST)",
+        "Data output hold time",
+        "Slave transmitter (after enable edge)",
+        "3.5",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(SD_MT)",
+        "Data output hold time",
+        "Master transmitter (after enable edge)",
+        "1.5",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "2. The maximum value of 256xFs is 50 MHz (APB1 maximum frequency). Note: Refer to the I2S section of RM0430 reference manual for more details on the sampling"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

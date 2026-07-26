@@ -1,0 +1,81 @@
+{
+  "table_id": "table_40",
+  "document": "DS10182 Rev 10 - Table 40. Peripheral current consumption in Stop and Standby mode",
+  "rev": "Rev 10",
+  "table_number": "40",
+  "title": "Table 40. Peripheral current consumption in Stop and Standby mode",
+  "page": 73,
+  "section": "6.3.3 Embedded internal reference voltage",
+  "section_title": "Embedded internal reference voltage",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l052c6.pdf#page=73",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l052c6.pdf",
+  "text_helper": "Table 40. Peripheral current consumption in Stop and Standby mode — section 6.3.3 Embedded internal reference voltage. Symbol, Peripheral, Typical consumption, T = 25 °C / V =1.8 V DD, Typical consumption, T = 25 °C / A / V =3.0 V DD, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Peripheral",
+      "Typical consumption, T = 25 °C / V =1.8 V DD",
+      "Typical consumption, T = 25 °C / A / V =3.0 V DD",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I DD(PVD / BOR)",
+        "-",
+        "0.7",
+        "1.2",
+        "µA"
+      ],
+      [
+        "I REFINT",
+        "-",
+        "-",
+        "1.4",
+        "µA"
+      ],
+      [
+        "-",
+        "LSE Low drive(2)",
+        "0,1",
+        "0,1",
+        "µA"
+      ],
+      [
+        "-",
+        "LPTIM1, Input 100 Hz",
+        "0,01",
+        "0,01",
+        "µA"
+      ],
+      [
+        "-",
+        "LPTIM1, Input 1 MHz",
+        "6",
+        "6",
+        "µA"
+      ],
+      [
+        "-",
+        "LPUART1",
+        "0,2",
+        "0,2",
+        "µA"
+      ],
+      [
+        "-",
+        "RTC",
+        "0,3",
+        "0,48",
+        "µA"
+      ]
+    ],
+    "notes": [
+      "2. LSE Low drive consumption is the difference between an external clock on OSC32_IN and a quartz between OSC32_IN and OSC32_OUT.-"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

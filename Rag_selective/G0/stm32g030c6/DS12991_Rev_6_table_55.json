@@ -1,0 +1,68 @@
+{
+  "table_id": "table_55",
+  "document": "DS12991 Rev 6 - Table 55. Analog switch booster characteristics",
+  "rev": "Rev 6",
+  "table_number": "55",
+  "title": "Table 55. Analog switch booster characteristics",
+  "page": 67,
+  "section": "5.3.17 Analog switch booster",
+  "section_title": "Analog switch booster",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32g030c6.pdf#page=67",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g030c6.pdf",
+  "text_helper": "Table 55. Analog switch booster characteristics — section 5.3.17 Analog switch booster. Symbol, Parameter, Min, Typ, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V DD",
+        "Supply voltage",
+        "V (min) DD",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "t SU(BOOST)",
+        "Booster startup time",
+        "-",
+        "-",
+        "240",
+        "µs"
+      ],
+      [
+        "I DD(BOOST)",
+        "Booster consumption for V ≤ 2.7 V DD",
+        "-",
+        "-",
+        "500",
+        "µA"
+      ],
+      [
+        "I DD(BOOST)",
+        "Booster consumption for 2.7 V ≤ V ≤ 3.6 V DD",
+        "-",
+        "-",
+        "900",
+        "900"
+      ]
+    ],
+    "notes": [
+      "1. Specified by design. Not tested in production.",
+      "2. The user must ensure that, upon power-on, the level on the NRST pin can exceed the minimum V IH(NRST)",
+      "3. The external capacitor on NRST must be placed as close as possible to the device.",
+      "4. V REF+ is internally connected to V DDA on some packages.Refer to Section 4: Pinouts, pin description and alternate functions for further details."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

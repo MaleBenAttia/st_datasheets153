@@ -1,0 +1,65 @@
+{
+  "table_id": "table_105",
+  "document": "DS11854 Rev 7 - Table 105. Switching characteristics for NAND Flash read cycles",
+  "rev": "Rev 7",
+  "table_number": "105",
+  "title": "Table 105. Switching characteristics for NAND Flash read cycles",
+  "page": 190,
+  "section": "6.3.30 FMC characteristics",
+  "section_title": "FMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f732ie.pdf#page=190",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f732ie.pdf",
+  "text_helper": "Table 105. Switching characteristics for NAND Flash read cycles — section 6.3.30 FMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t w(N0E)",
+        "FMC_NOE low width",
+        "5.0- klchT4",
+        "5.0+ klchT4",
+        "ns"
+      ],
+      [
+        "t su(D-NOE)",
+        "FMC_D[15-0] valid data before FMC_NOE high",
+        "11",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(NOE-D)",
+        "FMC_D[15-0] valid data after FMC_NOE high",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(ALE-NOE)",
+        "FMC_ALE valid before FMC_NOE low",
+        "-",
+        "5.1+ klchT3",
+        "ns"
+      ],
+      [
+        "t h(NOE-ALE)",
+        "FMC_NWE high to FMC_ALE invalid",
+        "2 - klchT4",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

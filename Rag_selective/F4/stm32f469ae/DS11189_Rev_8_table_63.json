@@ -1,0 +1,79 @@
+{
+  "table_id": "table_63",
+  "document": "DS11189 Rev 8 - Table 63. TIMx characteristics",
+  "rev": "Rev 8",
+  "table_number": "63",
+  "title": "Table 63. TIMx characteristics",
+  "page": 141,
+  "section": "5.3.22 TIM timer characteristics",
+  "section_title": "TIM timer characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f469ae.pdf#page=141",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f469ae.pdf",
+  "text_helper": "Table 63. TIMx characteristics — section 5.3.22 TIM timer characteristics. Symbol, Symbol, Parameter, Conditions(3), Min, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Symbol",
+      "Parameter",
+      "Conditions(3)",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t res(TIM)",
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APBx prescaler = 1 or 2 or 4, f = 180 MHz TIMxCLK",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "t res(TIM)",
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APBx prescaler > 4, f = 90 MHz TIMxCLK",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "f EXT",
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "f = 180 MHz TIMxCLK",
+        "0",
+        "f /2 TIMxCLK",
+        "MHz"
+      ],
+      [
+        "Res TIM",
+        "Res TIM",
+        "Timer resolution",
+        "f = 180 MHz TIMxCLK",
+        "-",
+        "16/32",
+        "bit"
+      ],
+      [
+        "t MAX_COUNT",
+        "t MAX_COUNT",
+        "Maximum possible count with 32-bit counter",
+        "-",
+        "-",
+        "65536 × 65536",
+        "t TIMxCLK"
+      ]
+    ],
+    "notes": [
+      "3. The maximum timer frequency on APB1 or APB2 is up to 180 MHz, by setting the TIMPRE bit in the RCC_DCKCFGR register, if APBx prescaler is 1 or 2 or 4, then TIMxCLK = HCKL, otherwise TIMxCLK ="
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

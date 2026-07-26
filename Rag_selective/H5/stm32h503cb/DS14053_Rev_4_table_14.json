@@ -1,0 +1,89 @@
+{
+  "table_id": "table_14",
+  "document": "DS14053 Rev 4 - Table 14. Current characteristics",
+  "rev": "Rev 4",
+  "table_number": "14",
+  "title": "Table 14. Current characteristics",
+  "page": 73,
+  "section": "5.2 Absolute maximum ratings",
+  "section_title": "Absolute maximum ratings",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h503cb.pdf#page=73",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h503cb.pdf",
+  "text_helper": "Table 14. Current characteristics — section 5.2 Absolute maximum ratings. Symbol, Ratings, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Ratings",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "∑IV DD",
+        "Total current into sum of all V power lines (source)(1) DD",
+        "200",
+        "mA"
+      ],
+      [
+        "∑IV SS",
+        "Total current out of sum of all V ground lines (sink)(1) SS",
+        "200",
+        "mA"
+      ],
+      [
+        "IV DD",
+        "Maximum current into each V power pin (source)(1) DD",
+        "100",
+        "mA"
+      ],
+      [
+        "IV SS",
+        "Maximum current out of each V ground pin (sink)(1) SS",
+        "100",
+        "mA"
+      ],
+      [
+        "I IO(PIN)",
+        "Output current sunk/sourced by any I/O and control pin",
+        "20",
+        "mA"
+      ],
+      [
+        "∑I IO(PIN)",
+        "Total output current sunk by sum of all I/Os and control pins(2)",
+        "140",
+        "mA"
+      ],
+      [
+        "∑I IO(PIN)",
+        "Total output current sourced by sum of all I/Os and control pins(2)",
+        "140",
+        "mA"
+      ],
+      [
+        "I (3)(4) INJ(PIN)",
+        "Injected current on FT_xxx, TT_xx, NRST pins",
+        "-5 / 0",
+        "mA"
+      ],
+      [
+        "∑|I | INJ(PIN)",
+        "Total injected current (sum of all I/Os and control pins)(5)",
+        "±25",
+        "mA"
+      ]
+    ],
+    "notes": [
+      "1. All main power (VDD, VDDA, VDDIO2, and VBAT) and ground (VSS, VSSA) pins must always be connected to the external power supply, in the permitted range.",
+      "2. If HSLV = 0.",
+      "3. V or V . V = V . DDIO1 DDIO2 DDIO1 DD",
+      "4. HSLV = High-speed low-voltage mode. Refer to “General-purpose I/Os” (GPIO) section of RM0492.",
+      "5. V maximum must always be respected. Refer to for the maximum allowed injected current values. IN"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

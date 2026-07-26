@@ -1,0 +1,155 @@
+{
+  "table_id": "table_30",
+  "document": "DS14830 Rev 3 - Table 30. Embedded internal voltage reference",
+  "rev": "Rev 3",
+  "table_number": "30",
+  "title": "Table 30. Embedded internal voltage reference",
+  "page": 103,
+  "section": "5.3.5 Embedded voltage reference",
+  "section_title": "Embedded voltage reference",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u385cg.pdf#page=103",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u385cg.pdf",
+  "text_helper": "Table 30. Embedded internal voltage reference — section 5.3.5 Embedded voltage reference. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "VREFINT(1)",
+        "Internal reference voltages",
+        "Range 1",
+        "1.175",
+        "1.215",
+        "1.243",
+        "V"
+      ],
+      [
+        "VREFINT(1)",
+        "Internal reference voltages",
+        "Range 2 and low-power modes",
+        "1.170",
+        "1.215",
+        "1.248",
+        "V"
+      ],
+      [
+        "tS_vrefint(2)",
+        "ADC sampling time when reading the internal reference voltage",
+        "-",
+        "12.65",
+        "-",
+        "-",
+        "µs"
+      ],
+      [
+        "tstart_vrefint",
+        "Start time of reference voltage buffer when ADC is enabled",
+        "-",
+        "12.65",
+        "4",
+        "6",
+        "µs"
+      ],
+      [
+        "IDD(VREFINTBUF)",
+        "VREFINT buffer consumption from VDD when converted by ADC",
+        "-",
+        "12.65",
+        "1.5",
+        "2.1",
+        "µA"
+      ],
+      [
+        "ΔVREFINT",
+        "Internal reference voltage spread over the temperature range",
+        "VDD = 3 V",
+        "-",
+        "6",
+        "15",
+        "mV"
+      ],
+      [
+        "Tcoeff",
+        "Average temperature coefficient",
+        "-40 °C ≤ TJ ≤ 110 °C",
+        "-",
+        "62",
+        "150",
+        "ppm/°C"
+      ],
+      [
+        "Acoeff",
+        "Long-term stability",
+        "1000 hours, TJ = 25°C",
+        "-",
+        "400",
+        "-",
+        "ppm"
+      ],
+      [
+        "VDDcoeff1(3)",
+        "Average voltage coefficient",
+        "3.0 V ≤ VDD ≤ 3.6 V for -40°C ≤ TJ ≤ +110°C",
+        "-",
+        "600",
+        "2300",
+        "ppm/V"
+      ],
+      [
+        "VDDcoeff2(3)",
+        "Average voltage coefficient",
+        "1.8 V ≤ VDD ≤ 3.6 V for -40°C ≤ TJ ≤ +110°C",
+        "-",
+        "270",
+        "1150",
+        "ppm/V"
+      ],
+      [
+        "VREFINT_DIV1",
+        "1/4 reference voltage",
+        "VDD = 3.3 V",
+        "24",
+        "25",
+        "26",
+        "% VREFINT"
+      ],
+      [
+        "VREFINT_DIV2",
+        "1/2 reference voltage",
+        "VDD = 3.3 V",
+        "49",
+        "50",
+        "51",
+        "% VREFINT"
+      ],
+      [
+        "VREFINT_DIV3",
+        "3/4 reference voltage",
+        "VDD = 3.3 V",
+        "74",
+        "75",
+        "76",
+        "% VREFINT"
+      ]
+    ],
+    "notes": [
+      "1. Evaluated by characterization. Not tested in production. DS14830 - Rev 3 page 104/232",
+      "2. The shortest sampling time for the application can be determined by multiple iterations.",
+      "3. Evaluated by characterization, not tested in production."
+    ],
+    "legend": [
+      "The values in this table are specified by design and not tested in production."
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

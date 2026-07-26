@@ -1,0 +1,118 @@
+{
+  "table_id": "table_27",
+  "document": "DS10668 Rev 6 - Table 27. Current consumption in Run mode vs code type, code with data processing running from RAM",
+  "rev": "Rev 6",
+  "table_number": "27",
+  "title": "Table 27. Current consumption in Run mode vs code type, code with data processing running from RAM",
+  "page": 59,
+  "section": "6.3.4 Supply current characteristics",
+  "section_title": "Supply current characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l031c4.pdf#page=59",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l031c4.pdf",
+  "text_helper": "Table 27. Current consumption in Run mode vs code type, code with data processing running from RAM — section 6.3.4 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, Conditions, +3 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "Conditions",
+      "f HCLK",
+      "Typ",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash switched OFF",
+        "f = f up to 16 HSE HCLK MHz, included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(2)",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "Dhrystone",
+        "4 MHz",
+        "385",
+        "µA"
+      ],
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash switched OFF",
+        "f = f up to 16 HSE HCLK MHz, included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(2)",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "CoreMark",
+        "4 MHz",
+        "395",
+        "µA"
+      ],
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash switched OFF",
+        "f = f up to 16 HSE HCLK MHz, included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(2)",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "Fibonacci",
+        "4 MHz",
+        "360",
+        "µA"
+      ],
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash switched OFF",
+        "f = f up to 16 HSE HCLK MHz, included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(2)",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "while(1)",
+        "4 MHz",
+        "265",
+        "µA"
+      ],
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash switched OFF",
+        "f = f up to 16 HSE HCLK MHz, included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(2)",
+        "Range 1, V =1.8V, CORE VOS[1:0]=01",
+        "Dhrystone",
+        "32MHz",
+        "4.5",
+        "mA"
+      ],
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash switched OFF",
+        "f = f up to 16 HSE HCLK MHz, included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(2)",
+        "Range 1, V =1.8V, CORE VOS[1:0]=01",
+        "CoreMark",
+        "32MHz",
+        "4.65",
+        "mA"
+      ],
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash switched OFF",
+        "f = f up to 16 HSE HCLK MHz, included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(2)",
+        "Range 1, V =1.8V, CORE VOS[1:0]=01",
+        "Fibonacci",
+        "32MHz",
+        "4.2",
+        "mA"
+      ],
+      [
+        "I (Run DD from RAM)",
+        "Supply current in Run mode, code executed from RAM, Flash switched OFF",
+        "f = f up to 16 HSE HCLK MHz, included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(2)",
+        "Range 1, V =1.8V, CORE VOS[1:0]=01",
+        "while(1)",
+        "32MHz",
+        "3.05",
+        "mA"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization results at 125°C, unless otherwise specified.",
+      "2. Oscillator bypassed (HSEBYP = 1 in RCC_CR register)."
+    ],
+    "legend": [
+      "code with data processing running from RAM(1)"
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

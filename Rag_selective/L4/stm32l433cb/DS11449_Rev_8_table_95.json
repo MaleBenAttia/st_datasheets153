@@ -1,0 +1,232 @@
+{
+  "table_id": "table_95",
+  "document": "DS11449 Rev 8 - Table 95. SPI characteristics",
+  "rev": "Rev 8",
+  "table_number": "95",
+  "title": "Table 95. SPI characteristics",
+  "page": 183,
+  "section": "6.3.27 Communication interfaces characteristics",
+  "section_title": "Communication interfaces characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l433cb.pdf#page=183",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l433cb.pdf",
+  "text_helper": "Table 95. SPI characteristics — section 6.3.27 Communication interfaces characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Master mode receiver/full duplex 2.7 < V < 3.6 V DD Voltage Range 1",
+        "-",
+        "-",
+        "40",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Master mode receiver/full duplex 1.71 < V < 3.6 V DD Voltage Range 1",
+        "-",
+        "-",
+        "16",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Master mode transmitter 1.71 < V < 3.6 V DD Voltage Range 1",
+        "-",
+        "-",
+        "40",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Slave mode receiver 1.71 < V < 3.6 V DD Voltage Range 1",
+        "-",
+        "-",
+        "40",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Slave mode transmitter/full duplex 2.7 < V < 3.6 V DD Voltage Range 1",
+        "-",
+        "-",
+        "37(2)",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Slave mode transmitter/full duplex 1.71 < V < 3.6 V DD Voltage Range 1",
+        "-",
+        "-",
+        "20(2)",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Voltage Range 2",
+        "-",
+        "-",
+        "13",
+        "MHz"
+      ],
+      [
+        "t su(NSS)",
+        "NSS setup time",
+        "Slave mode, SPI prescaler = 2",
+        "4ₓT PCLK",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(NSS)",
+        "NSS hold time",
+        "Slave mode, SPI prescaler = 2",
+        "2ₓT PCLK",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t w(SCKH) t w(SCKL)",
+        "SCK high and low time",
+        "Master mode",
+        "T -2 PCLK",
+        "T PCLK",
+        "KLCP 2+ T",
+        "ns"
+      ],
+      [
+        "t su(MI)",
+        "Data input setup time",
+        "Master mode",
+        "4",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(SI)",
+        "Data input setup time",
+        "Slave mode",
+        "1.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(MI)",
+        "Data input hold time",
+        "Master mode",
+        "6.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(SI)",
+        "Data input hold time",
+        "Slave mode",
+        "1.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t a(SO)",
+        "Data output access time",
+        "Slave mode",
+        "9",
+        "-",
+        "36",
+        "ns"
+      ],
+      [
+        "t dis(SO)",
+        "Data output disable time",
+        "Slave mode",
+        "9",
+        "-",
+        "16",
+        "ns"
+      ],
+      [
+        "t v(SO)",
+        "Data output valid time",
+        "Slave mode 2.7 < V < 3.6 V DD Voltage Range 1",
+        "-",
+        "12.5",
+        "13.5",
+        "ns"
+      ],
+      [
+        "t v(SO)",
+        "Data output valid time",
+        "Slave mode 1.71 < V < 3.6 V DD Voltage Range 1",
+        "-",
+        "12.5",
+        "24",
+        "24"
+      ],
+      [
+        "t v(SO)",
+        "Data output valid time",
+        "Slave mode 1.71 < V < 3.6 V DD Voltage Range 2",
+        "-",
+        "12.5",
+        "33",
+        "33"
+      ],
+      [
+        "t v(MO)",
+        "t v(MO)",
+        "Master mode",
+        "-",
+        "4.5",
+        "6",
+        "6"
+      ],
+      [
+        "t h(SO)",
+        "Data output hold time",
+        "Slave mode",
+        "7",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(MO)",
+        "t h(MO)",
+        "Master mode",
+        "0",
+        "-",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "2. Maximum frequency in Slave transmitter mode is determined by the sum of t and t which has to fit into SCK low or v(SO) su(MI)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

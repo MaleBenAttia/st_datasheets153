@@ -1,0 +1,75 @@
+{
+  "table_id": "table_81",
+  "document": "DS13268 Rev 4 - Table 81. Minimum I2CCLK frequency in all I2C modes",
+  "rev": "Rev 4",
+  "table_number": "81",
+  "title": "Table 81. Minimum I2CCLK frequency in all I2C modes",
+  "page": 155,
+  "section": "5.3.26 Communication interfaces characteristics",
+  "section_title": "Communication interfaces characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32g4a1ce.pdf#page=155",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g4a1ce.pdf",
+  "text_helper": "Table 81. Minimum I2CCLK frequency in all I2C modes — section 5.3.26 Communication interfaces characteristics. Symbol, Parameter, Condition, Condition, Min, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Condition",
+      "Condition",
+      "Min",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f(I2CCLK)",
+        "I2CCLK frequency",
+        "Standard mode",
+        "Standard mode",
+        "2",
+        "MHz"
+      ],
+      [
+        "f(I2CCLK)",
+        "I2CCLK frequency",
+        "Fast-mode",
+        "Analog Filtre ON DNF=0",
+        "8",
+        "MHz"
+      ],
+      [
+        "f(I2CCLK)",
+        "I2CCLK frequency",
+        "Fast-mode",
+        "Analog Filtre OFF DNF=1",
+        "9",
+        "MHz"
+      ],
+      [
+        "f(I2CCLK)",
+        "I2CCLK frequency",
+        "Fast-mode Plus",
+        "Analog Filtre ON DNF=0",
+        "17",
+        "MHz"
+      ],
+      [
+        "f(I2CCLK)",
+        "I2CCLK frequency",
+        "Fast-mode Plus",
+        "Analog Filtre OFF DNF=1",
+        "16",
+        "MHz"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by design - Not tested in production.",
+      "2. Spikes with widths below t are filtered. AF(min)",
+      "3. Spikes with widths above t are not filtered AF(max)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

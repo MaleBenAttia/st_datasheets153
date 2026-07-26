@@ -1,0 +1,59 @@
+{
+  "table_id": "table_57",
+  "document": "DS14972 Rev 1 - Table 57. I/O current injection susceptibility",
+  "rev": "Rev 1",
+  "table_number": "57",
+  "title": "Table 57. I/O current injection susceptibility",
+  "page": 203,
+  "section": "5.3.14 I/O current injection characteristics",
+  "section_title": "I/O current injection characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h5f4aj.pdf#page=203",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h5f4aj.pdf",
+  "text_helper": "Table 57. I/O current injection susceptibility — section 5.3.14 I/O current injection characteristics. Symbol, Description, Functional susceptibility / Negative injection, Functional susceptibility / Positive injection, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Description",
+      "Functional susceptibility / Negative injection",
+      "Functional susceptibility / Positive injection",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I INJ",
+        "Injected current on pins PA4, PA5, PA0, PA1 and PA2",
+        "0",
+        "0",
+        "mA"
+      ],
+      [
+        "I INJ",
+        "Injected current on pins PC14, PC15, BOOT0, NRST and PA8",
+        "0",
+        "N/A",
+        "mA"
+      ],
+      [
+        "I INJ",
+        "Injected current on all other pins",
+        "5",
+        "N/A",
+        "mA"
+      ]
+    ],
+    "notes": [
+      "1. V represents V or V . DDIOx DD DDIO2",
+      "2. Compliant with CMOS requirements.",
+      "3. Specified by design - Not tested in production.",
+      "4. This parameter represents the pad leakage of the I/O itself. The total product pad leakage is provided by the following formula: I = 10 μA + [number of I/Os where V is applied on the pad] ₓ I .",
+      "5. V must be lower than Max(V ) + 3.6 V. IN DDXXX",
+      "6. The pull-up and pull-down resistors are designed with a true resistance in series with a switchable PMOS/NMOS. This PMOS/NMOS contribution to the series resistance is minimal (~10%).",
+      "7. Max(V ) is the maximum value of all the I/O supplies. DDXXX"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "table_id": "table_42",
+  "document": "DS8669 Rev 11 - Table 42. Synchronous non-multiplexed NOR/PSRAM read timings",
+  "rev": "Rev 11",
+  "table_number": "42",
+  "title": "Table 42. Synchronous non-multiplexed NOR/PSRAM read timings",
+  "page": 99,
+  "section": "6.3.10 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l162qd.pdf#page=99",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l162qd.pdf",
+  "text_helper": "Table 42. Synchronous non-multiplexed NOR/PSRAM read timings — section 6.3.10 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t w(CLK)",
+        "FSMC_CLK period",
+        "2*T - HCLK 0.5",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NExH)",
+        "FSMC_CLK low to FSMC_NEx high (x = 0...2)",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NADVL)",
+        "FSMC_CLK low to FSMC_NADV low",
+        "-",
+        "3",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NADVH)",
+        "FSMC_CLK low to FSMC_NADV high",
+        "3.5",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-AIV)",
+        "FSMC_CLK low to FSMC_Ax invalid (x = 16...25)",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NOEL)",
+        "FSMC_CLK low to FSMC_NOE low",
+        "-",
+        "KLCH 1 + T",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NOEH)",
+        "FSMC_CLK low to FSMC_NOE high",
+        "2.5",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(DV-CLKH)",
+        "FSMC_D[15:0] valid data before FSMC_CLK high",
+        "4",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(CLKH-DV)",
+        "FSMC_D[15:0] valid data after FSMC_CLK high",
+        "4",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

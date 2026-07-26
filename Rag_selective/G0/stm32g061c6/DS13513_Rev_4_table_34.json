@@ -1,0 +1,119 @@
+{
+  "table_id": "table_34",
+  "document": "DS13513 Rev 4 - Table 34. Low-power mode wakeup times",
+  "rev": "Rev 4",
+  "table_number": "34",
+  "title": "Table 34. Low-power mode wakeup times",
+  "page": 60,
+  "section": "8 MHz",
+  "section_title": "MHz",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32g061c6.pdf#page=60",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g061c6.pdf",
+  "text_helper": "Table 34. Low-power mode wakeup times — section 8 MHz. Symbol, Parameter, Conditions, Typ, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t WUSLEEP",
+        "Wakeup time from Sleep to Run mode",
+        "-",
+        "11",
+        "11",
+        "CPU cycles"
+      ],
+      [
+        "t WULPSLEEP",
+        "Wakeup time from Low-power sleep mode",
+        "Transiting to Low-power-run-mode execution in flash memory not powered in Low-power sleep mode; HCLK = HSI16 / 8 = 2 MHz",
+        "11",
+        "14",
+        "CPU cycles"
+      ],
+      [
+        "t WUSTOP0",
+        "Wakeup time from Stop 0",
+        "Transiting to Run-mode execution in flash memory not powered in Stop 0 mode; HCLK = HSI16 = 16 MHz; Regulator in Range 1 or Range 2",
+        "5.6",
+        "6",
+        "µs"
+      ],
+      [
+        "t WUSTOP0",
+        "Wakeup time from Stop 0",
+        "Transiting to Run-mode execution in SRAM or in flash memory powered in Stop 0 mode; HCLK = HSI16 = 16 MHz; Regulator in Range 1 or Range 2",
+        "2",
+        "2.4",
+        "µs"
+      ],
+      [
+        "t WUSTOP1",
+        "Wakeup time from Stop 1",
+        "Transiting to Run-mode execution in flash memory not powered in Stop 1 mode; HCLK = HSI16 = 16 MHz; Regulator in Range 1 or Range 2",
+        "9.0",
+        "11.2",
+        "µs"
+      ],
+      [
+        "t WUSTOP1",
+        "Wakeup time from Stop 1",
+        "Transiting to Run-mode execution in SRAM or in flash memory powered in Stop 1 mode; HCLK = HSI16 = 16 MHz; Regulator in Range 1 or Range 2",
+        "5",
+        "7.5",
+        "7.5"
+      ],
+      [
+        "t WUSTOP1",
+        "Wakeup time from Stop 1",
+        "Transiting to Low-power-run-mode execution in flash memory not powered in Stop 1 mode; HCLK = HSI16/8 = 2 MHz; Regulator in low-power mode (LPR = 1 in PWR_CR1)",
+        "22",
+        "25.3",
+        "25.3"
+      ],
+      [
+        "t WUSTOP1",
+        "Wakeup time from Stop 1",
+        "Transiting to Low-power-run-mode execution in SRAM or in flash memory powered in Stop 1 mode; HCLK = HSI16 / 8 = 2 MHz; Regulator in low-power mode (LPR = 1 in PWR_CR1)",
+        "18",
+        "23.5",
+        "23.5"
+      ],
+      [
+        "t WUSTBY",
+        "Wakeup time from Standby mode",
+        "Transiting to Run mode; HCLK = HSI16 = 16 MHz; Regulator in Range 1",
+        "14.5",
+        "30",
+        "µs"
+      ],
+      [
+        "t WUSHDN",
+        "Wakeup time from Shutdown mode",
+        "Transiting to Run mode; HCLK = HSI16 = 16 MHz; Regulator in Range 1",
+        "258",
+        "340",
+        "µs"
+      ],
+      [
+        "t WULPRUN",
+        "Wakeup time from Low-power run mode(2)",
+        "Transiting to Run mode; HSISYS = HSI16/8 = 2 MHz",
+        "5",
+        "7",
+        "µs"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

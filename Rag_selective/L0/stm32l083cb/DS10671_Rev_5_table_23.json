@@ -1,0 +1,104 @@
+{
+  "table_id": "table_23",
+  "document": "DS10671 Rev 5 - Table 23. Voltage characteristics",
+  "rev": "Rev 5",
+  "table_number": "23",
+  "title": "Table 23. Voltage characteristics",
+  "page": 62,
+  "section": "6.2 Absolute maximum ratings",
+  "section_title": "Absolute maximum ratings",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l083cb.pdf#page=62",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l083cb.pdf",
+  "text_helper": "Table 23. Voltage characteristics — section 6.2 Absolute maximum ratings. Symbol, Definition, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Definition",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V –V DD SS",
+        "External main supply voltage (including V , V , V )(1) DDA DD_USB DD",
+        "–0.3",
+        "4.0",
+        "V"
+      ],
+      [
+        "V (2) IN",
+        "Input voltage on FT and FTf pins",
+        "V - 0.3 SS",
+        "V +4.0 DD",
+        "V"
+      ],
+      [
+        "V (2) IN",
+        "Input voltage on TC pins",
+        "V - 0.3 SS",
+        "4.0",
+        "V"
+      ],
+      [
+        "V (2) IN",
+        "Input voltage on BOOT0",
+        "V SS",
+        "V + 4.0 DD",
+        "V"
+      ],
+      [
+        "V (2) IN",
+        "Input voltage on any other pin",
+        "V - 0.3 SS",
+        "4.0",
+        "V"
+      ],
+      [
+        "|ΔV | DD",
+        "Variations between different V power pins DDx",
+        "-",
+        "50",
+        "mV"
+      ],
+      [
+        "|V -V | DDA DDx",
+        "Variations between any V and V power DDx DDA pins(3)",
+        "-",
+        "300",
+        "mV"
+      ],
+      [
+        "|ΔV | SS",
+        "Variations between all different ground pins including V pin REF-",
+        "-",
+        "50",
+        "mV"
+      ],
+      [
+        "ADD +FER V– V",
+        "Allowed voltage difference for V > V REF+ DDA",
+        "-",
+        "0.4",
+        "V"
+      ],
+      [
+        "V ESD(HBM)",
+        "Electrostatic discharge voltage (human body model)",
+        "see Section 6.3.11",
+        "see Section 6.3.11",
+        "V"
+      ]
+    ],
+    "notes": [
+      "1. All main power (V ,V , V ) and ground (V , V ) pins must always be connected to the DD DD_USB DDA SS SSA",
+      "2. V maximum must always be respected. Refer to Table 24 for maximum allowed injected current values. IN",
+      "3. It is recommended to power V and V from the same source. A maximum difference of 300 mV DD DDA"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "table_id": "table_98",
+  "document": "DS11585 Rev 20 - Table 98. QUADSPI characteristics in DDR mode",
+  "rev": "Rev 20",
+  "table_number": "98",
+  "title": "Table 98. QUADSPI characteristics in DDR mode",
+  "page": 218,
+  "section": "6.3.28 Communication interfaces characteristics",
+  "section_title": "Communication interfaces characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l496ae.pdf#page=218",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l496ae.pdf",
+  "text_helper": "Table 98. QUADSPI characteristics in DDR mode — section 6.3.28 Communication interfaces characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "F CK 1/t (CK)",
+        "Quad SPI clock frequency",
+        "1.71 V < V < 3.6 V, DD C = 20 pF LOAD Voltage Range 1",
+        "-",
+        "-",
+        "40",
+        "MHz"
+      ],
+      [
+        "F CK 1/t (CK)",
+        "Quad SPI clock frequency",
+        "2 V < V < 3.6 V, DD C = 20 pF LOAD Voltage Range 1",
+        "-",
+        "-",
+        "48",
+        "MHz"
+      ],
+      [
+        "F CK 1/t (CK)",
+        "Quad SPI clock frequency",
+        "1.71 V < V < 3.6 V, DD C = 15 pF LOAD Voltage Range 1",
+        "-",
+        "-",
+        "48",
+        "MHz"
+      ],
+      [
+        "F CK 1/t (CK)",
+        "Quad SPI clock frequency",
+        "1.71 V < V < 3.6 V DD C = 20 pF LOAD Voltage Range 2",
+        "-",
+        "-",
+        "26",
+        "MHz"
+      ],
+      [
+        "t w(CKH)",
+        "Quad SPI clock high and low time",
+        "f = 48 MHz, presc= 1 AHBCLK",
+        "t /2 (CK)",
+        "-",
+        "t /2+1 (CK)",
+        "ns"
+      ],
+      [
+        "t w(CKL)",
+        "t w(CKL)",
+        "t w(CKL)",
+        "t /2-1 (CK)",
+        "-",
+        "t /2 (CK)",
+        "t /2 (CK)"
+      ],
+      [
+        "t ;t sf(IN) sr(IN)",
+        "Data input setup time",
+        "Voltage Range 1 and 2",
+        "3.5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t ; t hf(IN) hr(IN)",
+        "Data input hold time",
+        "Data input hold time",
+        "6.5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t vr(OUT)",
+        "Data output valid time on rise edge",
+        "Voltage Range 1",
+        "DHHC = 0",
+        "-",
+        "4.5",
+        "5.5"
+      ],
+      [
+        "t vr(OUT)",
+        "Data output valid time on rise edge",
+        "Voltage Range 1",
+        "DHHC = 1",
+        "t /2+1 (CK)",
+        "t /2+1.5 (CK)",
+        "t /2+1.5 (CK)"
+      ],
+      [
+        "t vr(OUT)",
+        "Data output valid time on rise edge",
+        "Voltage Range 2",
+        "Voltage Range 2",
+        "9.5",
+        "14",
+        "14"
+      ],
+      [
+        "t vf(OUT)",
+        "Data output valid time on falling edge",
+        "Voltage Range 1",
+        "DHHC = 0",
+        "-",
+        "5",
+        "6"
+      ],
+      [
+        "t vf(OUT)",
+        "Data output valid time on falling edge",
+        "Voltage Range 1",
+        "DHHC = 1",
+        "t /2+1 (CK)",
+        "t /2+1.5 (CK)",
+        "t /2+1.5 (CK)"
+      ],
+      [
+        "t vf(OUT)",
+        "Data output valid time on falling edge",
+        "Voltage Range 2",
+        "Voltage Range 2",
+        "15",
+        "18",
+        "18"
+      ],
+      [
+        "t hr(OUT)",
+        "Data output hold time on rise edge",
+        "Voltage Range 1",
+        "DHHC = 0",
+        "4",
+        "-",
+        "-"
+      ],
+      [
+        "t hr(OUT)",
+        "Data output hold time on rise edge",
+        "DHHC = 1",
+        "t /2+0.5 (CK)",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t hr(OUT)",
+        "Data output hold time on rise edge",
+        "Voltage Range 2",
+        "8",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t hf(OUT)",
+        "Data output hold time on falling edge",
+        "Voltage Range 1",
+        "DHHC = 0",
+        "3.5",
+        "-",
+        "-"
+      ],
+      [
+        "t hf(OUT)",
+        "Data output hold time on falling edge",
+        "DHHC = 1",
+        "t /2+0.5 (CK)",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t hf(OUT)",
+        "Data output hold time on falling edge",
+        "Voltage Range 2",
+        "13",
+        "13",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization results."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

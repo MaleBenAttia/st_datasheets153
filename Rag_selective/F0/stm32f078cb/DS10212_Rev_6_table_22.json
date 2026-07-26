@@ -1,0 +1,48 @@
+{
+  "table_id": "table_22",
+  "document": "DS10212 Rev 6 - Table 22. Thermal characteristics",
+  "rev": "Rev 6",
+  "table_number": "22",
+  "title": "Table 22. Thermal characteristics",
+  "page": 52,
+  "section": "6.2 Absolute maximum ratings",
+  "section_title": "Absolute maximum ratings",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f078cb.pdf#page=52",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f078cb.pdf",
+  "text_helper": "Table 22. Thermal characteristics — section 6.2 Absolute maximum ratings. Symbol, Ratings, Value, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Ratings",
+      "Value",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "T STG",
+        "Storage temperature range",
+        "–65 to +150",
+        "°C"
+      ],
+      [
+        "T J",
+        "Maximum junction temperature",
+        "150",
+        "°C"
+      ]
+    ],
+    "notes": [
+      "1. For operation with a voltage higher than V + 0.3 V, the internal pull-up resistor must be disabled. DDIOx",
+      "2. This current consumption must be correctly distributed over all I/Os and control pins. The total output current must not be sunk/sourced between two consecutive power supply pins referring to high pin count QFP packages.",
+      "3. A positive injection is induced by V > V while a negative injection is induced by V < V . I must never be IN DDIOx IN SS INJ(PIN)",
+      "4. Positive injection is not possible on these I/Os and does not occur for input voltages lower than the specified maximum value.",
+      "5. On these I/Os, a positive injection is induced by V > V . Negative injection disturbs the analog performance of the device. See note (2) below Table 57: ADC accurac I y N . DDA",
+      "6. When several inputs are submitted to a current injection, the maximum ΣI is the absolute sum of the positive and INJ(PIN)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

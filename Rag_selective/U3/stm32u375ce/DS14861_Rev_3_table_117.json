@@ -1,0 +1,50 @@
+{
+  "table_id": "table_117",
+  "document": "DS14861 Rev 3 - Table 117. I2C analog filter characteristics",
+  "rev": "Rev 3",
+  "table_number": "117",
+  "title": "Table 117. I2C analog filter characteristics",
+  "page": 175,
+  "section": "5.3.30 Delay block characteristics",
+  "section_title": "Delay block characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf#page=175",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf",
+  "text_helper": "Table 117. I2C analog filter characteristics — section 5.3.30 Delay block characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "tAF",
+        "Maximum pulse width of spikes that are suppressed by the analog filter",
+        "50(1)",
+        "160(2)",
+        "ns"
+      ],
+      [
+        "tSU_OD",
+        "SDA data setup time during open drain mode",
+        "Controller 1.08 V ≤ VDDIO2 ≤ 1.32 V",
+        "24.5(1)",
+        "24.5(1)"
+      ]
+    ],
+    "notes": [
+      "1. SDA data setup time during open drain mode is required to be Min 3ns in the MIPI specification.",
+      "2. When using SPI on port G. DS14861 - Rev 3 page 177/229"
+    ],
+    "legend": [
+      "The measurement points are performed at 50% VDD.",
+      "Evaluated by characterization. Not tested in production."
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

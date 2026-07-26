@@ -1,0 +1,171 @@
+{
+  "table_id": "table_50",
+  "document": "DS5944 Rev 11 - Table 50. SPI characteristics",
+  "rev": "Rev 11",
+  "table_number": "50",
+  "title": "Table 50. SPI characteristics",
+  "page": 81,
+  "section": "5.3.17 Communications interfaces",
+  "section_title": "Communications interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f100rc.pdf#page=81",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f100rc.pdf",
+  "text_helper": "Table 50. SPI characteristics — section 5.3.17 Communications interfaces. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Master mode",
+        "-",
+        "12",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Slave mode",
+        "-",
+        "12",
+        "MHz"
+      ],
+      [
+        "t r(SCK) t f(SCK)",
+        "SPI clock rise and fall time",
+        "Capacitive load: C = 30 pF",
+        "-",
+        "8",
+        "ns"
+      ],
+      [
+        "DuCy(SCK)",
+        "SPI slave input clock duty cycle",
+        "Slave mode",
+        "30",
+        "70",
+        "%"
+      ],
+      [
+        "t (1) su(NSS)",
+        "NSS setup time",
+        "Slave mode",
+        "4t PCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t (1) h(NSS)",
+        "NSS hold time",
+        "Slave mode",
+        "2t PCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t (1) w(SCKH) t (1) w(SCKL)",
+        "SCK high and low time",
+        "Master mode, f = 24 MHz, PCLK presc = 4",
+        "50",
+        "60",
+        "ns"
+      ],
+      [
+        "t (1) su(MI) t (1) su(SI)",
+        "Data input setup time",
+        "Master mode",
+        "5",
+        "-",
+        "ns"
+      ],
+      [
+        "t (1) su(MI) t (1) su(SI)",
+        "Data input setup time",
+        "Slave mode",
+        "5",
+        "-",
+        "ns"
+      ],
+      [
+        "t (1) h(MI)",
+        "Data input hold time",
+        "Master mode",
+        "5",
+        "-",
+        "ns"
+      ],
+      [
+        "t (1) h(SI)",
+        "Data input hold time",
+        "Slave mode",
+        "4",
+        "-",
+        "ns"
+      ],
+      [
+        "t (1)(2) a(SO)",
+        "Data output access time",
+        "Slave mode, f = 24 MHz PCLK",
+        "0",
+        "3t PCLK",
+        "ns"
+      ],
+      [
+        "t (1)(3) dis(SO)",
+        "Data output disable time",
+        "Slave mode",
+        "2",
+        "10",
+        "ns"
+      ],
+      [
+        "t (1) v(SO)",
+        "Data output valid time",
+        "Slave mode (after enable edge)",
+        "-",
+        "25",
+        "ns"
+      ],
+      [
+        "t (1) v(MO)",
+        "Data output valid time",
+        "Master mode (after enable edge)",
+        "-",
+        "5",
+        "ns"
+      ],
+      [
+        "t (1) h(SO)",
+        "Data output hold time",
+        "Slave mode (after enable edge)",
+        "15",
+        "-",
+        "ns"
+      ],
+      [
+        "t (1) h(MO)",
+        "Data output hold time",
+        "Master mode (after enable edge)",
+        "2",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. Preliminary values.",
+      "2. Min time is for the minimum time to drive the output and the max time is for the maximum time to validate the data.",
+      "3. Min time is for the minimum time to invalidate the output and the max time is for the maximum time to put the data in Hi-Z"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

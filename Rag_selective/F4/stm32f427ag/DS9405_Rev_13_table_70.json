@@ -1,0 +1,106 @@
+{
+  "table_id": "table_70",
+  "document": "DS9405 Rev 13 - Table 70. USB HS clock timing parameters",
+  "rev": "Rev 13",
+  "table_number": "70",
+  "title": "Table 70. USB HS clock timing parameters",
+  "page": 153,
+  "section": "6.3.20 Communications interfaces",
+  "section_title": "Communications interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f427ag.pdf#page=153",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f427ag.pdf",
+  "text_helper": "Table 70. USB HS clock timing parameters — section 6.3.20 Communications interfaces. Symbol, Parameter, Parameter, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Parameter",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "F START_8BIT",
+        "Frequency (first transition)",
+        "8-bit ±10%",
+        "54",
+        "60",
+        "66",
+        "MHz"
+      ],
+      [
+        "F STEADY",
+        "Frequency (steady state) ±500ppm",
+        "Frequency (steady state) ±500ppm",
+        "59.97",
+        "60",
+        "60.03",
+        "MHz"
+      ],
+      [
+        "D START_8BIT",
+        "Duty cycle (first transition)",
+        "8-bit ±10%",
+        "40",
+        "50",
+        "60",
+        "%"
+      ],
+      [
+        "D STEADY",
+        "Duty cycle (steady state) ±500ppm",
+        "Duty cycle (steady state) ±500ppm",
+        "49.975",
+        "50",
+        "50.025",
+        "%"
+      ],
+      [
+        "t STEADY",
+        "Time to reach the steady state frequency and duty cycle after the first transition",
+        "Time to reach the steady state frequency and duty cycle after the first transition",
+        "-",
+        "-",
+        "1.4",
+        "ms"
+      ],
+      [
+        "t START_DEV",
+        "Clock startup time after the de-assertion of SuspendM",
+        "Peripheral",
+        "-",
+        "-",
+        "5.6",
+        "ms"
+      ],
+      [
+        "t START_HOST",
+        "Clock startup time after the de-assertion of SuspendM",
+        "Host",
+        "-",
+        "-",
+        "-",
+        "ms"
+      ],
+      [
+        "t PREP",
+        "PHY preparation time after the first transition of the input clock",
+        "PHY preparation time after the first transition of the input clock",
+        "-",
+        "-",
+        "-",
+        "µs"
+      ]
+    ],
+    "notes": [
+      "1. Specified by design. Figure 46. ULPI timing diagram"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

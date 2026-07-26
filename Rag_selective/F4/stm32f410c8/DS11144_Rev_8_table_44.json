@@ -1,0 +1,158 @@
+{
+  "table_id": "table_44",
+  "document": "DS11144 Rev 8 - Table 44. Main PLL characteristics",
+  "rev": "Rev 8",
+  "table_number": "44",
+  "title": "Table 44. Main PLL characteristics",
+  "page": 83,
+  "section": "6.3.10 PLL characteristics",
+  "section_title": "PLL characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f410c8.pdf#page=83",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f410c8.pdf",
+  "text_helper": "Table 44. Main PLL characteristics — section 6.3.10 PLL characteristics. Symbol, Parameter, Conditions, Conditions, Min, +3 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f PLL_IN",
+        "PLL input clock(1)",
+        "-",
+        "-",
+        "0.95(2)",
+        "1",
+        "2.10",
+        "MHz"
+      ],
+      [
+        "f PLL_OUT",
+        "PLL multiplier output clock",
+        "-",
+        "-",
+        "24",
+        "-",
+        "100",
+        "MHz"
+      ],
+      [
+        "f PLL48_OUT",
+        "48 MHz PLL multiplier output clock",
+        "-",
+        "-",
+        "-",
+        "48",
+        "75",
+        "MHz"
+      ],
+      [
+        "f VCO_OUT",
+        "PLL VCO output",
+        "-",
+        "-",
+        "100",
+        "-",
+        "432",
+        "MHz"
+      ],
+      [
+        "t LOCK",
+        "PLL lock time",
+        "VCO freq = 100 MHz",
+        "VCO freq = 100 MHz",
+        "75",
+        "-",
+        "200",
+        "µs"
+      ],
+      [
+        "t LOCK",
+        "PLL lock time",
+        "VCO freq = 432 MHz",
+        "VCO freq = 432 MHz",
+        "100",
+        "-",
+        "300",
+        "µs"
+      ],
+      [
+        "Jitter(3)",
+        "Cycle-to-cycle jitter",
+        "System clock 100 MHz",
+        "RMS",
+        "-",
+        "25",
+        "-",
+        "ps"
+      ],
+      [
+        "Jitter(3)",
+        "Cycle-to-cycle jitter",
+        "System clock 100 MHz",
+        "peak to peak",
+        "-",
+        "±150",
+        "-",
+        "ps"
+      ],
+      [
+        "Jitter(3)",
+        "Period Jitter",
+        "System clock 100 MHz",
+        "RMS",
+        "-",
+        "15",
+        "-",
+        "ps"
+      ],
+      [
+        "Jitter(3)",
+        "Period Jitter",
+        "System clock 100 MHz",
+        "peak to peak",
+        "-",
+        "±200",
+        "-",
+        "ps"
+      ],
+      [
+        "I (4) DD(PLL)",
+        "PLL power consumption on VDD",
+        "VCO freq = 100 MHz VCO freq = 432 MHz",
+        "VCO freq = 100 MHz VCO freq = 432 MHz",
+        "0.15 0.45",
+        "0.15 0.45",
+        "-",
+        "0.40 0.75"
+      ],
+      [
+        "I (4) DDA(PLL)",
+        "PLL power consumption on VDDA",
+        "VCO freq = 100 MHz VCO freq = 432 MHz",
+        "VCO freq = 100 MHz VCO freq = 432 MHz",
+        "0.30 0.55",
+        "0.30 0.55",
+        "-",
+        "0.40 0.85"
+      ]
+    ],
+    "notes": [
+      "1. Take care of using the appropriate division factor M to obtain the specified PLL input clock values. The M factor is shared between PLL and PLLI2S.",
+      "2. Specified by design, not tested in production.",
+      "3. Specified by design, not tested in production.",
+      "4. Evaluated by characterization, not tested in production."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

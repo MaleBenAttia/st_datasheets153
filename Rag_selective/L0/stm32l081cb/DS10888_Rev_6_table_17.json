@@ -1,0 +1,97 @@
+{
+  "table_id": "table_17",
+  "document": "DS10888 Rev 6 - Table 17. Voltage characteristics",
+  "rev": "Rev 6",
+  "table_number": "17",
+  "title": "Table 17. Voltage characteristics",
+  "page": 47,
+  "section": "6.2 Absolute maximum ratings",
+  "section_title": "Absolute maximum ratings",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l081cb.pdf#page=47",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l081cb.pdf",
+  "text_helper": "Table 17. Voltage characteristics — section 6.2 Absolute maximum ratings. Symbol, Definition, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Definition",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V –V DD SS",
+        "External main supply voltage (including V , V V )(1) DDA DDIO2 DD",
+        "–0.3",
+        "4.0",
+        "V"
+      ],
+      [
+        "V (2) IN",
+        "Input voltage on FT and FTf pins",
+        "V - 0.3 SS",
+        "V +4.0 DD",
+        "V"
+      ],
+      [
+        "V (2) IN",
+        "Input voltage on TC pins",
+        "V - 0.3 SS",
+        "4.0",
+        "V"
+      ],
+      [
+        "V (2) IN",
+        "Input voltage on BOOT0",
+        "V SS",
+        "V + 4.0 DD",
+        "V"
+      ],
+      [
+        "V (2) IN",
+        "Input voltage on any other pin",
+        "V - 0.3 SS",
+        "4.0",
+        "V"
+      ],
+      [
+        "|ΔV | DD",
+        "Variations between different V power pins DDx",
+        "-",
+        "50",
+        "mV"
+      ],
+      [
+        "|V -V | DDA DDx",
+        "Variations between any V and V power DDx DDA pins(3)",
+        "-",
+        "300",
+        "mV"
+      ],
+      [
+        "|ΔV | SS",
+        "Variations between all different ground pins",
+        "-",
+        "50",
+        "mV"
+      ],
+      [
+        "V ESD(HBM)",
+        "Electrostatic discharge voltage (human body model)",
+        "see Section 6.3.11",
+        "see Section 6.3.11",
+        "mV"
+      ]
+    ],
+    "notes": [
+      "1. All main power (V , V ) and ground (V , V ) pins must always be connected to the external power DD DDA SS SSA",
+      "2. This current consumption must be correctly distributed over all I/Os and control pins. The total output current must not be sunk/sourced between two consecutive power supply pins referring to high pin count",
+      "3. Positive current injection is not possible on these I/Os. A negative injection is induced by V <V . I IN SS INJ(PIN)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

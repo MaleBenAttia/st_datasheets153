@@ -1,0 +1,83 @@
+{
+  "table_id": "table_4",
+  "document": "DS9118 Rev 14 - Table 4. STM32F303xB/STM32F303xC peripheral interconnect matrix",
+  "rev": "Rev 14",
+  "table_number": "4",
+  "title": "Table 4. STM32F303xB/STM32F303xC peripheral interconnect matrix",
+  "page": 17,
+  "section": "3.8 Interconnect matrix",
+  "section_title": "Interconnect matrix",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f303cb.pdf#page=17",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f303cb.pdf",
+  "text_helper": "Table 4. STM32F303xB/STM32F303xC peripheral interconnect matrix — section 3.8 Interconnect matrix. Interconnect source, Interconnect destination, Interconnect action.",
+  "table_content": {
+    "headers": [
+      "Interconnect source",
+      "Interconnect destination",
+      "Interconnect action"
+    ],
+    "rows": [
+      [
+        "TIMx",
+        "TIMx",
+        "Timers synchronization or chaining"
+      ],
+      [
+        "TIMx",
+        "ADCx DAC1",
+        "Conversion triggers"
+      ],
+      [
+        "TIMx",
+        "DMA",
+        "Memory to memory transfer trigger"
+      ],
+      [
+        "TIMx",
+        "Compx",
+        "Comparator output blanking"
+      ],
+      [
+        "COMPx",
+        "TIMx",
+        "Timer input: OCREF_CLR input, input capture"
+      ],
+      [
+        "ADCx",
+        "TIMx",
+        "Timer triggered by analog watchdog"
+      ],
+      [
+        "GPIO RTCCLK HSE/32 MC0",
+        "TIM16",
+        "Clock source used as input channel for HSI and LSI calibration"
+      ],
+      [
+        "CSS CPU (hard fault) COMPx PVD GPIO",
+        "TIM1, TIM8, TIM15, 16, 17",
+        "Timer break"
+      ],
+      [
+        "GPIO",
+        "TIMx",
+        "External trigger, timer break"
+      ],
+      [
+        "GPIO",
+        "ADCx DAC1",
+        "Conversion external trigger"
+      ],
+      [
+        "DAC1",
+        "COMPx",
+        "Comparator inverting input"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

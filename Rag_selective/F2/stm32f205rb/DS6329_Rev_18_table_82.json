@@ -1,0 +1,68 @@
+{
+  "table_id": "table_82",
+  "document": "DS6329 Rev 18 - Table 82. Switching characteristics for NAND Flash read cycles",
+  "rev": "Rev 18",
+  "table_number": "82",
+  "title": "Table 82. Switching characteristics for NAND Flash read cycles",
+  "page": 145,
+  "section": "6.3.25 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f205rb.pdf#page=145",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f205rb.pdf",
+  "text_helper": "Table 82. Switching characteristics for NAND Flash read cycles — section 6.3.25 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t w(N0E)",
+        "FSMC_NOE low width",
+        "4T - 1 HCLK",
+        "4T + 2 HCLK",
+        "ns"
+      ],
+      [
+        "t su(D-NOE)",
+        "FSMC_D[15-0] valid data before FSMC_NOE high",
+        "9",
+        "-",
+        "ns"
+      ],
+      [
+        "t ) h(NOE-D",
+        "FSMC_D[15-0] valid data after FSMC_NOE high",
+        "3",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(ALE-NOE)",
+        "FSMC_ALE valid before FSMC_NOE low",
+        "-",
+        "3T HCLK",
+        "ns"
+      ],
+      [
+        "t h(NOE-ALE)",
+        "FSMC_NWE high to FSMC_ALE invalid",
+        "3T + 2 HCLK",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. C = 30 pF. L",
+      "2. Guaranteed by characterization results, not tested in production. DS6329 Rev 18 145/181"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

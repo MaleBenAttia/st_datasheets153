@@ -1,0 +1,129 @@
+{
+  "table_id": "table_124",
+  "document": "DS12736 Rev 5 - Table 124. DFSDM measured timing 1.71 to 3.6 V",
+  "rev": "Rev 5",
+  "table_number": "124",
+  "title": "Table 124. DFSDM measured timing 1.71 to 3.6 V",
+  "page": 272,
+  "section": "5.3.27 DFSDM characteristics",
+  "section_title": "DFSDM characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l562ce.pdf#page=272",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l562ce.pdf",
+  "text_helper": "Table 124. DFSDM measured timing 1.71 to 3.6 V — section 5.3.27 DFSDM characteristics. Parameter, Conditions, Conditions, Min, Typ, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max"
+    ],
+    "rows": [
+      [
+        "DFSDM clock",
+        "1.71 < V < 3.6 V DD",
+        "1.71 < V < 3.6 V DD",
+        "-",
+        "-",
+        "f SYSCLK"
+      ],
+      [
+        "Input clock frequency",
+        "SPI mode (SITP[1:0]=0,1), External clock mode (SPICKSEL[1:0]=0), 1.71 < V < 3.6 V DD",
+        "SPI mode (SITP[1:0]=0,1), External clock mode (SPICKSEL[1:0]=0), 1.71 < V < 3.6 V DD",
+        "-",
+        "-",
+        "20"
+      ],
+      [
+        "Input clock frequency",
+        "SPI mode (SITP[1:0]=0,1), External clock mode (SPICKSEL[1:0]=0), 2.7 < V < 3.6 V DD",
+        "SPI mode (SITP[1:0]=0,1), External clock mode (SPICKSEL[1:0]=0), 2.7 < V < 3.6 V DD",
+        "-",
+        "-",
+        "20"
+      ],
+      [
+        "Input clock frequency",
+        "SPI mode (SITP[1:0]=0,1), Internal clock mode (SPICKSEL[1:0]≠0), 1.71 < V < 3.6 V DD",
+        "SPI mode (SITP[1:0]=0,1), Internal clock mode (SPICKSEL[1:0]≠0), 1.71 < V < 3.6 V DD",
+        "-",
+        "-",
+        "20"
+      ],
+      [
+        "Input clock frequency",
+        "SPI mode (SITP[1:0]=0,1), Internal clock mode (SPICKSEL[1:0]≠0), 2.7 < V < 3.6 V DD",
+        "SPI mode (SITP[1:0]=0,1), Internal clock mode (SPICKSEL[1:0]≠0), 2.7 < V < 3.6 V DD",
+        "-",
+        "-",
+        "20"
+      ],
+      [
+        "Output clock frequency",
+        "1.71 < V < 3.6 V DD",
+        "1.71 < V < 3.6 V DD",
+        "-",
+        "-",
+        "20"
+      ],
+      [
+        "Output clock frequency duty cycle",
+        "1.71 < V < 3.6 V DD",
+        "Even division CKOUTDIV[7:0]=n1,3,5...",
+        "45",
+        "50",
+        "55"
+      ],
+      [
+        "Output clock frequency duty cycle",
+        "1.71 < V < 3.6 V DD",
+        "ODD division CKOUTDIV[7:0]=n2,4,6...",
+        "(((n/2+1)/(n+ 1))*100)-5",
+        "((n/2+1)/(n+1 ))*100",
+        "(((n/2+1)/(n+ 1))*100)+5"
+      ],
+      [
+        "Input clock high and low time",
+        "SPI mode (SITP[1:0]=0,1), External clock mode (SPICKSEL[1:0]=0), 1.71 < V < 3.6 V DD",
+        "SPI mode (SITP[1:0]=0,1), External clock mode (SPICKSEL[1:0]=0), 1.71 < V < 3.6 V DD",
+        "TCKIN/2-0.5",
+        "NIKC 2/ T",
+        "-"
+      ],
+      [
+        "Data input setup time",
+        "SPI mode (SITP[1:0]=0,1), External clock mode (SPICKSEL[1:0]=0), 1.71 < V < 3.6 V DD",
+        "SPI mode (SITP[1:0]=0,1), External clock mode (SPICKSEL[1:0]=0), 1.71 < V < 3.6 V DD",
+        "3",
+        "-",
+        "-"
+      ],
+      [
+        "Data input hold time",
+        "SPI mode (SITP[1:0]=0,1), External clock mode (SPICKSEL[1:0]=0), 1.71 < V < 3.6 V DD",
+        "SPI mode (SITP[1:0]=0,1), External clock mode (SPICKSEL[1:0]=0), 1.71 < V < 3.6 V DD",
+        "2.5",
+        "-",
+        "-"
+      ],
+      [
+        "Manchester data period (recovered clock period)",
+        "Manchester mode (SITP[1:0]=2,3), Internal clock mode (SPICKSEL[1:0]≠0), 1.71 < V < 3.6 V DD",
+        "Manchester mode (SITP[1:0]=2,3), Internal clock mode (SPICKSEL[1:0]≠0), 1.71 < V < 3.6 V DD",
+        "(CKOUTDIV +1) * T DFSDMCLK",
+        "-",
+        "(2*CKOUTDI V) * T DFSDMCLK"
+      ]
+    ],
+    "notes": [
+      "1. Data based on characterization results, not tested in production. 272/341 DS12736 Rev 5"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

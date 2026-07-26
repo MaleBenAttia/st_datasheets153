@@ -1,0 +1,126 @@
+{
+  "table_id": "table_35",
+  "document": "DS10212 Rev 6 - Table 35. Low-speed external user clock characteristics",
+  "rev": "Rev 6",
+  "table_number": "35",
+  "title": "Table 35. Low-speed external user clock characteristics",
+  "page": 64,
+  "section": "6.3.6 External clock source characteristics",
+  "section_title": "External clock source characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f078cb.pdf#page=64",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f078cb.pdf",
+  "text_helper": "Table 35. Low-speed external user clock characteristics — section 6.3.6 External clock source characteristics. Symbol, Parameter(1), Parameter(1), Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter(1)",
+      "Parameter(1)",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f LSE_ext",
+        "User external clock source frequency",
+        "User external clock source frequency",
+        "-",
+        "32.768",
+        "1000",
+        "kHz"
+      ],
+      [
+        "V LSEH",
+        "OSC32_IN input pin high level voltage",
+        "OSC32_IN input pin high level voltage",
+        "0.7 V DDIOx",
+        "-",
+        "V DDIOx",
+        "V"
+      ],
+      [
+        "V LSEL",
+        "OSC32_IN input pin low level voltage",
+        "OSC32_IN input pin low level voltage",
+        "V SS",
+        "-",
+        "0.3 V DDIOx",
+        "V"
+      ],
+      [
+        "t w(LSEH) t w(LSEL)",
+        "OSC32_IN high or low time",
+        "OSC32_IN high or low time",
+        "450",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t r(LSE) t f(LSE)",
+        "OSC32_IN rise or fall time",
+        "OSC32_IN rise or fall time",
+        "-",
+        "-",
+        "50",
+        "ns"
+      ],
+      [
+        "I DD",
+        "HSE current consumption",
+        "V = 1.8 V, DD Rm = 30 Ω, CL = 10 pF@8 MHz",
+        "-",
+        "0.4",
+        "-",
+        "-"
+      ],
+      [
+        "I DD",
+        "HSE current consumption",
+        "V = 1.8 V, DD Rm = 45 Ω, CL = 10 pF@8 MHz",
+        "-",
+        "0.5",
+        "-",
+        "-"
+      ],
+      [
+        "I DD",
+        "HSE current consumption",
+        "V = 1.8 V, DD Rm = 30 Ω, CL = 5 pF@32 MHz",
+        "-",
+        "0.8",
+        "-",
+        "-"
+      ],
+      [
+        "I DD",
+        "HSE current consumption",
+        "V = 1.8 V, DD Rm = 30 Ω, CL = 10 pF@32 MHz",
+        "-",
+        "1",
+        "-",
+        "-"
+      ],
+      [
+        "I DD",
+        "HSE current consumption",
+        "V = 1.8 V, DD Rm = 30 Ω, CL = 20 pF@32 MHz",
+        "-",
+        "1.5",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by design, not tested in production.",
+      "3. This consumption level occurs during the first 2/3 of the t startup time SU(HSE)",
+      "4. t is the startup time measured from the moment it is enabled (by software) to a stabilized 8 MHz SU(HSE)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

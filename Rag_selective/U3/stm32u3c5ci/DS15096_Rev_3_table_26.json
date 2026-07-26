@@ -1,0 +1,47 @@
+{
+  "table_id": "table_26",
+  "document": "DS15096 Rev 3 - Table 26. Thermal characteristics.",
+  "rev": "Rev 3",
+  "table_number": "26",
+  "title": "Table 26. Thermal characteristics.",
+  "page": 107,
+  "section": "5.2 Absolute maximum ratings",
+  "section_title": "Absolute maximum ratings",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u3c5ci.pdf#page=107",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u3c5ci.pdf",
+  "text_helper": "Table 26. Thermal characteristics. — section 5.2 Absolute maximum ratings. Symbol, Ratings, Value, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Ratings",
+      "Value",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "TSTG",
+        "Storage temperature range",
+        "–65 to +150",
+        "°C"
+      ],
+      [
+        "TJ",
+        "Maximum junction temperature",
+        "110",
+        "°C"
+      ]
+    ],
+    "notes": [
+      "1. All main power (VDD, VDDSMPS, VDDA, VDDUSB, VDDIO2, VBAT) and ground (VSS, VSSA) pins must always be connected to the external power supplies, in the permitted range.",
+      "2. This current consumption must be correctly distributed over all I/Os and control pins. The total output current must not be sunk/sourced between two consecutive power supply pins, referring to high pin count QFP packages.",
+      "3. A negative injection is induced by VIN < VSS. IINJ(PIN) must never be exceeded. Refer also to Table 24 for the minimum allowed input voltage values.",
+      "4. Positive injection (when VIN > VDDIOx) is not possible on these I/Os and does not occur for input voltages lower than the specified maximum value.",
+      "5. When several inputs are submitted to a current injection, the maximum ∑IINJ(PIN) is the absolute sum of the negative injected currents (instantaneous values)."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

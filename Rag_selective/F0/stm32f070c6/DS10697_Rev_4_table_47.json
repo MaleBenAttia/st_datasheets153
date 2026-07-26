@@ -1,0 +1,99 @@
+{
+  "table_id": "table_47",
+  "document": "DS10697 Rev 4 - Table 47. NRST pin characteristics",
+  "rev": "Rev 4",
+  "table_number": "47",
+  "title": "Table 47. NRST pin characteristics",
+  "page": 60,
+  "section": "6.3.15 NRST pin characteristics",
+  "section_title": "NRST pin characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f070c6.pdf#page=60",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f070c6.pdf",
+  "text_helper": "Table 47. NRST pin characteristics — section 6.3.15 NRST pin characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V IL(NRST)",
+        "NRST input low level voltage",
+        "-",
+        "-",
+        "-",
+        "0.3 V +0.07(1) DD",
+        "V"
+      ],
+      [
+        "V IH(NRST)",
+        "NRST input high level voltage",
+        "-",
+        "0.445 V +0.398(1) DD",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "V hys(NRST)",
+        "NRST Schmitt trigger voltage hysteresis",
+        "-",
+        "-",
+        "200",
+        "-",
+        "mV"
+      ],
+      [
+        "R PU",
+        "Weak pull-up equivalent resistor(2)",
+        "V = V IN SS",
+        "25",
+        "40",
+        "55",
+        "kΩ"
+      ],
+      [
+        "V F(NRST)",
+        "NRST input filtered pulse",
+        "-",
+        "-",
+        "-",
+        "100(1)",
+        "ns"
+      ],
+      [
+        "V NF(NRST)",
+        "NRST input not filtered pulse",
+        "2.7 < V < 3.6 DD",
+        "300(3)",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "V NF(NRST)",
+        "NRST input not filtered pulse",
+        "2.4 < V < 3.6 DD",
+        "500(3)",
+        "-",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. Data based on design simulation only. Not tested in production.",
+      "2. The pull-up is designed with a true resistance in series with a switchable PMOS. This PMOS contribution to the series resistance is minimal (~10% order).",
+      "3. Data based on design simulation only. Not tested in production. 60/84 DS10697 Rev 4"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

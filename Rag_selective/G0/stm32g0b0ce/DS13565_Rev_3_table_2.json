@@ -1,0 +1,115 @@
+{
+  "table_id": "table_2",
+  "document": "DS13565 Rev 3 - Table 2. Access status versus readout protection level and execution modes",
+  "rev": "Rev 3",
+  "table_number": "2",
+  "title": "Table 2. Access status versus readout protection level and execution modes",
+  "page": 13,
+  "section": "3.3 Embedded flash memory",
+  "section_title": "Embedded flash memory",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32g0b0ce.pdf#page=13",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g0b0ce.pdf",
+  "text_helper": "Table 2. Access status versus readout protection level and execution modes — section 3.3 Embedded flash memory. Area, Protection level, User execution / Read, User execution / Write, User execution / Erase, +3 autres.",
+  "table_content": {
+    "headers": [
+      "Area",
+      "Protection level",
+      "User execution / Read",
+      "User execution / Write",
+      "User execution / Erase",
+      "Debug, boot from RAM or boot from system memory (loader) / Read",
+      "Debug, boot from RAM or boot from system memory (loader) / Write",
+      "Debug, boot from RAM or boot from system memory (loader) / Erase"
+    ],
+    "rows": [
+      [
+        "User memory",
+        "1",
+        "Yes",
+        "Yes",
+        "Yes",
+        "No",
+        "No",
+        "No"
+      ],
+      [
+        "User memory",
+        "2",
+        "Yes",
+        "Yes",
+        "Yes",
+        "N/A",
+        "N/A",
+        "N/A"
+      ],
+      [
+        "System memory",
+        "1",
+        "Yes",
+        "No",
+        "No",
+        "Yes",
+        "No",
+        "No"
+      ],
+      [
+        "System memory",
+        "2",
+        "Yes",
+        "No",
+        "No",
+        "N/A",
+        "N/A",
+        "N/A"
+      ],
+      [
+        "Option bytes",
+        "1",
+        "Yes",
+        "Yes",
+        "Yes",
+        "Yes",
+        "Yes",
+        "Yes"
+      ],
+      [
+        "Option bytes",
+        "2",
+        "Yes",
+        "No",
+        "No",
+        "N/A",
+        "N/A",
+        "N/A"
+      ],
+      [
+        "Backup registers",
+        "1",
+        "Yes",
+        "Yes",
+        "N/A(1)",
+        "No",
+        "No",
+        "N/A(1)"
+      ],
+      [
+        "Backup registers",
+        "2",
+        "Yes",
+        "Yes",
+        "N/A",
+        "N/A",
+        "N/A",
+        "N/A"
+      ]
+    ],
+    "notes": [
+      "1. Erased upon RDP change from Level 1 to Level 0. • Write protection (WRP): the protected area is protected against erasing and"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

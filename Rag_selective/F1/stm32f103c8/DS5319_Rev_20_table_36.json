@@ -1,0 +1,157 @@
+{
+  "table_id": "table_36",
+  "document": "DS5319 Rev 20 - Table 36. I/O static characteristics",
+  "rev": "Rev 20",
+  "table_number": "36",
+  "title": "Table 36. I/O static characteristics",
+  "page": 61,
+  "section": "5.3.13 I/O port characteristics",
+  "section_title": "I/O port characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f103c8.pdf#page=61",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f103c8.pdf",
+  "text_helper": "Table 36. I/O static characteristics — section 5.3.13 I/O port characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V IL",
+        "Low level input voltage",
+        "Standard IO input low level voltage",
+        "-",
+        "-",
+        "0.28*(V -2 V)+0.8 V(1) DD",
+        "V"
+      ],
+      [
+        "V IL",
+        "Low level input voltage",
+        "IO FT(3) input low level voltage",
+        "-",
+        "-",
+        "0.32*(V -2V)+0.75 V(1) DD",
+        "V"
+      ],
+      [
+        "V IL",
+        "Low level input voltage",
+        "All I/Os except BOOT0",
+        "-",
+        "-",
+        "0.35 V (2) DD",
+        "V"
+      ],
+      [
+        "V IH",
+        "High level input voltage",
+        "Standard IO input high level voltage",
+        "0.41*(V -2 V)+1.3 V(1) DD",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "V IH",
+        "High level input voltage",
+        "IO FT(3) input high level voltage",
+        "0.42*(V -2 V)+1 V(1) DD",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "V IH",
+        "High level input voltage",
+        "All I/Os except BOOT0",
+        "0.65 V (2) DD",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "V hys",
+        "Standard IO Schmitt trigger voltage hysteresis(4)",
+        "-",
+        "200",
+        "-",
+        "-",
+        "mV"
+      ],
+      [
+        "V hys",
+        "IO FT Schmitt trigger voltage hysteresis(4)",
+        "-",
+        "5% V (5) DD",
+        "-",
+        "-",
+        "mV"
+      ],
+      [
+        "I lkg",
+        "Input leakage current (6)",
+        "V ≤ V ≤ V SS IN DD Standard I/Os",
+        "-",
+        "-",
+        "±1",
+        "µA"
+      ],
+      [
+        "I lkg",
+        "Input leakage current (6)",
+        "V IN = 5 V I/O FT",
+        "-",
+        "-",
+        "3",
+        "µA"
+      ],
+      [
+        "R PU",
+        "Weak pull-up equivalent resistor(7)",
+        "V = V IN SS",
+        "30",
+        "40",
+        "50",
+        "kΩ"
+      ],
+      [
+        "R PD",
+        "Weak pull-down equivalent resistor(7)",
+        "V = V IN DD",
+        "30",
+        "40",
+        "50",
+        "kΩ"
+      ],
+      [
+        "C IO",
+        "I/O pin capacitance",
+        "V = V IN DD",
+        "-",
+        "5",
+        "-",
+        "pF"
+      ]
+    ],
+    "notes": [
+      "1. Data based on design simulation.",
+      "2. Tested in production.",
+      "3. FT = 5 V tolerant. To sustain a voltage higher than V + 0.3 V the internal pull-up/pull-down resistors must be disabled. DD",
+      "4. Hysteresis voltage between Schmitt trigger switching levels. Evaluated by characterization, not tested in production, unless otherwise specified.",
+      "5. With a minimum of 100 mV.",
+      "6. Leakage can be higher than Max if negative current is injected on adjacent pins. DS5319 Rev 20 61/115",
+      "7. Pull-up and pull-down resistors are designed with a true resistance in series with a switchable PMOS/NMOS. This PMOS/NMOS contribution to the series resistance is minimum (~10%)."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

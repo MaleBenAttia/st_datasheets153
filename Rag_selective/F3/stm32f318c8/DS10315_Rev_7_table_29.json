@@ -1,0 +1,77 @@
+{
+  "table_id": "table_29",
+  "document": "DS10315 Rev 7 - Table 29. Typical and maximum current consumption from V supply 55 BAT",
+  "rev": "Rev 7",
+  "table_number": "29",
+  "title": "Table 29. Typical and maximum current consumption from V supply 55 BAT",
+  "page": 55,
+  "section": "6.3.4 Supply current characteristics",
+  "section_title": "Supply current characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f318c8.pdf#page=55",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f318c8.pdf",
+  "text_helper": "Table 29. Typical and maximum current consumption from V supply 55 BAT — section 6.3.4 Supply current characteristics. Symbol, Para meter, Conditions (1), Typ.@V / 1.65V, Typ.@V / 1.8V, +10 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Para meter",
+      "Conditions (1)",
+      "Typ.@V / 1.65V",
+      "Typ.@V / 1.8V",
+      "Typ.@V / 2V",
+      "Typ.@V / 2.4V",
+      "Typ.@V / BAT / 2.7V",
+      "Typ.@V / 3V",
+      "Typ.@V / 3.3V",
+      "Typ.@V / 3.6V",
+      "Max. @V = 3.6V(2) BAT T (°C) A / 25",
+      "Max. @V = 3.6V(2) BAT T (°C) A / 85",
+      "Max. @V = 3.6V(2) BAT T (°C) A / 105",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I DD_VBAT",
+        "Backup domain supply current",
+        "LSE & RTC ON; \"Xtal mode\" lower driving capability; LSEDRV[1: 0] = '00'",
+        "0.41",
+        "0.43",
+        "0.46",
+        "0.54",
+        "0.59",
+        "0.66",
+        "0.74",
+        "0.82",
+        "-",
+        "-",
+        "-",
+        "µA"
+      ],
+      [
+        "I DD_VBAT",
+        "Backup domain supply current",
+        "LSE & RTC ON; \"Xtal mode\" higher driving capability; LSEDRV[1: 0] = '11'",
+        "0.65",
+        "0.68",
+        "0.73",
+        "0.80",
+        "0.87",
+        "0.95",
+        "1.03",
+        "1.14",
+        "-",
+        "-",
+        "-",
+        "µA"
+      ]
+    ],
+    "notes": [
+      "1. When peripherals are enabled, the power consumption of the analog part of peripherals such as ADC, DAC, Comparators, OpAmp etc. is not included. Refer to the tables of characteristics in the subsequent sections.",
+      "2. Guaranteed by characterization results."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "table_id": "table_104",
+  "document": "DS10915 Rev 5 - Table 104. LPSDR SDRAM read timings",
+  "rev": "Rev 5",
+  "table_number": "104",
+  "title": "Table 104. LPSDR SDRAM read timings",
+  "page": 194,
+  "section": "6.3.27 FMC characteristics",
+  "section_title": "FMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f756bg.pdf#page=194",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f756bg.pdf",
+  "text_helper": "Table 104. LPSDR SDRAM read timings — section 6.3.27 FMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t W(SDCLK)",
+        "FMC_SDCLK period",
+        "2T -0.5 HCLK",
+        "2T +0.5 HCLK",
+        "ns"
+      ],
+      [
+        "t su(SDCLKH_Data)",
+        "Data input setup time",
+        "3",
+        "-",
+        "ns"
+      ],
+      [
+        ")ataD_HKLCDS(h t",
+        "Data input hold time",
+        "1.5",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(SDCLKL_SDNE)",
+        "Chip select valid time",
+        "-",
+        "0.5",
+        "ns"
+      ],
+      [
+        "t h(SDCLKL_SDNE)",
+        "Chip select hold time",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(SDCLKL_SDNRAS",
+        "SDNRAS valid time",
+        "-",
+        "0.5",
+        "ns"
+      ],
+      [
+        "t h(SDCLKL_SDNCAS)",
+        "SDNCAS hold time",
+        "0",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization results. 194/230 DS10915 Rev 5"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "table_id": "table_8",
+  "document": "DS14861 Rev 3 - Table 8. STM32U375xx low-power modes overview.",
+  "rev": "Rev 3",
+  "table_number": "8",
+  "title": "Table 8. STM32U375xx low-power modes overview.",
+  "page": 21,
+  "section": "3.9 Low-power modes",
+  "section_title": "Low-power modes",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf#page=21",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf",
+  "text_helper": "Table 8. STM32U375xx low-power modes overview. — section 3.9 Low-power modes. Mode name, Entry, Wake-up source, Wake-up system clock, Effect on clocks, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Mode name",
+      "Entry",
+      "Wake-up source",
+      "Wake-up system clock",
+      "Effect on clocks",
+      "Voltage regulators"
+    ],
+    "rows": [
+      [
+        "Sleep (Sleep-now or Sleep-on-exit)",
+        "WFI or return from ISR",
+        "Any interrupt",
+        "Same as before entering Sleep mode",
+        "CPU clock OFF No effect on other clocks or analog clock sources",
+        "Range 1, 2"
+      ],
+      [
+        "Sleep (Sleep-now or Sleep-on-exit)",
+        "WFE",
+        "Wake-up event",
+        "Same as before entering Sleep mode",
+        "CPU clock OFF No effect on other clocks or analog clock sources",
+        "Range 1, 2"
+      ],
+      [
+        "Stop 0",
+        "EFW ro RSI morf nruter ro IFW + tib PEEDPEELS + 000 = SMPL",
+        "Any EXTI line (configured in the EXTI registers) Any PWR wake-up line (WKUP pins and I3C reset pattern) Specific peripherals events/interrupts(1)",
+        "HSI16 when STOPWUCK = 1 in RCC_CFGR1 MSIS with the frequency before entering the Stop mode, limited to 48 MHz, when STOPWUCK = 0",
+        "All clocks OFF except LSI and LSE MSIK, MSIS or HSI16 can be enabled temporarily when requested by an autonomous peripheral, or forced to be kept enabled.",
+        "Range 1, 2"
+      ],
+      [
+        "Stop 1",
+        "EFW ro RSI morf nruter ro IFW + tib PEEDPEELS + 100 = SMPL",
+        "Any EXTI line (configured in the EXTI registers) Any PWR wake-up line (WKUP pins and I3C reset pattern) Specific peripherals events/interrupts(1)",
+        "HSI16 when STOPWUCK = 1 in RCC_CFGR1 MSIS with the frequency before entering the Stop mode, limited to 48 MHz, when STOPWUCK = 0",
+        "All clocks OFF except LSI and LSE MSIK, MSIS or HSI16 can be enabled temporarily when requested by an autonomous peripheral, or forced to be kept enabled.",
+        "Low-power regulator (SMPS or LDO)"
+      ],
+      [
+        "Stop 2",
+        "EFW ro RSI morf nruter ro IFW + tib PEEDPEELS + 010 = SMPL",
+        "Any EXTI line (configured in the EXTI registers) Any PWR wake-up line (WKUP pins and I3C reset pattern) Specific peripherals events/interrupts(1)",
+        "HSI16 when STOPWUCK = 1 in RCC_CFGR1 MSIS with the frequency before entering the Stop mode, limited to 48 MHz, when STOPWUCK = 0",
+        "All clocks OFF except LSI and LSE MSIK, MSIS or HSI16 can be enabled temporarily when requested by an autonomous peripheral, or forced to be kept enabled.",
+        "Low-power regulator (SMPS or LDO)"
+      ],
+      [
+        "Stop 3",
+        "EFW ro RSI morf nruter ro IFW + tib PEEDPEELS + 110 = SMPL",
+        "WKUP pin edge, RTC/TAMP events/ interrupts (1), external reset in NRST pin, IWDG events/ interrupts (1) or reset, I3C reset pattern",
+        "HSI16 when STOPWUCK = 1 in RCC_CFGR1 MSIS with the frequency before entering the Stop mode, limited to 48 MHz, when STOPWUCK = 0",
+        "All clocks OFF except LSI and LSE",
+        "Low-power regulator (SMPS or LDO)"
+      ],
+      [
+        "Standby with SRAM2_ 8 Kbytes",
+        "LPMS = 10x+ RRS1 = 1 + SLEEPDEEP bit + WFI or return from ISR or WFE",
+        "LPMS = 10x+ RRS1 = 1 + SLEEPDEEP bit + WFI or return from ISR or WFE",
+        "MSIS from 3 MHz up to 12 MHz",
+        "MSIS from 3 MHz up to 12 MHz",
+        "MSIS from 3 MHz up to 12 MHz"
+      ],
+      [
+        "Standby with SRAM2_Full",
+        "LPMS = 10x+ RRS1 = RRS2 = RRS3 = 1+ SLEEPDEEP bit + WFI or return from ISR or WFE",
+        "LPMS = 10x+ RRS1 = RRS2 = RRS3 = 1+ SLEEPDEEP bit + WFI or return from ISR or WFE",
+        "LPMS = 10x+ RRS1 = RRS2 = RRS3 = 1+ SLEEPDEEP bit + WFI or return from ISR or WFE",
+        "LPMS = 10x+ RRS1 = RRS2 = RRS3 = 1+ SLEEPDEEP bit + WFI or return from ISR or WFE",
+        "LPMS = 10x+ RRS1 = RRS2 = RRS3 = 1+ SLEEPDEEP bit + WFI or return from ISR or WFE"
+      ],
+      [
+        "Standby",
+        "LPMS = 10x + RRS1 = RRS2 = RRS3 = 0 + SLEEPDEEP bit + WFI or return from ISR or WFE",
+        "LPMS = 10x + RRS1 = RRS2 = RRS3 = 0 + SLEEPDEEP bit + WFI or return from ISR or WFE",
+        "LPMS = 10x + RRS1 = RRS2 = RRS3 = 0 + SLEEPDEEP bit + WFI or return from ISR or WFE",
+        "LPMS = 10x + RRS1 = RRS2 = RRS3 = 0 + SLEEPDEEP bit + WFI or return from ISR or WFE",
+        "OFF"
+      ],
+      [
+        "Shutdown",
+        "EFW ro RSI morf nruter ro IFW + tib PEEDPEELS + x11 = SMPL",
+        "WKUP pin edge, RTC/TAMP events/ interrupts (1), external reset in NRST pin, I3C reset pattern",
+        "MSIS 12 MHz",
+        "All clocks OFF except LSE",
+        "OFF"
+      ]
+    ],
+    "notes": [
+      "1. A wake-up event from Stop mode can be generated with the peripheral interrupt signal. By default, the microcontroller is in Run mode after a system or a power reset. It is up to the user to select one of"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

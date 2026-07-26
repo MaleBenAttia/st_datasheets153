@@ -1,0 +1,75 @@
+{
+  "table_id": "table_3",
+  "document": "DS8576 Rev 13 - Table 3. Functionalities depending on the operating power supply range",
+  "rev": "Rev 13",
+  "table_number": "3",
+  "title": "Table 3. Functionalities depending on the operating power supply range",
+  "page": 17,
+  "section": "3.1 Low-power modes",
+  "section_title": "Low-power modes",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l151qd.pdf#page=17",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l151qd.pdf",
+  "text_helper": "Table 3. Functionalities depending on the operating power supply range — section 3.1 Low-power modes. -, Functionalities depending on the operating power supply, Functionalities depending on the operating power supply / range (1), Functionalities depending on the operating power supply.",
+  "table_content": {
+    "headers": [
+      "-",
+      "Functionalities depending on the operating power supply",
+      "Functionalities depending on the operating power supply / range (1)",
+      "Functionalities depending on the operating power supply"
+    ],
+    "rows": [
+      [
+        "Operating power supply range",
+        "DAC and ADC operation",
+        "USB",
+        "Dynamic voltage scaling range"
+      ],
+      [
+        "V = V = 1.65 to 1.71 V DD DDA",
+        "Not functional",
+        "Not functional",
+        "Range 2 or Range 3"
+      ],
+      [
+        "V =V = 1.71 to 1.8 V(2) DD DDA",
+        "Not functional",
+        "Not functional",
+        "Range 1, Range 2 or Range 3"
+      ],
+      [
+        "V =V = 1.8 to 2.0 V(2) DD DDA",
+        "Conversion time up to 500 Ksps",
+        "Not functional",
+        "Range 1, Range 2 or Range 3"
+      ],
+      [
+        "Operating power supply range",
+        "DAC and ADC operation",
+        "USB",
+        "Dynamic voltage scaling range"
+      ],
+      [
+        "V =V = 2.0 to 2.4 V DD DDA",
+        "Conversion time up to 500 Ksps",
+        "Functional(3)",
+        "Range 1, Range 2 or Range 3"
+      ],
+      [
+        "V =V = 2.4 to 3.6 V DD DDA",
+        "Conversion time up to 1 Msps",
+        "Functional(3)",
+        "Range 1, Range 2 or Range 3"
+      ]
+    ],
+    "notes": [
+      "1. The GPIO speed also depends from VDD voltage and the user has to refer to Table 52: I/O AC characteristics for more information about I/O speed.",
+      "2. CPU frequency changes from initial to final must respect “F initial < 4*F final” to limit V drop CPU CPU CORE",
+      "3. Must be USB compliant from I/O voltage standpoint, the minimum V is 3.0 V. DD"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

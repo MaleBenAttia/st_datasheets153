@@ -1,0 +1,108 @@
+{
+  "table_id": "table_38",
+  "document": "DS5934 Rev 6 - Table 38. TIMx characteristics",
+  "rev": "Rev 6",
+  "table_number": "38",
+  "title": "Table 38. TIMx characteristics",
+  "page": 57,
+  "section": "5.3.15 TIM timer characteristics",
+  "section_title": "TIM timer characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f102c4.pdf#page=57",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f102c4.pdf",
+  "text_helper": "Table 38. TIMx characteristics — section 5.3.15 TIM timer characteristics. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "-",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "f = 48 MHz TIMxCLK",
+        "20.84",
+        "-",
+        "ns"
+      ],
+      [
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "-",
+        "0",
+        "f /2 TIMxCLK",
+        "MHz"
+      ],
+      [
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "f = 48 MHz TIMxCLK",
+        "0",
+        "24",
+        "MHz"
+      ],
+      [
+        "Res TIM",
+        "Timer resolution",
+        "-",
+        "-",
+        "16",
+        "bit"
+      ],
+      [
+        "t COUNTER",
+        "16-bit counter clock period when internal clock is selected",
+        "-",
+        "1",
+        "65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t COUNTER",
+        "16-bit counter clock period when internal clock is selected",
+        "f = 48 MHz TIMxCLK",
+        "0.0208",
+        "1365",
+        "µs"
+      ],
+      [
+        "t MAX_COUNT",
+        "Maximum possible count",
+        "-",
+        "-",
+        "65536 × 65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t MAX_COUNT",
+        "Maximum possible count",
+        "f = 48 MHz TIMxCLK",
+        "-",
+        "89.48",
+        "s"
+      ]
+    ],
+    "notes": [
+      "1. TIMx is used as a general term to refer to the TIM2, TIM3 and TIM4 timers.",
+      "2. f must be at least 2 MHz to achieve standard mode I2C frequencies. It must be at least 4MHz to a P c C h L i K e 1 ve fast mode I2C frequencies. It must be a multiple of 10MHz to reach the 400kHz maximum I2C fast",
+      "3. The maximum Data hold time has only to be met if the interface does not stretch the low period of the SCL signal.",
+      "4. The analog filter minimum filtered spikes is above t to ensure that spikes width up to t are SP(max) SP(max)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

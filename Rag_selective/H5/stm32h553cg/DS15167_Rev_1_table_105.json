@@ -1,0 +1,278 @@
+{
+  "table_id": "table_105",
+  "document": "DS15167 Rev 1 - Table 105. COMP characteristics",
+  "rev": "Rev 1",
+  "table_number": "105",
+  "title": "Table 105. COMP characteristics",
+  "page": 187,
+  "section": "5.3.29 Comparator characteristics",
+  "section_title": "Comparator characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h553cg.pdf#page=187",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h553cg.pdf",
+  "text_helper": "Table 105. COMP characteristics — section 5.3.29 Comparator characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V DDA",
+        "Analog supply voltage",
+        "-",
+        "1.62",
+        "3.3",
+        "3.6",
+        "V"
+      ],
+      [
+        "V IN",
+        "Comparator input voltage range",
+        "-",
+        "0",
+        "-",
+        "V DDA",
+        "V"
+      ],
+      [
+        "V (2) BG",
+        "Scaler input voltage",
+        "-",
+        "-",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "V SC",
+        "Scaler offset voltage",
+        "-",
+        "-",
+        "±5",
+        "±10",
+        "mV"
+      ],
+      [
+        "I DDA(SCALER)",
+        "Scaler static consumption from V DDA",
+        "BRG_EN=0 (bridge disable)",
+        "-",
+        "0.2",
+        "0.3",
+        "µA"
+      ],
+      [
+        "I DDA(SCALER)",
+        "Scaler static consumption from V DDA",
+        "BRG_EN=1 (bridge enable)",
+        "-",
+        "0.8",
+        "1",
+        "µA"
+      ],
+      [
+        "t START_SCALER",
+        "Scaler startup time",
+        "-",
+        "-",
+        "140",
+        "250",
+        "µs"
+      ],
+      [
+        "t START",
+        "Comparator startup time to reach propagation delay specification",
+        "High-speed mode",
+        "-",
+        "2",
+        "5",
+        "µs"
+      ],
+      [
+        "t START",
+        "Comparator startup time to reach propagation delay specification",
+        "Medium mode",
+        "-",
+        "5",
+        "20",
+        "µs"
+      ],
+      [
+        "t START",
+        "Comparator startup time to reach propagation delay specification",
+        "Ultra-low-power mode",
+        "-",
+        "15",
+        "80",
+        "µs"
+      ],
+      [
+        "t (3) D",
+        "Propagation delay for 200 mV step with 100 mV overdrive",
+        "High-speed mode",
+        "-",
+        "50",
+        "80",
+        "ns"
+      ],
+      [
+        "t (3) D",
+        "Propagation delay for 200 mV step with 100 mV overdrive",
+        "Medium mode",
+        "-",
+        "0.5",
+        "0.9",
+        "µs"
+      ],
+      [
+        "t (3) D",
+        "Propagation delay for 200 mV step with 100 mV overdrive",
+        "Ultra-low-power mode",
+        "-",
+        "2.5",
+        "7",
+        "µs"
+      ],
+      [
+        "t (3) D",
+        "Propagation delay for step > 200 mV with 100 mV overdrive only on positive inputs",
+        "High-speed mode",
+        "-",
+        "50",
+        "120",
+        "ns"
+      ],
+      [
+        "t (3) D",
+        "Propagation delay for step > 200 mV with 100 mV overdrive only on positive inputs",
+        "Medium mode",
+        "-",
+        "0.5",
+        "1.2",
+        "µs"
+      ],
+      [
+        "t (3) D",
+        "Propagation delay for step > 200 mV with 100 mV overdrive only on positive inputs",
+        "Ultra-low-power mode",
+        "-",
+        "2.5",
+        "7",
+        "µs"
+      ],
+      [
+        "V offset",
+        "Comparator offset error",
+        "Full common mode range",
+        "-",
+        "±5",
+        "±20",
+        "mV"
+      ],
+      [
+        "V hys",
+        "Comparator hysteresis",
+        "No hysteresis",
+        "-",
+        "0",
+        "-",
+        "mV"
+      ],
+      [
+        "V hys",
+        "Comparator hysteresis",
+        "Low hysteresis",
+        "4",
+        "10",
+        "22",
+        "mV"
+      ],
+      [
+        "V hys",
+        "Comparator hysteresis",
+        "Medium hysteresis",
+        "8",
+        "20",
+        "37",
+        "mV"
+      ],
+      [
+        "V hys",
+        "Comparator hysteresis",
+        "High hysteresis",
+        "16",
+        "30",
+        "52",
+        "mV"
+      ],
+      [
+        "I (COMP) DDA",
+        "Comparator consumption from V DDA",
+        "Ultra-low- power mode",
+        "Static",
+        "400",
+        "600",
+        "nA"
+      ],
+      [
+        "I (COMP) DDA",
+        "Comparator consumption from V DDA",
+        "With 50 kHz ±100 mV overdrive square signal",
+        "-",
+        "800",
+        "-",
+        "-"
+      ],
+      [
+        "I (COMP) DDA",
+        "Medium mode",
+        "Static",
+        "-",
+        "5",
+        "7",
+        "µA"
+      ],
+      [
+        "I (COMP) DDA",
+        "Medium mode",
+        "With 50 kHz ±100 mV overdrive square signal",
+        "-",
+        "6",
+        "-",
+        "-"
+      ],
+      [
+        "I (COMP) DDA",
+        "High-speed mode",
+        "Static",
+        "-",
+        "70",
+        "100",
+        "100"
+      ],
+      [
+        "I (COMP) DDA",
+        "High-speed mode",
+        "With 50 kHz ±100 mV overdrive square signal",
+        "-",
+        "75",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "2. In degraded mode, the voltage reference buffer cannot accurately maintain the output voltage (V −drop voltage). DDA",
+      "3. Evaluated by characterization - Not tested in production."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

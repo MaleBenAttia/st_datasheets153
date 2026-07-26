@@ -1,0 +1,279 @@
+{
+  "table_id": "table_94",
+  "document": "DS14539 Rev 3 - Table 94. DAC accuracy",
+  "rev": "Rev 3",
+  "table_number": "94",
+  "title": "Table 94. DAC accuracy",
+  "page": 180,
+  "section": "5.3.23 DAC characteristics",
+  "section_title": "DAC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h533ce.pdf#page=180",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h533ce.pdf",
+  "text_helper": "Table 94. DAC accuracy — section 5.3.23 DAC characteristics. Symbol, Parameter, Conditions, Conditions, Min, +3 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "DNL",
+        "Differential non linearity(2)",
+        "DAC output buffer ON",
+        "DAC output buffer ON",
+        "-2",
+        "-",
+        "2",
+        "LSB"
+      ],
+      [
+        "DNL",
+        "Differential non linearity(2)",
+        "DAC output buffer OFF",
+        "DAC output buffer OFF",
+        "-2",
+        "-",
+        "2",
+        "LSB"
+      ],
+      [
+        "-",
+        "Monotonicity",
+        "10 bits",
+        "10 bits",
+        "-",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "INL",
+        "Integral non linearity(3)",
+        "DAC output buffer ON, C L≤50 pF, R ≥5 kΩ L",
+        "DAC output buffer ON, C L≤50 pF, R ≥5 kΩ L",
+        "-4",
+        "-",
+        "4",
+        "LSB"
+      ],
+      [
+        "INL",
+        "Integral non linearity(3)",
+        "DAC output buffer OFF, C L ≤ 50 pF, no R L",
+        "DAC output buffer OFF, C L ≤ 50 pF, no R L",
+        "-4",
+        "-",
+        "4",
+        "LSB"
+      ],
+      [
+        "Offset",
+        "Offset error at code 0x800 (3)",
+        "DAC output buffer ON, C L≤50 pF, R ≥5 kΩ L",
+        "V = 3.6 V REF+",
+        "-",
+        "-",
+        "±12",
+        "LSB"
+      ],
+      [
+        "Offset",
+        "Offset error at code 0x800 (3)",
+        "DAC output buffer ON, C L≤50 pF, R ≥5 kΩ L",
+        "V = 1.8 V REF+",
+        "-",
+        "-",
+        "±25",
+        "LSB"
+      ],
+      [
+        "Offset",
+        "Offset error at code 0x800 (3)",
+        "DAC output buffer OFF, C L ≤ 50 pF, no R L",
+        "DAC output buffer OFF, C L ≤ 50 pF, no R L",
+        "-",
+        "-",
+        "±8",
+        "LSB"
+      ],
+      [
+        "Offset1",
+        "Offset error at code 0x001(4)",
+        "DAC output buffer OFF, C L ≤ 50 pF, no R L",
+        "DAC output buffer OFF, C L ≤ 50 pF, no R L",
+        "-",
+        "-",
+        "±5",
+        "LSB"
+      ],
+      [
+        "OffsetCal",
+        "Offset error at code 0x800 after factory calibration",
+        "DAC output buffer ON, C L≤50 pF, R ≥5 kΩ L",
+        "V = 3.6 V REF+",
+        "-",
+        "-",
+        "±5",
+        "LSB"
+      ],
+      [
+        "OffsetCal",
+        "Offset error at code 0x800 after factory calibration",
+        "DAC output buffer ON, C L≤50 pF, R ≥5 kΩ L",
+        "V = 1.8 V REF+",
+        "-",
+        "-",
+        "±7",
+        "LSB"
+      ],
+      [
+        "Gain",
+        "Gain error(5)",
+        "DAC output buffer ON, C L≤50 pF, R ≥5 kΩ L",
+        "DAC output buffer ON, C L≤50 pF, R ≥5 kΩ L",
+        "-",
+        "-",
+        "±1",
+        "%"
+      ],
+      [
+        "Gain",
+        "Gain error(5)",
+        "DAC output buffer OFF, C L ≤ 50 pF, no R L",
+        "DAC output buffer OFF, C L ≤ 50 pF, no R L",
+        "-",
+        "-",
+        "±1",
+        "%"
+      ],
+      [
+        "TUE",
+        "Total unadjusted error",
+        "DAC output buffer ON, C L≤50 pF, R ≥5 kΩ L",
+        "DAC output buffer ON, C L≤50 pF, R ≥5 kΩ L",
+        "-",
+        "-",
+        "±30",
+        "LSB"
+      ],
+      [
+        "TUE",
+        "Total unadjusted error",
+        "DAC output buffer OFF, C L≤50 pF, no R L",
+        "DAC output buffer OFF, C L≤50 pF, no R L",
+        "-",
+        "-",
+        "±12",
+        "LSB"
+      ],
+      [
+        "TUECal",
+        "Total unadjusted error after calibration",
+        "DAC output buffer ON, C L≤50 pF, R ≥5 kΩ L",
+        "DAC output buffer ON, C L≤50 pF, R ≥5 kΩ L",
+        "-",
+        "-",
+        "±23",
+        "LSB"
+      ],
+      [
+        "SNR",
+        "Signal-to-noise ratio(6)",
+        "DAC output buffer ON, C L≤50 pF, R ≥5 kΩ, 1 kHz, BW = 500 kHz L",
+        "DAC output buffer ON, C L≤50 pF, R ≥5 kΩ, 1 kHz, BW = 500 kHz L",
+        "-",
+        "67.8",
+        "-",
+        "dB"
+      ],
+      [
+        "SNR",
+        "Signal-to-noise ratio(6)",
+        "DAC output buffer OFF, C L ≤ 50 pF, no R ,1 kHz, BW = 500 kHz L",
+        "DAC output buffer OFF, C L ≤ 50 pF, no R ,1 kHz, BW = 500 kHz L",
+        "-",
+        "67.8",
+        "-",
+        "dB"
+      ],
+      [
+        "THD",
+        "Total harmonic distortion(6)",
+        "DAC output buffer ON, C L≤50 pF, R ≥5 kΩ, 1 kHz L",
+        "DAC output buffer ON, C L≤50 pF, R ≥5 kΩ, 1 kHz L",
+        "-",
+        "-78.6",
+        "-",
+        "dB"
+      ],
+      [
+        "THD",
+        "Total harmonic distortion(6)",
+        "DAC output buffer OFF, C L ≤ 50 pF, no R L , 1 kHz",
+        "DAC output buffer OFF, C L ≤ 50 pF, no R L , 1 kHz",
+        "-",
+        "-78.6",
+        "-",
+        "dB"
+      ],
+      [
+        "SINAD",
+        "Signal-to-noise and distortion ratio(6)",
+        "DAC output buffer ON, C L≤50 pF, R ≥5 kΩ, 1 kHz L",
+        "DAC output buffer ON, C L≤50 pF, R ≥5 kΩ, 1 kHz L",
+        "-",
+        "67.5",
+        "-",
+        "dB"
+      ],
+      [
+        "SINAD",
+        "Signal-to-noise and distortion ratio(6)",
+        "DAC output buffer OFF, C L ≤ 50 pF, no R L , 1 kHz",
+        "DAC output buffer OFF, C L ≤ 50 pF, no R L , 1 kHz",
+        "-",
+        "67.5",
+        "-",
+        "dB"
+      ],
+      [
+        "ENOB",
+        "Effective number of bits",
+        "DAC output buffer ON, C ≤50 pF, R ≥ 5 kΩ, 1 kHz L L",
+        "DAC output buffer ON, C ≤50 pF, R ≥ 5 kΩ, 1 kHz L L",
+        "-",
+        "-",
+        "10.9",
+        "10.9"
+      ],
+      [
+        "None",
+        "None",
+        "DAC output buffer OFF, C L ≤ 50 pF, no R L , 1 kHz",
+        "DAC output buffer OFF, C L ≤ 50 pF, no R L , 1 kHz",
+        "-",
+        "-",
+        "10.9",
+        "10.9"
+      ]
+    ],
+    "notes": [
+      "2. Difference between two consecutive codes minus 1 LSB.",
+      "3. Difference between the value measured at Code i and the value measured at Code i on a line drawn between Code 0 and last Code 4095.",
+      "4. Difference between the value measured at Code (0x001) and the ideal value.",
+      "5. T is the refresh phase duration, T is the hold phase duration. Refer to the reference manual for more details. ON OFF",
+      "6. Signal is −0.5 dBFS with F = 1 MHz. sampling"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "table_id": "table_69",
+  "document": "DS11532 Rev 9 - Table 69. NRST pin characteristics",
+  "rev": "Rev 9",
+  "table_number": "69",
+  "title": "Table 69. NRST pin characteristics",
+  "page": 162,
+  "section": "6.3.21 NRST pin characteristics",
+  "section_title": "NRST pin characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f765bg.pdf#page=162",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f765bg.pdf",
+  "text_helper": "Table 69. NRST pin characteristics — section 6.3.21 NRST pin characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "R PU",
+        "Weak pull-up equivalent resistor(1)",
+        "V = V IN SS",
+        "30",
+        "40",
+        "50",
+        "kΩ"
+      ],
+      [
+        "V (2) F(NRST)",
+        "NRST Input filtered pulse",
+        "-",
+        "-",
+        "-",
+        "100",
+        "ns"
+      ],
+      [
+        "V (2) NF(NRST)",
+        "NRST Input not filtered pulse",
+        "V > 2.7 V DD",
+        "300",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "T NRST_OUT",
+        "Generated reset pulse duration",
+        "Internal Reset source",
+        "20",
+        "-",
+        "-",
+        "µs"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by design.",
+      "2. The I/O speed is configured using the OSPEEDRy[1:0] bits. Refer to the STM32F76xxx and STM32F77xxx reference manual for a description of the GPIOx_SPEEDR GPIO port output speed register."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "table_id": "table_25",
+  "document": "DS10086 Rev 5 - Table 25. Typical and maximum current consumption in run mode, code with data processing (ART accelerator enabled with prefetch) running from Flash memory",
+  "rev": "Rev 5",
+  "table_number": "25",
+  "title": "Table 25. Typical and maximum current consumption in run mode, code with data processing (ART accelerator enabled with prefetch) running from Flash memory",
+  "page": 68,
+  "section": "6.3.6 Supply current characteristics",
+  "section_title": "Supply current characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f401cd.pdf#page=68",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f401cd.pdf",
+  "text_helper": "Table 25. Typical and maximum current consumption in run mode, code with data processing (ART accelerator enabled with prefetch) running from Flash memory — section 6.3.6 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK (MHz), Typ, +4 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "f HCLK (MHz)",
+      "Typ",
+      "Max(1) / T = A 25 °C",
+      "Max(1) / T = A 85 °C",
+      "Max(1) / T = A 105 °C",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock, all peripherals enabled(2)(3)",
+        "84",
+        "32.5",
+        "33.3",
+        "34.3",
+        "35.4",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock, all peripherals enabled(2)(3)",
+        "60",
+        "22.2",
+        "23.3",
+        "24.3",
+        "25.3",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock, all peripherals enabled(2)(3)",
+        "40",
+        "16.0",
+        "17.1",
+        "18.1",
+        "19.2",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock, all peripherals enabled(2)(3)",
+        "30",
+        "12.9",
+        "14.1",
+        "15.1",
+        "16.1",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock, all peripherals enabled(2)(3)",
+        "20",
+        "10.2",
+        "11.1",
+        "12.1",
+        "13.1",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock, all peripherals disabled(3)",
+        "84",
+        "21.6",
+        "22.4",
+        "23.5",
+        "24.5",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock, all peripherals disabled(3)",
+        "60",
+        "15.3",
+        "16.4",
+        "17.4",
+        "18.4",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock, all peripherals disabled(3)",
+        "40",
+        "11.2",
+        "12.3",
+        "13.3",
+        "14.3",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock, all peripherals disabled(3)",
+        "30",
+        "9.0",
+        "10.2",
+        "11.2",
+        "12.3",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock, all peripherals disabled(3)",
+        "20",
+        "7.3",
+        "8.2",
+        "9.2",
+        "10.2",
+        "mA"
+      ]
+    ],
+    "notes": [
+      "1. Evaluated by characterization, unless otherwise specified.",
+      "2. Add an additional power consumption of 1.6 mA per ADC for the analog part. In applications, this consumption occurs only while the ADC is ON (ADON bit is set in the ADC_CR2 register).",
+      "3. When the ADC is ON (ADON bit set in the ADC_CR2), add an additional power consumption of 1.6mA per ADC for the analog part."
+    ],
+    "legend": [
+      "(ART accelerator enabled with prefetch) running from Flash memory"
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

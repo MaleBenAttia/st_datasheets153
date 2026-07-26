@@ -1,0 +1,107 @@
+{
+  "table_id": "table_86",
+  "document": "DS11139 Rev 9 - Table 86. Asynchronous non-multiplexed SRAM/PSRAM/NOR write timings",
+  "rev": "Rev 9",
+  "table_number": "86",
+  "title": "Table 86. Asynchronous non-multiplexed SRAM/PSRAM/NOR write timings",
+  "page": 152,
+  "section": "6.3.25 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f412ce.pdf#page=152",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f412ce.pdf",
+  "text_helper": "Table 86. Asynchronous non-multiplexed SRAM/PSRAM/NOR write timings — section 6.3.25 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t w(NE)",
+        "FSMC_NE low time",
+        "3 T - 1 HCLK",
+        "3 T +0.5 HCLK",
+        "ns"
+      ],
+      [
+        "t v(NWE_NE)",
+        "FSMC_NEx low to FSMC_NWE low",
+        "KLCH 5.0 + T",
+        "KLCH 5.0 + T",
+        "ns"
+      ],
+      [
+        "t w(NWE)",
+        "FSMC_NWE low time",
+        "T – 1.5 HCLK",
+        "KLCH 1 + T",
+        "ns"
+      ],
+      [
+        "t h(NE_NWE)",
+        "FSMC_NWE high to FSMC_NE high hold time",
+        "T - 1 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(A_NWE)",
+        "Address hold time after FSMC_NWE high",
+        "T - 0.5 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(BL_NE)",
+        "FSMC_NEx low to FSMC_BL valid",
+        "-",
+        "1",
+        "ns"
+      ],
+      [
+        "t h(BL_NWE)",
+        "FSMC_BL hold time after FSMC_NWE high",
+        "T - 1 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(Data_NE)",
+        "Data to FSMC_NEx low to Data valid",
+        "-",
+        "KLCH 2 + T",
+        "ns"
+      ],
+      [
+        "t h(Data_NWE)",
+        "Data hold time after FSMC_NWE high",
+        "KLCH 5.0 + T",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(NADV_NE)",
+        "FSMC_NEx low to FSMC_NADV low",
+        "-",
+        "1",
+        "ns"
+      ],
+      [
+        "t w(NADV)",
+        "FSMC_NADV low time",
+        "-",
+        "KLCH 5.0 + T",
+        "ns"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

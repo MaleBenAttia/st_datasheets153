@@ -1,0 +1,243 @@
+{
+  "table_id": "table_58",
+  "document": "DS10212 Rev 6 - Table 58. DAC characteristics",
+  "rev": "Rev 6",
+  "table_number": "58",
+  "title": "Table 58. DAC characteristics",
+  "page": 86,
+  "section": "6.3.16 DAC electrical specifications",
+  "section_title": "DAC electrical specifications",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f078cb.pdf#page=86",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f078cb.pdf",
+  "text_helper": "Table 58. DAC characteristics — section 6.3.16 DAC electrical specifications. Symbol, Parameter, Min, Typ, Max, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit",
+      "Comments"
+    ],
+    "rows": [
+      [
+        "V DDA",
+        "Analog supply voltage for DAC ON",
+        "2.4",
+        "-",
+        "3.6",
+        "V",
+        "-"
+      ],
+      [
+        "R (1) LOAD",
+        "Resistive load with buffer ON",
+        "5",
+        "-",
+        "-",
+        "kΩ",
+        "Load connected to V SSA"
+      ],
+      [
+        "R (1) LOAD",
+        "Resistive load with buffer ON",
+        "25",
+        "-",
+        "-",
+        "kΩ",
+        "Load connected to V DDA"
+      ],
+      [
+        "R (1) O",
+        "Impedance output with buffer OFF",
+        "-",
+        "-",
+        "15",
+        "kΩ",
+        "When the buffer is OFF, the Minimum resistive load between DAC_OUT and V to have a SS 1% accuracy is 1.5 MΩ"
+      ],
+      [
+        "C (1) LOAD",
+        "Capacitive load",
+        "-",
+        "-",
+        "50",
+        "pF",
+        "Maximum capacitive load at DAC_OUT pin (when the buffer is ON)."
+      ],
+      [
+        "DAC_OUT min(1)",
+        "Lower DAC_OUT voltage with buffer ON",
+        "0.2",
+        "-",
+        "-",
+        "V",
+        "It gives the maximum output excursion of the DAC. It corresponds to 12-bit input code (0x0E0) to (0xF1C) at V = 3.6 V and (0x155) and DDA (0xEAB) at V = 2.4 V DDA"
+      ],
+      [
+        "DAC_OUT max(1)",
+        "Higher DAC_OUT voltage with buffer ON",
+        "-",
+        "-",
+        "V – 0.2 DDA",
+        "V",
+        "It gives the maximum output excursion of the DAC. It corresponds to 12-bit input code (0x0E0) to (0xF1C) at V = 3.6 V and (0x155) and DDA (0xEAB) at V = 2.4 V DDA"
+      ],
+      [
+        "DAC_OUT min(1)",
+        "Lower DAC_OUT voltage with buffer OFF",
+        "-",
+        "0.5",
+        "-",
+        "mV",
+        "It gives the maximum output excursion of the DAC."
+      ],
+      [
+        "DAC_OUT max(1)",
+        "Higher DAC_OUT voltage with buffer OFF",
+        "-",
+        "-",
+        "V – 1LSB DDA",
+        "V",
+        "It gives the maximum output excursion of the DAC."
+      ],
+      [
+        "I (1) DDA",
+        "DAC DC current consumption in quiescent mode(2)",
+        "-",
+        "-",
+        "600",
+        "µA",
+        "With no load, middle code (0x800) on the input"
+      ],
+      [
+        "I (1) DDA",
+        "DAC DC current consumption in quiescent mode(2)",
+        "-",
+        "-",
+        "700",
+        "µA",
+        "With no load, worst code (0xF1C) on the input"
+      ],
+      [
+        "DNL(3)",
+        "Differential non linearity Difference between two consecutive code-1LSB)",
+        "-",
+        "-",
+        "±0.5",
+        "LSB",
+        "Given for the DAC in 10-bit configuration"
+      ],
+      [
+        "DNL(3)",
+        "Differential non linearity Difference between two consecutive code-1LSB)",
+        "-",
+        "-",
+        "±2",
+        "LSB",
+        "Given for the DAC in 12-bit configuration"
+      ],
+      [
+        "INL(3)",
+        "Integral non linearity (difference between measured value at Code i and the value at Code i on a line drawn between Code 0 and last Code 1023)",
+        "-",
+        "-",
+        "±1",
+        "LSB",
+        "Given for the DAC in 10-bit configuration"
+      ],
+      [
+        "INL(3)",
+        "Integral non linearity (difference between measured value at Code i and the value at Code i on a line drawn between Code 0 and last Code 1023)",
+        "-",
+        "-",
+        "±4",
+        "LSB",
+        "Given for the DAC in 12-bit configuration"
+      ],
+      [
+        "Offset(3)",
+        "Offset error (difference between measured value at Code (0x800) and the ideal value = V /2) DDA",
+        "-",
+        "-",
+        "±10",
+        "mV",
+        "-"
+      ],
+      [
+        "Offset(3)",
+        "Offset error (difference between measured value at Code (0x800) and the ideal value = V /2) DDA",
+        "-",
+        "-",
+        "±3",
+        "LSB",
+        "Given for the DAC in 10-bit at V = 3.6 V DDA"
+      ],
+      [
+        "Offset(3)",
+        "Offset error (difference between measured value at Code (0x800) and the ideal value = V /2) DDA",
+        "-",
+        "-",
+        "±12",
+        "LSB",
+        "Given for the DAC in 12-bit at V = 3.6 V DDA"
+      ],
+      [
+        "Gain error(3)",
+        "Gain error",
+        "-",
+        "-",
+        "±0.5",
+        "%",
+        "Given for the DAC in 12-bit configuration"
+      ],
+      [
+        "t (3) SETTLING",
+        "Settling time (full scale: for a 10-bit input code transition between the lowest and the highest input codes when DAC_OUT reaches final value ±1LSB",
+        "-",
+        "3",
+        "4",
+        "µs",
+        "DAOL DAOL Ωk 5 ≥ R ,Fp 05 ≤ C"
+      ],
+      [
+        "Update rate(3)",
+        "Max frequency for a correct DAC_OUT change when small variation in the input code (from code i to i+1LSB)",
+        "-",
+        "-",
+        "1",
+        "MS/s",
+        "DAOL DAOL Ωk 5 ≥ R ,Fp 05 ≤ C"
+      ],
+      [
+        "t (3) WAKEUP",
+        "Wakeup time from off state (Setting the ENx bit in the DAC Control register)",
+        "-",
+        "6.5",
+        "10",
+        "µs",
+        "C ≤ 50 pF, R ≥ 5 kΩ LOAD LOAD input code between lowest and highest possible ones."
+      ],
+      [
+        "PSRR+ (1)",
+        "Power supply rejection ratio (to V ) (static DC DDA measurement",
+        "-",
+        "–67",
+        "–40",
+        "dB",
+        "No R , C = 50 pF LOAD LOAD"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by design, not tested in production.",
+      "2. The DAC is in “quiescent mode” when it keeps the value steady on the output so no dynamic consumption is involved.",
+      "3. Data based on characterization results, not tested in production."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

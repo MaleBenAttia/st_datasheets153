@@ -1,0 +1,413 @@
+{
+  "table_id": "table_17",
+  "document": "DS9484 Rev 14 - Table 17. General operating conditions",
+  "rev": "Rev 14",
+  "table_number": "17",
+  "title": "Table 17. General operating conditions",
+  "page": 95,
+  "section": "6.3.1 General operating conditions",
+  "section_title": "General operating conditions",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f437ai.pdf#page=95",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f437ai.pdf",
+  "text_helper": "Table 17. General operating conditions — section 6.3.1 General operating conditions. Symbol, Parameter, Conditions(1), Conditions(1), Min, +3 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions(1)",
+      "Conditions(1)",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f HCLK",
+        "Internal AHB clock frequency",
+        "Power Scale 3 (VOS[1:0] bits in PWR_CR register = 0x01), Regulator ON, over-drive OFF",
+        "Power Scale 3 (VOS[1:0] bits in PWR_CR register = 0x01), Regulator ON, over-drive OFF",
+        "0",
+        "-",
+        "120",
+        "MHz"
+      ],
+      [
+        "f HCLK",
+        "Internal AHB clock frequency",
+        "Power Scale 2 (VOS[1:0] bits in PWR_CR register = 0x10), Regulator ON",
+        "Over- drive OFF",
+        "0",
+        "-",
+        "144",
+        "MHz"
+      ],
+      [
+        "f HCLK",
+        "Internal AHB clock frequency",
+        "Power Scale 2 (VOS[1:0] bits in PWR_CR register = 0x10), Regulator ON",
+        "Over- drive ON",
+        "0",
+        "-",
+        "168",
+        "MHz"
+      ],
+      [
+        "f HCLK",
+        "Internal AHB clock frequency",
+        "Power Scale 1 (VOS[1:0] bits in PWR_CR register= 0x11), Regulator ON",
+        "Over- drive OFF",
+        "0",
+        "-",
+        "168",
+        "MHz"
+      ],
+      [
+        "f HCLK",
+        "Internal AHB clock frequency",
+        "Power Scale 1 (VOS[1:0] bits in PWR_CR register= 0x11), Regulator ON",
+        "Over- drive ON",
+        "0",
+        "-",
+        "180",
+        "MHz"
+      ],
+      [
+        "f PCLK1",
+        "Internal APB1 clock frequency",
+        "Over-drive OFF",
+        "Over-drive OFF",
+        "0",
+        "-",
+        "42",
+        "MHz"
+      ],
+      [
+        "f PCLK1",
+        "Internal APB1 clock frequency",
+        "Over-drive ON",
+        "Over-drive ON",
+        "0",
+        "-",
+        "45",
+        "MHz"
+      ],
+      [
+        "f PCLK2",
+        "Internal APB2 clock frequency",
+        "Over-drive OFF",
+        "Over-drive OFF",
+        "0",
+        "-",
+        "84",
+        "MHz"
+      ],
+      [
+        "f PCLK2",
+        "Internal APB2 clock frequency",
+        "Over-drive ON",
+        "Over-drive ON",
+        "0",
+        "-",
+        "90",
+        "MHz"
+      ],
+      [
+        "V DD",
+        "Standard operating voltage",
+        "Over-drive ON",
+        "Over-drive ON",
+        "1.7(2)",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DDA (3)(4)",
+        "Analog operating voltage (ADC limited to 1.2 M samples)",
+        "Must be the same potential as V (5) DD",
+        "Must be the same potential as V (5) DD",
+        "1.7(2)",
+        "-",
+        "2.4",
+        "V"
+      ],
+      [
+        "V DDA (3)(4)",
+        "Analog operating voltage (ADC limited to 2.4 M samples)",
+        "Must be the same potential as V (5) DD",
+        "Must be the same potential as V (5) DD",
+        "2.4",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V BAT",
+        "Backup operating voltage",
+        "Must be the same potential as V (5) DD",
+        "Must be the same potential as V (5) DD",
+        "1.65",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V 12",
+        "Regulator ON: 1.2V internal voltage on V /V pins CAP_1 CAP_2",
+        "Power Scale 3 ((VOS[1:0] bits in PWR_CR register = 0x01), 120MHz HCLK max frequency",
+        "Power Scale 3 ((VOS[1:0] bits in PWR_CR register = 0x01), 120MHz HCLK max frequency",
+        "1.08",
+        "1.14",
+        "1.20",
+        "V"
+      ],
+      [
+        "V 12",
+        "Regulator ON: 1.2V internal voltage on V /V pins CAP_1 CAP_2",
+        "Power Scale 2 ((VOS[1:0] bits in PWR_CR register = 0x10), 144MHz HCLK max frequency with over-drive OFF or 168MHz with over-drive ON",
+        "Power Scale 2 ((VOS[1:0] bits in PWR_CR register = 0x10), 144MHz HCLK max frequency with over-drive OFF or 168MHz with over-drive ON",
+        "1.20",
+        "1.26",
+        "1.32",
+        "V"
+      ],
+      [
+        "V 12",
+        "Regulator ON: 1.2V internal voltage on V /V pins CAP_1 CAP_2",
+        "Power Scale 1 ((VOS[1:0] bits in PWR_CR register = 0x11), 168MHz HCLK max frequency with over-drive OFF or 180MHz with over-drive ON",
+        "Power Scale 1 ((VOS[1:0] bits in PWR_CR register = 0x11), 168MHz HCLK max frequency with over-drive OFF or 180MHz with over-drive ON",
+        "1.26",
+        "1.32",
+        "1.40",
+        "V"
+      ],
+      [
+        "V 12",
+        "Regulator OFF: 1.2V external voltage must be supplied from external regulator on V /V pins(6) CAP_1 CAP_2",
+        "Max frequency 120MHz",
+        "Max frequency 120MHz",
+        "1.10",
+        "1.14",
+        "1.20",
+        "V"
+      ],
+      [
+        "V 12",
+        "Regulator OFF: 1.2V external voltage must be supplied from external regulator on V /V pins(6) CAP_1 CAP_2",
+        "Max frequency 144MHz",
+        "Max frequency 144MHz",
+        "1.20",
+        "1.26",
+        "1.32",
+        "V"
+      ],
+      [
+        "V 12",
+        "Regulator OFF: 1.2V external voltage must be supplied from external regulator on V /V pins(6) CAP_1 CAP_2",
+        "Max frequency 168MHz",
+        "Max frequency 168MHz",
+        "1.26",
+        "1.32",
+        "1.38",
+        "V"
+      ],
+      [
+        "V IN",
+        "Input voltage on RST and FT pins(7)",
+        "2V ≤ V ≤ 3.6V DD",
+        "2V ≤ V ≤ 3.6V DD",
+        "-0.3",
+        "-",
+        "5.5",
+        "V"
+      ],
+      [
+        "None",
+        "None",
+        "V ≤ 2V DD",
+        "V ≤ 2V DD",
+        "-0.3",
+        "-",
+        "5.2",
+        "None"
+      ],
+      [
+        "None",
+        "Input voltage on TTa pins",
+        "Input voltage on TTa pins",
+        "Input voltage on TTa pins",
+        "-0.3",
+        "-",
+        "V + DDA 0.3",
+        "None"
+      ],
+      [
+        "None",
+        "Input voltage on BOOT0 pin",
+        "Input voltage on BOOT0 pin",
+        "Input voltage on BOOT0 pin",
+        "0",
+        "-",
+        "9",
+        "None"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 85°C A for suffix 6 or T = 105°C for A suffix 7(8)",
+        "LQFP100",
+        "LQFP100",
+        "-",
+        "-",
+        "465",
+        "mW"
+      ],
+      [
+        "None",
+        "None",
+        "WLCSP143",
+        "WLCSP143",
+        "-",
+        "-",
+        "641",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "LQFP144",
+        "LQFP144",
+        "-",
+        "-",
+        "500",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "UFBGA169",
+        "UFBGA169",
+        "-",
+        "-",
+        "385",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "LQFP176",
+        "LQFP176",
+        "-",
+        "-",
+        "526",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "UFBGA176",
+        "UFBGA176",
+        "-",
+        "-",
+        "513",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "LQFP208",
+        "LQFP208",
+        "-",
+        "-",
+        "1053",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "TFBGA216",
+        "TFBGA216",
+        "-",
+        "-",
+        "690",
+        "None"
+      ],
+      [
+        "TA",
+        "Ambient temperature for 6 suffix version",
+        "Maximum power dissipation",
+        "Maximum power dissipation",
+        "-40",
+        "-",
+        "85",
+        "°C"
+      ],
+      [
+        "None",
+        "None",
+        "Low power dissipation(9)",
+        "Low power dissipation(9)",
+        "-40",
+        "-",
+        "105",
+        "None"
+      ],
+      [
+        "None",
+        "Ambient temperature for 7 suffix version",
+        "Maximum power dissipation",
+        "Maximum power dissipation",
+        "-40",
+        "-",
+        "105",
+        "°C"
+      ],
+      [
+        "None",
+        "None",
+        "Low power dissipation(9)",
+        "Low power dissipation(9)",
+        "-40",
+        "-",
+        "125",
+        "None"
+      ],
+      [
+        "TJ",
+        "Junction temperature range",
+        "6 suffix version",
+        "6 suffix version",
+        "-40",
+        "-",
+        "105",
+        "°C"
+      ],
+      [
+        "None",
+        "None",
+        "7 suffix version",
+        "7 suffix version",
+        "-40",
+        "-",
+        "125",
+        "None"
+      ]
+    ],
+    "notes": [
+      "1. The overdrive mode is not supported at the voltage ranges from 1.7 to 2.1V.",
+      "2. V /V minimum value of 1.7V is obtained with the use of an external power supply supervisor (refer to Section3.17.2: DD DDA",
+      "3. When the ADC is used, refer to Table75: ADC characteristics.",
+      "4. If a V pin is present, it must respect the following condition: V -V < 1.2V. REF+ DDA REF+",
+      "5. It is recommended to power V and V from the same source. A maximum difference of 300mV between V and V DD DDA DD DDA",
+      "6. The overdrive mode is not supported when the internal regulator is OFF.",
+      "7. To sustain a voltage higher than VDD+0.3, the internal pull-up and pull-down resistors must be disabled",
+      "8. If T is lower, higher P values are allowed as long as T does not exceed T . A D J Jmax",
+      "9. In low-power dissipation state, T can be extended to this range as long as T does not exceed T . A J Jmax"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

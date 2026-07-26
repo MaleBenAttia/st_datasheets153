@@ -1,0 +1,135 @@
+{
+  "table_id": "table_48",
+  "document": "DS5944 Rev 11 - Table 48. I2C characteristics",
+  "rev": "Rev 11",
+  "table_number": "48",
+  "title": "Table 48. I2C characteristics",
+  "page": 79,
+  "section": "5.3.17 Communications interfaces",
+  "section_title": "Communications interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f100rc.pdf#page=79",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f100rc.pdf",
+  "text_helper": "Table 48. I2C characteristics — section 5.3.17 Communications interfaces. Symbol, Parameter, Standard mode I2C(1) / Min, Standard mode I2C(1) / Max, Fast mode I2C(1)(2) / Min, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Standard mode I2C(1) / Min",
+      "Standard mode I2C(1) / Max",
+      "Fast mode I2C(1)(2) / Min",
+      "Fast mode I2C(1)(2) / Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t w(SCLL)",
+        "SCL clock low time",
+        "4.7",
+        "-",
+        "1.3",
+        "-",
+        "µs"
+      ],
+      [
+        "t w(SCLH)",
+        "SCL clock high time",
+        "4.0",
+        "-",
+        "0.6",
+        "-",
+        "µs"
+      ],
+      [
+        "t su(SDA)",
+        "SDA setup time",
+        "250",
+        "-",
+        "100",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(SDA)",
+        "SDA data hold time",
+        "0",
+        "-",
+        "0",
+        "900(3)",
+        "ns"
+      ],
+      [
+        "t r(SDA) t r(SCL)",
+        "SDA and SCL rise time",
+        "-",
+        "1000",
+        "-",
+        "300",
+        "ns"
+      ],
+      [
+        "t f(SDA) t f(SCL)",
+        "SDA and SCL fall time",
+        "-",
+        "300",
+        "-",
+        "300",
+        "ns"
+      ],
+      [
+        "t h(STA)",
+        "Start condition hold time",
+        "4.0",
+        "-",
+        "0.6",
+        "-",
+        "µs"
+      ],
+      [
+        "t su(STA)",
+        "Repeated Start condition setup time",
+        "4.7",
+        "-",
+        "0.6",
+        "-",
+        "µs"
+      ],
+      [
+        "t su(STO)",
+        "Stop condition setup time",
+        "4.0",
+        "-",
+        "0.6",
+        "-",
+        "µs"
+      ],
+      [
+        "t w(STO:STA)",
+        "Stop to Start condition time (bus free)",
+        "4.7",
+        "-",
+        "1.3",
+        "-",
+        "µs"
+      ],
+      [
+        "C b",
+        "Capacitive load for each bus line",
+        "-",
+        "400",
+        "-",
+        "400",
+        "pF"
+      ]
+    ],
+    "notes": [
+      "1. Measurement points are done at CMOS levels: 0.3V and 0.7V DD DD.",
+      "2. For speeds around 400 kHz, the tolerance on the achieved speed is of ±2%. For other speed ranges, the tolerance on the achieved speed ±1%. These variations depend on the accuracy of the external",
+      "3. Guaranteed by design, not tested in production. 80/107 DS5944 Rev 11"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

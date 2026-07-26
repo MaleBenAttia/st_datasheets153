@@ -1,0 +1,97 @@
+{
+  "table_id": "table_28",
+  "document": "DS12324 Rev 3 - Table 28. Average current consumption during wakeup",
+  "rev": "Rev 3",
+  "table_number": "28",
+  "title": "Table 28. Average current consumption during wakeup",
+  "page": 51,
+  "section": "6.3.4 Supply current characteristics",
+  "section_title": "Supply current characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l010c6.pdf#page=51",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l010c6.pdf",
+  "text_helper": "Table 28. Average current consumption during wakeup — section 6.3.4 Supply current characteristics. Symbol, Parameter, System frequency, Current consumption during wakeup, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "System frequency",
+      "Current consumption during wakeup",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I (wakeup from Stop) DD",
+        "Supply current during wakeup from Stop mode",
+        "HSI",
+        "1",
+        "mA"
+      ],
+      [
+        "I (wakeup from Stop) DD",
+        "Supply current during wakeup from Stop mode",
+        "HSI/4",
+        "0,7",
+        "mA"
+      ],
+      [
+        "I (wakeup from Stop) DD",
+        "Supply current during wakeup from Stop mode",
+        "zHM2,4 ISM",
+        "0,7",
+        "mA"
+      ],
+      [
+        "I (wakeup from Stop) DD",
+        "Supply current during wakeup from Stop mode",
+        "zHM50,1 ISM",
+        "0,4",
+        "mA"
+      ],
+      [
+        "I (wakeup from Stop) DD",
+        "Supply current during wakeup from Stop mode",
+        "zHK56 ISM",
+        "0,1",
+        "mA"
+      ],
+      [
+        "I (Reset) DD",
+        "Reset pin pulled down",
+        "-",
+        "0,21",
+        "mA"
+      ],
+      [
+        "I (Power up) DD",
+        "BOR ON",
+        "-",
+        "0,23",
+        "mA"
+      ],
+      [
+        "I (wakeup from Standby) DD",
+        "With fast wakeup set",
+        "zHM1,2 ISM",
+        "0,5",
+        "mA"
+      ],
+      [
+        "I (wakeup from Standby) DD",
+        "With fast wakeup disabled",
+        "zHM1,2 ISM",
+        "0,12",
+        "mA"
+      ]
+    ],
+    "notes": [
+      "1. Data based on differential I measurement between all peripherals OFF an one peripheral with clock enabled, in the DD",
+      "2. HSI oscillator is OFF for this measure.",
+      "3. These values correspond to the Flash memory configuration interface consumption, which is negligible. To assess true Flash memory consumption, compare relevant figures, like for example Table19 and Table21."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

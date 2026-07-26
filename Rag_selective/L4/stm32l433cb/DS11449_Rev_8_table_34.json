@@ -1,0 +1,92 @@
+{
+  "table_id": "table_34",
+  "document": "DS11449 Rev 8 - Table 34. Typical current consumption in Run, with different codes running from flash, ART enable (Cache ON Prefetch OFF) and power supplied by external SMPS (VDD12 = 1.05 V)",
+  "rev": "Rev 8",
+  "table_number": "34",
+  "title": "Table 34. Typical current consumption in Run, with different codes running from flash, ART enable (Cache ON Prefetch OFF) and power supplied by external SMPS (VDD12 = 1.05 V)",
+  "page": 109,
+  "section": "6.3.5 Supply current characteristics",
+  "section_title": "Supply current characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l433cb.pdf#page=109",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l433cb.pdf",
+  "text_helper": "Table 34. Typical current consumption in Run, with different codes running from flash, ART enable (Cache ON Prefetch OFF) and power supplied by external SMPS (VDD12 = 1.05 V) — section 6.3.5 Supply current characteristics. Symbol, Parameter, Conditions(1) / -, Conditions(1) / Voltage scaling, Con...",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions(1) / -",
+      "Conditions(1) / Voltage scaling",
+      "Conditions(1) / Code",
+      "TYP / 25 °C",
+      "Unit",
+      "TYP / 25 °C",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I DD_ALL (Run)",
+        "Supply current in Run mode",
+        "f = f up to HCLK HSE 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disable",
+        "fHCLK = 26 MHz",
+        "Reduced code(2)",
+        "0.93",
+        "mA",
+        "36",
+        "µA/MHz"
+      ],
+      [
+        "I DD_ALL (Run)",
+        "Supply current in Run mode",
+        "f = f up to HCLK HSE 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disable",
+        "fHCLK = 26 MHz",
+        "Coremark",
+        "1.06",
+        "mA",
+        "41",
+        "µA/MHz"
+      ],
+      [
+        "I DD_ALL (Run)",
+        "Supply current in Run mode",
+        "f = f up to HCLK HSE 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disable",
+        "fHCLK = 26 MHz",
+        "Dhrystone 2.1",
+        "1.08",
+        "mA",
+        "41",
+        "µA/MHz"
+      ],
+      [
+        "I DD_ALL (Run)",
+        "Supply current in Run mode",
+        "f = f up to HCLK HSE 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disable",
+        "fHCLK = 26 MHz",
+        "Fibonacci",
+        "1.01",
+        "mA",
+        "39",
+        "µA/MHz"
+      ],
+      [
+        "I DD_ALL (Run)",
+        "Supply current in Run mode",
+        "f = f up to HCLK HSE 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disable",
+        "fHCLK = 26 MHz",
+        "While(1)",
+        "0.90",
+        "mA",
+        "35",
+        "µA/MHz"
+      ]
+    ],
+    "notes": [
+      "1. All values are obtained by calculation based on measurements done without SMPS and using following parameters: SMPS input = 3.3 V, SMPS efficiency = 85%, V = 1.10 V",
+      "2. Reduced code used for characterization results provided in Table 26, Table 28, Table 30."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "table_id": "table_52",
+  "document": "DS8626 Rev 12 - Table 52. Characteristics of TIMx connected to the APB1 domain",
+  "rev": "Rev 12",
+  "table_number": "52",
+  "title": "Table 52. Characteristics of TIMx connected to the APB1 domain",
+  "page": 122,
+  "section": "6.3.18 TIM timer characteristics",
+  "section_title": "TIM timer characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f405oe.pdf#page=122",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f405oe.pdf",
+  "text_helper": "Table 52. Characteristics of TIMx connected to the APB1 domain — section 6.3.18 TIM timer characteristics. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APB1 prescaler distinct from 1, f = TIMxCLK 84 MHz",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APB1 prescaler distinct from 1, f = TIMxCLK 84 MHz",
+        "11.9",
+        "-",
+        "ns"
+      ],
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APB1 prescaler = 1, f = 42 MHz TIMxCLK",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APB1 prescaler = 1, f = 42 MHz TIMxCLK",
+        "23.8",
+        "-",
+        "ns"
+      ],
+      [
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "f = 84 MHz TIMxCLK APB1= 42 MHz",
+        "0",
+        "f /2 TIMxCLK",
+        "MHz"
+      ],
+      [
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "f = 84 MHz TIMxCLK APB1= 42 MHz",
+        "0",
+        "42",
+        "MHz"
+      ],
+      [
+        "Res TIM",
+        "Timer resolution",
+        "f = 84 MHz TIMxCLK APB1= 42 MHz",
+        "-",
+        "16/32",
+        "bit"
+      ],
+      [
+        "t COUNTER",
+        "16-bit counter clock period when internal clock is selected",
+        "f = 84 MHz TIMxCLK APB1= 42 MHz",
+        "1",
+        "65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t COUNTER",
+        "16-bit counter clock period when internal clock is selected",
+        "f = 84 MHz TIMxCLK APB1= 42 MHz",
+        "0.0119",
+        "780",
+        "µs"
+      ],
+      [
+        "t COUNTER",
+        "32-bit counter clock period when internal clock is selected",
+        "f = 84 MHz TIMxCLK APB1= 42 MHz",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "t COUNTER",
+        "32-bit counter clock period when internal clock is selected",
+        "f = 84 MHz TIMxCLK APB1= 42 MHz",
+        "0.0119",
+        "51130563",
+        "µs"
+      ],
+      [
+        "t MAX_COUNT",
+        "Maximum possible count",
+        "f = 84 MHz TIMxCLK APB1= 42 MHz",
+        "-",
+        "65536 × 65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t MAX_COUNT",
+        "Maximum possible count",
+        "f = 84 MHz TIMxCLK APB1= 42 MHz",
+        "-",
+        "51.1",
+        "s"
+      ]
+    ],
+    "notes": [
+      "1. TIMx is used as a general term to refer to the TIM2, TIM3, TIM4, TIM5, TIM6, TIM7, and TIM12 timers. 122/206 DS8626 Rev 12",
+      "2. Spikes with widths below t are filtered. AF(min)",
+      "3. Spikes with widths above t are not filtered AF(max)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

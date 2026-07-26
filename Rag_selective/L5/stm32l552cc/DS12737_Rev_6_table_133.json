@@ -1,0 +1,67 @@
+{
+  "table_id": "table_133",
+  "document": "DS12737 Rev 6 - Table 133. Asynchronous non-multiplexed SRAM/PSRAM/NOR read-NWAIT timings",
+  "rev": "Rev 6",
+  "table_number": "133",
+  "title": "Table 133. Asynchronous non-multiplexed SRAM/PSRAM/NOR read-NWAIT timings",
+  "page": 281,
+  "section": "5.3.30 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l552cc.pdf#page=281",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l552cc.pdf",
+  "text_helper": "Table 133. Asynchronous non-multiplexed SRAM/PSRAM/NOR read-NWAIT timings — section 5.3.30 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "tw(NE)",
+        "FMC_NE low time",
+        "8THCLK-0.5",
+        "8THCLK+1",
+        "ns"
+      ],
+      [
+        "tw(NOE)",
+        "FMC_NWE low time",
+        "7THCLK -0.5",
+        "7THCLK +0.5",
+        "ns"
+      ],
+      [
+        "tw(NWAIT)",
+        "FMC_NWAIT low time",
+        "THCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "tsu(NWAIT_NE)",
+        "FMC_NWAIT valid before FMC_NEx high",
+        "5THCLK +12.5",
+        "-",
+        "ns"
+      ],
+      [
+        "th(NE_NWAIT)",
+        "FMC_NEx hold time after FMC_NWAIT invalid",
+        "4THCLK+12",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [],
+    "legend": [
+      "timings(1)"
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

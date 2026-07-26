@@ -1,0 +1,57 @@
+{
+  "table_id": "table_45",
+  "document": "DS11144 Rev 8 - Table 45. SSCG parameter constraints",
+  "rev": "Rev 8",
+  "table_number": "45",
+  "title": "Table 45. SSCG parameter constraints",
+  "page": 84,
+  "section": "6.3.11 PLL spread spectrum clock generation (SSCG) characteristics",
+  "section_title": "PLL spread spectrum clock generation (SSCG) characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f410c8.pdf#page=84",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f410c8.pdf",
+  "text_helper": "Table 45. SSCG parameter constraints — section 6.3.11 PLL spread spectrum clock generation (SSCG) characteristics. Symbol, Parameter, Min, Typ, Max(1), +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Typ",
+      "Max(1)",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f Mod",
+        "Modulation frequency",
+        "-",
+        "-",
+        "10",
+        "kHz"
+      ],
+      [
+        "md",
+        "Peak modulation depth",
+        "0.25",
+        "-",
+        "2",
+        "%"
+      ],
+      [
+        "MODEPER * INCSTEP",
+        "(Modulation period) * (Increment Step)",
+        "-",
+        "-",
+        "215-1",
+        "-"
+      ]
+    ],
+    "notes": [
+      "1. Take care of using the appropriate division factor M to obtain the specified PLL input clock values. The M factor is shared between PLL and PLLI2S."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

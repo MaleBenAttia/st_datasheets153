@@ -1,0 +1,108 @@
+{
+  "table_id": "table_19",
+  "document": "DS10315 Rev 7 - Table 19. Current characteristics",
+  "rev": "Rev 7",
+  "table_number": "19",
+  "title": "Table 19. Current characteristics",
+  "page": 48,
+  "section": "6.2 Absolute maximum ratings",
+  "section_title": "Absolute maximum ratings",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f318c8.pdf#page=48",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f318c8.pdf",
+  "text_helper": "Table 19. Current characteristics — section 6.2 Absolute maximum ratings. Symbol, Ratings, Max., Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Ratings",
+      "Max.",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "ΣI VDD",
+        "Total current into sum of all VDD power lines (source)",
+        "130",
+        "mA"
+      ],
+      [
+        "ΣI VSS",
+        "Total current out of sum of all VSS ground lines (sink)",
+        "-130",
+        "mA"
+      ],
+      [
+        "I VDD",
+        "Maximum current into each V power line (source)(1) DD",
+        "100",
+        "mA"
+      ],
+      [
+        "I VSS",
+        "Maximum current out of each V ground line (sink)(1) SS",
+        "-100",
+        "mA"
+      ],
+      [
+        "I IO(PIN)",
+        "Output current sunk by any I/O and control pin",
+        "25",
+        "mA"
+      ],
+      [
+        "I IO(PIN)",
+        "Output current sourced by any I/O and control pin",
+        "-25",
+        "mA"
+      ],
+      [
+        "ΣI IO(PIN)",
+        "Total output current sunk by sum of all IOs and control pins(2)",
+        "80",
+        "mA"
+      ],
+      [
+        "ΣI IO(PIN)",
+        "Total output current sourced by sum of all IOs and control pins(2)",
+        "-80",
+        "mA"
+      ],
+      [
+        "I INJ(PIN)",
+        "Injected current on TT, FT, FTf and B pins(3)",
+        "-5/+0",
+        "mA"
+      ],
+      [
+        "I INJ(PIN)",
+        "Injected current on TC and RST pin(4)",
+        "+/-5",
+        "mA"
+      ],
+      [
+        "I INJ(PIN)",
+        "Injected current on TTa pins(5)",
+        "+/-5",
+        "mA"
+      ],
+      [
+        "ΣI INJ(PIN)",
+        "Total injected current (sum of all I/O and control pins)(6)",
+        "+/-25",
+        "mA"
+      ]
+    ],
+    "notes": [
+      "1. All main power (V , V ) and ground (V andV ) pins must always be connected to the external power supply, in the DD DDA SS SSA",
+      "2. This current consumption must be correctly distributed over all I/Os and control pins.The total output current must not be sunk/sourced between two consecutive power supply pins referring to high pin count LQFP packages.",
+      "3. Positive injection is not possible on these I/Os and does not occur for input voltages lower than the specified maximum value.",
+      "4. A positive injection is induced by V > V while a negative injection is induced by V < V . I must never be IN DD IN SS INJ(PIN)",
+      "5. A positive injection is induced by V > V while a negative injection is induced by V < V . I (PIN) must never be IN DDA IN SS INJ",
+      "6. When several inputs are submitted to a current injection, the maximum ΣI is the absolute sum of the positive and INJ(PIN)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

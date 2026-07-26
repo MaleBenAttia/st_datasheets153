@@ -1,0 +1,138 @@
+{
+  "table_id": "table_99",
+  "document": "DS9405 Rev 13 - Table 99. Switching characteristics for PC Card/CF read and write cycles in attribute/common space",
+  "rev": "Rev 13",
+  "table_number": "99",
+  "title": "Table 99. Switching characteristics for PC Card/CF read and write cycles in attribute/common space",
+  "page": 186,
+  "section": "6.3.26 FMC characteristics",
+  "section_title": "FMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f427ag.pdf#page=186",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f427ag.pdf",
+  "text_helper": "Table 99. Switching characteristics for PC Card/CF read and write cycles in attribute/common space — section 6.3.26 FMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t v(NCEx-A)",
+        "FMC_Ncex low to FMC_Ay valid",
+        "-",
+        "0",
+        "ns"
+      ],
+      [
+        "t h(NCEx_AI)",
+        "FMC_NCEx high to FMC_Ax invalid",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(NREG-NCEx)",
+        "FMC_NCEx low to FMC_NREG valid",
+        "-",
+        "1",
+        "ns"
+      ],
+      [
+        "t h(NCEx-NREG)",
+        "FMC_NCEx high to FMC_NREG invalid",
+        "T -2 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(NCEx-NWE)",
+        "FMC_NCEx low to FMC_NWE low",
+        "-",
+        "5T HCLK",
+        "ns"
+      ],
+      [
+        "t w(NWE)",
+        "FMC_NWE low width",
+        "8T -0.5 HCLK",
+        "8T +0.5 HCLK",
+        "ns"
+      ],
+      [
+        "t d(NWE_NCEx)",
+        "FMC_NWE high to FMC_NCEx high",
+        "5T +1 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t V(NWE-D)",
+        "FMC_NWE low to FMC_D[15:0] valid",
+        "-",
+        "0",
+        "ns"
+      ],
+      [
+        "t h(NWE-D)",
+        "FMC_NWE high to FMC_D[15:0] invalid",
+        "9T -0.5 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(D-NWE)",
+        "FMC_D[15:0] valid before FMC_NWE high",
+        "13T -3 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(NCEx-NOE)",
+        "FMC_NCEx low to FMC_NOE low",
+        "-",
+        "5T HCLK",
+        "ns"
+      ],
+      [
+        "t w(NOE)",
+        "FMC_NOE low width",
+        "8 T -0.5 HCLK",
+        "8 T +0.5 HCLK",
+        "ns"
+      ],
+      [
+        "t d(NOE_NCEx)",
+        "FMC_NOE high to FMC_NCEx high",
+        "5T -1 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t su (D-NOE)",
+        "FMC_D[15:0] valid data before FMC_NOE high",
+        "T HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(NOE-D)",
+        "FMC_NOE high to FMC_D[15:0] invalid",
+        "0",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. C = 30pF. L",
+      "2. Guaranteed by characterization results. 186/240 DS9405 Rev 13"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "table_id": "table_145",
+  "document": "DS12737 Rev 6 - Table 145. Switching characteristics for NAND Flash write cycles",
+  "rev": "Rev 6",
+  "table_number": "145",
+  "title": "Table 145. Switching characteristics for NAND Flash write cycles",
+  "page": 297,
+  "section": "1.5 Ns",
+  "section_title": "Ns",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l552cc.pdf#page=297",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l552cc.pdf",
+  "text_helper": "Table 145. Switching characteristics for NAND Flash write cycles — section 1.5 Ns. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "Tw(NWE)",
+        "FMC_NWE low width",
+        "4THCLK - 0.5",
+        "4THCLK+0.5",
+        "ns"
+      ],
+      [
+        "Tv(NWE-D)",
+        "FMC_NWE low to FMC_D[15-0] valid",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "Th(NWE-D)",
+        "FMC_NWE high to FMC_D[15-0] invalid",
+        "2THCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "Td(D-NWE)",
+        "FMC_D[15-0] valid before FMC_NWE high",
+        "5THCLK - 1",
+        "-",
+        "ns"
+      ],
+      [
+        "Td(ALE_NWE)",
+        "FMC_ALE valid before FMC_NWE low",
+        "-",
+        "3THCLK-1",
+        "ns"
+      ],
+      [
+        "Th(NWE-ALE)",
+        "FMC_NWE high to FMC_ALE invalid",
+        "3THCLK-0.5",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization results, not tested in production. DS12737 Rev 6 297/340",
+      "2. Guaranteed by characterization results. 298/340 DS12737 Rev 6"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

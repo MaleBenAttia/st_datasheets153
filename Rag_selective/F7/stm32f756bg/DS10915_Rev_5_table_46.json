@@ -1,0 +1,154 @@
+{
+  "table_id": "table_46",
+  "document": "DS10915 Rev 5 - Table 46. PLLISAI characteristics",
+  "rev": "Rev 5",
+  "table_number": "46",
+  "title": "Table 46. PLLISAI characteristics",
+  "page": 136,
+  "section": "6.3.11 PLL characteristics",
+  "section_title": "PLL characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f756bg.pdf#page=136",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f756bg.pdf",
+  "text_helper": "Table 46. PLLISAI characteristics — section 6.3.11 PLL characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f PLLSAI_IN",
+        "PLLSAI input clock(1)",
+        "-",
+        "0.95(2)",
+        "1",
+        "2.10",
+        "MHz"
+      ],
+      [
+        "f PLLSAIP_OUT",
+        "PLLSAI multiplier output clock for 48 MHz",
+        "-",
+        "-",
+        "48",
+        "75",
+        "MHz"
+      ],
+      [
+        "f PLLSAIQ_OUT",
+        "PLLSAI multiplier output clock for SAI",
+        "-",
+        "-",
+        "-",
+        "216",
+        "MHz"
+      ],
+      [
+        "f PLLSAIR_OUT",
+        "PLLSAI multiplier output clock for LCD-TFT",
+        "-",
+        "-",
+        "-",
+        "216",
+        "MHz"
+      ],
+      [
+        "f VCO_OUT",
+        "PLLSAI VCO output",
+        "-",
+        "100",
+        "-",
+        "432",
+        "MHz"
+      ],
+      [
+        "t LOCK",
+        "PLLSAI lock time",
+        "VCO freq = 100 MHz",
+        "75",
+        "-",
+        "200",
+        "µs"
+      ],
+      [
+        "t LOCK",
+        "PLLSAI lock time",
+        "VCO freq = 432 MHz",
+        "100",
+        "-",
+        "300",
+        "µs"
+      ],
+      [
+        "Jitter(3)",
+        "Master SAI clock jitter",
+        "Cycle to cycle at 12.288 MHz on 48KHz period, N=432, R=5",
+        "RMS",
+        "-",
+        "90",
+        "-"
+      ],
+      [
+        "Jitter(3)",
+        "Master SAI clock jitter",
+        "peak to peak",
+        "-",
+        "±280",
+        "-",
+        "ps"
+      ],
+      [
+        "Jitter(3)",
+        "Master SAI clock jitter",
+        "Average frequency of 12.288 MHz N = 432, R = 5 on 1000 samples",
+        "-",
+        "90",
+        "-",
+        "ps"
+      ],
+      [
+        "Jitter(3)",
+        "FS clock jitter",
+        "Cycle to cycle at 48 KHz on 1000 samples",
+        "-",
+        "400",
+        "-",
+        "ps"
+      ],
+      [
+        "I (4) DD(PLLSAI)",
+        "PLLSAI power consumption on V DD",
+        "VCO freq = 100 MHz VCO freq = 432 MHz",
+        "0.15 0.45",
+        "-",
+        "0.40 0.75",
+        "mA"
+      ],
+      [
+        "I (4) DDA(PLLSAI)",
+        "PLLSAI power consumption on V DDA",
+        "VCO freq = 100 MHz VCO freq = 432 MHz",
+        "0.30 0.55",
+        "-",
+        "0.40 0.85",
+        "mA"
+      ]
+    ],
+    "notes": [
+      "1. Take care of using the appropriate division factor M to have the specified PLL input clock values.",
+      "2. Guaranteed by design.",
+      "3. Value given with main PLL running.",
+      "4. Guaranteed by characterization results."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

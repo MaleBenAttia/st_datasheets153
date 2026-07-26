@@ -1,0 +1,130 @@
+{
+  "table_id": "table_143",
+  "document": "DS12736 Rev 5 - Table 143. Synchronous non-multiplexed PSRAM write timings",
+  "rev": "Rev 5",
+  "table_number": "143",
+  "title": "Table 143. Synchronous non-multiplexed PSRAM write timings",
+  "page": 299,
+  "section": "1.5 Ns",
+  "section_title": "Ns",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l562ce.pdf#page=299",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l562ce.pdf",
+  "text_helper": "Table 143. Synchronous non-multiplexed PSRAM write timings — section 1.5 Ns. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "tw(CLK)",
+        "FMC_CLK period",
+        "R*THCLK-0.5(2)",
+        "-",
+        "ns"
+      ],
+      [
+        "td(CLKL-NExL)",
+        "FMC_CLK low to FMC_NEx low (x=0..2)",
+        "-",
+        "2.5",
+        "ns"
+      ],
+      [
+        "td(CLKH-NExH)",
+        "FMC_CLK high to FMC_NEx high (x= 0…2)",
+        "R*THCLK/2 +1(2)",
+        "-",
+        "ns"
+      ],
+      [
+        "td(CLKL-NADVL)",
+        "FMC_CLK low to FMC_NADV low",
+        "-",
+        "2.5",
+        "ns"
+      ],
+      [
+        "td(CLKL-NADVH)",
+        "FMC_CLK low to FMC_NADV high",
+        "2",
+        "-",
+        "ns"
+      ],
+      [
+        "td(CLKL-AV)",
+        "FMC_CLK low to FMC_Ax valid (x=0…25)",
+        "-",
+        "5.5",
+        "ns"
+      ],
+      [
+        "td(CLKH-AIV)",
+        "FMC_CLK high to FMC_Ax invalid (x=0…25)",
+        "R*THCLK/2+0.5(2)",
+        "-",
+        "ns"
+      ],
+      [
+        "td(CLKL-NWEL)",
+        "FMC_CLK low to FMC_NWE low",
+        "-",
+        "2",
+        "ns"
+      ],
+      [
+        "td(CLKH-NWEH)",
+        "FMC_CLK high to FMC_NWE high",
+        "R*THCLK/2+1(2)",
+        "-",
+        "ns"
+      ],
+      [
+        ")ataD-LKLC(dt",
+        "FMC_D[15:0] valid data after FMC_CLK low",
+        "-",
+        "3.5",
+        "ns"
+      ],
+      [
+        "td(CLKL-NBLL)",
+        "FMC_CLK low to FMC_NBL low",
+        "1",
+        "-",
+        "ns"
+      ],
+      [
+        "td(CLKH-NBLH)",
+        "FMC_CLK high to FMC_NBL high",
+        "R*THCLK/2+1.5(2)",
+        "-",
+        "ns"
+      ],
+      [
+        "tsu(NWAIT-CLKH)",
+        "FMC_NWAIT valid before FMC_CLK high",
+        "1.5",
+        "-",
+        "ns"
+      ],
+      [
+        "th(CLKH-NWAIT)",
+        "FMC_NWAIT valid after FMC_CLK high",
+        "4",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "2. Clock ratio R = (HCLK period /FMC_CLK period). NAND controller waveforms and timings"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

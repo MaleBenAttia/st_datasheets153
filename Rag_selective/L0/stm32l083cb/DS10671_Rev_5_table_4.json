@@ -1,0 +1,43 @@
+{
+  "table_id": "table_4",
+  "document": "DS10671 Rev 5 - Table 4. CPU frequency range depending on dynamic voltage scaling",
+  "rev": "Rev 5",
+  "table_number": "4",
+  "title": "Table 4. CPU frequency range depending on dynamic voltage scaling",
+  "page": 16,
+  "section": "3.1 Low-power modes",
+  "section_title": "Low-power modes",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l083cb.pdf#page=16",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l083cb.pdf",
+  "text_helper": "Table 4. CPU frequency range depending on dynamic voltage scaling — section 3.1 Low-power modes. CPU frequency range, Dynamic voltage scaling range.",
+  "table_content": {
+    "headers": [
+      "CPU frequency range",
+      "Dynamic voltage scaling range"
+    ],
+    "rows": [
+      [
+        "16 MHz to 32 MHz (1ws) 32 kHz to 16 MHz (0ws)",
+        "Range 1"
+      ],
+      [
+        "8 MHz to 16 MHz (1ws) 32 kHz to 8 MHz (0ws)",
+        "Range 2"
+      ],
+      [
+        "32 kHz to 4.2 MHz (0ws)",
+        "Range 3"
+      ]
+    ],
+    "notes": [
+      "1. GPIO speed depends on V voltage range. Refer to Table 62: I/O AC characteristics for more information DD",
+      "2. CPU frequency changes from initial to final must respect \"fcpu initial <4*fcpu final\". It must also respect 5 μs delay between two changes. For example to switch from 4.2 MHz to 32 MHz, you can switch from 4.2",
+      "3. To be USB compliant from the I/O voltage standpoint, the minimum V is 3.0 V. DD_USB"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

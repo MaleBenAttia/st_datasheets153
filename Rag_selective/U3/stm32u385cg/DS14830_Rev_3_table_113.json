@@ -1,0 +1,273 @@
+{
+  "table_id": "table_113",
+  "document": "DS14830 Rev 3 - Table 113. OCTOSPI characteristics in DTR mode (with DQS)/HyperBus.",
+  "rev": "Rev 3",
+  "table_number": "113",
+  "title": "Table 113. OCTOSPI characteristics in DTR mode (with DQS)/HyperBus.",
+  "page": 173,
+  "section": "5.3.28 OCTOSPI characteristics",
+  "section_title": "OCTOSPI characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u385cg.pdf#page=173",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u385cg.pdf",
+  "text_helper": "Table 113. OCTOSPI characteristics in DTR mode (with DQS)/HyperBus. — section 5.3.28 OCTOSPI characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f(CLK)",
+        "OCTOSPI clock frequency",
+        "1.71 V < VDDIOX < 3.6 V Voltage range 1 CL = 15 pF",
+        "-",
+        "-",
+        "48(1)(2)",
+        "MHz"
+      ],
+      [
+        "f(CLK)",
+        "OCTOSPI clock frequency",
+        "1.7 V < VDDIOX < 3.6 V Voltage range 2 CL = 15 pF",
+        "-",
+        "-",
+        "24(1)(2)",
+        "MHz"
+      ],
+      [
+        "f(CLK)",
+        "OCTOSPI clock frequency",
+        "Fp 51 = LC V 23.1 ≤ 2OIDDV ≤ V 80.1",
+        "-",
+        "-",
+        "15(1)(2)",
+        "MHz"
+      ],
+      [
+        "tw(CLKH)",
+        "OCTOSPI clock high and low time (even division)",
+        "PRESCALER[7:0] = n (n = 0, 1, 3, 5,..255)",
+        "t(CLK)/2 - 0.5",
+        "-",
+        "t(CLK)/2 + 0.5",
+        "ns"
+      ],
+      [
+        "tw(CLKL)",
+        "OCTOSPI clock high and low time (even division)",
+        "PRESCALER[7:0] = n (n = 0, 1, 3, 5,..255)",
+        "t(CLK)/2 - 0.5",
+        "-",
+        "t(CLK)/2 + 0.5",
+        "ns"
+      ],
+      [
+        "tw(CLKH)",
+        "OCTOSPI clock high and low time (odd division)",
+        "PRESCALER[7:0] = n (n = 2, 4, 6,..254)",
+        "(n/2) × t(CLK)/ (n+1) - 0.5",
+        "-",
+        "(n/2) × t(CLK)/ (n+1) + 0.5",
+        "ns"
+      ],
+      [
+        "tww(CLKL)",
+        "OCTOSPI clock high and low time (odd division)",
+        "PRESCALER[7:0] = n (n = 2, 4, 6,..254)",
+        "((n/2)+1) × t(CLK)/(n+1) - 0.5",
+        "-",
+        "((n/2)+1) × t(CLK)/(n+1) + 0.5",
+        "ns"
+      ],
+      [
+        "tv(CLKL)",
+        "Clock valid time",
+        "-",
+        "-",
+        "-",
+        "t(CLK) + 2",
+        "ns"
+      ],
+      [
+        "thv(CLK)",
+        "Clock hold time",
+        "-",
+        "t(CLK)/2 - 1",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "VODr(CLK)(3)",
+        "CLK, NCLK crossing level on CLK rising edge",
+        "VDDIOX = 1.8 V",
+        "1230",
+        "-",
+        "1450",
+        "mV"
+      ],
+      [
+        "VODf(CLK)(3)",
+        "CLK, NCLK crossing level on CLK falling edge",
+        "VDDIOX = 1.8 V",
+        "819",
+        "-",
+        "900",
+        "mV"
+      ],
+      [
+        "tw(CS)",
+        "Chip select high time",
+        "-",
+        "3 × t(CLK)",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "tv(DQ)",
+        "Data input valid time",
+        "-",
+        "0",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "tv(DS)",
+        "Data strobe input valid time",
+        "-",
+        "0",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "th(DS)",
+        "Data strobe input hold time",
+        "-",
+        "0",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "tv(RWDS)",
+        "Data strobe output valid time",
+        "-",
+        "-",
+        "-",
+        "3 × t(CLK)",
+        "3 × t(CLK)"
+      ],
+      [
+        "tsr(DQ) tsf(DQ)",
+        "Data input setup time",
+        "Voltage range 1",
+        "-0.5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "tsr(DQ) tsf(DQ)",
+        "Data input setup time",
+        "Voltage range 2",
+        "1.25",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "thr(DQ) thf(IN)",
+        "Data input hold time",
+        "Voltage range 1",
+        "2.5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "thr(DQ) thf(IN)",
+        "Data input hold time",
+        "Voltage range 2",
+        "2.5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "tvr(OUT) tvf(OUT)",
+        "Data output valid time, DHQC = 0",
+        "Voltage range 1",
+        "-",
+        "8.5",
+        "13",
+        "13"
+      ],
+      [
+        "tvr(OUT) tvf(OUT)",
+        "Data output valid time, DHQC = 0",
+        "Voltage range 2",
+        "-",
+        "12.5",
+        "21.5",
+        "21.5"
+      ],
+      [
+        "tvr(OUT) tvf(OUT)",
+        "Data output valid time, DHQC = 1",
+        "Voltage range 1 All prescaler values (except 0)",
+        "-",
+        "t(CLK)/4 + 1.5",
+        "t(CLK)/4 + 3.5",
+        "t(CLK)/4 + 3.5"
+      ],
+      [
+        "thr(OUT) thf(OUT)",
+        "Data output hold time, DHQC = 0",
+        "Voltage range 1",
+        "5.5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "thr(OUT) thf(OUT)",
+        "Data output hold time, DHQC = 0",
+        "Voltage range 2",
+        "10",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "thr(OUT) thf(OUT)",
+        "Data output hold time, DHQC = 1",
+        "Voltage range 1 All prescaler values (except 0)",
+        "t(CLK)/4 - 1",
+        "-",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "1. Activating DHQC is mandatory to reach this frequency.",
+      "2. Activating DHQC is mandatory to reach this frequency.",
+      "3. P10/PB5, PB4/PB5, and PA3/PB5 are recommended to be in line with crossing specification."
+    ],
+    "legend": [
+      "Delay block bypassed.",
+      "Evaluated by characterization. Not tested in production."
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

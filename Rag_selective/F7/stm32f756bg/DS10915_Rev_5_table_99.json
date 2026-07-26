@@ -1,0 +1,100 @@
+{
+  "table_id": "table_99",
+  "document": "DS10915 Rev 5 - Table 99. Synchronous non-multiplexed NOR/PSRAM read timings",
+  "rev": "Rev 5",
+  "table_number": "99",
+  "title": "Table 99. Synchronous non-multiplexed NOR/PSRAM read timings",
+  "page": 187,
+  "section": "6.3.27 FMC characteristics",
+  "section_title": "FMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f756bg.pdf#page=187",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f756bg.pdf",
+  "text_helper": "Table 99. Synchronous non-multiplexed NOR/PSRAM read timings — section 6.3.27 FMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t w(CLK)",
+        "FMC_CLK period",
+        "2T -1 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t (CLKL-NExL)",
+        "FMC_CLK low to FMC_NEx low (x=0..2)",
+        "-",
+        "2.5",
+        "ns"
+      ],
+      [
+        "t d(CLKH-NExH)",
+        "FMC_CLK high to FMC_NEx high (x= 0…2)",
+        "KLCH 5.0+ T",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NADVL)",
+        "FMC_CLK low to FMC_NADV low",
+        "-",
+        "0",
+        "ns"
+      ],
+      [
+        "t d(CLKH-AIV)",
+        "FMC_CLK high to FMC_Ax invalid (x=16…25)",
+        "T HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NOEL)",
+        "FMC_CLK low to FMC_NOE low",
+        "-",
+        "2",
+        "ns"
+      ],
+      [
+        "t d(CLKH-NOEH)",
+        "FMC_CLK high to FMC_NOE high",
+        "KLCH 5.0+ T",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(DV-CLKH)",
+        "FMC_D[15:0] valid data before FMC_CLK high",
+        "1.5",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(CLKH-DV)",
+        "FMC_D[15:0] valid data after FMC_CLK high",
+        "1",
+        "-",
+        "ns"
+      ],
+      [
+        "t (NWAIT-CLKH)",
+        "FMC_NWAIT valid before FMC_CLK high",
+        "2",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

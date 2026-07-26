@@ -1,0 +1,197 @@
+{
+  "table_id": "table_54",
+  "document": "DS11532 Rev 9 - Table 54. DSI regulator characteristics",
+  "rev": "Rev 9",
+  "table_number": "54",
+  "title": "Table 54. DSI regulator characteristics",
+  "page": 149,
+  "section": "6.3.15 MIPI D-PHY regulator characteristics",
+  "section_title": "MIPI D-PHY regulator characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f765bg.pdf#page=149",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f765bg.pdf",
+  "text_helper": "Table 54. DSI regulator characteristics — section 6.3.15 MIPI D-PHY regulator characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V DD12DSI",
+        "1.2 V internal voltage on V DD12DSI",
+        "-",
+        "1.15",
+        "1.20",
+        "1.30",
+        "V"
+      ],
+      [
+        "C EXT",
+        "External capacitor on V CAPDSI",
+        "-",
+        "1.1",
+        "2.2",
+        "3.3",
+        "μF"
+      ],
+      [
+        "ESR",
+        "External Serial Resistor",
+        "-",
+        "0",
+        "25",
+        "600",
+        "mΩ"
+      ],
+      [
+        "I DDDSIREG",
+        "Regulator power consumption",
+        "-",
+        "100",
+        "120",
+        "125",
+        "µA"
+      ],
+      [
+        "I DDDSI",
+        "DSI system (regulator, PLL and D-PHY) current consumption on V DDDSI",
+        "Ultra Low Power Mode (Reg. ON + PLL OFF)",
+        "-",
+        "290",
+        "600",
+        "µA"
+      ],
+      [
+        "I DDDSI",
+        "DSI system (regulator, PLL and D-PHY) current consumption on V DDDSI",
+        "Stop State (Reg. ON + PLL OFF)",
+        "-",
+        "290",
+        "600",
+        "µA"
+      ],
+      [
+        "I DDDSILP",
+        "DSI system current consumption on V in LP mode communication(2) DDDSI",
+        "10 MHz escape clock (Reg. ON + PLL OFF)",
+        "-",
+        "4.3",
+        "5.0",
+        "mA"
+      ],
+      [
+        "I DDDSILP",
+        "DSI system current consumption on V in LP mode communication(2) DDDSI",
+        "20 MHz escape clock (Reg. ON + PLL OFF)",
+        "-",
+        "4.3",
+        "5.0",
+        "mA"
+      ],
+      [
+        "I DDDSIHS",
+        "DSI system (regulator, PLL and D-PHY) current consumption on V DDDSI in HS mode communication(3)",
+        "300 Mbps - 1 data lane (Reg. ON + PLL ON)",
+        "-",
+        "8.0",
+        "8.8",
+        "mA"
+      ],
+      [
+        "I DDDSIHS",
+        "DSI system (regulator, PLL and D-PHY) current consumption on V DDDSI in HS mode communication(3)",
+        "300 Mbps - 2data lane (Reg. ON + PLL ON)",
+        "-",
+        "11.4",
+        "12.5",
+        "mA"
+      ],
+      [
+        "I DDDSIHS",
+        "DSI system (regulator, PLL and D-PHY) current consumption on V DDDSI in HS mode communication(3)",
+        "500 Mbps - 1 data lane (Reg. ON + PLL ON)",
+        "-",
+        "13.5",
+        "14.7",
+        "mA"
+      ],
+      [
+        "I DDDSIHS",
+        "DSI system (regulator, PLL and D-PHY) current consumption on V DDDSI in HS mode communication(3)",
+        "500 Mbps - 2data lane (Reg. ON + PLL ON)",
+        "-",
+        "18.0",
+        "19.6",
+        "mA"
+      ],
+      [
+        "I DDDSIHS",
+        "DSI system (regulator, PLL and D-PHY) current consumption on V DDDSI in HS mode with CLK like payload",
+        "500 Mbps - 2data lane (Reg. ON + PLL ON)",
+        "-",
+        "21.4",
+        "23.3",
+        "mA"
+      ],
+      [
+        "t WAKEUP",
+        "Startup delay",
+        "C = 2.2 µF EXT",
+        "-",
+        "110",
+        "-",
+        "µs"
+      ],
+      [
+        "t WAKEUP",
+        "Startup delay",
+        "C = 3.3 µF EXT",
+        "-",
+        "-",
+        "160",
+        "µs"
+      ],
+      [
+        "I INRUSH",
+        "Inrush current on V DDDSI",
+        "External capacitor load at start",
+        "-",
+        "60",
+        "200",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current",
+        "Write / Erase 16-bit mode, V = 2.1 V DD",
+        "-",
+        "17",
+        "-",
+        "-"
+      ],
+      [
+        "I DD",
+        "Supply current",
+        "Write / Erase 32-bit mode, V = 3.3 V DD",
+        "-",
+        "24",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "2. Values based on an average traffic in LP Command Mode.",
+      "3. Values based on an average traffic (3/4 HS traffic & 1/4 LP) in Video Mode. DS11532 Rev 9 149/256"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

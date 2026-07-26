@@ -1,0 +1,216 @@
+{
+  "table_id": "table_38",
+  "document": "DS12556 Rev 8 - Table 38. PLL characteristics (wide VCO frequency range)",
+  "rev": "Rev 8",
+  "table_number": "38",
+  "title": "Table 38. PLL characteristics (wide VCO frequency range)",
+  "page": 119,
+  "section": "6.3.10 PLL characteristics",
+  "section_title": "PLL characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h750ib.pdf#page=119",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h750ib.pdf",
+  "text_helper": "Table 38. PLL characteristics (wide VCO frequency range) — section 6.3.10 PLL characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f PLL_IN",
+        "PLL input clock",
+        "-",
+        "2",
+        "-",
+        "16",
+        "MHz"
+      ],
+      [
+        "f PLL_P_OUT",
+        "PLL multiplier output clock P",
+        "VOS1",
+        "1.5",
+        "-",
+        "400(2)",
+        "MHz"
+      ],
+      [
+        "f PLL_P_OUT",
+        "PLL multiplier output clock P",
+        "VOS2",
+        "1.5",
+        "-",
+        "300",
+        "300"
+      ],
+      [
+        "f PLL_P_OUT",
+        "PLL multiplier output clock P",
+        "VOS3",
+        "1.5",
+        "-",
+        "200",
+        "200"
+      ],
+      [
+        "f PLL_Q_OUT",
+        "PLL multiplier output clock Q/R",
+        "VOS1",
+        "1.5",
+        "-",
+        "400(2)",
+        "400(2)"
+      ],
+      [
+        "f PLL_Q_OUT",
+        "PLL multiplier output clock Q/R",
+        "VOS2",
+        "1.5",
+        "-",
+        "300",
+        "300"
+      ],
+      [
+        "f PLL_Q_OUT",
+        "PLL multiplier output clock Q/R",
+        "VOS3",
+        "1.5",
+        "-",
+        "200",
+        "200"
+      ],
+      [
+        "f VCO_OUT",
+        "PLL VCO output",
+        "-",
+        "192",
+        "-",
+        "836",
+        "836"
+      ],
+      [
+        "t LOCK",
+        "PLL lock time",
+        "Normal mode",
+        "-",
+        "50(3)",
+        "150(3)",
+        "µs"
+      ],
+      [
+        "t LOCK",
+        "PLL lock time",
+        "Sigma-delta mode (CKIN ≥ 8 MHz)",
+        "-",
+        "58(3)",
+        "166(3)",
+        "166(3)"
+      ],
+      [
+        "Jitter",
+        "Cycle-to-cycle jitter(4)",
+        "VCO = 192 MHz",
+        "-",
+        "134",
+        "-",
+        "±ps"
+      ],
+      [
+        "Jitter",
+        "Cycle-to-cycle jitter(4)",
+        "VCO = 200 MHz",
+        "-",
+        "134",
+        "-",
+        "-"
+      ],
+      [
+        "Jitter",
+        "Cycle-to-cycle jitter(4)",
+        "VCO = 400 MHz",
+        "-",
+        "76",
+        "-",
+        "-"
+      ],
+      [
+        "Jitter",
+        "Cycle-to-cycle jitter(4)",
+        "VCO = 800 MHz",
+        "-",
+        "39",
+        "-",
+        "-"
+      ],
+      [
+        "Jitter",
+        "Long term jitter",
+        "Normal mode",
+        "-",
+        "±0.7",
+        "-",
+        "%"
+      ],
+      [
+        "Jitter",
+        "Long term jitter",
+        "Sigma-delta mode (CKIN = 16 MHz)",
+        "-",
+        "±0.8",
+        "-",
+        "-"
+      ],
+      [
+        "I (3) DD(PLL)",
+        "PLL power consumption on V DD",
+        "VCO freq = 420 MHz",
+        "V DDA",
+        "440",
+        "1150",
+        "µA"
+      ],
+      [
+        "I (3) DD(PLL)",
+        "PLL power consumption on V DD",
+        "V CORE",
+        "-",
+        "530",
+        "-",
+        "-"
+      ],
+      [
+        "I (3) DD(PLL)",
+        "VCO freq = 150 MHz",
+        "V DDA",
+        "-",
+        "180",
+        "500",
+        "500"
+      ],
+      [
+        "I (3) DD(PLL)",
+        "VCO freq = 150 MHz",
+        "V CORE",
+        "-",
+        "200",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "2. This value must be limited to the maximum frequency due to the product limitation (400 MHz for VOS1, 300 MHz for VOS2, 200 MHz for VOS3).",
+      "3. Guaranteed by characterization results.",
+      "4. Integer mode only."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

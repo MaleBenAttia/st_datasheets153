@@ -1,0 +1,275 @@
+{
+  "table_id": "table_35",
+  "document": "DS10009 Rev 7 - Table 35. Peripheral current consumption",
+  "rev": "Rev 7",
+  "table_number": "35",
+  "title": "Table 35. Peripheral current consumption",
+  "page": 62,
+  "section": "6.3.5 Supply current characteristics",
+  "section_title": "Supply current characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f071c8.pdf#page=62",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f071c8.pdf",
+  "text_helper": "Table 35. Peripheral current consumption — section 6.3.5 Supply current characteristics. Peripheral, Peripheral, Typical consumption at 25 °C, Unit.",
+  "table_content": {
+    "headers": [
+      "Peripheral",
+      "Peripheral",
+      "Typical consumption at 25 °C",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "AHB",
+        "BusMatrix(1)",
+        "2.2",
+        "µA/MHz"
+      ],
+      [
+        "AHB",
+        "CRC",
+        "1.6",
+        "µA/MHz"
+      ],
+      [
+        "AHB",
+        "DMA",
+        "5.7",
+        "µA/MHz"
+      ],
+      [
+        "AHB",
+        "Flash memory interface",
+        "13.0",
+        "µA/MHz"
+      ],
+      [
+        "AHB",
+        "GPIOA",
+        "8.2",
+        "µA/MHz"
+      ],
+      [
+        "AHB",
+        "GPIOB",
+        "8.5",
+        "µA/MHz"
+      ],
+      [
+        "AHB",
+        "GPIOC",
+        "2.3",
+        "µA/MHz"
+      ],
+      [
+        "AHB",
+        "GPIOD",
+        "1.9",
+        "µA/MHz"
+      ],
+      [
+        "AHB",
+        "GPIOE",
+        "2.2",
+        "µA/MHz"
+      ],
+      [
+        "AHB",
+        "GPIOF",
+        "1.2",
+        "µA/MHz"
+      ],
+      [
+        "AHB",
+        "SRAM",
+        "0.9",
+        "µA/MHz"
+      ],
+      [
+        "AHB",
+        "TSC",
+        "5.0",
+        "µA/MHz"
+      ],
+      [
+        "AHB",
+        "All AHB peripherals",
+        "52.6",
+        "µA/MHz"
+      ],
+      [
+        "APB",
+        "APB-Bridge(2)",
+        "2.8",
+        "µA/MHz"
+      ],
+      [
+        "APB",
+        "ADC(3)",
+        "4.1",
+        "4.1"
+      ],
+      [
+        "APB",
+        "CEC",
+        "1.5",
+        "1.5"
+      ],
+      [
+        "APB",
+        "CRS",
+        "0.8",
+        "0.8"
+      ],
+      [
+        "APB",
+        "DAC(3)",
+        "4.7",
+        "4.7"
+      ],
+      [
+        "APB",
+        "DEBUG (MCU debug feature)",
+        "0.1",
+        "0.1"
+      ],
+      [
+        "APB",
+        "I2C1",
+        "3.9",
+        "3.9"
+      ],
+      [
+        "APB",
+        "I2C2",
+        "4.0",
+        "4.0"
+      ],
+      [
+        "APB",
+        "PWR",
+        "1.3",
+        "1.3"
+      ],
+      [
+        "APB",
+        "SPI1",
+        "8.7",
+        "8.7"
+      ],
+      [
+        "APB",
+        "SPI2",
+        "8.5",
+        "8.5"
+      ],
+      [
+        "APB",
+        "SYSCFG & COMP",
+        "1.7",
+        "1.7"
+      ],
+      [
+        "APB",
+        "TIM1",
+        "14.9",
+        "14.9"
+      ],
+      [
+        "APB",
+        "TIM2",
+        "15.5",
+        "15.5"
+      ],
+      [
+        "APB",
+        "TIM3",
+        "11.4",
+        "11.4"
+      ],
+      [
+        "APB",
+        "TIM6",
+        "2.5",
+        "2.5"
+      ],
+      [
+        "APB",
+        "TIM7",
+        "2.3",
+        "2.3"
+      ],
+      [
+        "APB",
+        "TIM14",
+        "5.3",
+        "5.3"
+      ],
+      [
+        "APB",
+        "TIM15",
+        "9.1",
+        "9.1"
+      ],
+      [
+        "APB",
+        "TIM16",
+        "6.6",
+        "6.6"
+      ],
+      [
+        "APB",
+        "TIM17",
+        "6.8",
+        "6.8"
+      ],
+      [
+        "APB",
+        "USART1",
+        "17.0",
+        "17.0"
+      ],
+      [
+        "APB",
+        "USART2",
+        "16.7",
+        "16.7"
+      ],
+      [
+        "APB",
+        "USART3",
+        "5.4",
+        "5.4"
+      ],
+      [
+        "APB",
+        "USART4",
+        "5.4",
+        "5.4"
+      ],
+      [
+        "APB",
+        "WWDG",
+        "1.4",
+        "1.4"
+      ],
+      [
+        "APB",
+        "All APB peripherals",
+        "162.4",
+        "162.4"
+      ]
+    ],
+    "notes": [
+      "1. The BusMatrix is automatically active when at least one master is ON (CPU, DMA).",
+      "2. The APB Bridge is automatically active when at least one peripheral is ON on the Bus.",
+      "3. The power consumption of the analog part (I ) of peripherals such as ADC, DAC, Comparators, is not DDA"
+    ],
+    "legend": [
+      "applicable) is indicated in each related section of the datasheet."
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

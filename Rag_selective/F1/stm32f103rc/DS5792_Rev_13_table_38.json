@@ -1,0 +1,124 @@
+{
+  "table_id": "table_38",
+  "document": "DS5792 Rev 13 - Table 38. Synchronous non-multiplexed PSRAM write timings",
+  "rev": "Rev 13",
+  "table_number": "38",
+  "title": "Table 38. Synchronous non-multiplexed PSRAM write timings",
+  "page": 76,
+  "section": "5.3.10 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f103rc.pdf#page=76",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f103rc.pdf",
+  "text_helper": "Table 38. Synchronous non-multiplexed PSRAM write timings — section 5.3.10 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t w(CLK)",
+        "FSMC_CLK period",
+        "27.7",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NExL)",
+        "FSMC_CLK low to FSMC_NEx low (x = 0...2)",
+        "-",
+        "2",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NExH)",
+        "FSMC_CLK low to FSMC_NEx high (x = 0...2)",
+        "2",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NADVL)",
+        "FSMC_CLK low to FSMC_NADV low",
+        "-",
+        "4",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NADVH)",
+        "FSMC_CLK low to FSMC_NADV high",
+        "5",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-AV)",
+        "FSMC_CLK low to FSMC_Ax valid (x = 16...25)",
+        "-",
+        "0",
+        "ns"
+      ],
+      [
+        "t d(CLKL-AIV)",
+        "FSMC_CLK low to FSMC_Ax invalid (x = 16...25)",
+        "2",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NWEL)",
+        "FSMC_CLK low to FSMC_NWE low",
+        "-",
+        "1",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NWEH)",
+        "FSMC_CLK low to FSMC_NWE high",
+        "1",
+        "-",
+        "ns"
+      ],
+      [
+        ")ataD-LKLC(d t",
+        "FSMC_D[15:0] valid data after FSMC_CLK low",
+        "-",
+        "6",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NBLH)",
+        "FSMC_CLK low to FSMC_NBL high",
+        "1",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(NWAITV-CLKH)",
+        "FSMC_NWAIT valid before FSMC_CLK high",
+        "7",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(CLKH-NWAITV)",
+        "FSMC_NWAIT valid after FSMC_CLK high",
+        "2",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. C = 15 pF. L",
+      "2. Guaranteed by characterization results. 76/143 DS5792 Rev 13"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

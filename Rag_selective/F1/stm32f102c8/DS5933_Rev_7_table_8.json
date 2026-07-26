@@ -1,0 +1,173 @@
+{
+  "table_id": "table_8",
+  "document": "DS5933 Rev 7 - Table 8. General operating conditions",
+  "rev": "Rev 7",
+  "table_number": "8",
+  "title": "Table 8. General operating conditions",
+  "page": 29,
+  "section": "5.3.1 General operating conditions",
+  "section_title": "General operating conditions",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f102c8.pdf#page=29",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f102c8.pdf",
+  "text_helper": "Table 8. General operating conditions — section 5.3.1 General operating conditions. Symbol, Parameter, Conditions, Conditions, Min, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f HCLK",
+        "Internal AHB clock frequency",
+        "-",
+        "-",
+        "0",
+        "48",
+        "MHz"
+      ],
+      [
+        "f PCLK1",
+        "Internal APB1 clock frequency",
+        "-",
+        "-",
+        "0",
+        "24",
+        "MHz"
+      ],
+      [
+        "f PCLK2",
+        "Internal APB2 clock frequency",
+        "-",
+        "-",
+        "0",
+        "48",
+        "MHz"
+      ],
+      [
+        "V DD",
+        "Standard operating voltage",
+        "-",
+        "-",
+        "2",
+        "3.6",
+        "V"
+      ],
+      [
+        "V (1) DDA",
+        "Analog operating voltage (ADC not used)",
+        "Must be the same potential as V (2) DD",
+        "Must be the same potential as V (2) DD",
+        "2",
+        "3.6",
+        "V"
+      ],
+      [
+        "V (1) DDA",
+        "Analog operating voltage (ADC used)",
+        "Must be the same potential as V (2) DD",
+        "Must be the same potential as V (2) DD",
+        "2.4",
+        "3.6",
+        "V"
+      ],
+      [
+        "V IN",
+        "I/O input voltage",
+        "Standard IO",
+        "Standard IO",
+        "–0.3",
+        "V + DD 0.3",
+        "V"
+      ],
+      [
+        "V IN",
+        "I/O input voltage",
+        "FTIO(3)",
+        "2 V < V ≤ 3.6 V DD",
+        "–0.3",
+        "5.5",
+        "V"
+      ],
+      [
+        "V IN",
+        "I/O input voltage",
+        "FTIO(3)",
+        "V = 2 V DD",
+        "–0.3",
+        "5.2",
+        "V"
+      ],
+      [
+        "V IN",
+        "I/O input voltage",
+        "BOOT0",
+        "BOOT0",
+        "0",
+        "5.5",
+        "V"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 85 °C(4) A",
+        "LQFP48",
+        "LQFP48",
+        "-",
+        "363",
+        "mW"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 85 °C(4) A",
+        "LQFP64",
+        "LQFP64",
+        "-",
+        "444",
+        "mW"
+      ],
+      [
+        "TA",
+        "Ambient temperature",
+        "Maximum power dissipation",
+        "Maximum power dissipation",
+        "–40",
+        "85",
+        "°C"
+      ],
+      [
+        "TA",
+        "Ambient temperature",
+        "Low power dissipation(5)",
+        "Low power dissipation(5)",
+        "–40",
+        "105",
+        "°C"
+      ],
+      [
+        "TJ",
+        "Junction temperature range",
+        "-",
+        "-",
+        "–40",
+        "105",
+        "°C"
+      ]
+    ],
+    "notes": [
+      "1. When the ADC is used, refer to Table 45: ADC characteristics.",
+      "2. It is recommended to power V and V from the same source. A maximum difference of 300 mV DD DDA",
+      "3. To sustain a voltage higher than V +0.3 V, the internal pull-up/pull-down resistors must be disabled. DD",
+      "4. If T is lower, higher P values are allowed as long as T does not exceed T max (see Section 6.3: A D J J",
+      "5. In low power dissipation state, T can be extended to this range as long as T does not exceed T max (see A J J"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

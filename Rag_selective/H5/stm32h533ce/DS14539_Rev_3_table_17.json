@@ -1,0 +1,121 @@
+{
+  "table_id": "table_17",
+  "document": "DS14539 Rev 3 - Table 17. Voltage characteristics",
+  "rev": "Rev 3",
+  "table_number": "17",
+  "title": "Table 17. Voltage characteristics",
+  "page": 98,
+  "section": "5.2 Absolute maximum ratings",
+  "section_title": "Absolute maximum ratings",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h533ce.pdf#page=98",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h533ce.pdf",
+  "text_helper": "Table 17. Voltage characteristics — section 5.2 Absolute maximum ratings. Symbol, Ratings, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Ratings",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V - V DDx SS",
+        "External main supply voltage (including V , DDA V , V (2)(3)(4), V , and V ) DDUSB DDIO2 BAT REF+",
+        "-0.3",
+        "4.0",
+        "V"
+      ],
+      [
+        "V (4) - V DDIOx SS",
+        "I/O supply when HSLV(2) = 0",
+        "-0.3",
+        "4.0",
+        "V"
+      ],
+      [
+        "V (4) - V DDIOx SS",
+        "I/O supply when HSLV(2) = 1",
+        "-0.3",
+        "2.75",
+        "V"
+      ],
+      [
+        "V (5) IN",
+        "Input voltage on FT_xxx pins except FT_c pins",
+        "V - 0.3 SS",
+        "min (min(V , V , V , DD DDA DDUSB V ) + 4.0, 6.0 V)(6)(7) DDIO2",
+        "V"
+      ],
+      [
+        "V (5) IN",
+        "Input voltage on FT_t in V mode BAT",
+        "V - 0.3 SS",
+        "min (min(V , V , V , BAT DDA DDUSB V ) + 4.0V, 6.0 V) DDIO2",
+        "V"
+      ],
+      [
+        "V (5) IN",
+        "Input voltage on TT_xx pins",
+        "V - 0.3 SS",
+        "4.0",
+        "V"
+      ],
+      [
+        "V (5) IN",
+        "Input voltage on BOOT0 pin",
+        "V SS",
+        "min (min(V , V , V , DD DDA DDUSB V ) + 4.0, 6.0 V)(6) DDIO2",
+        "V"
+      ],
+      [
+        "V (5) IN",
+        "Input voltage on FT_c pins",
+        "V - 0.3 SS",
+        "5.5",
+        "V"
+      ],
+      [
+        "V (5) IN",
+        "Input voltage on any other pins",
+        "V - 0.3 SS",
+        "4.0",
+        "V"
+      ],
+      [
+        "V - V REF+ DDA",
+        "Allowed voltage difference for V > V REF+ DDA",
+        "-",
+        "0.4",
+        "V"
+      ],
+      [
+        "|∆V | DDx",
+        "Variations between different V power pins DDX of the same domain",
+        "-",
+        "50.0",
+        "mV"
+      ],
+      [
+        "|V -V | SSx SS",
+        "Variations between all the different ground pins",
+        "-",
+        "50.0",
+        "mV"
+      ]
+    ],
+    "notes": [
+      "2. HSLV = High-speed low-voltage mode. Refer to General purpose I/Os (GPIO) section of RM0481.",
+      "3. If HSLV = 0.",
+      "4. V or V . V = V . DDIO1 DDIO2 DDIO1 DD",
+      "5. V maximum must always be respected. Refer to the maximum allowed injected current values. IN",
+      "6. To sustain a voltage higher than 4 V the internal pull-up/pull-down resistors must be disabled.",
+      "7. This formula must be applied on power supplies related to the I/O structure described by the pin definition table. 98/231 DS14539 Rev 3"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

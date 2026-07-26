@@ -1,0 +1,135 @@
+{
+  "table_id": "table_20",
+  "document": "DS12324 Rev 3 - Table 20. Current consumption in Run mode vs code type, code with data processing running from Flash memory",
+  "rev": "Rev 3",
+  "table_number": "20",
+  "title": "Table 20. Current consumption in Run mode vs code type, code with data processing running from Flash memory",
+  "page": 44,
+  "section": "6.3.4 Supply current characteristics",
+  "section_title": "Supply current characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l010c6.pdf#page=44",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l010c6.pdf",
+  "text_helper": "Table 20. Current consumption in Run mode vs code type, code with data processing running from Flash memory — section 6.3.4 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, Conditions, +3 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "Conditions",
+      "f HCLK",
+      "Typ",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I DD (Run from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "f = f up to HSE HCLK 16MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(1)",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "Dhrystone",
+        "4 MHz",
+        "460",
+        "µA"
+      ],
+      [
+        "I DD (Run from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "f = f up to HSE HCLK 16MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(1)",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "CoreMark",
+        "4 MHz",
+        "455",
+        "µA"
+      ],
+      [
+        "I DD (Run from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "f = f up to HSE HCLK 16MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(1)",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "Fibonacci",
+        "4 MHz",
+        "330",
+        "µA"
+      ],
+      [
+        "I DD (Run from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "f = f up to HSE HCLK 16MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(1)",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "while(1)",
+        "4 MHz",
+        "305",
+        "µA"
+      ],
+      [
+        "I DD (Run from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "f = f up to HSE HCLK 16MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(1)",
+        "Range 3, V =1.2V, CORE VOS[1:0]=11",
+        "while(1), prefetch OFF",
+        "4 MHz",
+        "320",
+        "µA"
+      ],
+      [
+        "I DD (Run from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "f = f up to HSE HCLK 16MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(1)",
+        "Range 1, V =1.8 V CORE VOS[1:0]=01",
+        "Dhrystone",
+        "32 MHz",
+        "5",
+        "mA"
+      ],
+      [
+        "I DD (Run from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "f = f up to HSE HCLK 16MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(1)",
+        "Range 1, V =1.8 V CORE VOS[1:0]=01",
+        "CoreMark",
+        "32 MHz",
+        "5.15",
+        "mA"
+      ],
+      [
+        "I DD (Run from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "f = f up to HSE HCLK 16MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(1)",
+        "Range 1, V =1.8 V CORE VOS[1:0]=01",
+        "Fibonacci",
+        "32 MHz",
+        "5",
+        "mA"
+      ],
+      [
+        "I DD (Run from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "f = f up to HSE HCLK 16MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(1)",
+        "Range 1, V =1.8 V CORE VOS[1:0]=01",
+        "while(1)",
+        "32 MHz",
+        "4.35",
+        "mA"
+      ],
+      [
+        "I DD (Run from Flash memory)",
+        "Supply current in Run mode, code executed from Flash memory",
+        "f = f up to HSE HCLK 16MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(1)",
+        "Range 1, V =1.8 V CORE VOS[1:0]=01",
+        "while(1), prefetch OFF",
+        "32 MHz",
+        "3.85",
+        "mA"
+      ]
+    ],
+    "notes": [
+      "1. Oscillator bypassed (HSEBYP = 1 in RCC_CR register)."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

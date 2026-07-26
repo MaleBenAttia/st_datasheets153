@@ -1,0 +1,145 @@
+{
+  "table_id": "table_25",
+  "document": "DS8576 Rev 13 - Table 25. Low-power mode wakeup timings",
+  "rev": "Rev 13",
+  "table_number": "25",
+  "title": "Table 25. Low-power mode wakeup timings",
+  "page": 79,
+  "section": "6.3.5 Wakeup time from low-power mode",
+  "section_title": "Wakeup time from low-power mode",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l151qd.pdf#page=79",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l151qd.pdf",
+  "text_helper": "Table 25. Low-power mode wakeup timings — section 6.3.5 Wakeup time from low-power mode. Symbol, Parameter, Conditions, Typ, Max(1), +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Typ",
+      "Max(1)",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t WUSLEEP",
+        "Wakeup from Sleep mode",
+        "f = 32 MHz HCLK",
+        "0.4",
+        "-",
+        "µs"
+      ],
+      [
+        "t WUSLEEP_LP",
+        "Wakeup from Low-power sleep mode, f = 262 kHz HCLK",
+        "f = 262 kHz HCLK Flash enabled",
+        "46",
+        "-",
+        "µs"
+      ],
+      [
+        "t WUSLEEP_LP",
+        "Wakeup from Low-power sleep mode, f = 262 kHz HCLK",
+        "f = 262 kHz HCLK Flash switched OFF",
+        "46",
+        "-",
+        "µs"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in Run mode ULP bit = 1 and FWU bit = 1",
+        "f = f = 4.2 MHz HCLK MSI",
+        "8.2",
+        "-",
+        "µs"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in low-power mode ULP bit = 1 and FWU bit = 1",
+        "f = f = 4.2 MHz HCLK MSI Voltage range 1 and 2",
+        "7.7",
+        "8.9",
+        "µs"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in low-power mode ULP bit = 1 and FWU bit = 1",
+        "f = f = 4.2 MHz HCLK MSI Voltage range 3",
+        "8.2",
+        "13.1",
+        "µs"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in low-power mode ULP bit = 1 and FWU bit = 1",
+        "f = f = 2.1 MHz HCLK MSI",
+        "10.2",
+        "13.4",
+        "µs"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in low-power mode ULP bit = 1 and FWU bit = 1",
+        "f = f = 1.05 MHz HCLK MSI",
+        "16",
+        "20",
+        "µs"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in low-power mode ULP bit = 1 and FWU bit = 1",
+        "f = f = 524 kHz HCLK MSI",
+        "31",
+        "37",
+        "µs"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in low-power mode ULP bit = 1 and FWU bit = 1",
+        "f = f = 262 kHz HCLK MSI",
+        "57",
+        "66",
+        "µs"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in low-power mode ULP bit = 1 and FWU bit = 1",
+        "f = f = 131 kHz HCLK MSI",
+        "112",
+        "123",
+        "µs"
+      ],
+      [
+        "t WUSTOP",
+        "Wakeup from Stop mode, regulator in low-power mode ULP bit = 1 and FWU bit = 1",
+        "f = MSI = 65 kHz HCLK",
+        "221",
+        "236",
+        "µs"
+      ],
+      [
+        "t WUSTDBY",
+        "Wakeup from Standby mode ULP bit = 1 and FWU bit = 1",
+        "f = MSI = 2.1 MHz HCLK",
+        "58",
+        "104",
+        "µs"
+      ],
+      [
+        "t WUSTDBY",
+        "Wakeup from Standby mode FWU bit = 0",
+        "f = MSI = 2.1 MHz HCLK",
+        "2.6",
+        "3.25",
+        "ms"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by design."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

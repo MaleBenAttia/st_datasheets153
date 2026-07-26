@@ -1,0 +1,81 @@
+{
+  "table_id": "table_41",
+  "document": "DS11451 Rev 4 - Table 41. Wakeup time using USART/LPUART",
+  "rev": "Rev 4",
+  "table_number": "41",
+  "title": "Table 41. Wakeup time using USART/LPUART",
+  "page": 91,
+  "section": "6.3.5 Supply current characteristics",
+  "section_title": "Supply current characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l432kb.pdf#page=91",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l432kb.pdf",
+  "text_helper": "Table 41. Wakeup time using USART/LPUART — section 6.3.5 Supply current characteristics. Symbol, Symbol, Parameter, Conditions, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t WUUSART t WULPUART",
+        "t WUUSART t WULPUART",
+        "Wakeup time needed to calculate the maximum USART/LPUART baudrate allowing to wakeup up from stop mode when USART/LPUART clock source is HSI16",
+        "Stop 0 mode",
+        "-",
+        "1.7",
+        "µs"
+      ],
+      [
+        "t WUUSART t WULPUART",
+        "t WUUSART t WULPUART",
+        "Wakeup time needed to calculate the maximum USART/LPUART baudrate allowing to wakeup up from stop mode when USART/LPUART clock source is HSI16",
+        "Stop 1 mode and Stop 2 mode",
+        "-",
+        "8.5",
+        "µs"
+      ],
+      [
+        "f HSE_ext",
+        "User external clock source frequency",
+        "Voltage scaling Range 2",
+        "-",
+        "8",
+        "26",
+        "26"
+      ],
+      [
+        "V HSEL",
+        "CK_IN input pin low level voltage",
+        "-",
+        "V SS",
+        "-",
+        "0.3 V DDIOx",
+        "0.3 V DDIOx"
+      ],
+      [
+        "t w(HSEH) t w(HSEL)",
+        "CK_IN high or low time",
+        "Voltage scaling Range 2",
+        "18",
+        "-",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization results.",
+      "2. Time until REGLPF flag is cleared in PWR_SR2.",
+      "3. Time until VOSF flag is cleared in PWR_SR2."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

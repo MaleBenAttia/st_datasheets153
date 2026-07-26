@@ -1,0 +1,54 @@
+{
+  "table_id": "table_65",
+  "document": "DS11580 Rev 8 - Table 65. SCL frequency (f = 50 MHz, V = V = 3.3 V) 132 PCLK1 DD DD_I2C",
+  "rev": "Rev 8",
+  "table_number": "65",
+  "title": "Table 65. SCL frequency (f = 50 MHz, V = V = 3.3 V) 132 PCLK1 DD DD_I2C",
+  "page": 132,
+  "section": "6.3.19 Communications interfaces",
+  "section_title": "Communications interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f423ch.pdf#page=132",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f423ch.pdf",
+  "text_helper": "Table 65. SCL frequency (f = 50 MHz, V = V = 3.3 V) 132 PCLK1 DD DD_I2C — section 6.3.19 Communications interfaces. f (kHz) SCL, I2C_CCR value / R = 4.7 kΩ P.",
+  "table_content": {
+    "headers": [
+      "f (kHz) SCL",
+      "I2C_CCR value / R = 4.7 kΩ P"
+    ],
+    "rows": [
+      [
+        "400",
+        "0x8019"
+      ],
+      [
+        "300",
+        "0x8021"
+      ],
+      [
+        "200",
+        "0x8032"
+      ],
+      [
+        "100",
+        "0x0096"
+      ],
+      [
+        "50",
+        "0x012C"
+      ],
+      [
+        "20",
+        "0x02EE"
+      ]
+    ],
+    "notes": [
+      "1. R = External pull-up resistance, f = I2C speed P SCL",
+      "2. For speeds around 200 kHz, the tolerance on the achieved speed is of ±5%. For other speed ranges, the tolerance on the achieved speed is ±2%. These variations depend on the accuracy of the external"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

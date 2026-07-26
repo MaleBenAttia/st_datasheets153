@@ -1,0 +1,107 @@
+{
+  "table_id": "table_29",
+  "document": "DS8928 Rev 12 - Table 29. HSE oscillator characteristics",
+  "rev": "Rev 12",
+  "table_number": "29",
+  "title": "Table 29. HSE oscillator characteristics",
+  "page": 69,
+  "section": "6.3.6 External clock source characteristics",
+  "section_title": "External clock source characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l162rc.pdf#page=69",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l162rc.pdf",
+  "text_helper": "Table 29. HSE oscillator characteristics — section 6.3.6 External clock source characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f OSC_IN",
+        "Oscillator frequency",
+        "-",
+        "1",
+        "-",
+        "24",
+        "MHz"
+      ],
+      [
+        "R F",
+        "Feedback resistor",
+        "-",
+        "-",
+        "200",
+        "-",
+        "kΩ"
+      ],
+      [
+        "C",
+        "Recommended load capacitance versus equivalent serial resistance of the crystal (R )(3) S",
+        "R = 30 Ω S",
+        "-",
+        "20",
+        "-",
+        "pF"
+      ],
+      [
+        "I HSE",
+        "HSE driving current",
+        "V = 3.3 V, DD V = V with 30 pF IN SS load",
+        "-",
+        "-",
+        "3",
+        "mA"
+      ],
+      [
+        "I DD(HSE)",
+        "HSE oscillator power consumption",
+        "C = 20 pF f = 16 MHz OSC",
+        "-",
+        "-",
+        "2.5 (startup) 0.7 (stabilized)",
+        "mA"
+      ],
+      [
+        "I DD(HSE)",
+        "HSE oscillator power consumption",
+        "C = 10 pF f = 16 MHz OSC",
+        "-",
+        "-",
+        "2.5 (startup) 0.46 (stabilized)",
+        "mA"
+      ],
+      [
+        "g m",
+        "Oscillator transconductance",
+        "Startup",
+        "3.5",
+        "-",
+        "-",
+        "mA /V"
+      ],
+      [
+        "t (4) SU(HSE)",
+        "Startup time",
+        "V is stabilized DD",
+        "-",
+        "1",
+        "-",
+        "ms"
+      ]
+    ],
+    "notes": [
+      "3. The relatively low value of the RF resistor offers a good protection against issues resulting from use in a humid environment, due to the induced leakage and the bias condition change. However, it is recommended to take this point into",
+      "4. t is the startup time measured from the moment it is enabled (by software) to a stabilized 8 MHz oscillation is SU(HSE)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

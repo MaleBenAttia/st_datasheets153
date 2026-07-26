@@ -1,0 +1,93 @@
+{
+  "table_id": "table_5",
+  "document": "DS14830 Rev 3 - Table 5. Boot modes when TrustZone® is enabled (TZEN = 1).",
+  "rev": "Rev 3",
+  "table_number": "5",
+  "title": "Table 5. Boot modes when TrustZone® is enabled (TZEN = 1).",
+  "page": 14,
+  "section": "3.7 Global TrustZone® controller (GTZC)",
+  "section_title": "Global TrustZone® controller (GTZC)",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u385cg.pdf#page=14",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u385cg.pdf",
+  "text_helper": "Table 5. Boot modes when TrustZone® is enabled (TZEN = 1). — section 3.7 Global TrustZone® controller (GTZC). BOOT_ LOCK, NBOOT0, BOOT0 pin, NSWBOOT0, RSS command, +3 autres.",
+  "table_content": {
+    "headers": [
+      "BOOT_ LOCK",
+      "NBOOT0",
+      "BOOT0 pin",
+      "NSWBOOT0",
+      "RSS command",
+      "Boot address option- byte selection",
+      "Boot area",
+      "ST programmed default value"
+    ],
+    "rows": [
+      [
+        "0",
+        "-",
+        "0",
+        "1",
+        "0",
+        "ADD[24:0] in FLASH_SBOOT0R",
+        "Secure boot base address 0 defined by user option bytes in FLASH_SBOOT0R",
+        "Flash: 0x0C00 0000"
+      ],
+      [
+        "0",
+        "-",
+        "1",
+        "1",
+        "0",
+        "N/A",
+        "RSS",
+        "RSS: 0x0FF8 0000"
+      ],
+      [
+        "0",
+        "1",
+        "-",
+        "0",
+        "0",
+        "ADD[24:0] in FLASH_SBOOT0R",
+        "Secure boot base address 0 defined by user option bytes in FLASH_SBOOT0R",
+        "Flash: 0x0C00 0000"
+      ],
+      [
+        "0",
+        "0",
+        "-",
+        "0",
+        "0",
+        "N/A",
+        "RSS",
+        "RSS: 0x0FF8 0000"
+      ],
+      [
+        "0",
+        "-",
+        "-",
+        "-",
+        "≠0",
+        "N/A",
+        "RSS",
+        "RSS: 0x0FF8 0000"
+      ],
+      [
+        "1",
+        "-",
+        "-",
+        "-",
+        "-",
+        "ADD[24:0] in FLASH_SBOOT0R",
+        "Secure boot base address 0 defined by user option bytes in FLASH_SBOOT0R",
+        "Flash: 0x0C00 0000"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "table_id": "table_67",
+  "document": "DS10624 Rev 5 - Table 67. I2S characteristics",
+  "rev": "Rev 5",
+  "table_number": "67",
+  "title": "Table 67. I2S characteristics",
+  "page": 97,
+  "section": "6.3.21 Communication interfaces",
+  "section_title": "Communication interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f098cc.pdf#page=97",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f098cc.pdf",
+  "text_helper": "Table 67. I2S characteristics — section 6.3.21 Communication interfaces. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f CK 1/t c(CK)",
+        "I2S clock frequency",
+        "Master mode (data: 16 bits, Audio frequency = 48 kHz)",
+        "1.597",
+        "1.601",
+        "MHz"
+      ],
+      [
+        "f CK 1/t c(CK)",
+        "I2S clock frequency",
+        "Slave mode",
+        "0",
+        "6.5",
+        "MHz"
+      ],
+      [
+        "t r(CK)",
+        "I2S clock rise time",
+        "Capacitive load C = 15 pF L",
+        "-",
+        "10",
+        "ns"
+      ],
+      [
+        "t f(CK)",
+        "I2S clock fall time",
+        "Capacitive load C = 15 pF L",
+        "-",
+        "12",
+        "ns"
+      ],
+      [
+        "t w(CKH)",
+        "I2S clock high time",
+        "Master f = 16 MHz, audio PCLK frequency = 48 kHz",
+        "306",
+        "-",
+        "ns"
+      ],
+      [
+        "t w(CKL)",
+        "I2S clock low time",
+        "Master f = 16 MHz, audio PCLK frequency = 48 kHz",
+        "312",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(WS)",
+        "WS valid time",
+        "Master mode",
+        "2",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(WS)",
+        "WS hold time",
+        "Master mode",
+        "2",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(WS)",
+        "WS setup time",
+        "Slave mode",
+        "7",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(WS)",
+        "WS hold time",
+        "Slave mode",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "DuCy(SCK)",
+        "I2S slave input clock duty cycle",
+        "Slave mode",
+        "25",
+        "75",
+        "%"
+      ],
+      [
+        "t su(SD_MR)",
+        "Data input setup time",
+        "Master receiver",
+        "6",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(SD_SR)",
+        "t su(SD_SR)",
+        "Slave receiver",
+        "2",
+        "-",
+        "-"
+      ],
+      [
+        "t (2) h(SD_MR)",
+        "Data input hold time",
+        "Master receiver",
+        "4",
+        "-",
+        "-"
+      ],
+      [
+        "t (2) h(SD_SR)",
+        "t (2) h(SD_SR)",
+        "Slave receiver",
+        "0.5",
+        "-",
+        "-"
+      ],
+      [
+        "t (2) v(SD_MT)",
+        "Data output valid time",
+        "Master transmitter",
+        "-",
+        "4",
+        "4"
+      ],
+      [
+        "t (2) v(SD_ST)",
+        "t (2) v(SD_ST)",
+        "Slave transmitter",
+        "-",
+        "31",
+        "31"
+      ],
+      [
+        "t h(SD_MT)",
+        "Data output hold time",
+        "Master transmitter",
+        "0",
+        "-",
+        "-"
+      ],
+      [
+        "t h(SD_ST)",
+        "t h(SD_ST)",
+        "Slave transmitter",
+        "13",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "2. Depends on f . For example, if f = 8 MHz, then T = 1/f = 125 ns. PCLK PCLK PCLK PLCLK"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

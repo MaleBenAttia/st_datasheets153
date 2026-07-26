@@ -1,0 +1,348 @@
+{
+  "table_id": "table_39",
+  "document": "DS11451 Rev 4 - Table 39. Low-power mode wakeup timings",
+  "rev": "Rev 4",
+  "table_number": "39",
+  "title": "Table 39. Low-power mode wakeup timings",
+  "page": 89,
+  "section": "6.3.5 Supply current characteristics",
+  "section_title": "Supply current characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l432kb.pdf#page=89",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l432kb.pdf",
+  "text_helper": "Table 39. Low-power mode wakeup timings — section 6.3.5 Supply current characteristics. Symbol, Parameter, Conditions, Typ, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t WUSLEEP",
+        "Wakeup time from Sleep mode to Run mode",
+        "-",
+        "6",
+        "6",
+        "Nb of CPU cycles"
+      ],
+      [
+        "t WULPSLEEP",
+        "Wakeup time from Low- power sleep mode to Low- power run mode",
+        "Wakeup in Flash with Flash in power-down during low-power sleep mode (SLEEP_PD=1 in FLASH_ACR) and with clock MSI = 2 MHz",
+        "6",
+        "8.3",
+        "Nb of CPU cycles"
+      ],
+      [
+        "t WUSTOP0",
+        "Wake up time from Stop 0 mode to Run mode in Flash",
+        "Range 1",
+        "3.8",
+        "5.7",
+        "µs"
+      ],
+      [
+        "t WUSTOP0",
+        "Wake up time from Stop 0 mode to Run mode in Flash",
+        "Wakeup clock HSI16 = 16 MHz",
+        "4.1",
+        "6.9",
+        "6.9"
+      ],
+      [
+        "t WUSTOP0",
+        "Range 2",
+        "Wakeup clock MSI = 24 MHz",
+        "4.07",
+        "6.2",
+        "6.2"
+      ],
+      [
+        "t WUSTOP0",
+        "Range 2",
+        "Wakeup clock HSI16 = 16 MHz",
+        "4.1",
+        "6.8",
+        "6.8"
+      ],
+      [
+        "t WUSTOP0",
+        "Range 2",
+        "Wakeup clock MSI = 4 MHz",
+        "8.45",
+        "11.8",
+        "11.8"
+      ],
+      [
+        "t WUSTOP0",
+        "Wake up time from Stop 0 mode to Run mode in SRAM1",
+        "Range 1",
+        "Wakeup clock MSI = 48 MHz",
+        "1.5",
+        "2.9"
+      ],
+      [
+        "t WUSTOP0",
+        "Wake up time from Stop 0 mode to Run mode in SRAM1",
+        "Wakeup clock HSI16 = 16 MHz",
+        "2.4",
+        "2.76",
+        "2.76"
+      ],
+      [
+        "t WUSTOP0",
+        "Range 2",
+        "Wakeup clock MSI = 24 MHz",
+        "2.4",
+        "3.48",
+        "3.48"
+      ],
+      [
+        "t WUSTOP0",
+        "Range 2",
+        "Wakeup clock HSI16 = 16 MHz",
+        "2.4",
+        "2.76",
+        "2.76"
+      ],
+      [
+        "t WUSTOP0",
+        "Range 2",
+        "Wakeup clock MSI = 4 MHz",
+        "8.16",
+        "10.94",
+        "10.94"
+      ],
+      [
+        "t WUSTOP1",
+        "Wake up time from Stop 1 mode to Run in Flash",
+        "Range 1",
+        "6.34",
+        "7.86",
+        "µs"
+      ],
+      [
+        "t WUSTOP1",
+        "Wake up time from Stop 1 mode to Run in Flash",
+        "Wakeup clock HSI16 = 16 MHz",
+        "6.84",
+        "8.23",
+        "8.23"
+      ],
+      [
+        "t WUSTOP1",
+        "Range 2",
+        "Wakeup clock MSI = 24 MHz",
+        "6.74",
+        "8.1",
+        "8.1"
+      ],
+      [
+        "t WUSTOP1",
+        "Range 2",
+        "Wakeup clock HSI16 = 16 MHz",
+        "6.89",
+        "8.21",
+        "8.21"
+      ],
+      [
+        "t WUSTOP1",
+        "Range 2",
+        "Wakeup clock MSI = 4 MHz",
+        "10.47",
+        "12.1",
+        "12.1"
+      ],
+      [
+        "t WUSTOP1",
+        "Wake up time from Stop 1 mode to Run mode in SRAM1",
+        "Range 1",
+        "Wakeup clock MSI = 48 MHz",
+        "4.7",
+        "5.97"
+      ],
+      [
+        "t WUSTOP1",
+        "Wake up time from Stop 1 mode to Run mode in SRAM1",
+        "Wakeup clock HSI16 = 16 MHz",
+        "5.9",
+        "6.92",
+        "6.92"
+      ],
+      [
+        "t WUSTOP1",
+        "Range 2",
+        "Wakeup clock MSI = 24 MHz",
+        "5.4",
+        "6.51",
+        "6.51"
+      ],
+      [
+        "t WUSTOP1",
+        "Range 2",
+        "Wakeup clock HSI16 = 16 MHz",
+        "5.9",
+        "6.92",
+        "6.92"
+      ],
+      [
+        "t WUSTOP1",
+        "Range 2",
+        "Wakeup clock MSI = 4 MHz",
+        "11.1",
+        "12.2",
+        "12.2"
+      ],
+      [
+        "t WUSTOP1",
+        "Wake up time from Stop 1 mode to Low-power run mode in Flash",
+        "Regulator in low-power mode (LPR=1 in PWR_CR1)",
+        "Wakeup clock MSI = 2 MHz",
+        "16.4",
+        "17.73"
+      ],
+      [
+        "t WUSTOP1",
+        "Wake up time from Stop 1 mode to Low-power run mode in SRAM1",
+        "Wake up time from Stop 1 mode to Low-power run mode in SRAM1",
+        "17.3",
+        "18.82",
+        "18.82"
+      ],
+      [
+        "t WUSTOP2",
+        "Wake up time from Stop 2 mode to Run mode in Flash",
+        "Range 1",
+        "8.02",
+        "9.24",
+        "µs"
+      ],
+      [
+        "t WUSTOP2",
+        "Wake up time from Stop 2 mode to Run mode in Flash",
+        "Wakeup clock HSI16 = 16 MHz",
+        "7.66",
+        "8.95",
+        "8.95"
+      ],
+      [
+        "t WUSTOP2",
+        "Range 2",
+        "Wakeup clock MSI = 24 MHz",
+        "8.5",
+        "9.54",
+        "9.54"
+      ],
+      [
+        "t WUSTOP2",
+        "Range 2",
+        "Wakeup clock HSI16 = 16 MHz",
+        "7.75",
+        "8.95",
+        "8.95"
+      ],
+      [
+        "t WUSTOP2",
+        "Range 2",
+        "Wakeup clock MSI = 4 MHz",
+        "12.06",
+        "13.16",
+        "13.16"
+      ],
+      [
+        "t WUSTOP2",
+        "Wake up time from Stop 2 mode to Run mode in SRAM1",
+        "Range 1",
+        "Wakeup clock MSI = 48 MHz",
+        "5.45",
+        "6.79"
+      ],
+      [
+        "t WUSTOP2",
+        "Wake up time from Stop 2 mode to Run mode in SRAM1",
+        "Wakeup clock HSI16 = 16 MHz",
+        "6.9",
+        "7.98",
+        "7.98"
+      ],
+      [
+        "t WUSTOP2",
+        "Range 2",
+        "Wakeup clock MSI = 24 MHz",
+        "6.3",
+        "7.36",
+        "7.36"
+      ],
+      [
+        "t WUSTOP2",
+        "Range 2",
+        "Wakeup clock HSI16 = 16 MHz",
+        "6.9",
+        "7.9",
+        "7.9"
+      ],
+      [
+        "t WUSTOP2",
+        "Range 2",
+        "Wakeup clock MSI = 4 MHz",
+        "13.1",
+        "13.31",
+        "13.31"
+      ],
+      [
+        "t WUSTBY",
+        "Wakeup time from Standby mode to Run mode",
+        "Range 1",
+        "12.2",
+        "18.35",
+        "µs"
+      ],
+      [
+        "t WUSTBY",
+        "Wakeup time from Standby mode to Run mode",
+        "Wakeup clock MSI = 4 MHz",
+        "19.14",
+        "25.8",
+        "25.8"
+      ],
+      [
+        "t WUSTBY SRAM2",
+        "Wakeup time from Standby with SRAM2 to Run mode",
+        "Range 1",
+        "12.1",
+        "18.3",
+        "µs"
+      ],
+      [
+        "t WUSTBY SRAM2",
+        "Wakeup time from Standby with SRAM2 to Run mode",
+        "Wakeup clock MSI = 4 MHz",
+        "19.2",
+        "25.87",
+        "25.87"
+      ],
+      [
+        "t WUSHDN",
+        "Wakeup time from Shutdown mode to Run mode",
+        "Range 1",
+        "261.5",
+        "315.7",
+        "µs"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization results.",
+      "2. Time until REGLPF flag is cleared in PWR_SR2.",
+      "3. Time until VOSF flag is cleared in PWR_SR2.",
+      "4. The AHB to APB2 Bridge is automatically active when at least one peripheral is ON on the APB2."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

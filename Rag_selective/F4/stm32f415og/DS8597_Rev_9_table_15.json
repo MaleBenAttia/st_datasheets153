@@ -1,0 +1,74 @@
+{
+  "table_id": "table_15",
+  "document": "DS8597 Rev 9 - Table 15. Limitations depending on the operating power supply range",
+  "rev": "Rev 9",
+  "table_number": "15",
+  "title": "Table 15. Limitations depending on the operating power supply range",
+  "page": 84,
+  "section": "1.2 V internal voltage on",
+  "section_title": "V internal voltage on",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f415og.pdf#page=84",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f415og.pdf",
+  "text_helper": "Table 15. Limitations depending on the operating power supply range — section 1.2 V internal voltage on. Operating power supply range, ADC operation, Maximum Flash memory access frequency with no wait state (f ) Flashmax, Maximum Flash memory access frequency with wait states(1) (2), I/O operatio...",
+  "table_content": {
+    "headers": [
+      "Operating power supply range",
+      "ADC operation",
+      "Maximum Flash memory access frequency with no wait state (f ) Flashmax",
+      "Maximum Flash memory access frequency with wait states(1) (2)",
+      "I/O operation",
+      "Clock output Frequency on I/O pins",
+      "Possible Flash memory operations"
+    ],
+    "rows": [
+      [
+        "V =1.8 to DD 2.1 V(3)",
+        "Conversion time up to 1.2 Msps",
+        "20 MHz(4)",
+        "160 MHz with 7 wait states",
+        "– Degraded speed performance – No I/O compensation",
+        "up to 30 MHz",
+        "8-bit erase and program operations only"
+      ],
+      [
+        "V = 2.1 to DD 2.4 V",
+        "Conversion time up to 1.2 Msps",
+        "22 MHz",
+        "168 MHz with 7 wait states",
+        "– Degraded speed performance – No I/O compensation",
+        "up to 30 MHz",
+        "16-bit erase and program operations"
+      ],
+      [
+        "V = 2.4 to DD 2.7 V",
+        "Conversion time up to 2.4 Msps",
+        "24 MHz",
+        "168 MHz with 6 wait states",
+        "– Degraded speed performance – I/O compensation works",
+        "up to 48 MHz",
+        "16-bit erase and program operations"
+      ],
+      [
+        "V = 2.7 to DD 3.6 V(5)",
+        "Conversion time up to 2.4 Msps",
+        "30 MHz",
+        "168 MHz with 5 wait states",
+        "– Full-speed operation – I/O compensation works",
+        "– up to 60 MHz when V = DD 3.0 to 3.6 V – up to 48 MHz when V = DD 2.7 to 3.0 V",
+        "32-bit erase and program operations"
+      ]
+    ],
+    "notes": [
+      "1. It applies only when code executed from Flash memory access, when code executed from RAM, no wait state is required.",
+      "2. Thanks to the ART accelerator and the 128-bit Flash memory, the number of wait states given here does not impact the execution speed from Flash memory since the ART accelerator allows to achieve a performance equivalent to 0 wait state",
+      "3. D 6 D V(5) time up to 30 MHz wait states – I/O – up to and program",
+      "4. Prefetch is not available. Refer to AN3430 application note for details on how to adjust performance and power.",
+      "5. The voltage range for OTG USB FS can drop down to 2.7 V. However it is degraded between 2.7 and 3 V. 84/207 DS8597 Rev 9"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

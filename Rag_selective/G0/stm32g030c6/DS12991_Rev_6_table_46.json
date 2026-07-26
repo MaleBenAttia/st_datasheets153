@@ -1,0 +1,42 @@
+{
+  "table_id": "table_46",
+  "document": "DS12991 Rev 6 - Table 46. Electrical sensitivity",
+  "rev": "Rev 6",
+  "table_number": "46",
+  "title": "Table 46. Electrical sensitivity",
+  "page": 60,
+  "section": "5.3.12 Electrical sensitivity characteristics",
+  "section_title": "Electrical sensitivity characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32g030c6.pdf#page=60",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g030c6.pdf",
+  "text_helper": "Table 46. Electrical sensitivity — section 5.3.12 Electrical sensitivity characteristics. Symbol, Parameter, Conditions, Class.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Class"
+    ],
+    "rows": [
+      [
+        "LU",
+        "Static latch-up class",
+        "T = +85 °C conforming to JESD78 A",
+        "II Level A"
+      ]
+    ],
+    "notes": [
+      "1. Based on characterization results, not tested in production.",
+      "2. The injection current value is applicable when the switchable diode is activated, N/A when not activated. 60/100 DS12991 Rev 6",
+      "3. Guaranteed by design.",
+      "4. This value represents the pad leakage of the I/O itself. The total product pad leakage is provided by this formula: I = 10 µA + [number of I/Os where V is applied on the pad] ₓ I (Max).",
+      "5. FT_e with diode enabled. Input leakage current of FT_e I/Os with the diode disabled is the same as standard I/Os.",
+      "6. Pull-up and pull-down resistors are designed with a true resistance in series with a switchable PMOS/NMOS. This PMOS/NMOS contribution to the series resistance is minimal (~10% order)."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

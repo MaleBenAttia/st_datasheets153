@@ -1,0 +1,43 @@
+{
+  "table_id": "table_10",
+  "document": "DS10152 Rev 10 - Table 10. Comparison of I2C analog and digital filters",
+  "rev": "Rev 10",
+  "table_number": "10",
+  "title": "Table 10. Comparison of I2C analog and digital filters",
+  "page": 34,
+  "section": "3.19 Communication interfaces",
+  "section_title": "Communication interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l053c6.pdf#page=34",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l053c6.pdf",
+  "text_helper": "Table 10. Comparison of I2C analog and digital filters — section 3.19 Communication interfaces. , Analog filter, Digital filter.",
+  "table_content": {
+    "headers": [
+      "",
+      "Analog filter",
+      "Digital filter"
+    ],
+    "rows": [
+      [
+        "Pulse width of suppressed spikes",
+        "≥ 50 ns",
+        "Programmable length from 1 to 15 I2C peripheral clocks"
+      ],
+      [
+        "Benefits",
+        "Available in Stop mode",
+        "1. Extra filtering capability vs. standard requirements. 2. Stable length"
+      ],
+      [
+        "Drawbacks",
+        "Variations depending on temperature, voltage, process",
+        "Wake-up from Stop on address match is not available when digital filter is enabled."
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

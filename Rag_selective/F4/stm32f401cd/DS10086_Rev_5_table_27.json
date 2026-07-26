@@ -1,0 +1,86 @@
+{
+  "table_id": "table_27",
+  "document": "DS10086 Rev 5 - Table 27. Typical and maximum current consumptions in Stop mode - V =1.8 V 69 DD",
+  "rev": "Rev 5",
+  "table_number": "27",
+  "title": "Table 27. Typical and maximum current consumptions in Stop mode - V =1.8 V 69 DD",
+  "page": 69,
+  "section": "6.3.6 Supply current characteristics",
+  "section_title": "Supply current characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f401cd.pdf#page=69",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f401cd.pdf",
+  "text_helper": "Table 27. Typical and maximum current consumptions in Stop mode - V =1.8 V 69 DD — section 6.3.6 Supply current characteristics. Symbol, Parameter, Conditions, Typ / T = A 25 °C, Max(1) / T = A 25 °C, +3 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Typ / T = A 25 °C",
+      "Max(1) / T = A 25 °C",
+      "Max(1) / T = A 85 ° C",
+      "Max(1) / T = A 105 ° C",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I DD_STO P",
+        "Main regulator usage",
+        "Flash in Stop mode, all oscillators OFF, no independent watchdog",
+        "109",
+        "135",
+        "440",
+        "650",
+        "µA"
+      ],
+      [
+        "I DD_STO P",
+        "Low power regulator usage",
+        "Flash in Stop mode, all oscillators OFF, no independent watchdog",
+        "41",
+        "65",
+        "310",
+        "530(2)",
+        "µA"
+      ],
+      [
+        "I DD_STO P",
+        "Main regulator usage",
+        "Flash in Deep power down mode, all oscillators OFF, no independent watchdog",
+        "72",
+        "95",
+        "345",
+        "530",
+        "µA"
+      ],
+      [
+        "I DD_STO P",
+        "Low power regulator usage",
+        "Flash in Deep power down mode, all oscillators OFF, no independent watchdog",
+        "12",
+        "36",
+        "260",
+        "510(2)",
+        "µA"
+      ],
+      [
+        "I DD_STO P",
+        "Low power low voltage regulator usage",
+        "Flash in Deep power down mode, all oscillators OFF, no independent watchdog",
+        "10",
+        "27",
+        "230",
+        "460",
+        "µA"
+      ]
+    ],
+    "notes": [
+      "1. Evaluated by characterization, unless otherwise specified.",
+      "2. Add an additional power consumption of 1.6 mA per ADC for the analog part. In applications, this consumption occurs only while the ADC is ON (ADON bit is set in the ADC_CR2 register)."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

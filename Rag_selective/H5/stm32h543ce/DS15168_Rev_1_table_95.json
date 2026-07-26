@@ -1,0 +1,107 @@
+{
+  "table_id": "table_95",
+  "document": "DS15168 Rev 1 - Table 95. Analog temperature sensor characteristics",
+  "rev": "Rev 1",
+  "table_number": "95",
+  "title": "Table 95. Analog temperature sensor characteristics",
+  "page": 180,
+  "section": "5.3.23 Analog temperature sensor characteristics",
+  "section_title": "Analog temperature sensor characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h543ce.pdf#page=180",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h543ce.pdf",
+  "text_helper": "Table 95. Analog temperature sensor characteristics — section 5.3.23 Analog temperature sensor characteristics. Symbol, Parameter, Min, Typ, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "T (1) L",
+        "V linearity with temperature (from V voltage) SENSE SENSOR",
+        "-",
+        "-",
+        "3",
+        "°C"
+      ],
+      [
+        "T (1) L",
+        "V linearity with temperature (from ADC counter) SENSE",
+        "-",
+        "-",
+        "3",
+        "°C"
+      ],
+      [
+        "Avg_Slope(2)",
+        "Average slope (from V voltage) SENSOR",
+        "-",
+        "2",
+        "-",
+        "mV/°C"
+      ],
+      [
+        "Avg_Slope(2)",
+        "Average slope (from ADC counter)",
+        "-",
+        "2",
+        "-",
+        "mV/°C"
+      ],
+      [
+        "V (3) 30",
+        "Voltage at 30°C ± 5°C",
+        "-",
+        "0.62",
+        "-",
+        "V"
+      ],
+      [
+        "t start_run",
+        "Startup time in Run mode (buffer startup)",
+        "-",
+        "-",
+        "25.2",
+        "µs"
+      ],
+      [
+        "t (1) S_temp",
+        "ADC sampling time when reading the temperature",
+        "9",
+        "-",
+        "-",
+        "µs"
+      ],
+      [
+        "I (1) sens",
+        "Sensor consumption",
+        "-",
+        "0.18",
+        "0.31",
+        "µA"
+      ],
+      [
+        "I (1) sensbuf",
+        "Sensor buffer consumption",
+        "-",
+        "3.8",
+        "6.5",
+        "µA"
+      ]
+    ],
+    "notes": [
+      "1. Evaluated by characterization - Not tested in production.",
+      "2. Difference between two consecutive codes minus 1 LSB.",
+      "3. Difference between the value measured at Code i and the value measured at Code i on a line drawn between Code 0 and last Code 4095."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

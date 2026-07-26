@@ -1,0 +1,138 @@
+{
+  "table_id": "table_55",
+  "document": "DS9866 Rev 8 - Table 55. TIMx characteristics",
+  "rev": "Rev 8",
+  "table_number": "55",
+  "title": "Table 55. TIMx characteristics",
+  "page": 84,
+  "section": "6.3.16 Timer characteristics",
+  "section_title": "Timer characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f303c6.pdf#page=84",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f303c6.pdf",
+  "text_helper": "Table 55. TIMx characteristics — section 6.3.16 Timer characteristics. Symbol, Parameter, Conditions, Min., Max., +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min.",
+      "Max.",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "-",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "f = 72 MHz TIMxCLK",
+        "13.9",
+        "-",
+        "ns"
+      ],
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "f = 144 MHz TIM1CLK",
+        "6.95",
+        "-",
+        "ns"
+      ],
+      [
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "-",
+        "0",
+        "f /2 TIMxCLK",
+        "MHz"
+      ],
+      [
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "f = 72 MHz TIMxCLK",
+        "0",
+        "36",
+        "MHz"
+      ],
+      [
+        "Res TIM",
+        "Timer resolution",
+        "TIMx (except TIM2)",
+        "-",
+        "16",
+        "bit"
+      ],
+      [
+        "Res TIM",
+        "Timer resolution",
+        "TIM2",
+        "-",
+        "32",
+        "bit"
+      ],
+      [
+        "t COUNTER",
+        "16-bit counter clock period",
+        "-",
+        "1",
+        "65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t COUNTER",
+        "16-bit counter clock period",
+        "f = 72 MHz TIMxCLK",
+        "0.0139",
+        "910",
+        "µs"
+      ],
+      [
+        "t COUNTER",
+        "16-bit counter clock period",
+        "f = 144 MHz TIM1CLK",
+        "0.0069",
+        "455",
+        "µs"
+      ],
+      [
+        "t MAX_COUNT",
+        "Maximum possible count with 32-bit counter",
+        "-",
+        "-",
+        "65536 × 65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t MAX_COUNT",
+        "Maximum possible count with 32-bit counter",
+        "f = 72 MHz TIMxCLK",
+        "-",
+        "59.65",
+        "s"
+      ],
+      [
+        "t MAX_COUNT",
+        "Maximum possible count with 32-bit counter",
+        "f = 144 MHz TIM1CLK",
+        "-",
+        "29.825",
+        "s"
+      ]
+    ],
+    "notes": [
+      "1. TIMx is used as a general term to refer to the TIM1, TIM2, TIM3, TIM15, TIM16 and TIM17 timers.",
+      "2. Guaranteed by design, not tested in production. 84/124 DS9866 Rev 8"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

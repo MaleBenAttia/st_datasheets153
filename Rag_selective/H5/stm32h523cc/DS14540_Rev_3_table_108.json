@@ -1,0 +1,60 @@
+{
+  "table_id": "table_108",
+  "document": "DS14540 Rev 3 - Table 108. I3C push-pull measured timing",
+  "rev": "Rev 3",
+  "table_number": "108",
+  "title": "Table 108. I3C push-pull measured timing",
+  "page": 184,
+  "section": "5.3.32 Communication interfaces",
+  "section_title": "Communication interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h523cc.pdf#page=184",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h523cc.pdf",
+  "text_helper": "Table 108. I3C push-pull measured timing — section 5.3.32 Communication interfaces. Symbol, Parameter, Conditions, I3C open drain mode / (specification) / Min, I3C open drain mode / Max, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "I3C open drain mode / (specification) / Min",
+      "I3C open drain mode / Max",
+      "Timing measurements",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t SU_OD",
+        "SDA data setup time during open drain mode",
+        "Controller 1.71 V < V < 3.6 V DD",
+        "3",
+        "-",
+        "16.5",
+        "ns"
+      ],
+      [
+        "t SU_PP",
+        "SDA signal data setup in push-pull mode",
+        "Controller 1.71 V < V < 3.6 V DD",
+        "3",
+        "-",
+        "12",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. Evaluated by characterization - Not tested in production.",
+      "2. When using PB13.",
+      "3. Maximum frequency in slave transmitter mode is determined by the sum of t and t which must fit into SCK low or v(SO) su(MI)",
+      "4. When using PB14. DS14540 Rev 3 185/226"
+    ],
+    "legend": [
+      "SCL low duration in the I3C_TIMINGR0 register. For t this can be mitigated by enabling",
+      "and adjusting the clock stall time both on the address ACK phase and on the data read Tbit",
+      "phase in the I3C_TIMINGR2 register. This can also be mitigated by increasing the SCL low",
+      "duration in the I3C_TIMINGR0 register. For further details, refer to AN5879."
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

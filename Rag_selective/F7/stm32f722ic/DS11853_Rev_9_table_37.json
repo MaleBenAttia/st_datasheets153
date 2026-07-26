@@ -1,0 +1,106 @@
+{
+  "table_id": "table_37",
+  "document": "DS11853 Rev 9 - Table 37. Low-power mode wakeup timings",
+  "rev": "Rev 9",
+  "table_number": "37",
+  "title": "Table 37. Low-power mode wakeup timings",
+  "page": 125,
+  "section": "6.3.8 Wakeup time from low-power modes",
+  "section_title": "Wakeup time from low-power modes",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f722ic.pdf#page=125",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f722ic.pdf",
+  "text_helper": "Table 37. Low-power mode wakeup timings — section 6.3.8 Wakeup time from low-power modes. Symbol, Parameter, Conditions, Typ(1), Max(1), +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Typ(1)",
+      "Max(1)",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t (2) WUSLEEP",
+        "Wakeup from Sleep mode",
+        "-",
+        "13",
+        "13",
+        "CPU clock cycles"
+      ],
+      [
+        "t (2) WUSTOP",
+        "Wakeup from Stop mode with MR/LP regulator in normal mode",
+        "Main regulator is ON",
+        "14",
+        "14.9",
+        "µs"
+      ],
+      [
+        "t (2) WUSTOP",
+        "Wakeup from Stop mode with MR/LP regulator in normal mode",
+        "Main regulator is ON and Flash memory in Deep power down mode",
+        "104.1",
+        "107.6",
+        "µs"
+      ],
+      [
+        "t (2) WUSTOP",
+        "Wakeup from Stop mode with MR/LP regulator in normal mode",
+        "Low power regulator is ON",
+        "21.4",
+        "24.2",
+        "µs"
+      ],
+      [
+        "t (2) WUSTOP",
+        "Wakeup from Stop mode with MR/LP regulator in normal mode",
+        "Low power regulator is ON and Flash memory in Deep power down mode",
+        "111.5",
+        "116.5",
+        "µs"
+      ],
+      [
+        "t (2) WUSTOP",
+        "Wakeup from Stop mode with MR/LP regulator in Under-drive mode",
+        "Main regulator in under-drive mode (Flash memory in Deep power-down mode)",
+        "107.4",
+        "113.2",
+        "µs"
+      ],
+      [
+        "t (2) WUSTOP",
+        "Wakeup from Stop mode with MR/LP regulator in Under-drive mode",
+        "Low power regulator in under-drive mode (Flash memory in Deep power-down mode)",
+        "112.7",
+        "120",
+        "120"
+      ],
+      [
+        "t (2) WUSTDBY",
+        "Wakeup from Standby mode",
+        "Exit Standby mode on rising edge",
+        "308",
+        "313",
+        "µs"
+      ],
+      [
+        "t (2) WUSTDBY",
+        "Wakeup from Standby mode",
+        "Exit Standby mode on falling edge",
+        "307",
+        "313",
+        "313"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization results.",
+      "2. The wakeup times are measured from the wakeup event to the point in which the application code reads the first"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

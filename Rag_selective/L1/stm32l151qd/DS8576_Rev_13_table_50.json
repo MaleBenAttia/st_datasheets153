@@ -1,0 +1,164 @@
+{
+  "table_id": "table_50",
+  "document": "DS8576 Rev 13 - Table 50. I/O static characteristics",
+  "rev": "Rev 13",
+  "table_number": "50",
+  "title": "Table 50. I/O static characteristics",
+  "page": 105,
+  "section": "6.3.14 I/O port characteristics",
+  "section_title": "I/O port characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l151qd.pdf#page=105",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l151qd.pdf",
+  "text_helper": "Table 50. I/O static characteristics — section 6.3.14 I/O port characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V IL",
+        "Input low level voltage",
+        "-",
+        "-",
+        "-",
+        "0.3V DD (1)",
+        "V"
+      ],
+      [
+        "V IH",
+        "Input high level voltage",
+        "Standard I/O",
+        "0.7 V DD",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "V IH",
+        "Input high level voltage",
+        "FT I/O",
+        "0.7 V DD",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "V IH",
+        "Input high level voltage",
+        "BOOT0 I/O",
+        "0.7 V DD",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "V hys",
+        "I/O Schmitt trigger voltage hysteresis(2)",
+        "Standard I/O",
+        "-",
+        "10% V (3) DD",
+        "-",
+        "V"
+      ],
+      [
+        "I lkg",
+        "Input leakage current(4)",
+        "V ≤ V ≤ V SS IN DD I/Os with LCD",
+        "-",
+        "-",
+        "±50",
+        "nA"
+      ],
+      [
+        "I lkg",
+        "Input leakage current(4)",
+        "V ≤ V ≤ V SS IN DD I/Os with analog switches",
+        "-",
+        "-",
+        "±50",
+        "nA"
+      ],
+      [
+        "I lkg",
+        "Input leakage current(4)",
+        "V ≤ V ≤ V SS IN DD I/Os with analog switches and LCD",
+        "-",
+        "-",
+        "±50",
+        "nA"
+      ],
+      [
+        "I lkg",
+        "Input leakage current(4)",
+        "V ≤ V ≤ V SS IN DD I/Os with USB",
+        "-",
+        "-",
+        "±250",
+        "nA"
+      ],
+      [
+        "I lkg",
+        "Input leakage current(4)",
+        "V ≤ V ≤ V SS IN DD Standard I/Os",
+        "-",
+        "-",
+        "±50",
+        "nA"
+      ],
+      [
+        "I lkg",
+        "Input leakage current(4)",
+        "FT I/O V ≤ V ≤ 5V DD IN",
+        "-",
+        "-",
+        "±10",
+        "uA"
+      ],
+      [
+        "R PU",
+        "Weak pull-up equivalent resistor(1)(5)",
+        "V = V IN SS",
+        "30",
+        "45",
+        "60",
+        "kΩ"
+      ],
+      [
+        "R PD",
+        "Weak pull-down equivalent resistor(5)",
+        "V = V IN DD",
+        "30",
+        "45",
+        "60",
+        "kΩ"
+      ],
+      [
+        "C IO",
+        "I/O pin capacitance",
+        "-",
+        "-",
+        "5",
+        "-",
+        "pF"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by test in production",
+      "2. Hysteresis voltage between Schmitt trigger switching levels. Guaranteed by characterization results.",
+      "3. With a minimum of 200 mV. Guaranteed by characterization results.",
+      "4. The max. value may be exceeded if negative current is injected on adjacent pins.",
+      "5. Pull-up and pull-down resistors are designed with a true resistance in series with a switchable PMOS/NMOS. DS8576 Rev 13 105/155"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

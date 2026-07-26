@@ -1,0 +1,75 @@
+{
+  "table_id": "table_17",
+  "document": "DS11139 Rev 9 - Table 17. Features depending on the operating power supply range",
+  "rev": "Rev 9",
+  "table_number": "17",
+  "title": "Table 17. Features depending on the operating power supply range",
+  "page": 83,
+  "section": "6.3.1 General operating conditions",
+  "section_title": "General operating conditions",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f412ce.pdf#page=83",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f412ce.pdf",
+  "text_helper": "Table 17. Features depending on the operating power supply range — section 6.3.1 General operating conditions. Operating power supply range, ADC operation, Maximum flash memory access frequency with no wait states (f ) Flashmax, Maximum flash memory access frequency with wait states (1)(2), I/O o...",
+  "table_content": {
+    "headers": [
+      "Operating power supply range",
+      "ADC operation",
+      "Maximum flash memory access frequency with no wait states (f ) Flashmax",
+      "Maximum flash memory access frequency with wait states (1)(2)",
+      "I/O operation",
+      "Clock output frequency on I/O pins(3)",
+      "Possible flash memory operations"
+    ],
+    "rows": [
+      [
+        "V =1.7 to DD 2.1 V(4)",
+        "Conversion time up to 1.2 Msps",
+        "16 MHz(5)",
+        "100 MHz with 6 wait states",
+        "– No I/O compensation",
+        "up to 30 MHz",
+        "8-bit erase and program operations only"
+      ],
+      [
+        "V = 2.1 to DD 2.4 V",
+        "Conversion time up to 1.2 Msps",
+        "18 MHz",
+        "100 MHz with 5 wait states",
+        "– No I/O compensation",
+        "up to 30 MHz",
+        "16-bit erase and program operations"
+      ],
+      [
+        "V = 2.4 to DD 2.7 V",
+        "Conversion time up to 2.4 Msps",
+        "24 MHz",
+        "100 MHz with 4 wait states",
+        "– I/O compensation works",
+        "up to 50 MHz",
+        "16-bit erase and program operations"
+      ],
+      [
+        "V = 2.7 to DD 3.6 V(6)",
+        "Conversion time up to 2.4 Msps",
+        "30 MHz",
+        "100 MHz with 3 wait states",
+        "– I/O compensation works",
+        "– up to 100 MHz when V = DD 3.0 to 3.6 V – up to 50 MHz when V = DD 2.7 to 3.0 V",
+        "32-bit erase and program operations"
+      ]
+    ],
+    "notes": [
+      "1. Applicable only when the code is executed from flash memory. When the code is executed from RAM, no wait state is required.",
+      "2. Thanks to the ART accelerator and the 128-bit flash memory, the number of wait states given here does not impact the execution speed from flash memory since the ART accelerator allows to achieve a performance equivalent to 0 wait state",
+      "3. Refer to Table 59: I/O AC characteristics for frequencies vs. external load.",
+      "4. V /V minimum value of 1.7 V, with the use of an external power supply supervisor (refer to Section 3.18.2: Internal DD DDA",
+      "5. Prefetch available over the complete VDD supply range.",
+      "6. The voltage range for the USB full speed embedded PHY can drop down to 2.7 V. However the electrical characteristics of D- and D+ pins will be degraded between 2.7 and 3 V."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

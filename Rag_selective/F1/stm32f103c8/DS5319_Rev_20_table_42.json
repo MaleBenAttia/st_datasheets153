@@ -1,0 +1,55 @@
+{
+  "table_id": "table_42",
+  "document": "DS5319 Rev 20 - Table 42. SCL frequency (f = 36 MHz, V = 3.3 V) 69 PCLK1 DD_I2C",
+  "rev": "Rev 20",
+  "table_number": "42",
+  "title": "Table 42. SCL frequency (f = 36 MHz, V = 3.3 V) 69 PCLK1 DD_I2C",
+  "page": 69,
+  "section": "5.3.16 Communications interfaces",
+  "section_title": "Communications interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f103c8.pdf#page=69",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f103c8.pdf",
+  "text_helper": "Table 42. SCL frequency (f = 36 MHz, V = 3.3 V) 69 PCLK1 DD_I2C — section 5.3.16 Communications interfaces. f (kHz) SCL, I2C_CCR value / R = 4.7 kΩ P.",
+  "table_content": {
+    "headers": [
+      "f (kHz) SCL",
+      "I2C_CCR value / R = 4.7 kΩ P"
+    ],
+    "rows": [
+      [
+        "400",
+        "0x801E"
+      ],
+      [
+        "300",
+        "0x8028"
+      ],
+      [
+        "200",
+        "0x803C"
+      ],
+      [
+        "100",
+        "0x00B4"
+      ],
+      [
+        "50",
+        "0x0168"
+      ],
+      [
+        "20",
+        "0x0384"
+      ]
+    ],
+    "notes": [
+      "1. R = External pull-up resistance, f = I2C speed, P SCL",
+      "2. For speeds around 200 kHz, the tolerance on the achieved speed is ±5%. For other speed ranges, the tolerance on the achieved speed is ±2%. These variations depend upon the accuracy of the external",
+      "3. Min time is for the minimum time to invalidate the output and the max time is for the maximum time to put the data in Hi-Z."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,205 @@
+{
+  "table_id": "table_14",
+  "document": "DS11532 Rev 9 - Table 14. Voltage characteristics",
+  "rev": "Rev 9",
+  "table_number": "14",
+  "title": "Table 14. Voltage characteristics",
+  "page": 107,
+  "section": "6.2 Absolute maximum ratings",
+  "section_title": "Absolute maximum ratings",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f765bg.pdf#page=107",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f765bg.pdf",
+  "text_helper": "Table 14. Voltage characteristics — section 6.2 Absolute maximum ratings. Symbol, Ratings, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Ratings",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V –V DD SS",
+        "External main supply voltage (including V , DDA V V , V V (1) and V (2) DD, BAT DDUSB, DDDSI DDSDMMC)",
+        "-0.3",
+        "4.0",
+        "V"
+      ],
+      [
+        "V IN",
+        "Input voltage on FT pins(3)",
+        "V -0.3 SS",
+        "Min(Min(V , V , DD DDA V ) +3.6, 5.5 V)(4)(5) DDUSB",
+        "V"
+      ],
+      [
+        "V IN",
+        "Input voltage on TTa pins",
+        "V -0.3 SS",
+        "4.0",
+        "V"
+      ],
+      [
+        "V IN",
+        "Input voltage on any other pin",
+        "V -0.3 SS",
+        "4.0",
+        "V"
+      ],
+      [
+        "V IN",
+        "Input voltage on BOOT pin",
+        "V SS",
+        "9.0",
+        "V"
+      ],
+      [
+        "|ΔV | DDx",
+        "Variations between different V power pins DD",
+        "-",
+        "50",
+        "mV"
+      ],
+      [
+        "|V -V | SSX SS",
+        "Variations between all the different ground pins(6)",
+        "-",
+        "50",
+        "mV"
+      ],
+      [
+        "V ESD(HBM)",
+        "Electrostatic discharge voltage (human body model)",
+        "see Section 6.3.18: Absolute maximum ratings (electrical sensitivity)",
+        "see Section 6.3.18: Absolute maximum ratings (electrical sensitivity)",
+        "-"
+      ],
+      [
+        "ΣI VDD",
+        "ΣI VDD",
+        "Total current into sum of all V power lines (source)(1) DD_x",
+        "Total current into sum of all V power lines (source)(1) DD_x",
+        "420"
+      ],
+      [
+        "SSV I Σ",
+        "SSV I Σ",
+        "Total current out of sum of all V ground lines (sink)(1) SS_x",
+        "Total current out of sum of all V ground lines (sink)(1) SS_x",
+        "-420"
+      ],
+      [
+        "BSUDDV I Σ",
+        "BSUDDV I Σ",
+        "Total current into V power line (source) DDUSB",
+        "Total current into V power line (source) DDUSB",
+        "25"
+      ],
+      [
+        "CMMDSDDV I Σ",
+        "CMMDSDDV I Σ",
+        "Total current into V power line (source) DDSDMMC",
+        "Total current into V power line (source) DDSDMMC",
+        "60"
+      ],
+      [
+        "I VDD",
+        "I VDD",
+        "Maximum current into each V power line (source)(1) DD_x",
+        "Maximum current into each V power line (source)(1) DD_x",
+        "100"
+      ],
+      [
+        "I VDDSDMMC",
+        "I VDDSDMMC",
+        "Maximum current into V power line (source): PG[12:9], PD[7:6] DDSDMMC",
+        "Maximum current into V power line (source): PG[12:9], PD[7:6] DDSDMMC",
+        "100"
+      ],
+      [
+        "I VSS",
+        "I VSS",
+        "Maximum current out of each V ground line (sink)(1) SS_x",
+        "Maximum current out of each V ground line (sink)(1) SS_x",
+        "-100"
+      ],
+      [
+        "I IO",
+        "I IO",
+        "Output current sunk by any I/O and control pin",
+        "Output current sunk by any I/O and control pin",
+        "25"
+      ],
+      [
+        "None",
+        "None",
+        "Output current sourced by any I/Os and control pin",
+        "Output current sourced by any I/Os and control pin",
+        "-25"
+      ],
+      [
+        "ΣI IO",
+        "ΣI IO",
+        "Total output current sunk by sum of all I/O and control pins (2)",
+        "Total output current sunk by sum of all I/O and control pins (2)",
+        "120"
+      ],
+      [
+        "None",
+        "None",
+        "Total output current sunk by sum of all USB I/Os",
+        "Total output current sunk by sum of all USB I/Os",
+        "25"
+      ],
+      [
+        "None",
+        "None",
+        "Total output current sunk by sum of all SDMMC I/Os",
+        "Total output current sunk by sum of all SDMMC I/Os",
+        "120"
+      ],
+      [
+        "None",
+        "None",
+        "Total output current sourced by sum of all I/Os and control pins except USB I/Os(2)",
+        "Total output current sourced by sum of all I/Os and control pins except USB I/Os(2)",
+        "-120"
+      ],
+      [
+        "I INJ(PIN)",
+        "I INJ(PIN)",
+        "Injected current on FT, FTf, RST and B pins (3)",
+        "Injected current on FT, FTf, RST and B pins (3)",
+        "-5/+0"
+      ],
+      [
+        "None",
+        "None",
+        "Injected current on TTa pins(4)",
+        "Injected current on TTa pins(4)",
+        "±5"
+      ],
+      [
+        "ΣI (4) INJ(PIN)",
+        "ΣI (4) INJ(PIN)",
+        "Total injected current (sum of all I/O and control pins)(5)",
+        "Total injected current (sum of all I/O and control pins)(5)",
+        "±25"
+      ]
+    ],
+    "notes": [
+      "1. Applicable only for STM32F7x9 sales types.",
+      "2. All main power (V DD , V DDA , V DDSDMMC, V DDUSB, V DDDSI) and ground (V SS , V SSA ) pins must always be connected to the external power supply, in the permitted range.",
+      "3. V maximum value must always be respected. Refer to Table 15 for the values of the maximum allowed injected current. IN",
+      "4. This formula has to be applied on power supplies related to the IO structure described by the pin definition table.",
+      "5. To sustain a voltage higher than 4 V the internal pull-up/pull-down resistors must be disabled.",
+      "6. Include V pin. REF-"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

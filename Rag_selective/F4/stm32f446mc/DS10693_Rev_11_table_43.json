@@ -1,0 +1,154 @@
+{
+  "table_id": "table_43",
+  "document": "DS10693 Rev 11 - Table 43. Main PLL characteristics",
+  "rev": "Rev 11",
+  "table_number": "43",
+  "title": "Table 43. Main PLL characteristics",
+  "page": 107,
+  "section": "6.3.11 PLL characteristics",
+  "section_title": "PLL characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f446mc.pdf#page=107",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f446mc.pdf",
+  "text_helper": "Table 43. Main PLL characteristics — section 6.3.11 PLL characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f PLL_IN",
+        "PLL input clock(1)",
+        "-",
+        "0.95(2)",
+        "1",
+        "2.10",
+        "MHz"
+      ],
+      [
+        "f PLL_OUT",
+        "PLL multiplier output clock",
+        "-",
+        "12.5",
+        "-",
+        "180",
+        "MHz"
+      ],
+      [
+        "f PLL48_OUT",
+        "48 MHz PLL multiplier output clock",
+        "-",
+        "-",
+        "48",
+        "75",
+        "MHz"
+      ],
+      [
+        "f VCO_OUT",
+        "PLL VCO output",
+        "-",
+        "100",
+        "-",
+        "432",
+        "MHz"
+      ],
+      [
+        "t LOCK",
+        "PLL lock time",
+        "VCO frequency = 100 MHz",
+        "75",
+        "-",
+        "200",
+        "µs"
+      ],
+      [
+        "t LOCK",
+        "PLL lock time",
+        "VCO frequency = 432 MHz",
+        "100",
+        "-",
+        "300",
+        "µs"
+      ],
+      [
+        "Jitter(3)",
+        "Cycle-to-cycle jitter",
+        "System clock 120 MHz",
+        "RMS",
+        "25",
+        "-",
+        "ps"
+      ],
+      [
+        "Jitter(3)",
+        "Cycle-to-cycle jitter",
+        "Peak to peak",
+        "-",
+        "±150",
+        "-",
+        "-"
+      ],
+      [
+        "Jitter(3)",
+        "Period Jitter",
+        "RMS",
+        "-",
+        "15",
+        "-",
+        "-"
+      ],
+      [
+        "Jitter(3)",
+        "Period Jitter",
+        "Peak to peak",
+        "-",
+        "±200",
+        "-",
+        "-"
+      ],
+      [
+        "Jitter(3)",
+        "Bit Time CAN jitter",
+        "Cycle to cycle at 1 MHz on 1000 samples",
+        "-",
+        "330",
+        "-",
+        "-"
+      ],
+      [
+        "I (4) DD(PLL)",
+        "PLL power consumption on V DD",
+        "VCO frequency = 100 MHz VCO frequency = 432 MHz",
+        "0.15 0.45",
+        "-",
+        "0.40 0.75",
+        "mA"
+      ],
+      [
+        "I (4) DDA(PLL)",
+        "PLL power consumption on V DDA",
+        "VCO frequency = 100 MHz VCO frequency = 432 MHz",
+        "0.30 0.55",
+        "-",
+        "0.40 0.85",
+        "mA"
+      ]
+    ],
+    "notes": [
+      "1. Use the appropriate division factor M (each PLL has its own) to obtain the specified PLL input clock values.",
+      "2. Guaranteed by design.",
+      "3. Guaranteed by design.",
+      "4. Guaranteed based on test during characterization."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

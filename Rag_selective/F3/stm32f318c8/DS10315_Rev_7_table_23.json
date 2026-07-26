@@ -1,0 +1,80 @@
+{
+  "table_id": "table_23",
+  "document": "DS10315 Rev 7 - Table 23. Embedded internal reference voltage",
+  "rev": "Rev 7",
+  "table_number": "23",
+  "title": "Table 23. Embedded internal reference voltage",
+  "page": 51,
+  "section": "6.3.3 Embedded reference voltage",
+  "section_title": "Embedded reference voltage",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f318c8.pdf#page=51",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f318c8.pdf",
+  "text_helper": "Table 23. Embedded internal reference voltage — section 6.3.3 Embedded reference voltage. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V REFINT",
+        "Internal reference voltage",
+        "–40 °C < T < +105 °C A",
+        "1.20",
+        "1.23",
+        "1.25",
+        "V"
+      ],
+      [
+        "T S_vrefint",
+        "ADC sampling time when reading the internal reference voltage",
+        "-",
+        "2.2",
+        "-",
+        "-",
+        "µs"
+      ],
+      [
+        "V RERINT",
+        "Internal reference voltage spread over the temperature range",
+        "V = 1.8 V ±10 mV DD",
+        "-",
+        "-",
+        "10(1)",
+        "mV"
+      ],
+      [
+        "T Coeff",
+        "Temperature coefficient",
+        "-",
+        "-",
+        "-",
+        "100 (1)",
+        "ppm/° C"
+      ],
+      [
+        "T REFINT_RDY (2)",
+        "Internal reference voltage temporization",
+        "-",
+        "1.5",
+        "2.5",
+        "4.5",
+        "ms"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by design.",
+      "2. Guaranteed by design. Latency between the time when pin NPOR is set to 1 by the application and the time when V is set to 1 by the hardware."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

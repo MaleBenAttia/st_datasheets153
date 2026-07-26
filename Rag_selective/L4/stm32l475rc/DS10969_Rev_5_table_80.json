@@ -1,0 +1,106 @@
+{
+  "table_id": "table_80",
+  "document": "DS10969 Rev 5 - Table 80. DFSDM characteristics",
+  "rev": "Rev 5",
+  "table_number": "80",
+  "title": "Table 80. DFSDM characteristics",
+  "page": 166,
+  "section": "6.3.25 DFSDM characteristics",
+  "section_title": "DFSDM characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l475rc.pdf#page=166",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l475rc.pdf",
+  "text_helper": "Table 80. DFSDM characteristics — section 6.3.25 DFSDM characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f DFSDMCLK",
+        "DFSDM clock",
+        "-",
+        "-",
+        "-",
+        "f SYSCLK",
+        "MHz"
+      ],
+      [
+        "f CKIN (1/T ) CKIN",
+        "Input clock frequency",
+        "SPI mode (SITP[1:0] = 01)",
+        "-",
+        "-",
+        "20 (f /4) DFSDMCLK",
+        "MHz"
+      ],
+      [
+        "f CKOUT",
+        "Output clock frequency",
+        "-",
+        "-",
+        "-",
+        "20",
+        "MHz"
+      ],
+      [
+        "DuCy CKOUT",
+        "Output clock frequency duty cycle",
+        "-",
+        "45",
+        "50",
+        "55",
+        "%"
+      ],
+      [
+        "t wh(CKIN) t wl(CKIN)",
+        "Input clock high and low time",
+        "SPI mode (SITP[1:0] = 01), External clock mode (SPICKSEL[1:0] = 0)",
+        "NIKC 5.0-2/ T",
+        "NIKC 2/ T",
+        "-",
+        "ns"
+      ],
+      [
+        "t su",
+        "Data input setup time",
+        "SPI mode (SITP[1:0]=01), External clock mode (SPICKSEL[1:0] = 0)",
+        "0",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h",
+        "Data input hold time",
+        "SPI mode (SITP[1:0]=01), External clock mode (SPICKSEL[1:0] = 0)",
+        "2",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "T Manchester",
+        "Manchester data period (recovered clock period)",
+        "Manchester mode (SITP[1:0] = 10 or 11), Internal clock mode (SPICKSEL[1:0] ≠ 0)",
+        "(CKOUT DIV+1) ₓ T DFSDMCLK",
+        "-",
+        "(2 ₓ CKOUTDIV) ₓ T DFSDMCLK",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization results. 166/204 DS10969 Rev 5"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "table_id": "table_47",
+  "document": "DS5944 Rev 11 - Table 47. TIMx characteristics",
+  "rev": "Rev 11",
+  "table_number": "47",
+  "title": "Table 47. TIMx characteristics",
+  "page": 78,
+  "section": "5.3.16 TIMx characteristics",
+  "section_title": "TIMx characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f100rc.pdf#page=78",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f100rc.pdf",
+  "text_helper": "Table 47. TIMx characteristics — section 5.3.16 TIMx characteristics. Symbol, Parameter, Conditions(1), Min, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions(1)",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "-",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "f = 24 MHz TIMxCLK",
+        "41.7",
+        "-",
+        "ns"
+      ],
+      [
+        "f EXT",
+        "Timer external clock frequency on CHx(2)",
+        "f = 24 MHz TIMxCLK",
+        "0",
+        "f /2 TIMxCLK",
+        "MHz"
+      ],
+      [
+        "f EXT",
+        "Timer external clock frequency on CHx(2)",
+        "f = 24 MHz TIMxCLK",
+        "0",
+        "12",
+        "MHz"
+      ],
+      [
+        "Res TIM",
+        "Timer resolution",
+        "-",
+        "-",
+        "16",
+        "bit"
+      ],
+      [
+        "t COUNTER",
+        "16-bit counter clock period when the internal clock is selected",
+        "-",
+        "1",
+        "65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t COUNTER",
+        "16-bit counter clock period when the internal clock is selected",
+        "f = 24 MHz TIMxCLK",
+        "-",
+        "2730",
+        "µs"
+      ],
+      [
+        "t MAX_COUNT",
+        "Maximum possible count",
+        "-",
+        "-",
+        "65536 × 65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t MAX_COUNT",
+        "Maximum possible count",
+        "f = 24 MHz TIMxCLK",
+        "-",
+        "178",
+        "s"
+      ]
+    ],
+    "notes": [
+      "1. TIMx is used as a general term to refer to the TIM1, TIM2, TIM3, TIM4, TIM5, TIM15, TIM16 and TIM17 timers.",
+      "2. CHx is used as a general term to refer to CH1 to CH4 for TIM1, TIM2, TIM3, TIM4 and TIM5, to the CH1 to CH2 for TIM15, and to CH1 for TIM16 and TIM17."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

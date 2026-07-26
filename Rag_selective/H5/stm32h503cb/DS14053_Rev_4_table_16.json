@@ -1,0 +1,519 @@
+{
+  "table_id": "table_16",
+  "document": "DS14053 Rev 4 - Table 16. General operating conditions",
+  "rev": "Rev 4",
+  "table_number": "16",
+  "title": "Table 16. General operating conditions",
+  "page": 74,
+  "section": "5.3.1 General operating conditions",
+  "section_title": "General operating conditions",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h503cb.pdf#page=74",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h503cb.pdf",
+  "text_helper": "Table 16. General operating conditions — section 5.3.1 General operating conditions. Symbol, Parameter, Operating conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Operating conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V DD",
+        "Standard operating voltage",
+        "HSLV(1) = 0",
+        "1.71(2)",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DD",
+        "Standard operating voltage",
+        "HSLV(1) = 1",
+        "1.71(2)",
+        "-",
+        "2.7",
+        "V"
+      ],
+      [
+        "V (3) DDIO2",
+        "PA8, PA9, PA15 and PB[3:8] I/Os supply voltage",
+        "At least one I/O in PA8, PA9, PA15 and PB[3:8] is used, HSLV(1) = 0",
+        "1.08",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V (3) DDIO2",
+        "PA8, PA9, PA15 and PB[3:8] I/Os supply voltage",
+        "At least one I/O in PA8, PA9, PA15 and PB[3:8] is used, HSLV(1) = 1",
+        "1.08",
+        "-",
+        "2.7",
+        "V"
+      ],
+      [
+        "V (3) DDIO2",
+        "PA8, PA9, PA15 and PB[3:8] I/Os supply voltage",
+        "PA8, PA9, PA15, and PB[3:8] are not used, HSLV(1) = 0",
+        "0",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DDA",
+        "Analog supply voltage",
+        "COMP is used",
+        "1.62",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DDA",
+        "Analog supply voltage",
+        "DAC is used",
+        "1.8",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DDA",
+        "Analog supply voltage",
+        "OPAMP is used",
+        "2.0",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DDA",
+        "Analog supply voltage",
+        "ADC is used",
+        "1.62",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DDA",
+        "Analog supply voltage",
+        "ADC, DAC, OPAMP, and COMP are not used",
+        "0",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V BAT",
+        "Backup operating voltage",
+        "-",
+        "1.2",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V IN",
+        "I/O input voltage",
+        "All I/O except TT_xx",
+        "-0.3",
+        "-",
+        "min (min (V , DD V , V ) + DDA DDIO2 3.6V, 5.5 V)(4)(5)",
+        "V"
+      ],
+      [
+        "V IN",
+        "I/O input voltage",
+        "Input voltage on FT_t in VBAT mode",
+        "-0.3",
+        "-",
+        "min (min (V , BAT V , V ) + DDA DDIO2 3.6 V, 5.5 V)(4)(5)",
+        "min (min (V , BAT V , V ) + DDA DDIO2 3.6 V, 5.5 V)(4)(5)"
+      ],
+      [
+        "V IN",
+        "I/O input voltage",
+        "TT_xx I/O",
+        "-0.3",
+        "-0.3",
+        "V + 0.3 DDIOx",
+        "V + 0.3 DDIOx"
+      ],
+      [
+        "V CORE",
+        "Internal regulator ON",
+        "VOS0(6)",
+        "1.30",
+        "1.35",
+        "1.40",
+        "V"
+      ],
+      [
+        "V CORE",
+        "Internal regulator ON",
+        "VOS1",
+        "1.15",
+        "1.20",
+        "1.26",
+        "1.26"
+      ],
+      [
+        "V CORE",
+        "Internal regulator ON",
+        "VOS2",
+        "1.05",
+        "1.10",
+        "1.15",
+        "1.15"
+      ],
+      [
+        "V CORE",
+        "Internal regulator ON",
+        "VOS3",
+        "0.95",
+        "1.00",
+        "1.05",
+        "1.05"
+      ],
+      [
+        "V CORE",
+        "Regulator OFF: external VCORE voltage must be supplied from external regulator on VCAP pins.",
+        "VOS0(6)",
+        "1.32",
+        "1.35",
+        "1.40",
+        "V"
+      ],
+      [
+        "V CORE",
+        "Regulator OFF: external VCORE voltage must be supplied from external regulator on VCAP pins.",
+        "VOS1",
+        "1.17",
+        "1.20",
+        "1.26",
+        "1.26"
+      ],
+      [
+        "V CORE",
+        "Regulator OFF: external VCORE voltage must be supplied from external regulator on VCAP pins.",
+        "VOS2",
+        "1.07",
+        "1.10",
+        "1.15",
+        "1.15"
+      ],
+      [
+        "V CORE",
+        "Regulator OFF: external VCORE voltage must be supplied from external regulator on VCAP pins.",
+        "VOS3",
+        "0.97",
+        "1.00",
+        "1.05",
+        "1.05"
+      ],
+      [
+        "V CORE",
+        "Stop mode",
+        "SVOS3",
+        "-",
+        "1.0",
+        "-",
+        "V"
+      ],
+      [
+        "V CORE",
+        "Stop mode",
+        "SVOS4",
+        "-",
+        "0.9",
+        "-",
+        "-"
+      ],
+      [
+        "V CORE",
+        "Stop mode",
+        "SVOS5",
+        "-",
+        "0.74",
+        "-",
+        "-"
+      ],
+      [
+        "f HCLK",
+        "AHB clock frequency",
+        "VOS0(6)",
+        "-",
+        "-",
+        "250",
+        "MHz"
+      ],
+      [
+        "f HCLK",
+        "AHB clock frequency",
+        "VOS1",
+        "-",
+        "-",
+        "200",
+        "200"
+      ],
+      [
+        "f HCLK",
+        "AHB clock frequency",
+        "VOS2",
+        "-",
+        "-",
+        "150",
+        "150"
+      ],
+      [
+        "f HCLK",
+        "AHB clock frequency",
+        "VOS3",
+        "-",
+        "-",
+        "100",
+        "100"
+      ],
+      [
+        "f PCLKx (x=1,2,3)",
+        "APB1, APB2, APB3 clock frequency",
+        "VOS0(6)",
+        "-",
+        "-",
+        "250",
+        "MHz"
+      ],
+      [
+        "f PCLKx (x=1,2,3)",
+        "APB1, APB2, APB3 clock frequency",
+        "VOS1",
+        "-",
+        "-",
+        "200",
+        "200"
+      ],
+      [
+        "f PCLKx (x=1,2,3)",
+        "APB1, APB2, APB3 clock frequency",
+        "VOS2",
+        "-",
+        "-",
+        "150",
+        "150"
+      ],
+      [
+        "f PCLKx (x=1,2,3)",
+        "APB1, APB2, APB3 clock frequency",
+        "VOS3",
+        "-",
+        "-",
+        "100",
+        "100"
+      ],
+      [
+        "P (7) D",
+        "Power dissipation at T = 85 °C for suffix 6(8) A",
+        "WLCSP25",
+        "-",
+        "-",
+        "557.62",
+        "mW"
+      ],
+      [
+        "P (7) D",
+        "Power dissipation at T = 85 °C for suffix 6(8) A",
+        "UFQFPN32",
+        "-",
+        "-",
+        "1122.19",
+        "1122.19"
+      ],
+      [
+        "P (7) D",
+        "Power dissipation at T = 85 °C for suffix 6(8) A",
+        "UFQFPN48",
+        "-",
+        "-",
+        "1525.42",
+        "1525.42"
+      ],
+      [
+        "P (7) D",
+        "Power dissipation at T = 85 °C for suffix 6(8) A",
+        "LQFP48",
+        "-",
+        "-",
+        "831.79",
+        "831.79"
+      ],
+      [
+        "P (7) D",
+        "Power dissipation at T = 85 °C for suffix 6(8) A",
+        "LQFP64",
+        "-",
+        "-",
+        "920.25",
+        "920.25"
+      ],
+      [
+        "P (7) D",
+        "Power dissipation at T = 105 °C for suffix 7(8) A",
+        "WLCSP25",
+        "-",
+        "-",
+        "309.79",
+        "mW"
+      ],
+      [
+        "P (7) D",
+        "Power dissipation at T = 105 °C for suffix 7(8) A",
+        "UFQFPN32",
+        "-",
+        "-",
+        "623.44",
+        "623.44"
+      ],
+      [
+        "P (7) D",
+        "Power dissipation at T = 105 °C for suffix 7(8) A",
+        "UFQFPN48",
+        "-",
+        "-",
+        "847.46",
+        "847.46"
+      ],
+      [
+        "P (7) D",
+        "Power dissipation at T = 105 °C for suffix 7(8) A",
+        "LQFP48",
+        "-",
+        "-",
+        "462.11",
+        "462.11"
+      ],
+      [
+        "P (7) D",
+        "Power dissipation at T = 105 °C for suffix 7(8) A",
+        "LQFP64",
+        "-",
+        "-",
+        "511.25",
+        "511.25"
+      ],
+      [
+        "P (7) D",
+        "Power dissipation at T = 125 °C for suffix 7(8) A",
+        "WLCSP25",
+        "-",
+        "-",
+        "61.96",
+        "mW"
+      ],
+      [
+        "P (7) D",
+        "Power dissipation at T = 125 °C for suffix 7(8) A",
+        "UFQFPN32",
+        "-",
+        "-",
+        "124.69",
+        "124.69"
+      ],
+      [
+        "P (7) D",
+        "Power dissipation at T = 125 °C for suffix 7(8) A",
+        "UFQFPN48",
+        "-",
+        "-",
+        "169.49",
+        "169.49"
+      ],
+      [
+        "P (7) D",
+        "Power dissipation at T = 125 °C for suffix 7(8) A",
+        "LQFP48",
+        "-",
+        "-",
+        "92.42",
+        "92.42"
+      ],
+      [
+        "P (7) D",
+        "Power dissipation at T = 125 °C for suffix 7(8) A",
+        "LQFP64",
+        "-",
+        "-",
+        "102.25",
+        "102.25"
+      ],
+      [
+        "T A",
+        "Ambient temperature for the suffix 6 version",
+        "Maximum power dissipation",
+        "-40",
+        "-",
+        "85",
+        "°C"
+      ],
+      [
+        "T A",
+        "Ambient temperature for the suffix 7 version",
+        "Maximum power dissipation",
+        "Maximum power dissipation",
+        "-",
+        "105",
+        "105"
+      ],
+      [
+        "T A",
+        "Ambient temperature for the suffix 7 version",
+        "LDO bypass mode, or in low dissipation at 125 °C (9)",
+        "LDO bypass mode, or in low dissipation at 125 °C (9)",
+        "-",
+        "125",
+        "125"
+      ],
+      [
+        "T J",
+        "Junction temperature range",
+        "Suffix 6 and 7 version",
+        "VOS0",
+        "-",
+        "105",
+        "°C"
+      ],
+      [
+        "T J",
+        "Junction temperature range",
+        "VOS1, VOS2, and VOS3",
+        "-40",
+        "-",
+        "130",
+        "130"
+      ]
+    ],
+    "notes": [
+      "1. The junction temperature is limited to 105 °C in the VOS0 voltage range.",
+      "2. When RESET is released, the functionality is guaranteed down to VPDR minimum.",
+      "3. Dedicated power supply pin VDDIO2 is only available on the WLCSP25 package.",
+      "4. This formula has to be applied on power supplies related to the IO structure described by the pin definition table. Maximum I/O input voltage is the smallest value between min (V , V , V ) + 3.6 V and 5.5 V.",
+      "5. When several inputs are submitted to a current injection, the maximum ∑|I | is the absolute sum of INJ(PIN)",
+      "6. In VOS0 mode, the max T is 105 °C. J",
+      "7. P is calculated based on relevant Θ (characterized in line with JEDEC51-2), for further details, see Section 6.7: Dmax JA",
+      "8. If T is lower, higher P values are allowed as long as T does not exceed T (see Section 6.7: Package thermal A D J Jmax",
+      "9. In the low-power dissipation state, T can be extended to this range as long as T does not exceed T (see Section 6.7: A J Jmax"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

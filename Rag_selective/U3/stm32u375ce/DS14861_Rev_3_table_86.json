@@ -1,0 +1,225 @@
+{
+  "table_id": "table_86",
+  "document": "DS14861 Rev 3 - Table 86. I/O static characteristics",
+  "rev": "Rev 3",
+  "table_number": "86",
+  "title": "Table 86. I/O static characteristics",
+  "page": 144,
+  "section": "5.3.14 I/O port characteristics",
+  "section_title": "I/O port characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf#page=144",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf",
+  "text_helper": "Table 86. I/O static characteristics — section 5.3.14 I/O port characteristics. Symbol, Parameter, Conditions, Conditions, Min, +3 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "VIL(1)",
+        "I/O input low‑level voltage",
+        "1.08 V ≤ VDDIOx ≤ 3.6 V",
+        "1.08 V ≤ VDDIOx ≤ 3.6 V",
+        "-",
+        "-",
+        "0.3 VDDIOx",
+        "V"
+      ],
+      [
+        "VIL(1)",
+        "I/O input low‑level voltage",
+        "All I/Os",
+        "All I/Os",
+        "-",
+        "-",
+        "0.38 VDDIOx(2)",
+        "V"
+      ],
+      [
+        "VIH(1)",
+        "I/O input high-level voltage",
+        "1.08 V ≤ VDDIOx ≤ 3.6 V",
+        "1.08 V ≤ VDDIOx ≤ 3.6 V",
+        "0.7 VDDIOx",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "VIH(1)",
+        "I/O input high-level voltage",
+        "All I/Os",
+        "All I/Os",
+        "0.5 VDDIOx + 0.2(2)",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "Vhys(2)",
+        "Input hysteresis",
+        "TT_xx, FT_xx I/Os",
+        "TT_xx, FT_xx I/Os",
+        "-",
+        "250",
+        "-",
+        "mV"
+      ],
+      [
+        "Ilkg(2)(3)",
+        "Input leakage current",
+        "All I/Os except FT_u, FT_o, PC13, TT_xx",
+        "VIN ≤ Max (VDDxxx)(4)",
+        "-",
+        "-",
+        "150",
+        "nA"
+      ],
+      [
+        "Ilkg(2)(3)",
+        "Input leakage current",
+        "All I/Os except FT_u, FT_o, PC13, TT_xx",
+        "Max (VDDXXX) < VIN(5) ≤ Max (VDDXXX) + 1 V",
+        "-",
+        "-",
+        "2000",
+        "nA"
+      ],
+      [
+        "Ilkg(2)(3)",
+        "Input leakage current",
+        "All I/Os except FT_u, FT_o, PC13, TT_xx",
+        "Max (VDDXXX) + 1 V < VIN ≤ 5.5 V(5)",
+        "-",
+        "-",
+        "500",
+        "nA"
+      ],
+      [
+        "Ilkg(2)(3)",
+        "Input leakage current",
+        "FT_o I/Os",
+        "VIN ≤ Max (VDDXXX)",
+        "-",
+        "-",
+        "50",
+        "nA"
+      ],
+      [
+        "Ilkg(2)(3)",
+        "Input leakage current",
+        "FT_o I/Os",
+        "Max (VDDXXX) ≤ VIN ≤ Max (VDDXXX) + 1 V",
+        "-",
+        "-",
+        "500",
+        "nA"
+      ],
+      [
+        "Ilkg(2)(3)",
+        "Input leakage current",
+        "FT_o I/Os",
+        "Max (VDDXXX) +1 V ≤ VIN ≤ 5.5 V(5)",
+        "-",
+        "-",
+        "200",
+        "nA"
+      ],
+      [
+        "Ilkg(2)(3)",
+        "Input leakage current",
+        "FT_u I/O",
+        "VIN≤ Max (VDDXXX)",
+        "-",
+        "-",
+        "200",
+        "nA"
+      ],
+      [
+        "Ilkg(2)(3)",
+        "Input leakage current",
+        "FT_u I/O",
+        "Max (VDDXXX) ≤ VIN ≤ Max (VDDXXX) + 1 V",
+        "-",
+        "-",
+        "2500",
+        "nA"
+      ],
+      [
+        "Ilkg(2)(3)",
+        "Input leakage current",
+        "FT_u I/O",
+        "Max (VDDXXX) ≤ VIN ≤ 5.5",
+        "-",
+        "-",
+        "500",
+        "nA"
+      ],
+      [
+        "Ilkg (2)(3)",
+        "Input leakage current",
+        "TT_xx I/Os",
+        "VIN ≤ Max (VDDXXX)",
+        "-",
+        "-",
+        "500",
+        "nA"
+      ],
+      [
+        "RPU",
+        "Weak pull‑up equivalent resistor(6)",
+        "-",
+        "-",
+        "30",
+        "40",
+        "50",
+        "kΩ"
+      ],
+      [
+        "RPD",
+        "Weak pulldown equivalent resistor(6)",
+        "-",
+        "-",
+        "30",
+        "40",
+        "50",
+        "kΩ"
+      ],
+      [
+        "CIO",
+        "I/O pin capacitance",
+        "-",
+        "-",
+        "-",
+        "5",
+        "-",
+        "pF"
+      ]
+    ],
+    "notes": [
+      "1. Refer to Figure 36. I/O input characteristics.",
+      "2. Specified by design. Not tested in production.",
+      "3. This parameter represents the pad leakage of the I/O itself. The total product pad leakage is provided by the following formula: ITotal_Ileak_max = 10 μA + [number of I/Os where VIN is applied on the pad] × Ilkg max.",
+      "4. Max (VDDxxx) is the maximum value of all the I/O supplies. The I/O supplies depend on the I/O structure options, as described in Table 20.",
+      "5. To sustain a voltage higher than Min (VDD, VDDA, VDDUSB, VDDIO2) +0.3 V, the internal pull‑up and pull‑down resistors must be disabled.",
+      "6. The pull-up and pull-down resistors are designed with a true resistance in series with a switchable PMOS/NMOS. This PMOS/NMOS contribution to the series resistance is minimal (~10% order)."
+    ],
+    "legend": [
+      "The I/O structure options listed in this table can be a concatenation of options including the option explicitly listed. For instance, TT_a refers to",
+      "any TT I/O with _a option. TT_xx refers to any TT I/O and FT_xx refers to any FT I/O.",
+      "All I/Os are CMOS- and TTL-compliant (no software configuration required). Their characteristics cover more than the strict CMOS-technology",
+      "or TTL parameters. The coverage of these requirements is shown in the figure below."
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

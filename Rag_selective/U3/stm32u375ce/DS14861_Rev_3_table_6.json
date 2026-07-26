@@ -1,0 +1,48 @@
+{
+  "table_id": "table_6",
+  "document": "DS14861 Rev 3 - Table 6. Boot space versus RDP protection.",
+  "rev": "Rev 3",
+  "table_number": "6",
+  "title": "Table 6. Boot space versus RDP protection.",
+  "page": 14,
+  "section": "3.7 Global TrustZone® controller (GTZC)",
+  "section_title": "Global TrustZone® controller (GTZC)",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf#page=14",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf",
+  "text_helper": "Table 6. Boot space versus RDP protection. — section 3.7 Global TrustZone® controller (GTZC). RDP, TZEN = 1, TZEN = 0.",
+  "table_content": {
+    "headers": [
+      "RDP",
+      "TZEN = 1",
+      "TZEN = 0"
+    ],
+    "rows": [
+      [
+        "0",
+        "Any boot address",
+        "Any boot address"
+      ],
+      [
+        "0.5",
+        "Boot address only in RSS (0x0FF8 0000) or secure flash memory: 0x0C00 0000 - 0x0C0F FFFF Otherwise, the forced boot address is 0x0FF8 0000.",
+        "N/A"
+      ],
+      [
+        "1",
+        "Boot address only in RSS (0x0FF8 0000) or secure flash memory: 0x0C00 0000 - 0x0C0F FFFF Otherwise, the forced boot address is 0x0FF8 0000.",
+        "Any boot address"
+      ],
+      [
+        "2",
+        "Boot address only in RSS (0x0FF8 0000) or secure flash memory: 0x0C00 0000 - 0x0C0F FFFF Otherwise, the forced boot address is 0x0FF8 0000.",
+        "Boot address only in flash memory: 0x0800 0000 - 0x080F FFFF Otherwise, forced boot address is 0x0800 0000."
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

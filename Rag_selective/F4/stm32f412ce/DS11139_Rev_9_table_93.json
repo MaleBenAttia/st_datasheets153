@@ -1,0 +1,75 @@
+{
+  "table_id": "table_93",
+  "document": "DS11139 Rev 9 - Table 93. Synchronous multiplexed PSRAM write timings",
+  "rev": "Rev 9",
+  "table_number": "93",
+  "title": "Table 93. Synchronous multiplexed PSRAM write timings",
+  "page": 160,
+  "section": "6.3.25 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f412ce.pdf#page=160",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f412ce.pdf",
+  "text_helper": "Table 93. Synchronous multiplexed PSRAM write timings — section 6.3.25 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t w(CLK)",
+        "FSMC_CLK period, V range= 2.7 to 3.6 V DD",
+        "2T - 0.5 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NExL)",
+        "FSMC_CLK low to FSMC_NEx low (x= 0...2)",
+        "-",
+        "1",
+        "ns"
+      ],
+      [
+        "t (CLKH-NWEH)",
+        "FSMC_CLK high to FSMC_NWE high",
+        "KLCH 5.0 + T",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-ADV)",
+        "FSMC_CLK low to FSMC_AD[15:0] valid",
+        "-",
+        "2.5",
+        "ns"
+      ],
+      [
+        "t d(CLKL-ADIV)",
+        "FSMC_CLK low to FSMC_AD[15:0] invalid",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-DATA)",
+        "FSMC_A/D[15:0] valid data after FSMC_CLK low",
+        "-",
+        "4",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. C = 30 pF. L",
+      "2. Based on characterization, not tested in production. 160/202 DS11139 Rev 9"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

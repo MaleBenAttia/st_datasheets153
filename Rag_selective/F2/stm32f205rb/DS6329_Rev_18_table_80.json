@@ -1,0 +1,147 @@
+{
+  "table_id": "table_80",
+  "document": "DS6329 Rev 18 - Table 80. Switching characteristics for PC Card/CF read and write cycles in attribute/common space",
+  "rev": "Rev 18",
+  "table_number": "80",
+  "title": "Table 80. Switching characteristics for PC Card/CF read and write cycles in attribute/common space",
+  "page": 142,
+  "section": "6.3.25 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f205rb.pdf#page=142",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f205rb.pdf",
+  "text_helper": "Table 80. Switching characteristics for PC Card/CF read and write cycles in attribute/common space — section 6.3.25 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t v(NCEx-A)",
+        "FSMC_Ncex low to FSMC_Ay valid",
+        "-",
+        "0",
+        "ns"
+      ],
+      [
+        "t h(NCEx_AI)",
+        "FSMC_NCEx high to FSMC_Ax invalid",
+        "4",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(NREG-NCEx)",
+        "FSMC_NCEx low to FSMC_NREG valid",
+        "-",
+        "3.5",
+        "ns"
+      ],
+      [
+        "t h(NCEx-NREG)",
+        "FSMC_NCEx high to FSMC_NREG invalid",
+        "KLCH 4 + T",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(NCEx-NWE)",
+        "FSMC_NCEx low to FSMC_NWE low",
+        "-",
+        "5T + 1 HCLK",
+        "ns"
+      ],
+      [
+        "t d(NCEx-NOE)",
+        "FSMC_NCEx low to FSMC_NOE low",
+        "-",
+        "5T HCLK",
+        "ns"
+      ],
+      [
+        "t w(NOE)",
+        "FSMC_NOE low width",
+        "8T – 0.5 HCLK",
+        "8T + 1 HCLK",
+        "ns"
+      ],
+      [
+        "t d(NOE_NCEx)",
+        "FSMC_NOE high to FSMC_NCEx high",
+        "5T + 2.5 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t su (D-NOE)",
+        "FSMC_D[15:0] valid data before FSMC_NOE high",
+        "4",
+        "-",
+        "ns"
+      ],
+      [
+        "t h (N0E-D)",
+        "FSMC_N0E high to FSMC_D[15:0] invalid",
+        "2",
+        "-",
+        "ns"
+      ],
+      [
+        "t w(NWE)",
+        "FSMC_NWE low width",
+        "8T - 1 HCLK",
+        "8T + 4 HCLK",
+        "ns"
+      ],
+      [
+        "t ) d(NWE_NCEx",
+        "FSMC_NWE high to FSMC_NCEx high",
+        "5T + 1.5 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(NCEx-NWE)",
+        "FSMC_NCEx low to FSMC_NWE low",
+        "-",
+        "5T + 1 HCLK",
+        "ns"
+      ],
+      [
+        "t v (NWE-D)",
+        "FSMC_NWE low to FSMC_D[15:0] valid",
+        "-",
+        "0",
+        "ns"
+      ],
+      [
+        "t h (NWE-D)",
+        "FSMC_NWE high to FSMC_D[15:0] invalid",
+        "8T HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t d (D-NWE)",
+        "FSMC_D[15:0] valid before FSMC_NWE high",
+        "13T HCLK",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. C = 30 pF. L",
+      "2. Guaranteed by characterization results, not tested in production. 142/181 DS6329 Rev 18"
+    ],
+    "legend": [
+      "in attribute/common space(1)(2)"
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

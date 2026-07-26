@@ -1,0 +1,73 @@
+{
+  "table_id": "table_104",
+  "document": "DS14539 Rev 3 - Table 104. TIMx characteristics",
+  "rev": "Rev 3",
+  "table_number": "104",
+  "title": "Table 104. TIMx characteristics",
+  "page": 185,
+  "section": "5.3.30 Timer characteristics",
+  "section_title": "Timer characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h533ce.pdf#page=185",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h533ce.pdf",
+  "text_helper": "Table 104. TIMx characteristics — section 5.3.30 Timer characteristics. Symbol, Parameter, Conditions(3), Min, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions(3)",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APBx prescaler = 1, 2, or 4, f = 250 MHz TIMxCLK",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APBx prescaler > 4, f = 125 MHz TIMxCLK",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "f = 250 MHz TIMxCLK",
+        "0",
+        "f / 2 TIMxCLK",
+        "MHz"
+      ],
+      [
+        "Res TIM",
+        "Timer resolution",
+        "f = 250 MHz TIMxCLK",
+        "-",
+        "16 / 32",
+        "bit"
+      ],
+      [
+        "t MAX_COUNT",
+        "Maximum possible count with 32-bit counter",
+        "-",
+        "-",
+        "65536 × 65536",
+        "t TIMxCLK"
+      ]
+    ],
+    "notes": [
+      "3. Evaluated by characterization - Not tested in production."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

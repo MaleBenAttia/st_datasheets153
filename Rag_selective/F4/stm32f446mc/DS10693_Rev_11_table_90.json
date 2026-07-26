@@ -1,0 +1,121 @@
+{
+  "table_id": "table_90",
+  "document": "DS10693 Rev 11 - Table 90. Asynchronous multiplexed PSRAM/NOR read timings",
+  "rev": "Rev 11",
+  "table_number": "90",
+  "title": "Table 90. Asynchronous multiplexed PSRAM/NOR read timings",
+  "page": 154,
+  "section": "6.3.26 FMC characteristics",
+  "section_title": "FMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f446mc.pdf#page=154",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f446mc.pdf",
+  "text_helper": "Table 90. Asynchronous multiplexed PSRAM/NOR read timings — section 6.3.26 FMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t w(NE)",
+        "FMC_NE low time",
+        "3T – 2 HCLK",
+        "3T +0.5 HCLK",
+        "ns"
+      ],
+      [
+        "t v(NOE_NE)",
+        "FMC_NEx low to FMC_NOE low",
+        "2T – 0.5 HCLK",
+        "2T HCLK",
+        "ns"
+      ],
+      [
+        "t tw(NOE)",
+        "FMC_NOE low time",
+        "T – 1 HCLK",
+        "KLCH 5.0 + T",
+        "ns"
+      ],
+      [
+        "t h(NE_NOE)",
+        "FMC_NOE high to FMC_NE high hold time",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(A_NE)",
+        "FMC_NEx low to FMC_A valid",
+        "-",
+        "2",
+        "ns"
+      ],
+      [
+        "t v(NADV_NE)",
+        "FMC_NEx low to FMC_NADV low",
+        "0",
+        "2",
+        "ns"
+      ],
+      [
+        "t h(AD_NADV)",
+        "FMC_AD(address) valid hold time after FMC_NADV high)",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(A_NOE)",
+        "Address hold time after FMC_NOE high",
+        "T – 0.5 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(BL_NOE)",
+        "FMC_BL time after FMC_NOE high",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(Data_NE)",
+        "Data to FMC_NEx high setup time",
+        "KLCH 5.1 + T",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(Data_NOE)",
+        "Data to FMC_NOE high setup time",
+        "KLCH 1 + T",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(Data_NE)",
+        "Data hold time after FMC_NEx high",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(Data_NOE)",
+        "Data hold time after FMC_NOE high",
+        "0",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

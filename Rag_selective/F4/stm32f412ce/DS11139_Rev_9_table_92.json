@@ -1,0 +1,68 @@
+{
+  "table_id": "table_92",
+  "document": "DS11139 Rev 9 - Table 92. Synchronous multiplexed NOR/PSRAM read timings",
+  "rev": "Rev 9",
+  "table_number": "92",
+  "title": "Table 92. Synchronous multiplexed NOR/PSRAM read timings",
+  "page": 158,
+  "section": "6.3.25 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f412ce.pdf#page=158",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f412ce.pdf",
+  "text_helper": "Table 92. Synchronous multiplexed NOR/PSRAM read timings — section 6.3.25 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t w(CLK)",
+        "FSMC_CLK period",
+        "2T - 0.5 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NExL)",
+        "FSMC_CLK low to FSMC_NEx low (x=0..2)",
+        "-",
+        "1",
+        "ns"
+      ],
+      [
+        "t d(CLKH_NExH)",
+        "FSMC_CLK high to FSMC_NEx high (x= 0…2)",
+        "KLCH 5.0 + T",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(ADV-CLKH)",
+        "FSMC_A/D[15:0] valid data before FSMC_CLK high",
+        "1",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(CLKH-ADV)",
+        "FSMC_A/D[15:0] valid data after FSMC_CLK high",
+        "2",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. C = 30 pF. L",
+      "2. Based on characterization, not tested in production. 158/202 DS11139 Rev 9"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

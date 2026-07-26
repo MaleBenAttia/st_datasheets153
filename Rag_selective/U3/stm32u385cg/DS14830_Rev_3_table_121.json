@@ -1,0 +1,257 @@
+{
+  "table_id": "table_121",
+  "document": "DS14830 Rev 3 - Table 121. SPI characteristics.",
+  "rev": "Rev 3",
+  "table_number": "121",
+  "title": "Table 121. SPI characteristics.",
+  "page": 181,
+  "section": "5.3.34 SPI characteristics",
+  "section_title": "SPI characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u385cg.pdf#page=181",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u385cg.pdf",
+  "text_helper": "Table 121. SPI characteristics. — section 5.3.34 SPI characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "fSCK",
+        "SPI clock frequency",
+        "Master mode,1.71 V ≤ VDDIOX ≤ 3.6 V,",
+        "-",
+        "-",
+        "48/33(1)",
+        "MHz"
+      ],
+      [
+        "fSCK",
+        "SPI clock frequency",
+        "Voltage range 1",
+        "Voltage range 1",
+        "Voltage range 1",
+        "Voltage range 1",
+        "MHz"
+      ],
+      [
+        "fSCK",
+        "SPI clock frequency",
+        "Slave receiver mode, 1.71 V ≤ VDDIOX ≤ 3.6 V, Voltage range 1",
+        "-",
+        "-",
+        "96",
+        "96"
+      ],
+      [
+        "fSCK",
+        "SPI clock frequency",
+        "Slave mode transmitter/full duplex(3), 1.71 V ≤ VDDIOX ≤ 3.6 V, Voltage range 1",
+        "-",
+        "-",
+        "33/25(2)",
+        "33/25(2)"
+      ],
+      [
+        "fSCK",
+        "SPI clock frequency",
+        "Slave mode transmitter/full duplex(3), 2.7 V ≤ VDDIOX ≤ 3.6 V, voltage range 1",
+        "-",
+        "-",
+        "31",
+        "31"
+      ],
+      [
+        "fSCK",
+        "SPI clock frequency",
+        "Master or slave mode, 1.71 V ≤ VDDIOX ≤ 3.6 V, Voltage range 2",
+        "-",
+        "-",
+        "24/18.5(2)",
+        "24/18.5(2)"
+      ],
+      [
+        "fSCK",
+        "SPI clock frequency",
+        "Master or slave mode, 1.08 V ≤ VDDIO2 ≤ 1.32 V(4)",
+        "-",
+        "-",
+        "15",
+        "15"
+      ],
+      [
+        "tsu(NSS)",
+        "NSS setup time",
+        "Slave mode",
+        "4 x TPCLK",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "th(NSS)",
+        "NSS hold time",
+        "Slave mode",
+        "2 x TPCLK",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "tw(SCKH) tw(SCKL)",
+        "SCK high and low time",
+        "Master mode(5)",
+        "tSCK - 1",
+        "tSCK",
+        "tSCK + 1",
+        "tSCK + 1"
+      ],
+      [
+        "tsu(MI)",
+        "Data input setup time",
+        "Master mode",
+        "3.5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "tsu(SI)",
+        "tsu(SI)",
+        "Slave mode",
+        "2.5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "th(MI)",
+        "Data input hold time",
+        "Master mode",
+        "3",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "th(SI)",
+        "th(SI)",
+        "Slave mode",
+        "1",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "ta(SO)",
+        "Data output access time",
+        "Slave mode",
+        "12",
+        "14.5",
+        "28",
+        "28"
+      ],
+      [
+        "tdis(SO)",
+        "Data output disable time",
+        "Slave mode",
+        "7",
+        "14",
+        "28",
+        "28"
+      ],
+      [
+        "tv(SO)",
+        "Data output valid time",
+        "Slave mode, 2.7 V ≤ VDDIOX ≤ 3.6 V, Voltage range 1",
+        "-",
+        "12",
+        "16",
+        "ns"
+      ],
+      [
+        "tv(SO)",
+        "Data output valid time",
+        "Slave mode, 1.71 V ≤ VDDIOX < 2.7 V, Voltage range 1",
+        "-",
+        "12",
+        "15/20(2)",
+        "15/20(2)"
+      ],
+      [
+        "tv(SO)",
+        "Data output valid time",
+        "Slave mode, 1.71 V ≤ VDDIOX ≤ 3.6 V, Voltage range 2",
+        "-",
+        "15",
+        "20.5/26.5(2)",
+        "20.5/26.5(2)"
+      ],
+      [
+        "tv(SO)",
+        "Data output valid time",
+        "Slave mode, 1.08 V ≤ VDDIO2 ≤ 1.32 V(4)",
+        "-",
+        "19",
+        "22",
+        "22"
+      ],
+      [
+        "tv(MO)",
+        "tv(MO)",
+        "Master mode",
+        "-",
+        "0.5",
+        "1.5/7.5(6)",
+        "1.5/7.5(6)"
+      ],
+      [
+        "th(SO)",
+        "Data output hold time",
+        "Slave mode",
+        "8.5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "th(SO)",
+        "Data output hold time",
+        "Slave mode, 1.08 V ≤ VDDIO2 ≤ 1.32 V(4)",
+        "13",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "th(MO)",
+        "th(MO)",
+        "Master mode",
+        "0",
+        "-",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "1. When using PA5, PA9, PD1.",
+      "2. When using PA11.",
+      "3. Maximum frequency in Slave transmitter mode is determined by the sum of tv(SO) and tsu(MI) which must fit into SCK low or high phase preceding the SCK sampling edge. This value can be achieved when the SPI communicates with a master having tsu(MI) = 0 while",
+      "4. The SPI is mapped on port G I/Os, that is supplied by VDDIO2 specified down to 1.08 V. The SPI is tested at this value.",
+      "5. tSCK = tspi_ker_ck × baud rate prescaler.",
+      "6. When using PA12/PB15. DS14830 - Rev 3 page 182/232"
+    ],
+    "legend": [
+      "Evaluated by characterization. Not tested in production."
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

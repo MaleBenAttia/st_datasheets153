@@ -1,0 +1,83 @@
+{
+  "table_id": "table_4",
+  "document": "DS9866 Rev 8 - Table 4. STM32F303x6/8 peripheral interconnect matrix",
+  "rev": "Rev 8",
+  "table_number": "4",
+  "title": "Table 4. STM32F303x6/8 peripheral interconnect matrix",
+  "page": 17,
+  "section": "3.5 Interconnect matrix",
+  "section_title": "Interconnect matrix",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f303c6.pdf#page=17",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f303c6.pdf",
+  "text_helper": "Table 4. STM32F303x6/8 peripheral interconnect matrix — section 3.5 Interconnect matrix. Interconnect source, Interconnect destination, Interconnect action.",
+  "table_content": {
+    "headers": [
+      "Interconnect source",
+      "Interconnect destination",
+      "Interconnect action"
+    ],
+    "rows": [
+      [
+        "TIMx",
+        "TIMx",
+        "Timers synchronization or chaining"
+      ],
+      [
+        "TIMx",
+        "ADCx DACx",
+        "Conversion triggers"
+      ],
+      [
+        "TIMx",
+        "DMA",
+        "Memory to memory transfer trigger"
+      ],
+      [
+        "TIMx",
+        "COMPx",
+        "Comparator output blanking"
+      ],
+      [
+        "COMPx",
+        "TIMx",
+        "Timer input: ocrefclear input, input capture"
+      ],
+      [
+        "ADCx",
+        "TIM1",
+        "Timer triggered by analog watchdog"
+      ],
+      [
+        "GPIO RTCCLK HSE/32 MC0",
+        "TIM16",
+        "Clock source used as input channel for HSI and LSI calibration"
+      ],
+      [
+        "CSS CPU (hard fault) RAM (parity error) COMPx PVD GPIO",
+        "TIM1 TIM15, 16, 17",
+        "Timer break"
+      ],
+      [
+        "GPIO",
+        "TIMx",
+        "External trigger, timer break"
+      ],
+      [
+        "GPIO",
+        "ADCx DACx",
+        "Conversion external trigger"
+      ],
+      [
+        "DACx",
+        "COMPx",
+        "Comparator inverting input"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

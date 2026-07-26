@@ -1,0 +1,96 @@
+{
+  "table_id": "table_97",
+  "document": "DS11580 Rev 8 - Table 97. Synchronous multiplexed PSRAM write timings",
+  "rev": "Rev 8",
+  "table_number": "97",
+  "title": "Table 97. Synchronous multiplexed PSRAM write timings",
+  "page": 170,
+  "section": "6.3.26 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f423ch.pdf#page=170",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f423ch.pdf",
+  "text_helper": "Table 97. Synchronous multiplexed PSRAM write timings — section 6.3.26 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t w(CLK)",
+        "FSMC_CLK period, V range= 2.7 to 3.6 V DD",
+        "2 * T - 0.5 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NExL)",
+        "FSMC_CLK low to FSMC_NEx low (x= 0...2)",
+        "-",
+        "2",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NADVL)",
+        "FSMC_CLK low to FSMC_NADV low",
+        "-",
+        "1",
+        "ns"
+      ],
+      [
+        "t (CLKH-NWEH)",
+        "FSMC_CLK high to FSMC_NWE high",
+        "KLCH 5.0 + T",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-ADV)",
+        "FSMC_CLK low to FSMC_AD[15:0] valid",
+        "-",
+        "3",
+        "ns"
+      ],
+      [
+        "t d(CLKL-ADIV)",
+        "FSMC_CLK low to FSMC_AD[15:0] invalid",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-DATA)",
+        "FSMC_A/D[15:0] valid data after FSMC_CLK low",
+        "-",
+        "4",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NBLL)",
+        "FSMC_CLK low to FSMC_NBL low",
+        "0",
+        "2",
+        "ns"
+      ],
+      [
+        "t d(CLKH-NBLH)",
+        "FSMC_CLK high to FSMC_NBL high",
+        "KLCH 5.0 + T",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. C = 30 pF. L",
+      "2. Guaranteed by characterization results. 170/210 DS11580 Rev 8"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "table_id": "table_7",
+  "document": "DS14861 Rev 3 - Table 7. Example of memory map security attribution versus SAU configuration regions",
+  "rev": "Rev 3",
+  "table_number": "7",
+  "title": "Table 7. Example of memory map security attribution versus SAU configuration regions",
+  "page": 15,
+  "section": "3.7.1 TrustZone® security architecture",
+  "section_title": "TrustZone® security architecture",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf#page=15",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf",
+  "text_helper": "Table 7. Example of memory map security attribution versus SAU configuration regions — section 3.7.1 TrustZone® security architecture. Region description, Address range, IDAU security attribution, SAU security attribution typical configuration, Final security attribution.",
+  "table_content": {
+    "headers": [
+      "Region description",
+      "Address range",
+      "IDAU security attribution",
+      "SAU security attribution typical configuration",
+      "Final security attribution"
+    ],
+    "rows": [
+      [
+        "Code external memories",
+        "0x0000 0000 0x07FF FFFF",
+        "Nonsecure",
+        "Secure or nonsecure or NSC (1)",
+        "Secure or nonsecure or NSC"
+      ],
+      [
+        "Code flash and SRAM",
+        "0x0800 0000 0x0BFF FFFF",
+        "Nonsecure",
+        "Nonsecure",
+        "Nonsecure"
+      ],
+      [
+        "Code flash and SRAM",
+        "0x0C00 0000 0x0FFF FFFF",
+        "NSC",
+        "Secure or NSC",
+        "Secure or NSC"
+      ],
+      [
+        "Code external memories",
+        "0x1000 0000 0x17FF FFFF",
+        "Nonsecure",
+        "Nonsecure",
+        "Nonsecure"
+      ],
+      [
+        "Code external memories",
+        "0x1800 0000 0x1FFF FFFF",
+        "Nonsecure",
+        "Nonsecure",
+        "Nonsecure"
+      ],
+      [
+        "SRAM",
+        "0x2000 0000 0x2FFF FFFF",
+        "Nonsecure",
+        "Nonsecure",
+        "Nonsecure"
+      ],
+      [
+        "SRAM",
+        "0x3000 0000 0x3FFF FFFF",
+        "NSC",
+        "Secure or NSC",
+        "Secure or NSC"
+      ],
+      [
+        "Peripherals",
+        "0x4000 0000 0x4FFF FFFF",
+        "Nonsecure",
+        "Nonsecure",
+        "Nonsecure"
+      ],
+      [
+        "Peripherals",
+        "0x5000 0000 0x5FFF FFFF",
+        "NSC",
+        "Secure or NSC",
+        "Secure or NSC"
+      ],
+      [
+        "External memories",
+        "0x6000 0000 0xDFFF FFFF",
+        "Nonsecure",
+        "Secure or nonsecure or NSC",
+        "Secure or nonsecure or NSC"
+      ]
+    ],
+    "notes": [
+      "1. NSC = nonsecure callable."
+    ],
+    "legend": [
+      "choose the secure, nonsecure, or NSC regions for external memories as needed."
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

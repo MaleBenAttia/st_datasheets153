@@ -1,0 +1,106 @@
+{
+  "table_id": "table_64",
+  "document": "DS10668 Rev 6 - Table 64. TIMx characteristics",
+  "rev": "Rev 6",
+  "table_number": "64",
+  "title": "Table 64. TIMx characteristics",
+  "page": 90,
+  "section": "6.3.18 Timer characteristics",
+  "section_title": "Timer characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l031c4.pdf#page=90",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l031c4.pdf",
+  "text_helper": "Table 64. TIMx characteristics — section 6.3.18 Timer characteristics. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "-",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "f = 32 MHz TIMxCLK",
+        "31.25",
+        "-",
+        "ns"
+      ],
+      [
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "-",
+        "0",
+        "f /2 TIMxCLK",
+        "MHz"
+      ],
+      [
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "f = 32 MHz TIMxCLK",
+        "0",
+        "16",
+        "MHz"
+      ],
+      [
+        "Res TIM",
+        "Timer resolution",
+        "-",
+        "-",
+        "16",
+        "bit"
+      ],
+      [
+        "t COUNTER",
+        "16-bit counter clock period when internal clock is selected (timer's prescaler disabled)",
+        "-",
+        "1",
+        "65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t COUNTER",
+        "16-bit counter clock period when internal clock is selected (timer's prescaler disabled)",
+        "f = 32 MHz TIMxCLK",
+        "0.0312",
+        "2048",
+        "µs"
+      ],
+      [
+        "t MAX_COUNT",
+        "Maximum possible count",
+        "-",
+        "-",
+        "65536 × 65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t MAX_COUNT",
+        "Maximum possible count",
+        "f = 32 MHz TIMxCLK",
+        "-",
+        "134.2",
+        "s"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization results.",
+      "2. Spikes with widths below t are filtered. AF(min)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

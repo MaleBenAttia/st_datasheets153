@@ -1,0 +1,124 @@
+{
+  "table_id": "table_89",
+  "document": "DS14121 Rev 5 - Table 89. OCTOSPI characteristics in SDR mode",
+  "rev": "Rev 5",
+  "table_number": "89",
+  "title": "Table 89. OCTOSPI characteristics in SDR mode",
+  "page": 201,
+  "section": "5.3.19 Octo-SPI interface characteristics",
+  "section_title": "Octo-SPI interface characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h573ai.pdf#page=201",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h573ai.pdf",
+  "text_helper": "Table 89. OCTOSPI characteristics in SDR mode — section 5.3.19 Octo-SPI interface characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max(3)",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "F (CLK)",
+        "Clock frequency",
+        "1.71 V < V < 1.9 V, DD C = 15 pF L",
+        "-",
+        "-",
+        "110",
+        "MHz"
+      ],
+      [
+        "F (CLK)",
+        "Clock frequency",
+        "1.71 V < V < 3.6 V, DD C =15 pF L",
+        "-",
+        "-",
+        "150",
+        "MHz"
+      ],
+      [
+        "t w(CLKH)",
+        "Clock high and low time, even division",
+        "PRESCALER[7:0] = n (= 0, 1, 3, 5,..., 255)",
+        "t / 2 - 0.5 (CLK)",
+        "-",
+        "t / 2 + 0.5 (CLK)",
+        "ns"
+      ],
+      [
+        "t w(CLKL)",
+        "Clock high and low time, even division",
+        "PRESCALER[7:0] = n (= 0, 1, 3, 5,..., 255)",
+        "t / 2 - 0.5 (CLK)",
+        "-",
+        "t / 2 + 0.5 (CK)",
+        "ns"
+      ],
+      [
+        "t w(CLKH)",
+        "Clock high and low time, odd division",
+        "PRESCALER[7:0] = n (= 2, 4, 6, ..., 254)",
+        "(n / 2) * t / (CLK) (n + 1) - 0.5",
+        "-",
+        "(n / 2) * t / (CLK) (n + 1) + 0.5",
+        "ns"
+      ],
+      [
+        "t w(CLKL)",
+        "Clock high and low time, odd division",
+        "PRESCALER[7:0] = n (= 2, 4, 6, ..., 254)",
+        "(n / 2 + 1) * t / (CLK) (n + 1) - 0.5",
+        "-",
+        "(n / 2 + 1) * t / (CLK) (n + 1) + 0.5",
+        "ns"
+      ],
+      [
+        "t s(IN)",
+        "Data input setup time",
+        "-",
+        "4",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(IN)",
+        "Data input hold time",
+        "-",
+        "1",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(OUT)",
+        "Data output valid time",
+        "-",
+        "-",
+        "0.5",
+        "1",
+        "ns"
+      ],
+      [
+        "t h(OUT)",
+        "Data output hold time",
+        "-",
+        "0",
+        "-",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "3. At VOS1 these values are degraded by up to 5%."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

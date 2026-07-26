@@ -1,0 +1,57 @@
+{
+  "table_id": "table_59",
+  "document": "DS9895 Rev 8 - Table 59. WWDG min-max timeout value @72 MHz (PCLK)",
+  "rev": "Rev 8",
+  "table_number": "59",
+  "title": "Table 59. WWDG min-max timeout value @72 MHz (PCLK)",
+  "page": 93,
+  "section": "6.3.16 Timer characteristics",
+  "section_title": "Timer characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f301c6.pdf#page=93",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f301c6.pdf",
+  "text_helper": "Table 59. WWDG min-max timeout value @72 MHz (PCLK) — section 6.3.16 Timer characteristics. Prescaler, WDGTB, Min timeout value, Max timeout value.",
+  "table_content": {
+    "headers": [
+      "Prescaler",
+      "WDGTB",
+      "Min timeout value",
+      "Max timeout value"
+    ],
+    "rows": [
+      [
+        "1",
+        "0",
+        "0.05687",
+        "3.6409"
+      ],
+      [
+        "2",
+        "1",
+        "0.1137",
+        "7.2817"
+      ],
+      [
+        "4",
+        "2",
+        "0.2275",
+        "14.564"
+      ],
+      [
+        "8",
+        "3",
+        "0.4551",
+        "29.127"
+      ]
+    ],
+    "notes": [
+      "1. These timings are given for a 40 kHz clock but the microcontroller internal RC frequency can vary from 30 to 60 kHz. Moreover, given an exact RC oscillator frequency, the exact timings still depend on the phasing",
+      "2. Spikes with widths below t are filtered. AF(min)",
+      "3. Spikes with widths above t are not filtered AF(max)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

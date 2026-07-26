@@ -1,0 +1,127 @@
+{
+  "table_id": "table_89",
+  "document": "DS11421 Rev 6 - Table 89. eMMC dynamic characteristics, VDD = 1.71 V to 1.9 V",
+  "rev": "Rev 6",
+  "table_number": "89",
+  "title": "Table 89. eMMC dynamic characteristics, VDD = 1.71 V to 1.9 V",
+  "page": 183,
+  "section": "6.3.27 Communication interfaces characteristics",
+  "section_title": "Communication interfaces characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l443cc.pdf#page=183",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l443cc.pdf",
+  "text_helper": "Table 89. eMMC dynamic characteristics, VDD = 1.71 V to 1.9 V — section 6.3.27 Communication interfaces characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f PP",
+        "Clock frequency in data transfer mode",
+        "-",
+        "0",
+        "-",
+        "50",
+        "MHz"
+      ],
+      [
+        "-",
+        "SDIO_CK/f frequency ratio PCLK2",
+        "-",
+        "-",
+        "-",
+        "4/3",
+        "-"
+      ],
+      [
+        "t W(CKL)",
+        "Clock low time",
+        "f = 50 MHz PP",
+        "8",
+        "10",
+        "-",
+        "ns"
+      ],
+      [
+        "t W(CKH)",
+        "Clock high time",
+        "f = 50 MHz PP",
+        "8",
+        "10",
+        "-",
+        "ns"
+      ],
+      [
+        "CMD, D inputs (referenced to CK) in eMMC mode",
+        "CMD, D inputs (referenced to CK) in eMMC mode",
+        "CMD, D inputs (referenced to CK) in eMMC mode",
+        "CMD, D inputs (referenced to CK) in eMMC mode",
+        "CMD, D inputs (referenced to CK) in eMMC mode",
+        "CMD, D inputs (referenced to CK) in eMMC mode",
+        "CMD, D inputs (referenced to CK) in eMMC mode"
+      ],
+      [
+        "t ISU",
+        "Input setup time HS",
+        "f = 50 MHz PP",
+        "0",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t IH",
+        "Input hold time HS",
+        "f = 50 MHz PP",
+        "1.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "CMD, D outputs (referenced to CK) in eMMC mode",
+        "CMD, D outputs (referenced to CK) in eMMC mode",
+        "CMD, D outputs (referenced to CK) in eMMC mode",
+        "CMD, D outputs (referenced to CK) in eMMC mode",
+        "CMD, D outputs (referenced to CK) in eMMC mode",
+        "CMD, D outputs (referenced to CK) in eMMC mode",
+        "CMD, D outputs (referenced to CK) in eMMC mode"
+      ],
+      [
+        "t OV",
+        "Output valid time HS",
+        "f = 50 MHz PP",
+        "-",
+        "13.5",
+        "15",
+        "ns"
+      ],
+      [
+        "t OH",
+        "Output hold time HS",
+        "f = 50 MHz PP",
+        "9",
+        "-",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization results.",
+      "2. C = 20pF. LOAD",
+      "3. Guaranteed by design.",
+      "4. No external termination series resistors are required on USB_DP (D+) and USB_DM (D-); the matching impedance is already included in the embedded driver."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

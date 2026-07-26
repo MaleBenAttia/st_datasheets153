@@ -1,0 +1,65 @@
+{
+  "table_id": "table_99",
+  "document": "DS12997 Rev 4 - Table 99. Synchronous non-multiplexed NOR/PSRAM read timings",
+  "rev": "Rev 4",
+  "table_number": "99",
+  "title": "Table 99. Synchronous non-multiplexed NOR/PSRAM read timings",
+  "page": 187,
+  "section": "5.3.27 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32g483ce.pdf#page=187",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g483ce.pdf",
+  "text_helper": "Table 99. Synchronous non-multiplexed NOR/PSRAM read timings — section 5.3.27 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t d(CLKH-AIV)",
+        "FMC_CLK high to FMC_Ax invalid (x=16…25)",
+        "R*T /2+- 1 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NOEL)",
+        "FMC_CLK low to FMC_NOE low",
+        "-",
+        "2",
+        "ns"
+      ],
+      [
+        "t d(CLKH-NOEH)",
+        "FMC_CLK high to FMC_NOE high",
+        "R*T /2 + 1 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(DV-CLKH)",
+        "FMC_D[15:0] valid data before FMC_CLK high",
+        "2",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(CLKH-DV)",
+        "FMC_D[15:0] valid data after FMC_CLK high",
+        "4",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

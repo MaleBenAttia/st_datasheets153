@@ -1,0 +1,108 @@
+{
+  "table_id": "table_62",
+  "document": "DS10182 Rev 10 - Table 62. NRST pin characteristics",
+  "rev": "Rev 10",
+  "table_number": "62",
+  "title": "Table 62. NRST pin characteristics",
+  "page": 92,
+  "section": "6.3.14 NRST pin characteristics",
+  "section_title": "NRST pin characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l052c6.pdf#page=92",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l052c6.pdf",
+  "text_helper": "Table 62. NRST pin characteristics — section 6.3.14 NRST pin characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V (1) IL(NRST)",
+        "NRST input low level voltage",
+        "-",
+        "V SS",
+        "-",
+        "0.8",
+        "V"
+      ],
+      [
+        "V (1) IH(NRST)",
+        "NRST input high level voltage",
+        "-",
+        "1.4",
+        "-",
+        "V DD",
+        "V"
+      ],
+      [
+        "V (1) OL(NRST)",
+        "NRST output low level voltage",
+        "I = 2 mA OL 2.7 V < V < 3.6 V DD",
+        "-",
+        "-",
+        "0.4",
+        "V"
+      ],
+      [
+        "V (1) OL(NRST)",
+        "NRST output low level voltage",
+        "I = 1.5 mA OL 1.65 V < V < 2.7 V DD",
+        "-",
+        "-",
+        "0.4",
+        "V"
+      ],
+      [
+        "V (1) hys(NRST)",
+        "NRST Schmitt trigger voltage hysteresis",
+        "-",
+        "-",
+        "10%V (2) DD",
+        "-",
+        "mV"
+      ],
+      [
+        "R PU",
+        "Weak pull-up equivalent resistor(3)",
+        "V = V IN SS",
+        "25",
+        "45",
+        "65",
+        "kΩ"
+      ],
+      [
+        "V (1) F(NRST)",
+        "NRST input filtered pulse",
+        "-",
+        "-",
+        "-",
+        "50",
+        "ns"
+      ],
+      [
+        "V (1) NF(NRST)",
+        "NRST input not filtered pulse",
+        "-",
+        "350",
+        "-",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by design.",
+      "2. 200 mV minimum value",
+      "3. The pull-up is designed with a true resistance in series with a switchable PMOS. This PMOS contribution to the series resistance is around 10%."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

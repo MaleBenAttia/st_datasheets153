@@ -1,0 +1,255 @@
+{
+  "table_id": "table_65",
+  "document": "DS13513 Rev 4 - Table 65. COMP characteristics",
+  "rev": "Rev 4",
+  "table_number": "65",
+  "title": "Table 65. COMP characteristics",
+  "page": 92,
+  "section": "5.3.21 Comparator characteristics",
+  "section_title": "Comparator characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32g061c6.pdf#page=92",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g061c6.pdf",
+  "text_helper": "Table 65. COMP characteristics — section 5.3.21 Comparator characteristics. Symbol, Parameter, Conditions, Conditions, Min, +3 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V DDA",
+        "Analog supply voltage",
+        "-",
+        "-",
+        "1.62",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V IN",
+        "Comparator input voltage range",
+        "-",
+        "-",
+        "0",
+        "-",
+        "V DDA",
+        "V"
+      ],
+      [
+        "V (2) BG",
+        "Scaler input voltage",
+        "-",
+        "-",
+        "V REFINT",
+        "V REFINT",
+        "V REFINT",
+        "V"
+      ],
+      [
+        "V SC",
+        "Scaler offset voltage",
+        "-",
+        "-",
+        "-",
+        "±5",
+        "±10",
+        "mV"
+      ],
+      [
+        "I DDA(SCALER)",
+        "Scaler static consumption from V DDA",
+        "BRG_EN=0 (bridge disable)",
+        "BRG_EN=0 (bridge disable)",
+        "-",
+        "200",
+        "300",
+        "nA"
+      ],
+      [
+        "I DDA(SCALER)",
+        "Scaler static consumption from V DDA",
+        "BRG_EN=1 (bridge enable)",
+        "BRG_EN=1 (bridge enable)",
+        "-",
+        "0.8",
+        "1",
+        "µA"
+      ],
+      [
+        "t START_SCALER",
+        "Scaler startup time",
+        "-",
+        "-",
+        "-",
+        "100",
+        "200",
+        "µs"
+      ],
+      [
+        "t START",
+        "Comparator startup time to reach propagation delay specification",
+        "High-speed mode",
+        "High-speed mode",
+        "-",
+        "-",
+        "5",
+        "µs"
+      ],
+      [
+        "t START",
+        "Comparator startup time to reach propagation delay specification",
+        "Medium-speed mode",
+        "Medium-speed mode",
+        "-",
+        "-",
+        "15",
+        "µs"
+      ],
+      [
+        "t D",
+        "Propagation delay",
+        "evirdrevo Vm 001 ;pets Vm 002",
+        "High-speed mode",
+        "-",
+        "30",
+        "50",
+        "ns"
+      ],
+      [
+        "t D",
+        "Propagation delay",
+        "evirdrevo Vm 001 ;pets Vm 002",
+        "Medium-speed mode",
+        "-",
+        "0.3",
+        "0.6",
+        "µs"
+      ],
+      [
+        "t D",
+        "Propagation delay",
+        ">200 mV step; 100 mV overdrive",
+        "High-speed mode",
+        "-",
+        "-",
+        "70",
+        "ns"
+      ],
+      [
+        "t D",
+        "Propagation delay",
+        ">200 mV step; 100 mV overdrive",
+        "Medium-speed mode",
+        "-",
+        "-",
+        "1.2",
+        "µs"
+      ],
+      [
+        "V offset",
+        "Comparator offset error",
+        "Full common mode range",
+        "Full common mode range",
+        "-",
+        "±5",
+        "±20",
+        "mV"
+      ],
+      [
+        "V hys",
+        "Comparator hysteresis",
+        "No hysteresis",
+        "No hysteresis",
+        "-",
+        "0",
+        "-",
+        "mV"
+      ],
+      [
+        "V hys",
+        "Comparator hysteresis",
+        "Low hysteresis",
+        "Low hysteresis",
+        "-",
+        "10",
+        "-",
+        "-"
+      ],
+      [
+        "V hys",
+        "Comparator hysteresis",
+        "Medium hysteresis",
+        "Medium hysteresis",
+        "-",
+        "20",
+        "-",
+        "-"
+      ],
+      [
+        "V hys",
+        "Comparator hysteresis",
+        "High hysteresis",
+        "High hysteresis",
+        "-",
+        "30",
+        "-",
+        "-"
+      ],
+      [
+        "I DDA(COMP)",
+        "Comparator consumption from V DDA",
+        "Medium-speed mode",
+        "Static",
+        "-",
+        "5",
+        "7.5",
+        "µA"
+      ],
+      [
+        "I DDA(COMP)",
+        "Comparator consumption from V DDA",
+        "Medium-speed mode",
+        "With 50 kHz and ±100 mV overdrive square signal",
+        "-",
+        "6",
+        "-",
+        "-"
+      ],
+      [
+        "I DDA(COMP)",
+        "Comparator consumption from V DDA",
+        "High-speed mode",
+        "Static",
+        "-",
+        "250",
+        "400",
+        "400"
+      ],
+      [
+        "I DDA(COMP)",
+        "Comparator consumption from V DDA",
+        "High-speed mode",
+        "With 50 kHz and ±100 mV overdrive square signal",
+        "-",
+        "250",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "2. If the V is below the VREFBUF operating voltage, the voltage reference buffer can not maintain accurately the output DDA"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

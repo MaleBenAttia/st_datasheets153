@@ -1,0 +1,71 @@
+{
+  "table_id": "table_62",
+  "document": "DS11189 Rev 8 - Table 62. NRST pin characteristics",
+  "rev": "Rev 8",
+  "table_number": "62",
+  "title": "Table 62. NRST pin characteristics",
+  "page": 140,
+  "section": "5.3.21 NRST pin characteristics",
+  "section_title": "NRST pin characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f469ae.pdf#page=140",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f469ae.pdf",
+  "text_helper": "Table 62. NRST pin characteristics — section 5.3.21 NRST pin characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "R PU",
+        "Weak pull-up equivalent resistor(1)",
+        "V IN = V SS",
+        "30",
+        "40",
+        "50",
+        "kΩ"
+      ],
+      [
+        "V (2) F(NRST)",
+        "NRST Input filtered pulse",
+        "-",
+        "-",
+        "-",
+        "100",
+        "ns"
+      ],
+      [
+        "V (2) NF(NRST)",
+        "NRST Input not filtered pulse",
+        "V > 2.7 V DD",
+        "300",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "T NRST_OUT",
+        "Generated reset pulse duration",
+        "Internal Reset source",
+        "20",
+        "-",
+        "-",
+        "µs"
+      ]
+    ],
+    "notes": [
+      "1. The pull-up is designed with a true resistance in series with a switchable PMOS. This PMOS contribution to the series resistance must be minimum (~10%).",
+      "2. Guaranteed by design."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

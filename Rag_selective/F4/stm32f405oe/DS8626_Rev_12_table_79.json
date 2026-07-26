@@ -1,0 +1,96 @@
+{
+  "table_id": "table_79",
+  "document": "DS8626 Rev 12 - Table 79. Synchronous multiplexed NOR/PSRAM read timings",
+  "rev": "Rev 12",
+  "table_number": "79",
+  "title": "Table 79. Synchronous multiplexed NOR/PSRAM read timings",
+  "page": 150,
+  "section": "6.3.26 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f405oe.pdf#page=150",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f405oe.pdf",
+  "text_helper": "Table 79. Synchronous multiplexed NOR/PSRAM read timings — section 6.3.26 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t d(CLKL-NExL)",
+        "FSMC_CLK low to FSMC_NEx low (x=0..2)",
+        "-",
+        "0",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NExH)",
+        "FSMC_CLK low to FSMC_NEx high (x= 0…2)",
+        "2",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NADVH)",
+        "FSMC_CLK low to FSMC_NADV high",
+        "2",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-AIV)",
+        "FSMC_CLK low to FSMC_Ax invalid (x=16…25)",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NOEL)",
+        "FSMC_CLK low to FSMC_NOE low",
+        "-",
+        "0",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NOEH)",
+        "FSMC_CLK low to FSMC_NOE high",
+        "2",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-ADV)",
+        "FSMC_CLK low to FSMC_AD[15:0] valid",
+        "-",
+        "4.5",
+        "ns"
+      ],
+      [
+        "t su(ADV-CLKH)",
+        "FSMC_A/D[15:0] valid data before FSMC_CLK high",
+        "6",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(CLKH-ADV)",
+        "FSMC_A/D[15:0] valid data after FSMC_CLK high",
+        "0",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. C = 30 pF. L",
+      "2. Evaluated by characterization - not tested in production. 150/206 DS8626 Rev 12"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

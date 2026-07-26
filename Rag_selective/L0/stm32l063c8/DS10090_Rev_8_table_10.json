@@ -1,0 +1,46 @@
+{
+  "table_id": "table_10",
+  "document": "DS10090 Rev 8 - Table 10. Comparison of I2C analog and digital filters",
+  "rev": "Rev 8",
+  "table_number": "10",
+  "title": "Table 10. Comparison of I2C analog and digital filters",
+  "page": 33,
+  "section": "3.20 Communication interfaces",
+  "section_title": "Communication interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l063c8.pdf#page=33",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l063c8.pdf",
+  "text_helper": "Table 10. Comparison of I2C analog and digital filters — section 3.20 Communication interfaces. , Analog filter, Digital filter.",
+  "table_content": {
+    "headers": [
+      "",
+      "Analog filter",
+      "Digital filter"
+    ],
+    "rows": [
+      [
+        "Pulse width of suppressed spikes",
+        "≥ 50 ns",
+        "Programmable length from 1 to 15 I2C peripheral clocks"
+      ],
+      [
+        "Benefits",
+        "Available in Stop mode",
+        "1. Extra filtering capability vs. standard requirements. 2. Stable length"
+      ],
+      [
+        "Drawbacks",
+        "Variations depending on temperature, voltage, process",
+        "Wakeup from Stop on address match is not available when digital filter is enabled."
+      ]
+    ],
+    "notes": [
+      "1. X = supported.",
+      "2. This mode allows using the USART as an SPI master."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

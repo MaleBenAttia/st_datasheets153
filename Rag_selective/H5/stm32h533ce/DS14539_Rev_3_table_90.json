@@ -1,0 +1,579 @@
+{
+  "table_id": "table_90",
+  "document": "DS14539 Rev 3 - Table 90. 12-bit ADC characteristics",
+  "rev": "Rev 3",
+  "table_number": "90",
+  "title": "Table 90. 12-bit ADC characteristics",
+  "page": 170,
+  "section": "5.3.21 PSSI interface characteristics",
+  "section_title": "PSSI interface characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h533ce.pdf#page=170",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h533ce.pdf",
+  "text_helper": "Table 90. 12-bit ADC characteristics — section 5.3.21 PSSI interface characteristics. Symbol, Parameter, Conditions, Conditions, Min, +3 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "VDDA",
+        "Analog supply voltage for ADC ON",
+        "-",
+        "-",
+        "1.62",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "VREF+",
+        "Positive reference voltage",
+        "-",
+        "-",
+        "1.62",
+        "-",
+        "VDDA",
+        "V"
+      ],
+      [
+        "VREF-",
+        "Negative reference voltage",
+        "-",
+        "-",
+        "VSSA",
+        "VSSA",
+        "VSSA",
+        "V"
+      ],
+      [
+        "fadc_ker_ck (3)",
+        "Clock frequency",
+        "1.62 V ≤ VDDA ≤ 3.6 V",
+        "1.62 V ≤ VDDA ≤ 3.6 V",
+        "1.5",
+        "-",
+        "75",
+        "MHz"
+      ],
+      [
+        "fS (4) with RAIN = 47 Ω and CPCB = 22 pF",
+        "Sampling rate for fast channels (VIN[0:5])",
+        "Resolution = 12 bits",
+        "Continuous mode",
+        "-",
+        "5.00",
+        "-",
+        "MSPS"
+      ],
+      [
+        "fS (4) with RAIN = 47 Ω and CPCB = 22 pF",
+        "Sampling rate for fast channels (VIN[0:5])",
+        "1.6V ≤ VDDA ≤ 3.6V",
+        "fadc_ker_ck = 70 MHz",
+        "-",
+        "4.66",
+        "-",
+        "-"
+      ],
+      [
+        "fS (4) with RAIN = 47 Ω and CPCB = 22 pF",
+        "Single or Discontinuous mode",
+        "2.4V ≤ VDDA ≤ 3.6V",
+        "fadc_ker_ck = 60 MHz",
+        "-",
+        "4.00",
+        "-",
+        "-"
+      ],
+      [
+        "fS (4) with RAIN = 47 Ω and CPCB = 22 pF",
+        "Single or Discontinuous mode",
+        "1.6V ≤ VDDA ≤ 3.6V",
+        "fadc_ker_ck = 50 MHz",
+        "-",
+        "3.33",
+        "-",
+        "-"
+      ],
+      [
+        "fS (4) with RAIN = 47 Ω and CPCB = 22 pF",
+        "Resolution = 10 bits",
+        "Continuous mode",
+        "1.6V ≤ VDDA ≤ 3.6V",
+        "fadc_ker_ck = 75 MHz",
+        "-",
+        "5.77",
+        "-"
+      ],
+      [
+        "fS (4) with RAIN = 47 Ω and CPCB = 22 pF",
+        "Resolution = 10 bits",
+        "Single or Discontinuous mode",
+        "2.4V ≤ VDDA ≤ 3.6V",
+        "-",
+        "5.77",
+        "-",
+        "-"
+      ],
+      [
+        "fS (4) with RAIN = 47 Ω and CPCB = 22 pF",
+        "Resolution = 10 bits",
+        "1.6V ≤ VDDA ≤ 3.6V",
+        "fadc_ker_ck = 65 MHz",
+        "-",
+        "5.00",
+        "-",
+        "-"
+      ],
+      [
+        "fS (4) with RAIN = 47 Ω and CPCB = 22 pF",
+        "Resolution = 8 bits",
+        "All modes",
+        "1.6V ≤ VDDA ≤ 3.6V",
+        "fadc_ker_ck = 75 MHz",
+        "-",
+        "6.82",
+        "-"
+      ],
+      [
+        "fS (4) with RAIN = 47 Ω and CPCB = 22 pF",
+        "Resolution = 8 bits",
+        "Resolution = 6 bits",
+        "Resolution = 6 bits",
+        "-",
+        "8.33",
+        "-",
+        "-"
+      ],
+      [
+        "Sampling rate for slow channels",
+        "Resolution = 12 bits",
+        "All modes(5)",
+        "1.6V ≤ VDDA ≤ 3.6V",
+        "fadc_ker_ck = 35 MHz",
+        "-",
+        "2.30",
+        "-"
+      ],
+      [
+        "Sampling rate for slow channels",
+        "Resolution = 12 bits",
+        "Resolution = 10 bits",
+        "Resolution = 10 bits",
+        "-",
+        "2.70",
+        "-",
+        "-"
+      ],
+      [
+        "Sampling rate for slow channels",
+        "Resolution = 12 bits",
+        "Resolution = 8 bits",
+        "fadc_ker_ck = 50 MHz",
+        "-",
+        "4.50",
+        "-",
+        "-"
+      ],
+      [
+        "Sampling rate for slow channels",
+        "Resolution = 12 bits",
+        "Resolution = 6 bits",
+        "fadc_ker_ck = 50 MHz",
+        "-",
+        "5.50",
+        "-",
+        "-"
+      ],
+      [
+        "tTRIG",
+        "External trigger period",
+        "Resolution = 12 bits",
+        "Resolution = 12 bits",
+        "-",
+        "-",
+        "15",
+        "1/fADC"
+      ],
+      [
+        "VAIN (2)",
+        "Conversion voltage range",
+        "-",
+        "-",
+        "0",
+        "-",
+        "VREF+",
+        "V"
+      ],
+      [
+        "VCMIV",
+        "Common mode input voltage",
+        "-",
+        "-",
+        "VREF / 2 - 10%",
+        "VREF / 2",
+        "VREF / 2 + 10%",
+        "VREF / 2 + 10%"
+      ],
+      [
+        "RAIN (6)",
+        "External input impedance",
+        "Resolution = 12 bits, TJ = 130°C (tolerance 4 LSBs)",
+        "Resolution = 12 bits, TJ = 130°C (tolerance 4 LSBs)",
+        "-",
+        "-",
+        "321",
+        "Ω"
+      ],
+      [
+        "RAIN (6)",
+        "External input impedance",
+        "Resolution = 12 bits, TJ = 125°C",
+        "Resolution = 12 bits, TJ = 125°C",
+        "-",
+        "-",
+        "220",
+        "220"
+      ],
+      [
+        "RAIN (6)",
+        "External input impedance",
+        "Resolution = 10 bits, TJ = 130°C",
+        "Resolution = 10 bits, TJ = 130°C",
+        "-",
+        "-",
+        "1039",
+        "1039"
+      ],
+      [
+        "RAIN (6)",
+        "External input impedance",
+        "Resolution = 10 bits, TJ = 125°C",
+        "Resolution = 10 bits, TJ = 125°C",
+        "-",
+        "-",
+        "2100",
+        "2100"
+      ],
+      [
+        "RAIN (6)",
+        "External input impedance",
+        "Resolution = 8 bits, TJ = 130°C",
+        "Resolution = 8 bits, TJ = 130°C",
+        "-",
+        "-",
+        "6327",
+        "6327"
+      ],
+      [
+        "RAIN (6)",
+        "External input impedance",
+        "Resolution = 8 bits, TJ = 125°C",
+        "Resolution = 8 bits, TJ = 125°C",
+        "-",
+        "-",
+        "12000",
+        "12000"
+      ],
+      [
+        "RAIN (6)",
+        "External input impedance",
+        "Resolution = 6 bits, TJ = 130°C",
+        "Resolution = 6 bits, TJ = 130°C",
+        "-",
+        "-",
+        "47620",
+        "47620"
+      ],
+      [
+        "RAIN (6)",
+        "External input impedance",
+        "Resolution = 6 bits, TJ = 125°C",
+        "Resolution = 6 bits, TJ = 125°C",
+        "-",
+        "-",
+        "80000",
+        "80000"
+      ],
+      [
+        "CADC",
+        "Internal sample and hold capacitor",
+        "-",
+        "-",
+        "-",
+        "3",
+        "-",
+        "pF"
+      ],
+      [
+        "tADCVREG_ STUP",
+        "LDO startup time",
+        "-",
+        "-",
+        "-",
+        "5",
+        "10",
+        "µs"
+      ],
+      [
+        "tSTAB",
+        "Power-up time",
+        "LDO already started",
+        "LDO already started",
+        "1",
+        "-",
+        "-",
+        "Conversion cycle"
+      ],
+      [
+        "tOFF_CAL",
+        "Offset calibration time",
+        "-",
+        "1335",
+        "None",
+        "None",
+        "1/fADC",
+        "1/fADC"
+      ],
+      [
+        "tLATR",
+        "Trigger conversion latency for regular and injected channels without aborting the conversion",
+        "CKMODE = 00",
+        "1.5",
+        "2",
+        "2.5",
+        "None",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "CKMODE = 01",
+        "-",
+        "-",
+        "2.5",
+        "None",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "CKMODE = 10",
+        "-",
+        "-",
+        "2.5",
+        "None",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "CKMODE = 11",
+        "-",
+        "-",
+        "2.25",
+        "None",
+        "None"
+      ],
+      [
+        "tLATRINJ",
+        "Trigger conversion latency for regular and injected channels when a regular conversion is aborted",
+        "CKMODE = 00",
+        "2.5",
+        "3",
+        "3.5",
+        "None",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "CKMODE = 01",
+        "-",
+        "-",
+        "3.5",
+        "None",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "CKMODE = 10",
+        "-",
+        "-",
+        "3.5",
+        "None",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "CKMODE = 11",
+        "-",
+        "-",
+        "3.25",
+        "None",
+        "None"
+      ],
+      [
+        "tS",
+        "Sampling time",
+        "-",
+        "2.5",
+        "-",
+        "640.5",
+        "None",
+        "None"
+      ],
+      [
+        "tCONV",
+        "Total conversion time (including sampling)",
+        "N-bits resolution",
+        "tS + 0.5 + N",
+        "-",
+        "-",
+        "None",
+        "None"
+      ],
+      [
+        "IDDA_D(ADC)",
+        "Consumption on VDDA and VREF, differential mode",
+        "fs = 5 MSPS",
+        "-",
+        "600",
+        "-",
+        "µA",
+        "µA"
+      ],
+      [
+        "None",
+        "None",
+        "fs = 1 MSPS",
+        "-",
+        "190",
+        "-",
+        "None",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "fs = 0.1 MSPS",
+        "-",
+        "50",
+        "-",
+        "None",
+        "None"
+      ],
+      [
+        "IDDA_SE(ADC)",
+        "Consumption on VDDA and VREF, single- ended mode",
+        "fs = 5 MSPS",
+        "-",
+        "500",
+        "-",
+        "None",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "fs = 1 MSPS",
+        "-",
+        "150",
+        "-",
+        "None",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "fs = 0.1 MSPS",
+        "-",
+        "50",
+        "-",
+        "None",
+        "None"
+      ],
+      [
+        "IDD(ADC)",
+        "Consumption on VDD",
+        "fadc_ker_ck = 75 MHz",
+        "-",
+        "265",
+        "-",
+        "None",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "fadc_ker_ck = 50 MHz",
+        "fadc_ker_ck = 50 MHz",
+        "175",
+        "-",
+        "None",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "fadc_ker_ck = 25 MHz",
+        "-",
+        "90",
+        "-",
+        "None",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "fadc_ker_ck = 12.5 MHz",
+        "-",
+        "45",
+        "-",
+        "None",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "fadc_ker_ck = 6.25 MHz",
+        "-",
+        "22",
+        "-",
+        "None",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "fadc_ker_ck = 3.125 MHz",
+        "-",
+        "11",
+        "-",
+        "None",
+        "None"
+      ]
+    ],
+    "notes": [
+      "2. The voltage booster on ADC switches must be used for V < 2.7 V (embedded I/O switches). DDA",
+      "3. This frequency is the analog ADC specification, it must respect the value in Table 21.",
+      "4. These values are valid on UFBGA144 package.",
+      "5. Depending upon the package, V can be internally connected to V , and V to V . REF+ DDA REF- SSA",
+      "6. The tolerance is two LSBs for 12-, 10-, and 8-bit resolutions, if not otherwise specified. 172/231 DS14539 Rev 3"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

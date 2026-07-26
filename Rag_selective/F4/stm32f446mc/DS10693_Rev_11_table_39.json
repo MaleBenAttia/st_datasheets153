@@ -1,0 +1,107 @@
+{
+  "table_id": "table_39",
+  "document": "DS10693 Rev 11 - Table 39. HSE 4-26 MHz oscillator characteristics",
+  "rev": "Rev 11",
+  "table_number": "39",
+  "title": "Table 39. HSE 4-26 MHz oscillator characteristics",
+  "page": 104,
+  "section": "6.3.9 External clock source characteristics",
+  "section_title": "External clock source characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f446mc.pdf#page=104",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f446mc.pdf",
+  "text_helper": "Table 39. HSE 4-26 MHz oscillator characteristics — section 6.3.9 External clock source characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f OSC_IN",
+        "Oscillator frequency",
+        "-",
+        "4",
+        "-",
+        "26",
+        "MHz"
+      ],
+      [
+        "R F",
+        "Feedback resistor",
+        "-",
+        "-",
+        "200",
+        "-",
+        "kΩ"
+      ],
+      [
+        "I DD",
+        "HSE current consumption",
+        "V =3.3 V, DD ESR= 30 Ω, C =5 pF@25 MHz L",
+        "-",
+        "450",
+        "-",
+        "µA"
+      ],
+      [
+        "I DD",
+        "HSE current consumption",
+        "V =3.3 V, DD ESR= 30 Ω, C =10 pF@25 MHz L",
+        "-",
+        "530",
+        "-",
+        "µA"
+      ],
+      [
+        "ACC (2) HSE",
+        "HSE accuracy",
+        "-",
+        "-500",
+        "-",
+        "500",
+        "ppm"
+      ],
+      [
+        "G _crit_max m",
+        "Maximum critical crystal g m",
+        "Startup",
+        "-",
+        "-",
+        "1",
+        "mA/V"
+      ],
+      [
+        "t (3) SU(HSE",
+        "Startup time",
+        "V is stabilized DD",
+        "-",
+        "2",
+        "-",
+        "ms"
+      ],
+      [
+        "G _crit_max m",
+        "Maximum critical crystal g m",
+        "Startup high-drive mode",
+        "-",
+        "-",
+        "1.5",
+        "1.5"
+      ]
+    ],
+    "notes": [
+      "2. This parameter depends on the crystal used in the application. The minimum and maximum values must be respected to comply with USB standard specifications.",
+      "3. t is the startup time measured from the moment it is enabled (by software) to a stabilized 8 MHz SU(HSE)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

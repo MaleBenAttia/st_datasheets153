@@ -1,0 +1,171 @@
+{
+  "table_id": "table_49",
+  "document": "DS10262 Rev 8 - Table 49. SPI characteristics",
+  "rev": "Rev 8",
+  "table_number": "49",
+  "title": "Table 49. SPI characteristics",
+  "page": 96,
+  "section": "6.3.16 Communications interfaces",
+  "section_title": "Communications interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l151qc.pdf#page=96",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l151qc.pdf",
+  "text_helper": "Table 49. SPI characteristics — section 6.3.16 Communications interfaces. Symbol, Parameter, Conditions, Min, Max(2), +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max(2)",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Master mode",
+        "-",
+        "16",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Slave mode",
+        "-",
+        "16",
+        "MHz"
+      ],
+      [
+        "f SCK 1/t c(SCK)",
+        "SPI clock frequency",
+        "Slave transmitter",
+        "-",
+        "12(3)",
+        "MHz"
+      ],
+      [
+        "t (2) r(SCK) t (2) f(SCK)",
+        "SPI clock rise and fall time",
+        "Capacitive load: C = 30 pF",
+        "-",
+        "6",
+        "ns"
+      ],
+      [
+        "DuCy(SCK)",
+        "SPI slave input clock duty cycle",
+        "Slave mode",
+        "30",
+        "70",
+        "%"
+      ],
+      [
+        "t su(NSS)",
+        "NSS setup time",
+        "Slave mode",
+        "4t HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(NSS)",
+        "NSS hold time",
+        "Slave mode",
+        "2t HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t (2) w(SCKH) t (2) w(SCKL)",
+        "SCK high and low time",
+        "Master mode",
+        "t /2 - 5 SCK",
+        "t /2 +3 SCK",
+        "ns"
+      ],
+      [
+        "t (2) su(MI)",
+        "Data input setup time",
+        "Master mode",
+        "5",
+        "-",
+        "ns"
+      ],
+      [
+        "t (2) su(SI)",
+        "Data input setup time",
+        "Slave mode",
+        "6",
+        "-",
+        "ns"
+      ],
+      [
+        "t (2) h(MI)",
+        "Data input hold time",
+        "Master mode",
+        "5",
+        "-",
+        "ns"
+      ],
+      [
+        "t (2) h(SI)",
+        "Data input hold time",
+        "Slave mode",
+        "5",
+        "-",
+        "ns"
+      ],
+      [
+        "t (4) a(SO)",
+        "Data output access time",
+        "Slave mode",
+        "0",
+        "3t HCLK",
+        "ns"
+      ],
+      [
+        "t (2) v(SO)",
+        "Data output valid time",
+        "Slave mode",
+        "-",
+        "33",
+        "ns"
+      ],
+      [
+        "t (2) v(MO)",
+        "Data output valid time",
+        "Master mode",
+        "-",
+        "6.5",
+        "ns"
+      ],
+      [
+        "t (2) h(SO)",
+        "Data output hold time",
+        "Slave mode",
+        "17",
+        "-",
+        "ns"
+      ],
+      [
+        "t (2) h(MO)",
+        "Data output hold time",
+        "Master mode",
+        "0.5",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "2. Guaranteed by characterization results.",
+      "3. The maximum SPI clock frequency in slave transmitter mode is given for an SPI slave input clock duty cycle (DuCy(SCK)) ranging between 40 to 60%.",
+      "4. Min time is for the minimum time to drive the output and max time is for the maximum time to validate the data. 96/134 DS10262 Rev 8"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

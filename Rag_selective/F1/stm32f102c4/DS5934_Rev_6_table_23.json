@@ -1,0 +1,158 @@
+{
+  "table_id": "table_23",
+  "document": "DS5934 Rev 6 - Table 23. HSI oscillator characteristics.",
+  "rev": "Rev 6",
+  "table_number": "23",
+  "title": "Table 23. HSI oscillator characteristics.",
+  "page": 44,
+  "section": "5.3.7 Internal clock source characteristics",
+  "section_title": "Internal clock source characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f102c4.pdf#page=44",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f102c4.pdf",
+  "text_helper": "Table 23. HSI oscillator characteristics. — section 5.3.7 Internal clock source characteristics. Symbol, Parameter, Conditions, Conditions, Min, +3 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f HSI",
+        "Frequency",
+        "-",
+        "-",
+        "-",
+        "8",
+        "-",
+        "MHz"
+      ],
+      [
+        "DuCy (HSI)",
+        "Duty cycle",
+        "-",
+        "-",
+        "45",
+        "-",
+        "55",
+        "%"
+      ],
+      [
+        "ACC HSI",
+        "Accuracy of the HSI oscillator",
+        "User-trimmed with the RCC_CR register(2)",
+        "User-trimmed with the RCC_CR register(2)",
+        "-",
+        "-",
+        "1(3)",
+        "%"
+      ],
+      [
+        "ACC HSI",
+        "Accuracy of the HSI oscillator",
+        "Factory- calibrated(4)(5)",
+        "T = –40 to 105°C A",
+        "–2.0",
+        "-",
+        "2.5",
+        "%"
+      ],
+      [
+        "ACC HSI",
+        "Accuracy of the HSI oscillator",
+        "Factory- calibrated(4)(5)",
+        "T = –10 to 85°C A",
+        "–1.5",
+        "-",
+        "2.2",
+        "%"
+      ],
+      [
+        "ACC HSI",
+        "Accuracy of the HSI oscillator",
+        "Factory- calibrated(4)(5)",
+        "T = 0 to 70°C A",
+        "–1.3",
+        "-",
+        "2",
+        "%"
+      ],
+      [
+        "ACC HSI",
+        "Accuracy of the HSI oscillator",
+        "Factory- calibrated(4)(5)",
+        "T = 25°C A",
+        "–1.1",
+        "-",
+        "1.8",
+        "%"
+      ],
+      [
+        "t (4) su(HSI)",
+        "HSI oscillator startup time",
+        "-",
+        "-",
+        "1",
+        "-",
+        "2",
+        "µs"
+      ],
+      [
+        "I (4) DD(HSI)",
+        "HSI oscillator power consumption",
+        "-",
+        "-",
+        "-",
+        "80",
+        "100",
+        "µA"
+      ],
+      [
+        "f LSI",
+        "f LSI",
+        "Frequency",
+        "Frequency",
+        "30",
+        "40",
+        "60",
+        "60"
+      ],
+      [
+        "t (3) su(LSI)",
+        "t (3) su(LSI)",
+        "LSI oscillator startup time",
+        "LSI oscillator startup time",
+        "-",
+        "-",
+        "85",
+        "85"
+      ],
+      [
+        "I (3) DD(LSI)",
+        "I (3) DD(LSI)",
+        "LSI oscillator power consumption",
+        "LSI oscillator power consumption",
+        "-",
+        "0.65",
+        "1.2",
+        "1.2"
+      ]
+    ],
+    "notes": [
+      "2. Refer to STM32F10xxx internal RC oscillator (HSI) calibration (AN2868) “” available from www.st.com. 44/79 DS5934 Rev 6",
+      "3. Guaranteed by design, not tested in production.",
+      "4. Based on characterization, not tested in production.",
+      "5. The actual frequency of HSI oscillator may be impacted by a reflow, but does not drift out of the specified range."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

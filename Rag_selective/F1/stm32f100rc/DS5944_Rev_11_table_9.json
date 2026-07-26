@@ -1,0 +1,163 @@
+{
+  "table_id": "table_9",
+  "document": "DS5944 Rev 11 - Table 9. General operating conditions",
+  "rev": "Rev 11",
+  "table_number": "9",
+  "title": "Table 9. General operating conditions",
+  "page": 38,
+  "section": "5.3.1 General operating conditions",
+  "section_title": "General operating conditions",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f100rc.pdf#page=38",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f100rc.pdf",
+  "text_helper": "Table 9. General operating conditions — section 5.3.1 General operating conditions. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f HCLK",
+        "Internal AHB clock frequency",
+        "-",
+        "0",
+        "24",
+        "MHz"
+      ],
+      [
+        "f PCLK1",
+        "Internal APB1 clock frequency",
+        "-",
+        "0",
+        "24",
+        "MHz"
+      ],
+      [
+        "f PCLK2",
+        "Internal APB2 clock frequency",
+        "-",
+        "0",
+        "24",
+        "MHz"
+      ],
+      [
+        "V DD",
+        "Standard operating voltage",
+        "-",
+        "2",
+        "3.6",
+        "V"
+      ],
+      [
+        "V (1) DDA",
+        "Analog operating voltage (ADC not used)",
+        "Must be the same potential as V DD",
+        "2",
+        "3.6",
+        "V"
+      ],
+      [
+        "V (1) DDA",
+        "Analog operating voltage (ADC used)",
+        "Must be the same potential as V DD",
+        "2.4",
+        "3.6",
+        "V"
+      ],
+      [
+        "V BAT",
+        "Backup operating voltage",
+        "-",
+        "1.8",
+        "3.6",
+        "V"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = A 85 °C for suffix 6 or T = A 105 °C for suffix 7(2)",
+        "LQFP144",
+        "-",
+        "666",
+        "mW"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = A 85 °C for suffix 6 or T = A 105 °C for suffix 7(2)",
+        "LQFP100",
+        "-",
+        "434",
+        "434"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = A 85 °C for suffix 6 or T = A 105 °C for suffix 7(2)",
+        "LQFP64",
+        "-",
+        "444",
+        "444"
+      ],
+      [
+        "TA",
+        "Ambient temperature for 6 suffix version",
+        "Maximum power dissipation",
+        "–40",
+        "85",
+        "°C"
+      ],
+      [
+        "TA",
+        "Ambient temperature for 6 suffix version",
+        "Low power dissipation(3)",
+        "–40",
+        "105",
+        "105"
+      ],
+      [
+        "TA",
+        "Ambient temperature for 7 suffix version",
+        "Maximum power dissipation",
+        "–40",
+        "105",
+        "°C"
+      ],
+      [
+        "TA",
+        "Ambient temperature for 7 suffix version",
+        "Low power dissipation(3)",
+        "–40",
+        "125",
+        "125"
+      ],
+      [
+        "TJ",
+        "Junction temperature range",
+        "6 suffix version",
+        "–40",
+        "105",
+        "°C"
+      ],
+      [
+        "TJ",
+        "Junction temperature range",
+        "7 suffix version",
+        "–40",
+        "125",
+        "125"
+      ]
+    ],
+    "notes": [
+      "1. The product behavior is guaranteed by design down to the minimum V value. POR/PDR",
+      "2. Guaranteed by design, not tested in production. 40/107 DS5944 Rev 11",
+      "3. Positive injection is not possible on these I/Os. A negative injection is induced by V <V . I must IN SS INJ(PIN)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "table_id": "table_26",
+  "document": "DS9716 Rev 11 - Table 26. Typical and maximum current consumption in Sleep mode.",
+  "rev": "Rev 11",
+  "table_number": "26",
+  "title": "Table 26. Typical and maximum current consumption in Sleep mode.",
+  "page": 67,
+  "section": "6.3.6 Supply current characteristics",
+  "section_title": "Supply current characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f401cb.pdf#page=67",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f401cb.pdf",
+  "text_helper": "Table 26. Typical and maximum current consumption in Sleep mode. — section 6.3.6 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK (MHz), Typ, +5 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "f HCLK (MHz)",
+      "Typ",
+      "Max(1) / T = A 25°C",
+      "Max(1) / T = A 85°C",
+      "Max(1) / T = A 105°C",
+      "Max(1) / T = A 125°C",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "External clock, all peripherals enabled(2)(3)",
+        "84",
+        "16.2",
+        "17",
+        "18",
+        "19",
+        "20.1",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "External clock, all peripherals enabled(2)(3)",
+        "60",
+        "10.7",
+        "11",
+        "12",
+        "13",
+        "14.1",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "External clock, all peripherals enabled(2)(3)",
+        "40",
+        "8.3",
+        "9",
+        "10",
+        "11",
+        "12.2",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "External clock, all peripherals enabled(2)(3)",
+        "30",
+        "6.8",
+        "7",
+        "8",
+        "9",
+        "10.2",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "External clock, all peripherals enabled(2)(3)",
+        "20",
+        "5.9",
+        "6",
+        "7",
+        "8",
+        "9.2",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "External clock, all peripherals disabled(3)(4)",
+        "84",
+        "5.2",
+        "6",
+        "7",
+        "8",
+        "9.2",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "External clock, all peripherals disabled(3)(4)",
+        "60",
+        "3.6",
+        "4",
+        "5",
+        "6",
+        "7.2",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "External clock, all peripherals disabled(3)(4)",
+        "40",
+        "2.9",
+        "3",
+        "4",
+        "5",
+        "5.2",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "External clock, all peripherals disabled(3)(4)",
+        "30",
+        "2.6",
+        "3",
+        "4",
+        "5",
+        "5.2",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "External clock, all peripherals disabled(3)(4)",
+        "20",
+        "2.6",
+        "3",
+        "4",
+        "5",
+        "5.2",
+        "mA"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization, unless otherwise specified.",
+      "2. Add an additional power consumption of 1.6mA per ADC for the analog part. In applications, this consumption occurs only while the ADC is ON (ADON bit is set in the ADC_CR2 register).",
+      "3. When the ADC is ON (ADON bit set in the ADC_CR2), add an additional power consumption of 1.6 mA per ADC for the analog part.",
+      "4. Same current consumption for f at 30MHz and 20MHz due to VCO running slower at 30MHz. HCLK"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

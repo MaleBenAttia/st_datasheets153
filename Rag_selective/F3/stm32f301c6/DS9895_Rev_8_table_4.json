@@ -1,0 +1,83 @@
+{
+  "table_id": "table_4",
+  "document": "DS9895 Rev 8 - Table 4. STM32F301x6/8 peripheral interconnect matrix",
+  "rev": "Rev 8",
+  "table_number": "4",
+  "title": "Table 4. STM32F301x6/8 peripheral interconnect matrix",
+  "page": 16,
+  "section": "3.5.4 Low-power modes",
+  "section_title": "Low-power modes",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f301c6.pdf#page=16",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f301c6.pdf",
+  "text_helper": "Table 4. STM32F301x6/8 peripheral interconnect matrix — section 3.5.4 Low-power modes. Interconnect source, Interconnect destination, Interconnect action.",
+  "table_content": {
+    "headers": [
+      "Interconnect source",
+      "Interconnect destination",
+      "Interconnect action"
+    ],
+    "rows": [
+      [
+        "TIMx",
+        "TIMx",
+        "Timers synchronization or chaining"
+      ],
+      [
+        "TIMx",
+        "ADC1 DAC1",
+        "Conversion triggers"
+      ],
+      [
+        "TIMx",
+        "DMA",
+        "Memory to memory transfer trigger"
+      ],
+      [
+        "TIMx",
+        "Compx",
+        "Comparator output blanking"
+      ],
+      [
+        "COMPx",
+        "TIMx",
+        "Timer input: OCREF_CLR input, input capture"
+      ],
+      [
+        "ADC1",
+        "TIM1",
+        "Timer triggered by analog watchdog"
+      ],
+      [
+        "GPIO RTCCLK HSE/32 MC0",
+        "TIM16",
+        "Clock source used as input channel for HSI and LSI calibration"
+      ],
+      [
+        "CSS CPU (hard fault) COMPx PVD GPIO",
+        "TIM1 TIM15, 16, 17",
+        "Timer break"
+      ],
+      [
+        "GPIO",
+        "TIMx",
+        "External trigger, timer break"
+      ],
+      [
+        "GPIO",
+        "ADC1 DAC1",
+        "Conversion external trigger"
+      ],
+      [
+        "DAC1",
+        "COMPx",
+        "Comparator inverting input"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

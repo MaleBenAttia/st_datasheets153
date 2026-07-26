@@ -1,0 +1,115 @@
+{
+  "table_id": "table_56",
+  "document": "DS12766 Rev 3 - Table 56. ADC accuracy",
+  "rev": "Rev 3",
+  "table_number": "56",
+  "title": "Table 56. ADC accuracy",
+  "page": 72,
+  "section": "5.3.18 Analog-to-digital converter characteristics",
+  "section_title": "Analog-to-digital converter characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32g070cb.pdf#page=72",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g070cb.pdf",
+  "text_helper": "Table 56. ADC accuracy — section 5.3.18 Analog-to-digital converter characteristics. Symbol, Parameter, Conditions(4), Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions(4)",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "ET",
+        "Total unadjusted error",
+        "V =V < 3.6 V; DDA REF+ f = 35 MHz; f ≤ 2.5 MSps; ADC s T = entire range A",
+        "-",
+        "3",
+        "6.5",
+        "LSB"
+      ],
+      [
+        "EO",
+        "Offset error",
+        "V =V < 3.6 V; DDA REF+ f = 35 MHz; f ≤ 2.5 MSps; ADC s T = entire range A",
+        "-",
+        "1.5",
+        "4.5",
+        "LSB"
+      ],
+      [
+        "EG",
+        "Gain error",
+        "V =V < 3.6 V; DDA REF+ f = 35 MHz; f ≤ 2.5 MSps; ADC s T = entire range A",
+        "-",
+        "3",
+        "5",
+        "LSB"
+      ],
+      [
+        "ED",
+        "Differential linearity error",
+        "V =V < 3.6 V; DDA REF+ f = 35 MHz; f ≤ 2.5 MSps; ADC s T = entire range A",
+        "-",
+        "1.2",
+        "1.5",
+        "LSB"
+      ],
+      [
+        "EL",
+        "Integral linearity error",
+        "V =V < 3.6 V; DDA REF+ f = 35 MHz; f ≤ 2.5 MSps; ADC s T = entire range A",
+        "-",
+        "2.5",
+        "3",
+        "LSB"
+      ],
+      [
+        "ENOB",
+        "Effective number of bits",
+        "V =V < 3.6 V; DDA REF+ f = 35 MHz; f ≤ 2.5 MSps; ADC s T = entire range A",
+        "9.6",
+        "10.2",
+        "-",
+        "bit"
+      ],
+      [
+        "SINAD",
+        "Signal-to-noise and distortion ratio",
+        "V =V < 3.6 V; DDA REF+ f = 35 MHz; f ≤ 2.5 MSps; ADC s T = entire range A",
+        "59.5",
+        "63",
+        "-",
+        "dB"
+      ],
+      [
+        "SNR",
+        "Signal-to-noise ratio",
+        "V =V < 3.6 V; DDA REF+ f = 35 MHz; f ≤ 2.5 MSps; ADC s T = entire range A",
+        "60",
+        "64",
+        "-",
+        "dB"
+      ],
+      [
+        "THD",
+        "Total harmonic distortion",
+        "V =V < 3.6 V; DDA REF+ f = 35 MHz; f ≤ 2.5 MSps; ADC s T = entire range A",
+        "-",
+        "-74",
+        "-70",
+        "dB"
+      ]
+    ],
+    "notes": [
+      "4. I/O analog switch voltage booster enabled (BOOSTEN = 1 in the SYSCFG_CFGR1) when V < 2.4 V DDA"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

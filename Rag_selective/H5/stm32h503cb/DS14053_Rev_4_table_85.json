@@ -1,0 +1,118 @@
+{
+  "table_id": "table_85",
+  "document": "DS14053 Rev 4 - Table 85. USB DC electrical characteristics",
+  "rev": "Rev 4",
+  "table_number": "85",
+  "title": "Table 85. USB DC electrical characteristics",
+  "page": 150,
+  "section": "5.3.27 Communication interfaces",
+  "section_title": "Communication interfaces",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32h503cb.pdf#page=150",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h503cb.pdf",
+  "text_helper": "Table 85. USB DC electrical characteristics — section 5.3.27 Communication interfaces. Symbol, Parameter, Conditions, Min(1), Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min(1)",
+      "Typ",
+      "Max(1)",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V DD",
+        "USB full speed transceiver operating voltage",
+        "-",
+        "3.0(2)",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V (3) DI",
+        "Differential input sensitivity",
+        "Over VCM range",
+        "0.2",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "V (3) CM",
+        "Differential input common mode range",
+        "Includes V range DI",
+        "0.8",
+        "-",
+        "2.5",
+        "V"
+      ],
+      [
+        "V (3) SE",
+        "Single ended receiver input threshold",
+        "-",
+        "0.8",
+        "-",
+        "2.0",
+        "V"
+      ],
+      [
+        "V OL",
+        "Static output level low",
+        "R of 1.5 kΩ to 3.6 V(4) L",
+        "-",
+        "-",
+        "0.3",
+        "V"
+      ],
+      [
+        "V OH",
+        "Static output level high",
+        "R of 15 kΩ to V (4) L SS",
+        "2.8",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "R (3) PD",
+        "Pull down resistor on PA11, PA12 (USB_DP/DM)",
+        "V = V IN DD",
+        "14.25",
+        "-",
+        "24.8",
+        "kΩ"
+      ],
+      [
+        "R (3) PU",
+        "Pull Up Resistor on PA12 (USB_DP)",
+        "V = V , during idle IN SS",
+        "0.9",
+        "1.25",
+        "1.575",
+        "kΩ"
+      ],
+      [
+        "R (3) PU",
+        "Pull Up Resistor on PA12 (USB_DP)",
+        "V = V during IN SS reception",
+        "1.425",
+        "2.25",
+        "3.09",
+        "kΩ"
+      ]
+    ],
+    "notes": [
+      "1. All the voltages are measured from the local ground potential.",
+      "2. The USB full speed transceiver functionality is ensured down to 2.7 V but not the full USB full speed electrical characteristics, which are degraded in the 2.7-to-3.0 V V voltage range.",
+      "3. Specified by design - Not tested in production.",
+      "4. R is the load connected on the USB full speed drivers. L"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

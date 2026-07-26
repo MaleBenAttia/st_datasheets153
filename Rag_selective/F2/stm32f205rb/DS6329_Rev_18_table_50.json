@@ -1,0 +1,137 @@
+{
+  "table_id": "table_50",
+  "document": "DS6329 Rev 18 - Table 50. Characteristics of TIMx connected to the APB1 domain",
+  "rev": "Rev 18",
+  "table_number": "50",
+  "title": "Table 50. Characteristics of TIMx connected to the APB1 domain",
+  "page": 108,
+  "section": "6.3.18 TIM timer characteristics",
+  "section_title": "TIM timer characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f205rb.pdf#page=108",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f205rb.pdf",
+  "text_helper": "Table 50. Characteristics of TIMx connected to the APB1 domain — section 6.3.18 TIM timer characteristics. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APB1 prescaler distinct from 1, f = TIMxCLK 60 MHz",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APB1 prescaler distinct from 1, f = TIMxCLK 60 MHz",
+        "16.7",
+        "-",
+        "ns"
+      ],
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APB1 prescaler = 1, f = 30 MHz TIMxCLK",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APB1 prescaler = 1, f = 30 MHz TIMxCLK",
+        "33.3",
+        "-",
+        "ns"
+      ],
+      [
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "f = 60 MHz TIMxCLK APB1= 30 MHz",
+        "0",
+        "f /2 TIMxCLK",
+        "MHz"
+      ],
+      [
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "f = 60 MHz TIMxCLK APB1= 30 MHz",
+        "0",
+        "30",
+        "MHz"
+      ],
+      [
+        "Res TIM",
+        "Timer resolution",
+        "f = 60 MHz TIMxCLK APB1= 30 MHz",
+        "-",
+        "16/32",
+        "bit"
+      ],
+      [
+        "t COUNTER",
+        "16-bit counter clock period when internal clock is selected",
+        "f = 60 MHz TIMxCLK APB1= 30 MHz",
+        "1",
+        "65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t COUNTER",
+        "16-bit counter clock period when internal clock is selected",
+        "f = 60 MHz TIMxCLK APB1= 30 MHz",
+        "0.0167",
+        "1092",
+        "µs"
+      ],
+      [
+        "t COUNTER",
+        "32-bit counter clock period when internal clock is selected",
+        "f = 60 MHz TIMxCLK APB1= 30 MHz",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "t COUNTER",
+        "32-bit counter clock period when internal clock is selected",
+        "f = 60 MHz TIMxCLK APB1= 30 MHz",
+        "0.0167",
+        "71582788",
+        "µs"
+      ],
+      [
+        "t MAX_COUNT",
+        "Maximum possible count",
+        "f = 60 MHz TIMxCLK APB1= 30 MHz",
+        "-",
+        "65536 × 65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t MAX_COUNT",
+        "Maximum possible count",
+        "f = 60 MHz TIMxCLK APB1= 30 MHz",
+        "-",
+        "71.6",
+        "s"
+      ]
+    ],
+    "notes": [
+      "1. TIMx is used as a general term to refer to the TIM2, TIM3, TIM4, TIM5, TIM6, TIM7, and TIM12 timers."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

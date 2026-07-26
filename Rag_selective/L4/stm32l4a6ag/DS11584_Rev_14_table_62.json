@@ -1,0 +1,188 @@
+{
+  "table_id": "table_62",
+  "document": "DS11584 Rev 14 - Table 62. PLL, PLLSAI1, PLLSAI2 characteristics",
+  "rev": "Rev 14",
+  "table_number": "62",
+  "title": "Table 62. PLL, PLLSAI1, PLLSAI2 characteristics",
+  "page": 170,
+  "section": "6.3.9 PLL characteristics",
+  "section_title": "PLL characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l4a6ag.pdf#page=170",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l4a6ag.pdf",
+  "text_helper": "Table 62. PLL, PLLSAI1, PLLSAI2 characteristics — section 6.3.9 PLL characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f PLL_IN",
+        "PLL input clock(2)",
+        "-",
+        "4",
+        "-",
+        "16",
+        "MHz"
+      ],
+      [
+        "f PLL_IN",
+        "PLL input clock duty cycle",
+        "-",
+        "45",
+        "-",
+        "55",
+        "%"
+      ],
+      [
+        "f PLL_P_OUT",
+        "PLL multiplier output clock P",
+        "Voltage scaling Range 1",
+        "2.0645",
+        "-",
+        "80",
+        "MHz"
+      ],
+      [
+        "f PLL_P_OUT",
+        "PLL multiplier output clock P",
+        "Voltage scaling Range 2",
+        "2.0645",
+        "-",
+        "26",
+        "MHz"
+      ],
+      [
+        "f PLL_Q_OUT",
+        "PLL multiplier output clock Q",
+        "Voltage scaling Range 1",
+        "8",
+        "-",
+        "80",
+        "MHz"
+      ],
+      [
+        "f PLL_Q_OUT",
+        "PLL multiplier output clock Q",
+        "Voltage scaling Range 2",
+        "8",
+        "-",
+        "26",
+        "MHz"
+      ],
+      [
+        "f PLL_R_OUT",
+        "PLL multiplier output clock R",
+        "Voltage scaling Range 1",
+        "8",
+        "-",
+        "80",
+        "MHz"
+      ],
+      [
+        "f PLL_R_OUT",
+        "PLL multiplier output clock R",
+        "Voltage scaling Range 2",
+        "8",
+        "-",
+        "26",
+        "MHz"
+      ],
+      [
+        "f VCO_OUT",
+        "PLL VCO output",
+        "Voltage scaling Range 1",
+        "64",
+        "-",
+        "344",
+        "MHz"
+      ],
+      [
+        "f VCO_OUT",
+        "PLL VCO output",
+        "Voltage scaling Range 2",
+        "64",
+        "-",
+        "128",
+        "MHz"
+      ],
+      [
+        "t LOCK",
+        "PLL lock time",
+        "-",
+        "-",
+        "15",
+        "40",
+        "μs"
+      ],
+      [
+        "Jitter",
+        "RMS cycle-to-cycle jitter",
+        "System clock 80 MHz",
+        "-",
+        "40",
+        "-",
+        "±ps"
+      ],
+      [
+        "Jitter",
+        "RMS period jitter",
+        "System clock 80 MHz",
+        "-",
+        "30",
+        "-",
+        "±ps"
+      ],
+      [
+        "I (PLL) DD",
+        "PLL power consumption on V (1) DD",
+        "VCO freq = 64 MHz",
+        "-",
+        "150",
+        "200",
+        "μA"
+      ],
+      [
+        "I (PLL) DD",
+        "PLL power consumption on V (1) DD",
+        "VCO freq = 96 MHz",
+        "-",
+        "200",
+        "260",
+        "μA"
+      ],
+      [
+        "I (PLL) DD",
+        "PLL power consumption on V (1) DD",
+        "VCO freq = 192 MHz",
+        "-",
+        "300",
+        "380",
+        "μA"
+      ],
+      [
+        "I (PLL) DD",
+        "PLL power consumption on V (1) DD",
+        "VCO freq = 344 MHz",
+        "-",
+        "520",
+        "650",
+        "μA"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by design.",
+      "2. Take care of using the appropriate division factor M to obtain the specified PLL input clock values. The M factor is shared between the 3 PLLs."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

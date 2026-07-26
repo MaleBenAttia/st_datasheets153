@@ -1,0 +1,81 @@
+{
+  "table_id": "table_140",
+  "document": "DS12736 Rev 5 - Table 140. Synchronous multiplexed NOR/PSRAM read timings",
+  "rev": "Rev 5",
+  "table_number": "140",
+  "title": "Table 140. Synchronous multiplexed NOR/PSRAM read timings",
+  "page": 293,
+  "section": "1.5 Ns",
+  "section_title": "Ns",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l562ce.pdf#page=293",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l562ce.pdf",
+  "text_helper": "Table 140. Synchronous multiplexed NOR/PSRAM read timings — section 1.5 Ns. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "tw(CLK)",
+        "FMC_CLK period",
+        "R*THCLK-0.5(2))",
+        "-",
+        "ns"
+      ],
+      [
+        "td(CLKH_NExH)",
+        "FMC_CLK high to FMC_NEx high (x= 0…2)",
+        "R*THCLK/2+1(2)",
+        "-",
+        "ns"
+      ],
+      [
+        "td(CLKL-AV)",
+        "FMC_CLK low to FMC_Ax valid (x=16…25)",
+        "-",
+        "5.5",
+        "ns"
+      ],
+      [
+        "td(CLKH-AIV)",
+        "FMC_CLK high to FMC_Ax invalid (x=16…25)",
+        "R*THCLK/2 + 1(2)",
+        "-",
+        "ns"
+      ],
+      [
+        "td(CLKL-ADV)",
+        "FMC_CLK low to FMC_AD[15:0] valid",
+        "-",
+        "3",
+        "ns"
+      ],
+      [
+        "tsu(ADV-CLKH)",
+        "FMC_A/D[15:0] valid data before FMC_CLK high",
+        "2",
+        "-",
+        "ns"
+      ],
+      [
+        "th(CLKH-ADV)",
+        "FMC_A/D[15:0] valid data after FMC_CLK high",
+        "4",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "2. Clock ratio R = (HCLK period /FMC_CLK period). DS12736 Rev 5 293/341"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

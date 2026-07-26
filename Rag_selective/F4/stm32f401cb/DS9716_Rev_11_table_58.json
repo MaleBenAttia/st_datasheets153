@@ -1,0 +1,170 @@
+{
+  "table_id": "table_58",
+  "document": "DS9716 Rev 11 - Table 58. TIMx characteristics",
+  "rev": "Rev 11",
+  "table_number": "58",
+  "title": "Table 58. TIMx characteristics",
+  "page": 95,
+  "section": "6.3.18 TIM timer characteristics",
+  "section_title": "TIM timer characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f401cb.pdf#page=95",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f401cb.pdf",
+  "text_helper": "Table 58. TIMx characteristics — section 6.3.18 TIM timer characteristics. Symbol, Symbol, Parameter, Conditions(3), Min, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Symbol",
+      "Parameter",
+      "Conditions(3)",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t res(TIM)",
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APBx prescaler=1 or 2 or 4, f = TIMxCLK 84MHz",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "t res(TIM)",
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APBx prescaler=1 or 2 or 4, f = TIMxCLK 84MHz",
+        "11.9",
+        "-",
+        "ns"
+      ],
+      [
+        "t res(TIM)",
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APBx prescaler>4, f = 84MHz TIMxCLK",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "t res(TIM)",
+        "t res(TIM)",
+        "Timer resolution time",
+        "AHB/APBx prescaler>4, f = 84MHz TIMxCLK",
+        "11.9",
+        "-",
+        "ns"
+      ],
+      [
+        "f EXT",
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "f = 84MHz TIMxCLK",
+        "0",
+        "f /2 TIMxCLK",
+        "MHz"
+      ],
+      [
+        "f EXT",
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "f = 84MHz TIMxCLK",
+        "0",
+        "42",
+        "MHz"
+      ],
+      [
+        "Res TIM",
+        "Res TIM",
+        "Timer resolution",
+        "f = 84MHz TIMxCLK",
+        "-",
+        "16/32",
+        "bit"
+      ],
+      [
+        "t COUNTER",
+        "t COUNTER",
+        "16-bit counter clock period when internal clock is selected",
+        "f = 84MHz TIMxCLK",
+        "0.0119",
+        "780",
+        "µs"
+      ],
+      [
+        "t MAX_COUNT",
+        "t MAX_COUNT",
+        "Maximum possible count with 32-bit counter",
+        "-",
+        "-",
+        "65536 × 65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t MAX_COUNT",
+        "t MAX_COUNT",
+        "Maximum possible count with 32-bit counter",
+        "f = 84MHz TIMxCLK",
+        "-",
+        "51.1",
+        "S"
+      ],
+      [
+        "t w(SCLH)",
+        "SCL clock high time",
+        "4.0",
+        "-",
+        "0.6",
+        "-",
+        "-"
+      ],
+      [
+        "t h(SDA)",
+        "SDA data hold time",
+        "0",
+        "-",
+        "0",
+        "900(3)",
+        "900(3)"
+      ],
+      [
+        "t r(SDA) t r(SCL)",
+        "SDA and SCL rise time",
+        "-",
+        "1000",
+        "-",
+        "300",
+        "300"
+      ],
+      [
+        "t f(SDA) t f(SCL)",
+        "SDA and SCL fall time",
+        "-",
+        "300",
+        "-",
+        "300",
+        "300"
+      ],
+      [
+        "t su(STA)",
+        "Repeated Start condition setup time",
+        "4.7",
+        "-",
+        "0.6",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "3. The maximum data hold time has only to be met if the interface does not stretch the low period of SCL signal.",
+      "4. The minimum width of the spikes filtered by the analog filter is above t SP"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

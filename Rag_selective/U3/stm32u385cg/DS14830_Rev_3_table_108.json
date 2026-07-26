@@ -1,0 +1,268 @@
+{
+  "table_id": "table_108",
+  "document": "DS14830 Rev 3 - Table 108. TIMx characteristics.",
+  "rev": "Rev 3",
+  "table_number": "108",
+  "title": "Table 108. TIMx characteristics.",
+  "page": 171,
+  "section": "5.3.27 Timer characteristics",
+  "section_title": "Timer characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u385cg.pdf#page=171",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u385cg.pdf",
+  "text_helper": "Table 108. TIMx characteristics. — section 5.3.27 Timer characteristics. Symbol, Symbol, Parameter, Conditions, Min, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "tRes(TIM)",
+        "tRes(TIM)",
+        "Timer resolution time",
+        "-",
+        "1",
+        "-",
+        "tTIMxCLK"
+      ],
+      [
+        "tRes(TIM)",
+        "tRes(TIM)",
+        "Timer resolution time",
+        "fTIMxCLK = 96 MHz",
+        "10.4",
+        "-",
+        "ns"
+      ],
+      [
+        "fEXT",
+        "fEXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "-",
+        "0",
+        "fTIMxCLK/4",
+        "MHz"
+      ],
+      [
+        "fEXT",
+        "fEXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "fTIMxCLK = 96 MHz",
+        "0",
+        "24",
+        "MHz"
+      ],
+      [
+        "Res(TIM)",
+        "Res(TIM)",
+        "Timer resolution",
+        "TIMx (except TIM2/TIM3/TIM4)",
+        "-",
+        "16",
+        "bit"
+      ],
+      [
+        "Res(TIM)",
+        "Res(TIM)",
+        "Timer resolution",
+        "TIM2/TIM3/TIM4",
+        "-",
+        "32",
+        "bit"
+      ],
+      [
+        "tCOUNTER",
+        "tCOUNTER",
+        "16-bit counter clock period",
+        "-",
+        "1",
+        "65536",
+        "tTIMxCLK"
+      ],
+      [
+        "tCOUNTER",
+        "tCOUNTER",
+        "16-bit counter clock period",
+        "fTIMxCLK = 96 MHz",
+        "0.010",
+        "682.7",
+        "µs"
+      ],
+      [
+        "tMAX_COUNT",
+        "tMAX_COUNT",
+        "Maximum possible count with 32‑bit counter",
+        "-",
+        "-",
+        "65536 × 65536",
+        "tTIMxCLK"
+      ],
+      [
+        "tMAX_COUNT",
+        "tMAX_COUNT",
+        "Maximum possible count with 32‑bit counter",
+        "fTIMxCLK = 96 MHz",
+        "-",
+        "44.739",
+        "s"
+      ],
+      [
+        "f(CLK)",
+        "OCTOSPI clock frequency",
+        "2.7 V < VDDIOX < 3.6 V Voltage range 1 CL = 15 pF",
+        "-",
+        "-",
+        "96",
+        "MHz"
+      ],
+      [
+        "f(CLK)",
+        "OCTOSPI clock frequency",
+        "1.71 V < VDDIOX < 3.6 V Voltage range 1 CL = 15 pF",
+        "-",
+        "-",
+        "93",
+        "93"
+      ],
+      [
+        "f(CLK)",
+        "OCTOSPI clock frequency",
+        "1.71 V < VDDIOX < 3.6 V Voltage range 2 CL = 15 pF",
+        "-",
+        "-",
+        "48",
+        "48"
+      ],
+      [
+        "f(CLK)",
+        "OCTOSPI clock frequency",
+        "Fp 51 = LC V 23.1 ≤ 2OIDDV ≤ V 80.1",
+        "-",
+        "-",
+        "15",
+        "15"
+      ],
+      [
+        "tw(CLKH)",
+        "OCTOSPI clock high and low time (even division)",
+        "PRESCALER[7:0] = n (n = 0, 1, 3, 5,..255)",
+        "t(CLK)/2 - 0.5",
+        "-",
+        "t(CLK)/2",
+        "ns"
+      ],
+      [
+        "tw(CLKL)",
+        "tw(CLKL)",
+        "tw(CLKL)",
+        "tw(CLKL)",
+        "tw(CLKL)",
+        "tw(CLKL)",
+        "tw(CLKL)"
+      ],
+      [
+        "tw(CLKH)",
+        "OCTOSPI clock high and low time (odd division)",
+        "PRESCALER[7:0] = n (n = 2, 4, 6,..254)",
+        "(n/2) × t(CLK)/(n+1) - 0.5",
+        "-",
+        "(n/2) × t(CLK)/ (n+1)",
+        "(n/2) × t(CLK)/ (n+1)"
+      ],
+      [
+        "tw(CLKL)",
+        "tw(CLKL)",
+        "tw(CLKL)",
+        "((n/2)+1) × t(CLK)/ (n+1) - 0.5",
+        "-",
+        "((n/2)+1) × t(CLK)/(n+1)",
+        "((n/2)+1) × t(CLK)/(n+1)"
+      ],
+      [
+        "ts(DQ)",
+        "Data input setup time",
+        "Voltage range 1",
+        "3",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "ts(DQ)",
+        "Data input setup time",
+        "Voltage range 2",
+        "5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "th(DQ)",
+        "Data input hold time",
+        "Voltage range 1",
+        "3",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "th(DQ)",
+        "Data input hold time",
+        "Voltage range 2",
+        "3.5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "tv(OUT)",
+        "Data output valid time",
+        "Voltage range 1",
+        "-",
+        "1",
+        "3",
+        "3"
+      ],
+      [
+        "tv(OUT)",
+        "Data output valid time",
+        "Voltage range 2",
+        "-",
+        "1.5",
+        "3.5",
+        "3.5"
+      ],
+      [
+        "th(OUT)",
+        "Data output hold time",
+        "Voltage range 1",
+        "0",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "th(OUT)",
+        "Data output hold time",
+        "Voltage range 2",
+        "0",
+        "-",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [],
+    "legend": [
+      "TIMx, is used as a general term in which x stands for 1, 2, 3, 4, 6, 7, 15, 16, 17."
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

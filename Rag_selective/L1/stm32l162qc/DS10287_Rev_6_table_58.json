@@ -1,0 +1,362 @@
+{
+  "table_id": "table_58",
+  "document": "DS10287 Rev 6 - Table 58. DAC characteristics",
+  "rev": "Rev 6",
+  "table_number": "58",
+  "title": "Table 58. DAC characteristics",
+  "page": 106,
+  "section": "6.3.18 DAC electrical specifications",
+  "section_title": "DAC electrical specifications",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l162qc.pdf#page=106",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l162qc.pdf",
+  "text_helper": "Table 58. DAC characteristics — section 6.3.18 DAC electrical specifications. Symbol, Parameter, Conditions, Conditions, Min, +3 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V DDA",
+        "Analog supply voltage",
+        "-",
+        "-",
+        "1.8",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V REF+",
+        "Reference supply voltage",
+        "V must always be below REF+ V DDA",
+        "V must always be below REF+ V DDA",
+        "1.8",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V REF-",
+        "Lower reference voltage",
+        "-",
+        "-",
+        "V SSA",
+        "V SSA",
+        "V SSA",
+        "V"
+      ],
+      [
+        "I (1) DDVREF+",
+        "Current consumption on V supply REF+ V = 3.3 V REF+",
+        "No load, middle code (0x800)",
+        "No load, middle code (0x800)",
+        "-",
+        "130",
+        "220",
+        "µA"
+      ],
+      [
+        "I (1) DDVREF+",
+        "Current consumption on V supply REF+ V = 3.3 V REF+",
+        "No load, worst code (0x000)",
+        "No load, worst code (0x000)",
+        "-",
+        "220",
+        "350",
+        "µA"
+      ],
+      [
+        "I (1) DDA",
+        "Current consumption on V supply DDA V = 3.3 V DDA",
+        "No load, middle code (0x800)",
+        "No load, middle code (0x800)",
+        "-",
+        "210",
+        "320",
+        "µA"
+      ],
+      [
+        "I (1) DDA",
+        "Current consumption on V supply DDA V = 3.3 V DDA",
+        "No load, worst code (0xF1C)",
+        "No load, worst code (0xF1C)",
+        "-",
+        "320",
+        "520",
+        "µA"
+      ],
+      [
+        "R L",
+        "Resistive load",
+        "DAC output buffer ON",
+        "Connected to V SSA",
+        "5",
+        "-",
+        "-",
+        "kΩ"
+      ],
+      [
+        "R L",
+        "Resistive load",
+        "DAC output buffer ON",
+        "Conected to V DDA",
+        "25",
+        "-",
+        "-",
+        "kΩ"
+      ],
+      [
+        "C (2) L",
+        "Capacitive load",
+        "DAC output buffer ON",
+        "DAC output buffer ON",
+        "-",
+        "-",
+        "50",
+        "pF"
+      ],
+      [
+        "R O",
+        "Output impedance",
+        "DAC output buffer OFF",
+        "DAC output buffer OFF",
+        "12",
+        "16",
+        "20",
+        "kΩ"
+      ],
+      [
+        "V DAC_OUT",
+        "Voltage on DAC_OUT output",
+        "DAC output buffer ON",
+        "DAC output buffer ON",
+        "0.2",
+        "-",
+        "V – 0.2 DDA",
+        "V"
+      ],
+      [
+        "V DAC_OUT",
+        "Voltage on DAC_OUT output",
+        "DAC output buffer OFF",
+        "DAC output buffer OFF",
+        "0.5",
+        "-",
+        "BSL1 +FER – V",
+        "mV"
+      ],
+      [
+        "DNL(1)",
+        "Differential non linearity(3)",
+        "NO reffub tuptuo CAD L L Ωk 5 ≥ R ,Fp 05 ≤ C",
+        "NO reffub tuptuo CAD L L Ωk 5 ≥ R ,Fp 05 ≤ C",
+        "-",
+        "1.5",
+        "3",
+        "LSB"
+      ],
+      [
+        "DNL(1)",
+        "Differential non linearity(3)",
+        "No R , C ≤ 50 pF L L DAC output buffer OFF",
+        "No R , C ≤ 50 pF L L DAC output buffer OFF",
+        "-",
+        "1.5",
+        "3",
+        "LSB"
+      ],
+      [
+        "INL(1)",
+        "Integral non linearity(4)",
+        "NO reffub tuptuo CAD L L Ωk 5 ≥ R ,Fp 05 ≤ C",
+        "NO reffub tuptuo CAD L L Ωk 5 ≥ R ,Fp 05 ≤ C",
+        "-",
+        "2",
+        "4",
+        "LSB"
+      ],
+      [
+        "INL(1)",
+        "Integral non linearity(4)",
+        "No R , C ≤ 50 pF L L DAC output buffer OFF",
+        "No R , C ≤ 50 pF L L DAC output buffer OFF",
+        "-",
+        "2",
+        "4",
+        "LSB"
+      ],
+      [
+        "Offset(1)",
+        "Offset error at code 0x800 (5)",
+        "NO reffub tuptuo CAD L L Ωk 5 ≥ R ,Fp 05 ≤ C",
+        "NO reffub tuptuo CAD L L Ωk 5 ≥ R ,Fp 05 ≤ C",
+        "-",
+        "±10",
+        "±25",
+        "LSB"
+      ],
+      [
+        "Offset(1)",
+        "Offset error at code 0x800 (5)",
+        "No R , C ≤ 50 pF L L DAC output buffer OFF",
+        "No R , C ≤ 50 pF L L DAC output buffer OFF",
+        "-",
+        "±5",
+        "±8",
+        "LSB"
+      ],
+      [
+        "Offset1(1)",
+        "Offset error at code 0x001(6)",
+        "No R , C ≤ 50 pF L L DAC output buffer OFF",
+        "No R , C ≤ 50 pF L L DAC output buffer OFF",
+        "-",
+        "±1.5",
+        "±5",
+        "LSB"
+      ],
+      [
+        "dOffset/dT(1)",
+        "Offset error temperature coefficient (code 0x800)",
+        "V = 3.3V DDA V = 3.0V REF+ T = 0 to 50 °C A DAC output buffer OFF",
+        "V = 3.3V DDA V = 3.0V REF+ T = 0 to 50 °C A DAC output buffer OFF",
+        "-20",
+        "-10",
+        "0",
+        "0"
+      ],
+      [
+        "None",
+        "None",
+        "V = 3.3V DDA V = 3.0V REF+ T = 0 to 50 °C A DAC output buffer ON",
+        "V = 3.3V DDA V = 3.0V REF+ T = 0 to 50 °C A DAC output buffer ON",
+        "0",
+        "20",
+        "50",
+        "50"
+      ],
+      [
+        "Gain(1)",
+        "Gain error(7)",
+        "NO reffub tuptuo CAD L L Ωk 5 ≥ R ,Fp 05 ≤ C",
+        "NO reffub tuptuo CAD L L Ωk 5 ≥ R ,Fp 05 ≤ C",
+        "-",
+        "+0.1 / -0.2%",
+        "+0.2 / -0.5%",
+        "+0.2 / -0.5%"
+      ],
+      [
+        "None",
+        "None",
+        "No R , C ≤ 50 pF L L DAC output buffer OFF",
+        "No R , C ≤ 50 pF L L DAC output buffer OFF",
+        "-",
+        "+0 / -0.2%",
+        "+0 / -0.4%",
+        "+0 / -0.4%"
+      ],
+      [
+        "dGain/dT(1)",
+        "Gain error temperature coefficient",
+        "V = 3.3V DDA V = 3.0V REF+ T = 0 to 50 °C A DAC output buffer OFF",
+        "V = 3.3V DDA V = 3.0V REF+ T = 0 to 50 °C A DAC output buffer OFF",
+        "-10",
+        "-2",
+        "0",
+        "0"
+      ],
+      [
+        "None",
+        "None",
+        "V = 3.3V DDA V = 3.0V REF+ T = 0 to 50 °C A DAC output buffer ON",
+        "V = 3.3V DDA V = 3.0V REF+ T = 0 to 50 °C A DAC output buffer ON",
+        "-40",
+        "-8",
+        "0",
+        "0"
+      ],
+      [
+        "TUE(1)",
+        "Total unadjusted error",
+        "NO reffub tuptuo CAD L L Ωk 5 ≥ R ,Fp 05 ≤ C",
+        "NO reffub tuptuo CAD L L Ωk 5 ≥ R ,Fp 05 ≤ C",
+        "-",
+        "12",
+        "30",
+        "30"
+      ],
+      [
+        "None",
+        "None",
+        "No R , C ≤ 50 pF L L DAC output buffer OFF",
+        "No R , C ≤ 50 pF L L DAC output buffer OFF",
+        "-",
+        "8",
+        "12",
+        "12"
+      ],
+      [
+        "t SETTLING",
+        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes till DAC_OUT reaches final value ±1LSB",
+        "C ≤ 50 pF, R ≥ 5 kΩ L L",
+        "C ≤ 50 pF, R ≥ 5 kΩ L L",
+        "-",
+        "7",
+        "12",
+        "12"
+      ],
+      [
+        "Update rate",
+        "Max frequency for a correct DAC_OUT change (95% of final value) with 1 LSB variation in the input code",
+        "C ≤ 50 pF, R ≥ 5 kΩ L L",
+        "C ≤ 50 pF, R ≥ 5 kΩ L L",
+        "-",
+        "-",
+        "1",
+        "1"
+      ],
+      [
+        "t WAKEUP",
+        "Wakeup time from off state (setting the ENx bit in the DAC Control register)(8)",
+        "C ≤ 50 pF, R ≥ 5 kΩ L L",
+        "C ≤ 50 pF, R ≥ 5 kΩ L L",
+        "-",
+        "9",
+        "15",
+        "15"
+      ],
+      [
+        "PSRR+",
+        "V supply rejection DDA ratio (static DC measurement)",
+        "C ≤ 50 pF, R ≥ 5 kΩ L L",
+        "C ≤ 50 pF, R ≥ 5 kΩ L L",
+        "-",
+        "-60",
+        "-35",
+        "-35"
+      ]
+    ],
+    "notes": [
+      "1. Data based on characterization results.",
+      "2. Connected between DAC_OUT and VSSA.",
+      "3. Difference between two consecutive codes - 1 LSB. DS10287 Rev 6 107/130",
+      "4. Difference between measured value at Code i and the value at Code i on a line drawn between Code 0 and last Code 4095.",
+      "5. Difference between the value measured at Code (0x800) and the ideal value = V /2. REF+",
+      "6. Difference between the value measured at Code (0x001) and the ideal value.",
+      "7. Difference between ideal slope of the transfer function and measured slope computed from code 0x000 and 0xFFF when buffer is OFF, and from code giving 0.2 V and (VDDA – 0.2) V when buffer is ON.",
+      "8. In buffered mode, the output can overshoot above the final value for low input code (starting from min value)."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

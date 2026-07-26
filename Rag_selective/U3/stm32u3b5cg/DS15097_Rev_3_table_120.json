@@ -1,0 +1,218 @@
+{
+  "table_id": "table_120",
+  "document": "DS15097 Rev 3 - Table 120. USART (SPI mode) characteristics.",
+  "rev": "Rev 3",
+  "table_number": "120",
+  "title": "Table 120. USART (SPI mode) characteristics.",
+  "page": 188,
+  "section": "5.3.33 USART characteristics",
+  "section_title": "USART characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u3b5cg.pdf#page=188",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u3b5cg.pdf",
+  "text_helper": "Table 120. USART (SPI mode) characteristics. — section 5.3.33 USART characteristics. Symbol, Parameter, Conditions, Conditions, Min, +3 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "fCK",
+        "USART clock frequency",
+        "SPI master mode 1.71 V ≤ VDDIOX ≤ 3.6 V",
+        "SPI master mode 1.71 V ≤ VDDIOX ≤ 3.6 V",
+        "-",
+        "-",
+        "12",
+        "MHz"
+      ],
+      [
+        "fCK",
+        "USART clock frequency",
+        "SPI slave mode 1.71 V ≤ VDDIOX ≤ 3.6 V",
+        "SPI slave mode 1.71 V ≤ VDDIOX ≤ 3.6 V",
+        "-",
+        "-",
+        "32",
+        "MHz"
+      ],
+      [
+        "fCK",
+        "USART clock frequency",
+        "SPI master or slave mode 1.08 V ≤ VDDIO2 ≤ 1.32 V",
+        "SPI master or slave mode 1.08 V ≤ VDDIO2 ≤ 1.32 V",
+        "-",
+        "-",
+        "15",
+        "MHz"
+      ],
+      [
+        "tsu(NSS)",
+        "NSS setup time",
+        "SPI Ssave mode",
+        "SPI Ssave mode",
+        "tker(1) + 4",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "th(NSS)",
+        "NSS hold time",
+        "SPI slave mode",
+        "SPI slave mode",
+        "2",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "tw(CKH)",
+        "CK high and low time",
+        "SPI master mode",
+        "SPI master mode",
+        "1/ fCK /2-1",
+        "1/ fCK /2",
+        "1/ fCK /2+1",
+        "ns"
+      ],
+      [
+        "tw(CKL)",
+        "CK high and low time",
+        "SPI master mode",
+        "SPI master mode",
+        "1/ fCK /2-1",
+        "1/ fCK /2",
+        "1/ fCK /2+1",
+        "ns"
+      ],
+      [
+        "tsu(RX)",
+        "Data input setup time",
+        "SPI master mode",
+        "SPI master mode",
+        "14.5/22.5(2)",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "tsu(RX)",
+        "Data input setup time",
+        "SPI slave mode",
+        "SPI slave mode",
+        "2.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "th(RX)",
+        "Data input hold time",
+        "SPI master mode",
+        "SPI master mode",
+        "0.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "th(RX)",
+        "Data input hold time",
+        "SPI slave mode",
+        "SPI slave mode",
+        "1",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "tv(TX)",
+        "Data output valid time",
+        "SPI Slave mode",
+        "2.7 V ≤ VDDIOX ≤ 3.6 V",
+        "-",
+        "13.5",
+        "15.5",
+        "ns"
+      ],
+      [
+        "tv(TX)",
+        "Data output valid time",
+        "SPI Slave mode",
+        "1.71 V ≤ VDDIOX ≤ 3.6 V",
+        "-",
+        "13.5",
+        "15.5",
+        "ns"
+      ],
+      [
+        "tv(TX)",
+        "Data output valid time",
+        "SPI Slave mode",
+        "1.08 V ≤ VDDIO2 ≤ 1.32 V",
+        "-",
+        "17.5",
+        "23.5",
+        "ns"
+      ],
+      [
+        "tv(TX)",
+        "Data output valid time",
+        "SPI Master mode",
+        "2.7 V ≤ VDDIOX ≤ 3.6 V",
+        "-",
+        "0.5",
+        "2",
+        "ns"
+      ],
+      [
+        "tv(TX)",
+        "Data output valid time",
+        "SPI Master mode",
+        "1.71 V ≤ VDDIOX ≤ 3.6 V",
+        "-",
+        "0.5",
+        "2.5",
+        "ns"
+      ],
+      [
+        "th(TX)",
+        "Data output hold time",
+        "SPI slave mode",
+        "SPI slave mode",
+        "8",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "th(TX)",
+        "Data output hold time",
+        "SPI master mode",
+        "SPI master mode",
+        "0",
+        "-",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. Tker is the usart_ker_ck_pres clock period.",
+      "2. When using SPI on port G. DS15097 - Rev 3 page 188/239"
+    ],
+    "legend": [
+      "Evaluated by characterization. Not tested in production."
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

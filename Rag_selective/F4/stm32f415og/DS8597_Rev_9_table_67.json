@@ -1,0 +1,328 @@
+{
+  "table_id": "table_67",
+  "document": "DS8597 Rev 9 - Table 67. ADC characteristics",
+  "rev": "Rev 9",
+  "table_number": "67",
+  "title": "Table 67. ADC characteristics",
+  "page": 137,
+  "section": "5.3.20 CAN (controller area network) interface",
+  "section_title": "CAN (controller area network) interface",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f415og.pdf#page=137",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f415og.pdf",
+  "text_helper": "Table 67. ADC characteristics — section 5.3.20 CAN (controller area network) interface. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V DDA",
+        "Power supply",
+        "-",
+        "1.8(1)",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V REF+",
+        "Positive reference voltage",
+        "-",
+        "1.8(1)(2)(3)",
+        "-",
+        "V DDA",
+        "V"
+      ],
+      [
+        "V REF-",
+        "Negative reference voltage",
+        "-",
+        "-",
+        "0",
+        "-",
+        "V"
+      ],
+      [
+        "f ADC",
+        "ADC clock frequency",
+        "V = 1.8(1)(3) to DDA 2.4 V",
+        "0.6",
+        "15",
+        "18",
+        "MHz"
+      ],
+      [
+        "f ADC",
+        "ADC clock frequency",
+        "V = 2.4 to 3.6 V(3) DDA",
+        "0.6",
+        "30",
+        "36",
+        "MHz"
+      ],
+      [
+        "f (4) TRIG",
+        "External trigger frequency",
+        "f = 30 MHz, ADC 12-bit resolution",
+        "-",
+        "-",
+        "1764",
+        "kHz"
+      ],
+      [
+        "f (4) TRIG",
+        "External trigger frequency",
+        "-",
+        "-",
+        "-",
+        "17",
+        "1/f ADC"
+      ],
+      [
+        "V AIN",
+        "Conversion voltage range(5)",
+        "-",
+        ")dnuorg ot deit -FER ASS V ro V(0",
+        "-",
+        "V REF+",
+        "V"
+      ],
+      [
+        "R (4) AIN",
+        "External input impedance",
+        "See Equation 1 for details",
+        "-",
+        "-",
+        "50",
+        "κΩ"
+      ],
+      [
+        "R (4)(6) ADC",
+        "Sampling switch resistance",
+        "-",
+        "-",
+        "-",
+        "6",
+        "κΩ"
+      ],
+      [
+        "C (4) ADC",
+        "Internal sample and hold capacitor",
+        "-",
+        "-",
+        "4",
+        "-",
+        "pF"
+      ],
+      [
+        "t (4) lat",
+        "Injection trigger conversion latency",
+        "f = 30 MHz ADC",
+        "-",
+        "-",
+        "0.100",
+        "µs"
+      ],
+      [
+        "t (4) lat",
+        "Injection trigger conversion latency",
+        "f = 30 MHz ADC",
+        "-",
+        "-",
+        "3(7)",
+        "1/f ADC"
+      ],
+      [
+        "t (4) latr",
+        "Regular trigger conversion latency",
+        "f = 30 MHz ADC",
+        "-",
+        "-",
+        "0.067",
+        "µs"
+      ],
+      [
+        "t (4) latr",
+        "Regular trigger conversion latency",
+        "f = 30 MHz ADC",
+        "-",
+        "-",
+        "2(7)",
+        "1/f ADC"
+      ],
+      [
+        "t (4) S",
+        "Sampling time",
+        "f = 30 MHz ADC",
+        "0.100",
+        "-",
+        "16",
+        "µs"
+      ],
+      [
+        "t (4) S",
+        "Sampling time",
+        "-",
+        "3",
+        "-",
+        "480",
+        "1/f ADC"
+      ],
+      [
+        "t (4) STAB",
+        "Power-up time",
+        "-",
+        "-",
+        "2",
+        "3",
+        "µs"
+      ],
+      [
+        "t (4) CONV",
+        "Total conversion time (including sampling time)",
+        "f = 30 MHz ADC 12-bit resolution",
+        "0.50",
+        "-",
+        "16.40",
+        "µs"
+      ],
+      [
+        "t (4) CONV",
+        "Total conversion time (including sampling time)",
+        "f = 30 MHz ADC 10-bit resolution",
+        "0.43",
+        "-",
+        "16.34",
+        "µs"
+      ],
+      [
+        "t (4) CONV",
+        "Total conversion time (including sampling time)",
+        "f = 30 MHz ADC 8-bit resolution",
+        "0.37",
+        "-",
+        "16.27",
+        "µs"
+      ],
+      [
+        "t (4) CONV",
+        "Total conversion time (including sampling time)",
+        "f = 30 MHz ADC 6-bit resolution",
+        "0.30",
+        "-",
+        "16.20",
+        "µs"
+      ],
+      [
+        "t (4) CONV",
+        "Total conversion time (including sampling time)",
+        "9 to 492 (t for sampling +n-bit resolution for successive S approximation)",
+        "9 to 492 (t for sampling +n-bit resolution for successive S approximation)",
+        "9 to 492 (t for sampling +n-bit resolution for successive S approximation)",
+        "9 to 492 (t for sampling +n-bit resolution for successive S approximation)",
+        "1/f ADC"
+      ],
+      [
+        "f (4) S",
+        "Sampling rate (f = 30 MHz, and ADC t = 3 ADC cycles) S",
+        "12-bit resolution Single ADC",
+        "-",
+        "-",
+        "2",
+        "Msps"
+      ],
+      [
+        "f (4) S",
+        "Sampling rate (f = 30 MHz, and ADC t = 3 ADC cycles) S",
+        "12-bit resolution Interleave Dual ADC mode",
+        "-",
+        "-",
+        "3.75",
+        "Msps"
+      ],
+      [
+        "f (4) S",
+        "Sampling rate (f = 30 MHz, and ADC t = 3 ADC cycles) S",
+        "12-bit resolution Interleave Triple ADC mode",
+        "-",
+        "-",
+        "6",
+        "Msps"
+      ],
+      [
+        "I (4) VREF+",
+        "edom noisrevnoc ni noitpmusnoc FER tnerruc CD V CDA",
+        "-",
+        "-",
+        "300",
+        "500",
+        "µA"
+      ],
+      [
+        "I (4) VDDA",
+        "edom noisrevnoc ni noitpmusnoc ADD tnerruc CD V CDA",
+        "-",
+        "-",
+        "1.6",
+        "1.8",
+        "mA"
+      ],
+      [
+        "EO",
+        "Offset error",
+        "None",
+        "±1.5",
+        "±2.5",
+        "None",
+        "None"
+      ],
+      [
+        "EG",
+        "Gain error",
+        "None",
+        "±1.5",
+        "±3",
+        "None",
+        "None"
+      ],
+      [
+        "ED",
+        "Differential linearity error",
+        "None",
+        "±1",
+        "±2",
+        "None",
+        "None"
+      ],
+      [
+        "EL",
+        "Integral linearity error",
+        "None",
+        "±1.5",
+        "±3",
+        "None",
+        "None"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization.",
+      "2. It is recommended to maintain the voltage difference between V and V below 1.8 V. REF+ DDA",
+      "3. V -V < 1.2 V. DDA REF+",
+      "4. Guaranteed by characterization.",
+      "5. V is internally connected to V and V is internally connected to V . REF+ DDA REF- SSA",
+      "6. R maximum value is given for V =1.8 V, and minimum value for V =3.3 V. ADC DD DD",
+      "7. For external triggers, a delay of 1/f must be added to the latency specified in Table 67. PCLK2"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

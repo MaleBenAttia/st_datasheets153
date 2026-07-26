@@ -1,0 +1,384 @@
+{
+  "table_id": "table_16",
+  "document": "DS12535 Rev 2 - Table 16. General operating conditions",
+  "rev": "Rev 2",
+  "table_number": "16",
+  "title": "Table 16. General operating conditions",
+  "page": 86,
+  "section": "6.3.1 General operating conditions",
+  "section_title": "General operating conditions",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f750n8.pdf#page=86",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f750n8.pdf",
+  "text_helper": "Table 16. General operating conditions — section 6.3.1 General operating conditions. Symbol, Parameter, Conditions(1), Conditions(1), Min, +3 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions(1)",
+      "Conditions(1)",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f HCLK",
+        "Internal AHB clock frequency",
+        "Power Scale 3 (VOS[1:0] bits in PWR_CR register = 0x01), Regulator ON, over-drive OFF",
+        "Power Scale 3 (VOS[1:0] bits in PWR_CR register = 0x01), Regulator ON, over-drive OFF",
+        "0",
+        "-",
+        "144",
+        "MHz"
+      ],
+      [
+        "f HCLK",
+        "Internal AHB clock frequency",
+        "Power Scale 2 (VOS[1:0] bits in PWR_CR register = 0x10), Regulator ON",
+        "Over- drive OFF",
+        "0",
+        "-",
+        "168",
+        "MHz"
+      ],
+      [
+        "f HCLK",
+        "Internal AHB clock frequency",
+        "Power Scale 2 (VOS[1:0] bits in PWR_CR register = 0x10), Regulator ON",
+        "Over- drive ON",
+        "0",
+        "-",
+        "180",
+        "MHz"
+      ],
+      [
+        "f HCLK",
+        "Internal AHB clock frequency",
+        "Power Scale 1 (VOS[1:0] bits in PWR_CR register= 0x11), Regulator ON",
+        "Over- drive OFF",
+        "0",
+        "-",
+        "180",
+        "MHz"
+      ],
+      [
+        "f HCLK",
+        "Internal AHB clock frequency",
+        "Power Scale 1 (VOS[1:0] bits in PWR_CR register= 0x11), Regulator ON",
+        "Over- drive ON",
+        "0",
+        "-",
+        "216(2)",
+        "MHz"
+      ],
+      [
+        "f PCLK1",
+        "Internal APB1 clock frequency",
+        "Over-drive OFF",
+        "Over-drive OFF",
+        "0",
+        "-",
+        "45",
+        "MHz"
+      ],
+      [
+        "f PCLK1",
+        "Internal APB1 clock frequency",
+        "Over-drive ON",
+        "Over-drive ON",
+        "0",
+        "-",
+        "54",
+        "MHz"
+      ],
+      [
+        "f PCLK2",
+        "Internal APB2 clock frequency",
+        "Over-drive OFF",
+        "Over-drive OFF",
+        "0",
+        "-",
+        "90",
+        "MHz"
+      ],
+      [
+        "f PCLK2",
+        "Internal APB2 clock frequency",
+        "Over-drive ON",
+        "Over-drive ON",
+        "0",
+        "-",
+        "108",
+        "MHz"
+      ],
+      [
+        "V DD",
+        "Standard operating voltage",
+        "-",
+        "-",
+        "1.7(3)",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V (4) DDA (5)",
+        "Analog operating voltage (ADC limited to 1.2 M samples)",
+        "Must be the same potential as V (6) DD",
+        "Must be the same potential as V (6) DD",
+        "1.7(3)",
+        "-",
+        "2.4",
+        "V"
+      ],
+      [
+        "V (4) DDA (5)",
+        "Analog operating voltage (ADC limited to 2.4 M samples)",
+        "Must be the same potential as V (6) DD",
+        "Must be the same potential as V (6) DD",
+        "2.4",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DDUSB",
+        "USB supply voltage (supply voltage for PA11,PA12, PB14 and PB15 pins)",
+        "USB not used",
+        "USB not used",
+        "1.7",
+        "3.3",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DDUSB",
+        "USB supply voltage (supply voltage for PA11,PA12, PB14 and PB15 pins)",
+        "USB used",
+        "USB used",
+        "3.0",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V BAT",
+        "Backup operating voltage",
+        "-",
+        "-",
+        "1.65",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V 12",
+        "Regulator ON: 1.2 V internal voltage on V /V pins CAP_1 CAP_2",
+        "Power Scale 3 ((VOS[1:0] bits in PWR_CR register = 0x01), 144 MHz HCLK max frequency",
+        "Power Scale 3 ((VOS[1:0] bits in PWR_CR register = 0x01), 144 MHz HCLK max frequency",
+        "1.08",
+        "1.14",
+        "1.20",
+        "V"
+      ],
+      [
+        "None",
+        "None",
+        "Power Scale 2 ((VOS[1:0] bits in PWR_CR register = 0x10), 168 MHz HCLK max frequency with over-drive OFF or 180 MHz with over-drive ON",
+        "Power Scale 2 ((VOS[1:0] bits in PWR_CR register = 0x10), 168 MHz HCLK max frequency with over-drive OFF or 180 MHz with over-drive ON",
+        "1.20",
+        "1.26",
+        "1.32",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "Power Scale 1 ((VOS[1:0] bits in PWR_CR register = 0x11), 180 MHz HCLK max frequency with over-drive OFF or 216 MHz with over-drive ON",
+        "Power Scale 1 ((VOS[1:0] bits in PWR_CR register = 0x11), 180 MHz HCLK max frequency with over-drive OFF or 216 MHz with over-drive ON",
+        "1.26",
+        "1.32",
+        "1.40",
+        "None"
+      ],
+      [
+        "None",
+        "Regulator OFF: 1.2 V external voltage must be supplied from external regulator on V /V pins(7) CAP_1 CAP_2",
+        "Max frequency 144 MHz",
+        "Max frequency 144 MHz",
+        "1.10",
+        "1.14",
+        "1.20",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "Max frequency 168MHz",
+        "Max frequency 168MHz",
+        "1.20",
+        "1.26",
+        "1.32",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "Max frequency 180 MHz",
+        "Max frequency 180 MHz",
+        "1.26",
+        "1.32",
+        "1.38",
+        "None"
+      ],
+      [
+        "V IN",
+        "Input voltage on RST and FT pins(8)",
+        "2 V ≤ V ≤ 3.6 V DD",
+        "2 V ≤ V ≤ 3.6 V DD",
+        "-0.3",
+        "-",
+        "5.5",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "V ≤ 2 V DD",
+        "V ≤ 2 V DD",
+        "-0.3",
+        "-",
+        "5.2",
+        "None"
+      ],
+      [
+        "None",
+        "Input voltage on TTa pins",
+        "-",
+        "-",
+        "-0.3",
+        "-",
+        "V + DDA 0.3",
+        "None"
+      ],
+      [
+        "None",
+        "Input voltage on BOOT pin",
+        "-",
+        "-",
+        "0",
+        "-",
+        "9",
+        "None"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 85 °C A for suffix 6 or T = 105 °C for A suffix 7(9)",
+        "LQFP100",
+        "LQFP100",
+        "-",
+        "-",
+        "465",
+        "mW"
+      ],
+      [
+        "None",
+        "None",
+        "LQFP144",
+        "LQFP144",
+        "-",
+        "-",
+        "500",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "TFBGA216",
+        "TFBGA216",
+        "-",
+        "-",
+        "690",
+        "None"
+      ],
+      [
+        "TA",
+        "Ambient temperature for 6 suffix version",
+        "Maximum power dissipation",
+        "Maximum power dissipation",
+        "-40",
+        "-",
+        "85",
+        "°C"
+      ],
+      [
+        "None",
+        "None",
+        "Low power dissipation(10)",
+        "Low power dissipation(10)",
+        "-40",
+        "-",
+        "105",
+        "None"
+      ],
+      [
+        "None",
+        "Ambient temperature for 7 suffix version",
+        "Maximum power dissipation",
+        "Maximum power dissipation",
+        "-40",
+        "-",
+        "105",
+        "°C"
+      ],
+      [
+        "None",
+        "None",
+        "Low power dissipation(10)",
+        "Low power dissipation(10)",
+        "-40",
+        "-",
+        "125",
+        "None"
+      ],
+      [
+        "TJ",
+        "Junction temperature range",
+        "6 suffix version",
+        "6 suffix version",
+        "-40",
+        "-",
+        "105",
+        "°C"
+      ],
+      [
+        "None",
+        "None",
+        "7 suffix version",
+        "7 suffix version",
+        "-40",
+        "-",
+        "125",
+        "None"
+      ]
+    ],
+    "notes": [
+      "1. Applicable only when the code is executed from flash memory. When the code is executed from RAM, no wait state is required.",
+      "2. Thanks to the ART accelerator on ITCM interface and L1-cache on AXI interface, the number of wait states given here does not impact the execution speed from flash memory since the ART accelerator or L1-cache allows to achieve a",
+      "3. V /V minimum value of 1.7 V is obtained with the use of an external power supply supervisor (refer to Section 3.17.2: DD DDA",
+      "4. The voltage range for USB full speed PHYs can drop down to 2.7 V. However the electrical characteristics of D- and D+ pins will be degraded between 2.7 and 3 V.",
+      "5. If V pin is present, it must respect the following condition: V -V < 1.2 V. REF+ DDA REF+",
+      "6. It is recommended to power V and V from the same source. A maximum difference of 300 mV between V and DD DDA DD",
+      "7. The over-drive mode is not supported when the internal regulator is OFF.",
+      "8. To sustain a voltage higher than VDD+0.3, the internal Pull-up and Pull-Down resistors must be disabled",
+      "9. If T is lower, higher P values are allowed as long as T does not exceed T . A D J Jmax",
+      "10. In low power dissipation state, T can be extended to this range as long as T does not exceed T . A J Jmax"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

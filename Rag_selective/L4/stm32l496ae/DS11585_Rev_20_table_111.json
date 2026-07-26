@@ -1,0 +1,121 @@
+{
+  "table_id": "table_111",
+  "document": "DS11585 Rev 20 - Table 111. Asynchronous multiplexed PSRAM/NOR write timings",
+  "rev": "Rev 20",
+  "table_number": "111",
+  "title": "Table 111. Asynchronous multiplexed PSRAM/NOR write timings",
+  "page": 232,
+  "section": "6.3.29 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32l496ae.pdf#page=232",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l496ae.pdf",
+  "text_helper": "Table 111. Asynchronous multiplexed PSRAM/NOR write timings — section 6.3.29 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t w(NE)",
+        "FMC_NE low time",
+        "4T -1 HCLK",
+        "4T +1 HCLK",
+        "ns"
+      ],
+      [
+        "t v(NWE_NE)",
+        "FMC_NEx low to FMC_NWE low",
+        "T -1 HCLK",
+        "KLCH 1+ T",
+        "ns"
+      ],
+      [
+        "t w(NWE)",
+        "FMC_NWE low time",
+        "2xT -0.5 HCLK",
+        "2xT + 0.5 HCLK",
+        "ns"
+      ],
+      [
+        "t h(NE_NWE)",
+        "FMC_NWE high to FMC_NE high hold time",
+        "T -0.5 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(A_NE)",
+        "FMC_NEx low to FMC_A valid",
+        "-",
+        "0",
+        "ns"
+      ],
+      [
+        "t v(NADV_NE)",
+        "FMC_NEx low to FMC_NADV low",
+        "0",
+        "0.5",
+        "ns"
+      ],
+      [
+        "t w(NADV)",
+        "FMC_NADV low time",
+        "T HCLK",
+        "KLCH 1+ T",
+        "ns"
+      ],
+      [
+        "t h(AD_NADV)",
+        "FMC_AD(adress) valid hold time after FMC_NADV high",
+        "KLCH 5.0 + T",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(A_NWE)",
+        "Address hold time after FMC_NWE high",
+        "KLCH 5.0 + T",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(BL_NWE)",
+        "FMC_BL hold time after FMC_NWE high",
+        "T - 0.5 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(BL_NE)",
+        "FMC_NEx low to FMC_BL valid",
+        "-",
+        "0.5",
+        "ns"
+      ],
+      [
+        "t v(Data_NADV)",
+        "FMC_NADV high to Data valid",
+        "-",
+        "KLCH 3+ T",
+        "ns"
+      ],
+      [
+        "t h(Data_NWE)",
+        "Data hold time after FMC_NWE high",
+        "KLCH 5.0+ T",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "table_id": "table_58",
+  "document": "DS9994 Rev 9 - Table 58. HRTIM synchronization input / output",
+  "rev": "Rev 9",
+  "table_number": "58",
+  "title": "Table 58. HRTIM synchronization input / output",
+  "page": 84,
+  "section": "6.3.16 High-resolution timer (HRTIM)",
+  "section_title": "High-resolution timer (HRTIM)",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f334c4.pdf#page=84",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f334c4.pdf",
+  "text_helper": "Table 58. HRTIM synchronization input / output — section 6.3.16 High-resolution timer (HRTIM). Symbol, Parameter, Conditions, Min., Typ., +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min.",
+      "Typ.",
+      "Max.",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t W(SYNCIN)",
+        "Minimum pulse width on SYNCIN inputs, including HRTIM1_SCIN",
+        "-",
+        "2",
+        "-",
+        "-",
+        "t HRTIM"
+      ],
+      [
+        "t LAT(DF)",
+        "Response time to external synchronization request",
+        "-",
+        "-",
+        "-",
+        "1",
+        "t HRTIM"
+      ],
+      [
+        "t LAT(AF)",
+        "Pulse width on HRTIM1_SCOUT output",
+        "-",
+        "-",
+        "16",
+        "-",
+        "t HRTIM"
+      ],
+      [
+        "t LAT(AF)",
+        "Pulse width on HRTIM1_SCOUT output",
+        "f =144 MHz HRTIM",
+        "-",
+        "111.1",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by design, not tested in production. 84/125 DS9994 Rev 9",
+      "2. Guaranteed by design, not tested in production. DS9994 Rev 9 85/125",
+      "4. This parameter is given for f = 144 MHz. HRTIM",
+      "5. T = 1 / f with f = 144 MHz or f = 128 MHZ depending on the clock controller configuration. (Refer to HRTIM HRTIM HRTIM HRTIM"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

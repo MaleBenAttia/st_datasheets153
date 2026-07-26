@@ -1,0 +1,90 @@
+{
+  "table_id": "table_15",
+  "document": "DS10916 Rev 5 - Table 15. Voltage characteristics",
+  "rev": "Rev 5",
+  "table_number": "15",
+  "title": "Table 15. Voltage characteristics",
+  "page": 102,
+  "section": "6.2 Absolute maximum ratings",
+  "section_title": "Absolute maximum ratings",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32f745ie.pdf#page=102",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f745ie.pdf",
+  "text_helper": "Table 15. Voltage characteristics — section 6.2 Absolute maximum ratings. Symbol, Ratings, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Ratings",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V –V DD SS",
+        "External main supply voltage (including V ,V DDA DD, V and V ) (1) BAT DDUSB",
+        "-0.3",
+        "4.0",
+        "V"
+      ],
+      [
+        "V IN",
+        "Input voltage on FT pins(2)",
+        "V -0.3 SS",
+        "V +4.0 DD",
+        "V"
+      ],
+      [
+        "V IN",
+        "Input voltage on TTa pins",
+        "V -0.3 SS",
+        "4.0",
+        "V"
+      ],
+      [
+        "V IN",
+        "Input voltage on any other pin",
+        "V -0.3 SS",
+        "4.0",
+        "V"
+      ],
+      [
+        "V IN",
+        "Input voltage on BOOT pin",
+        "V SS",
+        "9.0",
+        "V"
+      ],
+      [
+        "|ΔV | DDx",
+        "Variations between different V power pins DD",
+        "-",
+        "50",
+        "mV"
+      ],
+      [
+        "|V -V | SSX SS",
+        "Variations between all the different ground pins(3)",
+        "-",
+        "50",
+        "mV"
+      ],
+      [
+        "V ESD(HBM)",
+        "Electrostatic discharge voltage (human body model)",
+        "see Section 6.3.15: Absolute maximum ratings (electrical sensitivity)",
+        "see Section 6.3.15: Absolute maximum ratings (electrical sensitivity)",
+        "-"
+      ]
+    ],
+    "notes": [
+      "1. All main power (V , V , V ) and ground (V , V ) pins must always be connected to the DD DDA DDUSB SS SSA",
+      "2. V maximum value must always be respected. Refer to Table 16 for the values of the maximum allowed IN",
+      "3. Include VREF- pin. 120/248 DS10916 Rev 5"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}
