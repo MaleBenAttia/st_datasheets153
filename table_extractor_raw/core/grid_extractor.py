@@ -1909,10 +1909,11 @@ def extract_table_grid(
             "col_count":             len(headers),
         })
 
-        # ── Image crop debug ──────────────────────────────────────────────────
-        crop_path = _save_table_crop(page, bbox, output_base, ref.table_id, family, pdf_name)
-        if crop_path:
-            result.setdefault("debug", {})["crop_path"] = crop_path
+        # ── Image crop debug (seulement si qualité ≠ high) ────────────────────
+        if confidence != "high":
+            crop_path = _save_table_crop(page, bbox, output_base, ref.table_id, family, pdf_name)
+            if crop_path:
+                result.setdefault("debug", {})["crop_path"] = crop_path
 
         # ── Debug table vide ─────────────────────────────────────────────────
         if DEBUG_EMPTY_ROWS and not rows_fixed:
