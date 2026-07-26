@@ -1279,7 +1279,11 @@ def extract_table_grid(
                         nq_boosted = nq + keyword_bonus
                         if nq_boosted >= 10.0:
                             # ── Garde-fou : page suivante contient une AUTRE table ? ──
-                            nxt_text = " ".join(w["text"] for w in p.extract_words()).lower()
+                            # Vérifier dans les lignes extraites (nxt_raw), pas toute la page,
+                            # pour éviter de rejeter une table correcte qui cohabite avec
+                            # d'autres tables sur la même page (ex: table_76 + table_77 page 156,
+                            # table_9 USART page 25 avant table_10 SPI).
+                            nxt_text = " ".join(str(c) for row in nxt_raw for c in row).lower()
                             cur_num = int(ref.table_id.split("_")[1])
                             other_tables = re.findall(r"table\s+(\d+)", nxt_text)
                             other_nums = [int(n) for n in other_tables if n.isdigit()]
