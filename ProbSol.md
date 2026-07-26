@@ -94,15 +94,77 @@ depuis la légende via `STM32[A-Za-z0-9]+`. Les headers sont remplacés par
 
 ---
 
+---
+
+## 6. `_find_caption_y` — Seuil de mots réduit de 3 à 2
+
+**Problème :** `_find_caption_y` cherchait une séquence de **3 mots consécutifs**
+de la légende dans le texte de la page. Quand le PDF scindait un mot (ex:
+`"Current"` → `"C"` + `"urrent"` sur deux zones de texte distinctes), le
+matching échouait car seul 1 mot sur 3 était trouvé → `caption_y = None`
+→ pas de filtrage caption → lignes d'une autre table au-dessus conservées
+→ **13 tables vides** (table_21 L0, table_36 F7, etc.).
+
+**Solution :** Seuil passé à `min(2, len(caption_words))`. Pour une légende
+de 7 mots, on accepte 2 matchs au lieu de 3. Ceci tolère un seul mot scindé
+tout en évitant les faux positifs (2 mots sont difficilement visibles par
+hasard dans le texte de la page). Le fix `page_height * 0.25` (min_y)
+testé précédemment a été abandonné car il bloquait la détection de
+légendes situées dans le quart supérieur de la page.
+
+**Fichier :** `grid_extractor.py:_find_caption_y`
+
+---
+
+## 7. Table C5/table_65 — Colonnes "Conditions" dupliquées (guard `cols ≤ 10`)
+
+**Problème :** `_merge_identical_adjacent_columns` avait un guard
+`if cols <= 10: return headers, rows` qui empêchait la fusion des colonnes
+"Conditions" dupliquées dans les tables ≤10 colonnes. Résultat : headers
+à 8 colonnes (dont `"Conditions"` et `"Conditions"` côte à côte) au lieu
+de 7.
+
+**Solution :** Le guard a été supprimé. La fusion s'applique maintenant
+quel que soit le nombre de colonnes. De plus, l'appel à
+`_merge_identical_adjacent_columns` a été **déplacé AVANT** la recherche
+de continuation (ligne ~1407 de `grid_extractor.py`) pour que
+`find_continuations()` utilise un header sans doublon.
+
+**Fichier :** `grid_extractor.py:_merge_identical_adjacent_columns` (ligne ~2402)
+
+---
+
+## 8. Continuation — Colonne `None` en trop + lignes vides dupliquées
+
+**Problème :** Deux artefacts dans la fusion continuation :
+
+1. **Colonne `None` en trop :** quand une colonne spanning est scindée sur
+   la page de continuation, pdfplumber insère parfois une colonne `None`
+   supplémentaire (`col_count > expected_col_count`). La boucle d'expansion
+   ajoutait alors une colonne vide supplémentaire dans le résultat final.
+2. **Lignes vides dupliquées :** la page de continuation répétait parfois la
+   première ligne de données (même première cellule, autres cellules vides
+   ou identiques), créant des doublons.
+
+**Solution :**
+1. Quand `col_count > expected_col_count`, on cale `target_cols` sur
+   `expected_col_count` au lieu de `col_count` (la colonne `None` est
+   ignorée).
+2. Avant l'insertion, on saute toute ligne dont la première cellule est
+   identique à la ligne précédente ET dont au moins une autre cellule est
+   vide (signe de doublon de continuation).
+
+**Fichier :** `continuation.py:find_continuations`
+
+---
+
 ## Résultat final
 
-| Famille | OK | FAILED | Notes |
-|---------|----|--------|-------|
-| C0 | 5 | 0 | ✅ |
-| C5 | 6 | 0 | ✅ |
-| F0 | 13 | 0 | ✅ |
-| F3 | 14 | 0 | ✅ |
-| **F4** | **14** | **0** | ✅ 2 bugs (table_76) fixés |
-| **U0** | **2** | **1** | ✅ 2 bugs (table_65, table_67) fixés — reste table_9 (1 ligne "X: supported", non extractable comme grille) |
-| N6 | 1 | 0 | ✅ + headers nettoyés |
-| **Total** | **55** | **1** | 5 bugs sur 6 corrigés |
+| Métrique | Valeur |
+|----------|--------|
+| Datasheets | 185 (20 familles) |
+| Tables extraites | 18 694 |
+| Tables vides | **0** (88 ordering_info OK, 4 dessins mécaniques préexistants) |
+| Crédibilité | 180 high / 5 crashs préexistants |
+| Temps full scan | 1656s (27 min) — 16 workers |
+| Régressions | **0** ✅ |

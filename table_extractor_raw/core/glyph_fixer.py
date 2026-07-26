@@ -44,20 +44,8 @@ GLYPH_MAP: dict[str, str] = {
 
 # ── Patterns de détection CID / pieds de page ──────────────────────────────────
 
-# Détecte les fragments de texte CID (Character ID) — caractères de la Private
-# Use Area (U+E000–U+F8FF) non mappés par GLYPH_MAP. Ces fragments apparaissent
-# quand pdfplumber extrait du texte depuis des zones d'image ou des cadres
-# décoratifs (bordures, logos, etc.).
-CID_PATTERN = re.compile(r"[\ue000-\uf8ff]")
-
-# Détecte les pieds de page (numéros de page seuls sur une ligne)
-FOOTER_PATTERN = re.compile(r"^\s*\d+\s*$")
-
 # Séquences regex à corriger APRÈS la table de glyphes
 _REGEX_FIXES: list[tuple[str, str]] = [
-    # "V DD" → "VDD" (espaces parasites dans les noms de signaux)
-    # Attention : trop agressif → désactivé par défaut, commenter pour activer
-    # (r"\bV\s+([A-Z]{2,})\b", r"V\1"),
     # Espaces multiples → espace simple
     (r"  +", " "),
     # Retours à la ligne internes → espace

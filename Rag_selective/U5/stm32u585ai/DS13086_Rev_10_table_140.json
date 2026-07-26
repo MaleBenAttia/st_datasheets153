@@ -1,0 +1,67 @@
+{
+  "table_id": "table_140",
+  "document": "DS13086 Rev 10 - Table 140. Switching characteristics for NAND Flash read cycles",
+  "rev": "Rev 10",
+  "table_number": "140",
+  "title": "Table 140. Switching characteristics for NAND Flash read cycles",
+  "page": 289,
+  "section": "5.3.33 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u585ai.pdf#page=289",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u585ai.pdf",
+  "text_helper": "Table 140. Switching characteristics for NAND Flash read cycles — section 5.3.33 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t w(NOE)",
+        "FMC_NOE low width",
+        "4 × t - 0.5 HCLK",
+        "4 × t + 0.5 HCLK",
+        "ns"
+      ],
+      [
+        "t su(D-NOE)",
+        "FMC_D[15-0] valid data before FMC_NOE high",
+        "10",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(NOE-D)",
+        "FMC_D[15-0] valid data after FMC_NOE high",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(ALE-NOE)",
+        "FMC_ALE valid before FMC_NOE low",
+        "-",
+        "3 × t + 0.5 HCLK",
+        "ns"
+      ],
+      [
+        "t h(NOE-ALE)",
+        "FMC_NWE high to FMC_ALE invalid",
+        "4 × t - 1 HCLK",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. Evaluated by characterization. Not tested in production. DS13086 Rev 10 289/350"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

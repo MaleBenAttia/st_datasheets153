@@ -30,13 +30,13 @@ MAX_CONT_COL_DRIFT    = 50    # seuil de dérive x0 (px) pour accepter la suite 
                                # 200 était trop permissif (captait des tables adjacentes).
 
 # ── Type 2 (Antenna House / XML-based) ────────────────────────────────────────
-MIN_TABLE_WIDTH = 40      # en dessous = bandeau décoratif / marge → rejeter
+MIN_TABLE_WIDTH = 20      # en dessous = bandeau décoratif / marge → rejeter
 
 # ── Debug / images ────────────────────────────────────────────────────────────
 SAVE_DEBUG_IMAGES         = True   # crop image à côté du JSON
 SAVE_IMAGES_ONLY_ON_ISSUE = True   # si True : image seulement si confidence != "high"
 DEBUG_IMAGE_DPI           = 150    # résolution des crops (compromis taille/lisibilité)
-DEBUG_EMPTY_ROWS          = False  # capture debug détaillée si la table a 0 lignes
+DEBUG_EMPTY_ROWS          = True   # capture debug détaillée si la table a 0 lignes
 
 # ── pdfplumber — réglages grille ──────────────────────────────────────────────
 PDFPLUMBER_TABLE_SETTINGS = {

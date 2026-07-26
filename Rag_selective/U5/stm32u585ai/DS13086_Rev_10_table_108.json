@@ -1,0 +1,359 @@
+{
+  "table_id": "table_108",
+  "document": "DS13086 Rev 10 - Table 108. 12-bit ADC4 characteristics",
+  "rev": "Rev 10",
+  "table_number": "108",
+  "title": "Table 108. 12-bit ADC4 characteristics",
+  "page": 250,
+  "section": "5.3.18 Analog switches booster",
+  "section_title": "Analog switches booster",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u585ai.pdf#page=250",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u585ai.pdf",
+  "text_helper": "Table 108. 12-bit ADC4 characteristics — section 5.3.18 Analog switches booster. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V DDA",
+        "Analog power supply for ADC ON",
+        "-",
+        "1.62",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V REF+",
+        "Positive reference voltage",
+        "-",
+        "1",
+        "-",
+        "V DDA",
+        "V"
+      ],
+      [
+        "V REF-",
+        "Negative reference voltage",
+        "-",
+        "V SSA",
+        "V SSA",
+        "V SSA",
+        "V"
+      ],
+      [
+        "f ADC",
+        "ADC clock frequency",
+        "1.62 V ≤ V ≤ 3.6 V DDA",
+        "0.14",
+        "-",
+        "55",
+        "MHz"
+      ],
+      [
+        "f ADC",
+        "ADC clock duty cycle",
+        "-",
+        "45",
+        "-",
+        "55",
+        "%"
+      ],
+      [
+        "f s",
+        "Sampling rate",
+        "Resolution = 12 bits",
+        "0.01",
+        "-",
+        "2.75",
+        "Msps"
+      ],
+      [
+        "f s",
+        "Sampling rate",
+        "Resolution = 10 bits",
+        "0.012",
+        "-",
+        "3.05",
+        "Msps"
+      ],
+      [
+        "f s",
+        "Sampling rate",
+        "Resolution = 8 bits",
+        "0.014",
+        "-",
+        "3.43",
+        "Msps"
+      ],
+      [
+        "f s",
+        "Sampling rate",
+        "Resolution = 6 bits",
+        "0.0175",
+        "-",
+        "3.92",
+        "Msps"
+      ],
+      [
+        "t TRIG",
+        "External trigger period",
+        "Resolution = 12 bits",
+        "16",
+        "-",
+        "-",
+        "1/f ADC"
+      ],
+      [
+        "V (3) AIN",
+        "Conversion voltage range",
+        "-",
+        "0",
+        "-",
+        "V REF+",
+        "V"
+      ],
+      [
+        "R (4) AIN",
+        "External input impedance T = 130 °C j",
+        "Resolution = 12 bits",
+        "-",
+        "-",
+        "2.2",
+        "kΩ"
+      ],
+      [
+        "R (4) AIN",
+        "External input impedance T = 130 °C j",
+        "Resolution = 10 bits",
+        "-",
+        "-",
+        "6.8",
+        "kΩ"
+      ],
+      [
+        "R (4) AIN",
+        "External input impedance T = 130 °C j",
+        "Resolution = 8 bits",
+        "-",
+        "-",
+        "33.0",
+        "kΩ"
+      ],
+      [
+        "R (4) AIN",
+        "External input impedance T = 130 °C j",
+        "Resolution = 6 bits",
+        "-",
+        "-",
+        "47.0",
+        "kΩ"
+      ],
+      [
+        "C ADC",
+        "Internal sample and hold capacitor",
+        "-",
+        "-",
+        "5",
+        "-",
+        "pF"
+      ],
+      [
+        "t ADCVREG_ STUP",
+        "ADC LDO startup ready flag time",
+        "-",
+        "-",
+        "-",
+        "25",
+        "µs"
+      ],
+      [
+        "t STAB",
+        "ADC power-up time",
+        "LDO already started",
+        "(3 × 1/f ) + 1 conversion ADC",
+        "(3 × 1/f ) + 1 conversion ADC",
+        "(3 × 1/f ) + 1 conversion ADC",
+        "Cycle"
+      ],
+      [
+        "t OFF_CAL",
+        "Offset calibration time",
+        "-",
+        "-",
+        "123",
+        "-",
+        "1/f ADC"
+      ],
+      [
+        "t LATR",
+        "Trigger conversion latency",
+        "CDA KLCH = f ,0 = DPD ,0 = FFOTUA ,0 = TIAW",
+        "4",
+        "4",
+        "4",
+        "1/f ADC"
+      ],
+      [
+        "t LATR",
+        "Trigger conversion latency",
+        "WAIT = 0, AUTOFF = 0, DPD = 0, f = HCLK/2 ADC",
+        "4",
+        "4",
+        "4",
+        "1/f ADC"
+      ],
+      [
+        "t LATR",
+        "Trigger conversion latency",
+        "WAIT = 0, AUTOFF = 0, DPD = 0, f = HCLK/4 ADC",
+        "3.75",
+        "3.75",
+        "3.75",
+        "1/f ADC"
+      ],
+      [
+        "t s",
+        "Sampling time",
+        "-",
+        "1.5",
+        "-",
+        "814.5",
+        "1/f ADC"
+      ],
+      [
+        "t CONV",
+        "Total conversion time (including sampling time)",
+        "Resolution = N bits, VREFPROTEN = 0",
+        "t + N + 0.5 s",
+        "t + N + 0.5 s",
+        "t + N + 0.5 s",
+        "1/f ADC"
+      ],
+      [
+        "t CONV",
+        "Total conversion time (including sampling time)",
+        "Resolution = N bits, VREFPROTEN = 1 VREFSECSMP = 0",
+        "t + N + 0.5 s",
+        "-",
+        "t + N + 1.5 s",
+        "t + N + 1.5 s"
+      ],
+      [
+        "t CONV",
+        "Total conversion time (including sampling time)",
+        "Resolution = N bits, VREFPROTEN = 1 VREFSECSMP = 1",
+        "t + N + 0.5 s",
+        "-",
+        "t + N + 2.5 s",
+        "t + N + 2.5 s"
+      ],
+      [
+        "I DDA(ADC)",
+        "ADC consumption on V DDA",
+        "f = 2.5 Msps s",
+        "-",
+        "360",
+        "-",
+        "µA"
+      ],
+      [
+        "I DDA(ADC)",
+        "ADC consumption on V DDA",
+        "f = 1 Msps s",
+        "-",
+        "180",
+        "-",
+        "-"
+      ],
+      [
+        "I DDA(ADC)",
+        "ADC consumption on V DDA",
+        "f = 10 ksps s",
+        "-",
+        "10",
+        "-",
+        "-"
+      ],
+      [
+        "I DDA(ADC)",
+        "ADC consumption on V DDA",
+        "noisrevnoc on ,0 = DPD ,1 = FFOTUA",
+        "-",
+        "9",
+        "-",
+        "-"
+      ],
+      [
+        "I DDA(ADC)",
+        "ADC consumption on V DDA",
+        "noisrevnoc on ,1 = DPD ,1 = FFOTUA",
+        "-",
+        "0.1",
+        "-",
+        "-"
+      ],
+      [
+        "I DDV(ADC)",
+        "ADC consumption on V REF+",
+        "f = 2.5 Msps s",
+        "-",
+        "18",
+        "-",
+        "-"
+      ],
+      [
+        "I DDV(ADC)",
+        "ADC consumption on V REF+",
+        "f = 1 Msps s",
+        "-",
+        "10.2",
+        "-",
+        "-"
+      ],
+      [
+        "I DDV(ADC)",
+        "ADC consumption on V REF+",
+        "f = 10 ksps s",
+        "-",
+        "0.12",
+        "-",
+        "-"
+      ],
+      [
+        "I DDV(ADC)",
+        "ADC consumption on V REF+",
+        "noisrevnoc on ,0 = DPD ,1 = FFOTUA",
+        "-",
+        "0.01",
+        "-",
+        "-"
+      ],
+      [
+        "I DDV(ADC)",
+        "ADC consumption on V REF+",
+        "noisrevnoc on ,1 = DPD ,1 = FFOTUA",
+        "-",
+        "0.01",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "3. Depending on the package, V REF+ can be internally connected to V DDA and V REF- can be internally connected to V SSA .",
+      "4. The maximum value of R is specified to keep leakage induced offset within the specified tolerance. The tolerance is ain"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

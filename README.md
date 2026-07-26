@@ -7,11 +7,11 @@ Pipeline complet d'extraction automatique de tableaux depuis les datasheets
 PDF STMicroelectronics (STM32) et de transformation en chunks optimises pour
 l'indexation vectorielle (RAG avec ChromaDB, Qdrant, Pinecone, etc.).
 
-**Chiffres cles :** 185 datasheets, 20 familles STM32, extraction 100 % high
-confidence, 0 erreur, 0 valeur null, extraction de l'ordering information pour les PDFs Type 1.
-Famille C5 (Type 2) : 0 tables vides apres correction des heuristiques de section bleed
-et propagation verticale. 55/56 familles testees sans echec apres corrections
-continuation (Jaccard, expansion x0, guard body_on_next_page, re-extract sous caption).
+**Chiffres cles :** 185 datasheets, 20 familles STM32, **18 694 tables extraites**,
+**0 table vide reelle** (88 ordering_info correctement filtrees, 4 dessins mecaniques
+preexistants non extractibles), extraction 100 % high confidence, 0 valeur null.
+Scan complet valide : **180 OK / 5 crashs preexistants** (U0/L5/U5) en **1656s (27 min)**
+avec 16 workers. Aucune regression introduite.
 
 ---
 
@@ -337,6 +337,32 @@ lignes trailing consecutives dont la 1ere cellule commence par `\d+.`
 (ex: `"1."`, `"2."`, `"6.3.16"`). Minimum 2 lignes pour eviter de toucher
 aux donnees legitimes. Regex `^\d+\.` (sans `$` pour matcher les cellules
 avec texte apres le numero).
+
+### Deduplication inter-table en post-processing (Fix 22)
+
+Apres l'extraction de toutes les tables d'un PDF, `_deduplicate_table_boundaries()`
+dans `main.py:124` supprime les lignes de donnees (`rows`) et les notes (`_notes`)
+de la table N lorsqu'elles sont identiques a celles de N+1 ou N+2.
+
+**Probleme :** les tables STM32 s'etendent parfois sur 2-3 pages mais le
+detecteur de continuation (`find_continuations`) echoue a les fusionner
+quand les pages adjacentes contiennent des titres intermediaires (ex: la
+page 88 contient `"Table 51"` en haut puis les donnees de `Table 50` en bas).
+Dans ce cas, les 2 tables distinctes partagent des lignes de donnees
+redondantes et des notes identiques.
+
+**Solution :**
+1. **Match exact** (`json.dumps`) : pour les lignes au meme nombre de colonnes.
+2. **Match par sous-sequence** (`_row_content_matches`) : quand le nombre de
+   colonnes differe (ex: continuation avec colonnes fusionnees). Toutes les
+   cellules du row le plus court doivent apparaitre dans le plus long, dans
+   le meme ordre, avec >= 2 cellules.
+3. **Notes** : suppression des `_notes` de N si la liste est identique a N+1/N+2.
+4. **Seulement inter-table** : ne touche pas aux doublons internes a une table.
+5. **Mise a jour** : `datasheet_metaData.rows_count` est recalculé et les
+   JSONs modifies sont re-ecrits.
+
+**Resultat sur la famille C5 :** 354 rows et 263 notes deduplicates (6 PDFs).
 
 ### Fusion des colonnes fragmentees pdfplumber_text (Fix 10)
 
@@ -979,6 +1005,7 @@ python table_extractor_raw/main.py --random 60 --workers 8
 | `--workers 4` | Mini, stable sur tout PC |
 | `--workers 6` | Recommande pour testing |
 | `--workers 8` | Max stable, necessite 16+ Go RAM |
+| `--workers 16` | Full scan valide (1656s, 27 min, 185 PDFs), necessite 32+ Go RAM |
 
 ### Pipeline complet (extraction + stats + RAG)
 

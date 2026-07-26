@@ -1,0 +1,227 @@
+{
+  "table_id": "table_116",
+  "document": "DS13086 Rev 10 - Table 116. DAC accuracy",
+  "rev": "Rev 10",
+  "table_number": "116",
+  "title": "Table 116. DAC accuracy",
+  "page": 258,
+  "section": "5.3.24 Digital-to-analog converter characteristics",
+  "section_title": "Digital-to-analog converter characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u585ai.pdf#page=258",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u585ai.pdf",
+  "text_helper": "Table 116. DAC accuracy — section 5.3.24 Digital-to-analog converter characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "DNL",
+        "Differential non-linearity(2)",
+        "DAC output buffer ON",
+        "-",
+        "-",
+        "±2",
+        "LSB"
+      ],
+      [
+        "DNL",
+        "Differential non-linearity(2)",
+        "DAC output buffer OFF",
+        "-",
+        "-",
+        "±2",
+        "LSB"
+      ],
+      [
+        "-",
+        "Monotonicity",
+        "10 bits",
+        "guaranteed",
+        "guaranteed",
+        "guaranteed",
+        "-"
+      ],
+      [
+        "INL",
+        "Integral non-linearity(3)",
+        "DAC output buffer ON, C ≤ 50 pF, R ≥ 5 kΩ L L",
+        "-",
+        "-",
+        "±4",
+        "LSB"
+      ],
+      [
+        "INL",
+        "Integral non-linearity(3)",
+        "DAC output buffer OFF, C ≤ 50 pF, no R L L",
+        "-",
+        "-",
+        "±4",
+        "LSB"
+      ],
+      [
+        "Offset",
+        "Offset error at code 0x800(3)",
+        "DAC output buffer OFF, C ≤ 50 pF, no R L L",
+        "-",
+        "-",
+        "±8",
+        "LSB"
+      ],
+      [
+        "Offset1",
+        "Offset error at code 0x001(4)",
+        "DAC output buffer OFF, C ≤ 50 pF, no R L L",
+        "-",
+        "-",
+        "±5",
+        "±5"
+      ],
+      [
+        "OffsetCal",
+        "Offset error at code 0x800(3) after calibration",
+        "DAC output buffer ON, C ≤ 50 pF, R ≥ 5 kΩ L L",
+        "V = 3.6 V REF+",
+        "-",
+        "-",
+        "±5"
+      ],
+      [
+        "OffsetCal",
+        "Offset error at code 0x800(3) after calibration",
+        "V = 1.6 V REF+",
+        "-",
+        "-",
+        "±5",
+        "±5"
+      ],
+      [
+        "Gain",
+        "Gain error(5)",
+        "DAC output buffer ON, C ≤ 50 pF, R ≥ 5 kΩ L L",
+        "-",
+        "-",
+        "±0.5",
+        "%"
+      ],
+      [
+        "Gain",
+        "Gain error(5)",
+        "DAC output buffer OFF, C ≤ 50 pF, no R L L",
+        "-",
+        "-",
+        "±0.5",
+        "±0.5"
+      ],
+      [
+        "TUE",
+        "Total unadjusted error",
+        "DAC output buffer OFF, C ≤ 50 pF, no R L L",
+        "-",
+        "-",
+        "±10",
+        "LSB"
+      ],
+      [
+        "TUE",
+        "Total unadjusted error",
+        "DAC output buffer ON, C ≤ 50 pF, R ≥ 5 kΩ, L L after calibration",
+        "-",
+        "-",
+        "±14",
+        "±14"
+      ],
+      [
+        "SNR",
+        "Signal-to-noise ratio(6)",
+        "DAC output buffer ON, C ≤ 50 pF, R ≥ 5 kΩ, L L 1 kHz, BW = 500 kHz",
+        "-",
+        "70.6",
+        "-",
+        "dB"
+      ],
+      [
+        "SNR",
+        "Signal-to-noise ratio(6)",
+        "DAC output buffer OFF, C ≤ 50 pF, no R , 1 kHz, L L BW = 500 kHz",
+        "-",
+        "72",
+        "-",
+        "-"
+      ],
+      [
+        "THD",
+        "Total harmonic distortion(6)",
+        "DAC output buffer ON, C ≤ 50 pF, R ≥ 5 kΩ, 1 kHz L L",
+        "-",
+        "-79",
+        "-",
+        "-"
+      ],
+      [
+        "THD",
+        "Total harmonic distortion(6)",
+        "DAC output buffer OFF, C ≤ 50 pF, no R , 1 kHz L L",
+        "-",
+        "-81",
+        "-",
+        "-"
+      ],
+      [
+        "SINAD",
+        "Signal-to-noise and distortion ratio(6)",
+        "DAC output buffer ON, C ≤ 50 pF, R ≥ 5 kΩ, 1 kHz L L",
+        "-",
+        "70.1",
+        "-",
+        "-"
+      ],
+      [
+        "SINAD",
+        "Signal-to-noise and distortion ratio(6)",
+        "DAC output buffer OFF, C ≤ 50 pF, no R , 1 kHz L L",
+        "-",
+        "71.5",
+        "-",
+        "-"
+      ],
+      [
+        "ENOB",
+        "Effective number of bits",
+        "DAC output buffer ON, C ≤ 50 pF, R ≥ 5 kΩ, 1 kHz L L",
+        "-",
+        "11.3",
+        "-",
+        "bits"
+      ],
+      [
+        "ENOB",
+        "Effective number of bits",
+        "DAC output buffer OFF, C ≤ 50 pF, no R , 1 kHz L L",
+        "-",
+        "11.6",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "2. In buffered mode, the output can overshoot above the final value for low input code (starting from the minimum value).",
+      "3. Refer to Table 95: I/O static characteristics.",
+      "4. T is the refresh phase duration. T is the hold phase duration (see the product reference manual for more details). ON OFF",
+      "5. Difference between the ideal transfer-function slope and the measured slope computed from code 0x000 and 0xFFF when the buffer is OFF, and from code giving 0.2 V and (VREF+ - 0.2 V) when the buffer is ON.",
+      "6. Signal is -0.5 dBFS with Fsampling = 1 MHz. DS13086 Rev 10 259/350"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

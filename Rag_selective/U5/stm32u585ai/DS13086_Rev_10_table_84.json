@@ -1,0 +1,137 @@
+{
+  "table_id": "table_84",
+  "document": "DS13086 Rev 10 - Table 84. HSI48 oscillator characteristics",
+  "rev": "Rev 10",
+  "table_number": "84",
+  "title": "Table 84. HSI48 oscillator characteristics",
+  "page": 224,
+  "section": "5.3.9 Internal clock timing characteristics",
+  "section_title": "Internal clock timing characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u585ai.pdf#page=224",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u585ai.pdf",
+  "text_helper": "Table 84. HSI48 oscillator characteristics — section 5.3.9 Internal clock timing characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f HSI48",
+        "HSI48 frequency after factory calibration",
+        "V = 3.0 V, T = 30 °C DD J",
+        "47.5",
+        "48",
+        "48.5",
+        "MHz"
+      ],
+      [
+        "TRIM (1) HSI48",
+        "User trimming step",
+        "-",
+        "-",
+        "0.12",
+        "0.18",
+        "%"
+      ],
+      [
+        "USER TRIM COVERAGE(2)",
+        "User trimming coverage",
+        "±63 steps",
+        "±4.5",
+        "±7.56",
+        "-",
+        "-"
+      ],
+      [
+        "DuCy (1) HSI48",
+        "Duty cycle",
+        "-",
+        "45",
+        "-",
+        "55",
+        "55"
+      ],
+      [
+        "ACC HSI48_REL (2)",
+        "Accuracy of the HSI48 oscillator over temperature (factory calibrated) Reference is 3 V and 30 °C(3) .",
+        "1.58 V ≤ V ≤ 3.6 V, DD T = –40 to 125 °C J",
+        "-3",
+        "-",
+        "2",
+        "2"
+      ],
+      [
+        "∆ (1) VDD(HSI48)",
+        "HSI48 frequency drift with V (4) DD",
+        "3.0 V ≤ V ≤ 3.6 V DD",
+        "-",
+        "0.025",
+        "0.05",
+        "0.05"
+      ],
+      [
+        "∆ (1) VDD(HSI48)",
+        "HSI48 frequency drift with V (4) DD",
+        "1.58 V ≤ V ≤ 3.6 V DD",
+        "-",
+        "0.05",
+        "0.1",
+        "0.1"
+      ],
+      [
+        "N jitter(1) T",
+        "Next transition jitter Accumulated jitter on 28 cycles(5)",
+        "-",
+        "-",
+        "±0.15",
+        "-",
+        "ns"
+      ],
+      [
+        "P jitter(1) T",
+        "Paired transition jitter Accumulated jitter on 56 cycles(5)",
+        "-",
+        "-",
+        "±0.25",
+        "-",
+        "-"
+      ],
+      [
+        "t (1) su(HSI48)",
+        "HSI48 oscillator startup time",
+        "-",
+        "-",
+        "2.5",
+        "6",
+        "μs"
+      ],
+      [
+        "I (1) DD(HSI48)",
+        "HSI48 oscillator power consumption",
+        "-",
+        "-",
+        "350",
+        "400",
+        "μA"
+      ]
+    ],
+    "notes": [
+      "1. Evaluated by characterization and not tested in production, unless otherwise specified.",
+      "2. In PLL mode, the MSI accuracy is the LSE crystal accuracy.",
+      "3. Specified by design. Not tested in production.",
+      "4. This is a deviation for an individual part once the initial frequency has been measured.",
+      "5. The MSI startup time is the time when the four MSIRCs are in power down."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

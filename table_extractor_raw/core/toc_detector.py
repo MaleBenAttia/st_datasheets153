@@ -174,27 +174,54 @@ def detect_tables(pdf_path: str, pdf_type: int = 1, pdf=None) -> list[TableRef]:
     if _own_pdf:
         pdf = pdfplumber.open(pdf_path)
     try:
-        # Tentative 1 : H2.0 annotations PDF
-        refs = _from_toc_links(pdf_path, pdf, pdf_type)
-        if refs:
-            logger.info("H2.0 (annotations): %d tables detected", len(refs))
-            _assign_sections(pdf_path, pdf, refs, pdf_type)
-            return refs
+        # Phase 1 : collecter les refs depuis TOUTES les sources
 
-        # Tentative 2 : H2.1-H2.4 regex texte
+        # H2.0 : annotations PDF (liens)
+        refs_h20 = _from_toc_links(pdf_path, pdf, pdf_type) or []
+
+        # H2.1-H2.4 : regex texte
         if pdf_type == 2:
-            refs = _from_toc_reverse(pdf)
+            refs_regex = _from_toc_reverse(pdf)
         else:
-            refs = _from_toc(pdf)
-        if refs:
-            logger.info("H2.1-H2.4 (text regex): %d tables detected", len(refs))
-            _assign_sections(pdf_path, pdf, refs, pdf_type)
+            refs_regex = _from_toc(pdf)
+
+        # Fusionner : H2.0 (annotations) + H2.1-H2.4 (regex)
+        seen = set()
+        merged = []
+        for r in refs_h20 + refs_regex:
+            if r.table_id not in seen:
+                seen.add(r.table_id)
+                merged.append(r)
+        refs = merged
+
+        logger.info(
+            "H2.0 + H2.1-H2.4: %d tables (%d from annotations, %d from regex)",
+            len(refs), len(refs_h20), len(refs_regex)
+        )
+
+        # H2.5 : inline scan pour completer les tables manquantes
+        inline_refs = _from_inline_scan(pdf)
+        if inline_refs:
+            existing_ids = {r.table_id for r in refs}
+            added = 0
+            for r in inline_refs:
+                if r.table_id not in existing_ids:
+                    refs.append(r)
+                    existing_ids.add(r.table_id)
+                    added += 1
+            if added:
+                logger.info(
+                    " + inline scan: %d additional tables detected",
+                    added
+                )
+                refs.sort(key=lambda r: r.page)
+            else:
+                logger.info(" + inline scan: no new tables (inline scan already covered by TOC)")
+
+        if not refs:
+            logger.info("No tables detected at all")
             return refs
 
-        # Tentative 3 : H2.5 inline scan
-        logger.info("No TOC found, scanning pages for inline captions")
-        refs = _from_inline_scan(pdf)
-        logger.info("H2.5 (inline scan): %d tables detected", len(refs))
         _assign_sections(pdf_path, pdf, refs, pdf_type)
         return refs
     finally:

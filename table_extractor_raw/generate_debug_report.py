@@ -83,6 +83,8 @@ def main():
                 "failed": summary.get("failed", 0),
                 "errors": summary.get("errors", []),
                 "worst_tables": worst_raw,
+                "dedup_rows_removed": summary.get("dedup_rows_removed", 0),
+                "dedup_notes_removed": summary.get("dedup_notes_removed", 0),
             }
             family_map[family].append(entry)
 
@@ -103,6 +105,8 @@ def main():
     total_low = sum(e["low"] for e in all_datasheets)
     total_failed = sum(e["failed"] for e in all_datasheets)
     total_errors = sum(len(e["errors"]) for e in all_datasheets)
+    total_dedup_rows = sum(e.get("dedup_rows_removed", 0) for e in all_datasheets)
+    total_dedup_notes = sum(e.get("dedup_notes_removed", 0) for e in all_datasheets)
 
     # All worst tables across all datasheets
     all_worst = []
@@ -130,6 +134,8 @@ def main():
             "errors": total_errors,
             "extraction_rate_pct": round(total_extracted / total_found * 100, 2) if total_found else 0,
             "high_rate_pct": round(total_high / total_found * 100, 2) if total_found else 0,
+            "dedup_rows_removed": total_dedup_rows,
+            "dedup_notes_removed": total_dedup_notes,
         },
         "global_worst_tables_count": len(all_worst),
         "global_worst_tables": all_worst,
@@ -145,6 +151,8 @@ def main():
         f_medium = sum(e["medium"] for e in entries)
         f_low = sum(e["low"] for e in entries)
         f_failed = sum(e["failed"] for e in entries)
+        f_dedup_rows = sum(e.get("dedup_rows_removed", 0) for e in entries)
+        f_dedup_notes = sum(e.get("dedup_notes_removed", 0) for e in entries)
         f_worst = [w for e in entries for w in e["worst_tables"]]
         global_report["by_family"][fam] = {
             "datasheets": len(entries),
@@ -154,6 +162,8 @@ def main():
             "medium": f_medium,
             "low": f_low,
             "failed": f_failed,
+            "dedup_rows_removed": f_dedup_rows,
+            "dedup_notes_removed": f_dedup_notes,
             "worst_tables_count": len(f_worst),
             "worst_tables": sorted(f_worst, key=lambda x: x.get("empty_cell_ratio", 0), reverse=True),
         }
@@ -189,8 +199,25 @@ def main():
     _w(f"  Errors:         {g['errors']}")
     _w(f"  Extraction rate: {g['extraction_rate_pct']}%")
     _w(f"  High rate:       {g['high_rate_pct']}%")
+    _w(f"  Dedup rows:      {g['dedup_rows_removed']}")
+    _w(f"  Dedup notes:     {g['dedup_notes_removed']}")
     _w(f"  Worst tables:    {global_report['global_worst_tables_count']}")
     _w("")
+
+    # Dedup summary
+    has_dedup = [e for e in all_datasheets if e.get("dedup_rows_removed", 0) > 0 or e.get("dedup_notes_removed", 0) > 0]
+    if has_dedup:
+        _w("── DEDUP SUMMARY ─────────────────────────────────────────────")
+        _w(f"  Datasheets with dedup: {len(has_dedup)}")
+        _w(f"  Total rows removed:    {g['dedup_rows_removed']}")
+        _w(f"  Total notes removed:   {g['dedup_notes_removed']}")
+        _w("")
+        for e in sorted(has_dedup, key=lambda x: x.get("dedup_rows_removed", 0) + x.get("dedup_notes_removed", 0), reverse=True):
+            dr = e.get("dedup_rows_removed", 0)
+            dn = e.get("dedup_notes_removed", 0)
+            if dr + dn > 0:
+                _w(f"  {e['family']:<10} {e['pdf_name']:<30} rows={dr:>4d}  notes={dn:>4d}")
+        _w("")
 
     # Global worst tables (top 50)
     if all_worst:
@@ -222,6 +249,7 @@ def main():
         _w(f"  FAMILY: {fam}")
         _w(f"    Datasheets: {f['datasheets']}  found={f['tables_found']}  extracted={f['tables_extracted']}")
         _w(f"    high={f['high']}  medium={f['medium']}  low={f['low']}  failed={f['failed']}")
+        _w(f"    dedup: rows={f['dedup_rows_removed']}  notes={f['dedup_notes_removed']}")
         _w(f"    worst_tables: {f['worst_tables_count']}")
         for w in f["worst_tables"][:10]:
             _w(f"      [{w.get('table_id','')}] {_short_caption(w.get('caption',''), 60)}")
@@ -235,11 +263,13 @@ def main():
     # Per-datasheet one-liner
     _w("── BY DATASHEET ───────────────────────────────────────────────")
     _w("")
-    _w(f"  {'FAMILY':<10} {'PDF':<30} {'Fd':>4} {'Ext':>4} {'H':>4} {'M':>4} {'L':>4} {'F':>4} {'Worst':>5}")
-    _w("  " + "-" * 75)
+    _w(f"  {'FAMILY':<10} {'PDF':<30} {'Fd':>4} {'Ext':>4} {'H':>4} {'M':>4} {'L':>4} {'F':>4} {'Dr':>4} {'Dn':>4} {'Worst':>5}")
+    _w("  " + "-" * 85)
     for e in sorted(all_datasheets, key=lambda x: (x["family"], x["pdf_name"])):
         n_worst = len(e["worst_tables"])
-        _w(f"  {e['family']:<10} {e['pdf_name']:<30} {e['tables_found']:>4d} {e['tables_extracted']:>4d} {e['high']:>4d} {e['medium']:>4d} {e['low']:>4d} {e['failed']:>4d} {n_worst:>5d}")
+        dr = e.get("dedup_rows_removed", 0)
+        dn = e.get("dedup_notes_removed", 0)
+        _w(f"  {e['family']:<10} {e['pdf_name']:<30} {e['tables_found']:>4d} {e['tables_extracted']:>4d} {e['high']:>4d} {e['medium']:>4d} {e['low']:>4d} {e['failed']:>4d} {dr:>4d} {dn:>4d} {n_worst:>5d}")
     _w("")
 
     # Datasheets with failed/errors

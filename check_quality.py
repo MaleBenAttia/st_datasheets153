@@ -26,6 +26,9 @@ for json_file in sorted(out_dir.rglob("*.json")):
     # Ignorer les fichiers internes (_all_tables.json, _run_report.json, etc.)
     if json_file.name.startswith("_"):
         continue
+    # Ignorer features.json (métadonnées, pas une table)
+    if json_file.name == "features.json":
+        continue
     try:
         data = json.loads(json_file.read_text(encoding="utf-8"))
         meta = data.get("datasheet_metaData", {})
@@ -36,6 +39,10 @@ for json_file in sorted(out_dir.rglob("*.json")):
         cont  = meta.get("is_continued", False)
         rows  = meta.get("rows_count", 0)
 
+        # Ignorer ordering_information (données dans structured_json, pas dans rows)
+        if "non_table:ordering_information" in data.get("warnings", []):
+            stats["ordering_info"] = stats.get("ordering_info", 0) + 1
+            continue
         if cont:
             stats["continued"] += 1
         if conf == "medium":
@@ -60,6 +67,7 @@ print(f"  is_continued  : {stats['continued']}")
 print(f"  confidence=medium : {stats['medium']}")
 print(f"  confidence=low    : {stats['low']}")
 print(f"  rows=0 (vides)    : {stats['empty']}")
+print(f"  ordering_info     : {stats.get('ordering_info', 0)}")
 print(f"\n=== PROBLÈMES DÉTECTÉS ({len(problems)}) ===")
 for p in problems:
     print(" ", p)

@@ -1,0 +1,130 @@
+{
+  "table_id": "table_133",
+  "document": "DS13086 Rev 10 - Table 133. Asynchronous multiplexed PSRAM/NOR read-NWAIT timings",
+  "rev": "Rev 10",
+  "table_number": "133",
+  "title": "Table 133. Asynchronous multiplexed PSRAM/NOR read-NWAIT timings",
+  "page": 280,
+  "section": "5.3.33 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u585ai.pdf#page=280",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u585ai.pdf",
+  "text_helper": "Table 133. Asynchronous multiplexed PSRAM/NOR read-NWAIT timings — section 5.3.33 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t v(NOE_NE)",
+        "FMC_NEx low to FMC_NOE low",
+        "0",
+        "5",
+        "ns"
+      ],
+      [
+        "t w(NOE)",
+        "FMC_NOE low time",
+        "2 × t - 0.5 HCLK",
+        "2 × t + 0.5 HCLK",
+        "ns"
+      ],
+      [
+        "t h(NE_NOE)",
+        "FMC_NOE high to FMC_NE high hold time",
+        "t HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(A_NE)",
+        "FMC_NEx low to FMC_A valid",
+        "-",
+        "1.5",
+        "ns"
+      ],
+      [
+        "t v(NADV_NE)",
+        "FMC_NEx low to FMC_NADV low",
+        "0",
+        "1.5",
+        "ns"
+      ],
+      [
+        "t h(AD_NADV)",
+        "FMC_AD(address) valid hold time after FMC_NADV high)",
+        "t - 4 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(A_NOE)",
+        "Address hold time after FMC_NOE high",
+        "t - 1 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(Data_NE)",
+        "Data to FMC_NEx high setup time",
+        "t + 15 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t su(Data_NOE)",
+        "Data to FMC_NOE high setup time",
+        "15",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(Data_NE)",
+        "Data hold time after FMC_NEx high",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(Data_NOE)",
+        "Data hold time after FMC_NOE high",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t w(NOE)",
+        "FMC_NOE low time",
+        "7 × t - 1 HCLK",
+        "7 × t + 1 HCLK",
+        "ns"
+      ],
+      [
+        "t su(NWAIT_NE)",
+        "FMC_NWAIT(2) valid before FMC_NEx high",
+        "4 × t + 9.5 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(NE_NWAIT)",
+        "FMC_NEx hold time after FMC_NWAIT invalid",
+        "3 × t + 10 HCLK",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "2. NWAIT pulse is equal to one HCLK cycle. 280/350 DS13086 Rev 10"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

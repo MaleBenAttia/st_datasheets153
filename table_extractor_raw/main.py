@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 import json
 import logging
+import re
 import sys
 import io
 import os
@@ -89,7 +90,6 @@ def _fix_missing_dashes(table: dict) -> dict:
 def detect_pdf_type(pdf_path: str) -> int:
     """Détecte le type de PDF : 1 = Acrobat, 2 = Antenna House (XML)."""
     try:
-        import pdfplumber
         with pdfplumber.open(pdf_path) as pdf:
             producer = (pdf.metadata or {}).get("Producer", "")
         return 2 if "antenna" in producer.lower() else 1
@@ -107,6 +107,101 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger("main")
+
+
+def _row_content_matches(a: list, b: list, min_compare: int = 2) -> bool:
+    """True si toutes les cellules du row le plus court sont une sous-séquence du plus long (≥ min_compare cellules)."""
+    shorter, longer = (a, b) if len(a) <= len(b) else (b, a)
+    if len(shorter) < min_compare:
+        return False
+    i = 0
+    for cell in longer:
+        if i < len(shorter) and cell == shorter[i]:
+            i += 1
+    return i == len(shorter)
+
+
+def _deduplicate_table_boundaries(all_tables: list[dict], out_dir: Path) -> int:
+    """
+    Supprime les rows et _notes de table N qui existent aussi dans N+1 ou N+2.
+    - rows: match exact (même nombre cols) ou sous-séquence (cols différentes)
+    - _notes: match exact (liste identique), supprime de N si trouvé dans N+1/N+2
+    Met à jour datasheet_metaData et ré-écrit les JSONs modifiés.
+    """
+    sorted_tables = sorted(
+        all_tables,
+        key=lambda t: int(re.findall(r'\d+', t.get("table_id", "0"))[0])
+    )
+    removed_rows = 0
+    cleared_notes = 0
+    modified_ids: set[str] = set()
+
+    for i in range(len(sorted_tables)):
+        cur = sorted_tables[i]
+
+        # ── Row dedup ────────────────────────────────────────────────────
+        cur_rows = cur.get("rows", [])
+        if cur_rows:
+            next_rows: list[list] = []
+            for j in range(1, 3):
+                if i + j < len(sorted_tables):
+                    next_rows.extend(sorted_tables[i + j].get("rows", []))
+            if next_rows:
+                next_set = {json.dumps(row, ensure_ascii=False) for row in next_rows}
+                before = len(cur_rows)
+                def _is_dup(row):
+                    row_j = json.dumps(row, ensure_ascii=False)
+                    if row_j in next_set:
+                        return True
+                    if len(row) < 2:
+                        return False
+                    for nxt in next_rows:
+                        if _row_content_matches(row, nxt):
+                            return True
+                    return False
+                cur["rows"] = [row for row in cur_rows if not _is_dup(row)]
+                if before != len(cur["rows"]):
+                    n_removed = before - len(cur["rows"])
+                    removed_rows += n_removed
+                    modified_ids.add(cur["table_id"])
+                    cur.setdefault("heuristics", {})["_dedup_rows_removed"] = n_removed
+
+        # ── Notes dedup ──────────────────────────────────────────────────
+        cur_notes = cur.get("heuristics", {}).get("_notes")
+        if cur_notes:
+            for j in range(1, 3):
+                if i + j < len(sorted_tables):
+                    nxt = sorted_tables[i + j]
+                    nxt_notes = nxt.get("heuristics", {}).get("_notes")
+                    if nxt_notes and cur_notes == nxt_notes:
+                        n_notes = len(cur_notes)
+                        del cur["heuristics"]["_notes"]
+                        cleared_notes += n_notes
+                        modified_ids.add(cur["table_id"])
+                        cur["heuristics"]["_dedup_notes_removed"] = n_notes
+                        break
+
+    total = removed_rows + cleared_notes
+    if total > 0:
+        parts = []
+        if removed_rows:
+            parts.append(f"{removed_rows} duplicate rows")
+        if cleared_notes:
+            parts.append(f"{cleared_notes} duplicated notes entries")
+        logger.info(f"  [dedup] removed {' and '.join(parts)} across table boundaries")
+        for table_json in all_tables:
+            tid = table_json["table_id"]
+            if tid not in modified_ids:
+                continue
+            new_count = len(table_json["rows"])
+            if new_count != table_json["datasheet_metaData"]["rows_count"]:
+                table_json["datasheet_metaData"]["rows_count"] = new_count
+            out_file = out_dir / f"{tid}.json"
+            out_file.write_text(
+                json.dumps(table_json, ensure_ascii=False, indent=2),
+                encoding="utf-8"
+            )
+    return removed_rows, cleared_notes
 
 
 def process_pdf(pdf_path: Path, family: str, table_ids: list[int] | None = None) -> dict:
@@ -306,6 +401,11 @@ def process_pdf(pdf_path: Path, family: str, table_ids: list[int] | None = None)
             logger.error(f"  ✗ {ref.table_id}: {e}", exc_info=True)
             summary["errors"].append(f"{ref.table_id}:{e}")
             summary["failed"] += 1
+
+    # ── [Dedup] Suppression des rows dupliquées entre tables adjacentes ────────
+    dedup_rows, dedup_notes = _deduplicate_table_boundaries(all_tables_json, out_dir)
+    summary["dedup_rows_removed"] = dedup_rows
+    summary["dedup_notes_removed"] = dedup_notes
 
     # ── Sauvegarde du fichier global _all_tables.json ──────────────────────────
     # Construire le contenu avec features en premier

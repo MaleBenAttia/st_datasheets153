@@ -61,18 +61,7 @@ DMA_RE = re.compile(r'(?:(\d+)\s*-?\s*(?:channel|channels)\s+(?:DMA|LPDMA)|(?:DM
 # Part number fallback: used when pdfplumber table extraction fails
 PART_RE = re.compile(r'STM32[A-Z0-9]{6,}')
 
-# Line-by-line regexes (currently unused in output, kept for potential re-enable)
-TIMER_LINE_RE = re.compile(r'(?:(\d+)\s*[x×]\s+\d+-bit\s+timers?|(?:Up\s+to\s+)?(\d+)\s*timers?\b)', re.IGNORECASE)
-ADC_LINE_RE = re.compile(r'(?:\d+\s*-?\s*bits?.*ADC|\d+-bit.*ADC|ADC.*\d+\s*-?\s*bits?)', re.IGNORECASE)
-COMM_INTF_RE = re.compile(
-    r'(?:\d+\s*[x×]?\s*)?(?:Up\s+to\s+\d+\s*[x×]?\s*)?'
-    r'(I2C|USART|UART|(?<!X)SPI(?!M)|FDCAN|CAN\b|USB|\bSAI\b|SDMMC|SDIO|Ethernet|ETH|I3C|LPUART)',
-    re.IGNORECASE
-)
-SECURITY_KW_RE = re.compile(
-    r'(SESIP|PSA\s+Level|secure\s+boot|tamper|HASH|RNG|TrustZone|OTP|antitamper|DPA)',
-    re.IGNORECASE
-)
+# (TIMER_LINE_RE, ADC_LINE_RE, COMM_INTF_RE, SECURITY_KW_RE supprimés — inutilisés)
 
 MAX_SCAN_PAGES = 10
 

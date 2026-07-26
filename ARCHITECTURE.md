@@ -28,13 +28,25 @@ DataSHEET/<family>/<pdf>.pdf
 └──────────────────────────────────────────────────────────────┘
         │
         ▼  écrit 1 JSON/table + _all_tables.json + _run_report.json
-   outJason/<family>/<pdf_name>/...
-        │
-        ▼  generate_rag_for_pdf()  rag_transformer.py  (auto dans main.py)
-   RagJason/<family>/<pdf_name>.json   ← array de {id, document, metadata}
-        │
-        ▼  monitoring (optionnel)
-   global_extraction_stats.json  (aggregate_stats.py)
+    outJason/<family>/<pdf_name>/...
+         │
+         ▼  Post-processing : dédup inter-table dans main.py
+    _deduplicate_table_boundaries(all_tables_json, out_dir)
+      → rows matchés exact + sous-séquence (cols différentes)
+      → _notes identiques N vs N+1/N+2 supprimées
+      → re-écriture des JSONs modifiés + datasheet_metaData.rows_count
+         │
+         ▼  build_rag_selective.py  (appelé dans main.py)
+    Rag_selective/<family>/<pdf_name>/...
+      → 1 fichier par table {doc_ref}_{revision}_{table_id}.json
+      → features.json (features + features_content)
+      → _all_tables.json (features position 0 + tables)
+         │
+         ▼  generate_rag_for_pdf()  rag_transformer.py  (auto dans main.py)
+    RagJason/<family>/<pdf_name>.json   ← array de {id, document, metadata}
+         │
+         ▼  monitoring (optionnel)
+    global_extraction_stats.json  (aggregate_stats.py)
 ```
 
 ---
@@ -375,6 +387,9 @@ Ordre d'appel interne (les "Fix") :
 | 25 | Fix 19 | Filtre footnote `(N)` post-merge | `:1319` | Supprime toute ligne dont la 1ère cellule est exactement `(1)`, `(2)`, etc. (notes de bas de tableau non capturées par les autres filtres) |
 | 26 | Fix 20 | `_is_likely_reversed()` + `_fix_reversed_cells()` | `:1692` + `:1812` | Correction texte inversé basée sur **dérive de casse** (uppercase drift). `drift < -0.5` et `rev_init > clean_init` capturent les textes retournés verticalement. Guards explicites pour acronymes `SRAM (Kbytes)`, plages tension `2.7 V - 3.6 V`, bit-width `12-bit ADC channels`. `_reversed_debug.json` logue toutes les cellules >=5 car. avec drift, raison et correction. |
 | 27 | Fix 21 | `extract_footnotes_from_pages()` + `extract_legend_from_page()` + `extract_notes_type1()` | `:2211` + `:2267` + `:2383` | Extraction notes `(N)` depuis texte de page et légendes entre caption/headers. Stocké dans `heuristics._notes` / `heuristics._legend`. **Type 1 + Type 2** (page_text_cache construit pour tous les types). Type 1 Pattern B : `extract_notes_type1()` détecte "Notes:" heading + lignes numérotées dans le texte de page. 3 filtres anti-faux-positifs pour légendes. |
+| 28 | Fix BF6 | `_merge_identical_adjacent_columns` avant continuation | `:1407` | Appel de `_merge_identical_adjacent_columns` AVANT `find_continuations()` pour que la recherche continuation utilise un header sans doublon. Sans ceci, colonnes "Conditions" dupliquées perturbaient la détection de continuation. |
+| 29 | Fix BF7 | Suppression guard `cols ≤ 10` | `:2402` | Le guard `if cols <= 10: return headers, rows` dans `_merge_identical_adjacent_columns` empêchait la fusion des colonnes dupliquées dans les tables ≤10 colonnes. Supprimé — la fusion s'applique maintenant à toutes les tailles. |
+| 30 | Fix BF8 | Continuation — colonne None + skip duplicate | `continuation.py:642+` | Quand `col_count > expected_col_count` (colonne `None` insérée par spanning), `target_cols` est recadré à `expected_col_count`. Lignes de continuation avec 1ère cellule identique à la précédente + autres vides → ignorées (doublons). |
 
 ### `_extract_from_page()` — `grid_extractor.py:950-995`
 
@@ -407,6 +422,13 @@ return None, None, "pdfplumber", None
 ### `_find_caption_y()` — `grid_extractor.py:124-157`
 
 Localise la légende d'une table sur la page en cherchant une séquence de mots consécutifs. Ignore la ponctuation ET les notes de bas de page entre parenthèses `(n)` via `split("(")[0]`, permettant de matcher `"TIMx(1)"` avec `"TIMx"`.
+
+**Seuil de matching :** `min(2, len(caption_words))` — on accepte 2 mots
+trouvés même si la légende en contient 7. Ce seuil bas tolère les mots
+scindés par le moteur PDF (ex: `"Current"` → `"C"` + `"urrent"` dans deux
+zones de texte distinctes) tout en restant discriminant (2 mots difficiles
+à obtenir par hasard). La contrainte `min_y = page * 0.25` a été
+définitivement abandonnée car elle bloquait les légendes en haut de page.
 
 ### Filtrage des lignes par légende — `grid_extractor.py:900-919`
 
@@ -516,10 +538,48 @@ MAX_CONT_COL_DRIFT = 200  # augmenté de 60→200 pour tolérer les
 |------|----------|-----------|
 | 2026-07-23 | **Table 2 C0** : continuation page 11 non détectée — lignes de bordure manquantes → pdfplumber 8 colonnes au lieu de 12 → `col_count < expected - 2 = 10` → rejet | `expected - 2` → `expected - 4`, drift ignoré si `(continued)` présent, 3 stratégies (lines → text → text_grid) |
 | 2026-07-23 | **Drift 76px** rejette continuation entre lines (page 10) et text (page 11) | `has_title` flag → skip drift check, `MAX_CONT_COL_DRIFT` 60→200 |
+| 2026-07-26 | **Colonne None en trop** : spanning crée une colonne supplémentaire `None` dans les données continuation | `target_cols = min(col_count, expected_col_count)` — la colonne `None` est ignorée |
+| 2026-07-26 | **Lignes vides dupliquées** : la page de continuation répète la 1ère ligne de données (même 1ère cellule, autres vides/identiques) | Skip avant insertion : si 1ère cellule == ligne précédente ET au moins une cellule vide → ignorer |
+| 2026-07-26 | **C5/table_65 headers dupliqués** : `_merge_identical_adjacent_columns` bloqué par guard `cols ≤ 10` | Guard supprimé + fonction déplacée AVANT `find_continuations()` pour header propre dès la recherche |
 
 ---
 
-## 6. Schéma de données
+## 6. Post-processing — Dedup inter-table
+
+### `_deduplicate_table_boundaries()` — `main.py:124`
+
+Appelé **après** l'extraction de toutes les tables du PDF (dans `process_pdf()`),
+juste avant l'écriture de `_all_tables.json`. Supprime les lignes et notes de
+la table N qui existent aussi dans N+1 ou N+2.
+
+**Quand la continuation échoue :** le détecteur `find_continuations()` ne peut
+pas fusionner une table quand une page contient un titre de table intermédiaire
+(ex: page 88 a `"Table 51"` en haut + données `Table 50` en bas). Dans ce cas,
+2 tables distinctes partagent des lignes de données redondantes et des notes
+identiques. Ce post-processing nettoie la redondance.
+
+### `_row_content_matches(a, b, min_compare=2)` — `main.py:113`
+
+Match par sous-séquence quand le nombre de colonnes diffère entre la table N
+et N+1/N+2. Toutes les cellules du row le plus court doivent apparaître dans
+le plus long, dans le même ordre, avec ≥ `min_compare` cellules.
+
+### Algorithme complet
+
+```
+Pour chaque table N (triée par table_id) :
+  1. Concaténer les rows de N+1 et N+2 → next_rows
+  2. Match exact (json.dumps) : si un row de N est dans next_rows → supprimer
+  3. Match sous-séquence : si cols différents + _row_content_matches → supprimer
+  4. Notes : si `_notes` de N == `_notes` de N+1 ou N+2 → supprimer les notes de N
+  5. Si modifications : re-écrire le JSON + mettre à jour datasheet_metaData.rows_count
+```
+
+**Résultat C5 :** 354 rows + 263 notes dédupliqués (6 PDFs). Aucune régression.
+
+---
+
+## 7. Schéma de données
 
 ### `RawTable` (Pydantic `BaseModel`) — `schema.py:10-36`
 
@@ -559,7 +619,7 @@ warnings: list[str]              # ["vertical_merge_suspected"]
 
 ---
 
-## 7. Glyphes & Qualité
+## 8. Glyphes & Qualité
 
 ### `glyph_fixer.py`
 
@@ -605,7 +665,7 @@ GLYPH_MAP = {
 
 ---
 
-## 8. Étape RAG (`rag_transformer.py`)
+## 9. Étape RAG (`rag_transformer.py`)
 
 ### Catégorisation — `get_category(caption)` (`:52-67`)
 
@@ -678,7 +738,7 @@ Appelé depuis `main.py:185` : `generate_rag_for_pdf(all_tables_json, family, pd
 
 ---
 
-## 9. Config — `config.py`
+## 10. Config — `config.py`
 
 ```python
 OUTPUT_DIR = ROOT.parent / "outJason"
@@ -716,7 +776,7 @@ Settings fallback identiques mais avec `strategy="text"` (pas de détection de l
 
 ---
 
-## 10. Layout des sorties
+## 11. Layout des sorties
 
 ### `outJason/` — un dossier par datasheet
 
@@ -846,7 +906,7 @@ les métadonnées features en tête : `references`, `package`, `family`, `core`,
 
 ---
 
-## 11. Scripts annexes
+## 12. Scripts annexes
 
 | Script | Rôle |
 |---|---|
@@ -858,13 +918,13 @@ les métadonnées features en tête : `references`, `package`, `family`, `core`,
 
 ---
 
-## 12. Référence rapide (`file:line`)
+## 13. Référence rapide (`file:line`)
 
 | Concern | Fichier | Ligne |
 |---|---|---|---|---|---|
 | CLI group (`--pdf`, `--family`, `--all`) | `main.py` | `:224-227` |
 | `detect_pdf_type()` | `main.py` | `:55` |
-| `process_pdf()` | `main.py` | `:78-216` |
+| `process_pdf()` | `main.py` | `:204-496` |
 | Appel RAG automatique | `main.py` | `:182-190` |
 | `TableRef` dataclass | `toc_detector.py` | `:120-126` |
 | `detect_tables()` dispatch H2.0→H2.1→H2.5 | `toc_detector.py` | `:128-150` |
@@ -903,6 +963,9 @@ les métadonnées features en tête : `references`, `package`, `family`, `core`,
 | Fix 18 (extension `_remove_bleed_rows_bottom`) | `grid_extractor.py` | `:1491-1494` |
 | Fix 19 (filtre footnote `(N)` post-merge) | `grid_extractor.py` | `:1355-1366` |
 | Fix 20 (`_apply_rotated_fix` + `_is_likely_reversed` + `_fix_reversed_cells`) | `grid_extractor.py` | `:1876` + `:1543` + `:1621` |
+| Fix 22 (`_deduplicate_table_boundaries`) | `main.py` | `:124` |
+| Fix 22 (`_row_content_matches`) | `main.py` | `:113` |
+| Appel dedup dans process_pdf | `main.py` | `:402` |
 | `extract_ordering_info()` | `ordering.py` | `:66-221` |
 | Caption row filter (toutes méthodes) | `grid_extractor.py` | `:935-955` |
 | `_fill_horizontal()` | `grid_extractor.py` | `:268-280` |

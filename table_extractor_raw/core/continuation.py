@@ -137,7 +137,12 @@ def _pick_best_continuation(
         col_count = max(len(r) for r in table_data) if table_data else 0
         col_diff = abs(col_count - expected_col_count)
         if method == "lines" and col_diff <= 4:
-            rank = 0
+            if len(table_data) <= 1 and any(
+                c[2] != "lines" and len(c[0]) > 1 for c in candidates
+            ):
+                rank = 3
+            else:
+                rank = 0
         else:
             rank = _METHOD_RANK.get(method, 9)
         scored.append((rank, col_diff, -len(table_data), table_data, top_ft, method, cont_x0s))
@@ -176,7 +181,18 @@ def _headers_differ(
     if len(union) < 2:
         return False
     dissimilarity = 1.0 - len(intersection) / len(union)
-    return dissimilarity > threshold
+    if dissimilarity <= threshold:
+        return False
+    # Fallback : préfixe/substring — si chaque header de continuation
+    # est contenu dans un header base, les tables sont structurellement
+    # identiques malgré les abréviations (ex: "AF0" vs "AF0 / SYS_AF").
+    if cont_norm and base_norm:
+        cont_clean = {c for c in cont_norm if c.strip()}
+        base_clean = {b for b in base_norm if b.strip()}
+        matches = sum(1 for ch in cont_clean if any(ch in bh or bh in ch for bh in base_clean))
+        ratio = matches / max(len(cont_clean), 1)
+        return ratio < 0.5
+    return True
 
 
 def _is_continuation_page(
@@ -239,6 +255,12 @@ def _is_continuation_page(
         if text_grid:
             good.append((text_grid, None, "text_grid", None))
 
+    # Essai 4 : fallback texte-grille même sans "(continued)"
+    if not good and len(words) > 10:
+        text_grid = _build_text_grid(words, page, current_table_num)
+        if text_grid:
+            good.append((text_grid, None, "text_grid", None))
+
     if not good:
         return False, None, None, None, has_continued_title
 
@@ -270,16 +292,26 @@ def _is_continuation_page(
         return False, None, None, None, False
 
     for w in words:
-        if "Table" in w["text"] and top_ft.bbox[1] - 50 < w["top"] < top_ft.bbox[1]:
+        if "Table" in w["text"] and w["top"] < top_ft.bbox[1]:
             line_words = [ow for ow in words if abs(ow["top"] - w["top"]) < 3]
+            line_x0s = [ow["x0"] for ow in line_words]
+            # Ignorer les cross-references : "Table N" au milieu d'une phrase
+            # (mot précédé d'autres mots sur la même ligne, x0 > min de la ligne)
+            min_x0 = min(line_x0s)
+            if w["x0"] > min_x0 + 3:
+                continue
             line_text = " ".join(ow["text"] for ow in line_words).lower()
             if current_table_num and f"table {current_table_num}" in line_text:
-                pass
-            else:
-                logger.info(
-                    f"  page {page.page_number}: found \"{line_text.strip()}\" near table, "
-                    f"allowing header-check pass-through"
-                )
+                pass  # table courante trouvée → continuer
+            elif current_table_num:
+                nums = re.findall(r'table\s*(\d+)', line_text)
+                if nums and nums[0] != current_table_num:
+                    logger.info(
+                        f"  page {page.page_number}: found \"{line_text.strip()}\" "
+                        f"(table {nums[0]} != current {current_table_num}), "
+                        f"will truncate downstream"
+                    )
+                    continue
 
     col_count = max(len(r) for r in table_data) if table_data else 0
     if abs(col_count - expected_col_count) > 2:
@@ -304,7 +336,14 @@ def _is_continuation_page(
     # Si la page N+1 a un en-tête différent de la table de base, c'est que
     # la table trouvée n'est pas la continuation mais une table différente.
     if base_header and table_data:
-        if _headers_differ(table_data[0], base_header):
+        from core.grid_extractor import _is_likely_reversed
+        header_row = table_data[0]
+        if header_row:
+            header_row = [
+                str(c)[::-1] if c and _is_likely_reversed(str(c)) else str(c)
+                for c in header_row
+            ]
+        if _headers_differ(header_row, base_header):
             logger.info(
                 f"  page {page.page_number}: header mismatch with base table, "
                 f"rejecting continuation"
@@ -492,28 +531,42 @@ def find_continuations(
     current_page = start_page_num + 1
 
     # Trouver la prochaine légende de table différente (limite de scan)
-    next_refs = [r for r in all_refs if r.page >= current_page and r.table_id != current_table_id]
+    # Inclure les tables sur la même page que la table courante pour éviter
+    # de continuer au-delà d'une table distincte (ex: Table 27 + Table 28 page 69).
+    next_refs = [r for r in all_refs if r.page > start_page_num and r.table_id != current_table_id]
     next_ref = min(next_refs, key=lambda r: r.page) if next_refs else None
     next_table_page = next_ref.page if next_ref else float('inf')
 
-    # Si d'autres tables partagent la même page ET la table courante ne remplit
-    # pas la page (bbox bas < 85% de la hauteur), ignorer la continuation.
-    if base_bbox_bottom is not None:
-        same_page_others = [r for r in all_refs if r.page == start_page_num and r.table_id != current_table_id]
-        if same_page_others:
-            page_height = pdf.pages[start_page_num - 1].height
-            fill_threshold = page_height * 0.85
-            if base_bbox_bottom < fill_threshold:
-                logger.info(
-                    f"  table {current_table_id} ends at y={base_bbox_bottom:.0f} "
-                    f"(threshold={fill_threshold:.0f}), other tables on same page, skipping continuation"
-                )
-                return merged_pages, [], expected_col_count, []
-
+    cont_header_rows: list[list[str]] = []
     while current_page <= len(pdf.pages) and len(merged_pages) < max_pages:
         # Ne pas dépasser la page de la table suivante
         if current_page > next_table_page:
             break
+
+        # Vérifier si une table différente commence en haut de page
+        # (ex: page 91 a "Table 66" en haut → skip, page 88 a "Table 51"
+        # en bas après les données continuation → accept)
+        # Type 2 : pas de marqueur (continued), on laisse _is_continuation_page
+        # décider via la structure des colonnes.
+        if pdf_type != 2:
+            cur_nums = re.findall(r'\d+', current_table_id)
+            cur_num_str = cur_nums[0] if cur_nums else ""
+            if cur_num_str:
+                pg = pdf.pages[current_page - 1]
+                words = pg.extract_words()
+                top30 = sorted(words, key=lambda w: w["top"])[:30]
+                top_text = " ".join(w["text"] for w in top30).lower()
+                if _CONTINUED_RE.search(top_text) and f"table {cur_num_str}" in top_text:
+                    pass  # "(continued)" présent → accepter
+                else:
+                    all_in_top = re.findall(r'table\s*(\d+)', top_text)
+                    top_nums = set(all_in_top)
+                    if top_nums and cur_num_str not in top_nums:
+                        logger.info(
+                            f"  -> page {current_page}: different table(s) {top_nums} at top "
+                            f"(no Table {cur_num_str}), skipping continuation"
+                        )
+                        break
 
         is_cont, table_data, cont_x0s, top_ft, has_title = _is_continuation_page(
             pdf.pages[current_page - 1], expected_col_count, current_table_id,
@@ -563,6 +616,7 @@ def find_continuations(
 
         # ── Supprimer l'en-tête répété ────────────────────────────────────────
         if len(table_data) > 0:
+            cont_header_rows.append([str(c) for c in table_data[0]])
             row0_cell0 = str(table_data[0][0] or "").strip()
             if row0_cell0 and first_cell_text and row0_cell0 == first_cell_text:
                 skip = 0
@@ -583,17 +637,103 @@ def find_continuations(
             data_rows = []
 
         if data_rows:
+            # Supprimer les lignes parasites : même 1ère cellule que la ligne
+            # précédente ET toutes les autres cellules vides/identiques.
+            cleaned = []
             for row in data_rows:
-                max_cont_cols = max(max_cont_cols, len(row))
-            all_data_rows.extend(data_rows)
+                if cleaned and row and cleaned[-1] and row[0] == cleaned[-1][0]:
+                    is_dup = True
+                    for j in range(1, len(row)):
+                        if j < len(cleaned[-1]) and str(row[j] or "").strip() and str(row[j] or "").strip() != str(cleaned[-1][j] or "").strip():
+                            is_dup = False
+                            break
+                    if is_dup:
+                        logger.info(f"  skipped duplicate row: {[str(c)[:20] for c in row]}")
+                        continue
+                cleaned.append(row)
+            data_rows = cleaned
+
+            # Tronquer dès qu'une table suivante apparaît dans les données
+            # (ex: page 91 a "Table 66. SPI characteristics" en première ligne)
+            cur_num = int(re.findall(r'\d+', current_table_id)[0]) if re.findall(r'\d+', current_table_id) else 0
+            truncated = []
+            for row in data_rows:
+                text = "".join(str(c or "") for c in row)
+                m = re.search(r'\b[Tt]able\s*(\d+)', text)
+                if m and int(m.group(1)) != cur_num:
+                    logger.info(f"  -> page {current_page}: truncating at row {len(truncated)} (Table {m.group(1)})")
+                    break
+                truncated.append(row)
+            data_rows = truncated
+
+            if data_rows:
+                for row in data_rows:
+                    max_cont_cols = max(max_cont_cols, len(row))
+                all_data_rows.extend(data_rows)
+            else:
+                merged_pages.pop()
+                logger.info(f"  -> page {current_page}: all rows truncated, removed from merged_pages")
 
         current_page += 1
 
     # ── Traiter toutes les lignes collectées avec le même target_cols ────
     target_cols = max(expected_col_count, min(max_cont_cols, expected_col_count + 1))
+    # Si la continuation a plus de colonnes que la base, vérifier si c'est dû
+    # à une colonne dupliquée dans l'en-tête continuation (ex: "Conditions"
+    # en double dans continuation mais pas dans base). Dans ce cas, utiliser
+    # expected_col_count comme cible plutôt que d'insérer une colonne vide.
+    if target_cols > expected_col_count and base_header and cont_header_rows:
+        last_cont_header = cont_header_rows[-1]
+        # Si la continuation a une colonne de plus que la base et que cette
+        # colonne supplémentaire est "None" (spanning artifact), ignorer.
+        if len(last_cont_header) == expected_col_count + 1:
+            none_positions = [i for i, c in enumerate(last_cont_header) if str(c).strip().lower() in ("none", "", "")]
+            base_without_none = list(last_cont_header)
+            for pos in sorted(none_positions, reverse=True):
+                if pos < len(base_without_none):
+                    base_without_none.pop(pos)
+            if len(base_without_none) == expected_col_count:
+                logger.info(
+                    f"  cont has {max_cont_cols} cols vs base {expected_col_count}: "
+                    f"extra None column detected, capping target to {expected_col_count}"
+                )
+                target_cols = expected_col_count
+
+    # ── [Fix B7] Alignement continuation quand base_header a des colonnes dupliquées ──
+    # Ex: base [Symbol, Symbol, Parameter,...] (8 cols) mais continuation
+    #     [Symbol, Parameter,...] (7 cols, Symbol unique). Sans ce fix,
+    #     les lignes continuation sont réduites 8→7 en droppant la mauvaise
+    #     colonne → décalage de 1 colonne vers la droite.
+    needs_dup_expand = False
+    dup_insert_positions: list[int] = []
+    if base_header and all_data_rows and target_cols <= len(all_data_rows[0]) < len(base_header):
+        dedup_base = _remove_adjacent_duplicates(base_header)
+        cont_prefix = [str(c).strip().lower() for c in all_data_rows[0][:len(dedup_base)]]
+        if dedup_base == cont_prefix:
+            needs_dup_expand = True
+            target_cols = len(base_header)
+            # Trouver les positions où base_header a un doublon adjacent
+            for i in range(1, len(base_header)):
+                if base_header[i] == base_header[i-1]:
+                    dup_insert_positions.append(i)
+            logger.info(
+                f"  continuation dup-expand: base={len(base_header)} dedup={len(dedup_base)} "
+                f"insert_positions={dup_insert_positions}"
+            )
+
     extra_rows = []
     for row in all_data_rows:
-        if len(row) < target_cols:
+        if needs_dup_expand:
+            # Étendre la ligne en dupliquant les colonnes aux positions détectées
+            for pos in sorted(dup_insert_positions, reverse=True):
+                src_idx = pos - 1  # la colonne source est celle d'avant (le doublon)
+                if src_idx < len(row):
+                    val = str(row[src_idx])
+                else:
+                    val = ""
+                row = row[:pos] + [val] + row[pos:]
+            row = row[:target_cols]
+        elif len(row) < target_cols:
             if base_col_x0s and all_col_x0s:
                 row = _expand_cont_row_by_x0s(row, target_cols, base_col_x0s, all_col_x0s[0])
             else:
