@@ -1,0 +1,53 @@
+{
+  "table_id": "table_135",
+  "document": "DS14395 Rev 4 - Table 135. Asynchronous non-multiplexed SRAM/PSRAM/NOR write-NWAIT timings",
+  "rev": "Rev 4",
+  "table_number": "135",
+  "title": "Table 135. Asynchronous non-multiplexed SRAM/PSRAM/NOR write-NWAIT timings",
+  "page": 291,
+  "section": "5.3.35 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u5f7vj.pdf#page=291",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u5f7vj.pdf",
+  "text_helper": "Table 135. Asynchronous non-multiplexed SRAM/PSRAM/NOR write-NWAIT timings — section 5.3.35 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t w(NWE)",
+        "FMC_NWE low time",
+        "6 × t - 1 HCLK",
+        "6 × t + 1 HCLK",
+        "ns"
+      ],
+      [
+        "t su(NWAIT_NE)",
+        "FMC_NWAIT(2) valid before FMC_NEx high",
+        "5 × t + 13 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(NE_NWAIT)",
+        "FMC_NEx hold time after FMC_NWAIT invalid",
+        "4 × t + 12 HCLK",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "2. NWAIT pulse is equal to one HCLK cycle."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

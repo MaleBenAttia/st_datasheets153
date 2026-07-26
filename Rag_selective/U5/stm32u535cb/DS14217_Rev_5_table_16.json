@@ -1,0 +1,50 @@
+{
+  "table_id": "table_16",
+  "document": "DS14217 Rev 5 - Table 16. Temperature sensor calibration values",
+  "rev": "Rev 5",
+  "table_number": "16",
+  "title": "Table 16. Temperature sensor calibration values",
+  "page": 60,
+  "section": "3.25.3 Temperature sensor",
+  "section_title": "Temperature sensor",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u535cb.pdf#page=60",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u535cb.pdf",
+  "text_helper": "Table 16. Temperature sensor calibration values — section 3.25.3 Temperature sensor. Calibration value name, Description, Memory address.",
+  "table_content": {
+    "headers": [
+      "Calibration value name",
+      "Description",
+      "Memory address"
+    ],
+    "rows": [
+      [
+        "TS_CAL1",
+        "Temperature sensor 14-bit raw data acquired by ADC1 at 30 °C (± 5 °C), V = V = 3.0 V (± 10 mV) DDA REF+",
+        "0x0BFA 0710 - 0x0BFA 0711"
+      ],
+      [
+        "TS_CAL2",
+        "Temperature sensor 14-bit raw data acquired by ADC1 at 130 °C (± 5 °C), V = V = 3.0 V (± 10 mV) DDA REF+",
+        "0x0BFA 0742 - 0x0BFA 0743"
+      ]
+    ],
+    "notes": [],
+    "legend": [
+      "Temperature sensor 14-bit raw data acquired by ADC1",
+      "TS_CAL1 0x0BFA 0710 - 0x0BFA 0711",
+      "at 30 °C (± 5 °C), V = V = 3.0 V (± 10 mV)",
+      "Temperature sensor 14-bit raw data acquired by ADC1",
+      "TS_CAL2 0x0BFA 0742 - 0x0BFA 0743",
+      "at 130 °C (± 5 °C), V = V = 3.0 V (± 10 mV)",
+      "The VREFINT provides a stable (bandgap) voltage output for the ADC and the comparators.",
+      "The VREFINT is internally connected to ADC1 and ADC4 input channels.",
+      "The precise voltage of VREFINT is individually measured for each part by",
+      "STMicroelectronics during production test and stored in the system memory area. It is",
+      "accessible in read-only mode."
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

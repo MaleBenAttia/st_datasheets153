@@ -1,0 +1,41 @@
+{
+  "table_id": "table_12",
+  "document": "DS13737 Rev 10 - Table 12. GPDMA1 autonomous mode and wake-up in low-power modes",
+  "rev": "Rev 10",
+  "table_number": "12",
+  "title": "Table 12. GPDMA1 autonomous mode and wake-up in low-power modes",
+  "page": 54,
+  "section": "3.18 Low-power direct memory access controller (LPDMA)",
+  "section_title": "Low-power direct memory access controller (LPDMA)",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u575ag.pdf#page=54",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u575ag.pdf",
+  "text_helper": "Table 12. GPDMA1 autonomous mode and wake-up in low-power modes — section 3.18 Low-power direct memory access controller (LPDMA). Channel x, Hardware parameters / dma_fifo_ size[x], Hardware parameters / dma_ addressing[x], Features.",
+  "table_content": {
+    "headers": [
+      "Channel x",
+      "Hardware parameters / dma_fifo_ size[x]",
+      "Hardware parameters / dma_ addressing[x]",
+      "Features"
+    ],
+    "rows": [
+      [
+        "x = 0 to 11",
+        "2",
+        "0",
+        "Channel x (x = 0 to 11) is implemented with: – a FIFO of 8 bytes, 2 words – fixed/contiguously incremented addressing These channels may be also used for GPDMA transfers, between an APB or AHB peripheral and SRAM."
+      ],
+      [
+        "x = 12 to 15",
+        "4",
+        "1",
+        "Channel x (x = 12 to 15) is implemented with: – a FIFO of 32 bytes, 8 words – 2D addressing These channels may be also used for GPDMA transfers, between a demanding AHB peripheral and SRAM, or for transfers from/to external memories."
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

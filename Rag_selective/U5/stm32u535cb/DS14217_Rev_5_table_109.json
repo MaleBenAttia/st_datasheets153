@@ -1,0 +1,92 @@
+{
+  "table_id": "table_109",
+  "document": "DS14217 Rev 5 - Table 109. Temperature sensor characteristics",
+  "rev": "Rev 5",
+  "table_number": "109",
+  "title": "Table 109. Temperature sensor characteristics",
+  "page": 224,
+  "section": "5.3.21 Temperature sensor characteristics",
+  "section_title": "Temperature sensor characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u535cb.pdf#page=224",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u535cb.pdf",
+  "text_helper": "Table 109. Temperature sensor characteristics — section 5.3.21 Temperature sensor characteristics. Symbol, Parameter, Min, Typ, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "T (1) L",
+        "V linearity with temperature SENSE",
+        "-",
+        "-",
+        "1.3",
+        "°C"
+      ],
+      [
+        "Avg_Slope(1)",
+        "Average slope",
+        "2",
+        "2.5",
+        "3.0",
+        "mV/°C"
+      ],
+      [
+        "V (2) 30",
+        "Voltage at 30°C (±5 °C)",
+        "700",
+        "752",
+        "800",
+        "mV"
+      ],
+      [
+        "∆(V - continuous V )(3) sampling",
+        "Difference of voltage between continuous and sampling modes(4)",
+        "-",
+        "-",
+        "–10/+4",
+        "mV"
+      ],
+      [
+        "t START (3) (TS_BUF)",
+        "Sensor buffer startup time",
+        "-",
+        "1",
+        "10",
+        "µs"
+      ],
+      [
+        "t (3) S_temp",
+        "ADC sampling time when reading the temperature",
+        "13",
+        "-",
+        "-",
+        "µs"
+      ],
+      [
+        "I (3) DD(TS)",
+        "Temperature sensor consumption from V , when DD selected by ADC",
+        "-",
+        "14",
+        "20",
+        "µA"
+      ]
+    ],
+    "notes": [
+      "1. Evaluated by characterization. Not tested in production.",
+      "2. Measured at V = V = 3.0 V ±10 mV. The V A/D conversion result is stored in the TS_CAL1 byte. Refer to REF+ DDA 30",
+      "3. Specified by design. Not tested in production.",
+      "4. The temperature sensor is in continuous mode when the regulator is in range 1, 2 or 3. The temperature sensor is in sampling mode when the regulator is in range 4, or when the device is in Stop 1 or Stop 2 mode."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

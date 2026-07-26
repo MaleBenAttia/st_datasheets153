@@ -1,0 +1,106 @@
+{
+  "table_id": "table_29",
+  "document": "DS14395 Rev 4 - Table 29. Voltage characteristics",
+  "rev": "Rev 4",
+  "table_number": "29",
+  "title": "Table 29. Voltage characteristics",
+  "page": 159,
+  "section": "5.2 Absolute maximum ratings",
+  "section_title": "Absolute maximum ratings",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u5f7vj.pdf#page=159",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u5f7vj.pdf",
+  "text_helper": "Table 29. Voltage characteristics — section 5.2 Absolute maximum ratings. Symbol, Ratings, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Ratings",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V - V DDX SS",
+        "External main supply voltage (including V , V , V , V , DDSMPS DDA DDUSB DDDSI V , V ) BAT REF+",
+        "-0.3",
+        "4.0",
+        "V"
+      ],
+      [
+        "V (3) - V DDIOx SS",
+        "I/O supply when HSLV = 0",
+        "-0.3",
+        "4.0",
+        "V"
+      ],
+      [
+        "V (3) - V DDIOx SS",
+        "I/O supply when HSLV = 1",
+        "-0.3",
+        "2.75",
+        "V"
+      ],
+      [
+        "V (4) IN",
+        "Input voltage on FT_xx pins except FT_c pins",
+        "V - 0.3 SS",
+        "Min (min (V , V , V V ) DD DDA DDUSB, DDIO2 + 4.0, 6.0)(5)(6)",
+        "V"
+      ],
+      [
+        "V (4) IN",
+        "Input voltage on FT_t pins in V mode BAT",
+        "V - 0.3 SS",
+        "Min (min (V , V , V BAT DDA DDUSB, V ) + 4.0, 6.0)(5)(6) DDIO2",
+        "V"
+      ],
+      [
+        "V (4) IN",
+        "Input voltage on FT_c pins",
+        "V - 0.3 SS",
+        "5.5",
+        "V"
+      ],
+      [
+        "V (4) IN",
+        "Input voltage on any other pins",
+        "V - 0.3 SS",
+        "4.0",
+        "V"
+      ],
+      [
+        "V - V REF+ DDA",
+        "Allowed voltage difference for V > V REF+ DDA",
+        "-",
+        "0.4",
+        "V"
+      ],
+      [
+        "|∆V | DDx",
+        "Variations between different VDDx power pins of the same domain",
+        "-",
+        "50.0",
+        "mV"
+      ],
+      [
+        "|V -V | SSx SS",
+        "Variations between all the different ground pins(7)",
+        "-",
+        "50.0",
+        "mV"
+      ]
+    ],
+    "notes": [
+      "3. Positive injection (when V > V ) is not possible on these I/Os and does not occur for input voltages lower than the IN DDIOx",
+      "4. A negative injection is induced by V < V . I must never be exceeded. Refer also to Table 29 for the minimum IN SS INJ(PIN)",
+      "5. When several inputs are submitted to a current injection, the maximum ∑|I is the absolute sum of the negative INJ(PIN)",
+      "6. This formula has to be applied only on the power supplies related to the I/O structure described in the pin definition table.",
+      "7. Including VREF- pin. DS14395 Rev 4 159/351"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

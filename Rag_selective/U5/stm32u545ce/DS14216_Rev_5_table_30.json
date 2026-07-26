@@ -1,0 +1,120 @@
+{
+  "table_id": "table_30",
+  "document": "DS14216 Rev 5 - Table 30. Voltage characteristics",
+  "rev": "Rev 5",
+  "table_number": "30",
+  "title": "Table 30. Voltage characteristics",
+  "page": 134,
+  "section": "5.2 Absolute maximum ratings",
+  "section_title": "Absolute maximum ratings",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u545ce.pdf#page=134",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u545ce.pdf",
+  "text_helper": "Table 30. Voltage characteristics — section 5.2 Absolute maximum ratings. Symbol, Ratings, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Ratings",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V - V DDX SS",
+        "External main supply voltage (including V , V , V , V , V ) DDSMPS DDA DDUSB BAT REF+",
+        "-0.3",
+        "4.0",
+        "V"
+      ],
+      [
+        "V (3) - V DDIOx SS",
+        "I/O supply when HSLV = 0",
+        "-0.3",
+        "4.0",
+        "V"
+      ],
+      [
+        "V (3) - V DDIOx SS",
+        "I/O supply when HSLV = 1",
+        "-0.3",
+        "2.75",
+        "V"
+      ],
+      [
+        "V (4) IN",
+        "Input voltage on FT_xx pins except FT_c pins",
+        "V - 0.3 SS",
+        "Min (min (V , V , V , V ) DD DDA DDUSB DDIO2 + 4.0, 6.0)(5)(6)",
+        "V"
+      ],
+      [
+        "V (4) IN",
+        "Input voltage on FT_t pins in V mode BAT",
+        "V - 0.3 SS",
+        "Min (min (V , V , V , BAT DDA DDUSB V ) + 4.0, 6.0) (5)(6) DDIO2",
+        "V"
+      ],
+      [
+        "V (4) IN",
+        "Input voltage on FT_c pins",
+        "V - 0.3 SS",
+        "5.5",
+        "V"
+      ],
+      [
+        "V (4) IN",
+        "Input voltage on any other pins",
+        "V - 0.3 SS",
+        "4.0",
+        "V"
+      ],
+      [
+        "V - V REF+ DDA",
+        "Allowed voltage difference for V > V REF+ DDA",
+        "-",
+        "0.4",
+        "V"
+      ],
+      [
+        "|∆V | DDx",
+        "Variations between different VDDx power pins of the same domain",
+        "-",
+        "50.0",
+        "mV"
+      ],
+      [
+        "|V -V | SSx SS",
+        "Variations between all the different ground pins(7)",
+        "-",
+        "50.0",
+        "mV"
+      ],
+      [
+        "T STG",
+        "T STG",
+        "Storage temperature range",
+        "Storage temperature range",
+        "–65 to +150"
+      ],
+      [
+        "T J",
+        "T J",
+        "Maximum junction temperature",
+        "Maximum junction temperature",
+        "140"
+      ]
+    ],
+    "notes": [
+      "3. V or V or V , V = V . DDIO1 DDIO2 SW DDIO1 DD",
+      "4. V maximum must always be respected. Refer to Table 31 for the maximum allowed injected current values. IN",
+      "5. To sustain a voltage higher than 4 V, the internal pull-up/pull-down resistors must be disabled.",
+      "6. This formula has to be applied only on the power supplies related to the I/O structure described in the pin definition table.",
+      "7. Including VREF- pin."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

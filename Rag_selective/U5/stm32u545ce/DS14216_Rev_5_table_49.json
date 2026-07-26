@@ -1,0 +1,87 @@
+{
+  "table_id": "table_49",
+  "document": "DS14216 Rev 5 - Table 49. Static power consumption of flash banks, when supplied by LDO/SMPS",
+  "rev": "Rev 5",
+  "table_number": "49",
+  "title": "Table 49. Static power consumption of flash banks, when supplied by LDO/SMPS",
+  "page": 154,
+  "section": "5.3.6 Supply current characteristics",
+  "section_title": "Supply current characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u545ce.pdf#page=154",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u545ce.pdf",
+  "text_helper": "Table 49. Static power consumption of flash banks, when supplied by LDO/SMPS — section 5.3.6 Supply current characteristics. Symbol, Parameter, Typ / 25°C, Typ / 55°C, Typ / 85°C, +8 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Typ / 25°C",
+      "Typ / 55°C",
+      "Typ / 85°C",
+      "Typ / 105°C",
+      "Typ / 125°C",
+      "Max(1) / 25°C",
+      "Max(1) / 55°C",
+      "Max(1) / 85°C",
+      "Max(1) / 105°C",
+      "Max(1) / 125°C",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "I DD (2) (Flash_Bank1)",
+        "Flash bank 1 static consumption in normal mode (PD1 = 1 versus PD1 = 0)",
+        "45.0",
+        "45.0",
+        "50.0",
+        "50.0",
+        "100.0",
+        "60.0",
+        "100.0",
+        "100.0",
+        "100.0",
+        "150.0",
+        "µA"
+      ],
+      [
+        "I DD (2) (Flash_Bank2)",
+        "Flash bank 2 static consumption in normal mode (PD2 = 1 versus PD2 = 0)",
+        "45.0",
+        "45.0",
+        "50.0",
+        "50.0",
+        "100.0",
+        "60.0",
+        "100.0",
+        "100.0",
+        "100.0",
+        "150.0",
+        "µA"
+      ],
+      [
+        "I DD (3) (Flash_Bank_LPM)",
+        "One flash bank additional static consumption in normal mode versus low-power mode (LPM = 0 versus LPM = 1)",
+        "25.0",
+        "25.0",
+        "25.0",
+        "25.0",
+        "50.0",
+        "40.0",
+        "40.0",
+        "40.0",
+        "40.0",
+        "70.0",
+        "µA"
+      ]
+    ],
+    "notes": [
+      "1. Evaluated by characterization. Not tested in production.",
+      "2. When one bank is in power-down, this consumption is saved. When the flash memory is in power down in Sleep mode (SLEEP_PD =1 ), Bank 1 and Bank 2 are in power down.",
+      "3. If no bank is in power-down, the flash memory additional static consumption in normal mode versus low-power mode is 2 x I . DD(Flash_Bank_LPM)"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

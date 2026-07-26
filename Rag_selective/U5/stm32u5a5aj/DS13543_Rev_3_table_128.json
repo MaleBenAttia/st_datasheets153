@@ -1,0 +1,109 @@
+{
+  "table_id": "table_128",
+  "document": "DS13543 Rev 3 - Table 128. Asynchronous non-multiplexed SRAM/PSRAM/NOR write timings",
+  "rev": "Rev 3",
+  "table_number": "128",
+  "title": "Table 128. Asynchronous non-multiplexed SRAM/PSRAM/NOR write timings",
+  "page": 315,
+  "section": "5.3.35 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u5a5aj.pdf#page=315",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u5a5aj.pdf",
+  "text_helper": "Table 128. Asynchronous non-multiplexed SRAM/PSRAM/NOR write timings — section 5.3.35 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t v(NWE_NE)",
+        "FMC_NEx low to FMC_NWE low",
+        "t - 1 HCLK",
+        "t HCLK",
+        "ns"
+      ],
+      [
+        "t w(NWE)",
+        "FMC_NWE low time",
+        "t - 0.5 HCLK",
+        "t + 0.5 HCLK",
+        "ns"
+      ],
+      [
+        "t h(NE_NWE)",
+        "FMC_NWE high to FMC_NE high hold time",
+        "t HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(A_NE)",
+        "FMC_NEx low to FMC_A valid",
+        "-",
+        "1",
+        "ns"
+      ],
+      [
+        "t h(A_NWE)",
+        "Address hold time after FMC_NWE high",
+        "t - 0.5 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(BL_NE)",
+        "FMC_NEx low to FMC_BL valid",
+        "-",
+        "0.5",
+        "ns"
+      ],
+      [
+        "t h(BL_NWE)",
+        "FMC_BL hold time after FMC_NWE high",
+        "t - 0.5 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(Data_NE)",
+        "FMC_NEx low to Data valid",
+        "-",
+        "t + 2 HCLK",
+        "ns"
+      ],
+      [
+        "t h(Data_NWE)",
+        "Data hold time after FMC_NWE high",
+        "t HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(NADV_NE)",
+        "FMC_NEx low to FMC_NADV low",
+        "-",
+        "2",
+        "ns"
+      ],
+      [
+        "t w(NADV)",
+        "FMC_NADV low time",
+        "-",
+        "t + 1 HCLK",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. Evaluated by characterization. Not tested in production. DS13543 Rev 3 315/389"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

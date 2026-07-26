@@ -1,0 +1,88 @@
+{
+  "table_id": "table_143",
+  "document": "DS14102 Rev 5 - Table 143. Synchronous multiplexed PSRAM write timings",
+  "rev": "Rev 5",
+  "table_number": "143",
+  "title": "Table 143. Synchronous multiplexed PSRAM write timings",
+  "page": 293,
+  "section": "5.3.35 FSMC characteristics",
+  "section_title": "FSMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u5g7vj.pdf#page=293",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u5g7vj.pdf",
+  "text_helper": "Table 143. Synchronous multiplexed PSRAM write timings — section 5.3.35 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t w(CLK)",
+        "FMC_CLK period, 2.7 V ≤ VDD ≤ 3.6 V",
+        "2 × t - 0.5 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-NExL)",
+        "FMC_CLK low to FMC_NEx low (x = 0..2)",
+        "-",
+        "2",
+        "ns"
+      ],
+      [
+        "t d(CLKH-NExH)",
+        "FMC_CLK high to FMC_NEx high (x= 0..2)",
+        "t + 1.5 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKH-NWEH)",
+        "FMC_CLK high to FMC_NWE high",
+        "t + 1 HCLK",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-ADV)",
+        "FMC_CLK low to FMC_AD[15:0] valid",
+        "-",
+        "2",
+        "ns"
+      ],
+      [
+        "t d(CLKL-ADIV)",
+        "FMC_CLK low to FMC_AD[15:0] invalid",
+        "0",
+        "-",
+        "ns"
+      ],
+      [
+        "t d(CLKL-DATA)",
+        "FMC_A/D[15:0] valid data after FMC_CLK low",
+        "-",
+        "3",
+        "ns"
+      ],
+      [
+        "t d(CLKH-NBLH)",
+        "FMC_CLK high to FMC_NBL high",
+        "t + 0.5 HCLK",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. Evaluated by characterization. Not tested in production. DS14102 Rev 5 293/347"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

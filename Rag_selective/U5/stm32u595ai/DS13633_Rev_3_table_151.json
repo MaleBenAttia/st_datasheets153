@@ -1,0 +1,117 @@
+{
+  "table_id": "table_151",
+  "document": "DS13633 Rev 3 - Table 151. OTG_HS electrical characteristics",
+  "rev": "Rev 3",
+  "table_number": "151",
+  "title": "Table 151. OTG_HS electrical characteristics",
+  "page": 345,
+  "section": "5.3.43 SAI characteristics",
+  "section_title": "SAI characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u595ai.pdf#page=345",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u595ai.pdf",
+  "text_helper": "Table 151. OTG_HS electrical characteristics — section 5.3.43 SAI characteristics. Symbol, Parameter, Condition, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Condition",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V DDUSB",
+        "USB transceiver operating voltage",
+        "-",
+        "3.12(2)",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "f HCLK",
+        "f value to guarantee proper operation of HCLK the OTG_HS interface",
+        "-",
+        "30(3)",
+        "-",
+        "-",
+        "MHz"
+      ],
+      [
+        "R PUI",
+        "Embedded OTG_HS_DP pull-up value during idle",
+        "-",
+        "900",
+        "1250",
+        "1575",
+        "Ω"
+      ],
+      [
+        "R PUR",
+        "Embedded OTG_HS_DP pull-up value during reception",
+        "-",
+        "1425(3)",
+        "2250",
+        "3090(3)",
+        "Ω"
+      ],
+      [
+        "R PD",
+        "Embedded OTG_HS_DP and OTG_HS_DM pull-down value",
+        "-",
+        "14250",
+        "-",
+        "24800",
+        "Ω"
+      ],
+      [
+        "Z DRV",
+        "Output driver impedance(4)",
+        "Driving high or low",
+        "40.5(3)",
+        "45",
+        "49.5(3)",
+        "Ω"
+      ],
+      [
+        "t lr",
+        "Rise time",
+        "Fp 5 < LC",
+        "0.5(3)",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t lf",
+        "Fall time",
+        "Fp 5 < LC",
+        "0.5(3)",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t lrfm",
+        "Rise/fall time matching",
+        "-",
+        "80(3)",
+        "-",
+        "125(3)",
+        "%"
+      ]
+    ],
+    "notes": [
+      "2. The USB functionality is ensured down to 3 V but not the full USB electrical characteristics which are degraded in 3.0 to 3.12 V voltage range.",
+      "3. Specified by design. Not tested in production.",
+      "4. No external termination series resistors are required on OTG_HS_DP (D+) and OTG_HS_DM (D-). The matching impedance is already included in the embedded driver."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

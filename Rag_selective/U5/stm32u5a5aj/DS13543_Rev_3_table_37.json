@@ -1,0 +1,145 @@
+{
+  "table_id": "table_37",
+  "document": "DS13543 Rev 3 - Table 37. Embedded internal voltage reference",
+  "rev": "Rev 3",
+  "table_number": "37",
+  "title": "Table 37. Embedded internal voltage reference",
+  "page": 192,
+  "section": "5.3.5 Embedded voltage reference",
+  "section_title": "Embedded voltage reference",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u5a5aj.pdf#page=192",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u5a5aj.pdf",
+  "text_helper": "Table 37. Embedded internal voltage reference — section 5.3.5 Embedded voltage reference. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V (1) REFINT",
+        "Internal reference voltage",
+        "Range 1, 2, 3",
+        "1.175",
+        "1.215",
+        "1.255",
+        "V"
+      ],
+      [
+        "V (1) REFINT",
+        "Internal reference voltage",
+        "Range 4 and low-power modes",
+        "1.170",
+        "1.215",
+        "1.260",
+        "V"
+      ],
+      [
+        "t (2)(3) S_vrefint",
+        "ADC sampling time when reading the internal reference voltage",
+        "-",
+        "12.65",
+        "-",
+        "-",
+        "µs"
+      ],
+      [
+        "t (3) start_vrefint",
+        "Start time of reference voltage buffer when the ADC is enabled",
+        "-",
+        "-",
+        "4",
+        "6",
+        "µs"
+      ],
+      [
+        "I DD(VREFINTBUF) (3)",
+        "V buffer consumption from REFINT V when converted by the ADC DD",
+        "-",
+        "-",
+        "1.5",
+        "2.1",
+        "µA"
+      ],
+      [
+        "∆V (4) REFINT",
+        "Internal reference voltage spread over the temperature range",
+        "V = 3 V DD",
+        "-",
+        "6",
+        "11.5",
+        "mV"
+      ],
+      [
+        "T (4) Coeff",
+        "Average temperature coefficient",
+        "–40°C < T < +130 °C J",
+        "-",
+        "40",
+        "125",
+        "ppm/°C"
+      ],
+      [
+        "A (3) Coeff",
+        "Long term stability",
+        "1000 hours, T = 25 °C J",
+        "-",
+        "400",
+        "1000",
+        "ppm"
+      ],
+      [
+        "V (4) DDCoeff",
+        "Average voltage coefficient",
+        "3.0 V ≤ V ≤ 3.6 V DD",
+        "-",
+        "500",
+        "2900",
+        "ppm/V"
+      ],
+      [
+        "V (3) REFINT_DIV1",
+        "1/4 reference voltage",
+        "-",
+        "24",
+        "25",
+        "26",
+        "% V REFINT"
+      ],
+      [
+        "V (3) REFINT_DIV2",
+        "1/2 reference voltage",
+        "-",
+        "49",
+        "50",
+        "51",
+        "% V REFINT"
+      ],
+      [
+        "V (3) REFINT_DIV3",
+        "3/4 reference voltage",
+        "-",
+        "74",
+        "75",
+        "76",
+        "% V REFINT"
+      ]
+    ],
+    "notes": [
+      "1. V does not take into account package and soldering effects. REFINT",
+      "2. The shortest sampling time for the application can be determined by multiple iterations.",
+      "3. Specified by design. Not tested in production",
+      "4. Evaluated by characterization. Not tested in production. 192/389 DS13543 Rev 3"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "table_id": "table_85",
+  "document": "DS14216 Rev 5 - Table 85. SHSI oscillator characteristics",
+  "rev": "Rev 5",
+  "table_number": "85",
+  "title": "Table 85. SHSI oscillator characteristics",
+  "page": 201,
+  "section": "5.3.9 Internal clock timing characteristics",
+  "section_title": "Internal clock timing characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u545ce.pdf#page=201",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u545ce.pdf",
+  "text_helper": "Table 85. SHSI oscillator characteristics — section 5.3.9 Internal clock timing characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f SHSI",
+        "SHSI frequency",
+        "-",
+        "-",
+        "48",
+        "-",
+        "MHz"
+      ],
+      [
+        "t SU(SHSI)",
+        "SHSI oscillator startup time",
+        "-",
+        "-",
+        "2.5",
+        "6",
+        "μs"
+      ],
+      [
+        "I DD(SHSI)",
+        "SHSI oscillator power consumption",
+        "-",
+        "-",
+        "350",
+        "400",
+        "μA"
+      ]
+    ],
+    "notes": [
+      "1. Specified by design and not tested in production, unless otherwise specified.",
+      "2. PLL1 output Q and PLL2 output Q can be up to 200 MHz only when selected as OCTOSPI clock.",
+      "3. Evaluated by characterization. Not tested in production.",
+      "4. Lock time is the duration until PLLxRDY flag (2% of final frequency).",
+      "5. Measured on 5000 cycles.",
+      "6. SMPS efficiency based on CoreMark RUN current on V at max frequency of each voltage range. CORE"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "table_id": "table_77",
+  "document": "DS14395 Rev 4 - Table 77. High-speed external user clock characteristics",
+  "rev": "Rev 4",
+  "table_number": "77",
+  "title": "Table 77. High-speed external user clock characteristics",
+  "page": 222,
+  "section": "5.3.8 External clock timing characteristics",
+  "section_title": "External clock timing characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u5f7vj.pdf#page=222",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u5f7vj.pdf",
+  "text_helper": "Table 77. High-speed external user clock characteristics — section 5.3.8 External clock timing characteristics. Symbol, Parameter, Conditions, Conditions, Min, +3 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f HSE_ext",
+        "User external clock source frequency",
+        "Digital mode (HSEBYP = 1, HSEEXT = 1)",
+        "Voltage scaling range 1, 2, 3",
+        "-",
+        "-",
+        "55",
+        "MHz"
+      ],
+      [
+        "f HSE_ext",
+        "User external clock source frequency",
+        "Analog mode (HSEBYP = 1, HSEEXT = 0)",
+        "Voltage scaling range 1, 2, 3",
+        "4",
+        "-",
+        "50",
+        "MHz"
+      ],
+      [
+        "f HSE_ext",
+        "User external clock source frequency",
+        "-",
+        "Voltage scaling range 4",
+        "4(2)",
+        "-",
+        "25",
+        "MHz"
+      ],
+      [
+        "V HSEH",
+        "OSC_IN input pin high-level voltage",
+        "Digital mode (HSEBYP = 1, HSEEXT = 1)",
+        "-",
+        "0.7 × V D D",
+        "-",
+        "V DD",
+        "V"
+      ],
+      [
+        "V HSEL",
+        "OSC_IN input pin low-level voltage",
+        "Digital mode (HSEBYP = 1, HSEEXT = 1)",
+        "-",
+        "V SS",
+        "-",
+        "0.3 × V D D",
+        "V"
+      ],
+      [
+        "t t w(HSEH) w(HSEL)",
+        "OSC_IN high or low time",
+        "Digital mode (HSEBYP = 1, HSEEXT = 1)",
+        "Voltage scaling range 1, 2, 3",
+        "7",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t t w(HSEH) w(HSEL)",
+        "OSC_IN high or low time",
+        "Digital mode (HSEBYP = 1, HSEEXT = 1)",
+        "Voltage scaling range 4",
+        "18",
+        "-",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "2. Only for analog mode. No minimum value in digital mode."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,368 @@
+{
+  "table_id": "table_74",
+  "document": "DS14217 Rev 5 - Table 74. Low-power mode wake-up timings on SMPS",
+  "rev": "Rev 5",
+  "table_number": "74",
+  "title": "Table 74. Low-power mode wake-up timings on SMPS",
+  "page": 182,
+  "section": "5.3.6 Supply current characteristics",
+  "section_title": "Supply current characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u535cb.pdf#page=182",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u535cb.pdf",
+  "text_helper": "Table 74. Low-power mode wake-up timings on SMPS — section 5.3.6 Supply current characteristics. Mode, Parameter, Conditions, Conditions, Typ (3 V, 30 °C), +2 autres.",
+  "table_content": {
+    "headers": [
+      "Mode",
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "Typ (3 V, 30 °C)",
+      "Max (3 V)",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t wu(Sleep)",
+        "Wake-up time from Sleep to Run mode",
+        "SLEEP_PD = 0",
+        "SLEEP_PD = 0",
+        "14",
+        "17",
+        "Nb of CPU cycles"
+      ],
+      [
+        "t wu(Sleep)",
+        "Wake-up time from Sleep to Run mode",
+        "SLEEP_PD = 1 with MSI = 24 MHz",
+        "SLEEP_PD = 1 with MSI = 24 MHz",
+        "8.1",
+        "8.8",
+        "µs"
+      ],
+      [
+        "t wu(Stop 0)",
+        "Wake-up time from Stop 0 to Run mode All SRAMs retained",
+        "Wake-up in FLASH, range 4, FLASHFWU = 1 and SRAM4FWU = 1 in PWR_CR2",
+        "MSI 24 MHz",
+        "2.35",
+        "2.5",
+        "µs"
+      ],
+      [
+        "t wu(Stop 0)",
+        "Wake-up time from Stop 0 to Run mode All SRAMs retained",
+        "Wake-up in FLASH, range 4, FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2",
+        "MSI 24 MHz",
+        "11.0",
+        "12.0",
+        "µs"
+      ],
+      [
+        "t wu(Stop 0)",
+        "Wake-up time from Stop 0 to Run mode All SRAMs retained",
+        "Wake-up in FLASH, range 4, FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2",
+        "HSI 16 MHz",
+        "11.0",
+        "12.0",
+        "µs"
+      ],
+      [
+        "t wu(Stop 0)",
+        "Wake-up time from Stop 0 to Run mode All SRAMs retained",
+        "Wake-up in FLASH, range 4, FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2",
+        "MSI 1 MHz",
+        "37.0",
+        "39.0",
+        "µs"
+      ],
+      [
+        "t wu(Stop 0)",
+        "Wake-up time from Stop 0 to Run mode All SRAMs retained",
+        "Wake-up in SRAM2, range 4, FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2",
+        "MSI 24 MHz",
+        "4.75",
+        "5.0",
+        "µs"
+      ],
+      [
+        "t wu(Stop 0)",
+        "Wake-up time from Stop 0 to Run mode All SRAMs retained",
+        "Wake-up in SRAM2, range 4, FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2",
+        "HSI 16 MHz",
+        "6.75",
+        "7.4",
+        "µs"
+      ],
+      [
+        "t wu(Stop 0)",
+        "Wake-up time from Stop 0 to Run mode All SRAMs retained",
+        "Wake-up in SRAM2, range 4, FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2",
+        "MSI 1 MHz",
+        "34.0",
+        "36.0",
+        "µs"
+      ],
+      [
+        "t wu(Stop 1)",
+        "Wake-up time from Stop 1 to Run mode All SRAMs retained",
+        "Wake-up in FLASH, FLASHFWU = 1 and SRAM4FWU = 1 in PWR_CR2",
+        "MSI 24 MHz",
+        "7.65",
+        "8.3",
+        "µs"
+      ],
+      [
+        "t wu(Stop 1)",
+        "Wake-up time from Stop 1 to Run mode All SRAMs retained",
+        "Wake-up in FLASH FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2",
+        "MSI 24 MHz",
+        "16.5",
+        "18.0",
+        "µs"
+      ],
+      [
+        "t wu(Stop 1)",
+        "Wake-up time from Stop 1 to Run mode All SRAMs retained",
+        "Wake-up in FLASH FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2",
+        "HSI 16 MHz",
+        "16.0",
+        "18.0",
+        "µs"
+      ],
+      [
+        "t wu(Stop 1)",
+        "Wake-up time from Stop 1 to Run mode All SRAMs retained",
+        "Wake-up in FLASH FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2",
+        "MSI 1 MHz",
+        "42.5",
+        "45.0",
+        "µs"
+      ],
+      [
+        "t wu(Stop 1)",
+        "Wake-up time from Stop 1 to Run mode All SRAMs retained",
+        "Wake-up in SRAM2, range 4, FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2",
+        "MSI 24 MHz",
+        "10.0",
+        "11.0",
+        "µs"
+      ],
+      [
+        "t wu(Stop 1)",
+        "Wake-up time from Stop 1 to Run mode All SRAMs retained",
+        "Wake-up in SRAM2, range 4, FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2",
+        "HSI 16 MHz",
+        "12.0",
+        "13.0",
+        "µs"
+      ],
+      [
+        "t wu(Stop 1)",
+        "Wake-up time from Stop 1 to Run mode All SRAMs retained",
+        "Wake-up in SRAM2, range 4, FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2",
+        "MSI 1 MHz",
+        "39.5",
+        "42.0",
+        "µs"
+      ],
+      [
+        "t wu(Stop 2)",
+        "Wake-up time from Stop 2 to Run mode All SRAMs retained",
+        "Wake-up in FLASH SRAM4FWU = 1 in PWR_CR2",
+        "MSI 24 MHz",
+        "17.5",
+        "19.0",
+        "µs"
+      ],
+      [
+        "t wu(Stop 2)",
+        "Wake-up time from Stop 2 to Run mode All SRAMs retained",
+        "Wake-up in FLASH SRAM4FWU = 0 in PWR_CR2",
+        "MSI 24 MHz",
+        "20.5",
+        "22.0",
+        "µs"
+      ],
+      [
+        "t wu(Stop 2)",
+        "Wake-up time from Stop 2 to Run mode All SRAMs retained",
+        "Wake-up in FLASH SRAM4FWU = 0 in PWR_CR2",
+        "HSI 16 MHz",
+        "20.0",
+        "22.0",
+        "µs"
+      ],
+      [
+        "t wu(Stop 2)",
+        "Wake-up time from Stop 2 to Run mode All SRAMs retained",
+        "Wake-up in FLASH SRAM4FWU = 0 in PWR_CR2",
+        "MSI 1 MHz",
+        "54.0",
+        "70.0",
+        "µs"
+      ],
+      [
+        "t wu(Stop 2)",
+        "Wake-up time from Stop 2 to Run mode All SRAMs retained",
+        "Wake-up in SRAM2, range 4, SRAM4FWU = 0 in PWR_CR2",
+        "MSI 24 MHz",
+        "14.0",
+        "16.0",
+        "µs"
+      ],
+      [
+        "t wu(Stop 2)",
+        "Wake-up time from Stop 2 to Run mode All SRAMs retained",
+        "Wake-up in SRAM2, range 4, SRAM4FWU = 0 in PWR_CR2",
+        "HSI 16 MHz",
+        "16.0",
+        "18.0",
+        "µs"
+      ],
+      [
+        "t wu(Stop 2)",
+        "Wake-up time from Stop 2 to Run mode All SRAMs retained",
+        "Wake-up in SRAM2, range 4, SRAM4FWU = 0 in PWR_CR2",
+        "MSI 1 MHz",
+        "51.5",
+        "74.0",
+        "µs"
+      ],
+      [
+        "t wu(Stop 3)",
+        "Wake-up time from Stop 3 to Run mode All SRAMs retained",
+        "Wake-up in FLASH, FSTEN = 0 in PWR_CR3",
+        "MSI 24 MHz",
+        "130",
+        "160",
+        "µs"
+      ],
+      [
+        "t wu(Stop 3)",
+        "Wake-up time from Stop 3 to Run mode All SRAMs retained",
+        "Wake-up in FLASH, FSTEN = 1 in PWR_CR3",
+        "MSI 24 MHz",
+        "32.5",
+        "37.0",
+        "37.0"
+      ],
+      [
+        "t wu(Stop 3)",
+        "Wake-up time from Stop 3 to Run mode All SRAMs retained",
+        "Wake-up in FLASH, FSTEN = 1 in PWR_CR3",
+        "HSI 16 MHz",
+        "32.0",
+        "36.0",
+        "36.0"
+      ],
+      [
+        "t wu(Stop 3)",
+        "Wake-up time from Stop 3 to Run mode All SRAMs retained",
+        "Wake-up in FLASH, FSTEN = 1 in PWR_CR3",
+        "MSI 1 MHz",
+        "72.5",
+        "94.0",
+        "94.0"
+      ],
+      [
+        "t wu(Stop 3)",
+        "Wake-up time from Stop 3 to Run mode All SRAMs retained",
+        "Wake-up in SRAM2, range 4",
+        "MSI 24 MHz",
+        "26.5",
+        "31.0",
+        "31.0"
+      ],
+      [
+        "t wu(Stop 3)",
+        "Wake-up time from Stop 3 to Run mode All SRAMs retained",
+        "Wake-up in SRAM2, range 4",
+        "HSI 16 MHz",
+        "28.0",
+        "32.0",
+        "32.0"
+      ],
+      [
+        "t wu(Stop 3)",
+        "Wake-up time from Stop 3 to Run mode All SRAMs retained",
+        "Wake-up in SRAM2, range 4",
+        "MSI 1 MHz",
+        "68.5",
+        "89.0",
+        "89.0"
+      ],
+      [
+        "t wu(Standby with SRAM2)",
+        "Wake-up time from Standby with SRAM2 to Run mode",
+        "Wake-up in FLASH, FSTEN = 0 in PWR_CR3",
+        "MSI 4 MHz",
+        "61.5",
+        "80.0",
+        "80.0"
+      ],
+      [
+        "t wu(Standby with SRAM2)",
+        "Wake-up time from Standby with SRAM2 to Run mode",
+        "Wake-up in FLASH, FSTEN = 1 in PWR_CR3",
+        "MSI 4 MHz",
+        "61.5",
+        "80.0",
+        "80.0"
+      ],
+      [
+        "t wu(Standby with SRAM2)",
+        "Wake-up time from Standby with SRAM2 to Run mode",
+        "Wake-up in FLASH, FSTEN = 1 in PWR_CR3",
+        "MSI 1 MHz",
+        "150",
+        "240",
+        "240"
+      ],
+      [
+        "t wu(Standby)",
+        "Wake-up time from Standby to Run mode",
+        "Wake-up in FLASH, FSTEN = 0 in PWR_CR3",
+        "MSI 4 MHz",
+        "340",
+        "420",
+        "420"
+      ],
+      [
+        "t wu(Standby)",
+        "Wake-up time from Standby to Run mode",
+        "Wake-up in FLASH, FSTEN = 1 in PWR_CR3",
+        "MSI 4 MHz",
+        "100",
+        "130",
+        "130"
+      ],
+      [
+        "t wu(Standby)",
+        "Wake-up time from Standby to Run mode",
+        "Wake-up in FLASH, FSTEN = 1 in PWR_CR3",
+        "MSI 1 MHz",
+        "210",
+        "290",
+        "290"
+      ],
+      [
+        "t wu(Shutdown)",
+        "Wake-up time from Shutdown to Run mode",
+        "-",
+        "MSI 4 MHz",
+        "610",
+        "710",
+        "710"
+      ]
+    ],
+    "notes": [
+      "1. Evaluated by characterization. Not tested in production.",
+      "2. This wake-up time is the HSI16 (see Table 81) or the MSI (see Table 82) oscillator maximum startup time."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

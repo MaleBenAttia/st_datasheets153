@@ -1,0 +1,48 @@
+{
+  "table_id": "table_8",
+  "document": "DS14216 Rev 5 - Table 8. Boot space versus RDP protection",
+  "rev": "Rev 5",
+  "table_number": "8",
+  "title": "Table 8. Boot space versus RDP protection",
+  "page": 30,
+  "section": "3.7 Boot modes",
+  "section_title": "Boot modes",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u545ce.pdf#page=30",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u545ce.pdf",
+  "text_helper": "Table 8. Boot space versus RDP protection — section 3.7 Boot modes. RDP, TZEN = 1, TZEN = 0.",
+  "table_content": {
+    "headers": [
+      "RDP",
+      "TZEN = 1",
+      "TZEN = 0"
+    ],
+    "rows": [
+      [
+        "0",
+        "Any boot address",
+        "Any boot address"
+      ],
+      [
+        "0.5",
+        "Boot address only in RSS or secure flash memory: 0x0C00 0000 - 0x0C07 FFFF Otherwise, forced boot address is 0x0FF8 0000.",
+        "N/A"
+      ],
+      [
+        "1",
+        "Boot address only in RSS or secure flash memory: 0x0C00 0000 - 0x0C07 FFFF Otherwise, forced boot address is 0x0FF8 0000.",
+        "Any boot address"
+      ],
+      [
+        "2",
+        "Boot address only in RSS or secure flash memory: 0x0C00 0000 - 0x0C07 FFFF Otherwise, forced boot address is 0x0FF8 0000.",
+        "Boot address only in flash memory 0x0800 0000 - 0x0807 FFFF Otherwise, forced boot address is 0x0800 0000."
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

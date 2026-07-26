@@ -1,0 +1,135 @@
+{
+  "table_id": "table_147",
+  "document": "DS13543 Rev 3 - Table 147. e•MMC characteristics (V = 1.71 V to 1.9 V) 339 DD",
+  "rev": "Rev 3",
+  "table_number": "147",
+  "title": "Table 147. e•MMC characteristics (V = 1.71 V to 1.9 V) 339 DD",
+  "page": 339,
+  "section": "5.3.37 HSPI characteristics",
+  "section_title": "HSPI characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u5a5aj.pdf#page=339",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u5a5aj.pdf",
+  "text_helper": "Table 147. e•MMC characteristics (V = 1.71 V to 1.9 V) 339 DD — section 5.3.37 HSPI characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f PP",
+        "Clock frequency in data transfer mode",
+        "All modes except DDR",
+        "-",
+        "-",
+        "84",
+        "MHz"
+      ],
+      [
+        "f PP",
+        "Clock frequency in data transfer mode",
+        "DDR mode",
+        "-",
+        "-",
+        "40(3)",
+        "MHz"
+      ],
+      [
+        "t W(CKL)",
+        "Clock low time",
+        "f = 52 MHz PP",
+        "8.5",
+        "9.5",
+        "-",
+        "ns"
+      ],
+      [
+        "t W(CKH)",
+        "Clock high time",
+        "f = 52 MHz PP",
+        "8.5",
+        "9.5",
+        "-",
+        "ns"
+      ],
+      [
+        "CMD, D inputs (referenced to CK) in e•MMC mode",
+        "CMD, D inputs (referenced to CK) in e•MMC mode",
+        "CMD, D inputs (referenced to CK) in e•MMC mode",
+        "CMD, D inputs (referenced to CK) in e•MMC mode",
+        "CMD, D inputs (referenced to CK) in e•MMC mode",
+        "CMD, D inputs (referenced to CK) in e•MMC mode",
+        "CMD, D inputs (referenced to CK) in e•MMC mode"
+      ],
+      [
+        "t ISU",
+        "Input setup time HS",
+        "-",
+        "3",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t IH",
+        "Input hold time HS",
+        "-",
+        "2",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t (4) IDW",
+        "Input valid window (variable window)",
+        "-",
+        "4",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "CMD, D outputs (referenced to CK) in e•MMC mode",
+        "CMD, D outputs (referenced to CK) in e•MMC mode",
+        "CMD, D outputs (referenced to CK) in e•MMC mode",
+        "CMD, D outputs (referenced to CK) in e•MMC mode",
+        "CMD, D outputs (referenced to CK) in e•MMC mode",
+        "CMD, D outputs (referenced to CK) in e•MMC mode",
+        "CMD, D outputs (referenced to CK) in e•MMC mode"
+      ],
+      [
+        "t OV",
+        "Output valid time HS",
+        "-",
+        "-",
+        "12",
+        "14/16(5)",
+        "ns"
+      ],
+      [
+        "t OH",
+        "Output hold time HS",
+        "-",
+        "6",
+        "-",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "3. For DDR mode, the maximum frequency is 40 MHz and HSLV must be OFF.",
+      "4. Minimum window of time where the data needs to be stable for proper sampling in tuning mode.",
+      "5. t = 14 ns for SDMMC1 and t = 16 ns for SDMMC2. OV OV"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

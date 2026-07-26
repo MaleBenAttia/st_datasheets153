@@ -1,0 +1,140 @@
+{
+  "table_id": "table_144",
+  "document": "DS13543 Rev 3 - Table 144. HSPI characteristics in DTR mode (no DQS)",
+  "rev": "Rev 3",
+  "table_number": "144",
+  "title": "Table 144. HSPI characteristics in DTR mode (no DQS)",
+  "page": 334,
+  "section": "5.3.37 HSPI characteristics",
+  "section_title": "HSPI characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u5a5aj.pdf#page=334",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u5a5aj.pdf",
+  "text_helper": "Table 144. HSPI characteristics in DTR mode (no DQS) — section 5.3.37 HSPI characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f (CLK)",
+        "HSPI clock frequency",
+        "L Fp 51 = C ,4 egnar egatloV DD V 6.3 ≤ V ≤ V 17.1",
+        "-",
+        "-",
+        "25",
+        "MHz"
+      ],
+      [
+        "t w(CLKL)",
+        "HSPI clock high and low time (odd division)",
+        "PRESCALER[7:0] = n (n = 2, 4, 6,..254)",
+        "((n/2)+1) × t (CLK) /(n+1) - 0.5",
+        "-",
+        "((n/2)+1) × t (CLK) /(n+1) + 0.5",
+        "ns"
+      ],
+      [
+        "t sr(IN) t sf(IN)",
+        "Data input setup time",
+        "Voltage range 1",
+        "2",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t sr(IN) t sf(IN)",
+        "Data input setup time",
+        "Voltage range 4",
+        "3",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t hr(IN) t hf(IN)",
+        "Data input hold time",
+        "Voltage range 1",
+        "0.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t hr(IN) t hf(IN)",
+        "Data input hold time",
+        "Voltage range 4",
+        "1",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t vr(OUT) t vf(OUT)",
+        "Data output valid time",
+        "Voltage range 1",
+        "-",
+        "t /4 + 0.5 (CLK)",
+        "t /4 + 1.5 (CLK)",
+        "ns"
+      ],
+      [
+        "t vr(OUT) t vf(OUT)",
+        "Data output valid time",
+        "Voltage range 1 (prescaler = 0) with F(CLK) < 50 MHz",
+        "-",
+        "5.5",
+        "6.5",
+        "ns"
+      ],
+      [
+        "t vr(OUT) t vf(OUT)",
+        "Data output valid time",
+        "Voltage range 4",
+        "-",
+        "t /4 + 0.75 (CLK)",
+        "t /4 + 3 (CLK)",
+        "ns"
+      ],
+      [
+        "t hr(OUT) t hf(OUT)",
+        "Data output hold time",
+        "Voltage range 1",
+        "t /4 - 1 (CLK)",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t hr(OUT) t hf(OUT)",
+        "Data output hold time",
+        "Voltage range 1 (prescaler = 0) with F(CLK) < 50 MHz",
+        "4.75",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t hr(OUT) t hf(OUT)",
+        "Data output hold time",
+        "Voltage range 4",
+        "t /4 - 2 (CLK)",
+        "-",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

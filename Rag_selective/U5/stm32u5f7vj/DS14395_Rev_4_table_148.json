@@ -1,0 +1,367 @@
+{
+  "table_id": "table_148",
+  "document": "DS14395 Rev 4 - Table 148. OCTOSPI characteristics in DTR mode (with DQS)/HyperBus",
+  "rev": "Rev 4",
+  "table_number": "148",
+  "title": "Table 148. OCTOSPI characteristics in DTR mode (with DQS)/HyperBus",
+  "page": 305,
+  "section": "5.3.36 OCTOSPI characteristics",
+  "section_title": "OCTOSPI characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u5f7vj.pdf#page=305",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u5f7vj.pdf",
+  "text_helper": "Table 148. OCTOSPI characteristics in DTR mode (with DQS)/HyperBus — section 5.3.36 OCTOSPI characteristics. Sym bol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Sym bol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t w(CLKH)",
+        "OCTOSPI clock high and low time (even division)",
+        "PRESCALER[7:0] = n (n = 0 1, 3, 5,..255)",
+        "t /2 - 0.5 (CLK)",
+        "-",
+        "t /2 + 0.5 (CLK)",
+        "ns"
+      ],
+      [
+        "t w(CLKL)",
+        "OCTOSPI clock high and low time (even division)",
+        "PRESCALER[7:0] = n (n = 0 1, 3, 5,..255)",
+        "t /2 - 0.5 (CLK)",
+        "-",
+        "t /2 + 0.5 (CLK)",
+        "ns"
+      ],
+      [
+        "t w(CLKH)",
+        "OCTOSPI clock high and low time (odd division)",
+        "PRESCALER[7:0] = n (n = 2, 4, 6,..254)",
+        "(n/2) × t (CLK) /(n+1) - 0.5",
+        "-",
+        "(n/2) × t (CLK) /(n+1) + 0.5",
+        "ns"
+      ],
+      [
+        "t w(CLKL)",
+        "OCTOSPI clock high and low time (odd division)",
+        "PRESCALER[7:0] = n (n = 2, 4, 6,..254)",
+        "((n/2)+1) × t (CLK) /(n+1) - 0.5",
+        "-",
+        "((n/2)+1) × t (CLK) /(n+1) + 0.5",
+        "ns"
+      ],
+      [
+        "t sr(IN) t sf(IN)",
+        "Data input setup time",
+        "Voltage range 1",
+        "3.25",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t sr(IN) t sf(IN)",
+        "Data input setup time",
+        "Voltage range 4",
+        "3.75",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t hr(IN) t hf(IN)",
+        "Data input hold time",
+        "Voltage range 1",
+        "1",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t hr(IN) t hf(IN)",
+        "Data input hold time",
+        "Voltage range 4",
+        "1.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t vr(OUT) t vf(OUT)",
+        "Data output valid time, DHQC = 0",
+        "Voltage range 1",
+        "-",
+        "6",
+        "9.25",
+        "ns"
+      ],
+      [
+        "t vr(OUT) t vf(OUT)",
+        "Data output valid time, DHQC = 0",
+        "Voltage range 4",
+        "-",
+        "13.25",
+        "19.75",
+        "ns"
+      ],
+      [
+        "t vr(OUT) t vf(OUT)",
+        "Data output valid time, DHQC = 1",
+        "Voltage range 1 All prescaler values (except 0)",
+        "-",
+        "t /4 + 0.75 (CLK)",
+        "t /4 + 1.5 (CLK)",
+        "ns"
+      ],
+      [
+        "t hr(OUT) t hf(OUT)",
+        "Data output hold time DHQC = 0",
+        "Voltage range 1",
+        "4",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t hr(OUT) t hf(OUT)",
+        "Data output hold time DHQC = 0",
+        "Voltage range 4",
+        "8",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t hr(OUT) t hf(OUT)",
+        "Data output hold time DHQC = 1",
+        "Voltage range 1 All prescaler values (except 0)",
+        "t /4 - 0.5 (CLK)",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t w(CLKH)",
+        "OCTOSPI clock high and low time (even division)",
+        "PRESCALER[7:0] = n (n = 0 1, 3, 5,..255)",
+        "t /2 - 0.5 (CLK)",
+        "-",
+        "t /2 + 0.5 (CLK)",
+        "ns"
+      ],
+      [
+        "t w(CLKL)",
+        "t w(CLKL)",
+        "t w(CLKL)",
+        "t /2 - 0.5 (CLK)",
+        "-",
+        "t /2 + 0.5 (CLK)",
+        "t /2 + 0.5 (CLK)"
+      ],
+      [
+        "t w(CLKH)",
+        "OCTOSPI clock high and low time (odd division)",
+        "PRESCALER[7:0] = n (n = 2, 4, 6,..254)",
+        "(n/2) × t (CLK) /(n+1) - 0.5",
+        "-",
+        "(n/2) × t (CLK) /(n+1) + 0.5",
+        "(n/2) × t (CLK) /(n+1) + 0.5"
+      ],
+      [
+        "t w(CLKL)",
+        "t w(CLKL)",
+        "t w(CLKL)",
+        "((n/2)+1) × t (CLK) /(n+1) - 0.5",
+        "-",
+        "((n/2)+1) × t (CLK) /(n+1) + 0.5",
+        "((n/2)+1) × t (CLK) /(n+1) + 0.5"
+      ],
+      [
+        "t v(CLK)",
+        "Clock valid time",
+        "-",
+        "-",
+        "-",
+        "t + 2 (CLK)",
+        "t + 2 (CLK)"
+      ],
+      [
+        "t h(CLK)",
+        "Clock hold time",
+        "-",
+        "t /2 - 0.5 (CLK)",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "V ODr(CLK) (5)",
+        "CLK, NCLK crossing level on CLK rising edge",
+        "V = 1.8 V DD",
+        "845",
+        "-",
+        "1098",
+        "mV"
+      ],
+      [
+        "V ODf(CLK) (5)",
+        "CLK, NCLK crossing level on CLK falling edge",
+        "V = 1.8 V DD",
+        "725",
+        "-",
+        "1055",
+        "1055"
+      ],
+      [
+        "t w(CS)",
+        "Chip select high time",
+        "-",
+        "3 × t (CLK)",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(DQ)",
+        "Data input valid time",
+        "-",
+        "0",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t v(DS)",
+        "Data strobe input valid time",
+        "-",
+        "0",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t h(DS)",
+        "Data strobe input hold time",
+        "-",
+        "0",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t v(RWDS)",
+        "Data strobe output valid time",
+        "-",
+        "-",
+        "-",
+        "3 × t (CLK)",
+        "3 × t (CLK)"
+      ],
+      [
+        "t sr(DQ) t sf(DQ)",
+        "Data input setup time",
+        "Voltage range 1",
+        "-0.25",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t sr(DQ) t sf(DQ)",
+        "Data input setup time",
+        "Voltage range 4",
+        "0",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t hr(DQ) t hf(DQ)",
+        "Data input hold time",
+        "Voltage range 1",
+        "1.25",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t hr(DQ) t hf(DQ)",
+        "Data input hold time",
+        "Voltage range 4",
+        "1.75",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t vr(OUT) t vf(OUT)",
+        "Data output valid time DHQC = 0",
+        "Voltage range 1",
+        "-",
+        "6",
+        "9.5",
+        "9.5"
+      ],
+      [
+        "t vr(OUT) t vf(OUT)",
+        "Data output valid time DHQC = 0",
+        "Voltage range 4",
+        "-",
+        "13",
+        "19.5",
+        "19.5"
+      ],
+      [
+        "t vr(OUT) t vf(OUT)",
+        "Data output valid time DHQC = 1",
+        "Voltage range 1 All prescaler values (except 0)",
+        "-",
+        "t /4 + 0.5 (CLK)",
+        "t /4 + 1.25 (CLK)",
+        "t /4 + 1.25 (CLK)"
+      ],
+      [
+        "t hr(OUT) t hf(OUT)",
+        "Data output hold time DHQC = 0",
+        "Voltage range 1",
+        "4",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t hr(OUT) t hf(OUT)",
+        "Data output hold time DHQC = 0",
+        "Voltage range 4",
+        "7.75",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t hr(OUT)",
+        "Data output hold time DHQC = 1",
+        "Voltage range 1 All prescaler values (except 0)",
+        "t /4 - 0.5 (CLK)",
+        "-",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "5. Crossing results are in line with specification, except for PA3/PB5 CLK that exceed slightly the specification."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

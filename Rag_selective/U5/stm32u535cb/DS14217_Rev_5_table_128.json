@@ -1,0 +1,271 @@
+{
+  "table_id": "table_128",
+  "document": "DS14217 Rev 5 - Table 128. OCTOSPI characteristics in DTR mode (with DQS)/HyperBus",
+  "rev": "Rev 5",
+  "table_number": "128",
+  "title": "Table 128. OCTOSPI characteristics in DTR mode (with DQS)/HyperBus",
+  "page": 247,
+  "section": "5.3.33 OCTOSPI characteristics",
+  "section_title": "OCTOSPI characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u535cb.pdf#page=247",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u535cb.pdf",
+  "text_helper": "Table 128. OCTOSPI characteristics in DTR mode (with DQS)/HyperBus — section 5.3.33 OCTOSPI characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "f (CLK)",
+        "OCTOSPI clock frequency",
+        "L Fp 51 = C 1 egnar egatloV DD V 9.1 ≤ V ≤ V 17.1",
+        "-",
+        "-",
+        "93(3)(4)",
+        "MHz"
+      ],
+      [
+        "f (CLK)",
+        "OCTOSPI clock frequency",
+        "L Fp 51 = C 1egnar egatloV DD V 6.3 ≤ V ≤ V 7.2",
+        "-",
+        "-",
+        "100(3)(4)",
+        "MHz"
+      ],
+      [
+        "f (CLK)",
+        "OCTOSPI clock frequency",
+        "L Fp 51 = C 4 egnar egatloV DD V 6.3 ≤ V ≤ V 17.1",
+        "-",
+        "-",
+        "25(4)",
+        "MHz"
+      ],
+      [
+        "t w(CLKH)",
+        "OCTOSPI clock high and low time (even division)",
+        "PRESCALER[7:0] = n (n = 0, 1, 3, 5,..255)",
+        "t /2 - 0.5 (CLK)",
+        "-",
+        "t /2 + 0.5 (CLK)",
+        "ns"
+      ],
+      [
+        "t w(CLKL)",
+        "OCTOSPI clock high and low time (even division)",
+        "PRESCALER[7:0] = n (n = 0, 1, 3, 5,..255)",
+        "t /2 - 0.5 (CLK)",
+        "-",
+        "t /2 + 0.5 (CLK)",
+        "ns"
+      ],
+      [
+        "t w(CLKH)",
+        "OCTOSPI clock high and low time (odd division)",
+        "PRESCALER[7:0] = n (n = 2, 4, 6,..254)",
+        "(n/2) × t (CLK) /(n+1) - 0.5",
+        "-",
+        "(n/2) × t (CLK) /(n+1) + 0.5",
+        "ns"
+      ],
+      [
+        "t w(CLKL)",
+        "OCTOSPI clock high and low time (odd division)",
+        "PRESCALER[7:0] = n (n = 2, 4, 6,..254)",
+        "((n/2)+1) × t (CLK) /(n+1) - 0.5",
+        "-",
+        "((n/2)+1) × t (CLK) /(n+1) + 0.5",
+        "ns"
+      ],
+      [
+        "t v(CLK)",
+        "Clock valid time",
+        "-",
+        "-",
+        "-",
+        "t + 2 (CLK)",
+        "ns"
+      ],
+      [
+        "t h(CLK)",
+        "Clock hold time",
+        "-",
+        "t /2 - 0.5 (CLK)",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "V ODr(CLK) (5)",
+        "CLK, NCLK crossing level on CLK rising edge",
+        "V = 1.8 V DD",
+        "1005",
+        "-",
+        "1065",
+        "mV"
+      ],
+      [
+        "V ODf(CLK) (5)",
+        "CLK, NCLK crossing level on CLK falling edge",
+        "V = 1.8 V DD",
+        "950",
+        "-",
+        "1050",
+        "mV"
+      ],
+      [
+        "t w(CS)",
+        "Chip select high time",
+        "-",
+        "3 × t (CLK)",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(DQ)",
+        "Data input valid time",
+        "-",
+        "0",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(DS)",
+        "Data strobe input valid time",
+        "-",
+        "0",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(DS)",
+        "Data strobe input hold time",
+        "-",
+        "0",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(RWDS)",
+        "Data strobe output valid time",
+        "-",
+        "-",
+        "-",
+        "3 × t (CLK)",
+        "ns"
+      ],
+      [
+        "t sr(DQ) t sf(DQ)",
+        "Data input setup time",
+        "Voltage range 1",
+        "-0.25",
+        "-",
+        "t /2 - 1.25(6) (CLK)",
+        "ns"
+      ],
+      [
+        "t sr(DQ) t sf(DQ)",
+        "Data input setup time",
+        "Voltage range 4",
+        "0",
+        "-",
+        "t /2 - 1.75(6) (CLK)",
+        "ns"
+      ],
+      [
+        "t hr(DQ) t hf(DQ)",
+        "Data input hold time",
+        "Voltage range 1",
+        "1.25",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t hr(DQ) t hf(DQ)",
+        "Data input hold time",
+        "Voltage range 4",
+        "1.75",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t vr(OUT) t vf(OUT)",
+        "Data output valid time DHQC = 0",
+        "Voltage range 1",
+        "-",
+        "6",
+        "9.5",
+        "ns"
+      ],
+      [
+        "t vr(OUT) t vf(OUT)",
+        "Data output valid time DHQC = 0",
+        "Voltage range 4",
+        "-",
+        "13",
+        "19.5",
+        "19.5"
+      ],
+      [
+        "t vr(OUT) t vf(OUT)",
+        "Data output valid time DHQC = 1",
+        "Voltage range 1 All prescaler values (except 0)",
+        "-",
+        "t /4 + 0.5 (CLK)",
+        "t /4 + 1.25 (CLK)",
+        "t /4 + 1.25 (CLK)"
+      ],
+      [
+        "t hr(OUT) t hf(OUT)",
+        "Data output hold time DHQC = 0",
+        "Voltage range 1",
+        "4",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t hr(OUT) t hf(OUT)",
+        "Data output hold time DHQC = 0",
+        "Voltage range 4",
+        "7.75",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t hr(OUT)",
+        "Data output hold time DHQC = 1",
+        "Voltage range 1 All prescaler values (except 0)",
+        "t /4 - 0.5 (CLK)",
+        "-",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "3. Maximum frequency values are given for a RWDS to DQ skew of maximum ±1.0 ns.",
+      "4. Activating DHQC is mandatory to reach this frequency.",
+      "5. Crossing results are in line with specification, using pairs PB10/PE9 or PE10/PB12. It exceeds slightly the specification on other CLK/NCLK pairs.",
+      "6. Data input maximum setup time does not take into account the data level switching duration."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

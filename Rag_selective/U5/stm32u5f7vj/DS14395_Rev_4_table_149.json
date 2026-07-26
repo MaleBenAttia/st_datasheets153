@@ -1,0 +1,142 @@
+{
+  "table_id": "table_149",
+  "document": "DS14395 Rev 4 - Table 149. HSPI characteristics in SDR mode",
+  "rev": "Rev 4",
+  "table_number": "149",
+  "title": "Table 149. HSPI characteristics in SDR mode",
+  "page": 309,
+  "section": "5.3.37 HSPI characteristics",
+  "section_title": "HSPI characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u5f7vj.pdf#page=309",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u5f7vj.pdf",
+  "text_helper": "Table 149. HSPI characteristics in SDR mode — section 5.3.37 HSPI characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t w(CLKH)",
+        "HSPI clock high and low time (even division)",
+        "PRESCALER[7:0] = n (n = 0, 1, 3, 5,..255)",
+        "t /2 - 0.5 (CLK)",
+        "-",
+        "t /2 (CLK)",
+        "ns"
+      ],
+      [
+        "t w(CLKL)",
+        "HSPI clock high and low time (even division)",
+        "PRESCALER[7:0] = n (n = 0, 1, 3, 5,..255)",
+        "t /2 - 0.5 (CLK)",
+        "-",
+        "t /2 (CLK)",
+        "ns"
+      ],
+      [
+        "t w(CLKH)",
+        "HSPI clock high and low time (odd division)",
+        "PRESCALER[7:0] = n (n = 2, 4, 6,..254)",
+        "(n/2) × t (CLK) /(n+1) - 0.5",
+        "-",
+        "(n/2) × t (CLK) /(n+1)",
+        "ns"
+      ],
+      [
+        "t w(CLKL)",
+        "HSPI clock high and low time (odd division)",
+        "PRESCALER[7:0] = n (n = 2, 4, 6,..254)",
+        "((n/2)+1) × t (CLK) /(n+1) - 0.5",
+        "-",
+        "((n/2)+1) × t (CLK) /(n+1)",
+        "ns"
+      ],
+      [
+        "t s(IN)",
+        "Data input setup time",
+        "Voltage range 1",
+        "2",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t s(IN)",
+        "Data input setup time",
+        "Voltage range 4",
+        "2.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(IN)",
+        "Data input hold time",
+        "Voltage range 1",
+        "0",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(IN)",
+        "Data input hold time",
+        "Voltage range 4",
+        "0.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t v(OUT)",
+        "Data output valid time",
+        "Voltage range 1",
+        "-",
+        "0.5",
+        "1",
+        "ns"
+      ],
+      [
+        "t v(OUT)",
+        "Data output valid time",
+        "Voltage range 4",
+        "-",
+        "1.5",
+        "2.5",
+        "ns"
+      ],
+      [
+        "t h(OUT)",
+        "Data output hold time",
+        "Voltage range 1",
+        "0",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t h(OUT)",
+        "Data output hold time",
+        "Voltage range 4",
+        "1",
+        "-",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. Evaluated by characterization. Not tested in production. DS14395 Rev 4 309/351"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

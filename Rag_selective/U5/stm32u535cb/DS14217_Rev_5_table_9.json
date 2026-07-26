@@ -1,0 +1,229 @@
+{
+  "table_id": "table_9",
+  "document": "DS14217 Rev 5 - Table 9. STM32U535xx mode overview",
+  "rev": "Rev 5",
+  "table_number": "9",
+  "title": "Table 9. STM32U535xx mode overview",
+  "page": 36,
+  "section": "3.9.3 Low-power modes",
+  "section_title": "Low-power modes",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u535cb.pdf#page=36",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u535cb.pdf",
+  "text_helper": "Table 9. STM32U535xx mode overview — section 3.9.3 Low-power modes. Mode, Regulator(1), CPU, Flash, SRAM, +3 autres.",
+  "table_content": {
+    "headers": [
+      "Mode",
+      "Regulator(1)",
+      "CPU",
+      "Flash",
+      "SRAM",
+      "Clocks",
+      "DMA and peripherals(2)",
+      "Wake-up source"
+    ],
+    "rows": [
+      [
+        "Run",
+        "Range 1",
+        "Yes",
+        "ON(3)",
+        "ON",
+        "Any",
+        "All",
+        "N/A"
+      ],
+      [
+        "Run",
+        "Range 2",
+        "Yes",
+        "ON(3)",
+        "ON",
+        "Any",
+        "All",
+        "N/A"
+      ],
+      [
+        "Run",
+        "Range 3",
+        "Yes",
+        "ON(3)",
+        "ON",
+        "Any",
+        "All",
+        "N/A"
+      ],
+      [
+        "Run",
+        "Range 4",
+        "Yes",
+        "ON(3)",
+        "ON",
+        "Any",
+        "All except USB",
+        "N/A"
+      ],
+      [
+        "Sleep",
+        "Range 1",
+        "No",
+        "ON",
+        "ON(4)",
+        "Any",
+        "All",
+        "Any interrupt or event"
+      ],
+      [
+        "Sleep",
+        "Range 2",
+        "No",
+        "ON",
+        "ON(4)",
+        "Any",
+        "All",
+        "Any interrupt or event"
+      ],
+      [
+        "Sleep",
+        "Range 3",
+        "No",
+        "ON",
+        "ON(4)",
+        "Any",
+        "All",
+        "Any interrupt or event"
+      ],
+      [
+        "Sleep",
+        "Range 4",
+        "No",
+        "ON",
+        "ON(4)",
+        "Any",
+        "All except USB",
+        "Any interrupt or event"
+      ],
+      [
+        "Stop 0",
+        "Range 1",
+        "No",
+        "OFF",
+        "ON(5)",
+        "LSE LSI (6)",
+        "BOR, PVD, PVM, RTC, TAMP, IWDG, TEMP (temp. sensor), VREFBUF, ADC4(7), DAC1 (2 channels)(8), COMP1, OPAMP1, USARTx (x = 1, 3, 4, 5)(9), LPUART1, SPIx (x = 1...3)(10), I2Cx (x = 1...4)(11), LPTIMx (x = 1...4)(12), MDF1(13), ADF1, GPIO, LPGPIO, GPDMA1(14), LPDMA1 All other peripherals are frozen.",
+        "Reset pin, all I/Os, BOR, PVD, PVM, RTC, TAMP, IWDG, TEMP, ADC4, DAC1 (2 channels), COMP1, USARTx (x = 1, 3, 4, 5), LPUART1, SPIx (x = 1...3), I2Cx (x = 1...4), LPTIMx (x = 1...4), MDF1, ADF1, GPDMA1, LPDMA1, USB"
+      ],
+      [
+        "Stop 0",
+        "Range 2",
+        "No",
+        "OFF",
+        "ON(5)",
+        "LSE LSI (6)",
+        "BOR, PVD, PVM, RTC, TAMP, IWDG, TEMP (temp. sensor), VREFBUF, ADC4(7), DAC1 (2 channels)(8), COMP1, OPAMP1, USARTx (x = 1, 3, 4, 5)(9), LPUART1, SPIx (x = 1...3)(10), I2Cx (x = 1...4)(11), LPTIMx (x = 1...4)(12), MDF1(13), ADF1, GPIO, LPGPIO, GPDMA1(14), LPDMA1 All other peripherals are frozen.",
+        "Reset pin, all I/Os, BOR, PVD, PVM, RTC, TAMP, IWDG, TEMP, ADC4, DAC1 (2 channels), COMP1, USARTx (x = 1, 3, 4, 5), LPUART1, SPIx (x = 1...3), I2Cx (x = 1...4), LPTIMx (x = 1...4), MDF1, ADF1, GPDMA1, LPDMA1, USB"
+      ],
+      [
+        "Stop 0",
+        "Range 3",
+        "No",
+        "OFF",
+        "ON(5)",
+        "LSE LSI (6)",
+        "BOR, PVD, PVM, RTC, TAMP, IWDG, TEMP (temp. sensor), VREFBUF, ADC4(7), DAC1 (2 channels)(8), COMP1, OPAMP1, USARTx (x = 1, 3, 4, 5)(9), LPUART1, SPIx (x = 1...3)(10), I2Cx (x = 1...4)(11), LPTIMx (x = 1...4)(12), MDF1(13), ADF1, GPIO, LPGPIO, GPDMA1(14), LPDMA1 All other peripherals are frozen.",
+        "Reset pin, all I/Os, BOR, PVD, PVM, RTC, TAMP, IWDG, TEMP, ADC4, DAC1 (2 channels), COMP1, USARTx (x = 1, 3, 4, 5), LPUART1, SPIx (x = 1...3), I2Cx (x = 1...4), LPTIMx (x = 1...4), MDF1, ADF1, GPDMA1, LPDMA1, USB"
+      ],
+      [
+        "Stop 0",
+        "Range 4",
+        "No",
+        "OFF",
+        "ON(5)",
+        "LSE LSI (6)",
+        "BOR, PVD, PVM, RTC, TAMP, IWDG, TEMP (temp. sensor), VREFBUF, ADC4(7), DAC1 (2 channels)(8), COMP1, OPAMP1, USARTx (x = 1, 3, 4, 5)(9), LPUART1, SPIx (x = 1...3)(10), I2Cx (x = 1...4)(11), LPTIMx (x = 1...4)(12), MDF1(13), ADF1, GPIO, LPGPIO, GPDMA1(14), LPDMA1 All other peripherals are frozen.",
+        "Reset pin, all I/Os, BOR, PVD, PVM, RTC, TAMP, IWDG, TEMP, ADC4, DAC1 (2 channels), COMP1, USARTx (x = 1, 3, 4, 5), LPUART1, SPIx (x = 1...3), I2Cx (x = 1...4), LPTIMx (x = 1...4), MDF1, ADF1, GPDMA1, LPDMA1, USB"
+      ],
+      [
+        "Stop 1",
+        "LPR",
+        "No",
+        "OFF",
+        "ON(5)",
+        "LSE LSI (6)",
+        "BOR, PVD, PVM, RTC, TAMP, IWDG, TEMP (temp. sensor), VREFBUF, ADC4(7), DAC1 (2 channels)(8), COMP1, OPAMP1, USARTx (x = 1, 3, 4, 5)(9), LPUART1, SPIx (x = 1...3)(10), I2Cx (x = 1...4)(11), LPTIMx (x = 1...4)(12), MDF1(13), ADF1, GPIO, LPGPIO, GPDMA1(14), LPDMA1 All other peripherals are frozen.",
+        "Reset pin, all I/Os, BOR, PVD, PVM, RTC, TAMP, IWDG, TEMP, ADC4, DAC1 (2 channels), COMP1, USARTx (x = 1, 3, 4, 5), LPUART1, SPIx (x = 1...3), I2Cx (x = 1...4), LPTIMx (x = 1...4), MDF1, ADF1, GPDMA1, LPDMA1, USB"
+      ],
+      [
+        "Stop 2",
+        "LPR",
+        "No",
+        "OFF",
+        "ON(5)",
+        "LSE LSI",
+        "BOR, PVD, PVM, RTC, TAMP, IWDG, TEMP, VREFBUF, ADC4, DAC1 (2 channels), COMP1, OPAMP1, LPUART1, SPI3, I2C3, LPTIMx (x = 1, 3, 4), ADF1, LPGPIO, LPDMA1 All other peripherals are frozen.",
+        "Reset pin, all I/Os, BOR, PVD, PVM, RTC, TAMP, IWDG, TEMP, ADC4, COMP1, LPUART1, SPI3, I2C3, LPTIMx (x = 1,3,4), ADF1, LPDMA1"
+      ],
+      [
+        "Stop 3",
+        "LPR",
+        "No",
+        "OFF",
+        "ON(5)",
+        "LSE LSI",
+        "BOR, RTC, TAMP, IWDG, DAC1 (2 static channels), OPAMP1 All other peripherals are frozen. I/O configuration can be floating, pull-up or pull-down.",
+        "Reset pin, 24 I/Os (WKUPx), BOR, RTC, TAMP, IWDG"
+      ],
+      [
+        "Standby",
+        "LPR",
+        "Powered off",
+        "OFF",
+        "2MARS ffo )5(MARSPKB derewop etybK-8 sMARS ro etybK-2 -65 rehto ,-46 lla",
+        "LSE LSI",
+        "BOR, RTC, TAMP, IWDG All other peripherals are powered off. I/O configuration can be floating, pull-up or pull-down.",
+        "Reset pin, 24 I/Os (WKUPx), BOR, RTC, TAMP, IWDG"
+      ],
+      [
+        "Standby",
+        "OFF",
+        "OFF",
+        "OFF",
+        "derewoP ffo",
+        "derewoP ffo",
+        "derewoP ffo",
+        "derewoP ffo"
+      ],
+      [
+        "Shutdown",
+        "OFF",
+        "Powered off",
+        "OFF",
+        "derewoP ffo",
+        "LSE",
+        "RTC, TAMP All other peripherals are powered off. I/O configuration can be floating, pull-up or pull-down(15).",
+        "Reset pin, 24 I/Os (WKUPx), RTC, TAMP"
+      ]
+    ],
+    "notes": [
+      "1. LPR means that the main regulator is OFF and the low-power regulator is ON.",
+      "2. All peripherals can be active or clock gated to save power consumption.",
+      "3. The flash memory can be put in power-down and its clock can be gated off when executing from SRAM. One bank can also be put in power-down mode.",
+      "4. The SRAM1, SRAM2, SRAM4 and BKPSRAM clocks can be gated on or off independently.",
+      "5. The SRAM can be individually powered off to save power consumption.",
+      "6. MSI and HSI16 can be temporary enabled upon peripheral request, for autonomous functions with DMA or wake-up from Stop event detections.",
+      "7. The ADC4 conversion is functional and autonomous with DMA in Stop mode, and can generate a wake-up interrupt on conversion events.",
+      "8. DAC1 is the digital-to-analog (D/A) converter controller instance name. This instance controls two D/A converters also called \"two channels\". The DAC conversions are functional and autonomous with DMA in Stop mode.",
+      "9. U(S)ART and LPUART transmission and reception is functional and autonomous with DMA in Stop mode, and can generate a wake-up interrupt on transfer events.",
+      "10. SPI transmission and reception is functional and autonomous with DMA in Stop mode, and can generate a wake-up interrupt on transfer events.",
+      "11. I2C transmission and reception is functional and autonomous with DMA in Stop mode, and can generate a wake-up interrupt on transfer events.",
+      "12. LPTIM is functional and autonomous with DMA in Stop mode, and can generate a wake-up interrupt on all events.",
+      "13. MDF and ADF are functional and autonomous with DMA in Stop mode, and can generate a wake-up interrupt on events.",
+      "14. GPDMA and LPDMA are functional and autonomous in Stop mode, and can generate a wake-up interrupt on events.",
+      "15. I/Os can be configured with internal pull-up, pull-down or floating in Shutdown mode but the configuration is lost when exiting the Shutdown mode."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "table_id": "table_134",
+  "document": "DS14216 Rev 5 - Table 134. I2C analog filter characteristics",
+  "rev": "Rev 5",
+  "table_number": "134",
+  "title": "Table 134. I2C analog filter characteristics",
+  "page": 258,
+  "section": "5.3.35 Delay block characteristics",
+  "section_title": "Delay block characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u545ce.pdf#page=258",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u545ce.pdf",
+  "text_helper": "Table 134. I2C analog filter characteristics — section 5.3.35 Delay block characteristics. Symbol, Symbol, Parameter, Min, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t AF",
+        "t AF",
+        "Maximum pulse width of spikes that are suppressed by the analog filter",
+        "50(2)",
+        "115(3)",
+        "ns"
+      ],
+      [
+        "f CK",
+        "SPI slave receiver, 1.71 V ≤ V ≤ 3.6 V DDIOX",
+        "-",
+        "-",
+        "53",
+        "53"
+      ],
+      [
+        "f CK",
+        "SPI slave transmitter, 1.71 V ≤ V ≤ 3.6 V DDIOX",
+        "-",
+        "-",
+        "30",
+        "30"
+      ],
+      [
+        "f CK",
+        "SPI slave transmitter, 2.7 V ≤ V ≤ 3.6 V DDIOX",
+        "-",
+        "-",
+        "27",
+        "27"
+      ],
+      [
+        "t su(RX)",
+        "SPI slave mode",
+        "2.5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t h(RX)",
+        "SPI slave mode",
+        "1",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "t v(TX)",
+        "SPI slave mode, 1.71 V ≤ V ≤ 3.6 V DD",
+        "-",
+        "13",
+        "18.5",
+        "18.5"
+      ],
+      [
+        "t v(TX)",
+        "SPI master mode",
+        "-",
+        "2.5",
+        "6.5",
+        "6.5"
+      ],
+      [
+        "t h(TX)",
+        "SPI master mode",
+        "0.5",
+        "-",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "2. Spikes with widths below t min are filtered. AF",
+      "3. Spikes with width above t max are not filtered. AF"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

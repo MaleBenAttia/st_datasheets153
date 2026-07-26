@@ -1,0 +1,482 @@
+{
+  "table_id": "table_33",
+  "document": "DS14102 Rev 5 - Table 33. General operating conditions",
+  "rev": "Rev 5",
+  "table_number": "33",
+  "title": "Table 33. General operating conditions",
+  "page": 158,
+  "section": "5.3.1 General operating conditions",
+  "section_title": "General operating conditions",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u5g7vj.pdf#page=158",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u5g7vj.pdf",
+  "text_helper": "Table 33. General operating conditions — section 5.3.1 General operating conditions. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "V DD",
+        "Standard operating voltage",
+        "HSLV(1) = 0",
+        "1.71(2)",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DD",
+        "Standard operating voltage",
+        "HSLV = 1",
+        "1.71(2)",
+        "-",
+        "2.7",
+        "V"
+      ],
+      [
+        "V DDSMPS",
+        "Supply voltage for the internal SMPS step-down converter",
+        "-",
+        "V DD",
+        "V DD",
+        "V DD",
+        "V"
+      ],
+      [
+        "V DDIO2",
+        "Supply voltage for PG[15:2] I/Os",
+        "At least one I/O in PG[15:2] used, HSLV = 0",
+        "1.08",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DDIO2",
+        "Supply voltage for PG[15:2] I/Os",
+        "At least one I/O in PG[15:2] used, HSLV = 1",
+        "1.08",
+        "-",
+        "2.7",
+        "V"
+      ],
+      [
+        "V DDIO2",
+        "Supply voltage for PG[15:2] I/Os",
+        "PG[15:2] I/Os not used",
+        "0",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DDUSB",
+        "USB supply voltage",
+        "USB used",
+        "3.0",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DDUSB",
+        "USB supply voltage",
+        "USB not used",
+        "0",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DDA",
+        "Analog supply voltage",
+        "COMP used",
+        "1.58",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DDA",
+        "Analog supply voltage",
+        "DAC or OPAMP used",
+        "1.60",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DDA",
+        "Analog supply voltage",
+        "ADC used",
+        "1.62",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DDA",
+        "Analog supply voltage",
+        "VREFBUF used (normal mode)",
+        "1.8",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V DDA",
+        "Analog supply voltage",
+        "ADC, DAC, COMP, OPAMP, and VREFBUF not used",
+        "0",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V BAT",
+        "Backup domain supply voltage",
+        "-",
+        "1.65(3)",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "V IN",
+        "I/O input voltage",
+        "All I/Os except FT_c and TT_xx pins",
+        "-0.3",
+        "-",
+        "Min (min(V , V , DD DDA V , V ) +3.6, DDUSB DDIO2 5.5)(4)(5)",
+        "V"
+      ],
+      [
+        "V IN",
+        "I/O input voltage",
+        "Input voltage on FT_t pins in V mode BAT",
+        "-0.3",
+        "-",
+        "Min (min(V , V , BAT DDA V V ) + 3.6, DDUSB, DDIO2 5.5)(4)(5)",
+        "V"
+      ],
+      [
+        "V IN",
+        "I/O input voltage",
+        "FT_c I/Os",
+        "-0.3",
+        "-",
+        "5.0",
+        "V"
+      ],
+      [
+        "V IN",
+        "I/O input voltage",
+        "TT_xx I/Os",
+        "-0.3",
+        "-",
+        "V + 0.3 DDIOx",
+        "V"
+      ],
+      [
+        "I IO_SW",
+        "Sum of output current sourced by all I/Os powered by V (6) SW",
+        "-",
+        "-",
+        "-",
+        "3",
+        "mA"
+      ],
+      [
+        "V CORE",
+        "Internal regulator ON",
+        "Range 1",
+        "1.15",
+        "1.21",
+        "1.27",
+        "V"
+      ],
+      [
+        "V CORE",
+        "Internal regulator ON",
+        "Range 2",
+        "1.05",
+        "1.1",
+        "1.15",
+        "1.15"
+      ],
+      [
+        "V CORE",
+        "Internal regulator ON",
+        "Range 3",
+        "0.95",
+        "1.0",
+        "1.05",
+        "1.05"
+      ],
+      [
+        "V CORE",
+        "Internal regulator ON",
+        "Range 4",
+        "0.81",
+        "0.9",
+        "0.99",
+        "0.99"
+      ],
+      [
+        "f HCLK",
+        "AHB clock frequency",
+        "Range 1",
+        "-",
+        "-",
+        "160",
+        "MHz"
+      ],
+      [
+        "f HCLK",
+        "AHB clock frequency",
+        "Range 2",
+        "-",
+        "-",
+        "110",
+        "110"
+      ],
+      [
+        "f HCLK",
+        "AHB clock frequency",
+        "Range 3",
+        "-",
+        "-",
+        "55",
+        "55"
+      ],
+      [
+        "f HCLK",
+        "AHB clock frequency",
+        "Range 4",
+        "-",
+        "-",
+        "25",
+        "25"
+      ],
+      [
+        "f PCLKx (x = 1, 2, 3)",
+        "APB1, APB2, APB3 clock frequency",
+        "Range 1",
+        "-",
+        "-",
+        "160",
+        "160"
+      ],
+      [
+        "f PCLKx (x = 1, 2, 3)",
+        "APB1, APB2, APB3 clock frequency",
+        "Range 2",
+        "-",
+        "-",
+        "110",
+        "110"
+      ],
+      [
+        "f PCLKx (x = 1, 2, 3)",
+        "APB1, APB2, APB3 clock frequency",
+        "Range 3",
+        "-",
+        "-",
+        "55",
+        "55"
+      ],
+      [
+        "f PCLKx (x = 1, 2, 3)",
+        "APB1, APB2, APB3 clock frequency",
+        "Range 4",
+        "-",
+        "-",
+        "25",
+        "25"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 85 °C A for suffix 6(7)",
+        "LQFP100",
+        "See Section 6.7: Package thermal characteristics for application appropriate thermal resistance and package. The power dissipation is then calculated according to ambient temperature (T ) and maximum junction temperature (T ) A J and selected thermal resistance.",
+        "See Section 6.7: Package thermal characteristics for application appropriate thermal resistance and package. The power dissipation is then calculated according to ambient temperature (T ) and maximum junction temperature (T ) A J and selected thermal resistance.",
+        "See Section 6.7: Package thermal characteristics for application appropriate thermal resistance and package. The power dissipation is then calculated according to ambient temperature (T ) and maximum junction temperature (T ) A J and selected thermal resistance.",
+        "mW"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 85 °C A for suffix 6(7)",
+        "LQFP144",
+        "LQFP144",
+        "LQFP144",
+        "LQFP144",
+        "LQFP144"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 85 °C A for suffix 6(7)",
+        "UFBGA144",
+        "UFBGA144",
+        "UFBGA144",
+        "UFBGA144",
+        "UFBGA144"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 85 °C A for suffix 6(7)",
+        "WLCSP208",
+        "WLCSP208",
+        "WLCSP208",
+        "WLCSP208",
+        "WLCSP208"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 85 °C A for suffix 6(7)",
+        "TFBGA216",
+        "TFBGA216",
+        "TFBGA216",
+        "TFBGA216",
+        "TFBGA216"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 125 °C A for suffix 3(7)",
+        "LQFP100",
+        "LQFP100",
+        "LQFP100",
+        "LQFP100",
+        "LQFP100"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 125 °C A for suffix 3(7)",
+        "LQFP144",
+        "LQFP144",
+        "LQFP144",
+        "LQFP144",
+        "LQFP144"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 125 °C A for suffix 3(7)",
+        "UFBGA144",
+        "UFBGA144",
+        "UFBGA144",
+        "UFBGA144",
+        "UFBGA144"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 125 °C A for suffix 3(7)",
+        "WLCSP208",
+        "WLCSP208",
+        "WLCSP208",
+        "WLCSP208",
+        "WLCSP208"
+      ],
+      [
+        "P D",
+        "Power dissipation at T = 125 °C A for suffix 3(7)",
+        "TFBGA216",
+        "TFBGA216",
+        "TFBGA216",
+        "TFBGA216",
+        "TFBGA216"
+      ],
+      [
+        "TA",
+        "Ambient temperature for suffix 6",
+        "Maximum power dissipation",
+        "–40",
+        "-",
+        "85",
+        "°C"
+      ],
+      [
+        "TA",
+        "Ambient temperature for suffix 6",
+        "Low-power dissipation(8)",
+        "–40",
+        "-",
+        "105",
+        "105"
+      ],
+      [
+        "TA",
+        "Ambient temperature for suffix 3",
+        "Maximum power dissipation",
+        "–40",
+        "-",
+        "125",
+        "125"
+      ],
+      [
+        "TA",
+        "Ambient temperature for suffix 3",
+        "Low-power dissipation(8)",
+        "–40",
+        "-",
+        "130",
+        "130"
+      ],
+      [
+        "TJ",
+        "Junction temperature range",
+        "Suffix 6 version",
+        "–40",
+        "-",
+        "105",
+        "105"
+      ],
+      [
+        "TJ",
+        "Junction temperature range",
+        "Suffix 3 version",
+        "–40",
+        "-",
+        "130",
+        "130"
+      ],
+      [
+        "None",
+        "V fall-time rate DD",
+        "ULPMEN = 0 (default value)",
+        "20",
+        "∞",
+        "None",
+        "None"
+      ],
+      [
+        "None",
+        "None",
+        "Standby mode, BOR level 0 selected with ULPMEN = 1",
+        "250",
+        "∞",
+        "ms/V",
+        "ms/V"
+      ]
+    ],
+    "notes": [
+      "1. HSLV means high-speed low-voltage mode (refer to the GPIO section of the product reference manual).",
+      "2. When RESET is released, the functionality is guaranteed down to V min. BORx",
+      "3. In V mode, the functionality is guaranteed down to V min. BAT BOR_VBAT",
+      "4. This formula has to be applied only on the power supplies related to the I/O structure described by the pin definition table. The maximum I/O input voltage is the smallest value between Min (V , V , V V )+3.6 V, and 5.5V.",
+      "5. For operation with voltage higher than Min (V , V , V V ) +0.3 V, the internal pull-up and pull-down resistors DD DDA DDUSB, DDIO2",
+      "6. The I/Os powered by V are: SW",
+      "7. If T is lower, higher P values are allowed as long as T does not exceed T max (see Section 6.7: Package thermal A D J J",
+      "8. In low-power dissipation state, T can be extended to this range as long as T does not exceed T max (see Section 6.7: A J J"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

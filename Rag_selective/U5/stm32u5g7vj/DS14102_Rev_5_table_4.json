@@ -1,0 +1,223 @@
+{
+  "table_id": "table_4",
+  "document": "DS14102 Rev 5 - Table 4. Access status versus protection level and execution modes when TZEN = 1",
+  "rev": "Rev 5",
+  "table_number": "4",
+  "title": "Table 4. Access status versus protection level and execution modes when TZEN = 1",
+  "page": 25,
+  "section": "3.4 Embedded flash memory",
+  "section_title": "Embedded flash memory",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u5g7vj.pdf#page=25",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u5g7vj.pdf",
+  "text_helper": "Table 4. Access status versus protection level and execution modes when TZEN = 1 — section 3.4 Embedded flash memory. Area, RDP level, User execution (boot from flash memory) / Read, User execution (boot from flash memory) / Write, User execution (boot from flash memory) / Erase, +3 autres.",
+  "table_content": {
+    "headers": [
+      "Area",
+      "RDP level",
+      "User execution (boot from flash memory) / Read",
+      "User execution (boot from flash memory) / Write",
+      "User execution (boot from flash memory) / Erase",
+      "Debug/boot from RAM/ bootloader(1) / Read",
+      "Debug/boot from RAM/ bootloader(1) / Write",
+      "Debug/boot from RAM/ bootloader(1) / Erase"
+    ],
+    "rows": [
+      [
+        "Backup registers",
+        "1",
+        "Yes",
+        "Yes",
+        "N/A",
+        "No",
+        "No",
+        "N/A(7)"
+      ],
+      [
+        "Backup registers",
+        "2",
+        "Yes",
+        "Yes",
+        "N/A",
+        "N/A",
+        "N/A",
+        "N/A"
+      ],
+      [
+        "SRAM2/backup RAM",
+        "1",
+        "Yes",
+        "Yes",
+        "N/A",
+        "No",
+        "No",
+        "N/A(8)"
+      ],
+      [
+        "SRAM2/backup RAM",
+        "2",
+        "Yes",
+        "Yes",
+        "N/A",
+        "N/A",
+        "N/A",
+        "N/A"
+      ],
+      [
+        "OTFDEC regions (Octo-SPI)",
+        "1",
+        "Yes",
+        "Yes",
+        "Yes",
+        "No(9)",
+        "Yes",
+        "Yes"
+      ],
+      [
+        "OTFDEC regions (Octo-SPI)",
+        "2",
+        "Yes",
+        "Yes",
+        "Yes",
+        "N/A",
+        "N/A",
+        "N/A"
+      ],
+      [
+        "OTP",
+        "0.5",
+        "Yes",
+        "Yes(7)",
+        "N/A",
+        "Yes",
+        "Yes(7)",
+        "N/A"
+      ],
+      [
+        "OTP",
+        "1",
+        "Yes",
+        "Yes(7)",
+        "N/A",
+        "Yes",
+        "Yes(7)",
+        "N/A"
+      ],
+      [
+        "OTP",
+        "2",
+        "Yes",
+        "Yes(7)",
+        "N/A",
+        "N/A",
+        "N/A",
+        "N/A"
+      ],
+      [
+        "Backup registers",
+        "0.5",
+        "Yes",
+        "Yes",
+        "N/A",
+        "Yes(2)",
+        "Yes(2)",
+        "N/A(8)"
+      ],
+      [
+        "Backup registers",
+        "1",
+        "Yes",
+        "Yes",
+        "N/A",
+        "No",
+        "No",
+        "N/A(8)"
+      ],
+      [
+        "Backup registers",
+        "2",
+        "Yes",
+        "Yes",
+        "N/A",
+        "N/A",
+        "N/A",
+        "N/A"
+      ],
+      [
+        "SRAM2/backup RAM",
+        "0.5",
+        "Yes",
+        "Yes",
+        "N/A",
+        "Yes(2)",
+        "Yes(2)",
+        "N/A(9)"
+      ],
+      [
+        "SRAM2/backup RAM",
+        "1",
+        "Yes",
+        "Yes",
+        "N/A",
+        "No",
+        "No",
+        "N/A(9)"
+      ],
+      [
+        "SRAM2/backup RAM",
+        "2",
+        "Yes",
+        "Yes",
+        "N/A",
+        "N/A",
+        "N/A",
+        "N/A"
+      ],
+      [
+        "OTFDEC regions (Octo-SPI)",
+        "0.5",
+        "Yes",
+        "Yes",
+        "Yes",
+        "No(10)",
+        "Yes",
+        "Yes"
+      ],
+      [
+        "OTFDEC regions (Octo-SPI)",
+        "1",
+        "Yes",
+        "Yes",
+        "Yes",
+        "No(10)",
+        "Yes",
+        "Yes"
+      ],
+      [
+        "OTFDEC regions (Octo-SPI)",
+        "2",
+        "Yes",
+        "Yes",
+        "Yes",
+        "N/A",
+        "N/A",
+        "N/A"
+      ]
+    ],
+    "notes": [
+      "1. When the protection level 2 is active, the debug port, the boot from RAM and the boot from system memory are disabled.",
+      "2. The system memory is only read-accessible, whatever the protection level (0, 1 or 2) and execution mode.",
+      "7. The backup registers are erased when RDP changes from level 1 to level 0.",
+      "8. All SRAMs are erased when RDP changes from level 1 to level 0.",
+      "9. The OTFDEC keys are erased when the RDP option byte changes from level 1 to level 0.",
+      "10. The OTFDEC keys are erased when the RDP option byte changes from level 1 to level 0."
+    ],
+    "legend": [
+      "Debug/ bootloader(1)",
+      "Debug/ bootloader(1)"
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

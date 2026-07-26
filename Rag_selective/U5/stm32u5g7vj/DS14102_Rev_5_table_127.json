@@ -1,0 +1,130 @@
+{
+  "table_id": "table_127",
+  "document": "DS14102 Rev 5 - Table 127. MIPI D-PHY AC characteristics LP mode and HS/LP transitions",
+  "rev": "Rev 5",
+  "table_number": "127",
+  "title": "Table 127. MIPI D-PHY AC characteristics LP mode and HS/LP transitions",
+  "page": 279,
+  "section": "5.3.33 MIPI D-PHY characteristics",
+  "section_title": "MIPI D-PHY characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u5g7vj.pdf#page=279",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u5g7vj.pdf",
+  "text_helper": "Table 127. MIPI D-PHY AC characteristics LP mode and HS/LP transitions — section 5.3.33 MIPI D-PHY characteristics. Symbol, Parameter, Min, Typ, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "T LPX",
+        "Transmitted length of any LP state period",
+        "50",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "T CLK-PREPARE",
+        "Time that the transmitter drives the clock lane LP-00 line state immediately before the HS-0 line state, starting the HS transmission",
+        "38",
+        "-",
+        "95",
+        "ns"
+      ],
+      [
+        "T CLK-PREPARE + T CLK-ZERO",
+        "T + time that the transmitter drives the CLK-PREPARE HS-0 state prior to starting the clock",
+        "300",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "T CLK-PRE",
+        "Time that the HS clock must be driven by the transmitter prior to any associated data lane beginning the transition from LP to HS mode",
+        "8",
+        "-",
+        "-",
+        "UI(2)"
+      ],
+      [
+        "T CLK-POST",
+        "Time that the transmitter continues to send HS clock after the last associated data lane transitioned to LP mode",
+        "62 + 52 × UI",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "T CLK-TRAIL",
+        "Time that the transmitter drives the HS-0 state after the last payload clock bit of an HS transmission burst",
+        "60",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "T HS-PREPARE",
+        "Time that the transmitter drives the data lane LP-00 line state immediately before the HS-0 line state starting the HS transmission",
+        "40 + 4 × UI",
+        "-",
+        "85 + 6 × UI",
+        "ns"
+      ],
+      [
+        "T HS-PREPARE + T HS-ZERO",
+        "T + time that the transmitter drives the HS-PREPARE HS-0 state prior to transmitting the sync sequence",
+        "145 + 10 × UI",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "T HS-TRAIL",
+        "Time that the transmitter drives the flipped differential state after last payload data bit of a HS transmission burst",
+        "Max (n × 8 × UI, 60 + n × 4 × UI)",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "T HS-EXIT",
+        "Time that the transmitter drives LP-11 following a HS burst",
+        "100",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "T REOT",
+        "30%-85% rise and fall time",
+        "-",
+        "-",
+        "35(3)",
+        "ns"
+      ],
+      [
+        "T EOT",
+        "Transmitted time interval from the start of T or HS-TRAIL T , to the start of the LP-11 state following a CLK-TRAIL HS burst",
+        "-",
+        "-",
+        "105 + n × 12 × UI",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "2. UI (unit interval) equals to the duration of any HS state on the clock lane.",
+      "3. For V above 3 V, this parameter may be degraded in the 55°C to 125°C range. For V = 1.8 V, this parameter may be DD DD"
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

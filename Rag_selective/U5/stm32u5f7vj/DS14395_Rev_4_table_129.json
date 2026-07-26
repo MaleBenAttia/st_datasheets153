@@ -1,0 +1,111 @@
+{
+  "table_id": "table_129",
+  "document": "DS14395 Rev 4 - Table 129. TIMx characteristics",
+  "rev": "Rev 4",
+  "table_number": "129",
+  "title": "Table 129. TIMx characteristics",
+  "page": 286,
+  "section": "5.3.34 Timer characteristics",
+  "section_title": "Timer characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u5f7vj.pdf#page=286",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u5f7vj.pdf",
+  "text_helper": "Table 129. TIMx characteristics — section 5.3.34 Timer characteristics. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "-",
+        "1",
+        "-",
+        "t TIMxCLK"
+      ],
+      [
+        "t res(TIM)",
+        "Timer resolution time",
+        "f = 160 MHz TIMxCLK",
+        "6.25",
+        "-",
+        "ns"
+      ],
+      [
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "-",
+        "0",
+        "f /2 TIMxCLK",
+        "MHz"
+      ],
+      [
+        "f EXT",
+        "Timer external clock frequency on CH1 to CH4",
+        "f = 160 MHz TIMxCLK",
+        "0",
+        "80",
+        "MHz"
+      ],
+      [
+        "Res TIM",
+        "Timer resolution",
+        "TIMx (except TIM2/3/4/5)",
+        "-",
+        "16",
+        "bit"
+      ],
+      [
+        "Res TIM",
+        "Timer resolution",
+        "TIM2/3/4/5",
+        "-",
+        "32",
+        "bit"
+      ],
+      [
+        "t COUNTER",
+        "16-bit counter clock period",
+        "-",
+        "1",
+        "65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t COUNTER",
+        "16-bit counter clock period",
+        "f = 160 MHz TIMxCLK",
+        "0.007",
+        "409.6",
+        "µs"
+      ],
+      [
+        "t MAX_COUNT",
+        "Maximum possible count with 32-bit counter",
+        "-",
+        "-",
+        "65536 × 65536",
+        "t TIMxCLK"
+      ],
+      [
+        "t MAX_COUNT",
+        "Maximum possible count with 32-bit counter",
+        "f = 160 MHz TIMxCLK",
+        "-",
+        "26.843",
+        "s"
+      ]
+    ],
+    "notes": [],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}
