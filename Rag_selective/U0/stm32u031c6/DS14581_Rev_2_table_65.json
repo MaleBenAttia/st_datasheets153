@@ -1,0 +1,115 @@
+{
+  "table_id": "table_65",
+  "document": "DS14581 Rev 2 - Table 65. NRST pin characteristics",
+  "rev": "Rev 2",
+  "table_number": "65",
+  "title": "Table 65. NRST pin characteristics",
+  "page": 80,
+  "section": "6.3.15 NRST pin characteristics",
+  "section_title": "NRST pin characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u031c6.pdf#page=80",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u031c6.pdf",
+  "text_helper": "Table 65. NRST pin characteristics — section 6.3.15 NRST pin characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "VIL(NRST)",
+        "NRST input low level voltage",
+        "-",
+        "-",
+        "-",
+        "0.3 × VDDIOx",
+        "V"
+      ],
+      [
+        "VIH(NRST)",
+        "NRST input high level voltage",
+        "-",
+        "0.7 × VDDIOx",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "Vhys(NRST)",
+        "NRST Schmitt trigger voltage hysteresis",
+        "-",
+        "-",
+        "200",
+        "-",
+        "mV"
+      ],
+      [
+        "RPU",
+        "Weak pull-up equivalent resistor(1)",
+        "VIN = VSS",
+        "25",
+        "40",
+        "55",
+        "kΩ"
+      ],
+      [
+        "VF(NRST)",
+        "NRST input filtered pulse",
+        "-",
+        "-",
+        "-",
+        "70",
+        "ns"
+      ],
+      [
+        "VNF(NRST)",
+        "NRST input not filtered pulse",
+        "1.71 V ≤ VDD ≤ 3.6 V",
+        "350",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "IDD(BOOST)",
+        "Booster consumption for 1.62 V ≤ VDD ≤ 2.0 V",
+        "Booster consumption for 1.62 V ≤ VDD ≤ 2.0 V",
+        "-",
+        "-",
+        "-",
+        "250"
+      ],
+      [
+        "None",
+        "Booster consumption for 2.0 V ≤ VDD ≤ 2.7 V",
+        "Booster consumption for 2.0 V ≤ VDD ≤ 2.7 V",
+        "-",
+        "-",
+        "-",
+        "500"
+      ],
+      [
+        "None",
+        "Booster consumption for 2.7 V ≤ VDD ≤ 3.6 V",
+        "Booster consumption for 2.7 V ≤ VDD ≤ 3.6 V",
+        "-",
+        "-",
+        "-",
+        "900"
+      ]
+    ],
+    "notes": [
+      "1. The pull-up is designed with a true resistance in series with a switchable PMOS. This PMOS contribution to the series resistance is minimal (~10% order)."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

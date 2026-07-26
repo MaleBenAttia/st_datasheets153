@@ -1,0 +1,55 @@
+{
+  "table_id": "table_46",
+  "document": "DS14463 Rev 2 - Table 46. Regulator mode transition times",
+  "rev": "Rev 2",
+  "table_number": "46",
+  "title": "Table 46. Regulator mode transition times",
+  "page": 69,
+  "section": "6.3.6 Wake-up time from low-power modes and voltage scaling transition times",
+  "section_title": "Wake-up time from low-power modes and voltage scaling transition times",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u083cc.pdf#page=69",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u083cc.pdf",
+  "text_helper": "Table 46. Regulator mode transition times — section 6.3.6 Wake-up time from low-power modes and voltage scaling transition times. Symbol, Parameter, Parameter, Conditions, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Parameter",
+      "Conditions",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "tWULPRUN",
+        "Wake-up time from Low-power run mode to Run mode(1)",
+        "Wake-up time from Low-power run mode to Run mode(1)",
+        "Code run with MSI 2 MHz",
+        "5",
+        "7",
+        "μs"
+      ],
+      [
+        "tVOST",
+        "Regulator transition time from Range 2 to Range 1 or Range 1 to Range 2(2)",
+        "Regulator transition time from Range 2 to Range 1 or Range 1 to Range 2(2)",
+        "Code run with MSI 16 MHz",
+        "20",
+        "40",
+        "μs"
+      ]
+    ],
+    "notes": [
+      "1. Time until REGLPF flag is cleared in PWR_SR2.",
+      "2. Time until VOSF flag is cleared in PWR_SR2."
+    ],
+    "legend": [
+      "Evaluated by characterization, not tested in production."
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

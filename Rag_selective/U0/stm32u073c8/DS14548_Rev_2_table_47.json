@@ -1,0 +1,83 @@
+{
+  "table_id": "table_47",
+  "document": "DS14548 Rev 2 - Table 47. Wake-up time using USART/LPUART",
+  "rev": "Rev 2",
+  "table_number": "47",
+  "title": "Table 47. Wake-up time using USART/LPUART",
+  "page": 69,
+  "section": "6.3.6 Wake-up time from low-power modes and voltage scaling transition times",
+  "section_title": "Wake-up time from low-power modes and voltage scaling transition times",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u073c8.pdf#page=69",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u073c8.pdf",
+  "text_helper": "Table 47. Wake-up time using USART/LPUART — section 6.3.6 Wake-up time from low-power modes and voltage scaling transition times. Symbol, Parameter, Parameter, Conditions, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Parameter",
+      "Conditions",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "tWUUSART tWULPUART",
+        "Wake-up time needed to calculate the maximum USART/LPUART baud rate allowing to wake up up from stop mode when USART/LPUART clock source is HSI",
+        "Wake-up time needed to calculate the maximum USART/LPUART baud rate allowing to wake up up from stop mode when USART/LPUART clock source is HSI",
+        "Stop 0 mode",
+        "-",
+        "1.7",
+        "µs"
+      ],
+      [
+        "tWUUSART tWULPUART",
+        "Wake-up time needed to calculate the maximum USART/LPUART baud rate allowing to wake up up from stop mode when USART/LPUART clock source is HSI",
+        "Wake-up time needed to calculate the maximum USART/LPUART baud rate allowing to wake up up from stop mode when USART/LPUART clock source is HSI",
+        "Stop 1 mode and Stop 2 mode",
+        "-",
+        "8.5",
+        "µs"
+      ],
+      [
+        "fHSE_ext",
+        "User external clock source frequency",
+        "Voltage scaling Range 2",
+        "-",
+        "8",
+        "19",
+        "19"
+      ],
+      [
+        "VHSEL",
+        "OSC_IN input pin low level voltage",
+        "-",
+        "VSS",
+        "-",
+        "0.3 VDDIOx",
+        "0.3 VDDIOx"
+      ],
+      [
+        "tw(HSEH) tw(HSEL)",
+        "OSC_IN high or low time",
+        "Voltage scaling Range 2",
+        "18",
+        "-",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "1. Time until REGLPF flag is cleared in PWR_SR2.",
+      "2. Time until VOSF flag is cleared in PWR_SR2.",
+      "3. tSU(HSE) is the startup time measured from the moment it is enabled (by software) to a stabilized 8 MHz oscillation is reached. This value is measured for a standard crystal resonator and it can vary significantly with the crystal manufacturer"
+    ],
+    "legend": [
+      "Evaluated by characterization, not tested in production."
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

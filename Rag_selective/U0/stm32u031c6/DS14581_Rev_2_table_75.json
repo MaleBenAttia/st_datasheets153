@@ -1,0 +1,430 @@
+{
+  "table_id": "table_75",
+  "document": "DS14581 Rev 2 - Table 75. DAC accuracy",
+  "rev": "Rev 2",
+  "table_number": "75",
+  "title": "Table 75. DAC accuracy",
+  "page": 90,
+  "section": "6.3.21 Digital-to-analog converter characteristics",
+  "section_title": "Digital-to-analog converter characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u031c6.pdf#page=90",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u031c6.pdf",
+  "text_helper": "Table 75. DAC accuracy — section 6.3.21 Digital-to-analog converter characteristics. Symbol, Parameter, Conditions, Conditions, Min, +3 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "DNL",
+        "Differential non linearity(1)",
+        "DAC output buffer ON",
+        "DAC output buffer ON",
+        "-",
+        "-",
+        "±2",
+        "LSB"
+      ],
+      [
+        "DNL",
+        "Differential non linearity(1)",
+        "DAC output buffer OFF",
+        "DAC output buffer OFF",
+        "-",
+        "-",
+        "±2",
+        "LSB"
+      ],
+      [
+        "-",
+        "monotonicity",
+        "10 bits",
+        "10 bits",
+        "guaranteed",
+        "guaranteed",
+        "guaranteed",
+        "LSB"
+      ],
+      [
+        "INL",
+        "Integral non linearity(2)",
+        "DAC output buffer ON CL ≤ 50 pF, RL ≥ 5 kΩ",
+        "DAC output buffer ON CL ≤ 50 pF, RL ≥ 5 kΩ",
+        "-",
+        "-",
+        "±4",
+        "LSB"
+      ],
+      [
+        "INL",
+        "Integral non linearity(2)",
+        "DAC output buffer OFF CL ≤ 50 pF, no RL",
+        "DAC output buffer OFF CL ≤ 50 pF, no RL",
+        "-",
+        "-",
+        "±4",
+        "LSB"
+      ],
+      [
+        "Offset",
+        "Offset error at code 0x800(2)",
+        "DAC output buffer ON CL ≤ 50 pF, RL ≥ 5 kΩ",
+        "VREF+ = 3.6 V",
+        "-",
+        "-",
+        "±12",
+        "LSB"
+      ],
+      [
+        "Offset",
+        "Offset error at code 0x800(2)",
+        "DAC output buffer ON CL ≤ 50 pF, RL ≥ 5 kΩ",
+        "VREF+ = 1.8 V",
+        "-",
+        "-",
+        "±25",
+        "LSB"
+      ],
+      [
+        "Offset",
+        "Offset error at code 0x800(2)",
+        "DAC output buffer OFF CL ≤ 50 pF, no RL",
+        "DAC output buffer OFF CL ≤ 50 pF, no RL",
+        "-",
+        "-",
+        "±8",
+        "±8"
+      ],
+      [
+        "Offset1",
+        "Offset error at code 0x001(3)",
+        "DAC output buffer OFF CL ≤ 50 pF, no RL",
+        "DAC output buffer OFF CL ≤ 50 pF, no RL",
+        "-",
+        "-",
+        "±5",
+        "±5"
+      ],
+      [
+        "OffsetCal",
+        "Offset Error at code 0x800 after calibration",
+        "DAC output buffer ON CL ≤ 50 pF, RL ≥ 5 kΩ",
+        "VREF+ = 3.6 V",
+        "-",
+        "-",
+        "±5",
+        "±5"
+      ],
+      [
+        "OffsetCal",
+        "Offset Error at code 0x800 after calibration",
+        "DAC output buffer ON CL ≤ 50 pF, RL ≥ 5 kΩ",
+        "VREF+ = 1.8 V",
+        "-",
+        "-",
+        "±7",
+        "±7"
+      ],
+      [
+        "Gain",
+        "Gain error(4)",
+        "DAC output buffer ON CL ≤ 50 pF, RL ≥ 5 kΩ",
+        "DAC output buffer ON CL ≤ 50 pF, RL ≥ 5 kΩ",
+        "-",
+        "-",
+        "±0.5",
+        "%"
+      ],
+      [
+        "Gain",
+        "Gain error(4)",
+        "DAC output buffer OFF CL ≤ 50 pF, no RL",
+        "DAC output buffer OFF CL ≤ 50 pF, no RL",
+        "-",
+        "-",
+        "±0.5",
+        "±0.5"
+      ],
+      [
+        "TUE",
+        "Total unadjusted error",
+        "DAC output buffer ON CL ≤ 50 pF, RL ≥ 5 kΩ",
+        "DAC output buffer ON CL ≤ 50 pF, RL ≥ 5 kΩ",
+        "-",
+        "-",
+        "±30",
+        "LSB"
+      ],
+      [
+        "TUE",
+        "Total unadjusted error",
+        "DAC output buffer OFF CL ≤ 50 pF, no RL",
+        "DAC output buffer OFF CL ≤ 50 pF, no RL",
+        "-",
+        "-",
+        "±12",
+        "±12"
+      ],
+      [
+        "TUECal",
+        "Total unadjusted error after calibration",
+        "DAC output buffer ON CL ≤ 50 pF, RL ≥ 5 kΩ",
+        "DAC output buffer ON CL ≤ 50 pF, RL ≥ 5 kΩ",
+        "-",
+        "-",
+        "±23",
+        "LSB"
+      ],
+      [
+        "SNR",
+        "Signal-to-noise ratio",
+        "DAC output buffer ON CL ≤ 50 pF, RL ≥ 5 kΩ 1 kHz, BW 500 kHz",
+        "DAC output buffer ON CL ≤ 50 pF, RL ≥ 5 kΩ 1 kHz, BW 500 kHz",
+        "-",
+        "71.2",
+        "-",
+        "dB"
+      ],
+      [
+        "SNR",
+        "Signal-to-noise ratio",
+        "DAC output buffer OFF CL ≤ 50 pF, no RL, 1 kHz BW 500 kHz",
+        "DAC output buffer OFF CL ≤ 50 pF, no RL, 1 kHz BW 500 kHz",
+        "-",
+        "71.6",
+        "-",
+        "-"
+      ],
+      [
+        "THD",
+        "Total harmonic distortion",
+        "DAC output buffer ON CL ≤ 50 pF, RL ≥ 5 kΩ, 1 kHz",
+        "DAC output buffer ON CL ≤ 50 pF, RL ≥ 5 kΩ, 1 kHz",
+        "-",
+        "-78",
+        "-",
+        "dB"
+      ],
+      [
+        "THD",
+        "Total harmonic distortion",
+        "DAC output buffer OFF CL ≤ 50 pF, no RL, 1 kHz",
+        "DAC output buffer OFF CL ≤ 50 pF, no RL, 1 kHz",
+        "-",
+        "-79",
+        "-",
+        "-"
+      ],
+      [
+        "SINAD",
+        "Signal-to-noise and distortion ratio",
+        "DAC output buffer ON CL ≤ 50 pF, RL ≥ 5 kΩ, 1 kHz",
+        "DAC output buffer ON CL ≤ 50 pF, RL ≥ 5 kΩ, 1 kHz",
+        "-",
+        "70.4",
+        "-",
+        "dB"
+      ],
+      [
+        "SINAD",
+        "Signal-to-noise and distortion ratio",
+        "DAC output buffer OFF CL ≤ 50 pF, no RL, 1 kHz",
+        "DAC output buffer OFF CL ≤ 50 pF, no RL, 1 kHz",
+        "-",
+        "71",
+        "-",
+        "-"
+      ],
+      [
+        "ENOB",
+        "Effective number of bits",
+        "DAC output buffer ON CL ≤ 50 pF, RL ≥ 5 kΩ, 1 kHz",
+        "DAC output buffer ON CL ≤ 50 pF, RL ≥ 5 kΩ, 1 kHz",
+        "-",
+        "11.4",
+        "-",
+        "bits"
+      ],
+      [
+        "ENOB",
+        "Effective number of bits",
+        "DAC output buffer OFF CL ≤ 50 pF, no RL, 1 kHz",
+        "DAC output buffer OFF CL ≤ 50 pF, no RL, 1 kHz",
+        "-",
+        "11.5",
+        "-",
+        "-"
+      ],
+      [
+        "VIN",
+        "Comparator input voltage range",
+        "-",
+        "-",
+        "0",
+        "-",
+        "VDDA",
+        "VDDA"
+      ],
+      [
+        "VBG(1)",
+        "Scaler input voltage",
+        "-",
+        "-",
+        "VREFINT",
+        "VREFINT",
+        "VREFINT",
+        "VREFINT"
+      ],
+      [
+        "tSTART",
+        "Comparator startup time to reach propagation delay specification",
+        "High-speed mode",
+        "VDDA < 2.7 V",
+        "-",
+        "-",
+        "7",
+        "7"
+      ],
+      [
+        "tSTART",
+        "Comparator startup time to reach propagation delay specification",
+        "Medium mode",
+        "VDDA ≥ 2.7 V",
+        "-",
+        "-",
+        "15",
+        "15"
+      ],
+      [
+        "tSTART",
+        "Comparator startup time to reach propagation delay specification",
+        "Medium mode",
+        "VDDA < 2.7 V",
+        "-",
+        "-",
+        "25",
+        "25"
+      ],
+      [
+        "tSTART",
+        "Comparator startup time to reach propagation delay specification",
+        "Ultra-low-power mode",
+        "Ultra-low-power mode",
+        "-",
+        "-",
+        "40",
+        "40"
+      ],
+      [
+        "tD(2)",
+        "Propagation delay with 100 mV overdrive",
+        "High-speed mode",
+        "VDDA < 2.7 V",
+        "-",
+        "65",
+        "100",
+        "100"
+      ],
+      [
+        "tD(2)",
+        "Propagation delay with 100 mV overdrive",
+        "Ultra-low-power mode",
+        "Ultra-low-power mode",
+        "-",
+        "4",
+        "7",
+        "7"
+      ],
+      [
+        "Vhys",
+        "Comparator hysteresis",
+        "Low hysteresis",
+        "Low hysteresis",
+        "4",
+        "8",
+        "16",
+        "16"
+      ],
+      [
+        "Vhys",
+        "Comparator hysteresis",
+        "Medium hysteresis",
+        "Medium hysteresis",
+        "8",
+        "15",
+        "30",
+        "30"
+      ],
+      [
+        "Vhys",
+        "Comparator hysteresis",
+        "High hysteresis",
+        "High hysteresis",
+        "15",
+        "27",
+        "52",
+        "52"
+      ],
+      [
+        "IDDA(COMP)",
+        "Comparator consumption from VDDA",
+        "Ultra-low-power mode",
+        "With 50 kHz ±100 mV overdrive square signal",
+        "-",
+        "1200",
+        "-",
+        "-"
+      ],
+      [
+        "IDDA(COMP)",
+        "Comparator consumption from VDDA",
+        "Medium mode",
+        "With 50 kHz ±100 mV overdrive square signal",
+        "-",
+        "6",
+        "-",
+        "-"
+      ],
+      [
+        "IDDA(COMP)",
+        "Comparator consumption from VDDA",
+        "High-speed mode",
+        "Static",
+        "-",
+        "70",
+        "100",
+        "100"
+      ],
+      [
+        "IDDA(COMP)",
+        "Comparator consumption from VDDA",
+        "High-speed mode",
+        "With 50 kHz ±100 mV overdrive square signal",
+        "-",
+        "75",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "1. In buffered mode, the output can overshoot above the final value for low input code (starting from min value).",
+      "2. Refer to Table 62. I/O static characteristics.",
+      "3. Ton is the Refresh phase duration. Toff is the Hold phase duration. Refer to RM0503 reference manual for more details.",
+      "4. Difference between ideal slope of the transfer function and measured slope computed from code 0x000 and 0xFFF when buffer is OFF, and from code giving 0.2 V and (VREF+ - 0.2) V when buffer is ON."
+    ],
+    "legend": [
+      "Specified by design, not tested in production."
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

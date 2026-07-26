@@ -1,0 +1,80 @@
+{
+  "table_id": "table_60",
+  "document": "DS14548 Rev 2 - Table 60. EMI characteristics for f = 8 MHz and f = 54 MHz 81 HSE HCLK",
+  "rev": "Rev 2",
+  "table_number": "60",
+  "title": "Table 60. EMI characteristics for f = 8 MHz and f = 54 MHz 81 HSE HCLK",
+  "page": 81,
+  "section": "6.3.11 EMC characteristics",
+  "section_title": "EMC characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u073c8.pdf#page=81",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u073c8.pdf",
+  "text_helper": "Table 60. EMI characteristics for f = 8 MHz and f = 54 MHz 81 HSE HCLK — section 6.3.11 EMC characteristics. Symbol, Parameter, Conditions, Monitored frequency band, Value, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Monitored frequency band",
+      "Value",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "SEMI",
+        "Peak",
+        "VDD = 3.6 V, TA = 25 °C, LQFP64 package compliant with IEC 61967-2",
+        "0.1 MHz to 30 MHz",
+        "5",
+        "dBµV"
+      ],
+      [
+        "SEMI",
+        "Peak",
+        "VDD = 3.6 V, TA = 25 °C, LQFP64 package compliant with IEC 61967-2",
+        "30 MHz to 130 MHz",
+        "2",
+        "dBµV"
+      ],
+      [
+        "SEMI",
+        "Peak",
+        "VDD = 3.6 V, TA = 25 °C, LQFP64 package compliant with IEC 61967-2",
+        "130 MHz to 1 GHz",
+        "1",
+        "dBµV"
+      ],
+      [
+        "SEMI",
+        "Peak",
+        "VDD = 3.6 V, TA = 25 °C, LQFP64 package compliant with IEC 61967-2",
+        "1 GHz to 2 GHz",
+        "8",
+        "dBµV"
+      ],
+      [
+        "SEMI",
+        "Level",
+        "VDD = 3.6 V, TA = 25 °C, LQFP64 package compliant with IEC 61967-2",
+        "0.1 MHz to 2 GHz",
+        "2",
+        "-"
+      ]
+    ],
+    "notes": [
+      "1. Evaluated by characterization, not tested in production. Static latch-up",
+      "2. Tested in production.",
+      "3. Specified by design, not tested in production.",
+      "4. This value represents the pad leakage of the IO itself. The total product pad leakage is provided by this formula: ITotal_Ileak_max = 10 µA + [number of IOs where VIN is applied on the pad] × Ilkg(Max).",
+      "5. All FT_xx GPIOs except FT_u and PC3 I/O.",
+      "6. Max(VDDXXX) is the maximum value of all the I/O supplies. Refer to Table: Legend/Abbreviations used in the pinout table.",
+      "7. To sustain a voltage higher than Min(VDD, VDDA, VDDUSB) + 0.3 V, the internal Pull-up and Pull-Down resistors must be disabled.",
+      "8. Pull-up and pull-down resistors are designed with a true resistance in series with a switchable PMOS/NMOS. This PMOS/NMOS contribution to the series resistance is minimal (~10% order)."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

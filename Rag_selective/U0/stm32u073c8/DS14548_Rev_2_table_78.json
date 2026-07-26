@@ -1,0 +1,440 @@
+{
+  "table_id": "table_78",
+  "document": "DS14548 Rev 2 - Table 78. VREFBUF characteristics",
+  "rev": "Rev 2",
+  "table_number": "78",
+  "title": "Table 78. VREFBUF characteristics",
+  "page": 97,
+  "section": "6.3.22 Voltage reference buffer characteristics",
+  "section_title": "Voltage reference buffer characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u073c8.pdf#page=97",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u073c8.pdf",
+  "text_helper": "Table 78. VREFBUF characteristics — section 6.3.22 Voltage reference buffer characteristics. Symbol, Parameter, Conditions, Conditions, Min, +3 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "VDDA",
+        "Analog supply voltage",
+        "Normal mode",
+        "VRS = 0",
+        "2.4",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "VDDA",
+        "Analog supply voltage",
+        "Normal mode",
+        "VRS = 1",
+        "2.8",
+        "-",
+        "3.6",
+        "V"
+      ],
+      [
+        "VDDA",
+        "Analog supply voltage",
+        "Degraded mode(1)",
+        "VRS = 0",
+        "1.65",
+        "-",
+        "2.4",
+        "2.4"
+      ],
+      [
+        "VDDA",
+        "Analog supply voltage",
+        "Degraded mode(1)",
+        "VRS = 1",
+        "1.65",
+        "-",
+        "2.8",
+        "2.8"
+      ],
+      [
+        "VREFBUF_ OUT",
+        "Voltage reference output",
+        "Iload = 100 µA T = 30 °C",
+        "VRS = 0",
+        "2.038",
+        "2.042",
+        "2.046",
+        "2.046"
+      ],
+      [
+        "VREFBUF_ OUT",
+        "Voltage reference output",
+        "Iload = 100 µA T = 30 °C",
+        "VRS = 1",
+        "2.497",
+        "2.5",
+        "2.503",
+        "2.503"
+      ],
+      [
+        "VREFBUF_ OUT",
+        "Voltage reference output",
+        "Iload = 100 µA T = 30 °C",
+        "VRS = 0",
+        "Vm 051-ADDV",
+        "-",
+        "VDDA",
+        "VDDA"
+      ],
+      [
+        "VREFBUF_ OUT",
+        "Voltage reference output",
+        "Iload = 100 µA T = 30 °C",
+        "VRS = 1",
+        "Vm 051-ADDV",
+        "-",
+        "VDDA",
+        "VDDA"
+      ],
+      [
+        "TRIM",
+        "Trim step resolution",
+        "-",
+        "-",
+        "-",
+        "±0.05",
+        "±0.1",
+        "%"
+      ],
+      [
+        "CL",
+        "Load capacitor",
+        "-",
+        "-",
+        "0.5",
+        "1",
+        "1.5",
+        "µF"
+      ],
+      [
+        "esr",
+        "Equivalent Serial Resistor of Cload",
+        "-",
+        "-",
+        "-",
+        "-",
+        "2",
+        "Ω"
+      ],
+      [
+        "Iload",
+        "Static load current",
+        "-",
+        "-",
+        "-",
+        "-",
+        "4",
+        "mA"
+      ],
+      [
+        "Iline_reg",
+        "Line regulation",
+        "2.8 V ≤ VDDA ≤ 3.6 V",
+        "Iload = 500 µA",
+        "-",
+        "200",
+        "1000",
+        "ppm/V"
+      ],
+      [
+        "Iline_reg",
+        "Line regulation",
+        "2.8 V ≤ VDDA ≤ 3.6 V",
+        "Iload = 4 mA",
+        "-",
+        "100",
+        "500",
+        "500"
+      ],
+      [
+        "Iload_reg",
+        "Load regulation",
+        "500 μA ≤ Iload ≤4 mA",
+        "Normal mode",
+        "-",
+        "50",
+        "500",
+        "Am/mpp"
+      ],
+      [
+        "TCoeff_vrefbuf",
+        "Temperature coefficient of VREFBUF(2)",
+        "-40 °C < TJ < +125 °C",
+        "-40 °C < TJ < +125 °C",
+        "-",
+        "-",
+        "50",
+        "ppm/ °C"
+      ],
+      [
+        "PSRR",
+        "Power supply rejection",
+        "DC",
+        "DC",
+        "40",
+        "60",
+        "-",
+        "dB"
+      ],
+      [
+        "PSRR",
+        "Power supply rejection",
+        "100 kHz",
+        "100 kHz",
+        "25",
+        "40",
+        "-",
+        "-"
+      ],
+      [
+        "tSTART",
+        "Start-up time",
+        "CL = 0.5 µF(3)",
+        "CL = 0.5 µF(3)",
+        "-",
+        "300",
+        "350",
+        "µs"
+      ],
+      [
+        "tSTART",
+        "Start-up time",
+        "CL = 1.1 µF(3)",
+        "CL = 1.1 µF(3)",
+        "-",
+        "500",
+        "650",
+        "650"
+      ],
+      [
+        "tSTART",
+        "Start-up time",
+        "CL = 1.5 µF(3)",
+        "CL = 1.5 µF(3)",
+        "-",
+        "650",
+        "800",
+        "800"
+      ],
+      [
+        "IINRUSH",
+        "Control of maximum DC current drive on VREFBUF_OUT during start-up phase(4)",
+        "-",
+        "-",
+        "-",
+        "8",
+        "-",
+        "mA"
+      ],
+      [
+        "IDDA(VREFBUF)",
+        "VREFBUF consumption from VDDA",
+        "Iload = 0 µA",
+        "Iload = 0 µA",
+        "-",
+        "16",
+        "25",
+        "µA"
+      ],
+      [
+        "IDDA(VREFBUF)",
+        "VREFBUF consumption from VDDA",
+        "Iload = 500 µA",
+        "Iload = 500 µA",
+        "-",
+        "18",
+        "30",
+        "30"
+      ],
+      [
+        "IDDA(VREFBUF)",
+        "VREFBUF consumption from VDDA",
+        "Iload = 4 mA",
+        "Iload = 4 mA",
+        "-",
+        "35",
+        "50",
+        "50"
+      ],
+      [
+        "VIN",
+        "Comparator input voltage range",
+        "-",
+        "-",
+        "0",
+        "-",
+        "VDDA",
+        "VDDA"
+      ],
+      [
+        "VBG(1)",
+        "Scaler input voltage",
+        "-",
+        "-",
+        "VREFINT",
+        "VREFINT",
+        "VREFINT",
+        "VREFINT"
+      ],
+      [
+        "tSTART",
+        "Comparator startup time to reach propagation delay specification",
+        "High-speed mode",
+        "VDDA < 2.7 V",
+        "-",
+        "-",
+        "7",
+        "7"
+      ],
+      [
+        "tSTART",
+        "Comparator startup time to reach propagation delay specification",
+        "Medium mode",
+        "VDDA ≥ 2.7 V",
+        "-",
+        "-",
+        "15",
+        "15"
+      ],
+      [
+        "tSTART",
+        "Comparator startup time to reach propagation delay specification",
+        "Medium mode",
+        "VDDA < 2.7 V",
+        "-",
+        "-",
+        "25",
+        "25"
+      ],
+      [
+        "tSTART",
+        "Comparator startup time to reach propagation delay specification",
+        "Ultra-low-power mode",
+        "Ultra-low-power mode",
+        "-",
+        "-",
+        "40",
+        "40"
+      ],
+      [
+        "tD(2)",
+        "Propagation delay with 100 mV overdrive",
+        "High-speed mode",
+        "VDDA < 2.7 V",
+        "-",
+        "65",
+        "100",
+        "100"
+      ],
+      [
+        "tD(2)",
+        "Propagation delay with 100 mV overdrive",
+        "Ultra-low-power mode",
+        "Ultra-low-power mode",
+        "-",
+        "4",
+        "7",
+        "7"
+      ],
+      [
+        "Vhys",
+        "Comparator hysteresis",
+        "Low hysteresis",
+        "Low hysteresis",
+        "4",
+        "8",
+        "16",
+        "16"
+      ],
+      [
+        "Vhys",
+        "Comparator hysteresis",
+        "Medium hysteresis",
+        "Medium hysteresis",
+        "8",
+        "15",
+        "30",
+        "30"
+      ],
+      [
+        "Vhys",
+        "Comparator hysteresis",
+        "High hysteresis",
+        "High hysteresis",
+        "15",
+        "27",
+        "52",
+        "52"
+      ],
+      [
+        "IDDA(COMP)",
+        "Comparator consumption from VDDA",
+        "Ultra-low-power mode",
+        "With 50 kHz ±100 mV overdrive square signal",
+        "-",
+        "1200",
+        "-",
+        "-"
+      ],
+      [
+        "IDDA(COMP)",
+        "Comparator consumption from VDDA",
+        "Medium mode",
+        "With 50 kHz ±100 mV overdrive square signal",
+        "-",
+        "6",
+        "-",
+        "-"
+      ],
+      [
+        "IDDA(COMP)",
+        "Comparator consumption from VDDA",
+        "High-speed mode",
+        "Static",
+        "-",
+        "70",
+        "100",
+        "100"
+      ],
+      [
+        "IDDA(COMP)",
+        "Comparator consumption from VDDA",
+        "High-speed mode",
+        "With 50 kHz ±100 mV overdrive square signal",
+        "-",
+        "75",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "1. Difference between two consecutive codes - 1 LSB.",
+      "2. Difference between measured value at Code i and the value at Code i on a line drawn between Code 0 and last Code 4095.",
+      "3. Difference between the value measured at Code (0x001) and the ideal value.",
+      "4. Difference between ideal slope of the transfer function and measured slope computed from code 0x000 and 0xFFF when buffer is OFF, and from code giving 0.2 V and (VREF+ - 0.2) V when buffer is ON."
+    ],
+    "legend": [
+      "Specified by design, not tested in production."
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

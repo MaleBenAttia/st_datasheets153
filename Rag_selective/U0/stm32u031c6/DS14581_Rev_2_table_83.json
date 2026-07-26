@@ -1,0 +1,226 @@
+{
+  "table_id": "table_83",
+  "document": "DS14581 Rev 2 - Table 83. SPI characteristics",
+  "rev": "Rev 2",
+  "table_number": "83",
+  "title": "Table 83. SPI characteristics",
+  "page": 99,
+  "section": "6.3.27 SPI characteristics",
+  "section_title": "SPI characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u031c6.pdf#page=99",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u031c6.pdf",
+  "text_helper": "Table 83. SPI characteristics — section 6.3.27 SPI characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "fSCK 1/tc(SCK)",
+        "SPI clock frequency",
+        "Master mode receiver/full duplex 1.71 < VDD < 3.6 V Voltage Range 1",
+        "-",
+        "-",
+        "27",
+        "MHz"
+      ],
+      [
+        "fSCK 1/tc(SCK)",
+        "SPI clock frequency",
+        "Master mode transmitter 1.71 < VDD < 3.6 V Voltage Range 1",
+        "-",
+        "-",
+        "27",
+        "MHz"
+      ],
+      [
+        "fSCK 1/tc(SCK)",
+        "SPI clock frequency",
+        "Slave mode receiver 1.71 < VDD < 3.6 V Voltage Range 1",
+        "-",
+        "-",
+        "27",
+        "MHz"
+      ],
+      [
+        "fSCK 1/tc(SCK)",
+        "SPI clock frequency",
+        "Slave mode transmitter/full duplex 2.7 < VDD < 3.6 V Voltage Range 1",
+        "-",
+        "-",
+        "27(1)",
+        "MHz"
+      ],
+      [
+        "fSCK 1/tc(SCK)",
+        "SPI clock frequency",
+        "Slave mode transmitter/full duplex 1.71 < VDD < 3.6 V Voltage Range 1",
+        "-",
+        "-",
+        "21.5(1)",
+        "MHz"
+      ],
+      [
+        "fSCK 1/tc(SCK)",
+        "SPI clock frequency",
+        "Voltage Range 2",
+        "-",
+        "-",
+        "9.5",
+        "MHz"
+      ],
+      [
+        "tsu(NSS)",
+        "NSS setup time",
+        "Slave mode, SPI prescaler = 2",
+        "4",
+        "-",
+        "-",
+        "TPCLK"
+      ],
+      [
+        "th(NSS)",
+        "NSS hold time",
+        "Slave mode, SPI prescaler = 2",
+        "2",
+        "-",
+        "-",
+        "TPCLK"
+      ],
+      [
+        "tw(SCKH) tw(SCKL)",
+        "SCK high and low time",
+        "Master mode",
+        "TSCK2 - 1.5(2)",
+        "TSCK2(2)",
+        "TSCK2 + 1.5(2)",
+        "TPCLK"
+      ],
+      [
+        "tsu(MI)",
+        "Data input setup time",
+        "Master mode",
+        "3",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "tsu(SI)",
+        "Data input setup time",
+        "Slave mode",
+        "3",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "th(MI)",
+        "Data input hold time",
+        "Master mode",
+        "2.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "th(SI)",
+        "Data input hold time",
+        "Slave mode",
+        "2.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "ta(SO)",
+        "Data output access time",
+        "Slave mode",
+        "10",
+        "12.5",
+        "20",
+        "ns"
+      ],
+      [
+        "tdis(SO)",
+        "Data output disable time",
+        "Slave mode",
+        "6",
+        "7.5",
+        "18",
+        "ns"
+      ],
+      [
+        "tv(SO)",
+        "Data output valid time",
+        "Slave mode 2.7 < VDD < 3.6 V Voltage Range 1",
+        "-",
+        "15",
+        "18",
+        "ns"
+      ],
+      [
+        "tv(SO)",
+        "Data output valid time",
+        "Slave mode 1.71 < VDD < 3.6 V Voltage Range 1",
+        "-",
+        "15",
+        "23",
+        "ns"
+      ],
+      [
+        "tv(SO)",
+        "Data output valid time",
+        "Slave mode 1.71 < VDD < 3.6 V Voltage Range 2",
+        "-",
+        "22",
+        "30",
+        "ns"
+      ],
+      [
+        "tv(MO)",
+        "Data output valid time",
+        "Master mode",
+        "-",
+        "3",
+        "5.5",
+        "ns"
+      ],
+      [
+        "th(SO)",
+        "Data output hold time",
+        "Slave mode",
+        "10",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "th(MO)",
+        "Data output hold time",
+        "Master mode",
+        "1",
+        "-",
+        "-",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. Maximum frequency in Slave transmitter mode is determined by the sum of tv(SO) and tsu(MI) which has to fit into SCK low or high phase preceding the SCK sampling edge. This value can be achieved when the SPI communicates with a master having tsu(MI) = 0 while",
+      "2. TSCK2 = TPCLK × prescaler / 2 DS14581 - Rev 2 page 99/134"
+    ],
+    "legend": [
+      "Evaluated by characterization, not tested in production."
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

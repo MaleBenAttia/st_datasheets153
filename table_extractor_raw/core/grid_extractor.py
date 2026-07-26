@@ -1105,6 +1105,54 @@ def _build_final_headers(
 
         final.append(" / ".join(parts))
 
+    # ── Post-traitement : refusion headers fragmentés ─────────────────────────
+    # Quand une cellule parent multi-lignes est éclatée par pdfplumber, le texte
+    # des lignes 2+ fuit dans row1. On détecte ça par :
+    #   - header_depth >= 3
+    #   - row0[c] = None, row1[c] ≠ None et commence par minuscule ou '('
+    #   - 2+ colonnes consécutives avec ce motif
+    # On reconstruit le parent complet et on supprime les fragments de row1.
+    if header_depth >= 3:
+        c = 0
+        while c < cols:
+            start = None
+            # Chercher début de groupe : row0[c] != None (parent) et row0[c+1] == None (fusion)
+            if (c + 1 < cols
+                and table[0][c] is not None and str(table[0][c]).strip()
+                and table[0][c + 1] is None
+                and table[1][c + 1] is not None):
+                nxt = str(table[1][c + 1]).strip()
+                if nxt and (nxt[0].islower() or nxt[0] == '('):
+                    start = c
+                    end = c + 1
+                    while end + 1 < cols:
+                        if (table[0][end + 1] is None
+                            and table[1][end + 1] is not None
+                            and str(table[1][end + 1]).strip()):
+                            end += 1
+                        else:
+                            break
+
+            if start is not None:
+                parent_start = str(table[0][start]).strip()
+                fragments = []
+                for fc in range(start, end + 1):
+                    frag = str(table[1][fc]).strip()
+                    if frag and frag != parent_start:
+                        fragments.append(frag)
+                reconstructed = parent_start + " " + " ".join(fragments)
+
+                for fc in range(start, end + 1):
+                    child_val = str(table[2][fc]).strip() if header_depth > 2 and fc < len(table[2]) else ""
+                    if child_val:
+                        final[fc] = reconstructed + " / " + child_val
+                    else:
+                        final[fc] = reconstructed
+
+                c = end + 1
+            else:
+                c += 1
+
     _debug_headers_raw(table_id, table, header_depth, cols, final)
     return final
 

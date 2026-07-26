@@ -1,0 +1,164 @@
+{
+  "table_id": "table_22",
+  "document": "DS14548 Rev 2 - Table 22. General operating conditions",
+  "rev": "Rev 2",
+  "table_number": "22",
+  "title": "Table 22. General operating conditions",
+  "page": 44,
+  "section": "6.3.1 General operating conditions",
+  "section_title": "General operating conditions",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u073c8.pdf#page=44",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u073c8.pdf",
+  "text_helper": "Table 22. General operating conditions — section 6.3.1 General operating conditions. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "fHCLK",
+        "Internal AHB clock frequency",
+        "-",
+        "0",
+        "56",
+        "MHz"
+      ],
+      [
+        "fPCLK",
+        "Internal APB clock frequency",
+        "-",
+        "0",
+        "56",
+        "MHz"
+      ],
+      [
+        "VDD",
+        "Standard operating voltage",
+        "-",
+        "1.71(1)",
+        "3.6",
+        "V"
+      ],
+      [
+        "VDDA",
+        "Analog supply voltage",
+        "ADC or COMP used",
+        "1.62",
+        "3.6",
+        "V"
+      ],
+      [
+        "VDDA",
+        "Analog supply voltage",
+        "OPAMP used",
+        "1.8",
+        "3.6",
+        "V"
+      ],
+      [
+        "VDDA",
+        "Analog supply voltage",
+        "ADC, OPAMP, COMP not used",
+        "0",
+        "3.6",
+        "V"
+      ],
+      [
+        "VBAT",
+        "Backup domain supply voltage",
+        "-",
+        "1.55",
+        "3.6",
+        "V"
+      ],
+      [
+        "VDDUSB",
+        "USB supply voltage",
+        "USB used",
+        "3.0",
+        "3.6",
+        "V"
+      ],
+      [
+        "VIN",
+        "I/O input voltage",
+        "TT_xx I/Os",
+        "-0.3",
+        "VDDIOx + 0.3",
+        "V"
+      ],
+      [
+        "VIN",
+        "I/O input voltage",
+        "All I/Os except TT_xx pins",
+        "-0.3",
+        "Min(Min(VDD, VDDA, VDDUSB) + 3.6, 5.5)(2)(3)",
+        "Min(Min(VDD, VDDA, VDDUSB) + 3.6, 5.5)(2)(3)"
+      ],
+      [
+        "TA",
+        "Ambient temperature for suffix 6",
+        "Maximum power dissipation",
+        "-40",
+        "85",
+        "°C"
+      ],
+      [
+        "TA",
+        "Ambient temperature for suffix 6",
+        "Low-power dissipation(4)",
+        "Low-power dissipation(4)",
+        "105",
+        "105"
+      ],
+      [
+        "TA",
+        "Ambient temperature for suffix 3",
+        "Maximum power dissipation",
+        "Maximum power dissipation",
+        "125",
+        "125"
+      ],
+      [
+        "TA",
+        "Ambient temperature for suffix 3",
+        "Low-power dissipation(4)",
+        "Low-power dissipation(4)",
+        "130",
+        "130"
+      ],
+      [
+        "TJ",
+        "Junction temperature range",
+        "Suffix 6 version",
+        "-40",
+        "105",
+        "105"
+      ],
+      [
+        "TJ",
+        "Junction temperature range",
+        "Suffix 3 version",
+        "Suffix 3 version",
+        "130",
+        "130"
+      ]
+    ],
+    "notes": [
+      "1. All main power (VDD, VDDA, VDDUSB, VBAT) and ground (VSS, VSSA) pins must always be connected to the external power supplies, in the permitted range.",
+      "2. This current consumption must be correctly distributed over all I/Os and control pins. The total output current must not be sunk/sourced between two consecutive power supply pins.",
+      "3. Positive injection (when VIN > VDDIOx) is not possible on these I/Os and does not occur for input voltages lower than the specified maximum value.",
+      "4. A negative injection is induced by VIN < VSS. IINJ(PIN) must never be exceeded. Refer also to Table 19. Voltage characteristics for the maximum allowed input voltage values."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

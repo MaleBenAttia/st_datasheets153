@@ -1,0 +1,44 @@
+{
+  "table_id": "table_62",
+  "document": "DS14463 Rev 2 - Table 62. Electrical sensitivities",
+  "rev": "Rev 2",
+  "table_number": "62",
+  "title": "Table 62. Electrical sensitivities",
+  "page": 82,
+  "section": "6.3.12 Electrical sensitivity characteristics",
+  "section_title": "Electrical sensitivity characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u083cc.pdf#page=82",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u083cc.pdf",
+  "text_helper": "Table 62. Electrical sensitivities — section 6.3.12 Electrical sensitivity characteristics. Symbol, Parameter, Conditions, Class.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Class"
+    ],
+    "rows": [
+      [
+        "LU",
+        "Static latch-up class",
+        "TA = +130 °C conforming to JESD78A",
+        "II"
+      ]
+    ],
+    "notes": [
+      "1. Refer to Figure 23. I/O input characteristics.",
+      "2. Tested in production.",
+      "3. Specified by design, not tested in production.",
+      "4. This value represents the pad leakage of the IO itself. The total product pad leakage is provided by this formula: ITotal_Ileak_max = 10 µA + [number of IOs where VIN is applied on the pad] × Ilkg(Max).",
+      "5. All FT_xx GPIOs except FT_u and PC3 I/O.",
+      "6. Max(VDDXXX) is the maximum value of all the I/O supplies. Refer to Table: Legend/Abbreviations used in the pinout table.",
+      "7. To sustain a voltage higher than Min(VDD, VDDA, VDDUSB) + 0.3 V, the internal Pull-up and Pull-Down resistors must be disabled.",
+      "8. Pull-up and pull-down resistors are designed with a true resistance in series with a switchable PMOS/NMOS. This PMOS/NMOS contribution to the series resistance is minimal (~10% order)."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

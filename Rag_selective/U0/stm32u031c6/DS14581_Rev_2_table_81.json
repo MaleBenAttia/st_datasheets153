@@ -1,0 +1,108 @@
+{
+  "table_id": "table_81",
+  "document": "DS14581 Rev 2 - Table 81. I2C analog filter characteristics",
+  "rev": "Rev 2",
+  "table_number": "81",
+  "title": "Table 81. I2C analog filter characteristics",
+  "page": 96,
+  "section": "6.3.24 Timer characteristics",
+  "section_title": "Timer characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u031c6.pdf#page=96",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u031c6.pdf",
+  "text_helper": "Table 81. I2C analog filter characteristics — section 6.3.24 Timer characteristics. Symbol, Symbol, Parameter, Min, Max, +1 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Symbol",
+      "Parameter",
+      "Min",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "tAF",
+        "tAF",
+        "Maximum pulse width of spikes that are suppressed by the analog filter",
+        "50(1)",
+        "205(2)",
+        "ns"
+      ],
+      [
+        "fCK",
+        "Slave mode",
+        "-",
+        "-",
+        "18",
+        "18"
+      ],
+      [
+        "th(NSS)",
+        "NSS hold time",
+        "0.5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "tw(CKL)",
+        "SCK low time",
+        "SCK low time",
+        "SCK low time",
+        "SCK low time",
+        "SCK low time"
+      ],
+      [
+        "tsu(RX)",
+        "Slave mode",
+        "5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "th(RX)",
+        "Slave mode",
+        "0.5",
+        "-",
+        "-",
+        "-"
+      ],
+      [
+        "tv(TX)",
+        "Slave mode, 2.7 V ≤ VDD ≤ 3.6 V",
+        "16",
+        "-",
+        "19.5",
+        "19.5"
+      ],
+      [
+        "tv(TX)",
+        "Slave mode, 1.71 V ≤ VDD ≤ 3.6 V",
+        "16",
+        "-",
+        "27.5",
+        "27.5"
+      ],
+      [
+        "th(TX)",
+        "Master mode",
+        "10",
+        "-",
+        "-",
+        "-"
+      ]
+    ],
+    "notes": [
+      "1. Spikes with widths below tAF(min) are filtered.",
+      "2. Spikes with widths above tAF(max) are not filtered"
+    ],
+    "legend": [
+      "Specified by design, not tested in production."
+    ],
+    "semantic_type": "",
+    "semantic": {}
+  }
+}

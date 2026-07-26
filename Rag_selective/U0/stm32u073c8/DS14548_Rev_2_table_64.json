@@ -1,0 +1,185 @@
+{
+  "table_id": "table_64",
+  "document": "DS14548 Rev 2 - Table 64. I/O static characteristics",
+  "rev": "Rev 2",
+  "table_number": "64",
+  "title": "Table 64. I/O static characteristics",
+  "page": 82,
+  "section": "6.3.14 I/O port characteristics",
+  "section_title": "I/O port characteristics",
+  "semantic_type": "",
+  "tags": [],
+  "url": "https://www.st.com/resource/en/datasheet/stm32u073c8.pdf#page=82",
+  "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u073c8.pdf",
+  "text_helper": "Table 64. I/O static characteristics — section 6.3.14 I/O port characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "table_content": {
+    "headers": [
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "Min",
+      "Typ",
+      "Max",
+      "Unit"
+    ],
+    "rows": [
+      [
+        "VIL(1)",
+        "I/O input low level voltage",
+        "1.62 V < VDDIOx < 3.6 V",
+        "-",
+        "-",
+        "0.3 x VDDIOx (2)",
+        "V"
+      ],
+      [
+        "VIL(1)",
+        "I/O input low level voltage",
+        "1.62 V < VDDIOx < 3.6 V",
+        "-",
+        "-",
+        "0.39 x VDDIOx - 0.06(3)",
+        "V"
+      ],
+      [
+        "VIH(1)",
+        "I/O input high level voltage",
+        "1.62 V < VDDIOx < 3.6 V",
+        "0.7 x VDDIOx (2)",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "VIH(1)",
+        "I/O input high level voltage",
+        "1.62 V < VDDIOx < 3.6 V",
+        "0.49 x VDDIOX + 0.26 (3)",
+        "-",
+        "-",
+        "V"
+      ],
+      [
+        "Vhys(3)",
+        "TT_xx, FT_xxx and NRST I/O input hysteresis",
+        "1.62 V < VDDIOx < 3.6 V",
+        "-",
+        "200",
+        "-",
+        "mV"
+      ],
+      [
+        "Ilkg(4)",
+        "FT_xx input leakage current(3)(5)",
+        "VIN ≤ Max(VDDXXX)(6)(7)",
+        "-",
+        "-",
+        "±100",
+        "nA"
+      ],
+      [
+        "Ilkg(4)",
+        "FT_xx input leakage current(3)(5)",
+        "Max(VDDXXX) ≤ VIN ≤ Max(VDDXXX) + 1 V(6)(7)",
+        "-",
+        "-",
+        "650",
+        "nA"
+      ],
+      [
+        "Ilkg(4)",
+        "FT_xx input leakage current(3)(5)",
+        "Max(VDDXXX) + 1 V < VIN ≤ 5.5 V(6)(7)",
+        "-",
+        "-",
+        "200",
+        "200"
+      ],
+      [
+        "Ilkg(4)",
+        "PC3 I/O",
+        "VIN ≤ Max(VDDXXX)(6)(7)",
+        "-",
+        "-",
+        "±150",
+        "±150"
+      ],
+      [
+        "Ilkg(4)",
+        "PC3 I/O",
+        "Max(VDDXXX) ≤ VIN ≤ Max(VDDXXX) + 1 V(6)(7)",
+        "-",
+        "-",
+        "2500(3)",
+        "2500(3)"
+      ],
+      [
+        "Ilkg(4)",
+        "PC3 I/O",
+        "Max(VDDXXX) + 1 V < VIN ≤ 5.5 V(6)(7)",
+        "-",
+        "-",
+        "250",
+        "250"
+      ],
+      [
+        "Ilkg(4)",
+        "TT_xx input leakage current",
+        "VIN ≤ Max(VDDXXX)(6)",
+        "-",
+        "-",
+        "±150",
+        "±150"
+      ],
+      [
+        "Ilkg(4)",
+        "TT_xx input leakage current",
+        "Max(VDDXXX) ≤ VIN < 3.6V(6)",
+        "-",
+        "-",
+        "2000(3)",
+        "2000(3)"
+      ],
+      [
+        "RPU",
+        "Weak pull-up equivalent resistor(8)",
+        "VIN = VSS",
+        "25",
+        "40",
+        "55",
+        "kΩ"
+      ],
+      [
+        "RPD",
+        "Weak pull-down equivalent resistor(8)",
+        "VIN = VDDIOx",
+        "25",
+        "40",
+        "55",
+        "kΩ"
+      ],
+      [
+        "CIO",
+        "I/O pin capacitance",
+        "-",
+        "-",
+        "5",
+        "-",
+        "pF"
+      ]
+    ],
+    "notes": [
+      "1. Injection is not possible.",
+      "2. Tested in production.",
+      "3. Specified by design, not tested in production.",
+      "4. This value represents the pad leakage of the IO itself. The total product pad leakage is provided by this formula: ITotal_Ileak_max = 10 µA + [number of IOs where VIN is applied on the pad] × Ilkg(Max).",
+      "5. All FT_xx GPIOs except FT_u and PC3 I/O.",
+      "6. Max(VDDXXX) is the maximum value of all the I/O supplies. Refer to Table: Legend/Abbreviations used in the pinout table.",
+      "7. To sustain a voltage higher than Min(VDD, VDDA, VDDUSB) + 0.3 V, the internal Pull-up and Pull-Down resistors must be disabled.",
+      "8. Pull-up and pull-down resistors are designed with a true resistance in series with a switchable PMOS/NMOS. This PMOS/NMOS contribution to the series resistance is minimal (~10% order)."
+    ],
+    "legend": "",
+    "semantic_type": "",
+    "semantic": {}
+  }
+}
