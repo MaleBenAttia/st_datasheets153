@@ -708,7 +708,7 @@
         "Pin name (function after reset)",
         "Pin type",
         "I/O structure / O/I",
-        "Notes / setoN",
+        "Notes",
         "Pin functions / Alternate functions",
         "Pin functions / Additional functions"
       ],
@@ -2619,7 +2619,6 @@
         ]
       ],
       "notes": [
-        "1. If T is lower, higher P values are allowed as long as T does not exceed T . A D J Jmax",
         "2. In low power dissipation state, T can be extended to this range as long as T does not exceed T (see Section 7.5: A J Jmax",
         "3. A positive injection is induced by V > V while a negative injection is induced by V < V . I must never be IN DDIOx IN SS INJ(PIN)",
         "4. Positive injection is not possible on these I/Os and does not occur for input voltages lower than the specified maximum value.",
@@ -3091,13 +3090,85 @@
       ],
       "rows": [
         [
-          "Symbol",
-          "Parameter",
-          "Conditions(1)",
-          "f HCLK",
-          "Typ",
-          "Max @ T (1) A",
-          "Unit"
+          "I DD",
+          "Supply current in Stop mode",
+          "Regulator in run mode, all oscillators OFF",
+          "Regulator in run mode, all oscillators OFF",
+          "15.9",
+          "49",
+          "µA"
+        ],
+        [
+          "I DD",
+          "Supply current in Stop mode",
+          "Regulator in low-power mode, all oscillators OFF",
+          "Regulator in low-power mode, all oscillators OFF",
+          "3.7",
+          "33",
+          "33"
+        ],
+        [
+          "I DD",
+          "Supply current in Standby mode",
+          "LSI ON and IWDG ON",
+          "LSI ON and IWDG ON",
+          "1.5",
+          "-",
+          "-"
+        ],
+        [
+          "I DDA",
+          "Supply current in Stop mode",
+          "V monitoring ON DDA",
+          "Regulator in run or low- power mode, all oscillators OFF",
+          "2.8",
+          "3.6",
+          "3.6"
+        ],
+        [
+          "I DDA",
+          "Supply current in Standby mode",
+          "Supply current in Standby mode",
+          "LSI ON and IWDG ON",
+          "3.5",
+          "-",
+          "-"
+        ],
+        [
+          "I DDA",
+          "Supply current in Standby mode",
+          "Supply current in Standby mode",
+          "LSI OFF and IWDG OFF",
+          "2.6",
+          "3.6",
+          "3.6"
+        ],
+        [
+          "I DDA",
+          "Supply current in Stop mode",
+          "V monitoring OFF DDA",
+          "Regulator in run or low- power mode, all oscillators OFF",
+          "1.5",
+          "-",
+          "-"
+        ],
+        [
+          "I DDA",
+          "Supply current in Standby mode",
+          "Supply current in Standby mode",
+          "LSI ON and IWDG ON",
+          "2.2",
+          "-",
+          "-"
+        ],
+        [
+          "I DDA",
+          "Supply current in Standby mode",
+          "Supply current in Standby mode",
+          "LSI OFF and IWDG OFF",
+          "1.4",
+          "-",
+          "-"
         ]
       ],
       "notes": [
@@ -3138,24 +3209,6 @@
         "Unit"
       ],
       "rows": [
-        [
-          "-",
-          "-",
-          "-",
-          "",
-          "DDA",
-          "DDA",
-          "DDA"
-        ],
-        [
-          "Symbol",
-          "Parameter",
-          "Conditions(1)",
-          "f HCLK",
-          "Typ",
-          "Max @ T A",
-          "Unit"
-        ],
         [
           "I DD",
           "Supply current in Stop mode",
@@ -3308,7 +3361,7 @@
         [
           "I DDA",
           "Supply current in Standby mode",
-          "FFO GDWI dna FFO ISL NO GDWI dna NO ISL ADD",
+          "FFO GDWI dna FFO ISLNO GDWI dna NO ISL ADD",
           "LSI ON and IWDG ON",
           "3.5",
           "-",
@@ -3335,7 +3388,7 @@
         [
           "I DDA",
           "Supply current in Standby mode",
-          "FFO GDWI dna FFO ISL NO GDWI dna NO ISL ADD",
+          "FFO GDWI dna FFO ISLNO GDWI dna NO ISL ADD",
           "LSI ON and IWDG ON",
           "2.2",
           "-",
@@ -5847,8 +5900,7 @@
         ]
       ],
       "notes": [
-        "1. Guaranteed by design, not tested in production.",
-        "2. Measured at V = 3.3 V ± 10 mV. The V ADC conversion result is stored in the TS_CAL1 byte. Refer to Table 2: DDA 30"
+        "1. Guaranteed by design, not tested in production."
       ],
       "legend": "",
       "semantic_type": "",

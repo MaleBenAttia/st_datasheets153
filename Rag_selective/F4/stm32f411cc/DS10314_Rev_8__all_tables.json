@@ -640,9 +640,9 @@
         "Pin number / LQFP100",
         "Pin number / UFBGA100",
         "Pin name (function after reset)(1)",
-        "Pin type / epyt niP",
+        "Pin type / Pintype",
         "I/O structure / O/I",
-        "Notes / setoN",
+        "Notes",
         "Alternate functions",
         "Additional functions"
       ],
@@ -773,7 +773,7 @@
           "PC13- ANTI_TAMP",
           "I/O",
           "FT",
-          "(2)(3)",
+          "(2,3)",
           "-",
           "RTC_AMP1, RTC_OUT, RTC_TS"
         ],
@@ -786,7 +786,7 @@
           "PC14- OSC32_IN",
           "I/O",
           "FT",
-          "(2)(3) (4)",
+          "(2,3) (4)",
           "-",
           "OSC32_IN"
         ],
@@ -3883,7 +3883,7 @@
       ],
       "rows": [
         [
-          "",
+          "Bus",
           "0xE010 0000 - 0xFFFF FFFF",
           "Reserved"
         ],
@@ -4361,7 +4361,6 @@
         ]
       ],
       "notes": [
-        "1. All main power (V , V ) and ground (V , V ) pins must always be connected to the external power supply, in the DD DDA SS SSA",
         "2. This current consumption must be correctly distributed over all I/Os and control pins.",
         "3. Negative injection disturbs the analog performance of the device. See note in Section 6.3.20: 12-bit ADC characteristics.",
         "4. Positive injection is not possible on these I/Os and does not occur for input voltages lower than the specified maximum value.",
@@ -4797,7 +4796,6 @@
         "4. It is recommended to power V and V from the same source. A maximum difference of 300 mV between V and DD DDA DD",
         "5. Guaranteed by test in production.",
         "6. To sustain a voltage higher than VDD+0.3, the internal Pull-up and Pull-Down resistors must be disabled",
-        "7. If T is lower, higher P values are allowed as long as T does not exceed T . A D J Jmax",
         "8. In low power dissipation state, T can be extended to this range as long as T does not exceed T . A J Jmax"
       ],
       "legend": "",
@@ -5398,7 +5396,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, PLL ON(2), all peripherals enabled(3)(4)",
+          "External clock, PLL ON(2), all peripherals enabled(3,4)",
           "100",
           "21.4",
           "23.0",
@@ -5434,7 +5432,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "enabled(3)(4)",
+          "enabled(3,4)",
           "50",
           "9.4",
           "10.1",
@@ -5446,7 +5444,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, PLL ON(2), all peripherals enabled(3)(4)",
+          "External clock, PLL ON(2), all peripherals enabled(3,4)",
           "20",
           "4.3",
           "4.8",
@@ -5612,7 +5610,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, PLL ON(2), all peripherals enabled(3)(4)",
+          "External clock, PLL ON(2), all peripherals enabled(3,4)",
           "100",
           "21.7",
           "23.3",
@@ -5648,7 +5646,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "enabled(3)(4)",
+          "enabled(3,4)",
           "50",
           "9.6",
           "10.4",
@@ -5660,7 +5658,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, PLL ON(2), all peripherals enabled(3)(4)",
+          "External clock, PLL ON(2), all peripherals enabled(3,4)",
           "20",
           "4.5",
           "5.0",
@@ -5826,7 +5824,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, PLL ON(2), all peripherals enabled(3)(4)",
+          "External clock, PLL ON(2), all peripherals enabled(3,4)",
           "100",
           "20.4",
           "21.8",
@@ -5862,7 +5860,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "enabled(3)(4)",
+          "enabled(3,4)",
           "50",
           "9.0",
           "9.7",
@@ -5874,7 +5872,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, PLL ON(2), all peripherals enabled(3)(4)",
+          "External clock, PLL ON(2), all peripherals enabled(3,4)",
           "20",
           "4.6",
           "5.0",
@@ -6041,7 +6039,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, PLL ON(2), all peripherals enabled(3)(4)",
+          "External clock, PLL ON(2), all peripherals enabled(3,4)",
           "100",
           "20.7",
           "22.2",
@@ -6077,7 +6075,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "enabled(3)(4)",
+          "enabled(3,4)",
           "50",
           "9.3",
           "10.2",
@@ -6089,7 +6087,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, PLL ON(2), all peripherals enabled(3)(4)",
+          "External clock, PLL ON(2), all peripherals enabled(3,4)",
           "20",
           "4.8",
           "5.5",
@@ -6257,7 +6255,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, PLL ON(2), all peripherals enabled(3)(4)",
+          "External clock, PLL ON(2), all peripherals enabled(3,4)",
           "100",
           "29.5",
           "31.5",
@@ -6293,7 +6291,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "enabled(3)(4)",
+          "enabled(3,4)",
           "50",
           "15.2",
           "16.4",
@@ -6305,7 +6303,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, PLL ON(2), all peripherals enabled(3)(4)",
+          "External clock, PLL ON(2), all peripherals enabled(3,4)",
           "20",
           "7.6",
           "8.4",
@@ -6473,7 +6471,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, PLL ON(2), all peripherals enabled(3)(4)",
+          "External clock, PLL ON(2), all peripherals enabled(3,4)",
           "100",
           "31.7",
           "33.6",
@@ -6509,7 +6507,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "enabled(3)(4)",
+          "enabled(3,4)",
           "50",
           "15.6",
           "16.7",
@@ -6521,7 +6519,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, PLL ON(2), all peripherals enabled(3)(4)",
+          "External clock, PLL ON(2), all peripherals enabled(3,4)",
           "20",
           "7.6",
           "8.4",
@@ -6641,7 +6639,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "External clock, PLL ON(2), all peripherals enabled(3)(4)",
+          "External clock, PLL ON(2), all peripherals enabled(3,4)",
           "84",
           "9.8",
           "10.6",
@@ -6653,7 +6651,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "External clock, PLL ON(2), all peripherals enabled(3)(4)",
+          "External clock, PLL ON(2), all peripherals enabled(3,4)",
           "64",
           "6.9",
           "7.4",
@@ -6665,7 +6663,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "External clock, PLL ON(2), all peripherals enabled(3)(4)",
+          "External clock, PLL ON(2), all peripherals enabled(3,4)",
           "50",
           "5.4",
           "5.9",
@@ -6677,7 +6675,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "External clock, PLL ON(2), all peripherals enabled(3)(4)",
+          "External clock, PLL ON(2), all peripherals enabled(3,4)",
           "20",
           "2.8",
           "3.2",
@@ -6845,7 +6843,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "External clock, PLL ON(2), all peripherals enabled(3)(4)",
+          "External clock, PLL ON(2), all peripherals enabled(3,4)",
           "100",
           "12.2",
           "13.2",
@@ -6881,7 +6879,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "enabled(3)(4)",
+          "enabled(3,4)",
           "50",
           "5.4",
           "5.9",
@@ -6893,7 +6891,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "External clock, PLL ON(2), all peripherals enabled(3)(4)",
+          "External clock, PLL ON(2), all peripherals enabled(3,4)",
           "20",
           "2.8",
           "3.2",
@@ -7070,7 +7068,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "External clock, PLL ON(2), all peripherals enabled(3)(4)",
+          "External clock, PLL ON(2), all peripherals enabled(3,4)",
           "100",
           "12.2",
           "13.2",
@@ -7106,7 +7104,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "enabled(3)(4)",
+          "enabled(3,4)",
           "50",
           "5.4",
           "5.9",
@@ -7118,7 +7116,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "External clock, PLL ON(2), all peripherals enabled(3)(4)",
+          "External clock, PLL ON(2), all peripherals enabled(3,4)",
           "20",
           "2.8",
           "3.2",
@@ -8451,7 +8449,7 @@
         [
           "f OSC_IN",
           "Oscillator frequency",
-          "Oscillator frequency",
+          "Conditions",
           "4",
           "-",
           "26",
@@ -8460,7 +8458,7 @@
         [
           "R F",
           "Feedback resistor",
-          "Feedback resistor",
+          "Conditions",
           "-",
           "200",
           "-",
@@ -8817,8 +8815,8 @@
         [
           "f PLL_IN",
           "PLL input clock(1)",
-          "PLL input clock(1)",
-          "PLL input clock(1)",
+          "Conditions",
+          "Conditions",
           "0.95(2)",
           "1",
           "2.10",
@@ -8827,8 +8825,8 @@
         [
           "f PLL_OUT",
           "PLL multiplier output clock",
-          "PLL multiplier output clock",
-          "PLL multiplier output clock",
+          "Conditions",
+          "Conditions",
           "24",
           "-",
           "100",
@@ -8837,8 +8835,8 @@
         [
           "f PLL48_OUT",
           "48 MHz PLL multiplier output clock",
-          "48 MHz PLL multiplier output clock",
-          "48 MHz PLL multiplier output clock",
+          "Conditions",
+          "Conditions",
           "-",
           "48",
           "75",
@@ -8847,8 +8845,8 @@
         [
           "f VCO_OUT",
           "PLL VCO output",
-          "PLL VCO output",
-          "PLL VCO output",
+          "Conditions",
+          "Conditions",
           "100",
           "-",
           "432",
@@ -11443,7 +11441,7 @@
           "Input levels",
           "V DD",
           "egatlov gnitarepo SF GTO BSU",
-          "egatlov gnitarepo SF GTO BSU",
+          "Conditions",
           "3.0(2)",
           "-",
           "3.6",

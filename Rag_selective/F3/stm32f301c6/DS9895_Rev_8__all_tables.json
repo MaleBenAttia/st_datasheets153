@@ -1237,9 +1237,9 @@
         "Pin Number / LQFP48",
         "Pin Number / LQFP64",
         "Pin name (function after reset)",
-        "Pin type / epyt niP",
+        "Pin type / Pintype",
         "I/O structure / erutcurts O/I",
-        "Notes / setoN",
+        "Notes",
         "Alternate functions",
         "Additional functions"
       ],
@@ -1513,7 +1513,7 @@
           "PA4",
           "I/O",
           "TTa",
-          "(3)(4)",
+          "(3,4)",
           "TSC_G2_IO1, SPI3_NSS/I2S3_WS, USART2_CK, EVENTOUT",
           "ADC1_IN5, DAC1_OUT1, COMP2_INM, COMP4_INM, COMP6_INM"
         ],
@@ -2184,10 +2184,10 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f301c6.pdf#page=44",
-    "text_helper": "Table 14. Alternate functions for Port A — section 3.22.1 Serial wire JTAG debug port (SWJ-DP). Port & pin name / eman nip & troP, 0FA / SYS_AFAF0, AF1 / 61MIT/51MIT/2MIT TNEVE/71MIT/, 2FA / I2C3/TIM1/TIM2/TIM15AF2, 3FA / I2C3/TIM15/TSCAF3, +12 autres.",
+    "text_helper": "Table 14. Alternate functions for Port A — section 3.22.1 Serial wire JTAG debug port (SWJ-DP). Port & pin name / Port&pinname, 0FA / SYS_AFAF0, AF1 / 61MIT/51MIT/2MIT TNEVE/71MIT/, 2FA / I2C3/TIM1/TIM2/TIM15AF2, 3FA / I2C3/TIM15/TSCAF3, +12 autres.",
     "table_content": {
       "headers": [
-        "Port & pin name / eman nip & troP",
+        "Port & pin name / Port&pinname",
         "0FA / SYS_AFAF0",
         "AF1 / 61MIT/51MIT/2MIT TNEVE/71MIT/",
         "2FA / I2C3/TIM1/TIM2/TIM15AF2",
@@ -3833,7 +3833,6 @@
         ]
       ],
       "notes": [
-        "1. All main power (V , V ) and ground (V andV ) pins must always be connected to the external power supply, in the DD DDA SS SSA",
         "2. This current consumption must be correctly distributed over all I/Os and control pins.The total output current must not be sunk/sourced between two consecutive power supply pins referring to high pin count LQFP packages.",
         "3. Positive injection is not possible on these I/Os and does not occur for input voltages lower than the specified maximum value.",
         "4. A positive injection is induced by V > V while a negative injection is induced by V < V . I must never be IN DD IN SS INJ(PIN)",

@@ -365,12 +365,12 @@
           "SDMMC2",
           "No",
           "No",
-          "Yes(5)(6)",
-          "Yes(5)(6)",
-          "Yes(5)(6)",
-          "Yes(5)(6)",
-          "Yes(5)(6)",
-          "Yes(5)(6)"
+          "Yes(5,6)",
+          "Yes(5,6)",
+          "Yes(5,6)",
+          "Yes(5,6)",
+          "Yes(5,6)",
+          "Yes(5,6)"
         ]
       ],
       "notes": [
@@ -6660,7 +6660,6 @@
         ]
       ],
       "notes": [
-        "1. All main power (V , V , V , V , V ) and ground (V , V ) pins must always be DD DDA DDSDMMC DDPHYHS DDUSB SS SSA",
         "2. V maximum value must always be respected. Refer to Table 14 for the values of the maximum allowed IN",
         "3. Include VREF- pin.",
         "4. A positive injection is induced by V > V while a negative injection is induced by V < V . I must never be IN DDA IN SS INJ(PIN)",
@@ -6963,44 +6962,64 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f722ic.pdf#page=104",
-    "text_helper": "Table 18. VCAP1/VCAP2 operating conditions — section 6.3.1 General operating conditions. Note: The VCAP2 pin is not available on the, LQFP64 package., , .",
+    "text_helper": "Table 18. VCAP1/VCAP2 operating conditions — section 6.3.1 General operating conditions. Note: The VCAP2 pin is not available on the, LQFP64 package..",
     "table_content": {
       "headers": [
         "Note: The VCAP2 pin is not available on the",
-        "LQFP64 package.",
-        "",
-        ""
+        "LQFP64 package."
       ],
       "rows": [
         [
-          "Figure 31.",
-          "External capacitor C",
-          "EXT",
-          "EXT"
+          "Not",
+          "LQFP64 pac"
         ],
         [
           "Figure 31.",
-          "C pacitor C",
-          "EXT",
-          "EXT"
+          "External capacitor C EXT"
+        ],
+        [
+          "Figure 31.",
+          "C pacitor C EXT"
         ],
         [
           "ESR e 31.",
-          "C pacitor C",
-          "EXT",
-          "EXT"
+          "C pacitor C EXT"
         ],
         [
           "ESR e 31.",
-          "R Leakpacitor C",
-          "EXT",
-          "EXT"
+          "R Leakpacitor C EXT"
         ],
         [
           "ESR e 31.",
-          "R Leakpacitor C",
-          "EXT",
-          "MS1"
+          "R Leakpacitor C EXT EXT MS1"
+        ],
+        [
+          "1. Legend: ESR is the equivalent seriesresist",
+          "ance. pacitor C EXT EXT MS1"
+        ],
+        [
+          "1. Symbol Paramet",
+          "erpacitor C Conditions"
+        ],
+        [
+          "1. CEXT Capacitance ofexter",
+          "nal capacitorpacitor C 2.2 µF s"
+        ],
+        [
+          "1. ESR ESR of external",
+          "capacitorpacitor C < 2 Ω s"
+        ],
+        [
+          "1. When bypassing thevoltage regulator, the",
+          "two 2.2 µF V CAP capacitorsare not requiredandshould be"
+        ],
+        [
+          "1. replaced by two 100 nF decoupling capacit",
+          "ors. capacitorsare not requiredandshould be"
+        ],
+        [
+          "104 /226 replaced by two 100 D S118",
+          "53 Rev 9 capacitorsare not requiredandshould be"
         ]
       ],
       "notes": [
@@ -7615,7 +7634,7 @@
         [
           "I DD",
           "Supply cur- rent in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "216",
           "156",
           "170(4)",
@@ -7626,7 +7645,7 @@
         [
           "I DD",
           "Supply cur- rent in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "200",
           "144",
           "154",
@@ -7637,7 +7656,7 @@
         [
           "I DD",
           "Supply cur- rent in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "180",
           "127",
           "134(4)",
@@ -7648,7 +7667,7 @@
         [
           "I DD",
           "Supply cur- rent in Run mode",
-          "enabled(2)(3)",
+          "enabled(2,3)",
           "168",
           "113",
           "119",
@@ -7659,7 +7678,7 @@
         [
           "I DD",
           "Supply cur- rent in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "144",
           "86",
           "96",
@@ -7670,7 +7689,7 @@
         [
           "I DD",
           "Supply cur- rent in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "60",
           "41",
           "44",
@@ -7681,7 +7700,7 @@
         [
           "I DD",
           "Supply cur-",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "25",
           "22",
           "24",
@@ -7815,7 +7834,7 @@
         [
           "I DD",
           "Supply cur- rent in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "216",
           "155.3",
           "164",
@@ -7826,7 +7845,7 @@
         [
           "I DD",
           "Supply cur- rent in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "200",
           "144.7",
           "153.6",
@@ -7837,7 +7856,7 @@
         [
           "I DD",
           "Supply cur- rent in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "180",
           "127.3",
           "135",
@@ -7848,7 +7867,7 @@
         [
           "I DD",
           "Supply cur- rent in Run mode",
-          "enabled(2)(3)",
+          "enabled(2,3)",
           "168",
           "113.1",
           "119.1",
@@ -7859,7 +7878,7 @@
         [
           "I DD",
           "Supply cur- rent in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "144",
           "86.9",
           "91.6",
@@ -7870,7 +7889,7 @@
         [
           "I DD",
           "Supply cur- rent in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "60",
           "41.2",
           "43.6",
@@ -7881,7 +7900,7 @@
         [
           "I DD",
           "Supply cur-",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "25",
           "21.7",
           "24",
@@ -8015,7 +8034,7 @@
         [
           "I DD",
           "Supply cur- rent in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "216",
           "129.3",
           "137.6",
@@ -8026,7 +8045,7 @@
         [
           "I DD",
           "Supply cur- rent in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "200",
           "122",
           "128",
@@ -8037,7 +8056,7 @@
         [
           "I DD",
           "Supply cur- rent in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "180",
           "108",
           "117",
@@ -8048,7 +8067,7 @@
         [
           "I DD",
           "Supply cur- rent in Run mode",
-          "enabled(2)(3)",
+          "enabled(2,3)",
           "168",
           "99",
           "104.5",
@@ -8059,7 +8078,7 @@
         [
           "I DD",
           "Supply cur- rent in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "144",
           "80",
           "84.7",
@@ -8070,7 +8089,7 @@
         [
           "I DD",
           "Supply cur- rent in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "60",
           "42",
           "45",
@@ -8081,7 +8100,7 @@
         [
           "I DD",
           "Supply cur-",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "25",
           "23",
           "23.4",
@@ -8214,7 +8233,7 @@
         [
           "I DD",
           "Supply cur- rent in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "216",
           "138",
           "151",
@@ -8225,7 +8244,7 @@
         [
           "I DD",
           "Supply cur- rent in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "200",
           "133",
           "141",
@@ -8236,7 +8255,7 @@
         [
           "I DD",
           "Supply cur- rent in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "180",
           "110",
           "131",
@@ -8247,7 +8266,7 @@
         [
           "I DD",
           "Supply cur- rent in Run mode",
-          "enabled(2)(3)",
+          "enabled(2,3)",
           "168",
           "99",
           "117",
@@ -8258,7 +8277,7 @@
         [
           "I DD",
           "Supply cur- rent in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "144",
           "79",
           "98",
@@ -8269,7 +8288,7 @@
         [
           "I DD",
           "Supply cur- rent in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "60",
           "49",
           "53",
@@ -8280,7 +8299,7 @@
         [
           "I DD",
           "Supply cur-",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "25",
           "27",
           "30",
@@ -8417,7 +8436,7 @@
         [
           "IDD12/ IDD",
           "Supply cur- rent in Run mode from V and V 12 DD supplies",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "180",
           "112",
           "1.4",
@@ -8432,7 +8451,7 @@
         [
           "IDD12/ IDD",
           "Supply cur- rent in Run mode from V and V 12 DD supplies",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "168",
           "110",
           "1.4",
@@ -8447,7 +8466,7 @@
         [
           "IDD12/ IDD",
           "Supply cur- rent in Run mode from V and V 12 DD supplies",
-          "enabled(2)(3)",
+          "enabled(2,3)",
           "144",
           "78",
           "1.3",
@@ -8462,7 +8481,7 @@
         [
           "IDD12/ IDD",
           "Supply cur-",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "60",
           "37",
           "1.1",
@@ -8477,7 +8496,7 @@
         [
           "IDD12/",
           "rent in Run",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "25",
           "19",
           "1.1",
@@ -8990,10 +9009,9 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f722ic.pdf#page=114",
-    "text_helper": "Table 31. Typical and maximum current consumptions in Stop mode — section 6.3.7 Supply current characteristics. Symbol, Symbol, Parameter, Conditions, Typ / T = A 25 °C, +4 autres.",
+    "text_helper": "Table 31. Typical and maximum current consumptions in Stop mode — section 6.3.7 Supply current characteristics. Symbol, Parameter, Conditions, Typ / T = A 25 °C, Max(1) / V = 3.6 V DD / T = A 25 °C, +3 autres.",
     "table_content": {
       "headers": [
-        "Symbol",
         "Symbol",
         "Parameter",
         "Conditions",
@@ -9006,7 +9024,6 @@
       "rows": [
         [
           "I DD_STOP_NM (normal mode)",
-          "I DD_STOP_NM (normal mode)",
           "Supply current in Stop mode, main regulator in Run mode",
           "Flash memory in Stop mode, all oscillators OFF, no IWDG",
           "0.45",
@@ -9016,7 +9033,6 @@
           "mA"
         ],
         [
-          "I DD_STOP_NM (normal mode)",
           "I DD_STOP_NM (normal mode)",
           "Run mode",
           "Flash memory in Deep power down mode, all oscillators OFF",
@@ -9028,7 +9044,6 @@
         ],
         [
           "(normal mode)",
-          "(normal mode)",
           "Supply current in Stop mode, main regulator in low-power mode",
           "Flash memory in Stop mode, all oscillators OFF, no IWDG",
           "0.32",
@@ -9038,7 +9053,6 @@
           "mA"
         ],
         [
-          "I DD_STOP_NM (normal mode)",
           "I DD_STOP_NM (normal mode)",
           "mode, main regulator in low-power mode",
           "Flash memory in Deep power down mode, all oscillators OFF, no IWDG",
@@ -9050,7 +9064,6 @@
         ],
         [
           "I DD_STOP_UDM (under-drive mode)",
-          "I DD_STOP_UDM (under-drive mode)",
           "Supply current in Stop mode, main regulator in low-voltage and under- drive modes",
           "Regulator in Run mode, Flash memory in Deep power down mode, all oscillators OFF, no IWDG",
           "0.15",
@@ -9061,7 +9074,6 @@
         ],
         [
           "mode)",
-          "mode)",
           "low-voltage and under- drive modes",
           "Regulator in Low-power mode, Flash memory in Deep power down mode, all oscillators OFF, no IWDG",
           "0.1",
@@ -9069,105 +9081,6 @@
           "4",
           "7",
           "mA"
-        ],
-        [
-          "I DD_STBY",
-          "Backup SRAM ON, RTC and LSE OFF",
-          "1.85",
-          "1.88",
-          "2.17",
-          "5",
-          "30",
-          "60",
-          "60"
-        ],
-        [
-          "I DD_STBY",
-          "Backup SRAM OFF, RTC ON and LSE in low drive mode",
-          "1.65",
-          "1.86",
-          "2.43",
-          "7",
-          "47",
-          "95.5",
-          "95.5"
-        ],
-        [
-          "I DD_STBY",
-          "Backup SRAM OFF, RTC ON and LSE in medium low drive mode",
-          "1.67",
-          "1.88",
-          "2.46",
-          "7",
-          "47.5",
-          "97",
-          "97"
-        ],
-        [
-          "I DD_STBY",
-          "Backup SRAM OFF, RTC ON and LSE in medium high drive mode",
-          "1.8",
-          "2.01",
-          "2.61",
-          "7.5",
-          "50.5",
-          "102.5",
-          "102.5"
-        ],
-        [
-          "I DD_STBY",
-          "Backup SRAM OFF, RTC ON and LSE in high drive mode",
-          "1.92",
-          "2.13",
-          "2.73",
-          "8",
-          "53",
-          "107",
-          "107"
-        ],
-        [
-          "I DD_STBY",
-          "Backup SRAM ON, RTC ON and LSE in low drive mode",
-          "2.39",
-          "2.6",
-          "3.23",
-          "9",
-          "62",
-          "127",
-          "127"
-        ],
-        [
-          "I DD_STBY",
-          "Backup SRAM ON, RTC ON and LSE in medium low drive mode",
-          "2.41",
-          "2.64",
-          "3.25",
-          "9",
-          "63",
-          "128",
-          "128"
-        ],
-        [
-          "I DD_STBY",
-          "Backup SRAM ON, RTC ON and LSE in medium high drive mode",
-          "2.67",
-          "2.89",
-          "2.53",
-          "10",
-          "68",
-          "139",
-          "139"
-        ],
-        [
-          "I DD_STBY",
-          "Backup SRAM ON, RTC ON and LSE in high drive mode",
-          "2.68",
-          "2.9",
-          "3.51",
-          "10",
-          "68",
-          "138",
-          "138"
         ]
       ],
       "notes": [
@@ -10379,18 +10292,18 @@
       ],
       "rows": [
         [
-          "",
           "-",
+          "I (Typ)",
           "DD",
           "DD",
-          "DD"
+          "Unit"
         ],
         [
-          "",
+          "-",
           "Scale 1",
           "Scale 2",
           "Scale 3",
-          "Scale 3"
+          "Unit"
         ]
       ],
       "notes": [

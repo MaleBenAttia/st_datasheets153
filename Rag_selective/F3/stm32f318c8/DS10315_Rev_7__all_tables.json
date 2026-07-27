@@ -1102,16 +1102,16 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f318c8.pdf#page=32",
-    "text_helper": "Table 13. STM32F318x8 pin definitions — section 4 Pinouts and pin description. Pin number / UQFN32, Pin number / LQFP48, Pin number / WLCSP49, Pin name (function after reset), Pin type / epyt niP, +4 autres.",
+    "text_helper": "Table 13. STM32F318x8 pin definitions — section 4 Pinouts and pin description. Pin number / UQFN32, Pin number / LQFP48, Pin number / WLCSP49, Pin name (function after reset), Pin type / Pintype, +4 autres.",
     "table_content": {
       "headers": [
         "Pin number / UQFN32",
         "Pin number / LQFP48",
         "Pin number / WLCSP49",
         "Pin name (function after reset)",
-        "Pin type / epyt niP",
+        "Pin type / Pintype",
         "I/O structure / O/I",
-        "Notes / setoN",
+        "Notes",
         "Alternate functions",
         "Additional functions"
       ],
@@ -1299,7 +1299,7 @@
           "PA4",
           "I/O",
           "TTa",
-          "(2)(3)",
+          "(2,3)",
           "TSC_G2_IO1, SPI3_NSS/I2S3_WS, USART2_CK, EVENTOUT",
           "ADC1_IN5, DAC1_OUT1, COMP2_INM, COMP4_INM, COMP6_INM"
         ],
@@ -1739,10 +1739,10 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f318c8.pdf#page=37",
-    "text_helper": "Table 14. Alternate functions for port A — section 4 Pinouts and pin description. Port name / eman troP, AF0 / SYS_AF, AF1 / 61MIT/51MIT/2MIT TNEVE/71MIT/, AF2 / I2C3/TIM1/TIM2/TIM15, AF3 / I2C3/TIM15/TSC, +12 autres.",
+    "text_helper": "Table 14. Alternate functions for port A — section 4 Pinouts and pin description. Port name / Portname, AF0 / SYS_AF, AF1 / 61MIT/51MIT/2MIT TNEVE/71MIT/, AF2 / I2C3/TIM1/TIM2/TIM15, AF3 / I2C3/TIM15/TSC, +12 autres.",
     "table_content": {
       "headers": [
-        "Port name / eman troP",
+        "Port name / Portname",
         "AF0 / SYS_AF",
         "AF1 / 61MIT/51MIT/2MIT TNEVE/71MIT/",
         "AF2 / I2C3/TIM1/TIM2/TIM15",
@@ -2090,10 +2090,10 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f318c8.pdf#page=39",
-    "text_helper": "Table 15. Alternate functions for port B — section 4 Pinouts and pin description. Port name / eman troP, AF0 / SYS_AF, AF1 / 61MIT/51MIT/2MIT TNEVE/71MIT/, AF2 / I2C3/TIM1/TIM2/TIM15, AF3 / I2C3/TIM15/TSC, +12 autres.",
+    "text_helper": "Table 15. Alternate functions for port B — section 4 Pinouts and pin description. Port name / Portname, AF0 / SYS_AF, AF1 / 61MIT/51MIT/2MIT TNEVE/71MIT/, AF2 / I2C3/TIM1/TIM2/TIM15, AF3 / I2C3/TIM15/TSC, +12 autres.",
     "table_content": {
       "headers": [
-        "Port name / eman troP",
+        "Port name / Portname",
         "AF0 / SYS_AF",
         "AF1 / 61MIT/51MIT/2MIT TNEVE/71MIT/",
         "AF2 / I2C3/TIM1/TIM2/TIM15",
@@ -3115,7 +3115,6 @@
         ]
       ],
       "notes": [
-        "1. All main power (V , V ) and ground (V andV ) pins must always be connected to the external power supply, in the DD DDA SS SSA",
         "2. This current consumption must be correctly distributed over all I/Os and control pins.The total output current must not be sunk/sourced between two consecutive power supply pins referring to high pin count LQFP packages.",
         "3. Positive injection is not possible on these I/Os and does not occur for input voltages lower than the specified maximum value.",
         "4. A positive injection is induced by V > V while a negative injection is induced by V < V . I must never be IN DD IN SS INJ(PIN)",
@@ -4632,7 +4631,7 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f318c8.pdf#page=54",
-    "text_helper": "Table 28. Typical and maximum V consumption in Stop mode 54 DDA — section 6.3.4 Supply current characteristics. Symbol, Parameter, Parameter, Conditions, Typ @V (V = 1.8 V), +10 autres. (table vide)",
+    "text_helper": "Table 28. Typical and maximum V consumption in Stop mode 54 DDA — section 6.3.4 Supply current characteristics. Symbol, Parameter, Parameter, Conditions, Typ @V (V = 1.8 V), +10 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -4651,8 +4650,45 @@
         "",
         "Unit"
       ],
-      "rows": [],
-      "notes": [],
+      "rows": [
+        [
+          "I DDA",
+          "Supply current in Stop mode",
+          "Supply current in Stop mode",
+          "All oscillators off",
+          "0.70",
+          "0.71",
+          "0.73",
+          "0.76",
+          "0.81",
+          "0.87",
+          "0.94",
+          "1.6",
+          "2.1",
+          "2.7",
+          "µA"
+        ],
+        [
+          "I DD_VBAT",
+          "Backup domain supply current",
+          "LSE & RTC ON; \"Xtal mode\" higher driving capability; LSEDRV[1: 0] = '11'",
+          "0.65",
+          "0.68",
+          "0.73",
+          "0.80",
+          "0.87",
+          "0.95",
+          "1.03",
+          "1.14",
+          "-",
+          "-",
+          "-",
+          "-"
+        ]
+      ],
+      "notes": [
+        "1. When peripherals are enabled, the power consumption of the analog part of peripherals such as ADC, DAC, Comparators, OpAmp etc. is not included. Refer to the tables of characteristics in the subsequent sections."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -7305,7 +7341,7 @@
           "Maximum frequency(2)",
           "C = 50 pF, V = 1.65 V to 1.95 V L DD",
           "-",
-          "0.5(3)(4)",
+          "0.5(3,4)",
           "MHz"
         ],
         [
@@ -7323,7 +7359,7 @@
           "Output low to high level rise time",
           "C = 50 pF, V = 1.65 V to 1.95 V L DD",
           "-",
-          "44(3)(4)",
+          "44(3,4)",
           "ns"
         ],
         [

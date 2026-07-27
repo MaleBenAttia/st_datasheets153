@@ -976,9 +976,9 @@
         "Pin numbers / WLCSP64",
         "Pin numbers / LQFP48/UFQFPN48",
         "Pin name (function upon reset)",
-        "Pin type / epyt niP",
+        "Pin type / Pintype",
         "I/O structure / erutcurts O/I",
-        "Notes / setoN",
+        "Notes",
         "Pin functions / Alternate functions",
         "Pin functions / Additional functions"
       ],
@@ -993,7 +993,7 @@
           "PE2",
           "I/O",
           "FT",
-          "FT",
+          "Notes",
           "TSC_G7_IO1, TIM3_ETR",
           "-"
         ],
@@ -1007,7 +1007,7 @@
           "PE3",
           "I/O",
           "FT",
-          "FT",
+          "Notes",
           "TSC_G7_IO2, TIM3_CH1",
           "-"
         ],
@@ -1021,7 +1021,7 @@
           "PE4",
           "I/O",
           "FT",
-          "FT",
+          "Notes",
           "TSC_G7_IO3, TIM3_CH2",
           "-"
         ],
@@ -1035,7 +1035,7 @@
           "PE5",
           "I/O",
           "FT",
-          "FT",
+          "Notes",
           "TSC_G7_IO4, TIM3_CH3",
           "-"
         ],
@@ -1049,7 +1049,7 @@
           "PE6",
           "I/O",
           "FT",
-          "FT",
+          "Notes",
           "TIM3_CH4",
           "WKUP3, RTC_TAMP3"
         ],
@@ -4007,7 +4007,6 @@
         ]
       ],
       "notes": [
-        "1. All main power (VDD, VDDA) and ground (VSS, VSSA) pins must always be connected to the external power supply, in the permitted range.",
         "2. This current consumption must be correctly distributed over all I/Os and control pins. The total output current must not be sunk/sourced between two consecutive power supply pins referring to high pin count QFP packages.",
         "3. A positive injection is induced by V > V while a negative injection is induced by V < V . I must never be IN DDIOx IN SS INJ(PIN)",
         "4. Positive injection is not possible on these I/Os and does not occur for input voltages lower than the specified maximum value.",
@@ -4958,10 +4957,10 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f098cc.pdf#page=59",
-    "text_helper": "Table 27. Typical and maximum current consumption in Stop mode — section 6.3.4 Supply current characteristics. Symbol / lobmyS, Para-meter, Conditions, Typ @ V (V = 1.8 V) / = 1.8 V, Typ @ V (V = 1.8 V) / = 2.0 V, +9 autres.",
+    "text_helper": "Table 27. Typical and maximum current consumption in Stop mode — section 6.3.4 Supply current characteristics. Symbol, Para-meter, Conditions, Typ @ V (V = 1.8 V) / = 1.8 V, Typ @ V (V = 1.8 V) / = 2.0 V, +9 autres.",
     "table_content": {
       "headers": [
-        "Symbol / lobmyS",
+        "Symbol",
         "Para-meter",
         "Conditions",
         "Typ @ V (V = 1.8 V) / = 1.8 V",
@@ -5014,7 +5013,23 @@
         "1. Current consumption from the V supply is independent of whether the digital peripherals are enabled or disabled, being DDA",
         "2. Data based on characterization results, not tested in production unless otherwise specified."
       ],
-      "legend": "",
+      "legend": [
+        "DS10624 Rev 5 59/128",
+        "99",
+        "lobmyS",
+        "retemaraP snoitidnoC",
+        "8.1",
+        "0.2",
+        "4.2",
+        "7.2",
+        "0.3",
+        "6.3",
+        "I 0.6 2.4 33 78",
+        "DD Supply current",
+        "All oscillators OFF µA",
+        "in Stop mode",
+        "I 0.9 0.9 1.0 1.0 1.0 1.1 1.2 2.5 3.0 3.7"
+      ],
       "semantic_type": "",
       "semantic": {}
     }
@@ -9386,8 +9401,7 @@
         ]
       ],
       "notes": [
-        "1. Guaranteed by design, not tested in production.",
-        "2. Measured at V = 3.3 V ± 10 mV. The V ADC conversion result is stored in the TS_CAL1 byte. Refer to Table 2: DDA 30"
+        "1. Guaranteed by design, not tested in production."
       ],
       "legend": "",
       "semantic_type": "",

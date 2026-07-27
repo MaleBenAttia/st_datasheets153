@@ -19,7 +19,7 @@
       "Pin number / LQFP32",
       "Pin number / TSSOP20",
       "Pin name (function after reset)",
-      "Pin type / epyt niP",
+      "Pin type / Pintype",
       "I/O structure / O/I",
       "Notes",
       "Pin functions / Alternate functions",
@@ -203,7 +203,7 @@
         "I/O",
         "TTa",
         "-",
-        "USART1_CTS(2), USART2_CTS(3)(5), USART4_TX(5)",
+        "USART1_CTS(2), USART2_CTS(3,5), USART4_TX(5)",
         "ADC_IN0, RTC_TAMP2, WKUP1"
       ],
       [
@@ -215,7 +215,7 @@
         "I/O",
         "TTa",
         "-",
-        "USART1_RTS(2), USART2_RTS(3)(5), EVENTOUT, USART4_RX(5)",
+        "USART1_RTS(2), USART2_RTS(3,5), EVENTOUT, USART4_RX(5)",
         "ADC_IN1"
       ],
       [
@@ -227,7 +227,7 @@
         "I/O",
         "TTa",
         "-",
-        "USART1_TX(2), USART2_TX(3)(5), TIM15_CH1(3)(5)",
+        "USART1_TX(2), USART2_TX(3,5), TIM15_CH1(3,5)",
         "ADC_IN2, WKUP4(5)"
       ],
       [
@@ -239,7 +239,7 @@
         "I/O",
         "TTa",
         "-",
-        "USART1_RX(2), USART2_RX(3)(5), TIM15_CH2(3)(5)",
+        "USART1_RX(2), USART2_RX(3,5), TIM15_CH2(3,5)",
         "ADC_IN3"
       ],
       [
@@ -299,7 +299,7 @@
         "I/O",
         "TTa",
         "-",
-        "SPI1_NSS, USART1_CK(2) USART2_CK(3)(5), TIM14_CH1, USART6_TX(5)",
+        "SPI1_NSS, USART1_CK(2) USART2_CK(3,5), TIM14_CH1, USART6_TX(5)",
         "ADC_IN4"
       ],
       [
@@ -419,7 +419,7 @@
         "I/O",
         "FT",
         "-",
-        "SPI2_SCK(5), I2C1_SCL(2), I2C2_SCL(3)(5), USART3_TX(5)",
+        "SPI2_SCK(5), I2C1_SCL(2), I2C2_SCL(3,5), USART3_TX(5)",
         "-"
       ],
       [
@@ -431,7 +431,7 @@
         "I/O",
         "FT",
         "-",
-        "I2C1_SDA(2), I2C2_SDA(3)(5), EVENTOUT, USART3_RX(5)",
+        "I2C1_SDA(2), I2C2_SDA(3,5), EVENTOUT, USART3_RX(5)",
         "-"
       ],
       [
@@ -467,7 +467,7 @@
         "I/O",
         "FT",
         "-",
-        "SPI1_NSS(2), SPI2_NSS(3)(5), TIM1_BKIN, EVENTOUT, USART3_CK(5)",
+        "SPI1_NSS(2), SPI2_NSS(3,5), TIM1_BKIN, EVENTOUT, USART3_CK(5)",
         "-"
       ],
       [
@@ -491,7 +491,7 @@
         "I/O",
         "FT",
         "-",
-        "SPI1_SCK(2), SPI2_SCK(3)(5), I2C2_SCL(5), TIM1_CH1N, USART3_CTS(5)",
+        "SPI1_SCK(2), SPI2_SCK(3,5), I2C2_SCL(5), TIM1_CH1N, USART3_CTS(5)",
         "-"
       ],
       [
@@ -503,7 +503,7 @@
         "I/O",
         "FT",
         "-",
-        "SPI1_MISO(2), SPI2_MISO(3)(5), I2C2_SDA(5), TIM1_CH2N, TIM15_CH1(3)(5), USART3_RTS(5)",
+        "SPI1_MISO(2), SPI2_MISO(3,5), I2C2_SDA(5), TIM1_CH2N, TIM15_CH1(3,5), USART3_RTS(5)",
         "-"
       ],
       [
@@ -515,7 +515,7 @@
         "I/O",
         "FT",
         "-",
-        "SPI1_MOSI(2), SPI2_MOSI(3)(5), TIM1_CH3N, TIM15_CH1N(3)(5), TIM15_CH2(3)(5)",
+        "SPI1_MOSI(2), SPI2_MOSI(3,5), TIM1_CH3N, TIM15_CH1N(3,5), TIM15_CH2(3,5)",
         "RTC_REFIN, WKUP7(5)"
       ],
       [
@@ -587,7 +587,7 @@
         "I/O",
         "FT",
         "-",
-        "USART1_TX, TIM1_CH2, TIM15_BKIN(3)(5) I2C1_SCL(2)(5)",
+        "USART1_TX, TIM1_CH2, TIM15_BKIN(3,5) I2C1_SCL(2,5)",
         "-"
       ],
       [
@@ -599,7 +599,7 @@
         "I/O",
         "FT",
         "-",
-        "USART1_RX, TIM1_CH3, TIM17_BKIN I2C1_SDA(2)(5)",
+        "USART1_RX, TIM1_CH3, TIM17_BKIN I2C1_SDA(2,5)",
         "-"
       ],
       [
@@ -707,7 +707,7 @@
         "I/O",
         "FT",
         "(7)",
-        "USART1_TX(2), USART2_TX(3)(5), SWCLK",
+        "USART1_TX(2), USART2_TX(3,5), SWCLK",
         "-"
       ],
       [
@@ -719,7 +719,7 @@
         "I/O",
         "FT",
         "-",
-        "SPI1_NSS, USART1_RX(2), USART2_RX(3)(5), USART4_RTS(5), EVENTOUT",
+        "SPI1_NSS, USART1_RX(2), USART2_RX(3,5), USART4_RTS(5), EVENTOUT",
         "-"
       ],
       [

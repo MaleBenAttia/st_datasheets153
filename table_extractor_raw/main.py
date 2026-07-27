@@ -144,11 +144,19 @@ def _deduplicate_table_boundaries(all_tables: list[dict], out_dir: Path) -> int:
         all_tables,
         key=lambda t: int(re.findall(r'\d+', t.get("table_id", "0"))[0])
     )
+
+    # Exemption N6 : tables 2-6 (features tables) ont des valeurs
+    # légitimement répétées entre tables adjacentes → skip dedup
+    family = out_dir.parent.name
+    N6_EXEMPT = frozenset({"table_2", "table_3", "table_4", "table_5", "table_6"})
+
     removed_rows = 0
     modified_ids: set[str] = set()
 
     for i in range(len(sorted_tables)):
         cur = sorted_tables[i]
+        if family == "N6" and cur["table_id"] in N6_EXEMPT:
+            continue
 
         # ── Row dedup ────────────────────────────────────────────────────
         cur_rows = cur.get("rows", [])

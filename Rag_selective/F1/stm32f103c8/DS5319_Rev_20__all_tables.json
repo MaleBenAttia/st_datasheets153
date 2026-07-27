@@ -2095,7 +2095,6 @@
         ]
       ],
       "notes": [
-        "1. All main power (V , V ) and ground (V , V ) pins must always be connected to the external power DD DDA SS SSA",
         "2. V maximum must always be respected. Refer to Table 7 for the maximum allowed injected current IN"
       ],
       "legend": "",
@@ -2174,7 +2173,6 @@
         ]
       ],
       "notes": [
-        "1. All main power (V , V ) and ground (V , V ) pins must always be connected to the external power DD DDA SS SSA",
         "2. V maximum must always be respected. Refer to Table 7 for the maximum allowed injected current IN",
         "3. Positive injection is not possible on these I/Os. A negative injection is induced by V <V . I must IN SS INJ(PIN)",
         "4. A positive injection is induced by V > V , while a negative injection is induced by V < V . IN DD IN SS",
@@ -4235,7 +4233,7 @@
           "f LSE_ext",
           "User external clock source frequency(1)",
           "-",
-          "-",
+          "Min",
           "32.768",
           "1000",
           "kHz"
@@ -4610,7 +4608,7 @@
         [
           "ACC HSI",
           "Accuracy of the HSI oscillator",
-          "Factory- calibrated (4)(5)",
+          "Factory- calibrated (4,5)",
           "T = –40 to 105 °C A",
           "–2",
           "-",
@@ -4630,7 +4628,7 @@
         [
           "ACC HSI",
           "Accuracy of the HSI oscillator",
-          "T = 0 to 70 °C (4)(5) A",
+          "T = 0 to 70 °C (4,5) A",
           "T = 0 to 70 °C A",
           "–1.3",
           "-",
@@ -6533,12 +6531,12 @@
     "table_number": "45",
     "title": "Table 45. USB DC electrical characteristics",
     "page": 73,
-    "section": "5.3.16 Communications interfaces",
-    "section_title": "Communications interfaces",
+    "section": "5.3.17 CAN (controller area network) interface",
+    "section_title": "CAN (controller area network) interface",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f103c8.pdf#page=73",
-    "text_helper": "Table 45. USB DC electrical characteristics — section 5.3.16 Communications interfaces. Symbol, Parameter, Conditions, Min.(1), Max.(1), +1 autres.",
+    "text_helper": "Table 45. USB DC electrical characteristics — section 5.3.17 CAN (controller area network) interface. Symbol, Parameter, Conditions, Min.(1), Max.(1), +1 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -6639,12 +6637,12 @@
     "table_number": "46",
     "title": "Table 46. USB: Full-speed electrical characteristics",
     "page": 73,
-    "section": "5.3.16 Communications interfaces",
-    "section_title": "Communications interfaces",
+    "section": "5.3.17 CAN (controller area network) interface",
+    "section_title": "CAN (controller area network) interface",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f103c8.pdf#page=73",
-    "text_helper": "Table 46. USB: Full-speed electrical characteristics — section 5.3.16 Communications interfaces. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
+    "text_helper": "Table 46. USB: Full-speed electrical characteristics — section 5.3.17 CAN (controller area network) interface. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -7470,8 +7468,8 @@
           "-",
           "-",
           "1.700",
-          "1.700",
-          "1.700",
+          "Typ",
+          "Min",
           "0.0669"
         ],
         [
@@ -7480,7 +7478,7 @@
           "-",
           "-",
           "0.0106",
-          "0.0106",
+          "Min",
           "0.0669"
         ],
         [

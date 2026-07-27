@@ -635,9 +635,9 @@
         "Pin Number / LQFP100",
         "Pin Number / UFBGA100",
         "Pin name (function after reset)(1) / Pin name (function reset)(1) after",
-        "Pin type / epyt niP",
+        "Pin type / Pintype",
         "I/O structure / O/I",
-        "Notes / setoN",
+        "Notes",
         "Alternate functions",
         "Additional functions"
       ],
@@ -755,7 +755,7 @@
           "PC13",
           "I/O",
           "FT",
-          "(2)(3)",
+          "(2,3)",
           "EVENTOUT,",
           "RTC_TAMP1, RTC_OUT, RTC_TS"
         ],
@@ -781,7 +781,7 @@
           "PC14- OSC32_IN (PC14)",
           "I/O",
           "FT",
-          "(2)(3) (4)",
+          "(2,3) (4)",
           "EVENTOUT",
           "OSC32_IN"
         ],
@@ -794,7 +794,7 @@
           "PC15- OSC32_OUT (PC15)",
           "I/O",
           "FT",
-          "(2)(3) (4)",
+          "(2,3) (4)",
           "EVENTOUT",
           "OSC32_OUT"
         ],
@@ -3865,7 +3865,7 @@
       ],
       "rows": [
         [
-          "",
+          "Bus",
           "0xE010 0000 - 0xFFFF FFFF",
           "Reserved"
         ],
@@ -4342,7 +4342,6 @@
         ]
       ],
       "notes": [
-        "1. All main power (V , V ) and ground (V , V ) pins must always be connected to the external power supply, in the DD DDA SS SSA",
         "2. This current consumption must be correctly distributed over all I/Os and control pins. The total output current must not be sunk/sourced between two consecutive power supply pins referring to high pin count LQFP packages.",
         "3. Negative injection disturbs the analog performance of the device. See note in Section6.3.20: 12-bit ADC characteristics.",
         "4. Positive injection is not possible on these I/Os and does not occur for input voltages lower than the specified maximum value.",
@@ -5354,7 +5353,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(2)(3)",
+          "External clock, all peripherals enabled(2,3)",
           "84",
           "20.0",
           "21",
@@ -5366,7 +5365,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "enabled(2)(3)",
+          "enabled(2,3)",
           "40",
           "10.4",
           "11",
@@ -5378,7 +5377,7 @@
         [
           "I DD",
           "Supply",
-          "External clock, all peripherals enabled(2)(3)",
+          "External clock, all peripherals enabled(2,3)",
           "20",
           "5.5",
           "6",
@@ -5483,7 +5482,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(2)(3)",
+          "External clock, all peripherals enabled(2,3)",
           "84",
           "20.2",
           "21",
@@ -5507,7 +5506,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "enabled(2)(3)",
+          "enabled(2,3)",
           "40",
           "10.7",
           "11",
@@ -5519,7 +5518,7 @@
         [
           "I DD",
           "Supply",
-          "External clock, all peripherals enabled(2)(3)",
+          "External clock, all peripherals enabled(2,3)",
           "20",
           "5.7",
           "6",
@@ -5623,7 +5622,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(2)(3)",
+          "External clock, all peripherals enabled(2,3)",
           "84",
           "22.2",
           "23",
@@ -5659,7 +5658,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(2)(3)",
+          "External clock, all peripherals enabled(2,3)",
           "30",
           "8.6",
           "9",
@@ -5671,7 +5670,7 @@
         [
           "I DD",
           "Supply",
-          "External clock, all peripherals enabled(2)(3)",
+          "External clock, all peripherals enabled(2,3)",
           "20",
           "7.0",
           "8",
@@ -5789,7 +5788,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(2)(3)",
+          "External clock, all peripherals enabled(2,3)",
           "84",
           "22.5",
           "23",
@@ -5825,7 +5824,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(2)(3)",
+          "External clock, all peripherals enabled(2,3)",
           "30",
           "8.9",
           "10",
@@ -5837,7 +5836,7 @@
         [
           "I DD",
           "Supply current",
-          "External clock, all peripherals enabled(2)(3)",
+          "External clock, all peripherals enabled(2,3)",
           "20",
           "7.3",
           "8",
@@ -5955,7 +5954,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(2)(3)",
+          "External clock, all peripherals enabled(2,3)",
           "84",
           "30.6",
           "32",
@@ -5991,7 +5990,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(2)(3)",
+          "External clock, all peripherals enabled(2,3)",
           "30",
           "12.7",
           "13",
@@ -6003,7 +6002,7 @@
         [
           "I DD",
           "Supply current",
-          "External clock, all peripherals enabled(2)(3)",
+          "External clock, all peripherals enabled(2,3)",
           "20",
           "10.0",
           "11",
@@ -6121,7 +6120,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(2)(3)",
+          "External clock, all peripherals enabled(2,3)",
           "84",
           "31.8",
           "33",
@@ -6157,7 +6156,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(2)(3)",
+          "External clock, all peripherals enabled(2,3)",
           "30",
           "12.9",
           "14",
@@ -6169,7 +6168,7 @@
         [
           "I DD",
           "Supply current",
-          "External clock, all peripherals enabled(2)(3)",
+          "External clock, all peripherals enabled(2,3)",
           "20",
           "10.4",
           "11",
@@ -6287,7 +6286,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "External clock, all peripherals enabled(2)(3)",
+          "External clock, all peripherals enabled(2,3)",
           "84",
           "16.2",
           "17",
@@ -6323,7 +6322,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "External clock, all peripherals enabled(2)(3)",
+          "External clock, all peripherals enabled(2,3)",
           "30",
           "6.8",
           "7",
@@ -6335,7 +6334,7 @@
         [
           "I DD",
           "Supply current",
-          "External clock, all peripherals enabled(2)(3)",
+          "External clock, all peripherals enabled(2,3)",
           "20",
           "5.9",
           "6",
@@ -6347,7 +6346,7 @@
         [
           "I DD",
           "in Sleep mode",
-          "External clock, all peripherals disabled(3)(4)",
+          "External clock, all peripherals disabled(3,4)",
           "84",
           "5.2",
           "6",
@@ -6383,7 +6382,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "External clock, all peripherals disabled(3)(4)",
+          "External clock, all peripherals disabled(3,4)",
           "30",
           "2.6",
           "3",
@@ -6395,7 +6394,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "External clock, all peripherals disabled(3)(4)",
+          "External clock, all peripherals disabled(3,4)",
           "20",
           "2.6",
           "3",

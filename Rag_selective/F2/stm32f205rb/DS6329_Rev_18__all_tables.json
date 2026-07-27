@@ -215,20 +215,20 @@
         [
           "Comm. interfaces",
           "SPI/(I2S)",
-          "3/(2)(2)",
-          "3/(2)(2)",
-          "3/(2)(2)",
-          "3/(2)(2)",
-          "3/(2)(2)",
-          "3/(2)(2) 3 4 2 Yes Yes 2",
-          "3/(2)(2)",
-          "3/(2)(2)",
-          "3/(2)(2)",
-          "3/(2)(2)",
-          "3/(2)(2)",
-          "3/(2)(2)",
-          "3/(2)(2)",
-          "3/(2)(2)"
+          "3/(2,2)",
+          "3/(2,2)",
+          "3/(2,2)",
+          "3/(2,2)",
+          "3/(2,2)",
+          "3/(2,2) 3 4 2 Yes Yes 2",
+          "3/(2,2)",
+          "3/(2,2)",
+          "3/(2,2)",
+          "3/(2,2)",
+          "3/(2,2)",
+          "3/(2,2)",
+          "3/(2,2)",
+          "3/(2,2)"
         ],
         [
           "I2C",
@@ -1129,7 +1129,7 @@
         "Pins / LQFP176",
         "Pins / )2(671AGBFU",
         "Pin name (function after reset)(1)",
-        "Pin type / epyt niP",
+        "Pin type / Pintype",
         "I/O structure / O/I",
         "Note / etoN",
         "Alternate functions",
@@ -1230,7 +1230,7 @@
           "PI8",
           "I/O",
           "FT",
-          "(3)(4)",
+          "(3,4)",
           "EVENTOUT",
           "RTC_AF2"
         ],
@@ -1244,7 +1244,7 @@
           "PC13",
           "I/O",
           "FT",
-          "(3)(4)",
+          "(3,4)",
           "EVENTOUT",
           "RTC_AF1"
         ],
@@ -1258,7 +1258,7 @@
           "PC14/OSC32_IN (PC14)",
           "I/O",
           "FT",
-          "(3)(4)",
+          "(3,4)",
           "EVENTOUT",
           "OSC32_IN(5)"
         ],
@@ -1272,7 +1272,7 @@
           "PC15-OSC32_OUT (PC15)",
           "I/O",
           "FT",
-          "(3)(4)",
+          "(3,4)",
           "EVENTOUT",
           "OSC32_OUT(5)"
         ],
@@ -1720,7 +1720,7 @@
           "PA0-WKUP (PA0)",
           "I/O",
           "FT",
-          "(5)(6)",
+          "(5,6)",
           "USART2_CTS, UART4_TX, ETH_MII_CRS, TIM2_CH1_ETR, TIM5_CH1, TIM8_ETR, EVENTOUT",
           "ADC123_IN0, WKUP"
         ],
@@ -4399,7 +4399,7 @@
           "TIM8_ETR",
           "-",
           "-",
-          "-",
+          "SPI3/I2S3",
           "USART2_CTS",
           "UART4_TX",
           "-",
@@ -4419,7 +4419,7 @@
           "-",
           "-",
           "-",
-          "-",
+          "SPI3/I2S3",
           "USART2_RTS",
           "UART4_RX",
           "-",
@@ -4439,7 +4439,7 @@
           "TIM9_CH1",
           "-",
           "-",
-          "-",
+          "SPI3/I2S3",
           "USART2_TX",
           "-",
           "-",
@@ -4459,7 +4459,7 @@
           "TIM9_CH2",
           "-",
           "-",
-          "-",
+          "SPI3/I2S3",
           "USART2_RX",
           "-",
           "-",
@@ -7269,7 +7269,6 @@
         ]
       ],
       "notes": [
-        "1. All main power (V , V ) and ground (V , V ) pins must always be connected to the external power DD DDA SS SSA",
         "2. V maximum value must always be respected. Refer to Table 12 for the values of the maximum allowed IN"
       ],
       "legend": "",
@@ -7348,7 +7347,6 @@
         ]
       ],
       "notes": [
-        "1. All main power (V , V ) and ground (V , V ) pins must always be connected to the external power DD DDA SS SSA",
         "2. Negative injection disturbs the analog performance of the device. See note in Section 6.3.20: 12-bit ADC characteristics.",
         "3. Positive injection is not possible on these I/Os. A negative injection is induced by V <V . I must IN SS INJ(PIN)",
         "4. A positive injection is induced by V >V while a negative injection is induced by V <V . I must IN DD IN SS INJ(PIN)",
@@ -7721,7 +7719,6 @@
         ]
       ],
       "notes": [
-        "1. The number of wait states can be reduced by reducing the CPU frequency (see Figure 21).",
         "2. On devices in WLCSP64+2 package, if IRROFF is set to V , the supply voltage can drop to 1.7 V when the device DD",
         "3. D 6 D V(4) time up to memory wait 3(3) – I/O – Up to and program 2 Msps compensation operations",
         "4. The voltage range for OTG USB FS can drop down to 2.7 V. However it is degraded between 2.7 and 3 V. 72/181 DS6329 Rev 18"
@@ -7749,42 +7746,64 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f205rb.pdf#page=73",
-    "text_helper": "Table 16. VCAP1/VCAP2 operating conditions — section 2.4 V memory wait. Figure 22, . External capacitor C EXT, , .",
+    "text_helper": "Table 16. VCAP1/VCAP2 operating conditions — section 2.4 V memory wait. Figure 22, . External capacitor C EXT.",
     "table_content": {
       "headers": [
         "Figure 22",
-        ". External capacitor C EXT",
-        "",
-        ""
+        ". External capacitor C EXT"
       ],
       "rows": [
         [
-          "",
-          "C",
-          "C",
+          "Figure 22",
+          ". Externa"
+        ],
+        [
+          "Figure 22",
           "C"
         ],
         [
-          "ESR",
-          "ESR C",
-          "C",
+          "ESR Figure 22",
           "C"
         ],
         [
-          "ESR",
-          "ESR R Leak",
-          "R Leak",
+          "ESR Figure 22",
           "R Leak"
         ],
         [
-          "ESR",
-          "ESR R Leak",
-          "R Leak",
-          "MS19044V2"
+          "ESR Figure 22",
+          "R Leakr C EXT MS19044V2"
+        ],
+        [
+          "1. Legend: E SR is the equivalent series resis",
+          "tance. R Leakr C EXT MS19044V2"
+        ],
+        [
+          "1. Legend: E SR is the e Table 16. VCAP",
+          "1/VCAP2 operatingconditions (1) MS19044V2"
+        ],
+        [
+          "Symbolis the e Table Para",
+          "meteroperatingconditions Conditions MS19044V2"
+        ],
+        [
+          "CEXT olis the e Capacitance of",
+          "external capacitorconditions Fµ 2.2 MS19044V2"
+        ],
+        [
+          "ESR olis the e Cap ESR of exte",
+          "rnal capacitorconditions < 2 Ω MS19044V2"
+        ],
+        [
+          "1. When bypassing thevoltageregulator, the",
+          "Fµ 2.2 owt V capacito CAP rs are not required and must be MS19044V2"
+        ],
+        [
+          "replaced by two 100 nF decoupling capaci",
+          "tors. V capacito CAP rs are not required and must be MS19044V2"
         ]
       ],
       "notes": [
-        "1. When bypassing the voltage regulator, the two 2.2 µF V capacitors are not required and must be CAP"
+        "1. The supply voltage can drop to 1.7 V when the device operates in the 0 to 70 °C temperature range and IRROFF is set to V ."
       ],
       "legend": "",
       "semantic_type": "",
@@ -11440,7 +11459,7 @@
           "BOOT0 I/O input hysteresis",
           "BOOT0 I/O input hysteresis",
           "1.75 VV 3.6 V, DD –40 °CT 105 °C A",
-          "10%V (1)(3) DDIO",
+          "10%V (1,3) DDIO",
           "-",
           "-",
           "V"
@@ -12959,7 +12978,7 @@
           "Input levels",
           "V DD",
           "egatlov gnitarepo SF GTO BSU",
-          "egatlov gnitarepo SF GTO BSU",
+          "Conditions",
           "3.0(2)",
           "-",
           "3.6",
@@ -13686,7 +13705,7 @@
           "V REF+",
           "Positive reference voltage",
           "-",
-          "1.8(1)(2)",
+          "1.8(1,2)",
           "-",
           "V DDA",
           "V"

@@ -1023,7 +1023,7 @@
           "PE4",
           "I/O",
           "FT",
-          "(2)(3)",
+          "(2,3)",
           "TRACED1, SPI4_NSS/I2S4_WS, SPI5_NSS/I2S5_WS, SAI1_SD_A, DFSDM1_DATIN3, FSMC_A20, EVENTOUT",
           "-"
         ],
@@ -1053,7 +1053,7 @@
           "PE6",
           "I/O",
           "FT",
-          "(2)(3)",
+          "(2,3)",
           "TRACED3, TIM9_CH2, SPI4_MOSI/I2S4_SD, SPI5_MOSI/I2S5_SD, SAI1_FS_A, FSMC_A22, EVENTOUT",
           "-"
         ],
@@ -1083,7 +1083,7 @@
           "PC13- ANTI_TAMP",
           "I/O",
           "FT",
-          "(4)(5)",
+          "(4,5)",
           "EVENTOUT",
           "TAMP_1"
         ],
@@ -1098,7 +1098,7 @@
           "PC14- OSC32_IN",
           "I/O",
           "FT",
-          "(4)(5)(6)",
+          "(4,5,6)",
           "EVENTOUT",
           "OSC32_IN"
         ],
@@ -1128,7 +1128,7 @@
           "PC15- OSC32_OUT",
           "I/O",
           "FT",
-          "(4)(6)",
+          "(4,6)",
           "EVENTOUT",
           "OSC32_OUT"
         ],
@@ -6456,7 +6456,7 @@
       ],
       "rows": [
         [
-          "",
+          "Bus",
           "0xE010 0000 - 0xFFFF FFFF",
           "Reserved"
         ],
@@ -7104,7 +7104,6 @@
         ]
       ],
       "notes": [
-        "1. All main power (V , V V ) and ground (V , V ) pins must always be connected to the external power supply, DD DDA, DDUSB SS SSA",
         "2. This current consumption must be correctly distributed over all I/Os and control pins.",
         "3. Negative injection disturbs the analog performance of the device. See note in Section 6.3.20: 12-bit ADC characteristics.",
         "4. Positive injection is not possible on these I/Os and does not occur for input voltages lower than the specified maximum value.",
@@ -7711,84 +7710,162 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f413cg.pdf#page=84",
-    "text_helper": "Table 19. VCAP_1/VCAP_2 operating conditions — section 2.7 V wait states. Figure 23. Externalcapacitor C, EXT.",
+    "text_helper": "Table 19. VCAP_1/VCAP_2 operating conditions — section 2.7 V wait states. Figure 2, 3. Externalcapacitor C, EXT, , .",
     "table_content": {
       "headers": [
-        "Figure 23. Externalcapacitor C",
-        "EXT"
+        "Figure 2",
+        "3. Externalcapacitor C",
+        "EXT",
+        "",
+        ""
       ],
       "rows": [
         [
-          "1. Legend: ESR is the equivalent series resistance.",
-          ""
+          "Figure 2",
+          "3. External",
+          "EXT",
+          "EXT",
+          "EXT"
         ],
         [
-          "Table 19. VCAP_ 1/VCAP_2 operating co",
-          "nditions(1)"
+          "Figure 2",
+          "3. External",
+          "EXT",
+          "EXT",
+          "EXT"
         ],
         [
-          "Symbol 19. VCAP_ Parameteroperating co",
-          "ndition C onditions"
+          "Figure 2",
+          "",
+          "EXT",
+          "EXT",
+          "EXT"
         ],
         [
-          "Capacitance of external capacitor with the pin",
-          "s C onditions"
+          "Figure 2",
+          "",
+          "EXT",
+          "EXT",
+          "EXT"
         ],
         [
-          "CEXT citance of external capacitor with the pin",
-          "s C Fµ 2.2 s"
+          "1. Legend: ESR is the equivalent series resi",
+          "stance.",
+          "EXT",
+          "EXT",
+          "EXT"
         ],
         [
-          "CEXT VCAP_1 and VCAP_2 available",
-          "s C Fµ 2.2 s"
+          "Table 19. VCAP_",
+          "1/VCAP_2 operating co",
+          "ndition",
+          "s(1)",
+          "s(1)"
         ],
         [
-          "ESR of external capacitor with thepins VCAP_1",
-          "and C Fµ 2.2 s"
+          "Symbol 19. VCAP_",
+          "Parameteroperating co",
+          "ndition",
+          "C",
+          "onditions"
         ],
         [
-          "ESR xternal capacitor with thepins VCAP_1",
-          "and C < 2 Ω s"
+          "Capacitance of ex",
+          "ternal capacitor with the pin",
+          "s",
+          "C",
+          "onditions"
         ],
         [
-          "ESR VC AP_2 available VCAP_1",
-          "and C < 2 Ω s"
+          "CEXT citance of ex",
+          "ternal capacitor with the pin",
+          "s",
+          "C",
+          "Fµ 2.2 s"
         ],
         [
-          "Capacitance of external capacitor with asingle V",
-          "CAP C < 2 Ω s"
+          "CEXT VCAP_1 a",
+          "nd VCAP_2 available",
+          "s",
+          "C",
+          "Fµ 2.2 s"
         ],
         [
-          "CEXT nce of external capacitor with asingle V",
-          "CAP C < 2 Ω s"
+          "ESR of external capa",
+          "citor with thepins VCAP_1",
+          "and",
+          "C",
+          "Fµ 2.2 s"
         ],
         [
-          "CEXT nce of external capacitor with asingle V",
-          "CAP C Fµ 7.4 s"
+          "ESR xternal capa",
+          "citor with thepins VCAP_1",
+          "and",
+          "C",
+          "< 2 Ω s"
         ],
         [
-          "CEXT pin availableith asingle V",
-          "CAP C Fµ 7.4 s"
+          "ESR VC",
+          "AP_2 available VCAP_1",
+          "and",
+          "C",
+          "< 2 Ω s"
         ],
         [
-          "ESR ofexternal capacitor with asingle VCAP",
-          "pin C Fµ 7.4 s"
+          "Capacitance of exter",
+          "nal capacitor with asingle V",
+          "CAP",
+          "C",
+          "< 2 Ω s"
         ],
         [
-          "ESR external capacitor with asingle VCAP",
-          "pin C < 1 Ω s"
+          "CEXT nce of exter",
+          "nal capacitor with asingle V",
+          "CAP",
+          "C",
+          "< 2 Ω s"
         ],
         [
-          "ESR external caavailablesingle VCAP",
-          "pin C < 1 Ω s"
+          "CEXT nce of exter",
+          "nal capacitor with asingle V",
+          "CAP",
+          "C",
+          "Fµ 7.4 s"
         ],
         [
-          "1. When bypassing the voltage regulator, the two 2.2 µF V C ca AP pacitors a",
-          "re not required and shouldbe"
+          "CEXT p",
+          "in availableith asingle V",
+          "CAP",
+          "C",
+          "Fµ 7.4 s"
         ],
         [
-          "replaced by two 100 nF decoupling capacitors. ca AP pacitors a",
-          "re not required and shouldbe"
+          "ESR ofexternal ca",
+          "pacitor with asingle VCAP",
+          "pin",
+          "C",
+          "Fµ 7.4 s"
+        ],
+        [
+          "ESR external ca",
+          "pacitor with asingle VCAP",
+          "pin",
+          "C",
+          "< 1 Ω s"
+        ],
+        [
+          "ESR external ca",
+          "availablesingle VCAP",
+          "pin",
+          "C",
+          "< 1 Ω s"
+        ],
+        [
+          "1. When bypassing the voltage regulator, th",
+          "e two 2.2 µF V C ca AP pacitors a",
+          "re not req",
+          "uired a",
+          "nd shouldbe"
         ]
       ],
       "notes": [
@@ -8269,7 +8346,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, PLL ON, all peripherals enabled(2)(3)",
+          "External clock, PLL ON, all peripherals enabled(2,3)",
           "100",
           "32.9",
           "34.96",
@@ -8281,7 +8358,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, PLL ON, all peripherals enabled(2)(3)",
+          "External clock, PLL ON, all peripherals enabled(2,3)",
           "84",
           "26.5",
           "28.13",
@@ -8317,7 +8394,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, PLL ON, all peripherals enabled(2)(3)",
+          "External clock, PLL ON, all peripherals enabled(2,3)",
           "25",
           "7.5",
           "8.10",
@@ -8329,7 +8406,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, PLL ON, all peripherals enabled(2)(3)",
+          "External clock, PLL ON, all peripherals enabled(2,3)",
           "20",
           "6.4",
           "6.99",
@@ -8341,7 +8418,7 @@
         [
           "I DD",
           "Supply",
-          "HSI, PLL off, all peripherals enabled(2)(3)",
+          "HSI, PLL off, all peripherals enabled(2,3)",
           "16",
           "4.6",
           "5.17",
@@ -8353,7 +8430,7 @@
         [
           "I DD",
           "Supply",
-          "enabled(2)(3)",
+          "enabled(2,3)",
           "1",
           "0.7",
           "1.28",
@@ -8742,7 +8819,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, PLL ON, all peripherals enabled(2)(3)",
+          "External clock, PLL ON, all peripherals enabled(2,3)",
           "100",
           "30.2",
           "32.03",
@@ -8754,7 +8831,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, PLL ON, all peripherals enabled(2)(3)",
+          "External clock, PLL ON, all peripherals enabled(2,3)",
           "84",
           "24.3",
           "25.77",
@@ -8766,7 +8843,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, PLL ON, all peripherals enabled(2)(3)",
+          "External clock, PLL ON, all peripherals enabled(2,3)",
           "64",
           "16.8",
           "17.80",
@@ -8778,7 +8855,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "enabled(2)(3) all peripherals",
+          "enabled(2,3) all peripherals",
           "50",
           "13.2",
           "14.05",
@@ -8790,7 +8867,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, PLL ON, all peripherals enabled(2)(3)",
+          "External clock, PLL ON, all peripherals enabled(2,3)",
           "25",
           "7.1",
           "7.62",
@@ -8802,7 +8879,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, PLL ON, all peripherals enabled(2)(3)",
+          "External clock, PLL ON, all peripherals enabled(2,3)",
           "20",
           "6.1",
           "6.69",
@@ -9458,7 +9535,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, PLL ON, all peripherals enabled(2)(3)",
+          "External clock, PLL ON, all peripherals enabled(2,3)",
           "100",
           "36.1",
           "38.48",
@@ -9470,7 +9547,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, PLL ON, all peripherals enabled(2)(3)",
+          "External clock, PLL ON, all peripherals enabled(2,3)",
           "84",
           "30.6",
           "32.60",
@@ -9506,7 +9583,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, PLL ON, all peripherals enabled(2)(3)",
+          "External clock, PLL ON, all peripherals enabled(2,3)",
           "25",
           "10.8",
           "11.63",
@@ -9518,7 +9595,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, PLL ON, all peripherals enabled(2)(3)",
+          "External clock, PLL ON, all peripherals enabled(2,3)",
           "20",
           "9.2",
           "9.84",
@@ -9530,7 +9607,7 @@
         [
           "I DD",
           "Supply current",
-          "HSI, PLL OFF, all peripherals enabled(2)(3)",
+          "HSI, PLL OFF, all peripherals enabled(2,3)",
           "16",
           "7.1",
           "7.69",
@@ -9542,7 +9619,7 @@
         [
           "I DD",
           "Supply current",
-          "enabled(2)(3)",
+          "enabled(2,3)",
           "1",
           "1.2",
           "1.84",
@@ -10125,7 +10202,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(2)(3), External clock, PLL ON, Flash deep power down",
+          "All peripherals enabled(2,3), External clock, PLL ON, Flash deep power down",
           "84",
           "17.4",
           "18.50",
@@ -10137,7 +10214,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(2)(3), External clock, PLL ON, Flash deep power down",
+          "All peripherals enabled(2,3), External clock, PLL ON, Flash deep power down",
           "64",
           "12.0",
           "12.81",
@@ -10149,7 +10226,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(2)(3), External clock, PLL ON, Flash deep power down",
+          "All peripherals enabled(2,3), External clock, PLL ON, Flash deep power down",
           "50",
           "9.5",
           "10.15",
@@ -10161,7 +10238,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(2)(3), External clock, PLL ON, Flash deep power down",
+          "All peripherals enabled(2,3), External clock, PLL ON, Flash deep power down",
           "25",
           "5.2",
           "5.79",
@@ -10173,7 +10250,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(2)(3), External clock, PLL ON, Flash deep power down",
+          "All peripherals enabled(2,3), External clock, PLL ON, Flash deep power down",
           "20",
           "4.6",
           "5.17",
@@ -10185,7 +10262,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(2)(3), HSI, PLL OFF, Flash deep power down",
+          "All peripherals enabled(2,3), HSI, PLL OFF, Flash deep power down",
           "16",
           "3.0",
           "3.24",
@@ -10197,7 +10274,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(2)(3), HSI, PLL OFF, Flash deep power down",
+          "All peripherals enabled(2,3), HSI, PLL OFF, Flash deep power down",
           "1",
           "0.7",
           "0.76",
@@ -10209,7 +10286,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(2)(3), External clock, PLL ON Flash ON",
+          "All peripherals enabled(2,3), External clock, PLL ON Flash ON",
           "100",
           "22.0",
           "23.42",
@@ -10221,7 +10298,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(2)(3), External clock, PLL ON Flash ON",
+          "All peripherals enabled(2,3), External clock, PLL ON Flash ON",
           "84",
           "17.7",
           "18.91",
@@ -10233,7 +10310,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(2)(3), External clock, PLL ON Flash ON",
+          "All peripherals enabled(2,3), External clock, PLL ON Flash ON",
           "64",
           "12.4",
           "13.17",
@@ -10245,7 +10322,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(2)(3), External clock, PLL ON Flash ON",
+          "All peripherals enabled(2,3), External clock, PLL ON Flash ON",
           "50",
           "9.8",
           "10.48",
@@ -10257,7 +10334,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(2)(3), External clock, PLL ON Flash ON",
+          "All peripherals enabled(2,3), External clock, PLL ON Flash ON",
           "25",
           "5.5",
           "6.05",
@@ -10269,7 +10346,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(2)(3), External clock, PLL ON Flash ON",
+          "All peripherals enabled(2,3), External clock, PLL ON Flash ON",
           "20",
           "4.9",
           "5.42",
@@ -10281,7 +10358,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(2)(3), HSI, PLL ON, Flash ON",
+          "All peripherals enabled(2,3), HSI, PLL ON, Flash ON",
           "16",
           "3.3",
           "3.51",
@@ -10293,7 +10370,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(2)(3), HSI, PLL ON, Flash ON",
+          "All peripherals enabled(2,3), HSI, PLL ON, Flash ON",
           "1",
           "0.9",
           "1.01",
@@ -10544,7 +10621,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(2)(3), External clock, PLL ON, Flash deep power down",
+          "All peripherals enabled(2,3), External clock, PLL ON, Flash deep power down",
           "100",
           "21.6",
           "22.97(4)",
@@ -10556,7 +10633,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "enabled(2)(3), All peripherals",
+          "enabled(2,3), All peripherals",
           "84",
           "17.4",
           "18.50",
@@ -10592,7 +10669,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(2)(3), External clock, PLL ON, Flash deep power down",
+          "All peripherals enabled(2,3), External clock, PLL ON, Flash deep power down",
           "25",
           "5.2",
           "5.79",
@@ -10604,7 +10681,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(2)(3), External clock, PLL ON, Flash deep power down",
+          "All peripherals enabled(2,3), External clock, PLL ON, Flash deep power down",
           "20",
           "4.6",
           "5.17",
@@ -10616,7 +10693,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(2)(3), HSI, PLL OFF, Flash deep power down",
+          "All peripherals enabled(2,3), HSI, PLL OFF, Flash deep power down",
           "16",
           "3.0",
           "3.24",
@@ -10640,7 +10717,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(2)(3), External clock, PLL ON Flash ON",
+          "All peripherals enabled(2,3), External clock, PLL ON Flash ON",
           "100",
           "22.0",
           "23.42",
@@ -10652,7 +10729,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(2)(3), External clock, PLL ON Flash ON",
+          "All peripherals enabled(2,3), External clock, PLL ON Flash ON",
           "84",
           "17.7",
           "18.91",
@@ -10664,7 +10741,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(2)(3), External clock, PLL ON Flash ON",
+          "All peripherals enabled(2,3), External clock, PLL ON Flash ON",
           "64",
           "12.4",
           "13.17",
@@ -10688,7 +10765,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(2)(3), External clock, PLL ON Flash ON",
+          "All peripherals enabled(2,3), External clock, PLL ON Flash ON",
           "25",
           "5.5",
           "6.05",
@@ -10700,7 +10777,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(2)(3), External clock, PLL ON Flash ON",
+          "All peripherals enabled(2,3), External clock, PLL ON Flash ON",
           "20",
           "4.9",
           "5.42",
@@ -10712,7 +10789,7 @@
         [
           "I DD",
           "Supply",
-          "All peripherals enabled(2)(3), HSI, PLL ON, Flash ON",
+          "All peripherals enabled(2,3), HSI, PLL ON, Flash ON",
           "16",
           "3.3",
           "3.51",
@@ -13332,7 +13409,7 @@
         [
           "f HSE_ext",
           "External user clock source frequency(1)",
-          "External user clock source frequency(1)",
+          "Conditions",
           "1",
           "-",
           "50",
@@ -13341,7 +13418,7 @@
         [
           "V HSEH",
           "OSC_IN input pin high level voltage",
-          "OSC_IN input pin high level voltage",
+          "Conditions",
           "0.7V DD",
           "-",
           "V DD",
@@ -13350,7 +13427,7 @@
         [
           "V HSEL",
           "OSC_IN input pin low level voltage",
-          "OSC_IN input pin low level voltage",
+          "Conditions",
           "V SS",
           "-",
           "0.3V DD",
@@ -13359,7 +13436,7 @@
         [
           "t w(HSE) t w(HSE)",
           "OSC_IN high or low time(1)",
-          "OSC_IN high or low time(1)",
+          "Conditions",
           "5",
           "-",
           "-",
@@ -13368,7 +13445,7 @@
         [
           "t r(HSE) t f(HSE)",
           "OSC_IN rise or fall time(1)",
-          "OSC_IN rise or fall time(1)",
+          "Conditions",
           "-",
           "-",
           "10",
@@ -13377,7 +13454,7 @@
         [
           "C in(HSE)",
           "OSC_IN input capacitance(1)",
-          "OSC_IN input capacitance(1)",
+          "Conditions",
           "-",
           "5",
           "-",
@@ -13386,7 +13463,7 @@
         [
           "DuCy (HSE)",
           "Duty cycle",
-          "Duty cycle",
+          "Conditions",
           "45",
           "-",
           "55",
@@ -13443,7 +13520,7 @@
         [
           "f LSE_ext",
           "User External clock source frequency(1)",
-          "User External clock source frequency(1)",
+          "Conditions",
           "-",
           "32.768",
           "1000",
@@ -13452,7 +13529,7 @@
         [
           "V LSEH",
           "OSC32_IN input pin high level voltage",
-          "OSC32_IN input pin high level voltage",
+          "Conditions",
           "0.7V DD",
           "-",
           "V DD",
@@ -13461,7 +13538,7 @@
         [
           "V LSEL",
           "OSC32_IN input pin low level voltage",
-          "OSC32_IN input pin low level voltage",
+          "Conditions",
           "V SS",
           "-",
           "0.3V DD",
@@ -13470,7 +13547,7 @@
         [
           "t w(LSE) t f(LSE)",
           "OSC32_IN high or low time(1)",
-          "OSC32_IN high or low time(1)",
+          "Conditions",
           "450",
           "-",
           "-",
@@ -13479,7 +13556,7 @@
         [
           "t r(LSE) t f(LSE)",
           "OSC32_IN rise or fall time(1)",
-          "OSC32_IN rise or fall time(1)",
+          "Conditions",
           "-",
           "-",
           "50",
@@ -13488,7 +13565,7 @@
         [
           "C in(LSE)",
           "OSC32_IN input capacitance(1)",
-          "OSC32_IN input capacitance(1)",
+          "Conditions",
           "-",
           "5",
           "-",
@@ -13497,7 +13574,7 @@
         [
           "DuCy (LSE)",
           "Duty cycle",
-          "Duty cycle",
+          "Conditions",
           "30",
           "-",
           "70",
@@ -13554,7 +13631,7 @@
         [
           "f OSC_IN",
           "Oscillator frequency",
-          "Oscillator frequency",
+          "Conditions",
           "4",
           "-",
           "26",
@@ -13563,7 +13640,7 @@
         [
           "R F",
           "Feedback resistor",
-          "Feedback resistor",
+          "Conditions",
           "-",
           "200",
           "-",
@@ -15133,7 +15210,7 @@
           "V (4) HYS",
           "FT, TTa, TC and NRST I/O input hysteresis",
           "1.7 V≤ V ≤ 3.6 V DD",
-          "10% V (2)(5) DD",
+          "10% V (2,5) DD",
           "-",
           "-",
           "V"
@@ -17243,7 +17320,7 @@
           "Input levels",
           "V DD",
           "egatlov gnitarepo SF GTO BSU",
-          "egatlov gnitarepo SF GTO BSU",
+          "Conditions",
           "3.0(2)",
           "-",
           "3.6",
@@ -18401,7 +18478,7 @@
           "-",
           "3.6",
           "V",
-          "V"
+          "Comments"
         ],
         [
           "V REF+",

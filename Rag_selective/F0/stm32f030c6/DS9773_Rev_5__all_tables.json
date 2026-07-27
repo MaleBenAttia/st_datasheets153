@@ -910,7 +910,7 @@
         "Pin number / LQFP32",
         "Pin number / TSSOP20",
         "Pin name (function after reset)",
-        "Pin type / epyt niP",
+        "Pin type / Pintype",
         "I/O structure / O/I",
         "Notes",
         "Pin functions / Alternate functions",
@@ -1094,7 +1094,7 @@
           "I/O",
           "TTa",
           "-",
-          "USART1_CTS(2), USART2_CTS(3)(5), USART4_TX(5)",
+          "USART1_CTS(2), USART2_CTS(3,5), USART4_TX(5)",
           "ADC_IN0, RTC_TAMP2, WKUP1"
         ],
         [
@@ -1106,7 +1106,7 @@
           "I/O",
           "TTa",
           "-",
-          "USART1_RTS(2), USART2_RTS(3)(5), EVENTOUT, USART4_RX(5)",
+          "USART1_RTS(2), USART2_RTS(3,5), EVENTOUT, USART4_RX(5)",
           "ADC_IN1"
         ],
         [
@@ -1118,7 +1118,7 @@
           "I/O",
           "TTa",
           "-",
-          "USART1_TX(2), USART2_TX(3)(5), TIM15_CH1(3)(5)",
+          "USART1_TX(2), USART2_TX(3,5), TIM15_CH1(3,5)",
           "ADC_IN2, WKUP4(5)"
         ],
         [
@@ -1130,7 +1130,7 @@
           "I/O",
           "TTa",
           "-",
-          "USART1_RX(2), USART2_RX(3)(5), TIM15_CH2(3)(5)",
+          "USART1_RX(2), USART2_RX(3,5), TIM15_CH2(3,5)",
           "ADC_IN3"
         ],
         [
@@ -1190,7 +1190,7 @@
           "I/O",
           "TTa",
           "-",
-          "SPI1_NSS, USART1_CK(2) USART2_CK(3)(5), TIM14_CH1, USART6_TX(5)",
+          "SPI1_NSS, USART1_CK(2) USART2_CK(3,5), TIM14_CH1, USART6_TX(5)",
           "ADC_IN4"
         ],
         [
@@ -1310,7 +1310,7 @@
           "I/O",
           "FT",
           "-",
-          "SPI2_SCK(5), I2C1_SCL(2), I2C2_SCL(3)(5), USART3_TX(5)",
+          "SPI2_SCK(5), I2C1_SCL(2), I2C2_SCL(3,5), USART3_TX(5)",
           "-"
         ],
         [
@@ -1322,7 +1322,7 @@
           "I/O",
           "FT",
           "-",
-          "I2C1_SDA(2), I2C2_SDA(3)(5), EVENTOUT, USART3_RX(5)",
+          "I2C1_SDA(2), I2C2_SDA(3,5), EVENTOUT, USART3_RX(5)",
           "-"
         ],
         [
@@ -1358,7 +1358,7 @@
           "I/O",
           "FT",
           "-",
-          "SPI1_NSS(2), SPI2_NSS(3)(5), TIM1_BKIN, EVENTOUT, USART3_CK(5)",
+          "SPI1_NSS(2), SPI2_NSS(3,5), TIM1_BKIN, EVENTOUT, USART3_CK(5)",
           "-"
         ],
         [
@@ -1382,7 +1382,7 @@
           "I/O",
           "FT",
           "-",
-          "SPI1_SCK(2), SPI2_SCK(3)(5), I2C2_SCL(5), TIM1_CH1N, USART3_CTS(5)",
+          "SPI1_SCK(2), SPI2_SCK(3,5), I2C2_SCL(5), TIM1_CH1N, USART3_CTS(5)",
           "-"
         ],
         [
@@ -1394,7 +1394,7 @@
           "I/O",
           "FT",
           "-",
-          "SPI1_MISO(2), SPI2_MISO(3)(5), I2C2_SDA(5), TIM1_CH2N, TIM15_CH1(3)(5), USART3_RTS(5)",
+          "SPI1_MISO(2), SPI2_MISO(3,5), I2C2_SDA(5), TIM1_CH2N, TIM15_CH1(3,5), USART3_RTS(5)",
           "-"
         ],
         [
@@ -1406,7 +1406,7 @@
           "I/O",
           "FT",
           "-",
-          "SPI1_MOSI(2), SPI2_MOSI(3)(5), TIM1_CH3N, TIM15_CH1N(3)(5), TIM15_CH2(3)(5)",
+          "SPI1_MOSI(2), SPI2_MOSI(3,5), TIM1_CH3N, TIM15_CH1N(3,5), TIM15_CH2(3,5)",
           "RTC_REFIN, WKUP7(5)"
         ],
         [
@@ -1478,7 +1478,7 @@
           "I/O",
           "FT",
           "-",
-          "USART1_TX, TIM1_CH2, TIM15_BKIN(3)(5) I2C1_SCL(2)(5)",
+          "USART1_TX, TIM1_CH2, TIM15_BKIN(3,5) I2C1_SCL(2,5)",
           "-"
         ],
         [
@@ -1490,7 +1490,7 @@
           "I/O",
           "FT",
           "-",
-          "USART1_RX, TIM1_CH3, TIM17_BKIN I2C1_SDA(2)(5)",
+          "USART1_RX, TIM1_CH3, TIM17_BKIN I2C1_SDA(2,5)",
           "-"
         ],
         [
@@ -1598,7 +1598,7 @@
           "I/O",
           "FT",
           "(7)",
-          "USART1_TX(2), USART2_TX(3)(5), SWCLK",
+          "USART1_TX(2), USART2_TX(3,5), SWCLK",
           "-"
         ],
         [
@@ -1610,7 +1610,7 @@
           "I/O",
           "FT",
           "-",
-          "SPI1_NSS, USART1_RX(2), USART2_RX(3)(5), USART4_RTS(5), EVENTOUT",
+          "SPI1_NSS, USART1_RX(2), USART2_RX(3,5), USART4_RTS(5), EVENTOUT",
           "-"
         ],
         [
@@ -1852,7 +1852,7 @@
         [
           "PA0",
           "-",
-          "USART2_CTS(1)(3)",
+          "USART2_CTS(1,3)",
           "-",
           "-",
           "USART4_TX(1)",
@@ -1872,7 +1872,7 @@
         [
           "PA1",
           "EVENTOUT",
-          "USART2_RTS(1)(3)",
+          "USART2_RTS(1,3)",
           "-",
           "-",
           "USART4_RX(1)",
@@ -1881,7 +1881,7 @@
         ],
         [
           "PA2",
-          "TIM15_CH1(1)(3)",
+          "TIM15_CH1(1,3)",
           "USART1_TX(2)",
           "-",
           "-",
@@ -1891,8 +1891,8 @@
         ],
         [
           "PA2",
-          "TIM15_CH1(1)(3)",
-          "USART2_TX(1)(3)",
+          "TIM15_CH1(1,3)",
+          "USART2_TX(1,3)",
           "-",
           "-",
           "-",
@@ -1901,7 +1901,7 @@
         ],
         [
           "PA3",
-          "TIM15_CH2(1)(3)",
+          "TIM15_CH2(1,3)",
           "USART1_RX(2)",
           "-",
           "-",
@@ -1911,8 +1911,8 @@
         ],
         [
           "PA3",
-          "TIM15_CH2(1)(3)",
-          "USART2_RX(1)(3)",
+          "TIM15_CH2(1,3)",
+          "USART2_RX(1,3)",
           "-",
           "-",
           "-",
@@ -1932,7 +1932,7 @@
         [
           "PA4",
           "SPI1_NSS",
-          "USART2_CK(1)(3)",
+          "USART2_CK(1,3)",
           "-",
           "-",
           "TIM14_CH1",
@@ -1981,11 +1981,11 @@
         ],
         [
           "PA9",
-          "TIM15_BKIN(1)(3)",
+          "TIM15_BKIN(1,3)",
           "USART1_TX",
           "TIM1_CH2",
           "-",
-          "I2C1_SCL(1)(2)",
+          "I2C1_SCL(1,2)",
           "MCO(1)",
           "-"
         ],
@@ -1995,7 +1995,7 @@
           "USART1_RX",
           "TIM1_CH3",
           "-",
-          "I2C1_SDA(1)(2)",
+          "I2C1_SDA(1,2)",
           "-",
           "-"
         ],
@@ -2042,12 +2042,12 @@
         [
           "PA14",
           "SWCLK",
-          "USART2_TX(1)(3)",
-          "USART2_TX(1)(3)",
-          "USART2_TX(1)(3)",
-          "USART2_TX(1)(3)",
-          "USART2_TX(1)(3)",
-          "USART2_TX(1)(3)"
+          "USART2_TX(1,3)",
+          "USART2_TX(1,3)",
+          "USART2_TX(1,3)",
+          "USART2_TX(1,3)",
+          "USART2_TX(1,3)",
+          "USART2_TX(1,3)"
         ],
         [
           "PA15",
@@ -2062,12 +2062,12 @@
         [
           "PA15",
           "SPI1_NSS",
-          "USART2_RX(1)(3)",
-          "USART2_RX(1)(3)",
-          "USART2_RX(1)(3)",
-          "USART2_RX(1)(3)",
-          "USART2_RX(1)(3)",
-          "USART2_RX(1)(3)"
+          "USART2_RX(1,3)",
+          "USART2_RX(1,3)",
+          "USART2_RX(1,3)",
+          "USART2_RX(1,3)",
+          "USART2_RX(1,3)",
+          "USART2_RX(1,3)"
         ]
       ],
       "notes": [
@@ -2212,11 +2212,11 @@
         [
           "PB10",
           "-",
-          "I2C2_SCL(1)(3)",
-          "I2C2_SCL(1)(3)",
-          "I2C2_SCL(1)(3)",
-          "I2C2_SCL(1)(3)",
-          "I2C2_SCL(1)(3)"
+          "I2C2_SCL(1,3)",
+          "I2C2_SCL(1,3)",
+          "I2C2_SCL(1,3)",
+          "I2C2_SCL(1,3)",
+          "I2C2_SCL(1,3)"
         ],
         [
           "PB11",
@@ -2230,11 +2230,11 @@
         [
           "PB11",
           "EVENTOUT",
-          "I2C2_SDA(1)(3)",
-          "I2C2_SDA(1)(3)",
-          "I2C2_SDA(1)(3)",
-          "I2C2_SDA(1)(3)",
-          "I2C2_SDA(1)(3)"
+          "I2C2_SDA(1,3)",
+          "I2C2_SDA(1,3)",
+          "I2C2_SDA(1,3)",
+          "I2C2_SDA(1,3)",
+          "I2C2_SDA(1,3)"
         ],
         [
           "PB12",
@@ -2247,12 +2247,12 @@
         ],
         [
           "PB12",
-          "SPI2_NSS(1)(3)",
-          "SPI2_NSS(1)(3)",
-          "SPI2_NSS(1)(3)",
-          "SPI2_NSS(1)(3)",
-          "SPI2_NSS(1)(3)",
-          "SPI2_NSS(1)(3)"
+          "SPI2_NSS(1,3)",
+          "SPI2_NSS(1,3)",
+          "SPI2_NSS(1,3)",
+          "SPI2_NSS(1,3)",
+          "SPI2_NSS(1,3)",
+          "SPI2_NSS(1,3)"
         ],
         [
           "PB13",
@@ -2265,17 +2265,17 @@
         ],
         [
           "PB13",
-          "SPI2_SCK(1)(3)",
-          "SPI2_SCK(1)(3)",
-          "SPI2_SCK(1)(3)",
-          "SPI2_SCK(1)(3)",
-          "SPI2_SCK(1)(3)",
-          "SPI2_SCK(1)(3)"
+          "SPI2_SCK(1,3)",
+          "SPI2_SCK(1,3)",
+          "SPI2_SCK(1,3)",
+          "SPI2_SCK(1,3)",
+          "SPI2_SCK(1,3)",
+          "SPI2_SCK(1,3)"
         ],
         [
           "PB14",
           "SPI1_MISO(2)",
-          "TIM15_CH1(1)(3)",
+          "TIM15_CH1(1,3)",
           "TIM1_CH2N",
           "-",
           "USART3_RTS(1)",
@@ -2283,30 +2283,30 @@
         ],
         [
           "PB14",
-          "SPI2_MISO(1)(3)",
-          "SPI2_MISO(1)(3)",
-          "SPI2_MISO(1)(3)",
-          "SPI2_MISO(1)(3)",
-          "SPI2_MISO(1)(3)",
-          "SPI2_MISO(1)(3)"
+          "SPI2_MISO(1,3)",
+          "SPI2_MISO(1,3)",
+          "SPI2_MISO(1,3)",
+          "SPI2_MISO(1,3)",
+          "SPI2_MISO(1,3)",
+          "SPI2_MISO(1,3)"
         ],
         [
           "PB15",
           "SPI1_MOSI(2)",
-          "TIM15_CH2(1)(3)",
+          "TIM15_CH2(1,3)",
           "TIM1_CH3N",
-          "TIM15_CH1N(1)(3)",
+          "TIM15_CH1N(1,3)",
           "-",
           "-"
         ],
         [
           "PB15",
-          "SPI2_MOSI(1)(3)",
-          "SPI2_MOSI(1)(3)",
-          "SPI2_MOSI(1)(3)",
-          "SPI2_MOSI(1)(3)",
-          "SPI2_MOSI(1)(3)",
-          "SPI2_MOSI(1)(3)"
+          "SPI2_MOSI(1,3)",
+          "SPI2_MOSI(1,3)",
+          "SPI2_MOSI(1,3)",
+          "SPI2_MOSI(1,3)",
+          "SPI2_MOSI(1,3)",
+          "SPI2_MOSI(1,3)"
         ]
       ],
       "notes": [
@@ -3163,7 +3163,6 @@
         ]
       ],
       "notes": [
-        "1. All main power (VDD, VDDA) and ground (VSS, VSSA) pins must always be connected to the external power supply, in the permitted range.",
         "2. This current consumption must be correctly distributed over all I/Os and control pins. The total output current must not be sunk/sourced between two consecutive power supply pins referring to high pin count QFP packages.",
         "3. A positive injection is induced by V > V while a negative injection is induced by V < V . I must never be IN DDIOx IN SS INJ(PIN)",
         "4. Positive injection is not possible on these I/Os and does not occur for input voltages lower than the specified maximum value.",
@@ -3772,24 +3771,6 @@
       ],
       "rows": [
         [
-          "-",
-          "-",
-          "-",
-          "",
-          "DDA",
-          "DDA",
-          "DDA"
-        ],
-        [
-          "Symbol",
-          "Parameter",
-          "Conditions(2)",
-          "f HCLK",
-          "Typ",
-          "Max @ T (3) A",
-          "Unit"
-        ],
-        [
           "I DD",
           "Supply current in Stop mode",
           "Regulator in low-power mode, all oscillators OFF",
@@ -3863,8 +3844,7 @@
         ]
       ],
       "notes": [
-        "2. Current consumption from the V supply is independent of whether the digital peripherals are enabled or disabled, being DDA",
-        "3. Data based on characterization results, not tested in production. 48/93 DS9773 Rev 5"
+        "2. Current consumption from the V supply is independent of whether the digital peripherals are enabled or disabled, being DDA"
       ],
       "legend": "",
       "semantic_type": "",
@@ -3940,7 +3920,7 @@
         [
           "I DDA",
           "Supply current in Standby mode",
-          "FFO GDWI dna FFO ISL NO GDWI dna NO ISL ADD",
+          "FFO GDWI dna FFO ISLNO GDWI dna NO ISL ADD",
           "LSI ON and IWDG ON",
           "3.3",
           "-",
@@ -3967,7 +3947,7 @@
         [
           "I DDA",
           "Supply current in Standby mode",
-          "FFO GDWI dna FFO ISL NO GDWI dna NO ISL ADD",
+          "FFO GDWI dna FFO ISLNO GDWI dna NO ISL ADD",
           "LSI ON and IWDG ON",
           "2.3",
           "-",
@@ -6481,8 +6461,7 @@
         ]
       ],
       "notes": [
-        "1. These timings are given for a 40 kHz clock but the microcontroller internal RC frequency can vary from 30 to 60 kHz. Moreover, given an exact RC oscillator frequency, the exact timings still depend on the phasing",
-        "2. Measured at V = 3.3 V ± 10 mV. The V ADC conversion result is stored in the TS_CAL1 byte. Refer to Table 3: DDA 30"
+        "1. These timings are given for a 40 kHz clock but the microcontroller internal RC frequency can vary from 30 to 60 kHz. Moreover, given an exact RC oscillator frequency, the exact timings still depend on the phasing"
       ],
       "legend": "",
       "semantic_type": "",

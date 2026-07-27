@@ -2544,7 +2544,6 @@
         ]
       ],
       "notes": [
-        "1. All main power (V , V ) and ground (V , V ) pins must always be connected to the external power DD DDA SS SSA",
         "2. V maximum must always be respected. Refer to Table 7: Current characteristics for the maximum IN"
       ],
       "legend": "",
@@ -2623,7 +2622,6 @@
         ]
       ],
       "notes": [
-        "1. All main power (V , V ) and ground (V , V ) pins must always be connected to the external power DD DDA SS SSA",
         "2. Negative injection disturbs the analog performance of the device. See Note: on page 85.",
         "3. Positive injection is not possible on these I/Os. A negative injection is induced by V <V . I must IN SS INJ(PIN)",
         "4. A positive injection is induced by V >V while a negative injection is induced by V <V . I must IN DD IN SS INJ(PIN)",
@@ -4757,7 +4755,6 @@
       ],
       "notes": [
         "3. It is recommended to use high-quality external ceramic capacitors in the 5 pF to 25 pF range (typ.), designed for high-frequency applications, and selected to match the requirements of the crystal or",
-        "4. The relatively low value of the RF resistor offers a good protection against issues resulting from use in a humid environment, due to the induced leakage and the bias condition change. However, it is",
         "5. t is the startup time measured from the moment it is enabled (by software) to a stabilized 8 MHz SU(HSE)"
       ],
       "legend": "",
@@ -4919,7 +4916,6 @@
       ],
       "notes": [
         "2. Refer to the note and caution paragraphs above the table.",
-        "3. The oscillator selection can be optimized in terms of supply current using an high quality resonator with small R value for S",
         "4. t is the startup time measured from the moment it is enabled (by software) to a stabilized 32.768 kHz oscillation is SU(LSE)"
       ],
       "legend": "",
@@ -7377,6 +7373,8 @@
         ]
       ],
       "notes": [
+        "1. R = External pull-up resistance, f = I2C speed, P SCL",
+        "2. For speeds around 400 kHz, the tolerance on the achieved speed is of ±2%. For other speed ranges, the tolerance on the achieved speed ±1%. These variations depend on the accuracy of the external",
         "3. Guaranteed by design, not tested in production. 80/107 DS5944 Rev 11"
       ],
       "legend": "",

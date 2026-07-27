@@ -1190,9 +1190,9 @@
         "Pin number / LQFP208",
         "Pin number / TFBGA216",
         "Pin name (function after reset)(1) / Pin name (function reset)(1) after",
-        "Pin type / epyt niP",
+        "Pin type / Pintype",
         "I / O structure / erutcurts O / I",
-        "Notes / setoN",
+        "Notes",
         "Alternate functions",
         "Additional functions"
       ],
@@ -9167,7 +9167,7 @@
       ],
       "rows": [
         [
-          "",
+          "Bus",
           "0xE00F FFFF - 0xFFFF FFFF",
           "Reserved"
         ],
@@ -9878,7 +9878,6 @@
         ]
       ],
       "notes": [
-        "1. All main power (V , V ) and ground (V , V ) pins must always be connected to the external power supply, in the DD DDA SS SSA",
         "2. This current consumption must be correctly distributed over all I/Os and control pins. The total output current must not be sunk/sourced between two consecutive power supply pins referring to high pin count LQFP packages.",
         "3. Negative injection disturbs the analog performance of the device. See note in Section6.3.21: 12-bit ADC characteristics.",
         "4. Positive injection is not possible on these I/Os and does not occur for input voltages lower than the specified maximum value.",
@@ -10866,7 +10865,7 @@
         [
           "I DD",
           "Supply current in RUN mode",
-          "All Peripherals enabled(3)(4)",
+          "All Peripherals enabled(3,4)",
           "180",
           "98",
           "104(5)",
@@ -10877,7 +10876,7 @@
         [
           "I DD",
           "Supply current in RUN mode",
-          "All Peripherals enabled(3)(4)",
+          "All Peripherals enabled(3,4)",
           "168",
           "89",
           "98(5)",
@@ -10888,7 +10887,7 @@
         [
           "I DD",
           "Supply current in RUN mode",
-          "All Peripherals enabled(3)(4)",
+          "All Peripherals enabled(3,4)",
           "150",
           "75",
           "84",
@@ -10899,7 +10898,7 @@
         [
           "I DD",
           "Supply current in RUN mode",
-          "All Peripherals enabled(3)(4)",
+          "All Peripherals enabled(3,4)",
           "144",
           "72",
           "81",
@@ -10910,7 +10909,7 @@
         [
           "I DD",
           "Supply current in RUN mode",
-          "All Peripherals enabled(3)(4)",
+          "All Peripherals enabled(3,4)",
           "120",
           "54",
           "58",
@@ -10943,7 +10942,7 @@
         [
           "I DD",
           "Supply current in RUN mode",
-          "All Peripherals enabled(3)(4)",
+          "All Peripherals enabled(3,4)",
           "30",
           "16",
           "20",
@@ -10954,7 +10953,7 @@
         [
           "I DD",
           "Supply current in RUN mode",
-          "All Peripherals enabled(3)(4)",
+          "All Peripherals enabled(3,4)",
           "25",
           "13",
           "16",
@@ -10965,7 +10964,7 @@
         [
           "I DD",
           "Supply current in RUN mode",
-          "All Peripherals enabled(3)(4)",
+          "All Peripherals enabled(3,4)",
           "16",
           "11",
           "13",
@@ -10976,7 +10975,7 @@
         [
           "I DD",
           "Supply current in RUN mode",
-          "All Peripherals enabled(3)(4)",
+          "All Peripherals enabled(3,4)",
           "8",
           "5",
           "9",
@@ -10987,7 +10986,7 @@
         [
           "I DD",
           "Supply current in RUN mode",
-          "All Peripherals enabled(3)(4)",
+          "All Peripherals enabled(3,4)",
           "4",
           "4",
           "8",
@@ -10998,7 +10997,7 @@
         [
           "I DD",
           "Supply",
-          "All Peripherals enabled(3)(4)",
+          "All Peripherals enabled(3,4)",
           "2",
           "2",
           "7",
@@ -11198,7 +11197,7 @@
         [
           "I DD",
           "Supply current in RUN mode",
-          "All Peripherals enabled(2)(3)",
+          "All Peripherals enabled(2,3)",
           "180",
           "103",
           "112",
@@ -11209,7 +11208,7 @@
         [
           "I DD",
           "Supply current in RUN mode",
-          "All Peripherals enabled(2)(3)",
+          "All Peripherals enabled(2,3)",
           "168",
           "98",
           "107",
@@ -11220,7 +11219,7 @@
         [
           "I DD",
           "Supply current in RUN mode",
-          "All Peripherals enabled(2)(3)",
+          "All Peripherals enabled(2,3)",
           "150",
           "87",
           "95",
@@ -11231,7 +11230,7 @@
         [
           "I DD",
           "Supply current in RUN mode",
-          "All Peripherals enabled(2)(3)",
+          "All Peripherals enabled(2,3)",
           "144",
           "85",
           "92",
@@ -11242,7 +11241,7 @@
         [
           "I DD",
           "Supply current in RUN mode",
-          "All Peripherals enabled(2)(3)",
+          "All Peripherals enabled(2,3)",
           "120",
           "66",
           "71",
@@ -11253,7 +11252,7 @@
         [
           "I DD",
           "Supply current in RUN mode",
-          "All Peripherals enabled(2)(3)",
+          "All Peripherals enabled(2,3)",
           "90",
           "54",
           "58",
@@ -11264,7 +11263,7 @@
         [
           "I DD",
           "Supply current in RUN mode",
-          "enabled(2)(3)",
+          "enabled(2,3)",
           "60",
           "37",
           "39",
@@ -11275,7 +11274,7 @@
         [
           "I DD",
           "Supply current in RUN mode",
-          "All Peripherals enabled(2)(3)",
+          "All Peripherals enabled(2,3)",
           "30",
           "20",
           "24",
@@ -11286,7 +11285,7 @@
         [
           "I DD",
           "Supply current in RUN mode",
-          "All Peripherals enabled(2)(3)",
+          "All Peripherals enabled(2,3)",
           "25",
           "17",
           "21",
@@ -11297,7 +11296,7 @@
         [
           "I DD",
           "Supply current in RUN mode",
-          "All Peripherals enabled(2)(3)",
+          "All Peripherals enabled(2,3)",
           "16",
           "12",
           "16",
@@ -11308,7 +11307,7 @@
         [
           "I DD",
           "Supply current in RUN mode",
-          "All Peripherals enabled(2)(3)",
+          "All Peripherals enabled(2,3)",
           "8",
           "7",
           "11",
@@ -11319,7 +11318,7 @@
         [
           "I DD",
           "Supply current in RUN mode",
-          "All Peripherals enabled(2)(3)",
+          "All Peripherals enabled(2,3)",
           "4",
           "5",
           "8",
@@ -11330,7 +11329,7 @@
         [
           "I DD",
           "Supply",
-          "All Peripherals enabled(2)(3)",
+          "All Peripherals enabled(2,3)",
           "2",
           "3",
           "7",
@@ -16901,7 +16900,7 @@
         [
           "f SCK 1/t",
           "SPI clock frequency",
-          "DD xelpud-lluf V≤V7.2 V6.3≤ /rettimsnarT ,6/5/4/1IPS",
+          "DD xelpud-lluf V≤V7.2 V6.3≤/rettimsnarT ,6/5/4/1IPS",
           "Transmitter/ full-duplex",
           "-",
           "-",
@@ -17440,7 +17439,7 @@
           "Input levels",
           "V DD",
           "USB OTG full speed transceiver operating voltage",
-          "USB OTG full speed transceiver operating voltage",
+          "Conditions",
           "3.0(2)",
           "-",
           "3.6",
@@ -17653,15 +17652,6 @@
         "Unit"
       ],
       "rows": [
-        [
-          "-",
-          "f value to guarantee proper operation of HCLK USB HS interface",
-          "f value to guarantee proper operation of HCLK USB HS interface",
-          "30",
-          "-",
-          "-",
-          "MHz"
-        ],
         [
           "F START_8BIT",
           "Frequency (first transition)",
@@ -18541,7 +18531,7 @@
         [
           "EO",
           "Offset error",
-          "Ωk 01 < R CDA",
+          "Ωk 01 < RCDA",
           "±1.5",
           "±2.5",
           "LSB"
@@ -18697,7 +18687,7 @@
         [
           "EO",
           "Offset error",
-          "Ωk 01 < R CDA",
+          "Ωk 01 < RCDA",
           "±1.5",
           "±2.5",
           "LSB"
@@ -18775,7 +18765,7 @@
         [
           "EO",
           "Offset error",
-          "Ωk 01 < R CDA",
+          "Ωk 01 < RCDA",
           "±1.5",
           "±2.5",
           "LSB"
@@ -21448,13 +21438,6 @@
       ],
       "rows": [
         [
-          "-",
-          "Frequency ratio DCMI_PIXCLK/f HCLK",
-          "-",
-          "0.4",
-          "0.4"
-        ],
-        [
           "DCMI_PIXCLK",
           "Pixel clock input",
           "-",
@@ -21596,7 +21579,7 @@
         ],
         [
           "t h(VSYNC)",
-          "emit dloh tuptuo ED/CNYSV/CNYSH",
+          "emitdloh tuptuo ED/CNYSV/CNYSH",
           "2",
           "-",
           "ns"

@@ -364,12 +364,12 @@
     "table_number": "3",
     "title": "Table 3. Embedded bootloader interfaces",
     "page": 19,
-    "section": "3.13 Boot modes",
-    "section_title": "Boot modes",
+    "section": "3.14 Power supply schemes",
+    "section_title": "Power supply schemes",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f410c8.pdf#page=19",
-    "text_helper": "Table 3. Embedded bootloader interfaces — section 3.13 Boot modes. Package, USART1, USART2, I2C1, I2C2, +3 autres.",
+    "text_helper": "Table 3. Embedded bootloader interfaces — section 3.14 Power supply schemes. Package, USART1, USART2, I2C1, I2C2, +3 autres.",
     "table_content": {
       "headers": [
         "Package",
@@ -634,12 +634,12 @@
     "table_number": "7",
     "title": "Table 7. USART feature comparison",
     "page": 28,
-    "section": "3.22 Universal synchronous/asynchronous receiver transmitters",
-    "section_title": "Universal synchronous/asynchronous receiver transmitters",
+    "section": "3.25 True random number generator (RNG)",
+    "section_title": "True random number generator (RNG)",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f410c8.pdf#page=28",
-    "text_helper": "Table 7. USART feature comparison — section 3.22 Universal synchronous/asynchronous receiver transmitters. USART name, Standard features, Modem (RTS/CTS), LIN, SPI master, +5 autres.",
+    "text_helper": "Table 7. USART feature comparison — section 3.25 True random number generator (RNG). USART name, Standard features, Modem (RTS/CTS), LIN, SPI master, +5 autres.",
     "table_content": {
       "headers": [
         "USART name",
@@ -683,9 +683,9 @@
           "X",
           "N.A",
           "X",
-          "X(1)(2)",
+          "X(1,2)",
           "X",
-          "X(1)(2)",
+          "X(1,2)",
           "6.25",
           "12.5",
           "APB2 (max. 50 MHz)"
@@ -815,9 +815,9 @@
         "Pin Number / LQFP64",
         "Pin Number / UFBGA64",
         "Pin name (function after reset)(1)",
-        "Pin type / epyt niP",
+        "Pin type / Pintype",
         "I/O structure / O/I",
-        "Notes / setoN",
+        "Notes",
         "Alternate functions",
         "Additional functions"
       ],
@@ -857,7 +857,7 @@
           "PC13",
           "I/O",
           "FT",
-          "(2)(3)",
+          "(2,3)",
           "EVENTOUT",
           "RTC_TAMP1, RTC_OUT, RTC_TS"
         ],
@@ -870,7 +870,7 @@
           "PC14- OSC32_IN",
           "I/O",
           "FT",
-          "(2)(3) (4)",
+          "(2,3) (4)",
           "EVENTOUT",
           "OSC32_IN"
         ],
@@ -883,7 +883,7 @@
           "PC15- OSC32_OUT",
           "I/O",
           "FT",
-          "(2)(4)",
+          "(2,4)",
           "EVENTOUT",
           "OSC32_OUT"
         ],
@@ -3356,7 +3356,6 @@
         ]
       ],
       "notes": [
-        "1. All main power (V , V ) and ground (V , V ) pins must always be connected to the external power supply, in the DD DDA SS SSA",
         "2. This current consumption must be correctly distributed over all I/Os and control pins.",
         "3. Negative injection disturbs the analog performance of the device. See note in Section 6.3.20: 12-bit ADC characteristics.",
         "4. Positive injection is not possible on these I/Os and does not occur for input voltages lower than the specified maximum value.",
@@ -3888,33 +3887,61 @@
     "table_number": "17",
     "title": "Table 17. VCAP_1 operating conditions",
     "page": 55,
-    "section": "2.7 V wait states",
-    "section_title": "V wait states",
+    "section": "1.08 V",
+    "section_title": "V",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f410c8.pdf#page=55",
-    "text_helper": "Table 17. VCAP_1 operating conditions — section 2.7 V wait states. Figure 15. External capacitor C EX, T.",
+    "text_helper": "Table 17. VCAP_1 operating conditions — section 1.08 V. Figure 1, 5. External capacitor C EX, T, .",
     "table_content": {
       "headers": [
-        "Figure 15. External capacitor C EX",
-        "T"
+        "Figure 1",
+        "5. External capacitor C EX",
+        "T",
+        ""
       ],
       "rows": [
         [
-          "1. Legend: ESR isthe equivalent series resistance.",
-          ""
+          "Figure 1",
+          "5. Externa",
+          "T",
+          "T"
         ],
         [
-          "Symbolthe equivalent series resi Parameter",
-          "C onditions"
+          "Figure 1",
+          "5. Externa",
+          "T",
+          "T"
         ],
         [
-          "CEXT the equival Capacitance of externalcapacitor",
-          "C 4.7 µ F"
+          "Figure 1",
+          "5. Externa",
+          "T",
+          "T"
         ],
         [
-          "ESR the equival ESR ofexternal capacitor",
-          "C < 1 Ω"
+          "1. Legend: ESR isthe equivalent series resi",
+          "stance.",
+          "T",
+          "T"
+        ],
+        [
+          "Symbolthe equivalent series resi",
+          "Parameter",
+          "C",
+          "onditions"
+        ],
+        [
+          "CEXT the equival Capacitanc",
+          "e of externalcapacitor",
+          "C",
+          "4.7 µ F"
+        ],
+        [
+          "ESR the equival ESR of",
+          "external capacitor",
+          "C",
+          "< 1 Ω"
         ]
       ],
       "notes": [
@@ -3938,12 +3965,12 @@
     "table_number": "18",
     "title": "Table 18. Operating conditions at power-up / power-down (regulator ON)",
     "page": 55,
-    "section": "6.3.3 Operating conditions at power-up/power-down (regulator ON)",
-    "section_title": "Operating conditions at power-up/power-down (regulator ON)",
+    "section": "1.08 V",
+    "section_title": "V",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f410c8.pdf#page=55",
-    "text_helper": "Table 18. Operating conditions at power-up / power-down (regulator ON) — section 6.3.3 Operating conditions at power-up/power-down (regulator ON). Symbol, Parameter, Min, Max, Unit.",
+    "text_helper": "Table 18. Operating conditions at power-up / power-down (regulator ON) — section 1.08 V. Symbol, Parameter, Min, Max, Unit.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -3989,12 +4016,12 @@
     "table_number": "19",
     "title": "Table 19. Operating conditions at power-up / power-down (regulator OFF)",
     "page": 55,
-    "section": "6.3.4 Operating conditions at power-up / power-down (regulator OFF)",
-    "section_title": "Operating conditions at power-up / power-down (regulator OFF)",
+    "section": "1.08 V",
+    "section_title": "V",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f410c8.pdf#page=55",
-    "text_helper": "Table 19. Operating conditions at power-up / power-down (regulator OFF) — section 6.3.4 Operating conditions at power-up / power-down (regulator OFF). Symbol, Parameter, Conditions, Min, Max, +1 autres.",
+    "text_helper": "Table 19. Operating conditions at power-up / power-down (regulator OFF) — section 1.08 V. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -4395,7 +4422,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(3)(4)",
+          "External clock, all peripherals enabled(3,4)",
           "100",
           "S1",
           "200",
@@ -4409,7 +4436,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(3)(4)",
+          "External clock, all peripherals enabled(3,4)",
           "84",
           "S2",
           "168",
@@ -4451,7 +4478,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(3)(4)",
+          "External clock, all peripherals enabled(3,4)",
           "25",
           "S3",
           "100",
@@ -4465,7 +4492,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(3)(4)",
+          "External clock, all peripherals enabled(3,4)",
           "20",
           "S3",
           "160",
@@ -4638,7 +4665,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(3)(4)",
+          "External clock, all peripherals enabled(3,4)",
           "100",
           "S1",
           "200",
@@ -4652,7 +4679,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(3)(4)",
+          "External clock, all peripherals enabled(3,4)",
           "84",
           "S2",
           "168",
@@ -4680,7 +4707,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "enabled(3)(4)",
+          "enabled(3,4)",
           "50",
           "S3",
           "100",
@@ -4694,7 +4721,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(3)(4)",
+          "External clock, all peripherals enabled(3,4)",
           "25",
           "S3",
           "100",
@@ -4708,7 +4735,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(3)(4)",
+          "External clock, all peripherals enabled(3,4)",
           "20",
           "S3",
           "160",
@@ -4722,7 +4749,7 @@
         [
           "I DD",
           "Supply",
-          "HSI, PLL off, all peripherals enabled(3)(4)",
+          "HSI, PLL off, all peripherals enabled(3,4)",
           "16",
           "S3",
           "off",
@@ -4736,7 +4763,7 @@
         [
           "I DD",
           "Supply",
-          "enabled(3)(4)",
+          "enabled(3,4)",
           "1",
           "S3",
           "off",
@@ -4909,7 +4936,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(3)(4)",
+          "External clock, all peripherals enabled(3,4)",
           "100",
           "S1",
           "200",
@@ -4923,7 +4950,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(3)(4)",
+          "External clock, all peripherals enabled(3,4)",
           "84",
           "S2",
           "168",
@@ -4951,7 +4978,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "enabled(3)(4)",
+          "enabled(3,4)",
           "50",
           "S3",
           "100",
@@ -4965,7 +4992,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(3)(4)",
+          "External clock, all peripherals enabled(3,4)",
           "25",
           "S3",
           "100",
@@ -4979,7 +5006,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(3)(4)",
+          "External clock, all peripherals enabled(3,4)",
           "20",
           "S3",
           "160",
@@ -4993,7 +5020,7 @@
         [
           "I DD",
           "Supply",
-          "HSI, PLL OFF, all peripherals enabled(3)(4)",
+          "HSI, PLL OFF, all peripherals enabled(3,4)",
           "16",
           "S3",
           "off",
@@ -5007,7 +5034,7 @@
         [
           "I DD",
           "Supply",
-          "enabled(3)(4)",
+          "enabled(3,4)",
           "1",
           "S3",
           "off",
@@ -5182,7 +5209,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(3)(4)",
+          "External clock, all peripherals enabled(3,4)",
           "100",
           "S1",
           "200",
@@ -5196,7 +5223,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(3)(4)",
+          "External clock, all peripherals enabled(3,4)",
           "84",
           "S2",
           "168",
@@ -5238,7 +5265,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(3)(4)",
+          "External clock, all peripherals enabled(3,4)",
           "25",
           "S3",
           "100",
@@ -5252,7 +5279,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(3)(4)",
+          "External clock, all peripherals enabled(3,4)",
           "20",
           "S3",
           "160",
@@ -5266,7 +5293,7 @@
         [
           "I DD",
           "Supply",
-          "HSI, PLL OFF, all peripherals enabled(3)(4)",
+          "HSI, PLL OFF, all peripherals enabled(3,4)",
           "16",
           "S3",
           "off",
@@ -5280,7 +5307,7 @@
         [
           "I DD",
           "Supply",
-          "all peripherals enabled(3)(4)",
+          "all peripherals enabled(3,4)",
           "1",
           "S3",
           "off",
@@ -5455,7 +5482,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(3)(4)",
+          "External clock, all peripherals enabled(3,4)",
           "100",
           "S1",
           "200",
@@ -5469,7 +5496,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(3)(4)",
+          "External clock, all peripherals enabled(3,4)",
           "84",
           "S2",
           "168",
@@ -5497,7 +5524,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "enabled(3)(4)",
+          "enabled(3,4)",
           "50",
           "S3",
           "100",
@@ -5511,7 +5538,7 @@
         [
           "I DD",
           "Supply",
-          "enabled(3)(4)",
+          "enabled(3,4)",
           "1",
           "S3",
           "off",
@@ -5686,7 +5713,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(3)(4)",
+          "External clock, all peripherals enabled(3,4)",
           "100",
           "S1",
           "200",
@@ -5700,7 +5727,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(3)(4)",
+          "External clock, all peripherals enabled(3,4)",
           "84",
           "S2",
           "168",
@@ -5728,7 +5755,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "enabled(3)(4)",
+          "enabled(3,4)",
           "50",
           "S3",
           "100",
@@ -5742,7 +5769,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(3)(4)",
+          "External clock, all peripherals enabled(3,4)",
           "25",
           "S3",
           "100",
@@ -5756,7 +5783,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(3)(4)",
+          "External clock, all peripherals enabled(3,4)",
           "20",
           "S3",
           "160",
@@ -5770,7 +5797,7 @@
         [
           "I DD",
           "Supply",
-          "HSI, PLL OFF, all peripherals enabled(3)(4)",
+          "HSI, PLL OFF, all peripherals enabled(3,4)",
           "16",
           "S3",
           "off",
@@ -5784,7 +5811,7 @@
         [
           "I DD",
           "Supply",
-          "enabled(3)(4)",
+          "enabled(3,4)",
           "1",
           "S3",
           "off",
@@ -5959,7 +5986,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(3)(4)",
+          "External clock, all peripherals enabled(3,4)",
           "100",
           "S1",
           "200",
@@ -5973,7 +6000,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(3)(4)",
+          "External clock, all peripherals enabled(3,4)",
           "84",
           "S2",
           "168",
@@ -6001,7 +6028,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "enabled(3)(4)",
+          "enabled(3,4)",
           "50",
           "S3",
           "100",
@@ -6015,7 +6042,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(3)(4)",
+          "External clock, all peripherals enabled(3,4)",
           "25",
           "S3",
           "100",
@@ -6029,7 +6056,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "External clock, all peripherals enabled(3)(4)",
+          "External clock, all peripherals enabled(3,4)",
           "20",
           "S3",
           "160",
@@ -6043,7 +6070,7 @@
         [
           "I DD",
           "Supply",
-          "HSI, PLL OFF, all peripherals enabled(3)(4)",
+          "HSI, PLL OFF, all peripherals enabled(3,4)",
           "16",
           "S3",
           "off",
@@ -6057,7 +6084,7 @@
         [
           "I DD",
           "Supply",
-          "enabled(3)(4)",
+          "enabled(3,4)",
           "1",
           "S3",
           "off",
@@ -6183,7 +6210,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory in Deep power down mode",
+          "All peripherals enabled(3,4), External clock, PLL ON, Flash memory in Deep power down mode",
           "84",
           "S2",
           "168",
@@ -6197,7 +6224,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory in Deep power down mode",
+          "All peripherals enabled(3,4), External clock, PLL ON, Flash memory in Deep power down mode",
           "64",
           "S3",
           "128",
@@ -6211,7 +6238,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory in Deep power down mode",
+          "All peripherals enabled(3,4), External clock, PLL ON, Flash memory in Deep power down mode",
           "50",
           "S3",
           "100",
@@ -6225,7 +6252,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory in Deep power down mode",
+          "All peripherals enabled(3,4), External clock, PLL ON, Flash memory in Deep power down mode",
           "25",
           "S3",
           "100",
@@ -6239,7 +6266,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory in Deep power down mode",
+          "All peripherals enabled(3,4), External clock, PLL ON, Flash memory in Deep power down mode",
           "20",
           "S3",
           "160",
@@ -6253,7 +6280,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), HSI, PLL OFF, Flash memory in Deep power down mode",
+          "All peripherals enabled(3,4), HSI, PLL OFF, Flash memory in Deep power down mode",
           "16",
           "S3",
           "off",
@@ -6267,7 +6294,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), HSI, PLL OFF, Flash memory in Deep power down mode",
+          "All peripherals enabled(3,4), HSI, PLL OFF, Flash memory in Deep power down mode",
           "1",
           "S3",
           "off",
@@ -6281,7 +6308,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory ON",
+          "All peripherals enabled(3,4), External clock, PLL ON, Flash memory ON",
           "100",
           "S1",
           "200",
@@ -6295,7 +6322,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory ON",
+          "All peripherals enabled(3,4), External clock, PLL ON, Flash memory ON",
           "84",
           "S2",
           "168",
@@ -6309,7 +6336,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory ON",
+          "All peripherals enabled(3,4), External clock, PLL ON, Flash memory ON",
           "64",
           "S3",
           "128",
@@ -6323,7 +6350,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory ON",
+          "All peripherals enabled(3,4), External clock, PLL ON, Flash memory ON",
           "50",
           "S3",
           "100",
@@ -6337,7 +6364,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory ON",
+          "All peripherals enabled(3,4), External clock, PLL ON, Flash memory ON",
           "25",
           "S3",
           "100",
@@ -6351,7 +6378,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory ON",
+          "All peripherals enabled(3,4), External clock, PLL ON, Flash memory ON",
           "20",
           "S3",
           "160",
@@ -6442,7 +6469,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory in Deep power down mode",
+          "All peripherals enabled(3,4), External clock, PLL ON, Flash memory in Deep power down mode",
           "100",
           "S1",
           "200",
@@ -6456,7 +6483,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "enabled(3)(4),",
+          "enabled(3,4),",
           "84",
           "S2",
           "168",
@@ -6512,7 +6539,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory in Deep power down mode",
+          "All peripherals enabled(3,4), External clock, PLL ON, Flash memory in Deep power down mode",
           "20",
           "S3",
           "160",
@@ -6526,7 +6553,7 @@
         [
           "I DD",
           "Supply current in Sleep",
-          "All peripherals enabled(3)(4), HSI, PLL OFF, Flash memory in Deep power down mode",
+          "All peripherals enabled(3,4), HSI, PLL OFF, Flash memory in Deep power down mode",
           "16",
           "S3",
           "off",
@@ -6554,7 +6581,7 @@
         [
           "I DD",
           "mode",
-          "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory ON",
+          "All peripherals enabled(3,4), External clock, PLL ON, Flash memory ON",
           "100",
           "S1",
           "200",
@@ -6582,7 +6609,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory ON",
+          "All peripherals enabled(3,4), External clock, PLL ON, Flash memory ON",
           "64",
           "S3",
           "128",
@@ -6624,7 +6651,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory ON",
+          "All peripherals enabled(3,4), External clock, PLL ON, Flash memory ON",
           "20",
           "S3",
           "160",
@@ -6960,7 +6987,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), HSI, PLL OFF, Flash memory in Deep power down mode",
+          "All peripherals enabled(3,4), HSI, PLL OFF, Flash memory in Deep power down mode",
           "16",
           "S3",
           "off",
@@ -6974,7 +7001,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), HSI, PLL OFF, Flash memory in Deep power down mode",
+          "All peripherals enabled(3,4), HSI, PLL OFF, Flash memory in Deep power down mode",
           "1",
           "S3",
           "off",
@@ -6988,7 +7015,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory ON",
+          "All peripherals enabled(3,4), External clock, PLL ON, Flash memory ON",
           "100",
           "S1",
           "200",
@@ -7002,7 +7029,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory ON",
+          "All peripherals enabled(3,4), External clock, PLL ON, Flash memory ON",
           "84",
           "S2",
           "168",
@@ -7016,7 +7043,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory ON",
+          "All peripherals enabled(3,4), External clock, PLL ON, Flash memory ON",
           "64",
           "S3",
           "128",
@@ -7030,7 +7057,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory ON",
+          "All peripherals enabled(3,4), External clock, PLL ON, Flash memory ON",
           "50",
           "S3",
           "100",
@@ -7044,7 +7071,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory ON",
+          "All peripherals enabled(3,4), External clock, PLL ON, Flash memory ON",
           "25",
           "S3",
           "100",
@@ -7058,7 +7085,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory ON",
+          "All peripherals enabled(3,4), External clock, PLL ON, Flash memory ON",
           "20",
           "S3",
           "160",
@@ -7072,7 +7099,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), HSI, PLL OFF, Flash memory ON",
+          "All peripherals enabled(3,4), HSI, PLL OFF, Flash memory ON",
           "16",
           "S3",
           "off",
@@ -7086,7 +7113,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), HSI, PLL OFF, Flash memory ON",
+          "All peripherals enabled(3,4), HSI, PLL OFF, Flash memory ON",
           "1",
           "S3",
           "off",
@@ -7231,7 +7258,7 @@
         [
           "I DD",
           "Supply current in",
-          "All peripherals enabled(3)(4), HSI, PLL OFF, Flash memory in Deep power down mode",
+          "All peripherals enabled(3,4), HSI, PLL OFF, Flash memory in Deep power down mode",
           "16",
           "S3",
           "off",
@@ -7259,7 +7286,7 @@
         [
           "I DD",
           "mode",
-          "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory ON",
+          "All peripherals enabled(3,4), External clock, PLL ON, Flash memory ON",
           "100",
           "S1",
           "200",
@@ -7287,7 +7314,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory ON",
+          "All peripherals enabled(3,4), External clock, PLL ON, Flash memory ON",
           "64",
           "S3",
           "128",
@@ -7329,7 +7356,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory ON",
+          "All peripherals enabled(3,4), External clock, PLL ON, Flash memory ON",
           "20",
           "S3",
           "160",
@@ -7343,7 +7370,7 @@
         [
           "I DD",
           "Supply current in Sleep mode",
-          "All peripherals enabled(3)(4), HSI, PLL OFF, Flash memory ON",
+          "All peripherals enabled(3,4), HSI, PLL OFF, Flash memory ON",
           "16",
           "S3",
           "off",

@@ -20,7 +20,7 @@
       "oscillator System",
       "clock System",
       "clock Peripheral",
-      "kcolc UPC",
+      "UPC kcolc",
       "regulator Voltage",
       "PWR_ON"
     ],
@@ -32,8 +32,41 @@
         "NO",
         "NO",
         "NO",
-        ")1(NO",
-        ")hgih/wol SOV( NO",
+        "ON(1)",
+        "ON(VOS low/high)",
+        "1"
+      ],
+      [
+        "peelS",
+        "WFI or return from ISR or WFE(2)",
+        "See Table 7",
+        "OFFON/OFF(5)ON",
+        "NO FFO",
+        "ON/OFF(3)",
+        "OFFON(1)",
+        "SOV( NO )hgih SOVS( NO )wol SOVS( NO",
+        "1"
+      ],
+      [
+        "Stop SVOS high",
+        "SVOS + SLEEPDEEP + WFI or return from ISR, WFE, or wake-up source cleared(4)",
+        "See Table 7",
+        "ON/OFF(5)",
+        "kcolc metsySNOFFOFFO",
+        "FFO",
+        "OFFOFFON(1)CPU clock",
+        "ON(SVOS high)",
+        "1"
+      ],
+      [
+        "Stop SVOS low",
+        "SLEEPDEEP + WFI or return from ISR, WFE, or wake-up source cleared(3)",
+        "See Table 7",
+        "OFFOFFON/OFF(5)ONSystem oscillator",
+        "kcolc metsySNOFFOFFO",
+        "kcolc larehpirePNOFFO/NOFFOFFO",
+        "OFFOFFON(1)CPU clock",
+        "ON(SVOS low)",
         "1"
       ]
     ],
@@ -42,8 +75,7 @@
       "2. WFI = wait for interrupt, ISR = interrupt service routine, WFE = wait for event.",
       "3. The CPU subsystem peripherals with a PERxLPEN bit operate accordingly.",
       "4. When the CPU is in Stop mode, the last EXTI wake-up source must be cleared by software.",
-      "5. When HSI or MSI is used, the state is controlled by HSISTOPEN and MSISTOPEN, otherwise the system oscillator is off.",
-      "6. A guaranteed minimum PWR_ON pulse low time can be defined by POPL bits in PWR_CR1."
+      "5. When HSI or MSI is used, the state is controlled by HSISTOPEN and MSISTOPEN, otherwise the system oscillator is off."
     ],
     "legend": "",
     "semantic_type": "",

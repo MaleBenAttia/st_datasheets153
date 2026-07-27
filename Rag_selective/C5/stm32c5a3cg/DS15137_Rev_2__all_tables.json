@@ -1413,7 +1413,7 @@
           "FT",
           "-",
           "TRACECLK, LPTIM1_IN2, SPI3_SCK/I2S3_CK, XSPI1_IO2, ETH1_MII_TXD3, EVENTOUT",
-          "TRACECLK, LPTIM1_IN2, SPI3_SCK/I2S3_CK, XSPI1_IO2, ETH1_MII_TXD3, EVENTOUT"
+          "Additional functions"
         ],
         [
           "-",
@@ -1429,7 +1429,7 @@
           "FT",
           "-",
           "TRACED0, TIM15_BKIN, USART1_RX, EVENTOUT",
-          "TRACED0, TIM15_BKIN, USART1_RX, EVENTOUT"
+          "Additional functions"
         ],
         [
           "-",
@@ -1445,7 +1445,7 @@
           "FT",
           "-",
           "TRACED1, TIM15_CH1N, SPI3_NSS/I2S3_WS, USART1_TX, ETH1_MII_RXD0/ ETH1_RMII_RXD0, EVENTOUT",
-          "TRACED1, TIM15_CH1N, SPI3_NSS/I2S3_WS, USART1_TX, ETH1_MII_RXD0/ ETH1_RMII_RXD0, EVENTOUT"
+          "Additional functions"
         ],
         [
           "-",
@@ -1461,7 +1461,7 @@
           "FT",
           "-",
           "TRACED2, TIM15_CH1, SPI3_MISO/I2S3_SDI, USART1_CK, ETH1_MII_RXD1/ ETH1_RMII_RXD1, EVENTOUT",
-          "TRACED2, TIM15_CH1, SPI3_MISO/I2S3_SDI, USART1_CK, ETH1_MII_RXD1/ ETH1_RMII_RXD1, EVENTOUT"
+          "Additional functions"
         ],
         [
           "-",
@@ -1507,7 +1507,7 @@
           "PC13",
           "I/O",
           "FT_t",
-          "(1)(2)",
+          "(1,2)",
           "FDCAN1_TX, EVENTOUT",
           "TAMP_IN1, RTC_OUT1/ RTC_TS, WKUP4"
         ],
@@ -6506,8 +6506,7 @@
         ]
       ],
       "notes": [
-        "1. VIN maximum must always be respected. Refer to Table 16 for the maximum allowed injected current values.",
-        "2. When the analog option is selected by enabling analog peripheral or the pull-up/pull-down resistors are enabled on a given pin, VIN must not exceed 4 V."
+        "1. VIN maximum must always be respected. Refer to Table 16 for the maximum allowed injected current values."
       ],
       "legend": [
         "All main power (VDD) and ground (VSS) pins must always be connected to the external power supply, in the permitted range.",
@@ -6607,9 +6606,7 @@
         ]
       ],
       "notes": [
-        "1. VIN maximum must always be respected. Refer to Table 16 for the maximum allowed injected current values.",
         "2. When the analog option is selected by enabling analog peripheral or the pull-up/pull-down resistors are enabled on a given pin, VIN must not exceed 4 V.",
-        "3. A negative injection is induced by VIN < VSS. IINJ(PIN) must never be exceeded. Refer also to Table 15 for the minimum allowed input voltage values.",
         "4. Positive injection (when VIN > VDDIOx) is not possible on these I/Os and does not occur for input voltages lower than the specified maximum value.",
         "5. When several inputs are submitted to a current injection, the maximum ∑IINJ(PIN) is the absolute sum of the negative injected currents (instantaneous values)."
       ],
@@ -6818,7 +6815,6 @@
       ],
       "notes": [
         "1. When RESET is released, the functionality is guaranteed down to PDR minimum voltage.",
-        "2. For operation with voltage higher than VDD + 0.3 V, the internal pull‑up and pull‑down resistors must be disabled. The minimum and maximum input voltage (Vin) must comply with the selected peripheral enabled on the given GPIOs. Refer to the respective peripheral",
         "3. If TA is lower, higher PD values are allowed as long as TJ does not exceed TJmax (see Section 6.10: Package thermal characteristics). DS15137 - Rev 2 page 65/149"
       ],
       "legend": "",
@@ -7272,7 +7268,8 @@
         ]
       ],
       "notes": [
-        "1. Measurements done with prefetch enabled."
+        "1. Measures done with prefetch enabled.",
+        "2. Clocked by PSI 144 MHz with HSE at 16 MHz on bypass mode. DS15137 - Rev 2 page 68/149"
       ],
       "legend": [
         "Specified by design - not tested in production, unless otherwise stated.",
@@ -9030,7 +9027,6 @@
       "notes": [
         "1. Tested in production.",
         "2. Specified by design - Not tested in production.",
-        "3. Evaluated by characterization - Not tested in production.",
         "4. ΔfHSI = ΔTEMP + ΔVDD",
         "5. These values are obtained by using formula: (Freq(3.6 V) - Freq(3.3 V)) / Freq(3.3 V) or (Freq(3.6 V) - Freq(2.7 V)) / Freq(2.7 V).",
         "6. The supply regulation consumption is common to HSI and PSI. (To be counted once if both oscillators are ON).",
@@ -9356,7 +9352,6 @@
         "1. Tested in production.",
         "2. Frequencies above the supported product's maximum frequency can only be used once divided through PSIK or PSIDIV4 dividers.",
         "3. Specified by design - Not tested in production.",
-        "4. Evaluated by characterization - Not tested in production.",
         "5. The supply regulation consumption is common to HSI and PSI. (To be counted once if both oscillators are ON)",
         "6. Jitter measurements are performed without clock source activated in parallel. The typical value refer to the standard deviation, while the maximum is the peak measurement of TIE-8 over 36 cycles.",
         "7. Jitter measurements are performed without clock source activated in parallel. The typical value refer to the standard deviation, while the maximum is the peak measurement of TIE-16 over 36 cycles."
@@ -9453,8 +9448,7 @@
       ],
       "notes": [
         "1. Guaranteed by test production.",
-        "2. Evaluated by characterization - Not tested in production.",
-        "3. Specified by design - Not tested in production."
+        "2. Evaluated by characterization - Not tested in production."
       ],
       "legend": "",
       "semantic_type": "",
@@ -10135,7 +10129,7 @@
         [
           "(3)",
           "current(2) FT_xx Input leakage",
-          "Max(VDDXXX) < VIN ≤ Max(VDDXXX + 1 V)(5)(6)(4)",
+          "Max(VDDXXX) < VIN ≤ Max(VDDXXX + 1 V)(5,6,4)",
           "-",
           "-",
           "±2500",
@@ -10144,7 +10138,7 @@
         [
           "Ileak (3)",
           "FT_xx Input leakage current(2)",
-          "Max(VDDXXX + 1) < VIN ≤ 5.5 V (5)(6)(4)",
+          "Max(VDDXXX + 1) < VIN ≤ 5.5 V (5,6,4)",
           "-",
           "-",
           "750",
@@ -11054,7 +11048,7 @@
           "2.7 V < VDD < 3.6 V CL=15 pF",
           "-",
           "-",
-          "72(1)(2)",
+          "72(1,2)",
           "MHz"
         ],
         [
@@ -11864,10 +11858,9 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c5a3cg.pdf#page=99",
-    "text_helper": "Table 60. Temperature sensor characteristics — section 5.3.20 Temperature sensor characteristics. Symbol, Symbol, Parameter, Min, Typ, +2 autres.",
+    "text_helper": "Table 60. Temperature sensor characteristics — section 5.3.20 Temperature sensor characteristics. Symbol, Parameter, Min, Typ, Max, +1 autres.",
     "table_content": {
       "headers": [
-        "Symbol",
         "Symbol",
         "Parameter",
         "Min",
@@ -11878,7 +11871,6 @@
       "rows": [
         [
           "TL(1)",
-          "TL(1)",
           "VSENSE linearity with temperature (from Vsensor voltage)",
           "-",
           "-",
@@ -11886,7 +11878,6 @@
           "°C"
         ],
         [
-          "Avg_Slope(2)",
           "Avg_Slope(2)",
           "Average slope (from Vsense voltage)",
           "-",
@@ -11896,7 +11887,6 @@
         ],
         [
           "V30(3)",
-          "V30(3)",
           "Voltage at 30° C (± 1 ° C)",
           "-",
           "0.65",
@@ -11904,7 +11894,6 @@
           "V"
         ],
         [
-          "tstart_run(1)",
           "tstart_run(1)",
           "Startup time in Run mode (buffer startup)",
           "-",
@@ -11914,7 +11903,6 @@
         ],
         [
           "tS_temp(1)",
-          "tS_temp(1)",
           "ADC sampling time when reading the temperature",
           "13",
           "-",
@@ -11922,7 +11910,6 @@
           "µs"
         ],
         [
-          "Isens(1)",
           "Isens(1)",
           "Sensor consumption",
           "-",
@@ -11932,39 +11919,11 @@
         ],
         [
           "Isensbuf(1)",
-          "Isensbuf(1)",
           "Sensor buffer consumption",
           "-",
           "3.8",
           "6.5",
           "µA"
-        ],
-        [
-          "IDDA(DAC)",
-          "DAC output buffer OFF",
-          "Sample and Hold mode, CSH=100 nF",
-          "-",
-          "315*Ton/ (Ton+Toff)",
-          "-",
-          "-"
-        ],
-        [
-          "IDDV(DAC)",
-          "DAC output buffer OFF",
-          "Sample and Hold mode, Buffer ON, CSH=100 nF (worst code)",
-          "-",
-          "185*Ton/ (Ton+Toff)",
-          "-",
-          "-"
-        ],
-        [
-          "IDDV(DAC)",
-          "DAC output buffer OFF",
-          "Sample and Hold mode, Buffer OFF, CSH=100 nF (worst code)",
-          "-",
-          "155*Ton/ (Ton+Toff)",
-          "-",
-          "-"
         ]
       ],
       "notes": [
@@ -12058,7 +12017,7 @@
           "-",
           "2.7",
           "-",
-          "-",
+          "Max",
           "V"
         ],
         [
@@ -13277,7 +13236,7 @@
           "-",
           "-",
           "18",
-          "18"
+          "Unit"
         ],
         [
           "fCK",
@@ -13287,7 +13246,7 @@
           "-",
           "-",
           "48",
-          "48"
+          "Unit"
         ],
         [
           "fCK",
@@ -13297,7 +13256,7 @@
           "-",
           "-",
           "26",
-          "26"
+          "Unit"
         ],
         [
           "tsu(NSS)",
@@ -15760,7 +15719,7 @@
           "39.0",
           "27.8",
           "10.3",
-          "10.3"
+          "Unit"
         ],
         [
           "Θ",
@@ -15769,7 +15728,7 @@
           "38.0",
           "24.0",
           "10.4",
-          "10.4"
+          "Unit"
         ],
         [
           "Θ",
@@ -15778,7 +15737,7 @@
           "41.0",
           "25.3",
           "11.7",
-          "11.7"
+          "Unit"
         ],
         [
           "Θ",

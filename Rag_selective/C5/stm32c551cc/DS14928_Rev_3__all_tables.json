@@ -1429,7 +1429,7 @@
           "PC13",
           "I/O",
           "FT_t",
-          "(2)(3)(4)",
+          "(2,3,4)",
           "FDCAN1_TX, EVENTOUT",
           "TAMP_IN1, RTC_OUT1/ RTC_TS, WKUP4"
         ],
@@ -1445,7 +1445,7 @@
           "PC14-OSC32_IN (OSC32_IN)",
           "I/O",
           "FT",
-          "(2)(4)",
+          "(2,4)",
           "TIM12_CH1, FDCAN1_RX, EVENTOUT",
           "OSC32_IN"
         ],
@@ -4997,8 +4997,7 @@
         ]
       ],
       "notes": [
-        "1. When RESET is released, the functionality is guaranteed down to PDR minimum voltage.",
-        "2. For operation with voltage higher than VDD + 0.3 V, the internal pull‑up and pull‑down resistors must be disabled. The minimum and maximum input voltage (Vin) must comply with the selected peripheral enabled on the given GPIOs. Refer to the respective peripheral"
+        "1. When RESET is released, the functionality is guaranteed down to PDR minimum voltage."
       ],
       "legend": [
         "All main power (VDD) and ground (VSS) pins must always be connected to the external power supply, in the permitted range.",
@@ -5098,9 +5097,7 @@
         ]
       ],
       "notes": [
-        "1. When RESET is released, the functionality is guaranteed down to PDR minimum voltage.",
         "2. For operation with voltage higher than VDD + 0.3 V, the internal pull‑up and pull‑down resistors must be disabled. The minimum and maximum input voltage (Vin) must comply with the selected peripheral enabled on the given GPIOs. Refer to the respective peripheral",
-        "3. If TA is lower, higher PD values are allowed as long as TJ does not exceed TJmax (see Section 6.9: Package thermal characteristics). DS14928 - Rev 3 page 56/132",
         "4. Positive injection (when VIN > VDDIOx) is not possible on these I/Os and does not occur for input voltages lower than the specified maximum value.",
         "5. When several inputs are submitted to a current injection, the maximum ∑IINJ(PIN) is the absolute sum of the negative injected currents (instantaneous values)."
       ],
@@ -5309,7 +5306,6 @@
       ],
       "notes": [
         "1. When RESET is released, the functionality is guaranteed down to PDR minimum voltage.",
-        "2. For operation with voltage higher than VDD + 0.3 V, the internal pull‑up and pull‑down resistors must be disabled. The minimum and maximum input voltage (Vin) must comply with the selected peripheral enabled on the given GPIOs. Refer to the respective peripheral",
         "3. If TA is lower, higher PD values are allowed as long as TJ does not exceed TJmax (see Section 6.9: Package thermal characteristics). DS14928 - Rev 3 page 56/132"
       ],
       "legend": "",
@@ -5818,7 +5814,6 @@
         ]
       ],
       "notes": [
-        "1. Measures done with prefetch enabled.",
         "2. Clocked by PSI at 144 MHz with HSE at 16 MHz in bypass mode."
       ],
       "legend": [
@@ -7603,7 +7598,6 @@
       "notes": [
         "1. Tested in production.",
         "2. Specified by design - Not tested in production.",
-        "3. Evaluated by characterization - Not tested in production.",
         "4. ΔfHSI = ΔTEMP + ΔVDD",
         "5. These values are obtained by using formula: (Freq(3.6 V) - Freq(3.3 V)) / Freq(3.3 V) or (Freq(3.6 V) - Freq(2.7 V)) / Freq(2.7 V).",
         "6. The supply regulation consumption is common to HSI and PSI. (To be counted once if both oscillators are ON).",
@@ -7929,7 +7923,6 @@
         "1. Guaranteed by test production.",
         "2. Evaluated by characterization - Not tested in production.",
         "3. Specified by design - Not tested in production.",
-        "4. Evaluated by characterization - Not tested in production.",
         "5. The supply regulation consumption is common to HSI and PSI. (To be counted once if both oscillators are ON)",
         "6. Jitter measurements are performed without clock source activated in parallel. The typical value refer to the standard deviation, while the maximum is the peak measurement of TIE-8 over 36 cycles.",
         "7. Jitter measurements are performed without clock source activated in parallel. The typical value refer to the standard deviation, while the maximum is the peak measurement of TIE-16 over 36 cycles."
@@ -8026,8 +8019,7 @@
       ],
       "notes": [
         "1. Guaranteed by test production.",
-        "2. Evaluated by characterization - Not tested in production.",
-        "3. Specified by design - Not tested in production."
+        "2. Evaluated by characterization - Not tested in production."
       ],
       "legend": "",
       "semantic_type": "",
@@ -8786,7 +8778,7 @@
         [
           "(3)",
           "current(2) FT_xx Input leakage",
-          "Max(VDDXXX) < VIN ≤ Max(VDDXXX + 1 V)(5)(6)(4)",
+          "Max(VDDXXX) < VIN ≤ Max(VDDXXX + 1 V)(5,6,4)",
           "-",
           "-",
           "±2500",
@@ -8795,7 +8787,7 @@
         [
           "Ileak (3)",
           "FT_xx Input leakage current(2)",
-          "Max(VDDXXX + 1) < VIN ≤ 5.5 V (5)(6)(4)",
+          "Max(VDDXXX + 1) < VIN ≤ 5.5 V (5,6,4)",
           "-",
           "-",
           "750",
@@ -10027,10 +10019,9 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c551cc.pdf#page=86",
-    "text_helper": "Table 55. Temperature sensor characteristics — section 5.3.18 Temperature sensor characteristics. Symbol, Symbol, Parameter, Min, Typ, +2 autres.",
+    "text_helper": "Table 55. Temperature sensor characteristics — section 5.3.18 Temperature sensor characteristics. Symbol, Parameter, Min, Typ, Max, +1 autres.",
     "table_content": {
       "headers": [
-        "Symbol",
         "Symbol",
         "Parameter",
         "Min",
@@ -10041,7 +10032,6 @@
       "rows": [
         [
           "TL(1)",
-          "TL(1)",
           "VSENSE linearity with temperature (from Vsensor voltage)",
           "-",
           "-",
@@ -10049,7 +10039,6 @@
           "°C"
         ],
         [
-          "Avg_Slope(2)",
           "Avg_Slope(2)",
           "Average slope (from Vsense voltage)",
           "-",
@@ -10059,7 +10048,6 @@
         ],
         [
           "V30(3)",
-          "V30(3)",
           "Voltage at 30° C (± 1 ° C)",
           "-",
           "0.65",
@@ -10067,7 +10055,6 @@
           "V"
         ],
         [
-          "tstart_run(1)",
           "tstart_run(1)",
           "Startup time in Run mode (buffer startup)",
           "-",
@@ -10077,7 +10064,6 @@
         ],
         [
           "tS_temp(1)",
-          "tS_temp(1)",
           "ADC sampling time when reading the temperature",
           "13",
           "-",
@@ -10085,7 +10071,6 @@
           "µs"
         ],
         [
-          "Isens(1)",
           "Isens(1)",
           "Sensor consumption",
           "-",
@@ -10095,39 +10080,11 @@
         ],
         [
           "Isensbuf(1)",
-          "Isensbuf(1)",
           "Sensor buffer consumption",
           "-",
           "3.8",
           "6.5",
           "µA"
-        ],
-        [
-          "IDDA(DAC)",
-          "DAC output buffer OFF",
-          "Sample and Hold mode, CSH=100 nF",
-          "-",
-          "315*Ton/ (Ton+Toff)",
-          "-",
-          "-"
-        ],
-        [
-          "IDDV(DAC)",
-          "DAC output buffer OFF",
-          "Sample and Hold mode, Buffer ON, CSH=100 nF (worst code)",
-          "-",
-          "185*Ton/ (Ton+Toff)",
-          "-",
-          "-"
-        ],
-        [
-          "IDDV(DAC)",
-          "DAC output buffer OFF",
-          "Sample and Hold mode, Buffer OFF, CSH=100 nF (worst code)",
-          "-",
-          "155*Ton/ (Ton+Toff)",
-          "-",
-          "-"
         ]
       ],
       "notes": [
@@ -10221,7 +10178,7 @@
           "-",
           "2.7",
           "-",
-          "-",
+          "Max",
           "V"
         ],
         [
@@ -11531,7 +11488,7 @@
           "-",
           "-",
           "18",
-          "18"
+          "Unit"
         ],
         [
           "fCK",
@@ -11540,7 +11497,7 @@
           "-",
           "-",
           "48",
-          "48"
+          "Unit"
         ],
         [
           "fCK",
@@ -11549,7 +11506,7 @@
           "-",
           "-",
           "27",
-          "27"
+          "Unit"
         ],
         [
           "tsu(NSS)",

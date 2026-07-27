@@ -1317,7 +1317,7 @@
         "Pin name (function upon reset)",
         "Pin type",
         "I/O structure / erutcurts O/I",
-        "Notes / setoN",
+        "Notes",
         "Pin functions / Alternate functions",
         "Pin functions / Additional functions"
       ],
@@ -3855,7 +3855,6 @@
         ]
       ],
       "notes": [
-        "1. All main power (VDD, VDDA) and ground (VSS, VSSA) pins must always be connected to the external power supply, in the permitted range.",
         "2. This current consumption must be correctly distributed over all I/Os and control pins. The total output current must not be sunk/sourced between two consecutive power supply pins referring to high pin count QFP packages.",
         "3. A positive injection is induced by V > V while a negative injection is induced by V < V . I must never be IN DDIOx IN SS INJ(PIN)",
         "4. Positive injection is not possible on these I/Os and does not occur for input voltages lower than the specified maximum value.",
@@ -5374,10 +5373,10 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f078cb.pdf#page=59",
-    "text_helper": "Table 30. Typical and maximum consumption in Stop mode — section 6.3.4 Supply current characteristics. Symbol / lobmyS, Parameter, Conditions, Typ @ V (V = 1.8 V) / = 1.8 V, Typ @ V (V = 1.8 V) / = 2.0 V, +9 autres.",
+    "text_helper": "Table 30. Typical and maximum consumption in Stop mode — section 6.3.4 Supply current characteristics. Symbol, Parameter, Conditions, Typ @ V (V = 1.8 V) / = 1.8 V, Typ @ V (V = 1.8 V) / = 2.0 V, +9 autres.",
     "table_content": {
       "headers": [
-        "Symbol / lobmyS",
+        "Symbol",
         "Parameter",
         "Conditions",
         "Typ @ V (V = 1.8 V) / = 1.8 V",
@@ -9303,8 +9302,7 @@
         ]
       ],
       "notes": [
-        "1. Guaranteed by design, not tested in production.",
-        "2. Measured at V = 3.3 V ± 10 mV. The V ADC conversion result is stored in the TS_CAL1 byte. Refer to Table 2: DDA 30"
+        "1. Guaranteed by design, not tested in production."
       ],
       "legend": "",
       "semantic_type": "",

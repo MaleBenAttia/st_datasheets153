@@ -2269,8 +2269,11 @@ def _is_likely_reversed(cell: str) -> bool:
         return False
     # Commence par un caractère non-alphanumérique (ex: ΣIVDD, ~0.5 LSB).
     # Ces cellules sont des artefacts d'extraction, pas du texte inversé.
+    # Exception : ")" suivi d'un chiffre (ex: ")1(NO" → "NO(1)") est un
+    # texte inversé, pas un artefact.
     if clean and not clean[0].isalnum():
-        return False
+        if not starts_with_reversed_paren:
+            return False
     # "I/O" (Input/Output) suivi d'un espace → pas inversé
     if re.match(r'^I/O\s', clean):
         return False
@@ -2379,6 +2382,11 @@ def _is_likely_reversed(cell: str) -> bool:
     # Requiert diff >= 2 pour éviter les faux positifs "V rising DD" (diff=1)
     if rev_init > clean_init + 1 and not clean[0].islower() and not clean[0].isdigit():
         return True
+    # Lowercase prefix (>=2 chars) + uppercase suffix, inversé = uppercase prefix + lowercase suffix
+    # Ex: "kcolc UPC" → "CPU clock", "yrtnE" → "Entry"
+    if clean_init == 0 and len(clean) >= 2 and clean[0].islower() and clean[1].islower() and rev_init >= 3:
+        if rev_init < len(rev) and any(c.islower() for c in rev[rev_init:]):
+            return True
 
     # Parenthèses inversées ")N(" → inversé
     if re.search(r'\(\d+\)', rev) and re.search(r'\)\d+\(', clean):

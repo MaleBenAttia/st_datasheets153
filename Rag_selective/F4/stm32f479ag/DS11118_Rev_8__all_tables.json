@@ -873,9 +873,9 @@
         "Pin number / LQFP208",
         "Pin number / TFBGA216",
         "Pin name (function after reset)(1)",
-        "Pin types / sepyt niP",
+        "Pin types / Pintypes",
         "I/O structures / O/I",
-        "Notes / setoN",
+        "Notes",
         "Alternate functions",
         "Additional functions"
       ],
@@ -9228,7 +9228,6 @@
         ]
       ],
       "notes": [
-        "1. All main power (V , V ) and ground (V , V ) pins must always be connected to the external power DD DDA SS SSA",
         "2. This current consumption must be correctly distributed over all I/Os and control pins. The total output current must not be sunk/sourced between two consecutive power supply pins referring to high pin count",
         "3. Negative injection disturbs the analog performance of the device. See note in Section 5.3.24.",
         "4. Positive injection is not possible on these I/Os and does not occur for input voltages lower than the specified maximum value.",
@@ -10187,7 +10186,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "180",
           "103",
           "109(4)",
@@ -10198,7 +10197,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "168",
           "94",
           "99",
@@ -10209,7 +10208,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "150",
           "84",
           "89",
@@ -10220,7 +10219,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "144",
           "77",
           "81",
@@ -10231,7 +10230,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "120",
           "57",
           "60",
@@ -10264,7 +10263,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "30",
           "16",
           "19",
@@ -10275,7 +10274,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "25",
           "14",
           "16",
@@ -10286,7 +10285,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "16",
           "7",
           "10",
@@ -10297,7 +10296,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "8",
           "4",
           "7",
@@ -10308,7 +10307,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "4",
           "3",
           "6",
@@ -10319,7 +10318,7 @@
         [
           "I DD",
           "Supply",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "2",
           "3",
           "5",
@@ -10520,7 +10519,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "168",
           "97",
           "102",
@@ -10531,7 +10530,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "150",
           "87",
           "92",
@@ -10542,7 +10541,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "144",
           "80",
           "84",
@@ -10564,7 +10563,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "90",
           "51",
           "54",
@@ -10575,7 +10574,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "60",
           "37",
           "41",
@@ -10586,7 +10585,7 @@
         [
           "I DD",
           "Supply current in Run mode",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "30",
           "21",
           "23",
@@ -10597,7 +10596,7 @@
         [
           "I DD",
           "Supply current in",
-          "All peripherals enabled(2)(3)",
+          "All peripherals enabled(2,3)",
           "25",
           "18",
           "20",
@@ -11629,10 +11628,9 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f479ag.pdf#page=104",
-    "text_helper": "Table 29. Typical and maximum current consumption in Stop mode — section 5.3.7 Supply current characteristics. Symbol, Symbol, Parameter, Conditions, Typ, +4 autres.",
+    "text_helper": "Table 29. Typical and maximum current consumption in Stop mode — section 5.3.7 Supply current characteristics. Symbol, Parameter, Conditions, Typ, Max(1) / T = A 25 °C, +3 autres.",
     "table_content": {
       "headers": [
-        "Symbol",
         "Symbol",
         "Parameter",
         "Conditions",
@@ -11645,7 +11643,6 @@
       "rows": [
         [
           "I DD_STOP_NM (normal mode)",
-          "I DD_STOP_NM (normal mode)",
           "Supply current in Stop mode with voltage regulator in main regulator mode",
           "Flash memory in Stop mode, all oscillators OFF, no independent watchdog",
           "0.63",
@@ -11655,7 +11652,6 @@
           "mA"
         ],
         [
-          "I DD_STOP_NM",
           "I DD_STOP_NM",
           "regulator in main regulator mode",
           "Flash memory in Deep power down mode, all oscillators OFF, no independent watchdog",
@@ -11667,7 +11663,6 @@
         ],
         [
           "(normal mode)",
-          "(normal mode)",
           "Supply current in Stop mode with voltage regulator in Low Power regulator mode",
           "Flash memory in Stop mode, all oscillators OFF, no independent watchdog",
           "0.50",
@@ -11677,7 +11672,6 @@
           "mA"
         ],
         [
-          "I DD_STOP_NM (normal mode)",
           "I DD_STOP_NM (normal mode)",
           "regulator in Low Power regulator mode",
           "Flash memory in Deep power down mode, all oscillators OFF, no independent watchdog",
@@ -11689,7 +11683,6 @@
         ],
         [
           "I DD_STOP_UDM (under-drive mode)",
-          "I DD_STOP_UDM (under-drive mode)",
           "Supply current in Stop mode with voltage regulator in main regulator and under- drive mode",
           "Flash memory in Deep power down mode, main regulator in under-drive mode, all oscillators OFF, no independent watchdog",
           "0.21",
@@ -11700,7 +11693,6 @@
         ],
         [
           "mode)",
-          "mode)",
           "Supply current in Stop mode with voltage regulator in Low Power regulator and under- drive mode",
           "Flash memory in Deep power down mode, Low Power regulator in under-drive mode, all oscillators OFF, no independent watchdog",
           "0.14",
@@ -11708,66 +11700,10 @@
           "6",
           "13",
           "mA"
-        ],
-        [
-          "I DD_STBY",
-          "Backup SRAM OFF, RTC and LSE oscillator OFF",
-          "1.0",
-          "1.8",
-          "2.20",
-          "5(3)",
-          "15",
-          "30(3)",
-          "30(3)"
-        ],
-        [
-          "I DD_STBY",
-          "Backup SRAM OFF, RTC ON and LSE oscillator in Power Drive mode",
-          "1.7",
-          "2.7",
-          "3.2",
-          "7",
-          "20",
-          "39",
-          "39"
-        ],
-        [
-          "I DD_STBY",
-          "Backup SRAM ON, RTC ON and LSE oscillator in Power Drive mode",
-          "2.4",
-          "3.4",
-          "4.0",
-          "8",
-          "25",
-          "48",
-          "48"
-        ],
-        [
-          "I DD_STBY",
-          "Backup SRAM ON, RTC ON and LSE oscillator in High Drive mode",
-          "3.2",
-          "4.2",
-          "4.8",
-          "10",
-          "29",
-          "57",
-          "57"
-        ],
-        [
-          "I DD_STBY",
-          "Backup SRAM OFF, RTC ON and LSE oscillator in High Drive mode",
-          "2.5",
-          "3.5",
-          "4.1",
-          "8",
-          "25",
-          "48",
-          "48"
         ]
       ],
       "notes": [
-        "1. Data based on characterization, tested in production. 104/225 DS11118 Rev 8",
-        "3. Based on characterization, tested in production. DS11118 Rev 8 105/225"
+        "1. Data based on characterization, tested in production. 104/225 DS11118 Rev 8"
       ],
       "legend": "",
       "semantic_type": "",
@@ -18217,7 +18153,7 @@
           "EO",
           "EO",
           "Offset error",
-          "NIA Ωk 01 < R CDA",
+          "NIA Ωk 01 < RCDA",
           "±1.5",
           "±2.5",
           "LSB"
@@ -21833,6 +21769,14 @@
           "0.0570"
         ],
         [
+          "b(9,11)",
+          "0.17",
+          "0.22",
+          "0.0067",
+          "0.0087",
+          "0.0106"
+        ],
+        [
           "D(4)",
           "16.00 BSC",
           "16.00 BSC",
@@ -21841,7 +21785,7 @@
           "0.6299 BSC"
         ],
         [
-          "D1(2)(5)",
+          "D1(2,5)",
           "14.00 BSC",
           "14.00 BSC",
           "0.5512 BSC",
@@ -21857,7 +21801,7 @@
           "0.6299 BSC"
         ],
         [
-          "E1(2)(5)",
+          "E1(2,5)",
           "14.00 BSC",
           "14.00 BSC",
           "0.5512 BSC",
@@ -21873,7 +21817,7 @@
           "0.0295"
         ],
         [
-          "L1(1)(11)",
+          "L1(1,11)",
           "1.00",
           "1.00",
           "-",
