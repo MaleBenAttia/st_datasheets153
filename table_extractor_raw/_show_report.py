@@ -1,7 +1,16 @@
 """Reconstruct batch report from existing outJason directories (no extraction)."""
 
+import io
 import json
+import sys
 from pathlib import Path
+
+# Force UTF-8 sur stdout (évite cp1252 errors avec caractères Unicode)
+try:
+    if sys.stdout.encoding != "utf-8":
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+except Exception:
+    pass
 
 OUT = Path(__file__).resolve().parent.parent / "outJason"
 
@@ -19,7 +28,7 @@ for fam_dir in sorted(OUT.iterdir()):
         all_path = pdf_dir / "_all_tables.json"
         if not all_path.exists():
             continue
-        data = json.loads(all_path.read_text())
+        data = json.loads(all_path.read_text(encoding="utf-8"))
 
         features = {}
         if data and isinstance(data[0], dict) and "features" in data[0]:
