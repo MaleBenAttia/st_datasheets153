@@ -3262,23 +3262,29 @@ def extract_footnotes_from_pages(
     marqueurs (N) dans les cellules ET les headers.
     Utilise page_text_cache (dict page_num->text) au lieu d'ouvrir le PDF.
     Retourne ['1. X = supported.', '2. Wake-up supported from Stop mode.', ...]."""
-    # Colonnes à exclure de l'extraction des marqueurs
-    # (ex: Symbol "IDD(PSI)(3)(5)" contient des nombres qui ne sont pas des notes)
-    skip_cols: set[int] = set()
-    for ci, h in enumerate(headers):
-        if re.search(r'(?i)\b(?:symbol|parameter)\b', str(h)):
-            skip_cols.add(ci)
+    def _is_after_letter_paren(cell: str, match_start: int) -> bool:
+        """True si le marqueur (N) suit immédiatement un groupe parenthésé
+        contenant des lettres (ex: IDD(PSI)(3) où (3) suit (PSI)).
+        """
+        if match_start < 1 or cell[match_start - 1] != ')':
+            return False
+        # Chercher '(' avant la position
+        prev_open = cell.rfind('(', match_start - 20, match_start - 1)
+        if prev_open == -1:
+            return False
+        inner = cell[prev_open + 1:match_start - 1]
+        return any(c.isalpha() for c in inner)
 
     markers: set[str] = set()
     for cell in headers:
         for m in re.finditer(r'\((\d+)\)', str(cell)):
-            markers.add(m.group(1))
+            if not _is_after_letter_paren(str(cell), m.start()):
+                markers.add(m.group(1))
     for row in rows:
         for ci, cell in enumerate(row):
-            if ci in skip_cols:
-                continue
             for m in re.finditer(r'\((\d+)\)', str(cell)):
-                markers.add(m.group(1))
+                if not _is_after_letter_paren(str(cell), m.start()):
+                    markers.add(m.group(1))
     if not markers:
         return []
 
