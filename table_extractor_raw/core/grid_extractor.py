@@ -1356,7 +1356,17 @@ def extract_table_grid(
         # (légende mi-page avec extraction partielle). 0-2 = vraie page suivante.
         start_page = ref.page
         n_non_empty = sum(1 for row in raw_table if any(str(c).strip() for c in row)) if raw_table else 0
-        should_try_next = n_non_empty == 0
+        caption_near_bottom = (
+            caption_y is not None
+            and caption_y > page.height * 0.85
+        )
+        if raw_table and caption_near_bottom and n_non_empty > 0:
+            total_cells = len(raw_table) * max(len(r) for r in raw_table)
+            filled_cells = sum(1 for row in raw_table for c in row if str(c).strip()) if total_cells else 0
+            sparse_below = total_cells == 0 or filled_cells / total_cells < 0.15
+        else:
+            sparse_below = False
+        should_try_next = (n_non_empty == 0) or (caption_near_bottom and sparse_below)
         saved_pre_body = []
         if should_try_next and ref.page < len(pdf.pages):
                 caption_keyword = ""
@@ -1520,9 +1530,14 @@ def extract_table_grid(
         if saved_pre_body:
             hd = len(raw_table) - len(rows_raw)
             extra = saved_pre_body[hd:]
+            nxt_cols = max(len(r) for r in rows_raw) if rows_raw else 0
             if extra:
-                rows_raw = extra + rows_raw
-                logger.info(f"body_on_next_page: merged {len(extra)} rows from page {ref.page}")
+                extra_cols = max(len(r) for r in extra) if extra else 0
+                if extra_cols == 0 or nxt_cols == 0 or abs(extra_cols - nxt_cols) / max(nxt_cols, 1) > 0.5:
+                    logger.debug(f"body_on_next_page: skip merge ({extra_cols} cols != {nxt_cols} cols)")
+                else:
+                    rows_raw = extra + rows_raw
+                    logger.info(f"body_on_next_page: merged {len(extra)} rows from page {ref.page}")
 
         # ── [Fix] Fusion colonnes identiques AVANT continuation ──────────────
         # Il faut fusionner les colonnes adjacentes dupliquées (ex: "Conditions"
