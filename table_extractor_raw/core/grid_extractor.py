@@ -1807,6 +1807,8 @@ def extract_table_grid(
 
         # ── [Fix] Correction texte inversé (cellules fusionnées verticales) ─
         rows_fixed = _fix_reversed_cells(rows_fixed, table_id=ref.table_id)
+        # Appliquer aussi la correction aux en-têtes (ex: "kcolc UPC" → "CPU clock")
+        headers = _fix_reversed_cells([headers], table_id=ref.table_id + "_headers")[0]
 
         # ── [Fix] Suppression des lignes header résiduelles dans les données ─
         # Cas rare : _expand_spans_and_headers peut laisser des lignes header
@@ -2174,13 +2176,19 @@ def _is_likely_reversed(cell: str) -> bool:
     clean_init = _initial_upper_run(clean)
     rev_init = _initial_upper_run(rev)
 
-    # La version inversée ne doit pas avoir PLUS de majuscules en milieu de mot
-    if rev_mid > clean_mid:
+    # Texte qui commence par ")" suivi d'un chiffre (ex: ")1(NO" → "ON(1)")
+    # est très probablement inversé → skip les gardes suivants
+    starts_with_reversed_paren = clean.startswith(")") and len(clean) > 1
+
+    # La version inversée ne doit pas avoir BEAUCOUP PLUS de majuscules
+    # en milieu de mot. On autorise 1 de différence pour les cas comme
+    # ")1(NO" → "ON(1)" où rev_mid=1 vs clean_mid=0.
+    if rev_mid > clean_mid + 1:
         return False
 
     # Si le texte original a déjà "(N)" correctement orienté → pas inversé
     # Ex: "V (1) IL" est déjà correct
-    if re.search(r'\(\d+\)', clean):
+    if not starts_with_reversed_paren and re.search(r'\(\d+\)', clean):
         return False
 
     # Si le texte contient déjà "to NN" ou "°C" correct → pas inversé
@@ -2681,11 +2689,18 @@ def _truncate_at_next_table(
     cut_idx = len(raw_table)
     for i, row in enumerate(raw_table):
         text = "".join(str(c or "") for c in row)
-        # Couper si "Table N.", "Table N:", ou "TableN" (sans espace)
-        # avec N > table_id actuelle. Le pattern large \bTable\s*(\d+)
-        # capture aussi "Table26" (fréquent dans les PDFs scannés).
-        m = re.search(r'\bTable\s*(\d+)', text)
-        if m and int(m.group(1)) > cur_id:
+        # Couper si "Table N." ou "Table N:" apparaît en DÉBUT de cellule
+        # (pas au milieu d'un cross-reference comme "See Table 5").
+        # On vérifie cellule par cellule; si le match est dans les 3 premiers
+        # caractères (après strip), c'est un véritable en-tête de table.
+        found_next = False
+        for cell in row:
+            cell_s = str(cell or "").strip()
+            m = re.match(r'Table\s*(\d+)', cell_s)
+            if m and int(m.group(1)) > cur_id:
+                found_next = True
+                break
+        if found_next:
             cut_idx = i
             logger.info(f"_truncate_at_next_table: cut at row {i} (Table {m.group(1)})")
             break
