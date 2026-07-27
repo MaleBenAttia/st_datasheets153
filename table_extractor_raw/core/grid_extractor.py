@@ -2496,7 +2496,7 @@ def _normalize_reversed_text(text: str) -> tuple[str, bool, str | None]:
         ):
             family_code = m.group(1).upper()
             candidate = _reverse_preserving_parentheses(inner)
-            if candidate.upper().startswith(family_code):
+            if family_code in candidate.upper():
                 changed = True
                 reasons.append("paren_code")
                 return f"({candidate})"
@@ -2507,12 +2507,40 @@ def _normalize_reversed_text(text: str) -> tuple[str, bool, str | None]:
             reasons.append("paren_unit")
             return f"({_PAREN_KNOWN_UNITS[inner]})"
 
-        # Fix C : ne jamais corriger un contenu qui commence par majuscule
-        # (c'est un mot anglais normal comme "Sleep" dans "I DD(Sleep)")
-        if len(inner) >= 5 and not inner[0].isupper() and _is_likely_reversed(inner):
+        # Fix C : corriger le contenu parenthésé inversé.
+        if len(inner) >= 5 and _is_likely_reversed(inner):
             changed = True
             reasons.append("paren_fragment")
             return f"({_reverse_preserving_parentheses(inner)})"
+
+        # Fix Cb : si inner commence par Maj mais que l'inversé contient des
+        # mots anglais communs → c'est du texte inversé (ex: "(CCE htiw 46
+        # gnidulcni)" → "(including 64 with ECC)").
+        if (
+            len(inner) >= 8
+            and inner[0].isupper()
+            and not re.match(r'^[A-Z][a-z]{1,3}$', inner)  # pas un mot simple comme "Sleep"
+        ):
+            rev_inner = _reverse_preserving_parentheses(inner)
+            rev_words = re.findall(r'[a-z]{3,}', rev_inner.lower())
+            _COMMON = frozenset([
+                "the", "and", "with", "for", "from", "that", "this", "are", "have",
+                "will", "which", "what", "when", "where", "how", "than", "them",
+                "also", "about", "their", "there", "while", "after", "before",
+                "between", "under", "over", "through", "during", "within",
+                "without", "into", "upon", "would", "could", "should", "shall",
+                "may", "might", "must", "can", "they", "all", "any", "each",
+                "most", "some", "more", "very", "just", "then", "these", "those",
+                "such", "even", "only", "own", "same", "still", "well", "much",
+                "many", "above", "across", "behind", "below", "beneath", "beside",
+                "beyond", "inside", "outside", "throughout", "toward", "frequency",
+                "including", "excluded", "configured", "supported",
+            ])
+            if any(w in _COMMON for w in rev_words):
+                changed = True
+                reasons.append("paren_fragment")
+                return f"({rev_inner})"
+
         return match.group(0)
 
     normalized = re.sub(r'\(([^()]*)\)', _fix_parenthesized, clean)
