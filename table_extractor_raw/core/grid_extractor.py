@@ -416,6 +416,107 @@ def _detect_vector_dashes(
     return raw_table
 
 
+def _fill_orphan_columns(
+    raw_table: list[list[str | None]],
+    table_obj: Any,
+    page: Page,
+) -> list[list[str | None]]:
+    """
+    Remplit les cellules vides dans les colonnes où pdfplumber n'a pas détecté
+    de bordures de cellules (colonnes Symbol/Parameter dans les lignes de données).
+
+    pdfplumber avec stratégie 'lines' ne crée pas de cellules pour les colonnes
+    sans bordures horizontales dans les lignes de données. Pour chaque colonne
+    où la ligne d'en-tête a une cellule mais les lignes de données n'en ont pas,
+    on scanne les mots flottants du PDF dans la zone (col_x0..col_x1, row_top..row_bottom).
+    """
+    if not raw_table or not table_obj or not hasattr(table_obj, 'rows'):
+        return raw_table
+    if len(raw_table) < 2 or len(table_obj.rows) < 2:
+        return raw_table
+
+    header_row = table_obj.rows[0]
+    n_header_cells = len(header_row.cells) if hasattr(header_row, 'cells') else 0
+    if n_header_cells == 0:
+        return raw_table
+
+    col_x_ranges: dict[int, tuple[float, float]] = {}
+    for ci in range(n_header_cells):
+        cell = header_row.cells[ci]
+        if cell is not None:
+            col_x_ranges[ci] = (cell[0], cell[2])
+
+    if not col_x_ranges:
+        return raw_table
+
+    words = page.extract_words()
+    if not words:
+        return raw_table
+
+    nrows = min(len(raw_table), len(table_obj.rows))
+    margin = 3
+
+    for ri in range(1, nrows):
+        raw_row = raw_table[ri]
+        row_finder = table_obj.rows[ri]
+        if not hasattr(row_finder, 'cells') or not hasattr(row_finder, 'bbox'):
+            continue
+
+        row_bbox = row_finder.bbox
+        if row_bbox is None:
+            continue
+        row_top, row_bottom = row_bbox[1], row_bbox[3]
+
+        n_cells = len(row_finder.cells) if hasattr(row_finder, 'cells') else 0
+
+        for ci, (x0, x1) in col_x_ranges.items():
+            # Skip if cell already has content
+            cell_val = raw_row[ci] if ci < len(raw_row) else None
+            if cell_val is not None and cell_val.strip():
+                continue
+
+            # Skip if pdfplumber DID create a cell here (cell exists and is non-empty)
+            if ci < n_cells and row_finder.cells[ci] is not None:
+                continue
+
+            # Ghost cell: find words in this column × row region
+            # Words must be strictly at or below row_top to avoid header bleed
+            found_words = []
+            for w in words:
+                if (w['x0'] >= x0 - margin and w['x1'] <= x1 + margin
+                        and w['top'] >= row_top
+                        and w['bottom'] <= row_bottom + margin
+                        and w['text'].strip()):
+                    found_words.append(w)
+
+            if not found_words:
+                continue
+
+            # Group by line (y proximity)
+            found_words.sort(key=lambda w: (w['top'], w['x0']))
+            lines = []
+            cur_line = []
+            last_top = None
+            for w in found_words:
+                if last_top is not None and abs(w['top'] - last_top) > 5:
+                    lines.append(' '.join(cur_line))
+                    cur_line = []
+                cur_line.append(w['text'])
+                last_top = w['top']
+            if cur_line:
+                lines.append(' '.join(cur_line))
+
+            txt = '\n'.join(lines)
+            if len(txt) < 2:
+                continue
+
+            while ci >= len(raw_row):
+                raw_row.append('')
+            raw_row[ci] = txt
+
+    return raw_table
+
+
 def _fill_horizontal(rows: list[list[str]]) -> None:
     """
     Remplit horizontalement les cellules vides : copie depuis le voisin gauche
@@ -475,8 +576,11 @@ def _ensure_no_empty_cells(rows: list[list[str]]) -> None:
                         row[c] = above[c]
                 first_val = next((c for c in row if c), "")
             if first_val:
+                filling = False
                 for c in range(len(row)):
-                    if not row[c]:
+                    if row[c]:
+                        filling = True
+                    elif filling:
                         row[c] = first_val
         changed = any(
             old[r][c] != rows[r][c]
@@ -956,17 +1060,6 @@ def _expand_spans_and_headers(
                     elif top_val is not None:
                         table[r][c] = top_val
 
-    # ── 3b. Fill-down : propager la dernière valeur non-vide vers le bas ───────
-    for c in range(cols):
-        carry = None
-        for r in range(rows):
-            val = table[r][c] if c < len(table[r]) else None
-            if val is not None and str(val).strip():
-                carry = val
-            elif (val is not None and not str(val).strip()) or val is None:
-                if carry is not None:
-                    table[r][c] = carry
-
     # ── 4. Détection géométrique de la profondeur d'en-tête ────────────────────
     header_depth = 1 + inserted_rows
     if table_obj is not None and hasattr(table_obj, "rows") and len(table_obj.rows) > 0:
@@ -1038,6 +1131,20 @@ def _expand_spans_and_headers(
     if header_depth > 2 and (rows - header_depth) < 2:
         header_depth = 1
         warnings.append("header_depth_forced:1")
+
+    # ── 4b. Fill-down restreint aux lignes de données ─────────────────────────
+    # Ne propage que les valeurs à l'intérieur des lignes de données
+    # (header_depth..rows), en ignorant les en-têtes. Évite que des valeurs
+    # d'en-tête (ex: "lobmyS" → "Symbol") ne contaminent les données.
+    for c in range(cols):
+        carry = None
+        for r in range(header_depth, rows):
+            val = table[r][c] if c < len(table[r]) else None
+            if val is not None and str(val).strip():
+                carry = val
+            elif (val is not None and not str(val).strip()) or val is None:
+                if carry is not None:
+                    table[r][c] = carry
 
     # ── 5. Construction des en-têtes finaux ────────────────────────────────────
     final_headers = _build_final_headers(table, cols, header_depth, pdf_type, table_id=table_id)    # ── 6. Lignes de données ───────────────────────────────────────────────────
@@ -1697,7 +1804,21 @@ def extract_table_grid(
             else:
                 break
         # Scan aussi les lignes au milieu (ex: en-tête secondaire après merge de sous-tables)
-        rows_fixed = [r for r in rows_fixed if not (r and r[0].strip().lower() in {'symbol', 'parameter'})]
+        # Vérifie que TOUTES les cellules non-vides matchent l'en-tête pour éviter
+        # de supprimer des lignes de données dont la 1ère cellule serait "symbol"
+        # par coïncidence (ex: fill-down d'avant P0).
+        rows_fixed = [
+            r for r in rows_fixed
+            if not (
+                r and r[0].strip().lower() in {'symbol', 'parameter'}
+                and headers and len(r) == len(headers)
+                and all(
+                    r[c].strip().lower() == headers[c].strip().lower()
+                    for c in range(1, len(headers))
+                    if r[c].strip()
+                )
+            )
+        ]
         # Supprime les résidus de sous-en-tête (même 1ère cellule que la ligne précédente,
         # une seule cellule différente contenant 'Max'/'Typ'/'Min'/'Unit')
         cleaned = []
@@ -2549,6 +2670,18 @@ def _truncate_at_next_table(
             cut_idx = i
             logger.info(f"_truncate_at_next_table: cut at row {i} (DS footer)")
             break
+        # Ligne à valeur uniforme = sous-en-tête de table suivante
+        non_empty_vals = [str(c).strip() for c in row if c and str(c).strip()]
+        if len(non_empty_vals) >= 2 and len(set(non_empty_vals)) == 1:
+            cut_idx = i
+            logger.info(f"_truncate_at_next_table: cut at row {i} (uniform row: {non_empty_vals[0]})")
+            break
+        # 1ère cellule "None" = rowspan au-delà de la table
+        first_cell = str(row[0] or "").strip() if row else ""
+        if first_cell == "None":
+            cut_idx = i
+            logger.info(f"_truncate_at_next_table: cut at row {i} (None-bleed)")
+            break
     return raw_table[:cut_idx]
 
 
@@ -2812,6 +2945,7 @@ def _extract_from_page(
             best1 = _apply_rotated_fix(page, best1, rotated_map, best_ft1)
             best1 = _detect_vector_dashes(best1, best_ft1, page)
             best1, best_ft1 = _merge_compatible_tables(best1, best_ft1, tables, finder.tables, page=page, table_id=ref.table_id)
+            best1 = _fill_orphan_columns(best1, best_ft1, page)
 
     q1 = _table_quality(best1) if best1 else -1.0
     if q1 >= 2.0:
@@ -2832,6 +2966,7 @@ def _extract_from_page(
             best2 = _apply_rotated_fix(page, best2, rotated_map, best_ft2)
             best2 = _detect_vector_dashes(best2, best_ft2, page)
             best2, best_ft2 = _merge_compatible_tables(best2, best_ft2, tables_text, finder_text.tables, page=page, table_id=ref.table_id)
+            best2 = _fill_orphan_columns(best2, best_ft2, page)
 
             # Le filtrage des lignes au-dessus de la légende est fait
             # dans extract_table_grid (après _extract_from_page) pour que

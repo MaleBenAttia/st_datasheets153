@@ -125,7 +125,7 @@ TOC_SECTION_PATTERNS = [
 # "Table 12. I2C characteristics ....... 78"
 # Gère les variations : points collés, espaces entre points, tirets
 TOC_ENTRY_PATTERN = re.compile(
-    r"(?:Table|Tableau)\s+(\d+)[.:]?\s+(.+?)\s+[.\-\s]{3,}\s*(\d+)\s*$",
+    r"(?:Table|Tableau)\s+(\d+)[.:]?\s+(.+?)\s*[.\-\s]{3,}\s*(\d+)\s*$",
     re.IGNORECASE,
 )
 
@@ -699,7 +699,10 @@ def _from_toc_reverse(pdf: pdfplumber.PDF) -> list[TableRef]:
 
 
 def _from_inline_scan(pdf: pdfplumber.PDF) -> list[TableRef]:
-    """Scan chaque page pour détecter des légendes de table inline."""
+    """Scan chaque page pour détecter des légendes de table inline.
+    Si la ligne a un format TOC (avec points de remplissage et numéro de page),
+    on extrait le numéro de page destination au lieu d'utiliser la page courante.
+    """
     refs: list[TableRef] = []
     seen_ids: set[str] = set()
 
@@ -712,10 +715,20 @@ def _from_inline_scan(pdf: pdfplumber.PDF) -> list[TableRef]:
                 tid = f"table_{num}"
                 if tid not in seen_ids:
                     caption_text = _clean_caption(m.group(2))
+                    toc_m = TOC_ENTRY_PATTERN.match(line.strip())
+                    if toc_m:
+                        actual_page = _st_to_actual_page(pdf, int(toc_m.group(3)))
+                    else:
+                        # Fallback : numéro de page collé au dernier mot (ex: "data125")
+                        trail_m = re.search(r'([a-zA-Z])(\d{2,})\s*$', line.strip())
+                        if trail_m:
+                            actual_page = _st_to_actual_page(pdf, int(trail_m.group(2)))
+                        else:
+                            actual_page = page_num
                     refs.append(TableRef(
                         table_id=tid,
                         caption=f"Table {num}. {caption_text}",
-                        page=page_num,
+                        page=actual_page,
                     ))
                     seen_ids.add(tid)
 

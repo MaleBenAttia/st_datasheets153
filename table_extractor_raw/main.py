@@ -62,6 +62,11 @@ def _fix_missing_dashes(table: dict) -> dict:
     La détection vectorielle (page.chars + page.lines) a déjà été faite dans
     grid_extractor._detect_vector_dashes.  Ce fallback ne touche que les
     cellules encore vides, après cette détection.
+
+    Ne remplit PAS les colonnes qui sont quasi-vides (< 10% de remplissage) :
+    ces colonnes sont des labels d'en-tête (ex: "Symbol", "Parameter") qui
+    couvrent la colonne entière via rowspan/colspan — les données n'y ont pas
+    de valeur propre.
     """
     headers = table.get("headers", [])
     rows = table.get("rows", [])
@@ -79,8 +84,16 @@ def _fix_missing_dashes(table: dict) -> dict:
     if not dash_cols:
         return table
 
+    # Ne pas remplir les colonnes quasi-vides (< 10% de cellules non-vides)
+    # qui sont des en-têtes spanning (ex: "Symbol", "Parameter")
+    active_dash_cols: set[int] = set()
+    for ci in dash_cols:
+        n_filled = sum(1 for row in rows if ci < len(row) and row[ci].strip())
+        if n_filled / max(len(rows), 1) >= 0.1:
+            active_dash_cols.add(ci)
+
     for row in rows:
-        for ci in dash_cols:
+        for ci in active_dash_cols:
             if ci < len(row) and row[ci] == "":
                 row[ci] = "-"
 
@@ -158,6 +171,9 @@ def _deduplicate_table_boundaries(all_tables: list[dict], out_dir: Path) -> int:
                             return True
                     return False
                 cur["rows"] = [row for row in cur_rows if not _is_dup(row)]
+                # Garde-fou : ne jamais vider complètement une table
+                if before > 0 and len(cur["rows"]) == 0:
+                    cur["rows"] = list(cur_rows)
                 if before != len(cur["rows"]):
                     n_removed = before - len(cur["rows"])
                     removed_rows += n_removed

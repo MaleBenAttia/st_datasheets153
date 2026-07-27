@@ -309,9 +309,9 @@ def _is_continuation_page(
                     logger.info(
                         f"  page {page.page_number}: found \"{line_text.strip()}\" "
                         f"(table {nums[0]} != current {current_table_num}), "
-                        f"will truncate downstream"
+                        f"rejecting continuation"
                     )
-                    continue
+                    return False, None, None, None, False
 
     col_count = max(len(r) for r in table_data) if table_data else 0
     if abs(col_count - expected_col_count) > 2:
