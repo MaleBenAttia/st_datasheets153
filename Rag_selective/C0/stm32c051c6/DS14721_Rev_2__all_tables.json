@@ -654,7 +654,7 @@
         [
           "V REFINT",
           "Raw data acquired at a temperature of 30 °C (± 5 °C), V = V = 3.0 V (± 10 mV) DDA REF+",
-          "0x1FFF756A-0x1FFF756B"
+          "B657FFF1x0-A657FFF1x0"
         ]
       ],
       "notes": [],
@@ -1085,7 +1085,7 @@
         "Pin Number / 84NPFQFU 84PFQL",
         "Pin name (function after reset)",
         "Pin type / Pintype",
-        "I/O structure / erutcurts O/I",
+        "I/O structure / I/Ostructure",
         "Notes",
         "Alternate functions",
         "Additional functions"
@@ -3247,7 +3247,7 @@
           "V"
         ],
         [
-          "f HCLK",
+          "KLCH f",
           "AHB clock frequency",
           "-",
           "-",
@@ -3255,7 +3255,7 @@
           "MHz"
         ],
         [
-          "f PCLK",
+          "KLCP f",
           "APB clock frequency",
           "-",
           "-",
@@ -3351,14 +3351,14 @@
       ],
       "rows": [
         [
-          "t VDD",
+          "DDV t",
           "V rise time rate DD",
           "0",
           "∞",
           "µs/V"
         ],
         [
-          "t VDD",
+          "DDV t",
           "V fall time rate DD",
           "10",
           "∞",
@@ -3639,7 +3639,7 @@
           "-",
           "250",
           "1200",
-          "ppm/V"
+          "V/mpp"
         ]
       ],
       "notes": [
@@ -6464,7 +6464,7 @@
       ],
       "rows": [
         [
-          "t WUSLEEP",
+          "PEELSUW t",
           "Wake-up time from Sleep to Run mode",
           "HCLK = HSI48/4 = 12 MHz",
           "Transiting to Run-mode execution in flash memory powered during Sleep mode",
@@ -6473,7 +6473,7 @@
           "CPU clock cycles"
         ],
         [
-          "t WUSLEEP",
+          "PEELSUW t",
           "mode",
           "Transiting to Run-mode execution in flash memory not powered during Sleep mode",
           "Transiting to Run-mode execution in flash memory not powered during Sleep mode",
@@ -6482,7 +6482,7 @@
           "µs"
         ],
         [
-          "t WULPSTOP",
+          "POTSPLUW t",
           "Wake-up time from Stop mode",
           "Clock after wake-up is HCLK = HSI48/4 = 12 MHz",
           "Transiting to Run-mode execution in flash memory powered during Stop mode",
@@ -6491,7 +6491,7 @@
           "µs"
         ],
         [
-          "t WULPSTOP",
+          "POTSPLUW t",
           "from Stop mode",
           "Transiting to Run-mode execution in = HSI48/4 = 12 flash memory not powered during MHz Stop mode",
           "Transiting to Run-mode execution in flash memory not powered during Stop mode",
@@ -6500,7 +6500,7 @@
           "µs"
         ],
         [
-          "t WULPSTOP",
+          "POTSPLUW t",
           "Wake-up time from Stop mode",
           "Transiting to Run-mode execution in SRAM",
           "Transiting to Run-mode execution in SRAM",
@@ -6509,7 +6509,7 @@
           "µs"
         ],
         [
-          "t WUSTBY",
+          "YBTSUW t",
           "Wake-up time from Standby mode",
           "Clock after wake- up is HCLK = HSI48/4 = 12 MHz",
           "Transiting to Run mode",
@@ -6518,7 +6518,7 @@
           "µs"
         ],
         [
-          "t WUSHDN",
+          "NDHSUW t",
           "Wake-up time from Shutdown mode",
           "Clock after wake- up is HCLK = HSI48/4 = 12 MHz",
           "Transiting to Run mode",
@@ -6716,7 +6716,7 @@
       ],
       "rows": [
         [
-          "f OSC_IN",
+          "NI_CSO f",
           "Oscillator frequency",
           "-",
           "4",
@@ -6953,7 +6953,7 @@
         ],
         [
           "Temp(HSI)",
-          "full voltage range V DD",
+          "DD V egnar egatlov lluf",
           "T = -40 to 125 °C A",
           "-2.5",
           "-",
@@ -7064,7 +7064,7 @@
       ],
       "rows": [
         [
-          "f LSI",
+          "ISL f",
           "LSI frequency",
           "V = 3.3 V, T = 25 °C DD A",
           "31.04",
@@ -7073,7 +7073,7 @@
           "kHz"
         ],
         [
-          "f LSI",
+          "ISL f",
           "LSI frequency",
           "V = 2 V to 3.6 V, T = -40 to 125 °C DD A",
           "29.5(1)",
@@ -7194,7 +7194,7 @@
           "22.4"
         ],
         [
-          "t ERASE",
+          "ESARE t",
           "Page (2 Kbyte) erase time",
           "-",
           "-",
@@ -7320,42 +7320,42 @@
           "kcycles"
         ],
         [
-          "t RET",
+          "TER t",
           "Data retention",
           "1 kcycle(2) at T = 85 °C A",
           "30",
           "Years"
         ],
         [
-          "t RET",
+          "TER t",
           "Data retention",
           "1 kcycle(2) at T = 105 °C A",
           "15",
           "Years"
         ],
         [
-          "t RET",
+          "TER t",
           "Data retention",
           "1 kcycle(2) at T = 125 °C A",
           "7",
           "Years"
         ],
         [
-          "t RET",
+          "TER t",
           "Data retention",
           "10 kcycles(2) at T = 55 °C A",
           "30",
           "Years"
         ],
         [
-          "t RET",
+          "TER t",
           "Data retention",
           "10 kcycles(2) at T = 85 °C A",
           "15",
           "Years"
         ],
         [
-          "t RET",
+          "TER t",
           "Data retention",
           "10 kcycles(2) at T = 105 °C A",
           "10",
@@ -8421,7 +8421,7 @@
           "V"
         ],
         [
-          "f ADC",
+          "CDA f",
           "ADC clock frequency",
           "-",
           "0.14",
@@ -8466,22 +8466,22 @@
           "MSps"
         ],
         [
-          "f TRIG",
+          "GIRT f",
           "External trigger frequency",
-          "f = 35 MHz; 12 bits ADC",
+          "CDA stib 21 ;zHM 53 = f",
           "-",
           "-",
           "2.33",
           "MHz"
         ],
         [
-          "f TRIG",
+          "GIRT f",
           "External trigger frequency",
           "12 bits",
           "-",
           "-",
-          "f /15 ADC",
-          "f /15 ADC"
+          "CDA 51/ f",
+          "CDA 51/ f"
         ],
         [
           "V AIN",
@@ -8511,7 +8511,7 @@
           "pF"
         ],
         [
-          "t STAB",
+          "BATS t",
           "ADC power-up time",
           "LDO already started",
           "2",
@@ -8520,30 +8520,30 @@
           "Conversion cycle"
         ],
         [
-          "t CAL",
+          "LAC t",
           "Calibration time",
-          "f = 35 MHz ADC",
+          "CDA zHM 53 = f",
           "2.35",
           "2.35",
           "2.35",
           "µs"
         ],
         [
-          "t CAL",
+          "LAC t",
           "Calibration time",
           "-",
           "82",
           "82",
           "82",
-          "1/f ADC"
+          "CDA f/1"
         ],
         [
           "WLATENCY",
           "ADC_DR register write latency",
           "CKMODE = 00",
-          "1.5/f ADC + 2/f PCLK",
+          "KLCP f/2 + CDA f/5.1",
           "-",
-          "1.5/f ADC + 3/f PCLK",
+          "KLCP f/3 + CDA f/5.1",
           "-"
         ],
         [
@@ -8553,7 +8553,7 @@
           "4.5",
           "4.5",
           "4.5",
-          "1/f PCLK"
+          "KLCP f/1"
         ],
         [
           "WLATENCY",
@@ -8574,25 +8574,25 @@
           "2.5"
         ],
         [
-          "t LATR",
+          "RTAL t",
           "Trigger conversion latency for regular and injected channels without aborting the conversion",
           "CKMODE = 00",
           "2",
           "-",
           "3",
-          "1/f ADC"
+          "CDA f/1"
         ],
         [
-          "t LATR",
+          "RTAL t",
           "Trigger conversion latency for regular and injected channels without aborting the conversion",
           "CKMODE = 01",
           "6.5",
           "6.5",
           "6.5",
-          "1/f PCLK"
+          "KLCP f/1"
         ],
         [
-          "t LATR",
+          "RTAL t",
           "Trigger conversion latency for regular and injected channels without aborting the conversion",
           "CKMODE = 10",
           "12.5",
@@ -8601,7 +8601,7 @@
           "12.5"
         ],
         [
-          "t LATR",
+          "RTAL t",
           "Trigger conversion latency for regular and injected channels without aborting the conversion",
           "CKMODE = 11",
           "3.5",
@@ -8612,7 +8612,7 @@
         [
           "t s",
           "Sampling time",
-          "f = 35 MHz ADC",
+          "CDA zHM 53 = f",
           "0.043",
           "-",
           "4.59",
@@ -8621,14 +8621,14 @@
         [
           "t s",
           "Sampling time",
-          "f = 35 MHz ADC",
+          "CDA zHM 53 = f",
           "1.5",
           "-",
           "160.5",
-          "1/f ADC"
+          "CDA f/1"
         ],
         [
-          "t ADCVREG _STUP",
+          "PUTS_ GERVCDA t",
           "ADC voltage regulator start-up time",
           "-",
           "-",
@@ -8637,7 +8637,7 @@
           "µs"
         ],
         [
-          "t CONV",
+          "VNOC t",
           "Total conversion time (including sampling time)",
           "f = 35 MHz ADC Resolution = 12 bits",
           "0.40",
@@ -8646,16 +8646,16 @@
           "µs"
         ],
         [
-          "t CONV",
+          "VNOC t",
           "Total conversion time (including sampling time)",
           "Resolution = 12 bits",
           "t + 12.5 cycles for successive s approximation = 14 to 173",
           "t + 12.5 cycles for successive s approximation = 14 to 173",
           "t + 12.5 cycles for successive s approximation = 14 to 173",
-          "1/f ADC"
+          "CDA f/1"
         ],
         [
-          "t IDLE",
+          "ELDI t",
           "Laps of time allowed between two conversions without rearm",
           "-",
           "-",
@@ -9288,22 +9288,22 @@
           "-",
           "1",
           "-",
-          "t TIMxCLK"
+          "KLCxMIT t"
         ],
         [
           "t res(TIM)",
           "Timer resolution time",
-          "f = 48 MHz TIMxCLK",
+          "KLCxMIT zHM 84 = f",
           "20.833",
           "-",
           "ns"
         ],
         [
-          "f EXT",
+          "TXE f",
           "Timer external clock frequency on CH1 to CH4",
           "-",
           "0",
-          "f /4 TIMxCLK",
+          "KLCxMIT 4/ f",
           "MHz"
         ],
         [
@@ -9323,20 +9323,20 @@
           "bit"
         ],
         [
-          "t COUNTER",
+          "RETNUOC t",
           "Counter clock period",
           "TIMx other than TIM2",
           "1",
           "216",
-          "t TIMxCLK"
+          "KLCxMIT t"
         ],
         [
-          "t COUNTER",
+          "RETNUOC t",
           "Counter clock period",
           "TIM2",
           "1",
           "232",
-          "t TIMxCLK"
+          "KLCxMIT t"
         ]
       ],
       "notes": [
@@ -9915,7 +9915,7 @@
       ],
       "rows": [
         [
-          "f MCK",
+          "KCM f",
           "I2S main clock output",
           "-",
           "-",
@@ -10973,6 +10973,69 @@
           "0.1969 BSC",
           "0.1969 BSC",
           "0.1969 BSC"
+        ],
+        [
+          "D2(8)",
+          "See Table 73: Exposed pad variation",
+          "See Table 73: Exposed pad variation",
+          "See Table 73: Exposed pad variation",
+          "pad variation",
+          "See Table 73: Exposed pad variation",
+          "See Table 73: Exposed pad variation"
+        ],
+        [
+          "E(7)",
+          "5.00 BSC",
+          "5.00 BSC",
+          "5.00 BSC",
+          "0.1969 BSC",
+          "0.1969 BSC",
+          "0.1969 BSC"
+        ],
+        [
+          "E2(8)",
+          "See Table 73: Exposed pad variation",
+          "See Table 73: Exposed pad variation",
+          "See Table 73: Exposed pad variation",
+          "pad variation",
+          "See Table 73: Exposed pad variation",
+          "See Table 73: Exposed pad variation"
+        ],
+        [
+          "e",
+          "0.50 BSC",
+          "0.50 BSC",
+          "0.50 BSC",
+          "0.0197 BSC",
+          "0.0197 BSC",
+          "0.0197 BSC"
+        ],
+        [
+          "N(9)",
+          "32",
+          "32",
+          "32",
+          "32",
+          "32",
+          "32"
+        ],
+        [
+          "L",
+          "0.30",
+          "-",
+          "0.50",
+          "0.0118",
+          "-",
+          "0.0197"
+        ],
+        [
+          "R",
+          "0.09",
+          "-",
+          "-",
+          "0.0035",
+          "-",
+          "-"
         ]
       ],
       "notes": [
@@ -10982,7 +11045,9 @@
         "4. The profile height, A, is the distance from the seating plane to the highest point on the package. It is measured perpendicular to the seating plane.",
         "5. A1 is the vertical distance from the bottom surface of the plastic body to the nearest metalized package feature.",
         "6. Dimension b applies to metalized terminal. If the terminal has the optional radius on the other end of the terminal, the dimension b must not be measured in that radius area.",
-        "7. BSC stands for BASIC dimensions. It corresponds to the nominal value and has no tolerance. For tolerances, refer to Table 72."
+        "7. BSC stands for BASIC dimensions. It corresponds to the nominal value and has no tolerance. For tolerances, refer to Table 72.",
+        "8. Dimensions D2 and E2 refer to the exposed pad. For variance, refer to Table 73.",
+        "9. N represents the total number of terminals."
       ],
       "legend": "",
       "semantic_type": "",

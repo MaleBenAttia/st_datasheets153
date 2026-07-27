@@ -336,11 +336,11 @@ def _is_continuation_page(
     # Si la page N+1 a un en-tête différent de la table de base, c'est que
     # la table trouvée n'est pas la continuation mais une table différente.
     if base_header and table_data:
-        from core.grid_extractor import _is_likely_reversed
+        from core.grid_extractor import _normalize_reversed_text
         header_row = table_data[0]
         if header_row:
             header_row = [
-                str(c)[::-1] if c and _is_likely_reversed(str(c)) else str(c)
+                _normalize_reversed_text(str(c))[0] if c else str(c)
                 for c in header_row
             ]
         if _headers_differ(header_row, base_header):

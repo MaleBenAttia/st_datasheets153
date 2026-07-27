@@ -501,6 +501,7 @@ def process_pdf(pdf_path: Path, family: str, table_ids: list[int] | None = None)
             "tables_checked": len({e["table_id"] for e in entries}),
             "cells_checked": len(entries),
             "cells_reversed": sum(1 for e in entries if e["reversed"]),
+            "cells_fixed": sum(1 for e in entries if e.get("corrected") is not None),
             "entries": entries,
         }
         debug_path = out_dir / "_reversed_debug.json"

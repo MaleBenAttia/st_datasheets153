@@ -11,12 +11,12 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f102c4.pdf#page=38",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f102c4.pdf",
-  "text_helper": "Table 17. Typical current consumption in Sleep mode, code running from Flash memory or RAM — section 5.3.5 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK, Typ(1) / All peripherals enabled(2), +2 autres.",
+  "text_helper": "Table 17. Typical current consumption in Sleep mode, code running from Flash memory or RAM — section 5.3.5 Supply current characteristics. Symbol / lobmyS, Parameter / retemaraP, Conditions / snoitidnoC, f HCLK, Typ(1) / All peripherals enabled(2), +2 autres.",
   "table_content": {
     "headers": [
-      "Symbol",
-      "Parameter",
-      "Conditions",
+      "Symbol / lobmyS",
+      "Parameter / retemaraP",
+      "Conditions / snoitidnoC",
       "f HCLK",
       "Typ(1) / All peripherals enabled(2)",
       "Typ(1) / All peripherals disabled",
@@ -27,7 +27,7 @@
         "I DD",
         "Supply current in Sleep mode",
         "External clock(3)",
-        "48 MHz",
+        "zHM 84",
         "8.7",
         "3.8",
         "mA"
@@ -36,7 +36,7 @@
         "I DD",
         "Supply current in Sleep mode",
         "External clock(3)",
-        "36 MHz",
+        "zHM 63",
         "6.7",
         "3.1",
         "mA"
@@ -45,7 +45,7 @@
         "I DD",
         "Supply current in Sleep mode",
         "External clock(3)",
-        "24 MHz",
+        "zHM 42",
         "4.8",
         "2.3",
         "mA"
@@ -54,7 +54,7 @@
         "I DD",
         "Supply current in Sleep mode",
         "External clock(3)",
-        "16 MHz",
+        "zHM 61",
         "3.4",
         "1.8",
         "mA"
@@ -63,7 +63,7 @@
         "I DD",
         "Supply current in Sleep mode",
         "External clock(3)",
-        "8 MHz",
+        "zHM 8",
         "2",
         "1.2",
         "mA"
@@ -72,7 +72,7 @@
         "I DD",
         "Supply current in Sleep mode",
         "External clock(3)",
-        "4 MHz",
+        "zHM 4",
         "1.5",
         "1.1",
         "mA"
@@ -81,7 +81,7 @@
         "I DD",
         "Supply current in Sleep mode",
         "External clock(3)",
-        "2 MHz",
+        "zHM 2",
         "1.25",
         "1",
         "mA"
@@ -90,7 +90,7 @@
         "I DD",
         "Supply current in Sleep mode",
         "External clock(3)",
-        "1 MHz",
+        "zHM 1",
         "1.1",
         "0.98",
         "mA"
@@ -117,7 +117,7 @@
         "I DD",
         "Sleep mode",
         "Running on High Speed Internal RC (HSI), AHB prescaler used to reduce the frequency",
-        "48 MHz",
+        "zHM 84",
         "8.1",
         "3.2",
         "mA"
@@ -126,7 +126,7 @@
         "I DD",
         "Supply current in Sleep mode",
         "Running on High Speed Internal RC (HSI), AHB prescaler used to reduce the frequency",
-        "36 MHz",
+        "zHM 63",
         "6.1",
         "2.5",
         "mA"
@@ -135,7 +135,7 @@
         "I DD",
         "Supply current in Sleep mode",
         "Running on High Speed Internal RC (HSI), AHB prescaler used to reduce the frequency",
-        "24 MHz",
+        "zHM 42",
         "4.2",
         "1.7",
         "mA"
@@ -144,7 +144,7 @@
         "I DD",
         "Supply current in Sleep mode",
         "Running on High",
-        "16 MHz",
+        "zHM 61",
         "2.8",
         "1.2",
         "mA"
@@ -153,7 +153,7 @@
         "I DD",
         "Supply current in Sleep mode",
         "RC (HSI), AHB",
-        "8 MHz",
+        "zHM 8",
         "1.4",
         "0.55",
         "mA"
@@ -162,7 +162,7 @@
         "I DD",
         "Supply current in Sleep mode",
         "prescaler used to",
-        "4 MHz",
+        "zHM 4",
         "0.9",
         "0.5",
         "mA"
@@ -171,7 +171,7 @@
         "I DD",
         "Supply current in Sleep mode",
         "frequency",
-        "2 MHz",
+        "zHM 2",
         "0.7",
         "0.45",
         "mA"
@@ -180,7 +180,7 @@
         "I DD",
         "Supply current in Sleep mode",
         "Running on High Speed Internal RC (HSI), AHB prescaler used to reduce the frequency",
-        "1 MHz",
+        "zHM 1",
         "0.55",
         "0.42",
         "mA"
@@ -209,9 +209,7 @@
       "2. Add an additional power consumption of 0.8 mA per ADC for the analog part. In applications, this consumption occurs only while the ADC is on (ADON bit is set in the ADC_CR2 register).",
       "3. External clock is 8 MHz and PLL is on when f > 8 MHz. HCLK"
     ],
-    "legend": [
-      "memory or RAM"
-    ],
+    "legend": "",
     "semantic_type": "",
     "semantic": {}
   }

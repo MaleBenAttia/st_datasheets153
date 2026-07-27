@@ -90,16 +90,143 @@
         "V (3) AIN",
         "Conversion voltage range",
         "-",
-        ")dnuorg ASS ot deit V(0",
+        "(dnuorg ASS ot deit V)0",
         "-",
         "V REF+",
         "V"
+      ],
+      [
+        "R (2) AIN",
+        "External input impedance",
+        "See Equation 1 and Table 52 for details",
+        "-",
+        "-",
+        "50",
+        "kΩ"
+      ],
+      [
+        "R (2) ADC",
+        "Sampling switch resistance",
+        "-",
+        "-",
+        "-",
+        "1",
+        "kΩ"
+      ],
+      [
+        "C (2) ADC",
+        "Internal sample and hold capacitor",
+        "-",
+        "-",
+        "-",
+        "8",
+        "pF"
+      ],
+      [
+        "t (2) CAL",
+        "Calibration time",
+        "f = 12 MHz ADC",
+        "5.9",
+        "5.9",
+        "5.9",
+        "µs"
+      ],
+      [
+        "t (2) CAL",
+        "Calibration time",
+        "-",
+        "83",
+        "83",
+        "83",
+        "1/f ADC"
+      ],
+      [
+        "t (2) lat",
+        "Injection trigger conversion latency",
+        "f = 12 MHz ADC",
+        "-",
+        "-",
+        "0.214",
+        "µs"
+      ],
+      [
+        "t (2) lat",
+        "latency",
+        "-",
+        "-",
+        "-",
+        "3(4)",
+        "1/f ADC"
+      ],
+      [
+        "t (2) latr",
+        "Regular trigger conversion latency",
+        "f = 12 MHz ADC",
+        "-",
+        "-",
+        "0.143",
+        "µs"
+      ],
+      [
+        "t (2) latr",
+        "latency",
+        "-",
+        "-",
+        "-",
+        "2(4)",
+        "1/f ADC"
+      ],
+      [
+        "t (2) S",
+        "Sampling time",
+        "f = 12 MHz ADC",
+        "0.125",
+        "-",
+        "17.1",
+        "µs"
+      ],
+      [
+        "t (2) S",
+        "Sampling time",
+        "f = 12 MHz ADC",
+        "1.5",
+        "-",
+        "239.5",
+        "1/f ADC"
+      ],
+      [
+        "t (2) STAB",
+        "emit pu-rewoP",
+        "-",
+        "0",
+        "0",
+        "1",
+        "µs"
+      ],
+      [
+        "t (2) CONV",
+        "Total conversion time (including sampling time)",
+        "f = 12 MHz ADC",
+        "1.17",
+        "-",
+        "21",
+        "µs"
+      ],
+      [
+        "t CONV",
+        "(including sampling time)",
+        "-",
+        "14 to 252 (t for sampling +12.5 for S successive approximation)",
+        "14 to 252 (t for sampling +12.5 for S successive approximation)",
+        "+12.5 for",
+        "1/f ADC"
       ]
     ],
     "notes": [
       "1. Preliminary values.",
       "2. Guaranteed by design, not tested in production.",
-      "3. V is internally connected to V REF+ DDA"
+      "3. V is internally connected to V REF+ DDA",
+      "4. For external triggers, a delay of 1/f must be added to the latency specified in Table 51. PCLK2"
     ],
     "legend": "",
     "semantic_type": "",

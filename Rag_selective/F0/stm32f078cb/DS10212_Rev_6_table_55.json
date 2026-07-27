@@ -87,6 +87,51 @@
         "V"
       ],
       [
+        "R (2) AIN",
+        "External input impedance",
+        "See Equation 1 and Table 56 for details",
+        "-",
+        "-",
+        "50",
+        "kΩ"
+      ],
+      [
+        "R (2) ADC",
+        "Sampling switch resistance",
+        "-",
+        "-",
+        "-",
+        "1",
+        "kΩ"
+      ],
+      [
+        "C (2) ADC",
+        "Internal sample and hold capacitor",
+        "-",
+        "-",
+        "-",
+        "8",
+        "pF"
+      ],
+      [
+        "t (2)(3) CAL",
+        "Calibration time",
+        "f = 14 MHz ADC",
+        "5.9",
+        "5.9 83",
+        "5.9",
+        "µs"
+      ],
+      [
+        "t (2)(3) CAL",
+        "Calibration time",
+        "-",
+        "83",
+        "83",
+        "83",
+        "1/f ADC"
+      ],
+      [
         "W (2)(4) LATENCY",
         "ADC_DR register ready latency",
         "ADC clock = HSI14",
@@ -216,6 +261,7 @@
     "notes": [
       "1. Guaranteed by design, not tested in production.",
       "2. The pull-up is designed with a true resistance in series with a switchable PMOS. This PMOS contribution to the series resistance is minimal (~10% order).",
+      "3. Specified value includes only ADC timing. It does not include the latency of the register access.",
       "4. This parameter specify latency for transfer of the conversion result to the ADC_DR register. EOC flag is set at this time. Equation 1: R max formula"
     ],
     "legend": "",

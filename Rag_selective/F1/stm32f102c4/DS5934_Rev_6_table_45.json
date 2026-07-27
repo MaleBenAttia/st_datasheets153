@@ -72,15 +72,142 @@
         "V AIN",
         "Conversion voltage range(2)",
         "-",
-        ")dnuorg -FER ot deit V ASS ro V(0",
+        "(dnuorg -FER ot deit V ASS ro V)0",
         "-",
         "V REF+",
         "V"
+      ],
+      [
+        "R (1) AIN",
+        "External input impedance",
+        "See Equation 1 and Table46 for details",
+        "-",
+        "-",
+        "50",
+        "κΩ"
+      ],
+      [
+        "R (1) ADC",
+        "Sampling switch resistance",
+        "-",
+        "-",
+        "-",
+        "1",
+        "κΩ"
+      ],
+      [
+        "C (1) ADC",
+        "Internal sample and hold capacitor",
+        "-",
+        "-",
+        "-",
+        "8",
+        "pF"
+      ],
+      [
+        "t (1) CAL",
+        "Calibration time",
+        "f = 12 MHz ADC",
+        "5.9",
+        "5.9 83",
+        "5.9",
+        "µs"
+      ],
+      [
+        "t (1) CAL",
+        "Calibration time",
+        "-",
+        "83",
+        "83",
+        "83",
+        "1/f ADC"
+      ],
+      [
+        "t (1) lat",
+        "Injection trigger conversion latency",
+        "f = 12 MHz ADC",
+        "-",
+        "-",
+        "0.214",
+        "µs"
+      ],
+      [
+        "t (1) lat",
+        "latency",
+        "-",
+        "-",
+        "-",
+        "3(3)",
+        "1/f ADC"
+      ],
+      [
+        "t (1) latr",
+        "Regular trigger conversion latency",
+        "f = 12 MHz ADC",
+        "-",
+        "-",
+        "0.143",
+        "µs"
+      ],
+      [
+        "t (1) latr",
+        "latency",
+        "-",
+        "-",
+        "-",
+        "2(3)",
+        "1/f ADC"
+      ],
+      [
+        "t (1) S",
+        "Sampling time",
+        "f = 12 MHz ADC",
+        "0.125",
+        "-",
+        "19.95",
+        "µs"
+      ],
+      [
+        "t (1) S",
+        "Sampling time",
+        "-",
+        "1.5",
+        "-",
+        "239.5",
+        "1/f ADC"
+      ],
+      [
+        "t (1) STAB",
+        "emit pu-rewoP",
+        "-",
+        "0",
+        "0",
+        "1",
+        "µs"
+      ],
+      [
+        "t (1) CONV",
+        "Total conversion time (including sampling time)",
+        "f = 12 MHz ADC",
+        "1.2",
+        "-",
+        "21",
+        "µs"
+      ],
+      [
+        "t CONV",
+        "(including sampling time)",
+        "-",
+        "14 to 252 (t for sampling +12.5 S for successive approximation)",
+        "14 to 252 (t for sampling +12.5 S for successive approximation)",
+        "+12.5",
+        "1/f ADC"
       ]
     ],
     "notes": [
       "1. Guaranteed by design, not tested in production.",
-      "2. VREF+ is internally connected to VDDA and VREF- is internally connected to VSSA."
+      "2. VREF+ is internally connected to VDDA and VREF- is internally connected to VSSA.",
+      "3. For external triggers, a delay of 1/f must be added to the latency specified in Table46. PCLK2"
     ],
     "legend": "",
     "semantic_type": "",

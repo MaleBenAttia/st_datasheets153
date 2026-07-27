@@ -11,11 +11,11 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32g0c1cc.pdf#page=74",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g0c1cc.pdf",
-  "text_helper": "Table 29. Typical current consumption in Run and Low-power run modes, depending on code executed — section 8 MHz. Symbol, Parameter, Conditions / General, Conditions / Code, Conditions / Fetch from(1), +4 autres.",
+  "text_helper": "Table 29. Typical current consumption in Run and Low-power run modes, depending on code executed — section 8 MHz. Symbol / lobmyS, Parameter / retemaraP, Conditions / General, Conditions / Code, Conditions / Fetch from(1), +4 autres.",
   "table_content": {
     "headers": [
-      "Symbol",
-      "Parameter",
+      "Symbol / lobmyS",
+      "Parameter / retemaraP",
       "Conditions / General",
       "Conditions / Code",
       "Conditions / Fetch from(1)",
@@ -40,7 +40,7 @@
         "I DD(Run)",
         "Supply current in Run mode",
         "Coremark",
-        "Coremark",
+        "krameroC",
         "Flash memory",
         "8.15",
         "mA",
@@ -62,7 +62,7 @@
         "I DD(Run)",
         "Supply current in Run mode",
         "Fibonacci",
-        "Fibonacci",
+        "iccanobiF",
         "Flash memory",
         "7.30",
         "mA",
@@ -95,7 +95,7 @@
         "I DD(Run)",
         "Supply current in Run mode",
         "Coremark",
-        "Coremark",
+        "krameroC",
         "SRAM",
         "9.10",
         "mA",
@@ -105,7 +105,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "SRAM Dhrystone 2.1",
+        "1.2 enotsyrhD MARS",
         "Dhrystone 2.1",
         "SRAM",
         "8.95",
@@ -117,7 +117,7 @@
         "I DD(Run)",
         "Supply current in Run mode",
         "Fibonacci",
-        "Fibonacci",
+        "iccanobiF",
         "SRAM",
         "9.85",
         "mA",
@@ -150,7 +150,7 @@
         "I DD(Run)",
         "Supply current in Run mode",
         "Coremark",
-        "Coremark",
+        "krameroC",
         "Flash memory",
         "1.90",
         "mA",
@@ -172,7 +172,7 @@
         "I DD(Run)",
         "Supply current in Run mode",
         "Fibonacci Range 2;",
-        "Fibonacci",
+        "iccanobiF",
         "Flash memory",
         "1.70",
         "mA",
@@ -205,7 +205,7 @@
         "I DD(Run)",
         "Supply current in Run mode",
         "Coremark",
-        "Coremark",
+        "krameroC",
         "SRAM",
         "2.10",
         "mA",
@@ -227,7 +227,7 @@
         "I DD(Run)",
         "Supply current in Run mode",
         "Fibonacci",
-        "Fibonacci",
+        "iccanobiF",
         "SRAM",
         "2.25",
         "mA",
@@ -246,7 +246,7 @@
         "μA/MHz"
       ],
       [
-        "I DD(LPRun)",
+        "I DD(nuRPL)",
         "Supply current in Low-power run mode",
         "f = f /8 = HCLK HSI16 2 MHz; PLL disabled, (2)",
         "Reduced code(3)",
@@ -257,10 +257,10 @@
         "μA/MHz"
       ],
       [
-        "I DD(LPRun)",
+        "I DD(nuRPL)",
         "Supply current in Low-power run mode",
         "Coremark",
-        "Coremark",
+        "krameroC",
         "Flash memory",
         "475",
         "μA",
@@ -268,7 +268,7 @@
         "μA/MHz"
       ],
       [
-        "I DD(LPRun)",
+        "I DD(nuRPL)",
         "Supply current in Low-power run mode",
         "Dhrystone 2.1 memory",
         "Dhrystone 2.1",
@@ -279,10 +279,10 @@
         "μA/MHz"
       ],
       [
-        "I DD(LPRun)",
+        "I DD(nuRPL)",
         "Supply current in Low-power run mode",
         "Fibonacci",
-        "Fibonacci",
+        "iccanobiF",
         "Flash memory",
         "500",
         "μA",
@@ -290,7 +290,7 @@
         "μA/MHz"
       ],
       [
-        "I DD(LPRun)",
+        "I DD(nuRPL)",
         "current in",
         "While(1) loop 2 MHz;",
         "While(1) loop",
@@ -301,8 +301,8 @@
         "μA/MHz"
       ],
       [
-        "I DD(LPRun)",
-        "Low-power run mode",
+        "I DD(nuRPL)",
+        "Low-powerrun mode",
         "PLL disabled, code(3) Reduced (2) Coremark Dhrystone 2.1 SRAM Fibonacci While(1) loop",
         "Reduced code(3)",
         "SRAM",
@@ -312,10 +312,10 @@
         "μA/MHz"
       ],
       [
-        "I DD(LPRun)",
+        "I DD(nuRPL)",
         "Supply current in Low-power run mode",
         "Coremark",
-        "Coremark",
+        "krameroC",
         "SRAM",
         "485",
         "μA",
@@ -323,7 +323,7 @@
         "μA/MHz"
       ],
       [
-        "I DD(LPRun)",
+        "I DD(nuRPL)",
         "Supply current in Low-power run mode",
         "Dhrystone 2.1 SRAM",
         "Dhrystone 2.1",
@@ -334,10 +334,10 @@
         "μA/MHz"
       ],
       [
-        "I DD(LPRun)",
+        "I DD(nuRPL)",
         "Supply current in Low-power run mode",
         "Fibonacci",
-        "Fibonacci",
+        "iccanobiF",
         "SRAM",
         "510",
         "μA",
@@ -345,7 +345,7 @@
         "μA/MHz"
       ],
       [
-        "I DD(LPRun)",
+        "I DD(nuRPL)",
         "Supply current in Low-power run mode",
         "While(1) loop",
         "While(1) loop",
@@ -361,9 +361,7 @@
       "2. VDD = 3.3 V, all peripherals disabled, cache enabled, prefetch disabled for execution in flash memory and enabled in SRAM 74/163 DS13564 Rev 5",
       "3. Reduced code used for characterization results provided in Table 28."
     ],
-    "legend": [
-      "depending on code executed"
-    ],
+    "legend": "",
     "semantic_type": "",
     "semantic": {}
   }

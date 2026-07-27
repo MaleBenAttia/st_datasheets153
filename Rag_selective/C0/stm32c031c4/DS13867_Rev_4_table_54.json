@@ -42,7 +42,7 @@
         "V"
       ],
       [
-        "f ADC",
+        "CDA f",
         "ADC clock frequency",
         "-",
         "0.14",
@@ -87,21 +87,21 @@
         "MSps"
       ],
       [
-        "f TRIG",
+        "GIRT f",
         "External trigger frequency",
-        "f = 35 MHz; 12 bits ADC",
+        "CDA stib 21 ;zHM 53 = f",
         "-",
         "-",
         "2.33",
         "MHz"
       ],
       [
-        "f TRIG",
+        "GIRT f",
         "frequency",
         "12 bits",
         "-",
         "-",
-        "f /15 ADC",
+        "CDA 51/ f",
         "MHz"
       ],
       [
@@ -132,7 +132,7 @@
         "pF"
       ],
       [
-        "t STAB",
+        "BATS t",
         "ADC power-up time",
         "LDO already started",
         "2",
@@ -141,43 +141,43 @@
         "Conversion cycle"
       ],
       [
-        "t CAL",
+        "LAC t",
         "Calibration time",
-        "f = 35 MHz ADC",
+        "CDA zHM 53 = f",
         "2.35",
         "2.35",
         "2.35",
         "µs"
       ],
       [
-        "t CAL",
+        "LAC t",
         "Calibration time",
         "-",
         "82",
         "82",
         "82",
-        "1/f ADC"
+        "CDA f/1"
       ],
       [
-        "t LATR",
+        "RTAL t",
         "Trigger conversion latency for regular and injected channels without aborting the conversion",
         "CKMODE = 00",
         "2",
         "-",
         "3",
-        "1/f ADC"
+        "CDA f/1"
       ],
       [
-        "t LATR",
+        "RTAL t",
         "Trigger conversion latency for regular and injected channels without aborting the conversion",
         "CKMODE = 01",
         "6.5",
         "6.5",
         "6.5",
-        "1/f PCLK"
+        "KLCP f/1"
       ],
       [
-        "t LATR",
+        "RTAL t",
         "Trigger conversion latency for regular and injected channels without aborting the conversion",
         "CKMODE = 10",
         "12.5",
@@ -186,7 +186,7 @@
         "12.5"
       ],
       [
-        "t LATR",
+        "RTAL t",
         "Trigger conversion latency for regular and injected channels without aborting the conversion",
         "CKMODE = 11",
         "3.5",
@@ -197,7 +197,7 @@
       [
         "t s",
         "Sampling time",
-        "f = 35 MHz ADC",
+        "CDA zHM 53 = f",
         "0.043",
         "-",
         "4.59",
@@ -206,14 +206,14 @@
       [
         "t s",
         "Sampling time",
-        "f = 35 MHz ADC",
+        "CDA zHM 53 = f",
         "1.5",
         "-",
         "160.5",
-        "1/f ADC"
+        "CDA f/1"
       ],
       [
-        "t ADCVREG_S TUP",
+        "PUT S_GERVCDA t",
         "ADC voltage regulator start-up time",
         "-",
         "-",
@@ -222,7 +222,7 @@
         "µs"
       ],
       [
-        "t CONV",
+        "VNOC t",
         "Total conversion time (including sampling time)",
         "f = 35 MHz ADC Resolution = 12 bits",
         "0.40",
@@ -231,16 +231,16 @@
         "µs"
       ],
       [
-        "t CONV",
+        "VNOC t",
         "Total conversion time (including sampling time)",
         "Resolution = 12 bits",
         "t + 12.5 cycles for successive s approximation = 14 to 173",
         "t + 12.5 cycles for successive s approximation = 14 to 173",
         "t + 12.5 cycles for successive s approximation = 14 to 173",
-        "1/f ADC"
+        "CDA f/1"
       ],
       [
-        "t IDLE",
+        "ELDI t",
         "Laps of time allowed between two conversions without rearm",
         "-",
         "-",

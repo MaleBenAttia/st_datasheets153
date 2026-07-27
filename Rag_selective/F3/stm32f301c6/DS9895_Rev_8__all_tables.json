@@ -89,8 +89,8 @@
       ],
       "rows": [
         [
-          "Flash (Kbytes)",
-          "Flash (Kbytes)",
+          "Flash(setybK)",
+          "Flash(setybK)",
           "32",
           "64",
           "32",
@@ -99,8 +99,8 @@
           "64"
         ],
         [
-          "SRAM (Kbytes)",
-          "SRAM (Kbytes)",
+          "SRAM(setybK)",
+          "SRAM(setybK)",
           "16",
           "16",
           "16",
@@ -109,7 +109,7 @@
           "16"
         ],
         [
-          "Timers",
+          "sremiT",
           "Advanced control",
           "1 (16-bit)",
           "1 (16-bit)",
@@ -130,7 +130,7 @@
         ],
         [
           "Basic",
-          "Basic",
+          "cisaB",
           "1",
           "1",
           "1",
@@ -179,7 +179,7 @@
           "12"
         ],
         [
-          "Comm. interfaces",
+          "secafretni .mmoC",
           "SPI/I2S",
           "2",
           "2",
@@ -209,7 +209,7 @@
           "3"
         ],
         [
-          "GPIOs",
+          "sOIPG",
           "Normal I/Os (TC, TTa)",
           "9 (UFQFPN32) 10 (LQFP32)",
           "9 (UFQFPN32) 10 (LQFP32)",
@@ -291,12 +291,12 @@
         [
           "CPU frequency",
           "CPU frequency",
-          "72 MHz",
-          "72 MHz",
-          "72 MHz",
-          "72 MHz",
-          "72 MHz",
-          "72 MHz"
+          "zHM 27",
+          "zHM 27",
+          "zHM 27",
+          "zHM 27",
+          "zHM 27",
+          "zHM 27"
         ],
         [
           "Operating voltage",
@@ -319,8 +319,8 @@
           "Ambient operating temperature: - 40 to 85°C / - 40 to 105°C Junction temperature: - 40 to 125°C"
         ],
         [
-          "Packages",
-          "Packages",
+          "segakcaP",
+          "segakcaP",
           "UFQFPN32 LQFP32",
           "UFQFPN32 LQFP32",
           "LQFP48, WLCSP49",
@@ -350,12 +350,12 @@
     "table_number": "3",
     "title": "Table 3. External analog supply values for analog peripherals",
     "page": 14,
-    "section": "3.5.1 Power supply schemes",
-    "section_title": "Power supply schemes",
+    "section": "3.5.2 Power supply supervisor",
+    "section_title": "Power supply supervisor",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f301c6.pdf#page=14",
-    "text_helper": "Table 3. External analog supply values for analog peripherals — section 3.5.1 Power supply schemes. Analog peripheral, Minimum V supply DDA, Maximum V supply DDA.",
+    "text_helper": "Table 3. External analog supply values for analog peripherals — section 3.5.2 Power supply supervisor. Analog peripheral, Minimum V supply DDA, Maximum V supply DDA.",
     "table_content": {
       "headers": [
         "Analog peripheral",
@@ -423,11 +423,11 @@
         ],
         [
           "TIMx",
-          "Compx",
+          "xpmoC",
           "Comparator output blanking"
         ],
         [
-          "COMPx",
+          "xPMOC",
           "TIMx",
           "Timer input: OCREF_CLR input, input capture"
         ],
@@ -458,7 +458,7 @@
         ],
         [
           "DAC1",
-          "COMPx",
+          "xPMOC",
           "Comparator inverting input"
         ]
       ],
@@ -510,7 +510,7 @@
           "Yes"
         ],
         [
-          "General- purpose",
+          "esoprup -lareneG",
           "TIM2",
           "32-bit",
           "Up, Down, Up/Down",
@@ -520,7 +520,7 @@
           "No"
         ],
         [
-          "General- purpose",
+          "General-purpose",
           "TIM15(1)",
           "16-bit",
           "Up",
@@ -530,7 +530,7 @@
           "1"
         ],
         [
-          "General- purpose",
+          "esoprup -lareneG",
           "TIM16(1), TIM17(1)",
           "16-bit",
           "Up",
@@ -540,7 +540,7 @@
           "1"
         ],
         [
-          "Basic",
+          "cisaB",
           "TIM6",
           "16-bit",
           "Up",
@@ -590,12 +590,12 @@
           "Programmable length from 1 to 15 I2C peripheral clocks"
         ],
         [
-          "Benefits",
+          "stifeneB",
           "Available in Stop mode",
           "1. Extra filtering capability vs. standard requirements. 2. Stable length"
         ],
         [
-          "Drawbacks",
+          "skcabwarD",
           "Variations depending on temperature, voltage, process",
           "Wakeup from Stop on address match is not available when digital filter is enabled."
         ]
@@ -672,7 +672,7 @@
           "X"
         ],
         [
-          "SMBus",
+          "suBMS",
           "X",
           "X",
           "X"
@@ -750,7 +750,7 @@
           "-"
         ],
         [
-          "Single-wire half-duplex communication",
+          "noitacinummoc xelpud-flah eriw-elgniS",
           "X",
           "X",
           "X"
@@ -1189,11 +1189,11 @@
           "I/O structure",
           "I/O structure",
           "RST",
-          "Bi-directional reset pin with embedded weak pull-up resistor"
+          "rotsiser pu-llup kaew deddebme htiw nip teser lanoitcerid-iB"
         ],
         [
-          "Notes",
-          "Notes",
+          "setoN",
+          "setoN",
           "Unless otherwise specified by a note, all I/Os are set as floating inputs during and after reset",
           "specified by a note, all I/Os are set as floating inputs during and after"
         ],
@@ -1240,8 +1240,8 @@
         "Pin type / Pintype",
         "I/O structure / erutcurts O/I",
         "Notes",
-        "Alternate functions",
-        "Additional functions"
+        "Alternate functions / snoitcnufetanretlA",
+        "Additional functions / snoitcnuflanoitiddA"
       ],
       "rows": [
         [
@@ -1414,7 +1414,7 @@
           "reference voltage"
         ],
         [
-          ")1(23PFQL",
+          "LQFP32)1(",
           "23NFQU",
           "94PSCLW",
           "84PFQL",
@@ -1557,7 +1557,7 @@
           "ADC1_IN15, COMP2_INP, OPAMP2_VINP"
         ],
         [
-          ")1(23PFQL",
+          "LQFP32)1(",
           "23NFQU",
           "94PSCLW",
           "84PFQL",
@@ -1631,7 +1631,7 @@
           "I/O",
           "TTa",
           "-",
-          "TSC_G3_IO4, EVENTOUT",
+          "TUOTNEVE ,4OI_3G_CST",
           "COMP4_INM"
         ],
         [
@@ -1713,7 +1713,7 @@
           "ADC1_IN13"
         ],
         [
-          ")1(23PFQL",
+          "LQFP32)1(",
           "23NFQU",
           "94PSCLW",
           "84PFQL",
@@ -1830,7 +1830,7 @@
           "-"
         ],
         [
-          ")1(23PFQL",
+          "LQFP32)1(",
           "23NFQU",
           "94PSCLW",
           "84PFQL",
@@ -1947,7 +1947,7 @@
           "-"
         ],
         [
-          ")1(23PFQL",
+          "LQFP32)1(",
           "23NFQU",
           "94PSCLW",
           "84PFQL",
@@ -2077,7 +2077,7 @@
           "-"
         ],
         [
-          ")1(23PFQL",
+          "LQFP32)1(",
           "23NFQU",
           "94PSCLW",
           "84PFQL",
@@ -2403,8 +2403,8 @@
           "51MIT/2MIT/1MIT/3C2I",
           "CST/51MIT/3C2I",
           "/1MIT/2C2I/1C2I 71MIT/61MIT",
-          "derarfnI/3S2I/3IPS /2S2I/2IPS",
-          "derarfnI/1MIT/3S2I /3IPS/2S2I/2IPS",
+          "SPI2/I2S2/ SPI3/I2S3/Infrared",
+          "SPI2/I2S2/SPI3/ I2S3/TIM1/Infrared",
           "/3TRASU/2TRASU/1TRASU 6PMOCPG",
           "6PMOCPG/4PMOCPG/ 2PMOCPG/3C2I",
           "51MIT/1MIT",
@@ -3269,7 +3269,7 @@
           "-",
           "0x4800 1800 - 0x4FFF FFFF",
           "~132 M",
-          "Reserved"
+          "devreseR"
         ],
         [
           "AHB2",
@@ -3281,7 +3281,7 @@
           "AHB2",
           "0x4800 1000 - 0x4800 13FF",
           "1 K",
-          "Reserved"
+          "devreseR"
         ],
         [
           "AHB2",
@@ -3311,7 +3311,7 @@
           "-",
           "0x4002 4400 - 0x47FF FFFF",
           "~128 M",
-          "Reserved"
+          "devreseR"
         ],
         [
           "AHB1",
@@ -3323,7 +3323,7 @@
           "AHB1",
           "0x4002 3400 - 0x4002 3FFF",
           "3 K",
-          "Reserved"
+          "devreseR"
         ],
         [
           "AHB1",
@@ -3335,7 +3335,7 @@
           "AHB1",
           "0x4002 2400 - 0x4002 2FFF",
           "3 K",
-          "Reserved"
+          "devreseR"
         ],
         [
           "AHB1",
@@ -3347,7 +3347,7 @@
           "AHB1",
           "0x4002 1400 - 0x4002 1FFF",
           "3 K",
-          "Reserved"
+          "devreseR"
         ],
         [
           "AHB1",
@@ -3359,7 +3359,7 @@
           "AHB1",
           "0x4002 0400 - 0x4002 0FFF",
           "3 K",
-          "Reserved"
+          "devreseR"
         ],
         [
           "AHB1",
@@ -3371,13 +3371,13 @@
           "-",
           "0x4001 8000 - 0x4001 FFFF",
           "32 K",
-          "Reserved"
+          "devreseR"
         ],
         [
           "APB2",
           "0x4001 4C00 - 0x4001 7FFF",
           "13 K",
-          "Reserved"
+          "devreseR"
         ],
         [
           "APB2",
@@ -3401,7 +3401,7 @@
           "APB2",
           "0x4001 3C00 - 0x4001 3FFF",
           "1 K",
-          "Reserved"
+          "devreseR"
         ],
         [
           "APB2",
@@ -3413,7 +3413,7 @@
           "APB2",
           "0x4001 3000 - 0x4001 37FF",
           "2 K",
-          "Reserved"
+          "devreseR"
         ],
         [
           "APB2",
@@ -3425,7 +3425,7 @@
           "APB2",
           "0x4001 0800 - 0x4001 2BFF",
           "8 K",
-          "Reserved"
+          "devreseR"
         ],
         [
           "APB2",
@@ -3443,13 +3443,13 @@
           "-",
           "0x4000 9C00 - 0x4000 FFFF",
           "25 K",
-          "Reserved"
+          "devreseR"
         ],
         [
           "APB1",
           "0x4000 7C00 - 0x4000 9BFF",
           "8 K",
-          "Reserved"
+          "devreseR"
         ],
         [
           "APB1",
@@ -3473,7 +3473,7 @@
           "APB1",
           "0x4000 5C00 - 0x4000 6FFF",
           "5 K",
-          "Reserved"
+          "devreseR"
         ],
         [
           "APB1",
@@ -3491,7 +3491,7 @@
           "APB1",
           "0x4000 4C00 - 0x4000 53FF",
           "2 K",
-          "Reserved"
+          "devreseR"
         ],
         [
           "APB1",
@@ -3551,7 +3551,7 @@
           "APB1",
           "0x4000 1400 - 0x4000 27FF",
           "5 K",
-          "Reserved"
+          "devreseR"
         ],
         [
           "APB1",
@@ -3563,7 +3563,7 @@
           "APB1",
           "0x4000 0400 - 0x4000 0FFF",
           "3 K",
-          "Reserved"
+          "devreseR"
         ],
         [
           "APB1",
@@ -3575,7 +3575,7 @@
           "-",
           "0x2000 4000 - 3FFF FFFF",
           "~512 M",
-          "Reserved"
+          "devreseR"
         ],
         [
           "-",
@@ -3599,7 +3599,7 @@
           "-",
           "0x0801 0000 - 0x1FFF D7FF",
           "~384 M",
-          "Reserved"
+          "devreseR"
         ],
         [
           "-",
@@ -3611,7 +3611,7 @@
           "-",
           "0x0001 0000 - 0x07FF FFFF",
           "~128 M",
-          "Reserved"
+          "devreseR"
         ],
         [
           "-",
@@ -4001,7 +4001,7 @@
         [
           "V IN",
           "I/O input voltage",
-          "TTa I/O pins",
+          "snip O/I aTT",
           "–0.3",
           "ADD 3.0+ V",
           "V"
@@ -4603,12 +4603,12 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f301c6.pdf#page=62",
-    "text_helper": "Table 29. Typical and maximum current consumption from VDD supply at VDD = 3.6V — section 6.3.5 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK, All peripherals enabled / Typ / 25 °C 85 °C 105 °C, +8 autres.",
+    "text_helper": "Table 29. Typical and maximum current consumption from VDD supply at VDD = 3.6V — section 6.3.5 Supply current characteristics. Symbol / lobmyS / Symbol, Parameter / retemaraP / Parameter, Conditions / snoitidnoC / Conditions, f HCLK, All peripherals enabled / Typ / 25 °C 85 °C 105 °C, +8 autres.",
     "table_content": {
       "headers": [
-        "Symbol",
-        "Parameter",
-        "Conditions",
+        "Symbol / lobmyS / Symbol",
+        "Parameter / retemaraP / Parameter",
+        "Conditions / snoitidnoC / Conditions",
         "f HCLK",
         "All peripherals enabled / Typ / 25 °C 85 °C 105 °C",
         "All peripherals enabled / Max @ T (1) A / 25 °C",
@@ -4625,7 +4625,7 @@
           "I DD",
           "Supply current in Run mode, executing from Flash",
           "External clock (HSE bypass)",
-          "72 MHz",
+          "zHM 27",
           "45.7",
           "48.6",
           "50.0",
@@ -4640,7 +4640,7 @@
           "I DD",
           "Supply current in Run mode, executing from Flash",
           "External clock (HSE bypass)",
-          "64 MHz",
+          "zHM 46",
           "40.6",
           "43.6",
           "44.5",
@@ -4655,7 +4655,7 @@
           "I DD",
           "Supply current in Run mode, executing from Flash",
           "External",
-          "48 MHz",
+          "zHM 84",
           "30.8",
           "33.6",
           "34.1",
@@ -4669,8 +4669,8 @@
         [
           "I DD",
           "Supply current in Run mode, executing from Flash",
-          "clock (HSE",
-          "32 MHz",
+          "ESH(kcolc",
+          "zHM 23",
           "21.0",
           "22.9",
           "23.5",
@@ -4685,7 +4685,7 @@
           "I DD",
           "Supply",
           "External clock (HSE bypass)",
-          "24 MHz",
+          "zHM 42",
           "16.0",
           "16.8",
           "18.0",
@@ -4700,7 +4700,7 @@
           "I DD",
           "Run",
           "External clock (HSE bypass)",
-          "8 MHz",
+          "zHM 8",
           "5.4",
           "5.6",
           "6.1",
@@ -4715,7 +4715,7 @@
           "I DD",
           "mode,",
           "External clock (HSE bypass)",
-          "1 MHz",
+          "zHM 1",
           "1.1",
           "1.2",
           "1.7",
@@ -4730,7 +4730,7 @@
           "I DD",
           "from Flash",
           "Internal clock (HSI)",
-          "64 MHz",
+          "zHM 46",
           "37.6",
           "41.3",
           "42.9",
@@ -4745,7 +4745,7 @@
           "I DD",
           "Supply current in Run mode, executing from Flash",
           "Internal clock (HSI)",
-          "48 MHz",
+          "zHM 84",
           "28.7",
           "32.3",
           "33.1",
@@ -4760,7 +4760,7 @@
           "I DD",
           "Supply current in Run mode, executing from Flash",
           "clock (HSI)",
-          "32 MHz",
+          "zHM 23",
           "19.5",
           "22.0",
           "23.4",
@@ -4775,7 +4775,7 @@
           "I DD",
           "Supply current in Run mode, executing from Flash",
           "Internal clock (HSI)",
-          "24 MHz",
+          "zHM 42",
           "14.9",
           "16.6",
           "17.9",
@@ -4790,7 +4790,7 @@
           "I DD",
           "Supply current in Run mode, executing from Flash",
           "Internal clock (HSI)",
-          "8 MHz",
+          "zHM 8",
           "5.2",
           "5.5",
           "6.4",
@@ -4805,7 +4805,7 @@
           "I DD",
           "Supply current in Run mode, executing from RAM",
           "External clock (HSE bypass)",
-          "72 MHz",
+          "zHM 27",
           "45.8",
           "49.1(2)",
           "50.1",
@@ -4820,7 +4820,7 @@
           "I DD",
           "Supply current in Run mode, executing from RAM",
           "External clock (HSE bypass)",
-          "64 MHz",
+          "zHM 46",
           "40.8",
           "43.6",
           "44.9",
@@ -4835,7 +4835,7 @@
           "I DD",
           "Supply current in Run mode, executing from RAM",
           "External clock (HSE bypass)",
-          "48 MHz",
+          "zHM 84",
           "30.2",
           "32.9",
           "33.5",
@@ -4850,7 +4850,7 @@
           "I DD",
           "Supply current in Run mode, executing from RAM",
           "External clock (HSE bypass)",
-          "32 MHz",
+          "zHM 23",
           "20.5",
           "23.1",
           "24.1",
@@ -4865,7 +4865,7 @@
           "I DD",
           "Supply current in Run mode, executing from RAM",
           "External clock (HSE bypass)",
-          "24 MHz",
+          "zHM 42",
           "15.4",
           "17.1",
           "18.3",
@@ -4880,7 +4880,7 @@
           "I DD",
           "Supply current in Run mode, executing from RAM",
           "External clock (HSE bypass)",
-          "8 MHz",
+          "zHM 8",
           "5.0",
           "5.9",
           "6.3",
@@ -4895,7 +4895,7 @@
           "I DD",
           "Supply current in Run mode, executing from RAM",
           "External clock (HSE bypass)",
-          "1 MHz",
+          "zHM 1",
           "0.8",
           "1.1",
           "1.9",
@@ -4910,7 +4910,7 @@
           "I DD",
           "Supply current in Run mode, executing from RAM",
           "Internal clock (HSI)",
-          "64 MHz",
+          "zHM 46",
           "37.3",
           "41.1",
           "41.8",
@@ -4925,7 +4925,7 @@
           "I DD",
           "Supply current in Run mode, executing from RAM",
           "Internal clock (HSI)",
-          "48 MHz",
+          "zHM 84",
           "28.0",
           "31.1",
           "31.6",
@@ -4940,7 +4940,7 @@
           "I DD",
           "Supply current in Run mode, executing from RAM",
           "Internal clock (HSI)",
-          "32 MHz",
+          "zHM 23",
           "18.8",
           "21.3",
           "22.1",
@@ -4955,7 +4955,7 @@
           "I DD",
           "Supply current in Run mode, executing from RAM",
           "Internal clock (HSI)",
-          "24 MHz",
+          "zHM 42",
           "14.2",
           "15.9",
           "16.8",
@@ -4970,7 +4970,7 @@
           "I DD",
           "Supply current in Run mode, executing from RAM",
           "Internal clock (HSI)",
-          "8 MHz",
+          "zHM 8",
           "4.8",
           "5.1",
           "6.0",
@@ -4985,7 +4985,7 @@
           "I DD",
           "Supply current in Sleep mode, executing from Flash or RAM",
           "External clock (HSE bypass)",
-          "72 MHz",
+          "zHM 27",
           "30.0",
           "32.8(2)",
           "33.1",
@@ -5000,7 +5000,7 @@
           "I DD",
           "Supply current in Sleep mode, executing from Flash or RAM",
           "External clock (HSE bypass)",
-          "64 MHz",
+          "zHM 46",
           "26.7",
           "29.2",
           "29.6",
@@ -5015,7 +5015,7 @@
           "I DD",
           "Supply current in Sleep mode, executing from Flash or RAM",
           "External clock (HSE bypass)",
-          "48 MHz",
+          "zHM 84",
           "16.7",
           "18.5",
           "19.0",
@@ -5030,7 +5030,7 @@
           "I DD",
           "Supply current in Sleep mode, executing from Flash or RAM",
           "External clock (HSE bypass)",
-          "32 MHz",
+          "zHM 23",
           "13.3",
           "14.9",
           "15.3",
@@ -5045,7 +5045,7 @@
           "I DD",
           "Supply current in Sleep mode, executing from Flash or RAM",
           "External clock (HSE bypass)",
-          "24 MHz",
+          "zHM 42",
           "10.2",
           "11.4",
           "12.0",
@@ -5060,7 +5060,7 @@
           "I DD",
           "Supply current in Sleep mode, executing from Flash or RAM",
           "External clock (HSE bypass)",
-          "8 MHz",
+          "zHM 8",
           "3.6",
           "4.4",
           "4.8",
@@ -5075,7 +5075,7 @@
           "I DD",
           "Supply current in Sleep mode, executing from Flash or RAM",
           "External clock (HSE bypass)",
-          "1 MHz",
+          "zHM 1",
           "0.5",
           "0.8",
           "1.1",
@@ -5090,7 +5090,7 @@
           "I DD",
           "Supply current in Sleep mode, executing from Flash or RAM",
           "Internal clock (HSI)",
-          "64 MHz",
+          "zHM 46",
           "23.2",
           "25.3",
           "25.6",
@@ -5105,7 +5105,7 @@
           "I DD",
           "Supply current in Sleep mode, executing from Flash or RAM",
           "Internal clock (HSI)",
-          "48 MHz",
+          "zHM 84",
           "17.5",
           "19.2",
           "19.4",
@@ -5120,7 +5120,7 @@
           "I DD",
           "Supply current in Sleep mode, executing from Flash or RAM",
           "Internal clock (HSI)",
-          "32 MHz",
+          "zHM 23",
           "11.7",
           "12.9",
           "13.2",
@@ -5135,7 +5135,7 @@
           "I DD",
           "Supply current in Sleep mode, executing from Flash or RAM",
           "Internal clock (HSI)",
-          "24 MHz",
+          "zHM 42",
           "8.9",
           "10.2",
           "10.6",
@@ -5150,7 +5150,7 @@
           "I DD",
           "Supply current in Sleep mode, executing from Flash or RAM",
           "Internal clock (HSI)",
-          "8 MHz",
+          "zHM 8",
           "3.4",
           "4.0",
           "4.6",
@@ -5160,177 +5160,11 @@
           "1.4",
           "1.9",
           "1.9"
-        ],
-        [
-          "I DDA",
-          "Supply current in Run/Sleep mode, code executing from Flash or RAM",
-          "HSE bypass",
-          "64 MHz",
-          "203",
-          "226",
-          "239",
-          "243",
-          "222",
-          "245",
-          "261",
-          "266",
-          "266"
-        ],
-        [
-          "I DDA",
-          "Supply current in Run/Sleep mode, code executing from Flash or RAM",
-          "HSE bypass",
-          "48 MHz",
-          "153",
-          "174",
-          "182",
-          "186",
-          "165",
-          "185",
-          "198",
-          "203",
-          "203"
-        ],
-        [
-          "I DDA",
-          "Supply current in Run/Sleep mode, code executing from Flash or RAM",
-          "HSE bypass",
-          "32 MHz",
-          "105",
-          "124",
-          "131",
-          "133",
-          "114",
-          "132",
-          "141",
-          "143",
-          "143"
-        ],
-        [
-          "I DDA",
-          "Supply current in Run/Sleep mode, code executing from Flash or RAM",
-          "HSE bypass",
-          "24 MHz",
-          "82",
-          "98",
-          "104",
-          "105",
-          "89",
-          "106",
-          "111",
-          "113",
-          "113"
-        ],
-        [
-          "I DDA",
-          "Supply current in Run/Sleep mode, code executing from Flash or RAM",
-          "HSE bypass",
-          "8 MHz",
-          "3.1",
-          "4.1",
-          "4.1",
-          "5.1",
-          "3.6",
-          "4.7",
-          "5.2",
-          "5.5",
-          "5.5"
-        ],
-        [
-          "I DDA",
-          "Supply current in Run/Sleep mode, code executing from Flash or RAM",
-          "HSE bypass",
-          "1 MHz",
-          "3.1",
-          "4.1",
-          "4.1",
-          "5.1",
-          "3.6",
-          "4.7",
-          "5.2",
-          "5.5",
-          "5.5"
-        ],
-        [
-          "I DDA",
-          "Supply current in Run/Sleep mode, code executing from Flash or RAM",
-          "HSI clock",
-          "64 MHz",
-          "270",
-          "294",
-          "307",
-          "312",
-          "296",
-          "322",
-          "338",
-          "343",
-          "343"
-        ],
-        [
-          "I DDA",
-          "Supply current in Run/Sleep mode, code executing from Flash or RAM",
-          "HSI clock",
-          "48 MHz",
-          "219",
-          "242",
-          "253",
-          "257",
-          "240",
-          "263",
-          "276",
-          "281",
-          "281"
-        ],
-        [
-          "I DDA",
-          "Supply current in Run/Sleep mode, code executing from Flash or RAM",
-          "HSI clock",
-          "32 MHz",
-          "171",
-          "192",
-          "201",
-          "203",
-          "188",
-          "209",
-          "219",
-          "222",
-          "222"
-        ],
-        [
-          "I DDA",
-          "Supply current in Run/Sleep mode, code executing from Flash or RAM",
-          "HSI clock",
-          "24 MHz",
-          "148",
-          "169",
-          "175",
-          "177",
-          "163",
-          "182",
-          "190",
-          "193",
-          "193"
-        ],
-        [
-          "I DDA",
-          "Supply current in Run/Sleep mode, code executing from Flash or RAM",
-          "HSI clock",
-          "8 MHz",
-          "69",
-          "84",
-          "87",
-          "87",
-          "79",
-          "92",
-          "94",
-          "96",
-          "96"
         ]
       ],
       "notes": [
         "1. Current consumption from the V supply is independent of whether the peripherals are on or off. Furthermore when the DDA",
-        "2. Guaranteed by characterization results.",
-        "3. Data based on characterization results and tested in production. Tab l e 31. Typical and maximum V consumption in Stop and Standby modes"
+        "2. Guaranteed by characterization results."
       ],
       "legend": "",
       "semantic_type": "",
@@ -5355,12 +5189,11 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f301c6.pdf#page=64",
-    "text_helper": "Table 30. Typical and maximum current consumption from the V supply 64 DDA — section 6.3.5 Supply current characteristics. Symbol, Parameter, Conditions (1) / (1), Conditions (1) / (1), f HCLK, +9 autres.",
+    "text_helper": "Table 30. Typical and maximum current consumption from the V supply 64 DDA — section 6.3.5 Supply current characteristics. Symbol / lobmyS, Parameter / retemaraP, Conditions (1) / (1), f HCLK, V = 2.4 V / Typ / 25 °C 85 °C 105 °C, +8 autres.",
     "table_content": {
       "headers": [
-        "Symbol",
-        "Parameter",
-        "Conditions (1) / (1)",
+        "Symbol / lobmyS",
+        "Parameter / retemaraP",
         "Conditions (1) / (1)",
         "f HCLK",
         "V = 2.4 V / Typ / 25 °C 85 °C 105 °C",
@@ -5378,8 +5211,7 @@
           "I DDA",
           "Supply current in Run/Sleep mode, code executing from Flash or RAM",
           "HSE bypass",
-          "HSE bypass",
-          "72 MHz",
+          "zHM 27",
           "231",
           "254(3)",
           "266",
@@ -5394,8 +5226,7 @@
           "I DDA",
           "Supply current in Run/Sleep mode, code executing from Flash or RAM",
           "HSE bypass",
-          "HSE bypass",
-          "64 MHz",
+          "zHM 46",
           "203",
           "226",
           "239",
@@ -5410,8 +5241,7 @@
           "I DDA",
           "Supply current in Run/Sleep mode, code executing from Flash or RAM",
           "HSE bypass",
-          "HSE bypass",
-          "48 MHz",
+          "zHM 84",
           "153",
           "174",
           "182",
@@ -5426,8 +5256,7 @@
           "I DDA",
           "Supply",
           "bypass",
-          "bypass",
-          "32 MHz",
+          "zHM 23",
           "105",
           "124",
           "131",
@@ -5442,8 +5271,7 @@
           "I DDA",
           "Supply current in Run/Sleep mode, code executing from Flash or RAM",
           "HSE bypass",
-          "HSE bypass",
-          "24 MHz",
+          "zHM 42",
           "82",
           "98",
           "104",
@@ -5458,8 +5286,7 @@
           "I DDA",
           "mode,",
           "HSE bypass",
-          "HSE bypass",
-          "8 MHz",
+          "zHM 8",
           "3.1",
           "4.1",
           "4.1",
@@ -5474,8 +5301,7 @@
           "I DDA",
           "code",
           "HSE bypass",
-          "HSE bypass",
-          "1 MHz",
+          "zHM 1",
           "3.1",
           "4.1",
           "4.1",
@@ -5488,10 +5314,9 @@
         ],
         [
           "I DDA",
-          "from Flash or RAM",
+          "MAR rohsalF morf",
           "HSI clock",
-          "HSI clock",
-          "64 MHz",
+          "zHM 46",
           "270",
           "294",
           "307",
@@ -5504,10 +5329,9 @@
         ],
         [
           "I DDA",
-          "or RAM",
+          "MAR ro",
           "HSI clock",
-          "HSI clock",
-          "48 MHz",
+          "zHM 84",
           "219",
           "242",
           "253",
@@ -5522,8 +5346,7 @@
           "I DDA",
           "Supply current in Run/Sleep mode, code executing from Flash or RAM",
           "HSI clock",
-          "HSI clock",
-          "32 MHz",
+          "zHM 23",
           "171",
           "192",
           "201",
@@ -5538,8 +5361,7 @@
           "I DDA",
           "Supply current in Run/Sleep mode, code executing from Flash or RAM",
           "HSI clock",
-          "HSI clock",
-          "24 MHz",
+          "zHM 42",
           "148",
           "169",
           "175",
@@ -5554,8 +5376,7 @@
           "I DDA",
           "Supply current in Run/Sleep mode, code executing from Flash or RAM",
           "HSI clock",
-          "HSI clock",
-          "8 MHz",
+          "zHM 8",
           "69",
           "84",
           "87",
@@ -5565,102 +5386,6 @@
           "94",
           "96",
           "µA"
-        ],
-        [
-          "I DDA",
-          "Supply current in Stop mode",
-          "NO rosivrepus ADD V",
-          "Regulator in run/low- power mode, all oscillators OFF",
-          "1.70",
-          "1.83",
-          "1.95",
-          "2.08",
-          "2.22",
-          "2.37",
-          "3.40",
-          "5.30",
-          "5.5",
-          "µA"
-        ],
-        [
-          "I DDA",
-          "Supply current in Standby mode",
-          "Supply current in Standby mode",
-          "LSI ON and IWDG ON",
-          "2.08",
-          "2.25",
-          "2.41",
-          "2.59",
-          "2.79",
-          "3.01",
-          "-",
-          "-",
-          "-",
-          "-"
-        ],
-        [
-          "I DDA",
-          "Supply current in Standby mode",
-          "Supply current in Standby mode",
-          "LSI OFF and IWDG OFF",
-          "1.59",
-          "1.72",
-          "1.83",
-          "1.96",
-          "2.10",
-          "2.25",
-          "2.80",
-          "2.90",
-          "3.60",
-          "3.60"
-        ],
-        [
-          "I DDA",
-          "Supply current in Stop mode",
-          "FFO rosivrepus ADD V",
-          "Regulator in run/low- power mode, all oscillators OFF",
-          "0.99",
-          "1.01",
-          "1.04",
-          "1.09",
-          "1.14",
-          "1.21",
-          "-",
-          "-",
-          "-",
-          "-"
-        ],
-        [
-          "I DDA",
-          "Supply current in Standby mode",
-          "Supply current in Standby mode",
-          "LSI ON and IWDG ON",
-          "1.36",
-          "1.43",
-          "1.50",
-          "1.60",
-          "1.72",
-          "1.85",
-          "-",
-          "-",
-          "-",
-          "-"
-        ],
-        [
-          "I DDA",
-          "Supply current in Standby mode",
-          "Supply current in Standby mode",
-          "LSI OFF and IWDG OFF",
-          "0.87",
-          "0.89",
-          "0.92",
-          "0.97",
-          "1.02",
-          "1.09",
-          "-",
-          "-",
-          "-",
-          "-"
         ]
       ],
       "notes": [
@@ -5691,12 +5416,11 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f301c6.pdf#page=64",
-    "text_helper": "Table 31. Typical and maximum V consumption in Stop and Standby modes 64 DD — section 6.3.5 Supply current characteristics. Symbol, Parameter, Conditions (1) / (1), Conditions (1) / (1), f HCLK, +9 autres.",
+    "text_helper": "Table 31. Typical and maximum V consumption in Stop and Standby modes 64 DD — section 6.3.5 Supply current characteristics. Symbol / lobmyS, Parameter / retemaraP, Conditions (1) / (1), f HCLK, V = 2.4 V / Typ / 25 °C 85 °C 105 °C, +8 autres.",
     "table_content": {
       "headers": [
-        "Symbol",
-        "Parameter",
-        "Conditions (1) / (1)",
+        "Symbol / lobmyS",
+        "Parameter / retemaraP",
         "Conditions (1) / (1)",
         "f HCLK",
         "V = 2.4 V / Typ / 25 °C 85 °C 105 °C",
@@ -5714,8 +5438,7 @@
           "I DDA",
           "Supply current in Run/Sleep mode, code executing from Flash or RAM",
           "HSE bypass",
-          "HSE bypass",
-          "72 MHz",
+          "zHM 27",
           "231",
           "254(3)",
           "266",
@@ -5730,8 +5453,7 @@
           "I DDA",
           "Supply current in Run/Sleep mode, code executing from Flash or RAM",
           "HSE bypass",
-          "HSE bypass",
-          "64 MHz",
+          "zHM 46",
           "203",
           "226",
           "239",
@@ -5746,8 +5468,7 @@
           "I DDA",
           "Supply current in Run/Sleep mode, code executing from Flash or RAM",
           "HSE bypass",
-          "HSE bypass",
-          "48 MHz",
+          "zHM 84",
           "153",
           "174",
           "182",
@@ -5762,8 +5483,7 @@
           "I DDA",
           "Supply",
           "bypass",
-          "bypass",
-          "32 MHz",
+          "zHM 23",
           "105",
           "124",
           "131",
@@ -5778,8 +5498,7 @@
           "I DDA",
           "Supply current in Run/Sleep mode, code executing from Flash or RAM",
           "HSE bypass",
-          "HSE bypass",
-          "24 MHz",
+          "zHM 42",
           "82",
           "98",
           "104",
@@ -5794,8 +5513,7 @@
           "I DDA",
           "mode,",
           "HSE bypass",
-          "HSE bypass",
-          "8 MHz",
+          "zHM 8",
           "3.1",
           "4.1",
           "4.1",
@@ -5810,8 +5528,7 @@
           "I DDA",
           "code",
           "HSE bypass",
-          "HSE bypass",
-          "1 MHz",
+          "zHM 1",
           "3.1",
           "4.1",
           "4.1",
@@ -5824,10 +5541,9 @@
         ],
         [
           "I DDA",
-          "from Flash or RAM",
+          "MAR rohsalF morf",
           "HSI clock",
-          "HSI clock",
-          "64 MHz",
+          "zHM 46",
           "270",
           "294",
           "307",
@@ -5840,10 +5556,9 @@
         ],
         [
           "I DDA",
-          "or RAM",
+          "MAR ro",
           "HSI clock",
-          "HSI clock",
-          "48 MHz",
+          "zHM 84",
           "219",
           "242",
           "253",
@@ -5858,8 +5573,7 @@
           "I DDA",
           "Supply current in Run/Sleep mode, code executing from Flash or RAM",
           "HSI clock",
-          "HSI clock",
-          "32 MHz",
+          "zHM 23",
           "171",
           "192",
           "201",
@@ -5874,8 +5588,7 @@
           "I DDA",
           "Supply current in Run/Sleep mode, code executing from Flash or RAM",
           "HSI clock",
-          "HSI clock",
-          "24 MHz",
+          "zHM 42",
           "148",
           "169",
           "175",
@@ -5890,8 +5603,7 @@
           "I DDA",
           "Supply current in Run/Sleep mode, code executing from Flash or RAM",
           "HSI clock",
-          "HSI clock",
-          "8 MHz",
+          "zHM 8",
           "69",
           "84",
           "87",
@@ -5901,86 +5613,6 @@
           "94",
           "96",
           "µA"
-        ],
-        [
-          "I DDA",
-          "Supply current in Standby mode",
-          "Supply current in Standby mode",
-          "LSI ON and IWDG ON",
-          "2.08",
-          "2.25",
-          "2.41",
-          "2.59",
-          "2.79",
-          "3.01",
-          "-",
-          "-",
-          "-",
-          "-"
-        ],
-        [
-          "I DDA",
-          "Supply current in Standby mode",
-          "Supply current in Standby mode",
-          "LSI OFF and IWDG OFF",
-          "1.59",
-          "1.72",
-          "1.83",
-          "1.96",
-          "2.10",
-          "2.25",
-          "2.80",
-          "2.90",
-          "3.60",
-          "3.60"
-        ],
-        [
-          "I DDA",
-          "Supply current in Stop mode",
-          "FFO rosivrepus ADD V",
-          "Regulator in run/low- power mode, all oscillators OFF",
-          "0.99",
-          "1.01",
-          "1.04",
-          "1.09",
-          "1.14",
-          "1.21",
-          "-",
-          "-",
-          "-",
-          "-"
-        ],
-        [
-          "I DDA",
-          "Supply current in Standby mode",
-          "Supply current in Standby mode",
-          "LSI ON and IWDG ON",
-          "1.36",
-          "1.43",
-          "1.50",
-          "1.60",
-          "1.72",
-          "1.85",
-          "-",
-          "-",
-          "-",
-          "-"
-        ],
-        [
-          "I DDA",
-          "Supply current in Standby mode",
-          "Supply current in Standby mode",
-          "LSI OFF and IWDG OFF",
-          "0.87",
-          "0.89",
-          "0.92",
-          "0.97",
-          "1.02",
-          "1.09",
-          "-",
-          "-",
-          "-",
-          "-"
         ]
       ],
       "notes": [
@@ -6011,12 +5643,12 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f301c6.pdf#page=65",
-    "text_helper": "Table 32. Typical and maximum V consumption in Stop and Standby modes 65 DDA — section 6.3.5 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, Typ @V (V = V ) / 2.0 V, +9 autres.",
+    "text_helper": "Table 32. Typical and maximum V consumption in Stop and Standby modes 65 DDA — section 6.3.5 Supply current characteristics. Symbol / lobmyS, Parameter / retemaraP, Conditions / snoitidnoC, Conditions, Typ @V (V = V ) / 2.0 V, +9 autres.",
     "table_content": {
       "headers": [
-        "Symbol",
-        "Parameter",
-        "Conditions",
+        "Symbol / lobmyS",
+        "Parameter / retemaraP",
+        "Conditions / snoitidnoC",
         "Conditions",
         "Typ @V (V = V ) / 2.0 V",
         "Typ @V (V = V ) / 2.4 V",
@@ -6064,7 +5696,7 @@
         ],
         [
           "I DDA",
-          "Standby mode",
+          "Standbymode",
           "LSI OFF and IWDG ADD OFF V",
           "LSI OFF and IWDG OFF",
           "1.59",
@@ -6112,7 +5744,7 @@
         ],
         [
           "I DDA",
-          "Standby mode",
+          "Standbymode",
           "LSI OFF and IWDG ADD OFF V",
           "LSI OFF and IWDG OFF",
           "0.87",
@@ -6235,12 +5867,12 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f301c6.pdf#page=67",
-    "text_helper": "Table 34. Typical current consumption in Run mode, code with data processing running from Flash67 — section 6.3.5 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK, Typ / Peripherals enabled, +2 autres.",
+    "text_helper": "Table 34. Typical current consumption in Run mode, code with data processing running from Flash67 — section 6.3.5 Supply current characteristics. Symbol / lobmyS, Parameter / retemaraP, Conditions / snoitidnoC, f HCLK, Typ / Peripherals enabled, +2 autres.",
     "table_content": {
       "headers": [
-        "Symbol",
-        "Parameter",
-        "Conditions",
+        "Symbol / lobmyS",
+        "Parameter / retemaraP",
+        "Conditions / snoitidnoC",
         "f HCLK",
         "Typ / Peripherals enabled",
         "Typ / Peripherals disabled",
@@ -6251,7 +5883,7 @@
           "I DD",
           "Supply current in Run mode from V supply DD",
           "Running from HSE crystal clock 8 MHz, code executing from Flash",
-          "72 MHz",
+          "zHM 27",
           "44.8",
           "24.9",
           "mA"
@@ -6260,7 +5892,7 @@
           "I DD",
           "Supply current in Run mode from V supply DD",
           "Running from HSE crystal clock 8 MHz, code executing from Flash",
-          "64 MHz",
+          "zHM 46",
           "40.0",
           "22.4",
           "mA"
@@ -6269,7 +5901,7 @@
           "I DD",
           "Supply current in Run mode from V supply DD",
           "Running from HSE crystal clock 8 MHz, code executing from Flash",
-          "48 MHz",
+          "zHM 84",
           "30.3",
           "17.1",
           "mA"
@@ -6278,7 +5910,7 @@
           "I DD",
           "Supply current in Run mode from V supply DD",
           "Running from HSE crystal clock 8 MHz, code executing from Flash",
-          "32 MHz",
+          "zHM 23",
           "20.7",
           "11.9",
           "mA"
@@ -6287,7 +5919,7 @@
           "I DD",
           "Supply current in Run mode from V supply DD",
           "Running from HSE crystal clock 8 MHz, code executing from Flash",
-          "24 MHz",
+          "zHM 42",
           "15.8",
           "9.2",
           "mA"
@@ -6296,7 +5928,7 @@
           "I DD",
           "Supply current in Run mode from V supply DD",
           "Running from HSE crystal clock 8 MHz, code executing from Flash",
-          "16 MHz",
+          "zHM 61",
           "10.9",
           "6.5",
           "mA"
@@ -6305,7 +5937,7 @@
           "I DD",
           "supply V DD",
           "Running from HSE crystal clock 8 MHz, code executing from Flash",
-          "8 MHz",
+          "zHM 8",
           "5.7",
           "3.55",
           "mA"
@@ -6314,7 +5946,7 @@
           "I DD",
           "Supply current in Run mode from V supply DD",
           "Running from HSE crystal clock 8 MHz, code executing from Flash",
-          "4 MHz",
+          "zHM 4",
           "3.43",
           "3.22",
           "mA"
@@ -6323,7 +5955,7 @@
           "I DD",
           "Supply current in Run mode from V supply DD",
           "Running from HSE crystal clock 8 MHz, code executing from Flash",
-          "2 MHz",
+          "zHM 2",
           "2.18",
           "1.53",
           "mA"
@@ -6332,7 +5964,7 @@
           "I DD",
           "Supply current in Run mode from V supply DD",
           "Running from HSE crystal clock 8 MHz, code executing from Flash",
-          "1 MHz",
+          "zHM 1",
           "1.56",
           "1.19",
           "mA"
@@ -6359,7 +5991,7 @@
           "I (1)(2) DDA",
           "Supply current in Run mode from V supply DDA",
           "code executing from Flash",
-          "72 MHz",
+          "zHM 27",
           "237.1",
           "237.1",
           "µA"
@@ -6368,7 +6000,7 @@
           "I (1)(2) DDA",
           "Supply current in Run mode from V supply DDA",
           "Running from HSE crystal clock 8 MHz, code executing from Flash",
-          "64 MHz",
+          "zHM 46",
           "208.3",
           "208.3",
           "µA"
@@ -6377,7 +6009,7 @@
           "I (1)(2) DDA",
           "Supply current in Run mode from V supply DDA",
           "Running from HSE crystal clock 8 MHz, code executing from Flash",
-          "48 MHz",
+          "zHM 84",
           "154.3",
           "154.3",
           "µA"
@@ -6386,7 +6018,7 @@
           "I (1)(2) DDA",
           "Supply current in Run mode from V supply DDA",
           "Running from HSE crystal clock 8 MHz, code executing from Flash",
-          "32 MHz",
+          "zHM 23",
           "105.0",
           "105.0",
           "µA"
@@ -6395,7 +6027,7 @@
           "I (1)(2) DDA",
           "Supply current in Run mode from V supply DDA",
           "Running from HSE crystal clock 8 MHz, code executing from Flash",
-          "24 MHz",
+          "zHM 42",
           "81.3",
           "81.3",
           "µA"
@@ -6404,7 +6036,7 @@
           "(1)(2)",
           "Supply current in Run mode from V supply DDA",
           "Running from HSE crystal clock 8 MHz, code executing from Flash",
-          "16 MHz",
+          "zHM 61",
           "57.8",
           "57.8",
           "µA"
@@ -6413,7 +6045,7 @@
           "I (1)(2) DDA",
           "supply V DDA",
           "Running from HSE crystal clock 8 MHz, code executing from Flash",
-          "8 MHz",
+          "zHM 8",
           "1.15",
           "1.15",
           "µA"
@@ -6422,7 +6054,7 @@
           "I (1)(2) DDA",
           "Supply current in Run mode from V supply DDA",
           "Running from HSE crystal clock 8 MHz, code executing from Flash",
-          "4 MHz",
+          "zHM 4",
           "1.15",
           "1.15",
           "µA"
@@ -6431,7 +6063,7 @@
           "I (1)(2) DDA",
           "Supply current in Run mode from V supply DDA",
           "Running from HSE crystal clock 8 MHz, code executing from Flash",
-          "2 MHz",
+          "zHM 2",
           "1.15",
           "1.15",
           "µA"
@@ -6440,7 +6072,7 @@
           "I (1)(2) DDA",
           "Supply current in Run mode from V supply DDA",
           "Running from HSE crystal clock 8 MHz, code executing from Flash",
-          "1 MHz",
+          "zHM 1",
           "1.15",
           "1.15",
           "µA"
@@ -6491,12 +6123,12 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f301c6.pdf#page=68",
-    "text_helper": "Table 35. Typical current consumption in Sleep mode, code running from Flash or RAM — section 6.3.5 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK, Typ / Peripherals enabled, +2 autres.",
+    "text_helper": "Table 35. Typical current consumption in Sleep mode, code running from Flash or RAM — section 6.3.5 Supply current characteristics. Symbol / lobmyS, Parameter / retemaraP, Conditions / snoitidnoC, f HCLK, Typ / Peripherals enabled, +2 autres.",
     "table_content": {
       "headers": [
-        "Symbol",
-        "Parameter",
-        "Conditions",
+        "Symbol / lobmyS",
+        "Parameter / retemaraP",
+        "Conditions / snoitidnoC",
         "f HCLK",
         "Typ / Peripherals enabled",
         "Typ / Peripherals disabled",
@@ -6507,7 +6139,7 @@
           "I DD",
           "Supply current in Sleep mode from V supply DD",
           "Running from HSE crystal clock 8 MHz, code executing from Flash or RAM",
-          "72 MHz",
+          "zHM 27",
           "28.7",
           "6.1",
           "mA"
@@ -6516,7 +6148,7 @@
           "I DD",
           "Supply current in Sleep mode from V supply DD",
           "Running from HSE crystal clock 8 MHz, code executing from Flash or RAM",
-          "64 MHz",
+          "zHM 46",
           "25.6",
           "5.5",
           "mA"
@@ -6525,7 +6157,7 @@
           "I DD",
           "Supply current in Sleep mode from V supply DD",
           "Running from HSE crystal clock 8 MHz, code executing from Flash or RAM",
-          "48 MHz",
+          "zHM 84",
           "19.3",
           "4.26",
           "mA"
@@ -6534,7 +6166,7 @@
           "I DD",
           "Supply current in Sleep mode from V supply DD",
           "Running from HSE crystal clock 8 MHz, code executing from Flash or RAM",
-          "32 MHz",
+          "zHM 23",
           "13.1",
           "3.04",
           "mA"
@@ -6543,7 +6175,7 @@
           "I DD",
           "Supply current in Sleep mode from V supply DD",
           "Running from HSE crystal clock 8 MHz, code executing from Flash or RAM",
-          "24 MHz",
+          "zHM 42",
           "10.0",
           "2.42",
           "mA"
@@ -6552,7 +6184,7 @@
           "I DD",
           "Supply current in Sleep mode from V supply DD",
           "Running from HSE crystal clock 8 MHz, code executing from Flash or RAM",
-          "16 MHz",
+          "zHM 61",
           "6.8",
           "1.81",
           "mA"
@@ -6561,7 +6193,7 @@
           "I DD",
           "supply V DD",
           "Running from HSE crystal clock 8 MHz, code executing from Flash or RAM",
-          "8 MHz",
+          "zHM 8",
           "3.54",
           "0.98",
           "mA"
@@ -6570,7 +6202,7 @@
           "I DD",
           "Supply current in Sleep mode from V supply DD",
           "Running from HSE crystal clock 8 MHz, code executing from Flash or RAM",
-          "4 MHz",
+          "zHM 4",
           "2.35",
           "0.88",
           "mA"
@@ -6579,7 +6211,7 @@
           "I DD",
           "Supply current in Sleep mode from V supply DD",
           "Running from HSE crystal clock 8 MHz, code executing from Flash or RAM",
-          "2 MHz",
+          "zHM 2",
           "1.64",
           "0.80",
           "mA"
@@ -6588,7 +6220,7 @@
           "I DD",
           "Supply current in Sleep mode from V supply DD",
           "Running from HSE crystal clock 8 MHz, code executing from Flash or RAM",
-          "1 MHz",
+          "zHM 1",
           "1.28",
           "0.77",
           "mA"
@@ -6614,8 +6246,8 @@
         [
           "I (1)(2) DDA",
           "Supply current in Sleep mode from V supply DDA",
-          "code executing from Flash or RAM",
-          "72 MHz",
+          "MAR ro hsalFmorf gnitucexe edoc",
+          "zHM 27",
           "237.1",
           "237.1",
           "µA"
@@ -6624,7 +6256,7 @@
           "I (1)(2) DDA",
           "Supply current in Sleep mode from V supply DDA",
           "Running from HSE crystal clock 8 MHz, code executing from Flash or RAM",
-          "64 MHz",
+          "zHM 46",
           "208.3",
           "208.3",
           "µA"
@@ -6633,7 +6265,7 @@
           "I (1)(2) DDA",
           "Supply current in Sleep mode from V supply DDA",
           "Running from HSE crystal clock 8 MHz, code executing from Flash or RAM",
-          "48 MHz",
+          "zHM 84",
           "154.3",
           "154.3",
           "µA"
@@ -6642,7 +6274,7 @@
           "I (1)(2) DDA",
           "Supply current in Sleep mode from V supply DDA",
           "Running from HSE crystal clock 8 MHz, code executing from Flash or RAM",
-          "32 MHz",
+          "zHM 23",
           "105.0",
           "105.0",
           "µA"
@@ -6651,7 +6283,7 @@
           "I (1)(2) DDA",
           "Supply current in Sleep mode from V supply DDA",
           "Running from HSE crystal clock 8 MHz, code executing from Flash or RAM",
-          "24 MHz",
+          "zHM 42",
           "81.3",
           "81.3",
           "µA"
@@ -6660,7 +6292,7 @@
           "(1)(2)",
           "Supply current in Sleep mode from V supply DDA",
           "Running from HSE crystal clock 8 MHz, code executing from Flash or RAM",
-          "16 MHz",
+          "zHM 61",
           "57.8",
           "57.8",
           "µA"
@@ -6669,7 +6301,7 @@
           "I (1)(2) DDA",
           "supply V DDA",
           "Running from HSE crystal clock 8 MHz, code executing from Flash or RAM",
-          "8 MHz",
+          "zHM 8",
           "1.15",
           "1.15",
           "µA"
@@ -6678,7 +6310,7 @@
           "I (1)(2) DDA",
           "Supply current in Sleep mode from V supply DDA",
           "Running from HSE crystal clock 8 MHz, code executing from Flash or RAM",
-          "4 MHz",
+          "zHM 4",
           "1.15",
           "1.15",
           "µA"
@@ -6687,7 +6319,7 @@
           "I (1)(2) DDA",
           "Supply current in Sleep mode from V supply DDA",
           "Running from HSE crystal clock 8 MHz, code executing from Flash or RAM",
-          "2 MHz",
+          "zHM 2",
           "1.15",
           "1.15",
           "µA"
@@ -6696,7 +6328,7 @@
           "I (1)(2) DDA",
           "Supply current in Sleep mode from V supply DDA",
           "Running from HSE crystal clock 8 MHz, code executing from Flash or RAM",
-          "1 MHz",
+          "zHM 1",
           "1.15",
           "1.15",
           "µA"
@@ -6762,7 +6394,7 @@
           "I SW",
           "I/O current consumption",
           "V = 3.3 V DD C = 0 pF ext C = C + C + C INT EXT S",
-          "2 MHz",
+          "zHM 2",
           "0.90",
           "mA"
         ],
@@ -6770,7 +6402,7 @@
           "I SW",
           "I/O current consumption",
           "V = 3.3 V DD C = 0 pF ext C = C + C + C INT EXT S",
-          "4 MHz",
+          "zHM 4",
           "0.93",
           "mA"
         ],
@@ -6778,7 +6410,7 @@
           "I SW",
           "I/O current consumption",
           "V = 3.3 V DD",
-          "8 MHz",
+          "zHM 8",
           "1.16",
           "mA"
         ],
@@ -6786,7 +6418,7 @@
           "I SW",
           "I/O current consumption",
           "+ C + C C = C INT EXT S",
-          "18 MHz",
+          "zHM 81",
           "1.60",
           "mA"
         ],
@@ -6794,7 +6426,7 @@
           "I SW",
           "I/O current consumption",
           "V = 3.3 V DD C = 0 pF ext C = C + C + C INT EXT S",
-          "36 MHz",
+          "zHM 63",
           "2.51",
           "mA"
         ],
@@ -6802,7 +6434,7 @@
           "I SW",
           "I/O current consumption",
           "V = 3.3 V DD C = 0 pF ext C = C + C + C INT EXT S",
-          "48 MHz",
+          "zHM 84",
           "2.97",
           "mA"
         ],
@@ -6810,7 +6442,7 @@
           "I SW",
           "I/O current consumption",
           "V = 3.3 V DD C = 10 pF ext C = C + C +C INT EXT S",
-          "2 MHz",
+          "zHM 2",
           "0.93",
           "mA"
         ],
@@ -6818,7 +6450,7 @@
           "I SW",
           "I/O current consumption",
           "V = 3.3 V DD C = 10 pF ext C = C + C +C INT EXT S",
-          "4 MHz",
+          "zHM 4",
           "1.06",
           "mA"
         ],
@@ -6826,7 +6458,7 @@
           "I SW",
           "I/O current consumption",
           "V = 3.3 V DD",
-          "8 MHz",
+          "zHM 8",
           "1.47",
           "mA"
         ],
@@ -6834,7 +6466,7 @@
           "I SW",
           "I/O current consumption",
           "+ C +C C = C INT EXT S",
-          "18 MHz",
+          "zHM 81",
           "2.26",
           "mA"
         ],
@@ -6842,7 +6474,7 @@
           "I SW",
           "I/O current consumption",
           "V = 3.3 V DD C = 10 pF ext C = C + C +C INT EXT S",
-          "36 MHz",
+          "zHM 63",
           "3.39",
           "mA"
         ],
@@ -6850,7 +6482,7 @@
           "I SW",
           "I/O current consumption",
           "V = 3.3 V DD C = 10 pF ext C = C + C +C INT EXT S",
-          "48 MHz",
+          "zHM 84",
           "5.99",
           "mA"
         ],
@@ -6858,7 +6490,7 @@
           "I SW",
           "I/O current consumption",
           "V = 3.3 V DD C = 22 pF ext C = C + C +C INT EXT S",
-          "2 MHz",
+          "zHM 2",
           "1.03",
           "mA"
         ],
@@ -6866,7 +6498,7 @@
           "I SW",
           "consumption",
           "= 3.3 V V",
-          "4 MHz",
+          "zHM 4",
           "1.30",
           "mA"
         ],
@@ -6874,7 +6506,7 @@
           "I SW",
           "I/O current consumption",
           "C = 22 pF ext",
-          "8 MHz",
+          "zHM 8",
           "1.79",
           "mA"
         ],
@@ -6882,7 +6514,7 @@
           "I SW",
           "I/O current consumption",
           "INT EXT S",
-          "18 MHz",
+          "zHM 81",
           "3.01",
           "mA"
         ],
@@ -6890,7 +6522,7 @@
           "I SW",
           "I/O current consumption",
           "V = 3.3 V DD C = 22 pF ext C = C + C +C INT EXT S",
-          "36 MHz",
+          "zHM 63",
           "5.99",
           "mA"
         ],
@@ -6898,7 +6530,7 @@
           "I SW",
           "I/O current consumption",
           "V = 3.3 V DD C = 33 pF ext C = C + C + C INT EXT S",
-          "2 MHz",
+          "zHM 2",
           "1.10",
           "mA"
         ],
@@ -6906,7 +6538,7 @@
           "I SW",
           "I/O current consumption",
           "V = 3.3 V",
-          "4 MHz",
+          "zHM 4",
           "1.31",
           "mA"
         ],
@@ -6914,7 +6546,7 @@
           "I SW",
           "I/O current consumption",
           "= 33 pF C ext",
-          "8 MHz",
+          "zHM 8",
           "2.06",
           "mA"
         ],
@@ -6922,7 +6554,7 @@
           "I SW",
           "I/O current consumption",
           "INT EXT S",
-          "18 MHz",
+          "zHM 81",
           "3.47",
           "mA"
         ],
@@ -6930,7 +6562,7 @@
           "I SW",
           "I/O current consumption",
           "V = 3.3 V DD C = 33 pF ext C = C + C + C INT EXT S",
-          "36 MHz",
+          "zHM 63",
           "8.35",
           "mA"
         ],
@@ -6938,7 +6570,7 @@
           "I SW",
           "I/O current consumption",
           "V = 3.3 V DD C = 47 pF ext C = C + C + C INT EXT S",
-          "2 MHz",
+          "zHM 2",
           "1.20",
           "mA"
         ],
@@ -6946,7 +6578,7 @@
           "I SW",
           "I/O current consumption",
           "= 3.3 V V DD",
-          "4 MHz",
+          "zHM 4",
           "1.54",
           "mA"
         ],
@@ -6954,7 +6586,7 @@
           "I SW",
           "I/O current consumption",
           "C = C + C + C INT EXT S",
-          "8 MHz",
+          "zHM 8",
           "2.46",
           "mA"
         ],
@@ -6962,7 +6594,7 @@
           "I SW",
           "I/O current consumption",
           "V = 3.3 V DD C = 47 pF ext C = C + C + C INT EXT S",
-          "18 MHz",
+          "zHM 81",
           "4.51",
           "mA"
         ]
@@ -7532,7 +7164,7 @@
         [
           "g m",
           "Oscillator transconductance",
-          "Startup",
+          "putratS",
           "10",
           "-",
           "-",
@@ -7592,7 +7224,7 @@
         [
           "I DD",
           "LSE current consumption",
-          "LSEDRV[1:0]=00 lower driving capability",
+          "ytilibapac gnivird rewol 00=]0:1[VRDESL",
           "-",
           "0.5",
           "0.9",
@@ -7601,7 +7233,7 @@
         [
           "I DD",
           "LSE current consumption",
-          "LSEDRV[1:0]=10 medium low driving capability",
+          "ytilibapac gnivird wol muidem 01=]0:1[VRDESL",
           "-",
           "-",
           "1",
@@ -7610,7 +7242,7 @@
         [
           "I DD",
           "LSE current consumption",
-          "LSEDRV[1:0]=01 medium high driving capability",
+          "ytilibapac gnivird hgih muidem 10=]0:1[VRDESL",
           "-",
           "-",
           "1.3",
@@ -7619,7 +7251,7 @@
         [
           "I DD",
           "LSE current consumption",
-          "LSEDRV[1:0]=11 higher driving capability",
+          "ytilibapac gnivird rehgih 11=]0:1[VRDESL",
           "-",
           "-",
           "1.6",
@@ -7628,7 +7260,7 @@
         [
           "g m",
           "Oscillator transconductance",
-          "LSEDRV[1:0]=00 lower driving capability",
+          "ytilibapac gnivird rewol 00=]0:1[VRDESL",
           "5",
           "-",
           "-",
@@ -7637,7 +7269,7 @@
         [
           "g m",
           "Oscillator",
-          "LSEDRV[1:0]=10 medium low driving capability",
+          "ytilibapac gnivird wol muidem 01=]0:1[VRDESL",
           "8",
           "-",
           "-",
@@ -7646,7 +7278,7 @@
         [
           "g m",
           "transconductance",
-          "LSEDRV[1:0]=01 medium high driving capability",
+          "ytilibapac gnivird hgih muidem 10=]0:1[VRDESL",
           "15",
           "-",
           "-",
@@ -7655,7 +7287,7 @@
         [
           "g m",
           "Oscillator transconductance",
-          "LSEDRV[1:0]=11 higher driving capability",
+          "ytilibapac gnivird rehgih 11=]0:1[VRDESL",
           "25",
           "-",
           "-",
@@ -7713,7 +7345,7 @@
       "rows": [
         [
           "f HSI",
-          "Frequency",
+          "ycneuqerF",
           "-",
           "-",
           "8",
@@ -7852,7 +7484,7 @@
       "rows": [
         [
           "f LSI",
-          "Frequency",
+          "ycneuqerF",
           "30",
           "40",
           "50",
@@ -7945,8 +7577,8 @@
           "µs"
         ],
         [
-          "Jitter",
-          "Cycle-to-cycle jitter",
+          "rettiJ",
+          "rettij elcyc-ot-elcyC",
           "-",
           "-",
           "300(2)",
@@ -8076,7 +7708,7 @@
       "rows": [
         [
           "N END",
-          "Endurance",
+          "ecnarudnE",
           "T = –40 to +85 °C (6 suffix versions) A T = –40 to +105 °C (7 suffix versions) A",
           "10",
           "kcycles"
@@ -8086,7 +7718,7 @@
           "Data retention",
           "1 kcycle(2) at T = 85 °C A",
           "30",
-          "Years"
+          "sraeY"
         ],
         [
           "t RET",
@@ -8100,7 +7732,7 @@
           "Data retention",
           "10 kcycles(2) at T = 55 °C A",
           "20",
-          "Years"
+          "sraeY"
         ]
       ],
       "notes": [
@@ -8208,8 +7840,8 @@
         [
           "S EMI",
           "Peak level",
-          "compliant with IEC",
-          "130 MHz to 1GHz",
+          "CEI htiw tnailpmoc",
+          "zHG1 ot zHM 031",
           "28",
           "dBµV"
         ],
@@ -8217,7 +7849,7 @@
           "S EMI",
           "Peak level",
           "V = 3.3 V, T = 25 °C, DD A LQFP64 package compliant with IEC 61967-2",
-          "SAE EMI Level",
+          "leveL IME EAS",
           "4",
           "-"
         ]
@@ -8359,11 +7991,11 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f301c6.pdf#page=85",
-    "text_helper": "Table 52. I/O current injection susceptibility — section 6.3.13 I/O current injection characteristics. Symbol, Description, Functional susceptibility / Negative injection, Functional susceptibility / Positive injection, Unit.",
+    "text_helper": "Table 52. I/O current injection susceptibility — section 6.3.13 I/O current injection characteristics. Symbol / lobmyS, Description / noitpircseD, Functional susceptibility / Negative injection, Functional susceptibility / Positive injection, Unit.",
     "table_content": {
       "headers": [
-        "Symbol",
-        "Description",
+        "Symbol / lobmyS",
+        "Description / noitpircseD",
         "Functional susceptibility / Negative injection",
         "Functional susceptibility / Positive injection",
         "Unit"
@@ -8378,7 +8010,7 @@
         ],
         [
           "I INJ",
-          "Injected current on PC0 pin (TTa pin)",
+          "Injected current on PC0 pin(nip aTT)",
           "-0",
           "+5",
           "mA"
@@ -8979,7 +8611,7 @@
       "rows": [
         [
           "V (1) IL(NRST)",
-          "NRST Input low level voltage",
+          "egatlov level wol tupnI TSRN",
           "-",
           "-",
           "-",
@@ -8988,7 +8620,7 @@
         ],
         [
           "V (1) IH(NRST)",
-          "NRST Input high level voltage",
+          "egatlov level hgih tupnI TSRN",
           "-",
           "0.445V + DD 0.398(1)",
           "-",
@@ -8997,7 +8629,7 @@
         ],
         [
           "V hys(NRST)",
-          "NRST Schmitt trigger voltage hysteresis",
+          "siseretsyh egatlov reggirt ttimhcS TSRN",
           "-",
           "-",
           "200",
@@ -9015,7 +8647,7 @@
         ],
         [
           "V (1) F(NRST)",
-          "NRST Input filtered pulse",
+          "eslup deretlif tupnI TSRN",
           "-",
           "-",
           "-",
@@ -9024,7 +8656,7 @@
         ],
         [
           "V (1) NF(NRST)",
-          "NRST Input not filtered pulse",
+          "eslup deretlif ton tupnI TSRN",
           "-",
           "500(1)",
           "-",
@@ -9201,11 +8833,11 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f301c6.pdf#page=93",
-    "text_helper": "Table 58. IWDG min/max timeout period at 40 kHz (LSI) — section 6.3.16 Timer characteristics. Prescaler divider, PR[2:0] bits, Min timeout (ms) RL[11:0]= 0x000, Max timeout (ms) RL[11:0]= 0xFFF.",
+    "text_helper": "Table 58. IWDG min/max timeout period at 40 kHz (LSI) — section 6.3.16 Timer characteristics. Prescaler divider, stib ]0:2[RP, Min timeout (ms) RL[11:0]= 0x000, Max timeout (ms) RL[11:0]= 0xFFF.",
     "table_content": {
       "headers": [
         "Prescaler divider",
-        "PR[2:0] bits",
+        "stib ]0:2[RP",
         "Min timeout (ms) RL[11:0]= 0x000",
         "Max timeout (ms) RL[11:0]= 0xFFF"
       ],
@@ -9440,9 +9072,9 @@
           "t w(SCKH) t w(SCKL)",
           "SCK high and low time",
           "Master mode, f = 36 PCLK MHz, presc = 4",
-          "Tpclk- 2",
-          "Tpclk",
-          "Tpclk+ 2",
+          "2 -klcpT",
+          "klcpT",
+          "2 +klcpT",
           "ns"
         ],
         [
@@ -9751,8 +9383,8 @@
         ],
         [
           "I DDA",
-          "ADC current consumption (see Figure 31)",
-          "Single-ended mode, 5 MSPS",
+          "ADC current consumption(13 erugiF ees)",
+          "SPSM 5 ,edom dedne-elgniS",
           "-",
           "1011.3",
           "1172.0",
@@ -9760,8 +9392,8 @@
         ],
         [
           "I DDA",
-          "ADC current consumption (see Figure 31)",
-          "Single-ended mode, 1 MSPS",
+          "ADC current consumption(13 erugiF ees)",
+          "SPSM 1 ,edom dedne-elgniS",
           "-",
           "214.7",
           "322.3",
@@ -9769,8 +9401,8 @@
         ],
         [
           "I DDA",
-          "ADC current consumption (see Figure 31)",
-          "Single-ended mode, 200 KSPS",
+          "ADC current consumption(13 erugiF ees)",
+          "SPSK 002 ,edom dedne-elgniS",
           "-",
           "54.7",
           "81.1",
@@ -9778,7 +9410,7 @@
         ],
         [
           "I DDA",
-          "ADC current consumption (see Figure 31)",
+          "ADC current consumption(13 erugiF ees)",
           "Differential mode, 5 MSPS",
           "-",
           "1061.5",
@@ -9787,7 +9419,7 @@
         ],
         [
           "I DDA",
-          "ADC current consumption (see Figure 31)",
+          "ADC current consumption(13 erugiF ees)",
           "Differential mode, 1 MSPS",
           "-",
           "246.6",
@@ -9796,7 +9428,7 @@
         ],
         [
           "I DDA",
-          "ADC current consumption (see Figure 31)",
+          "ADC current consumption(13 erugiF ees)",
           "Differential mode, 200 KSPS",
           "-",
           "56.4",
@@ -10012,7 +9644,7 @@
         ],
         [
           "t (1) STAB",
-          "Power-up time",
+          "emit pu-rewoP",
           "-",
           "1",
           "1",
@@ -10073,10 +9705,10 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f301c6.pdf#page=102",
-    "text_helper": "Table 64. Maximum ADC RAIN — section 6.3.18 ADC characteristics. Resolution, Sampling cycle @ 72 MHz / cycle @ 72 MHz, Sampling time [ns] @ 72 MHz / time [ns] @ 72 MHz, R max (k Ω ) / Fast channels(2), R max (k Ω ) / AIN / Slow channels, +1 autres.",
+    "text_helper": "Table 64. Maximum ADC RAIN — section 6.3.18 ADC characteristics. Resolution / noituloseR, Sampling cycle @ 72 MHz / cycle @ 72 MHz, Sampling time [ns] @ 72 MHz / time [ns] @ 72 MHz, R max (k Ω ) / Fast channels(2), R max (k Ω ) / AIN / Slow channels, +1 autres.",
     "table_content": {
       "headers": [
-        "Resolution",
+        "Resolution / noituloseR",
         "Sampling cycle @ 72 MHz / cycle @ 72 MHz",
         "Sampling time [ns] @ 72 MHz / time [ns] @ 72 MHz",
         "R max (k Ω ) / Fast channels(2)",
@@ -10345,10 +9977,7 @@
         "2. All fast channels, expect channel on PA6.",
         "3. Channel available on PA6. DS9895 Rev 8 103/141"
       ],
-      "legend": [
-        "R max (kΩ)",
-        "R max (kΩ)"
-      ],
+      "legend": "",
       "semantic_type": "",
       "semantic": {}
     }
@@ -10411,7 +10040,7 @@
           "ET",
           "Total unadjusted error",
           "Slow channel 4.8 Ms",
-          "Differential",
+          "laitnereffiD",
           "Slow channel 4.8 Ms",
           "-",
           "±3.5",
@@ -10444,7 +10073,7 @@
           "EO",
           "Offset error",
           "Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
-          "Differential",
+          "laitnereffiD",
           "Fast channel 5.1 Ms",
           "-",
           "±1.5",
@@ -10455,7 +10084,7 @@
           "EO",
           "Offset error",
           "Slow channel 4.8 Ms",
-          "Differential",
+          "laitnereffiD",
           "Slow channel 4.8 Ms",
           "-",
           "±1.5",
@@ -10488,7 +10117,7 @@
           "EG",
           "Gain error",
           "Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
-          "Differential",
+          "laitnereffiD",
           "Fast channel 5.1 Ms",
           "-",
           "±3",
@@ -10499,7 +10128,7 @@
           "EG",
           "Gain error",
           "Slow channel 4.8 Ms",
-          "Differential",
+          "laitnereffiD",
           "Slow channel 4.8 Ms",
           "-",
           "±3",
@@ -10532,7 +10161,7 @@
           "ED",
           "error",
           "= 3.3 V V Fast channel 5.1 Ms DDA Differential 25°C Slow channel 4.8 Ms",
-          "Differential",
+          "laitnereffiD",
           "Fast channel 5.1 Ms",
           "-",
           "±1",
@@ -10543,7 +10172,7 @@
           "ED",
           "Differential linearity error",
           "Slow channel 4.8 Ms",
-          "Differential",
+          "laitnereffiD",
           "Slow channel 4.8 Ms",
           "-",
           "±1",
@@ -10576,7 +10205,7 @@
           "EL",
           "error",
           "Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
-          "Differential",
+          "laitnereffiD",
           "Fast channel 5.1 Ms",
           "-",
           "±1.5",
@@ -10587,7 +10216,7 @@
           "EL",
           "Integral linearity error",
           "Slow channel 4.8 Ms",
-          "Differential",
+          "laitnereffiD",
           "Slow channel 4.8 Ms",
           "-",
           "±1.5",
@@ -10620,7 +10249,7 @@
           "ENOB (4)",
           "bits",
           "Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
-          "Differential",
+          "laitnereffiD",
           "Fast channel 5.1 Ms",
           "11.2",
           "11.3",
@@ -10631,7 +10260,7 @@
           "ENOB (4)",
           "Effective number of bits",
           "Slow channel 4.8 Ms",
-          "Differential",
+          "laitnereffiD",
           "Slow channel 4.8 Ms",
           "11.2",
           "11.3",
@@ -10640,7 +10269,7 @@
         ],
         [
           "SINAD (4)",
-          "Signal-to- noise and distortion ratio",
+          "oitar noitrotsid dna esion -ot-langiS",
           "Fast channel 5.1 Ms Single ended Slow channel 4.8 Ms Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Single ended",
           "Fast channel 5.1 Ms",
@@ -10664,7 +10293,7 @@
           "SINAD (4)",
           "distortion ratio",
           "Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
-          "Differential",
+          "laitnereffiD",
           "Fast channel 5.1 Ms",
           "69",
           "70",
@@ -10673,9 +10302,9 @@
         ],
         [
           "SINAD (4)",
-          "Signal-to- noise and distortion ratio",
+          "oitar noitrotsid dna esion -ot-langiS",
           "Slow channel 4.8 Ms",
-          "Differential",
+          "laitnereffiD",
           "Slow channel 4.8 Ms",
           "69",
           "70",
@@ -10684,7 +10313,7 @@
         ],
         [
           "SNR(4)",
-          "Signal-to- noise ratio",
+          "oitar esion -ot-langiS",
           "ADC clock freq. ≤ 72 MHz Sampling freq ≤ 5 Msps V = 3.3 V DDA 25°C",
           "Single ended",
           "Fast channel 5.1 Ms",
@@ -10695,7 +10324,7 @@
         ],
         [
           "SNR(4)",
-          "Signal-to- noise ratio",
+          "oitar esion -ot-langiS",
           "ADC clock freq. ≤ 72 MHz Sampling freq ≤ 5 Msps V = 3.3 V DDA 25°C",
           "Single ended",
           "Slow channel 4.8 Ms",
@@ -10706,9 +10335,9 @@
         ],
         [
           "SNR(4)",
-          "Signal-to- noise ratio",
+          "oitar esion -ot-langiS",
           "ADC clock freq. ≤ 72 MHz Sampling freq ≤ 5 Msps V = 3.3 V DDA 25°C",
-          "Differential",
+          "laitnereffiD",
           "Fast channel 5.1 Ms",
           "69",
           "70",
@@ -10717,9 +10346,9 @@
         ],
         [
           "SNR(4)",
-          "Signal-to- noise ratio",
+          "oitar esion -ot-langiS",
           "ADC clock freq. ≤ 72 MHz Sampling freq ≤ 5 Msps V = 3.3 V DDA 25°C",
-          "Differential",
+          "laitnereffiD",
           "Slow channel 4.8 Ms",
           "69",
           "70",
@@ -10752,7 +10381,7 @@
           "THD(4)",
           "Total harmonic distortion",
           "Total harmonic distortion",
-          "Differential",
+          "laitnereffiD",
           "Fast channel 5.1 Ms",
           "-",
           "-83",
@@ -10763,7 +10392,7 @@
           "THD(4)",
           "Total harmonic distortion",
           "Total harmonic distortion",
-          "Differential",
+          "laitnereffiD",
           "Slow channel 4.8 Ms",
           "-",
           "-81",
@@ -10835,7 +10464,7 @@
           "ET",
           "error",
           "Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
-          "Differential",
+          "laitnereffiD",
           "Fast channel 5.1 Ms",
           "-",
           "±4",
@@ -10845,7 +10474,7 @@
           "ET",
           "Total unadjusted error",
           "Slow channel 4.8 Ms",
-          "Differential",
+          "laitnereffiD",
           "Slow channel 4.8 Ms",
           "-",
           "±4.5",
@@ -10875,7 +10504,7 @@
           "EO",
           "Offset error",
           "Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
-          "Differential",
+          "laitnereffiD",
           "Fast channel 5.1 Ms",
           "-",
           "±2.5",
@@ -10885,7 +10514,7 @@
           "EO",
           "Offset error",
           "Slow channel 4.8 Ms",
-          "Differential",
+          "laitnereffiD",
           "Slow channel 4.8 Ms",
           "-",
           "±2.5",
@@ -10915,7 +10544,7 @@
           "EG",
           "Gain error",
           "Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
-          "Differential",
+          "laitnereffiD",
           "Fast channel 5.1 Ms",
           "-",
           "±3.5",
@@ -10925,7 +10554,7 @@
           "EG",
           "Gain error",
           "Slow channel 4.8 Ms",
-          "Differential",
+          "laitnereffiD",
           "Slow channel 4.8 Ms",
           "-",
           "±4",
@@ -10955,7 +10584,7 @@
           "ED",
           "error",
           "Fast channel 5.1 Ms ≤ ≤ 2.0 V V 3.6 V DDA Differential Slow channel 4.8 Ms",
-          "Differential",
+          "laitnereffiD",
           "Fast channel 5.1 Ms",
           "-",
           "±1.5",
@@ -10965,7 +10594,7 @@
           "ED",
           "Differential linearity error",
           "Slow channel 4.8 Ms",
-          "Differential",
+          "laitnereffiD",
           "Slow channel 4.8 Ms",
           "-",
           "±1.5",
@@ -10995,7 +10624,7 @@
           "EL",
           "error",
           "Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
-          "Differential",
+          "laitnereffiD",
           "Fast channel 5.1 Ms",
           "-",
           "±2",
@@ -11005,7 +10634,7 @@
           "EL",
           "Integral linearity error",
           "Slow channel 4.8 Ms",
-          "Differential",
+          "laitnereffiD",
           "Slow channel 4.8 Ms",
           "-",
           "±2.5",
@@ -11035,7 +10664,7 @@
           "ENOB (5)",
           "bits",
           "Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
-          "Differential",
+          "laitnereffiD",
           "Fast channel 5.1 Ms",
           "10.8",
           "-",
@@ -11045,7 +10674,7 @@
           "ENOB (5)",
           "Effective number of bits",
           "Slow channel 4.8 Ms",
-          "Differential",
+          "laitnereffiD",
           "Slow channel 4.8 Ms",
           "10.8",
           "-",
@@ -11053,7 +10682,7 @@
         ],
         [
           "SINAD (5)",
-          "Signal-to- noise and distortion ratio",
+          "oitar noitrotsid dna esion -ot-langiS",
           "Fast channel 5.1 Ms Single ended Slow channel 4.8 Ms Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Single ended",
           "Fast channel 5.1 Ms",
@@ -11075,7 +10704,7 @@
           "SINAD (5)",
           "distortion ratio",
           "Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
-          "Differential",
+          "laitnereffiD",
           "Fast channel 5.1 Ms",
           "67",
           "-",
@@ -11083,9 +10712,9 @@
         ],
         [
           "SINAD (5)",
-          "Signal-to- noise and distortion ratio",
+          "oitar noitrotsid dna esion -ot-langiS",
           "Slow channel 4.8 Ms",
-          "Differential",
+          "laitnereffiD",
           "Slow channel 4.8 Ms",
           "67",
           "-",
@@ -11093,7 +10722,7 @@
         ],
         [
           "SNR(5)",
-          "Signal-to- noise ratio",
+          "oitar esion -ot-langiS",
           "ADC clock freq. ≤ 72 MHz, Sampling freq ≤ 5 Msps, 2 V ≤ V ≤ 3.6 V DDA",
           "Single ended",
           "Fast channel 5.1 Ms",
@@ -11103,7 +10732,7 @@
         ],
         [
           "SNR(5)",
-          "Signal-to- noise ratio",
+          "oitar esion -ot-langiS",
           "ADC clock freq. ≤ 72 MHz, Sampling freq ≤ 5 Msps, 2 V ≤ V ≤ 3.6 V DDA",
           "Single ended",
           "Slow channel 4.8 Ms",
@@ -11113,9 +10742,9 @@
         ],
         [
           "SNR(5)",
-          "Signal-to- noise ratio",
+          "oitar esion -ot-langiS",
           "ADC clock freq. ≤ 72 MHz, Sampling freq ≤ 5 Msps, 2 V ≤ V ≤ 3.6 V DDA",
-          "Differential",
+          "laitnereffiD",
           "Fast channel 5.1 Ms",
           "67",
           "-",
@@ -11123,9 +10752,9 @@
         ],
         [
           "SNR(5)",
-          "Signal-to- noise ratio",
+          "oitar esion -ot-langiS",
           "ADC clock freq. ≤ 72 MHz, Sampling freq ≤ 5 Msps, 2 V ≤ V ≤ 3.6 V DDA",
-          "Differential",
+          "laitnereffiD",
           "Slow channel 4.8 Ms",
           "67",
           "-",
@@ -11155,7 +10784,7 @@
           "THD(5)",
           "Total harmonic distortion",
           "Total harmonic distortion",
-          "Differential",
+          "laitnereffiD",
           "Fast channel 5.1 Ms",
           "-",
           "-79",
@@ -11165,7 +10794,7 @@
           "THD(5)",
           "Total harmonic distortion",
           "Total harmonic distortion",
-          "Differential",
+          "laitnereffiD",
           "Slow channel 4.8 Ms",
           "-",
           "-78",
@@ -11493,7 +11122,7 @@
         ],
         [
           "Offset(3)",
-          "and the ideal value = /2) V DDA",
+          "and the ideal value =/2(V DDA",
           "Given for a 12-bit input code at V = 3.6 V DDA",
           "Given for a 12-bit input code at V = 3.6 V DDA",
           "-",
@@ -11524,7 +11153,7 @@
         [
           "Update rate(3) i",
           "Update rate(3) i",
-          "Max frequency for a correct DAC_OUT change when small variation in the input code (from code i to +1LSB)",
+          "Max frequency for a correct DAC_OUT change when small variation in the input code(BSL1+ ot i edoc morf)",
           "≤ C 50 pF, LOAD R ≥ 5 kΩ LOAD",
           "≤ C 50 pF, LOAD R ≥ 5 kΩ LOAD",
           "-",
@@ -11858,8 +11487,8 @@
         ],
         [
           "IDDOPAMP",
-          "Consumption",
-          "Consumption",
+          "noitpmusnoC",
+          "noitpmusnoC",
           "No load, quiescent mode",
           "-",
           "690",
@@ -11888,8 +11517,8 @@
         ],
         [
           "GBW",
-          "Bandwidth",
-          "Bandwidth",
+          "htdiwdnaB",
+          "htdiwdnaB",
           "-",
           "-",
           "8.2",
@@ -11990,7 +11619,7 @@
           "t WAKEUP",
           "Wake up time from OFF state.",
           "Wake up time from OFF state.",
-          "C ≤ 50 pf, LOAD R ≥ 4 kΩ, LOAD Follower configuration",
+          "noitarugifnoc rewolloF DAOL ,Ωk 4 ≥ R DAOL ,fp 05 ≤ C",
           "-",
           "2.8",
           "5",
@@ -12423,7 +12052,7 @@
       ],
       "rows": [
         [
-          "Pitch",
+          "hctiP",
           "0.4"
         ],
         [

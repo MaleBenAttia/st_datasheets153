@@ -22,7 +22,7 @@
     ],
     "rows": [
       [
-        "t v(NCEx-A) t v(NCE4_1-A)",
+        "t v(A-xECN)t v(NCE4_1-A)",
         "FSMC_NCEx low (x = 4_1/4_2) to FSMC_Ay valid (y = 0...10) FSMC_NCE4_1 low (x = 4_1/4_2) to FSMC_Ay valid (y = 0...10)",
         "-",
         "0",
@@ -148,14 +148,14 @@
         "ns"
       ],
       [
-        "t d(NCE4_1-NIOWR)",
+        "t d(RWOIN-1_4ECN)",
         "FSMC_NCE4_1 low to FSMC_NIOWR valid",
         "-",
         "5t +3ns HCLK",
         "ns"
       ],
       [
-        "t h(NCEx-NIOWR) t h(NCE4_1-NIOWR)",
+        "t h(NCEx-NIOWR)t h(RWOIN-1_4ECN)",
         "FSMC_NCEx high to FSMC_NIOWR invalid FSMC_NCE4_1 high to FSMC_NIOWR invalid",
         "5t – 5 HCLK",
         "-",
@@ -169,7 +169,7 @@
         "ns"
       ],
       [
-        "t h(NCEx-NIORD) t h(NCE4_1-NIORD)",
+        "t h(NCEx-NIORD)t h(DROIN-1_4ECN)",
         "FSMC_NCEx high to FSMC_NIORD invalid FSMC_NCE4_1 high to FSMC_NIORD invalid",
         "5t – 5 HCLK",
         "-",

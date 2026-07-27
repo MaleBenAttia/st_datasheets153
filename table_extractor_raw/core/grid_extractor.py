@@ -1791,11 +1791,9 @@ def extract_table_grid(
         # ── Correction des glyphes ─────────────────────────────────────────────
         headers    = fix_headers(headers)
         for i in range(len(headers)):
-            if _is_likely_reversed(headers[i]):
-                if ' ' in headers[i]:
-                    headers[i] = ' '.join(p[::-1].strip() for p in headers[i].split(' '))
-                else:
-                    headers[i] = headers[i][::-1].strip()
+            normalized, did_change, _ = _normalize_reversed_text(headers[i])
+            if did_change:
+                headers[i] = normalized
         rows_fixed = fix_rows(rows_raw)
 
         rows_fixed = _deduplicate_rows(rows_fixed)
@@ -2045,14 +2043,22 @@ def extract_table_grid(
         # depuis la légende de la table.
         import re as _re
         _oc_pat = _re.compile(r'Q3H0[A-Z0-9]+')
+        _oc_split_pat = _re.compile(r'^(Q3H0[A-Z0-9]+)\s+23MTS$')
         _stm32_pat = _re.compile(r'(STM32[A-Za-z0-9]+)')
         _stm32_m = _stm32_pat.search(ref.caption) if ref.caption else None
         if _stm32_m:
             _stm32_name = _stm32_m.group(1)
             for _i, _h in enumerate(headers):
-                if _h and _oc_pat.search(_h):
+                if not _h:
+                    continue
+                split_m = _oc_split_pat.match(_h.strip())
+                if split_m:
+                    _oc = split_m.group(1)
+                    headers[_i] = f"{_stm32_name} ({_oc[::-1]})"
+                    continue
+                if _oc_pat.search(_h):
                     _oc = _oc_pat.search(_h).group()
-                    headers[_i] = f"{_stm32_name} ({_oc})"
+                    headers[_i] = f"{_stm32_name} ({_oc[::-1]})"
 
         # ── Remplissage du résultat ────────────────────────────────────────────
         if heuristics:
@@ -2392,21 +2398,134 @@ def _is_likely_reversed(cell: str) -> bool:
     if re.search(r'\(\d+\)', rev) and re.search(r'\)\d+\(', clean):
         return True
 
+    # ── Fix E1 : Majuscule clusterisée à la FIN → inversé ──────────────────
+    # Ex: "noituloseR" → "Resolution", "pu-ekaW" → "Wake-up"
+    # Si l'original commence par minuscule ET la dernière majuscule est en
+    # toute dernière position ET l'inversé commence par Maj+minuscule → inversé
+    if clean_init == 0 and upper_pos and upper_pos[-1] == len(clean) - 1:
+        if rev and rev[0].isupper() and any(c.islower() for c in rev):
+            return True
+
+    # ── Fix E2 : Pattern valeur+unité inversé ─────────────────────────────
+    # Ex: "spsM 2" → "2 Msps", "zHM 48" → "48 MHz"
+    # L'inversé commence par un chiffre suivi d'une unité Maj+minuscule
+    if re.match(r'^\d+(\.\d+)?\s+[A-Z][a-z]', rev):
+        # Vérifier que l'original contient bien des lettres suivies d'un chiffre
+        if re.search(r'[a-zA-Z].*\d', clean):
+            return True
+
     # Drift négatif : majuscules clusterisées au début → inversé
     # Capture les cas où l'inversé commence par minuscule
     # (ex: "ISL f" → "f LSI", drift = -3.0).
     # Garde-fou : les part numbers STM32 ("STM32C5A3KxT", drift = -5.0)
     # ont aussi un drift négatif mais ne sont PAS inversés.
-    if drift < -0.5 and not re.match(r'^[A-Z]+\d+[A-Z]', clean):
+    # Garde-fou 2 (Fix A) : si clean_init > 0, le texte commence par une
+    # majuscule → mot anglais normal (ex: "System", "Coremark"), pas inversé.
+    # Garde-fou 3 : si clean commence par un chiffre → valeur numérique,
+    # pas du texte inversé (ex: "2 Msps" est correct, "spsM 2" est inversé).
+    if drift < -0.5 and clean_init <= 0 and not re.match(r'^\d', clean) and not re.match(r'^[A-Z]+\d+[A-Z]', clean):
         return True
 
     # Si l'original commence par majuscule et les deux versions ont autant
     # de majuscules en milieu de mot → symétrique → pas inversé
-    # Sauf si drift < 0 (déjà capturé ci-dessus)
-    if not clean[0].islower() and rev_mid >= clean_mid:
+    # (Fix B : clean_init > 0 renforce la condition)
+    if clean_init > 0 and rev_mid >= clean_mid:
         return False
 
     return False
+
+
+_PAREN_SWAP = str.maketrans("()", ")(")
+
+# Fix D : unités communes dont l'inversion est fréquente dans les parenthèses
+# Ex: "(setybK)" → "(Kbytes)", "(zHM)" → "(MHz)"
+_PAREN_KNOWN_UNITS: dict[str, str] = {}
+for _unit in ["Kbytes", "Mbytes", "Kbits", "Mbits", "MHz", "kHz", "Hz", "Msps", "ksps", "mV", "µA", "nA"]:
+    _rev = _unit[::-1]
+    _PAREN_KNOWN_UNITS[_rev] = _unit
+
+
+def _reverse_preserving_parentheses(text: str) -> str:
+    """Reverse a string and restore the orientation of parentheses.
+    
+    Si les parenthèses sont déjà en orientation inversée dans l'original
+    (ex: ")1(NO" → ")" avant "("), le reversal simple donne déjà des
+    parenthèses correctes → pas besoin de swap.
+    """
+    rev = text[::-1]
+    first_close = text.find(")")
+    first_open = text.find("(")
+    if first_close != -1 and first_open != -1 and first_close < first_open:
+        return rev
+    return rev.translate(_PAREN_SWAP)
+
+
+def _normalize_reversed_text(text: str) -> tuple[str, bool, str | None]:
+    """Normalize reversed text, including fragments inside parentheses.
+
+    Returns:
+        normalized_text, changed, reason
+    """
+    if not isinstance(text, str):
+        return text, False, None
+
+    clean = text.replace("\n", "").strip()
+    if len(clean) < 5:
+        return text, False, None
+
+    changed = False
+    reasons: list[str] = []
+
+    if clean.startswith(")") and clean.endswith("("):
+        normalized = clean[::-1]
+        return normalized, True, "wrapped_parens"
+
+    def _fix_parenthesized(match: re.Match[str]) -> str:
+        nonlocal changed
+        inner = (match.group(1) or "").strip()
+        before = clean[:match.start()]
+
+        # Cas STM32... (Q3H0X756N) -> STM32... (N657X0H3Q)
+        # Les codes alphanumériques placés après "STM32..." dans des parenthèses
+        # sont souvent des fragments lus à l'envers.
+        if (
+            len(inner) >= 6
+            and re.fullmatch(r'[A-Z0-9]+', inner)
+            and any(ch.isdigit() for ch in inner)
+            and (m := re.search(r'STM32([A-Za-z0-9]+)xx\s*$', before))
+        ):
+            family_code = m.group(1).upper()
+            candidate = _reverse_preserving_parentheses(inner)
+            if candidate.upper().startswith(family_code):
+                changed = True
+                reasons.append("paren_code")
+                return f"({candidate})"
+
+        # Fix D : unité connue inversée (ex: "setybK" → "Kbytes")
+        if inner in _PAREN_KNOWN_UNITS:
+            changed = True
+            reasons.append("paren_unit")
+            return f"({_PAREN_KNOWN_UNITS[inner]})"
+
+        # Fix C : ne jamais corriger un contenu qui commence par majuscule
+        # (c'est un mot anglais normal comme "Sleep" dans "I DD(Sleep)")
+        if len(inner) >= 5 and not inner[0].isupper() and _is_likely_reversed(inner):
+            changed = True
+            reasons.append("paren_fragment")
+            return f"({_reverse_preserving_parentheses(inner)})"
+        return match.group(0)
+
+    normalized = re.sub(r'\(([^()]*)\)', _fix_parenthesized, clean)
+
+    if _is_likely_reversed(normalized):
+        changed = True
+        reasons.append("whole_cell")
+        normalized = _reverse_preserving_parentheses(normalized)
+
+    if not changed:
+        return text, False, None
+
+    return normalized, True, "+".join(dict.fromkeys(reasons))
 
 
 def _fix_reversed_cells(rows: list[list], table_id: str = "") -> list[list]:
@@ -2422,10 +2541,15 @@ def _fix_reversed_cells(rows: list[list], table_id: str = "") -> list[list]:
                 clean = cell.replace("\n", "")
                 is_rev = _is_likely_reversed(clean)
                 corrected = None
+                correction_reason = None
                 if is_rev:
-                    corrected = clean[::-1]
+                    corrected, _, correction_reason = _normalize_reversed_text(clean)
                     corrected = SPACE_AROUND_PARENS.sub(r'\1', corrected)
                     cell = corrected
+                else:
+                    corrected, did_change, correction_reason = _normalize_reversed_text(clean)
+                    if did_change:
+                        cell = SPACE_AROUND_PARENS.sub(r'\1', corrected)
                 upper_pos = [i for i, c in enumerate(clean) if c.isupper()]
                 lower_pos = [i for i, c in enumerate(clean) if c.islower()]
                 drift_v = 0.0
@@ -2439,6 +2563,7 @@ def _fix_reversed_cells(rows: list[list], table_id: str = "") -> list[list]:
                     "reversed": is_rev,
                     "drift": round(drift_v, 2),
                     "corrected": corrected,
+                    "reason": correction_reason,
                 })
             fixed_row.append(cell)
         fixed.append(fixed_row)

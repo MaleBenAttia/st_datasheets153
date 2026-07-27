@@ -11,12 +11,12 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f103rc.pdf#page=53",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f103rc.pdf",
-  "text_helper": "Table 18. Typical current consumption in Run mode, code with data processing running from Flash — section 5.3.5 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK, Typ(1) / All peripherals enabled(2), +2 autres.",
+  "text_helper": "Table 18. Typical current consumption in Run mode, code with data processing running from Flash — section 5.3.5 Supply current characteristics. Symbol / lobmyS, Parameter / retemaraP, Conditions / snoitidnoC, f HCLK, Typ(1) / All peripherals enabled(2), +2 autres.",
   "table_content": {
     "headers": [
-      "Symbol",
-      "Parameter",
-      "Conditions",
+      "Symbol / lobmyS",
+      "Parameter / retemaraP",
+      "Conditions / snoitidnoC",
       "f HCLK",
       "Typ(1) / All peripherals enabled(2)",
       "Typ(1) / All peripherals disabled",
@@ -27,7 +27,7 @@
         "I DD",
         "Supply current in Run mode",
         "External clock(3)",
-        "72 MHz",
+        "zHM 27",
         "51",
         "30.5",
         "mA"
@@ -36,7 +36,7 @@
         "I DD",
         "Supply current in Run mode",
         "External clock(3)",
-        "48 MHz",
+        "zHM 84",
         "34.6",
         "20.7",
         "mA"
@@ -45,7 +45,7 @@
         "I DD",
         "Supply current in Run mode",
         "External clock(3)",
-        "36 MHz",
+        "zHM 63",
         "26.6",
         "16.2",
         "mA"
@@ -54,7 +54,7 @@
         "I DD",
         "Supply current in Run mode",
         "External clock(3)",
-        "24 MHz",
+        "zHM 42",
         "18.5",
         "11.4",
         "mA"
@@ -63,7 +63,7 @@
         "I DD",
         "Supply current in Run mode",
         "External clock(3)",
-        "16 MHz",
+        "zHM 61",
         "12.8",
         "8.2",
         "mA"
@@ -72,7 +72,7 @@
         "I DD",
         "Supply current in Run mode",
         "clock(3) External",
-        "8 MHz",
+        "zHM 8",
         "7.2",
         "5",
         "mA"
@@ -81,7 +81,7 @@
         "I DD",
         "Supply current in Run mode",
         "External clock(3)",
-        "4 MHz",
+        "zHM 4",
         "4.2",
         "3.1",
         "mA"
@@ -90,7 +90,7 @@
         "I DD",
         "Supply current in Run mode",
         "External clock(3)",
-        "2 MHz",
+        "zHM 2",
         "2.7",
         "2.1",
         "mA"
@@ -99,7 +99,7 @@
         "I DD",
         "Supply current in Run mode",
         "External clock(3)",
-        "1 MHz",
+        "zHM 1",
         "2",
         "1.7",
         "mA"
@@ -126,7 +126,7 @@
         "I DD",
         "Run mode",
         "Running on high speed internal RC (HSI), AHB prescaler used to reduce the frequency",
-        "64 MHz",
+        "zHM 46",
         "45",
         "27",
         "mA"
@@ -135,7 +135,7 @@
         "I DD",
         "Supply current in Run mode",
         "Running on high speed internal RC (HSI), AHB prescaler used to reduce the frequency",
-        "48 MHz",
+        "zHM 84",
         "34",
         "20.1",
         "mA"
@@ -144,7 +144,7 @@
         "I DD",
         "Supply current in Run mode",
         "Running on high speed internal RC (HSI), AHB prescaler used to reduce the frequency",
-        "36 MHz",
+        "zHM 63",
         "26",
         "15.6",
         "mA"
@@ -153,7 +153,7 @@
         "I DD",
         "Supply current in Run mode",
         "Running on high",
-        "24 MHz",
+        "zHM 42",
         "17.9",
         "10.8",
         "mA"
@@ -162,7 +162,7 @@
         "I DD",
         "Supply current in Run mode",
         "speed internal RC",
-        "16 MHz",
+        "zHM 61",
         "12.2",
         "7.6",
         "mA"
@@ -171,7 +171,7 @@
         "I DD",
         "Supply current in Run mode",
         "prescaler used to",
-        "8 MHz",
+        "zHM 8",
         "6.6",
         "4.4",
         "mA"
@@ -180,7 +180,7 @@
         "I DD",
         "Supply current in Run mode",
         "reduce the",
-        "4 MHz",
+        "zHM 4",
         "3.6",
         "2.5",
         "mA"
@@ -189,7 +189,7 @@
         "I DD",
         "Supply current in Run mode",
         "Running on high speed internal RC (HSI), AHB prescaler used to reduce the frequency",
-        "2 MHz",
+        "zHM 2",
         "2.1",
         "1.5",
         "mA"
@@ -198,7 +198,7 @@
         "I DD",
         "Supply current in Run mode",
         "Running on high speed internal RC (HSI), AHB prescaler used to reduce the frequency",
-        "1 MHz",
+        "zHM 1",
         "1.4",
         "1.1",
         "mA"
@@ -227,9 +227,7 @@
       "2. Add an additional power consumption of 0.8 mA per ADC for the analog part. In applications, this consumption occurs only while the ADC is on (ADON bit is set in the ADC_CR2 register).",
       "3. External clock is 8 MHz and PLL is on when f > 8 MHz. HCLK"
     ],
-    "legend": [
-      "running from Flash"
-    ],
+    "legend": "",
     "semantic_type": "",
     "semantic": {}
   }

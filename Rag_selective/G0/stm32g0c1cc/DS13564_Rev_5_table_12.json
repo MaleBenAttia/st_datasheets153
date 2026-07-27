@@ -26,11 +26,11 @@
       "Pin number / LQFP100",
       "Pin number / UFBGA100",
       "Pin name",
-      "Pin type / epyt niP",
+      "Pin type / Pintype",
       "I/O structure / erutcurts O/I",
       "Note / etoN",
-      "Alternate functions",
-      "Additional functions"
+      "Alternate functions / snoitcnufetanretlA",
+      "Additional functions / snoitcnuflanoitiddA"
     ],
     "rows": [
       [
@@ -162,7 +162,7 @@
         "PC13",
         "I/O",
         "FT",
-        "(1)(2)",
+        "(1,2)",
         "TIM1_BKIN",
         "TAMP_IN1, RTC_TS, RTC_OUT1, WKUP2"
       ],
@@ -181,7 +181,7 @@
         "PC14- OSC32_IN",
         "I/O",
         "FT",
-        "(1)(2)",
+        "(1,2)",
         "TIM1_BKIN2",
         "OSC32_IN"
       ],
@@ -200,7 +200,7 @@
         "PC14- OSC32_IN",
         "I/O",
         "FT",
-        "(1)(2)",
+        "(1,2)",
         "TIM1_BKIN2",
         "OSC32_IN, OSC_IN"
       ],
@@ -219,7 +219,7 @@
         "PC15- OSC32_OUT",
         "I/O",
         "FT",
-        "(1)(2)",
+        "(1,2)",
         "OSC32_EN, OSC_EN, TIM15_BKIN",
         "OSC32_OUT"
       ],
@@ -541,7 +541,7 @@
         "L2",
         "PA1",
         "I/O",
-        "FT_ea",
+        "ae_TF",
         "-",
         "SPI1_SCK/I2S1_CK, USART2_RTS_DE_CK, TIM2_CH2, USART4_RX, TIM15_CH1N, I2C1_SMBA, EVENTOUT",
         "COMP1_INP2, ADC_IN1"
@@ -598,7 +598,7 @@
         "K4",
         "PA3",
         "I/O",
-        "FT_ea",
+        "ae_TF",
         "-",
         "SPI2_MISO/I2S2_MCK, USART2_RX, TIM2_CH4, UCPD2_FRSTX, TIM15_CH2, LPUART1_RX, EVENTOUT",
         "COMP2_INP2, ADC_IN3"
@@ -655,7 +655,7 @@
         "M2",
         "PA5",
         "I/O",
-        "TT_ea",
+        "ae_TT",
         "-",
         "SPI1_SCK/I2S1_CK, CEC, TIM2_CH1_ETR, USART6_RX, USART3_TX, LPTIM2_ETR, UCPD1_FRSTX, EVENTOUT",
         "ADC_IN5, DAC1_OUT2"
@@ -674,7 +674,7 @@
         "M3",
         "PA6",
         "I/O",
-        "FT_ea",
+        "ae_TF",
         "-",
         "SPI1_MISO/I2S1_MCK, TIM3_CH1, TIM1_BKIN, USART6_CTS, USART3_CTS, TIM16_CH1, LPUART1_CTS, COMP1_OUT, I2C2_SDA, I2C3_SDA",
         "ADC_IN6"
@@ -769,7 +769,7 @@
         "L5",
         "PB0",
         "I/O",
-        "FT_ea",
+        "ae_TF",
         "-",
         "SPI1_NSS/I2S1_WS, TIM3_CH3, TIM1_CH2N, FDCAN2_RX, USART3_RX, LPTIM1_OUT, UCPD1_FRSTX, COMP1_OUT, USART5_TX, LPUART2_CTS",
         "COMP3_INP0, ADC_IN8"
@@ -788,7 +788,7 @@
         "M5",
         "PB1",
         "I/O",
-        "FT_ea",
+        "ae_TF",
         "-",
         "TIM14_CH1, TIM3_CH4, TIM1_CH3N, FDCAN2_TX, USART3_RTS_DE_CK, LPTIM2_IN1, LPUART1_RTS_DE, COMP3_OUT, USART5_RX, LPUART2_RTS_DE",
         "COMP1_INM6, ADC_IN9"
@@ -807,7 +807,7 @@
         "L6",
         "PB2",
         "I/O",
-        "FT_ea",
+        "ae_TF",
         "-",
         "SPI2_MISO/I2S2_MCK, MCO2, USART3_TX, LPTIM1_OUT, EVENTOUT",
         "COMP1_INP1, COMP3_INM6, ADC_IN10"
@@ -1054,7 +1054,7 @@
         "M11",
         "PB10",
         "I/O",
-        "FT_fa",
+        "af_TF",
         "-",
         "CEC, LPUART1_RX, TIM2_CH3, USART3_TX, SPI2_SCK/I2S2_CK, I2C2_SCL, COMP1_OUT",
         "ADC_IN11"
@@ -1073,7 +1073,7 @@
         "L11",
         "PB11",
         "I/O",
-        "FT_fa",
+        "af_TF",
         "-",
         "SPI2_MOSI/I2S2_SD, LPUART1_TX, TIM2_CH4, USART3_RX, I2C2_SDA, COMP2_OUT",
         "ADC_IN15"
@@ -1092,7 +1092,7 @@
         "K10",
         "PB12",
         "I/O",
-        "FT_fa",
+        "af_TF",
         "-",
         "SPI2_NSS/I2S2_WS, LPUART1_RTS_DE, TIM1_BKIN, FDCAN2_RX, TIM15_BKIN, UCPD2_FRSTX, EVENTOUT, I2C2_SMBA",
         "ADC_IN16"
@@ -1111,7 +1111,7 @@
         "M12",
         "PB13",
         "I/O",
-        "FT_fs",
+        "sf_TF",
         "-",
         "SPI2_SCK/I2S2_CK, LPUART1_CTS, TIM1_CH1N, FDCAN2_TX, USART3_CTS, TIM15_CH1N, I2C2_SCL, EVENTOUT",
         "-"
@@ -1130,7 +1130,7 @@
         "K11",
         "PB14",
         "I/O",
-        "FT_fs",
+        "sf_TF",
         "-",
         "SPI2_MISO/I2S2_MCK, UCPD1_FRSTX, TIM1_CH2N, USART3_RTS_DE_CK, TIM15_CH1, I2C2_SDA, EVENTOUT, USART6_RTS_DE_CK",
         "-"
@@ -1149,7 +1149,7 @@
         "J10",
         "PB15",
         "I/O",
-        "FT_fcs",
+        "scf_TF",
         "(4)",
         "SPI2_MOSI/I2S2_SD, TIM1_CH3N, TIM15_CH1N, TIM15_CH2, EVENTOUT, USART6_CTS",
         "UCPD1_CC2, RTC_REFIN"
@@ -1168,7 +1168,7 @@
         "L12",
         "PA8",
         "I/O",
-        "FT_fcs",
+        "scf_TF",
         "(4)",
         "MCO, SPI2_NSS/I2S2_WS, TIM1_CH1, CRS1_SYNC, LPTIM2_OUT, EVENTOUT, I2C2_SMBA",
         "UCPD1_CC1"
@@ -1187,7 +1187,7 @@
         "H10",
         "PA9",
         "I/O",
-        "FT_fds",
+        "sdf_TF",
         "(4)",
         "MCO, USART1_TX, TIM1_CH2, SPI2_MISO/I2S2_MCK, TIM15_BKIN, I2C1_SCL, EVENTOUT, I2C2_SCL",
         "UCPD1_DBCC1"
@@ -1453,7 +1453,7 @@
         "E10",
         "PA10",
         "I/O",
-        "FT_fds",
+        "sdf_TF",
         "(4)",
         "SPI2_MOSI/I2S2_SD, USART1_RX, TIM1_CH3, MCO2, TIM17_BKIN, I2C1_SDA, EVENTOUT, I2C2_SDA",
         "UCPD1_DBCC2"
@@ -1472,7 +1472,7 @@
         "D12",
         "PA11 [PA9]",
         "I/O",
-        "FT_fus",
+        "suf_TF",
         "(5)",
         "SPI1_MISO/I2S1_MCK, USART1_CTS, TIM1_CH4, FDCAN1_RX, TIM1_BKIN2, I2C2_SCL, COMP1_OUT",
         "USB_DM"
@@ -1491,7 +1491,7 @@
         "C12",
         "PA12 [PA10]",
         "I/O",
-        "FT_fus",
+        "suf_TF",
         "(5)",
         "SPI1_MOSI/I2S1_SD, USART1_RTS_DE_CK, TIM1_ETR, FDCAN1_TX, I2S_CKIN, I2C2_SDA, COMP2_OUT",
         "USB_DP"
@@ -1548,7 +1548,7 @@
         "C11",
         "PA13",
         "I/O",
-        "FT_es",
+        "se_TF",
         "(6)",
         "SWDIO, IR_OUT, USB_NOE, EVENTOUT, LPUART2_RX",
         "-"
@@ -1643,7 +1643,7 @@
         "B10",
         "PD0",
         "I/O",
-        "FT_cs",
+        "sc_TF",
         "(4)",
         "EVENTOUT, SPI2_NSS/I2S2_WS, TIM16_CH1, FDCAN1_RX",
         "UCPD2_CC1"
@@ -1662,7 +1662,7 @@
         "C9",
         "PD1",
         "I/O",
-        "FT_ds",
+        "sd_TF",
         "(4)",
         "EVENTOUT, SPI2_SCK/I2S2_CK, TIM17_CH1, FDCAN1_TX",
         "UCPD2_DBCC1"
@@ -1681,7 +1681,7 @@
         "A11",
         "PD2",
         "I/O",
-        "FT_cs",
+        "sc_TF",
         "(4)",
         "USART3_RTS_DE_CK, TIM3_ETR, TIM1_CH1N, USART5_RX",
         "UCPD2_CC2"
@@ -1700,7 +1700,7 @@
         "C8",
         "PD3",
         "I/O",
-        "FT_ds",
+        "sd_TF",
         "(4)",
         "USART2_CTS, SPI2_MISO/I2S2_MCK, TIM1_CH2N, USART5_TX",
         "UCPD2_DBCC2"
@@ -1987,7 +1987,7 @@
         "I/O",
         "FT",
         "-",
-        "TIM17_CH1, EVENTOUT",
+        "TUOTNEVE ,1HC_71MIT",
         "-"
       ],
       [
@@ -2061,7 +2061,7 @@
         "C4",
         "PB6",
         "I/O",
-        "FT_fa",
+        "af_TF",
         "-",
         "USART1_TX, TIM1_CH3, TIM16_CH1N, FDCAN2_TX, SPI2_MISO/I2S2_MCK, LPTIM1_ETR, I2C1_SCL, EVENTOUT, USART5_CTS, TIM4_CH1, LPUART2_TX",
         "COMP2_INP1"
@@ -2080,7 +2080,7 @@
         "B3",
         "PB7",
         "I/O",
-        "FT_fa",
+        "af_TF",
         "-",
         "USART1_RX, SPI2_MOSI/I2S2_SD, TIM17_CH1N, USART4_CTS, LPTIM1_IN2, I2C1_SDA, EVENTOUT, TIM4_CH2, LPUART2_RX",
         "COMP2_INM7, PVD_IN"
