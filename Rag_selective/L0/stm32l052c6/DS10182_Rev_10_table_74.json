@@ -33,7 +33,7 @@
         "MHz"
       ],
       [
-        "f SCK 1/t c(SCK)",
+        "f SCK 1/t",
         "SPI clock frequency",
         "Slave mode Transmitter 1.65<V <3.6V DD",
         "-",
@@ -141,7 +141,9 @@
         "ns"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "2. The maximum SPI clock frequency in slave transmitter mode is determined by the sum of t and t which has to fit v(SO) su(MI)"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

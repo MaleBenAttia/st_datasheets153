@@ -11,13 +11,13 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32c071r8.pdf#page=64",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c071r8.pdf",
-  "text_helper": "Table 33. Current consumption in Standby mode — section 5.3.5 Supply current characteristics. Symbol, Parameter, Conditions, V DD, Typ / 25 °C, +8 autres.",
+  "text_helper": "Table 33. Current consumption in Standby mode — section 5.3.5 Supply current characteristics. Symbol, Parameter, Conditions, V DD / DD, Typ / 25 °C, +8 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions",
-      "V DD",
+      "V DD / DD",
       "Typ / 25 °C",
       "Typ / 85 °C",
       "Typ / 105 °C",
@@ -61,7 +61,7 @@
       ],
       [
         "I DD(Standby)",
-        "Supply current in Standby mode",
+        "Supply",
         "All clocks off",
         "3 V",
         "7.35",
@@ -76,7 +76,7 @@
       ],
       [
         "I DD(Standby)",
-        "Supply current in Standby mode",
+        "current in",
         "All clocks off",
         "3.6 V",
         "7.75",
@@ -91,7 +91,7 @@
       ],
       [
         "I DD(Standby)",
-        "Supply current in Standby mode",
+        "mode",
         "IWDG enabled and clocked by LSI",
         "2 V",
         "7.20",
@@ -107,7 +107,7 @@
       [
         "I DD(Standby)",
         "Supply current in Standby mode",
-        "IWDG enabled and clocked by LSI",
+        "enabled and",
         "2.4 V",
         "7.50",
         "9.05",
@@ -150,7 +150,9 @@
         "µA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Evaluated by characterization. Not tested in production."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

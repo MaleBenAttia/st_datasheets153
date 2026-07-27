@@ -47,7 +47,7 @@
       [
         "IDD12/ IDD",
         "Supply current in RUN mode from V12 and VDD supply",
-        "All Peripherals Enabled(2)(3)",
+        "All",
         "168",
         "136",
         "1",
@@ -62,7 +62,7 @@
       [
         "IDD12/ IDD",
         "Supply current in RUN mode from V12 and VDD supply",
-        "All Peripherals Enabled(2)(3)",
+        "Peripherals",
         "144",
         "105",
         "1",
@@ -76,7 +76,7 @@
       ],
       [
         "IDD12/ IDD",
-        "Supply current in RUN mode from V12 and VDD supply",
+        "Supply",
         "All Peripherals Enabled(2)(3)",
         "60",
         "47",
@@ -90,8 +90,8 @@
         "mA"
       ],
       [
-        "IDD12/ IDD",
-        "Supply current in RUN mode from V12 and VDD supply",
+        "IDD12/",
+        "RUN mode",
         "All Peripherals Enabled(2)(3)",
         "25",
         "22",
@@ -105,8 +105,8 @@
         "mA"
       ],
       [
-        "IDD12/ IDD",
-        "Supply current in RUN mode from V12 and VDD supply",
+        "IDD",
+        "from V12 and VDD supply",
         "All Peripherals Disabled(3)",
         "180",
         "74",
@@ -121,8 +121,8 @@
       ],
       [
         "IDD12/ IDD",
-        "Supply current in RUN mode from V12 and VDD supply",
-        "All Peripherals Disabled(3)",
+        "supply",
+        "All",
         "168",
         "65",
         "1",
@@ -137,7 +137,7 @@
       [
         "IDD12/ IDD",
         "Supply current in RUN mode from V12 and VDD supply",
-        "All Peripherals Disabled(3)",
+        "Peripherals",
         "144",
         "50",
         "1",
@@ -180,7 +180,11 @@
         "mA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Guaranteed by characterization results.",
+      "2. When analog peripheral blocks such as ADCs, DACs, HSE, LSE, HSI, or LSI are ON, an additional power consumption should be considered.",
+      "3. When the ADC is ON (ADON bit set in the ADC_CR2 register), add an additional power consumption of 1.73 mA per ADC for the analog part."
+    ],
     "legend": [
       "running from flash memory (Dual bank mode, ART ON except prefetch / L1-cache ON)",
       "or SRAM on AXI (L1-cache ON), regulator OFF"

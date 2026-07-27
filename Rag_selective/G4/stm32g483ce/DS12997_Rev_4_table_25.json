@@ -39,7 +39,7 @@
       [
         "IDD (Run)",
         "Supply current in Run mode",
-        "f = f up to 48 MHZ HCLK HSE included, bypass mode PLL ON above 48 MHz all peripherals disable",
+        "Range2",
         "Range2 f =26 M HCLK Hz",
         "Coremark",
         "3.35",
@@ -50,7 +50,7 @@
       [
         "IDD (Run)",
         "Supply current in Run mode",
-        "f = f up to 48 MHZ HCLK HSE included, bypass mode PLL ON above 48 MHz all peripherals disable",
+        "=26 M f HCLK",
         "Range2 f =26 M HCLK Hz",
         "Dhrystone2.1",
         "3.30",
@@ -83,7 +83,7 @@
       [
         "IDD (Run)",
         "Supply current in Run mode",
-        "f = f up to 48 MHZ HCLK HSE included, bypass mode PLL ON above 48 MHz all peripherals disable",
+        "= f up to 48 MHZ f HCLK HSE Range 1 included, bypass mode f = 150 HCLK PLL ON above 48 MHz all MHz peripherals disable",
         "Range 1 f = 150 HCLK MHz",
         "Reduced code(1)",
         "21.50",
@@ -94,7 +94,7 @@
       [
         "IDD (Run)",
         "Supply current in Run mode",
-        "f = f up to 48 MHZ HCLK HSE included, bypass mode PLL ON above 48 MHz all peripherals disable",
+        "= f up to 48 MHZ f HCLK HSE Range 1",
         "Range 1 f = 150 HCLK MHz",
         "Coremark",
         "22.50",
@@ -104,8 +104,8 @@
       ],
       [
         "IDD (Run)",
-        "Supply current in Run mode",
-        "f = f up to 48 MHZ HCLK HSE included, bypass mode PLL ON above 48 MHz all peripherals disable",
+        "Run mode",
+        "f = 150 HCLK PLL ON above 48 MHz all",
         "Range 1 f = 150 HCLK MHz",
         "Dhrystone2.1",
         "21.50",
@@ -116,7 +116,7 @@
       [
         "IDD (Run)",
         "Supply current in Run mode",
-        "f = f up to 48 MHZ HCLK HSE included, bypass mode PLL ON above 48 MHz all peripherals disable",
+        "peripherals disable",
         "Range 1 f = 150 HCLK MHz",
         "Fibonacci",
         "22.50",
@@ -138,7 +138,7 @@
       [
         "IDD (Run)",
         "Supply current in Run mode",
-        "f = f up to 48 MHZ HCLK HSE included, bypass mode PLL ON above 48 MHz all peripherals disable",
+        "Range 1 Boost mode = f HCLK 170 MHz",
         "Range 1 Boost mode f = HCLK 170 MHz",
         "Reduced code(1)",
         "26.00",
@@ -149,7 +149,7 @@
       [
         "IDD (Run)",
         "Supply current in Run mode",
-        "f = f up to 48 MHZ HCLK HSE included, bypass mode PLL ON above 48 MHz all peripherals disable",
+        "Range 1",
         "Range 1 Boost mode f = HCLK 170 MHz",
         "Coremark",
         "27.00",
@@ -160,7 +160,7 @@
       [
         "IDD (Run)",
         "Supply current in Run mode",
-        "f = f up to 48 MHZ HCLK HSE included, bypass mode PLL ON above 48 MHz all peripherals disable",
+        "= f HCLK",
         "Range 1 Boost mode f = HCLK 170 MHz",
         "Dhrystone2.1",
         "26.00",
@@ -171,7 +171,7 @@
       [
         "IDD (Run)",
         "Supply current in Run mode",
-        "f = f up to 48 MHZ HCLK HSE included, bypass mode PLL ON above 48 MHz all peripherals disable",
+        "170 MHz",
         "Range 1 Boost mode f = HCLK 170 MHz",
         "Fibonacci",
         "27.50",
@@ -213,9 +213,9 @@
         "µA/MHz"
       ],
       [
-        "IDD (LPRun)",
-        "Supply current in Low-power run",
-        "f = f = 2 MHz HCLK HSE all peripherals disable",
+        "(LPRun)",
+        "Low-power run",
+        "HCLK HSE all peripherals disable",
         "f = f = 2 MHz HCLK HSE all peripherals disable",
         "Dhrystone2.1",
         "915",
@@ -246,7 +246,9 @@
         "µA/MHz"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Reduced code used for characterization results provided in Table 21, Table 23."
+    ],
     "legend": [
       "running from SRAM1"
     ],

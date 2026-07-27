@@ -35,8 +35,8 @@
         "V"
       ],
       [
-        "V DDA",
-        "VREFBUF operating voltage",
+        "DDA",
+        "voltage",
         "VRS= 1",
         "VRS= 1",
         "2.8",
@@ -55,9 +55,9 @@
         "V"
       ],
       [
-        "V REFBUF_ OUT",
-        "Voltage reference output",
-        "I = load 100 µA T = 30 °C",
+        "OUT",
+        "reference output",
+        "VRS = 1 T = 30 °C",
         "VRS= 1",
         "2.497(2)",
         "2.5",
@@ -117,7 +117,7 @@
       [
         "I line_reg",
         "Line regulation",
-        "2.8 V ≤ V ≤ 3.6 V DDA",
+        "= 4 mA I load",
         "I = 4 mA load",
         "-",
         "100",
@@ -156,7 +156,7 @@
       ],
       [
         "PSRR",
-        "Power supply rejection",
+        "rejection",
         "100 kHz",
         "100 kHz",
         "25",
@@ -215,8 +215,8 @@
         "µA"
       ],
       [
-        "I DDA(VREFBU F)",
-        "VREFBUF consumption from V DDA",
+        "UBFERV(ADD",
+        "consumption",
         "I = 500 µA load",
         "I = 500 µA load",
         "-",
@@ -226,7 +226,7 @@
       ],
       [
         "I DDA(VREFBU F)",
-        "VREFBUF consumption from V DDA",
+        "DDA",
         "I = 4 mA load",
         "I = 4 mA load",
         "-",
@@ -236,7 +236,6 @@
       ]
     ],
     "notes": [
-      "1. Specified by design. Not tested in production.",
       "2. If the V is below the VREFBUF operating voltage, the voltage reference buffer can not maintain accurately the output DDA",
       "3. The temperature coefficient at VREF+ output is the sum of T and T . Coeff_vrefint Coeff_vrefbuf",
       "4. The capacitive load must include a 100 nF capacitor in order to cut-off the high frequency noise. DS12992 Rev 4 85/126",

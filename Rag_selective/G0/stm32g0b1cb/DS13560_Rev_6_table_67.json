@@ -36,7 +36,7 @@
       ],
       [
         "DNL",
-        "Differential non linearity (2)",
+        "linearity",
         "DAC output buffer OFF",
         "DAC output buffer OFF",
         "-",
@@ -253,19 +253,14 @@
         "-",
         "bits",
         "bits"
-      ],
-      [
-        "None",
-        "None",
-        "DAC output buffer OFF CL ≤ 50 pF, no RL, 1 kHz",
-        "-",
-        "11.5",
-        "-",
-        "None",
-        "None"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "2. If the V is below the VREFBUF operating voltage, the voltage reference buffer can not maintain accurately the output DDA",
+      "3. The temperature coefficient at VREF+ output is the sum of T and T . Coeff_vrefint Coeff_vrefbuf",
+      "4. The capacitive load must include a 100 nF capacitor in order to cut-off the high frequency noise.",
+      "5. To correctly control the VREFBUF inrush current during start-up phase and scaling change, the V voltage should be in DDA"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

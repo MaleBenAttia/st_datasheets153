@@ -49,56 +49,15 @@
         "-",
         "140",
         "MHz"
-      ],
-      [
-        "t w(CKL)",
-        "OCTOSPI clock high and low time, odd division",
-        "PRESCALER[7:0] = n = 2,4,6,8",
-        "(n/2+1)*t / (CK) (n+1)–1",
-        "-",
-        "(n/2+1)*t (CK) /(n+1)",
-        "ns"
-      ],
-      [
-        "t (3) s(IN)",
-        "Data input setup time",
-        "-",
-        "3.0",
-        "-",
-        "-",
-        "ns"
-      ],
-      [
-        "t (3) h(IN)",
-        "Data input hold time",
-        "-",
-        "1.5",
-        "-",
-        "-",
-        "ns"
-      ],
-      [
-        "t v(OUT)",
-        "Data output valid time",
-        "-",
-        "-",
-        "0.5",
-        "1(4)",
-        "ns"
-      ],
-      [
-        "t h(OUT)",
-        "Data output hold time",
-        "-",
-        "0",
-        "-",
-        "-",
-        "ns"
       ]
     ],
     "notes": [
+      "1. All values apply to Octal and Quad-SPI mode.",
+      "2. Guaranteed by characterization results.",
       "3. Delay block bypassed.",
-      "4. Using PC2 or PC3 I/O in the data bus adds 4 ns to this timing value."
+      "4. Using PC2 or PC3 I/O in the data bus adds 4 ns to this timing value. Figure 39. OCTOSPI SDR read/write timing diagram",
+      "5. Delay block bypassed.",
+      "6. Using PC2 or PC3 I/O in the data bus adds 4 ns to this timing value. Figure 40. OCTOSPI DTR mode timing diagram"
     ],
     "legend": "",
     "semantic_type": "",

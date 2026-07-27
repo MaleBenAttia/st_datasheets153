@@ -33,7 +33,12 @@
         "°C"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. When RESET is released, the functionality is guaranteed down to VBOR0 min.",
+      "2. This formula has to be applied only on the power supplies related to the I/O structure described by the pin definition table. The maximum I/O input voltage is the smallest value between Min (VDD, VDDA) + 3.6 V and 5.5 V.",
+      "3. For operation with voltage higher than Min (VDD, VDDA) + 0.3 V, the internal pull‑up and pull‑down resistors must be disabled.",
+      "4. In low‑power dissipation state, TA can be extended to this range as long as TJ does not exceed TJ max (see Section 7.9: Package thermal characteristics)."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

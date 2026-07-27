@@ -47,8 +47,8 @@
         "MHz"
       ],
       [
-        "f EXT",
-        "Timer external clock frequency on CH1 to CH4",
+        "EXT",
+        "CH4",
         "f = 110 MHz TIMxCLK",
         "0",
         "55",
@@ -80,7 +80,7 @@
       ],
       [
         "t COUNTER",
-        "16-bit counter clock period",
+        "period",
         "f = 110 MHz TIMxCLK",
         "0.009",
         "595.78",
@@ -95,15 +95,19 @@
         "t TIMxCLK"
       ],
       [
-        "t MAX_COUNT",
-        "Maximum possible count with 32-bit counter",
+        "MAX_COUNT",
+        "counter",
         "f = 110 MHz TIMxCLK",
         "-",
         "39.045",
         "s"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. The exact timings still depend on the phasing of the APB interface clock versus the LSI clock so that there is always a full RC period of uncertainty.",
+      "2. Spikes with widths below t are filtered. AF(min)",
+      "3. Spikes with widths above t are not filtered AF(max)"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

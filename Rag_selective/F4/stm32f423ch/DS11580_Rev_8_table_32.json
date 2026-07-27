@@ -11,13 +11,13 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f423ch.pdf#page=98",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f423ch.pdf",
-  "text_helper": "Table 32. Typical and maximum current consumption in Sleep mode - V = 1.7 V 98 DD — section 6.3.6 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK (MHz), Typ / T = A 25 °C, +5 autres.",
+  "text_helper": "Table 32. Typical and maximum current consumption in Sleep mode - V = 1.7 V 98 DD — section 6.3.6 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK (MHz) / (MHz), Typ / T = A 25 °C, +5 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions",
-      "f HCLK (MHz)",
+      "f HCLK (MHz) / (MHz)",
       "Typ / T = A 25 °C",
       "Max(1) / T = A 25 °C",
       "Max(1) / T = A 85 °C",
@@ -53,7 +53,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "External clock, PLL ON, Flash deep power down, all peripherals enabled(2)",
+        "PLL ON,",
         "64",
         "11.8",
         "12.53",
@@ -65,7 +65,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "External clock, PLL ON, Flash deep power down, all peripherals enabled(2)",
+        "Flash deep power down,",
         "50",
         "9.3",
         "9.88",
@@ -113,7 +113,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "HSI, PLL OFF(2), Flash deep power down, all peripherals enabled",
+        "all peripherals enabled",
         "1",
         "0.6",
         "1.19",
@@ -161,7 +161,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "External clock, PLL ON(2) all peripherals enabled, Flash ON",
+        "Flash ON",
         "50",
         "9.6",
         "10.20",
@@ -196,7 +196,7 @@
       ],
       [
         "I DD",
-        "Supply current in Sleep mode",
+        "Supply current",
         "HSI, PLL OFF(2), all peripherals enabled, Flash ON",
         "16",
         "3.2",
@@ -208,8 +208,8 @@
       ],
       [
         "I DD",
-        "Supply current in Sleep mode",
-        "HSI, PLL OFF(2), all peripherals enabled, Flash ON",
+        "Supply current",
+        "Flash ON",
         "1",
         "0.9",
         "1.43",
@@ -220,7 +220,7 @@
       ],
       [
         "I DD",
-        "Supply current in Sleep mode",
+        "in Sleep mode",
         "All peripherals disabled, External clock, PLL ON(2), Flash deep power down",
         "100",
         "3.3",
@@ -245,7 +245,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "All peripherals disabled, External clock, PLL ON(2), Flash deep power down",
+        "External clock,",
         "64",
         "1.9",
         "2.48",
@@ -257,7 +257,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "All peripherals disabled, External clock, PLL ON(2), Flash deep power down",
+        "PLL",
         "50",
         "1.6",
         "2.13",
@@ -305,7 +305,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "All peripherals disabled, HSI, PLL OFF(2), Flash deep power down",
+        "Flash deep power down",
         "1",
         "0.5",
         "1.04",
@@ -353,7 +353,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "All peripherals disabled, External clock, PLL ON(2), Flash ON",
+        "ON(2), Flash ON",
         "50",
         "1.9",
         "2.44",
@@ -401,7 +401,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "All peripherals disabled, HSI, PLL OFF(2), Flash ON",
+        "ON",
         "1",
         "0.7",
         "1.25",
@@ -421,54 +421,6 @@
         "157.9",
         "713.7",
         "1323.5"
-      ],
-      [
-        "None",
-        "None",
-        "None",
-        "None",
-        "Low power regulator usage",
-        "Low power regulator usage",
-        "42.3",
-        "80.1",
-        "594.1",
-        "1167.6"
-      ],
-      [
-        "None",
-        "None",
-        "Flash in Deep power down mode, all oscillators OFF, no independent watchdog",
-        "Flash in Deep power down mode, all oscillators OFF, no independent watchdog",
-        "Main regulator usage",
-        "Main regulator usage",
-        "77.9",
-        "113.1",
-        "568.3",
-        "1073.6"
-      ],
-      [
-        "None",
-        "None",
-        "None",
-        "None",
-        "Low power regulator usage",
-        "Low power regulator usage",
-        "19.7",
-        "55.8",
-        "561.3",
-        "1123.2"
-      ],
-      [
-        "None",
-        "None",
-        "None",
-        "None",
-        "Low power low voltage regulator usage",
-        "Low power low voltage regulator usage",
-        "15.3",
-        "46.3",
-        "490.8",
-        "991.3"
       ]
     ],
     "notes": [

@@ -510,6 +510,13 @@ def _fill_orphan_columns(
             if len(txt) < 2:
                 continue
 
+            # Détection et correction de texte inversé (même logique que _fix_reversed_cells)
+            if len(txt) >= 5:
+                clean_check = txt.replace("\n", "")
+                if _is_likely_reversed(clean_check):
+                    txt = clean_check[::-1]
+                    txt = re.sub(r'\s*([()])\s*', r'\1', txt)
+
             while ci >= len(raw_row):
                 raw_row.append('')
             raw_row[ci] = txt
@@ -1059,6 +1066,18 @@ def _expand_spans_and_headers(
                         table[r][c] = left_val
                     elif top_val is not None:
                         table[r][c] = top_val
+
+    # ── 3b. Forward-fill vertical (LOCF) pour les None résiduels ─────────
+    for c in range(cols):
+        prev_val = None
+        for r in range(rows):
+            if c < len(table[r]):
+                cell = table[r][c]
+                if cell is None or (isinstance(cell, str) and cell.strip() == ""):
+                    if prev_val is not None and prev_val.strip():
+                        table[r][c] = prev_val
+                elif isinstance(cell, str):
+                    prev_val = cell
 
     # ── 4. Détection géométrique de la profondeur d'en-tête ────────────────────
     header_depth = 1 + inserted_rows
@@ -2635,6 +2654,14 @@ def _remove_section_bleed_rows(rows: list[list[str]], table_id: str) -> tuple[li
     return rows[:cut], removed
 
 
+def _is_numeric(val: str) -> bool:
+    try:
+        float(val)
+        return True
+    except (ValueError, TypeError):
+        return False
+
+
 def _truncate_at_next_table(
     raw_table: list[list],
     table_id,
@@ -2673,9 +2700,12 @@ def _truncate_at_next_table(
         # Ligne à valeur uniforme = sous-en-tête de table suivante
         non_empty_vals = [str(c).strip() for c in row if c and str(c).strip()]
         if len(non_empty_vals) >= 2 and len(set(non_empty_vals)) == 1:
-            cut_idx = i
-            logger.info(f"_truncate_at_next_table: cut at row {i} (uniform row: {non_empty_vals[0]})")
-            break
+            uni_val = non_empty_vals[0]
+            # Exempt dash / "None" (case-insensitive) / numeric (data body, pas séparateur)
+            if uni_val not in ("-", "None", "none", "NONE") and not _is_numeric(uni_val):
+                cut_idx = i
+                logger.info(f"_truncate_at_next_table: cut at row {i} (uniform row: {uni_val})")
+                break
         # 1ère cellule "None" = rowspan au-delà de la table
         first_cell = str(row[0] or "").strip() if row else ""
         if first_cell == "None":
@@ -2702,8 +2732,8 @@ def _merge_identical_adjacent_columns(
         if c < len(headers) and headers[c] == headers[c-1]:
             same = True
             for r in range(len(rows)):
-                v1 = rows[r][c] if c < len(rows[r]) else ""
-                v2 = rows[r][c-1] if c-1 < len(rows[r]) else ""
+                v1 = str(rows[r][c]) if c < len(rows[r]) and rows[r][c] is not None else ""
+                v2 = str(rows[r][c-1]) if c-1 < len(rows[r]) and rows[r][c-1] is not None else ""
                 if v1 != v2:
                     same = False
                     break
@@ -3232,12 +3262,21 @@ def extract_footnotes_from_pages(
     marqueurs (N) dans les cellules ET les headers.
     Utilise page_text_cache (dict page_num->text) au lieu d'ouvrir le PDF.
     Retourne ['1. X = supported.', '2. Wake-up supported from Stop mode.', ...]."""
+    # Colonnes à exclure de l'extraction des marqueurs
+    # (ex: Symbol "IDD(PSI)(3)(5)" contient des nombres qui ne sont pas des notes)
+    skip_cols: set[int] = set()
+    for ci, h in enumerate(headers):
+        if re.search(r'(?i)\b(?:symbol|parameter)\b', str(h)):
+            skip_cols.add(ci)
+
     markers: set[str] = set()
     for cell in headers:
         for m in re.finditer(r'\((\d+)\)', str(cell)):
             markers.add(m.group(1))
     for row in rows:
-        for cell in row:
+        for ci, cell in enumerate(row):
+            if ci in skip_cols:
+                continue
             for m in re.finditer(r'\((\d+)\)', str(cell)):
                 markers.add(m.group(1))
     if not markers:

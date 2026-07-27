@@ -51,7 +51,16 @@
         "500"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Injection is not possible.",
+      "2. Tested in production.",
+      "3. Specified by design, not tested in production.",
+      "4. This value represents the pad leakage of the IO itself. The total product pad leakage is provided by this formula: ITotal_Ileak_max = 10 µA + [number of IOs where VIN is applied on the pad] × Ilkg(Max).",
+      "5. All FT_xx GPIOs except FT_u and PC3 I/O.",
+      "6. Max(VDDXXX) is the maximum value of all the I/O supplies. Refer to Table: Legend/Abbreviations used in the pinout table.",
+      "7. To sustain a voltage higher than Min(VDD, VDDA) + 0.3 V, the internal Pull-up and Pull-Down resistors must be disabled.",
+      "8. Pull-up and pull-down resistors are designed with a true resistance in series with a switchable PMOS/NMOS. This PMOS/NMOS contribution to the series resistance is minimal (~10% order)."
+    ],
     "legend": [
       "TBD stands for \"to be defined\"."
     ],

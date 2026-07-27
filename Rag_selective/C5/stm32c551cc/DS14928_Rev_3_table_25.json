@@ -42,8 +42,8 @@
       ],
       [
         "IDD(SLEEP)",
-        "Supply current in Sleep mode",
-        "All peripheral clocks disabled",
+        "Supply current in Sleep",
+        "disabled",
         "48",
         "0.93",
         "1.15",
@@ -55,7 +55,7 @@
       ],
       [
         "IDD(SLEEP)",
-        "Supply current in Sleep mode",
+        "mode",
         "All peripheral clocks enabled",
         "144",
         "15.00",
@@ -69,7 +69,7 @@
       [
         "IDD(SLEEP)",
         "Supply current in Sleep mode",
-        "All peripheral clocks enabled",
+        "enabled",
         "48",
         "5.30",
         "5.60",
@@ -78,74 +78,11 @@
         "11.00",
         "12.50",
         "mA"
-      ],
-      [
-        "IDD(STOP)",
-        "FLASH ON",
-        "SRAM1/2 ON",
-        "STOP1",
-        "0.06",
-        "0.14",
-        "0.93",
-        "1.70",
-        "3.05",
-        "3.90",
-        "3.90"
-      ],
-      [
-        "IDD(STOP)",
-        "FLASH IN LOW POWER",
-        "SRAM1/2 ON",
-        "STOP0",
-        "0.17",
-        "0.32",
-        "1.60",
-        "2.75",
-        "4.75",
-        "6.10",
-        "6.10"
-      ],
-      [
-        "IDD(STOP)",
-        "FLASH IN LOW POWER",
-        "SRAM1/2 ON",
-        "STOP1",
-        "0.05",
-        "0.13",
-        "0.92",
-        "1.70",
-        "3.05",
-        "3.85",
-        "3.85"
-      ],
-      [
-        "IDD(STOP)",
-        "FLASH IN LOW POWER",
-        "SRAM1/2 Powered Down",
-        "STOP0",
-        "0.17",
-        "0.31",
-        "1.55",
-        "2.65",
-        "4.55",
-        "5.90",
-        "5.90"
-      ],
-      [
-        "IDD(STOP)",
-        "FLASH IN LOW POWER",
-        "SRAM1/2 Powered Down",
-        "STOP1",
-        "0.05",
-        "0.12",
-        "0.82",
-        "1.50",
-        "2.70",
-        "3.55",
-        "3.55"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. LSE is in bypass mode at 32.768 KHz. DS14928 - Rev 3 page 60/132"
+    ],
     "legend": [
       "Evaluated by characterization - Not tested in production.",
       "Clocked by HSI at 144MHz of HSIDIV3 at 48MHz."

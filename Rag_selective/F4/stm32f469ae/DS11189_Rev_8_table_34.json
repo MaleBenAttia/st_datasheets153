@@ -11,10 +11,9 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f469ae.pdf#page=113",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f469ae.pdf",
-  "text_helper": "Table 34. Low-power mode wakeup timings — section 5.3.8 Wake-up time from low-power modes. Symbol, Symbol, Parameter, Conditions, Typ(1), +2 autres.",
+  "text_helper": "Table 34. Low-power mode wakeup timings — section 5.3.8 Wake-up time from low-power modes. Symbol, Parameter, Conditions, Typ(1), Max(1), +1 autres.",
   "table_content": {
     "headers": [
-      "Symbol",
       "Symbol",
       "Parameter",
       "Conditions",
@@ -25,7 +24,6 @@
     "rows": [
       [
         "t (2) WUSLEEP",
-        "t (2) WUSLEEP",
         "Wakeup from Sleep",
         "-",
         "5",
@@ -34,7 +32,6 @@
       ],
       [
         "t (2) WUSTOP",
-        "t (2) WUSTOP",
         "Wakeup from Stop mode with MR/LP regulator in normal mode",
         "Main regulator is ON",
         "12.9",
@@ -42,25 +39,22 @@
         "µs"
       ],
       [
-        "t (2) WUSTOP",
-        "t (2) WUSTOP",
-        "Wakeup from Stop mode with MR/LP regulator in normal mode",
+        "(2)",
+        "Wakeup from Stop mode",
         "Main regulator is ON and Flash memory in Deep power down mode",
         "105",
         "120",
         "µs"
       ],
       [
-        "t (2) WUSTOP",
-        "t (2) WUSTOP",
-        "Wakeup from Stop mode with MR/LP regulator in normal mode",
+        "WUSTOP",
+        "normal mode",
         "Low power regulator is ON",
         "22",
         "28",
         "µs"
       ],
       [
-        "t (2) WUSTOP",
         "t (2) WUSTOP",
         "Wakeup from Stop mode with MR/LP regulator in normal mode",
         "Low power regulator is ON and Flash memory in Deep power down mode",
@@ -70,7 +64,6 @@
       ],
       [
         "t (2) WUSTOP",
-        "t (2) WUSTOP",
         "Wakeup from Stop mode with MR/LP regulator in Under-drive mode",
         "Main regulator in under-drive mode (Flash memory in Deep power-down mode)",
         "107",
@@ -78,9 +71,8 @@
         "µs"
       ],
       [
-        "t (2) WUSTOP",
-        "t (2) WUSTOP",
-        "Wakeup from Stop mode with MR/LP regulator in Under-drive mode",
+        "WUSTOP",
+        "Under-drive mode",
         "Low power regulator in under-drive mode (Flash memory in Deep power-down mode)",
         "115",
         "121",
@@ -88,48 +80,11 @@
       ],
       [
         "t (2)(3) WUSTDBY",
-        "t (2)(3) WUSTDBY",
         "Wakeup from Standby mode",
         "-",
         "318",
         "371",
         "µs"
-      ],
-      [
-        "V HSEH",
-        "OSC_IN input pin high level voltage",
-        "OSC_IN input pin high level voltage",
-        "0.7V DD",
-        "-",
-        "V DD",
-        "V"
-      ],
-      [
-        "V HSEL",
-        "OSC_IN input pin low level voltage",
-        "OSC_IN input pin low level voltage",
-        "V SS",
-        "-",
-        "0.3V DD",
-        "0.3V DD"
-      ],
-      [
-        "t w(HSE) t w(HSE)",
-        "OSC_IN high or low time(1)",
-        "OSC_IN high or low time(1)",
-        "5",
-        "-",
-        "-",
-        "ns"
-      ],
-      [
-        "t r(HSE) t f(HSE)",
-        "OSC_IN rise or fall time(1)",
-        "OSC_IN rise or fall time(1)",
-        "-",
-        "-",
-        "10",
-        "10"
       ]
     ],
     "notes": [

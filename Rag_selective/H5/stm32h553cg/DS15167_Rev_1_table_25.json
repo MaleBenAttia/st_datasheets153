@@ -11,15 +11,15 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32h553cg.pdf#page=107",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h553cg.pdf",
-  "text_helper": "Table 25. Typical and maximum current consumption in Run mode, code with data processing running from flash memory, 2-way instruction cache ON, PREFETCH ON — section 5.3.6 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, f HCLK (MHz), +7 autres.",
+  "text_helper": "Table 25. Typical and maximum current consumption in Run mode, code with data processing running from flash memory, 2-way instruction cache ON, PREFETCH ON — section 5.3.6 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, f HCLK (MHz) / (MHz), +7 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions",
       "Conditions",
-      "f HCLK (MHz)",
-      "Typ LDO",
+      "f HCLK (MHz) / (MHz)",
+      "Typ LDO / LDO",
       "Max(1)(2) / T = J 25°C",
       "Max(1)(2) / T = J 85°C",
       "Max(1)(2) / T = J 105°C",
@@ -45,7 +45,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "VOS0",
         "VOS0",
         "215",
         "29.9",
@@ -73,7 +73,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "VOS1 All peripherals disabled",
         "VOS1",
         "200",
         "23.6",
@@ -101,7 +101,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "All peripherals",
         "VOS1",
         "168",
         "20.3",
@@ -115,7 +115,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "disabled",
         "VOS1",
         "150",
         "17.9",
@@ -129,7 +129,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "VOS2",
         "VOS2",
         "150",
         "16.4",
@@ -157,7 +157,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "VOS3",
         "VOS3",
         "100",
         "10.6",
@@ -171,7 +171,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "VOS3",
         "VOS3",
         "60",
         "6.8",
@@ -184,7 +184,7 @@
       ],
       [
         "I DD(Run)",
-        "Supply current in Run mode",
+        "in Run mode",
         "All peripherals disabled",
         "VOS3",
         "25",
@@ -213,7 +213,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals enabled",
+        "VOS0",
         "VOS0",
         "215",
         "70.4",
@@ -241,7 +241,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals enabled",
+        "VOS1 All peripherals enabled",
         "VOS1",
         "200",
         "56.9",
@@ -255,7 +255,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals enabled",
+        "VOS1",
         "VOS1",
         "180",
         "51.6",
@@ -269,7 +269,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals enabled",
+        "enabled",
         "VOS1",
         "150",
         "42.9",
@@ -283,7 +283,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals enabled",
+        "VOS2",
         "VOS2",
         "150",
         "39.1",
@@ -311,7 +311,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals enabled",
+        "VOS3",
         "VOS3",
         "100",
         "24.1",
@@ -325,7 +325,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals enabled",
+        "VOS3",
         "VOS3",
         "60",
         "15.0",

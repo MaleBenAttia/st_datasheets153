@@ -11,14 +11,14 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32h750ib.pdf#page=207",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h750ib.pdf",
-  "text_helper": "Table 120. Typical and maximum current consumption batch acquisition mode, LDO regulator ON — section 7.3.6 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, f HCLK (MHz), +6 autres.",
+  "text_helper": "Table 120. Typical and maximum current consumption batch acquisition mode, LDO regulator ON — section 7.3.6 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, f HCLK (MHz) / (MHz), +6 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions",
       "Conditions",
-      "f HCLK (MHz)",
+      "f HCLK (MHz) / (MHz)",
       "Typ",
       "Max(1) / Tj=25°C",
       "Max(1) / Tj=85°C",
@@ -42,8 +42,8 @@
       ],
       [
         "I DD",
-        "Supply current in batch acquisition mode",
-        "D1 Standby, D2 Standby, D3 Run",
+        "Supply current in batch",
+        "D2 VOS3 Standby, D3 Run",
         "VOS3",
         "8",
         "1.1",
@@ -55,7 +55,7 @@
       ],
       [
         "I DD",
-        "Supply current in batch acquisition mode",
+        "mode",
         "D1 Stop, D2 Stop, D3 Run",
         "VOS3",
         "64",
@@ -69,7 +69,7 @@
       [
         "I DD",
         "Supply current in batch acquisition mode",
-        "D1 Stop, D2 Stop, D3 Run",
+        "D3 Run",
         "VOS3",
         "8",
         "3.8",
@@ -80,7 +80,9 @@
         "mA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Guaranteed by characterization results, unless otherwise specified."
+    ],
     "legend": [
       "LDO regulator ON"
     ],

@@ -11,13 +11,13 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32g483ce.pdf#page=124",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g483ce.pdf",
-  "text_helper": "Table 50. EMI characteristics — section 5.3.11 EMC characteristics. Symbol, Parameter, Conditions, Monitored frequency band, Max vs. [f /f ] HSE HCLK / 8 MHz / 170 MHz, +1 autres.",
+  "text_helper": "Table 50. EMI characteristics — section 5.3.11 EMC characteristics. Symbol, Parameter, Conditions, Monitored frequency band / frequency band, Max vs. [f /f ] HSE HCLK / 8 MHz / 170 MHz, +1 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions",
-      "Monitored frequency band",
+      "Monitored frequency band / frequency band",
       "Max vs. [f /f ] HSE HCLK / 8 MHz / 170 MHz",
       "Unit"
     ],
@@ -33,7 +33,7 @@
       [
         "S EMI",
         "Peak level",
-        "V = 3.6 V, T = 25 °C, DD A LQFP128 package compliant with IEC 61967-2",
+        "V = 3.6 V, T = 25 °C,",
         "30 MHz to 130 MHz",
         "0",
         "dBµV"
@@ -41,7 +41,7 @@
       [
         "S EMI",
         "Peak level",
-        "V = 3.6 V, T = 25 °C, DD A LQFP128 package compliant with IEC 61967-2",
+        "LQFP128 package",
         "130 MHz to 1 GHz",
         "16",
         "dBµV"
@@ -63,7 +63,9 @@
         "-"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Guaranteed by characterization results. 124/230 DS12997 Rev 4"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

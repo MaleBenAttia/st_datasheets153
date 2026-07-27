@@ -11,13 +11,13 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f412ce.pdf#page=91",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f412ce.pdf",
-  "text_helper": "Table 26. Typical and maximum current consumption in run mode, code with data processing — section 6.3.6 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK (MHz), Typ / T = A 25 °C, +5 autres.",
+  "text_helper": "Table 26. Typical and maximum current consumption in run mode, code with data processing — section 6.3.6 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK (MHz) / (MHz), Typ / T = A 25 °C, +5 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions",
-      "f HCLK (MHz)",
+      "f HCLK (MHz) / (MHz)",
       "Typ / T = A 25 °C",
       "Max(1) / T = A 25 °C",
       "Max(1) / T = A 85 °C",
@@ -65,7 +65,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "External clock, PLL ON(2), all peripherals enabled(3)",
+        "enabled(3) all peripherals",
         "50",
         "18.3",
         "19.77",
@@ -100,7 +100,7 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode",
+        "Supply current",
         "HSI, PLL OFF, all peripherals enabled(3)",
         "16",
         "6.3",
@@ -112,8 +112,8 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode",
-        "HSI, PLL OFF, all peripherals enabled(3)",
+        "Supply current",
+        "peripherals",
         "1",
         "1.1",
         "1.39",
@@ -124,7 +124,7 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode",
+        "in Run mode",
         "External clock, PLL ON(2) all peripherals disabled(3)",
         "100",
         "22.1",
@@ -149,7 +149,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "External clock, PLL ON(2) all peripherals disabled(3)",
+        "ON(2) External clock, PLL",
         "64",
         "14.5",
         "15.88",
@@ -161,7 +161,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "External clock, PLL ON(2) all peripherals disabled(3)",
+        "all peripherals",
         "50",
         "12.2",
         "13.38",
@@ -209,7 +209,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "HSI, PLL OFF, all peripherals disabled(3)",
+        "peripherals",
         "1",
         "0.9",
         "1.25",

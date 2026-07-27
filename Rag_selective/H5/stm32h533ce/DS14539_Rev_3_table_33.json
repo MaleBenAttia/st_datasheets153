@@ -11,15 +11,15 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32h533ce.pdf#page=111",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h533ce.pdf",
-  "text_helper": "Table 33. Typical and maximum current consumption in Sleep mode — section 5.3.6 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, f HCLK (MHz), +6 autres.",
+  "text_helper": "Table 33. Typical and maximum current consumption in Sleep mode — section 5.3.6 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, f HCLK (MHz) / HCLK (MHz), +6 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions",
       "Conditions",
-      "f HCLK (MHz)",
-      "Typ LDO",
+      "f HCLK (MHz) / HCLK (MHz)",
+      "Typ LDO / LDO",
       "Max(1) / T = J 25°C",
       "Max(1) / T = J 85°C",
       "Max(1) / T = J 105°C",
@@ -56,7 +56,7 @@
       [
         "I DD(sleep)",
         "Supply current in sleep mode",
-        "All peripherals disabled",
+        "VOS1 All peripherals disabled",
         "VOS1",
         "200",
         "4.2",
@@ -81,8 +81,8 @@
       ],
       [
         "I DD(sleep)",
-        "Supply current in sleep mode",
-        "All peripherals disabled",
+        "Supply",
+        "All peripherals",
         "VOS1",
         "168",
         "3.6",
@@ -94,8 +94,8 @@
       ],
       [
         "I DD(sleep)",
-        "Supply current in sleep mode",
-        "All peripherals disabled",
+        "sleep mode",
+        "disabled",
         "VOS1",
         "150",
         "3.3",
@@ -108,7 +108,7 @@
       [
         "I DD(sleep)",
         "Supply current in sleep mode",
-        "All peripherals disabled",
+        "VOS2",
         "VOS2",
         "150",
         "3.0",
@@ -134,7 +134,7 @@
       [
         "I DD(sleep)",
         "Supply current in sleep mode",
-        "All peripherals disabled",
+        "VOS3",
         "VOS3",
         "100",
         "2.2",
@@ -158,7 +158,9 @@
         "mA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Evaluated by characterization - Not tested in production."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

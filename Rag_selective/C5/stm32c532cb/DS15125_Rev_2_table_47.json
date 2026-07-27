@@ -1,9 +1,9 @@
 {
   "table_id": "table_47",
-  "document": "DS15125 Rev 2 - Table 47. Output voltage characteristics (all I/Os except PC14 and PC15).",
+  "document": "DS15125 Rev 2 - Table 47. Output voltage characteristics (all I/Os except PC14 and PC15)",
   "rev": "Rev 2",
   "table_number": "47",
-  "title": "Table 47. Output voltage characteristics (all I/Os except PC14 and PC15).",
+  "title": "Table 47. Output voltage characteristics (all I/Os except PC14 and PC15)",
   "page": 73,
   "section": "5.3.14 I/O port characteristics",
   "section_title": "I/O port characteristics",
@@ -11,10 +11,9 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32c532cb.pdf#page=73",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c532cb.pdf",
-  "text_helper": "Table 47. Output voltage characteristics (all I/Os except PC14 and PC15). — section 5.3.14 I/O port characteristics. Symbol, Symbol, Parameter, Conditions(2), Min, +2 autres.",
+  "text_helper": "Table 47. Output voltage characteristics (all I/Os except PC14 and PC15) — section 5.3.14 I/O port characteristics. Symbol, Parameter, Conditions(2), Min, Max, +1 autres.",
   "table_content": {
     "headers": [
-      "Symbol",
       "Symbol",
       "Parameter",
       "Conditions(2)",
@@ -25,7 +24,6 @@
     "rows": [
       [
         "VOL",
-        "VOL",
         "Output low-level voltage",
         "CMOS port(1), |IIO| = 8 mA, 2.7 V ≤ VDD ≤ 3.6 V",
         "-",
@@ -33,7 +31,6 @@
         "V"
       ],
       [
-        "VOH",
         "VOH",
         "Output high-level voltage",
         "CMOS port(1), |IIO| = -8 mA, 2.7 V ≤ VDD ≤ 3.6 V",
@@ -43,7 +40,6 @@
       ],
       [
         "VOL(2)",
-        "VOL(2)",
         "Output low-level voltage",
         "TTL port(1),|IIO| = 8 mA, 2.7 V ≤ VDD ≤ 3.6 V",
         "-",
@@ -51,7 +47,6 @@
         "V"
       ],
       [
-        "VOH(2)",
         "VOH(2)",
         "Output high-level voltage",
         "TTL port(1),|IIO| = -8 mA, 2.7 V ≤ VDD ≤ 3.6 V",
@@ -61,7 +56,6 @@
       ],
       [
         "VOL(2)",
-        "VOL(2)",
         "Output low-level voltage",
         "|IIO| = 20 mA, 2.7 V ≤ VDD≤ 3.6 V",
         "-",
@@ -69,7 +63,6 @@
         "V"
       ],
       [
-        "VOH(2)",
         "VOH(2)",
         "Output high-level voltage",
         "|IIO| = -20 mA, 2.7 V ≤ VDD≤ 3.6 V",
@@ -79,7 +72,6 @@
       ],
       [
         "VOLFM+(2)",
-        "VOLFM+(2)",
         "Output low-level voltage for a FT_f I/O pin in FM+ mode",
         "|IIO| = 20 mA, 2.7 V ≤ VDD ≤ 3.6 V",
         "-",
@@ -87,7 +79,10 @@
         "V"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. TTL and CMOS outputs are compatible with JEDEC standards JESD36 and JESD52.",
+      "2. Specified by design - Not tested in production."
+    ],
     "legend": [
       "The I/O structure options listed in this table can be a concatenation of options including the option explicitly listed. For instance, TT_a refers to",
       "any TT I/O with _a option. TT_xx refers to any TT I/O and FT_xx refers to any FT I/O.",

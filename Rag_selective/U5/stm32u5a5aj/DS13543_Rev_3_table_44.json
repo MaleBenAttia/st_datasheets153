@@ -47,7 +47,7 @@
       [
         "I DD (Run)",
         "Supply current in Run mode",
-        "f = f = 24 MHz, HCLK MSI all peripherals disabled, Flash bank 1 in low power, Flash bank 2 in power down, SRAM2 enabled, SRAM1/3/4/5 in power down",
+        "HCLK MSI CoreMark all peripherals disabled,",
         "Range 4",
         "CoreMark",
         "1.05",
@@ -60,9 +60,9 @@
         "µA/MHz"
       ],
       [
-        "I DD (Run)",
-        "Supply current in Run mode",
-        "f = f = 24 MHz, HCLK MSI all peripherals disabled, Flash bank 1 in low power, Flash bank 2 in power down, SRAM2 enabled, SRAM1/3/4/5 in power down",
+        "I DD",
+        "Supply",
+        "SecureMark Flash bank 1 in low power,",
         "Range 4",
         "SecureMark",
         "1.15",
@@ -75,9 +75,9 @@
         "µA/MHz"
       ],
       [
-        "I DD (Run)",
-        "Supply current in Run mode",
-        "f = f = 24 MHz, HCLK MSI all peripherals disabled, Flash bank 1 in low power, Flash bank 2 in power down, SRAM2 enabled, SRAM1/3/4/5 in power down",
+        "(Run)",
+        "Run mode",
+        "Flash bank 2 in power down, Dhrystone 2.1",
         "Range 4",
         "Dhrystone 2.1",
         "1.10",
@@ -92,7 +92,7 @@
       [
         "I DD (Run)",
         "Supply current in Run mode",
-        "f = f = 24 MHz, HCLK MSI all peripherals disabled, Flash bank 1 in low power, Flash bank 2 in power down, SRAM2 enabled, SRAM1/3/4/5 in power down",
+        "Fibonacci SRAM1/3/4/5 in power down",
         "Range 4",
         "Fibonacci",
         "0.94",
@@ -107,7 +107,7 @@
       [
         "I DD (Run)",
         "Supply current in Run mode",
-        "f = f = 24 MHz, HCLK MSI all peripherals disabled, Flash bank 1 in low power, Flash bank 2 in power down, SRAM2 enabled, SRAM1/3/4/5 in power down",
+        "While(1)",
         "Range 4",
         "While(1)",
         "0.80",
@@ -120,7 +120,9 @@
         "µA/MHz"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Evaluated by characterization. Not tested in production."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

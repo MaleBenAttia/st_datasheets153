@@ -58,9 +58,9 @@
           "SRAM (Kbytes)",
           "64 (including 32 with ECC)",
           "64 (including 32 with ECC)",
-          "64 (including 32 with ECC)",
-          "64 (including 32 with ECC)",
-          "64 (including 32 with ECC)",
+          "64",
+          "32 with",
+          "ECC)",
           "64 (including 32 with ECC)",
           "64 (including 32 with ECC)"
         ],
@@ -103,13 +103,13 @@
           "1 (32-bit) and 2 (16-bit)",
           "1 (32-bit) and 2 (16-bit)",
           "1 (32-bit) and 2 (16-bit)",
-          "1 (32-bit) and 2 (16-bit)",
+          "and 2 2 2",
           "1 (32-bit) and 2 (16-bit)",
           "1 (32-bit) and 2 (16-bit)",
           "1 (32-bit) and 2 (16-bit)"
         ],
         [
-          "Timers",
+          "Advanced‑control Timers",
           "Advanced‑control",
           "2",
           "2",
@@ -120,7 +120,7 @@
           "2"
         ],
         [
-          "Timers",
+          "Basic",
           "Basic",
           "2",
           "2",
@@ -138,7 +138,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 2. LPDMA1 and LPDMA2 channels implementation and usage.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 2. LPDMA1 and LPDMA2 channels implementation and usage",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -148,14 +148,14 @@
     "frequency": "144",
     "table_id": "table_2",
     "table_number": "2",
-    "title": "Table 2. LPDMA1 and LPDMA2 channels implementation and usage.",
+    "title": "Table 2. LPDMA1 and LPDMA2 channels implementation and usage",
     "page": 13,
     "section": "3.12 Low-power direct memory access controller (LPDMA)",
     "section_title": "Low-power direct memory access controller (LPDMA)",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=13",
-    "text_helper": "Table 2. LPDMA1 and LPDMA2 channels implementation and usage. — section 3.12 Low-power direct memory access controller (LPDMA). Channel x, Hardware parameters / dma_fifo_size[x], Hardware parameters / dma_addressing[x], Features.",
+    "text_helper": "Table 2. LPDMA1 and LPDMA2 channels implementation and usage — section 3.12 Low-power direct memory access controller (LPDMA). Channel x, Hardware parameters / dma_fifo_size[x], Hardware parameters / dma_addressing[x], Features.",
     "table_content": {
       "headers": [
         "Channel x",
@@ -169,18 +169,6 @@
           "0",
           "0",
           "Channel x (x = 0 to 4) is implemented with: • no FIFO. Only a single source transfer cell is internally registered. • fixed/contiguously incremented addressing"
-        ],
-        [
-          "Feature",
-          "Feature",
-          "Feature",
-          "Feature"
-        ],
-        [
-          "Wake-up",
-          "Wake-up",
-          "Wake-up",
-          "Wake-up"
         ]
       ],
       "notes": [],
@@ -302,7 +290,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 5. AES features.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 5. AES features",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -312,14 +300,14 @@
     "frequency": "144",
     "table_id": "table_5",
     "table_number": "5",
-    "title": "Table 5. AES features.",
+    "title": "Table 5. AES features",
     "page": 20,
     "section": "3.20 AES hardware accelerator (AES)",
     "section_title": "AES hardware accelerator (AES)",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=20",
-    "text_helper": "Table 5. AES features. — section 3.20 AES hardware accelerator (AES). Modes or features(1), AES.",
+    "text_helper": "Table 5. AES features — section 3.20 AES hardware accelerator (AES). Modes or features(1), AES.",
     "table_content": {
       "headers": [
         "Modes or features(1)",
@@ -355,14 +343,16 @@
           "128/256"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. X = supported."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 6. Timer feature comparison.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 6. Timer feature comparison",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -372,14 +362,14 @@
     "frequency": "144",
     "table_id": "table_6",
     "table_number": "6",
-    "title": "Table 6. Timer feature comparison.",
+    "title": "Table 6. Timer feature comparison",
     "page": 21,
     "section": "3.22 Timers and watchdogs",
     "section_title": "Timers and watchdogs",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=21",
-    "text_helper": "Table 6. Timer feature comparison. — section 3.22 Timers and watchdogs. Timer type, Timer, Counter resolution, Counter type, Prescaler factor, +3 autres.",
+    "text_helper": "Table 6. Timer feature comparison — section 3.22 Timers and watchdogs. Timer type, Timer, Counter resolution, Counter type, Prescaler factor, +3 autres.",
     "table_content": {
       "headers": [
         "Timer type",
@@ -410,36 +400,6 @@
           "Any integer between 1 and 65536",
           "Yes",
           "4",
-          "No"
-        ],
-        [
-          "General- purpose",
-          "TIM12,",
-          "16 bits",
-          "Up",
-          "Any integer between 1 and 65536",
-          "Yes",
-          "2",
-          "No"
-        ],
-        [
-          "General- purpose",
-          "TIM15",
-          "16 bits",
-          "Up, down, Up/ down",
-          "Any integer between 1 and 65536",
-          "Yes",
-          "2",
-          "No"
-        ],
-        [
-          "Basic",
-          "TIM6, TIM7",
-          "16 bits",
-          "Up",
-          "Any integer between 1 and 65536",
-          "Yes",
-          "0",
           "No"
         ]
       ],
@@ -867,7 +827,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 11. Legend/abbreviations used in the pinout table.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 11. Legend/abbreviations used in the pinout table",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -877,14 +837,14 @@
     "frequency": "144",
     "table_id": "table_11",
     "table_number": "11",
-    "title": "Table 11. Legend/abbreviations used in the pinout table.",
+    "title": "Table 11. Legend/abbreviations used in the pinout table",
     "page": 39,
     "section": "4.2 Pin description",
     "section_title": "Pin description",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=39",
-    "text_helper": "Table 11. Legend/abbreviations used in the pinout table. — section 4.2 Pin description. Name, Name, Abbreviation, Definition.",
+    "text_helper": "Table 11. Legend/abbreviations used in the pinout table — section 4.2 Pin description. Name, Name, Abbreviation, Definition.",
     "table_content": {
       "headers": [
         "Name",
@@ -897,7 +857,7 @@
           "Pin name",
           "Pin name",
           "Unless otherwise specified in brackets below the pin name, the pin function during and after reset is the same as the actual pin name.",
-          "Unless otherwise specified in brackets below the pin name, the pin function during and after reset is the same as the actual pin name."
+          "the pin name, the pin function during and after reset is the same as the actual pin name."
         ],
         [
           "Pin type",
@@ -939,7 +899,7 @@
           "I/O structure",
           "I/O structure",
           "Options for TT and FT I/Os(1)",
-          "Options for TT and FT I/Os(1)"
+          "I/Os(1) Options for TT and FT"
         ],
         [
           "I/O structure",
@@ -969,19 +929,19 @@
           "Notes",
           "Notes",
           "Unless otherwise specified by a note, all I/Os are set as floating inputs during and after reset.",
-          "Unless otherwise specified by a note, all I/Os are set as floating inputs during and after reset."
+          "are set as floating inputs during and after reset."
         ],
         [
           "Pin functions",
           "Alternate functions",
           "Functions selected through GPIOx_AFR registers",
-          "Functions selected through GPIOx_AFR registers"
+          "peripheral registers"
         ],
         [
-          "Pin functions",
+          "Additional functions",
           "Additional functions",
           "Functions directly selected/enabled through peripheral registers",
-          "Functions directly selected/enabled through peripheral registers"
+          "peripheral registers"
         ]
       ],
       "notes": [
@@ -2177,7 +2137,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 13. Alternate functions.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 13. Alternate functions",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -2187,14 +2147,14 @@
     "frequency": "144",
     "table_id": "table_13",
     "table_number": "13",
-    "title": "Table 13. Alternate functions.",
+    "title": "Table 13. Alternate functions",
     "page": 47,
     "section": "4.3 Alternate functions",
     "section_title": "Alternate functions",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=47",
-    "text_helper": "Table 13. Alternate functions. — section 4.3 Alternate functions. Port, Port, AF0 / SYS, AF1 / LPTIM1/ TIM1/2, AF2 / I3C1/ TIM1/8/12/15, +13 autres.",
+    "text_helper": "Table 13. Alternate functions — section 4.3 Alternate functions. Port, Port, AF0 / SYS, AF1 / LPTIM1/ TIM1/2, AF2 / I3C1/ TIM1/8/12/15, +13 autres.",
     "table_content": {
       "headers": [
         "Port",
@@ -2238,7 +2198,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA1",
           "PA1",
           "-",
           "TIM2_CH2",
@@ -2258,7 +2218,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA2",
           "PA2",
           "-",
           "TIM2_CH3",
@@ -2278,7 +2238,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA3",
           "PA3",
           "-",
           "TIM2_CH4",
@@ -2298,7 +2258,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA4",
           "PA4",
           "-",
           "TIM1_BKIN2",
@@ -2318,7 +2278,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA5",
           "PA5",
           "-",
           "TIM2_CH1",
@@ -2338,7 +2298,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA6",
           "PA6",
           "-",
           "TIM1_BKIN",
@@ -2358,7 +2318,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "A PA7 troP",
           "PA7",
           "-",
           "TIM1_CH1N",
@@ -2378,7 +2338,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA8",
           "PA8",
           "MCO1",
           "TIM1_CH1",
@@ -2398,7 +2358,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA9",
           "PA9",
           "MCO2",
           "TIM1_CH2",
@@ -2418,7 +2378,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA10",
           "PA10",
           "-",
           "TIM1_CH3",
@@ -2438,7 +2398,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA11",
           "PA11",
           "-",
           "TIM1_CH4",
@@ -2458,7 +2418,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA12",
           "PA12",
           "-",
           "TIM1_ETR",
@@ -2478,7 +2438,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA13",
           "PA13",
           "JTMS/SWDIO",
           "-",
@@ -2498,7 +2458,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA14",
           "PA14",
           "JTCK/SWCLK",
           "-",
@@ -2518,7 +2478,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA15",
           "PA15",
           "JTDI",
           "TIM2_CH1",
@@ -2558,7 +2518,7 @@
           "EVENTOUT"
         ],
         [
-          "Port BPort A",
+          "PB1",
           "PB1",
           "-",
           "TIM1_CH3N",
@@ -2578,7 +2538,7 @@
           "EVENTOUT"
         ],
         [
-          "Port BPort A",
+          "PB2",
           "PB2",
           "RTC_OUT2",
           "-",
@@ -2598,7 +2558,7 @@
           "EVENTOUT"
         ],
         [
-          "Port BPort A",
+          "Port B 3BP",
           "PB3",
           "JTDO/ TRACESWO",
           "TIM2_CH2",
@@ -2618,7 +2578,7 @@
           "EVENTOUT"
         ],
         [
-          "Port BPort A",
+          "PB4",
           "PB4",
           "NJTRST",
           "-",
@@ -2638,7 +2598,7 @@
           "EVENTOUT"
         ],
         [
-          "Port BPort A",
+          "PB5",
           "PB5",
           "-",
           "-",
@@ -2658,7 +2618,7 @@
           "EVENTOUT"
         ],
         [
-          "Port BPort A",
+          "PB6",
           "PB6",
           "-",
           "-",
@@ -2678,7 +2638,7 @@
           "EVENTOUT"
         ],
         [
-          "Port BPort A",
+          "PB6",
           "PB6",
           "AF0",
           "AF1",
@@ -3373,13 +3333,6 @@
           "-",
           "50.0",
           "mV"
-        ],
-        [
-          "TJ",
-          "TJ",
-          "Maximum junction temperature",
-          "150",
-          "None"
         ]
       ],
       "notes": [
@@ -3481,12 +3434,6 @@
           "Total injected current (sum of all I/Os and control pins)(5)",
           "±25",
           "mA"
-        ],
-        [
-          "TJ",
-          "Maximum junction temperature",
-          "150",
-          "150"
         ]
       ],
       "notes": [
@@ -3502,7 +3449,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 16. Thermal characteristics.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 16. Thermal characteristics",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -3512,14 +3459,14 @@
     "frequency": "144",
     "table_id": "table_16",
     "table_number": "16",
-    "title": "Table 16. Thermal characteristics.",
+    "title": "Table 16. Thermal characteristics",
     "page": 52,
     "section": "5.2 Absolute maximum ratings",
     "section_title": "Absolute maximum ratings",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=52",
-    "text_helper": "Table 16. Thermal characteristics. — section 5.2 Absolute maximum ratings. Symbol, Ratings, Value, Unit.",
+    "text_helper": "Table 16. Thermal characteristics — section 5.2 Absolute maximum ratings. Symbol, Ratings, Value, Unit.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -3541,7 +3488,11 @@
           "°C"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. When RESET is released, the functionality is guaranteed down to PDR minimum voltage.",
+        "2. For operation with voltage higher than VDD + 0.3 V, the internal pull‑up and pull‑down resistors must be disabled. The minimum and maximum input voltage (Vin) must comply with the selected peripheral enabled on the given GPIOs. Refer to the respective peripheral",
+        "3. If TA is lower, higher PD values are allowed as long as TJ does not exceed TJmax (see Section 6.10: Package thermal characteristics). DS15135 - Rev 1 page 52/130"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -3645,17 +3596,17 @@
           "Power dissipation at TA = 85 °C for suffix 6(3)",
           "-",
           "See Section 6.10: Package thermal characteristics for application appropriate thermal resistance and package. Power dissipation is then calculated according ambient temperature (TA) and maximum junction temperature (TJ) and selected thermal resistance.",
-          "See Section 6.10: Package thermal characteristics for application appropriate thermal resistance and package. Power dissipation is then calculated according ambient temperature (TA) and maximum junction temperature (TJ) and selected thermal resistance.",
-          "See Section 6.10: Package thermal characteristics for application appropriate thermal resistance and package. Power dissipation is then calculated according ambient temperature (TA) and maximum junction temperature (TJ) and selected thermal resistance.",
+          "Package thermal thermal resistance according junction temperature thermal resistance.",
+          "for and package. Power temperature (TJ) and selected",
           "mW"
         ],
         [
           "PD",
           "Power dissipation at TA = 125 °C for suffix 3(3)",
           "-",
-          "See Section 6.10: Package thermal characteristics for application appropriate thermal resistance and package. Power dissipation is then calculated according ambient temperature (TA) and maximum junction temperature (TJ) and selected thermal resistance.",
-          "See Section 6.10: Package thermal characteristics for application appropriate thermal resistance and package. Power dissipation is then calculated according ambient temperature (TA) and maximum junction temperature (TJ) and selected thermal resistance.",
-          "See Section 6.10: Package thermal characteristics for application appropriate thermal resistance and package. Power dissipation is then calculated according ambient temperature (TA) and maximum junction temperature (TJ) and selected thermal resistance.",
+          "(TA) and maximum",
+          "junction temperature thermal resistance.",
+          "(TJ) and selected",
           "mW"
         ],
         [
@@ -3693,15 +3644,6 @@
           "-",
           "105",
           "°C"
-        ],
-        [
-          "None",
-          "None",
-          "VDD fall‑time rate",
-          "VDD fall‑time rate",
-          "0",
-          "∞",
-          "ms/V"
         ]
       ],
       "notes": [
@@ -3715,7 +3657,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 18. Operating conditions at power-up/power-down.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 18. Operating conditions at power-up/power-down",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -3725,17 +3667,16 @@
     "frequency": "144",
     "table_id": "table_18",
     "table_number": "18",
-    "title": "Table 18. Operating conditions at power-up/power-down.",
+    "title": "Table 18. Operating conditions at power-up/power-down",
     "page": 53,
     "section": "5.3.2 Operating conditions at power-up/power-down",
     "section_title": "Operating conditions at power-up/power-down",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=53",
-    "text_helper": "Table 18. Operating conditions at power-up/power-down. — section 5.3.2 Operating conditions at power-up/power-down. Symbol, Symbol, Parameter, Min, Max, +1 autres.",
+    "text_helper": "Table 18. Operating conditions at power-up/power-down — section 5.3.2 Operating conditions at power-up/power-down. Symbol, Parameter, Min, Max, Unit.",
     "table_content": {
       "headers": [
-        "Symbol",
         "Symbol",
         "Parameter",
         "Min",
@@ -3745,7 +3686,6 @@
       "rows": [
         [
           "tVDD",
-          "tVDD",
           "VDD rise‑time rate",
           "0",
           "∞",
@@ -3753,21 +3693,23 @@
         ],
         [
           "tVDD",
-          "tVDD",
           "VDD fall‑time rate",
           "0",
           "∞",
           "ms/V"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Specified by design - Not tested in production.",
+        "2. From POR threshold crossing to NRST pull-up resistor activation."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 19. Embedded reset and power control block characteristics.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 19. Embedded reset and power control block characteristics",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -3777,14 +3719,14 @@
     "frequency": "144",
     "table_id": "table_19",
     "table_number": "19",
-    "title": "Table 19. Embedded reset and power control block characteristics.",
+    "title": "Table 19. Embedded reset and power control block characteristics",
     "page": 53,
     "section": "5.3.3 Embedded reset and power control block characteristics",
     "section_title": "Embedded reset and power control block characteristics",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=53",
-    "text_helper": "Table 19. Embedded reset and power control block characteristics. — section 5.3.3 Embedded reset and power control block characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+    "text_helper": "Table 19. Embedded reset and power control block characteristics — section 5.3.3 Embedded reset and power control block characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -3869,7 +3811,10 @@
           "µA"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Specified by design - Not tested in production.",
+        "2. From POR threshold crossing to NRST pull-up resistor activation."
+      ],
       "legend": [
         "The values in this table are evaluated by characterization - Not tested in production, unless otherwise specified."
       ],
@@ -3878,7 +3823,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 20. Embedded internal voltage reference.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 20. Embedded internal voltage reference",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -3888,14 +3833,14 @@
     "frequency": "144",
     "table_id": "table_20",
     "table_number": "20",
-    "title": "Table 20. Embedded internal voltage reference.",
+    "title": "Table 20. Embedded internal voltage reference",
     "page": 53,
     "section": "5.3.4 Inrush current and inrush electric charge characteristics",
     "section_title": "Inrush current and inrush electric charge characteristics",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=53",
-    "text_helper": "Table 20. Embedded internal voltage reference. — section 5.3.4 Inrush current and inrush electric charge characteristics. Symbol, Parameter, Typ, Unit.",
+    "text_helper": "Table 20. Embedded internal voltage reference — section 5.3.4 Inrush current and inrush electric charge characteristics. Symbol, Parameter, Typ, Unit.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -3930,7 +3875,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 21. Embedded internal voltage reference.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 21. Embedded internal voltage reference",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -3940,14 +3885,14 @@
     "frequency": "144",
     "table_id": "table_21",
     "table_number": "21",
-    "title": "Table 21. Embedded internal voltage reference.",
+    "title": "Table 21. Embedded internal voltage reference",
     "page": 54,
     "section": "5.3.5 Embedded voltage reference",
     "section_title": "Embedded voltage reference",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=54",
-    "text_helper": "Table 21. Embedded internal voltage reference. — section 5.3.5 Embedded voltage reference. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+    "text_helper": "Table 21. Embedded internal voltage reference — section 5.3.5 Embedded voltage reference. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -4122,7 +4067,7 @@
         [
           "IDD(Run)(1)",
           "Supply current in Run mode with all peripheral clocks disabled",
-          "Code in Flash, ICACHE 2-way",
+          "yaw-2 EHCACI",
           "48",
           "3.7",
           "3.85",
@@ -4147,8 +4092,8 @@
         ],
         [
           "IDD(Run)(1)",
-          "Supply current in Run mode with all peripheral clocks disabled",
-          "Code in Flash, ICACHE OFF",
+          "clocks disabled",
+          "ICACHE OFF",
           "48",
           "3.9",
           "4.20",
@@ -4159,7 +4104,7 @@
           "mA"
         ],
         [
-          "IDD(Run)(1)",
+          "(1) IDD(Run)",
           "Supply current in Run mode with all peripheral clocks disabled",
           "Code in SRAM2, ICACHE OFF, FLASH ON",
           "144",
@@ -4174,7 +4119,7 @@
         [
           "IDD(Run)(1)",
           "Supply current in Run mode with all peripheral clocks disabled",
-          "Code in SRAM2, ICACHE OFF, FLASH ON",
+          "ICACHE OFF, FLASH ON",
           "48",
           "3.3",
           "3.40",
@@ -4199,7 +4144,7 @@
         ],
         [
           "IDD(Run)(1)",
-          "Supply current in Run mode with all peripheral clocks enabled",
+          "clocks enabled",
           "Code in flash, ICACHE OFF",
           "144(2)",
           "19.0",
@@ -4224,7 +4169,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 24. Typical current consumption in Run mode with CoreMark running from flash memory and SRAM.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 24. Typical current consumption in Run mode with CoreMark running from flash memory and SRAM",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -4234,14 +4179,14 @@
     "frequency": "144",
     "table_id": "table_24",
     "table_number": "24",
-    "title": "Table 24. Typical current consumption in Run mode with CoreMark running from flash memory and SRAM.",
+    "title": "Table 24. Typical current consumption in Run mode with CoreMark running from flash memory and SRAM",
     "page": 55,
     "section": "5.3.6.1 Current consumption in Run mode",
     "section_title": "Current consumption in Run mode",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=55",
-    "text_helper": "Table 24. Typical current consumption in Run mode with CoreMark running from flash memory and SRAM. — section 5.3.6.1 Current consumption in Run mode. Symbol, Parameter, Conditions / Peripheral, SYSCLK / source, fHCLK / (MHz), +4 autres.",
+    "text_helper": "Table 24. Typical current consumption in Run mode with CoreMark running from flash memory and SRAM — section 5.3.6.1 Current consumption in Run mode. Symbol, Parameter, Conditions / Peripheral, SYSCLK / source, fHCLK / (MHz), +4 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -4290,9 +4235,9 @@
         ],
         [
           "IDD(Run)",
-          "Supply current in Run mode",
+          "mode",
           "Code in flash, ICACHE OFF, prefetch OFF",
-          "PSI (1)",
+          "(1) PSI",
           "144",
           "8.70",
           "mA",
@@ -4333,7 +4278,9 @@
           "µA/ MHz"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. LSE is in bypass mode at 32.768 kHz. DS15135 - Rev 1 page 56/130"
+      ],
       "legend": [
         "Evaluated by characterization - not tested in production, unless otherwise stated."
       ],
@@ -4390,8 +4337,8 @@
         ],
         [
           "IDD(SLEEP)",
-          "Supply current in Sleep mode",
-          "All peripheral clocks disabled",
+          "Supply current in Sleep",
+          "disabled",
           "48",
           "0.90",
           "1.05",
@@ -4403,7 +4350,7 @@
         ],
         [
           "IDD(SLEEP)",
-          "Supply current in Sleep mode",
+          "mode",
           "All peripheral clocks enabled",
           "144",
           "12.50",
@@ -4417,7 +4364,7 @@
         [
           "IDD(SLEEP)",
           "Supply current in Sleep mode",
-          "All peripheral clocks enabled",
+          "enabled",
           "48",
           "4.50",
           "4.00",
@@ -4426,74 +4373,11 @@
           "8.30",
           "10.00",
           "mA"
-        ],
-        [
-          "IDD(STOP)",
-          "FLASH ON",
-          "SRAM1/2 ON",
-          "STOP1",
-          "0.06",
-          "0.13",
-          "0.80",
-          "1.65",
-          "2.50",
-          "3.50",
-          "3.50"
-        ],
-        [
-          "IDD(STOP)",
-          "FLASH IN LOW POWER",
-          "SRAM1/2 ON",
-          "STOP0",
-          "0.16",
-          "0.29",
-          "1.40",
-          "2.75",
-          "4.05",
-          "5.45",
-          "5.45"
-        ],
-        [
-          "IDD(STOP)",
-          "FLASH IN LOW POWER",
-          "SRAM1/2 ON",
-          "STOP1",
-          "0.04",
-          "0.12",
-          "0.78",
-          "1.65",
-          "2.50",
-          "3.50",
-          "3.50"
-        ],
-        [
-          "IDD(STOP)",
-          "FLASH IN LOW POWER",
-          "SRAM1/2 powered down",
-          "STOP0",
-          "0.16",
-          "0.29",
-          "1.40",
-          "2.70",
-          "4.00",
-          "5.45",
-          "5.45"
-        ],
-        [
-          "IDD(STOP)",
-          "FLASH IN LOW POWER",
-          "SRAM1/2 powered down",
-          "STOP1",
-          "0.04",
-          "0.12",
-          "0.78",
-          "1.65",
-          "2.50",
-          "3.50",
-          "3.50"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. LSE is in bypass mode at 32.768 kHz. DS15135 - Rev 1 page 56/130"
+      ],
       "legend": [
         "Evaluated by characterization - Not tested in production.",
         "Clocked by HSI at 144MHz of HSIDIV3 at 48MHz."
@@ -4552,7 +4436,7 @@
         [
           "IDD(STOP)",
           "FLASH ON",
-          "SRAM1/2 ON",
+          "STOP1",
           "STOP1",
           "0.06",
           "0.13",
@@ -4578,7 +4462,7 @@
         [
           "IDD(STOP)",
           "FLASH IN LOW POWER",
-          "SRAM1/2 ON",
+          "STOP1",
           "STOP1",
           "0.04",
           "0.12",
@@ -4604,7 +4488,7 @@
         [
           "IDD(STOP)",
           "FLASH IN LOW POWER",
-          "SRAM1/2 powered down",
+          "down STOP1",
           "STOP1",
           "0.04",
           "0.12",
@@ -4615,7 +4499,9 @@
           "mA"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. LSE is in bypass mode at 32.768 kHz. DS15135 - Rev 1 page 56/130"
+      ],
       "legend": [
         "Evaluated by characterization - not tested in production, unless otherwise stated."
       ],
@@ -4673,7 +4559,7 @@
         [
           "IDD(Stop)",
           "FLASH IN LOW POWER",
-          "HSIKERON, STOP0",
+          "HSI48",
           "HSI48",
           "0.35",
           "0.48",
@@ -4684,7 +4570,9 @@
           "mA"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. LSE is in bypass mode at 32.768 kHz. DS15135 - Rev 1 page 56/130"
+      ],
       "legend": [
         "Evaluated by characterization - not tested in production, unless otherwise stated."
       ],
@@ -4743,7 +4631,7 @@
         ],
         [
           "IDD(Standby)",
-          "Supply current in Standby mode, IWDG OFF",
+          "IWDG OFF",
           "ON",
           "2.95",
           "3.10",
@@ -4771,7 +4659,7 @@
         ],
         [
           "IDD(Standby)",
-          "Supply current in Standby mode, IWDG ON",
+          "IWDG ON",
           "ON",
           "2.9",
           "3.05",
@@ -4795,7 +4683,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 29. Peripheral current consumption measured in Sleep mode.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 29. Peripheral current consumption measured in Sleep mode",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -4805,14 +4693,14 @@
     "frequency": "144",
     "table_id": "table_29",
     "table_number": "29",
-    "title": "Table 29. Peripheral current consumption measured in Sleep mode.",
+    "title": "Table 29. Peripheral current consumption measured in Sleep mode",
     "page": 57,
     "section": "5.3.6.5 Current consumption from peripherals",
     "section_title": "Current consumption from peripherals",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=57",
-    "text_helper": "Table 29. Peripheral current consumption measured in Sleep mode. — section 5.3.6.5 Current consumption from peripherals. Bus, Peripheral, IDD(Typ), Unit.",
+    "text_helper": "Table 29. Peripheral current consumption measured in Sleep mode — section 5.3.6.5 Current consumption from peripherals. Bus, Peripheral, IDD(Typ), Unit.",
     "table_content": {
       "headers": [
         "Bus",
@@ -5095,7 +4983,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 30. Wake-up time from low-power modes.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 30. Wake-up time from low-power modes",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -5105,14 +4993,14 @@
     "frequency": "144",
     "table_id": "table_30",
     "table_number": "30",
-    "title": "Table 30. Wake-up time from low-power modes.",
+    "title": "Table 30. Wake-up time from low-power modes",
     "page": 59,
     "section": "5.3.7 Wake-up time from low-power modes and voltage scaling transition times",
     "section_title": "Wake-up time from low-power modes and voltage scaling transition times",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=59",
-    "text_helper": "Table 30. Wake-up time from low-power modes. — section 5.3.7 Wake-up time from low-power modes and voltage scaling transition times. Symbol, Parameter, Conditions, Wakeup clock, fHCLK (MHz), +2 autres.",
+    "text_helper": "Table 30. Wake-up time from low-power modes — section 5.3.7 Wake-up time from low-power modes and voltage scaling transition times. Symbol, Parameter, Conditions, Wakeup clock, fHCLK (MHz), +2 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -5140,7 +5028,7 @@
           "-",
           "-",
           "16",
-          "CPU clock cycles"
+          "cycles"
         ],
         [
           "twu(Stop)",
@@ -5224,14 +5112,16 @@
           "µs"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Specified by design - Not tested in production."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 31. Wake-up time using USART/LPUART.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 31. Wake-up time using USART/LPUART",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -5241,14 +5131,14 @@
     "frequency": "144",
     "table_id": "table_31",
     "table_number": "31",
-    "title": "Table 31. Wake-up time using USART/LPUART.",
+    "title": "Table 31. Wake-up time using USART/LPUART",
     "page": 59,
     "section": "5.3.7 Wake-up time from low-power modes and voltage scaling transition times",
     "section_title": "Wake-up time from low-power modes and voltage scaling transition times",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=59",
-    "text_helper": "Table 31. Wake-up time using USART/LPUART. — section 5.3.7 Wake-up time from low-power modes and voltage scaling transition times. Symbol, Parameter, Parameter, Condition, Typ, +2 autres.",
+    "text_helper": "Table 31. Wake-up time using USART/LPUART — section 5.3.7 Wake-up time from low-power modes and voltage scaling transition times. Symbol, Parameter, Parameter, Condition, Typ, +2 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -5270,9 +5160,9 @@
           "µs"
         ],
         [
-          "tWUUSART/ tWULPUART",
-          "Wake-up time needed to calculate the maximum USART/LPUART baudrate allowing to wake up from Stop mode when USART/LPUART clock source is 48 MHz by HSIDIV3",
-          "Wake-up time needed to calculate the maximum USART/LPUART baudrate allowing to wake up from Stop mode when USART/LPUART clock source is 48 MHz by HSIDIV3",
+          "tWULPUART",
+          "up from Stop mode when USART/LPUART clock source is 48 MHz by HSIDIV3",
+          "up from Stop mode when USART/LPUART clock source is 48 MHz by HSIDIV3",
           "Stop 1 mode",
           "4.8",
           "6.6",
@@ -5288,7 +5178,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 32. High-speed external user clock characteristics.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 32. High-speed external user clock characteristics",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -5298,14 +5188,14 @@
     "frequency": "144",
     "table_id": "table_32",
     "table_number": "32",
-    "title": "Table 32. High-speed external user clock characteristics.",
+    "title": "Table 32. High-speed external user clock characteristics",
     "page": 59,
     "section": "5.3.8.1 High-speed external user clock generated from an external source",
     "section_title": "High-speed external user clock generated from an external source",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=59",
-    "text_helper": "Table 32. High-speed external user clock characteristics. — section 5.3.8.1 High-speed external user clock generated from an external source. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+    "text_helper": "Table 32. High-speed external user clock characteristics — section 5.3.8.1 High-speed external user clock generated from an external source. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -5397,47 +5287,10 @@
           "-",
           "0.3 / fext_ext",
           "ns"
-        ],
-        [
-          "VLSEL",
-          "OSC32_IN input pin low level voltage",
-          "External digital clock",
-          "VSS",
-          "-",
-          "0.3 VDD",
-          "0.3 VDD"
-        ],
-        [
-          "Vlsw_H",
-          "Analog low swing OSC_IN high level",
-          "External analog low swing clock",
-          "0.6",
-          "0.6",
-          "1.225",
-          "V"
-        ],
-        [
-          "Vlsw_L",
-          "Analog low swing OSC_IN low level",
-          "External analog low swing clock",
-          "0.35",
-          "0.35",
-          "0.8",
-          "0.8"
-        ],
-        [
-          "VlswLSE (VLSEH - VLSEL)",
-          "Analog low swing OSC_IN peak-to- peak amplitude",
-          "External analog low swing clock",
-          "0.2",
-          "0.2",
-          "0.875",
-          "0.875"
         ]
       ],
       "notes": [
-        "1. Specified by design - Not tested in production.",
-        "3. tSU(HSE) is the startup time measured from the moment it is enabled (by software) to a stabilized 8 MHz oscillation is reached. This value is measured for a standard crystal resonator and it can vary significantly with the crystal manufacturer."
+        "1. Specified by design - Not tested in production."
       ],
       "legend": [
         "Specified by design and not tested in production."
@@ -5447,7 +5300,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 33. Low-speed external user clock characteristics.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 33. Low-speed external user clock characteristics",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -5457,14 +5310,14 @@
     "frequency": "144",
     "table_id": "table_33",
     "table_number": "33",
-    "title": "Table 33. Low-speed external user clock characteristics.",
+    "title": "Table 33. Low-speed external user clock characteristics",
     "page": 61,
     "section": "5.3.8.2 Low-speed external user clock generated from an external source",
     "section_title": "Low-speed external user clock generated from an external source",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=61",
-    "text_helper": "Table 33. Low-speed external user clock characteristics. — section 5.3.8.2 Low-speed external user clock generated from an external source. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+    "text_helper": "Table 33. Low-speed external user clock characteristics — section 5.3.8.2 Low-speed external user clock generated from an external source. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -5556,55 +5409,9 @@
           "100",
           "200",
           "ns"
-        ],
-        [
-          "IDD(HSE)",
-          "HSE current consumption",
-          "VDD = 3 V, Rm = 20 Ω CL=10 pF at 4 MHz",
-          "-",
-          "0.4",
-          "-",
-          "-"
-        ],
-        [
-          "IDD(HSE)",
-          "HSE current consumption",
-          "VDD=3 V, Rm = 20 Ω CL = 10 pF at 8 MHz",
-          "-",
-          "0.4",
-          "-",
-          "-"
-        ],
-        [
-          "IDD(HSE)",
-          "HSE current consumption",
-          "VDD = 3 V, Rm = 20 Ω CL = 10 pF at 16 MHz",
-          "-",
-          "0.6",
-          "-",
-          "-"
-        ],
-        [
-          "IDD(HSE)",
-          "HSE current consumption",
-          "VDD = 3 V, Rm = 20 Ω CL = 10 pF at 32 MHz",
-          "-",
-          "0.7",
-          "-",
-          "-"
-        ],
-        [
-          "IDD(HSE)",
-          "HSE current consumption",
-          "VDD = 3 V, Rm = 20 Ω CL=10 pF at 48 MHz",
-          "-",
-          "1.2",
-          "-",
-          "-"
         ]
       ],
       "notes": [
-        "2. This consumption level occurs during the first 2/3 of the tSU(HSE) startup time.",
         "3. tSU(HSE) is the startup time measured from the moment it is enabled (by software) to a stabilized 8 MHz oscillation is reached. This value is measured for a standard crystal resonator and it can vary significantly with the crystal manufacturer."
       ],
       "legend": [
@@ -5733,39 +5540,12 @@
           "2",
           "-",
           "ms"
-        ],
-        [
-          "Gmcritmax",
-          "Maximum critical crystal Gm",
-          "LSEDRV[1:0] = 01, Medium low drive capability",
-          "-",
-          "-",
-          "0.75",
-          "0.75"
-        ],
-        [
-          "Gmcritmax",
-          "Maximum critical crystal Gm",
-          "LSEDRV[1:0] = 10, Medium high drive capability",
-          "-",
-          "-",
-          "1.7",
-          "1.7"
-        ],
-        [
-          "Gmcritmax",
-          "Maximum critical crystal Gm",
-          "LSEDRV[1:0] = 11, High drive capability",
-          "-",
-          "-",
-          "2.7",
-          "2.7"
         ]
       ],
       "notes": [
-        "1. Tested in production.",
-        "2. Specified by design - Not tested in production.",
-        "3. Evaluated by characterization - Not tested in production."
+        "1. Resonator characteristics given by the crystal/ceramic resonator manufacturer.",
+        "2. This consumption level occurs during the first 2/3 of the tSU(HSE) startup time.",
+        "3. tSU(HSE) is the startup time measured from the moment it is enabled (by software) to a stabilized 8 MHz oscillation is reached. This value is measured for a standard crystal resonator and it can vary significantly with the crystal manufacturer."
       ],
       "legend": [
         "Specified by design and not tested in production."
@@ -5775,7 +5555,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 35. LSE oscillator characteristics (f = 32.768 kHz).",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 35. LSE oscillator characteristics (f = 32.768 kHz)",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -5785,14 +5565,14 @@
     "frequency": "144",
     "table_id": "table_35",
     "table_number": "35",
-    "title": "Table 35. LSE oscillator characteristics (f = 32.768 kHz).",
+    "title": "Table 35. LSE oscillator characteristics (f = 32.768 kHz)",
     "page": 63,
     "section": "5.3.8.4 Low-speed external clock generated from a crystal resonator",
     "section_title": "Low-speed external clock generated from a crystal resonator",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=63",
-    "text_helper": "Table 35. LSE oscillator characteristics (f = 32.768 kHz). — section 5.3.8.4 Low-speed external clock generated from a crystal resonator. Symbol, Parameter, Operating conditions(1), Min, Typ, +2 autres.",
+    "text_helper": "Table 35. LSE oscillator characteristics (f = 32.768 kHz) — section 5.3.8.4 Low-speed external clock generated from a crystal resonator. Symbol, Parameter, Operating conditions(1), Min, Typ, +2 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -5857,126 +5637,12 @@
           "2",
           "-",
           "s"
-        ],
-        [
-          "USER TRIM COVERAGE(2)",
-          "USER TRIMMING Coverage positive",
-          "80 steps",
-          "5.2%",
-          "8%",
-          "-",
-          "-"
-        ],
-        [
-          "USER TRIM COVERAGE(2)",
-          "USER TRIMMING Coverage negative",
-          "48 steps",
-          "-3.1%",
-          "-4.8%",
-          "-",
-          "-"
-        ],
-        [
-          "DuCy(HSI)(2)",
-          "Duty Cycle",
-          "-",
-          "45",
-          "45",
-          "55",
-          "55"
-        ],
-        [
-          "ΔTEMP (HSI)(3)",
-          "HSI oscillator frequency drift over temperature (the reference is 144 MHz.)",
-          "TJ = -20 to 130 °C",
-          "-1",
-          "-",
-          "1",
-          "1"
-        ],
-        [
-          "ΔTEMP (HSI)(3)",
-          "HSI oscillator frequency drift over temperature (the reference is 144 MHz.)",
-          "TJ = -40 to TJmax °C",
-          "-1.5",
-          "-",
-          "1.5",
-          "1.5"
-        ],
-        [
-          "ΔVDD(HSI)(2)(4)",
-          "HSI oscillator frequency drift with VDDSection 5.3.9.1: High-speed internal HSI144 oscillator Section 5.3.9.1: High- speed internal HSI144 oscillator(the reference is 3.3V)",
-          "VDD from 2.7 V to 3.6 V",
-          "-",
-          "-",
-          "- 0.1",
-          "- 0.1"
-        ],
-        [
-          "tsu(HSI)(3)",
-          "HSI oscillator start-up time (PSI On)",
-          "-",
-          "-",
-          "0.5",
-          "-",
-          "-"
-        ],
-        [
-          "tstab(2)",
-          "stabilization time (PSI OFF from Enable)",
-          "+/-1% of target freq",
-          "-",
-          "-",
-          "8",
-          "8"
-        ],
-        [
-          "tstab(2)",
-          "stabilization time (PSI ON from Enable)",
-          "stabilization time (PSI ON from Enable)",
-          "-",
-          "-",
-          "0.7",
-          "0.7"
-        ],
-        [
-          "IDD(HSI)(2)(5)",
-          "HSI oscillator power consumption",
-          "-",
-          "-",
-          "28",
-          "-",
-          "-"
-        ],
-        [
-          "PT jitter(2)",
-          "Paired transition jitter(7)",
-          "Paired transition jitter(7)",
-          "-",
-          "62",
-          "394",
-          "394"
-        ],
-        [
-          "Per jitter(2)",
-          "Period Jitter standard deviation",
-          "On HSIS",
-          "On HSIS",
-          "15",
-          "15",
-          "15"
-        ],
-        [
-          "Per jitter(2)",
-          "Period Jitter standard deviation",
-          "On HSIDIV3",
-          "On HSIDIV3",
-          "26",
-          "26",
-          "26"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Tested in production.",
+        "2. Specified by design - Not tested in production."
+      ],
       "legend": [
         "Specified by design and not tested in production."
       ],
@@ -6042,7 +5708,7 @@
           "%"
         ],
         [
-          "USER TRIM COVERAGE(2)",
+          "COVERAGE(2)",
           "USER TRIMMING Coverage negative",
           "48 steps",
           "-3.1%",
@@ -6070,7 +5736,7 @@
         ],
         [
           "ΔTEMP (HSI)(3)",
-          "HSI oscillator frequency drift over temperature (the reference is 144 MHz.)",
+          "temperature (the reference is 144 MHz.)",
           "TJ = -40 to TJmax °C",
           "-1.5",
           "-",
@@ -6233,7 +5899,7 @@
         [
           "fPSI",
           "PSI potential frequency",
-          "If reference is HSE at 8, 16, 24, 32 or 48 MHz or HSIDIV18",
+          "at 8, 16, 24, 32 or 48 MHz",
           "-",
           "144",
           "-",
@@ -6242,7 +5908,7 @@
         [
           "fPSI",
           "PSI potential frequency",
-          "If reference is HSE at 8, 16, 24, 32 or 48 MHz or HSIDIV18",
+          "or HSIDIV18",
           "-",
           "160(2)",
           "-",
@@ -6339,7 +6005,7 @@
           "µA"
         ],
         [
-          "IDD(PSI)(3)(5)",
+          "(5) IDD(PSI)(3)",
           "PSI oscillator power consumption",
           "100 MHz",
           "-",
@@ -6499,33 +6165,6 @@
           "-",
           "0.775 (RMS) 6.16 (peak)",
           "ns"
-        ],
-        [
-          "fLSI",
-          "LSI frequency",
-          "TJ = -40 to 130°C",
-          "29.4(2)",
-          "-",
-          "33.6(2)",
-          "33.6(2)"
-        ],
-        [
-          "fLSI",
-          "LSI frequency",
-          "TJ = -40 to 140°C",
-          "28.6(2)",
-          "-",
-          "33.6(2)",
-          "33.6(2)"
-        ],
-        [
-          "tstab(LSI)(3)",
-          "LSI oscillator stabilization time (5% of final value)",
-          "-",
-          "-",
-          "120",
-          "170",
-          "170"
         ]
       ],
       "notes": [
@@ -6799,14 +6438,16 @@
           "V"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by test production."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 41. Flash memory user and EDATA endurance and data retention.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 41. Flash memory user and EDATA endurance and data retention",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -6816,14 +6457,14 @@
     "frequency": "144",
     "table_id": "table_41",
     "table_number": "41",
-    "title": "Table 41. Flash memory user and EDATA endurance and data retention.",
+    "title": "Table 41. Flash memory user and EDATA endurance and data retention",
     "page": 68,
     "section": "5.3.10 Flash memory characteristics",
     "section_title": "Flash memory characteristics",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=68",
-    "text_helper": "Table 41. Flash memory user and EDATA endurance and data retention. — section 5.3.10 Flash memory characteristics. Symbol, Parameter, Conditions, Min(1), Unit.",
+    "text_helper": "Table 41. Flash memory user and EDATA endurance and data retention — section 5.3.10 Flash memory characteristics. Symbol, Parameter, Conditions, Min(1), Unit.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -6860,20 +6501,6 @@
           "10 Kcycle at TJ = 55 °C",
           "30",
           "Year"
-        ],
-        [
-          "VFESD",
-          "Voltage limits to be applied on any I/O pin to induce a functional disturbance",
-          "Voltage limits to be applied on any I/O pin to induce a functional disturbance",
-          "VDD = 3.3 V, TA = 25°C, fHCLK = 144 MHz, LQFP64 package conforming to IEC 61000-4-2",
-          "VDD = 3.3 V, TA = 25°C, fHCLK = 144 MHz, LQFP64 package conforming to IEC 61000-4-2"
-        ],
-        [
-          "VEFTB",
-          "Fast transient voltage burst limits to be applied through 100 pF on VDD and VSS pins to induce a functional disturbance",
-          "Fast transient voltage burst limits to be applied through 100 pF on VDD and VSS pins to induce a functional disturbance",
-          "VDD = 3.3 V, TA = 25°C, fHCLK = 144 MHz, LQFP64 package conforming to IEC 61000-4-4",
-          "VDD = 3.3 V, TA = 25°C, fHCLK = 144 MHz, LQFP64 package conforming to IEC 61000-4-4"
         ]
       ],
       "notes": [
@@ -6885,7 +6512,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 42. EMS characteristics.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 42. EMS characteristics",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -6895,18 +6522,17 @@
     "frequency": "144",
     "table_id": "table_42",
     "table_number": "42",
-    "title": "Table 42. EMS characteristics.",
+    "title": "Table 42. EMS characteristics",
     "page": 69,
     "section": "5.3.11 EMC characteristics",
     "section_title": "EMC characteristics",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=69",
-    "text_helper": "Table 42. EMS characteristics. — section 5.3.11 EMC characteristics. Symbol, Parameter, Parameter, Conditions, Level/ Class.",
+    "text_helper": "Table 42. EMS characteristics — section 5.3.11 EMC characteristics. Symbol, Parameter, Conditions, Level/ Class.",
     "table_content": {
       "headers": [
         "Symbol",
-        "Parameter",
         "Parameter",
         "Conditions",
         "Level/ Class"
@@ -6915,47 +6541,26 @@
         [
           "VFESD",
           "Voltage limits to be applied on any I/O pin to induce a functional disturbance",
-          "Voltage limits to be applied on any I/O pin to induce a functional disturbance",
           "VDD = 3.3 V, TA = 25°C, fHCLK = 144 MHz, LQFP64 package conforming to IEC 61000-4-2",
           "2B"
         ],
         [
           "VEFTB",
           "Fast transient voltage burst limits to be applied through 100 pF on VDD and VSS pins to induce a functional disturbance",
-          "Fast transient voltage burst limits to be applied through 100 pF on VDD and VSS pins to induce a functional disturbance",
           "VDD = 3.3 V, TA = 25°C, fHCLK = 144 MHz, LQFP64 package conforming to IEC 61000-4-4",
           "5A"
-        ],
-        [
-          "SEMI",
-          "Peak(1)",
-          "30 MHz to 130 MHz",
-          "-1",
-          "-1"
-        ],
-        [
-          "SEMI",
-          "Peak(1)",
-          "130 MHz to 1 GHz",
-          "13",
-          "13"
-        ],
-        [
-          "SEMI",
-          "Peak(1)",
-          "1 GHz to 2 GHz",
-          "11",
-          "11"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Evaluated by characterization - Not tested in production. Static latch-up"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 43. EMI characteristics for f = 8 MHz and f = 144 MHz.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 43. EMI characteristics for f = 8 MHz and f = 144 MHz",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -6965,14 +6570,14 @@
     "frequency": "144",
     "table_id": "table_43",
     "table_number": "43",
-    "title": "Table 43. EMI characteristics for f = 8 MHz and f = 144 MHz.",
+    "title": "Table 43. EMI characteristics for f = 8 MHz and f = 144 MHz",
     "page": 70,
     "section": "5.3.11 EMC characteristics",
     "section_title": "EMC characteristics",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=70",
-    "text_helper": "Table 43. EMI characteristics for f = 8 MHz and f = 144 MHz. — section 5.3.11 EMC characteristics. Symbol, Parameter, Conditions, Monitored frequency band, Value, +1 autres.",
+    "text_helper": "Table 43. EMI characteristics for f = 8 MHz and f = 144 MHz — section 5.3.11 EMC characteristics. Symbol, Parameter, Conditions, Monitored frequency band, Value, +1 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -7034,7 +6639,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 44. ESD absolute maximum ratings.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 44. ESD absolute maximum ratings",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -7044,14 +6649,14 @@
     "frequency": "144",
     "table_id": "table_44",
     "table_number": "44",
-    "title": "Table 44. ESD absolute maximum ratings.",
+    "title": "Table 44. ESD absolute maximum ratings",
     "page": 70,
     "section": "5.3.12 Electrical sensitivity characteristics",
     "section_title": "Electrical sensitivity characteristics",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=70",
-    "text_helper": "Table 44. ESD absolute maximum ratings. — section 5.3.12 Electrical sensitivity characteristics. Symbol, Ratings, Conditions, Packages, Class, +2 autres.",
+    "text_helper": "Table 44. ESD absolute maximum ratings — section 5.3.12 Electrical sensitivity characteristics. Symbol, Ratings, Conditions, Packages, Class, +2 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -7092,8 +6697,8 @@
         ],
         [
           "VESD(CDM)",
-          "Electrostatic discharge voltage (charge device model)",
-          "TA = 25°C conforming to ANSI/ESDA/JEDEC JS- 002",
+          "discharge",
+          "TA = 25°C conforming to",
           "LQFP 32",
           "C3",
           "1000",
@@ -7101,8 +6706,8 @@
         ],
         [
           "VESD(CDM)",
-          "Electrostatic discharge voltage (charge device model)",
-          "TA = 25°C conforming to ANSI/ESDA/JEDEC JS- 002",
+          "voltage (charge device model)",
+          "002",
           "UFQFPN 48",
           "C3",
           "1000",
@@ -7138,7 +6743,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 45. Electrical sensitivities.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 45. Electrical sensitivities",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -7148,14 +6753,14 @@
     "frequency": "144",
     "table_id": "table_45",
     "table_number": "45",
-    "title": "Table 45. Electrical sensitivities.",
+    "title": "Table 45. Electrical sensitivities",
     "page": 70,
     "section": "5.3.12 Electrical sensitivity characteristics",
     "section_title": "Electrical sensitivity characteristics",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=70",
-    "text_helper": "Table 45. Electrical sensitivities. — section 5.3.12 Electrical sensitivity characteristics. Symbol, Parameter, Conditions, Class.",
+    "text_helper": "Table 45. Electrical sensitivities — section 5.3.12 Electrical sensitivity characteristics. Symbol, Parameter, Conditions, Class.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -7180,7 +6785,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 46. I/O current injection susceptibility.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 46. I/O current injection susceptibility",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -7190,14 +6795,14 @@
     "frequency": "144",
     "table_id": "table_46",
     "table_number": "46",
-    "title": "Table 46. I/O current injection susceptibility.",
+    "title": "Table 46. I/O current injection susceptibility",
     "page": 71,
     "section": "5.3.13 I/O current injection characteristics",
     "section_title": "I/O current injection characteristics",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=71",
-    "text_helper": "Table 46. I/O current injection susceptibility. — section 5.3.13 I/O current injection characteristics. Symbol, Description, Functional susceptibility / Negative injection, Functional susceptibility / Positive injection, Unit.",
+    "text_helper": "Table 46. I/O current injection susceptibility — section 5.3.13 I/O current injection characteristics. Symbol, Description, Functional susceptibility / Negative injection, Functional susceptibility / Positive injection, Unit.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -7229,7 +6834,15 @@
           "mA"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Compliant with CMOS requirements.",
+        "2. Specified by design - Not tested in production.",
+        "3. This parameter represents the pad leakage of the I/O itself. The total product pad leakage is provided by the following formula: ITotal_Ileak_max = 10 μA + [number of I/Os where VIN is applied on the pad] × Ilkg max.",
+        "4. Max(VDDXXX) is the maximum value of all the I/O supplies.",
+        "5. To sustain a voltage higher than the minimum of VDD or VDDA plus 0.3 V, disable the internal pull-up and pull-down resistors.",
+        "6. VIN must be less than Max(VDDXXX) + 3.6 V.",
+        "7. The pull-up and pull-down resistors are designed with a true resistance in series with a switchable PMOS/NMOS. This PMOS/NMOS contribution to the series resistance is minimal (~10% order)."
+      ],
       "legend": [
         "The I/O structure options listed in this table can be a concatenation of options including the option explicitly listed. For instance, TT_a refers to",
         "any TT I/O with _a option. TT_xx refers to any TT I/O and FT_xx refers to any FT I/O.",
@@ -7315,8 +6928,8 @@
           "nA"
         ],
         [
-          "Ileak (3)",
-          "FT_xx Input leakage current(2)",
+          "(3)",
+          "current(2) FT_xx Input leakage",
           "Max(VDDXXX) < VIN ≤ Max(VDDXXX + 1 V)(5)(6)(4)",
           "-",
           "-",
@@ -7389,7 +7002,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 48. Output voltage characteristics (all I/Os except PC14 and PC15).",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 48. Output voltage characteristics (all I/Os except PC14 and PC15)",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -7399,17 +7012,16 @@
     "frequency": "144",
     "table_id": "table_48",
     "table_number": "48",
-    "title": "Table 48. Output voltage characteristics (all I/Os except PC14 and PC15).",
+    "title": "Table 48. Output voltage characteristics (all I/Os except PC14 and PC15)",
     "page": 74,
     "section": "5.3.14 I/O port characteristics",
     "section_title": "I/O port characteristics",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=74",
-    "text_helper": "Table 48. Output voltage characteristics (all I/Os except PC14 and PC15). — section 5.3.14 I/O port characteristics. Symbol, Symbol, Parameter, Conditions(2), Min, +2 autres.",
+    "text_helper": "Table 48. Output voltage characteristics (all I/Os except PC14 and PC15) — section 5.3.14 I/O port characteristics. Symbol, Parameter, Conditions(2), Min, Max, +1 autres.",
     "table_content": {
       "headers": [
-        "Symbol",
         "Symbol",
         "Parameter",
         "Conditions(2)",
@@ -7420,7 +7032,6 @@
       "rows": [
         [
           "VOL",
-          "VOL",
           "Output low-level voltage",
           "CMOS port(1), |IIO| = 8 mA, 2.7 V ≤ VDD ≤ 3.6 V",
           "-",
@@ -7428,7 +7039,6 @@
           "V"
         ],
         [
-          "VOH",
           "VOH",
           "Output high-level voltage",
           "CMOS port(1), |IIO| = -8 mA, 2.7 V ≤ VDD ≤ 3.6 V",
@@ -7438,7 +7048,6 @@
         ],
         [
           "VOL(2)",
-          "VOL(2)",
           "Output low-level voltage",
           "TTL port(1),|IIO| = 8 mA, 2.7 V ≤ VDD ≤ 3.6 V",
           "-",
@@ -7446,7 +7055,6 @@
           "V"
         ],
         [
-          "VOH(2)",
           "VOH(2)",
           "Output high-level voltage",
           "TTL port(1),|IIO| = -8 mA, 2.7 V ≤ VDD ≤ 3.6 V",
@@ -7456,7 +7064,6 @@
         ],
         [
           "VOL(2)",
-          "VOL(2)",
           "Output low-level voltage",
           "|IIO| = 20 mA, 2.7 V ≤ VDD≤ 3.6 V",
           "-",
@@ -7464,7 +7071,6 @@
           "V"
         ],
         [
-          "VOH(2)",
           "VOH(2)",
           "Output high-level voltage",
           "|IIO| = -20 mA, 2.7 V ≤ VDD≤ 3.6 V",
@@ -7474,7 +7080,6 @@
         ],
         [
           "VOLFM+(2)",
-          "VOLFM+(2)",
           "Output low-level voltage for a FT_f I/O pin in FM+ mode",
           "|IIO| = 20 mA, 2.7 V ≤ VDD ≤ 3.6 V",
           "-",
@@ -7482,7 +7087,10 @@
           "V"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. TTL and CMOS outputs are compatible with JEDEC standards JESD36 and JESD52.",
+        "2. Specified by design - Not tested in production."
+      ],
       "legend": [
         "The I/O structure options listed in this table can be a concatenation of options including the option explicitly listed. For instance, TT_a refers to",
         "any TT I/O with _a option. TT_xx refers to any TT I/O and FT_xx refers to any FT I/O.",
@@ -7495,7 +7103,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 49. Output voltage characteristics for PC14 and PC15.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 49. Output voltage characteristics for PC14 and PC15",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -7505,17 +7113,16 @@
     "frequency": "144",
     "table_id": "table_49",
     "table_number": "49",
-    "title": "Table 49. Output voltage characteristics for PC14 and PC15.",
+    "title": "Table 49. Output voltage characteristics for PC14 and PC15",
     "page": 74,
     "section": "5.3.14 I/O port characteristics",
     "section_title": "I/O port characteristics",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=74",
-    "text_helper": "Table 49. Output voltage characteristics for PC14 and PC15. — section 5.3.14 I/O port characteristics. Symbol, Symbol, Parameter, Conditions(3), Min, +2 autres.",
+    "text_helper": "Table 49. Output voltage characteristics for PC14 and PC15 — section 5.3.14 I/O port characteristics. Symbol, Parameter, Conditions(3), Min, Max, +1 autres.",
     "table_content": {
       "headers": [
-        "Symbol",
         "Symbol",
         "Parameter",
         "Conditions(3)",
@@ -7526,7 +7133,6 @@
       "rows": [
         [
           "VOL",
-          "VOL",
           "Output low level voltage",
           "CMOS port(1) IIO=0.5 mA 2.7 V≤ VDD ≤3.6 V",
           "-",
@@ -7534,7 +7140,6 @@
           "V"
         ],
         [
-          "VOH",
           "VOH",
           "Output high level voltage",
           "CMOS port(1) IIO=-0.5 mA 2.7 V≤ VDD ≤3.6 V",
@@ -7544,7 +7149,6 @@
         ],
         [
           "VOL(2)",
-          "VOL(2)",
           "Output low level voltage",
           "TTL port(1) IIO = 0.5 mA 2.7 V ≤ VDD ≤3.6 V",
           "-",
@@ -7553,156 +7157,11 @@
         ],
         [
           "VOH(2)",
-          "VOH(2)",
           "Output high level voltage",
           "TTL port(1) IIO = -0.5 mA 2.7 V ≤ VDD ≤ 3.6 V",
           "2",
           "-",
           "V"
-        ],
-        [
-          "00",
-          "Fmax(1)",
-          "Maximum frequency",
-          "C = 30 pF, 2.7 V ≤ VDD ≤ 3.6 V",
-          "-",
-          "4",
-          "4"
-        ],
-        [
-          "00",
-          "Fmax(1)",
-          "Maximum frequency",
-          "C = 10 pF, 2.7 V≤ VDD ≤ 3.6 V",
-          "-",
-          "4",
-          "4"
-        ],
-        [
-          "00",
-          "tr/tf (2)",
-          "Output high to low level fall time and output low to high level rise time",
-          "C = 30 pF, 2.7 V ≤ VDD ≤ 3.6 V",
-          "-",
-          "46",
-          "46"
-        ],
-        [
-          "00",
-          "tr/tf (2)",
-          "Output high to low level fall time and output low to high level rise time",
-          "C = 10 pF, 2.7 V ≤ VDD ≤ 3.6 V",
-          "-",
-          "40",
-          "40"
-        ],
-        [
-          "01",
-          "Fmax(1)",
-          "Maximum frequency",
-          "C = 30 pF, 2.7 V≤ VDD ≤ 3.6 V",
-          "-",
-          "12",
-          "12"
-        ],
-        [
-          "01",
-          "Fmax(1)",
-          "Maximum frequency",
-          "C = 10 pF, 2.7 V ≤ VDD ≤ 3.6 V",
-          "-",
-          "12",
-          "12"
-        ],
-        [
-          "01",
-          "tr/tf(2)",
-          "Output high to low level fall time and output low to high level rise time",
-          "C = 30 pF, 2.7 V≤ VDD ≤ 3.6 V",
-          "-",
-          "17",
-          "17"
-        ],
-        [
-          "01",
-          "tr/tf(2)",
-          "Output high to low level fall time and output low to high level rise time",
-          "C = 10 pF, 2.7 V ≤ VDD ≤3.6 V",
-          "-",
-          "14",
-          "14"
-        ],
-        [
-          "10",
-          "Fmax(1)(3)",
-          "Maximum frequency",
-          "C = 30 pF, 2.7 V ≤ VDD ≤ 3.6 V",
-          "-",
-          "50",
-          "50"
-        ],
-        [
-          "10",
-          "Fmax(1)(3)",
-          "Maximum frequency",
-          "C = 10 pF, 2.7 V ≤ VDD ≤ 3.6 V",
-          "-",
-          "55",
-          "55"
-        ],
-        [
-          "10",
-          "tr/tf(2)(3)",
-          "Output high to low level fall time and output low to high level rise time",
-          "C = 30 pF, 2.7 V≤ VDD ≤ 3.6 V",
-          "-",
-          "6",
-          "6"
-        ],
-        [
-          "10",
-          "tr/tf(2)(3)",
-          "Output high to low level fall time and output low to high level rise time",
-          "C = 10 pF, 2.7 V ≤ VDD ≤ 3.6 V",
-          "-",
-          "4",
-          "4"
-        ],
-        [
-          "11",
-          "Fmax(1)(3)",
-          "Maximum frequency",
-          "C = 30 pF, 2.7 V ≤ VDD ≤ 3.6 V",
-          "-",
-          "96",
-          "96"
-        ],
-        [
-          "11",
-          "Fmax(1)(3)",
-          "Maximum frequency",
-          "C = 10 pF, 2.7 V ≤ VDD ≤ 3.6 V",
-          "-",
-          "110",
-          "110"
-        ],
-        [
-          "11",
-          "tr/tf(2)(3)",
-          "Output high to low level fall time and output low to high level rise time",
-          "C = 30 pF, 2.7 V ≤ VDD ≤ 3.6 V",
-          "-",
-          "4",
-          "4"
-        ],
-        [
-          "11",
-          "tr/tf(2)(3)",
-          "Output high to low level fall time and output low to high level rise time",
-          "C = 10 pF, 2.7 V ≤ VDD ≤ 3.6 V",
-          "-",
-          "3",
-          "3"
         ]
       ],
       "notes": [
@@ -7789,7 +7248,7 @@
         ],
         [
           "00",
-          "tr/tf (2)",
+          "(2) tr/tf",
           "Output high to low level fall time and output low to high level rise time",
           "C = 30 pF, 2.7 V ≤ VDD ≤ 3.6 V",
           "-",
@@ -7986,7 +7445,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 51. NRST pin characteristics.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 51. NRST pin characteristics",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -7996,14 +7455,14 @@
     "frequency": "144",
     "table_id": "table_51",
     "table_number": "51",
-    "title": "Table 51. NRST pin characteristics.",
+    "title": "Table 51. NRST pin characteristics",
     "page": 76,
     "section": "5.3.15 NRST pin characteristics",
     "section_title": "NRST pin characteristics",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=76",
-    "text_helper": "Table 51. NRST pin characteristics. — section 5.3.15 NRST pin characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+    "text_helper": "Table 51. NRST pin characteristics — section 5.3.15 NRST pin characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -8081,7 +7540,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 52. EXTI input characteristics.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 52. EXTI input characteristics",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -8091,14 +7550,14 @@
     "frequency": "144",
     "table_id": "table_52",
     "table_number": "52",
-    "title": "Table 52. EXTI input characteristics.",
+    "title": "Table 52. EXTI input characteristics",
     "page": 77,
     "section": "5.3.16 Extended interrupt and event controller input (EXTI) characteristics",
     "section_title": "Extended interrupt and event controller input (EXTI) characteristics",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=77",
-    "text_helper": "Table 52. EXTI input characteristics. — section 5.3.16 Extended interrupt and event controller input (EXTI) characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+    "text_helper": "Table 52. EXTI input characteristics — section 5.3.16 Extended interrupt and event controller input (EXTI) characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -8158,11 +7617,29 @@
         [
           "tLATR",
           "Trigger conversion latency for regular and injected channels",
+          "Trigger from an asynchronous clock",
+          "3",
+          "-",
+          "4",
+          "4"
+        ],
+        [
+          "tLATR",
+          "Trigger conversion latency for regular and injected channels",
           "Trigger from a synchronous clock",
           "3",
           "3",
           "3",
           "3"
+        ],
+        [
+          "tS",
+          "Sampling time",
+          "-",
+          "2.5",
+          "-",
+          "288.5",
+          "288.5"
         ],
         [
           "tCONV",
@@ -8183,7 +7660,9 @@
           "µA"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. High temperature generate leakage current on ADC inputs. This current create voltage drop through Rain directly affecting ADC accuracy (the worst case when VAIN = VDDA). To limit this effect to a tolerance of 2LSBs, it must respect rain max tables."
+      ],
       "legend": [
         "Specified by design and not tested in production."
       ],
@@ -8192,7 +7671,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 53. 12-bit ADC characteristics.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 53. 12-bit ADC characteristics",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -8202,14 +7681,14 @@
     "frequency": "144",
     "table_id": "table_53",
     "table_number": "53",
-    "title": "Table 53. 12-bit ADC characteristics.",
+    "title": "Table 53. 12-bit ADC characteristics",
     "page": 77,
     "section": "5.3.16 Extended interrupt and event controller input (EXTI) characteristics",
     "section_title": "Extended interrupt and event controller input (EXTI) characteristics",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=77",
-    "text_helper": "Table 53. 12-bit ADC characteristics. — section 5.3.16 Extended interrupt and event controller input (EXTI) characteristics. Symbol, Parameter, Conditions, Conditions, Conditions, +7 autres.",
+    "text_helper": "Table 53. 12-bit ADC characteristics — section 5.3.16 Extended interrupt and event controller input (EXTI) characteristics. Symbol, Parameter, Conditions, Conditions, Conditions, +7 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -8297,8 +7776,8 @@
           "MSPS"
         ],
         [
-          "fS with RAIN=47 Ω and CPCB = 22 pF",
-          "Sampling rate for slow channels",
+          "fS w it h R = 4 7 Ω A I N",
+          "S a m p l in g rate",
           "Resolution = 10 bits",
           "All modes",
           "2.7 V ≤ V DDA ≤ 3.6 V",
@@ -8309,303 +7788,11 @@
           "2.57",
           "-",
           "MSPS"
-        ],
-        [
-          "fS with RAIN=47 Ω and CPCB = 22 pF",
-          "Sampling rate for slow channels",
-          "Resolution = 8 bits",
-          "All modes",
-          "2.7 V ≤ V DDA ≤ 3.6 V",
-          "-40°C ≤ TJ ≤ 140°C",
-          "fADC= 36 MHz",
-          "SMP = 2.5",
-          "-",
-          "3",
-          "-",
-          "MSPS"
-        ],
-        [
-          "fS with RAIN=47 Ω and CPCB = 22 pF",
-          "Sampling rate for slow channels",
-          "Resolution = 6 bits",
-          "All modes",
-          "2.7 V ≤ V DDA ≤ 3.6 V",
-          "-40°C ≤ TJ ≤ 140°C",
-          "fADC= 36 MHz",
-          "SMP = 2.5",
-          "-",
-          "4.5",
-          "-",
-          "MSPS"
-        ],
-        [
-          "tTRIG",
-          "External trigger period",
-          "Resolution = 12 bits",
-          "Resolution = 12 bits",
-          "Resolution = 12 bits",
-          "Resolution = 12 bits",
-          "Resolution = 12 bits",
-          "Resolution = 12 bits",
-          "16",
-          "-",
-          "-",
-          "1/fADC"
-        ],
-        [
-          "VAIN",
-          "Conversion voltage range",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "0",
-          "-",
-          "VREF+",
-          "V"
-        ],
-        [
-          "RAIN(1)",
-          "External input impedance",
-          "Resolution = 12 bits, TJ = 140°C",
-          "Resolution = 12 bits, TJ = 140°C",
-          "Resolution = 12 bits, TJ = 140°C",
-          "Resolution = 12 bits, TJ = 140°C",
-          "Resolution = 12 bits, TJ = 140°C",
-          "Resolution = 12 bits, TJ = 140°C",
-          "-",
-          "-",
-          "110",
-          "Ω"
-        ],
-        [
-          "RAIN(1)",
-          "External input impedance",
-          "Resolution = 12 bits, TJ = 125°C",
-          "Resolution = 12 bits, TJ = 125°C",
-          "Resolution = 12 bits, TJ = 125°C",
-          "Resolution = 12 bits, TJ = 125°C",
-          "Resolution = 12 bits, TJ = 125°C",
-          "Resolution = 12 bits, TJ = 125°C",
-          "-",
-          "-",
-          "610",
-          "Ω"
-        ],
-        [
-          "RAIN(1)",
-          "External input impedance",
-          "Resolution = 10 bits, TJ = 140°C",
-          "Resolution = 10 bits, TJ = 140°C",
-          "Resolution = 10 bits, TJ = 140°C",
-          "Resolution = 10 bits, TJ = 140°C",
-          "Resolution = 10 bits, TJ = 140°C",
-          "Resolution = 10 bits, TJ = 140°C",
-          "-",
-          "-",
-          "2305",
-          "Ω"
-        ],
-        [
-          "RAIN(1)",
-          "External input impedance",
-          "Resolution = 10 bits, TJ = 125°C",
-          "Resolution = 10 bits, TJ = 125°C",
-          "Resolution = 10 bits, TJ = 125°C",
-          "Resolution = 10 bits, TJ = 125°C",
-          "Resolution = 10 bits, TJ = 125°C",
-          "Resolution = 10 bits, TJ = 125°C",
-          "-",
-          "-",
-          "4290",
-          "Ω"
-        ],
-        [
-          "RAIN(1)",
-          "External input impedance",
-          "Resolution = 8 bits, TJ = 140°C",
-          "Resolution = 8 bits, TJ = 140°C",
-          "Resolution = 8 bits, TJ = 140°C",
-          "Resolution = 8 bits, TJ = 140°C",
-          "Resolution = 8 bits, TJ = 140°C",
-          "Resolution = 8 bits, TJ = 140°C",
-          "-",
-          "-",
-          "11110",
-          "Ω"
-        ],
-        [
-          "RAIN(1)",
-          "External input impedance",
-          "Resolution = 8 bits, TJ = 125°C",
-          "Resolution = 8 bits, TJ = 125°C",
-          "Resolution = 8 bits, TJ = 125°C",
-          "Resolution = 8 bits, TJ = 125°C",
-          "Resolution = 8 bits, TJ = 125°C",
-          "Resolution = 8 bits, TJ = 125°C",
-          "-",
-          "-",
-          "15860",
-          "Ω"
-        ],
-        [
-          "RAIN(1)",
-          "External input impedance",
-          "Resolution = 6 bits, TJ = 140°C",
-          "Resolution = 6 bits, TJ = 140°C",
-          "Resolution = 6 bits, TJ = 140°C",
-          "Resolution = 6 bits, TJ = 140°C",
-          "Resolution = 6 bits, TJ = 140°C",
-          "Resolution = 6 bits, TJ = 140°C",
-          "-",
-          "-",
-          "46890",
-          "Ω"
-        ],
-        [
-          "RAIN(1)",
-          "External input impedance",
-          "Resolution = 6 bits, TJ = 125°C",
-          "Resolution = 6 bits, TJ = 125°C",
-          "Resolution = 6 bits, TJ = 125°C",
-          "Resolution = 6 bits, TJ = 125°C",
-          "Resolution = 6 bits, TJ = 125°C",
-          "Resolution = 6 bits, TJ = 125°C",
-          "-",
-          "-",
-          "79000",
-          "Ω"
-        ],
-        [
-          "CADC",
-          "Internal sample and hold capacitor",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "3",
-          "-",
-          "-"
-        ],
-        [
-          "tADCVREG_ STUP",
-          "ADC LDO startup time",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "10",
-          "10"
-        ],
-        [
-          "tSTAB",
-          "ADC power-up time",
-          "LDO already started",
-          "LDO already started",
-          "LDO already started",
-          "LDO already started",
-          "LDO already started",
-          "LDO already started",
-          "1",
-          "-",
-          "-",
-          "-"
-        ],
-        [
-          "tOFF_CAL",
-          "Offset calibration time",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "85",
-          "None",
-          "None",
-          "None"
-        ],
-        [
-          "tLATR",
-          "Trigger conversion latency for regular and injected channels",
-          "Trigger from an asynchronous clock",
-          "Trigger from an asynchronous clock",
-          "Trigger from an asynchronous clock",
-          "Trigger from an asynchronous clock",
-          "Trigger from an asynchronous clock",
-          "Trigger from an asynchronous clock",
-          "3",
-          "-",
-          "4",
-          "4"
-        ],
-        [
-          "None",
-          "None",
-          "Trigger from a synchronous clock",
-          "Trigger from a synchronous clock",
-          "Trigger from a synchronous clock",
-          "Trigger from a synchronous clock",
-          "Trigger from a synchronous clock",
-          "Trigger from a synchronous clock",
-          "3",
-          "None",
-          "None",
-          "None"
-        ],
-        [
-          "tS",
-          "Sampling time",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "2.5",
-          "-",
-          "288.5",
-          "288.5"
-        ],
-        [
-          "tCONV",
-          "Total conversion time (including sampling time)",
-          "N-bits resolution",
-          "N-bits resolution",
-          "N-bits resolution",
-          "N-bits resolution",
-          "N-bits resolution",
-          "N-bits resolution",
-          "tS + 1.5 + N",
-          "None",
-          "None",
-          "None"
-        ],
-        [
-          "IDDA(ADC)",
-          "ADC consumption on VDD, VDDA and VREF",
-          "fS = 2.25 MSPS",
-          "fS = 2.25 MSPS",
-          "fS = 2.25 MSPS",
-          "fS = 2.25 MSPS",
-          "fS = 2.25 MSPS",
-          "fS = 2.25 MSPS",
-          "-",
-          "200",
-          "-",
-          "-"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. High temperature generate leakage current on ADC inputs. This current create voltage drop through Rain directly affecting ADC accuracy (the worst case when VAIN = VDDA). To limit this effect to a tolerance of 2LSBs, it must respect rain max tables."
+      ],
       "legend": [
         "Specified by design - Not tested in production."
       ],
@@ -8956,7 +8143,7 @@
           "-",
           "2.7",
           "-",
-          "Max",
+          "-",
           "V"
         ],
         [
@@ -8992,7 +8179,7 @@
         [
           "RL",
           "Resistive Load",
-          "DAC output buffer ON",
+          "connected to VDDA",
           "connected to VDDA",
           "25",
           "-",
@@ -9329,7 +8516,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 58. DAC accuracy.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 58. DAC accuracy",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -9339,14 +8526,14 @@
     "frequency": "144",
     "table_id": "table_58",
     "table_number": "58",
-    "title": "Table 58. DAC accuracy.",
+    "title": "Table 58. DAC accuracy",
     "page": 85,
     "section": "5.3.19 Digital-to-analog converter characteristics (DAC)",
     "section_title": "Digital-to-analog converter characteristics (DAC)",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=85",
-    "text_helper": "Table 58. DAC accuracy. — section 5.3.19 Digital-to-analog converter characteristics (DAC). Symbol, Parameter, Conditions, Conditions, Min, +3 autres.",
+    "text_helper": "Table 58. DAC accuracy — section 5.3.19 Digital-to-analog converter characteristics (DAC). Symbol, Parameter, Conditions, Conditions, Min, +3 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -9595,7 +8782,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 59. COMP characteristics.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 59. COMP characteristics",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -9605,14 +8792,14 @@
     "frequency": "144",
     "table_id": "table_59",
     "table_number": "59",
-    "title": "Table 59. COMP characteristics.",
+    "title": "Table 59. COMP characteristics",
     "page": 85,
     "section": "5.3.20 Comparator characteristics",
     "section_title": "Comparator characteristics",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=85",
-    "text_helper": "Table 59. COMP characteristics. — section 5.3.20 Comparator characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+    "text_helper": "Table 59. COMP characteristics — section 5.3.20 Comparator characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -9836,7 +9023,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 60. OPAMP characteristics.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 60. OPAMP characteristics",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -9846,14 +9033,14 @@
     "frequency": "144",
     "table_id": "table_60",
     "table_number": "60",
-    "title": "Table 60. OPAMP characteristics.",
+    "title": "Table 60. OPAMP characteristics",
     "page": 86,
     "section": "5.3.21 OPAMP characteristics",
     "section_title": "OPAMP characteristics",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=86",
-    "text_helper": "Table 60. OPAMP characteristics. — section 5.3.21 OPAMP characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+    "text_helper": "Table 60. OPAMP characteristics — section 5.3.21 OPAMP characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -10364,7 +9551,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 61. TIMx characteristics.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 61. TIMx characteristics",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -10374,14 +9561,14 @@
     "frequency": "144",
     "table_id": "table_61",
     "table_number": "61",
-    "title": "Table 61. TIMx characteristics.",
+    "title": "Table 61. TIMx characteristics",
     "page": 88,
     "section": "5.3.22 Timer characteristics",
     "section_title": "Timer characteristics",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=88",
-    "text_helper": "Table 61. TIMx characteristics. — section 5.3.22 Timer characteristics. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
+    "text_helper": "Table 61. TIMx characteristics — section 5.3.22 Timer characteristics. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -10471,62 +9658,6 @@
           "-",
           "29.826",
           "s"
-        ],
-        [
-          "/4",
-          "/4",
-          "0",
-          "0.125",
-          "512",
-          "512"
-        ],
-        [
-          "/8",
-          "/8",
-          "1",
-          "0.250",
-          "1024",
-          "1024"
-        ],
-        [
-          "/16",
-          "/16",
-          "2",
-          "0.500",
-          "2048",
-          "2048"
-        ],
-        [
-          "/32",
-          "/32",
-          "3",
-          "1.0",
-          "4096",
-          "4096"
-        ],
-        [
-          "/64",
-          "/64",
-          "4",
-          "2.0",
-          "8192",
-          "8192"
-        ],
-        [
-          "/128",
-          "/128",
-          "5",
-          "4.0",
-          "16384",
-          "16384"
-        ],
-        [
-          "/256",
-          "/256",
-          "6 or 7",
-          "8.0",
-          "32768",
-          "32768"
         ]
       ],
       "notes": [
@@ -10538,7 +9669,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 62. IWDG min/max timeout period at 32 kHz (LSI).",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 62. IWDG min/max timeout period at 32 kHz (LSI)",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -10548,14 +9679,14 @@
     "frequency": "144",
     "table_id": "table_62",
     "table_number": "62",
-    "title": "Table 62. IWDG min/max timeout period at 32 kHz (LSI).",
+    "title": "Table 62. IWDG min/max timeout period at 32 kHz (LSI)",
     "page": 89,
     "section": "5.3.22 Timer characteristics",
     "section_title": "Timer characteristics",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=89",
-    "text_helper": "Table 62. IWDG min/max timeout period at 32 kHz (LSI). — section 5.3.22 Timer characteristics. Prescaler divider, PR[2:0] bits, Min timeout RL[11:0] = 0x000, Max timeout RL[11:0] = 0xFFF, Unit.",
+    "text_helper": "Table 62. IWDG min/max timeout period at 32 kHz (LSI) — section 5.3.22 Timer characteristics. Prescaler divider, PR[2:0] bits, Min timeout RL[11:0] = 0x000, Max timeout RL[11:0] = 0xFFF, Unit.",
     "table_content": {
       "headers": [
         "Prescaler divider",
@@ -10615,7 +9746,9 @@
           "ms"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. The minimum SDA data setup time during open-drain-mode is 3 ns, as specified in the MIPI Alliance specification for I3C. DS15135 - Rev 1 page 89/130"
+      ],
       "legend": [
         "Note: For the values in this table, the exact timings still depend on the phasing of the APB interface clock versus the LSI clock, so that there is",
         "always a full RC period of uncertainty."
@@ -10709,14 +9842,16 @@
           "ms"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. The minimum SDA data setup time during open-drain-mode is 3 ns, as specified in the MIPI Alliance specification for I3C. DS15135 - Rev 1 page 89/130"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 64. Open drain timing measurements.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 64. Open drain timing measurements",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -10726,14 +9861,14 @@
     "frequency": "144",
     "table_id": "table_64",
     "table_number": "64",
-    "title": "Table 64. Open drain timing measurements.",
+    "title": "Table 64. Open drain timing measurements",
     "page": 89,
     "section": "5.3.22 Timer characteristics",
     "section_title": "Timer characteristics",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=89",
-    "text_helper": "Table 64. Open drain timing measurements. — section 5.3.22 Timer characteristics. Symbol, Parameter, Conditions, Min, Unit.",
+    "text_helper": "Table 64. Open drain timing measurements — section 5.3.22 Timer characteristics. Symbol, Parameter, Conditions, Min, Unit.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -10762,7 +9897,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 65. I²C analog filter characteristics.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 65. I²C analog filter characteristics",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -10772,14 +9907,14 @@
     "frequency": "144",
     "table_id": "table_65",
     "table_number": "65",
-    "title": "Table 65. I²C analog filter characteristics.",
+    "title": "Table 65. I²C analog filter characteristics",
     "page": 90,
     "section": "5.3.22 Timer characteristics",
     "section_title": "Timer characteristics",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=90",
-    "text_helper": "Table 65. I²C analog filter characteristics. — section 5.3.22 Timer characteristics. Symbol, Parameter, Min, Max, Unit.",
+    "text_helper": "Table 65. I²C analog filter characteristics — section 5.3.22 Timer characteristics. Symbol, Parameter, Min, Max, Unit.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -10810,7 +9945,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 66. USART (SPI mode) characteristics.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 66. USART (SPI mode) characteristics",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -10820,14 +9955,14 @@
     "frequency": "144",
     "table_id": "table_66",
     "table_number": "66",
-    "title": "Table 66. USART (SPI mode) characteristics.",
+    "title": "Table 66. USART (SPI mode) characteristics",
     "page": 90,
     "section": "5.3.25 USART characteristics",
     "section_title": "USART characteristics",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=90",
-    "text_helper": "Table 66. USART (SPI mode) characteristics. — section 5.3.25 USART characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+    "text_helper": "Table 66. USART (SPI mode) characteristics — section 5.3.25 USART characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -10846,7 +9981,7 @@
           "-",
           "-",
           "18",
-          "Unit"
+          "18"
         ],
         [
           "fCK",
@@ -10855,7 +9990,7 @@
           "-",
           "-",
           "48",
-          "Unit"
+          "48"
         ],
         [
           "fCK",
@@ -10864,7 +9999,7 @@
           "-",
           "-",
           "27",
-          "Unit"
+          "27"
         ],
         [
           "tsu(NSS)",
@@ -10973,141 +10108,6 @@
           "-",
           "-",
           "-"
-        ],
-        [
-          "fSCK",
-          "SPI clock frequency",
-          "Slave receiver mode, 2.7 V ≤ VDD ≤ 3.6 V",
-          "-",
-          "-",
-          "100",
-          "100"
-        ],
-        [
-          "fSCK",
-          "SPI clock frequency",
-          "Slave transmitter mode, 2.7 V ≤ VDD ≤ 3.6 V",
-          "-",
-          "-",
-          "32",
-          "32"
-        ],
-        [
-          "th(NSS)",
-          "NSS hold time",
-          "Slave mode",
-          "1",
-          "-",
-          "-",
-          "-"
-        ],
-        [
-          "tw(SCKH)",
-          "SCK high and low time",
-          "Master mode",
-          "TSCK(1) - 1",
-          "TSCK(1)",
-          "TSCK(1)+ 1",
-          "TSCK(1)+ 1"
-        ],
-        [
-          "tw(SCKL)",
-          "tw(SCKL)",
-          "tw(SCKL)",
-          "tw(SCKL)",
-          "tw(SCKL)",
-          "tw(SCKL)",
-          "tw(SCKL)"
-        ],
-        [
-          "tsu(MI)",
-          "Data input setup time",
-          "DRDS = 1",
-          "13 - TSCK(1)/2",
-          "-",
-          "-",
-          "-"
-        ],
-        [
-          "tsu(SI)",
-          "tsu(SI)",
-          "Slave mode",
-          "2",
-          "-",
-          "-",
-          "-"
-        ],
-        [
-          "th(MI)",
-          "Data input hold time",
-          "DRDS = 1",
-          "TSCK(1)/2 - 8",
-          "-",
-          "-",
-          "-"
-        ],
-        [
-          "th(SI)",
-          "th(SI)",
-          "Slave mode",
-          "1.5",
-          "-",
-          "-",
-          "-"
-        ],
-        [
-          "ta(SO)",
-          "Data output access time",
-          "Slave mode",
-          "11",
-          "13.5",
-          "15.5",
-          "15.5"
-        ],
-        [
-          "tdis(SO)",
-          "Data output disable time",
-          "Slave mode",
-          "8.5",
-          "10.5",
-          "12.5",
-          "12.5"
-        ],
-        [
-          "tv(SO)",
-          "Data output valid time",
-          "Slave mode, 2.7 V ≤ VDD ≤ 3.6 V",
-          "-",
-          "12",
-          "15.5",
-          "15.5"
-        ],
-        [
-          "tv(MO)",
-          "Data output valid time",
-          "Master mode",
-          "-",
-          "1.5",
-          "2",
-          "2"
-        ],
-        [
-          "th(SO)",
-          "Data output hold time",
-          "Slave mode (after enable edge)",
-          "8",
-          "-",
-          "-",
-          "-"
-        ],
-        [
-          "th(MO)",
-          "Data output hold time",
-          "Master mode (after enable edge)",
-          "0",
-          "-",
-          "-",
-          "-"
         ]
       ],
       "notes": [
@@ -11121,7 +10121,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 67. SPI characteristics.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 67. SPI characteristics",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -11131,14 +10131,14 @@
     "frequency": "144",
     "table_id": "table_67",
     "table_number": "67",
-    "title": "Table 67. SPI characteristics.",
+    "title": "Table 67. SPI characteristics",
     "page": 92,
     "section": "5.3.26 SPI characteristics",
     "section_title": "SPI characteristics",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=92",
-    "text_helper": "Table 67. SPI characteristics. — section 5.3.26 SPI characteristics. Symbol, Parameter, Conditions, Conditions, Min, +3 autres.",
+    "text_helper": "Table 67. SPI characteristics — section 5.3.26 SPI characteristics. Symbol, Parameter, Conditions, Conditions, Min, +3 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -11234,7 +10234,7 @@
         [
           "tsu(MI)",
           "Data input setup time",
-          "Master mode",
+          "DRDS = 1",
           "DRDS = 1",
           "13 - TSCK(1)/2",
           "-",
@@ -11264,7 +10264,7 @@
         [
           "th(MI)",
           "Data input hold time",
-          "Master mode",
+          "DRDS = 1",
           "DRDS = 1",
           "TSCK(1)/2 - 8",
           "-",
@@ -11502,7 +10502,10 @@
           "ns"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. USB functionality is ensured down to 2.7 V, but some USB electrical characteristics are degraded in 2.7 to 3.0 V range.",
+        "2. No external termination series resistors are required on USB_DP (D+) and USB_DM (D-). The matching impedance is already included in the embedded driver."
+      ],
       "legend": [
         "Evaluated by characterization – Not tested in production."
       ],
@@ -11575,69 +10578,6 @@
           "36",
           "44",
           "Ω"
-        ],
-        [
-          "FTCK",
-          "FTCK",
-          "TCK clock frequency",
-          "-",
-          "-",
-          "34",
-          "34"
-        ],
-        [
-          "tisu(TMS)",
-          "tisu(TMS)",
-          "TMS input setup time",
-          "2",
-          "-",
-          "-",
-          "-"
-        ],
-        [
-          "tih(TMS)",
-          "tih(TMS)",
-          "TMS input hold time",
-          "0.5",
-          "-",
-          "-",
-          "-"
-        ],
-        [
-          "tisu(TDI)",
-          "tisu(TDI)",
-          "TDI input setup time",
-          "1.5",
-          "-",
-          "-",
-          "-"
-        ],
-        [
-          "tih(TDI)",
-          "tih(TDI)",
-          "TDI input hold time",
-          "0.5",
-          "-",
-          "-",
-          "-"
-        ],
-        [
-          "tov(TDO)",
-          "tov(TDO)",
-          "TDO output valid time",
-          "-",
-          "11",
-          "14.5",
-          "14.5"
-        ],
-        [
-          "toh(TDO)",
-          "toh(TDO)",
-          "TDO output hold time",
-          "7.5",
-          "-",
-          "-",
-          "-"
         ]
       ],
       "notes": [
@@ -11744,7 +10684,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 71. SWD characteristics.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 71. SWD characteristics",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -11754,14 +10694,14 @@
     "frequency": "144",
     "table_id": "table_71",
     "table_number": "71",
-    "title": "Table 71. SWD characteristics.",
+    "title": "Table 71. SWD characteristics",
     "page": 96,
     "section": "5.3.29 JTAG/SWD interface characteristics",
     "section_title": "JTAG/SWD interface characteristics",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=96",
-    "text_helper": "Table 71. SWD characteristics. — section 5.3.29 JTAG/SWD interface characteristics. Symbol, Parameter, Min, Typ, Max, +1 autres.",
+    "text_helper": "Table 71. SWD characteristics — section 5.3.29 JTAG/SWD interface characteristics. Symbol, Parameter, Min, Typ, Max, +1 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -11822,7 +10762,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 72. TSSOP20 - Mechanical data.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 72. TSSOP20 - Mechanical data",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -11832,14 +10772,14 @@
     "frequency": "144",
     "table_id": "table_72",
     "table_number": "72",
-    "title": "Table 72. TSSOP20 - Mechanical data.",
+    "title": "Table 72. TSSOP20 - Mechanical data",
     "page": 98,
     "section": "6.1 Device marking",
     "section_title": "Device marking",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=98",
-    "text_helper": "Table 72. TSSOP20 - Mechanical data. — section 6.1 Device marking. Symbol, Millimeters / Min, Millimeters / Typ, Millimeters / Max, Inches(1) / Min, +2 autres.",
+    "text_helper": "Table 72. TSSOP20 - Mechanical data — section 6.1 Device marking. Symbol, Millimeters / Min, Millimeters / Typ, Millimeters / Max, Inches(1) / Min, +2 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -11978,7 +10918,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 73. UFQFPN20 - Mechanical data.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 73. UFQFPN20 - Mechanical data",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -11988,14 +10928,14 @@
     "frequency": "144",
     "table_id": "table_73",
     "table_number": "73",
-    "title": "Table 73. UFQFPN20 - Mechanical data.",
+    "title": "Table 73. UFQFPN20 - Mechanical data",
     "page": 101,
     "section": "6.1 Device marking",
     "section_title": "Device marking",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=101",
-    "text_helper": "Table 73. UFQFPN20 - Mechanical data. — section 6.1 Device marking. Symbol, Millimeters / Min, Millimeters / Typ, Millimeters / Max, Inches / Min, +2 autres.",
+    "text_helper": "Table 73. UFQFPN20 - Mechanical data — section 6.1 Device marking. Symbol, Millimeters / Min, Millimeters / Typ, Millimeters / Max, Inches / Min, +2 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -12137,7 +11077,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 74. UFQFPN24 - Mechanical data.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 74. UFQFPN24 - Mechanical data",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -12147,14 +11087,14 @@
     "frequency": "144",
     "table_id": "table_74",
     "table_number": "74",
-    "title": "Table 74. UFQFPN24 - Mechanical data.",
+    "title": "Table 74. UFQFPN24 - Mechanical data",
     "page": 104,
     "section": "6.1 Device marking",
     "section_title": "Device marking",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=104",
-    "text_helper": "Table 74. UFQFPN24 - Mechanical data. — section 6.1 Device marking. Symbol, Millimeters / Min, Millimeters / Typ, Millimeters / Max, Inches(1) / Min, +2 autres.",
+    "text_helper": "Table 74. UFQFPN24 - Mechanical data — section 6.1 Device marking. Symbol, Millimeters / Min, Millimeters / Typ, Millimeters / Max, Inches(1) / Min, +2 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -12586,7 +11526,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 76. UFQFPN32 - Mechanical data.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 76. UFQFPN32 - Mechanical data",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -12596,14 +11536,14 @@
     "frequency": "144",
     "table_id": "table_76",
     "table_number": "76",
-    "title": "Table 76. UFQFPN32 - Mechanical data.",
+    "title": "Table 76. UFQFPN32 - Mechanical data",
     "page": 109,
     "section": "1.2 REF",
     "section_title": "REF",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=109",
-    "text_helper": "Table 76. UFQFPN32 - Mechanical data. — section 1.2 REF. Symbol, Millimeters(1) / Min, Millimeters(1) / Typ, Millimeters(1) / Max, Inches(2) / Min, +2 autres.",
+    "text_helper": "Table 76. UFQFPN32 - Mechanical data — section 1.2 REF. Symbol, Millimeters(1) / Min, Millimeters(1) / Typ, Millimeters(1) / Max, Inches(2) / Min, +2 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -12751,7 +11691,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 77. Tolerance of form and position.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 77. Tolerance of form and position",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -12761,14 +11701,14 @@
     "frequency": "144",
     "table_id": "table_77",
     "table_number": "77",
-    "title": "Table 77. Tolerance of form and position.",
+    "title": "Table 77. Tolerance of form and position",
     "page": 109,
     "section": "1.2 REF",
     "section_title": "REF",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=109",
-    "text_helper": "Table 77. Tolerance of form and position. — section 1.2 REF. Symbol(1), Tolerance of form and position(2) In millimeters, Tolerance of form and position(3) In inches.",
+    "text_helper": "Table 77. Tolerance of form and position — section 1.2 REF. Symbol(1), Tolerance of form and position(2) In millimeters, Tolerance of form and position(3) In inches.",
     "table_content": {
       "headers": [
         "Symbol(1)",
@@ -13058,7 +11998,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 80. UFQFPN48 - Mechanical data.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 80. UFQFPN48 - Mechanical data",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -13068,14 +12008,14 @@
     "frequency": "144",
     "table_id": "table_80",
     "table_number": "80",
-    "title": "Table 80. UFQFPN48 - Mechanical data.",
+    "title": "Table 80. UFQFPN48 - Mechanical data",
     "page": 115,
     "section": "1.2 REF",
     "section_title": "REF",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=115",
-    "text_helper": "Table 80. UFQFPN48 - Mechanical data. — section 1.2 REF. Symbol, Millimeters / Min, Millimeters / Typ Max, Inches (1) / Min, Inches (1) / Typ, +1 autres.",
+    "text_helper": "Table 80. UFQFPN48 - Mechanical data — section 1.2 REF. Symbol, Millimeters / Min, Millimeters / Typ Max, Inches (1) / Min, Inches (1) / Typ, +1 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -13507,7 +12447,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 82. Package thermal characteristics.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 82. Package thermal characteristics",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -13517,14 +12457,14 @@
     "frequency": "144",
     "table_id": "table_82",
     "table_number": "82",
-    "title": "Table 82. Package thermal characteristics.",
+    "title": "Table 82. Package thermal characteristics",
     "page": 119,
     "section": "6.10 Package thermal characteristics",
     "section_title": "Package thermal characteristics",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=119",
-    "text_helper": "Table 82. Package thermal characteristics. — section 6.10 Package thermal characteristics. Symbol, Definition, Parameter, Value / Junction-ambient ΘJA, Value / Junction-board ΘJB, +2 autres.",
+    "text_helper": "Table 82. Package thermal characteristics — section 6.10 Package thermal characteristics. Symbol, Definition, Parameter, Value / Junction-ambient ΘJA, Value / Junction-board ΘJB, +2 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -13616,7 +12556,7 @@
     }
   },
   {
-    "document": "DS15135 Rev 1 - stm32c542cc - Table 83. Document revision history.",
+    "document": "DS15135 Rev 1 - stm32c542cc - Table 83. Document revision history",
     "rev": "Rev 1",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf",
     "references": "DS15135",
@@ -13626,14 +12566,14 @@
     "frequency": "144",
     "table_id": "table_83",
     "table_number": "83",
-    "title": "Table 83. Document revision history.",
+    "title": "Table 83. Document revision history",
     "page": 122,
     "section": "7 Ordering information",
     "section_title": "Ordering information",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32c542cc.pdf#page=122",
-    "text_helper": "Table 83. Document revision history. — section 7 Ordering information. Date, Revision, Changes.",
+    "text_helper": "Table 83. Document revision history — section 7 Ordering information. Date, Revision, Changes.",
     "table_content": {
       "headers": [
         "Date",

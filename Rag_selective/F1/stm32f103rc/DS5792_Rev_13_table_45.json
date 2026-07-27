@@ -1,9 +1,9 @@
 {
   "table_id": "table_45",
-  "document": "DS5792 Rev 13 - Table 45. I/O current injection susceptibility.",
+  "document": "DS5792 Rev 13 - Table 45. I/O current injection susceptibility",
   "rev": "Rev 13",
   "table_number": "45",
-  "title": "Table 45. I/O current injection susceptibility.",
+  "title": "Table 45. I/O current injection susceptibility",
   "page": 88,
   "section": "5.3.13 I/O current injection characteristics",
   "section_title": "I/O current injection characteristics",
@@ -11,7 +11,7 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f103rc.pdf#page=88",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f103rc.pdf",
-  "text_helper": "Table 45. I/O current injection susceptibility. — section 5.3.13 I/O current injection characteristics. Symbol, Description, Functional susceptibility / Negative injection, Functional susceptibility / Positive injection, Unit.",
+  "text_helper": "Table 45. I/O current injection susceptibility — section 5.3.13 I/O current injection characteristics. Symbol, Description, Functional susceptibility / Negative injection, Functional susceptibility / Positive injection, Unit.",
   "table_content": {
     "headers": [
       "Symbol",
@@ -29,7 +29,7 @@
         "mA"
       ],
       [
-        "I INJ",
+        "INJ",
         "Injected current on all FT pins",
         "-5",
         "+0",
@@ -43,7 +43,13 @@
         "mA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. FT = Five-volt tolerant. In order to sustain a voltage higher than V +0.3 the internal pull-up/pull-down resistors must be DD",
+      "2. Hysteresis voltage between Schmitt trigger switching levels. Guaranteed by characterization results.",
+      "3. With a minimum of 100 mV.",
+      "4. Leakage could be higher than max. if negative current is injected on adjacent pins.",
+      "5. Pull-up and pull-down resistors are designed with a true resistance in series with a switchable PMOS/NMOS. This MOS/NMOS contribution to the series resistance is minimum (~10% order)."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

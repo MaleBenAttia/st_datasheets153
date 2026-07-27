@@ -39,13 +39,13 @@
         "SRAM on AXI",
         "1024",
         "1024",
-        "1024",
+        "1024 128 32",
         "1024",
         "1024",
         "1024"
       ],
       [
-        "SRAM in Kbytes",
+        "SRAM in Kbytes SRAM on AHB (CD domain)",
         "SRAM on AHB (CD domain)",
         "128",
         "128",
@@ -55,7 +55,7 @@
         "128"
       ],
       [
-        "SRAM in Kbytes",
+        "SRAM on AHB (SRD domain)",
         "SRAM on AHB (SRD domain)",
         "32",
         "32",
@@ -69,13 +69,13 @@
         "ITCM RAM (instruction)",
         "64",
         "64",
-        "64",
+        "64 128",
         "64",
         "64",
         "64"
       ],
       [
-        "TCM RAM in Kbytes",
+        "DTCM RAM (data)",
         "DTCM RAM (data)",
         "128",
         "128",
@@ -99,13 +99,13 @@
         "Interface",
         "1",
         "1",
-        "1",
+        "1 x(2) x - x(2) x - x(2) x - x(2) x -",
         "1",
         "1",
         "1"
       ],
       [
-        "FMC",
+        "rellortnoc MAR/yromem hsalF RON",
         "rellortnoc MAR/yromem hsalF RON",
         "x (2)",
         "x (2)",
@@ -115,7 +115,7 @@
         "-"
       ],
       [
-        "FMC",
+        "Multiplexed I/O NOR Flash FMC memory",
         "Multiplexed I/O NOR Flash memory",
         "x",
         "x",
@@ -125,7 +125,7 @@
         "-"
       ],
       [
-        "FMC",
+        "16-bit NAND Flash memory",
         "16-bit NAND Flash memory",
         "x",
         "x",
@@ -135,7 +135,7 @@
         "-"
       ],
       [
-        "FMC",
+        "SDRAM controller",
         "SDRAM controller",
         "x(2)",
         "x(2)",
@@ -159,13 +159,13 @@
         "General-purpose",
         "10",
         "10",
-        "10",
+        "10 2 2 3",
         "10",
         "10",
         "10"
       ],
       [
-        "Timers",
+        "Advanced-control (PWM)",
         "Advanced-control (PWM)",
         "2",
         "2",
@@ -175,7 +175,7 @@
         "2"
       ],
       [
-        "Timers",
+        "Basic",
         "Basic",
         "2",
         "2",
@@ -185,7 +185,7 @@
         "2"
       ],
       [
-        "Timers",
+        "Low-power",
         "Low-power",
         "3",
         "3",
@@ -225,7 +225,7 @@
         "2"
       ],
       [
-        "Tamper pins (5)",
+        "Active",
         "Active",
         "1",
         "1",
@@ -653,36 +653,6 @@
         "None",
         "None",
         "None"
-      ],
-      [
-        "None",
-        "Junction temperature range: -40 to 130 °C(13)",
-        "None",
-        "None",
-        "None",
-        "None",
-        "None",
-        "None"
-      ],
-      [
-        "Packages",
-        "UFBGA176+25",
-        "UFBGA169",
-        "LQFP176",
-        "LQFP144",
-        "LQFP100",
-        "LQFP64",
-        "LQFP64"
-      ],
-      [
-        "Bootloader",
-        "USART, I2C, SPI, USB- DFU, FDCAN",
-        "USART, I2C, SPI, USB-DFU, FDCAN",
-        "USART, I2C, SPI, USB-DFU, FDCAN",
-        "USART, I2C, SPI, USB-DFU",
-        "None",
-        "None",
-        "None"
       ]
     ],
     "notes": [
@@ -697,8 +667,7 @@
       "9. The ULPI interface is not supported.",
       "10. DCMI and PSSI cannot be used simultaneously since they share the same circuitry.",
       "11. For limitations on fast pads or channels depending on packages, check to the available pins/balls in Table 7. STM32H7B0xB pin/ball definition.",
-      "12. VDD/VDDA can drop down to 1.62 V by using an external power supervisor (see Section 3.5.2 Power supply supervisor) and connecting PDR_ON pin to VSS. Otherwise the supply voltage must stay above 1.71 V with the embedded power voltage detector enabled.",
-      "13. The junction temperature is limited to 105 °C in VOS0 voltage range. DS13196"
+      "12. VDD/VDDA can drop down to 1.62 V by using an external power supervisor (see Section 3.5.2 Power supply supervisor) and connecting PDR_ON pin to VSS. Otherwise the supply voltage must stay above 1.71 V with the embedded power voltage detector enabled."
     ],
     "legend": "",
     "semantic_type": "",

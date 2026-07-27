@@ -11,15 +11,15 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f410c8.pdf#page=65",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f410c8.pdf",
-  "text_helper": "Table 28. Typical and maximum current consumption in Sleep mode - V = 3.6 V 65 DD — section 6.3.6 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK (MHz), Voltage scale, +7 autres.",
+  "text_helper": "Table 28. Typical and maximum current consumption in Sleep mode - V = 3.6 V 65 DD — section 6.3.6 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK (MHz) / (MHz), Voltage scale / scale, +7 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions",
-      "f HCLK (MHz)",
-      "Voltage scale",
-      "PLL VCO (MHz) (1)",
+      "f HCLK (MHz) / (MHz)",
+      "Voltage scale / scale",
+      "PLL VCO (MHz) (1) / (MHz) (1)",
       "Typ / T = A 25 °C",
       "Max(2) / T = A 25 °C",
       "Max(2) / T = A 85 °C",
@@ -45,7 +45,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory in Deep power down mode",
+        "enabled(3)(4),",
         "84",
         "S2",
         "168",
@@ -59,7 +59,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory in Deep power down mode",
+        "External clock,",
         "64",
         "S3",
         "128",
@@ -73,7 +73,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory in Deep power down mode",
+        "memory in Deep",
         "50",
         "S3",
         "100",
@@ -87,7 +87,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory in Deep power down mode",
+        "power down",
         "25",
         "S3",
         "100",
@@ -114,7 +114,7 @@
       ],
       [
         "I DD",
-        "Supply current in Sleep mode",
+        "Supply current in Sleep",
         "All peripherals enabled(3)(4), HSI, PLL OFF, Flash memory in Deep power down mode",
         "16",
         "S3",
@@ -128,8 +128,8 @@
       ],
       [
         "I DD",
-        "Supply current in Sleep mode",
-        "All peripherals enabled(3)(4), HSI, PLL OFF, Flash memory in Deep power down mode",
+        "Supply current in Sleep",
+        "HSI, PLL OFF, Flash memory in Deep power down mode",
         "1",
         "S3",
         "off",
@@ -142,7 +142,7 @@
       ],
       [
         "I DD",
-        "Supply current in Sleep mode",
+        "mode",
         "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory ON",
         "100",
         "S1",
@@ -157,7 +157,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory ON",
+        "All peripherals",
         "84",
         "S2",
         "168",
@@ -185,7 +185,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory ON",
+        "PLL ON, Flash",
         "50",
         "S3",
         "100",
@@ -199,7 +199,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "All peripherals enabled(3)(4), External clock, PLL ON, Flash memory ON",
+        "memory ON",
         "25",
         "S3",
         "100",
@@ -241,7 +241,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "All peripherals enabled(3), HSI, PLL OFF, Flash memory ON",
+        "PLL OFF, Flash memory ON",
         "1",
         "S3",
         "off",
@@ -687,7 +687,12 @@
         "2.0"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Refer to Table 44 and RM0401 for the possible PLL VCO setting",
+      "2. Evaluated by characterization, not tested in production.",
+      "3. When the ADC is ON (ADON bit set in ADC_CR2), an additional power consumption of 1.6 mA must be added.",
+      "4. Add an additional power consumption of 1.6 mA per ADC for the analog part. In applications, this consumption occurs only while the ADC is ON (ADON bit is set in the ADC_CR2 register)"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

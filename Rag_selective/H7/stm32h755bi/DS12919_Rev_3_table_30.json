@@ -11,14 +11,14 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32h755bi.pdf#page=116",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h755bi.pdf",
-  "text_helper": "Table 30. Typical and maximum current consumption batch acquisition mode, LDO regulator ON — section 6.3.7 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, f HCLK (MHz), +7 autres.",
+  "text_helper": "Table 30. Typical and maximum current consumption batch acquisition mode, LDO regulator ON — section 6.3.7 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, f HCLK (MHz) / (MHz), +7 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions",
       "Conditions",
-      "f HCLK (MHz)",
+      "f HCLK (MHz) / (MHz)",
       "Typ",
       "Max(1) / Tj=25° C",
       "Max(1) / Tj=85° C",
@@ -44,8 +44,8 @@
       ],
       [
         "I DD",
-        "Supply current in batch acquisition mode",
-        "D1 Standby, D2 Standby, D3 Run",
+        "Supply current in batch",
+        "D2 VOS3 Standby, D3 Run",
         "VOS3",
         "8",
         "1.1",
@@ -58,7 +58,7 @@
       ],
       [
         "I DD",
-        "Supply current in batch acquisition mode",
+        "mode",
         "D1 Stop, D2 Stop, D3 Run",
         "VOS3",
         "64",
@@ -73,7 +73,7 @@
       [
         "I DD",
         "Supply current in batch acquisition mode",
-        "D1 Stop, D2 Stop, D3 Run",
+        "D3 Run",
         "VOS3",
         "8",
         "3.8",

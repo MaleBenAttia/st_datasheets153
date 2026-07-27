@@ -70,7 +70,7 @@
       ],
       [
         "I DDDSI",
-        "DSI system (regulator, PLL and D-PHY) current consumption on V DDDSI",
+        "D-PHY) current consumption on V DDDSI",
         "Stop State (Reg. ON + PLL OFF)",
         "-",
         "290",
@@ -88,7 +88,7 @@
       ],
       [
         "I DDDSILP",
-        "DSI system current consumption on V in LP mode communication(2) DDDSI",
+        "in LP mode V DDDSI",
         "20 MHz escape clock (Reg. ON + PLL OFF)",
         "-",
         "4.3",
@@ -106,7 +106,7 @@
       ],
       [
         "I DDDSIHS",
-        "DSI system (regulator, PLL and D-PHY) current consumption on V DDDSI in HS mode communication(3)",
+        "DSI system (regulator, PLL and",
         "300 Mbps - 2data lane (Reg. ON + PLL ON)",
         "-",
         "11.4",
@@ -115,7 +115,7 @@
       ],
       [
         "I DDDSIHS",
-        "DSI system (regulator, PLL and D-PHY) current consumption on V DDDSI in HS mode communication(3)",
+        "communication(3) in HS mode",
         "500 Mbps - 1 data lane (Reg. ON + PLL ON)",
         "-",
         "13.5",
@@ -166,29 +166,11 @@
         "60",
         "200",
         "mA"
-      ],
-      [
-        "I DD",
-        "Supply current",
-        "Write / Erase 16-bit mode, V = 2.1 V DD",
-        "-",
-        "8",
-        "-",
-        "-"
-      ],
-      [
-        "I DD",
-        "Supply current",
-        "Write / Erase 32-bit mode, V = 3.3 V DD",
-        "-",
-        "12",
-        "-",
-        "-"
       ]
     ],
     "notes": [
-      "2. The maximum programming time is measured after 100 K erase operations.",
-      "3. V should only be connected during programming/erasing. PP"
+      "2. Values based on an average traffic in LP Command Mode.",
+      "3. Values based on an average traffic (3/4 HS traffic & 1/4 LP) in Video Mode. DS11189 Rev 8 127/225"
     ],
     "legend": "",
     "semantic_type": "",

@@ -37,7 +37,7 @@
       [
         "ET",
         "Total unadjusted error",
-        "Direct channel",
+        "Differential",
         "Differential",
         "-",
         "2.5",
@@ -56,8 +56,8 @@
       ],
       [
         "ET",
-        "Total unadjusted error",
-        "Fast channel",
+        "error",
+        "Differential",
         "Differential",
         "-",
         "2.5",
@@ -77,7 +77,7 @@
       [
         "ET",
         "Total unadjusted error",
-        "Slow channel",
+        "Differential",
         "Differential",
         "-",
         "2.5",
@@ -116,7 +116,7 @@
       ],
       [
         "ED",
-        "Differential linearity error",
+        "error",
         "Differential",
         "Differential",
         "-",
@@ -137,7 +137,7 @@
       [
         "EL",
         "Integral linearity error",
-        "Direct channel",
+        "Differential",
         "Differential",
         "-",
         "+/-1",
@@ -156,8 +156,8 @@
       ],
       [
         "EL",
-        "Integral linearity error",
-        "Fast channel",
+        "error",
+        "Differential",
         "Differential",
         "-",
         "+/-1",
@@ -177,7 +177,7 @@
       [
         "EL",
         "Integral linearity error",
-        "Slow channel",
+        "Differential",
         "Differential",
         "-",
         "+/-1",
@@ -196,7 +196,7 @@
       ],
       [
         "ENOB",
-        "Effective number of bits",
+        "bits",
         "Differential",
         "Differential",
         "-",
@@ -216,7 +216,7 @@
       ],
       [
         "SINAD",
-        "Signal-to- noise and distortion ratio",
+        "distortion ratio",
         "Differential",
         "Differential",
         "-",
@@ -236,7 +236,7 @@
       ],
       [
         "SNR",
-        "Signal-to- noise ratio",
+        "noise ratio",
         "Differential",
         "Differential",
         "-",
@@ -256,157 +256,16 @@
       ],
       [
         "THD",
-        "Total harmonic distortion",
+        "distortion",
         "Differential",
         "Differential",
         "-",
         "-81.8",
         "-",
         "dB"
-      ],
-      [
-        "V REF+",
-        "Positive reference voltage",
-        "-",
-        "-",
-        "1.80",
-        "-",
-        "V DDA",
-        "V DDA"
-      ],
-      [
-        "V REF-",
-        "Negative reference voltage",
-        "-",
-        "-",
-        "-",
-        "V SSA",
-        "-",
-        "-"
-      ],
-      [
-        "R L",
-        "Resistive Load",
-        "DAC output buffer ON",
-        "connected to V DDA",
-        "25",
-        "-",
-        "-",
-        "-"
-      ],
-      [
-        "R O",
-        "Output Impedance",
-        "DAC output buffer OFF",
-        "DAC output buffer OFF",
-        "10.3",
-        "13",
-        "16",
-        "16"
-      ],
-      [
-        "R BON",
-        "Output impedance sample and hold mode, output buffer ON",
-        "DAC output buffer ON",
-        "V = 2.0 V DD",
-        "-",
-        "-",
-        "2.6",
-        "2.6"
-      ],
-      [
-        "R BOFF",
-        "Output impedance sample and hold mode, output buffer OFF",
-        "DAC output buffer OFF",
-        "V = 2.0 V DD",
-        "-",
-        "-",
-        "18.7",
-        "18.7"
-      ],
-      [
-        "C SH",
-        "C SH",
-        "Sample and Hold mode",
-        "Sample and Hold mode",
-        "-",
-        "0.1",
-        "1",
-        "µF"
-      ],
-      [
-        "V DAC_OUT",
-        "Voltage on DAC_OUT output",
-        "DAC output buffer OFF",
-        "DAC output buffer OFF",
-        "0",
-        "-",
-        "V REF+",
-        "V REF+"
-      ],
-      [
-        "t SETTLING",
-        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ±0.5LSB, ±1LSB, ±2LSB, ±4LSB, ±8LSB)",
-        "Normal mode, DAC output buffer ON, C L ≤ 50 pF, R ≥ 5 ㏀ L",
-        "±1 LSB",
-        "-",
-        "1.97",
-        "2.87",
-        "2.87"
-      ],
-      [
-        "t SETTLING",
-        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ±0.5LSB, ±1LSB, ±2LSB, ±4LSB, ±8LSB)",
-        "Normal mode, DAC output buffer ON, C L ≤ 50 pF, R ≥ 5 ㏀ L",
-        "±2 LSB",
-        "-",
-        "1.67",
-        "2.84",
-        "2.84"
-      ],
-      [
-        "t SETTLING",
-        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ±0.5LSB, ±1LSB, ±2LSB, ±4LSB, ±8LSB)",
-        "Normal mode, DAC output buffer ON, C L ≤ 50 pF, R ≥ 5 ㏀ L",
-        "±4 LSB",
-        "-",
-        "1.66",
-        "2.78",
-        "2.78"
-      ],
-      [
-        "t SETTLING",
-        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ±0.5LSB, ±1LSB, ±2LSB, ±4LSB, ±8LSB)",
-        "Normal mode, DAC output buffer ON, C L ≤ 50 pF, R ≥ 5 ㏀ L",
-        "±8 LSB",
-        "-",
-        "1.65",
-        "2.7",
-        "2.7"
-      ],
-      [
-        "t SETTLING",
-        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ±0.5LSB, ±1LSB, ±2LSB, ±4LSB, ±8LSB)",
-        "Normal mode, DAC output buffer OFF, ±1LSB C =10 pF L",
-        "Normal mode, DAC output buffer OFF, ±1LSB C =10 pF L",
-        "-",
-        "1.7",
-        "2",
-        "2"
-      ],
-      [
-        "t (2) WAKEUP",
-        "Wakeup time from off state (setting the ENx bit in the DAC Control register) until the final value of ±1LSB is reached",
-        "Normal mode, DAC output buffer OFF, C L ≤ 10 pF",
-        "Normal mode, DAC output buffer OFF, C L ≤ 10 pF",
-        "Normal mode, DAC output buffer OFF, C L ≤ 10 pF",
-        "2",
-        "5",
-        "5"
       ]
     ],
     "notes": [
-      "2. ADC DC accuracy values are measured after internal calibration in Continuous and Discontinuous mode.",
       "3. Direct channels are connected to analog I/Os (PA0_C, PA1_C, PC2_C and PC3_C) to optimize ADC performance."
     ],
     "legend": "",

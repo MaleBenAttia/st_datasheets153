@@ -11,16 +11,16 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32h5f4aj.pdf#page=177",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h5f4aj.pdf",
-  "text_helper": "Table 28. Typical and maximum current consumption in Run mode, code with data processing running from flash memory, 2-way instruction cache ON, PREFETCH ON — section 5.3.7 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, f HCLK (MHz), +7 autres.",
+  "text_helper": "Table 28. Typical and maximum current consumption in Run mode, code with data processing running from flash memory, 2-way instruction cache ON, PREFETCH ON — section 5.3.7 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, f HCLK (MHz) / (MHz), +7 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions",
       "Conditions",
-      "f HCLK (MHz)",
-      "Typ LDO",
-      "Typ SMPS",
+      "f HCLK (MHz) / (MHz)",
+      "Typ LDO / LDO",
+      "Typ SMPS / SMPS",
       "Max(1)(2) / T = J 25°C",
       "Max(1)(2) / T = J 85°C",
       "Max(1)(2) / T = J 105°C",
@@ -45,7 +45,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "VOS0",
         "VOS0",
         "215",
         "32.40",
@@ -73,7 +73,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "VOS1 All peripherals disabled",
         "VOS1",
         "200",
         "25.60",
@@ -101,7 +101,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "All peripherals",
         "VOS1",
         "168",
         "21.90",
@@ -115,7 +115,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "disabled",
         "VOS1",
         "150",
         "19.80",
@@ -129,7 +129,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "VOS2",
         "VOS2",
         "150",
         "17.90",
@@ -157,7 +157,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "VOS3",
         "VOS3",
         "100",
         "11.50",
@@ -171,7 +171,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "VOS3",
         "VOS3",
         "60",
         "7.63",
@@ -184,7 +184,7 @@
       ],
       [
         "I DD(Run)",
-        "Supply current in Run mode",
+        "in Run mode",
         "All peripherals disabled",
         "VOS3",
         "25",
@@ -213,7 +213,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals enabled",
+        "VOS0",
         "VOS0",
         "215",
         "84.50",
@@ -241,7 +241,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals enabled",
+        "VOS1 All peripherals enabled",
         "VOS1",
         "200",
         "67.80",
@@ -255,7 +255,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals enabled",
+        "VOS1",
         "VOS1",
         "180",
         "61.70",
@@ -269,7 +269,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals enabled",
+        "enabled",
         "VOS1",
         "150",
         "51.60",
@@ -283,7 +283,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals enabled",
+        "VOS2",
         "VOS2",
         "150",
         "46.80",
@@ -311,7 +311,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals enabled",
+        "VOS3",
         "VOS3",
         "100",
         "28.90",
@@ -325,7 +325,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals enabled",
+        "VOS3",
         "VOS3",
         "60",
         "18.10",

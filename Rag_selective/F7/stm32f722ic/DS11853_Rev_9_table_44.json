@@ -159,7 +159,12 @@
         "mA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Take care of using the appropriate division factor M to obtain the specified PLL input clock values. The M factor is shared between PLL and PLLI2S.",
+      "2. Guaranteed by design.",
+      "3. The use of 2 PLLs in parallel could degraded the Jitter up to +30%.",
+      "4. Guaranteed by characterization results."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

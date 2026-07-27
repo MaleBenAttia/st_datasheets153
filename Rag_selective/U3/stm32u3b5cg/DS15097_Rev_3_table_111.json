@@ -61,7 +61,16 @@
       ],
       [
         "tw(CLKL)",
-        "OCTOSPI clock high and low time (odd division)",
+        "(even division)",
+        "PRESCALER[7:0] = n (n = 0, 1, 3, 5,..255)",
+        "t(CLK)/2 - 0.5",
+        "-",
+        "t(CLK)/2 + 0.5",
+        "ns"
+      ],
+      [
+        "tw(CLKL)",
+        "(odd division)",
         "PRESCALER[7:0] = n (n = 2, 4, 6,..254)",
         "((n/2)+1) × t(CLK)/ (n+1) - 0.5",
         "-",

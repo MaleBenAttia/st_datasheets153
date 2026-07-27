@@ -39,7 +39,7 @@
       [
         "I DD_ALL (Run)",
         "Supply current in Run mode",
-        "f = f up to HCLK HSE 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disable",
+        "Coremark",
         "fHCLK = 26 MHzfHCLK = 80 MHzfHCLK = 26 MHz",
         "Coremark",
         "1.23",
@@ -50,7 +50,7 @@
       [
         "I DD_ALL (Run)",
         "Supply current in Run mode",
-        "f = f up to HCLK HSE 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disable",
+        "Dhrystone 2.1 = f up to f HCLK HSE =",
         "fHCLK = 26 MHzfHCLK = 80 MHzfHCLK = 26 MHz",
         "Dhrystone 2.1",
         "1.23",
@@ -61,7 +61,7 @@
       [
         "I DD_ALL (Run)",
         "Supply current in Run mode",
-        "f = f up to HCLK HSE 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disable",
+        "48 MHz included, Fibonacci",
         "fHCLK = 26 MHzfHCLK = 80 MHzfHCLK = 26 MHz",
         "Fibonacci",
         "1.13",
@@ -70,9 +70,9 @@
         "µA/MHz"
       ],
       [
-        "I DD_ALL (Run)",
+        "I DD_ALL",
         "Supply current in Run mode",
-        "f = f up to HCLK HSE 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disable",
+        "While(1) f",
         "fHCLK = 26 MHzfHCLK = 80 MHzfHCLK = 26 MHz",
         "While(1)",
         "1.04",
@@ -82,8 +82,8 @@
       ],
       [
         "I DD_ALL (Run)",
-        "Supply current in Run mode",
-        "f = f up to HCLK HSE 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disable",
+        "Run mode",
+        "Reduced zHM 48 MHz Coremark all peripherals 08 disable Dhrystone 2.1 = Fibonacci KLCH While(1) f",
         "zHM 08 = KLCH f",
         "Reduced code(1)",
         "3.59",
@@ -94,7 +94,7 @@
       [
         "I DD_ALL (Run)",
         "Supply current in Run mode",
-        "f = f up to HCLK HSE 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disable",
+        "Coremark all peripherals",
         "zHM 08 = KLCH f",
         "Coremark",
         "3.35",
@@ -105,7 +105,7 @@
       [
         "I DD_ALL (Run)",
         "Supply current in Run mode",
-        "f = f up to HCLK HSE 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disable",
+        "Dhrystone 2.1 =",
         "zHM 08 = KLCH f",
         "Dhrystone 2.1",
         "3.38",
@@ -116,7 +116,7 @@
       [
         "I DD_ALL (Run)",
         "Supply current in Run mode",
-        "f = f up to HCLK HSE 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disable",
+        "Fibonacci",
         "zHM 08 = KLCH f",
         "Fibonacci",
         "3.11",
@@ -127,7 +127,7 @@
       [
         "I DD_ALL (Run)",
         "Supply current in Run mode",
-        "f = f up to HCLK HSE 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disable",
+        "While(1) f",
         "zHM 08 = KLCH f",
         "While(1)",
         "3.10",
@@ -136,7 +136,10 @@
         "µA/MHz"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. All values are obtained by calculation based on measurements done without SMPS and using following parameters: SMPS input = 3.3 V, SMPS efficiency = 85%, V = 1.10 V",
+      "2. Reduced code used for characterization results provided in Table 26, Table 28, Table 30."
+    ],
     "legend": [
       "flash, ART disable and power supplied by external SMPS (V = 1.10 V)"
     ],

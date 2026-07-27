@@ -43,7 +43,7 @@
       ],
       [
         "(1)(2) TRIM",
-        "HSI user-trimmed resolution",
+        "resolution",
         "Trimming code is a multiple of 16",
         "-",
         "-",
@@ -70,7 +70,7 @@
       ],
       [
         "ACC (2) HSI",
-        "Accuracy of the factory-calibrated HSI oscillator",
+        "Accuracy of the",
         "V = 3.0 V, T = -10 to 70 °C DDA A",
         "-2",
         "-",
@@ -78,8 +78,8 @@
         "%"
       ],
       [
-        "ACC (2) HSI",
-        "Accuracy of the factory-calibrated HSI oscillator",
+        "ACC HSI",
+        "factory-calibrated",
         "V = 3.0 V, T = -10 to 85 °C DDA A",
         "-2.5",
         "-",
@@ -123,7 +123,11 @@
         "µA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. The trimming step differs depending on the trimming code. It is usually negative on the codes which are multiples of 16 (0x00, 0x10, 0x20, 0x30...0xE0).",
+      "2. Guaranteed by characterization results.",
+      "3. Guaranteed by test in production. Low-speed internal (LSI) RC oscillator"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

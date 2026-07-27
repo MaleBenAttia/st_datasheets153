@@ -11,18 +11,18 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32h750ib.pdf#page=102",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h750ib.pdf",
-  "text_helper": "Table 21. Typical consumption in Run mode and corresponding performance versus code position — section 6.3.6 Supply current characteristics. Symbol, Parameter, Conditions / Peripheral, Conditions / Code, f rcc_c_ck (MHz), +5 autres.",
+  "text_helper": "Table 21. Typical consumption in Run mode and corresponding performance versus code position — section 6.3.6 Supply current characteristics. Symbol, Parameter, Conditions / Peripheral, Conditions / Code, f rcc_c_ck (MHz) / (MHz), +5 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions / Peripheral",
       "Conditions / Code",
-      "f rcc_c_ck (MHz)",
+      "f rcc_c_ck (MHz) / (MHz)",
       "CoreMark",
       "Typ",
       "Unit",
-      "IDD/ CoreMark",
+      "IDD/ CoreMark / CoreMark",
       "Unit"
     ],
     "rows": [
@@ -41,7 +41,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals disabled, cache ON",
+        "FLASH A All",
         "FLASH A",
         "400",
         "2012",
@@ -53,7 +53,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals disabled, cache ON",
+        "AXI disabled, SRAM cache ON",
         "AXI SRAM",
         "400",
         "2012",
@@ -65,7 +65,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals disabled, cache ON",
+        "SRAM1",
         "SRAM1",
         "400",
         "2012",
@@ -76,19 +76,19 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode",
-        "All peripherals disabled, cache ON",
+        "Supply current",
+        "SRAM4",
         "SRAM4",
         "400",
         "2012",
         "105",
         "mA",
         "52",
-        "µA/ CoreMark"
+        "µA/"
       ],
       [
         "I DD",
-        "Supply current in Run mode",
+        "in Run mode",
         "All peripherals disabled cache OFF",
         "ITCM",
         "400",
@@ -96,12 +96,12 @@
         "71",
         "mA",
         "35",
-        "µA/ CoreMark"
+        "CoreMark"
       ],
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals disabled cache OFF",
+        "FLASH A All",
         "FLASH A",
         "400",
         "593",
@@ -113,7 +113,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals disabled cache OFF",
+        "AXI disabled SRAM cache OFF",
         "AXI SRAM",
         "400",
         "344",
@@ -125,7 +125,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals disabled cache OFF",
+        "SRAM1",
         "SRAM1",
         "400",
         "472",
@@ -137,7 +137,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals disabled cache OFF",
+        "SRAM4",
         "SRAM4",
         "400",
         "432",

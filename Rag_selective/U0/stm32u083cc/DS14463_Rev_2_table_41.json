@@ -53,7 +53,7 @@
       [
         "IDD (Standby)",
         "Supply current in Standby mode (backup registers retained), RTC disabled",
-        "No independent watchdog",
+        "2.4 V",
         "EN_ULP = 0",
         "2.4 V",
         "48.0",
@@ -71,7 +71,7 @@
       [
         "IDD (Standby)",
         "Supply current in Standby mode (backup registers retained), RTC disabled",
-        "No independent watchdog",
+        "EN_ULP = 0 3.0 V",
         "EN_ULP = 0",
         "3.0 V",
         "68.5",
@@ -89,7 +89,7 @@
       [
         "IDD (Standby)",
         "Supply current in Standby mode (backup registers retained), RTC disabled",
-        "No independent watchdog",
+        "3.3 V",
         "EN_ULP = 0",
         "3.3 V",
         "82.0",
@@ -107,7 +107,7 @@
       [
         "IDD (Standby)",
         "Supply current in Standby mode (backup registers retained), RTC disabled",
-        "No independent watchdog",
+        "3.6 V",
         "EN_ULP = 0",
         "3.6 V",
         "105",
@@ -125,7 +125,7 @@
       [
         "IDD (Standby)",
         "Supply current in Standby mode (backup registers retained), RTC disabled",
-        "No independent watchdog",
+        "1.8 V 2.4 V EN_ULP = 1 3.0 V 3.3 V 3.6 V",
         "EN_ULP = 1",
         "1.8 V",
         "100",
@@ -142,8 +142,8 @@
       ],
       [
         "IDD (Standby)",
-        "Supply current in Standby mode (backup registers retained), RTC disabled",
-        "No independent watchdog",
+        "Supply current in Standby mode",
+        "2.4 V",
         "EN_ULP = 1",
         "2.4 V",
         "115",
@@ -160,8 +160,8 @@
       ],
       [
         "IDD (Standby)",
-        "Supply current in Standby mode (backup registers retained), RTC disabled",
-        "No independent watchdog",
+        "(backup registers retained),",
+        "EN_ULP = 1 3.0 V",
         "EN_ULP = 1",
         "3.0 V",
         "130",
@@ -179,7 +179,7 @@
       [
         "IDD (Standby)",
         "Supply current in Standby mode (backup registers retained), RTC disabled",
-        "No independent watchdog",
+        "3.3 V",
         "EN_ULP = 1",
         "3.3 V",
         "135",
@@ -197,7 +197,7 @@
       [
         "IDD (Standby)",
         "Supply current in Standby mode (backup registers retained), RTC disabled",
-        "No independent watchdog",
+        "3.6 V",
         "EN_ULP = 1",
         "3.6 V",
         "150",
@@ -233,7 +233,7 @@
       [
         "IDD (Standby)",
         "Supply current in Standby mode (backup registers retained), RTC disabled",
-        "Independent watchdog",
+        "2.4 V",
         "EN_ULP = 0",
         "2.4 V",
         "215",
@@ -251,7 +251,7 @@
       [
         "IDD (Standby)",
         "Supply current in Standby mode (backup registers retained), RTC disabled",
-        "Independent watchdog",
+        "Independent watchdog EN_ULP = 0 3.0 V",
         "EN_ULP = 0",
         "3.0 V",
         "240",
@@ -269,7 +269,7 @@
       [
         "IDD (Standby)",
         "Supply current in Standby mode (backup registers retained), RTC disabled",
-        "Independent watchdog",
+        "3.3 V",
         "EN_ULP = 0",
         "3.3 V",
         "260",
@@ -287,7 +287,7 @@
       [
         "IDD (Standby)",
         "Supply current in Standby mode (backup registers retained), RTC disabled",
-        "Independent watchdog",
+        "3.6 V",
         "EN_ULP = 0",
         "3.6 V",
         "280",
@@ -321,9 +321,9 @@
         "nA"
       ],
       [
-        "IDD (Standby with RTC)",
-        "Supply current in Standby mode (backup registers retained), RTC enabled",
-        "RTC clocked by LSI, no independent watchdog",
+        "(Standby with",
+        "(backup registers retained),",
+        "RTC clocked by LSI, no 2.4 V EN_ULP = 0 independent watchdog",
         "EN_ULP = 0",
         "2.4 V",
         "220",
@@ -341,7 +341,7 @@
       [
         "IDD (Standby with RTC)",
         "Supply current in Standby mode (backup registers retained), RTC enabled",
-        "RTC clocked by LSI, no independent watchdog",
+        "3.0 V",
         "EN_ULP = 0",
         "3.0 V",
         "245",
@@ -355,6 +355,24 @@
         "10000",
         "28500",
         "nA"
+      ],
+      [
+        "Symbol",
+        "Parameter",
+        "-",
+        "-",
+        "VDD",
+        "25 °C",
+        "55 °C",
+        "85 °C",
+        "105 °C",
+        "125 °C",
+        "30 °C",
+        "55 °C",
+        "85 °C",
+        "105 °C",
+        "130 °C",
+        "Unit"
       ],
       [
         "IDD (Standby with RTC)",
@@ -895,6 +913,24 @@
         "3550",
         "8100",
         "8100"
+      ],
+      [
+        "Symbol",
+        "Parameter",
+        "-",
+        "-",
+        "VDD",
+        "25 °C",
+        "55 °C",
+        "85 °C",
+        "105 °C",
+        "125 °C",
+        "30 °C",
+        "55 °C",
+        "85 °C",
+        "105 °C",
+        "130 °C",
+        "Unit"
       ],
       [
         "IDD (SRAM2)",

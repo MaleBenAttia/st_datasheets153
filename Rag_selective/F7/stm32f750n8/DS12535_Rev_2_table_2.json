@@ -32,18 +32,18 @@
         "SRAM in Kbytes",
         "System",
         "320(240+16+64)",
-        "320(240+16+64)",
+        "320(240+16+64) 16 4",
         "320(240+16+64)"
       ],
       [
-        "SRAM in Kbytes",
+        "Instruction SRAM in Kbytes",
         "Instruction",
         "16",
         "16",
         "16"
       ],
       [
-        "SRAM in Kbytes",
+        "Backup",
         "Backup",
         "4",
         "4",
@@ -67,25 +67,25 @@
         "Timers",
         "General-purpose",
         "10",
-        "10",
+        "10 2 2 1",
         "10"
       ],
       [
-        "Timers",
+        "Advanced-control",
         "Advanced-control",
         "2",
         "2",
         "2"
       ],
       [
-        "Timers",
+        "Basic",
         "Basic",
         "2",
         "2",
         "2"
       ],
       [
-        "Timers",
+        "Low-power",
         "Low-power",
         "1",
         "1",
@@ -106,56 +106,56 @@
         "6/3 (simplex)(2)"
       ],
       [
-        "Communication interfaces",
+        "I2C",
         "I2C",
         "4",
         "4",
         "4"
       ],
       [
-        "Communication interfaces",
+        "USART/UART",
         "USART/UART",
         "4/4",
         "4/4",
         "4/4"
       ],
       [
-        "Communication interfaces",
+        "USB OTG FS",
         "USB OTG FS",
         "Yes",
         "Yes",
         "Yes"
       ],
       [
-        "Communication interfaces",
+        "USB OTG HS Communication interfaces",
         "USB OTG HS",
         "Yes",
         "Yes",
         "Yes"
       ],
       [
-        "Communication interfaces",
+        "CAN",
         "CAN",
         "2",
         "2",
         "2"
       ],
       [
-        "Communication interfaces",
+        "SAI",
         "SAI",
         "2",
         "2",
         "2"
       ],
       [
-        "Communication interfaces",
+        "SPDIFRX",
         "SPDIFRX",
         "4 inputs",
         "4 inputs",
         "4 inputs"
       ],
       [
-        "Communication interfaces",
+        "SDMMC",
         "SDMMC",
         "Yes",
         "Yes",
@@ -202,63 +202,11 @@
         "3",
         "None",
         "None"
-      ],
-      [
-        "None",
-        "None",
-        "16",
-        "24",
-        "None"
-      ],
-      [
-        "12-bit DAC Number of channels",
-        "12-bit DAC Number of channels",
-        "Yes 2",
-        "None",
-        "None"
-      ],
-      [
-        "Maximum CPU frequency",
-        "Maximum CPU frequency",
-        "216 MHz(3)",
-        "None",
-        "None"
-      ],
-      [
-        "Operating voltage",
-        "Operating voltage",
-        "1.7 to 3.6 V(4)",
-        "None",
-        "None"
-      ],
-      [
-        "Operating temperatures(5)",
-        "Operating temperatures(5)",
-        "Ambient temperatures: –40 to +85 °C /–40 to +105 °C",
-        "None",
-        "None"
-      ],
-      [
-        "None",
-        "None",
-        "Junction temperature: –40 to + 125 °C",
-        "None",
-        "None"
-      ],
-      [
-        "Package",
-        "Package",
-        "LQFP100",
-        "LQFP144",
-        "TFBGA216"
       ]
     ],
     "notes": [
       "1. For the LQFP100 package, only FMC Bank1 is available. Bank1 can only support a multiplexed NOR/PSRAM memory using the NE1 Chip Select.",
-      "2. The SPI1, SPI2 and SPI3 interfaces give the flexibility to work in an exclusive way in either the SPI mode or the I2S audio mode.",
-      "3. 216 MHz maximum frequency for -40°C to + 85°C ambient temperature range (200 MHz maximum frequency for -40°C to + 105°C ambient temperature range).",
-      "4. V /V minimum value of 1.7 V is obtained when the internal reset is OFF (refer to Section 3.17.2: Internal reset OFF). DD DDA",
-      "5. Not available for WLCSP packages. 14/198 DS12535 Rev 2"
+      "2. The SPI1, SPI2 and SPI3 interfaces give the flexibility to work in an exclusive way in either the SPI mode or the I2S audio mode."
     ],
     "legend": "",
     "semantic_type": "",

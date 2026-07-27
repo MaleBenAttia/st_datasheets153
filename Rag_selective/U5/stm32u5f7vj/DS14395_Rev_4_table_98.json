@@ -130,36 +130,13 @@
         "-",
         "17",
         "ns"
-      ],
-      [
-        "V IH(NRST)",
-        "NRST input high-level voltage",
-        "-",
-        "0.7 × V DD",
-        "-",
-        "-",
-        "-"
-      ],
-      [
-        "t NF(NRST)",
-        "NRST input not-filtered pulse",
-        "1.71 V ≤ V ≤ 3.6 V DD",
-        "330",
-        "-",
-        "-",
-        "-"
-      ],
-      [
-        "t NF(NRST)",
-        "NRST input not-filtered pulse",
-        "1.58 V ≤ V ≤ 3.6 V DD",
-        "1000",
-        "-",
-        "-",
-        "-"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Specified by design. Not tested in production. Figure 28. Output AC characteristics definition",
+      "2. The pull-up is designed with a true resistance in series with a switchable PMOS. This PMOS contribution to the series resistance is minimal (~10% order).",
+      "3. The external capacitor on NRST must be placed as close as possible to the device. 248/351 DS14395 Rev 4"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

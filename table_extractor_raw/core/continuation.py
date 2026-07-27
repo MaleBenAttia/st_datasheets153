@@ -163,7 +163,7 @@ def _remove_adjacent_duplicates(headers: list[str]) -> list[str]:
 def _headers_differ(
     cont_first_row: list | None,
     base_header: list[str] | None,
-    threshold: float = 0.33,
+    threshold: float = 0.25,
 ) -> bool:
     if not base_header or not cont_first_row:
         return False
@@ -314,7 +314,7 @@ def _is_continuation_page(
                     return False, None, None, None, False
 
     col_count = max(len(r) for r in table_data) if table_data else 0
-    if abs(col_count - expected_col_count) > 2:
+    if abs(col_count - expected_col_count) >= 2:
         # pdfplumber fusionne parfois des colonnes identiques adjacentes
         # dans la page de continuation (ex: 6× "Conditions" → 1× "Conditions").
         # Si les ensembles d'en-têtes (après dédup) sont identiques, la

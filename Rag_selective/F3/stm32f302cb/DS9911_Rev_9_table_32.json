@@ -11,7 +11,7 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f302cb.pdf#page=65",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f302cb.pdf",
-  "text_helper": "Table 32. Typical and maximum V consumption in Stop and Standby modes 65 DD — section 6.3.5 Supply current characteristics. Symbol, Parameter, Conditions, Typ @V (V =V ) / 2.0 V, Typ @V (V =V ) / 2.4 V, +8 autres. (table vide)",
+  "text_helper": "Table 32. Typical and maximum V consumption in Stop and Standby modes 65 DD — section 6.3.5 Supply current characteristics. Symbol, Parameter, Conditions, Typ @V (V =V ) / 2.0 V, Typ @V (V =V ) / 2.4 V, +8 autres.",
   "table_content": {
     "headers": [
       "Symbol",
@@ -28,8 +28,72 @@
       "Max(1) / T = A 105 °C",
       "Unit"
     ],
-    "rows": [],
-    "notes": [],
+    "rows": [
+      [
+        "I DD",
+        "Supply current in Stop mode",
+        "Regulator in run mode, all oscillators OFF",
+        "20.05",
+        "20.33",
+        "20.42",
+        "20.50",
+        "20.67",
+        "20.80",
+        "44.2(2)",
+        "350",
+        "735(2)",
+        "µA"
+      ],
+      [
+        "I DD",
+        "Stop mode",
+        "Regulator in low-power mode, all oscillators OFF",
+        "7.63",
+        "7.77",
+        "7.90",
+        "8.07",
+        "8.17",
+        "8.33",
+        "30.6(2)",
+        "335",
+        "720(2)",
+        "µA"
+      ],
+      [
+        "I DD",
+        "Supply current in Standby mode",
+        "LSI ON and IWDG ON",
+        "0.80",
+        "0.96",
+        "1.09",
+        "1.23",
+        "1.37",
+        "1.51",
+        "-",
+        "-",
+        "-",
+        "µA"
+      ],
+      [
+        "I DD",
+        "Standby mode",
+        "LSI OFF and IWDG OFF",
+        "0.60",
+        "0.74",
+        "0.83",
+        "0.93",
+        "1.02",
+        "1.11",
+        "5.0(2)",
+        "7.8",
+        "13.3(2)",
+        "µA"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization results unless otherwise specified.",
+      "2. Data based on characterization results and tested in production. Tab l e 33. Typical and maximum V consumption in Stop and Standby modes"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

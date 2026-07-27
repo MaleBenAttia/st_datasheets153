@@ -49,99 +49,14 @@
         "-",
         "300",
         "Ω"
-      ],
-      [
-        "V OL",
-        "Output low level voltage for an I/O pin",
-        "Output low level voltage for an I/O pin",
-        "CMOS port(3) |I |= 2 mA for FT_c I/Os IO = 8 mA for other I/Os V ≥ 2.7 V DDIOx",
-        "-",
-        "0.4",
-        "0.4"
-      ],
-      [
-        "V OH",
-        "Output high level voltage for an I/O pin",
-        "Output high level voltage for an I/O pin",
-        "None",
-        "V - 0.4 DDIOx",
-        "-",
-        "-"
-      ],
-      [
-        "V (4) OL",
-        "Output low level voltage for an I/O pin",
-        "Output low level voltage for an I/O pin",
-        "TTL port(3) |I |= 2 mA for FT_c I/Os IO = 8 mA for other I/Os V ≥ 2.7 V DDIOx",
-        "-",
-        "0.4",
-        "0.4"
-      ],
-      [
-        "V (4) OH",
-        "Output high level voltage for an I/O pin",
-        "Output high level voltage for an I/O pin",
-        "None",
-        "2.4",
-        "-",
-        "-"
-      ],
-      [
-        "V (4) OL",
-        "Output low level voltage for an I/O pin",
-        "Output low level voltage for an I/O pin",
-        "All I/Os except FT_c |I |= 15 mA IO V ≥ 2.7 V DDIOx",
-        "-",
-        "1.3",
-        "1.3"
-      ],
-      [
-        "V (4) OH",
-        "Output high level voltage for an I/O pin",
-        "Output high level voltage for an I/O pin",
-        "None",
-        "V - 1.3 DDIOx",
-        "-",
-        "-"
-      ],
-      [
-        "V (4) OL",
-        "Output low level voltage for an I/O pin",
-        "Output low level voltage for an I/O pin",
-        "|I |= 1 mA for FT_c I/Os IO = 3 mA for other I/Os V ≥ V (min) DDIOx DD",
-        "-",
-        "0.4",
-        "0.4"
-      ],
-      [
-        "V (4) OH",
-        "Output high level voltage for an I/O pin",
-        "Output high level voltage for an I/O pin",
-        "None",
-        "V - 0.45 DDIOx",
-        "-",
-        "-"
-      ],
-      [
-        "V OLFM+ (4)",
-        "Output low level voltage for an FT I/O pin in FM+ mode (FT I/O with _f option)",
-        "Output low level voltage for an FT I/O pin in FM+ mode (FT I/O with _f option)",
-        "|I |= 20 mA IO V ≥ 2.7 V DDIOx",
-        "-",
-        "0.4",
-        "0.4"
-      ],
-      [
-        "None",
-        "None",
-        "None",
-        "|I |= 9 mA IO V ≥ V (min) DDIOx DD",
-        "-",
-        "0.4",
-        "0.4"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. The I current sourced or sunk by the device must always respect the absolute maximum rating specified in Table 21: IO",
+      "2. As PC13, PC14 and PC15 are supplied through the power switch, the sum of currents sourced by those I/Os must not exceed 3 mA.",
+      "3. TTL and CMOS outputs are compatible with JEDEC standards JESD36 and JESD52.",
+      "4. Specified by design. Not tested in production. Output buffer timing characteristics"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

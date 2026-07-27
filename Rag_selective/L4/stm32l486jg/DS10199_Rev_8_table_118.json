@@ -11,10 +11,9 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32l486jg.pdf#page=229",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l486jg.pdf",
-  "text_helper": "Table 118. Switching characteristics for NAND flash write cycles — section 6.3.29 FSMC characteristics. Symbol, Symbol, Parameter, Min, Max, +1 autres.",
+  "text_helper": "Table 118. Switching characteristics for NAND flash write cycles — section 6.3.29 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
   "table_content": {
     "headers": [
-      "Symbol",
       "Symbol",
       "Parameter",
       "Min",
@@ -24,14 +23,12 @@
     "rows": [
       [
         "T w(NWE)",
-        "T w(NWE)",
         "FMC_NWE low width",
         "4T -1 HCLK",
         "4T +1 HCLK",
         "ns"
       ],
       [
-        "T v(NWE-D)",
         "T v(NWE-D)",
         "FMC_NWE low to FMC_D[15-0] valid",
         "-",
@@ -40,14 +37,12 @@
       ],
       [
         "T h(NWE-D)",
-        "T h(NWE-D)",
         "FMC_NWE high to FMC_D[15-0] invalid",
         "3T -4 HCLK",
         "-",
         "ns"
       ],
       [
-        "T d(D-NWE)",
         "T d(D-NWE)",
         "FMC_D[15-0] valid before FMC_NWE high",
         "5T -3 HCLK",
@@ -56,7 +51,6 @@
       ],
       [
         "T d(NCE_NWE)",
-        "T d(NCE_NWE)",
         "FMC_NCE valid before FMC_NWE low",
         "-",
         "3T +1 HCLK",
@@ -64,19 +58,10 @@
       ],
       [
         "T h(NWE-ALE)",
-        "T h(NWE-ALE)",
         "FMC_NWE high to FMC_ALE invalid",
         "2T -2 HCLK",
         "-",
         "ns"
-      ],
-      [
-        "t SWPBIT",
-        "V voltage range 2 CORE",
-        "620",
-        "-",
-        "-",
-        "-"
       ]
     ],
     "notes": [

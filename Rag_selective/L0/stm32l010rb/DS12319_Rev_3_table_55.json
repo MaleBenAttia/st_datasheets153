@@ -48,7 +48,7 @@
       ],
       [
         "f EXT",
-        "Timer external clock frequency on CH1 to CH4",
+        "CH1 to CH4",
         "f = 32 MHz TIMxCLK",
         "0",
         "16",
@@ -71,8 +71,8 @@
         "t TIMxCLK"
       ],
       [
-        "t COUNTER",
-        "16-bit counter clock period when internal clock is selected (timer's prescaler disabled)",
+        "COUNTER",
+        "prescaler disabled)",
         "f = 32 MHz TIMxCLK",
         "0.0312",
         "2048",
@@ -93,26 +93,11 @@
         "-",
         "134.2",
         "s"
-      ],
-      [
-        "t AF",
-        "Maximum pulse width of spikes that are suppressed by the analog filter",
-        "Range 2",
-        "Range 2",
-        "-",
-        "-"
-      ],
-      [
-        "t AF",
-        "Maximum pulse width of spikes that are suppressed by the analog filter",
-        "Range 3",
-        "Range 3",
-        "-",
-        "-"
       ]
     ],
     "notes": [
-      "2. C represents the capacitance of the PCB (dependent on soldering and PCB layout quality) plus the pad capacitance parasitic",
+      "1. TIMx is used as a general term to refer to the TIM2, TIM21 and TIM22 timers. 76/89 DS12319 Rev 3",
+      "2. Spikes with widths below t are filtered. AF(min)",
       "3. Spikes with widths above t are not filtered AF(max)"
     ],
     "legend": "",

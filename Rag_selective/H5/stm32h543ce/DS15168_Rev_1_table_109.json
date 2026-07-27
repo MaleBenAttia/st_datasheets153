@@ -11,18 +11,27 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32h543ce.pdf#page=189",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h543ce.pdf",
-  "text_helper": "Table 109. I3C open-drain measured timings — section 5.3.32 Communication interfaces. Symbol, Symbol, Parameter, Conditions, Min, +1 autres. (table vide)",
+  "text_helper": "Table 109. I3C open-drain measured timings — section 5.3.32 Communication interfaces. Symbol, Parameter, Conditions, Min, Unit.",
   "table_content": {
     "headers": [
-      "Symbol",
       "Symbol",
       "Parameter",
       "Conditions",
       "Min",
       "Unit"
     ],
-    "rows": [],
-    "notes": [],
+    "rows": [
+      [
+        "t SU_OD",
+        "open drain mode",
+        "Controller 1.08 V < V < 1.32 V DDIO2",
+        "24(1)",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. SDA data setup time in open-drain mode must be at least 3 ns, as required by the MIPI specification."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

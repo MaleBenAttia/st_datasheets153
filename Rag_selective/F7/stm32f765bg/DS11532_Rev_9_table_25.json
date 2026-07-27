@@ -48,7 +48,11 @@
         "mA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Guaranteed by characterization results.",
+      "2. When analog peripheral blocks such as ADCs, DACs, HSE, LSE, HSI, or LSI are ON, an additional power consumption should be considered.",
+      "3. When the ADC is ON (ADON bit set in the ADC_CR2 register), add an additional power consumption of 1.73 mA per ADC for the analog part."
+    ],
     "legend": [
       "running from flash memory (Single bank mode, ART ON except prefetch / L1-cache ON)",
       "or SRAM on AXI (L1-cache ON), regulator ON"

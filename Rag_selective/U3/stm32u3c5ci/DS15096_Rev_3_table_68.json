@@ -61,8 +61,8 @@
       ],
       [
         "twu(Stop 0)",
-        "Wake-up time from Stop 0 mode to Run mode all SRAMs retained",
-        "Wake-up in flash, range 2, PWR_CR2.FLASHFWU = 0, PWR_CR2.SRAMFWU = 0, ICACHE OFF",
+        "Wake-up time from Stop 0 mode",
+        "PWR_CR2.FLASHFWU = 0, HSI 16 PWR_CR2.SRAMFWU = 0, ICACHE MHz",
         "HSI 16 MHz",
         "4.4",
         "4.7",
@@ -70,8 +70,8 @@
       ],
       [
         "twu(Stop 0)",
-        "Wake-up time from Stop 0 mode to Run mode all SRAMs retained",
-        "Wake-up in flash, range 2, PWR_CR2.FLASHFWU = 0, PWR_CR2.SRAMFWU = 0, ICACHE OFF",
+        "to Run mode all SRAMs retained",
+        "MSI 3 MHz",
         "MSI 3 MHz",
         "11",
         "11.5",
@@ -89,7 +89,7 @@
       [
         "twu(Stop 0)",
         "Wake-up time from Stop 0 mode to Run mode all SRAMs retained",
-        "Wake-up in SRAM2, range 2, PWR_CR2.FLASHFWU = 0, PWR_CR2.SRAMFWU = 0",
+        "HSI 16 PWR_CR2.FLASHFWU = 0, MHz PWR_CR2.SRAMFWU = 0",
         "HSI 16 MHz",
         "4.2",
         "4.5",
@@ -98,7 +98,7 @@
       [
         "twu(Stop 0)",
         "Wake-up time from Stop 0 mode to Run mode all SRAMs retained",
-        "Wake-up in SRAM2, range 2, PWR_CR2.FLASHFWU = 0, PWR_CR2.SRAMFWU = 0",
+        "MSI 3 MHz",
         "MSI 3 MHz",
         "9.8",
         "10.5",
@@ -124,8 +124,8 @@
       ],
       [
         "twu(Stop 1)",
-        "Wake-up time from Stop 1 mode to Run mode all SRAMs retained",
-        "Wake-up in flash, PWR_CR2.FLASHFWU = 0, PWR_CR2.SRAMFWU = 0, ICACHE OFF",
+        "Wake-up time from Stop 1 mode",
+        "PWR_CR2.FLASHFWU = 0, HSI 16 PWR_CR2.SRAMFWU = 0, ICACHE MHz",
         "HSI 16 MHz",
         "10.5",
         "11.5",
@@ -133,8 +133,8 @@
       ],
       [
         "twu(Stop 1)",
-        "Wake-up time from Stop 1 mode to Run mode all SRAMs retained",
-        "Wake-up in flash, PWR_CR2.FLASHFWU = 0, PWR_CR2.SRAMFWU = 0, ICACHE OFF",
+        "to Run mode all SRAMs retained",
+        "MSI 3 MHz",
         "MSI 3 MHz",
         "17.5",
         "19",
@@ -152,7 +152,7 @@
       [
         "twu(Stop 1)",
         "Wake-up time from Stop 1 mode to Run mode all SRAMs retained",
-        "Wake-up in SRAM2, range 2, PWR_CR2.FLASHFWU = 0, PWR_CR2.SRAMFWU = 0",
+        "HSI 16 PWR_CR2.FLASHFWU = 0, MHz PWR_CR2.SRAMFWU = 0",
         "HSI 16 MHz",
         "10",
         "11.5",
@@ -161,7 +161,7 @@
       [
         "twu(Stop 1)",
         "Wake-up time from Stop 1 mode to Run mode all SRAMs retained",
-        "Wake-up in SRAM2, range 2, PWR_CR2.FLASHFWU = 0, PWR_CR2.SRAMFWU = 0",
+        "MSI 3 MHz",
         "MSI 3 MHz",
         "16.5",
         "17.5",
@@ -179,7 +179,7 @@
       [
         "twu(Stop 2)",
         "Wake-up time from Stop 2 mode to Run mode all SRAMs retained",
-        "Wake-up in flash, ICACHE OFF",
+        "HSI 16 Wake-up in flash, ICACHE OFF MHz",
         "HSI 16 MHz",
         "28.5",
         "40",
@@ -187,8 +187,8 @@
       ],
       [
         "twu(Stop 2)",
-        "Wake-up time from Stop 2 mode to Run mode all SRAMs retained",
-        "Wake-up in flash, ICACHE OFF",
+        "Wake-up time from Stop 2 mode",
+        "MSI 3 MHz",
         "MSI 3 MHz",
         "42.5",
         "54.5",
@@ -196,7 +196,7 @@
       ],
       [
         "twu(Stop 2)",
-        "Wake-up time from Stop 2 mode to Run mode all SRAMs retained",
+        "to Run mode all SRAMs retained",
         "Wake-up in SRAM2, range 2",
         "MSI 48 MHz",
         "25.5",
@@ -206,7 +206,7 @@
       [
         "twu(Stop 2)",
         "Wake-up time from Stop 2 mode to Run mode all SRAMs retained",
-        "Wake-up in SRAM2, range 2",
+        "HSI 16 Wake-up in SRAM2, range 2 MHz",
         "HSI 16 MHz",
         "28.5",
         "40",
@@ -215,7 +215,7 @@
       [
         "twu(Stop 2)",
         "Wake-up time from Stop 2 mode to Run mode all SRAMs retained",
-        "Wake-up in SRAM2, range 2",
+        "MSI 3 MHz",
         "MSI 3 MHz",
         "41.5",
         "53.5",
@@ -346,137 +346,10 @@
         "185",
         "335",
         "µs"
-      ],
-      [
-        "tLDO(2)",
-        "SMPS to LDO transition time",
-        "Range 2 (EPOD booster OFF)",
-        "16.5",
-        "21",
-        "µs",
-        "µs"
-      ],
-      [
-        "None",
-        "None",
-        "Range 2 (EPOD booster ON)",
-        "15.5",
-        "20",
-        "None",
-        "None"
-      ],
-      [
-        "None",
-        "None",
-        "Range 1 (with EPOD booster ON)",
-        "15.5",
-        "19",
-        "None",
-        "None"
-      ],
-      [
-        "tSMPS(2)",
-        "LDO to SMPS transition time",
-        "Range 2 (EPOD booster OFF)",
-        "13",
-        "16",
-        "µs",
-        "µs"
-      ],
-      [
-        "None",
-        "None",
-        "Range 2 (EPOD booster ON)",
-        "12",
-        "15",
-        "None",
-        "None"
-      ],
-      [
-        "None",
-        "None",
-        "Range 1 (with EPOD booster ON)",
-        "16",
-        "19",
-        "None",
-        "None"
-      ],
-      [
-        "tVOST (without EPOD booster)",
-        "Range 1 to range 2",
-        "LDO",
-        "4.3",
-        "6.5",
-        "µs",
-        "µs"
-      ],
-      [
-        "None",
-        "None",
-        "SMPS",
-        "2.7",
-        "3.6",
-        "None",
-        "None"
-      ],
-      [
-        "None",
-        "Range 2 to range 1",
-        "LDO",
-        "19",
-        "24",
-        "None",
-        "None"
-      ],
-      [
-        "None",
-        "None",
-        "SMPS",
-        "25.5",
-        "31",
-        "None",
-        "None"
-      ],
-      [
-        "tVOST (with EPOD booster)",
-        "Range 1 to range 2",
-        "LDO",
-        "3.7",
-        "5.8",
-        "µs",
-        "µs"
-      ],
-      [
-        "None",
-        "None",
-        "SMPS",
-        "2.0",
-        "2.8",
-        "None",
-        "None"
-      ],
-      [
-        "None",
-        "Range 2 to range 1",
-        "LDO",
-        "18.5",
-        "24",
-        "None",
-        "None"
-      ],
-      [
-        "None",
-        "None",
-        "SMPS",
-        "25",
-        "30",
-        "None",
-        "None"
       ]
     ],
     "notes": [
-      "1. Evaluated by characterization and not tested in production. Temperature range from -40°C to 110°C DS15096 - Rev 3 page 141/241",
-      "2. Time to PWR_SVMSR.REGS change"
+      "1. Evaluated by characterization and not tested in production. Temperature range from -40°C to 110°C DS15096 - Rev 3 page 141/241"
     ],
     "legend": "",
     "semantic_type": "",

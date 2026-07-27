@@ -11,15 +11,15 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32h553cg.pdf#page=111",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h553cg.pdf",
-  "text_helper": "Table 31. Typical and maximum current consumption in Sleep mode — section 5.3.6 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, f HCLK (MHz), +7 autres.",
+  "text_helper": "Table 31. Typical and maximum current consumption in Sleep mode — section 5.3.6 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, f HCLK (MHz) / (MHz), +7 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions",
       "Conditions",
-      "f HCLK (MHz)",
-      "Typ LDO",
+      "f HCLK (MHz) / (MHz)",
+      "Typ LDO / LDO",
       "Max(1) (2) / T = J 25°C",
       "Max(1) (2) / T = J 85°C",
       "Max(1) (2) / T = J 105°C",
@@ -59,7 +59,7 @@
       [
         "I DD(sleep)",
         "Supply current in sleep mode",
-        "All peripherals disabled",
+        "VOS1 All peripherals disabled",
         "VOS1",
         "200",
         "5.9",
@@ -86,8 +86,8 @@
       ],
       [
         "I DD(sleep)",
-        "Supply current in sleep mode",
-        "All peripherals disabled",
+        "Supply current",
+        "All peripherals",
         "VOS1",
         "168",
         "5.1",
@@ -100,8 +100,8 @@
       ],
       [
         "I DD(sleep)",
-        "Supply current in sleep mode",
-        "All peripherals disabled",
+        "in sleep mode",
+        "disabled",
         "VOS1",
         "150",
         "4.6",
@@ -115,7 +115,7 @@
       [
         "I DD(sleep)",
         "Supply current in sleep mode",
-        "All peripherals disabled",
+        "VOS2",
         "VOS2",
         "150",
         "4.2",
@@ -143,7 +143,7 @@
       [
         "I DD(sleep)",
         "Supply current in sleep mode",
-        "All peripherals disabled",
+        "VOS3",
         "VOS3",
         "100",
         "2.9",
@@ -169,7 +169,10 @@
         "mA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Evaluated by characterization - Not tested in production.",
+      "2. The maximum values are given for LDO regulator ON. T able 33. Typical and maximum current consumption in Standby mode"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

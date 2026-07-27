@@ -45,7 +45,7 @@
       [
         "I DD(Sleep)",
         "Supply current in Sleep mode",
-        "Flash memory enabled; f = f bypass HCLK HSE (≤16 MHz; PLL disabled), f = f HCLK PLLRCLK (>16 MHz; PLL enabled); All peripherals disabled",
+        "56 MHz",
         "Range 1",
         "56 MHz",
         "1.6",
@@ -59,7 +59,7 @@
       [
         "I DD(Sleep)",
         "Supply current in Sleep mode",
-        "Flash memory enabled; f = f bypass HCLK HSE (≤16 MHz; PLL disabled), f = f HCLK PLLRCLK (>16 MHz; PLL enabled); All peripherals disabled",
+        "48 MHz = f bypass f",
         "Range 1",
         "48 MHz",
         "1.4",
@@ -72,8 +72,8 @@
       ],
       [
         "I DD(Sleep)",
-        "Supply current in Sleep mode",
-        "Flash memory enabled; f = f bypass HCLK HSE (≤16 MHz; PLL disabled), f = f HCLK PLLRCLK (>16 MHz; PLL enabled); All peripherals disabled",
+        "Supply",
+        "32 MHz (≤16 MHz; PLL",
         "Range 1",
         "32 MHz",
         "1.0",
@@ -86,8 +86,8 @@
       ],
       [
         "I DD(Sleep)",
-        "Supply current in Sleep mode",
-        "Flash memory enabled; f = f bypass HCLK HSE (≤16 MHz; PLL disabled), f = f HCLK PLLRCLK (>16 MHz; PLL enabled); All peripherals disabled",
+        "Sleep",
+        "24 MHz = f f",
         "Range 1",
         "24 MHz",
         "0.8",
@@ -100,8 +100,8 @@
       ],
       [
         "I DD(Sleep)",
-        "Supply current in Sleep mode",
-        "Flash memory enabled; f = f bypass HCLK HSE (≤16 MHz; PLL disabled), f = f HCLK PLLRCLK (>16 MHz; PLL enabled); All peripherals disabled",
+        "mode",
+        "(>16 MHz; PLL 16 MHz",
         "Range 1",
         "16 MHz",
         "0.5",
@@ -115,7 +115,7 @@
       [
         "I DD(Sleep)",
         "Supply current in Sleep mode",
-        "Flash memory enabled; f = f bypass HCLK HSE (≤16 MHz; PLL disabled), f = f HCLK PLLRCLK (>16 MHz; PLL enabled); All peripherals disabled",
+        "16 MHz All peripherals disabled Range 2 8 MHz 2 MHz",
         "Range 2",
         "16 MHz",
         "0.4",
@@ -129,7 +129,7 @@
       [
         "I DD(Sleep)",
         "Supply current in Sleep mode",
-        "Flash memory enabled; f = f bypass HCLK HSE (≤16 MHz; PLL disabled), f = f HCLK PLLRCLK (>16 MHz; PLL enabled); All peripherals disabled",
+        "Range 2 8 MHz",
         "Range 2",
         "8 MHz",
         "0.3",
@@ -143,7 +143,7 @@
       [
         "I DD(Sleep)",
         "Supply current in Sleep mode",
-        "Flash memory enabled; f = f bypass HCLK HSE (≤16 MHz; PLL disabled), f = f HCLK PLLRCLK (>16 MHz; PLL enabled); All peripherals disabled",
+        "2 MHz",
         "Range 2",
         "2 MHz",
         "0.1",
@@ -170,8 +170,8 @@
       ],
       [
         "I DD(LPSleep)",
-        "Supply current in Low-power sleep mode",
-        "Flash memory disabled; PLL disabled; f = f bypass (> 32 kHz), HCLK HSE f = f bypass (= 32 kHz); HCLK LSE All peripherals disabled",
+        "Supply",
+        "1 MHz PLL disabled;",
         "Flash memory disabled; PLL disabled; f = f bypass (> 32 kHz), HCLK HSE f = f bypass (= 32 kHz); HCLK LSE All peripherals disabled",
         "1 MHz",
         "33",
@@ -184,8 +184,8 @@
       ],
       [
         "I DD(LPSleep)",
-        "Supply current in Low-power sleep mode",
-        "Flash memory disabled; PLL disabled; f = f bypass (> 32 kHz), HCLK HSE f = f bypass (= 32 kHz); HCLK LSE All peripherals disabled",
+        "Low-power",
+        "= f bypass (> 32 kHz), 500 kHz f HCLK HSE",
         "Flash memory disabled; PLL disabled; f = f bypass (> 32 kHz), HCLK HSE f = f bypass (= 32 kHz); HCLK LSE All peripherals disabled",
         "500 kHz",
         "25",
@@ -198,8 +198,8 @@
       ],
       [
         "I DD(LPSleep)",
-        "Supply current in Low-power sleep mode",
-        "Flash memory disabled; PLL disabled; f = f bypass (> 32 kHz), HCLK HSE f = f bypass (= 32 kHz); HCLK LSE All peripherals disabled",
+        "sleep mode",
+        "HCLK LSE 125 kHz All peripherals disabled",
         "Flash memory disabled; PLL disabled; f = f bypass (> 32 kHz), HCLK HSE f = f bypass (= 32 kHz); HCLK LSE All peripherals disabled",
         "125 kHz",
         "16",
@@ -213,7 +213,7 @@
       [
         "I DD(LPSleep)",
         "Supply current in Low-power sleep mode",
-        "Flash memory disabled; PLL disabled; f = f bypass (> 32 kHz), HCLK HSE f = f bypass (= 32 kHz); HCLK LSE All peripherals disabled",
+        "32 kHz",
         "Flash memory disabled; PLL disabled; f = f bypass (> 32 kHz), HCLK HSE f = f bypass (= 32 kHz); HCLK LSE All peripherals disabled",
         "32 kHz",
         "14",
@@ -225,7 +225,9 @@
         "µA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Based on characterization results, not tested in production."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

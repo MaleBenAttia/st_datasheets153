@@ -1,9 +1,9 @@
 {
   "table_id": "table_28",
-  "document": "DS14861 Rev 3 - Table 28. Operating conditions at power-up/power-down.",
+  "document": "DS14861 Rev 3 - Table 28. Operating conditions at power-up/power-down",
   "rev": "Rev 3",
   "table_number": "28",
-  "title": "Table 28. Operating conditions at power-up/power-down.",
+  "title": "Table 28. Operating conditions at power-up/power-down",
   "page": 99,
   "section": "5.3.2 Operating conditions at power-up/power-down",
   "section_title": "Operating conditions at power-up/power-down",
@@ -11,7 +11,7 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf#page=99",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf",
-  "text_helper": "Table 28. Operating conditions at power-up/power-down. — section 5.3.2 Operating conditions at power-up/power-down. Symbol, Parameter, Parameter, Conditions, Min, +2 autres.",
+  "text_helper": "Table 28. Operating conditions at power-up/power-down — section 5.3.2 Operating conditions at power-up/power-down. Symbol, Parameter, Parameter, Conditions, Min, +2 autres.",
   "table_content": {
     "headers": [
       "Symbol",
@@ -39,7 +39,7 @@
         "ULPMEN = 0",
         "20",
         "∞",
-        "µs/V"
+        "ms/V"
       ],
       [
         "tVDD",
@@ -49,27 +49,12 @@
         "250",
         "∞",
         "ms/V"
-      ],
-      [
-        "VREFINT_DIV2",
-        "1/2 reference voltage",
-        "VDD = 3.3 V",
-        "49",
-        "50",
-        "51",
-        "51"
-      ],
-      [
-        "VREFINT_DIV3",
-        "3/4 reference voltage",
-        "VDD = 3.3 V",
-        "74",
-        "75",
-        "76",
-        "76"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. BOR0 is enabled in all modes (except Shutdown) and its consumption is therefore included in the supply current characteristics tables (refer to Section 5.3.6: Supply current characteristics).",
+      "2. This is also the consumption saved in Standby mode when ULPMEN = 1"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

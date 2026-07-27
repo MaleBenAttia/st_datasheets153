@@ -11,11 +11,10 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32h7r3a8.pdf#page=186",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h7r3a8.pdf",
-  "text_helper": "Table 51. Low-power mode wakeup timings — section 6.3.8 Wake-up time from low-power modes. Symbol, Parameter, Parameter, Conditions, Typ(1), +2 autres.",
+  "text_helper": "Table 51. Low-power mode wakeup timings — section 6.3.8 Wake-up time from low-power modes. Symbol, Parameter, Conditions, Typ(1), Max(1)(2)(3), +1 autres.",
   "table_content": {
     "headers": [
       "Symbol",
-      "Parameter",
       "Parameter",
       "Conditions",
       "Typ(1)",
@@ -26,7 +25,6 @@
       [
         "t (4) WUSLEEP",
         "Wakeup from Sleep",
-        "Wakeup from Sleep",
         "-",
         "15",
         "16",
@@ -34,7 +32,6 @@
       ],
       [
         "t (4) WUDSTOP",
-        "Wakeup from Stop",
         "Wakeup from Stop",
         "SVOS low, HSI, Flash memory in normal mode",
         "42.5",
@@ -44,7 +41,6 @@
       [
         "t (4) WUDSTOP",
         "Wakeup from Stop",
-        "Wakeup from Stop",
         "SVOS low, HSI, Flash memory in low-power mode",
         "42.5",
         "46.0",
@@ -53,16 +49,14 @@
       [
         "t (4) WUDSTOP",
         "Wakeup from Stop",
-        "Wakeup from Stop",
         "SVOS high, HSI, Flash memory in normal mode",
         "16.0",
         "17.5",
         "µs"
       ],
       [
-        "t (4) WUDSTOP",
-        "Wakeup from Stop",
-        "Wakeup from Stop",
+        "(4)",
+        "Wakeup from",
         "SVOS high, HSI, Flash memory in low-power mode",
         "20.0",
         "21.0",
@@ -70,8 +64,7 @@
       ],
       [
         "t (4) WUDSTOP",
-        "Wakeup from Stop",
-        "Wakeup from Stop",
+        "Stop",
         "SVOS low, CSI, Flash memory in normal mode",
         "65.0",
         "71.0",
@@ -79,7 +72,6 @@
       ],
       [
         "t (4) WUDSTOP",
-        "Wakeup from Stop",
         "Wakeup from Stop",
         "SVOS low, CSI, Flash memory in low power mode",
         "71.5",
@@ -89,7 +81,6 @@
       [
         "t (4) WUDSTOP",
         "Wakeup from Stop",
-        "Wakeup from Stop",
         "SVOS high, CSI, Flash memory in normal mode",
         "32.0",
         "35.0",
@@ -97,7 +88,6 @@
       ],
       [
         "t (4) WUDSTOP",
-        "Wakeup from Stop",
         "Wakeup from Stop",
         "SVOS high, CSI, Flash memory in low-power mode",
         "48.5",
@@ -107,20 +97,10 @@
       [
         "t (4) WUSTDBY",
         "Wakeup from Standby mode",
-        "Wakeup from Standby mode",
         "-",
         "280.0",
         "535.0",
         "µs"
-      ],
-      [
-        "V HSEL",
-        "Digital OSC_IN input low-level voltage",
-        "External digital cwlock",
-        "V SS",
-        "-",
-        "0.3 V DD",
-        "0.3 V DD"
       ]
     ],
     "notes": [

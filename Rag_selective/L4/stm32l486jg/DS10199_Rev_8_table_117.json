@@ -11,10 +11,9 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32l486jg.pdf#page=229",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l486jg.pdf",
-  "text_helper": "Table 117. Switching characteristics for NAND flash read cycles — section 6.3.29 FSMC characteristics. Symbol, Symbol, Parameter, Min, Max, +1 autres.",
+  "text_helper": "Table 117. Switching characteristics for NAND flash read cycles — section 6.3.29 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
   "table_content": {
     "headers": [
-      "Symbol",
       "Symbol",
       "Parameter",
       "Min",
@@ -24,14 +23,12 @@
     "rows": [
       [
         "T w(N0E)",
-        "T w(N0E)",
         "FMC_NOE low width",
         "4T -1 HCLK",
         "4T +1 HCLK",
         "ns"
       ],
       [
-        "T su(D-NOE)",
         "T su(D-NOE)",
         "FMC_D[15-0] valid data before FMC_NOE high",
         "16",
@@ -40,14 +37,12 @@
       ],
       [
         "T h(NOE-D)",
-        "T h(NOE-D)",
         "FMC_D[15-0] valid data after FMC_NOE high",
         "6",
         "-",
         "ns"
       ],
       [
-        "T d(NCE-NOE)",
         "T d(NCE-NOE)",
         "FMC_NCE valid before FMC_NOE low",
         "-",
@@ -56,14 +51,16 @@
       ],
       [
         "T h(NOE-ALE)",
-        "T h(NOE-ALE)",
         "FMC_NOE high to FMC_ALE invalid",
         "2T -2 HCLK",
         "-",
         "ns"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. CL = 30 pF.",
+      "2. Guaranteed by characterization results."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

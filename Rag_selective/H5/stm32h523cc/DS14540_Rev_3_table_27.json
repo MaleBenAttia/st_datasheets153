@@ -11,14 +11,14 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32h523cc.pdf#page=105",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h523cc.pdf",
-  "text_helper": "Table 27. Typical and maximum current consumption in Run mode, code with data processing running from flash memory, 1-way instruction cache ON, PREFETCH ON — section 5.3.6 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, f HCLK (MHz), +6 autres.",
+  "text_helper": "Table 27. Typical and maximum current consumption in Run mode, code with data processing running from flash memory, 1-way instruction cache ON, PREFETCH ON — section 5.3.6 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, f HCLK (MHz) / (MHz), +6 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions",
       "Conditions",
-      "f HCLK (MHz)",
+      "f HCLK (MHz) / (MHz)",
       "Typ",
       "Max(1) / T = J 25°C",
       "Max(1) / T = J 85°C",
@@ -56,7 +56,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "VOS1 All peripherals disabled",
         "VOS1",
         "200",
         "19.1",
@@ -69,7 +69,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "VOS1",
         "VOS1",
         "180",
         "17.7",
@@ -81,8 +81,8 @@
       ],
       [
         "I DD(Run)",
-        "Supply current in Run mode",
-        "All peripherals disabled",
+        "in Run mode",
+        "disabled",
         "VOS1",
         "150",
         "14.6",
@@ -95,7 +95,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "VOS2",
         "VOS2",
         "150",
         "13.4",
@@ -121,7 +121,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "VOS3",
         "VOS3",
         "100",
         "8.5",
@@ -145,7 +145,9 @@
         "mA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Evaluated by characterization - Not tested in production."
+    ],
     "legend": [
       "running from flash memory, 1-way instruction cache ON, PREFETCH ON"
     ],

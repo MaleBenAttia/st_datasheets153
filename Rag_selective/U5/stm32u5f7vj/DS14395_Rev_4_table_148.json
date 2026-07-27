@@ -34,8 +34,8 @@
       ],
       [
         "t w(CLKL)",
-        "OCTOSPI clock high and low time (even division)",
-        "PRESCALER[7:0] = n (n = 0 1, 3, 5,..255)",
+        "(even division)",
+        "(n = 0 1, 3, 5,..255)",
         "t /2 - 0.5 (CLK)",
         "-",
         "t /2 + 0.5 (CLK)",
@@ -51,15 +51,6 @@
         "ns"
       ],
       [
-        "t w(CLKL)",
-        "OCTOSPI clock high and low time (odd division)",
-        "PRESCALER[7:0] = n (n = 2, 4, 6,..254)",
-        "((n/2)+1) × t (CLK) /(n+1) - 0.5",
-        "-",
-        "((n/2)+1) × t (CLK) /(n+1) + 0.5",
-        "ns"
-      ],
-      [
         "t sr(IN) t sf(IN)",
         "Data input setup time",
         "Voltage range 1",
@@ -69,8 +60,8 @@
         "ns"
       ],
       [
-        "t sr(IN) t sf(IN)",
-        "Data input setup time",
+        "t sf(IN)",
+        "time",
         "Voltage range 4",
         "3.75",
         "-",
@@ -87,8 +78,8 @@
         "ns"
       ],
       [
-        "t hr(IN) t hf(IN)",
-        "Data input hold time",
+        "t hf(IN)",
+        "time",
         "Voltage range 4",
         "1.5",
         "-",
@@ -106,7 +97,7 @@
       ],
       [
         "t vr(OUT) t vf(OUT)",
-        "Data output valid time, DHQC = 0",
+        "time, DHQC = 0",
         "Voltage range 4",
         "-",
         "13.25",
@@ -114,7 +105,7 @@
         "ns"
       ],
       [
-        "t vr(OUT) t vf(OUT)",
+        "t vf(OUT)",
         "Data output valid time, DHQC = 1",
         "Voltage range 1 All prescaler values (except 0)",
         "-",
@@ -133,7 +124,7 @@
       ],
       [
         "t hr(OUT) t hf(OUT)",
-        "Data output hold time DHQC = 0",
+        "time DHQC = 0",
         "Voltage range 4",
         "8",
         "-",
@@ -141,7 +132,7 @@
         "ns"
       ],
       [
-        "t hr(OUT) t hf(OUT)",
+        "t hf(OUT)",
         "Data output hold time DHQC = 1",
         "Voltage range 1 All prescaler values (except 0)",
         "t /4 - 0.5 (CLK)",

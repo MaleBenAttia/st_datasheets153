@@ -11,7 +11,7 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f722ic.pdf#page=153",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f722ic.pdf",
-  "text_helper": "Table 70. ADC static accuracy at f = 36 MHz 153 ADC — section 6.3.23 RTC characteristics. Symbol, Parameter, Test conditions, Typ, Max(1), +1 autres. (table vide)",
+  "text_helper": "Table 70. ADC static accuracy at f = 36 MHz 153 ADC — section 6.3.23 RTC characteristics. Symbol, Parameter, Test conditions, Typ, Max(1), +1 autres.",
   "table_content": {
     "headers": [
       "Symbol",
@@ -21,8 +21,51 @@
       "Max(1)",
       "Unit"
     ],
-    "rows": [],
-    "notes": [],
+    "rows": [
+      [
+        "ET",
+        "Total unadjusted error",
+        "f =36 MHz, ADC V = 2.4 to 3.6 V, DDA V = 1.7 to 3.6 V REF V - V < 1.2 V DDA REF",
+        "±4",
+        "±7",
+        "LSB"
+      ],
+      [
+        "EO",
+        "Offset error",
+        "ADC",
+        "±2",
+        "±3",
+        "LSB"
+      ],
+      [
+        "EG",
+        "Gain error",
+        "= 1.7 to 3.6 V V REF",
+        "±3",
+        "±6",
+        "LSB"
+      ],
+      [
+        "ED",
+        "Differential linearity error",
+        "- V < 1.2 V V DDA REF",
+        "±2",
+        "±3",
+        "LSB"
+      ],
+      [
+        "EL",
+        "Integral linearity error",
+        "f =36 MHz, ADC V = 2.4 to 3.6 V, DDA V = 1.7 to 3.6 V REF V - V < 1.2 V DDA REF",
+        "±3",
+        "±6",
+        "LSB"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization results. Ta b le 71. ADC dynamic accuracy at f = 18 MHz - limited test conditions(1)"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

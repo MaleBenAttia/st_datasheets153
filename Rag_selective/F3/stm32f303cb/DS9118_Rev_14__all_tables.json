@@ -121,13 +121,13 @@
           "Advanced control",
           "2 (16-bit)",
           "2 (16-bit)",
-          "2 (16-bit)",
+          "2 (16-bit) 5 (16-bit) 1 (32-bit) 2 (16-bit)",
           "2 (16-bit)",
           "2 (16-bit)",
           "2 (16-bit)"
         ],
         [
-          "Timers",
+          "Timers General purpose",
           "General purpose",
           "5 (16-bit) 1 (32-bit)",
           "5 (16-bit) 1 (32-bit)",
@@ -137,7 +137,7 @@
           "5 (16-bit) 1 (32-bit)"
         ],
         [
-          "Timers",
+          "Basic",
           "Basic",
           "2 (16-bit)",
           "2 (16-bit)",
@@ -171,13 +171,13 @@
           "SPI (I2S)(2)",
           "3(2)",
           "3(2)",
-          "3(2)",
+          "3(2) 2 3 2 1 1",
           "3(2)",
           "3(2)",
           "3(2)"
         ],
         [
-          "Communication interfaces",
+          "I2C",
           "I2C",
           "2",
           "2",
@@ -187,7 +187,7 @@
           "2"
         ],
         [
-          "Communication interfaces",
+          "USART Communication",
           "USART",
           "3",
           "3",
@@ -195,166 +195,6 @@
           "3",
           "3",
           "3"
-        ],
-        [
-          "Communication interfaces",
-          "UART",
-          "0",
-          "0",
-          "2",
-          "2",
-          "2",
-          "2"
-        ],
-        [
-          "Communication interfaces",
-          "CAN",
-          "1",
-          "1",
-          "1",
-          "1",
-          "1",
-          "1"
-        ],
-        [
-          "Communication interfaces",
-          "USB",
-          "1",
-          "1",
-          "1",
-          "1",
-          "1",
-          "1"
-        ],
-        [
-          "GPIOs",
-          "Normal I/Os (TC, TTa)",
-          "20",
-          "20",
-          "27",
-          "27",
-          "45 in LQFP100 37 in WLCSP100",
-          "45 in LQFP100 37 in WLCSP100"
-        ],
-        [
-          "GPIOs",
-          "5-volt tolerant I/Os (FT, FTf)",
-          "17",
-          "17",
-          "25",
-          "25",
-          "42 in LQFP100 40 in WLCSP100",
-          "42 in LQFP100 40 in WLCSP100"
-        ],
-        [
-          "DMA channels",
-          "DMA channels",
-          "12",
-          "12",
-          "12",
-          "12",
-          "12",
-          "12"
-        ],
-        [
-          "Capacitive sensing channels",
-          "Capacitive sensing channels",
-          "17",
-          "17",
-          "18",
-          "18",
-          "24",
-          "24"
-        ],
-        [
-          "12-bit ADCs Number of channels",
-          "12-bit ADCs Number of channels",
-          "4",
-          "4",
-          "4",
-          "4",
-          "4",
-          "4"
-        ],
-        [
-          "12-bit ADCs Number of channels",
-          "12-bit ADCs Number of channels",
-          "15",
-          "15",
-          "22",
-          "22",
-          "39 in LQFP100 32 in WLCSP100",
-          "39 in LQFP100 32 in WLCSP100"
-        ],
-        [
-          "12-bit DAC channels",
-          "12-bit DAC channels",
-          "2",
-          "2",
-          "2",
-          "2",
-          "2",
-          "2"
-        ],
-        [
-          "Analog comparator",
-          "Analog comparator",
-          "7",
-          "7",
-          "7",
-          "7",
-          "7",
-          "7"
-        ],
-        [
-          "Operational amplifiers",
-          "Operational amplifiers",
-          "4",
-          "4",
-          "4",
-          "4",
-          "4",
-          "4"
-        ],
-        [
-          "CPU frequency",
-          "CPU frequency",
-          "72 MHz",
-          "72 MHz",
-          "72 MHz",
-          "72 MHz",
-          "72 MHz",
-          "72 MHz"
-        ],
-        [
-          "Operating voltage",
-          "Operating voltage",
-          "2.0 to 3.6 V",
-          "2.0 to 3.6 V",
-          "2.0 to 3.6 V",
-          "2.0 to 3.6 V",
-          "2.0 to 3.6 V",
-          "2.0 to 3.6 V"
-        ],
-        [
-          "Operating temperature",
-          "Operating temperature",
-          "Ambient operating temperature: - 40 to 85 °C / - 40 to 105 °C Junction temperature: - 40 to 125 °C",
-          "Ambient operating temperature: - 40 to 85 °C / - 40 to 105 °C Junction temperature: - 40 to 125 °C",
-          "Ambient operating temperature: - 40 to 85 °C / - 40 to 105 °C Junction temperature: - 40 to 125 °C",
-          "Ambient operating temperature: - 40 to 85 °C / - 40 to 105 °C Junction temperature: - 40 to 125 °C",
-          "Ambient operating temperature: - 40 to 85 °C / - 40 to 105 °C Junction temperature: - 40 to 125 °C",
-          "Ambient operating temperature: - 40 to 85 °C / - 40 to 105 °C Junction temperature: - 40 to 125 °C"
-        ],
-        [
-          "Packages",
-          "Packages",
-          "LQFP48",
-          "LQFP48",
-          "LQFP64",
-          "LQFP64",
-          "LQFP100 WLCSP100",
-          "LQFP100 WLCSP100"
         ]
       ],
       "notes": [
@@ -854,7 +694,9 @@
           "-"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. X = supported."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -1162,7 +1004,7 @@
           "Pin name",
           "Pin name",
           "Unless otherwise specified in brackets below the pin name, the pin function during and after reset is the same as the actual pin name",
-          "Unless otherwise specified in brackets below the pin name, the pin function during and after reset is the same as the actual pin name"
+          "specified in brackets below the pin name, the pin function reset is the same as the actual pin name"
         ],
         [
           "Pin type",
@@ -1222,19 +1064,13 @@
           "Notes",
           "Notes",
           "Unless otherwise specified by a note, all I/Os are set as floating inputs during and after reset",
-          "Unless otherwise specified by a note, all I/Os are set as floating inputs during and after reset"
+          "specified by a note, all I/Os are set as floating inputs during and after reset"
         ],
         [
           "Pin functions",
           "Alternate functions",
           "Functions selected through GPIOx_AFR registers",
-          "Functions selected through GPIOx_AFR registers"
-        ],
-        [
-          "Pin functions",
-          "Additional functions",
-          "Functions directly selected/enabled through peripheral registers",
-          "Functions directly selected/enabled through peripheral registers"
+          "selected through GPIOx_AFR registers directly selected/enabled through peripheral registers"
         ]
       ],
       "notes": [],
@@ -1269,9 +1105,9 @@
         "Pin number / LQFP64",
         "Pin number / LQFP48",
         "Pin name (function after reset)",
-        "Pin type",
-        "I/O structure",
-        "Notes",
+        "Pin type / epyt niP",
+        "I/O structure / erutcurts O/I",
+        "Notes / setoN",
         "Pin functions / Alternate functions",
         "Pin functions / Additional functions"
       ],
@@ -4389,7 +4225,7 @@
           "V"
         ],
         [
-          "V (3) IN",
+          "(3)",
           "Input voltage on TTa pins",
           "V - 0.3 SS",
           "4.0",
@@ -4427,101 +4263,14 @@
           "V ESD(HBM)",
           "Electrostatic discharge voltage (human body model)",
           "see Section 6.3.12: Electrical sensitivity characteristics",
-          "see Section 6.3.12: Electrical sensitivity characteristics",
+          "Electrical",
           "-"
-        ],
-        [
-          "ΣI VDD",
-          "ΣI VDD",
-          "Total current into sum of all V power lines (source) DD",
-          "Total current into sum of all V power lines (source) DD",
-          "160"
-        ],
-        [
-          "ΣI VSS",
-          "ΣI VSS",
-          "Total current out of sum of all V ground lines (sink) SS",
-          "Total current out of sum of all V ground lines (sink) SS",
-          "- 160"
-        ],
-        [
-          "I VDD",
-          "I VDD",
-          "Maximum current into each V power line (source)(1) DD",
-          "Maximum current into each V power line (source)(1) DD",
-          "100"
-        ],
-        [
-          "I VSS",
-          "I VSS",
-          "Maximum current out of each V ground line (sink)(1) SS",
-          "Maximum current out of each V ground line (sink)(1) SS",
-          "- 100"
-        ],
-        [
-          "I IO(PIN)",
-          "I IO(PIN)",
-          "Output current sunk by any I/O and control pin",
-          "Output current sunk by any I/O and control pin",
-          "25"
-        ],
-        [
-          "None",
-          "None",
-          "Output current source by any I/O and control pin",
-          "Output current source by any I/O and control pin",
-          "- 25"
-        ],
-        [
-          "ΣI IO(PIN)",
-          "ΣI IO(PIN)",
-          "Total output current sunk by sum of all IOs and control pins(2)",
-          "Total output current sunk by sum of all IOs and control pins(2)",
-          "80"
-        ],
-        [
-          "None",
-          "None",
-          "Total output current sourced by sum of all IOs and control pins(2)",
-          "Total output current sourced by sum of all IOs and control pins(2)",
-          "- 80"
-        ],
-        [
-          "I INJ(PIN)",
-          "I INJ(PIN)",
-          "Injected current on FT, FTf and B pins(3)",
-          "Injected current on FT, FTf and B pins(3)",
-          "-5/+0"
-        ],
-        [
-          "None",
-          "None",
-          "Injected current on TC and RST pin(4)",
-          "Injected current on TC and RST pin(4)",
-          "± 5"
-        ],
-        [
-          "None",
-          "None",
-          "Injected current on TTa pins(5)",
-          "Injected current on TTa pins(5)",
-          "± 5"
-        ],
-        [
-          "ΣI INJ(PIN)",
-          "ΣI INJ(PIN)",
-          "Total injected current (sum of all I/O and control pins)(6)",
-          "Total injected current (sum of all I/O and control pins)(6)",
-          "± 25"
         ]
       ],
       "notes": [
-        "1. All main power (V , V ) and ground (V , V ) pins must always be connected to the external power supply, in the DD DDA SS SSA",
         "2. V REF+",
         "3. V maximum must always be respected. Refer to Table 22: Current characteristics for the maximum allowed injected IN",
-        "4. Include VREF- pin.",
-        "5. A positive injection is induced by V > V while a negative injection is induced by V < V . I (PIN) must never be IN DDA IN SS INJ",
-        "6. When several inputs are submitted to a current injection, the maximum ΣI is the absolute sum of the positive and INJ(PIN)"
+        "4. Include VREF- pin."
       ],
       "legend": "",
       "semantic_type": "",
@@ -4766,7 +4515,7 @@
         [
           "V DDA",
           "Analog operating voltage (OPAMP and DAC used)",
-          "Must have a potential equal to or higher than V DD",
+          "V DD",
           "2.4",
           "3.6",
           "V"
@@ -4821,7 +4570,7 @@
         ],
         [
           "P D",
-          "Power dissipation at T = A 85 °C for suffix 6 or T = A 105 °C for suffix 7(2)",
+          "Power dissipation at T = A",
           "LQFP100",
           "-",
           "488",
@@ -4829,7 +4578,7 @@
         ],
         [
           "P D",
-          "Power dissipation at T = A 85 °C for suffix 6 or T = A 105 °C for suffix 7(2)",
+          "7(2) 105 °C for suffix",
           "LQFP64",
           "-",
           "444",
@@ -4964,7 +4713,11 @@
           "µs/V"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. The PDR detector monitors V and also V (if kept enabled in the option bytes). The POR detector DD DDA",
+        "2. The product behavior is guaranteed by design down to the minimum V value. POR/PDR",
+        "3. Guaranteed by design. DS9118 Rev 14 61/149"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -5390,18 +5143,18 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f303cb.pdf#page=64",
-    "text_helper": "Table 30. Typical and maximum current consumption from V supply at V = 3.6V 64 DD DD — section 6.3.5 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK, All peripherals enabled / Typ, +8 autres.",
+    "text_helper": "Table 30. Typical and maximum current consumption from V supply at V = 3.6V 64 DD DD — section 6.3.5 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK, All peripherals enabled / Typ / 25 °C 85 °C 105 °C, +8 autres.",
     "table_content": {
       "headers": [
         "Symbol",
         "Parameter",
         "Conditions",
         "f HCLK",
-        "All peripherals enabled / Typ",
+        "All peripherals enabled / Typ / 25 °C 85 °C 105 °C",
         "All peripherals enabled / Max @ T (1) A / 25 °C",
         "All peripherals enabled / Max @ T (1) A / 85 °C",
         "All peripherals enabled / Max @ T (1) A / 105 °C",
-        "All peripherals disabled / Typ",
+        "All peripherals disabled / Typ / 25 °C 85 °C 105 °C",
         "All peripherals disabled / Max @ T (1) A / 25 °C",
         "All peripherals disabled / Max @ T (1) A / 85 °C",
         "All peripherals disabled / Max @ T (1) A / 105 °C",
@@ -5441,7 +5194,7 @@
         [
           "I DD",
           "Supply current in Run mode, executing from Flash",
-          "External clock (HSE bypass)",
+          "External",
           "48 MHz",
           "41.7",
           "45.1",
@@ -5456,7 +5209,7 @@
         [
           "I DD",
           "Supply current in Run mode, executing from Flash",
-          "External clock (HSE bypass)",
+          "clock (HSE",
           "32 MHz",
           "28.1",
           "31.5",
@@ -5470,7 +5223,7 @@
         ],
         [
           "I DD",
-          "Supply current in Run mode, executing from Flash",
+          "Supply",
           "External clock (HSE bypass)",
           "24 MHz",
           "21.4",
@@ -5485,7 +5238,7 @@
         ],
         [
           "I DD",
-          "Supply current in Run mode, executing from Flash",
+          "current in",
           "External clock (HSE bypass)",
           "8 MHz",
           "7.4",
@@ -5500,7 +5253,7 @@
         ],
         [
           "I DD",
-          "Supply current in Run mode, executing from Flash",
+          "executing",
           "External clock (HSE bypass)",
           "1 MHz",
           "1.3",
@@ -5515,7 +5268,7 @@
         ],
         [
           "I DD",
-          "Supply current in Run mode, executing from Flash",
+          "from Flash",
           "Internal clock (HSI)",
           "64 MHz",
           "49.7",
@@ -5546,7 +5299,7 @@
         [
           "I DD",
           "Supply current in Run mode, executing from Flash",
-          "Internal clock (HSI)",
+          "clock (HSI)",
           "32 MHz",
           "25.8",
           "29.2",
@@ -5621,7 +5374,7 @@
         [
           "I DD",
           "Supply current in Run mode, executing from RAM",
-          "External clock (HSE bypass)",
+          "External",
           "48 MHz",
           "41.0",
           "45.6",
@@ -5636,7 +5389,7 @@
         [
           "I DD",
           "Supply current in Run mode, executing from RAM",
-          "External clock (HSE bypass)",
+          "clock (HSE",
           "32 MHz",
           "27.6",
           "32.4",
@@ -5650,7 +5403,7 @@
         ],
         [
           "I DD",
-          "Supply current in Run mode, executing from RAM",
+          "Supply",
           "External clock (HSE bypass)",
           "24 MHz",
           "20.8",
@@ -5665,7 +5418,7 @@
         ],
         [
           "I DD",
-          "Supply current in Run mode, executing from RAM",
+          "current in",
           "External clock (HSE bypass)",
           "8 MHz",
           "6.9",
@@ -5680,7 +5433,7 @@
         ],
         [
           "I DD",
-          "Supply current in Run mode, executing from RAM",
+          "executing",
           "External clock (HSE bypass)",
           "1 MHz",
           "0.9",
@@ -5695,7 +5448,7 @@
         ],
         [
           "I DD",
-          "Supply current in Run mode, executing from RAM",
+          "from RAM",
           "Internal clock (HSI)",
           "64 MHz",
           "49.2",
@@ -5726,7 +5479,7 @@
         [
           "I DD",
           "Supply current in Run mode, executing from RAM",
-          "Internal clock (HSI)",
+          "clock (HSI)",
           "32 MHz",
           "25.1",
           "27.6",
@@ -5934,7 +5687,10 @@
           "2.1"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by characterization results unless otherwise specified.",
+        "2. Data based on characterization results and tested in production with code executing from RAM. Ta b le 31. Typical and maximum current consumption from the V supply"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -5958,18 +5714,18 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f303cb.pdf#page=65",
-    "text_helper": "Table 31. Typical and maximum current consumption from the V supply 65 DDA — section 6.3.5 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK, All peripherals enabled / Typ, +8 autres.",
+    "text_helper": "Table 31. Typical and maximum current consumption from the V supply 65 DDA — section 6.3.5 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK, All peripherals enabled / Typ / 25 °C 85 °C 105 °C, +8 autres.",
     "table_content": {
       "headers": [
         "Symbol",
         "Parameter",
         "Conditions",
         "f HCLK",
-        "All peripherals enabled / Typ",
+        "All peripherals enabled / Typ / 25 °C 85 °C 105 °C",
         "All peripherals enabled / Max @ T (1) A / 25 °C",
         "All peripherals enabled / Max @ T (1) A / 85 °C",
         "All peripherals enabled / Max @ T (1) A / 105 °C",
-        "All peripherals disabled / Typ",
+        "All peripherals disabled / Typ / 25 °C 85 °C 105 °C",
         "All peripherals disabled / Max @ T (1) A / 25 °C",
         "All peripherals disabled / Max @ T (1) A / 85 °C",
         "All peripherals disabled / Max @ T (1) A / 105 °C",
@@ -6009,7 +5765,7 @@
         [
           "I DD",
           "Supply current in Sleep mode, executing from Flash or RAM",
-          "External clock (HSE bypass)",
+          "External",
           "48 MHz",
           "29.6",
           "32.7",
@@ -6024,7 +5780,7 @@
         [
           "I DD",
           "Supply current in Sleep mode, executing from Flash or RAM",
-          "External clock (HSE bypass)",
+          "clock (HSE",
           "32 MHz",
           "19.7",
           "23.3",
@@ -6038,7 +5794,7 @@
         ],
         [
           "I DD",
-          "Supply current in Sleep mode, executing from Flash or RAM",
+          "current in",
           "External clock (HSE bypass)",
           "24 MHz",
           "14.9",
@@ -6053,7 +5809,7 @@
         ],
         [
           "I DD",
-          "Supply current in Sleep mode, executing from Flash or RAM",
+          "Sleep",
           "External clock (HSE bypass)",
           "8 MHz",
           "4.9",
@@ -6068,7 +5824,7 @@
         ],
         [
           "I DD",
-          "Supply current in Sleep mode, executing from Flash or RAM",
+          "executing",
           "External clock (HSE bypass)",
           "1 MHz",
           "0.6",
@@ -6083,7 +5839,7 @@
         ],
         [
           "I DD",
-          "Supply current in Sleep mode, executing from Flash or RAM",
+          "from Flash or RAM",
           "Internal clock (HSI)",
           "64 MHz",
           "34.2",
@@ -6114,7 +5870,7 @@
         [
           "I DD",
           "Supply current in Sleep mode, executing from Flash or RAM",
-          "Internal clock (HSI)",
+          "clock (HSI)",
           "32 MHz",
           "17.4",
           "19.4",
@@ -6229,7 +5985,7 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f303cb.pdf#page=66",
-    "text_helper": "Table 32. Typical and maximum V consumption in Stop and Standby modes 66 DD — section 6.3.5 Supply current characteristics. Symbol, Parameter, Conditions, Typ @V (V =V ) / 2.0 V, Typ @V (V =V ) / 2.4 V, +8 autres. (table vide)",
+    "text_helper": "Table 32. Typical and maximum V consumption in Stop and Standby modes 66 DD — section 6.3.5 Supply current characteristics. Symbol, Parameter, Conditions, Typ @V (V =V ) / 2.0 V, Typ @V (V =V ) / 2.4 V, +8 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -6246,8 +6002,72 @@
         "Max(1) / T = A 105 °C",
         "Unit"
       ],
-      "rows": [],
-      "notes": [],
+      "rows": [
+        [
+          "I DD",
+          "Supply current in Stop mode",
+          "Regulator in run mode, all oscillators OFF",
+          "20.05",
+          "20.33",
+          "20.42",
+          "20.50",
+          "20.67",
+          "20.80",
+          "44.2(2)",
+          "350",
+          "735(2)",
+          "µA"
+        ],
+        [
+          "I DD",
+          "Stop mode",
+          "Regulator in low-power mode, all oscillators OFF",
+          "7.63",
+          "7.77",
+          "7.90",
+          "8.07",
+          "8.17",
+          "8.33",
+          "30.6(2)",
+          "335",
+          "720(2)",
+          "µA"
+        ],
+        [
+          "I DD",
+          "Supply current in Standby mode",
+          "LSI ON and IWDG ON",
+          "0.80",
+          "0.96",
+          "1.09",
+          "1.23",
+          "1.37",
+          "1.51",
+          "-",
+          "-",
+          "-",
+          "µA"
+        ],
+        [
+          "I DD",
+          "Standby mode",
+          "LSI OFF and IWDG OFF",
+          "0.60",
+          "0.74",
+          "0.83",
+          "0.93",
+          "1.02",
+          "1.11",
+          "5.0(2)",
+          "7.8",
+          "13.3(2)",
+          "µA"
+        ]
+      ],
+      "notes": [
+        "1. Guaranteed by characterization results unless otherwise specified.",
+        "2. Data based on characterization results and tested in production. Tab l e 33. Typical and maximum V consumption in Stop and Standby modes"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -6306,7 +6126,7 @@
         ],
         [
           "I DD",
-          "Supply current in Stop mode",
+          "Stop mode",
           "Regulator in low-power mode, all oscillators OFF",
           "7.63",
           "7.77",
@@ -6336,7 +6156,7 @@
         ],
         [
           "I DD",
-          "Supply current in Standby mode",
+          "Standby mode",
           "LSI OFF and IWDG OFF",
           "0.60",
           "0.74",
@@ -6377,11 +6197,11 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f303cb.pdf#page=67",
-    "text_helper": "Table 34. Typical and maximum current consumption from V supply 67 BAT — section 6.3.5 Supply current characteristics. Symbol, Para meter, Conditions (1), Typ @V / 1.65V, Typ @V / 1.8V, +10 autres.",
+    "text_helper": "Table 34. Typical and maximum current consumption from V supply 67 BAT — section 6.3.5 Supply current characteristics. Symbol, Para meter / meter, Conditions (1), Typ @V / 1.65V, Typ @V / 1.8V, +10 autres.",
     "table_content": {
       "headers": [
         "Symbol",
-        "Para meter",
+        "Para meter / meter",
         "Conditions (1)",
         "Typ @V / 1.65V",
         "Typ @V / 1.8V",
@@ -6416,7 +6236,7 @@
         ],
         [
           "I DD_VBAT",
-          "Backup domain supply current",
+          "supply current",
           "LSE & RTC ON; \"Xtal mode\" higher driving capability; LSEDRV[1: 0] = '11'",
           "0.83",
           "0.86",
@@ -6527,7 +6347,7 @@
         ],
         [
           "I DD",
-          "Supply current in Run mode from V supply DD",
+          "supply V DD",
           "Running from HSE crystal clock 8 MHz, code executing from Flash",
           "8 MHz",
           "7.7",
@@ -6564,7 +6384,7 @@
         [
           "I DD",
           "Supply current in Run mode from V supply DD",
-          "Running from HSE crystal clock 8 MHz, code executing from Flash",
+          "Running from HSE",
           "500 kHz",
           "1.4",
           "1.1",
@@ -6573,7 +6393,7 @@
         [
           "I DD",
           "Supply current in Run mode from V supply DD",
-          "Running from HSE crystal clock 8 MHz, code executing from Flash",
+          "crystal clock 8 MHz,",
           "125 kHz",
           "1.1",
           "0.9",
@@ -6582,7 +6402,7 @@
         [
           "I (1)(2) DDA",
           "Supply current in Run mode from V supply DDA",
-          "Running from HSE crystal clock 8 MHz, code executing from Flash",
+          "code executing from Flash",
           "72 MHz",
           "240.3",
           "239.5",
@@ -6625,7 +6445,7 @@
           "µA"
         ],
         [
-          "I (1)(2) DDA",
+          "(1)(2)",
           "Supply current in Run mode from V supply DDA",
           "Running from HSE crystal clock 8 MHz, code executing from Flash",
           "16 MHz",
@@ -6635,7 +6455,7 @@
         ],
         [
           "I (1)(2) DDA",
-          "Supply current in Run mode from V supply DDA",
+          "V supply DDA",
           "Running from HSE crystal clock 8 MHz, code executing from Flash",
           "8 MHz",
           "2.4",
@@ -6688,7 +6508,10 @@
           "µA"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. V monitoring is ON. DDA",
+        "2. When peripherals are enabled, the power consumption of the analog part of peripherals such as ADC, DAC, Comparators, OpAmp etc. is not included. Refer to the tables of characteristics in the subsequent sections."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -6780,7 +6603,7 @@
         ],
         [
           "I DD",
-          "Supply current in Sleep mode from V supply DD",
+          "supply V DD",
           "Running from HSE crystal clock 8 MHz, code executing from Flash or RAM",
           "8 MHz",
           "5.4",
@@ -6817,7 +6640,7 @@
         [
           "I DD",
           "Supply current in Sleep mode from V supply DD",
-          "Running from HSE crystal clock 8 MHz, code executing from Flash or RAM",
+          "Running from HSE",
           "500 kHz",
           "1.2",
           "0.8",
@@ -6826,7 +6649,7 @@
         [
           "I DD",
           "Supply current in Sleep mode from V supply DD",
-          "Running from HSE crystal clock 8 MHz, code executing from Flash or RAM",
+          "crystal clock 8 MHz,",
           "125 kHz",
           "1.0",
           "0.8",
@@ -6835,7 +6658,7 @@
         [
           "I (1)(2) DDA",
           "Supply current in Sleep mode from V supply DDA",
-          "Running from HSE crystal clock 8 MHz, code executing from Flash or RAM",
+          "code executing from Flash or RAM",
           "72 MHz",
           "239.7",
           "238.5",
@@ -6878,7 +6701,7 @@
           "µA"
         ],
         [
-          "I (1)(2) DDA",
+          "(1)(2)",
           "Supply current in Sleep mode from V supply DDA",
           "Running from HSE crystal clock 8 MHz, code executing from Flash or RAM",
           "16 MHz",
@@ -6888,7 +6711,7 @@
         ],
         [
           "I (1)(2) DDA",
-          "Supply current in Sleep mode from V supply DDA",
+          "supply V DDA",
           "Running from HSE crystal clock 8 MHz, code executing from Flash or RAM",
           "8 MHz",
           "2.4",
@@ -6998,7 +6821,7 @@
         [
           "I SW",
           "I/O current consumption",
-          "V = 3.3 V DD C = 0 pF ext C = C + C + C INT EXT S",
+          "V = 3.3 V DD",
           "8 MHz",
           "1.16",
           "mA"
@@ -7006,7 +6829,7 @@
         [
           "I SW",
           "I/O current consumption",
-          "V = 3.3 V DD C = 0 pF ext C = C + C + C INT EXT S",
+          "+ C + C C = C INT EXT S",
           "18 MHz",
           "1.60",
           "mA"
@@ -7046,7 +6869,7 @@
         [
           "I SW",
           "I/O current consumption",
-          "V = 3.3 V DD C = 10 pF ext C = C + C +C INT EXT S",
+          "= 3.3 V V DD",
           "8 MHz",
           "1.47",
           "mA"
@@ -7054,7 +6877,7 @@
         [
           "I SW",
           "I/O current consumption",
-          "V = 3.3 V DD C = 10 pF ext C = C + C +C INT EXT S",
+          "+ C +C C = C INT EXT S",
           "18 MHz",
           "2.26",
           "mA"
@@ -7085,8 +6908,8 @@
         ],
         [
           "I SW",
-          "I/O current consumption",
-          "V = 3.3 V DD C = 22 pF ext C = C + C +C INT EXT S",
+          "consumption",
+          "= 3.3 V V",
           "4 MHz",
           "1.30",
           "mA"
@@ -7094,7 +6917,7 @@
         [
           "I SW",
           "I/O current consumption",
-          "V = 3.3 V DD C = 22 pF ext C = C + C +C INT EXT S",
+          "C = 22 pF ext",
           "8 MHz",
           "1.79",
           "mA"
@@ -7102,7 +6925,7 @@
         [
           "I SW",
           "I/O current consumption",
-          "V = 3.3 V DD C = 22 pF ext C = C + C +C INT EXT S",
+          "INT EXT S",
           "18 MHz",
           "3.01",
           "mA"
@@ -7126,7 +6949,7 @@
         [
           "I SW",
           "I/O current consumption",
-          "V = 3.3 V DD C = 33 pF ext C = C + C + C INT EXT S",
+          "V = 3.3 V",
           "4 MHz",
           "1.31",
           "mA"
@@ -7134,7 +6957,7 @@
         [
           "I SW",
           "I/O current consumption",
-          "V = 3.3 V DD C = 33 pF ext C = C + C + C INT EXT S",
+          "= 33 pF C ext",
           "8 MHz",
           "2.06",
           "mA"
@@ -7142,7 +6965,7 @@
         [
           "I SW",
           "I/O current consumption",
-          "V = 3.3 V DD C = 33 pF ext C = C + C + C INT EXT S",
+          "INT EXT S",
           "18 MHz",
           "3.47",
           "mA"
@@ -7166,7 +6989,7 @@
         [
           "I SW",
           "I/O current consumption",
-          "V = 3.3 V DD C = 47 pF ext C = C + C + C INT EXT S",
+          "= 3.3 V V",
           "4 MHz",
           "1.54",
           "mA"
@@ -7174,7 +6997,7 @@
         [
           "I SW",
           "I/O current consumption",
-          "V = 3.3 V DD C = 47 pF ext C = C + C + C INT EXT S",
+          "= 47 pF C ext",
           "8 MHz",
           "2.46",
           "mA"
@@ -7182,7 +7005,7 @@
         [
           "I SW",
           "I/O current consumption",
-          "V = 3.3 V DD C = 47 pF ext C = C + C + C INT EXT S",
+          "INT EXT S",
           "18 MHz",
           "4.51",
           "mA"
@@ -7495,7 +7318,7 @@
         ],
         [
           "t WUSTOP",
-          "Wakeup from Stop mode",
+          "Stop mode",
           "Regulator in low-power mode",
           "7.9",
           "6.7",
@@ -7617,42 +7440,6 @@
           "-",
           "20",
           "ns"
-        ],
-        [
-          "V LSEH",
-          "OSC32_IN input pin high level voltage",
-          "OSC32_IN input pin high level voltage",
-          "0.7V DD",
-          "-",
-          "V DD",
-          "V"
-        ],
-        [
-          "V LSEL",
-          "OSC32_IN input pin low level voltage",
-          "OSC32_IN input pin low level voltage",
-          "V SS",
-          "-",
-          "0.3V DD",
-          "0.3V DD"
-        ],
-        [
-          "t w(LSEH) t w(LSEL)",
-          "OSC32_IN high or low time(1)",
-          "OSC32_IN high or low time(1)",
-          "450",
-          "-",
-          "-",
-          "ns"
-        ],
-        [
-          "t r(LSE) t f(LSE)",
-          "OSC32_IN rise or fall time(1)",
-          "OSC32_IN rise or fall time(1)",
-          "-",
-          "-",
-          "50",
-          "50"
         ]
       ],
       "notes": [
@@ -7737,66 +7524,10 @@
           "-",
           "50",
           "ns"
-        ],
-        [
-          "R F",
-          "Feedback resistor",
-          "-",
-          "-",
-          "200",
-          "200",
-          "kΩ"
-        ],
-        [
-          "I DD",
-          "HSE current consumption",
-          "V =3.3 V, Rm= 30Ω, DD CL=10 pF@8 MHz",
-          "-",
-          "0.4",
-          "-",
-          "-"
-        ],
-        [
-          "I DD",
-          "HSE current consumption",
-          "V =3.3 V, Rm= 45Ω, DD CL=10 pF@8 MHz",
-          "-",
-          "0.5",
-          "-",
-          "-"
-        ],
-        [
-          "I DD",
-          "HSE current consumption",
-          "V =3.3 V, Rm= 30Ω, DD CL=5 pF@32 MHz",
-          "-",
-          "0.8",
-          "-",
-          "-"
-        ],
-        [
-          "I DD",
-          "HSE current consumption",
-          "V =3.3 V, Rm= 30Ω, DD CL=10 pF@32 MHz",
-          "-",
-          "1",
-          "-",
-          "-"
-        ],
-        [
-          "I DD",
-          "HSE current consumption",
-          "V =3.3 V, Rm= 30Ω, DD CL=20 pF@32 MHz",
-          "-",
-          "1.5",
-          "-",
-          "-"
         ]
       ],
       "notes": [
-        "1. Guaranteed by design.",
-        "3. This consumption level occurs during the first 2/3 of the t startup time. SU(HSE)",
-        "4. t is the startup time measured from the moment it is enabled (by software) to a stabilized 8 MHz SU(HSE)"
+        "1. Guaranteed by design."
       ],
       "legend": "",
       "semantic_type": "",
@@ -8012,7 +7743,7 @@
         ],
         [
           "g m",
-          "Oscillator transconductance",
+          "Oscillator",
           "LSEDRV[1:0]=10 medium low driving capability",
           "8",
           "-",
@@ -8021,7 +7752,7 @@
         ],
         [
           "g m",
-          "Oscillator transconductance",
+          "transconductance",
           "LSEDRV[1:0]=01 medium high driving capability",
           "15",
           "-",
@@ -8329,7 +8060,10 @@
           "ps"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Take care of using the appropriate multiplier factors so as to have PLL input clock values compatible with the range defined by f .",
+        "2. Guaranteed by design."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -8503,11 +8237,10 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f303cb.pdf#page=83",
-    "text_helper": "Table 49. EMS characteristics — section 6.3.11 EMC characteristics. Symbol, Parameter, Parameter, Conditions, Level/ Class.",
+    "text_helper": "Table 49. EMS characteristics — section 6.3.11 EMC characteristics. Symbol, Parameter, Conditions, Level/ Class.",
     "table_content": {
       "headers": [
         "Symbol",
-        "Parameter",
         "Parameter",
         "Conditions",
         "Level/ Class"
@@ -8516,33 +8249,19 @@
         [
           "V FESD",
           "Voltage limits to be applied on any I/O pin to induce a functional disturbance",
-          "Voltage limits to be applied on any I/O pin to induce a functional disturbance",
           "V = 3.3 V, LQFP100, T = +25°C, DD A f = 72 MHz HCLK conforms to IEC 61000-4-2",
           "3B"
         ],
         [
           "V EFTB",
           "Fast transient voltage burst limits to be applied through 100 pF on V and V DD SS pins to induce a functional disturbance",
-          "Fast transient voltage burst limits to be applied through 100 pF on V and V DD SS pins to induce a functional disturbance",
           "V = 3.3 V, LQFP100, T = +25°C, DD A f = 72 MHz HCLK conforms to IEC 61000-4-4",
           "4A"
-        ],
-        [
-          "S EMI",
-          "Peak level",
-          "30 to 130 MHz",
-          "20",
-          "20"
-        ],
-        [
-          "S EMI",
-          "Peak level",
-          "130 MHz to 1GHz",
-          "27",
-          "27"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by characterization results. 84/149 DS9118 Rev 14"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -8566,13 +8285,13 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f303cb.pdf#page=84",
-    "text_helper": "Table 50. EMI characteristics — section 6.3.11 EMC characteristics. Symbol, Parameter, Conditions, Monitored frequency band, Max vs. [f /f ] HSE HCLK / 8/72 MHz, +1 autres.",
+    "text_helper": "Table 50. EMI characteristics — section 6.3.11 EMC characteristics. Symbol, Parameter, Conditions, Monitored frequency band / frequency band, Max vs. [f /f ] HSE HCLK / 8/72 MHz, +1 autres.",
     "table_content": {
       "headers": [
         "Symbol",
         "Parameter",
         "Conditions",
-        "Monitored frequency band",
+        "Monitored frequency band / frequency band",
         "Max vs. [f /f ] HSE HCLK / 8/72 MHz",
         "Unit"
       ],
@@ -8588,7 +8307,7 @@
         [
           "S EMI",
           "Peak level",
-          "V = 3.6 V, T = 25 °C, DD A LQFP100 package compliant with IEC 61967-2",
+          "LQFP100 package",
           "30 to 130 MHz",
           "20",
           "dBµV"
@@ -8596,7 +8315,7 @@
         [
           "S EMI",
           "Peak level",
-          "V = 3.6 V, T = 25 °C, DD A LQFP100 package compliant with IEC 61967-2",
+          "compliant with IEC",
           "130 MHz to 1GHz",
           "27",
           "dBµV"
@@ -8610,7 +8329,9 @@
           "-"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by characterization results. 84/149 DS9118 Rev 14"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -8784,7 +8505,13 @@
           "mA"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Data based on design simulation.",
+        "2. Tested in production.",
+        "3. Leakage could be higher than the maximum value. if negative current is injected on adjacent pins. Refer to Table 53: I/O current injection susceptibility.",
+        "4. To sustain a voltage higher than V DD",
+        "5. Pull-up and pull-down resistors are designed with a true resistance in series with a switchable PMOS/NMOS. This PMOS/NMOS contribution to the series resistance is minimum (~10% order)."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -8831,7 +8558,7 @@
         ],
         [
           "V IL",
-          "Low level input voltage",
+          "Low level input",
           "FT and FTf I/O",
           "-",
           "-",
@@ -8840,7 +8567,7 @@
         ],
         [
           "V IL",
-          "Low level input voltage",
+          "voltage",
           "BOOT0",
           "-",
           "-",
@@ -8867,7 +8594,7 @@
         ],
         [
           "V IH",
-          "High level input voltage",
+          "High level input",
           "FT and FTf I/O",
           "0.5 V +0.2 (1) DD",
           "-",
@@ -8876,7 +8603,7 @@
         ],
         [
           "V IH",
-          "High level input voltage",
+          "voltage",
           "BOOT0",
           "0.2 V +0.95 (1) DD",
           "-",
@@ -8903,7 +8630,7 @@
         ],
         [
           "V hys",
-          "Schmitt trigger hysteresis",
+          "hysteresis",
           "FT and FTf I/O",
           "-",
           "100 (1)",
@@ -8930,7 +8657,7 @@
         ],
         [
           "I lkg",
-          "Input leakage current (3)",
+          "I n p u t le a k age (3 )",
           "TTa I/O in digital mode V ≤ V ≤ V DD IN DDA",
           "-",
           "-",
@@ -9035,7 +8762,7 @@
         [
           "V (3) OH",
           "Output high level voltage for an I/O pin",
-          "CMOS port(2) I = +8 mA IO 2.7 V < V < 3.6 V DD",
+          "I O < 3.6 V 2.7 V < V DD",
           "V –0.4 DD",
           "-",
           "V"
@@ -9051,7 +8778,7 @@
         [
           "V (3) OH",
           "Output high level voltage for an I/O pin",
-          "TTL port(2) I = +8 mA IO 2.7 V < V < 3.6 V DD",
+          "I O < 3.6 V 2.7 V < V DD",
           "2.4",
           "-",
           "V"
@@ -9067,7 +8794,7 @@
         [
           "V (3)(4) OH",
           "Output high level voltage for an I/O pin",
-          "I = +20 mA IO 2.7 V < V < 3.6 V DD",
+          "2.7 V < V < 3.6 V DD",
           "V –1.3 DD",
           "-",
           "V"
@@ -9083,7 +8810,7 @@
         [
           "V (3)(4) OH",
           "Output high level voltage for an I/O pin",
-          "I = +6 mA IO 2 V < V < 2.7 V DD",
+          "2 V < V < 2.7 V DD",
           "V –0.4 DD",
           "-",
           "V"
@@ -9204,7 +8931,7 @@
         [
           "11",
           "f max(IO)out",
-          "Maximum frequency(2)",
+          "frequency(2) Maximum",
           "C = 50 pF, V = 2.7 V to 3.6 V L DD",
           "-",
           "30(3)",
@@ -9231,7 +8958,7 @@
         [
           "11",
           "t f(IO)out",
-          "Output high to low level fall time",
+          "fall time",
           "C = 50 pF, V = 2.7 V to 3.6 V L DD",
           "-",
           "8(3)",
@@ -9258,7 +8985,7 @@
         [
           "11",
           "t r(IO)out",
-          "Output low to high level rise time",
+          "rise time",
           "C = 50 pF, V = 2.7 V to 3.6 V L DD",
           "-",
           "8(3)",
@@ -9481,7 +9208,7 @@
         ],
         [
           "f EXT",
-          "Timer external clock frequency on CH1 to CH4",
+          "frequency on CH1 to CH4",
           "f = 72 MHz TIMxCLK",
           "0",
           "36",
@@ -9537,7 +9264,7 @@
         ],
         [
           "t MAX_COUNT",
-          "Maximum possible count with 32-bit counter",
+          "Maximum possible count",
           "f = 72 MHz TIMxCLK",
           "-",
           "59.65",
@@ -9631,7 +9358,9 @@
           "26214.4"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. These timings are given for a 40 kHz clock but the microcontroller’s internal RC frequency can vary from 30 to 60 kHz. Moreover, given an exact RC oscillator frequency, the exact timings still depend on the phasing"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -9988,7 +9717,7 @@
           "MHz"
         ],
         [
-          "f SCK 1/t c(SCK)",
+          "f SCK",
           "SPI clock frequency",
           "Slave mode, SPI1 2.7<V <3.6 DD",
           "-",
@@ -9997,7 +9726,7 @@
           "MHz"
         ],
         [
-          "f SCK 1/t c(SCK)",
+          "1/t c(SCK)",
           "SPI clock frequency",
           "Master mode, SPI1/2/3 2<V <3.6 DD",
           "-",
@@ -10222,7 +9951,7 @@
         [
           "t w(CKL)",
           "I2S clock low time",
-          "Master f = 36 MHz, PCLK audio frequency = 48 kHz",
+          "48 kHz",
           "332",
           "-",
           "ns"
@@ -10642,7 +10371,7 @@
         ],
         [
           "I DDA",
-          "ADC current consumption on VDDA pin (see Figure 32)",
+          "ADC current consumption on VDDA",
           "Single-ended mode, 200 KSPS",
           "-",
           "51.5",
@@ -10651,7 +10380,7 @@
         ],
         [
           "I DDA",
-          "ADC current consumption on VDDA pin (see Figure 32)",
+          "(see Figure 32)",
           "Differential mode, 5 MSPS",
           "-",
           "887.5",
@@ -10714,7 +10443,7 @@
         ],
         [
           "I REF",
-          "ADC current consumption on VREF+ pin (see Figure 33)",
+          "ADC current consumption on VREF+",
           "Single-ended mode, 200 KSPS",
           "-",
           "3.3",
@@ -10723,7 +10452,7 @@
         ],
         [
           "I REF",
-          "ADC current consumption on VREF+ pin (see Figure 33)",
+          "(see Figure 33)",
           "Differential mode, 5 MSPS",
           "-",
           "174",
@@ -11019,12 +10748,12 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f303cb.pdf#page=108",
-    "text_helper": "Table 69. Maximum ADC RAIN — section 6.3.18 ADC characteristics. Resolution, Sampling cycle @ 72 MHz, Sampling time [ns] @ 72 MHz, R max (k Ω ) / Fast channels(2), R max (k Ω ) / AIN / Slow channels, +1 autres.",
+    "text_helper": "Table 69. Maximum ADC RAIN — section 6.3.18 ADC characteristics. Resolution, Sampling cycle @ 72 MHz / cycle @ 72 MHz, Sampling time [ns] @ 72 MHz / time [ns] @ 72 MHz, R max (k Ω ) / Fast channels(2), R max (k Ω ) / AIN / Slow channels, +1 autres.",
     "table_content": {
       "headers": [
         "Resolution",
-        "Sampling cycle @ 72 MHz",
-        "Sampling time [ns] @ 72 MHz",
+        "Sampling cycle @ 72 MHz / cycle @ 72 MHz",
+        "Sampling time [ns] @ 72 MHz / time [ns] @ 72 MHz",
         "R max (k Ω ) / Fast channels(2)",
         "R max (k Ω ) / AIN / Slow channels",
         "R max (k Ω ) / Other channels(3)"
@@ -11343,8 +11072,8 @@
         ],
         [
           "ET",
-          "Total unadjusted error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = V = 3.3 V DDA REF+ 25°C 100-pin package",
+          "Total",
+          "Slow channel 4.8 Ms",
           "Single ended",
           "Slow channel 4.8 Ms",
           "-",
@@ -11354,8 +11083,8 @@
         ],
         [
           "ET",
-          "Total unadjusted error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = V = 3.3 V DDA REF+ 25°C 100-pin package",
+          "error",
+          "Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Differential",
           "Fast channel 5.1 Ms",
           "-",
@@ -11366,7 +11095,7 @@
         [
           "ET",
           "Total unadjusted error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = V = 3.3 V DDA REF+ 25°C 100-pin package",
+          "Slow channel 4.8 Ms",
           "Differential",
           "Slow channel 4.8 Ms",
           "-",
@@ -11377,7 +11106,7 @@
         [
           "EO",
           "Offset error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = V = 3.3 V DDA REF+ 25°C 100-pin package",
+          "Fast channel 5.1 Ms Single ended Slow channel 4.8 Ms Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Single ended",
           "Fast channel 5.1 Ms",
           "-",
@@ -11388,7 +11117,7 @@
         [
           "EO",
           "Offset error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = V = 3.3 V DDA REF+ 25°C 100-pin package",
+          "Slow channel 4.8 Ms",
           "Single ended",
           "Slow channel 4.8 Ms",
           "-",
@@ -11399,7 +11128,7 @@
         [
           "EO",
           "Offset error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = V = 3.3 V DDA REF+ 25°C 100-pin package",
+          "Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Differential",
           "Fast channel 5.1 Ms",
           "-",
@@ -11410,7 +11139,7 @@
         [
           "EO",
           "Offset error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = V = 3.3 V DDA REF+ 25°C 100-pin package",
+          "Slow channel 4.8 Ms",
           "Differential",
           "Slow channel 4.8 Ms",
           "-",
@@ -11421,18 +11150,7 @@
         [
           "EG",
           "Gain error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = V = 3.3 V DDA REF+ 25°C 100-pin package",
-          "Single ended",
-          "Fast channel 5.1 Ms",
-          "-",
-          "±3",
-          "±4",
-          "LSB"
-        ],
-        [
-          "EG",
-          "Gain error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = V = 3.3 V DDA REF+ 25°C 100-pin package",
+          "Slow channel 4.8 Ms",
           "Single ended",
           "Slow channel 4.8 Ms",
           "-",
@@ -11443,7 +11161,7 @@
         [
           "EG",
           "Gain error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = V = 3.3 V DDA REF+ 25°C 100-pin package",
+          "Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Differential",
           "Fast channel 5.1 Ms",
           "-",
@@ -11454,7 +11172,7 @@
         [
           "EG",
           "Gain error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = V = 3.3 V DDA REF+ 25°C 100-pin package",
+          "Slow channel 4.8 Ms",
           "Differential",
           "Slow channel 4.8 Ms",
           "-",
@@ -11465,7 +11183,7 @@
         [
           "ED",
           "Differential linearity error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = V = 3.3 V DDA REF+ 25°C 100-pin package",
+          "≤ ADC clock freq. 72 MHz Fast channel 5.1 Ms Single ended ≤ Sampling freq. 5 Msps Slow channel 4.8 Ms V = V = 3.3 V DDA REF+ Fast channel 5.1 Ms 25°C Differential Slow channel 4.8 Ms 100-pin package",
           "Single ended",
           "Fast channel 5.1 Ms",
           "-",
@@ -11475,8 +11193,8 @@
         ],
         [
           "ED",
-          "Differential linearity error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = V = 3.3 V DDA REF+ 25°C 100-pin package",
+          "Differential",
+          "Slow channel 4.8 Ms",
           "Single ended",
           "Slow channel 4.8 Ms",
           "-",
@@ -11486,8 +11204,8 @@
         ],
         [
           "ED",
-          "Differential linearity error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = V = 3.3 V DDA REF+ 25°C 100-pin package",
+          "error",
+          "Fast channel 5.1 Ms 25°C Differential Slow channel 4.8 Ms 100-pin package",
           "Differential",
           "Fast channel 5.1 Ms",
           "-",
@@ -11498,7 +11216,7 @@
         [
           "ED",
           "Differential linearity error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = V = 3.3 V DDA REF+ 25°C 100-pin package",
+          "Slow channel 4.8 Ms 100-pin package",
           "Differential",
           "Slow channel 4.8 Ms",
           "-",
@@ -11508,19 +11226,8 @@
         ],
         [
           "EL",
-          "Integral linearity error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = V = 3.3 V DDA REF+ 25°C 100-pin package",
-          "Single ended",
-          "Fast channel 5.1 Ms",
-          "-",
-          "±1.5",
-          "±2",
-          "LSB"
-        ],
-        [
-          "EL",
-          "Integral linearity error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = V = 3.3 V DDA REF+ 25°C 100-pin package",
+          "Integral",
+          "Slow channel 4.8 Ms",
           "Single ended",
           "Slow channel 4.8 Ms",
           "-",
@@ -11530,8 +11237,8 @@
         ],
         [
           "EL",
-          "Integral linearity error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = V = 3.3 V DDA REF+ 25°C 100-pin package",
+          "error",
+          "Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Differential",
           "Fast channel 5.1 Ms",
           "-",
@@ -11542,7 +11249,7 @@
         [
           "EL",
           "Integral linearity error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = V = 3.3 V DDA REF+ 25°C 100-pin package",
+          "Slow channel 4.8 Ms",
           "Differential",
           "Slow channel 4.8 Ms",
           "-",
@@ -11553,7 +11260,7 @@
         [
           "ENOB(4)",
           "Effective number of bits",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = V = 3.3 V DDA REF+ 25°C 100-pin package",
+          "Fast channel 5.1 Ms Single ended Slow channel 4.8 Ms Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Single ended",
           "Fast channel 5.1 Ms",
           "10.7",
@@ -11563,8 +11270,8 @@
         ],
         [
           "ENOB(4)",
-          "Effective number of bits",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = V = 3.3 V DDA REF+ 25°C 100-pin package",
+          "Effective",
+          "Slow channel 4.8 Ms",
           "Single ended",
           "Slow channel 4.8 Ms",
           "10.7",
@@ -11574,8 +11281,8 @@
         ],
         [
           "ENOB(4)",
-          "Effective number of bits",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = V = 3.3 V DDA REF+ 25°C 100-pin package",
+          "bits",
+          "Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Differential",
           "Fast channel 5.1 Ms",
           "11.2",
@@ -11586,7 +11293,7 @@
         [
           "ENOB(4)",
           "Effective number of bits",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = V = 3.3 V DDA REF+ 25°C 100-pin package",
+          "Slow channel 4.8 Ms",
           "Differential",
           "Slow channel 4.8 Ms",
           "11.1",
@@ -11597,7 +11304,7 @@
         [
           "SINAD(4)",
           "Signal-to- noise and distortion ratio",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = V = 3.3 V DDA REF+ 25°C 100-pin package",
+          "Fast channel 5.1 Ms Single ended Slow channel 4.8 Ms Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Single ended",
           "Fast channel 5.1 Ms",
           "66",
@@ -11607,8 +11314,8 @@
         ],
         [
           "SINAD(4)",
-          "Signal-to- noise and distortion ratio",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = V = 3.3 V DDA REF+ 25°C 100-pin package",
+          "noise and",
+          "Slow channel 4.8 Ms",
           "Single ended",
           "Slow channel 4.8 Ms",
           "66",
@@ -11618,8 +11325,8 @@
         ],
         [
           "SINAD(4)",
-          "Signal-to- noise and distortion ratio",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = V = 3.3 V DDA REF+ 25°C 100-pin package",
+          "distortion ratio",
+          "Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Differential",
           "Fast channel 5.1 Ms",
           "69",
@@ -11630,7 +11337,7 @@
         [
           "SINAD(4)",
           "Signal-to- noise and distortion ratio",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = V = 3.3 V DDA REF+ 25°C 100-pin package",
+          "Slow channel 4.8 Ms",
           "Differential",
           "Slow channel 4.8 Ms",
           "69",
@@ -11779,8 +11486,8 @@
         ],
         [
           "ET",
-          "Total unadjusted error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2 V ≤ V , V ≤ 3.6 V DDA REF+ 100-pin package",
+          "Total",
+          "Ended Slow channel 4.8 Ms",
           "Single Ended",
           "Slow channel 4.8 Ms",
           "-",
@@ -11788,29 +11495,9 @@
           "LSB"
         ],
         [
-          "ET",
-          "Total unadjusted error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2 V ≤ V , V ≤ 3.6 V DDA REF+ 100-pin package",
-          "Differential",
-          "Fast channel 5.1 Ms",
-          "-",
-          "±4",
-          "LSB"
-        ],
-        [
-          "ET",
-          "Total unadjusted error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2 V ≤ V , V ≤ 3.6 V DDA REF+ 100-pin package",
-          "Differential",
-          "Slow channel 4.8 Ms",
-          "-",
-          "±4",
-          "LSB"
-        ],
-        [
           "EO",
           "Offset error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2 V ≤ V , V ≤ 3.6 V DDA REF+ 100-pin package",
+          "Fast channel 5.1 Ms Single Ended Slow channel 4.8 Ms Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Single Ended",
           "Fast channel 5.1 Ms",
           "-",
@@ -11820,37 +11507,17 @@
         [
           "EO",
           "Offset error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2 V ≤ V , V ≤ 3.6 V DDA REF+ 100-pin package",
+          "Ended Slow channel 4.8 Ms",
           "Single Ended",
           "Slow channel 4.8 Ms",
           "-",
           "±3",
-          "LSB"
-        ],
-        [
-          "EO",
-          "Offset error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2 V ≤ V , V ≤ 3.6 V DDA REF+ 100-pin package",
-          "Differential",
-          "Fast channel 5.1 Ms",
-          "-",
-          "±2",
-          "LSB"
-        ],
-        [
-          "EO",
-          "Offset error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2 V ≤ V , V ≤ 3.6 V DDA REF+ 100-pin package",
-          "Differential",
-          "Slow channel 4.8 Ms",
-          "-",
-          "±2",
           "LSB"
         ],
         [
           "EG",
           "Gain error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2 V ≤ V , V ≤ 3.6 V DDA REF+ 100-pin package",
+          "Fast channel 5.1 Ms Single Ended Slow channel 4.8 Ms Fast channel 5.1 Ms ≤ ADC clock freq. 72 MHz, Differential ≤ Slow channel 4.8 Ms Sampling freq. 5 Msps",
           "Single Ended",
           "Fast channel 5.1 Ms",
           "-",
@@ -11860,7 +11527,7 @@
         [
           "EG",
           "Gain error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2 V ≤ V , V ≤ 3.6 V DDA REF+ 100-pin package",
+          "Ended Slow channel 4.8 Ms",
           "Single Ended",
           "Slow channel 4.8 Ms",
           "-",
@@ -11870,7 +11537,7 @@
         [
           "EG",
           "Gain error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2 V ≤ V , V ≤ 3.6 V DDA REF+ 100-pin package",
+          "Fast channel 5.1 Ms ≤ ADC clock freq. 72 MHz, Differential ≤ Slow channel 4.8 Ms Sampling freq. 5 Msps",
           "Differential",
           "Fast channel 5.1 Ms",
           "-",
@@ -11880,7 +11547,7 @@
         [
           "EG",
           "Gain error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2 V ≤ V , V ≤ 3.6 V DDA REF+ 100-pin package",
+          "≤ Slow channel 4.8 Ms Sampling freq. 5 Msps",
           "Differential",
           "Slow channel 4.8 Ms",
           "-",
@@ -11890,7 +11557,7 @@
         [
           "ED",
           "Differential linearity error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2 V ≤ V , V ≤ 3.6 V DDA REF+ 100-pin package",
+          ", V 3.6 V 2 V V Fast channel 5.1 Ms DDA REF+ Single 100-pin package Ended Slow channel 4.8 Ms Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Single Ended",
           "Fast channel 5.1 Ms",
           "-",
@@ -11899,8 +11566,8 @@
         ],
         [
           "ED",
-          "Differential linearity error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2 V ≤ V , V ≤ 3.6 V DDA REF+ 100-pin package",
+          "Differential",
+          "Ended Slow channel 4.8 Ms",
           "Single Ended",
           "Slow channel 4.8 Ms",
           "-",
@@ -11909,20 +11576,10 @@
         ],
         [
           "ED",
-          "Differential linearity error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2 V ≤ V , V ≤ 3.6 V DDA REF+ 100-pin package",
+          "error",
+          "Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Differential",
           "Fast channel 5.1 Ms",
-          "-",
-          "±1.5",
-          "LSB"
-        ],
-        [
-          "ED",
-          "Differential linearity error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2 V ≤ V , V ≤ 3.6 V DDA REF+ 100-pin package",
-          "Differential",
-          "Slow channel 4.8 Ms",
           "-",
           "±1.5",
           "LSB"
@@ -11930,7 +11587,7 @@
         [
           "EL",
           "Integral linearity error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2 V ≤ V , V ≤ 3.6 V DDA REF+ 100-pin package",
+          "Fast channel 5.1 Ms Single Ended Slow channel 4.8 Ms Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Single Ended",
           "Fast channel 5.1 Ms",
           "-",
@@ -11939,38 +11596,18 @@
         ],
         [
           "EL",
-          "Integral linearity error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2 V ≤ V , V ≤ 3.6 V DDA REF+ 100-pin package",
+          "Integral",
+          "Ended Slow channel 4.8 Ms",
           "Single Ended",
           "Slow channel 4.8 Ms",
           "-",
           "±3",
-          "LSB"
-        ],
-        [
-          "EL",
-          "Integral linearity error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2 V ≤ V , V ≤ 3.6 V DDA REF+ 100-pin package",
-          "Differential",
-          "Fast channel 5.1 Ms",
-          "-",
-          "±2",
-          "LSB"
-        ],
-        [
-          "EL",
-          "Integral linearity error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2 V ≤ V , V ≤ 3.6 V DDA REF+ 100-pin package",
-          "Differential",
-          "Slow channel 4.8 Ms",
-          "-",
-          "±2",
           "LSB"
         ],
         [
           "ENOB (5)",
           "Effective number of bits",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2 V ≤ V , V ≤ 3.6 V DDA REF+ 100-pin package",
+          "Fast channel 5.1 Ms Single Ended Slow channel 4.8 Ms Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Single Ended",
           "Fast channel 5.1 Ms",
           "10.4",
@@ -11978,32 +11615,12 @@
           "bits"
         ],
         [
-          "ENOB (5)",
-          "Effective number of bits",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2 V ≤ V , V ≤ 3.6 V DDA REF+ 100-pin package",
+          "ENOB",
+          "Effective",
+          "Ended Slow channel 4.8 Ms",
           "Single Ended",
           "Slow channel 4.8 Ms",
           "10.2",
-          "-",
-          "bits"
-        ],
-        [
-          "ENOB (5)",
-          "Effective number of bits",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2 V ≤ V , V ≤ 3.6 V DDA REF+ 100-pin package",
-          "Differential",
-          "Fast channel 5.1 Ms",
-          "10.8",
-          "-",
-          "bits"
-        ],
-        [
-          "ENOB (5)",
-          "Effective number of bits",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2 V ≤ V , V ≤ 3.6 V DDA REF+ 100-pin package",
-          "Differential",
-          "Slow channel 4.8 Ms",
-          "10.8",
           "-",
           "bits"
         ],
@@ -12182,8 +11799,8 @@
         ],
         [
           "ET",
-          "Total unadjusted error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = 3.3 V DDA 25°C 64-pin package",
+          "Total",
+          "Slow channel 4.8 Ms",
           "Single ended",
           "Slow channel 4.8 Ms",
           "-",
@@ -12194,18 +11811,7 @@
         [
           "ET",
           "Total unadjusted error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = 3.3 V DDA 25°C 64-pin package",
-          "Differential",
-          "Fast channel 5.1 Ms",
-          "-",
-          "±3.5",
-          "±4",
-          "LSB"
-        ],
-        [
-          "ET",
-          "Total unadjusted error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = 3.3 V DDA 25°C 64-pin package",
+          "Slow channel 4.8 Ms",
           "Differential",
           "Slow channel 4.8 Ms",
           "-",
@@ -12216,7 +11822,7 @@
         [
           "EO",
           "Offset error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = 3.3 V DDA 25°C 64-pin package",
+          "Fast channel 5.1 Ms Single ended Slow channel 4.8 Ms Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Single ended",
           "Fast channel 5.1 Ms",
           "-",
@@ -12227,7 +11833,7 @@
         [
           "EO",
           "Offset error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = 3.3 V DDA 25°C 64-pin package",
+          "Slow channel 4.8 Ms",
           "Single ended",
           "Slow channel 4.8 Ms",
           "-",
@@ -12238,7 +11844,7 @@
         [
           "EO",
           "Offset error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = 3.3 V DDA 25°C 64-pin package",
+          "Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Differential",
           "Fast channel 5.1 Ms",
           "-",
@@ -12249,7 +11855,7 @@
         [
           "EO",
           "Offset error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = 3.3 V DDA 25°C 64-pin package",
+          "Slow channel 4.8 Ms",
           "Differential",
           "Slow channel 4.8 Ms",
           "-",
@@ -12260,7 +11866,7 @@
         [
           "EG",
           "Gain error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = 3.3 V DDA 25°C 64-pin package",
+          "Fast channel 5.1 Ms Single ended Slow channel 4.8 Ms Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Single ended",
           "Fast channel 5.1 Ms",
           "-",
@@ -12271,7 +11877,7 @@
         [
           "EG",
           "Gain error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = 3.3 V DDA 25°C 64-pin package",
+          "Slow channel 4.8 Ms",
           "Single ended",
           "Slow channel 4.8 Ms",
           "-",
@@ -12282,7 +11888,7 @@
         [
           "EG",
           "Gain error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = 3.3 V DDA 25°C 64-pin package",
+          "Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Differential",
           "Fast channel 5.1 Ms",
           "-",
@@ -12293,7 +11899,7 @@
         [
           "EG",
           "Gain error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = 3.3 V DDA 25°C 64-pin package",
+          "Slow channel 4.8 Ms",
           "Differential",
           "Slow channel 4.8 Ms",
           "-",
@@ -12304,7 +11910,7 @@
         [
           "ED",
           "Differential linearity error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = 3.3 V DDA 25°C 64-pin package",
+          "≤ ADC clock freq. 72 MHz Fast channel 5.1 Ms Single ended ≤ Sampling freq. 5 Msps Slow channel 4.8 Ms = 3.3 V V DDA Fast channel 5.1 Ms 25°C Differential Slow channel 4.8 Ms 64-pin package",
           "Single ended",
           "Fast channel 5.1 Ms",
           "-",
@@ -12314,8 +11920,8 @@
         ],
         [
           "ED",
-          "Differential linearity error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = 3.3 V DDA 25°C 64-pin package",
+          "Differential",
+          "Slow channel 4.8 Ms",
           "Single ended",
           "Slow channel 4.8 Ms",
           "-",
@@ -12325,8 +11931,8 @@
         ],
         [
           "ED",
-          "Differential linearity error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = 3.3 V DDA 25°C 64-pin package",
+          "error",
+          "Fast channel 5.1 Ms 25°C Differential Slow channel 4.8 Ms 64-pin package",
           "Differential",
           "Fast channel 5.1 Ms",
           "-",
@@ -12337,7 +11943,7 @@
         [
           "ED",
           "Differential linearity error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = 3.3 V DDA 25°C 64-pin package",
+          "Slow channel 4.8 Ms 64-pin package",
           "Differential",
           "Slow channel 4.8 Ms",
           "-",
@@ -12348,7 +11954,7 @@
         [
           "EL",
           "Integral linearity error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = 3.3 V DDA 25°C 64-pin package",
+          "Fast channel 5.1 Ms Single ended Slow channel 4.8 Ms Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Single ended",
           "Fast channel 5.1 Ms",
           "-",
@@ -12358,8 +11964,8 @@
         ],
         [
           "EL",
-          "Integral linearity error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = 3.3 V DDA 25°C 64-pin package",
+          "Integral",
+          "Slow channel 4.8 Ms",
           "Single ended",
           "Slow channel 4.8 Ms",
           "-",
@@ -12369,8 +11975,8 @@
         ],
         [
           "EL",
-          "Integral linearity error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = 3.3 V DDA 25°C 64-pin package",
+          "error",
+          "Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Differential",
           "Fast channel 5.1 Ms",
           "-",
@@ -12381,7 +11987,7 @@
         [
           "EL",
           "Integral linearity error",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = 3.3 V DDA 25°C 64-pin package",
+          "Slow channel 4.8 Ms",
           "Differential",
           "Slow channel 4.8 Ms",
           "-",
@@ -12392,7 +11998,7 @@
         [
           "ENOB (4)",
           "Effective number of bits",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = 3.3 V DDA 25°C 64-pin package",
+          "Fast channel 5.1 Ms Single ended Slow channel 4.8 Ms Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Single ended",
           "Fast channel 5.1 Ms",
           "10.8",
@@ -12401,9 +12007,9 @@
           "bit"
         ],
         [
-          "ENOB (4)",
-          "Effective number of bits",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = 3.3 V DDA 25°C 64-pin package",
+          "ENOB",
+          "Effective",
+          "Slow channel 4.8 Ms",
           "Single ended",
           "Slow channel 4.8 Ms",
           "10.8",
@@ -12413,8 +12019,8 @@
         ],
         [
           "ENOB (4)",
-          "Effective number of bits",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = 3.3 V DDA 25°C 64-pin package",
+          "bits",
+          "Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Differential",
           "Fast channel 5.1 Ms",
           "11.2",
@@ -12425,7 +12031,7 @@
         [
           "ENOB (4)",
           "Effective number of bits",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = 3.3 V DDA 25°C 64-pin package",
+          "Slow channel 4.8 Ms",
           "Differential",
           "Slow channel 4.8 Ms",
           "11.2",
@@ -12436,7 +12042,7 @@
         [
           "SINAD (4)",
           "Signal-to- noise and distortion ratio",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = 3.3 V DDA 25°C 64-pin package",
+          "Fast channel 5.1 Ms Single ended Slow channel 4.8 Ms Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Single ended",
           "Fast channel 5.1 Ms",
           "66",
@@ -12445,9 +12051,9 @@
           "dB"
         ],
         [
-          "SINAD (4)",
-          "Signal-to- noise and distortion ratio",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = 3.3 V DDA 25°C 64-pin package",
+          "SINAD",
+          "noise and",
+          "Slow channel 4.8 Ms",
           "Single ended",
           "Slow channel 4.8 Ms",
           "66",
@@ -12457,8 +12063,8 @@
         ],
         [
           "SINAD (4)",
-          "Signal-to- noise and distortion ratio",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = 3.3 V DDA 25°C 64-pin package",
+          "distortion ratio",
+          "Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Differential",
           "Fast channel 5.1 Ms",
           "69",
@@ -12469,7 +12075,7 @@
         [
           "SINAD (4)",
           "Signal-to- noise and distortion ratio",
-          "ADC clock freq. ≤ 72 MHz Sampling freq. ≤ 5 Msps V = 3.3 V DDA 25°C 64-pin package",
+          "Slow channel 4.8 Ms",
           "Differential",
           "Slow channel 4.8 Ms",
           "69",
@@ -12618,8 +12224,8 @@
         ],
         [
           "ET",
-          "Total unadjusted error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2.0 V ≤ V ≤ 3.6 V DDA 64-pin package",
+          "Total",
+          "Slow channel 4.8 Ms",
           "Single ended",
           "Slow channel 4.8 Ms",
           "-",
@@ -12628,8 +12234,8 @@
         ],
         [
           "ET",
-          "Total unadjusted error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2.0 V ≤ V ≤ 3.6 V DDA 64-pin package",
+          "error",
+          "Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Differential",
           "Fast channel 5.1 Ms",
           "-",
@@ -12639,7 +12245,7 @@
         [
           "ET",
           "Total unadjusted error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2.0 V ≤ V ≤ 3.6 V DDA 64-pin package",
+          "Slow channel 4.8 Ms",
           "Differential",
           "Slow channel 4.8 Ms",
           "-",
@@ -12649,7 +12255,7 @@
         [
           "EO",
           "Offset error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2.0 V ≤ V ≤ 3.6 V DDA 64-pin package",
+          "Fast channel 5.1 Ms Single ended Slow channel 4.8 Ms Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Single ended",
           "Fast channel 5.1 Ms",
           "-",
@@ -12659,7 +12265,7 @@
         [
           "EO",
           "Offset error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2.0 V ≤ V ≤ 3.6 V DDA 64-pin package",
+          "Slow channel 4.8 Ms",
           "Single ended",
           "Slow channel 4.8 Ms",
           "-",
@@ -12669,7 +12275,7 @@
         [
           "EO",
           "Offset error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2.0 V ≤ V ≤ 3.6 V DDA 64-pin package",
+          "Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Differential",
           "Fast channel 5.1 Ms",
           "-",
@@ -12679,7 +12285,7 @@
         [
           "EO",
           "Offset error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2.0 V ≤ V ≤ 3.6 V DDA 64-pin package",
+          "Slow channel 4.8 Ms",
           "Differential",
           "Slow channel 4.8 Ms",
           "-",
@@ -12689,7 +12295,7 @@
         [
           "EG",
           "Gain error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2.0 V ≤ V ≤ 3.6 V DDA 64-pin package",
+          "Fast channel 5.1 Ms Single ended Slow channel 4.8 Ms Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Single ended",
           "Fast channel 5.1 Ms",
           "-",
@@ -12699,7 +12305,7 @@
         [
           "EG",
           "Gain error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2.0 V ≤ V ≤ 3.6 V DDA 64-pin package",
+          "Slow channel 4.8 Ms",
           "Single ended",
           "Slow channel 4.8 Ms",
           "-",
@@ -12709,7 +12315,7 @@
         [
           "EG",
           "Gain error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2.0 V ≤ V ≤ 3.6 V DDA 64-pin package",
+          "Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Differential",
           "Fast channel 5.1 Ms",
           "-",
@@ -12719,7 +12325,7 @@
         [
           "EG",
           "Gain error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2.0 V ≤ V ≤ 3.6 V DDA 64-pin package",
+          "Slow channel 4.8 Ms",
           "Differential",
           "Slow channel 4.8 Ms",
           "-",
@@ -12729,7 +12335,7 @@
         [
           "ED",
           "Differential linearity error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2.0 V ≤ V ≤ 3.6 V DDA 64-pin package",
+          "Fast channel 5.1 Ms ≤ ADC clock freq. 72 MHz, Single ended ≤ Slow channel 4.8 Ms Sampling freq. 5 Msps ≤ ≤ 3.6 V 2.0 V V Fast channel 5.1 Ms DDA Differential 64-pin package Slow channel 4.8 Ms",
           "Single ended",
           "Fast channel 5.1 Ms",
           "-",
@@ -12738,8 +12344,8 @@
         ],
         [
           "ED",
-          "Differential linearity error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2.0 V ≤ V ≤ 3.6 V DDA 64-pin package",
+          "Differential",
+          "≤ Slow channel 4.8 Ms Sampling freq. 5 Msps",
           "Single ended",
           "Slow channel 4.8 Ms",
           "-",
@@ -12748,8 +12354,8 @@
         ],
         [
           "ED",
-          "Differential linearity error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2.0 V ≤ V ≤ 3.6 V DDA 64-pin package",
+          "error",
+          "3.6 V 2.0 V V Fast channel 5.1 Ms DDA Differential 64-pin package Slow channel 4.8 Ms",
           "Differential",
           "Fast channel 5.1 Ms",
           "-",
@@ -12759,7 +12365,7 @@
         [
           "ED",
           "Differential linearity error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2.0 V ≤ V ≤ 3.6 V DDA 64-pin package",
+          "Slow channel 4.8 Ms",
           "Differential",
           "Slow channel 4.8 Ms",
           "-",
@@ -12769,7 +12375,7 @@
         [
           "EL",
           "Integral linearity error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2.0 V ≤ V ≤ 3.6 V DDA 64-pin package",
+          "Fast channel 5.1 Ms Single ended Slow channel 4.8 Ms Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Single ended",
           "Fast channel 5.1 Ms",
           "-",
@@ -12778,8 +12384,8 @@
         ],
         [
           "EL",
-          "Integral linearity error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2.0 V ≤ V ≤ 3.6 V DDA 64-pin package",
+          "Integral",
+          "Slow channel 4.8 Ms",
           "Single ended",
           "Slow channel 4.8 Ms",
           "-",
@@ -12788,8 +12394,8 @@
         ],
         [
           "EL",
-          "Integral linearity error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2.0 V ≤ V ≤ 3.6 V DDA 64-pin package",
+          "error",
+          "Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Differential",
           "Fast channel 5.1 Ms",
           "-",
@@ -12799,7 +12405,7 @@
         [
           "EL",
           "Integral linearity error",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2.0 V ≤ V ≤ 3.6 V DDA 64-pin package",
+          "Slow channel 4.8 Ms",
           "Differential",
           "Slow channel 4.8 Ms",
           "-",
@@ -12809,7 +12415,7 @@
         [
           "ENOB (5)",
           "Effective number of bits",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2.0 V ≤ V ≤ 3.6 V DDA 64-pin package",
+          "Fast channel 5.1 Ms Single ended Slow channel 4.8 Ms Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Single ended",
           "Fast channel 5.1 Ms",
           "10.4",
@@ -12817,9 +12423,9 @@
           "bits"
         ],
         [
-          "ENOB (5)",
-          "Effective number of bits",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2.0 V ≤ V ≤ 3.6 V DDA 64-pin package",
+          "ENOB",
+          "Effective",
+          "Slow channel 4.8 Ms",
           "Single ended",
           "Slow channel 4.8 Ms",
           "10.4",
@@ -12828,8 +12434,8 @@
         ],
         [
           "ENOB (5)",
-          "Effective number of bits",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2.0 V ≤ V ≤ 3.6 V DDA 64-pin package",
+          "bits",
+          "Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Differential",
           "Fast channel 5.1 Ms",
           "10.8",
@@ -12839,7 +12445,7 @@
         [
           "ENOB (5)",
           "Effective number of bits",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2.0 V ≤ V ≤ 3.6 V DDA 64-pin package",
+          "Slow channel 4.8 Ms",
           "Differential",
           "Slow channel 4.8 Ms",
           "10.8",
@@ -12849,7 +12455,7 @@
         [
           "SINAD (5)",
           "Signal-to- noise and distortion ratio",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2.0 V ≤ V ≤ 3.6 V DDA 64-pin package",
+          "Fast channel 5.1 Ms Single ended Slow channel 4.8 Ms Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Single ended",
           "Fast channel 5.1 Ms",
           "64",
@@ -12857,9 +12463,9 @@
           "dB"
         ],
         [
-          "SINAD (5)",
-          "Signal-to- noise and distortion ratio",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2.0 V ≤ V ≤ 3.6 V DDA 64-pin package",
+          "SINAD",
+          "noise and",
+          "Slow channel 4.8 Ms",
           "Single ended",
           "Slow channel 4.8 Ms",
           "63",
@@ -12868,8 +12474,8 @@
         ],
         [
           "SINAD (5)",
-          "Signal-to- noise and distortion ratio",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2.0 V ≤ V ≤ 3.6 V DDA 64-pin package",
+          "distortion ratio",
+          "Fast channel 5.1 Ms Differential Slow channel 4.8 Ms",
           "Differential",
           "Fast channel 5.1 Ms",
           "67",
@@ -12879,7 +12485,7 @@
         [
           "SINAD (5)",
           "Signal-to- noise and distortion ratio",
-          "ADC clock freq. ≤ 72 MHz, Sampling freq. ≤ 5 Msps 2.0 V ≤ V ≤ 3.6 V DDA 64-pin package",
+          "Slow channel 4.8 Ms",
           "Differential",
           "Slow channel 4.8 Ms",
           "67",
@@ -13018,7 +12624,7 @@
         [
           "ET",
           "Total unadjusted error",
-          "ADC Freq ≤ 72 MHz Sampling Freq ≤ 1MSPS 2.4 V ≤ V = V ≤ 3.6 V DDA REF+ Single-ended mode",
+          "Slow channel",
           "Slow channel",
           "±3.5",
           "±5",
@@ -13027,7 +12633,7 @@
         [
           "EO",
           "Offset error",
-          "ADC Freq ≤ 72 MHz Sampling Freq ≤ 1MSPS 2.4 V ≤ V = V ≤ 3.6 V DDA REF+ Single-ended mode",
+          "Fast channel Slow channel",
           "Fast channel",
           "±1",
           "±2.5",
@@ -13036,7 +12642,7 @@
         [
           "EO",
           "Offset error",
-          "ADC Freq ≤ 72 MHz Sampling Freq ≤ 1MSPS 2.4 V ≤ V = V ≤ 3.6 V DDA REF+ Single-ended mode",
+          "Slow channel",
           "Slow channel",
           "±1.5",
           "±2.5",
@@ -13045,7 +12651,7 @@
         [
           "EG",
           "Gain error",
-          "ADC Freq ≤ 72 MHz Sampling Freq ≤ 1MSPS 2.4 V ≤ V = V ≤ 3.6 V DDA REF+ Single-ended mode",
+          "Fast channel Sampling Freq ≤ 1MSPS = V ≤ 3.6 V 2.4 V ≤ V DDA REF+ Slow channel",
           "Fast channel",
           "±2",
           "±3",
@@ -13054,7 +12660,7 @@
         [
           "EG",
           "Gain error",
-          "ADC Freq ≤ 72 MHz Sampling Freq ≤ 1MSPS 2.4 V ≤ V = V ≤ 3.6 V DDA REF+ Single-ended mode",
+          "DDA REF+ Slow channel",
           "Slow channel",
           "±3",
           "±4",
@@ -13063,7 +12669,7 @@
         [
           "ED",
           "Differential linearity error",
-          "ADC Freq ≤ 72 MHz Sampling Freq ≤ 1MSPS 2.4 V ≤ V = V ≤ 3.6 V DDA REF+ Single-ended mode",
+          "Fast channel Slow channel",
           "Fast channel",
           "±0.7",
           "±2",
@@ -13072,7 +12678,7 @@
         [
           "ED",
           "Differential linearity error",
-          "ADC Freq ≤ 72 MHz Sampling Freq ≤ 1MSPS 2.4 V ≤ V = V ≤ 3.6 V DDA REF+ Single-ended mode",
+          "Slow channel",
           "Slow channel",
           "±0.7",
           "±2",
@@ -13081,7 +12687,7 @@
         [
           "EL",
           "Integral linearity error",
-          "ADC Freq ≤ 72 MHz Sampling Freq ≤ 1MSPS 2.4 V ≤ V = V ≤ 3.6 V DDA REF+ Single-ended mode",
+          "Fast channel Slow channel",
           "Fast channel",
           "±1",
           "±3",
@@ -13090,7 +12696,7 @@
         [
           "EL",
           "Integral linearity error",
-          "ADC Freq ≤ 72 MHz Sampling Freq ≤ 1MSPS 2.4 V ≤ V = V ≤ 3.6 V DDA REF+ Single-ended mode",
+          "Slow channel",
           "Slow channel",
           "±1.2",
           "±3",
@@ -13159,7 +12765,7 @@
         [
           "R (1) LOAD",
           "Resistive load",
-          "DAC output buffer ON",
+          "buffer ON Connected to V DDA",
           "Connected to V DDA",
           "25",
           "-",
@@ -13218,7 +12824,7 @@
         ],
         [
           "I (3) DDA",
-          "DAC DC current consumption in quiescent mode (Standby mode)(2)",
+          "mode)(2) mode (Standby",
           "With no load, worst code (0xF1C) on the input.",
           "With no load, worst code (0xF1C) on the input.",
           "-",
@@ -13238,7 +12844,7 @@
         ],
         [
           "DNL(3)",
-          "Differential non linearity Difference between two consecutive code-1LSB)",
+          "consecutive code-1LSB)",
           "Given for a 12-bit input code",
           "Given for a 12-bit input code",
           "-",
@@ -13258,7 +12864,7 @@
         ],
         [
           "INL(3)",
-          "Integral non linearity (difference between measured value at Code i and the value at Code i on a line drawn between Code 0 and last Code 4095)",
+          "measured value at Code i and the value at Code i on a line drawn between Code 0 and last Code 4095)",
           "Given for a 12-bit input code",
           "Given for a 12-bit input code",
           "-",
@@ -13278,7 +12884,7 @@
         ],
         [
           "Offset(3)",
-          "Offset error (difference between measured value at Code (0x800) and the ideal value = V /2) DDA",
+          "between measured value at Code (0x800) and the ideal",
           "Given for a 10-bit input code at V = 3.6 V DDA",
           "Given for a 10-bit input code at V = 3.6 V DDA",
           "-",
@@ -13288,7 +12894,7 @@
         ],
         [
           "Offset(3)",
-          "Offset error (difference between measured value at Code (0x800) and the ideal value = V /2) DDA",
+          "/2) value = V DDA",
           "Given for a 12-bit input code at V = 3.6 V DDA",
           "Given for a 12-bit input code at V = 3.6 V DDA",
           "-",
@@ -13470,7 +13076,7 @@
         ],
         [
           "t D",
-          "Propagation delay for 200 mV step with 100 mV overdrive",
+          "Propagation delay for",
           "Low-power mode",
           "Low-power mode",
           "-",
@@ -13480,7 +13086,7 @@
         ],
         [
           "t D",
-          "Propagation delay for 200 mV step with 100 mV overdrive",
+          "200 mV step with 100 mV",
           "Medium power mode",
           "Medium power mode",
           "-",
@@ -13501,7 +13107,7 @@
         [
           "t D",
           "Propagation delay for 200 mV step with 100 mV overdrive",
-          "High speed mode",
+          "< 2.7 V V DDA",
           "V < 2.7 V DDA",
           "-",
           "100",
@@ -13520,7 +13126,7 @@
         ],
         [
           "t D",
-          "Propagation delay for full range step with 100 mV overdrive",
+          "Propagation delay for full",
           "Low-power mode",
           "Low-power mode",
           "-",
@@ -13530,7 +13136,7 @@
         ],
         [
           "t D",
-          "Propagation delay for full range step with 100 mV overdrive",
+          "Vm 001 htiw pets egnar",
           "Medium power mode",
           "Medium power mode",
           "-",
@@ -13551,7 +13157,7 @@
         [
           "t D",
           "Propagation delay for full range step with 100 mV overdrive",
-          "High speed mode",
+          "< 2.7 V V DDA",
           "V < 2.7 V DDA",
           "-",
           "110",
@@ -13590,7 +13196,7 @@
         ],
         [
           "I DD(COMP)",
-          "COMP current consumption",
+          "COMP current",
           "Low-power mode",
           "Low-power mode",
           "-",
@@ -13600,7 +13206,7 @@
         ],
         [
           "I DD(COMP)",
-          "COMP current consumption",
+          "consumption",
           "Medium power mode",
           "Medium power mode",
           "-",
@@ -13760,7 +13366,7 @@
         ],
         [
           "VI OFFSET",
-          "Input offset voltage",
+          "range Input offset",
           "Maximum calibration range",
           "All voltage/Temp.",
           "-",
@@ -13770,7 +13376,7 @@
         ],
         [
           "VI OFFSET",
-          "Input offset voltage",
+          "voltage After offset calibration",
           "After offset calibration",
           "25°C, No Load on output.",
           "-",
@@ -13780,7 +13386,7 @@
         ],
         [
           "VI OFFSET",
-          "Input offset voltage",
+          "calibration",
           "After offset calibration",
           "All voltage/Temp.",
           "-",
@@ -13967,162 +13573,10 @@
           "2",
           "-",
           "-"
-        ],
-        [
-          "None",
-          "None",
-          "None",
-          "None",
-          "-",
-          "4",
-          "-",
-          "-"
-        ],
-        [
-          "None",
-          "None",
-          "None",
-          "None",
-          "-",
-          "8",
-          "-",
-          "-"
-        ],
-        [
-          "None",
-          "None",
-          "None",
-          "None",
-          "-",
-          "16",
-          "-",
-          "-"
-        ],
-        [
-          "R network",
-          "R2/R1 internal resistance values in PGA mode (3)",
-          "R2/R1 internal resistance values in PGA mode (3)",
-          "Gain=2",
-          "-",
-          "5.4/5.4",
-          "-",
-          "kΩ"
-        ],
-        [
-          "None",
-          "None",
-          "None",
-          "Gain=4",
-          "-",
-          "16.2/5.4",
-          "-",
-          "None"
-        ],
-        [
-          "None",
-          "None",
-          "None",
-          "Gain=8",
-          "-",
-          "37.8/5.4",
-          "-",
-          "None"
-        ],
-        [
-          "None",
-          "None",
-          "None",
-          "Gain=16",
-          "-",
-          "40.5/2.7",
-          "-",
-          "None"
-        ],
-        [
-          "PGA gain error",
-          "PGA gain error",
-          "PGA gain error",
-          "-",
-          "-1%",
-          "-",
-          "1%",
-          "1%"
-        ],
-        [
-          "I bias",
-          "OPAMP input bias current",
-          "OPAMP input bias current",
-          "-",
-          "-",
-          "-",
-          "±0.2(4)",
-          "µA"
-        ],
-        [
-          "PGA BW",
-          "PGA bandwidth for different non inverting gain",
-          "PGA bandwidth for different non inverting gain",
-          "PGA Gain = 2, Cload = 50pF, Rload = 4 KΩ",
-          "-",
-          "4",
-          "-",
-          "MHz"
-        ],
-        [
-          "None",
-          "None",
-          "None",
-          "PGA Gain = 4, Cload = 50pF, Rload = 4 KΩ",
-          "-",
-          "2",
-          "-",
-          "None"
-        ],
-        [
-          "None",
-          "None",
-          "None",
-          "PGA Gain = 8, Cload = 50pF, Rload = 4 KΩ",
-          "-",
-          "1",
-          "-",
-          "None"
-        ],
-        [
-          "None",
-          "None",
-          "None",
-          "PGA Gain = 16, Cload = 50pF, Rload = 4 KΩ",
-          "-",
-          "0.5",
-          "-",
-          "None"
-        ],
-        [
-          "en",
-          "Voltage noise density",
-          "Voltage noise density",
-          "@ 1KHz, Output loaded with 4 KΩ",
-          "-",
-          "109",
-          "-",
-          "nV ----------- Hz"
-        ],
-        [
-          "None",
-          "None",
-          "None",
-          "@ 10KHz, Output loaded with 4 KΩ",
-          "-",
-          "43",
-          "-",
-          "None"
         ]
       ],
       "notes": [
-        "2. The saturation voltage can be also limited by the Iload (drive current).",
-        "3. R2 is the internal resistance between OPAMP output and OPAMP inverting input. R1 is the internal resistance between OPAMP inverting input and ground.",
-        "4. Mostly TTa I/O leakage, when used in analog mode. DS9118 Rev 14 123/149"
+        "2. The saturation voltage can be also limited by the Iload (drive current)."
       ],
       "legend": "",
       "semantic_type": "",
@@ -14199,7 +13653,10 @@
           "µs"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by design.",
+        "2. Shortest sampling time can be determined in the application by multiple iterations."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -14545,7 +14002,9 @@
           "-"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Drawing is not to scale."
+      ],
       "legend": [
         "data",
         "(continued)"

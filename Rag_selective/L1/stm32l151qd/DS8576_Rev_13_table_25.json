@@ -5,13 +5,13 @@
   "table_number": "25",
   "title": "Table 25. Low-power mode wakeup timings",
   "page": 79,
-  "section": "6.3.5 Wakeup time from low-power mode",
-  "section_title": "Wakeup time from low-power mode",
+  "section": "6.3.6 External clock source characteristics",
+  "section_title": "External clock source characteristics",
   "semantic_type": "",
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32l151qd.pdf#page=79",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l151qd.pdf",
-  "text_helper": "Table 25. Low-power mode wakeup timings — section 6.3.5 Wakeup time from low-power mode. Symbol, Parameter, Conditions, Typ, Max(1), +1 autres.",
+  "text_helper": "Table 25. Low-power mode wakeup timings — section 6.3.6 External clock source characteristics. Symbol, Parameter, Conditions, Typ, Max(1), +1 autres.",
   "table_content": {
     "headers": [
       "Symbol",
@@ -40,7 +40,7 @@
       ],
       [
         "t WUSLEEP_LP",
-        "Wakeup from Low-power sleep mode, f = 262 kHz HCLK",
+        "= 262 kHz mode, f HCLK",
         "f = 262 kHz HCLK Flash switched OFF",
         "46",
         "-",
@@ -71,8 +71,8 @@
         "µs"
       ],
       [
-        "t WUSTOP",
-        "Wakeup from Stop mode, regulator in low-power mode ULP bit = 1 and FWU bit = 1",
+        "WUSTOP",
+        "Wakeup from Stop mode,",
         "f = f = 2.1 MHz HCLK MSI",
         "10.2",
         "13.4",
@@ -80,7 +80,7 @@
       ],
       [
         "t WUSTOP",
-        "Wakeup from Stop mode, regulator in low-power mode ULP bit = 1 and FWU bit = 1",
+        "regulator in low-power mode",
         "f = f = 1.05 MHz HCLK MSI",
         "16",
         "20",
@@ -124,7 +124,7 @@
         "f = MSI = 2.1 MHz HCLK",
         "58",
         "104",
-        "µs"
+        "ms"
       ],
       [
         "t WUSTDBY",

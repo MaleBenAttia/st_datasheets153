@@ -37,7 +37,7 @@
       [
         "I (Run DD from RAM)",
         "Supply current in Run mode, code executed from RAM, Flash switched off",
-        "f = f up to 16 HSE HCLK MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(2)",
+        "=1.2 V, V CORE",
         "Range 3, V =1.2 V, CORE VOS[1:0]=11",
         "2 MHz",
         "240",
@@ -55,9 +55,9 @@
         "µA"
       ],
       [
-        "I (Run DD from RAM)",
-        "Supply current in Run mode, code executed from RAM, Flash switched off",
-        "f = f up to 16 HSE HCLK MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(2)",
+        "(Run I DD from",
+        "Supply current in Run mode, code executed from",
+        "= f up to 16 f HSE HCLK Range 2, MHz included, =1.5 ,V, V CORE f = f /2 above HSE HCLK VOS[1:0]=10 ON)(2) 16 MHz (PLL Range 1, =1.8 V, V CORE VOS[1:0]=01",
         "Range 2, V =1.5 ,V, CORE VOS[1:0]=10",
         "4 MHz",
         "0.52",
@@ -67,7 +67,7 @@
       [
         "I (Run DD from RAM)",
         "Supply current in Run mode, code executed from RAM, Flash switched off",
-        "f = f up to 16 HSE HCLK MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(2)",
+        "=1.5 ,V, V CORE f = f /2 above",
         "Range 2, V =1.5 ,V, CORE VOS[1:0]=10",
         "8 MHz",
         "1",
@@ -77,7 +77,7 @@
       [
         "I (Run DD from RAM)",
         "Supply current in Run mode, code executed from RAM, Flash switched off",
-        "f = f up to 16 HSE HCLK MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(2)",
+        "ON)(2) 16 MHz (PLL",
         "Range 2, V =1.5 ,V, CORE VOS[1:0]=10",
         "16 MHz",
         "2",
@@ -85,9 +85,9 @@
         "mA"
       ],
       [
-        "I (Run DD from RAM)",
-        "Supply current in Run mode, code executed from RAM, Flash switched off",
-        "f = f up to 16 HSE HCLK MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(2)",
+        "(Run I DD from",
+        "Supply current in Run mode, code executed from",
+        "Range 1, =1.8 V, V CORE VOS[1:0]=01",
         "Range 1, V =1.8 V, CORE VOS[1:0]=01",
         "8 MHz",
         "1.25",
@@ -95,77 +95,20 @@
         "mA"
       ],
       [
-        "I (Run DD from RAM)",
-        "Supply current in Run mode, code executed from RAM, Flash switched off",
-        "f = f up to 16 HSE HCLK MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(2)",
+        "(Run I DD",
+        "Run mode, code",
+        "=1.8 V, V CORE",
         "Range 1, V =1.8 V, CORE VOS[1:0]=01",
         "16 MHz",
         "2.45",
         "2.8",
         "mA"
-      ],
-      [
-        "I (Run DD from RAM)",
-        "Supply current in Run mode, code executed from RAM, Flash switched off",
-        "f = f up to 16 HSE HCLK MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(2)",
-        "Range 1, V =1.8 V, CORE VOS[1:0]=01",
-        "32 MHz",
-        "5.1",
-        "5.4",
-        "mA"
-      ],
-      [
-        "I (Run DD from RAM)",
-        "Supply current in Run mode, code executed from RAM, Flash switched off",
-        "MSI clock",
-        "Range 3, V =1.2 V, CORE VOS[1:0]=11",
-        "65 kHz",
-        "34.5",
-        "75",
-        "µA"
-      ],
-      [
-        "I (Run DD from RAM)",
-        "Supply current in Run mode, code executed from RAM, Flash switched off",
-        "MSI clock",
-        "Range 3, V =1.2 V, CORE VOS[1:0]=11",
-        "524 kHz",
-        "83",
-        "120",
-        "µA"
-      ],
-      [
-        "I (Run DD from RAM)",
-        "Supply current in Run mode, code executed from RAM, Flash switched off",
-        "MSI clock",
-        "Range 3, V =1.2 V, CORE VOS[1:0]=11",
-        "4.2 MHz",
-        "485",
-        "540",
-        "µA"
-      ],
-      [
-        "I (Run DD from RAM)",
-        "Supply current in Run mode, code executed from RAM, Flash switched off",
-        "HSI16 clock source (16 MHz)",
-        "Range 2, V =1.5 V, CORE VOS[1:0]=10",
-        "16 MHz",
-        "2.1",
-        "2.3",
-        "mA"
-      ],
-      [
-        "I (Run DD from RAM)",
-        "Supply current in Run mode, code executed from RAM, Flash switched off",
-        "HSI16 clock source (16 MHz)",
-        "Range 1, V =1.8 V, CORE VOS[1:0]=01",
-        "32 MHz",
-        "5.1",
-        "5.6",
-        "mA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Guaranteed by characterization results at 125 °C, unless otherwise specified. 64/130 DS10090 Rev 8",
+      "2. Oscillator bypassed (HSEBYP = 1 in RCC_CR register)."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

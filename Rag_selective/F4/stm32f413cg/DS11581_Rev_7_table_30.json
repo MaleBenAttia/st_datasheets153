@@ -11,13 +11,13 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f413cg.pdf#page=94",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f413cg.pdf",
-  "text_helper": "Table 30. Typical and maximum current consumption in run mode, code with data processing — section 6.3.6 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK (MHz), Typ / T = A 25 °C, +5 autres.",
+  "text_helper": "Table 30. Typical and maximum current consumption in run mode, code with data processing — section 6.3.6 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK (MHz) / (MHz), Typ / T = A 25 °C, +5 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions",
-      "f HCLK (MHz)",
+      "f HCLK (MHz) / (MHz)",
       "Typ / T = A 25 °C",
       "Max(1) / T = A 25 °C",
       "Max(1) / T = A 85 °C",
@@ -65,7 +65,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "External clock, PLL ON, all peripherals enabled(2)",
+        "enabled(2) all peripherals",
         "50",
         "20.7",
         "22.32",
@@ -100,7 +100,7 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode",
+        "Supply current",
         "HSI, PLL OFF, all peripherals enabled",
         "16",
         "7.1",
@@ -112,8 +112,8 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode",
-        "HSI, PLL OFF, all peripherals enabled",
+        "Supply current",
+        "all peripherals enabled",
         "1",
         "1.2",
         "1.84",
@@ -124,7 +124,7 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode",
+        "in Run mode",
         "External clock, PLL ON(2) all peripherals disabled",
         "100",
         "25.4",
@@ -161,7 +161,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "External clock, PLL ON(2) all peripherals disabled",
+        "all peripherals disabled",
         "50",
         "13.2",
         "15.10",
@@ -209,7 +209,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "HSI, PLL OFF, all peripherals disabled",
+        "all peripherals disabled",
         "1",
         "1.0",
         "1.62",
@@ -591,7 +591,12 @@
         "7.71"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Guaranteed by characterization results. 96/203 DS11581 Rev 7",
+      "2. Add an additional power consumption of 1.6 mA per ADC for the analog part. In applications, this consumption occurs only while the ADC is ON (ADON bit is set in the ADC_CR2 register).",
+      "3. When the ADC is ON (ADON bit set in the ADC_CR2), add an additional power consumption of 1.6mA per ADC for the analog part.",
+      "4. Tested in production. DS11581 Rev 7 95/203"
+    ],
     "legend": [
       "(ART accelerator enabled with prefetch) running from Flash memory - V = 1.7 V"
     ],

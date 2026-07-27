@@ -107,7 +107,7 @@
       [
         "tSTART",
         "Comparator startup time to reach propagation delay specification",
-        "High-speed mode",
+        "VDDA < 2.7 V",
         "VDDA < 2.7 V",
         "-",
         "-",
@@ -116,7 +116,7 @@
       ],
       [
         "tSTART",
-        "Comparator startup time to reach propagation delay specification",
+        "propagation delay specification",
         "Medium mode",
         "VDDA ≥ 2.7 V",
         "-",
@@ -127,7 +127,7 @@
       [
         "tSTART",
         "Comparator startup time to reach propagation delay specification",
-        "Medium mode",
+        "VDDA < 2.7 V",
         "VDDA < 2.7 V",
         "-",
         "-",
@@ -155,9 +155,9 @@
         "ns"
       ],
       [
-        "tD(2)",
+        "(2)",
         "Propagation delay with 100 mV overdrive",
-        "High-speed mode",
+        "VDDA < 2.7 V",
         "VDDA < 2.7 V",
         "-",
         "65",
@@ -247,7 +247,7 @@
       [
         "IDDA(COMP)",
         "Comparator consumption from VDDA",
-        "Ultra-low-power mode",
+        "Ultra-low-power mode With 50 kHz ±100 mV overdrive square signal",
         "With 50 kHz ±100 mV overdrive square signal",
         "-",
         "1200",
@@ -267,7 +267,7 @@
       [
         "IDDA(COMP)",
         "Comparator consumption from VDDA",
-        "Medium mode",
+        "Medium mode With 50 kHz ±100 mV overdrive square signal",
         "With 50 kHz ±100 mV overdrive square signal",
         "-",
         "6",
@@ -287,7 +287,7 @@
       [
         "IDDA(COMP)",
         "Comparator consumption from VDDA",
-        "High-speed mode",
+        "High-speed mode With 50 kHz ±100 mV overdrive square signal",
         "With 50 kHz ±100 mV overdrive square signal",
         "-",
         "75",
@@ -303,176 +303,6 @@
         "-",
         "-(3)",
         "nA"
-      ],
-      [
-        "VIOFFSET",
-        "Input offset voltage",
-        "All voltage/temperature",
-        "All voltage/temperature",
-        "-",
-        "-",
-        "±3",
-        "±3"
-      ],
-      [
-        "∆VIOFFSET",
-        "Input offset voltage drift",
-        "Low-power mode",
-        "Low-power mode",
-        "-",
-        "±10",
-        "-",
-        "-"
-      ],
-      [
-        "TRIMOFFSETN TRIMLPOFFSETN",
-        "Offset trim step at high common input voltage (0.9 ₓ VDDA)",
-        "-",
-        "-",
-        "-",
-        "1",
-        "1.35",
-        "1.35"
-      ],
-      [
-        "ILOAD",
-        "Drive current",
-        "Low-power mode",
-        "Low-power mode",
-        "-",
-        "-",
-        "100",
-        "100"
-      ],
-      [
-        "ILOAD_PGA",
-        "Drive current in PGA mode",
-        "Normal mode",
-        "VDDA ≥ 2 V",
-        "-",
-        "-",
-        "450",
-        "450"
-      ],
-      [
-        "ILOAD_PGA",
-        "Drive current in PGA mode",
-        "Low-power mode",
-        "Low-power mode",
-        "-",
-        "-",
-        "50",
-        "50"
-      ],
-      [
-        "RLOAD",
-        "Resistive load (connected to VSSA or to VDDA)",
-        "Low-power mode",
-        "Low-power mode",
-        "20",
-        "-",
-        "-",
-        "-"
-      ],
-      [
-        "RLOAD_PGA",
-        "Resistive load in PGA mode (connected to VSSA or to VDDA)",
-        "Normal mode",
-        "VDDA < 2 V",
-        "4.5",
-        "-",
-        "-",
-        "-"
-      ],
-      [
-        "RLOAD_PGA",
-        "Resistive load in PGA mode (connected to VSSA or to VDDA)",
-        "Low-power mode",
-        "Low-power mode",
-        "40",
-        "-",
-        "-",
-        "-"
-      ],
-      [
-        "CMRR",
-        "Common mode rejection ratio",
-        "Low-power mode",
-        "Low-power mode",
-        "-",
-        "-90",
-        "-",
-        "-"
-      ],
-      [
-        "PSRR",
-        "Power supply rejection ratio",
-        "Low-power mode",
-        "CD Ωk 02 ≥ DAOLR ,fp 05 ≤ DAOLC",
-        "72",
-        "90",
-        "-",
-        "-"
-      ],
-      [
-        "GBW",
-        "Gain Bandwidth Product",
-        "Low-power mode",
-        "Low-power mode",
-        "100",
-        "420",
-        "600",
-        "600"
-      ],
-      [
-        "GBW",
-        "Gain Bandwidth Product",
-        "Normal mode",
-        "VDDA < 2.4 V (OPA_RANGE = 0)",
-        "250",
-        "700",
-        "950",
-        "950"
-      ],
-      [
-        "GBW",
-        "Gain Bandwidth Product",
-        "Low-power mode",
-        "Low-power mode",
-        "40",
-        "180",
-        "280",
-        "280"
-      ],
-      [
-        "SR(2)",
-        "Slew rate (from 10 and 90% of output voltage)",
-        "Low-power mode",
-        "Low-power mode",
-        "-",
-        "180",
-        "-",
-        "-"
-      ],
-      [
-        "SR(2)",
-        "Slew rate (from 10 and 90% of output voltage)",
-        "Normal mode",
-        "VDDA < 2.4 V",
-        "-",
-        "300",
-        "-",
-        "-"
-      ],
-      [
-        "SR(2)",
-        "Slew rate (from 10 and 90% of output voltage)",
-        "Low-power mode",
-        "Low-power mode",
-        "-",
-        "80",
-        "-",
-        "-"
       ]
     ],
     "notes": [

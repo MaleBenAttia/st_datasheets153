@@ -1,9 +1,9 @@
 {
   "table_id": "table_8",
-  "document": "DS15097 Rev 3 - Table 8. STM32U3B5xx low-power modes overview.",
+  "document": "DS15097 Rev 3 - Table 8. STM32U3B5xx low-power modes overview",
   "rev": "Rev 3",
   "table_number": "8",
-  "title": "Table 8. STM32U3B5xx low-power modes overview.",
+  "title": "Table 8. STM32U3B5xx low-power modes overview",
   "page": 21,
   "section": "3.9 Low-power modes",
   "section_title": "Low-power modes",
@@ -11,7 +11,7 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32u3b5cg.pdf#page=21",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u3b5cg.pdf",
-  "text_helper": "Table 8. STM32U3B5xx low-power modes overview. — section 3.9 Low-power modes. Mode name, Entry, Wake-up source, Wake-up system clock, Effect on clocks, +1 autres.",
+  "text_helper": "Table 8. STM32U3B5xx low-power modes overview — section 3.9 Low-power modes. Mode name, Entry, Wake-up source, Wake-up system clock, Effect on clocks, +1 autres.",
   "table_content": {
     "headers": [
       "Mode name",
@@ -31,11 +31,11 @@
         "Range 1, 2"
       ],
       [
-        "Sleep (Sleep-now or Sleep-on-exit)",
+        "Sleep-on-exit)",
         "WFE",
         "Wake-up event",
-        "Same as before entering Sleep mode",
-        "CPU clock OFF No effect on other clocks or analog clock sources",
+        "mode",
+        "clock sources",
         "Range 1, 2"
       ],
       [
@@ -49,18 +49,18 @@
       [
         "Stop 1",
         "EFW ro RSI morf nruter ro IFW + tib PEEDPEELS + 100 = SMPL",
-        "Any EXTI line (configured in the EXTI registers) Any PWR wake-up line (WKUP pins and I3C reset pattern) Specific peripherals events/interrupts(1)",
-        "HSI16 when STOPWUCK = 1 in RCC_CFGR1 MSIS with the frequency before entering the Stop mode, limited to 48 MHz, when STOPWUCK = 0",
-        "All clocks OFF except LSI and LSE MSIK, MSIS or HSI16 can be enabled temporarily when requested by an autonomous peripheral, or forced to be kept enabled.",
+        "EXTI registers) Any PWR wake-up line (WKUP pins and I3C reset pattern) Specific peripherals events/interrupts(1)",
+        "RCC_CFGR1 MSIS with the frequency before entering the Stop mode, limited to 48 MHz, when STOPWUCK = 0",
+        "HSI16 can be enabled temporarily when requested by an autonomous peripheral, or forced to be kept enabled.",
         "Low-power regulator (SMPS or LDO)"
       ],
       [
         "Stop 2",
         "EFW ro RSI morf nruter ro IFW + tib PEEDPEELS + 010 = SMPL",
-        "Any EXTI line (configured in the EXTI registers) Any PWR wake-up line (WKUP pins and I3C reset pattern) Specific peripherals events/interrupts(1)",
-        "HSI16 when STOPWUCK = 1 in RCC_CFGR1 MSIS with the frequency before entering the Stop mode, limited to 48 MHz, when STOPWUCK = 0",
-        "All clocks OFF except LSI and LSE MSIK, MSIS or HSI16 can be enabled temporarily when requested by an autonomous peripheral, or forced to be kept enabled.",
-        "Low-power regulator (SMPS or LDO)"
+        "Specific peripherals events/interrupts(1)",
+        "mode, limited to 48 MHz, when STOPWUCK = 0",
+        "autonomous peripheral, or forced to be kept enabled.",
+        "regulator (SMPS or LDO)"
       ],
       [
         "Stop 3",

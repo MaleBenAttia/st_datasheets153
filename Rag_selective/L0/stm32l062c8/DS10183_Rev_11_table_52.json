@@ -33,7 +33,7 @@
       [
         "V (3) OH",
         "Output high level voltage for an I/O pin",
-        "CMOS port(2), I = +8 mA IO 2.7 V ≤ V ≤ 3.6 V DD",
+        "≤ ≤ 2.7 V V 3.6 V DD",
         "V -0.4 DD",
         "-",
         "V"
@@ -96,14 +96,19 @@
       ],
       [
         "V (1)(4) OLFM+",
-        "Output low level voltage for an FTf I/O pin in Fm+ mode",
+        "I/O pin in Fm+ mode",
         "I = 10 mA IO 1.65 V ≤ V ≤ 3.6 V DD",
         "-",
         "0.4",
         "V"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. The I/O speed is configured using the OSPEEDRx[1:0] bits. Refer to the line reference manual for a description of GPIO Port configuration register.",
+      "2. Guaranteed by design.",
+      "3. The maximum frequency is defined in Figure 21.",
+      "4. When Fm+ configuration is set, the I/O speed control is bypassed. Refer to the line reference manual for a detailed description of Fm+ I/O configuration."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

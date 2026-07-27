@@ -96,6 +96,15 @@
         "3"
       ],
       [
+        "tS",
+        "Sampling time",
+        "-",
+        "2.5",
+        "-",
+        "288.5",
+        "288.5"
+      ],
+      [
         "tCONV",
         "Total conversion time (including sampling time)",
         "N-bits resolution",
@@ -114,7 +123,9 @@
         "µA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. High temperature generate leakage current on ADC inputs. This current create voltage drop through Rain directly affecting ADC accuracy (worst case when VAIN = VDDA). To limit this effect to a tolerance of 2LSBs, you must respect Rain max tables."
+    ],
     "legend": [
       "Evaluated by characterization, not tested in production unless otherwise specified."
     ],

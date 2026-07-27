@@ -1,136 +1,217 @@
 {
   "table_id": "table_17",
-  "document": "DS5934 Rev 6 - Table 17. Typical current consumption in Sleep mode, code running from Flash memory or RAM 38 Table 18. Peripheral current consumption",
+  "document": "DS5934 Rev 6 - Table 17. Typical current consumption in Sleep mode, code running from Flash memory or RAM",
   "rev": "Rev 6",
   "table_number": "17",
-  "title": "Table 17. Typical current consumption in Sleep mode, code running from Flash memory or RAM 38 Table 18. Peripheral current consumption",
-  "page": 39,
+  "title": "Table 17. Typical current consumption in Sleep mode, code running from Flash memory or RAM",
+  "page": 38,
   "section": "5.3.5 Supply current characteristics",
   "section_title": "Supply current characteristics",
   "semantic_type": "",
   "tags": [],
-  "url": "https://www.st.com/resource/en/datasheet/stm32f102c4.pdf#page=39",
+  "url": "https://www.st.com/resource/en/datasheet/stm32f102c4.pdf#page=38",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f102c4.pdf",
-  "text_helper": "Table 17. Typical current consumption in Sleep mode, code running from Flash memory or RAM 38 Table 18. Peripheral current consumption — section 5.3.5 Supply current characteristics. Peripheral, Peripheral, µA/MHz.",
+  "text_helper": "Table 17. Typical current consumption in Sleep mode, code running from Flash memory or RAM — section 5.3.5 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK, Typ(1) / All peripherals enabled(2), +2 autres.",
   "table_content": {
     "headers": [
-      "Peripheral",
-      "Peripheral",
-      "µA/MHz"
+      "Symbol",
+      "Parameter",
+      "Conditions",
+      "f HCLK",
+      "Typ(1) / All peripherals enabled(2)",
+      "Typ(1) / All peripherals disabled",
+      "Unit"
     ],
     "rows": [
       [
-        "AHB (up to 48 MHz)",
-        "DMA1",
-        "15.97"
+        "I DD",
+        "Supply current in Sleep mode",
+        "External clock(3)",
+        "48 MHz",
+        "8.7",
+        "3.8",
+        "mA"
       ],
       [
-        "AHB (up to 48 MHz)",
-        "CRC",
-        "1.67"
+        "I DD",
+        "Supply current in Sleep mode",
+        "External clock(3)",
+        "36 MHz",
+        "6.7",
+        "3.1",
+        "mA"
       ],
       [
-        "AHB (up to 48 MHz)",
-        "BusMatrix(2)",
-        "8.33"
+        "I DD",
+        "Supply current in Sleep mode",
+        "External clock(3)",
+        "24 MHz",
+        "4.8",
+        "2.3",
+        "mA"
       ],
       [
-        "APB1 (up to 24 MHz)",
-        "APB1-Bridge",
-        "7.22"
+        "I DD",
+        "Supply current in Sleep mode",
+        "External clock(3)",
+        "16 MHz",
+        "3.4",
+        "1.8",
+        "mA"
       ],
       [
-        "APB1 (up to 24 MHz)",
-        "TIM2",
-        "33.33"
+        "I DD",
+        "Supply current in Sleep mode",
+        "External clock(3)",
+        "8 MHz",
+        "2",
+        "1.2",
+        "mA"
       ],
       [
-        "APB1 (up to 24 MHz)",
-        "TIM3",
-        "33.61"
+        "I DD",
+        "Supply current in Sleep mode",
+        "External clock(3)",
+        "4 MHz",
+        "1.5",
+        "1.1",
+        "mA"
       ],
       [
-        "APB1 (up to 24 MHz)",
-        "USART2",
-        "12.78"
+        "I DD",
+        "Supply current in Sleep mode",
+        "External clock(3)",
+        "2 MHz",
+        "1.25",
+        "1",
+        "mA"
       ],
       [
-        "APB1 (up to 24 MHz)",
-        "I2C1",
-        "10.83"
+        "I DD",
+        "Supply current in Sleep mode",
+        "External clock(3)",
+        "1 MHz",
+        "1.1",
+        "0.98",
+        "mA"
       ],
       [
-        "APB1 (up to 24 MHz)",
-        "USB",
-        "16.94"
+        "I DD",
+        "Supply current in Sleep mode",
+        "External clock(3)",
+        "500 kHz",
+        "1.05",
+        "0.96",
+        "mA"
       ],
       [
-        "APB1 (up to 24 MHz)",
-        "WWDG",
-        "3.33"
+        "I DD",
+        "Supply",
+        "External clock(3)",
+        "125 kHz",
+        "1",
+        "0.95",
+        "mA"
       ],
       [
-        "APB1 (up to 24 MHz)",
-        "PWR",
-        "1.94"
+        "I DD",
+        "Sleep mode",
+        "Running on High Speed Internal RC (HSI), AHB prescaler used to reduce the frequency",
+        "48 MHz",
+        "8.1",
+        "3.2",
+        "mA"
       ],
       [
-        "APB1 (up to 24 MHz)",
-        "BKP",
-        "2.78"
+        "I DD",
+        "Supply current in Sleep mode",
+        "Running on High Speed Internal RC (HSI), AHB prescaler used to reduce the frequency",
+        "36 MHz",
+        "6.1",
+        "2.5",
+        "mA"
       ],
       [
-        "APB1 (up to 24 MHz)",
-        "IWDG",
-        "1.39"
+        "I DD",
+        "Supply current in Sleep mode",
+        "Running on High Speed Internal RC (HSI), AHB prescaler used to reduce the frequency",
+        "24 MHz",
+        "4.2",
+        "1.7",
+        "mA"
       ],
       [
-        "APB2 (up to 48 MHz)",
-        "APB2-Bridge",
-        "3.33"
+        "I DD",
+        "Supply current in Sleep mode",
+        "Running on High",
+        "16 MHz",
+        "2.8",
+        "1.2",
+        "mA"
       ],
       [
-        "APB2 (up to 48 MHz)",
-        "GPIOA",
-        "7.50"
+        "I DD",
+        "Supply current in Sleep mode",
+        "RC (HSI), AHB",
+        "8 MHz",
+        "1.4",
+        "0.55",
+        "mA"
       ],
       [
-        "APB2 (up to 48 MHz)",
-        "GPIOB",
-        "6.81"
+        "I DD",
+        "Supply current in Sleep mode",
+        "prescaler used to",
+        "4 MHz",
+        "0.9",
+        "0.5",
+        "mA"
       ],
       [
-        "APB2 (up to 48 MHz)",
-        "GPIOC",
-        "7.22"
+        "I DD",
+        "Supply current in Sleep mode",
+        "frequency",
+        "2 MHz",
+        "0.7",
+        "0.45",
+        "mA"
       ],
       [
-        "APB2 (up to 48 MHz)",
-        "GPIOD",
-        "6.94"
+        "I DD",
+        "Supply current in Sleep mode",
+        "Running on High Speed Internal RC (HSI), AHB prescaler used to reduce the frequency",
+        "1 MHz",
+        "0.55",
+        "0.42",
+        "mA"
       ],
       [
-        "APB2 (up to 48 MHz)",
-        "SPI1",
-        "4.86"
+        "I DD",
+        "Supply current in Sleep mode",
+        "Running on High Speed Internal RC (HSI), AHB prescaler used to reduce the frequency",
+        "500 kHz",
+        "0.48",
+        "0.4",
+        "mA"
       ],
       [
-        "APB2 (up to 48 MHz)",
-        "USART1",
-        "12.78"
-      ],
-      [
-        "APB2 (up to 48 MHz)",
-        "ADC1(3) (4)",
-        "15.54"
+        "I DD",
+        "Supply current in Sleep mode",
+        "Running on High Speed Internal RC (HSI), AHB prescaler used to reduce the frequency",
+        "125 kHz",
+        "0.4",
+        "0.38",
+        "mA"
       ]
     ],
     "notes": [
-      "2. The BusMatrix is automatically active when at least one master is ON.",
-      "3. Specific conditions for ADC: f = 48 MHz, f = f /2, f = f , f = f /4. HCLK APB1 HCLK APB2 HCLK ADCCLK APB2",
-      "4. When ADON bit in the ADC_CR2 register is set to 1, there is an additional current consumption of 0.68mA. When the ADC is enabled there is an additional current consumption of 0.06 mA."
+      "1. Typical values are measures at T = 25 °C, V = 3.3 V. A DD",
+      "2. Add an additional power consumption of 0.8 mA per ADC for the analog part. In applications, this consumption occurs only while the ADC is on (ADON bit is set in the ADC_CR2 register).",
+      "3. External clock is 8 MHz and PLL is on when f > 8 MHz. HCLK"
     ],
-    "legend": "",
+    "legend": [
+      "memory or RAM"
+    ],
     "semantic_type": "",
     "semantic": {}
   }

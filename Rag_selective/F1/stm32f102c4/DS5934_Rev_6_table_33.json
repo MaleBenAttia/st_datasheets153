@@ -1,9 +1,9 @@
 {
   "table_id": "table_33",
-  "document": "DS5934 Rev 6 - Table 33. I/O current injection susceptibility.",
+  "document": "DS5934 Rev 6 - Table 33. I/O current injection susceptibility",
   "rev": "Rev 6",
   "table_number": "33",
-  "title": "Table 33. I/O current injection susceptibility.",
+  "title": "Table 33. I/O current injection susceptibility",
   "page": 49,
   "section": "5.3.12 I/O current injection characteristics",
   "section_title": "I/O current injection characteristics",
@@ -11,7 +11,7 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f102c4.pdf#page=49",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f102c4.pdf",
-  "text_helper": "Table 33. I/O current injection susceptibility. — section 5.3.12 I/O current injection characteristics. Symbol, Description, Functional susceptibility / Negative injection, Functional susceptibility / Positive injection, Unit.",
+  "text_helper": "Table 33. I/O current injection susceptibility — section 5.3.12 I/O current injection characteristics. Symbol, Description, Functional susceptibility / Negative injection, Functional susceptibility / Positive injection, Unit.",
   "table_content": {
     "headers": [
       "Symbol",
@@ -29,7 +29,7 @@
         "mA"
       ],
       [
-        "I INJ",
+        "INJ",
         "Injected current on all FT pins",
         "-5",
         "+0",
@@ -43,7 +43,15 @@
         "mA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Data based on design simulation.",
+      "2. Tested in production.",
+      "3. FT = 5-Volt tolerant, In order to sustain a voltage higher than V +0.3 the internal pull-up/pull-down resistors must be DD",
+      "4. Hysteresis voltage between Schmitt trigger switching levels. Based on characterization, not tested in production.",
+      "5. With a minimum of 100 mV.",
+      "6. Leakage can be higher than max if negative current is injected on adjacent pins.",
+      "7. Pull-up and pull-down resistors are designed with a true resistance in series with a switchable PMOS/NMOS. The PMOS/NMOS contribution to the series resistance is small (~10%)."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

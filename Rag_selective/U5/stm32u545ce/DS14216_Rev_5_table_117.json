@@ -37,7 +37,7 @@
       [
         "V DDA",
         "Analog supply voltage",
-        "Normal mode",
+        "VRS = 001",
         "VRS = 001",
         "2.1",
         "-",
@@ -47,7 +47,7 @@
       [
         "V DDA",
         "Analog supply voltage",
-        "Normal mode",
+        "VRS = 010",
         "VRS = 010",
         "2.4",
         "-",
@@ -56,8 +56,8 @@
       ],
       [
         "V DDA",
-        "Analog supply voltage",
-        "Normal mode",
+        "Analog supply",
+        "VRS = 011",
         "VRS = 011",
         "2.8",
         "-",
@@ -66,7 +66,7 @@
       ],
       [
         "V DDA",
-        "Analog supply voltage",
+        "voltage",
         "Degraded mode(2)",
         "VRS = 000",
         "1.62",
@@ -77,7 +77,7 @@
       [
         "V DDA",
         "Analog supply voltage",
-        "Degraded mode(2)",
+        "VRS = 001 Degraded",
         "VRS = 001",
         "1.62",
         "-",
@@ -87,7 +87,7 @@
       [
         "V DDA",
         "Analog supply voltage",
-        "Degraded mode(2)",
+        "VRS = 010",
         "VRS = 010",
         "1.62",
         "-",
@@ -97,7 +97,7 @@
       [
         "V DDA",
         "Analog supply voltage",
-        "Degraded mode(2)",
+        "VRS = 011",
         "VRS = 011",
         "1.62",
         "-",
@@ -117,7 +117,7 @@
       [
         "V REFBUF _OUT (3)",
         "Voltage reference buffer output",
-        "Normal mode at V = 3 V, DDA T = 30 °C, J I = 10 µA load",
+        "VRS = 001 = 3 V, V DDA",
         "VRS = 001",
         "1.795",
         "1.8",
@@ -127,7 +127,7 @@
       [
         "V REFBUF _OUT (3)",
         "Voltage reference buffer output",
-        "Normal mode at V = 3 V, DDA T = 30 °C, J I = 10 µA load",
+        "T = 30 °C, VRS = 010 J",
         "VRS = 010",
         "2.042",
         "2.048",
@@ -137,7 +137,7 @@
       [
         "V REFBUF _OUT (3)",
         "Voltage reference buffer output",
-        "Normal mode at V = 3 V, DDA T = 30 °C, J I = 10 µA load",
+        "VRS = 011",
         "VRS = 011",
         "2.493",
         "2.5",
@@ -157,7 +157,7 @@
       [
         "V REFBUF _OUT (3)",
         "Voltage reference buffer output",
-        "Degraded mode(2)",
+        "VRS = 001 Degraded",
         "VRS = 001",
         "Min (V - 0.15 DDA ;1.795)",
         "-",
@@ -167,7 +167,7 @@
       [
         "V REFBUF _OUT (3)",
         "Voltage reference buffer output",
-        "Degraded mode(2)",
+        "VRS = 010",
         "VRS = 010",
         "Min (V - 0.15 DDA ;2.042)",
         "-",
@@ -177,7 +177,7 @@
       [
         "V REFBUF _OUT (3)",
         "Voltage reference buffer output",
-        "Degraded mode(2)",
+        "VRS = 011",
         "VRS = 011",
         "Min (V - 0.15 DDA ;2.493)",
         "-",
@@ -276,7 +276,7 @@
       ],
       [
         "PSRR",
-        "Power supply rejection",
+        "rejection",
         "100 kHz",
         "100 kHz",
         "-",
@@ -293,74 +293,13 @@
         "110",
         "200",
         "200"
-      ],
-      [
-        "None",
-        "None",
-        "C = 1.1 µF L",
-        "C = 1.1 µF L",
-        "-",
-        "240",
-        "350",
-        "350"
-      ],
-      [
-        "None",
-        "None",
-        "C = 1.5 µF L",
-        "C = 1.5 µF L",
-        "-",
-        "320",
-        "500",
-        "500"
-      ],
-      [
-        "I INRUSH",
-        "Control of DC current drive on V REFBUF_ during startup OUT phase (6)",
-        "-",
-        "-",
-        "-",
-        "8",
-        "11",
-        "11"
-      ],
-      [
-        "I DDA (VREFBUF )",
-        "VREFBUF consumption from V DDA",
-        "I = 0 µA load",
-        "I = 0 µA load",
-        "-",
-        "14",
-        "18",
-        "18"
-      ],
-      [
-        "None",
-        "None",
-        "I = 500 µA load",
-        "I = 500 µA load",
-        "-",
-        "16",
-        "20",
-        "20"
-      ],
-      [
-        "None",
-        "None",
-        "I = 4 mA load",
-        "I = 4 mA load",
-        "-",
-        "42",
-        "50",
-        "50"
       ]
     ],
     "notes": [
       "2. In degraded mode, the voltage reference buffer can not accurately maintain the output voltage (V - drop voltage). DDA",
       "3. Evaluated by characterization. Not tested in production.",
       "4. The capacitive load must include a 100 nF capacitor in order to cut off the high-frequency noise.",
-      "5. The load regulation value only takes into account the die and package resistance. The parasitic resistance on PCB degrades this value.",
-      "6. To correctly control the VREFBUF inrush current during startup phase and scaling change, the V voltage must be in the DDA"
+      "5. The load regulation value only takes into account the die and package resistance. The parasitic resistance on PCB degrades this value."
     ],
     "legend": "",
     "semantic_type": "",

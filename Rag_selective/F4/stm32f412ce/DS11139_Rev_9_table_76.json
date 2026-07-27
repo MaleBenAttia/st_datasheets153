@@ -11,7 +11,7 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f412ce.pdf#page=142",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f412ce.pdf",
-  "text_helper": "Table 76. ADC dynamic accuracy at f = 18 MHz - limited test conditions 142 ADC — section 6.3.19 Communications interfaces. Symbol, Parameter, Test conditions, Typ, Max(2), +1 autres. (table vide)",
+  "text_helper": "Table 76. ADC dynamic accuracy at f = 18 MHz - limited test conditions 142 ADC — section 6.3.19 Communications interfaces. Symbol, Parameter, Test conditions, Typ, Max(2), +1 autres.",
   "table_content": {
     "headers": [
       "Symbol",
@@ -21,8 +21,51 @@
       "Max(2)",
       "Unit"
     ],
-    "rows": [],
-    "notes": [],
+    "rows": [
+      [
+        "ET",
+        "Total unadjusted error",
+        "f = 30 MHz, ADC R < 10 kΩ, AIN V = 2.4 to 3.6 V, DDA V = 1.7 to 3.6 V, REF V - V < 1.2 V DDA REF",
+        "±2",
+        "±5",
+        "LSB"
+      ],
+      [
+        "EO",
+        "Offset error",
+        "01 < R ,Ωk CDA",
+        "±1.5",
+        "±2.5",
+        "LSB"
+      ],
+      [
+        "EG",
+        "Gain error",
+        "V = 2.4 to 3.6 V, DDA",
+        "±1.5",
+        "±4",
+        "LSB"
+      ],
+      [
+        "ED",
+        "Differential linearity error",
+        "REF - V V < 1.2 V DDA REF",
+        "±1",
+        "±2",
+        "LSB"
+      ],
+      [
+        "EL",
+        "Integral linearity error",
+        "f = 30 MHz, ADC R < 10 kΩ, AIN V = 2.4 to 3.6 V, DDA V = 1.7 to 3.6 V, REF V - V < 1.2 V DDA REF",
+        "±1.5",
+        "±3",
+        "LSB"
+      ]
+    ],
+    "notes": [
+      "2. Guaranteed by characterization, not tested in production."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

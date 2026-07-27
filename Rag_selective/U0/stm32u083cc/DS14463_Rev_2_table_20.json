@@ -99,7 +99,12 @@
         "mA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. All main power (VDD, VDDA, VDDUSB, VBAT) and ground (VSS, VSSA) pins must always be connected to the external power supplies, in the permitted range.",
+      "2. This current consumption must be correctly distributed over all I/Os and control pins. The total output current must not be sunk/sourced between two consecutive power supply pins.",
+      "3. Positive injection (when VIN > VDDIOx) is not possible on these I/Os and does not occur for input voltages lower than the specified maximum value.",
+      "4. A negative injection is induced by VIN < VSS. IINJ(PIN) must never be exceeded. Refer also to Table 19. Voltage characteristics for the maximum allowed input voltage values."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

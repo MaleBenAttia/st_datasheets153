@@ -61,8 +61,8 @@
       ],
       [
         "t w(CLKL)",
-        "OCTOSPI clock high and low time (even division)",
-        "PRESCALER[7:0] = n (n = 0, 1, 3, 5,..255)",
+        "(even division)",
+        "(n = 0, 1, 3, 5,..255)",
         "t /2 - 0.5 (CLK)",
         "-",
         "t /2 + 0.5 (CLK)",
@@ -79,8 +79,8 @@
       ],
       [
         "t w(CLKL)",
-        "OCTOSPI clock high and low time (odd division)",
-        "PRESCALER[7:0] = n (n = 2, 4, 6,..254)",
+        "(odd division)",
+        "(n = 2, 4, 6,..254)",
         "((n/2)+1) × t (CLK) /(n+1) - 0.5",
         "-",
         "((n/2)+1) × t (CLK) /(n+1) + 0.5",
@@ -177,8 +177,8 @@
         "ns"
       ],
       [
-        "t sr(DQ) t sf(DQ)",
-        "Data input setup time",
+        "t sf(DQ)",
+        "time",
         "Voltage range 4",
         "0",
         "-",
@@ -195,8 +195,8 @@
         "ns"
       ],
       [
-        "t hr(DQ) t hf(DQ)",
-        "Data input hold time",
+        "t hf(DQ)",
+        "time",
         "Voltage range 4",
         "1.75",
         "-",

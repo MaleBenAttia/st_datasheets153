@@ -97,7 +97,7 @@
       [
         "Jitter(3)",
         "Master I2S clock jitter",
-        "Cycle to cycle at 12.288 MHz on 48KHz period, N=432, R=5",
+        "peak 48KHz period, to peak N=432, R=5",
         "peak to peak",
         "-",
         "±280",
@@ -145,7 +145,12 @@
         "0.40 0.85"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Take care of using the appropriate division factor M to have the specified PLL input clock values.",
+      "2. Guaranteed by design.",
+      "3. Value given with main PLL running.",
+      "4. Guaranteed by characterization results."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

@@ -41,7 +41,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "External clock (2), all peripherals enabled",
+        "peripherals enabled",
         "24 MHz",
         "19.9",
         "mA"
@@ -56,7 +56,7 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode",
+        "Supply current",
         "External clock (2), all peripherals enabled",
         "8 MHz",
         "8.6",
@@ -64,7 +64,7 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode",
+        "in Run mode",
         "External clock (2), all peripherals Disabled",
         "48 MHz",
         "24.4",
@@ -81,7 +81,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "External clock (2), all peripherals Disabled",
+        "peripherals Disabled",
         "24 MHz",
         "13.9",
         "mA"
@@ -103,7 +103,10 @@
         "mA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Based on characterization results, not tested in production.",
+      "2. External clock is 8 MHz and PLL is on when f > 8 MHz. HCLK"
+    ],
     "legend": [
       "running from Flash memory"
     ],

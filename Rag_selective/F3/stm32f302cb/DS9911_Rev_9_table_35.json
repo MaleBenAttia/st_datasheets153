@@ -79,7 +79,7 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode from V supply DD",
+        "supply V DD",
         "Running from HSE crystal clock 8 MHz, code executing from Flash",
         "8 MHz",
         "7.7",
@@ -116,7 +116,7 @@
       [
         "I DD",
         "Supply current in Run mode from V supply DD",
-        "Running from HSE crystal clock 8 MHz, code executing from Flash",
+        "Running from HSE",
         "500 kHz",
         "1.4",
         "1.1",
@@ -125,7 +125,7 @@
       [
         "I DD",
         "Supply current in Run mode from V supply DD",
-        "Running from HSE crystal clock 8 MHz, code executing from Flash",
+        "crystal clock 8 MHz,",
         "125 kHz",
         "1.1",
         "0.9",
@@ -134,7 +134,7 @@
       [
         "I (1)(2) DDA",
         "Supply current in Run mode from V supply DDA",
-        "Running from HSE crystal clock 8 MHz, code executing from Flash",
+        "code executing from Flash",
         "72 MHz",
         "240.3",
         "239.5",
@@ -177,7 +177,7 @@
         "µA"
       ],
       [
-        "I (1)(2) DDA",
+        "(1)(2)",
         "Supply current in Run mode from V supply DDA",
         "Running from HSE crystal clock 8 MHz, code executing from Flash",
         "16 MHz",
@@ -187,7 +187,7 @@
       ],
       [
         "I (1)(2) DDA",
-        "Supply current in Run mode from V supply DDA",
+        "V supply DDA",
         "Running from HSE crystal clock 8 MHz, code executing from Flash",
         "8 MHz",
         "2.4",
@@ -240,7 +240,10 @@
         "µA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. V monitoring is ON. DDA",
+      "2. When peripherals are enabled, the power consumption of the analog part of peripherals such as ADC, DAC, Comparators, OpAmp etc. is not included. Refer to the tables of characteristics in the subsequent sections."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

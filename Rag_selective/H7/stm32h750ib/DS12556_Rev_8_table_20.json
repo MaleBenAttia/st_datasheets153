@@ -11,14 +11,14 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32h750ib.pdf#page=101",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h750ib.pdf",
-  "text_helper": "Table 20. Typical and maximum current consumption in Run mode, code with data processing running from flash memory, cache OFF, regulator ON — section 6.3.6 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, f rcc_c_ck (MHz), +6 autres.",
+  "text_helper": "Table 20. Typical and maximum current consumption in Run mode, code with data processing running from flash memory, cache OFF, regulator ON — section 6.3.6 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, f rcc_c_ck (MHz) / ( M H z ), +6 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions",
       "Conditions",
-      "f rcc_c_ck (MHz)",
+      "f rcc_c_ck (MHz) / ( M H z )",
       "Typ",
       "Max(1) / T = J 25°C",
       "Max(1) / T = J 85°C",
@@ -43,7 +43,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "peripherals VOS2",
         "VOS2",
         "300",
         "52",
@@ -55,8 +55,8 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode",
-        "All peripherals disabled",
+        "Supply",
+        "VOS3",
         "VOS3",
         "200",
         "34",
@@ -68,7 +68,7 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode",
+        "mode",
         "All peripherals enabled",
         "VOS1",
         "400",
@@ -82,7 +82,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals enabled",
+        "peripherals VOS2",
         "VOS2",
         "300",
         "100",
@@ -95,7 +95,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals enabled",
+        "VOS3",
         "VOS3",
         "200",
         "70",

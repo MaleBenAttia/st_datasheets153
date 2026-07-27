@@ -1,9 +1,9 @@
 {
   "table_id": "table_52",
-  "document": "DS14928 Rev 3 - Table 52. EXTI input characteristics.",
+  "document": "DS14928 Rev 3 - Table 52. EXTI input characteristics",
   "rev": "Rev 3",
   "table_number": "52",
-  "title": "Table 52. EXTI input characteristics.",
+  "title": "Table 52. EXTI input characteristics",
   "page": 81,
   "section": "5.3.16 Extended interrupt and event controller input (EXTI) characteristics",
   "section_title": "Extended interrupt and event controller input (EXTI) characteristics",
@@ -11,7 +11,7 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32c551cc.pdf#page=81",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c551cc.pdf",
-  "text_helper": "Table 52. EXTI input characteristics. — section 5.3.16 Extended interrupt and event controller input (EXTI) characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "text_helper": "Table 52. EXTI input characteristics — section 5.3.16 Extended interrupt and event controller input (EXTI) characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
   "table_content": {
     "headers": [
       "Symbol",
@@ -114,7 +114,9 @@
         "µA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. High temperature generate leakage current on ADC inputs. This current create voltage drop through Rain directly affecting ADC accuracy (worst case when VAIN = VDDA). To limit this effect to a tolerance of 2LSBs, you must respect Rain max tables."
+    ],
     "legend": [
       "Specified by design and not tested in production."
     ],

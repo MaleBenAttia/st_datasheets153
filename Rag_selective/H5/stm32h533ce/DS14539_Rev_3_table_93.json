@@ -67,7 +67,7 @@
       [
         "R L",
         "Resistive load",
-        "DAC output buffer ON",
+        "ON Connected to V DDA",
         "Connected to V DDA",
         "25",
         "-",
@@ -95,9 +95,9 @@
         "kΩ"
       ],
       [
-        "R BON",
-        "Output impedance sample and hold mode, output buffer ON",
-        "DAC output buffer ON",
+        "BON",
+        "buffer ON",
+        "ON V = 2.0 V DD",
         "V = 2.0 V DD",
         "-",
         "-",
@@ -115,9 +115,9 @@
         "kΩ"
       ],
       [
-        "R BOFF",
-        "Output impedance sample and hold mode, output buffer OFF",
-        "DAC output buffer OFF",
+        "BOFF",
+        "buffer OFF",
+        "OFF = 2.0 V V DD",
         "V = 2.0 V DD",
         "-",
         "-",
@@ -176,8 +176,8 @@
       ],
       [
         "t SETTLING",
-        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ±0.5LSB, ±1LSB, ±2LSB, ±4LSB, ±8LSB)",
-        "Normal mode, DAC output buffer ON, C L ≤ 50 pF, R ≥ 5 kΩ L",
+        "Settling time (full scale: for a",
+        "±1 LSB Normal mode, DAC",
         "±1 LSB",
         "-",
         "1.97",
@@ -186,8 +186,8 @@
       ],
       [
         "t SETTLING",
-        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ±0.5LSB, ±1LSB, ±2LSB, ±4LSB, ±8LSB)",
-        "Normal mode, DAC output buffer ON, C L ≤ 50 pF, R ≥ 5 kΩ L",
+        "between the lowest and the",
+        "±2 LSB 50 pF, C ≤",
         "±2 LSB",
         "-",
         "1.67",
@@ -196,8 +196,8 @@
       ],
       [
         "t SETTLING",
-        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ±0.5LSB, ±1LSB, ±2LSB, ±4LSB, ±8LSB)",
-        "Normal mode, DAC output buffer ON, C L ≤ 50 pF, R ≥ 5 kΩ L",
+        "highest input codes when",
+        "R ≥ 5 kΩ ±4 LSB L",
         "±4 LSB",
         "-",
         "1.66",
@@ -206,8 +206,8 @@
       ],
       [
         "t SETTLING",
-        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ±0.5LSB, ±1LSB, ±2LSB, ±4LSB, ±8LSB)",
-        "Normal mode, DAC output buffer ON, C L ≤ 50 pF, R ≥ 5 kΩ L",
+        "value of ±0.5LSB, ±1LSB,",
+        "±8 LSB",
         "±8 LSB",
         "-",
         "1.65",
@@ -235,8 +235,8 @@
         "µs"
       ],
       [
-        "t WAKEUP (2)",
-        "Wake-up time from off state (setting the ENx bit in the DAC control register) until the final value of ±1LSB is reached",
+        "(2)",
+        "the final value of ±1LSB is reached",
         "Normal mode, DAC output buffer OFF, C L ≤ 10 pF",
         "Normal mode, DAC output buffer OFF, C L ≤ 10 pF",
         "-",

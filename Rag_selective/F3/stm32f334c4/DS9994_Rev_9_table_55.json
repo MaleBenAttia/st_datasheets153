@@ -11,7 +11,7 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f334c4.pdf#page=83",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f334c4.pdf",
-  "text_helper": "Table 55. HRTIM output response to fault protection — section 6.3.16 High-resolution timer (HRTIM). Symbol, Parameter, Conditions, Min., Typ., +2 autres. (table vide)",
+  "text_helper": "Table 55. HRTIM output response to fault protection — section 6.3.16 High-resolution timer (HRTIM). Symbol, Parameter, Conditions, Min., Typ., +2 autres.",
   "table_content": {
     "headers": [
       "Symbol",
@@ -22,8 +22,38 @@
       "Max.(2)",
       "Unit"
     ],
-    "rows": [],
-    "notes": [],
+    "rows": [
+      [
+        "t LAT(DF)",
+        "Digital fault response latency",
+        "Propagation delay from HRTIM1_FLTx digital input to HRTIM_CHxy output pin",
+        "-",
+        "12",
+        "25",
+        "ns"
+      ],
+      [
+        "t W(FLT)",
+        "Minimum Fault pulse width",
+        "-",
+        "12.5",
+        "-",
+        "-",
+        "ns"
+      ],
+      [
+        "t LAT(AF)",
+        "Analog fault response latency",
+        "Propagation delay from comparator COMPx_INP input pin to HRTIM_CHxy output pin",
+        "-",
+        "25",
+        "43",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "2. Data based on characterization results, not tested in production. Tabl e 56. HRTIM output response to external events 1 to 5 (Low-Latency mode(1))"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

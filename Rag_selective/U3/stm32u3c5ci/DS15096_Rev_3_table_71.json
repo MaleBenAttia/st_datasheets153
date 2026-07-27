@@ -34,7 +34,7 @@
       ],
       [
         "fHSE_ext",
-        "User external clock source frequency",
+        "frequency",
         "Analolog mode (HSEYBYP = 1, HSEEXT = 0)",
         "4",
         "-",
@@ -69,7 +69,7 @@
         "ns"
       ],
       [
-        "tw(HSEH) tw(HSEL)",
+        "tw(HSEL)",
         "OSC_IN high or low time",
         "Digital mode (HSEYBYP = 1, HSEEXT = 1), voltage scaling range 2",
         "18",
@@ -112,56 +112,9 @@
         "-",
         "0.3 / fext_ext",
         "ns"
-      ],
-      [
-        "fLSE_ext",
-        "User external clock source frequency",
-        "5",
-        "5",
-        "32.768",
-        "40",
-        "40"
-      ],
-      [
-        "VLSE_ext_PP",
-        "OSC32_IN peak-to-peak amplitude",
-        "0.3",
-        "0.3",
-        "-",
-        "VSW",
-        "VSW"
-      ],
-      [
-        "VLSE_ext",
-        "OSC32_IN input range",
-        "0",
-        "0",
-        "-",
-        "VSW(1)",
-        "VSW(1)"
-      ],
-      [
-        "tw(LSEH)",
-        "OSC32_IN high or low time for square signal input",
-        "10",
-        "10",
-        "-",
-        "-",
-        "-"
-      ],
-      [
-        "tw(LSEL)",
-        "None",
-        "None",
-        "None",
-        "None",
-        "None",
-        "None"
       ]
     ],
-    "notes": [
-      "1. In case VBAT mode is used, VLSE_ext must be lower than VBOR0 in order to respect this requirement when the switch to VBAT occurs."
-    ],
+    "notes": [],
     "legend": [
       "Specified by design and not tested in production."
     ],

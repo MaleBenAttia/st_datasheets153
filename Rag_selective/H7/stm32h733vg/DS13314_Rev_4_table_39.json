@@ -107,7 +107,7 @@
       [
         "Jitter",
         "Cycle-to-cycle jitter(4)",
-        "f = PLL_OUT f /100 VCO_OUT",
+        "f VCO_OUT = 400 MHz",
         "f VCO_OUT = 400 MHz",
         "-",
         "19",
@@ -117,7 +117,7 @@
       [
         "Jitter",
         "Cycle-to-cycle jitter(4)",
-        "f = PLL_OUT f /100 VCO_OUT",
+        "f VCO_OUT = 560 MHz",
         "f VCO_OUT = 560 MHz",
         "-",
         "10",
@@ -127,7 +127,7 @@
       [
         "Jitter",
         "Cycle-to-cycle jitter(4)",
-        "f = PLL_OUT f /100 VCO_OUT",
+        "f = f PLL_OUT VCO_OUT f /100 = 800 MHz VCO_OUT",
         "f VCO_OUT = 800 MHz",
         "-",
         "9",
@@ -137,7 +137,7 @@
       [
         "Jitter",
         "Period jitter",
-        "f = PLL_OUT f /100 VCO_OUT",
+        "f VCO_OUT = 192 MHz f VCO_OUT = 560 MHz f VCO_OUT = 800 MHz",
         "f VCO_OUT = 192 MHz",
         "-",
         "38",
@@ -147,7 +147,7 @@
       [
         "Jitter",
         "Period jitter",
-        "f = PLL_OUT f /100 VCO_OUT",
+        "f VCO_OUT = 560 MHz",
         "f VCO_OUT = 560 MHz",
         "-",
         "8",
@@ -157,7 +157,7 @@
       [
         "Jitter",
         "Period jitter",
-        "f = PLL_OUT f /100 VCO_OUT",
+        "f VCO_OUT = 800 MHz",
         "f VCO_OUT = 800 MHz",
         "-",
         "7",
@@ -177,7 +177,7 @@
       [
         "Jitter",
         "Long term jitter",
-        "Normal mode (CKIN = 2 MHz)",
+        "Normal mode f VCO_OUT (CKIN = 2 MHz) = 400 MHz",
         "f VCO_OUT = 400 MHz",
         "-",
         "0.14",
@@ -187,7 +187,7 @@
       [
         "Jitter",
         "Long term jitter",
-        "Normal mode (CKIN = 2 MHz)",
+        "f VCO_OUT = 832 MHz",
         "f VCO_OUT = 832 MHz",
         "-",
         "0.16",
@@ -207,7 +207,7 @@
       [
         "Jitter",
         "Long term jitter",
-        "Sigma-delta mode (CKIN = 16 MHz)",
+        "f VCO_OUT mode (CKIN = = 500 MHz 16 MHz)",
         "f VCO_OUT = 500 MHz",
         "-",
         "0.08",
@@ -217,7 +217,7 @@
       [
         "Jitter",
         "Long term jitter",
-        "Sigma-delta mode (CKIN = 16 MHz)",
+        "f VCO_OUT = 836 MHz",
         "f VCO_OUT = 836 MHz",
         "-",
         "0.06",
@@ -265,7 +265,11 @@
         "5700"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "2. This value must be limited to the maximum frequency due to the product limitation.",
+      "3. Guaranteed by characterization results.",
+      "4. Integer mode only."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

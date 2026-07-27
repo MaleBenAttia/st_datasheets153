@@ -11,13 +11,13 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f413cg.pdf#page=95",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f413cg.pdf",
-  "text_helper": "Table 31. Typical and maximum current consumption in Sleep mode - V = 3.6 V 95 DD — section 6.3.6 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK (MHz), Typ / T = A 25 °C, +5 autres.",
+  "text_helper": "Table 31. Typical and maximum current consumption in Sleep mode - V = 3.6 V 95 DD — section 6.3.6 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK (MHz) / (MHz), Typ / T = A 25 °C, +5 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions",
-      "f HCLK (MHz)",
+      "f HCLK (MHz) / (MHz)",
       "Typ / T = A 25 °C",
       "Max(1) / T = A 25 °C",
       "Max(1) / T = A 85 °C",
@@ -41,7 +41,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "All peripherals enabled(2)(3), External clock, PLL ON, Flash deep power down",
+        "enabled(2)(3), All peripherals",
         "84",
         "17.4",
         "18.50",
@@ -53,7 +53,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "All peripherals enabled(2)(3), External clock, PLL ON, Flash deep power down",
+        "External clock,",
         "64",
         "12.0",
         "12.81",
@@ -65,7 +65,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "All peripherals enabled(2)(3), External clock, PLL ON, Flash deep power down",
+        "PLL ON,",
         "50",
         "9.5",
         "10.15",
@@ -113,7 +113,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "All peripherals enabled(2)(3), HSI, PLL OFF, Flash deep power down",
+        "Flash deep power down",
         "1",
         "0.7",
         "0.76",
@@ -161,7 +161,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "All peripherals enabled(2)(3), External clock, PLL ON Flash ON",
+        "PLL ON Flash ON",
         "50",
         "9.8",
         "10.48",
@@ -196,7 +196,7 @@
       ],
       [
         "I DD",
-        "Supply current in Sleep mode",
+        "Supply",
         "All peripherals enabled(2)(3), HSI, PLL ON, Flash ON",
         "16",
         "3.3",
@@ -209,7 +209,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "All peripherals enabled(2)(3), HSI, PLL ON, Flash ON",
+        "HSI, PLL ON, Flash ON",
         "1",
         "0.9",
         "1.01",
@@ -220,7 +220,7 @@
       ],
       [
         "I DD",
-        "Supply current in Sleep mode",
+        "Sleep mode",
         "All peripherals disabled, External clock, PLL ON(2), Flash deep power down",
         "100",
         "3.5",
@@ -233,7 +233,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "All peripherals disabled, External clock, PLL ON(2), Flash deep power down",
+        "All peripherals disabled,",
         "84",
         "2.9",
         "3.48",
@@ -245,7 +245,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "All peripherals disabled, External clock, PLL ON(2), Flash deep power down",
+        "External clock,",
         "64",
         "2.2",
         "2.73",
@@ -257,7 +257,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "All peripherals disabled, External clock, PLL ON(2), Flash deep power down",
+        "PLL",
         "50",
         "1.8",
         "2.38",
@@ -305,7 +305,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "All peripherals disabled, HSI, PLL OFF(2), Flash deep power down",
+        "Flash deep power down",
         "1",
         "0.5",
         "0.59",
@@ -353,7 +353,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "All peripherals disabled, External clock, PLL ON(2), Flash ON",
+        "ON(2), PLL Flash ON",
         "50",
         "2.2",
         "2.69",
@@ -401,7 +401,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "All peripherals disabled, HSI, PLL OFF(2), Flash ON",
+        "HSI, PLL Flash ON",
         "1",
         "0.7",
         "0.85",

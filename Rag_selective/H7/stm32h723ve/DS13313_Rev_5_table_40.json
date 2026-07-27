@@ -87,7 +87,7 @@
       [
         "Jitter",
         "Cycle-to-cycle jitter(3)",
-        "-",
+        "= f VCO_OUT 300 MHz",
         "f = VCO_OUT 300 MHz",
         "-",
         "91",
@@ -97,7 +97,7 @@
       [
         "Jitter",
         "Cycle-to-cycle jitter(3)",
-        "-",
+        "f = VCO_OUT 400 MHz",
         "f = VCO_OUT 400 MHz",
         "-",
         "64",
@@ -107,7 +107,7 @@
       [
         "Jitter",
         "Cycle-to-cycle jitter(3)",
-        "-",
+        "= f VCO_OUT 420 MHz",
         "f = VCO_OUT 420 MHz",
         "-",
         "63",
@@ -127,7 +127,7 @@
       [
         "Jitter",
         "Period jitter",
-        "f = PLL_OUT 50 MHz",
+        "50 MHz f = VCO_OUT 400 MHz",
         "f = VCO_OUT 400 MHz",
         "-",
         "30",
@@ -147,7 +147,7 @@
       [
         "I(PLL)",
         "PLL power consumption on V DD",
-        "f = VCO_OUT 420 MHz",
+        "420 MHz VCORE",
         "VCORE",
         "-",
         "530",
@@ -167,7 +167,7 @@
       [
         "I(PLL)",
         "PLL power consumption on V DD",
-        "f = VCO_OUT 150 MHz",
+        "150 MHz VCORE",
         "VCORE",
         "-",
         "200",
@@ -315,7 +315,11 @@
         "-"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "2. Guaranteed by characterization results.",
+      "3. Integer mode only. T able 41. PLL2 and PLL3 characteristics (wide VCO frequency range)(1)",
+      "4. Integer mode only. T a ble 42. PLL2 and PLL3 characteristics (medium VCO frequency range)(1)"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

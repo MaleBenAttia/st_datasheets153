@@ -94,7 +94,7 @@
       [
         "I DD",
         "Supply current in RUN mode",
-        "All Peripherals enabled(2)(3)",
+        "enabled(2)(3)",
         "60",
         "37",
         "39",
@@ -159,7 +159,7 @@
       ],
       [
         "I DD",
-        "Supply current in RUN mode",
+        "Supply",
         "All Peripherals enabled(2)(3)",
         "2",
         "3",
@@ -170,7 +170,7 @@
       ],
       [
         "I DD",
-        "Supply current in RUN mode",
+        "RUN mode",
         "All Peripherals disabled(3)",
         "180",
         "57",
@@ -237,7 +237,7 @@
       [
         "I DD",
         "Supply current in RUN mode",
-        "All Peripherals disabled(3)",
+        "disabled(3)",
         "60",
         "21",
         "24",
@@ -312,7 +312,11 @@
         "mA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Evaluated by characterization unless otherwise specified.",
+      "2. When analog peripheral blocks such as ADCs, DACs, HSE, LSE, HSI, or LSI are ON, an additional power consumption should be considered.",
+      "3. Based on characterization, tested in production. 104/240 DS9405 Rev 13"
+    ],
     "legend": [
       "running from Flash memory (ART accelerator disabled)"
     ],

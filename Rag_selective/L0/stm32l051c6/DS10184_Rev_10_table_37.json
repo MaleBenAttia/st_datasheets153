@@ -11,11 +11,10 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32l051c6.pdf#page=65",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l051c6.pdf",
-  "text_helper": "Table 37. Low-power mode wakeup timings — section 6.3.5 Wakeup time from low-power mode. Symbol, Parameter, Parameter, Conditions, Typ, +2 autres.",
+  "text_helper": "Table 37. Low-power mode wakeup timings — section 6.3.5 Wakeup time from low-power mode. Symbol, Parameter, Conditions, Typ, Max, +1 autres.",
   "table_content": {
     "headers": [
       "Symbol",
-      "Parameter",
       "Parameter",
       "Conditions",
       "Typ",
@@ -26,7 +25,6 @@
       [
         "t WUSLEEP",
         "Wakeup from Sleep mode",
-        "Wakeup from Sleep mode",
         "f = 32 MHz HCLK",
         "7",
         "8",
@@ -35,7 +33,6 @@
       [
         "t WUSLEEP_LP",
         "Wakeup from Low-power sleep mode, f = 262 kHz HCLK",
-        "Wakeup from Low-power sleep mode, f = 262 kHz HCLK",
         "f = 262 kHz HCLK Flash memory enabled",
         "7",
         "8",
@@ -43,8 +40,7 @@
       ],
       [
         "t WUSLEEP_LP",
-        "Wakeup from Low-power sleep mode, f = 262 kHz HCLK",
-        "Wakeup from Low-power sleep mode, f = 262 kHz HCLK",
+        "= 262 kHz f HCLK",
         "f = 262 kHz HCLK Flash memory switched OFF",
         "9",
         "10",
@@ -53,7 +49,6 @@
       [
         "t WUSTOP",
         "Wakeup from Stop mode, regulator in Run mode",
-        "Wakeup from Stop mode, regulator in Run mode",
         "f = f = 4.2 MHz HCLK MSI",
         "5.0",
         "8",
@@ -61,8 +56,7 @@
       ],
       [
         "t WUSTOP",
-        "Wakeup from Stop mode, regulator in Run mode",
-        "Wakeup from Stop mode, regulator in Run mode",
+        "mode",
         "f = f = 16 MHz HCLK HSI",
         "4.9",
         "7",
@@ -71,7 +65,6 @@
       [
         "t WUSTOP",
         "Wakeup from Stop mode, regulator in Run mode",
-        "Wakeup from Stop mode, regulator in Run mode",
         "f = f /4 = 4 MHz HCLK HSI",
         "8.0",
         "11",
@@ -79,7 +72,6 @@
       ],
       [
         "t WUSTOP",
-        "Wakeup from Stop mode, regulator in low- power mode",
         "Wakeup from Stop mode, regulator in low- power mode",
         "f = f = 4.2 MHz HCLK MSI Voltage range 1",
         "5.0",
@@ -89,7 +81,6 @@
       [
         "t WUSTOP",
         "Wakeup from Stop mode, regulator in low- power mode",
-        "Wakeup from Stop mode, regulator in low- power mode",
         "f = f = 4.2 MHz HCLK MSI Voltage range 2",
         "5.0",
         "8",
@@ -97,7 +88,6 @@
       ],
       [
         "t WUSTOP",
-        "Wakeup from Stop mode, regulator in low- power mode",
         "Wakeup from Stop mode, regulator in low- power mode",
         "f = f = 4.2 MHz HCLK MSI Voltage range 3",
         "5.0",
@@ -107,7 +97,6 @@
       [
         "t WUSTOP",
         "Wakeup from Stop mode, regulator in low- power mode",
-        "Wakeup from Stop mode, regulator in low- power mode",
         "f = f = 2.1 MHz HCLK MSI",
         "7.3",
         "13",
@@ -115,8 +104,7 @@
       ],
       [
         "t WUSTOP",
-        "Wakeup from Stop mode, regulator in low- power mode",
-        "Wakeup from Stop mode, regulator in low- power mode",
+        "power mode",
         "f = f = 1.05 MHz HCLK MSI",
         "13",
         "23",
@@ -124,7 +112,6 @@
       ],
       [
         "t WUSTOP",
-        "Wakeup from Stop mode, regulator in low- power mode",
         "Wakeup from Stop mode, regulator in low- power mode",
         "f = f = 524 kHz HCLK MSI",
         "28",
@@ -134,7 +121,6 @@
       [
         "t WUSTOP",
         "Wakeup from Stop mode, regulator in low- power mode",
-        "Wakeup from Stop mode, regulator in low- power mode",
         "f = f = 262 kHz HCLK MSI",
         "51",
         "65",
@@ -142,7 +128,6 @@
       ],
       [
         "t WUSTOP",
-        "Wakeup from Stop mode, regulator in low- power mode",
         "Wakeup from Stop mode, regulator in low- power mode",
         "f = f = 131 kHz HCLK MSI",
         "100",
@@ -152,7 +137,6 @@
       [
         "t WUSTOP",
         "Wakeup from Stop mode, regulator in low- power mode",
-        "Wakeup from Stop mode, regulator in low- power mode",
         "f = MSI = 65 kHz HCLK",
         "190",
         "260",
@@ -161,7 +145,6 @@
       [
         "t WUSTOP",
         "Wakeup from Stop mode, regulator in low- power mode",
-        "Wakeup from Stop mode, regulator in low- power mode",
         "f = f = 16 MHz HCLK HSI",
         "4.9",
         "7",
@@ -169,7 +152,6 @@
       ],
       [
         "t WUSTOP",
-        "Wakeup from Stop mode, regulator in low- power mode",
         "Wakeup from Stop mode, regulator in low- power mode",
         "f = f /4 = 4 MHz HCLK HSI",
         "8.0",
@@ -179,7 +161,6 @@
       [
         "t WUSTOP",
         "Wakeup from Stop mode, regulator in low- power mode, code running from RAM",
-        "Wakeup from Stop mode, regulator in low- power mode, code running from RAM",
         "f = f = 16 MHz HCLK HSI",
         "4.9",
         "7",
@@ -187,8 +168,7 @@
       ],
       [
         "t WUSTOP",
-        "Wakeup from Stop mode, regulator in low- power mode, code running from RAM",
-        "Wakeup from Stop mode, regulator in low- power mode, code running from RAM",
+        "power mode, code running from RAM",
         "f = f /4 = 4 MHz HCLK HSI",
         "7.9",
         "10",
@@ -196,7 +176,6 @@
       ],
       [
         "t WUSTOP",
-        "Wakeup from Stop mode, regulator in low- power mode, code running from RAM",
         "Wakeup from Stop mode, regulator in low- power mode, code running from RAM",
         "f = f = 4.2 MHz HCLK MSI",
         "4.7",
@@ -206,7 +185,6 @@
       [
         "t WUSTDBY",
         "Wakeup from Standby mode, FWU bit = 1",
-        "Wakeup from Standby mode, FWU bit = 1",
         "f = MSI = 2.1 MHz HCLK",
         "65",
         "130",
@@ -215,56 +193,10 @@
       [
         "t WUSTDBY",
         "Wakeup from Standby mode, FWU bit = 0",
-        "Wakeup from Standby mode, FWU bit = 0",
         "f = MSI = 2.1 MHz HCLK",
         "2.2",
         "3",
         "ms"
-      ],
-      [
-        "V HSEL",
-        "OSC_IN input pin low level voltage",
-        "OSC_IN input pin low level voltage",
-        "V SS",
-        "-",
-        "0.3V DD",
-        "0.3V DD"
-      ],
-      [
-        "t w(HSE) t w(HSE)",
-        "OSC_IN high or low time",
-        "OSC_IN high or low time",
-        "12",
-        "-",
-        "-",
-        "ns"
-      ],
-      [
-        "t r(HSE) t f(HSE)",
-        "OSC_IN rise or fall time",
-        "OSC_IN rise or fall time",
-        "-",
-        "-",
-        "20",
-        "20"
-      ],
-      [
-        "C in(HSE)",
-        "OSC_IN input capacitance",
-        "OSC_IN input capacitance",
-        "-",
-        "2.6",
-        "-",
-        "pF"
-      ],
-      [
-        "DuCy (HSE)",
-        "Duty cycle",
-        "Duty cycle",
-        "45",
-        "-",
-        "55",
-        "%"
       ]
     ],
     "notes": [],

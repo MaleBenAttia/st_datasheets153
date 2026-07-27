@@ -11,10 +11,9 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32u385cg.pdf#page=159",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u385cg.pdf",
-  "text_helper": "Table 100. V monitoring characteristics 159 BAT — section 5.3.21 V monitoring characteristics. Symbol, Symbol, Parameter(1), Min, Typ, +2 autres.",
+  "text_helper": "Table 100. V monitoring characteristics 159 BAT — section 5.3.21 V monitoring characteristics. Symbol, Parameter(1), Min, Typ, Max, +1 autres.",
   "table_content": {
     "headers": [
-      "Symbol",
       "Symbol",
       "Parameter(1)",
       "Min",
@@ -25,7 +24,6 @@
     "rows": [
       [
         "R",
-        "R",
         "Resistor bridge for VBAT",
         "-",
         "4x 25.6",
@@ -33,7 +31,6 @@
         "kΩ"
       ],
       [
-        "Q",
         "Q",
         "Ratio on VBAT measurement",
         "-",
@@ -43,7 +40,6 @@
       ],
       [
         "Er(2)",
-        "Er(2)",
         "Error on Q",
         "-5",
         "-",
@@ -52,7 +48,6 @@
       ],
       [
         "tS_VBAT(2)",
-        "tS_VBAT(2)",
         "ADC sampling time when reading the VBAT",
         "5",
         "-",
@@ -60,7 +55,10 @@
         "µs"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Evaluated by characterization. Not tested in production.",
+      "2. Measured at VREF+ = VDDA = 3.0 V ± 10 mV. The V30 A/D conversion result is stored in the TS_CAL1 byte. Refer to Table 10. Temperature sensor calibration values."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

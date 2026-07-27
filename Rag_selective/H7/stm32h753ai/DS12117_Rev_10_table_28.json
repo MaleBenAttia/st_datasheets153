@@ -31,7 +31,7 @@
         "µA/MHz"
       ],
       [
-        "AHB3",
+        "DMA2D",
         "DMA2D",
         "21",
         "20",
@@ -39,7 +39,7 @@
         "µA/MHz"
       ],
       [
-        "AHB3",
+        "JPEG",
         "JPEG",
         "24",
         "23",
@@ -47,7 +47,7 @@
         "µA/MHz"
       ],
       [
-        "AHB3",
+        "FLASH",
         "FLASH",
         "9.9",
         "9",
@@ -55,7 +55,7 @@
         "µA/MHz"
       ],
       [
-        "AHB3",
+        "FMC registers",
         "FMC registers",
         "0.9",
         "0.9",
@@ -63,7 +63,7 @@
         "µA/MHz"
       ],
       [
-        "AHB3",
+        "FMC kernel",
         "FMC kernel",
         "6.1",
         "5.5",
@@ -71,7 +71,7 @@
         "µA/MHz"
       ],
       [
-        "AHB3",
+        "QUADSPI registers",
         "QUADSPI registers",
         "1.5",
         "1.4",
@@ -79,7 +79,7 @@
         "µA/MHz"
       ],
       [
-        "AHB3",
+        "AHB3 QUADSPI kernel",
         "QUADSPI kernel",
         "0.9",
         "0.8",
@@ -87,7 +87,7 @@
         "µA/MHz"
       ],
       [
-        "AHB3",
+        "SDMMC1 registers",
         "SDMMC1 registers",
         "8",
         "7.2",
@@ -95,7 +95,7 @@
         "µA/MHz"
       ],
       [
-        "AHB3",
+        "SDMMC1 kernel",
         "SDMMC1 kernel",
         "2.4",
         "2",
@@ -103,7 +103,7 @@
         "µA/MHz"
       ],
       [
-        "AHB3",
+        "DTCM1",
         "DTCM1",
         "5.7",
         "5",
@@ -111,7 +111,7 @@
         "µA/MHz"
       ],
       [
-        "AHB3",
+        "DTCM2",
         "DTCM2",
         "5.5",
         "4.8",
@@ -119,7 +119,7 @@
         "µA/MHz"
       ],
       [
-        "AHB3",
+        "ITCM",
         "ITCM",
         "3.2",
         "2.9",
@@ -127,7 +127,7 @@
         "µA/MHz"
       ],
       [
-        "AHB3",
+        "D1SRAM1",
         "D1SRAM1",
         "7.6",
         "6.8",
@@ -135,7 +135,7 @@
         "µA/MHz"
       ],
       [
-        "AHB3",
+        "AHB3 bridge",
         "AHB3 bridge",
         "7.5",
         "6.8",
@@ -151,7 +151,7 @@
         "µA/MHz"
       ],
       [
-        "AHB1",
+        "DMA2",
         "DMA2",
         "1.7",
         "1.4",
@@ -159,7 +159,7 @@
         "µA/MHz"
       ],
       [
-        "AHB1",
+        "ADC1/2 registers",
         "ADC1/2 registers",
         "3.9",
         "3.2",
@@ -167,7 +167,7 @@
         "µA/MHz"
       ],
       [
-        "AHB1",
+        "ADC1/2 kernel",
         "ADC1/2 kernel",
         "0.9",
         "0.8",
@@ -175,7 +175,7 @@
         "µA/MHz"
       ],
       [
-        "AHB1",
+        "ART accelerator",
         "ART accelerator",
         "5.5",
         "4.5",
@@ -183,7 +183,7 @@
         "µA/MHz"
       ],
       [
-        "AHB1",
+        "ETH1MAC ETH1TX ETH1RX",
         "ETH1MAC",
         "16",
         "14",
@@ -191,75 +191,11 @@
         "µA/MHz"
       ],
       [
-        "AHB1",
         "ETH1TX",
-        "16",
+        "ETH1TX",
+        "16 14 13",
         "14",
         "13",
-        "µA/MHz"
-      ],
-      [
-        "AHB1",
-        "ETH1RX",
-        "16",
-        "14",
-        "13",
-        "µA/MHz"
-      ],
-      [
-        "AHB1",
-        "USB1 OTG registers",
-        "15",
-        "14",
-        "13",
-        "µA/MHz"
-      ],
-      [
-        "AHB1",
-        "USB1 OTG kernel",
-        "-",
-        "8.5",
-        "8.5",
-        "µA/MHz"
-      ],
-      [
-        "AHB1",
-        "USB1 ULPI",
-        "0.3",
-        "0.3",
-        "0.1",
-        "µA/MHz"
-      ],
-      [
-        "AHB1",
-        "USB2 OTG registers",
-        "15",
-        "13",
-        "12",
-        "µA/MHz"
-      ],
-      [
-        "AHB1",
-        "USB2 OTG kernel",
-        "-",
-        "8.6",
-        "8.6",
-        "µA/MHz"
-      ],
-      [
-        "AHB1",
-        "USB2 ULPI",
-        "16",
-        "16",
-        "16",
-        "µA/MHz"
-      ],
-      [
-        "AHB1",
-        "AHB1 Bridge",
-        "10",
-        "9.6",
-        "8.6",
         "µA/MHz"
       ],
       [
@@ -1247,7 +1183,10 @@
         "0.1"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Guaranteed by characterization results.",
+      "2. The wakeup times are measured from the wakeup event to the point in which the application code reads the first instruction. 122/357 DS12117 Rev 10"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

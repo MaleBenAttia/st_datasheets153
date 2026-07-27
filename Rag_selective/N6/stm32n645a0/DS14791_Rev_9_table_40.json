@@ -19,7 +19,7 @@
       "Conditions",
       "Conditions",
       "frcc_c_ck (MHz)",
-      "SMPS external / Typ",
+      "SMPS external / Typ / Typ T = T = T = T = J J J J 25°C 85°C 105°C 125°C",
       "SMPS external / Max(1) / T = J 25°C",
       "SMPS external / Max(1) / T = J 85°C",
       "SMPS external / Max(1) / T = J 105°C",
@@ -42,7 +42,7 @@
       ],
       [
         "I DD",
-        "HSI, V = 1.8 V DD",
+        "disabled VOS low",
         "All peripherals disabled",
         "VOS low",
         "600(3)",
@@ -55,7 +55,7 @@
       ],
       [
         "I DD",
-        "HSI, V = 1.8 V DD",
+        "VOS high All peripherals enabled VOS low",
         "All peripherals enabled",
         "VOS high",
         "800(2)",
@@ -68,7 +68,7 @@
       ],
       [
         "I DD",
-        "HSI, V = 1.8 V DD",
+        "enabled VOS low",
         "All peripherals enabled",
         "VOS low",
         "600(3)",
@@ -81,7 +81,7 @@
       ],
       [
         "I DDCORE",
-        "HSI, V = 1.8 V DD",
+        "VOS high All peripherals disabled VOS low VOS high All peripherals enabled VOS low HSI,",
         "All peripherals disabled",
         "VOS high",
         "800(2)",
@@ -94,7 +94,7 @@
       ],
       [
         "I DDCORE",
-        "HSI, V = 1.8 V DD",
+        "disabled VOS low",
         "All peripherals disabled",
         "VOS low",
         "600(3)",
@@ -107,7 +107,7 @@
       ],
       [
         "I DDCORE",
-        "HSI, V = 1.8 V DD",
+        "VOS high All peripherals enabled VOS low HSI,",
         "All peripherals enabled",
         "VOS high",
         "800(2)",
@@ -120,7 +120,7 @@
       ],
       [
         "I DDCORE",
-        "HSI, V = 1.8 V DD",
+        "enabled VOS low HSI,",
         "All peripherals enabled",
         "VOS low",
         "600(3)",
@@ -133,7 +133,7 @@
       ],
       [
         "I (4) DDA1V8",
-        "HSI, V = 1.8 V DD",
+        "V = 1.8 V VOS high DD All peripherals disabled VOS low VOS high All peripherals enabled VOS low",
         "All peripherals disabled",
         "VOS high",
         "800(2)",
@@ -143,100 +143,14 @@
         "2.15",
         "2.15",
         "mA"
-      ],
-      [
-        "I (4) DDA1V8",
-        "HSI, V = 1.8 V DD",
-        "All peripherals disabled",
-        "VOS low",
-        "600(3)",
-        "4.29",
-        "4.52",
-        "4.61",
-        "4.64",
-        "4.67",
-        "mA"
-      ],
-      [
-        "I (4) DDA1V8",
-        "HSI, V = 1.8 V DD",
-        "All peripherals enabled",
-        "VOS high",
-        "800(2)",
-        "2.04",
-        "2.14",
-        "2.15",
-        "2.15",
-        "2.16",
-        "mA"
-      ],
-      [
-        "I (4) DDA1V8",
-        "HSI, V = 1.8 V DD",
-        "All peripherals enabled",
-        "VOS low",
-        "600(3)",
-        "4.31",
-        "4.52",
-        "4.61",
-        "4.65",
-        "4.69",
-        "mA"
-      ],
-      [
-        "I DDA1V8AON",
-        "HSI, V = 1.8 V DD",
-        "All peripherals disabled",
-        "VOS high",
-        "800(2)",
-        "0.25",
-        "0.26",
-        "0.28",
-        "0.29",
-        "0.30",
-        "mA"
-      ],
-      [
-        "I DDA1V8AON",
-        "HSI, V = 1.8 V DD",
-        "All peripherals disabled",
-        "VOS low",
-        "600(3)",
-        "0.25",
-        "0.26",
-        "0.28",
-        "0.29",
-        "0.30",
-        "mA"
-      ],
-      [
-        "I DDA1V8AON",
-        "HSI, V = 1.8 V DD",
-        "All peripherals enabled",
-        "VOS high",
-        "800(2)",
-        "0.45",
-        "0.48",
-        "0.50",
-        "0.51",
-        "0.53",
-        "mA"
-      ],
-      [
-        "I DDA1V8AON",
-        "HSI, V = 1.8 V DD",
-        "All peripherals enabled",
-        "VOS low",
-        "600(3)",
-        "0.45",
-        "0.48",
-        "0.50",
-        "0.51",
-        "0.53",
-        "mA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Guaranteed by characterization results unless otherwise specified.",
+      "2. cpu_overdrive range frequency",
+      "3. cpu_nominal range frequency.",
+      "4. Sleep mode applies only to the CPU subsystem (CPU clock is stopped). PLL clock configuration changes. Note: Power consumption is higher due to VCO frequency (800 MHz for F at 800 MHz HSI,"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

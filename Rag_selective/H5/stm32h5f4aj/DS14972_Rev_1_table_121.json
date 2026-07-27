@@ -11,18 +11,27 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32h5f4aj.pdf#page=275",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h5f4aj.pdf",
-  "text_helper": "Table 121. I3C open-drain measured timings — section 5.3.38 Communication interfaces. Symbol, Symbol, Parameter, Conditions, Min, +1 autres. (table vide)",
+  "text_helper": "Table 121. I3C open-drain measured timings — section 5.3.38 Communication interfaces. Symbol, Parameter, Conditions, Min, Unit.",
   "table_content": {
     "headers": [
-      "Symbol",
       "Symbol",
       "Parameter",
       "Conditions",
       "Min",
       "Unit"
     ],
-    "rows": [],
-    "notes": [],
+    "rows": [
+      [
+        "t SU_OD",
+        "open drain mode",
+        "Controller 1.71 V < V < 3.6 V DD",
+        "24.5(1)",
+        "ns"
+      ]
+    ],
+    "notes": [
+      "1. SDA data setup time in open-drain mode must be at least 3 ns, as required by the MIPI specification."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

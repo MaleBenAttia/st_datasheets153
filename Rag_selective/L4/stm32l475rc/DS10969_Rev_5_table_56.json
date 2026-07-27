@@ -11,13 +11,13 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32l475rc.pdf#page=130",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l475rc.pdf",
-  "text_helper": "Table 56. EMI characteristics — section 6.3.11 EMC characteristics. Symbol, Parameter, Conditions, Monitored frequency band, Max vs. [f /f ] HSE HCLK / [f 8 MHz / HSE = f 80 MHz] HCLK =, +1 autres.",
+  "text_helper": "Table 56. EMI characteristics — section 6.3.11 EMC characteristics. Symbol, Parameter, Conditions, Monitored frequency band / frequency band, Max vs. [f /f ] HSE HCLK / [f 8 MHz / HSE = f 80 MHz] HCLK =, +1 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions",
-      "Monitored frequency band",
+      "Monitored frequency band / frequency band",
       "Max vs. [f /f ] HSE HCLK / [f 8 MHz / HSE = f 80 MHz] HCLK =",
       "Unit"
     ],
@@ -33,7 +33,7 @@
       [
         "S EMI",
         "Peak level",
-        "V = 3.6 V, T = 25 °C, DD A LQFP100 package compliant with IEC 61967-2",
+        "LQFP100 package",
         "30 MHz to 130 MHz",
         "-9",
         "dBµV"
@@ -41,7 +41,7 @@
       [
         "S EMI",
         "Peak level",
-        "V = 3.6 V, T = 25 °C, DD A LQFP100 package compliant with IEC 61967-2",
+        "compliant with",
         "130 MHz to 1 GHz",
         "6",
         "dBµV"
@@ -55,7 +55,9 @@
         "-"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Guaranteed by characterization results. 130/204 DS10969 Rev 5"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

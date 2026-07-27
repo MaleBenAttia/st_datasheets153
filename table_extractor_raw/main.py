@@ -345,6 +345,16 @@ def process_pdf(pdf_path: Path, family: str, table_ids: list[int] | None = None)
                 if legend:
                     raw_dict.setdefault("heuristics", {})["_legend"] = legend
 
+                # ── Combinaison des marqueurs consécutifs (N)(M) → (N,M) ─────────
+                _CONSEC_MARKERS = re.compile(r'(\((\d+)\))+')
+                for row in rows:
+                    for ci in range(len(row)):
+                        cell = str(row[ci])
+                        # Évite de toucher aux colonnes Symbol (garder IDD(PSI)(3)(5) intact)
+                        if ci < len(headers) and re.search(r'(?i)\b(?:symbol|parameter)\b', str(headers[ci])):
+                            continue
+                        row[ci] = _CONSEC_MARKERS.sub(lambda m: '(' + ','.join(re.findall(r'\d+', m.group(0))) + ')', cell)
+
             # Validation Pydantic
             table_obj = RawTable(**raw_dict)
             table_json = table_obj.model_dump()

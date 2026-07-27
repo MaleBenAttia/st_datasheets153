@@ -37,7 +37,7 @@
       [
         "I DD(LSE)",
         "LSE current consumption",
-        "Rev. X",
+        "Rev. X LSEDRV[1:0] = 10, medium high-drive capability",
         "LSEDRV[1:0] = 10, medium high-drive capability",
         "-",
         "450",
@@ -47,7 +47,7 @@
       [
         "I DD(LSE)",
         "LSE current consumption",
-        "Rev. X",
+        "LSEDRV[1:0] = 11, high-drive capability",
         "LSEDRV[1:0] = 11, high-drive capability",
         "-",
         "600",
@@ -56,7 +56,7 @@
       ],
       [
         "I DD(LSE)",
-        "LSE current consumption",
+        "consumption",
         "Other revisions",
         "LSEDRV[1:0] = 00, low-drive capability",
         "-",
@@ -67,7 +67,7 @@
       [
         "I DD(LSE)",
         "LSE current consumption",
-        "Other revisions",
+        "LSEDRV[1:0] = 01, medium low-drive capability Other",
         "LSEDRV[1:0] = 01, medium low-drive capability",
         "-",
         "450",
@@ -77,7 +77,7 @@
       [
         "I DD(LSE)",
         "LSE current consumption",
-        "Other revisions",
+        "revisions LSEDRV[1:0] = 10, medium high-drive capability",
         "LSEDRV[1:0] = 10, medium high-drive capability",
         "-",
         "590",
@@ -87,7 +87,7 @@
       [
         "I DD(LSE)",
         "LSE current consumption",
-        "Other revisions",
+        "LSEDRV[1:0] = 11, high-drive capability",
         "LSEDRV[1:0] = 11, high-drive capability",
         "-",
         "700",
@@ -106,7 +106,7 @@
       ],
       [
         "Gm critmax",
-        "Maximum critical crystal Gm",
+        "Maximum",
         "LSEDRV[1:0] = 01, medium low-drive capability",
         "LSEDRV[1:0] = 01, medium low-drive capability",
         "-",
@@ -116,7 +116,7 @@
       ],
       [
         "Gm critmax",
-        "Maximum critical crystal Gm",
+        "Gm",
         "LSEDRV[1:0] = 10, medium high-drive capability",
         "LSEDRV[1:0] = 10, medium high-drive capability",
         "-",
@@ -146,7 +146,7 @@
       ],
       [
         "C S_PARA",
-        "Internal stray parasitic capacitance(3)",
+        "parasitic capacitance(3)",
         "Other revisions",
         "-",
         "-",
@@ -163,90 +163,9 @@
         "2",
         "-",
         "s"
-      ],
-      [
-        "f HSI16",
-        "f HSI16",
-        "HSI16 frequency after factory calibration",
-        "HSI16 frequency after factory calibration",
-        "V = 3.0 V, T = 30 °C DD J",
-        "15.92",
-        "16",
-        "16.08"
-      ],
-      [
-        "f (1) HSI16",
-        "f (1) HSI16",
-        "None",
-        "None",
-        "T = –10 °C to 100 °C, J 1.58 ≤ V ≤ 3.6 V DD",
-        "15.84",
-        "-",
-        "16.16"
-      ],
-      [
-        "None",
-        "None",
-        "None",
-        "None",
-        "T = –40 °C to 130 °C, J 1.58 ≤ V ≤ 3.6 V DD",
-        "15.65",
-        "-",
-        "16.25"
-      ],
-      [
-        "TRIM (2) HSI16",
-        "TRIM (2) HSI16",
-        "HSI16 user trimming step",
-        "HSI16 user trimming step",
-        "-",
-        "18",
-        "29",
-        "40"
-      ],
-      [
-        "DuCy (2) HSI16",
-        "DuCy (2) HSI16",
-        "Duty cycle",
-        "Duty cycle",
-        "-",
-        "45",
-        "-",
-        "55"
-      ],
-      [
-        "t (2) su(HSI16)",
-        "t (2) su(HSI16)",
-        "HSI16 oscillator startup time",
-        "HSI16 oscillator startup time",
-        "-",
-        "-",
-        "2.5",
-        "3.6"
-      ],
-      [
-        "t (2) stab(HSI16)",
-        "t (2) stab(HSI16)",
-        "HSI16 oscillator stabilization time",
-        "HSI16 oscillator stabilization time",
-        "At 1% of target frequency",
-        "-",
-        "4",
-        "6"
-      ],
-      [
-        "I (2) DD(HSI16)",
-        "I (2) DD(HSI16)",
-        "HSI16 oscillator power consumption",
-        "HSI16 oscillator power consumption",
-        "-",
-        "-",
-        "150",
-        "210"
       ]
     ],
     "notes": [
-      "1. Specified by design. Not tested in production.",
       "2. Refer to the note below this table.",
       "3. C is the equivalent capacitance seen by the crystal due to OSC32_IN and OSC32_OUT internal parasitic S_PARA",
       "4. t is the startup time measured from the moment it is enabled (by software) to a stabilized 32.768 kHz oscillation is SU(LSE)"

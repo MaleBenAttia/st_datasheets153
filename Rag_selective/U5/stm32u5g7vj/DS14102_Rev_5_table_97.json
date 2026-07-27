@@ -11,10 +11,9 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32u5g7vj.pdf#page=238",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u5g7vj.pdf",
-  "text_helper": "Table 97. Output voltage characteristics for FT_t I/Os in V mode, and for FT_o I/Os 238 BAT — section 5.3.15 I/O port characteristics. Symbol, Symbol, Parameter, Conditions, Min, +2 autres.",
+  "text_helper": "Table 97. Output voltage characteristics for FT_t I/Os in V mode, and for FT_o I/Os 238 BAT — section 5.3.15 I/O port characteristics. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
   "table_content": {
     "headers": [
-      "Symbol",
       "Symbol",
       "Parameter",
       "Conditions",
@@ -25,7 +24,6 @@
     "rows": [
       [
         "V OL",
-        "V OL",
         "Output low-level voltage",
         "CMOS port(4), |I |= 8 mA, IO 2.7 V ≤ V ≤ 3.6 V DDIOx",
         "-",
@@ -34,16 +32,14 @@
       ],
       [
         "V OH",
-        "V OH",
         "Output high-level voltage",
-        "CMOS port(4), |I |= 8 mA, IO 2.7 V ≤ V ≤ 3.6 V DDIOx",
+        "2.7 V ≤ V ≤ 3.6 V DDIOx",
         "V - 0.4 DDIOx",
         "-",
         "V"
       ],
       [
         "V (5) OL",
-        "V (5) OL",
         "Output low-level voltage",
         "TTL port(4),|I |= 8 mA, IO 2.7 V ≤ V ≤ 3.6 V DDIOx",
         "-",
@@ -52,15 +48,13 @@
       ],
       [
         "V (5) OH",
-        "V (5) OH",
         "Output high-level voltage",
-        "TTL port(4),|I |= 8 mA, IO 2.7 V ≤ V ≤ 3.6 V DDIOx",
+        "≤ 3.6 V 2.7 V ≤ V DDIOx",
         "2.4",
         "-",
         "V"
       ],
       [
-        "V (5) OL",
         "V (5) OL",
         "Output low-level voltage",
         "All I/Os, |I |= 20 mA, IO 2.7 V ≤ V ≤ 3.6 V DDIOx",
@@ -70,16 +64,14 @@
       ],
       [
         "V (5) OH",
-        "V (5) OH",
         "Output high-level voltage",
-        "All I/Os, |I |= 20 mA, IO 2.7 V ≤ V ≤ 3.6 V DDIOx",
+        "2.7 V ≤ V ≤ 3.6 V DDIOx",
         "V - 1.3 DDIOx",
         "-",
         "V"
       ],
       [
         "V (5) OL",
-        "V (5) OL",
         "Output low-level voltage",
         "|I | = 4 mA, IO 1.58 V ≤ V ≤ 3.6 V DDIOx",
         "-",
@@ -88,15 +80,13 @@
       ],
       [
         "V (5) OH",
-        "V (5) OH",
         "Output high-level voltage",
-        "|I | = 4 mA, IO 1.58 V ≤ V ≤ 3.6 V DDIOx",
+        "1.58 V ≤ V ≤ 3.6 V DDIOx",
         "V - 0.4 DDIOx",
         "-",
         "V"
       ],
       [
-        "V (5) OL",
         "V (5) OL",
         "Output low-level voltage",
         "|I | = 1 mA, IO 1.08 V ≤ V <3.6 V DDIOx",
@@ -106,15 +96,13 @@
       ],
       [
         "V (5) OH",
-        "V (5) OH",
         "Output high-level voltage",
-        "|I | = 1 mA, IO 1.08 V ≤ V <3.6 V DDIOx",
+        "1.08 V ≤ V <3.6 V DDIOx",
         "V - 0.4 DDIOx",
         "-",
         "V"
       ],
       [
-        "V (5) OLFM+",
         "V (5) OLFM+",
         "Output low-level voltage for a FT_f I/O pin in FM+ mode",
         "|I |= 20 mA, IO 2.7 V ≤ V ≤ 3.6 V DDIOx",
@@ -123,8 +111,7 @@
         "V"
       ],
       [
-        "V (5) OLFM+",
-        "V (5) OLFM+",
+        "(5) V OLFM+",
         "Output low-level voltage for a FT_f I/O pin in FM+ mode",
         "|I |= 10 mA, IO 1.58 V ≤ V ≤ 3.6 V DDIOx",
         "-",
@@ -133,192 +120,11 @@
       ],
       [
         "V (5) OLFM+",
-        "V (5) OLFM+",
         "Output low-level voltage for a FT_f I/O pin in FM+ mode",
         "|I |= 2 mA, IO 1.08 V ≤ V < 3.6 V DDIOx",
         "-",
         "0.4",
         "V"
-      ],
-      [
-        "00",
-        "Fmax",
-        "Maximum frequency all I/Os",
-        "C = 50 pF, 1.58 V ≤ V < 2.7 V L DDIOx",
-        "-",
-        "5",
-        "5"
-      ],
-      [
-        "00",
-        "Fmax",
-        "Maximum frequency all I/Os",
-        "C = 50 pF, 1.08 V ≤ V < 1.58 V L DDIOx",
-        "-",
-        "1",
-        "1"
-      ],
-      [
-        "00",
-        "Fmax",
-        "Maximum frequency all I/Os",
-        "C = 10 pF, 2.7 V ≤ V ≤ 3.6 V L DDIOx",
-        "-",
-        "12.5",
-        "12.5"
-      ],
-      [
-        "00",
-        "Fmax",
-        "Maximum frequency all I/Os",
-        "C = 10 pF, 1.58 V ≤ V < 2.7 V L DDIOx",
-        "-",
-        "5",
-        "5"
-      ],
-      [
-        "00",
-        "Fmax",
-        "Maximum frequency all I/Os",
-        "C = 10 pF, 1.08 V ≤ V < 1.58 V L DDIOx",
-        "-",
-        "1",
-        "1"
-      ],
-      [
-        "00",
-        "t/t r f",
-        "Output rise and fall time all I/Os",
-        "C = 50 pF, 1.58 V ≤ V < 2.7 V L DDIOx",
-        "-",
-        "33",
-        "33"
-      ],
-      [
-        "00",
-        "t/t r f",
-        "Output rise and fall time all I/Os",
-        "C = 50 pF, 1.08 V ≤ V < 1.58 V L DDIOx",
-        "-",
-        "85",
-        "85"
-      ],
-      [
-        "00",
-        "t/t r f",
-        "Output rise and fall time all I/Os",
-        "C = 10 pF, 2.7 V ≤ V ≤ 3.6 V L DDIOx",
-        "-",
-        "12.5",
-        "12.5"
-      ],
-      [
-        "00",
-        "t/t r f",
-        "Output rise and fall time all I/Os",
-        "C = 10 pF, 1.58 V ≤ V < 2.7 V L DDIOx",
-        "-",
-        "25",
-        "25"
-      ],
-      [
-        "00",
-        "t/t r f",
-        "Output rise and fall time all I/Os",
-        "C = 10 pF, 1.08 V ≤ V < 1.58 V L DDIOx",
-        "-",
-        "50",
-        "50"
-      ],
-      [
-        "01",
-        "Fmax",
-        "Maximum frequency all I/Os",
-        "C = 30 pF, 1.58 V ≤ V < 2.7 V L DDIOx",
-        "-",
-        "12.5",
-        "12.5"
-      ],
-      [
-        "01",
-        "Fmax",
-        "Maximum frequency all I/Os",
-        "C = 30 pF, 1.08 V ≤ V < 1.58 V L DDIOx",
-        "-",
-        "2.5",
-        "2.5"
-      ],
-      [
-        "01",
-        "Fmax",
-        "Maximum frequency all I/Os",
-        "C = 10 pF, 2.7 V ≤ V ≤ 3.6 V L DDIOx",
-        "-",
-        "55",
-        "55"
-      ],
-      [
-        "01",
-        "Fmax",
-        "Maximum frequency all I/Os",
-        "C = 10 pF, 1.58 V ≤ V < 2.7 V L DDIOx",
-        "-",
-        "12.5",
-        "12.5"
-      ],
-      [
-        "01",
-        "Fmax",
-        "Maximum frequency all I/Os",
-        "C = 10 pF, 1.08 V ≤ V ≤<1.58 V L DDIOx",
-        "-",
-        "2.5",
-        "2.5"
-      ],
-      [
-        "01",
-        "t/t r f",
-        "Output rise and fall time all I/Os",
-        "C = 30 pF, 1.58 V ≤ V < 2.7 V L DDIOx",
-        "-",
-        "10",
-        "10"
-      ],
-      [
-        "01",
-        "t/t r f",
-        "Output rise and fall time all I/Os",
-        "C = 30 pF, 1.08 V ≤ V < 1.58 V L DDIOx",
-        "-",
-        "18",
-        "18"
-      ],
-      [
-        "01",
-        "t/t r f",
-        "Output rise and fall time all I/Os",
-        "C = 10 pF, 2.7 V ≤ V ≤ 3.6 V L DDIOx",
-        "-",
-        "4.2",
-        "4.2"
-      ],
-      [
-        "01",
-        "t/t r f",
-        "Output rise and fall time all I/Os",
-        "C = 10 pF, 1.58 V ≤ V < 2.7 V L DDIOx",
-        "-",
-        "7.5",
-        "7.5"
-      ],
-      [
-        "01",
-        "t/t r f",
-        "Output rise and fall time all I/Os",
-        "C = 10 pF, 1.08 V ≤ V < 1.58 V L DDIOx",
-        "-",
-        "12",
-        "12"
       ]
     ],
     "notes": [

@@ -33,8 +33,8 @@
         "Nb of CPU cycles"
       ],
       [
-        "t wu(Sleep)",
-        "Wake-up time from Sleep to Run mode",
+        "t wu(Stop 0)",
+        "Wake-up time from Stop 0 to Run mode All SRAMs retained",
         "SLEEP_PD = 1 with MSI = 24 MHz",
         "SLEEP_PD = 1 with MSI = 24 MHz",
         "8.1",
@@ -61,8 +61,8 @@
       ],
       [
         "t wu(Stop 0)",
-        "Wake-up time from Stop 0 to Run mode All SRAMs retained",
-        "Wake-up in FLASH, range 4, FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2 ICACHE OFF",
+        "Stop 0 to Run mode",
+        "HSI 16 MHz SRAM4FWU = 0 in PWR_CR2",
         "HSI 16 MHz",
         "10.9",
         "12",
@@ -71,7 +71,7 @@
       [
         "t wu(Stop 0)",
         "Wake-up time from Stop 0 to Run mode All SRAMs retained",
-        "Wake-up in FLASH, range 4, FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2 ICACHE OFF",
+        "ICACHE OFF MSI 1 MHz",
         "MSI 1 MHz",
         "38.1",
         "40",
@@ -89,7 +89,7 @@
       [
         "t wu(Stop 0)",
         "Wake-up time from Stop 0 to Run mode All SRAMs retained",
-        "Wake-up in SRAM2, range 4, FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2",
+        "FLASHFWU = 0 and HSI 16 MHz",
         "HSI 16 MHz",
         "6.9",
         "8",
@@ -98,7 +98,7 @@
       [
         "t wu(Stop 0)",
         "Wake-up time from Stop 0 to Run mode All SRAMs retained",
-        "Wake-up in SRAM2, range 4, FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2",
+        "MSI 1 MHz",
         "MSI 1 MHz",
         "34.1",
         "36",

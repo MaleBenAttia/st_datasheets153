@@ -33,8 +33,8 @@
         "µA"
       ],
       [
-        "I DD_DSI",
-        "DSI system (Host, PLL and D-PHY) current consumption on V DDDSI",
+        "I DD_DSI I DD_DSILP I DD_DSIHS",
+        "DSI system (Host, PLL and D-PHY) current consumption on V DDDSI DSI system current consumption on communication(2) V in LP mode DDDSI DSI system (Host, PLL and D-PHY) current consumption on V DDDSI communication(3) in HS mode DSI system (Host, PLL and D-PHY) current consumption on V DDDSI in HS mode with CLK like payload",
         "Stop state - 1 data lane (PLL OFF)",
         "-",
         "2.74",
@@ -61,7 +61,7 @@
       ],
       [
         "I DD_DSILP",
-        "DSI system current consumption on V in LP mode communication(2) DDDSI",
+        "DSI system current consumption on",
         "10 MHz escape clock - 2 data lanes (PLL OFF)",
         "-",
         "5.65",
@@ -70,7 +70,7 @@
       ],
       [
         "I DD_DSILP",
-        "DSI system current consumption on V in LP mode communication(2) DDDSI",
+        "V in LP mode DDDSI",
         "20 MHz escape clock - 1 data lane (PLL OFF)",
         "-",
         "5.94",
@@ -97,7 +97,7 @@
       ],
       [
         "I DD_DSIHS",
-        "DSI system (Host, PLL and D-PHY) current consumption on V DDDSI in HS mode communication(3)",
+        "DSI system (Host, PLL and D-PHY)",
         "300 Mbit/s - 2 data lanes (PLL ON)",
         "-",
         "4.33",
@@ -106,7 +106,7 @@
       ],
       [
         "I DD_DSIHS",
-        "DSI system (Host, PLL and D-PHY) current consumption on V DDDSI in HS mode communication(3)",
+        "communication(3) in HS mode",
         "500 Mbit/s - 1 data lane (PLL ON)",
         "-",
         "3.21",
@@ -132,7 +132,10 @@
         "mA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "2. Values based on an average traffic in LP command mode.",
+      "3. Values based on an average traffic (3/4 HS traffic and 1/4 LP) in Video mode."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

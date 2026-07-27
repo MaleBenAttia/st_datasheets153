@@ -11,7 +11,7 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f446mc.pdf#page=78",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f446mc.pdf",
-  "text_helper": "Table 19. Operating conditions at power-up/power-down (regulator ON) — section 6.3.3 Operating conditions at power-up / power-down (regulator ON). Symbol, Parameter, Min, Max. (table vide)",
+  "text_helper": "Table 19. Operating conditions at power-up/power-down (regulator ON) — section 6.3.3 Operating conditions at power-up / power-down (regulator ON). Symbol, Parameter, Min, Max.",
   "table_content": {
     "headers": [
       "Symbol",
@@ -19,8 +19,23 @@
       "Min",
       "Max"
     ],
-    "rows": [],
-    "notes": [],
+    "rows": [
+      [
+        "t VDD",
+        "V rise time rate DD",
+        "20",
+        "∞"
+      ],
+      [
+        "t VDD",
+        "V fall time rate DD",
+        "20",
+        "∞"
+      ]
+    ],
+    "notes": [
+      "1. To reset the internal logic at power-down, a reset must be applied on pin PA0 when V drops below DD"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

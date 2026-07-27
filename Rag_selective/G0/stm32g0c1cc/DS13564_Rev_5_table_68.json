@@ -35,8 +35,8 @@
         "V"
       ],
       [
-        "V DDA",
-        "VREFBUF operating voltage",
+        "DDA",
+        "voltage",
         "VRS= 1",
         "VRS= 1",
         "2.8",
@@ -55,9 +55,9 @@
         "V"
       ],
       [
-        "V REFBUF_ OUT",
-        "Voltage reference output",
-        "I = load 100 µA T = 30 °C",
+        "OUT",
+        "reference output",
+        "VRS = 1 T = 30 °C",
         "VRS= 1",
         "2.497(2)",
         "2.5",
@@ -117,7 +117,7 @@
       [
         "I line_reg",
         "Line regulation",
-        "2.8 V ≤ V ≤ 3.6 V DDA",
+        "= 4 mA I load",
         "I = 4 mA load",
         "-",
         "100",
@@ -156,7 +156,7 @@
       ],
       [
         "PSRR",
-        "Power supply rejection",
+        "rejection",
         "100 kHz",
         "100 kHz",
         "25",
@@ -173,73 +173,12 @@
         "-",
         "300",
         "350"
-      ],
-      [
-        "None",
-        "None",
-        "None",
-        "CL = 1.1 µF(4)",
-        "CL = 1.1 µF(4)",
-        "-",
-        "500",
-        "650"
-      ],
-      [
-        "None",
-        "None",
-        "None",
-        "CL = 1.5 µF(4)",
-        "CL = 1.5 µF(4)",
-        "-",
-        "650",
-        "800"
-      ],
-      [
-        "I INRUSH",
-        "Control of maximum DC current drive on VREFBUF_OUT during start-up phase (5)",
-        "Control of maximum DC current drive on VREFBUF_OUT during start-up phase (5)",
-        "-",
-        "-",
-        "-",
-        "8",
-        "-"
-      ],
-      [
-        "I DDA(VREFBU F)",
-        "VREFBUF consumption from V DDA",
-        "VREFBUF consumption from V DDA",
-        "I = 0 µA load",
-        "I = 0 µA load",
-        "-",
-        "16",
-        "25"
-      ],
-      [
-        "None",
-        "None",
-        "None",
-        "I = 500 µA load",
-        "I = 500 µA load",
-        "-",
-        "18",
-        "30"
-      ],
-      [
-        "None",
-        "None",
-        "None",
-        "I = 4 mA load",
-        "I = 4 mA load",
-        "-",
-        "35",
-        "50"
       ]
     ],
     "notes": [
       "2. Difference between two consecutive codes - 1 LSB.",
       "3. Difference between measured value at Code i and the value at Code i on a line drawn between Code 0 and last Code 4095.",
-      "4. Difference between the value measured at Code (0x001) and the ideal value.",
-      "5. Difference between ideal slope of the transfer function and measured slope computed from code 0x000 and 0xFFF when buffer is OFF, and from code giving 0.2 V and (V – 0.2) V when buffer is ON."
+      "4. Difference between the value measured at Code (0x001) and the ideal value."
     ],
     "legend": "",
     "semantic_type": "",

@@ -60,8 +60,8 @@
         "ns"
       ],
       [
-        "t sr(IN) t sf(IN)",
-        "Data input setup time",
+        "t sf(IN)",
+        "time",
         "Voltage range 4",
         "3.75",
         "-",
@@ -78,8 +78,8 @@
         "ns"
       ],
       [
-        "t hr(IN) t hf(IN)",
-        "Data input hold time",
+        "t hf(IN)",
+        "time",
         "Voltage range 4",
         "1.5",
         "-",
@@ -96,8 +96,8 @@
         "ns"
       ],
       [
-        "t vr(OUT) t vf(OUT)",
-        "Data output valid time, DHQC = 0",
+        "t vr(OUT)",
+        "time, DHQC = 0",
         "Voltage range 4",
         "-",
         "13.25",
@@ -105,7 +105,7 @@
         "ns"
       ],
       [
-        "t vr(OUT) t vf(OUT)",
+        "vf(OUT)",
         "Data output valid time, DHQC = 1",
         "Voltage range 1 All prescaler values (except 0)",
         "-",
@@ -123,8 +123,8 @@
         "ns"
       ],
       [
-        "t hr(OUT) t hf(OUT)",
-        "Data output hold time DHQC = 0",
+        "t hr(OUT)",
+        "time DHQC = 0",
         "Voltage range 4",
         "8",
         "-",
@@ -132,7 +132,7 @@
         "ns"
       ],
       [
-        "t hr(OUT) t hf(OUT)",
+        "hf(OUT)",
         "Data output hold time DHQC = 1",
         "Voltage range 1 All prescaler values (except 0)",
         "t /4 - 0.5 (CLK)",
@@ -285,7 +285,12 @@
         "-"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "3. Maximum frequency values are given for a RWDS to DQ skew of maximum ±1.0 ns.",
+      "4. Activating DHQC is mandatory to reach this frequency.",
+      "5. Crossing results are in line with specification, using pairs PB10/PE9 or PE10/PB12. It exceeds slightly the specification on other CLK/NCLK pairs.",
+      "6. Data input maximum setup time does not take into account the data level switching duration."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

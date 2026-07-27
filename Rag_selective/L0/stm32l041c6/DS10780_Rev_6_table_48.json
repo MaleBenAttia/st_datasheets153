@@ -11,11 +11,10 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32l041c6.pdf#page=76",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l041c6.pdf",
-  "text_helper": "Table 48. EMS characteristics — section 6.3.10 EMC characteristics. Symbol, Parameter, Parameter, Conditions, Level/ Class.",
+  "text_helper": "Table 48. EMS characteristics — section 6.3.10 EMC characteristics. Symbol, Parameter, Conditions, Level/ Class.",
   "table_content": {
     "headers": [
       "Symbol",
-      "Parameter",
       "Parameter",
       "Conditions",
       "Level/ Class"
@@ -24,33 +23,19 @@
       [
         "V FESD",
         "Voltage limits to be applied on any I/O pin to induce a functional disturbance",
-        "Voltage limits to be applied on any I/O pin to induce a functional disturbance",
         "V = 3.3 V, LQFP48, T = +25 °C, DD A f = 32 MHz HCLK conforms to IEC 61000-4-2",
         "3B"
       ],
       [
         "V EFTB",
         "Fast transient voltage burst limits to be applied through 100 pF on V and V DD SS pins to induce a functional disturbance",
-        "Fast transient voltage burst limits to be applied through 100 pF on V and V DD SS pins to induce a functional disturbance",
         "V = 3.3 V, LQFP48, T = +25 °C, DD A f = 32 MHz HCLK conforms to IEC 61000-4-4",
         "4A"
-      ],
-      [
-        "S EMI",
-        "Peak level",
-        "30 to 130 MHz",
-        "5",
-        "5"
-      ],
-      [
-        "S EMI",
-        "Peak level",
-        "130 MHz to 1GHz",
-        "-5",
-        "-5"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Guaranteed by characterization results. Static latch-up"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

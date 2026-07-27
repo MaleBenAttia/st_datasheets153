@@ -34,7 +34,7 @@
       ],
       [
         "VDD",
-        "Standard operating voltage",
+        "voltage",
         "HSLV = 1",
         "1.71(2)",
         "-",
@@ -61,7 +61,7 @@
       ],
       [
         "VDDIO2",
-        "Supply voltage for PG[15:2] I/Os",
+        "for PG[15:2] I/Os",
         "At least one I/O in PG[15:2] used, HSLV = 1",
         "1.08",
         "-",
@@ -88,7 +88,7 @@
       ],
       [
         "VDDUSB",
-        "USB supply voltage",
+        "voltage",
         "USB not used",
         "0",
         "-",
@@ -115,7 +115,7 @@
       ],
       [
         "VDDA",
-        "Analog supply voltage",
+        "Analog supply",
         "ADC used",
         "1.62",
         "-",
@@ -156,7 +156,7 @@
         "-0.3",
         "-",
         "Min(min(VDD, VDDA, VDDUSB, VDDIO2) + 3.6, 5.5)(3) (4)",
-        "V"
+        "mA"
       ],
       [
         "VIN",
@@ -196,7 +196,7 @@
       ],
       [
         "VCORE",
-        "Internal regulator ON",
+        "regulator ON",
         "Range 2",
         "0.65",
         "0.75",
@@ -214,7 +214,7 @@
       ],
       [
         "fHCLK",
-        "AHB clock frequency",
+        "frequency",
         "Range 2",
         "-",
         "-",
@@ -231,8 +231,8 @@
         "MHz"
       ],
       [
-        "fPCLKx (x = 1, 2, 3)",
-        "APB1, APB2, APB3 clock frequency",
+        "(x = 1, 2, 3)",
+        "frequency",
         "Range 2",
         "-",
         "-",
@@ -472,33 +472,6 @@
         "Suffix 7 version",
         "110",
         "110"
-      ],
-      [
-        "tVDD",
-        "VDD rise‑time rate",
-        "-",
-        "0",
-        "∞",
-        "µs/V",
-        "µs/V"
-      ],
-      [
-        "None",
-        "VDD fall‑time rate",
-        "ULPMEN = 0",
-        "20",
-        "∞",
-        "None",
-        "None"
-      ],
-      [
-        "None",
-        "None",
-        "Standby mode, BOR level 0 selected with ULPMEN = 1",
-        "250",
-        "∞",
-        "ms/V",
-        "ms/V"
       ]
     ],
     "notes": [

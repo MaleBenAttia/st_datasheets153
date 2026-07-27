@@ -132,8 +132,8 @@
         "kΩ"
       ],
       [
-        "RAIN(2)",
-        "External input impedance Tj = 110°C",
+        "(2) RAIN",
+        "= 110°C",
         "Resolution = 10 bits",
         "-",
         "-",
@@ -312,7 +312,10 @@
         "-"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Depending on the package, VREF+ can be internally connected to VDDA and VREF- can be internally connected to VSSA.",
+      "2. The maximum value of Rain is specified to keep leakage induced offset within the specified tolerance. The tolerance is 2 LSBs."
+    ],
     "legend": [
       "The voltage booster on the ADC switches must be used when VDDA < 2.4 V (embedded I/O switches).",
       "Specified by design. Not tested in production."

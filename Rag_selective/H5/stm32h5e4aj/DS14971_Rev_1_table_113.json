@@ -33,6 +33,15 @@
         "MHz"
       ],
       [
+        "f CCKO",
+        "Output clock frequency in MASTER SPI mode",
+        "≤ 3.6 V 1.71 ≤ V DD",
+        "-",
+        "-",
+        "25",
+        "MHz"
+      ],
+      [
         "t HCCKI t LCCKI",
         "ADF_CCK[1:0] input clock high and low time",
         "In SLAVE SPI mode",
@@ -64,51 +73,6 @@
         "Data setup time with respect to ADF_CCK[1:0] input",
         "In SLAVE SPI mode: ADF_CCK[1:0] configured in input, measured on rising and falling edge",
         "4.5",
-        "-",
-        "-",
-        "ns"
-      ],
-      [
-        "t HDCCKI",
-        "Data hold time with respect to ADF_CCK[1:0] input",
-        "In SLAVE SPI mode: ADF_CCK[1:0] configured in input, measured on rising and falling edge",
-        "1",
-        "-",
-        "-",
-        "ns"
-      ],
-      [
-        "t SUCCKO",
-        "Data setup time with respect to ADF_CCK[1:0] output",
-        "In MASTER SPI mode: ADF_CCK[1:0] configured in output, measured on rising and falling edge",
-        "5.5",
-        "-",
-        "-",
-        "ns"
-      ],
-      [
-        "t HDCCKO",
-        "Data hold time with respect to ADF_CCK[1:0] output",
-        "In MASTER SPI mode: ADF_CCK[1:0] configured in output, measured on rising and falling edge",
-        "0",
-        "-",
-        "-",
-        "ns"
-      ],
-      [
-        "t SUCCKOLF",
-        "Data setup time with respect to ADF_CCK[1:0] output",
-        "In LF_MASTER SPI mode: ADF_CCK[1:0] configured in output, measured on rising and falling edge",
-        "19.5",
-        "-",
-        "-",
-        "ns"
-      ],
-      [
-        "t HDCCKOLF",
-        "Data hold time with respect to ADF_CCK[1:0] output",
-        "In LF_MASTER SPI mode: ADF_CCK[1:0] configured in output, measured on rising and falling edge",
-        "0",
         "-",
         "-",
         "ns"

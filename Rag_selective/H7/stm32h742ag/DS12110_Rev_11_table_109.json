@@ -69,86 +69,14 @@
         "-",
         "50",
         "mV"
-      ],
-      [
-        "ΣIV DD",
-        "ΣIV DD",
-        "Total current into sum of all V power lines (source)(1) DD",
-        "Total current into sum of all V power lines (source)(1) DD",
-        "620"
-      ],
-      [
-        "ΣIV SS",
-        "ΣIV SS",
-        "Total current out of sum of all V ground lines (sink)(1) SS",
-        "Total current out of sum of all V ground lines (sink)(1) SS",
-        "620"
-      ],
-      [
-        "IV DD",
-        "IV DD",
-        "Maximum current into each V power pin (source)(1) DD",
-        "Maximum current into each V power pin (source)(1) DD",
-        "100"
-      ],
-      [
-        "IV SS",
-        "IV SS",
-        "Maximum current out of each V ground pin (sink)(1) SS",
-        "Maximum current out of each V ground pin (sink)(1) SS",
-        "100"
-      ],
-      [
-        "I IO",
-        "I IO",
-        "Output current sunk by any I/O and control pin, except Px_C",
-        "Output current sunk by any I/O and control pin, except Px_C",
-        "20"
-      ],
-      [
-        "None",
-        "None",
-        "Output current sunk by Px_C pins",
-        "Output current sunk by Px_C pins",
-        "1"
-      ],
-      [
-        "ΣI (PIN)",
-        "ΣI (PIN)",
-        "Total output current sunk by sum of all I/Os and control pins(2)",
-        "Total output current sunk by sum of all I/Os and control pins(2)",
-        "140"
-      ],
-      [
-        "None",
-        "None",
-        "Total output current sourced by sum of all I/Os and control pins(2)",
-        "Total output current sourced by sum of all I/Os and control pins(2)",
-        "140"
-      ],
-      [
-        "I (3)(4) INJ(PIN)",
-        "I (3)(4) INJ(PIN)",
-        "Injected current on FT_xxx, TT_xx, RST and B pins except PA4, PA5",
-        "Injected current on FT_xxx, TT_xx, RST and B pins except PA4, PA5",
-        "-5/+0"
-      ],
-      [
-        "None",
-        "None",
-        "Injected current on PA4, PA5",
-        "Injected current on PA4, PA5",
-        "-0/0"
-      ],
-      [
-        "ΣI INJ(PIN)",
-        "ΣI INJ(PIN)",
-        "Total injected current (sum of all I/Os and control pins)(5)",
-        "Total injected current (sum of all I/Os and control pins)(5)",
-        "±25"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "2. V maximum must always be respected. Refer to Table 146: I/O current injection susceptibility for the IN",
+      "3. This formula has to be applied on power supplies related to the IO structure described by the pin definition table.",
+      "4. To sustain a voltage higher than 4V the internal pull-up/pull-down resistors must be disabled.",
+      "5. When an FT_a pin is used by an analog peripheral such as an ADC, the maximum V is 4 V. IN"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

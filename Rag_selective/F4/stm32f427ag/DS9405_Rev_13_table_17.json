@@ -47,7 +47,7 @@
       [
         "f HCLK",
         "Internal AHB clock frequency",
-        "Power Scale 2 (VOS[1:0] bits in PWR_CR register = 0x10), Regulator ON",
+        "Over- Regulator ON drive ON",
         "Over- drive ON",
         "0",
         "-",
@@ -67,7 +67,7 @@
       [
         "f HCLK",
         "Internal AHB clock frequency",
-        "Power Scale 1 (VOS[1:0] bits in PWR_CR register= 0x11), Regulator ON",
+        "Over- Regulator ON drive ON",
         "Over- drive ON",
         "0",
         "-",
@@ -196,7 +196,7 @@
       ],
       [
         "V 12",
-        "Regulator OFF: 1.2V external voltage must be supplied from external regulator on V /V pins(6) CAP_1 CAP_2",
+        "external regulator on",
         "Max frequency 144MHz",
         "Max frequency 144MHz",
         "1.20",
@@ -206,7 +206,7 @@
       ],
       [
         "V 12",
-        "Regulator OFF: 1.2V external voltage must be supplied from external regulator on V /V pins(6) CAP_1 CAP_2",
+        "pins(6) /V V CAP_1 CAP_2",
         "Max frequency 168MHz",
         "Max frequency 168MHz",
         "1.26",
@@ -223,176 +223,6 @@
         "-",
         "5.5",
         "V"
-      ],
-      [
-        "None",
-        "None",
-        "V ≤ 2V DD",
-        "V ≤ 2V DD",
-        "-0.3",
-        "-",
-        "5.2",
-        "None"
-      ],
-      [
-        "None",
-        "Input voltage on TTa pins",
-        "Input voltage on TTa pins",
-        "Input voltage on TTa pins",
-        "-0.3",
-        "-",
-        "V + DDA 0.3",
-        "None"
-      ],
-      [
-        "None",
-        "Input voltage on BOOT0 pin",
-        "Input voltage on BOOT0 pin",
-        "Input voltage on BOOT0 pin",
-        "0",
-        "-",
-        "9",
-        "None"
-      ],
-      [
-        "P D",
-        "Power dissipation at T = 85°C A for suffix 6 or T = 105°C for A suffix 7(8)",
-        "LQFP100",
-        "LQFP100",
-        "-",
-        "-",
-        "465",
-        "mW"
-      ],
-      [
-        "None",
-        "None",
-        "WLCSP143",
-        "WLCSP143",
-        "-",
-        "-",
-        "641",
-        "None"
-      ],
-      [
-        "None",
-        "None",
-        "LQFP144",
-        "LQFP144",
-        "-",
-        "-",
-        "500",
-        "None"
-      ],
-      [
-        "None",
-        "None",
-        "UFBGA169",
-        "UFBGA169",
-        "-",
-        "-",
-        "385",
-        "None"
-      ],
-      [
-        "None",
-        "None",
-        "LQFP176",
-        "LQFP176",
-        "-",
-        "-",
-        "526",
-        "None"
-      ],
-      [
-        "None",
-        "None",
-        "UFBGA176",
-        "UFBGA176",
-        "-",
-        "-",
-        "513",
-        "None"
-      ],
-      [
-        "None",
-        "None",
-        "LQFP208",
-        "LQFP208",
-        "-",
-        "-",
-        "1053",
-        "None"
-      ],
-      [
-        "None",
-        "None",
-        "TFBGA216",
-        "TFBGA216",
-        "-",
-        "-",
-        "690",
-        "None"
-      ],
-      [
-        "TA",
-        "Ambient temperature for 6 suffix version",
-        "Maximum power dissipation",
-        "Maximum power dissipation",
-        "-40",
-        "-",
-        "85",
-        "°C"
-      ],
-      [
-        "None",
-        "None",
-        "Low power dissipation(9)",
-        "Low power dissipation(9)",
-        "-40",
-        "-",
-        "105",
-        "None"
-      ],
-      [
-        "None",
-        "Ambient temperature for 7 suffix version",
-        "Maximum power dissipation",
-        "Maximum power dissipation",
-        "-40",
-        "-",
-        "105",
-        "°C"
-      ],
-      [
-        "None",
-        "None",
-        "Low power dissipation(9)",
-        "Low power dissipation(9)",
-        "-40",
-        "-",
-        "125",
-        "None"
-      ],
-      [
-        "TJ",
-        "Junction temperature range",
-        "6 suffix version",
-        "6 suffix version",
-        "-40",
-        "-",
-        "105",
-        "°C"
-      ],
-      [
-        "None",
-        "None",
-        "7 suffix version",
-        "7 suffix version",
-        "-40",
-        "-",
-        "125",
-        "None"
       ]
     ],
     "notes": [
@@ -402,9 +232,7 @@
       "4. If a V pin is present, it must respect the following condition: V -V < 1.2V. REF+ DDA REF+",
       "5. It is recommended to power V and V from the same source. A maximum difference of 300mV between V and V DD DDA DD DDA",
       "6. The overdrive mode is not supported when the internal regulator is OFF.",
-      "7. To sustain a voltage higher than VDD+0.3, the internal pull-up and pull-down resistors must be disabled",
-      "8. If T is lower, higher P values are allowed as long as T does not exceed T . A D J Jmax",
-      "9. In low-power dissipation state, T can be extended to this range as long as T does not exceed T . A J Jmax"
+      "7. To sustain a voltage higher than VDD+0.3, the internal pull-up and pull-down resistors must be disabled"
     ],
     "legend": "",
     "semantic_type": "",

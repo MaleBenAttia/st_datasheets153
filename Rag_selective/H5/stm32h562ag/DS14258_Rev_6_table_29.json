@@ -11,16 +11,16 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32h562ag.pdf#page=140",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h562ag.pdf",
-  "text_helper": "Table 29. Typical and maximum current consumption in Run mode, code with data processing running from flash memory, 1-way instruction cache ON, PREFETCH ON — section 5.3.7 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, f HCLK (MHz), +7 autres.",
+  "text_helper": "Table 29. Typical and maximum current consumption in Run mode, code with data processing running from flash memory, 1-way instruction cache ON, PREFETCH ON — section 5.3.7 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, f HCLK (MHz) / (MHz), +7 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions",
       "Conditions",
-      "f HCLK (MHz)",
-      "Typ LDO",
-      "Typ SMPS",
+      "f HCLK (MHz) / (MHz)",
+      "Typ LDO / LDO",
+      "Typ SMPS / SMPS",
       "Max(1)(2) / T = J 25°C",
       "Max(1)(2) / T = J 85°C",
       "Max(1)(2) / T = J 105°C",
@@ -59,7 +59,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "VOS1 All peripherals disabled",
         "VOS1",
         "200",
         "20.1",
@@ -73,7 +73,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "VOS1",
         "VOS1",
         "180",
         "18.5",
@@ -86,8 +86,8 @@
       ],
       [
         "I DD(Run)",
-        "Supply current in Run mode",
-        "All peripherals disabled",
+        "in Run mode",
+        "disabled",
         "VOS1",
         "150",
         "15.4",
@@ -101,7 +101,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "VOS2",
         "VOS2",
         "150",
         "14.0",
@@ -129,7 +129,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "VOS3",
         "VOS3",
         "100",
         "8.9",
@@ -155,7 +155,10 @@
         "mA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Evaluated by characterization - Not tested in production.",
+      "2. The maximum values are given for LDO regulator ON. Refer to Section 5.3.3 for the SMPS maximum current consumption."
+    ],
     "legend": [
       "running from flash memory, 1-way instruction cache ON, PREFETCH ON"
     ],

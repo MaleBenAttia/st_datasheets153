@@ -11,14 +11,43 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f410c8.pdf#page=100",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f410c8.pdf",
-  "text_helper": "Table 61. SCL frequency (f = 50 MHz, V = V = 3.3 V) 100 PCLK1 DD DD_I2C — section 6.3.19 Communications interfaces. f (kHz) SCL, I2C_CCR value / R = 4.7 kΩ P. (table vide)",
+  "text_helper": "Table 61. SCL frequency (f = 50 MHz, V = V = 3.3 V) 100 PCLK1 DD DD_I2C — section 6.3.19 Communications interfaces. f (kHz) SCL, I2C_CCR value / R = 4.7 kΩ P.",
   "table_content": {
     "headers": [
       "f (kHz) SCL",
       "I2C_CCR value / R = 4.7 kΩ P"
     ],
-    "rows": [],
-    "notes": [],
+    "rows": [
+      [
+        "400",
+        "0x8019"
+      ],
+      [
+        "300",
+        "0x8021"
+      ],
+      [
+        "200",
+        "0x8032"
+      ],
+      [
+        "100",
+        "0x0096"
+      ],
+      [
+        "50",
+        "0x012C"
+      ],
+      [
+        "20",
+        "0x02EE"
+      ]
+    ],
+    "notes": [
+      "1. R = External pull-up resistance, f = I2C speed, P SCL",
+      "2. For speeds around 200 kHz, the tolerance on the achieved speed is of ±5%. For other speed ranges, the tolerance on the achieved speed ±2%. These variations depend on the accuracy of the external",
+      "3. Can be limited. Maximum supported value can be retrieved by referring to the following formulas: t"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

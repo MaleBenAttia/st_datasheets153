@@ -58,37 +58,12 @@
         "-",
         "17",
         "ns"
-      ],
-      [
-        "V IH(NRST)",
-        "NRST input high-level voltage",
-        "-",
-        "0.7 × V DDIOx",
-        "-",
-        "-",
-        "-"
-      ],
-      [
-        "t NF(NRST)",
-        "NRST input not-filtered pulse",
-        "1.71 V ≤ V ≤ 3.6 V DD",
-        "330",
-        "-",
-        "-",
-        "-"
-      ],
-      [
-        "t NF(NRST)",
-        "NRST input not-filtered pulse",
-        "1.58 V ≤ V ≤ 3.6 V DD",
-        "1000",
-        "-",
-        "-",
-        "-"
       ]
     ],
     "notes": [
-      "2. The I/O speed is configured using the OSPEEDRy[1:0] bits. Refer to the product reference manual for a description of GPIO port configuration register."
+      "1. Specified by design. Not tested in production. Figure 36. Output AC characteristics definition",
+      "2. The pull-up is designed with a true resistance in series with a switchable PMOS. This PMOS contribution to the series resistance is minimal (~10% order).",
+      "3. The external capacitor on NRST must be placed as close as possible to the device. 268/385 DS13633 Rev 3"
     ],
     "legend": "",
     "semantic_type": "",

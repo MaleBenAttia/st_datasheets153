@@ -1,9 +1,9 @@
 {
   "table_id": "table_66",
-  "document": "DS15137 Rev 2 - Table 66. IWDG min/max timeout period at 32 kHz (LSI).",
+  "document": "DS15137 Rev 2 - Table 66. IWDG min/max timeout period at 32 kHz (LSI)",
   "rev": "Rev 2",
   "table_number": "66",
-  "title": "Table 66. IWDG min/max timeout period at 32 kHz (LSI).",
+  "title": "Table 66. IWDG min/max timeout period at 32 kHz (LSI)",
   "page": 104,
   "section": "5.3.23 Timer characteristics",
   "section_title": "Timer characteristics",
@@ -11,7 +11,7 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32c5a3cg.pdf#page=104",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c5a3cg.pdf",
-  "text_helper": "Table 66. IWDG min/max timeout period at 32 kHz (LSI). — section 5.3.23 Timer characteristics. Prescaler divider, PR[2:0] bits, Min timeout RL[11:0] = 0x000, Max timeout RL[11:0] = 0xFFF, Unit.",
+  "text_helper": "Table 66. IWDG min/max timeout period at 32 kHz (LSI) — section 5.3.23 Timer characteristics. Prescaler divider, PR[2:0] bits, Min timeout RL[11:0] = 0x000, Max timeout RL[11:0] = 0xFFF, Unit.",
   "table_content": {
     "headers": [
       "Prescaler divider",
@@ -71,7 +71,9 @@
         "ms"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. The minimum SDA data setup time during open-drain-mode is 3 ns, as specified in the MIPI Alliance specification for I3C."
+    ],
     "legend": [
       "Note: For the values in this table, the exact timings still depend on the phasing of the APB interface clock versus the LSI clock, so that there is",
       "always a full RC period of uncertainty."

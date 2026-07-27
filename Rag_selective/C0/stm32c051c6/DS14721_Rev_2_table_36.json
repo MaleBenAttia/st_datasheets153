@@ -34,8 +34,8 @@
       ],
       [
         "t WUSLEEP",
-        "Wake-up time from Sleep to Run mode",
-        "HCLK = HSI48/4 = 12 MHz",
+        "mode",
+        "Transiting to Run-mode execution in flash memory not powered during Sleep mode",
         "Transiting to Run-mode execution in flash memory not powered during Sleep mode",
         "4.74",
         "5.02",
@@ -52,8 +52,8 @@
       ],
       [
         "t WULPSTOP",
-        "Wake-up time from Stop mode",
-        "Clock after wake-up is HCLK = HSI48/4 = 12 MHz",
+        "from Stop mode",
+        "Transiting to Run-mode execution in = HSI48/4 = 12 flash memory not powered during MHz Stop mode",
         "Transiting to Run-mode execution in flash memory not powered during Stop mode",
         "5.9",
         "6.4",
@@ -62,7 +62,7 @@
       [
         "t WULPSTOP",
         "Wake-up time from Stop mode",
-        "Clock after wake-up is HCLK = HSI48/4 = 12 MHz",
+        "Transiting to Run-mode execution in SRAM",
         "Transiting to Run-mode execution in SRAM",
         "2.5",
         "2.9",
@@ -87,7 +87,9 @@
         "µs"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Specified by design. Not tested in production."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

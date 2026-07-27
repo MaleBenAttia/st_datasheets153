@@ -11,20 +11,20 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32h730ab.pdf#page=121",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h730ab.pdf",
-  "text_helper": "Table 26. Typical consumption in Run mode and corresponding performance versus code position — section 6.3.8 Supply current characteristics. Symbol, Parameter, Conditions / Peripheral, Conditions / Code, f rcc_c_c k (MHz), +7 autres.",
+  "text_helper": "Table 26. Typical consumption in Run mode and corresponding performance versus code position — section 6.3.8 Supply current characteristics. Symbol, Parameter, Conditions / Peripheral, Conditions / Code, f rcc_c_c k (MHz) / (MHz), +7 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions / Peripheral",
       "Conditions / Code",
-      "f rcc_c_c k (MHz)",
+      "f rcc_c_c k (MHz) / (MHz)",
       "Coremark",
-      "Typ LDO regulator ON",
-      "Typ SMPS ON",
+      "Typ LDO regulator ON / regulator ON",
+      "Typ SMPS ON / SMPS ON",
       "Unit",
-      "LDO I / DD Coremark",
-      "SMPS I / DD Coremark",
+      "LDO I / DD Coremark / Coremark",
+      "SMPS I / DD Coremark / I / DD Coremark",
       "Unit"
     ],
     "rows": [
@@ -45,7 +45,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals disabled, cache ON",
+        "FLASH All",
         "FLASH",
         "550",
         "2778",
@@ -59,7 +59,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals disabled, cache ON",
+        "AXI peripherals SRAM disabled,",
         "AXI SRAM",
         "550",
         "2778",
@@ -72,8 +72,8 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode",
-        "All peripherals disabled, cache ON",
+        "Supply",
+        "SRAM 1",
         "SRAM 1",
         "550",
         "2778",
@@ -82,12 +82,12 @@
         "mA",
         "54.0",
         "31.0",
-        "µA/ Core- mark"
+        "µA/"
       ],
       [
         "I DD",
-        "Supply current in Run mode",
-        "All peripherals disabled, cache ON",
+        "current in",
+        "SRAM 4",
         "SRAM 4",
         "550",
         "2778",
@@ -96,7 +96,7 @@
         "mA",
         "52.2",
         "30.1",
-        "µA/ Core- mark"
+        "Core-"
       ],
       [
         "I DD",
@@ -115,7 +115,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals disabled cache OFF",
+        "All AXI peripherals SRAM",
         "AXI SRAM",
         "550",
         "1271",
@@ -129,7 +129,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals disabled cache OFF",
+        "FFO ehcac 1 MARS",
         "SRAM 1",
         "550",
         "790",
@@ -143,7 +143,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals disabled cache OFF",
+        "SRAM 4",
         "SRAM 4",
         "550",
         "723",
@@ -155,7 +155,11 @@
         "µA/ Core- mark"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Guaranteed by characterization results.",
+      "2. Refer to Section 6.3.3: SMPS step-down converter for the SMPS maximum consumption.",
+      "3. The parameter values given in the above table for the SMPS regulator are extrapolated from the LDO consumption and typical SMPS efficiency factors."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

@@ -11,14 +11,14 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32h745bg.pdf#page=115",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h745bg.pdf",
-  "text_helper": "Table 29. Typical and maximum current consumption in Run mode, code with data processing running from flash memory, only Arm Cortex-M7 running, cache OFF, LDO regulator ON — section 6.3.7 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, f CPU1 (MHz), +7 autres.",
+  "text_helper": "Table 29. Typical and maximum current consumption in Run mode, code with data processing running from flash memory, only Arm Cortex-M7 running, cache OFF, LDO regulator ON — section 6.3.7 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, f CPU1 (MHz) / (MHz), +7 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions",
       "Conditions",
-      "f CPU1 (MHz)",
+      "f CPU1 (MHz) / (MHz)",
       "Typ",
       "Max(2) / Tj=25° C",
       "Max(2) / Tj=85° C",
@@ -45,7 +45,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "All VOS1",
         "VOS1",
         "400",
         "73",
@@ -59,7 +59,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "VOS2 disabled",
         "VOS2",
         "300",
         "52",
@@ -72,8 +72,8 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode",
-        "All peripherals disabled",
+        "Supply",
+        "VOS3",
         "VOS3",
         "200",
         "34",
@@ -86,7 +86,7 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode",
+        "Run mode",
         "All peripherals enabled",
         "VOS0",
         "480",
@@ -101,7 +101,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals enabled",
+        "All VOS1",
         "VOS1",
         "400",
         "135",
@@ -115,7 +115,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals enabled",
+        "VOS2 enabled",
         "VOS2",
         "300",
         "100",
@@ -129,7 +129,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals enabled",
+        "VOS3",
         "VOS3",
         "200",
         "70",
@@ -141,7 +141,9 @@
         "mA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "2. Guaranteed by characterization results, unless otherwise specified."
+    ],
     "legend": [
       "running from flash memory, only Arm Cortex-M7 running, cache OFF,",
       "LDO regulator ON(1)"

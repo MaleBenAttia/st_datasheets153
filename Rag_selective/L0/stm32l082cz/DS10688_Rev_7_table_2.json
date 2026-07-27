@@ -11,10 +11,10 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32l082cz.pdf#page=16",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l082cz.pdf",
-  "text_helper": "Table 2. Functionalities depending on the operating power supply range — section 3.1 Low-power modes. Operating power supply range(1), Functionalities depending on the operating power supply range / DAC and ADC operation, Functionalities depending on the operating power supply range / Dynamic vol...",
+  "text_helper": "Table 2. Functionalities depending on the operating power supply range — section 3.1 Low-power modes. Operating power supply range(1) / range(1), Functionalities depending on the operating power supply range / DAC and ADC operation, Functionalities depending on the operating power supply range / ...",
   "table_content": {
     "headers": [
-      "Operating power supply range(1)",
+      "Operating power supply range(1) / range(1)",
       "Functionalities depending on the operating power supply range / DAC and ADC operation",
       "Functionalities depending on the operating power supply range / Dynamic voltage scaling range",
       "Functionalities depending on the operating power supply range / USB"
@@ -51,7 +51,11 @@
         "Functional(3)"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. GPIO speed depends on V voltage range. Refer to Table 59: I/O AC characteristics for more information DD",
+      "2. CPU frequency changes from initial to final must respect \"fcpu initial <4*fcpu final\". It must also respect 5 μs delay between two changes. For example to switch from 4.2 MHz to 32 MHz, you can switch from 4.2",
+      "3. To be USB compliant from the I/O voltage standpoint, the minimum V is 3.0 V. DD_USB"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

@@ -34,7 +34,7 @@
       ],
       [
         "f HSE_ext",
-        "User external clock source frequency",
+        "frequency",
         "CSS is off, PLL not used",
         "0",
         "8",
@@ -85,48 +85,10 @@
         "2.6",
         "-",
         "pF"
-      ],
-      [
-        "V LSEH",
-        "OSC32_IN input pin high level voltage",
-        "OSC32_IN input pin high level voltage",
-        "0.7V DD",
-        "-",
-        "V DD",
-        "V"
-      ],
-      [
-        "V LSEL",
-        "OSC32_IN input pin low level voltage",
-        "OSC32_IN input pin low level voltage",
-        "V SS",
-        "-",
-        "0.3V DD",
-        "0.3V DD"
-      ],
-      [
-        "t w(LSEH) t w(LSEL)",
-        "OSC32_IN high or low time",
-        "OSC32_IN high or low time",
-        "465",
-        "-",
-        "-",
-        "ns"
-      ],
-      [
-        "t r(LSE) t f(LSE)",
-        "OSC32_IN rise or fall time",
-        "OSC32_IN rise or fall time",
-        "-",
-        "-",
-        "10",
-        "10"
       ]
     ],
     "notes": [
-      "1. Guaranteed by design. Figure 14. High-speed external clock source AC timing diagram",
-      "3. The relatively low value of the RF resistor offers a good protection against issues resulting from use in a humid environment, due to the induced leakage and the bias condition change. However, it is recommended to take this point into",
-      "4. t is the startup time measured from the moment it is enabled (by software) to a stabilized 8 MHz oscillation is SU(HSE)"
+      "1. Guaranteed by design. Figure 14. High-speed external clock source AC timing diagram"
     ],
     "legend": "",
     "semantic_type": "",

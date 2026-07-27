@@ -72,7 +72,7 @@
       [
         "R (2) LOAD",
         "Resistive load",
-        "DAC output buffer ON",
+        "buffer ON R LOAD connected to V DDA",
         "R LOAD connected to V DDA",
         "25",
         "-",
@@ -122,7 +122,7 @@
         "-",
         "V DDA - 0.2",
         "V",
-        "It gives the maximum output excursion of the DAC. It corresponds to 12-bit input code (0x0E0) to (0xF1C) at V = 3.6V and (0x1C7) to REF+ (0xE38) at V = 1.7V REF+"
+        "= 3.6V and (0x1C7) to V REF+ (0xE38) at V = 1.7V REF+"
       ],
       [
         "DAC_O UT min(2)",
@@ -144,7 +144,7 @@
         "-",
         "V REF+ - 1LSB",
         "V",
-        "It gives the maximum output excursion of the DAC."
+        "excursion of the DAC."
       ],
       [
         "I (4) VREF+",
@@ -159,7 +159,7 @@
       ],
       [
         "I (4) VREF+",
-        "DAC DC V current REF consumption in quiescent mode (Standby mode)",
+        "quiescent mode (Standby mode)",
         "-",
         "-",
         "-",
@@ -178,160 +178,6 @@
         "380",
         "µA",
         "With no load, middle code (0x800) on the inputs"
-      ],
-      [
-        "None",
-        "None",
-        "-",
-        "-",
-        "-",
-        "475",
-        "625",
-        "µA",
-        "With no load, worst code (0xF1C) at V = 3.6V in REF+ terms of DC consumption on the inputs"
-      ],
-      [
-        "DNL(4)",
-        "Differential non linearity Difference between two consecutive code- 1LSB)",
-        "-",
-        "-",
-        "-",
-        "-",
-        "±0.5",
-        "LSB",
-        "Given for the DAC in 10-bit configuration."
-      ],
-      [
-        "None",
-        "None",
-        "-",
-        "-",
-        "-",
-        "-",
-        "±2",
-        "LSB",
-        "Given for the DAC in 12-bit configuration."
-      ],
-      [
-        "INL(4)",
-        "Integral non linearity (difference between measured value at Code i and the value at Code i on a line drawn between Code 0 and last Code 1023)",
-        "-",
-        "-",
-        "-",
-        "-",
-        "±1",
-        "LSB",
-        "Given for the DAC in 10-bit configuration."
-      ],
-      [
-        "None",
-        "None",
-        "-",
-        "-",
-        "-",
-        "-",
-        "±4",
-        "LSB",
-        "Given for the DAC in 12-bit configuration."
-      ],
-      [
-        "Offset(4)",
-        "Offset error (difference between measured value at Code (0x800) and the ideal value = V /2) REF+",
-        "-",
-        "-",
-        "-",
-        "-",
-        "±10",
-        "mV",
-        "Given for the DAC in 12-bit configuration"
-      ],
-      [
-        "None",
-        "None",
-        "-",
-        "-",
-        "-",
-        "-",
-        "±3",
-        "LSB",
-        "Given for the DAC in 10-bit at V = 3.6V REF+"
-      ],
-      [
-        "None",
-        "None",
-        "-",
-        "-",
-        "-",
-        "-",
-        "±12",
-        "LSB",
-        "Given for the DAC in 12-bit at V = 3.6V REF+"
-      ],
-      [
-        "Gain error(4)",
-        "Gain error",
-        "-",
-        "-",
-        "-",
-        "-",
-        "±0.5",
-        "%",
-        "Given for the DAC in 12-bit configuration"
-      ],
-      [
-        "t SETTLIN (4) G",
-        "Settling time (full scale: for a 10-bit input code transition between the lowest and the highest input codes when DAC_OUT reaches final value ±4LSB",
-        "-",
-        "-",
-        "-",
-        "3",
-        "6",
-        "µs",
-        "DAOL Ωk 5 ≥ R DAOL ,Fp 05 ≤ C"
-      ],
-      [
-        "THD(4)",
-        "Total Harmonic Distortion Buffer ON",
-        "-",
-        "-",
-        "-",
-        "-",
-        "-",
-        "dB",
-        "DAOL Ωk 5 ≥ R DAOL ,Fp 05 ≤ C"
-      ],
-      [
-        "Update rate(2)",
-        "Max frequency for a correct DAC_OUT change when small variation in the input code (from code i to i+1LSB)",
-        "-",
-        "-",
-        "-",
-        "-",
-        "1",
-        "MS/ s",
-        "DAOL Ωk 5 ≥ R DAOL ,Fp 05 ≤ C"
-      ],
-      [
-        "t ( WAKEUP 4)",
-        "Wakeup time from off state (Setting the ENx bit in the DAC Control register)",
-        "-",
-        "-",
-        "-",
-        "6.5",
-        "10",
-        "µs",
-        "C ≤ 50 pF, R ≥ 5 kΩ LOAD LOAD input code between lowest and highest possible ones."
-      ],
-      [
-        "PSRR+ (2)",
-        "Power supply rejection ratio (to V ) (static DDA DC measurement)",
-        "-",
-        "-",
-        "-",
-        "–67",
-        "–40",
-        "dB",
-        "No R , C = 50 pF LOAD LOAD"
       ]
     ],
     "notes": [

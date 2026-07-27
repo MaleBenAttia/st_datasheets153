@@ -11,11 +11,10 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32c091kb.pdf#page=69",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c091kb.pdf",
-  "text_helper": "Table 45. EMS characteristics — section 5.3.10 EMC characteristics. Symbol, Parameter, Parameter, Conditions, Level/ Class.",
+  "text_helper": "Table 45. EMS characteristics — section 5.3.10 EMC characteristics. Symbol, Parameter, Conditions, Level/ Class.",
   "table_content": {
     "headers": [
       "Symbol",
-      "Parameter",
       "Parameter",
       "Conditions",
       "Level/ Class"
@@ -24,40 +23,20 @@
       [
         "V FESD",
         "Voltage limits to be applied on any I/O pin to induce a functional disturbance",
-        "Voltage limits to be applied on any I/O pin to induce a functional disturbance",
         "V = 3.3 V, T = +25 °C, DD A f = f = 48 MHz, LQFP64, HSE HCLK conforming to IEC 61000-4-2",
         "2B"
       ],
       [
         "V FTB",
         "Fast transient voltage burst limits to be applied through 100 pF on V and V pins to induce a DD SS functional disturbance",
-        "Fast transient voltage burst limits to be applied through 100 pF on V and V pins to induce a DD SS functional disturbance",
         "V = 3.3 V, T = +25 °C, DD A f = f = 48 MHz, LQFP64, HSE HCLK conforming to IEC 61000-4-2",
         "4B"
-      ],
-      [
-        "S EMI",
-        "Peak(1)",
-        "30 MHz to 130 MHz",
-        "8",
-        "8"
-      ],
-      [
-        "S EMI",
-        "Peak(1)",
-        "130 MHz to 1 GHz",
-        "6",
-        "6"
-      ],
-      [
-        "S EMI",
-        "Peak(1)",
-        "1 GHz to 2 GHz",
-        "7",
-        "7"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Refer to AN1709, section EMI radiated test",
+      "2. Refer to AN1709, section EMI level classification"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

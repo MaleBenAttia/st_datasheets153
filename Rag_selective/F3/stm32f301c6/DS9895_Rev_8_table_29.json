@@ -11,18 +11,18 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f301c6.pdf#page=62",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f301c6.pdf",
-  "text_helper": "Table 29. Typical and maximum current consumption from VDD supply at VDD = 3.6V — section 6.3.5 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK, All peripherals enabled / Typ, +8 autres.",
+  "text_helper": "Table 29. Typical and maximum current consumption from VDD supply at VDD = 3.6V — section 6.3.5 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK, All peripherals enabled / Typ / 25 °C 85 °C 105 °C, +8 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions",
       "f HCLK",
-      "All peripherals enabled / Typ",
+      "All peripherals enabled / Typ / 25 °C 85 °C 105 °C",
       "All peripherals enabled / Max @ T (1) A / 25 °C",
       "All peripherals enabled / Max @ T (1) A / 85 °C",
       "All peripherals enabled / Max @ T (1) A / 105 °C",
-      "All peripherals disabled / Typ",
+      "All peripherals disabled / Typ / 25 °C 85 °C 105 °C",
       "All peripherals disabled / Max @ T (1) A / 25 °C",
       "All peripherals disabled / Max @ T (1) A / 85 °C",
       "All peripherals disabled / Max @ T (1) A / 105 °C",
@@ -62,7 +62,7 @@
       [
         "I DD",
         "Supply current in Run mode, executing from Flash",
-        "External clock (HSE bypass)",
+        "External",
         "48 MHz",
         "30.8",
         "33.6",
@@ -77,7 +77,7 @@
       [
         "I DD",
         "Supply current in Run mode, executing from Flash",
-        "External clock (HSE bypass)",
+        "clock (HSE",
         "32 MHz",
         "21.0",
         "22.9",
@@ -91,7 +91,7 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode, executing from Flash",
+        "Supply",
         "External clock (HSE bypass)",
         "24 MHz",
         "16.0",
@@ -106,7 +106,7 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode, executing from Flash",
+        "Run",
         "External clock (HSE bypass)",
         "8 MHz",
         "5.4",
@@ -121,7 +121,7 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode, executing from Flash",
+        "mode,",
         "External clock (HSE bypass)",
         "1 MHz",
         "1.1",
@@ -136,7 +136,7 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode, executing from Flash",
+        "from Flash",
         "Internal clock (HSI)",
         "64 MHz",
         "37.6",
@@ -167,7 +167,7 @@
       [
         "I DD",
         "Supply current in Run mode, executing from Flash",
-        "Internal clock (HSI)",
+        "clock (HSI)",
         "32 MHz",
         "19.5",
         "22.0",
@@ -735,7 +735,11 @@
         "96"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Current consumption from the V supply is independent of whether the peripherals are on or off. Furthermore when the DDA",
+      "2. Guaranteed by characterization results.",
+      "3. Data based on characterization results and tested in production. Tab l e 31. Typical and maximum V consumption in Stop and Standby modes"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

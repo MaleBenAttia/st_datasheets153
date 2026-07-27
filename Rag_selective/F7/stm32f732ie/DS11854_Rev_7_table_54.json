@@ -35,7 +35,7 @@
       [
         "t ERASE16KB",
         "Sector (16 Kbytes) erase time",
-        "T = 0 to +40 °C A V = 3.3 V DD V = 8.5 V PP",
+        "= 0 to +40 °C T A = 3.3 V V DD = 8.5 V V PP",
         "-",
         "180",
         "-",
@@ -44,7 +44,7 @@
       [
         "t ERASE128KB",
         "Sector (128 Kbytes) erase time",
-        "T = 0 to +40 °C A V = 3.3 V DD V = 8.5 V PP",
+        "A = 3.3 V V DD",
         "-",
         "900",
         "-",
@@ -105,7 +105,11 @@
         "hour"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Guaranteed by characterization results.",
+      "2. The maximum programming time is measured after 10 K erase operations.",
+      "3. V should only be connected during programming/erasing. PP"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

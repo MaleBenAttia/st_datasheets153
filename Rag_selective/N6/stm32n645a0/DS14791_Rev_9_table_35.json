@@ -19,7 +19,7 @@
       "Conditions",
       "Conditions",
       "frcc_c_ck (MHz)",
-      "SMPS external / Typ",
+      "SMPS external / Typ / Typ T = T = T = T = J J J J 25°C 85°C 105°C 125°C",
       "SMPS external / Max(1) / T = J 25°C",
       "SMPS external / Max(1) / T = J 85°C",
       "SMPS external / Max(1) / T = J 105°C",
@@ -42,7 +42,7 @@
       ],
       [
         "I DDA1V8",
-        "Code with data processing running from ITCM(2) HSI, V = 1.8 V DD",
+        "disabled VOS low processing running",
         "All peripherals disabled",
         "VOS low",
         "600(4)",
@@ -55,7 +55,7 @@
       ],
       [
         "I DDA1V8",
-        "Code with data processing running from ITCM(2) HSI, V = 1.8 V DD",
+        "from VOS high All peripherals HSI, V = 1.8 V DD enabled VOS low",
         "All peripherals enabled",
         "VOS high",
         "800(3)",
@@ -68,7 +68,7 @@
       ],
       [
         "I DDA1V8",
-        "Code with data processing running from ITCM(2) HSI, V = 1.8 V DD",
+        "enabled VOS low",
         "All peripherals enabled",
         "VOS low",
         "600(4)",
@@ -94,7 +94,7 @@
       ],
       [
         "I DDA1V8",
-        "Code with data processing running from ITCM (2) HSE, V = 1.8 V DD",
+        "disabled VOS low processing running",
         "All peripherals disabled",
         "VOS low",
         "600(4)",
@@ -107,7 +107,7 @@
       ],
       [
         "I DDA1V8",
-        "Code with data processing running from ITCM (2) HSE, V = 1.8 V DD",
+        "from ITCM VOS high All peripherals HSE, V = 1.8 V DD enabled VOS low",
         "All peripherals enabled",
         "VOS high",
         "800(3)",
@@ -120,7 +120,7 @@
       ],
       [
         "I DDA1V8",
-        "Code with data processing running from ITCM (2) HSE, V = 1.8 V DD",
+        "enabled VOS low",
         "All peripherals enabled",
         "VOS low",
         "600(4)",
@@ -146,7 +146,7 @@
       ],
       [
         "I DDA1V8",
-        "Code with data processing running from AXI-SRAM2, Cache ON (2) HSI, V = 1.8 V DD",
+        "disabled processing running VOS low",
         "All peripherals disabled",
         "VOS low",
         "600(4)",
@@ -159,7 +159,7 @@
       ],
       [
         "I DDA1V8",
-        "Code with data processing running from AXI-SRAM2, Cache ON (2) HSI, V = 1.8 V DD",
+        "VOS high (2) Cache ON All peripherals = 1.8 V HSI, V enabled VOS low DD",
         "All peripherals enabled",
         "VOS high",
         "800(3)",
@@ -172,7 +172,7 @@
       ],
       [
         "I DDA1V8",
-        "Code with data processing running from AXI-SRAM2, Cache ON (2) HSI, V = 1.8 V DD",
+        "= 1.8 V HSI, V enabled VOS low DD",
         "All peripherals enabled",
         "VOS low",
         "600(4)",
@@ -198,7 +198,7 @@
       ],
       [
         "I DDA1V8",
-        "Code with data processing running from AXI-SRAM2, Cache OFF (2) HSE, V = 1.8 V DD",
+        "disabled processing running VOS low",
         "All peripherals disabled",
         "VOS low",
         "600(4)",
@@ -211,7 +211,7 @@
       ],
       [
         "I DDA1V8",
-        "Code with data processing running from AXI-SRAM2, Cache OFF (2) HSE, V = 1.8 V DD",
+        "VOS high (2) Cache OFF All peripherals HSE, V = 1.8 V enabled VOS low DD",
         "All peripherals enabled",
         "VOS high",
         "800(3)",
@@ -224,7 +224,7 @@
       ],
       [
         "I DDA1V8",
-        "Code with data processing running from AXI-SRAM2, Cache OFF (2) HSE, V = 1.8 V DD",
+        "HSE, V = 1.8 V enabled VOS low DD",
         "All peripherals enabled",
         "VOS low",
         "600(4)",
@@ -236,7 +236,12 @@
         "mA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Guaranteed by characterization results unless otherwise specified.",
+      "2. Data are in DTCM for best computation performance, cache has no influence on consumption in this case.",
+      "3. cpu_overdrive range frequency.",
+      "4. cpu_nominal range frequency. Note: Power consumption is higher due to VCO frequency (800 MHz for F at 800 MHz HSI,"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

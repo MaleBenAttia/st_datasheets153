@@ -33,7 +33,7 @@
       [
         "EO",
         "Offset error",
-        "f = 24 MHz, PCLK2 f = 12 MHz, R < 10 kΩ, ADC AIN V = 3 V to 3.6 V DDA V = V REF+ DDA T = 25 °C A Measurements made after ADC calibration",
+        "V V 6.3 ot V 3 = NIA CDA",
         "±1",
         "±2",
         "LSB"
@@ -41,7 +41,7 @@
       [
         "EG",
         "Gain error",
-        "f = 24 MHz, PCLK2 f = 12 MHz, R < 10 kΩ, ADC AIN V = 3 V to 3.6 V DDA V = V REF+ DDA T = 25 °C A Measurements made after ADC calibration",
+        "= V V REF+ DDA",
         "±0.5",
         "±1.5",
         "LSB"
@@ -49,7 +49,7 @@
       [
         "ED",
         "Differential linearity error",
-        "f = 24 MHz, PCLK2 f = 12 MHz, R < 10 kΩ, ADC AIN V = 3 V to 3.6 V DDA V = V REF+ DDA T = 25 °C A Measurements made after ADC calibration",
+        "T = 25 °C A",
         "±1.5",
         "±2",
         "LSB"
@@ -57,13 +57,17 @@
       [
         "EL",
         "Integral linearity error",
-        "f = 24 MHz, PCLK2 f = 12 MHz, R < 10 kΩ, ADC AIN V = 3 V to 3.6 V DDA V = V REF+ DDA T = 25 °C A Measurements made after ADC calibration",
+        "ADC calibration",
         "±1.5",
         "±2",
         "LSB"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. ADC DC accuracy values are measured after internal calibration.",
+      "2. Better performance could be achieved in restricted V , frequency, V and temperature ranges. DD REF",
+      "3. Preliminary values. Note: ADC accuracy vs. negative injection current: Injecting a negative current on any analog"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

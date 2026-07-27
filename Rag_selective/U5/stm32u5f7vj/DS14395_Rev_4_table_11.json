@@ -11,7 +11,7 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32u5f7vj.pdf#page=52",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u5f7vj.pdf",
-  "text_helper": "Table 11. GPDMA1 channels implementation and usage — section 3.17 General purpose direct memory access controller (GPDMA). Channel x, Hardware parameters / dma_fifo_ size[x], Hardware parameters / dma_ addressing[x], Features. (table vide)",
+  "text_helper": "Table 11. GPDMA1 channels implementation and usage — section 3.17 General purpose direct memory access controller (GPDMA). Channel x, Hardware parameters / dma_fifo_ size[x], Hardware parameters / dma_ addressing[x], Features.",
   "table_content": {
     "headers": [
       "Channel x",
@@ -19,7 +19,20 @@
       "Hardware parameters / dma_ addressing[x]",
       "Features"
     ],
-    "rows": [],
+    "rows": [
+      [
+        "x = 0 to 11",
+        "2",
+        "0",
+        "Channel x (x = 0 to 11) is implemented with: – a FIFO of 8 bytes, 2 words – fixed/contiguously incremented addressing These channels may be also used for GPDMA transfers, between an APB or AHB peripheral and SRAM."
+      ],
+      [
+        "x = 12 to 15",
+        "4",
+        "1",
+        "Channel x (x = 12 to 15) is implemented with: – a FIFO of 32 bytes, 8 words – 2D addressing These channels may be also used for GPDMA transfers, between a demanding AHB peripheral and SRAM, or for transfers from/to external memories."
+      ]
+    ],
     "notes": [],
     "legend": "",
     "semantic_type": "",

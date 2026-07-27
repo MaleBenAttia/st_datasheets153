@@ -11,7 +11,7 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32n645a0.pdf#page=145",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32n645a0.pdf",
-  "text_helper": "Table 31. Current consumption in Run mode — section 5.3.6 Supply current characteristics. Symbol, Conditions, Conditions, Conditions, frcc_c_ck (MHz), +6 autres. (table vide)",
+  "text_helper": "Table 31. Current consumption in Run mode — section 5.3.6 Supply current characteristics. Symbol, Conditions, Conditions, Conditions, frcc_c_ck (MHz), +6 autres.",
   "table_content": {
     "headers": [
       "Symbol",
@@ -19,14 +19,80 @@
       "Conditions",
       "Conditions",
       "frcc_c_ck (MHz)",
-      "SMPS external / Typ",
+      "SMPS external / Typ / Typ T = T = T = T = J J J J 25°C 85°C 105°C 125°C",
       "SMPS external / Max(1) / T = J 25°C",
       "SMPS external / Max(1) / T = J 85°C",
       "SMPS external / Max(1) / T = J 105°C",
       "SMPS external / Max(1) / T = J 125°C",
       "Unit"
     ],
-    "rows": [],
+    "rows": [
+      [
+        "I DD",
+        "from VOS high All peripherals HSI, V = 1.8 V DD enabled VOS low",
+        "All peripherals enabled",
+        "VOS high",
+        "800(3)",
+        "0.27",
+        "0.30",
+        "0.33",
+        "0.35",
+        "0.40",
+        "mA"
+      ],
+      [
+        "I DD",
+        "VOS high (2) Cache ON All peripherals = 1.8 V HSI, V enabled VOS low DD",
+        "All peripherals enabled",
+        "VOS high",
+        "800(3)",
+        "0.27",
+        "0.30",
+        "0.33",
+        "0.35",
+        "0.40",
+        "mA"
+      ],
+      [
+        "I DD",
+        "= 1.8 V HSI, V enabled VOS low DD",
+        "All peripherals enabled",
+        "VOS low",
+        "600(4)",
+        "0.27",
+        "0.30",
+        "0.33",
+        "0.35",
+        "0.40",
+        "mA"
+      ],
+      [
+        "I DD",
+        "VOS high (2) Cache OFF All peripherals HSE, V = 1.8 V enabled VOS low DD",
+        "All peripherals enabled",
+        "VOS high",
+        "800(3)",
+        "0.30",
+        "0.32",
+        "0.35",
+        "0.38",
+        "0.42",
+        "mA"
+      ],
+      [
+        "I DD",
+        "HSE, V = 1.8 V enabled VOS low DD",
+        "All peripherals enabled",
+        "VOS low",
+        "600(4)",
+        "0.30",
+        "0.32",
+        "0.35",
+        "0.38",
+        "0.42",
+        "mA"
+      ]
+    ],
     "notes": [
       "1. Guaranteed by characterization results unless otherwise specified.",
       "2. Data are in DTCM for best computation performance, cache has no influence on consumption in this case.",

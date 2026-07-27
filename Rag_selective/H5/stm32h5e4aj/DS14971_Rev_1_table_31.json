@@ -11,19 +11,19 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32h5e4aj.pdf#page=177",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h5e4aj.pdf",
-  "text_helper": "Table 31. Typical consumption in Run mode with CoreMark running from flash memory and SRAM — section 5.3.7 Supply current characteristics. Symbol, Parameter, Conditions / Peripheral, Conditions / Code, f HCLK (MHz), +6 autres.",
+  "text_helper": "Table 31. Typical consumption in Run mode with CoreMark running from flash memory and SRAM — section 5.3.7 Supply current characteristics. Symbol, Parameter, Conditions / Peripheral, Conditions / Code, f HCLK (MHz) / (MHz), +6 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions / Peripheral",
       "Conditions / Code",
-      "f HCLK (MHz)",
-      "Typ LDO",
-      "Typ SMPS",
+      "f HCLK (MHz) / (MHz)",
+      "Typ LDO / LDO",
+      "Typ SMPS / SMPS",
       "Unit",
-      "Typ LDO",
-      "Typ SMPS",
+      "Typ LDO / LDO",
+      "Typ SMPS / SMPS",
       "Unit"
     ],
     "rows": [
@@ -43,7 +43,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled, instruction cache 2-way, prefetch ON",
+        "disabled,",
         "FLASH",
         "200",
         "25.60",
@@ -56,7 +56,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled, instruction cache 2-way, prefetch ON",
+        "instruction cache FLASH",
         "FLASH",
         "168",
         "21.90",
@@ -69,7 +69,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled, instruction cache 2-way, prefetch ON",
+        "prefetch ON",
         "FLASH",
         "150",
         "17.90",
@@ -94,7 +94,7 @@
       ],
       [
         "I DD(Run)",
-        "Supply current in Run mode",
+        "Supply current",
         "All peripherals disabled, instruction cache 1-way, prefetch ON",
         "FLASH",
         "250",
@@ -108,7 +108,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled, instruction cache 1-way, prefetch ON",
+        "disabled,",
         "FLASH",
         "200",
         "23.20",
@@ -121,7 +121,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled, instruction cache 1-way, prefetch ON",
+        "1-way,",
         "FLASH",
         "150",
         "16.20",
@@ -133,8 +133,8 @@
       ],
       [
         "I DD(Run)",
-        "Supply current in Run mode",
-        "All peripherals disabled, instruction cache 1-way, prefetch ON",
+        "Supply current",
+        "prefetch ON",
         "FLASH",
         "100",
         "10.40",
@@ -146,7 +146,7 @@
       ],
       [
         "I DD(Run)",
-        "Supply current in Run mode",
+        "in Run mode",
         "All peripherals disabled, instruction cache 2-way",
         "SRAM",
         "250",
@@ -160,7 +160,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled, instruction cache 2-way",
+        "All peripherals",
         "SRAM",
         "200",
         "24.20",
@@ -173,7 +173,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled, instruction cache 2-way",
+        "SRAM instruction cache",
         "SRAM",
         "168",
         "20.70",
@@ -186,7 +186,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled, instruction cache 2-way",
+        "2-way",
         "SRAM",
         "150",
         "16.90",
@@ -225,7 +225,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled, instruction cache 1-way",
+        "disabled,",
         "SRAM",
         "200",
         "22.00",
@@ -238,7 +238,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled, instruction cache 1-way",
+        "instruction cache",
         "SRAM",
         "150",
         "15.40",

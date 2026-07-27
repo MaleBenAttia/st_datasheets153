@@ -11,10 +11,9 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32g081cb.pdf#page=71",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g081cb.pdf",
-  "text_helper": "Table 36. Wakeup time using LPUART — section 5.3.5 Supply current characteristics. Symbol, Symbol, Parameter, Conditions, Typ, +2 autres.",
+  "text_helper": "Table 36. Wakeup time using LPUART — section 5.3.5 Supply current characteristics. Symbol, Parameter, Conditions, Typ, Max, +1 autres.",
   "table_content": {
     "headers": [
-      "Symbol",
       "Symbol",
       "Parameter",
       "Conditions",
@@ -25,7 +24,6 @@
     "rows": [
       [
         "t WULPUART",
-        "t WULPUART",
         "Wakeup time needed to calculate the maximum LPUART baud rate allowing to wakeup up from Stop mode when LPUART clock source is HSI16",
         "Stop mode 0",
         "-",
@@ -34,15 +32,16 @@
       ],
       [
         "t WULPUART",
-        "t WULPUART",
-        "Wakeup time needed to calculate the maximum LPUART baud rate allowing to wakeup up from Stop mode when LPUART clock source is HSI16",
+        "mode when LPUART clock source is HSI16",
         "Stop mode 1",
         "-",
         "8.5",
         "µs"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Specified by design. Not tested in production. Figure 16. High-speed external clock source AC timing diagram"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

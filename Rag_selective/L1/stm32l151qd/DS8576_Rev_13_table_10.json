@@ -11,7 +11,7 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32l151qd.pdf#page=62",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l151qd.pdf",
-  "text_helper": "Table 10. Voltage characteristics — section 6.2 Absolute maximum ratings. Symbol, Ratings, Min, Max, Unit. (table vide)",
+  "text_helper": "Table 10. Voltage characteristics — section 6.2 Absolute maximum ratings. Symbol, Ratings, Min, Max, Unit.",
   "table_content": {
     "headers": [
       "Symbol",
@@ -20,8 +20,62 @@
       "Max",
       "Unit"
     ],
-    "rows": [],
-    "notes": [],
+    "rows": [
+      [
+        "V –V DD SS",
+        "External main supply voltage (including V and V )(1) DDA DD",
+        "–0.3",
+        "4.0",
+        "V"
+      ],
+      [
+        "V (2) IN",
+        "Input voltage on five-volt tolerant pin",
+        "V - 0.3 SS",
+        "V +4.0 DD",
+        "V"
+      ],
+      [
+        "V (2) IN",
+        "Input voltage on any other pin",
+        "V - 0.3 SS",
+        "4.0",
+        "V"
+      ],
+      [
+        "|ΔV | DDx",
+        "Variations between different V power pins DD",
+        "-",
+        "50",
+        "mV"
+      ],
+      [
+        "|V - V | SSX SS",
+        "Variations between all different ground pins(3)",
+        "-",
+        "50",
+        "mV"
+      ],
+      [
+        "ADD +FER V– V",
+        "Allowed voltage difference for V > V REF+ DDA",
+        "-",
+        "0.4",
+        "V"
+      ],
+      [
+        "V ESD(HBM)",
+        "Electrostatic discharge voltage (human body model)",
+        "see Section 6.3.12",
+        "6.3.12",
+        "-"
+      ]
+    ],
+    "notes": [
+      "1. All main power (V , V ) and ground (V , V ) pins must always be connected to the external power supply, in the DD DDA SS SSA",
+      "2. V maximum must always be respected. Refer to Table 11 for maximum allowed injected current values. IN",
+      "3. Include V pin. REF-"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

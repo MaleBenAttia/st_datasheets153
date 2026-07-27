@@ -11,18 +11,18 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f098cc.pdf#page=58",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f098cc.pdf",
-  "text_helper": "Table 26. Typical and maximum current consumption from V supply at V = 1.8 V 58 DD DD — section 6.3.4 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK, All peripherals enabled / Typ, +8 autres.",
+  "text_helper": "Table 26. Typical and maximum current consumption from V supply at V = 1.8 V 58 DD DD — section 6.3.4 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK, All peripherals enabled / Typ / 25 °C 85 °C 105 °C, +8 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions",
       "f HCLK",
-      "All peripherals enabled / Typ",
+      "All peripherals enabled / Typ / 25 °C 85 °C 105 °C",
       "All peripherals enabled / Max @ T (1) A / 25 °C",
       "All peripherals enabled / Max @ T (1) A / 85 °C",
       "All peripherals enabled / Max @ T (1) A / 105 °C",
-      "All peripherals disabled / Typ",
+      "All peripherals disabled / Typ / 25 °C 85 °C 105 °C",
       "All peripherals disabled / Max @ T (1) A / 25 °C",
       "All peripherals disabled / Max @ T (1) A / 85 °C",
       "All peripherals disabled / Max @ T (1) A / 105 °C",
@@ -46,7 +46,7 @@
       ],
       [
         "I DD",
-        "yromem ,edom hsalF nuR ni morf tnerruc gnitucexe ylppuS edoc",
+        "yromem ,edom",
         "HSE bypass, PLL on",
         "48 MHz",
         "26.1",
@@ -62,7 +62,7 @@
       [
         "I DD",
         "yromem ,edom hsalF nuR ni morf tnerruc gnitucexe ylppuS edoc",
-        "HSE bypass, PLL on",
+        "PLL on",
         "32 MHz",
         "17.7",
         "18.9",
@@ -91,7 +91,7 @@
       ],
       [
         "I DD",
-        "yromem ,edom hsalF nuR ni morf tnerruc gnitucexe ylppuS edoc",
+        "morf ni",
         "HSE bypass, PLL off",
         "8 MHz",
         "4.7",
@@ -107,7 +107,7 @@
       [
         "I DD",
         "yromem ,edom hsalF nuR ni morf tnerruc gnitucexe ylppuS edoc",
-        "HSE bypass, PLL off",
+        "PLL off",
         "1 MHz",
         "0.8",
         "0.9",
@@ -121,7 +121,7 @@
       ],
       [
         "I DD",
-        "yromem ,edom hsalF nuR ni morf tnerruc gnitucexe ylppuS edoc",
+        "Supply",
         "HSI clock, PLL on",
         "48 MHz",
         "26.1",
@@ -137,7 +137,7 @@
       [
         "I DD",
         "yromem ,edom hsalF nuR ni morf tnerruc gnitucexe ylppuS edoc",
-        "HSI clock, PLL on",
+        "PLL on",
         "32 MHz",
         "17.8",
         "19.0",
@@ -196,7 +196,7 @@
       ],
       [
         "I DD",
-        ",edom MAR nuR morf ni gnitucexe tnerruc ylppuS edoc",
+        ",edom MAR",
         "HSE bypass, PLL on",
         "48 MHz",
         "25.5",
@@ -212,7 +212,7 @@
       [
         "I DD",
         ",edom MAR nuR morf ni gnitucexe tnerruc ylppuS edoc",
-        "HSE bypass, PLL on",
+        "PLL on",
         "32 MHz",
         "17.2",
         "18.4",
@@ -241,7 +241,7 @@
       ],
       [
         "I DD",
-        ",edom MAR nuR morf ni gnitucexe tnerruc ylppuS edoc",
+        "ni",
         "HSE bypass, PLL off",
         "8 MHz",
         "4.2",
@@ -257,7 +257,7 @@
       [
         "I DD",
         ",edom MAR nuR morf ni gnitucexe tnerruc ylppuS edoc",
-        "HSE bypass, PLL off",
+        "PLL off",
         "1 MHz",
         "0.5",
         "0.7",
@@ -271,7 +271,7 @@
       ],
       [
         "I DD",
-        ",edom MAR nuR morf ni gnitucexe tnerruc ylppuS edoc",
+        "ylppuS edoc",
         "HSI clock, PLL on",
         "48 MHz",
         "25.6",
@@ -287,7 +287,7 @@
       [
         "I DD",
         ",edom MAR nuR morf ni gnitucexe tnerruc ylppuS edoc",
-        "HSI clock, PLL on",
+        "PLL on",
         "32 MHz",
         "17.3",
         "18.5",
@@ -346,7 +346,7 @@
       ],
       [
         "I DD",
-        "Supply current in Sleep modeParameter",
+        "edom",
         "HSE bypass, PLL on",
         "48 MHz",
         "16.4",
@@ -362,7 +362,7 @@
       [
         "I DD",
         "Supply current in Sleep modeParameter",
-        "HSE bypass, PLL on",
+        "PLL on",
         "32 MHz",
         "11.1",
         "11.9",
@@ -391,7 +391,7 @@
       ],
       [
         "I DD",
-        "Supply current in Sleep modeParameter",
+        "ni",
         "HSE bypass, PLL off",
         "8 MHz",
         "2.8",
@@ -407,7 +407,7 @@
       [
         "I DD",
         "Supply current in Sleep modeParameter",
-        "HSE bypass, PLL off",
+        "PLL off",
         "1 MHz",
         "0.4",
         "0.5",
@@ -421,7 +421,7 @@
       ],
       [
         "I DD",
-        "Supply current in Sleep modeParameter",
+        "Supply",
         "HSI clock, PLL on",
         "48 MHz",
         "16.4",
@@ -437,7 +437,7 @@
       [
         "I DD",
         "Supply current in Sleep modeParameter",
-        "HSI clock, PLL on",
+        "PLL on",
         "32 MHz",
         "11.2",
         "12.0",

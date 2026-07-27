@@ -37,7 +37,7 @@
       [
         "I (Run DD from RAM)",
         "Supply current in Run mode code executed from RAM, Flash memory switched off",
-        "f = f up to HSE HCLK 16 MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(2) MSI clock HSI clock source (16 MHz)",
+        "Vcore=1.2 V",
         "Range3, Vcore=1.2 V VOS[1:0]=11",
         "2",
         "315",
@@ -56,8 +56,8 @@
       ],
       [
         "I (Run DD from RAM)",
-        "Supply current in Run mode code executed from RAM, Flash memory switched off",
-        "f = f up to HSE HCLK 16 MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(2) MSI clock HSI clock source (16 MHz)",
+        "Supply current in Run mode code executed from RAM, Flash",
+        "= f up to f HSE HCLK Range2, 16 MHz included, Vcore=1.5 V = f /2 above f HSE HCLK VOS[1:0]=10 ON)(2) 16 MHz (PLL Range1, Vcore=1.8 V VOS[1:0]=01",
         "Range2, Vcore=1.5 V VOS[1:0]=10",
         "4",
         "0,71",
@@ -67,7 +67,7 @@
       [
         "I (Run DD from RAM)",
         "Supply current in Run mode code executed from RAM, Flash memory switched off",
-        "f = f up to HSE HCLK 16 MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(2) MSI clock HSI clock source (16 MHz)",
+        "Vcore=1.5 V = f /2 above f",
         "Range2, Vcore=1.5 V VOS[1:0]=10",
         "8",
         "1,35",
@@ -77,7 +77,7 @@
       [
         "I (Run DD from RAM)",
         "Supply current in Run mode code executed from RAM, Flash memory switched off",
-        "f = f up to HSE HCLK 16 MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(2) MSI clock HSI clock source (16 MHz)",
+        "ON)(2) 16 MHz (PLL",
         "Range2, Vcore=1.5 V VOS[1:0]=10",
         "16",
         "2,7",
@@ -86,8 +86,8 @@
       ],
       [
         "I (Run DD from RAM)",
-        "Supply current in Run mode code executed from RAM, Flash memory switched off",
-        "f = f up to HSE HCLK 16 MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(2) MSI clock HSI clock source (16 MHz)",
+        "Supply current in Run mode code executed from RAM, Flash",
+        "Range1, Vcore=1.8 V VOS[1:0]=01",
         "Range1, Vcore=1.8 V VOS[1:0]=01",
         "8",
         "1,7",
@@ -96,76 +96,19 @@
       ],
       [
         "I (Run DD from RAM)",
-        "Supply current in Run mode code executed from RAM, Flash memory switched off",
-        "f = f up to HSE HCLK 16 MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(2) MSI clock HSI clock source (16 MHz)",
+        "Supply current in Run",
+        "Vcore=1.8 V",
         "Range1, Vcore=1.8 V VOS[1:0]=01",
         "16",
         "3,2",
         "3,7",
         "mA"
-      ],
-      [
-        "I (Run DD from RAM)",
-        "Supply current in Run mode code executed from RAM, Flash memory switched off",
-        "f = f up to HSE HCLK 16 MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(2) MSI clock HSI clock source (16 MHz)",
-        "Range1, Vcore=1.8 V VOS[1:0]=01",
-        "32",
-        "6,65",
-        "7,1",
-        "mA"
-      ],
-      [
-        "I (Run DD from RAM)",
-        "Supply current in Run mode code executed from RAM, Flash memory switched off",
-        "f = f up to HSE HCLK 16 MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(2) MSI clock HSI clock source (16 MHz)",
-        "Range3, Vcore=1.2 V VOS[1:0]=11",
-        "0,065",
-        "38",
-        "98",
-        "µA"
-      ],
-      [
-        "I (Run DD from RAM)",
-        "Supply current in Run mode code executed from RAM, Flash memory switched off",
-        "f = f up to HSE HCLK 16 MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(2) MSI clock HSI clock source (16 MHz)",
-        "Range3, Vcore=1.2 V VOS[1:0]=11",
-        "0,524",
-        "105",
-        "160",
-        "µA"
-      ],
-      [
-        "I (Run DD from RAM)",
-        "Supply current in Run mode code executed from RAM, Flash memory switched off",
-        "f = f up to HSE HCLK 16 MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(2) MSI clock HSI clock source (16 MHz)",
-        "Range3, Vcore=1.2 V VOS[1:0]=11",
-        "4,2",
-        "615",
-        "710",
-        "µA"
-      ],
-      [
-        "I (Run DD from RAM)",
-        "Supply current in Run mode code executed from RAM, Flash memory switched off",
-        "f = f up to HSE HCLK 16 MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(2) MSI clock HSI clock source (16 MHz)",
-        "Range2, Vcore=1.5 V VOS[1:0]=10",
-        "16",
-        "2,85",
-        "3",
-        "mA"
-      ],
-      [
-        "I (Run DD from RAM)",
-        "Supply current in Run mode code executed from RAM, Flash memory switched off",
-        "f = f up to HSE HCLK 16 MHz included, f = f /2 above HSE HCLK 16 MHz (PLL ON)(2) MSI clock HSI clock source (16 MHz)",
-        "Range1, Vcore=1.8 V VOS[1:0]=01",
-        "32",
-        "6,85",
-        "7,3",
-        "mA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Guaranteed by characterization results, unless otherwise specified.",
+      "2. Oscillator bypassed (HSEBYP = 1 in RCC_CR register)."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

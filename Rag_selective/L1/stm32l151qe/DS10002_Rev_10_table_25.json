@@ -11,10 +11,9 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32l151qe.pdf#page=76",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l151qe.pdf",
-  "text_helper": "Table 25. Low-power mode wakeup timings — section 6.3.5 Wakeup time from low-power mode. Symbol, Symbol, Parameter, Conditions, Typ, +2 autres.",
+  "text_helper": "Table 25. Low-power mode wakeup timings — section 6.3.5 Wakeup time from low-power mode. Symbol, Parameter, Conditions, Typ, Max(1), +1 autres.",
   "table_content": {
     "headers": [
-      "Symbol",
       "Symbol",
       "Parameter",
       "Conditions",
@@ -25,7 +24,6 @@
     "rows": [
       [
         "t WUSLEEP",
-        "t WUSLEEP",
         "Wakeup from Sleep mode",
         "f = 32 MHz HCLK",
         "0.4",
@@ -33,7 +31,6 @@
         "µs"
       ],
       [
-        "t WUSLEEP_LP",
         "t WUSLEEP_LP",
         "Wakeup from Low-power sleep mode, f = 262 kHz HCLK",
         "f = 262 kHz HCLK Flash enabled",
@@ -43,15 +40,13 @@
       ],
       [
         "t WUSLEEP_LP",
-        "t WUSLEEP_LP",
-        "Wakeup from Low-power sleep mode, f = 262 kHz HCLK",
+        "mode, f = 262 kHz HCLK",
         "f = 262 kHz HCLK Flash switched OFF",
         "46",
         "-",
         "µs"
       ],
       [
-        "t WUSTOP",
         "t WUSTOP",
         "Wakeup from Stop mode, regulator in Run mode ULP bit = 1 and FWU bit = 1",
         "f = f = 4.2 MHz HCLK MSI",
@@ -61,7 +56,6 @@
       ],
       [
         "t WUSTOP",
-        "t WUSTOP",
         "Wakeup from Stop mode, regulator in low-power mode ULP bit = 1 and FWU bit = 1",
         "f = f = 4.2 MHz HCLK MSI Voltage range 1 and 2",
         "7.7",
@@ -70,7 +64,6 @@
       ],
       [
         "t WUSTOP",
-        "t WUSTOP",
         "Wakeup from Stop mode, regulator in low-power mode ULP bit = 1 and FWU bit = 1",
         "f = f = 4.2 MHz HCLK MSI Voltage range 3",
         "8.2",
@@ -78,9 +71,8 @@
         "µs"
       ],
       [
-        "t WUSTOP",
-        "t WUSTOP",
-        "Wakeup from Stop mode, regulator in low-power mode ULP bit = 1 and FWU bit = 1",
+        "WUSTOP",
+        "Wakeup from Stop mode,",
         "f = f = 2.1 MHz HCLK MSI",
         "10.2",
         "13.4",
@@ -88,15 +80,13 @@
       ],
       [
         "t WUSTOP",
-        "t WUSTOP",
-        "Wakeup from Stop mode, regulator in low-power mode ULP bit = 1 and FWU bit = 1",
+        "regulator in low-power mode",
         "f = f = 1.05 MHz HCLK MSI",
         "16",
         "20",
         "µs"
       ],
       [
-        "t WUSTOP",
         "t WUSTOP",
         "Wakeup from Stop mode, regulator in low-power mode ULP bit = 1 and FWU bit = 1",
         "f = f = 524 kHz HCLK MSI",
@@ -106,7 +96,6 @@
       ],
       [
         "t WUSTOP",
-        "t WUSTOP",
         "Wakeup from Stop mode, regulator in low-power mode ULP bit = 1 and FWU bit = 1",
         "f = f = 262 kHz HCLK MSI",
         "57",
@@ -114,7 +103,6 @@
         "µs"
       ],
       [
-        "t WUSTOP",
         "t WUSTOP",
         "Wakeup from Stop mode, regulator in low-power mode ULP bit = 1 and FWU bit = 1",
         "f = f = 131 kHz HCLK MSI",
@@ -124,7 +112,6 @@
       ],
       [
         "t WUSTOP",
-        "t WUSTOP",
         "Wakeup from Stop mode, regulator in low-power mode ULP bit = 1 and FWU bit = 1",
         "f = MSI = 65 kHz HCLK",
         "221",
@@ -133,57 +120,19 @@
       ],
       [
         "t WUSTDBY",
-        "t WUSTDBY",
         "Wakeup from Standby mode ULP bit = 1 and FWU bit = 1",
         "f = MSI = 2.1 MHz HCLK",
         "58",
         "104",
-        "µs"
+        "ms"
       ],
       [
-        "t WUSTDBY",
         "t WUSTDBY",
         "Wakeup from Standby mode FWU bit = 0",
         "f = MSI = 2.1 MHz HCLK",
         "2.6",
         "3.25",
         "ms"
-      ],
-      [
-        "V HSEL",
-        "OSC_IN input pin low level voltage",
-        "OSC_IN input pin low level voltage",
-        "V SS",
-        "-",
-        "0.3V DD",
-        "0.3V DD"
-      ],
-      [
-        "t w(HSEH) t w(HSEL)",
-        "OSC_IN high or low time",
-        "OSC_IN high or low time",
-        "12",
-        "-",
-        "-",
-        "ns"
-      ],
-      [
-        "t r(HSE) t f(HSE)",
-        "OSC_IN rise or fall time",
-        "OSC_IN rise or fall time",
-        "-",
-        "-",
-        "20",
-        "20"
-      ],
-      [
-        "C in(HSE)",
-        "OSC_IN input capacitance",
-        "OSC_IN input capacitance",
-        "-",
-        "2.6",
-        "-",
-        "pF"
       ]
     ],
     "notes": [

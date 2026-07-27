@@ -1,9 +1,9 @@
 {
   "table_id": "table_34",
-  "document": "DS15136 Rev 1 - Table 34. LSE oscillator characteristics (f = 32.768 kHz).",
+  "document": "DS15136 Rev 1 - Table 34. LSE oscillator characteristics (f = 32.768 kHz)",
   "rev": "Rev 1",
   "table_number": "34",
-  "title": "Table 34. LSE oscillator characteristics (f = 32.768 kHz).",
+  "title": "Table 34. LSE oscillator characteristics (f = 32.768 kHz)",
   "page": 74,
   "section": "5.3.8.4 Low-speed external clock generated from a crystal resonator",
   "section_title": "Low-speed external clock generated from a crystal resonator",
@@ -11,7 +11,7 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32c591ce.pdf#page=74",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c591ce.pdf",
-  "text_helper": "Table 34. LSE oscillator characteristics (f = 32.768 kHz). — section 5.3.8.4 Low-speed external clock generated from a crystal resonator. Symbol, Parameter, Operating conditions(1), Min, Typ, +2 autres.",
+  "text_helper": "Table 34. LSE oscillator characteristics (f = 32.768 kHz) — section 5.3.8.4 Low-speed external clock generated from a crystal resonator. Symbol, Parameter, Operating conditions(1), Min, Typ, +2 autres.",
   "table_content": {
     "headers": [
       "Symbol",
@@ -112,134 +112,11 @@
         "2",
         "-",
         "s"
-      ],
-      [
-        "USER TRIM COVERAGE(2)",
-        "USER TRIMMING Coverage positive",
-        "80 steps",
-        "5.2%",
-        "8%",
-        "-",
-        "-"
-      ],
-      [
-        "USER TRIM COVERAGE(2)",
-        "USER TRIMMING Coverage negative",
-        "48 steps",
-        "-3.1%",
-        "-4.8%",
-        "-",
-        "-"
-      ],
-      [
-        "DuCy(HSI)(2)",
-        "Duty Cycle",
-        "-",
-        "45",
-        "45",
-        "55",
-        "55"
-      ],
-      [
-        "ΔTEMP (HSI)(3)",
-        "HSI oscillator frequency drift over temperature (the reference is 144 MHz.)",
-        "TJ = -20 to 130 °C",
-        "-1",
-        "-",
-        "1",
-        "1"
-      ],
-      [
-        "ΔTEMP (HSI)(3)",
-        "HSI oscillator frequency drift over temperature (the reference is 144 MHz.)",
-        "TJ = -40 to TJmax °C",
-        "-1.5",
-        "-",
-        "1.5",
-        "1.5"
-      ],
-      [
-        "ΔVDD(HSI)(2)(4)",
-        "HSI oscillator frequency drift with VDDSection 5.3.9.1: High-speed internal HSI144 oscillator (5)(the reference is 3.3V)",
-        "VDD from 2.7 V to 3.6 V",
-        "-",
-        "-",
-        "- 0.1",
-        "- 0.1"
-      ],
-      [
-        "tsu(HSI)(3)",
-        "HSI oscillator start-up time (PSI On)",
-        "-",
-        "-",
-        "0.5",
-        "-",
-        "-"
-      ],
-      [
-        "tstab(2)",
-        "stabilization time (PSI OFF from Enable)",
-        "+/-1% of target freq",
-        "-",
-        "-",
-        "8",
-        "8"
-      ],
-      [
-        "tstab(2)",
-        "stabilization time (PSI ON from Enable)",
-        "stabilization time (PSI ON from Enable)",
-        "-",
-        "-",
-        "0.7",
-        "0.7"
-      ],
-      [
-        "IDD(HSI)(2)(6)",
-        "HSI oscillator power consumption",
-        "-",
-        "-",
-        "28",
-        "-",
-        "-"
-      ],
-      [
-        "PT jitter(2)",
-        "Paired transition jitter(8)",
-        "Paired transition jitter(8)",
-        "-",
-        "62",
-        "394",
-        "394"
-      ],
-      [
-        "Per jitter(2)",
-        "Period Jitter standard deviation",
-        "On HSIS",
-        "On HSIS",
-        "15",
-        "15",
-        "15"
-      ],
-      [
-        "Per jitter(2)",
-        "Period Jitter standard deviation",
-        "On HSIDIV3",
-        "On HSIDIV3",
-        "26",
-        "26",
-        "26"
       ]
     ],
     "notes": [
       "1. Refer to the following note and caution paragraphs, and to the application note AN2867 “Oscillator design guide for ST microcontrollers.",
-      "2. tSU is the startup time measured from the moment it is enabled (by software) to a stabilized 32.768k Hz oscillation is reached. This value is measured for a standard crystal resonator and it can vary significantly with the crystal manufacturer.",
-      "3. Evaluated by characterization - Not tested in production.",
-      "4. ΔfHSI = ΔTEMP + ΔVDD",
-      "5. These values are obtained by using formula: (Freq(3.6 V) - Freq(3.3 V)) / Freq(3.3 V) or (Freq(3.6 V) - Freq(2.7 V)) / Freq(2.7 V).",
-      "6. The supply regulation consumption is common to HSI and PSI. (To be counted once if both oscillators are ON).",
-      "7. Jitter measurements are performed without clock source activated in parallel. Typical value is standard deviation, Maximum is peak measure on TIE-8 over 36 cycles.",
-      "8. Jitter measurements are performed without clock source activated in parallel. Typical value is standard deviation, Maximum is peak measure on TIE-16 over 36 cycles."
+      "2. tSU is the startup time measured from the moment it is enabled (by software) to a stabilized 32.768k Hz oscillation is reached. This value is measured for a standard crystal resonator and it can vary significantly with the crystal manufacturer."
     ],
     "legend": [
       "Specified by design and not tested in production."

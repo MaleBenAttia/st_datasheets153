@@ -62,7 +62,7 @@
       [
         "f FOUTPOSTDIV",
         "Divided output clock",
-        "Divided output clock",
+        "Division by 1 Even division Odd division",
         "16.32",
         "-",
         "3200",
@@ -79,7 +79,7 @@
       ],
       [
         "f FOUTPOSTDIV",
-        "Divided output clock duty cycle",
+        "duty cycle",
         "Even division",
         "48",
         "50",
@@ -142,7 +142,7 @@
       ],
       [
         "Jitter",
-        "RMS integrated jitter (10 kHz - 20 MHz)",
+        "(10 kHz - 20 MHz)",
         "f = 3200 MHz, VCO f = 25 MHz, PFD fracN divider",
         "-",
         "-",
@@ -160,7 +160,7 @@
       ],
       [
         "I VDDA18PLL",
-        "PLL supply current on V DDA18PLL (analog)",
+        "on V DDA18PLL (analog)",
         "f = 3200 MHz, VCO FBDIV > 256",
         "-",
         "7050",
@@ -187,7 +187,7 @@
       ],
       [
         "I VDDCORE(PLL)",
-        "PLL supply current on V (0.81 V) DDCORE",
+        "(0.81 V) on V DDCORE",
         "f = 800 MHz VCO",
         "-",
         "295",
@@ -195,7 +195,9 @@
         "μA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Specified by design, not tested in production unless otherwise specified."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

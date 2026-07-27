@@ -87,7 +87,7 @@
         "µs"
       ],
       [
-        "tWUDSTOP(3)",
+        "(3)",
         "Wakeup from DStop",
         "SVOS5, HSI, flash memory in low-power mode",
         "35.0",
@@ -167,7 +167,7 @@
         "µs"
       ],
       [
-        "tWUDSTOP2(3)",
+        "(3) tWUDSTOP2",
         "Wakeup from DStop2, clock kept running",
         "SVOS4, HSI, flash memory in low-power mode",
         "20.4",
@@ -215,7 +215,11 @@
         "330"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Guaranteed by characterization results.",
+      "2. Measures done at −40 °C in the worst conditions.",
+      "3. The wakeup times are measured from the wakeup event to the point in which the application code reads the first instruction."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

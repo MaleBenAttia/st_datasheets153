@@ -62,18 +62,11 @@
         "-",
         "50.0",
         "mV"
-      ],
-      [
-        "TJ",
-        "TJ",
-        "Maximum junction temperature",
-        "150",
-        "None"
       ]
     ],
     "notes": [
-      "1. Specified by design - Not tested in production.",
-      "2. From POR threshold crossing to NRST pull-up resistor activation."
+      "1. VIN maximum must always be respected. Refer to Table 14 for the maximum allowed injected current values.",
+      "2. When the analog option is selected by enabling analog peripheral or the pull-up/pull-down resistors are enabled on a given pin, VIN must not exceed 4 V."
     ],
     "legend": [
       "All main power (VDD) and ground (VSS) pins must always be connected to the external power supply, in the permitted range.",

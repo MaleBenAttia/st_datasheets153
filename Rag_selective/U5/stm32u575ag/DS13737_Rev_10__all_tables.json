@@ -123,9 +123,9 @@
           "Flash memory (Mbytes)",
           "Flash memory (Mbytes)",
           "1 (for STM32U575xG) - 2 (for STM32U575xI)",
+          "1 (for",
           "1 (for STM32U575xG) - 2 (for STM32U575xI)",
-          "1 (for STM32U575xG) - 2 (for STM32U575xI)",
-          "1 (for STM32U575xG) - 2 (for STM32U575xI)",
+          "- 2",
           "1 (for STM32U575xG) - 2 (for STM32U575xI)",
           "1 (for STM32U575xG) - 2 (for STM32U575xI)",
           "1 (for STM32U575xG) - 2 (for STM32U575xI)"
@@ -134,21 +134,21 @@
           "SRAM",
           "System (Kbytes)",
           "784 (192+64+512+16)",
-          "784 (192+64+512+16)",
-          "784 (192+64+512+16)",
-          "784 (192+64+512+16)",
-          "784 (192+64+512+16)",
+          "2048",
+          "784 backup",
+          "+ 128",
+          "backup",
           "784 (192+64+512+16)",
           "784 (192+64+512+16)"
         ],
         [
-          "SRAM",
+          "Backup (bytes)",
           "Backup (bytes)",
           "2048 backup SRAM + 128 backup registers",
-          "2048 backup SRAM + 128 backup registers",
-          "2048 backup SRAM + 128 backup registers",
-          "2048 backup SRAM + 128 backup registers",
-          "2048 backup SRAM + 128 backup registers",
+          "2048",
+          "backup",
+          "+ 128",
+          "backup",
           "2048 backup SRAM + 128 backup registers",
           "2048 backup SRAM + 128 backup registers"
         ],
@@ -179,25 +179,25 @@
           "Advanced control",
           "2 (16 bits)",
           "2 (16 bits)",
-          "2 (16 bits)",
-          "2 (16 bits)",
-          "2 (16 bits)",
+          "4 (32",
+          "2 (16 bits) and 3 2 (16 bits) 4 (16 bits) 2 2",
+          "bits)",
           "2 (16 bits)",
           "2 (16 bits)"
         ],
         [
-          "Timers",
+          "General purpose",
           "General purpose",
           "4 (32 bits) and 3 (16 bits)",
           "4 (32 bits) and 3 (16 bits)",
-          "4 (32 bits) and 3 (16 bits)",
-          "4 (32 bits) and 3 (16 bits)",
-          "4 (32 bits) and 3 (16 bits)",
+          "4 (32",
+          "and 3",
+          "bits)",
           "4 (32 bits) and 3 (16 bits)",
           "4 (32 bits) and 3 (16 bits)"
         ],
         [
-          "Timers",
+          "Basic",
           "Basic",
           "2 (16 bits)",
           "2 (16 bits)",
@@ -208,7 +208,7 @@
           "2 (16 bits)"
         ],
         [
-          "Timers",
+          "Low power Timers",
           "Low power",
           "4 (16 bits)",
           "4 (16 bits)",
@@ -219,7 +219,7 @@
           "4 (16 bits)"
         ],
         [
-          "Timers",
+          "SysTick timer",
           "SysTick timer",
           "2",
           "2",
@@ -230,7 +230,7 @@
           "2"
         ],
         [
-          "Timers",
+          "Watchdog timers (independent, window)",
           "Watchdog timers (independent, window)",
           "2",
           "2",
@@ -989,8 +989,8 @@
           "SRAM",
           "0x2000 0000 0x2FFF FFFF",
           "Nonsecure",
-          "Nonsecure",
-          "Nonsecure"
+          "Secure or NSC",
+          "Secure or NSC"
         ],
         [
           "SRAM",
@@ -1233,12 +1233,12 @@
         ],
         [
           "1",
-          "Boot address only in RSS or secure Flash memory: 0x0C00 0000 - 0x0C1F FFFF Otherwise, forced boot address is 0x0FF8 0000.",
+          "Boot address only in RSS or secure Flash memory:",
           "Any boot address"
         ],
         [
           "2",
-          "Boot address only in RSS or secure Flash memory: 0x0C00 0000 - 0x0C1F FFFF Otherwise, forced boot address is 0x0FF8 0000.",
+          "Otherwise, forced boot address is 0x0FF8 0000.",
           "Boot address only in Flash memory 0x0800 0000 - 0x081F FFFF Otherwise, forced boot address is 0x0800 0000."
         ]
       ],
@@ -1337,7 +1337,7 @@
           "ON(4)",
           "Any",
           "All",
-          "Any interrupt or event"
+          "Any interrupt or"
         ],
         [
           "Sleep",
@@ -1347,7 +1347,7 @@
           "ON(4)",
           "Any",
           "All",
-          "Any interrupt or event"
+          "event"
         ],
         [
           "Sleep",
@@ -1377,7 +1377,7 @@
           "ON(5)",
           "LSE LSI (6)",
           "BOR, PVD, PVM, RTC, TAMP, IWDG, TEMP (temp. sensor), VREFBUF, ADC4(7), DAC1 (2 channels)(8), COMPx (x = 1, 2), OPAMPx (x = 1, 2), USARTx (x = 1...5)(9), LPUART1, SPIx (x = 1...3)(10), I2Cx (x = 1...4)(11), LPTIMx (x = 1...4)(12), MDF1(13), ADF1, GPIO, LPGPIO, GPDMA1(14), LPDMA1 All other peripherals are frozen.",
-          "Reset pin, all I/Os, BOR, PVD, PVM, RTC, TAMP, IWDG, TEMP, ADC4, DAC1 (2 channels), COMPx (x = 1, 2), USARTx (x = 1...5), LPUART1, SPIx (x = 1...3), I2Cx (x = 1...4), LPTIMx (x = 1...4), MDF1, ADF1, GPDMA1, LPDMA1, OTG_FS, UCPD"
+          "BOR, PVD, PVM,"
         ],
         [
           "Stop 0",
@@ -1386,8 +1386,8 @@
           "OFF",
           "ON(5)",
           "LSE LSI (6)",
-          "BOR, PVD, PVM, RTC, TAMP, IWDG, TEMP (temp. sensor), VREFBUF, ADC4(7), DAC1 (2 channels)(8), COMPx (x = 1, 2), OPAMPx (x = 1, 2), USARTx (x = 1...5)(9), LPUART1, SPIx (x = 1...3)(10), I2Cx (x = 1...4)(11), LPTIMx (x = 1...4)(12), MDF1(13), ADF1, GPIO, LPGPIO, GPDMA1(14), LPDMA1 All other peripherals are frozen.",
-          "Reset pin, all I/Os, BOR, PVD, PVM, RTC, TAMP, IWDG, TEMP, ADC4, DAC1 (2 channels), COMPx (x = 1, 2), USARTx (x = 1...5), LPUART1, SPIx (x = 1...3), I2Cx (x = 1...4), LPTIMx (x = 1...4), MDF1, ADF1, GPDMA1, LPDMA1, OTG_FS, UCPD"
+          "VREFBUF,",
+          "RTC, TAMP, IWDG,"
         ],
         [
           "Stop 0",
@@ -1396,7 +1396,7 @@
           "OFF",
           "ON(5)",
           "LSE LSI (6)",
-          "BOR, PVD, PVM, RTC, TAMP, IWDG, TEMP (temp. sensor), VREFBUF, ADC4(7), DAC1 (2 channels)(8), COMPx (x = 1, 2), OPAMPx (x = 1, 2), USARTx (x = 1...5)(9), LPUART1, SPIx (x = 1...3)(10), I2Cx (x = 1...4)(11), LPTIMx (x = 1...4)(12), MDF1(13), ADF1, GPIO, LPGPIO, GPDMA1(14), LPDMA1 All other peripherals are frozen.",
+          "ADC4(7),",
           "Reset pin, all I/Os, BOR, PVD, PVM, RTC, TAMP, IWDG, TEMP, ADC4, DAC1 (2 channels), COMPx (x = 1, 2), USARTx (x = 1...5), LPUART1, SPIx (x = 1...3), I2Cx (x = 1...4), LPTIMx (x = 1...4), MDF1, ADF1, GPDMA1, LPDMA1, OTG_FS, UCPD"
         ],
         [
@@ -1406,8 +1406,8 @@
           "OFF",
           "ON(5)",
           "LSE LSI (6)",
-          "BOR, PVD, PVM, RTC, TAMP, IWDG, TEMP (temp. sensor), VREFBUF, ADC4(7), DAC1 (2 channels)(8), COMPx (x = 1, 2), OPAMPx (x = 1, 2), USARTx (x = 1...5)(9), LPUART1, SPIx (x = 1...3)(10), I2Cx (x = 1...4)(11), LPTIMx (x = 1...4)(12), MDF1(13), ADF1, GPIO, LPGPIO, GPDMA1(14), LPDMA1 All other peripherals are frozen.",
-          "Reset pin, all I/Os, BOR, PVD, PVM, RTC, TAMP, IWDG, TEMP, ADC4, DAC1 (2 channels), COMPx (x = 1, 2), USARTx (x = 1...5), LPUART1, SPIx (x = 1...3), I2Cx (x = 1...4), LPTIMx (x = 1...4), MDF1, ADF1, GPDMA1, LPDMA1, OTG_FS, UCPD"
+          "COMPx (x = 1, 2), OPAMPx (x = 1, 2), 1...5)(9), USARTx (x = LPUART1, 1...3)(10), SPIx (x = 1...4)(11), I2Cx (x = 1...4)(12), LPTIMx (x = MDF1(13), ADF1, GPIO, LPGPIO, GPDMA1(14), LPDMA1 All other peripherals are frozen.",
+          "DAC1 (2 channels), COMPx (x = 1, 2), USARTx (x = 1...5), LPUART1, SPIx (x = 1...3), I2Cx (x = 1...4), LPTIMx (x = 1...4), MDF1, ADF1, GPDMA1, LPDMA1, OTG_FS, UCPD"
         ],
         [
           "Stop 2",
@@ -2478,7 +2478,7 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32u575ag.pdf#page=54",
-    "text_helper": "Table 11. GPDMA1 channels implementation and usage — section 3.17 General purpose direct memory access controller (GPDMA). Channel x, Hardware parameters / dma_fifo_ size[x], Hardware parameters / dma_ addressing[x], Features. (table vide)",
+    "text_helper": "Table 11. GPDMA1 channels implementation and usage — section 3.17 General purpose direct memory access controller (GPDMA). Channel x, Hardware parameters / dma_fifo_ size[x], Hardware parameters / dma_ addressing[x], Features.",
     "table_content": {
       "headers": [
         "Channel x",
@@ -2486,7 +2486,20 @@
         "Hardware parameters / dma_ addressing[x]",
         "Features"
       ],
-      "rows": [],
+      "rows": [
+        [
+          "x = 0 to 11",
+          "2",
+          "0",
+          "Channel x (x = 0 to 11) is implemented with: – a FIFO of 8 bytes, 2 words – fixed/contiguously incremented addressing These channels may be also used for GPDMA transfers, between an APB or AHB peripheral and SRAM."
+        ],
+        [
+          "x = 12 to 15",
+          "4",
+          "1",
+          "Channel x (x = 12 to 15) is implemented with: – a FIFO of 32 bytes, 8 words – 2D addressing These channels may be also used for GPDMA transfers, between a demanding AHB peripheral and SRAM, or for transfers from/to external memories."
+        ]
+      ],
       "notes": [],
       "legend": "",
       "semantic_type": "",
@@ -2571,18 +2584,6 @@
           "0",
           "0",
           "Channel x (x = 0 to 3) is implemented with: – no FIFO. Only a single source transfer cell is internally registered. – fixed/contiguously incremented addressing"
-        ],
-        [
-          "Feature",
-          "Feature",
-          "Feature",
-          "Feature"
-        ],
-        [
-          "Autonomous mode and wake-up",
-          "Autonomous mode and wake-up",
-          "Autonomous mode and wake-up",
-          "Autonomous mode and wake-up"
         ]
       ],
       "notes": [],
@@ -3089,7 +3090,9 @@
           "-"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. X: supported"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -3292,7 +3295,9 @@
           "Yes"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. X: supported"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -3459,7 +3464,7 @@
           "Pin name",
           "Pin name",
           "Unless otherwise specified in brackets below the pin name, the pin function during and after reset is the same as the actual pin name",
-          "Unless otherwise specified in brackets below the pin name, the pin function during and after reset is the same as the actual pin name"
+          "in brackets below the pin name, the pin function during reset is the same as the actual pin name"
         ],
         [
           "Pin type",
@@ -3501,7 +3506,7 @@
           "I/O structure",
           "I/O structure",
           "Option for TT or FT I/Os(1)",
-          "Option for TT or FT I/Os(1)"
+          "I/Os(1) Option for TT or FT"
         ],
         [
           "I/O structure",
@@ -3567,19 +3572,13 @@
           "Notes",
           "Notes",
           "Unless otherwise specified by a note, all I/Os are set as analog inputs during and after reset.",
-          "Unless otherwise specified by a note, all I/Os are set as analog inputs during and after reset."
+          "by a note, all I/Os are set as analog inputs during and after"
         ],
         [
           "Pin functions",
           "Alternate functions",
           "Functions selected through GPIOx_AFR registers",
-          "Functions selected through GPIOx_AFR registers"
-        ],
-        [
-          "Pin functions",
-          "Additional functions",
-          "Functions directly selected/enabled through peripheral registers",
-          "Functions directly selected/enabled through peripheral registers"
+          "sretsiger larehpirep hguorht sretsiger RFA_xOIPG"
         ]
       ],
       "notes": [
@@ -3625,9 +3624,9 @@
         "Pin number / LQFP144",
         "Pin number / UFBGA169",
         "Pin name (function after reset)",
-        "Pin type",
-        "I/O structure",
-        "Notes",
+        "Pin type / epyt niP",
+        "I/O structure / erutcurts O/I",
+        "Notes / setoN",
         "Alternate functions",
         "Additional functions"
       ],
@@ -7995,7 +7994,7 @@
           "USART2_CTS"
         ],
         [
-          "Port A",
+          "PA1",
           "PA1",
           "LPTIM1_CH2",
           "TIM2_CH2",
@@ -8007,7 +8006,7 @@
           "USART2_ RTS/USART2_ DE"
         ],
         [
-          "Port A",
+          "PA2",
           "PA2",
           "-",
           "TIM2_CH3",
@@ -8019,7 +8018,7 @@
           "USART2_TX"
         ],
         [
-          "Port A",
+          "PA3",
           "PA3",
           "-",
           "TIM2_CH4",
@@ -8031,7 +8030,7 @@
           "USART2_RX"
         ],
         [
-          "Port A",
+          "PA4",
           "PA4",
           "-",
           "-",
@@ -8043,7 +8042,7 @@
           "USART2_CK"
         ],
         [
-          "Port A",
+          "PA5",
           "PA5",
           "CSLEEP",
           "TIM2_CH1",
@@ -8055,7 +8054,7 @@
           "USART3_RX"
         ],
         [
-          "Port A",
+          "PA6",
           "PA6",
           "CDSTOP",
           "TIM1_BKIN",
@@ -8067,7 +8066,7 @@
           "USART3_CTS"
         ],
         [
-          "Port A",
+          "PA7",
           "PA7",
           "SRDSTOP",
           "TIM1_CH1N",
@@ -8079,7 +8078,7 @@
           "USART3_TX"
         ],
         [
-          "Port A",
+          "PA8",
           "PA8",
           "MCO",
           "TIM1_CH1",
@@ -8091,7 +8090,7 @@
           "USART1_CK"
         ],
         [
-          "Port A",
+          "PA9",
           "PA9",
           "-",
           "TIM1_CH2",
@@ -8103,7 +8102,7 @@
           "USART1_TX"
         ],
         [
-          "Port A",
+          "PA10",
           "PA10",
           "CRS_SYNC",
           "TIM1_CH3",
@@ -8115,7 +8114,7 @@
           "USART1_RX"
         ],
         [
-          "Port A",
+          "PA11",
           "PA11",
           "-",
           "TIM1_CH4",
@@ -8127,7 +8126,7 @@
           "USART1_CTS"
         ],
         [
-          "Port A",
+          "PA12",
           "PA12",
           "-",
           "TIM1_ETR",
@@ -8139,7 +8138,7 @@
           "USART1_ RTS/USART1_ DE"
         ],
         [
-          "Port A",
+          "PA13",
           "PA13",
           "JTMS/SWDIO",
           "IR_OUT",
@@ -8151,7 +8150,7 @@
           "-"
         ],
         [
-          "Port A",
+          "PA14",
           "PA14",
           "JTCK/SWCLK",
           "LPTIM1_CH1",
@@ -8163,7 +8162,7 @@
           "-"
         ],
         [
-          "Port A",
+          "PA15",
           "PA15",
           "JTDI",
           "TIM2_CH1",
@@ -9669,7 +9668,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA1",
           "PA1",
           "UART4_RX",
           "-",
@@ -9681,7 +9680,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA2",
           "PA2",
           "LPUART1_TX",
           "-",
@@ -9693,7 +9692,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA3",
           "PA3",
           "LPUART1_RX",
           "-",
@@ -9705,7 +9704,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA4",
           "PA4",
           "-",
           "-",
@@ -9717,7 +9716,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA5",
           "PA5",
           "-",
           "-",
@@ -9729,7 +9728,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA6 A",
           "PA6",
           "LPUART1_CTS",
           "-",
@@ -9741,7 +9740,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA7",
           "PA7",
           "-",
           "-",
@@ -9753,7 +9752,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA8",
           "PA8",
           "-",
           "-",
@@ -9765,7 +9764,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA9",
           "PA9",
           "-",
           "-",
@@ -9777,7 +9776,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA10",
           "PA10",
           "-",
           "-",
@@ -9789,7 +9788,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA11",
           "PA11",
           "-",
           "FDCAN1_RX",
@@ -9801,7 +9800,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA12",
           "PA12",
           "-",
           "FDCAN1_TX",
@@ -9813,7 +9812,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA13",
           "PA13",
           "-",
           "-",
@@ -9825,7 +9824,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA14",
           "PA14",
           "-",
           "-",
@@ -9837,7 +9836,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA15",
           "PA15",
           "UART4_RTS/ UART4_DE",
           "-",
@@ -11394,20 +11393,6 @@
           "-",
           "50.0",
           "mV"
-        ],
-        [
-          "T STG",
-          "T STG",
-          "Storage temperature range",
-          "Storage temperature range",
-          "–65 to +150"
-        ],
-        [
-          "T J",
-          "T J",
-          "Maximum junction temperature",
-          "Maximum junction temperature",
-          "140"
         ]
       ],
       "notes": [
@@ -11508,12 +11493,6 @@
           "Total injected current (sum of all I/Os and control pins)(5)",
           "±25",
           "mA"
-        ],
-        [
-          "T J",
-          "Maximum junction temperature",
-          "140",
-          "140"
         ]
       ],
       "notes": [
@@ -11620,7 +11599,7 @@
         ],
         [
           "V DD",
-          "Standard operating voltage",
+          "voltage",
           "IO_VDD_HSLV = 1",
           "1.71(2)",
           "-",
@@ -11647,7 +11626,7 @@
         ],
         [
           "V DDIO2",
-          "Supply voltage for PG[15:2] I/Os",
+          "PG[15:2] I/Os",
           "At least one I/O in PG[15:2] used, IO_VDDIO2_HSLV = 1",
           "1.08",
           "-",
@@ -11710,7 +11689,7 @@
         ],
         [
           "V DDA",
-          "Analog supply voltage",
+          "voltage",
           "VREFBUF used (normal mode)",
           "1.8",
           "-",
@@ -12120,11 +12099,10 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32u575ag.pdf#page=158",
-    "text_helper": "Table 33. Operating conditions at power-up/power-down — section 5.3.2 Operating conditions at power-up/power-down. Symbol, Parameter, Parameter, Conditions, Min, +2 autres.",
+    "text_helper": "Table 33. Operating conditions at power-up/power-down — section 5.3.2 Operating conditions at power-up/power-down. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
     "table_content": {
       "headers": [
         "Symbol",
-        "Parameter",
         "Parameter",
         "Conditions",
         "Min",
@@ -12135,7 +12113,6 @@
         [
           "t VDD",
           "V rise-time rate DD",
-          "V rise-time rate DD",
           "-",
           "0",
           "∞",
@@ -12144,249 +12121,22 @@
         [
           "t VDD",
           "V fall-time rate DD",
-          "V fall-time rate DD",
           "ULPMEN = 0 (default value)",
           "20",
-          "∞",
-          "µs/V"
-        ],
-        [
-          "t VDD",
-          "V fall-time rate DD",
-          "V fall-time rate DD",
-          "Standby mode, BOR level 0 selected with ULPMEN = 1",
-          "250",
           "∞",
           "ms/V"
         ],
         [
-          "V BOR0",
-          "Brownout reset threshold 0",
-          "Falling edge, range 1, 2, 3",
-          "1.58",
-          "1.64",
-          "1.69",
-          "1.69"
-        ],
-        [
-          "V BOR0",
-          "Brownout reset threshold 0",
-          "Falling edge, range 4 and low-power modes",
-          "1.58",
-          "1.64",
-          "1.69",
-          "1.69"
-        ],
-        [
-          "V BOR1",
-          "Brownout reset threshold 1",
-          "Rising edge",
-          "1.98",
-          "2.08",
-          "2.17",
-          "2.17"
-        ],
-        [
-          "V BOR1",
-          "Brownout reset threshold 1",
-          "Falling edge",
-          "1.9",
-          "2.00",
-          "2.1",
-          "2.1"
-        ],
-        [
-          "V BOR2",
-          "Brownout reset threshold 2",
-          "Rising edge",
-          "2.18",
-          "2.29",
-          "2.39",
-          "2.39"
-        ],
-        [
-          "V BOR2",
-          "Brownout reset threshold 2",
-          "Falling edge",
-          "2.08",
-          "2.18",
-          "2.25",
-          "2.25"
-        ],
-        [
-          "V BOR3",
-          "Brownout reset threshold 3",
-          "Rising edge",
-          "2.48",
-          "2.59",
-          "2.7",
-          "2.7"
-        ],
-        [
-          "V BOR3",
-          "Brownout reset threshold 3",
-          "Falling edge",
-          "2.39",
-          "2.5",
-          "2.61",
-          "2.61"
-        ],
-        [
-          "V BOR4",
-          "Brownout reset threshold 4",
-          "Rising edge",
-          "2.76",
-          "2.88",
-          "3.0",
-          "3.0"
-        ],
-        [
-          "V BOR4",
-          "Brownout reset threshold 4",
-          "Falling edge",
-          "2.67",
-          "2.79",
-          "2.9",
-          "2.9"
-        ],
-        [
-          "V PVD0",
-          "Programmable voltage detector threshold 0",
-          "Rising edge",
-          "2.03",
-          "2.13",
-          "2.23",
-          "2.23"
-        ],
-        [
-          "V PVD0",
-          "Programmable voltage detector threshold 0",
-          "Falling edge",
-          "1.93",
-          "2.03",
-          "2.12",
-          "2.12"
-        ],
-        [
-          "V PVD1",
-          "PVD threshold 1",
-          "Rising edge",
-          "2.18",
-          "2.29",
-          "2.39",
-          "2.39"
-        ],
-        [
-          "V PVD1",
-          "PVD threshold 1",
-          "Falling edge",
-          "2.08",
-          "2.18",
-          "2.28",
-          "2.28"
-        ],
-        [
-          "V PVD2",
-          "PVD threshold 2",
-          "Rising edge",
-          "2.33",
-          "2.44",
-          "2.55",
-          "2.55"
-        ],
-        [
-          "V PVD2",
-          "PVD threshold 2",
-          "Falling edge",
-          "2.23",
-          "2.34",
-          "2.44",
-          "2.44"
-        ],
-        [
-          "V PVD3",
-          "PVD threshold 3",
-          "Rising edge",
-          "2.47",
-          "2.59",
-          "2.7",
-          "2.7"
-        ],
-        [
-          "V PVD3",
-          "PVD threshold 3",
-          "Falling edge",
-          "2.39",
-          "2.50",
-          "2.61",
-          "2.61"
-        ],
-        [
-          "V PVD4",
-          "PVD threshold 4",
-          "Rising edge",
-          "2.6",
-          "2.72",
-          "2.83",
-          "2.83"
-        ],
-        [
-          "V PVD4",
-          "PVD threshold 4",
-          "Falling edge",
-          "2.5",
-          "2.62",
-          "2.73",
-          "2.73"
-        ],
-        [
-          "V PVD5",
-          "PVD threshold 5",
-          "Rising edge",
-          "2.76",
-          "2.88",
-          "3.0",
-          "3.0"
-        ],
-        [
-          "V PVD5",
-          "PVD threshold 5",
-          "Falling edge",
-          "2.66",
-          "2.78",
-          "2.9",
-          "2.9"
-        ],
-        [
-          "V PVD6",
-          "PVD threshold 6",
-          "Rising edge",
-          "2.83",
-          "2.96",
-          "3.08",
-          "3.08"
-        ],
-        [
-          "V PVD6",
-          "PVD threshold 6",
-          "Falling edge",
-          "2.76",
-          "2.88",
-          "3.0",
-          "3.0"
-        ],
-        [
-          "V hyst_BOR_PVD",
-          "Hysteresis voltage of BOR (except BOR0) and PVD",
-          "-",
-          "-",
-          "80",
-          "-",
-          "-"
+          "t VDD",
+          "fall-time rate V DD",
+          "Standby mode, BOR level 0 selected with ULPMEN = 1",
+          "250",
+          "∞",
+          "ms/V"
         ]
       ],
       "notes": [
-        "2. Specified by design. Not tested in production"
+        "8. In low-power dissipation state, T can be extended to this range as long as T does not exceed T max (see Section 6.9: A J J"
       ],
       "legend": "",
       "semantic_type": "",
@@ -12542,7 +12292,7 @@
         ],
         [
           "V PVD0",
-          "Programmable voltage detector threshold 0",
+          "threshold 0",
           "Falling edge",
           "1.93",
           "2.03",
@@ -12831,10 +12581,9 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32u575ag.pdf#page=160",
-    "text_helper": "Table 35. SMPS characteristics — section 5.3.4 SMPS characteristics. Symbol, Symbol, Parameter, Conditions, Typ, +1 autres.",
+    "text_helper": "Table 35. SMPS characteristics — section 5.3.4 SMPS characteristics. Symbol, Parameter, Conditions, Typ, Unit.",
     "table_content": {
       "headers": [
-        "Symbol",
         "Symbol",
         "Parameter",
         "Conditions",
@@ -12844,7 +12593,6 @@
       "rows": [
         [
           "Freq",
-          "Freq",
           "Switching frequency (range 1, 2, 3)(1)",
           "V > 1.9 V DD",
           "3",
@@ -12852,26 +12600,14 @@
         ],
         [
           "Freq",
-          "Freq",
           "Switching frequency (range 1, 2, 3)(1)",
           "V < 1.9 V DD",
           "1.5",
           "MHz"
-        ],
-        [
-          "V (1) REFINT",
-          "Range 4 and low-power modes",
-          "1.170",
-          "1.215",
-          "1.260",
-          "1.260"
         ]
       ],
       "notes": [
-        "1. Evaluated by characterization and not tested in production, unless otherwise specified.",
-        "2. Specified by design. Not tested in production",
-        "3. BOR0 is enabled in all modes (except Shutdown), and its consumption is therefore included in the supply current characteristics tables.",
-        "4. This is also the consumption saved in Standby mode when ULPMEN = 1."
+        "1. Evaluated by characterization and not tested in production, unless otherwise specified."
       ],
       "legend": "",
       "semantic_type": "",
@@ -12918,7 +12654,7 @@
           "V"
         ],
         [
-          "V (1) REFINT",
+          "V REFINT",
           "Internal reference voltage",
           "Range 4 and low-power modes",
           "1.170",
@@ -13088,7 +12824,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f , HCLK MSI all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "16",
           "Range 4",
           "16",
           "1.30",
@@ -13106,7 +12842,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f , HCLK MSI all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "12 = f , f HCLK MSI",
           "Range 4",
           "12",
           "1.05",
@@ -13124,7 +12860,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f , HCLK MSI all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "all peripherals and AHB/APB 4",
           "Range 4",
           "4",
           "0.49",
@@ -13142,7 +12878,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f , HCLK MSI all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "2 Flash bank 2 in power down,",
           "Range 4",
           "2",
           "0.37",
@@ -13160,7 +12896,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f , HCLK MSI all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "all SRAMs enabled 1",
           "Range 4",
           "1",
           "0.30",
@@ -13178,7 +12914,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f , HCLK MSI all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "0.4",
           "Range 4",
           "0.4",
           "0.26",
@@ -13196,7 +12932,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f , HCLK MSI all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "0.1",
           "Range 4",
           "0.1",
           "0.24",
@@ -13230,9 +12966,9 @@
           "mA"
         ],
         [
-          "I DD (Run)",
-          "Supply current in Run mode",
-          "f = PLL on HSE 16 MHz in HCLK bypass mode, all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "(Run)",
+          "Run mode",
+          "HCLK Range 1 140 bypass mode,",
           "Range 1",
           "140",
           "12.00",
@@ -13250,7 +12986,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = PLL on HSE 16 MHz in HCLK bypass mode, all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "120 all peripherals and AHB/APB",
           "Range 1",
           "120",
           "10.50",
@@ -13268,7 +13004,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = PLL on HSE 16 MHz in HCLK bypass mode, all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "110 Flash bank 2 in power down, Range 2 72 all SRAMs enabled 64",
           "Range 2",
           "110",
           "8.80",
@@ -13286,7 +13022,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = PLL on HSE 16 MHz in HCLK bypass mode, all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "Range 2 72 all SRAMs enabled",
           "Range 2",
           "72",
           "6.00",
@@ -13304,7 +13040,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = PLL on HSE 16 MHz in HCLK bypass mode, all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "64",
           "Range 2",
           "64",
           "5.40",
@@ -13340,7 +13076,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f bypass mode, HCLK HSE all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "disabled, Range 3 32 Flash bank 2 in power down, all SRAMs enabled",
           "Range 3",
           "32",
           "2.70",
@@ -13356,7 +13092,9 @@
           "mA"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "2. Evaluated by characterization. Not tested in production."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -13422,7 +13160,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f , HCLK MSI all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "16",
           "Range 4",
           "16",
           "0.88",
@@ -13440,7 +13178,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f , HCLK MSI all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "12 f = f , HCLK MSI",
           "Range 4",
           "12",
           "0.62",
@@ -13458,7 +13196,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f , HCLK MSI all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "all peripherals and AHB/APB 4",
           "Range 4",
           "4",
           "0.34",
@@ -13476,7 +13214,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f , HCLK MSI all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "2 Flash bank 2 in power down,",
           "Range 4",
           "2",
           "0.22",
@@ -13494,7 +13232,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f , HCLK MSI all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "all SRAMs enabled 1",
           "Range 4",
           "1",
           "0.18",
@@ -13512,7 +13250,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f , HCLK MSI all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "0.4",
           "Range 4",
           "0.4",
           "0.16",
@@ -13530,7 +13268,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f , HCLK MSI all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "0.1",
           "Range 4",
           "0.1",
           "0.15",
@@ -13564,9 +13302,9 @@
           "mA"
         ],
         [
-          "I DD (Run)",
-          "Supply current in Run mode",
-          "f = PLL on HSE 16 MHz in HCLK bypass mode, all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "(Run)",
+          "Run mode",
+          "HCLK Range 1 140 bypass mode,",
           "Range 1",
           "140",
           "9.30",
@@ -13584,7 +13322,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = PLL on HSE 16 MHz in HCLK bypass mode, all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "120 all peripherals and AHB/APB",
           "Range 1",
           "120",
           "8.50",
@@ -13602,7 +13340,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = PLL on HSE 16 MHz in HCLK bypass mode, all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "110 Flash bank 2 in power down, Range 2 72 all SRAMs enabled 64",
           "Range 2",
           "110",
           "6.95",
@@ -13620,7 +13358,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = PLL on HSE 16 MHz in HCLK bypass mode, all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "Range 2 72 all SRAMs enabled",
           "Range 2",
           "72",
           "4.35",
@@ -13638,7 +13376,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = PLL on HSE 16 MHz in HCLK bypass mode, all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "64",
           "Range 2",
           "64",
           "3.95",
@@ -13674,7 +13412,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f bypass mode, HCLK HSE all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "disabled, Range 3 32 Flash bank 2 in power down, all SRAMs enabled",
           "Range 3",
           "32",
           "1.85",
@@ -13759,7 +13497,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f , HCLK MSI all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "16",
           "Range 4",
           "16",
           "0.60",
@@ -13777,7 +13515,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f , HCLK MSI all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "12 f = f , HCLK MSI",
           "Range 4",
           "12",
           "0.45",
@@ -13795,7 +13533,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f , HCLK MSI all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "all peripherals and AHB/APB 4",
           "Range 4",
           "4",
           "0.23",
@@ -13813,7 +13551,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f , HCLK MSI all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "2 Flash bank 2 in power down,",
           "Range 4",
           "2",
           "0.17",
@@ -13831,7 +13569,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f , HCLK MSI all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "all SRAMs enabled 1",
           "Range 4",
           "1",
           "0.15",
@@ -13849,7 +13587,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f , HCLK MSI all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "0.4",
           "Range 4",
           "0.4",
           "0.13",
@@ -13867,7 +13605,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f , HCLK MSI all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "0.1",
           "Range 4",
           "0.1",
           "0.12",
@@ -13901,9 +13639,9 @@
           "mA"
         ],
         [
-          "I DD (Run)",
-          "Supply current in Run mode",
-          "f = PLL on HSE 16 MHz in HCLK bypass mode, all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "(Run)",
+          "Run mode",
+          "HCLK Range 1 140 bypass mode,",
           "Range 1",
           "140",
           "6.35",
@@ -13921,7 +13659,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = PLL on HSE 16 MHz in HCLK bypass mode, all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "120 all peripherals and AHB/APB",
           "Range 1",
           "120",
           "5.80",
@@ -13939,7 +13677,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = PLL on HSE 16 MHz in HCLK bypass mode, all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "110 Flash bank 2 in power down, Range 2 72 all SRAMs enabled 64",
           "Range 2",
           "110",
           "4.40",
@@ -13957,7 +13695,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = PLL on HSE 16 MHz in HCLK bypass mode, all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "Range 2 72 all SRAMs enabled",
           "Range 2",
           "72",
           "3.05",
@@ -13975,7 +13713,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = PLL on HSE 16 MHz in HCLK bypass mode, all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "64",
           "Range 2",
           "64",
           "2.80",
@@ -14011,7 +13749,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f bypass mode, HCLK HSE all peripherals and AHB/APB disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "disabled, Range 3 32 Flash bank 2 in power down, all SRAMs enabled",
           "Range 3",
           "32",
           "1.40",
@@ -14089,7 +13827,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f = 24 MHz, HCLK MSI all peripherals disabled, Flash bank 2 in power down, SRAM2 enabled, SRAM1, SRAM3, SRAM4 in power down",
+          "HCLK MSI CoreMark all peripherals disabled,",
           "Range 4",
           "CoreMark",
           "1.55",
@@ -14102,9 +13840,9 @@
           "µA/ MHz"
         ],
         [
-          "I DD (Run)",
-          "Supply current in Run mode",
-          "f = f = 24 MHz, HCLK MSI all peripherals disabled, Flash bank 2 in power down, SRAM2 enabled, SRAM1, SRAM3, SRAM4 in power down",
+          "I DD",
+          "Supply",
+          "SecureMark Flash bank 2 in power down,",
           "Range 4",
           "SecureMark",
           "1.80",
@@ -14114,12 +13852,12 @@
           "75.0",
           "75.0",
           "75.0",
-          "µA/ MHz"
+          "µA/"
         ],
         [
-          "I DD (Run)",
-          "Supply current in Run mode",
-          "f = f = 24 MHz, HCLK MSI all peripherals disabled, Flash bank 2 in power down, SRAM2 enabled, SRAM1, SRAM3, SRAM4 in power down",
+          "(Run)",
+          "Run mode",
+          "SRAM2 enabled, Dhrystone 2.1",
           "Range 4",
           "Dhrystone 2.1",
           "1.65",
@@ -14129,12 +13867,12 @@
           "68.8",
           "68.8",
           "68.8",
-          "µA/ MHz"
+          "MHz"
         ],
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f = 24 MHz, HCLK MSI all peripherals disabled, Flash bank 2 in power down, SRAM2 enabled, SRAM1, SRAM3, SRAM4 in power down",
+          "Fibonacci power down",
           "Range 4",
           "Fibonacci",
           "1.30",
@@ -14149,7 +13887,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f = 24 MHz, HCLK MSI all peripherals disabled, Flash bank 2 in power down, SRAM2 enabled, SRAM1, SRAM3, SRAM4 in power down",
+          "while(1)",
           "Range 4",
           "while(1)",
           "1.20",
@@ -14162,7 +13900,9 @@
           "µA/ MHz"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. The current consumption from SRAM is similar. lobmyS Conditions Typ Typ"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -14222,7 +13962,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f = 24 MHz, HCLK MSI all peripherals disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "CoreMark f = f = 24 MHz,",
           "Range 4",
           "CoreMark",
           "1.65",
@@ -14235,9 +13975,9 @@
           "µA/ MHz"
         ],
         [
-          "I DD (Run)",
-          "Supply current in Run mode",
-          "f = f = 24 MHz, HCLK MSI all peripherals disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "I DD",
+          "Supply",
+          "SecureMark all peripherals disabled,",
           "Range 4",
           "SecureMark",
           "1.85",
@@ -14247,12 +13987,12 @@
           "77.1",
           "77.1",
           "79.2",
-          "µA/ MHz"
+          "µA/"
         ],
         [
-          "I DD (Run)",
-          "Supply current in Run mode",
-          "f = f = 24 MHz, HCLK MSI all peripherals disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "(Run)",
+          "Run mode",
+          "Flash bank 2 in power down, Dhrystone 2.1",
           "Range 4",
           "Dhrystone 2.1",
           "1.75",
@@ -14262,12 +14002,12 @@
           "72.9",
           "72.9",
           "72.9",
-          "µA/ MHz"
+          "MHz"
         ],
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f = 24 MHz, HCLK MSI all peripherals disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "Fibonacci",
           "Range 4",
           "Fibonacci",
           "1.40",
@@ -14282,7 +14022,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f = 24 MHz, HCLK MSI all peripherals disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "While(1)",
           "Range 4",
           "While(1)",
           "1.30",
@@ -14565,7 +14305,9 @@
           "57.3"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. The current consumption from SRAM is similar. lobmyS Conditions Typ Typ"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -14625,7 +14367,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f = 24 MHz, HCLK MSI all peripherals disabled, Flash bank 2 in power down, SRAM2 enabled, SRAM1, SRAM3, SRAM4 in power down",
+          "HCLK MSI CoreMark all peripherals disabled,",
           "Range 4",
           "CoreMark",
           "1.05",
@@ -14638,9 +14380,9 @@
           "µA/ MHz"
         ],
         [
-          "I DD (Run)",
-          "Supply current in Run mode",
-          "f = f = 24 MHz, HCLK MSI all peripherals disabled, Flash bank 2 in power down, SRAM2 enabled, SRAM1, SRAM3, SRAM4 in power down",
+          "I DD",
+          "Supply",
+          "SecureMark Flash bank 2 in power down,",
           "Range 4",
           "SecureMark",
           "1.20",
@@ -14650,12 +14392,12 @@
           "50.0",
           "32.9",
           "30.0",
-          "µA/ MHz"
+          "µA/"
         ],
         [
-          "I DD (Run)",
-          "Supply current in Run mode",
-          "f = f = 24 MHz, HCLK MSI all peripherals disabled, Flash bank 2 in power down, SRAM2 enabled, SRAM1, SRAM3, SRAM4 in power down",
+          "(Run)",
+          "Run mode",
+          "SRAM2 enabled, Dhrystone 2.1",
           "Range 4",
           "Dhrystone 2.1",
           "1.10",
@@ -14665,12 +14407,12 @@
           "45.8",
           "28.5",
           "26.7",
-          "µA/ MHz"
+          "MHz"
         ],
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f = 24 MHz, HCLK MSI all peripherals disabled, Flash bank 2 in power down, SRAM2 enabled, SRAM1, SRAM3, SRAM4 in power down",
+          "Fibonacci power down",
           "Range 4",
           "Fibonacci",
           "0.89",
@@ -14685,7 +14427,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f = 24 MHz, HCLK MSI all peripherals disabled, Flash bank 2 in power down, SRAM2 enabled, SRAM1, SRAM3, SRAM4 in power down",
+          "while(1)",
           "Range 4",
           "while(1)",
           "0.77",
@@ -14698,7 +14440,9 @@
           "µA/ MHz"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. The current consumption from SRAM is similar. lobmyS Conditions Typ Typ"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -14758,7 +14502,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f = 24 MHz, HCLK MSI all peripherals disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "CoreMark = f = 24 MHz, f",
           "Range 4",
           "CoreMark",
           "1.10",
@@ -14771,9 +14515,9 @@
           "µA/ MHz"
         ],
         [
-          "I DD (Run)",
-          "Supply current in Run mode",
-          "f = f = 24 MHz, HCLK MSI all peripherals disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "I DD",
+          "Supply",
+          "SecureMark all peripherals disabled,",
           "Range 4",
           "SecureMark",
           "1.25",
@@ -14783,12 +14527,12 @@
           "52.1",
           "35.2",
           "32.1",
-          "µA/ MHz"
+          "µA/"
         ],
         [
-          "I DD (Run)",
-          "Supply current in Run mode",
-          "f = f = 24 MHz, HCLK MSI all peripherals disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "(Run)",
+          "Run mode",
+          "Flash bank 2 in power down, Dhrystone 2.1",
           "Range 4",
           "Dhrystone 2.1",
           "1.15",
@@ -14798,12 +14542,12 @@
           "47.9",
           "31.0",
           "28.8",
-          "µA/ MHz"
+          "MHz"
         ],
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f = 24 MHz, HCLK MSI all peripherals disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "Fibonacci",
           "Range 4",
           "Fibonacci",
           "0.97",
@@ -14818,7 +14562,7 @@
         [
           "I DD (Run)",
           "Supply current in Run mode",
-          "f = f = 24 MHz, HCLK MSI all peripherals disabled, Flash bank 2 in power down, all SRAMs enabled",
+          "while(1)",
           "Range 4",
           "while(1)",
           "0.89",
@@ -15184,7 +14928,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = f , HCLK MSI all peripherals disabled",
+          "16",
           "Range 4",
           "16",
           "0.49",
@@ -15202,7 +14946,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = f , HCLK MSI all peripherals disabled",
+          "12",
           "Range 4",
           "12",
           "0.43",
@@ -15220,7 +14964,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = f , HCLK MSI all peripherals disabled",
+          "4 = f , f HCLK MSI",
           "Range 4",
           "4",
           "0.25",
@@ -15238,7 +14982,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = f , HCLK MSI all peripherals disabled",
+          "all peripherals disabled 2",
           "Range 4",
           "2",
           "0.22",
@@ -15274,7 +15018,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = f , HCLK MSI all peripherals disabled",
+          "0.4",
           "Range 4",
           "0.4",
           "0.19",
@@ -15290,9 +15034,9 @@
           "mA"
         ],
         [
-          "I DD (Sleep)",
-          "Supply current in Sleep mode",
-          "f = f , HCLK MSI all peripherals disabled",
+          "I DD",
+          "current in",
+          "0.1",
           "Range 4",
           "0.1",
           "0.19",
@@ -15308,8 +15052,8 @@
           "mA"
         ],
         [
-          "I DD (Sleep)",
-          "Supply current in Sleep mode",
+          "(Sleep)",
+          "Sleep mode",
           "f = PLL on HSE 16 MHz HCLK in bypass mode, all peripherals disabled",
           "Range 1",
           "160",
@@ -15328,7 +15072,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = PLL on HSE 16 MHz HCLK in bypass mode, all peripherals disabled",
+          "Range 1 140",
           "Range 1",
           "140",
           "3.90",
@@ -15346,7 +15090,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = PLL on HSE 16 MHz HCLK in bypass mode, all peripherals disabled",
+          "= PLL on HSE 16 MHz f 120 HCLK",
           "Range 1",
           "120",
           "3.45",
@@ -15364,7 +15108,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = PLL on HSE 16 MHz HCLK in bypass mode, all peripherals disabled",
+          "110 all peripherals disabled Range 2 72 64",
           "Range 2",
           "110",
           "3.25",
@@ -15382,7 +15126,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = PLL on HSE 16 MHz HCLK in bypass mode, all peripherals disabled",
+          "Range 2 72",
           "Range 2",
           "72",
           "2.15",
@@ -15400,7 +15144,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = PLL on HSE 16 MHz HCLK in bypass mode, all peripherals disabled",
+          "64",
           "Range 2",
           "64",
           "2.00",
@@ -15436,7 +15180,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = f bypass mode, HCLK HSE all peripherals disabled",
+          "all peripherals disabled 32",
           "Range 3",
           "32",
           "1.00",
@@ -15452,7 +15196,9 @@
           "mA"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Evaluated by characterization. Not tested in production."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -15518,7 +15264,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = f , HCLK MSI all peripherals disabled",
+          "16",
           "Range 4",
           "16",
           "0.27",
@@ -15536,7 +15282,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = f , HCLK MSI all peripherals disabled",
+          "12",
           "Range 4",
           "12",
           "0.24",
@@ -15554,7 +15300,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = f , HCLK MSI all peripherals disabled",
+          "4 = f , f HCLK MSI",
           "Range 4",
           "4",
           "0.14",
@@ -15572,7 +15318,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = f , HCLK MSI all peripherals disabled",
+          "all peripherals disabled 2",
           "Range 4",
           "2",
           "0.12",
@@ -15608,7 +15354,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = f , HCLK MSI all peripherals disabled",
+          "0.4",
           "Range 4",
           "0.4",
           "0.10",
@@ -15624,9 +15370,9 @@
           "mA"
         ],
         [
-          "I DD (Sleep)",
-          "Supply current in Sleep mode",
-          "f = f , HCLK MSI all peripherals disabled",
+          "I DD",
+          "Supply",
+          "0.1",
           "Range 4",
           "0.1",
           "0.10",
@@ -15642,8 +15388,8 @@
           "mA"
         ],
         [
-          "I DD (Sleep)",
-          "Supply current in Sleep mode",
+          "(Sleep)",
+          "Sleep mode",
           "f = PLL on HSE 16 MHz HCLK in bypass mode, all peripherals disabled",
           "Range 1",
           "160",
@@ -15662,7 +15408,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = PLL on HSE 16 MHz HCLK in bypass mode, all peripherals disabled",
+          "Range 1 140",
           "Range 1",
           "140",
           "3.10",
@@ -15680,7 +15426,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = PLL on HSE 16 MHz HCLK in bypass mode, all peripherals disabled",
+          "= PLL on HSE 16 MHz f 120 HCLK",
           "Range 1",
           "120",
           "2.80",
@@ -15698,7 +15444,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = PLL on HSE 16 MHz HCLK in bypass mode, all peripherals disabled",
+          "110 all peripherals disabled Range 2 72 64",
           "Range 2",
           "110",
           "2.60",
@@ -15716,7 +15462,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = PLL on HSE 16 MHz HCLK in bypass mode, all peripherals disabled",
+          "Range 2 72",
           "Range 2",
           "72",
           "1.65",
@@ -15734,7 +15480,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = PLL on HSE 16 MHz HCLK in bypass mode, all peripherals disabled",
+          "64",
           "Range 2",
           "64",
           "1.55",
@@ -15770,7 +15516,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = f bypass mode, HCLK HSE all peripherals disabled",
+          "all peripherals disabled 32",
           "Range 3",
           "32",
           "0.85",
@@ -15855,7 +15601,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = f , HCLK MSI all peripherals disabled",
+          "16",
           "Range 4",
           "16",
           "0.20",
@@ -15873,7 +15619,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = f , HCLK MSI all peripherals disabled",
+          "12",
           "Range 4",
           "12",
           "0.17",
@@ -15891,7 +15637,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = f , HCLK MSI all peripherals disabled",
+          "4 = f , f HCLK MSI",
           "Range 4",
           "4",
           "0.10",
@@ -15909,7 +15655,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = f , HCLK MSI all peripherals disabled",
+          "all peripherals disabled 2",
           "Range 4",
           "2",
           "0.08",
@@ -15945,7 +15691,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = f , HCLK MSI all peripherals disabled",
+          "0.4",
           "Range 4",
           "0.4",
           "0.07",
@@ -15961,9 +15707,9 @@
           "mA"
         ],
         [
-          "I DD (Sleep)",
-          "Supply current in Sleep mode",
-          "f = f , HCLK MSI all peripherals disabled",
+          "I DD",
+          "Supply",
+          "0.1",
           "Range 4",
           "0.1",
           "0.07",
@@ -15979,8 +15725,8 @@
           "mA"
         ],
         [
-          "I DD (Sleep)",
-          "Supply current in Sleep mode",
+          "(Sleep)",
+          "Sleep mode",
           "f = PLL on HSE 16 MHz HCLK in bypass mode, all peripherals disabled",
           "Range 1",
           "160",
@@ -15999,7 +15745,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = PLL on HSE 16 MHz HCLK in bypass mode, all peripherals disabled",
+          "Range 1 140",
           "Range 1",
           "140",
           "2.25",
@@ -16017,7 +15763,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = PLL on HSE 16 MHz HCLK in bypass mode, all peripherals disabled",
+          "= PLL on HSE 16 MHz f 120 HCLK",
           "Range 1",
           "120",
           "2.05",
@@ -16035,7 +15781,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = PLL on HSE 16 MHz HCLK in bypass mode, all peripherals disabled",
+          "110 all peripherals disabled Range 2 72 64",
           "Range 2",
           "110",
           "1.95",
@@ -16053,7 +15799,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = PLL on HSE 16 MHz HCLK in bypass mode, all peripherals disabled",
+          "Range 2 72",
           "Range 2",
           "72",
           "1.30",
@@ -16071,7 +15817,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = PLL on HSE 16 MHz HCLK in bypass mode, all peripherals disabled",
+          "64",
           "Range 2",
           "64",
           "1.20",
@@ -16107,7 +15853,7 @@
         [
           "I DD (Sleep)",
           "Supply current in Sleep mode",
-          "f = f bypass mode, HCLK HSE all peripherals disabled",
+          "all peripherals disabled 32",
           "Range 3",
           "32",
           "0.70",
@@ -16189,9 +15935,9 @@
           "mA"
         ],
         [
-          "I DD (SRAM1)",
+          "I DD",
           "LDO",
-          "SRAM1 supply current in Run/Sleep mode (SRAM1PD = 1 versus SRAM1PD = 0)",
+          "SRAM1 supply current in Range 1 160",
           "Range 1",
           "160",
           "0.04",
@@ -16207,9 +15953,9 @@
           "mA"
         ],
         [
-          "I DD (SRAM1)",
+          "(SRAM1)",
           "LDO",
-          "SRAM1 supply current in Run/Sleep mode (SRAM1PD = 1 versus SRAM1PD = 0)",
+          "Range 2 110 versus SRAM1PD = 0)",
           "Range 2",
           "110",
           "0.03",
@@ -16227,7 +15973,7 @@
         [
           "I DD (SRAM1)",
           "LDO",
-          "SRAM1 supply current in Run/Sleep mode (SRAM1PD = 1 versus SRAM1PD = 0)",
+          "Range 3 55",
           "Range 3",
           "55",
           "0.02",
@@ -16261,9 +16007,9 @@
           "mA"
         ],
         [
-          "I DD (SRAM3)",
+          "I DD",
           "LDO",
-          "SRAM3 supply current in Run/Sleep mode (SRAM3PD = 1 versus SRAM3PD = 0)",
+          "SRAM3 supply current in Range 1 160",
           "Range 1",
           "160",
           "0.11",
@@ -16279,9 +16025,9 @@
           "mA"
         ],
         [
-          "I DD (SRAM3)",
+          "(SRAM3)",
           "LDO",
-          "SRAM3 supply current in Run/Sleep mode (SRAM3PD = 1 versus SRAM3PD = 0)",
+          "Range 2 110 versus SRAM3PD = 0)",
           "Range 2",
           "110",
           "0.08",
@@ -16299,7 +16045,7 @@
         [
           "I DD (SRAM3)",
           "LDO",
-          "SRAM3 supply current in Run/Sleep mode (SRAM3PD = 1 versus SRAM3PD = 0)",
+          "Range 3 55",
           "Range 3",
           "55",
           "0.06",
@@ -16333,9 +16079,9 @@
           "mA"
         ],
         [
-          "I DD (SRAM1)",
+          "I DD",
           "SMPS, V = 3.0 V DD",
-          "SRAM1 supply current in Run/Sleep mode (SRAM1PD = 1 versus SRAM1PD = 0)",
+          "SRAM1 supply current in Range 1 160",
           "Range 1",
           "160",
           "0.02",
@@ -16351,9 +16097,9 @@
           "mA"
         ],
         [
-          "I DD (SRAM1)",
+          "(SRAM1)",
           "SMPS, V = 3.0 V DD",
-          "SRAM1 supply current in Run/Sleep mode (SRAM1PD = 1 versus SRAM1PD = 0)",
+          "Range 2 110 versus SRAM1PD = 0)",
           "Range 2",
           "110",
           "0.01",
@@ -16370,8 +16116,8 @@
         ],
         [
           "I DD (SRAM1)",
-          "SMPS, V = 3.0 V DD",
-          "SRAM1 supply current in Run/Sleep mode (SRAM1PD = 1 versus SRAM1PD = 0)",
+          "SMPS,",
+          "Range 3 55",
           "Range 3",
           "55",
           "0.01",
@@ -16388,7 +16134,7 @@
         ],
         [
           "I DD (SRAM3)",
-          "SMPS, V = 3.0 V DD",
+          "= 3.0 V V DD",
           "SRAM3 supply current in Run/Sleep mode (SRAM3PD = 1 versus SRAM3PD = 0)",
           "Range 4",
           "24",
@@ -16405,9 +16151,9 @@
           "mA"
         ],
         [
-          "I DD (SRAM3)",
+          "I DD",
           "SMPS, V = 3.0 V DD",
-          "SRAM3 supply current in Run/Sleep mode (SRAM3PD = 1 versus SRAM3PD = 0)",
+          "SRAM3 supply current in Range 1 160",
           "Range 1",
           "160",
           "0.06",
@@ -16423,9 +16169,9 @@
           "mA"
         ],
         [
-          "I DD (SRAM3)",
+          "(SRAM3)",
           "SMPS, V = 3.0 V DD",
-          "SRAM3 supply current in Run/Sleep mode (SRAM3PD = 1 versus SRAM3PD = 0)",
+          "Range 2 100 versus SRAM3PD = 0)",
           "Range 2",
           "100",
           "0.04",
@@ -16443,7 +16189,7 @@
         [
           "I DD (SRAM3)",
           "SMPS, V = 3.0 V DD",
-          "SRAM3 supply current in Run/Sleep mode (SRAM3PD = 1 versus SRAM3PD = 0)",
+          "Range 3 55",
           "Range 3",
           "55",
           "0.03",
@@ -16757,7 +16503,7 @@
         ],
         [
           "I DD(Stop 0)",
-          "Supply current in Stop 0 mode, regulator in Range 4, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+          "regulator in Range 4,",
           "2.4",
           "115",
           "290",
@@ -16773,7 +16519,7 @@
         ],
         [
           "I DD(Stop 0)",
-          "Supply current in Stop 0 mode, regulator in Range 4, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+          "RTC disabled,",
           "3.0",
           "115",
           "295",
@@ -16789,7 +16535,7 @@
         ],
         [
           "I DD(Stop 0)",
-          "Supply current in Stop 0 mode, regulator in Range 4, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+          "retained",
           "3.3",
           "115",
           "295",
@@ -16837,7 +16583,7 @@
         ],
         [
           "I DD(Stop 0)",
-          "Supply current in Stop 0 mode, regulator in Range 4, RTC disabled, All SRAMs retained",
+          "Supply current in Stop 0 mode,",
           "2.4",
           "125",
           "315",
@@ -16853,7 +16599,7 @@
         ],
         [
           "I DD(Stop 0)",
-          "Supply current in Stop 0 mode, regulator in Range 4, RTC disabled, All SRAMs retained",
+          "RTC disabled,",
           "3.0",
           "125",
           "320",
@@ -16869,7 +16615,7 @@
         ],
         [
           "I DD(Stop 0)",
-          "Supply current in Stop 0 mode, regulator in Range 4, RTC disabled, All SRAMs retained",
+          "All SRAMs retained",
           "3.3",
           "130",
           "320",
@@ -16900,7 +16646,9 @@
           "µA"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Evaluated by characterization. Not tested in production."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -16961,7 +16709,7 @@
         ],
         [
           "I DD(Stop 0)",
-          "Supply current in Stop 0 mode, regulator in Range 4, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+          "regulator in Range 4,",
           "2.4",
           "38.5",
           "115",
@@ -16977,7 +16725,7 @@
         ],
         [
           "I DD(Stop 0)",
-          "Supply current in Stop 0 mode, regulator in Range 4, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+          "RTC disabled,",
           "3.0",
           "39.5",
           "115",
@@ -16993,7 +16741,7 @@
         ],
         [
           "I DD(Stop 0)",
-          "Supply current in Stop 0 mode, regulator in Range 4, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+          "retained",
           "3.3",
           "37.0",
           "105",
@@ -17041,7 +16789,7 @@
         ],
         [
           "I DD(Stop 0)",
-          "Supply current in Stop 0 mode, regulator in Range 4, RTC disabled, All SRAM retained",
+          "Supply current in Stop 0 mode,",
           "2.4",
           "43.5",
           "125",
@@ -17057,7 +16805,7 @@
         ],
         [
           "I DD(Stop 0)",
-          "Supply current in Stop 0 mode, regulator in Range 4, RTC disabled, All SRAM retained",
+          "RTC disabled,",
           "3.0",
           "44.5",
           "125",
@@ -17073,7 +16821,7 @@
         ],
         [
           "I DD(Stop 0)",
-          "Supply current in Stop 0 mode, regulator in Range 4, RTC disabled, All SRAM retained",
+          "All SRAM retained",
           "3.3",
           "41.5",
           "115",
@@ -17167,7 +16915,7 @@
         ],
         [
           "I DD (Stop 1)",
-          "Supply current in Stop 1 mode, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+          "Supply current in Stop 1 mode,",
           "2.4",
           "83.5",
           "250",
@@ -17183,7 +16931,7 @@
         ],
         [
           "I DD (Stop 1)",
-          "Supply current in Stop 1 mode, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+          "8-Kbyte SRAM2 + ICACHE",
           "3.0",
           "87.5",
           "255",
@@ -17199,7 +16947,7 @@
         ],
         [
           "I DD (Stop 1)",
-          "Supply current in Stop 1 mode, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+          "retained",
           "3.3",
           "84.0",
           "250",
@@ -17550,7 +17298,10 @@
           "-"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Evaluated by characterization. Not tested in production.",
+        "2. RTC with default configuration but LPCAL = 1 in RTC_CALR."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -17574,7 +17325,7 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32u575ag.pdf#page=178",
-    "text_helper": "Table 52. Current consumption during wake-up from Stop 1 mode on LDO — section 5.3.6 Supply current characteristics. Symbol, Parameter, Conditions / -, Conditions / V (V) DD, Typ / 25°C, +1 autres. (table vide)",
+    "text_helper": "Table 52. Current consumption during wake-up from Stop 1 mode on LDO — section 5.3.6 Supply current characteristics. Symbol, Parameter, Conditions / -, Conditions / V (V) DD, Typ / 25°C, +1 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -17584,8 +17335,36 @@
         "Typ / 25°C",
         "Unit"
       ],
-      "rows": [],
-      "notes": [],
+      "rows": [
+        [
+          "Q DD(wake-up from Stop 1)",
+          "Electrical charge consumed during wake-up from Stop 1 mode",
+          "Wake-up clock is MSI 24 MHz",
+          "3.0",
+          "40",
+          "nAs"
+        ],
+        [
+          "Q DD(wake-up from Stop 1)",
+          "Stop 1 mode",
+          "Wake-up clock is HSI 16 MHz",
+          "3.0",
+          "40",
+          "nAs"
+        ],
+        [
+          "Q DD(wake-up from Stop 1)",
+          "Electrical charge consumed during wake-up from Stop 1 mode",
+          "Wake-up clock is MSI 1 MHz",
+          "3.0",
+          "70",
+          "nAs"
+        ]
+      ],
+      "notes": [
+        "1. Evaluated by characterization. Not tested in production.",
+        "2. RTC with default configuration but LPCAL = 1 in RTC_CALR."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -17646,7 +17425,7 @@
         ],
         [
           "I DD(Stop 1)",
-          "Supply current in Stop 1 mode, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+          "Supply current in Stop 1 mode,",
           "2.4",
           "38.5",
           "115",
@@ -17662,7 +17441,7 @@
         ],
         [
           "I DD(Stop 1)",
-          "Supply current in Stop 1 mode, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+          "8-Kbyte SRAM2 + ICACHE",
           "3.0",
           "39.5",
           "115",
@@ -17678,7 +17457,7 @@
         ],
         [
           "I DD(Stop 1)",
-          "Supply current in Stop 1 mode, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+          "retained",
           "3.3",
           "37.0",
           "105",
@@ -17726,7 +17505,7 @@
         ],
         [
           "I DD(Stop 1)",
-          "Supply current in Stop 1 mode, RTC disabled, All SRAMs retained",
+          "Supply current in Stop 1 mode,",
           "2.4",
           "43.5",
           "125",
@@ -17742,7 +17521,7 @@
         ],
         [
           "I DD(Stop 1)",
-          "Supply current in Stop 1 mode, RTC disabled, All SRAMs retained",
+          "RTC disabled,",
           "3.0",
           "44.0",
           "125",
@@ -18029,7 +17808,10 @@
           "-"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Evaluated by characterization. Not tested in production.",
+        "2. RTC with default configuration but LPCAL = 1 in RTC_CALR."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -18074,7 +17856,7 @@
         ],
         [
           "Q DD(wake-up from Stop 1)",
-          "Electrical charge consumed during wake-up from Stop 1 mode",
+          "Stop 1 mode",
           "Wake-up clock is HSI 16 MHz",
           "3.0",
           "40",
@@ -18089,7 +17871,10 @@
           "nAs"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Evaluated by characterization. Not tested in production.",
+        "2. RTC with default configuration but LPCAL = 1 in RTC_CALR."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -18150,7 +17935,7 @@
         ],
         [
           "I DD(Stop 2)",
-          "Supply current in Stop 2 mode, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+          "Supply current in Stop 2 mode,",
           "2.4",
           "8.90",
           "23.5",
@@ -18166,7 +17951,7 @@
         ],
         [
           "I DD(Stop 2)",
-          "Supply current in Stop 2 mode, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+          "8-Kbyte SRAM2 + ICACHE",
           "3.0",
           "9.05",
           "24.0",
@@ -18182,7 +17967,7 @@
         ],
         [
           "I DD(Stop 2)",
-          "Supply current in Stop 2 mode, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+          "retained",
           "3.3",
           "9.30",
           "24.5",
@@ -18230,7 +18015,7 @@
         ],
         [
           "I DD(Stop 2)",
-          "Supply current in Stop 2 mode, RTC disabled, All SRAMs retained",
+          "Supply current in Stop 2 mode,",
           "2.4",
           "20.00",
           "48.5",
@@ -18246,7 +18031,7 @@
         ],
         [
           "I DD(Stop 2)",
-          "Supply current in Stop 2 mode, RTC disabled, All SRAMs retained",
+          "RTC disabled,",
           "3.0",
           "20.50",
           "48.5",
@@ -18613,7 +18398,10 @@
           "-"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Evaluated by characterization. Not tested in production.",
+        "2. RTC with default configuration but LPCAL = 1 in RTC_CALR."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -18841,7 +18629,7 @@
         ],
         [
           "Q DD(wake-up from Stop 2)",
-          "Electrical charge consumed during wake-up from Stop 2 mode",
+          "Stop 2 mode",
           "Wake-up clock is HSI 16 MHz",
           "3.0",
           "30",
@@ -18856,7 +18644,10 @@
           "nAs"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Evaluated by characterization. Not tested in production.",
+        "2. RTC with default configuration but LPCAL = 1 in RTC_CALR."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -18917,7 +18708,7 @@
         ],
         [
           "I DD(Stop 2)",
-          "Supply current in Stop 2 mode, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+          "Supply current in Stop 2 mode,",
           "2.4",
           "3.50",
           "9.6",
@@ -18933,7 +18724,7 @@
         ],
         [
           "I DD(Stop 2)",
-          "Supply current in Stop 2 mode, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+          "8-Kbyte SRAM2 + ICACHE",
           "3.0",
           "3.90",
           "10.0",
@@ -18949,7 +18740,7 @@
         ],
         [
           "I DD(Stop 2)",
-          "Supply current in Stop 2 mode, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+          "retained",
           "3.3",
           "3.90",
           "10.0",
@@ -18997,7 +18788,7 @@
         ],
         [
           "I DD(Stop 2)",
-          "Supply current in Stop 2 mode, RTC disabled, ALL SRAMs retained",
+          "Supply current in Stop 2 mode,",
           "2.4",
           "7.85",
           "19.5",
@@ -19013,7 +18804,7 @@
         ],
         [
           "I DD(Stop 2)",
-          "Supply current in Stop 2 mode, RTC disabled, ALL SRAMs retained",
+          "RTC disabled,",
           "3.0",
           "8.55",
           "20.5",
@@ -19380,7 +19171,10 @@
           "-"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Evaluated by characterization. Not tested in production.",
+        "2. RTC with default configuration but LPCAL = 1 in RTC_CALR."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -19608,7 +19402,7 @@
         ],
         [
           "Q DD(wake-up from Stop 2)",
-          "Electrical charge consumed during wake-up from Stop 2 mode",
+          "Stop 2 mode",
           "Wake-up clock is HSI 16 MHz",
           "3.0",
           "30",
@@ -19623,7 +19417,10 @@
           "nAs"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Evaluated by characterization. Not tested in production.",
+        "2. RTC with default configuration but LPCAL = 1 in RTC_CALR."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -19684,7 +19481,7 @@
         ],
         [
           "I DD(Stop 3)",
-          "Supply current in Stop 3 mode, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+          "Supply current in Stop 3 mode,",
           "2.4",
           "5.15",
           "15.0",
@@ -19700,7 +19497,7 @@
         ],
         [
           "I DD(Stop 3)",
-          "Supply current in Stop 3 mode, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+          "8-Kbyte SRAM2 + ICACHE",
           "3.0",
           "5.60",
           "15.0",
@@ -19716,7 +19513,7 @@
         ],
         [
           "I DD(Stop 3)",
-          "Supply current in Stop 3 mode, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+          "retained",
           "3.3",
           "5.30",
           "15.5",
@@ -19764,7 +19561,7 @@
         ],
         [
           "I DD(Stop 3)",
-          "Supply current in Stop 3 mode, RTC disabled, all SRAMs retained",
+          "Supply current in Stop 3 mode,",
           "2.4",
           "12.00",
           "36.0",
@@ -19780,7 +19577,7 @@
         ],
         [
           "I DD(Stop 3)",
-          "Supply current in Stop 3 mode, RTC disabled, all SRAMs retained",
+          "RTC disabled,",
           "3.0",
           "13.00",
           "36.5",
@@ -20378,7 +20175,7 @@
         ],
         [
           "Q DD(wake-up from Stop 3)",
-          "Electrical charge consumed during wake-up from Stop 3 mode",
+          "Stop 3 mode",
           "Wake-up clock is HSI 16 MHz",
           "3.0",
           "410",
@@ -20456,7 +20253,7 @@
         ],
         [
           "I DD(Stop 3)",
-          "Supply current in Stop 3 mode, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+          "Supply current in Stop 3 mode,",
           "2.4",
           "1.85",
           "5.95",
@@ -20472,7 +20269,7 @@
         ],
         [
           "I DD(Stop 3)",
-          "Supply current in Stop 3 mode, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+          "8-Kbyte SRAM2 + ICACHE",
           "3.0",
           "1.70",
           "5.30",
@@ -20488,7 +20285,7 @@
         ],
         [
           "I DD(Stop 3)",
-          "Supply current in Stop 3 mode, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+          "retained",
           "3.3",
           "1.80",
           "5.55",
@@ -20536,7 +20333,7 @@
         ],
         [
           "I DD(Stop 3)",
-          "Supply current in Stop 3 mode, RTC disabled, all SRAMs retained",
+          "Supply current in Stop 3 mode,",
           "2.4",
           "4.55",
           "14.00",
@@ -20552,7 +20349,7 @@
         ],
         [
           "I DD(Stop 3)",
-          "Supply current in Stop 3 mode, RTC disabled, all SRAMs retained",
+          "RTC disabled,",
           "3.0",
           "3.90",
           "12.00",
@@ -21150,7 +20947,7 @@
         ],
         [
           "Q DD(wake-up from Stop 3)",
-          "Electrical charge consumed during wake-up from Stop 3 mode",
+          "Stop 3 mode",
           "Wake-up clock is HSI 16 MHz",
           "3.0",
           "150",
@@ -21231,7 +21028,7 @@
         [
           "I DD(Standby)",
           "Supply current in Standby mode (backup registers retained), RTC disabled",
-          "No IWDG ULPMEN = 1",
+          "2.4",
           "2.4",
           "0.21",
           "0.74",
@@ -21248,7 +21045,7 @@
         [
           "I DD(Standby)",
           "Supply current in Standby mode (backup registers retained), RTC disabled",
-          "No IWDG ULPMEN = 1",
+          "3.0 ULPMEN = 1",
           "3.0",
           "0.36",
           "1.08",
@@ -21265,7 +21062,7 @@
         [
           "I DD(Standby)",
           "Supply current in Standby mode (backup registers retained), RTC disabled",
-          "No IWDG ULPMEN = 1",
+          "3.3",
           "3.3",
           "0.64",
           "1.69",
@@ -21282,7 +21079,7 @@
         [
           "I DD(Standby)",
           "Supply current in Standby mode (backup registers retained), RTC disabled",
-          "No IWDG ULPMEN = 1",
+          "3.6",
           "3.6",
           "1.51",
           "3.04",
@@ -21298,7 +21095,7 @@
         ],
         [
           "I DD(Standby)",
-          "Supply current in Standby mode (backup registers retained), RTC disabled",
+          "Supply current in Standby mode (backup",
           "No IWDG ULPMEN = 0",
           "1.8",
           "0.28",
@@ -21316,7 +21113,7 @@
         [
           "I DD(Standby)",
           "Supply current in Standby mode (backup registers retained), RTC disabled",
-          "No IWDG ULPMEN = 0",
+          "2.4",
           "2.4",
           "0.29",
           "0.83",
@@ -21333,7 +21130,7 @@
         [
           "I DD(Standby)",
           "Supply current in Standby mode (backup registers retained), RTC disabled",
-          "No IWDG ULPMEN = 0",
+          "3.0 ULPMEN = 0",
           "3.0",
           "0.43",
           "1.16",
@@ -21350,7 +21147,7 @@
         [
           "I DD(Standby)",
           "Supply current in Standby mode (backup registers retained), RTC disabled",
-          "No IWDG ULPMEN = 0",
+          "3.3",
           "3.3",
           "0.75",
           "1.75",
@@ -21366,8 +21163,8 @@
         ],
         [
           "I DD(Standby)",
-          "Supply current in Standby mode (backup registers retained), RTC disabled",
-          "No IWDG ULPMEN = 0",
+          "Standby mode (backup",
+          "3.6",
           "3.6",
           "1.58",
           "3.10",
@@ -21383,7 +21180,7 @@
         ],
         [
           "I DD(Standby)",
-          "Supply current in Standby mode (backup registers retained), RTC disabled",
+          "RTC disabled",
           "with IWDG clocked by LSI 32 kHz ULPMEN = 0",
           "1.8",
           "0.52",
@@ -21401,7 +21198,7 @@
         [
           "I DD(Standby)",
           "Supply current in Standby mode (backup registers retained), RTC disabled",
-          "with IWDG clocked by LSI 32 kHz ULPMEN = 0",
+          "with IWDG 2.4",
           "2.4",
           "0.64",
           "1.18",
@@ -21418,7 +21215,7 @@
         [
           "I DD(Standby)",
           "Supply current in Standby mode (backup registers retained), RTC disabled",
-          "with IWDG clocked by LSI 32 kHz ULPMEN = 0",
+          "zHk 23 ISL 0.3",
           "3.0",
           "0.87",
           "1.62",
@@ -21435,7 +21232,7 @@
         [
           "I DD(Standby)",
           "Supply current in Standby mode (backup registers retained), RTC disabled",
-          "with IWDG clocked by LSI 32 kHz ULPMEN = 0",
+          "3.3 ULPMEN = 0",
           "3.3",
           "1.23",
           "2.26",
@@ -21452,7 +21249,7 @@
         [
           "I DD(Standby)",
           "Supply current in Standby mode (backup registers retained), RTC disabled",
-          "with IWDG clocked by LSI 32 kHz ULPMEN = 0",
+          "3.6",
           "3.6",
           "2.13",
           "3.67",
@@ -21486,7 +21283,7 @@
         [
           "I DD(Standby)",
           "Supply current in Standby mode (backup registers retained), RTC disabled",
-          "with IWDG clocked by LSI 250 Hz ULPMEN = 0",
+          "with IWDG 2.4",
           "2.4",
           "0.40",
           "0.94",
@@ -21503,7 +21300,7 @@
         [
           "I DD(Standby)",
           "Supply current in Standby mode (backup registers retained), RTC disabled",
-          "with IWDG clocked by LSI 250 Hz ULPMEN = 0",
+          "3.0 LSI 250 Hz",
           "3.0",
           "0.55",
           "1.28",
@@ -21520,7 +21317,7 @@
         [
           "I DD(Standby)",
           "Supply current in Standby mode (backup registers retained), RTC disabled",
-          "with IWDG clocked by LSI 250 Hz ULPMEN = 0",
+          "3.3 ULPMEN = 0",
           "3.3",
           "0.87",
           "1.90",
@@ -21537,7 +21334,7 @@
         [
           "I DD(Standby)",
           "Supply current in Standby mode (backup registers retained), RTC disabled",
-          "with IWDG clocked by LSI 250 Hz ULPMEN = 0",
+          "3.6",
           "3.6",
           "1.71",
           "3.26",
@@ -22451,14 +22248,16 @@
         ],
         [
           "Q DD(wake-up from Standby)",
-          "Electrical charge consumed during wake-up from Standby mode",
+          "Standby mode",
           "Wake-up clock is MSI 1 MHz",
           "3.0",
           "3.2",
           "µAs"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Evaluated by characterization. Not tested in production."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -22521,8 +22320,8 @@
         ],
         [
           "I DD(Shutdown)",
-          "Supply current in Shutdown mode (backup registers retained), RTC disabled",
-          "-",
+          "Supply current in",
+          "2.4",
           "2.4",
           "0.17",
           "0.68",
@@ -22538,8 +22337,8 @@
         ],
         [
           "I DD(Shutdown)",
-          "Supply current in Shutdown mode (backup registers retained), RTC disabled",
-          "-",
+          "registers retained),",
+          "- 3.0",
           "3.0",
           "0.31",
           "1.05",
@@ -22555,8 +22354,8 @@
         ],
         [
           "I DD(Shutdown)",
-          "Supply current in Shutdown mode (backup registers retained), RTC disabled",
-          "-",
+          "RTC disabled",
+          "3.3",
           "3.3",
           "0.64",
           "1.65",
@@ -22573,7 +22372,7 @@
         [
           "I DD(Shutdown)",
           "Supply current in Shutdown mode (backup registers retained), RTC disabled",
-          "-",
+          "3.6",
           "3.6",
           "1.55",
           "3.05",
@@ -22607,7 +22406,7 @@
         [
           "I DD(Shutdown with RTC)",
           "Supply current in Shutdown mode (backup registers retained), RTC enabled",
-          "RTC(2) clocked by LSE bypassed at 32768 Hz",
+          "2.4 RTC(2) clocked by",
           "2.4",
           "0.37",
           "0.88",
@@ -22624,7 +22423,7 @@
         [
           "I DD(Shutdown with RTC)",
           "Supply current in Shutdown mode (backup registers retained), RTC enabled",
-          "RTC(2) clocked by LSE bypassed at 32768 Hz",
+          "LSE bypassed at 3.0",
           "3.0",
           "0.57",
           "1.30",
@@ -22641,7 +22440,7 @@
         [
           "I DD(Shutdown with RTC)",
           "Supply current in Shutdown mode (backup registers retained), RTC enabled",
-          "RTC(2) clocked by LSE bypassed at 32768 Hz",
+          "3.3",
           "3.3",
           "0.94",
           "2.00",
@@ -22656,9 +22455,9 @@
           "µA"
         ],
         [
-          "I DD(Shutdown with RTC)",
-          "Supply current in Shutdown mode (backup registers retained), RTC enabled",
-          "RTC(2) clocked by LSE bypassed at 32768 Hz",
+          "I DD(Shutdown",
+          "Shutdown mode (backup",
+          "3.6",
           "3.6",
           "1.90",
           "3.45",
@@ -22670,91 +22469,6 @@
           "20.00",
           "40.00",
           "89.00",
-          "µA"
-        ],
-        [
-          "I DD(Shutdown with RTC)",
-          "Supply current in Shutdown mode (backup registers retained), RTC enabled",
-          "RTC(2) clocked by LSE quartz in low-drive mode",
-          "1.8",
-          "0.48",
-          "0.97",
-          "3.10",
-          "7.70",
-          "20.00",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "µA"
-        ],
-        [
-          "I DD(Shutdown with RTC)",
-          "Supply current in Shutdown mode (backup registers retained), RTC enabled",
-          "RTC(2) clocked by LSE quartz in low-drive mode",
-          "2.4",
-          "0.52",
-          "1.03",
-          "3.30",
-          "8.15",
-          "21.00",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "µA"
-        ],
-        [
-          "I DD(Shutdown with RTC)",
-          "Supply current in Shutdown mode (backup registers retained), RTC enabled",
-          "RTC(2) clocked by LSE quartz in low-drive mode",
-          "3.0",
-          "0.66",
-          "1.35",
-          "4.20",
-          "10.05",
-          "25.50",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "µA"
-        ],
-        [
-          "I DD(Shutdown with RTC)",
-          "Supply current in Shutdown mode (backup registers retained), RTC enabled",
-          "RTC(2) clocked by LSE quartz in low-drive mode",
-          "3.3",
-          "0.98",
-          "2.00",
-          "5.50",
-          "12.10",
-          "29.50",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "µA"
-        ],
-        [
-          "I DD(Shutdown with RTC)",
-          "Supply current in Shutdown mode (backup registers retained), RTC enabled",
-          "RTC(2) clocked by LSE quartz in low-drive mode",
-          "3.6",
-          "1.84",
-          "3.35",
-          "7.90",
-          "16.10",
-          "35.50",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
           "µA"
         ]
       ],
@@ -22870,8 +22584,8 @@
         ],
         [
           "I DD(VBAT)",
-          "Supply current in V BAT mode (backup registers retained), RTC disabled",
-          "-",
+          "Supply current in V BAT",
+          "2.4",
           "2.4",
           "0.13",
           "0.29",
@@ -22887,8 +22601,8 @@
         ],
         [
           "I DD(VBAT)",
-          "Supply current in V BAT mode (backup registers retained), RTC disabled",
-          "-",
+          "retained),",
+          "- 3.0",
           "3.0",
           "0.16",
           "0.37",
@@ -22904,8 +22618,8 @@
         ],
         [
           "I DD(VBAT)",
-          "Supply current in V BAT mode (backup registers retained), RTC disabled",
-          "-",
+          "RTC disabled",
+          "3.3",
           "3.3",
           "0.25",
           "0.56",
@@ -22922,7 +22636,7 @@
         [
           "I DD(VBAT)",
           "Supply current in V BAT mode (backup registers retained), RTC disabled",
-          "-",
+          "3.6",
           "3.6",
           "0.46",
           "0.89",
@@ -22956,7 +22670,7 @@
         [
           "I DD(VBAT with RTC)",
           "Supply current in V BAT mode (backup registers retained), RTC enabled",
-          "RTC(2) clocked by LSE bypassed at 32768 Hz",
+          "2.4 RTC(2) clocked",
           "2.4",
           "0.48",
           "0.65",
@@ -22973,7 +22687,7 @@
         [
           "I DD(VBAT with RTC)",
           "Supply current in V BAT mode (backup registers retained), RTC enabled",
-          "RTC(2) clocked by LSE bypassed at 32768 Hz",
+          "0.3 dessapyb ESL yb",
           "3.0",
           "0.62",
           "0.85",
@@ -22990,7 +22704,7 @@
         [
           "I DD(VBAT with RTC)",
           "Supply current in V BAT mode (backup registers retained), RTC enabled",
-          "RTC(2) clocked by LSE bypassed at 32768 Hz",
+          "3.3",
           "3.3",
           "0.78",
           "1.10",
@@ -23007,7 +22721,7 @@
         [
           "I DD(VBAT with RTC)",
           "Supply current in V BAT mode (backup registers retained), RTC enabled",
-          "RTC(2) clocked by LSE bypassed at 32768 Hz",
+          "3.6",
           "3.6",
           "1.10",
           "1.55",
@@ -23040,8 +22754,8 @@
         ],
         [
           "I DD(VBAT with RTC)",
-          "Supply current in V BAT mode (backup registers retained), RTC enabled",
-          "RTC(2) clocked by LSE bypassed at 32768 Hz, LPCAL = 1 in RTC_CALR",
+          "Supply current in V BAT",
+          "dessapyb ESL yb 4.2",
           "2.4",
           "0.36",
           "0.53",
@@ -23056,9 +22770,9 @@
           "µA"
         ],
         [
-          "I DD(VBAT with RTC)",
-          "Supply current in V BAT mode (backup registers retained), RTC enabled",
-          "RTC(2) clocked by LSE bypassed at 32768 Hz, LPCAL = 1 in RTC_CALR",
+          "htiw TABV(DD",
+          "retained),",
+          "at 32768 Hz, 3.0",
           "3.0",
           "0.46",
           "0.69",
@@ -23074,8 +22788,8 @@
         ],
         [
           "I DD(VBAT with RTC)",
-          "Supply current in V BAT mode (backup registers retained), RTC enabled",
-          "RTC(2) clocked by LSE bypassed at 32768 Hz, LPCAL = 1 in RTC_CALR",
+          "RTC enabled",
+          "3.3 RTC_CALR",
           "3.3",
           "0.60",
           "0.93",
@@ -23092,7 +22806,7 @@
         [
           "I DD(VBAT with RTC)",
           "Supply current in V BAT mode (backup registers retained), RTC enabled",
-          "RTC(2) clocked by LSE bypassed at 32768 Hz, LPCAL = 1 in RTC_CALR",
+          "3.6",
           "3.6",
           "0.87",
           "1.35",
@@ -23126,7 +22840,7 @@
         [
           "I DD(VBAT with RTC)",
           "Supply current in V BAT mode (backup registers retained), RTC enabled",
-          "RTC(2) clocked by LSE quartz in low-drive",
+          "2.4 RTC(2) clocked",
           "2.4",
           "0.60",
           "0.77",
@@ -23143,7 +22857,7 @@
         [
           "I DD(VBAT with RTC)",
           "Supply current in V BAT mode (backup registers retained), RTC enabled",
-          "RTC(2) clocked by LSE quartz in low-drive",
+          "0.3 ni ztrauq ESL yb",
           "3.0",
           "0.69",
           "0.91",
@@ -23160,7 +22874,7 @@
         [
           "I DD(VBAT with RTC)",
           "Supply current in V BAT mode (backup registers retained), RTC enabled",
-          "RTC(2) clocked by LSE quartz in low-drive",
+          "3.3",
           "3.3",
           "0.80",
           "1.10",
@@ -23177,7 +22891,7 @@
         [
           "I DD(VBAT with RTC)",
           "Supply current in V BAT mode (backup registers retained), RTC enabled",
-          "RTC(2) clocked by LSE quartz in low-drive",
+          "3.6",
           "3.6",
           "1.05",
           "1.50",
@@ -23555,7 +23269,7 @@
           "0.13",
           "0.10",
           "-",
-          "µA/ MHz"
+          "µA/"
         ],
         [
           "1BHA",
@@ -23570,7 +23284,7 @@
           "0.26",
           "0.20",
           "-",
-          "µA/ MHz"
+          "MHz"
         ],
         [
           "1BHA",
@@ -25247,6 +24961,15 @@
       ],
       "rows": [
         [
+          "t wu(Stop 0) t wu(Stop 1)",
+          "Wake-up time from Stop 0 to Run mode All SRAMs retained Wake-up time from Stop 1 to Run mode All SRAMs retained",
+          "SLEEP_PD = 1 with MSI = 24 MHz",
+          "SLEEP_PD = 1 with MSI = 24 MHz",
+          "8.1",
+          "8.8",
+          "µs"
+        ],
+        [
           "t wu(Stop 0)",
           "Wake-up time from Stop 0 to Run mode All SRAMs retained",
           "Wake-up in FLASH, range 4, FLASHFWU = 1 and SRAM4FWU = 1 in PWR_CR2, ICACHE OFF",
@@ -25266,8 +24989,8 @@
         ],
         [
           "t wu(Stop 0)",
-          "Wake-up time from Stop 0 to Run mode All SRAMs retained",
-          "Wake-up in FLASH, range 4, FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2, ICACHE OFF",
+          "Stop 0 to Run mode",
+          "HSI 16 MHz and SRAM4FWU = 0 in",
           "HSI 16 MHz",
           "11.0",
           "12.0",
@@ -25276,7 +24999,7 @@
         [
           "t wu(Stop 0)",
           "Wake-up time from Stop 0 to Run mode All SRAMs retained",
-          "Wake-up in FLASH, range 4, FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2, ICACHE OFF",
+          "PWR_CR2, ICACHE OFF MSI 1 MHz",
           "MSI 1 MHz",
           "37.0",
           "39.0",
@@ -25294,7 +25017,16 @@
         [
           "t wu(Stop 0)",
           "Wake-up time from Stop 0 to Run mode All SRAMs retained",
-          "Wake-up in SRAM2, range 4, FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2",
+          "HSI 16 MHz and SRAM4FWU = 0 in",
+          "HSI 16 MHz",
+          "6.75",
+          "7.4",
+          "µs"
+        ],
+        [
+          "t wu(Stop 0)",
+          "Wake-up time from Stop 0 to Run mode All SRAMs retained",
+          "PWR_CR2 MSI 1 MHz",
           "MSI 1 MHz",
           "34.00",
           "36.0",
@@ -25320,8 +25052,8 @@
         ],
         [
           "t wu(Stop 1)",
-          "Wake-up time from Stop 1 to Run mode All SRAMs retained",
-          "Wake-up in FLASH, FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2, ICACHE OFF",
+          "Stop 1 to Run mode",
+          "HSI 16 MHz SRAM4FWU = 0 in",
           "HSI 16 MHz",
           "21.5",
           "24.0",
@@ -25330,7 +25062,7 @@
         [
           "t wu(Stop 1)",
           "Wake-up time from Stop 1 to Run mode All SRAMs retained",
-          "Wake-up in FLASH, FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2, ICACHE OFF",
+          "PWR_CR2, ICACHE OFF MSI 1 MHz",
           "MSI 1 MHz",
           "48.0",
           "51.0",
@@ -25348,7 +25080,7 @@
         [
           "t wu(Stop 1)",
           "Wake-up time from Stop 1 to Run mode All SRAMs retained",
-          "Wake-up in SRAM2, range 4, FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2",
+          "HSI 16 MHz and SRAM4FWU = 0 in",
           "HSI 16 MHz",
           "17.5",
           "20.0",
@@ -25357,7 +25089,7 @@
         [
           "t wu(Stop 1)",
           "Wake-up time from Stop 1 to Run mode All SRAMs retained",
-          "Wake-up in SRAM2, range 4, FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2",
+          "PWR_CR2 MSI 1 MHz",
           "MSI 1 MHz",
           "45.0",
           "48.0",
@@ -25565,8 +25297,8 @@
           "Nb of CPU cycles"
         ],
         [
-          "t wu(Sleep)",
-          "Wake-up time from Sleep to Run mode",
+          "t wu(Stop 0) t wu(Stop 1) t wu(Stop 2)",
+          "Wake-up time from Stop 0 to Run mode All SRAMs retained Wake-up time from Stop 1 to Run mode All SRAMs retained Wake-up time from Stop 2 to Run mode All SRAMs retained",
           "SLEEP_PD = 1 with MSI = 24 MHz",
           "SLEEP_PD = 1 with MSI = 24 MHz",
           "8.1",
@@ -25593,8 +25325,8 @@
         ],
         [
           "t wu(Stop 0)",
-          "Wake-up time from Stop 0 to Run mode All SRAMs retained",
-          "Wake-up in FLASH, range 4, FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2",
+          "Stop 0 to Run mode",
+          "HSI 16 MHz SRAM4FWU = 0 in",
           "HSI 16 MHz",
           "11.0",
           "12.0",
@@ -25603,7 +25335,7 @@
         [
           "t wu(Stop 0)",
           "Wake-up time from Stop 0 to Run mode All SRAMs retained",
-          "Wake-up in FLASH, range 4, FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2",
+          "PWR_CR2 MSI 1 MHz",
           "MSI 1 MHz",
           "37.0",
           "39.0",
@@ -25621,7 +25353,7 @@
         [
           "t wu(Stop 0)",
           "Wake-up time from Stop 0 to Run mode All SRAMs retained",
-          "Wake-up in SRAM2, range 4, FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2",
+          "HSI 16 MHz SRAM4FWU = 0 in",
           "HSI 16 MHz",
           "6.75",
           "7.4",
@@ -25630,7 +25362,7 @@
         [
           "t wu(Stop 0)",
           "Wake-up time from Stop 0 to Run mode All SRAMs retained",
-          "Wake-up in SRAM2, range 4, FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2",
+          "PWR_CR2 MSI 1 MHz",
           "MSI 1 MHz",
           "34.0",
           "36.0",
@@ -25656,8 +25388,8 @@
         ],
         [
           "t wu(Stop 1)",
-          "Wake-up time from Stop 1 to Run mode All SRAMs retained",
-          "Wake-up in FLASH FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2",
+          "Stop 1 to Run mode",
+          "HSI 16 MHz SRAM4FWU = 0 in",
           "HSI 16 MHz",
           "16.0",
           "18.0",
@@ -25666,7 +25398,7 @@
         [
           "t wu(Stop 1)",
           "Wake-up time from Stop 1 to Run mode All SRAMs retained",
-          "Wake-up in FLASH FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2",
+          "PWR_CR2 MSI 1 MHz",
           "MSI 1 MHz",
           "42.5",
           "45.0",
@@ -25684,7 +25416,7 @@
         [
           "t wu(Stop 1)",
           "Wake-up time from Stop 1 to Run mode All SRAMs retained",
-          "Wake-up in SRAM2, range 4, FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2",
+          "HSI 16 MHz SRAM4FWU = 0 in",
           "HSI 16 MHz",
           "12.0",
           "13.0",
@@ -25693,7 +25425,7 @@
         [
           "t wu(Stop 1)",
           "Wake-up time from Stop 1 to Run mode All SRAMs retained",
-          "Wake-up in SRAM2, range 4, FLASHFWU = 0 and SRAM4FWU = 0 in PWR_CR2",
+          "PWR_CR2 MSI 1 MHz",
           "MSI 1 MHz",
           "39.5",
           "42.0",
@@ -25719,8 +25451,8 @@
         ],
         [
           "t wu(Stop 2)",
-          "Wake-up time from Stop 2 to Run mode All SRAMs retained",
-          "Wake-up in FLASH SRAM4FWU = 0 in PWR_CR2",
+          "Stop 2 to Run mode",
+          "SRAM4FWU = 0 in HSI 16 MHz",
           "HSI 16 MHz",
           "20.0",
           "22.0",
@@ -25728,8 +25460,8 @@
         ],
         [
           "t wu(Stop 2)",
-          "Wake-up time from Stop 2 to Run mode All SRAMs retained",
-          "Wake-up in FLASH SRAM4FWU = 0 in PWR_CR2",
+          "All SRAMs retained",
+          "MSI 1 MHz",
           "MSI 1 MHz",
           "54.0",
           "70.0",
@@ -25747,7 +25479,7 @@
         [
           "t wu(Stop 2)",
           "Wake-up time from Stop 2 to Run mode All SRAMs retained",
-          "Wake-up in SRAM2, range 4, SRAM4FWU = 0 in PWR_CR2",
+          "SRAM4FWU = 0 in HSI 16 MHz",
           "HSI 16 MHz",
           "16.0",
           "18.0",
@@ -25756,7 +25488,7 @@
         [
           "t wu(Stop 2)",
           "Wake-up time from Stop 2 to Run mode All SRAMs retained",
-          "Wake-up in SRAM2, range 4, SRAM4FWU = 0 in PWR_CR2",
+          "MSI 1 MHz",
           "MSI 1 MHz",
           "51.5",
           "74.0",
@@ -25936,7 +25668,7 @@
           "µs"
         ],
         [
-          "t (2) LDO",
+          "(2)",
           "SMPS to LDO transition time",
           "Range 3",
           "15.0",
@@ -25968,7 +25700,7 @@
           "µs"
         ],
         [
-          "t (2) SMPS",
+          "(2)",
           "LDO to SMPS transition time",
           "Range 3",
           "17.0",
@@ -26102,7 +25834,9 @@
           "μs"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "2. Time to REGS change in PWR_SVMSR."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -26392,7 +26126,7 @@
         [
           "I DD(HSE)",
           "HSE current consumption",
-          "Rev. X",
+          "V = 3 V, Rm = 30 Ω, C = 10 pF @ 4 MHz DD L = 3 V, Rm = 30 Ω, C = 10 pF @ 8 MHz V DD L = 3 V, Rm = 45 Ω, C = 10 pF @ 8 MHz Rev. X V DD L V = 3 V, Rm = 30 Ω, C = 5 pF @ 48 MHz DD L = 3 V, Rm = 30 Ω, C = 10 pF @ 48 MHz V DD L = 3 V, Rm = 30 Ω, C = 20 pF @ 48 MHz V DD L",
           "V = 3 V, Rm = 30 Ω, C = 10 pF @ 4 MHz DD L",
           "-",
           "670",
@@ -26402,7 +26136,7 @@
         [
           "I DD(HSE)",
           "HSE current consumption",
-          "Rev. X",
+          "= 3 V, Rm = 30 Ω, C = 10 pF @ 8 MHz V DD L",
           "V = 3 V, Rm = 30 Ω, C = 10 pF @ 8 MHz DD L",
           "-",
           "530",
@@ -26411,8 +26145,8 @@
         ],
         [
           "I DD(HSE)",
-          "HSE current consumption",
-          "Rev. X",
+          "consumption",
+          "= 3 V, Rm = 45 Ω, C = 10 pF @ 8 MHz Rev. X V DD L",
           "V = 3 V, Rm = 45 Ω, C = 10 pF @ 8 MHz DD L",
           "-",
           "580",
@@ -26422,7 +26156,7 @@
         [
           "I DD(HSE)",
           "HSE current consumption",
-          "Rev. X",
+          "V = 3 V, Rm = 30 Ω, C = 5 pF @ 48 MHz DD L",
           "V = 3 V, Rm = 30 Ω, C = 5 pF @ 48 MHz DD L",
           "-",
           "980",
@@ -26432,7 +26166,7 @@
         [
           "I DD(HSE)",
           "HSE current consumption",
-          "Rev. X",
+          "= 3 V, Rm = 30 Ω, C = 10 pF @ 48 MHz V DD L",
           "V = 3 V, Rm = 30 Ω, C = 10 pF @ 48 MHz DD L",
           "-",
           "1700",
@@ -26442,7 +26176,7 @@
         [
           "I DD(HSE)",
           "HSE current consumption",
-          "Rev. X",
+          "= 3 V, Rm = 30 Ω, C = 20 pF @ 48 MHz V DD L",
           "V = 3 V, Rm = 30 Ω, C = 20 pF @ 48 MHz DD L",
           "-",
           "2700",
@@ -26538,110 +26272,10 @@
           "2",
           "-",
           "ms"
-        ],
-        [
-          "I DD(LSE)",
-          "LSE current consumption",
-          "Rev. X",
-          "LSEDRV[1:0] = 10, medium high-drive capability",
-          "-",
-          "450",
-          "-",
-          "-"
-        ],
-        [
-          "I DD(LSE)",
-          "LSE current consumption",
-          "Rev. X",
-          "LSEDRV[1:0] = 11, high-drive capability",
-          "-",
-          "600",
-          "-",
-          "-"
-        ],
-        [
-          "I DD(LSE)",
-          "LSE current consumption",
-          "Other revisions",
-          "LSEDRV[1:0] = 00, low-drive capability",
-          "-",
-          "410",
-          "-",
-          "-"
-        ],
-        [
-          "I DD(LSE)",
-          "LSE current consumption",
-          "Other revisions",
-          "LSEDRV[1:0] = 01, medium low-drive capability",
-          "LSEDRV[1:0] = 01, medium low-drive capability",
-          "450",
-          "450",
-          "450"
-        ],
-        [
-          "I DD(LSE)",
-          "LSE current consumption",
-          "Other revisions",
-          "LSEDRV[1:0] = 10, medium high-drive capability",
-          "-",
-          "590",
-          "-",
-          "-"
-        ],
-        [
-          "I DD(LSE)",
-          "LSE current consumption",
-          "Other revisions",
-          "LSEDRV[1:0] = 11, high-drive capability",
-          "-",
-          "700",
-          "-",
-          "-"
-        ],
-        [
-          "Gm critmax",
-          "Maximum critical crystal Gm",
-          "LSEDRV[1:0] = 01, medium low-drive capability",
-          "LSEDRV[1:0] = 01, medium low-drive capability",
-          "-",
-          "-",
-          "0.75",
-          "0.75"
-        ],
-        [
-          "Gm critmax",
-          "Maximum critical crystal Gm",
-          "LSEDRV[1:0] = 10, medium high-drive capability",
-          "LSEDRV[1:0] = 10, medium high-drive capability",
-          "-",
-          "-",
-          "1.7",
-          "1.7"
-        ],
-        [
-          "Gm critmax",
-          "Maximum critical crystal Gm",
-          "LSEDRV[1:0] = 11, high-drive capability",
-          "LSEDRV[1:0] = 11, high-drive capability",
-          "-",
-          "-",
-          "2.7",
-          "2.7"
-        ],
-        [
-          "C S_PARA",
-          "Internal stray parasitic capacitance(3)",
-          "Other revisions",
-          "-",
-          "-",
-          "3",
-          "-",
-          "-"
         ]
       ],
       "notes": [
-        "2. Specified by design. Not tested in production.",
+        "2. Resonator characteristics given by the crystal/ceramic resonator manufacturer.",
         "3. This consumption level occurs during the first 2/3 of the t startup time. SU(HSE)",
         "4. t is the startup time measured from the moment it is enabled (by software) to a stabilized 8 MHz oscillation is SU(HSE)"
       ],
@@ -26694,7 +26328,7 @@
         [
           "I DD(LSE)",
           "LSE current consumption",
-          "Rev. X",
+          "Rev. X LSEDRV[1:0] = 10, medium high-drive capability",
           "LSEDRV[1:0] = 10, medium high-drive capability",
           "-",
           "450",
@@ -26704,7 +26338,7 @@
         [
           "I DD(LSE)",
           "LSE current consumption",
-          "Rev. X",
+          "LSEDRV[1:0] = 11, high-drive capability",
           "LSEDRV[1:0] = 11, high-drive capability",
           "-",
           "600",
@@ -26713,7 +26347,7 @@
         ],
         [
           "I DD(LSE)",
-          "LSE current consumption",
+          "consumption",
           "Other revisions",
           "LSEDRV[1:0] = 00, low-drive capability",
           "-",
@@ -26724,7 +26358,7 @@
         [
           "I DD(LSE)",
           "LSE current consumption",
-          "Other revisions",
+          "LSEDRV[1:0] = 01, medium low-drive capability Other",
           "LSEDRV[1:0] = 01, medium low-drive capability",
           "-",
           "450",
@@ -26734,7 +26368,7 @@
         [
           "I DD(LSE)",
           "LSE current consumption",
-          "Other revisions",
+          "revisions LSEDRV[1:0] = 10, medium high-drive capability",
           "LSEDRV[1:0] = 10, medium high-drive capability",
           "-",
           "590",
@@ -26744,7 +26378,7 @@
         [
           "I DD(LSE)",
           "LSE current consumption",
-          "Other revisions",
+          "LSEDRV[1:0] = 11, high-drive capability",
           "LSEDRV[1:0] = 11, high-drive capability",
           "-",
           "700",
@@ -26763,7 +26397,7 @@
         ],
         [
           "Gm critmax",
-          "Maximum critical crystal Gm",
+          "Maximum",
           "LSEDRV[1:0] = 01, medium low-drive capability",
           "LSEDRV[1:0] = 01, medium low-drive capability",
           "-",
@@ -26773,7 +26407,7 @@
         ],
         [
           "Gm critmax",
-          "Maximum critical crystal Gm",
+          "Gm",
           "LSEDRV[1:0] = 10, medium high-drive capability",
           "LSEDRV[1:0] = 10, medium high-drive capability",
           "-",
@@ -26803,7 +26437,7 @@
         ],
         [
           "C S_PARA",
-          "Internal stray parasitic capacitance(3)",
+          "parasitic capacitance(3)",
           "Other revisions",
           "-",
           "-",
@@ -26820,90 +26454,9 @@
           "2",
           "-",
           "s"
-        ],
-        [
-          "f HSI16",
-          "f HSI16",
-          "HSI16 frequency after factory calibration",
-          "HSI16 frequency after factory calibration",
-          "V = 3.0 V, T = 30 °C DD J",
-          "15.92",
-          "16",
-          "16.08"
-        ],
-        [
-          "f (1) HSI16",
-          "f (1) HSI16",
-          "None",
-          "None",
-          "T = –10 °C to 100 °C, J 1.58 ≤ V ≤ 3.6 V DD",
-          "15.84",
-          "-",
-          "16.16"
-        ],
-        [
-          "None",
-          "None",
-          "None",
-          "None",
-          "T = –40 °C to 130 °C, J 1.58 ≤ V ≤ 3.6 V DD",
-          "15.65",
-          "-",
-          "16.25"
-        ],
-        [
-          "TRIM (2) HSI16",
-          "TRIM (2) HSI16",
-          "HSI16 user trimming step",
-          "HSI16 user trimming step",
-          "-",
-          "18",
-          "29",
-          "40"
-        ],
-        [
-          "DuCy (2) HSI16",
-          "DuCy (2) HSI16",
-          "Duty cycle",
-          "Duty cycle",
-          "-",
-          "45",
-          "-",
-          "55"
-        ],
-        [
-          "t (2) su(HSI16)",
-          "t (2) su(HSI16)",
-          "HSI16 oscillator startup time",
-          "HSI16 oscillator startup time",
-          "-",
-          "-",
-          "2.5",
-          "3.6"
-        ],
-        [
-          "t (2) stab(HSI16)",
-          "t (2) stab(HSI16)",
-          "HSI16 oscillator stabilization time",
-          "HSI16 oscillator stabilization time",
-          "At 1% of target frequency",
-          "-",
-          "4",
-          "6"
-        ],
-        [
-          "I (2) DD(HSI16)",
-          "I (2) DD(HSI16)",
-          "HSI16 oscillator power consumption",
-          "HSI16 oscillator power consumption",
-          "-",
-          "-",
-          "150",
-          "210"
         ]
       ],
       "notes": [
-        "1. Evaluated by characterization. Not tested in production. It does not take into account package and soldering effects.",
         "2. Specified by design. Not tested in production.",
         "3. C is the equivalent capacitance seen by the crystal due to OSC32_IN and OSC32_OUT internal parasitic S_PARA",
         "4. t is the startup time measured from the moment it is enabled (by software) to a stabilized 32.768 kHz oscillation is SU(LSE)"
@@ -27071,7 +26624,7 @@
         [
           "f MSI",
           "MSI frequency after factory calibration",
-          "V = 3 V DD T = 30 °C J",
+          "MSI range 1",
           "MSI mode",
           "MSI range 1",
           "23.87",
@@ -27082,7 +26635,7 @@
         [
           "f MSI",
           "MSI frequency after factory calibration",
-          "V = 3 V DD T = 30 °C J",
+          "MSI range 2",
           "MSI mode",
           "MSI range 2",
           "15.91",
@@ -27093,7 +26646,7 @@
         [
           "f MSI",
           "MSI frequency after factory calibration",
-          "V = 3 V DD T = 30 °C J",
+          "MSI range 3",
           "MSI mode",
           "MSI range 3",
           "11.93",
@@ -27104,7 +26657,7 @@
         [
           "f MSI",
           "MSI frequency after factory calibration",
-          "V = 3 V DD T = 30 °C J",
+          "MSI range 4 (MSIRC1)",
           "MSI mode",
           "MSI range 4 (MSIRC1)",
           "3.98",
@@ -27115,7 +26668,7 @@
         [
           "f MSI",
           "MSI frequency after factory calibration",
-          "V = 3 V DD T = 30 °C J",
+          "MSI range 5",
           "MSI mode",
           "MSI range 5",
           "1.99",
@@ -27126,7 +26679,7 @@
         [
           "f MSI",
           "MSI frequency after factory calibration",
-          "V = 3 V DD T = 30 °C J",
+          "MSI range 6",
           "MSI mode",
           "MSI range 6",
           "1.33",
@@ -27137,7 +26690,7 @@
         [
           "f MSI",
           "MSI frequency after factory calibration",
-          "V = 3 V DD T = 30 °C J",
+          "MSI range 7",
           "MSI mode",
           "MSI range 7",
           "0.99",
@@ -27148,7 +26701,7 @@
         [
           "f MSI",
           "MSI frequency after factory calibration",
-          "V = 3 V DD T = 30 °C J",
+          "MSI range 8 (MSIRC2)",
           "MSI mode",
           "MSI range 8 (MSIRC2)",
           "3.05",
@@ -27159,7 +26712,7 @@
         [
           "f MSI",
           "MSI frequency after factory calibration",
-          "V = 3 V DD T = 30 °C J",
+          "MSI range 9",
           "MSI mode",
           "MSI range 9",
           "1.53",
@@ -27170,7 +26723,7 @@
         [
           "f MSI",
           "MSI frequency after factory calibration",
-          "V = 3 V DD T = 30 °C J",
+          "MSI range 10",
           "MSI mode",
           "MSI range 10",
           "1.02",
@@ -27181,7 +26734,7 @@
         [
           "f MSI",
           "MSI frequency after factory calibration",
-          "V = 3 V DD T = 30 °C J",
+          "MSI range 11",
           "MSI mode",
           "MSI range 11",
           "0.76",
@@ -27192,7 +26745,7 @@
         [
           "f MSI",
           "MSI frequency after factory calibration",
-          "V = 3 V DD T = 30 °C J",
+          "MSI range 12 (MSIRC3) = 3 V V MSI range 13 DD = 30 °C T J MSI range 14 MSI range 15",
           "MSI mode",
           "MSI range 12 (MSIRC3)",
           "397.68",
@@ -27202,8 +26755,8 @@
         ],
         [
           "f MSI",
-          "MSI frequency after factory calibration",
-          "V = 3 V DD T = 30 °C J",
+          "after factory",
+          "= 3 V V MSI range 13 DD",
           "MSI mode",
           "MSI range 13",
           "198.84",
@@ -27213,8 +26766,8 @@
         ],
         [
           "f MSI",
-          "MSI frequency after factory calibration",
-          "V = 3 V DD T = 30 °C J",
+          "calibration",
+          "MSI range 14",
           "MSI mode",
           "MSI range 14",
           "132.56",
@@ -27225,7 +26778,7 @@
         [
           "f MSI",
           "MSI frequency after factory calibration",
-          "V = 3 V DD T = 30 °C J",
+          "MSI range 15",
           "MSI mode",
           "MSI range 15",
           "99.42",
@@ -27236,7 +26789,7 @@
         [
           "f MSI",
           "MSI frequency after factory calibration",
-          "V = 3 V DD T = 30 °C J",
+          "MSI range 0 (MSIRC0) MSI range 1 MSI range 2 MSI range 3 MSI range 4 (MSIRC1) PLL mode(2) MSI range 5 XTAL = MSI range 6 32.768 kHz MSI range 7 MSI range 8 (MSIRC2) MSI range 9 MSI range 10 MSI range 11",
           "PLL mode(2) XTAL = 32.768 kHz",
           "MSI range 0 (MSIRC0)",
           "-",
@@ -27247,7 +26800,7 @@
         [
           "f MSI",
           "MSI frequency after factory calibration",
-          "V = 3 V DD T = 30 °C J",
+          "MSI range 1",
           "PLL mode(2) XTAL = 32.768 kHz",
           "MSI range 1",
           "-",
@@ -27258,7 +26811,7 @@
         [
           "f MSI",
           "MSI frequency after factory calibration",
-          "V = 3 V DD T = 30 °C J",
+          "MSI range 2",
           "PLL mode(2) XTAL = 32.768 kHz",
           "MSI range 2",
           "-",
@@ -27269,7 +26822,7 @@
         [
           "f MSI",
           "MSI frequency after factory calibration",
-          "V = 3 V DD T = 30 °C J",
+          "MSI range 3",
           "PLL mode(2) XTAL = 32.768 kHz",
           "MSI range 3",
           "-",
@@ -27280,7 +26833,7 @@
         [
           "f MSI",
           "MSI frequency after factory calibration",
-          "V = 3 V DD T = 30 °C J",
+          "MSI range 4 (MSIRC1) PLL",
           "PLL mode(2) XTAL = 32.768 kHz",
           "MSI range 4 (MSIRC1)",
           "-",
@@ -27291,7 +26844,7 @@
         [
           "f MSI",
           "MSI frequency after factory calibration",
-          "V = 3 V DD T = 30 °C J",
+          "MSI range 5",
           "PLL mode(2) XTAL = 32.768 kHz",
           "MSI range 5",
           "-",
@@ -27302,7 +26855,7 @@
         [
           "f MSI",
           "MSI frequency after factory calibration",
-          "V = 3 V DD T = 30 °C J",
+          "MSI range 6 32.768 kHz",
           "PLL mode(2) XTAL = 32.768 kHz",
           "MSI range 6",
           "-",
@@ -27313,7 +26866,7 @@
         [
           "f MSI",
           "MSI frequency after factory calibration",
-          "V = 3 V DD T = 30 °C J",
+          "MSI range 7",
           "PLL mode(2) XTAL = 32.768 kHz",
           "MSI range 7",
           "-",
@@ -27324,7 +26877,7 @@
         [
           "f MSI",
           "MSI frequency after factory calibration",
-          "V = 3 V DD T = 30 °C J",
+          "MSI range 8 (MSIRC2)",
           "PLL mode(2) XTAL = 32.768 kHz",
           "MSI range 8 (MSIRC2)",
           "-",
@@ -27335,7 +26888,7 @@
         [
           "f MSI",
           "MSI frequency after factory calibration",
-          "V = 3 V DD T = 30 °C J",
+          "MSI range 9",
           "PLL mode(2) XTAL = 32.768 kHz",
           "MSI range 9",
           "-",
@@ -27346,7 +26899,7 @@
         [
           "f MSI",
           "MSI frequency after factory calibration",
-          "V = 3 V DD T = 30 °C J",
+          "MSI range 10",
           "PLL mode(2) XTAL = 32.768 kHz",
           "MSI range 10",
           "-",
@@ -27357,7 +26910,7 @@
         [
           "f MSI",
           "MSI frequency after factory calibration",
-          "V = 3 V DD T = 30 °C J",
+          "MSI range 11",
           "PLL mode(2) XTAL = 32.768 kHz",
           "MSI range 11",
           "-",
@@ -28179,7 +27732,7 @@
         ],
         [
           "I (2) DD(LSI)",
-          "LSI oscillator power consumption",
+          "consumption",
           "LSIPREDIV = 1",
           "-",
           "130",
@@ -28255,7 +27808,7 @@
         ],
         [
           "f PLL_OUT",
-          "PLL P, Q, R output clock",
+          "output clock",
           "Voltage scaling range 2",
           "1",
           "-",
@@ -28327,7 +27880,7 @@
         ],
         [
           "Jitter",
-          "RMS cycle-to- cycle jitter",
+          "cycle jitter",
           "Fractional mode, VCO = 544 MHz",
           "-",
           "70",
@@ -28363,7 +27916,7 @@
         ],
         [
           "Jitter",
-          "Long-term jitter(5), f = 8 MHz PLL_IN",
+          "f = 8 MHz PLL_IN",
           "Fractional mode, VCO = 544 MHz",
           "-",
           "170",
@@ -28716,7 +28269,7 @@
         [
           "t RET",
           "Data retention",
-          "Whole bank",
+          "kcycle(2) T = 105 °C after 1 A",
           "T = 105 °C after 1 kcycle(2) A",
           "15",
           "Years"
@@ -28724,7 +28277,7 @@
         [
           "t RET",
           "Data retention",
-          "Whole bank",
+          "kcycle(2) = 125 °C after 1 T A",
           "T = 125 °C after 1 kcycle(2) A",
           "10",
           "Years"
@@ -28732,7 +28285,7 @@
         [
           "t RET",
           "Data retention",
-          "Whole bank",
+          "kcycles(2) T = 55 °C after 10 A",
           "T = 55 °C after 10 kcycles(2) A",
           "30",
           "Years"
@@ -28740,7 +28293,7 @@
         [
           "t RET",
           "Data retention",
-          "Whole bank",
+          "kcycles(2) = 85 °C after 10 T A",
           "T = 85 °C after 10 kcycles(2) A",
           "15",
           "Years"
@@ -28748,7 +28301,7 @@
         [
           "t RET",
           "Data retention",
-          "Whole bank",
+          "kcycles(2) = 105 °C after 10 T A",
           "T = 105 °C after 10 kcycles(2) A",
           "10",
           "Years"
@@ -28764,7 +28317,7 @@
         [
           "t RET",
           "Data retention",
-          "Limited to 256 Kbytes per bank",
+          "kcycles(2) Limited to 256 Kbytes per bank = 85 °C after 100 T A",
           "T = 85 °C after 100 kcycles(2) A",
           "15",
           "Years"
@@ -28772,7 +28325,7 @@
         [
           "t RET",
           "Data retention",
-          "Limited to 256 Kbytes per bank",
+          "kcycles(2) = 105 °C after 100 T A",
           "T = 105 °C after 100 kcycles(2) A",
           "10",
           "Years"
@@ -28805,11 +28358,10 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32u575ag.pdf#page=225",
-    "text_helper": "Table 88. EMS characteristics — section 5.3.12 EMC characteristics. Symbol, Parameter, Parameter, Conditions, Level/ Class.",
+    "text_helper": "Table 88. EMS characteristics — section 5.3.12 EMC characteristics. Symbol, Parameter, Conditions, Level/ Class.",
     "table_content": {
       "headers": [
         "Symbol",
-        "Parameter",
         "Parameter",
         "Conditions",
         "Level/ Class"
@@ -28818,40 +28370,19 @@
         [
           "V FESD",
           "Voltage limits to be applied on any I/O pin to induce a functional disturbance",
-          "Voltage limits to be applied on any I/O pin to induce a functional disturbance",
           "V = 3.3 V, T = +25 °C, f = 160 MHz, DD A HCLK BGA169 conforming to IEC 61000-4-2",
           "3B"
         ],
         [
           "V EFTB",
           "Fast transient voltage burst limits to be applied through 100 pF on V and V pins DD SS to induce a functional disturbance",
-          "Fast transient voltage burst limits to be applied through 100 pF on V and V pins DD SS to induce a functional disturbance",
           "V = 3.3 V, T = +25 °C, f = 160 MHz, DD A HCLK BGA169 conforming to IEC 61000-4-4",
           "5A"
-        ],
-        [
-          "S EMI",
-          "Peak(1)",
-          "30 MHz to 130 MHz",
-          "6",
-          "6"
-        ],
-        [
-          "S EMI",
-          "Peak(1)",
-          "130 MHz to 1 GHz",
-          "6",
-          "6"
-        ],
-        [
-          "S EMI",
-          "Peak(1)",
-          "1 GHz to 2 GHz",
-          "7",
-          "7"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Evaluated by characterization. Not tested in production. 226/346 DS13737 Rev 10"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -28897,7 +28428,7 @@
         [
           "S EMI",
           "Peak(1)",
-          "V = 3.6 V, T 25 °C, DD A = BGA169 package compliant with IEC 61967-2",
+          "V = 3.6 V, T 25 °C,",
           "30 MHz to 130 MHz",
           "6",
           "dBμV"
@@ -28905,7 +28436,7 @@
         [
           "S EMI",
           "Peak(1)",
-          "V = 3.6 V, T 25 °C, DD A = BGA169 package compliant with IEC 61967-2",
+          "BGA169 package compliant",
           "130 MHz to 1 GHz",
           "6",
           "dBμV"
@@ -29046,7 +28577,10 @@
           "2"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Evaluated by characterization. Not tested in production.",
+        "2. The I/O structure options listed in this table can be a concatenation of options including the option explicitly listed. For instance TT_a refers to any TT I/O with _a option. TT_xx refers to any TT I/O and FT_xx refers to any FT I/O."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -29144,8 +28678,8 @@
           "V"
         ],
         [
-          "V (2) IL",
-          "I/O input low-level voltage",
+          "(2) V IL",
+          "low-level voltage",
           "All I/Os except FT_c",
           "-",
           "-",
@@ -29172,7 +28706,7 @@
         ],
         [
           "V IH (2)",
-          "I/O input high-level voltage",
+          "high-level voltage",
           "All I/Os except FT_c",
           "0.5 V DDIOx + 0.2(3)",
           "-",
@@ -29445,10 +28979,9 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32u575ag.pdf#page=232",
-    "text_helper": "Table 94. Output voltage characteristics (all I/Os except FT_t I/Os in VBAT mode, and FT_o I/Os) — section 5.3.15 I/O port characteristics. Symbol, Symbol, Parameter, Conditions, Min, +2 autres.",
+    "text_helper": "Table 94. Output voltage characteristics (all I/Os except FT_t I/Os in VBAT mode, and FT_o I/Os) — section 5.3.15 I/O port characteristics. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
     "table_content": {
       "headers": [
-        "Symbol",
         "Symbol",
         "Parameter",
         "Conditions",
@@ -29459,7 +28992,6 @@
       "rows": [
         [
           "V OL",
-          "V OL",
           "Output low-level voltage",
           "CMOS port(4), |I |= 8 mA, IO 2.7 V ≤ V ≤ 3.6 V DDIOx",
           "-",
@@ -29468,16 +29000,14 @@
         ],
         [
           "V OH",
-          "V OH",
           "Output high-level voltage",
-          "CMOS port(4), |I |= 8 mA, IO 2.7 V ≤ V ≤ 3.6 V DDIOx",
+          "2.7 V ≤ V ≤ 3.6 V DDIOx",
           "V - 0.4 DDIOx",
           "-",
           "V"
         ],
         [
           "V (5) OL",
-          "V (5) OL",
           "Output low-level voltage",
           "TTL port(4),|I |= 8 mA, IO 2.7 V ≤ V ≤ 3.6 V DDIOx",
           "-",
@@ -29486,15 +29016,13 @@
         ],
         [
           "V (5) OH",
-          "V (5) OH",
           "Output high-level voltage",
-          "TTL port(4),|I |= 8 mA, IO 2.7 V ≤ V ≤ 3.6 V DDIOx",
+          "≤ 3.6 V 2.7 V ≤ V DDIOx",
           "2.4",
           "-",
           "V"
         ],
         [
-          "V (5) OL",
           "V (5) OL",
           "Output low-level voltage",
           "All I/Os, |I |= 20 mA, IO 2.7 V ≤ V ≤ 3.6 V DDIOx",
@@ -29504,16 +29032,14 @@
         ],
         [
           "V (5) OH",
-          "V (5) OH",
           "Output high-level voltage",
-          "All I/Os, |I |= 20 mA, IO 2.7 V ≤ V ≤ 3.6 V DDIOx",
+          "2.7 V ≤ V ≤ 3.6 V DDIOx",
           "V - 1.3 DDIOx",
           "-",
           "V"
         ],
         [
           "V (5) OL",
-          "V (5) OL",
           "Output low-level voltage",
           "|I | = 4 mA, IO 1.58 V ≤ V ≤ 3.6 V DDIOx",
           "-",
@@ -29522,15 +29048,13 @@
         ],
         [
           "V (5) OH",
-          "V (5) OH",
           "Output high-level voltage",
-          "|I | = 4 mA, IO 1.58 V ≤ V ≤ 3.6 V DDIOx",
+          "1.58 V ≤ V ≤ 3.6 V DDIOx",
           "V - 0.4 DDIOx",
           "-",
           "V"
         ],
         [
-          "V (5) OL",
           "V (5) OL",
           "Output low-level voltage",
           "|I | = 1 mA, IO 1.08 V ≤ V <3.6 V DDIOx",
@@ -29540,15 +29064,13 @@
         ],
         [
           "V (5) OH",
-          "V (5) OH",
           "Output high-level voltage",
-          "|I | = 1 mA, IO 1.08 V ≤ V <3.6 V DDIOx",
+          "1.08 V ≤ V <3.6 V DDIOx",
           "V - 0.4 DDIOx",
           "-",
           "V"
         ],
         [
-          "V (5) OLFM+",
           "V (5) OLFM+",
           "Output low-level voltage for a FT_f I/O pin in FM+ mode",
           "|I |= 20 mA, IO 2.7 V ≤ V ≤ 3.6 V DDIOx",
@@ -29557,8 +29079,7 @@
           "V"
         ],
         [
-          "V (5) OLFM+",
-          "V (5) OLFM+",
+          "(5) V OLFM+",
           "Output low-level voltage for a FT_f I/O pin in FM+ mode",
           "|I |= 10 mA, IO 1.58 V ≤ V ≤ 3.6 V DDIOx",
           "-",
@@ -29566,7 +29087,6 @@
           "V"
         ],
         [
-          "V (5) OLFM+",
           "V (5) OLFM+",
           "Output low-level voltage for a FT_f I/O pin in FM+ mode",
           "|I |= 2 mA, IO 1.08 V ≤ V < 3.6 V DDIOx",
@@ -29602,10 +29122,9 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32u575ag.pdf#page=232",
-    "text_helper": "Table 95. Output voltage characteristics for FT_t I/Os in V mode, and for FT_o I/Os 232 BAT — section 5.3.15 I/O port characteristics. Symbol, Symbol, Parameter, Conditions, Min, +2 autres.",
+    "text_helper": "Table 95. Output voltage characteristics for FT_t I/Os in V mode, and for FT_o I/Os 232 BAT — section 5.3.15 I/O port characteristics. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
     "table_content": {
       "headers": [
-        "Symbol",
         "Symbol",
         "Parameter",
         "Conditions",
@@ -29616,7 +29135,6 @@
       "rows": [
         [
           "V OL",
-          "V OL",
           "Output low-level voltage",
           "|I |= 0.5 mA, 2.7 V ≤ V ≤ 3.6 V IO SW",
           "-",
@@ -29624,7 +29142,6 @@
           "V"
         ],
         [
-          "V OH",
           "V OH",
           "Output high-level voltage",
           "|I |= 0.5 mA, 2.7 V ≤ V ≤ 3.6 V IO SW",
@@ -29634,7 +29151,6 @@
         ],
         [
           "V OL",
-          "V OL",
           "Output low-level voltage",
           "|I |= 0.25 mA, 1.58 V ≤ V ≤ 3.6 V IO SW",
           "-",
@@ -29643,192 +29159,11 @@
         ],
         [
           "V OH",
-          "V OH",
           "Output high-level voltage",
           "|I |= 0.25 mA, 1.58 V ≤ V ≤ 3.6 V IO SW",
           "V - 0.4 SW",
           "-",
           "V"
-        ],
-        [
-          "00",
-          "Fmax",
-          "Maximum frequency all I/Os",
-          "C = 50 pF, 1.58 V ≤ V < 2.7 V L DDIOx",
-          "-",
-          "5",
-          "5"
-        ],
-        [
-          "00",
-          "Fmax",
-          "Maximum frequency all I/Os",
-          "C = 50 pF, 1.08 V ≤ V < 1.58 V L DDIOx",
-          "-",
-          "1",
-          "1"
-        ],
-        [
-          "00",
-          "Fmax",
-          "Maximum frequency all I/Os",
-          "C = 10 pF, 2.7 V ≤ V ≤ 3.6 V L DDIOx",
-          "-",
-          "12.5",
-          "12.5"
-        ],
-        [
-          "00",
-          "Fmax",
-          "Maximum frequency all I/Os",
-          "C = 10 pF, 1.58 V ≤ V < 2.7 V L DDIOx",
-          "-",
-          "5",
-          "5"
-        ],
-        [
-          "00",
-          "Fmax",
-          "Maximum frequency all I/Os",
-          "C = 10 pF, 1.08 V ≤ V < 1.58 V L DDIOx",
-          "-",
-          "1",
-          "1"
-        ],
-        [
-          "00",
-          "t/t r f",
-          "Output rise and fall time all I/Os",
-          "C = 50 pF, 1.58 V ≤ V < 2.7 V L DDIOx",
-          "-",
-          "33",
-          "33"
-        ],
-        [
-          "00",
-          "t/t r f",
-          "Output rise and fall time all I/Os",
-          "C = 50 pF, 1.08 V ≤ V < 1.58 V L DDIOx",
-          "-",
-          "85",
-          "85"
-        ],
-        [
-          "00",
-          "t/t r f",
-          "Output rise and fall time all I/Os",
-          "C = 10 pF, 2.7 V ≤ V ≤ 3.6 V L DDIOx",
-          "-",
-          "12.5",
-          "12.5"
-        ],
-        [
-          "00",
-          "t/t r f",
-          "Output rise and fall time all I/Os",
-          "C = 10 pF, 1.58 V ≤ V < 2.7 V L DDIOx",
-          "-",
-          "25",
-          "25"
-        ],
-        [
-          "00",
-          "t/t r f",
-          "Output rise and fall time all I/Os",
-          "C = 10 pF, 1.08 V ≤ V < 1.58 V L DDIOx",
-          "-",
-          "50",
-          "50"
-        ],
-        [
-          "01",
-          "Fmax",
-          "Maximum frequency all I/Os",
-          "C = 30 pF, 1.58 V ≤ V < 2.7 V L DDIOx",
-          "-",
-          "12.5",
-          "12.5"
-        ],
-        [
-          "01",
-          "Fmax",
-          "Maximum frequency all I/Os",
-          "C = 30 pF, 1.08 V ≤ V < 1.58 V L DDIOx",
-          "-",
-          "2.5",
-          "2.5"
-        ],
-        [
-          "01",
-          "Fmax",
-          "Maximum frequency all I/Os",
-          "C = 10 pF, 2.7 V ≤ V ≤ 3.6 V L DDIOx",
-          "-",
-          "55",
-          "55"
-        ],
-        [
-          "01",
-          "Fmax",
-          "Maximum frequency all I/Os",
-          "C = 10 pF, 1.58 V ≤ V < 2.7 V L DDIOx",
-          "-",
-          "12.5",
-          "12.5"
-        ],
-        [
-          "01",
-          "Fmax",
-          "Maximum frequency all I/Os",
-          "C = 10 pF, 1.08 V ≤ V ≤<1.58 V L DDIOx",
-          "-",
-          "2.5",
-          "2.5"
-        ],
-        [
-          "01",
-          "t/t r f",
-          "Output rise and fall time all I/Os",
-          "C = 30 pF, 1.58 V ≤ V < 2.7 V L DDIOx",
-          "-",
-          "10",
-          "10"
-        ],
-        [
-          "01",
-          "t/t r f",
-          "Output rise and fall time all I/Os",
-          "C = 30 pF, 1.08 V ≤ V < 1.58 V L DDIOx",
-          "-",
-          "18",
-          "18"
-        ],
-        [
-          "01",
-          "t/t r f",
-          "Output rise and fall time all I/Os",
-          "C = 10 pF, 2.7 V ≤ V ≤ 3.6 V L DDIOx",
-          "-",
-          "4.2",
-          "4.2"
-        ],
-        [
-          "01",
-          "t/t r f",
-          "Output rise and fall time all I/Os",
-          "C = 10 pF, 1.58 V ≤ V < 2.7 V L DDIOx",
-          "-",
-          "7.5",
-          "7.5"
-        ],
-        [
-          "01",
-          "t/t r f",
-          "Output rise and fall time all I/Os",
-          "C = 10 pF, 1.08 V ≤ V < 1.58 V L DDIOx",
-          "-",
-          "12",
-          "12"
         ]
       ],
       "notes": [
@@ -29892,7 +29227,7 @@
         [
           "00",
           "Fmax",
-          "Maximum frequency all I/Os",
+          "Maximum frequency",
           "C = 50 pF, 1.08 V ≤ V < 1.58 V L DDIOx",
           "-",
           "1",
@@ -29901,7 +29236,7 @@
         [
           "00",
           "Fmax",
-          "Maximum frequency all I/Os",
+          "all I/Os",
           "C = 10 pF, 2.7 V ≤ V ≤ 3.6 V L DDIOx",
           "-",
           "12.5",
@@ -29946,7 +29281,7 @@
         [
           "00",
           "t/t r f",
-          "Output rise and fall time all I/Os",
+          "Output rise and fall time",
           "C = 50 pF, 1.08 V ≤ V < 1.58 V L DDIOx",
           "-",
           "85",
@@ -29955,7 +29290,7 @@
         [
           "00",
           "t/t r f",
-          "Output rise and fall time all I/Os",
+          "all I/Os",
           "C = 10 pF, 2.7 V ≤ V ≤ 3.6 V L DDIOx",
           "-",
           "12.5",
@@ -30000,7 +29335,7 @@
         [
           "01",
           "Fmax",
-          "Maximum frequency all I/Os",
+          "Maximum frequency",
           "C = 30 pF, 1.08 V ≤ V < 1.58 V L DDIOx",
           "-",
           "2.5",
@@ -30009,7 +29344,7 @@
         [
           "01",
           "Fmax",
-          "Maximum frequency all I/Os",
+          "all I/Os",
           "C = 10 pF, 2.7 V ≤ V ≤ 3.6 V L DDIOx",
           "-",
           "55",
@@ -30054,7 +29389,7 @@
         [
           "01",
           "t/t r f",
-          "Output rise and fall time all I/Os",
+          "Output rise and fall time",
           "C = 30 pF, 1.08 V ≤ V < 1.58 V L DDIOx",
           "-",
           "18",
@@ -30063,7 +29398,7 @@
         [
           "01",
           "t/t r f",
-          "Output rise and fall time all I/Os",
+          "all I/Os",
           "C = 10 pF, 2.7 V ≤ V ≤ 3.6 V L DDIOx",
           "-",
           "4.2",
@@ -30430,7 +29765,10 @@
           "220"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "5. Compensation system enabled.",
+        "6. The fall time is defined between 70% and 30% of the output waveform accordingly to I2C specification. Ta b le 97. Output AC characteristics, HSLV ON (all I/Os except FT_c)(1)(2)(3)(4)"
+      ],
       "legend": [
         "FT_t in V mode and FT_o I/Os(1))(2)(3)(4)",
         "FT_t in V mode and FT_o I/Os(1))(2)(3)(4) (continued)",
@@ -30489,18 +29827,18 @@
           "ns"
         ],
         [
-          "11 (cont'd)",
+          "11",
           "t/t r f",
-          "Output rise and fall time FT_v and TT_v I/Os",
+          "Output rise and fall time",
           "C = 30 pF, 1.08 V ≤ V < 1.58 V L DDIOx",
           "-",
           "11",
           "ns"
         ],
         [
-          "11 (cont'd)",
+          "(cont'd)",
           "t/t r f",
-          "Output rise and fall time FT_v and TT_v I/Os",
+          "FT_v and TT_v I/Os",
           "C = 10 pF, 2.7 V ≤ V ≤ 3.6 V L DDIOx",
           "-",
           "1.66(5)",
@@ -30885,7 +30223,7 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32u575ag.pdf#page=237",
-    "text_helper": "Table 98. Output AC characteristics for FT_c I/Os — section 5.3.15 I/O port characteristics. Speed, Symbol, Parameter, Conditions, Min, +2 autres. (table vide)",
+    "text_helper": "Table 98. Output AC characteristics for FT_c I/Os — section 5.3.15 I/O port characteristics. Speed, Symbol, Parameter, Conditions, Min, +2 autres.",
     "table_content": {
       "headers": [
         "Speed",
@@ -30896,8 +30234,120 @@
         "Max",
         "Unit"
       ],
-      "rows": [],
-      "notes": [],
+      "rows": [
+        [
+          "00",
+          "Fmax",
+          "Maximum frequency",
+          "All I/Os, C = 50 pF, 2.7 V ≤ V ≤ 3.6 V L DDIOx",
+          "-",
+          "10",
+          "MHz"
+        ],
+        [
+          "00",
+          "Fmax",
+          "Maximum frequency",
+          "All I/Os, C = 50 pF, 1.58 V ≤ V < 2.7 V L DDIOx",
+          "-",
+          "5",
+          "MHz"
+        ],
+        [
+          "00",
+          "t/t r f",
+          "Output rise and fall time",
+          "All I/Os, C = 50 pF, 2.7 V ≤ V ≤ 3.6 V L DDIOx",
+          "-",
+          "33",
+          "ns"
+        ],
+        [
+          "00",
+          "t/t r f",
+          "Output rise and fall time",
+          "All I/Os, C = 50 pF, 1.58 V ≤ V < 2.7 V L DDIOx",
+          "-",
+          "66",
+          "ns"
+        ],
+        [
+          "01",
+          "Fmax",
+          "Maximum frequency",
+          "All I/Os, C = 50 pF, 2.7 V ≤ V ≤ 3.6 V L DDIOx",
+          "-",
+          "25",
+          "MHz"
+        ],
+        [
+          "01",
+          "Fmax",
+          "Maximum frequency",
+          "All I/Os, C = 50 pF, 1.58 V ≤ V < 2.7 V L DDIOx",
+          "-",
+          "10",
+          "MHz"
+        ],
+        [
+          "01",
+          "t/t r f",
+          "Output rise and fall time",
+          "All I/Os, C = 50 pF, 2.7 V ≤ V ≤ 3.6 V L DDIOx",
+          "-",
+          "13",
+          "ns"
+        ],
+        [
+          "01",
+          "t/t r f",
+          "Output rise and fall time",
+          "All I/Os, C = 50 pF, 1.58 V ≤ V < 2.7 V L DDIOx",
+          "-",
+          "33",
+          "ns"
+        ],
+        [
+          "1x",
+          "Fmax",
+          "Maximum frequency",
+          "All I/Os, C = 50 pF, 2.7 V ≤ V ≤ 3.6 V L DDIOx",
+          "-",
+          "40",
+          "MHz"
+        ],
+        [
+          "1x",
+          "Fmax",
+          "Maximum frequency",
+          "All I/Os, C = 50 pF, 1.58 V ≤ V < 2.7 V L DDIOx",
+          "-",
+          "20",
+          "MHz"
+        ],
+        [
+          "1x",
+          "t/t r f",
+          "Output rise and fall time",
+          "All I/Os, C = 50 pF, 2.7 V ≤ V ≤ 3.6 V L DDIOx",
+          "-",
+          "8",
+          "ns"
+        ],
+        [
+          "1x",
+          "t/t r f",
+          "Output rise and fall time",
+          "All I/Os, C = 50 pF, 1.58 V ≤ V < 2.7 V L DDIOx",
+          "-",
+          "17",
+          "ns"
+        ]
+      ],
+      "notes": [
+        "1. Specified by design. Not tested in production.",
+        "2. The I/O speed is configured using the OSPEEDRy[1:0] bits. Refer to the product reference manual for a description of GPIO port configuration register."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -31193,7 +30643,10 @@
           "ns"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Specified by design. Not tested in production.",
+        "3. The external capacitor on NRST must be placed as close as possible to the device."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -31217,10 +30670,9 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32u575ag.pdf#page=239",
-    "text_helper": "Table 102. Analog switches booster characteristics — section 5.3.18 Analog switches booster. Symbol, Symbol, Parameter, Min, Typ, +2 autres.",
+    "text_helper": "Table 102. Analog switches booster characteristics — section 5.3.18 Analog switches booster. Symbol, Parameter, Min, Typ, Max, +1 autres.",
     "table_content": {
       "headers": [
-        "Symbol",
         "Symbol",
         "Parameter",
         "Min",
@@ -31231,7 +30683,6 @@
       "rows": [
         [
           "V DD",
-          "V DD",
           "Supply voltage",
           "1.6",
           "1.8",
@@ -31239,7 +30690,6 @@
           "V"
         ],
         [
-          "t SU(BOOST)",
           "t SU(BOOST)",
           "Booster startup time",
           "-",
@@ -31249,105 +30699,15 @@
         ],
         [
           "I DD(BOOST)",
-          "I DD(BOOST)",
           "Booster consumption",
           "-",
           "-",
           "125",
           "µA"
-        ],
-        [
-          "V REF+",
-          "Positive reference voltage",
-          "ADD V 2 ≥ V",
-          "2",
-          "-",
-          "V DDA",
-          "V DDA"
-        ],
-        [
-          "V REF+",
-          "Positive reference voltage",
-          "V < 2 V DDA",
-          "V DDA",
-          "V DDA",
-          "V DDA",
-          "V DDA"
-        ],
-        [
-          "V REF-",
-          "Negative reference voltage",
-          "-",
-          "V SSA",
-          "V SSA",
-          "V SSA",
-          "V SSA"
-        ],
-        [
-          "f s",
-          "Sampling rate",
-          "Resolution = 12 bits",
-          "0.25",
-          "-",
-          "2.75",
-          "2.75"
-        ],
-        [
-          "f s",
-          "Sampling rate",
-          "Resolution = 10 bits",
-          "0.28",
-          "-",
-          "3.05",
-          "3.05"
-        ],
-        [
-          "f s",
-          "Sampling rate",
-          "Resolution = 8 bits",
-          "0.31",
-          "-",
-          "3.44",
-          "3.44"
-        ],
-        [
-          "R (5) AIN",
-          "External input impedance",
-          "Resolution = 12 bits T = 130 °C j",
-          "-",
-          "-",
-          "1000",
-          "1000"
-        ],
-        [
-          "R (5) AIN",
-          "External input impedance",
-          "Resolution = 10 bits T = 130 °C j",
-          "-",
-          "-",
-          "4700",
-          "4700"
-        ],
-        [
-          "R (5) AIN",
-          "External input impedance",
-          "Resolution = 8 bits T = 130 °C j",
-          "-",
-          "-",
-          "22000",
-          "22000"
-        ],
-        [
-          "t OFF_CAL",
-          "Offset calibration time",
-          "-",
-          "885",
-          "885",
-          "885",
-          "885"
         ]
       ],
       "notes": [
+        "1. Specified by design. Not tested in production.",
         "3. The external capacitor on NRST must be placed as close as possible to the device."
       ],
       "legend": "",
@@ -31405,7 +30765,7 @@
         ],
         [
           "V REF+",
-          "Positive reference voltage",
+          "voltage",
           "V < 2 V DDA",
           "V DDA",
           "V DDA",
@@ -31512,8 +30872,8 @@
           "Ω"
         ],
         [
-          "R (5) AIN",
-          "External input impedance",
+          "(5)",
+          "External input",
           "Resolution = 12 bits T = 130 °C j",
           "-",
           "-",
@@ -31522,7 +30882,7 @@
         ],
         [
           "R (5) AIN",
-          "External input impedance",
+          "impedance",
           "Resolution = 10 bits T = 130 °C j",
           "-",
           "-",
@@ -31561,7 +30921,7 @@
           "ADC power-up time",
           "LDO already started",
           "(3 × 1/f ) + 1 conversion ADC",
-          "(3 × 1/f ) + 1 conversion ADC",
+          ") + 1",
           "(3 × 1/f ) + 1 conversion ADC",
           "Cycle"
         ],
@@ -31570,7 +30930,7 @@
           "Offset and linearity calibration time",
           "-",
           "31849",
-          "31849",
+          "31849 885",
           "31849",
           "1/f ADC"
         ],
@@ -32395,7 +31755,7 @@
         ],
         [
           "SINAD",
-          "Signal-to-noise and distortion ratio",
+          "distortion ratio",
           "Differential",
           "Differential",
           "73",
@@ -32592,8 +31952,8 @@
           "kΩ"
         ],
         [
-          "R (4) AIN",
-          "External input impedance T = 130 °C j",
+          "(4)",
+          "External input impedance",
           "Resolution = 10 bits",
           "-",
           "-",
@@ -32602,7 +31962,7 @@
         ],
         [
           "R (4) AIN",
-          "External input impedance T = 130 °C j",
+          "= 130 °C T j",
           "Resolution = 8 bits",
           "-",
           "-",
@@ -32641,7 +32001,7 @@
           "ADC power-up time",
           "LDO already started",
           "(3 × 1/f ) + 1 conversion ADC",
-          "(3 × 1/f ) + 1 conversion ADC",
+          ") + 1",
           "(3 × 1/f ) + 1 conversion ADC",
           "Cycle"
         ],
@@ -32659,7 +32019,7 @@
           "Trigger conversion latency",
           "CDA KLCH = f ,0 = DPD ,0 = FFOTUA ,0 = TIAW",
           "4",
-          "4",
+          "4 4 3.75",
           "4",
           "1/f ADC"
         ],
@@ -32899,7 +32259,7 @@
           "680",
           "650",
           "39.5",
-          "39.5"
+          "79.5"
         ],
         [
           "12 bits",
@@ -32927,7 +32287,7 @@
           "3300",
           "2395",
           "814.5",
-          "814.5"
+          "814.5 N/A"
         ],
         [
           "12 bits",
@@ -32997,7 +32357,7 @@
           "150",
           "108",
           "7.5",
-          "7.5"
+          "12.5"
         ],
         [
           "10 bits",
@@ -33045,7 +32405,7 @@
           "10 bits",
           "2200",
           "516",
-          "19.5",
+          "39.5",
           "79.5"
         ],
         [
@@ -33838,7 +33198,7 @@
         [
           "R L",
           "Resistive load",
-          "DAC output buffer ON",
+          "connected to buffer ON V DDA",
           "connected to V DDA",
           "25",
           "-",
@@ -33866,8 +33226,8 @@
           "kΩ"
         ],
         [
-          "R BON",
-          "Output impedance sample and hold mode, output buffer ON",
+          "BON",
+          "buffer ON",
           "V = 2.0 V DDA",
           "V = 2.0 V DDA",
           "-",
@@ -33886,8 +33246,8 @@
           "kΩ"
         ],
         [
-          "R BOFF",
-          "Output impedance sample and hold mode, output buffer OFF",
+          "BOFF",
+          "buffer OFF",
           "V = 2.0 V DDA",
           "V = 2.0 V DDA",
           "-",
@@ -33927,7 +33287,7 @@
         ],
         [
           "V DAC_OUT",
-          "Voltage on DAC_OUT output",
+          "output",
           "DAC output buffer OFF",
           "DAC output buffer OFF",
           "0",
@@ -33947,8 +33307,8 @@
         ],
         [
           "t SETTLING",
-          "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ±0.5 LSB, ±1 LSB, ±2 LSB, ±4 LSB, or ±8 LSB)",
-          "Normal mode DAC output buffer ON C ≤ 50 pF, L R ≥ 5 kΩ L",
+          "a 12-bit code transition",
+          "±1 LSB DAC output",
           "±1 LSB",
           "-",
           "1.90",
@@ -33957,8 +33317,8 @@
         ],
         [
           "t SETTLING",
-          "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ±0.5 LSB, ±1 LSB, ±2 LSB, ±4 LSB, or ±8 LSB)",
-          "Normal mode DAC output buffer ON C ≤ 50 pF, L R ≥ 5 kΩ L",
+          "between the lowest and the",
+          "±2 LSB buffer ON",
           "±2 LSB",
           "-",
           "1.85",
@@ -33967,8 +33327,8 @@
         ],
         [
           "t SETTLING",
-          "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ±0.5 LSB, ±1 LSB, ±2 LSB, ±4 LSB, or ±8 LSB)",
-          "Normal mode DAC output buffer ON C ≤ 50 pF, L R ≥ 5 kΩ L",
+          "D A C _ O U T re a ch e s t h e",
+          "L R Ω k 5 ≥ BSL 4± L",
           "±4 LSB",
           "-",
           "1.80",
@@ -33977,8 +33337,8 @@
         ],
         [
           "t SETTLING",
-          "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ±0.5 LSB, ±1 LSB, ±2 LSB, ±4 LSB, or ±8 LSB)",
-          "Normal mode DAC output buffer ON C ≤ 50 pF, L R ≥ 5 kΩ L",
+          "final value of ±0.5 LSB,",
+          "±8 LSB",
           "±8 LSB",
           "-",
           "1.75",
@@ -33987,7 +33347,7 @@
         ],
         [
           "t SETTLING",
-          "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ±0.5 LSB, ±1 LSB, ±2 LSB, ±4 LSB, or ±8 LSB)",
+          "or ±8 LSB)",
           "Normal mode DAC output buffer OFF, ±1 LSB, C = 10 pF L",
           "Normal mode DAC output buffer OFF, ±1 LSB, C = 10 pF L",
           "-",
@@ -34007,7 +33367,7 @@
         ],
         [
           "t WAKEUP (2)",
-          "Wake-up time from off state (setting the ENx bit in the DAC control register) until the final value ±1 LSB",
+          "the final value ±1 LSB",
           "Normal mode DAC output buffer OFF, C ≤ 10 pF L",
           "Normal mode DAC output buffer OFF, C ≤ 10 pF L",
           "-",
@@ -34482,7 +33842,7 @@
         [
           "V DDA",
           "Analog supply voltage",
-          "Normal mode",
+          "VRS = 001",
           "VRS = 001",
           "2.1",
           "-",
@@ -34492,7 +33852,7 @@
         [
           "V DDA",
           "Analog supply voltage",
-          "Normal mode",
+          "VRS = 010",
           "VRS = 010",
           "2.4",
           "-",
@@ -34501,8 +33861,8 @@
         ],
         [
           "V DDA",
-          "Analog supply voltage",
-          "Normal mode",
+          "Analog supply",
+          "VRS = 011",
           "VRS = 011",
           "2.8",
           "-",
@@ -34511,7 +33871,7 @@
         ],
         [
           "V DDA",
-          "Analog supply voltage",
+          "voltage",
           "Degraded mode(2)",
           "VRS = 000",
           "1.62",
@@ -34522,7 +33882,7 @@
         [
           "V DDA",
           "Analog supply voltage",
-          "Degraded mode(2)",
+          "VRS = 001 Degraded",
           "VRS = 001",
           "1.62",
           "-",
@@ -34532,7 +33892,7 @@
         [
           "V DDA",
           "Analog supply voltage",
-          "Degraded mode(2)",
+          "VRS = 010",
           "VRS = 010",
           "1.62",
           "-",
@@ -34542,7 +33902,7 @@
         [
           "V DDA",
           "Analog supply voltage",
-          "Degraded mode(2)",
+          "VRS = 011",
           "VRS = 011",
           "1.62",
           "-",
@@ -34562,7 +33922,7 @@
         [
           "V REFBUF _OUT (3)",
           "Voltage reference buffer output",
-          "Normal mode at V = 3 V, DDA T = 30 °C, J I = 10 µA load",
+          "VRS = 001 = 3 V, V DDA",
           "VRS = 001",
           "1.795",
           "1.8",
@@ -34572,7 +33932,7 @@
         [
           "V REFBUF _OUT (3)",
           "Voltage reference buffer output",
-          "Normal mode at V = 3 V, DDA T = 30 °C, J I = 10 µA load",
+          "T = 30 °C, VRS = 010 J",
           "VRS = 010",
           "2.042",
           "2.048",
@@ -34582,7 +33942,7 @@
         [
           "V REFBUF _OUT (3)",
           "Voltage reference buffer output",
-          "Normal mode at V = 3 V, DDA T = 30 °C, J I = 10 µA load",
+          "VRS = 011",
           "VRS = 011",
           "2.493",
           "2.5",
@@ -34602,7 +33962,7 @@
         [
           "V REFBUF _OUT (3)",
           "Voltage reference buffer output",
-          "Degraded mode(2)",
+          "VRS = 001 Degraded",
           "VRS = 001",
           "Min (V - 0.15 DDA ;1.795)",
           "-",
@@ -34612,7 +33972,7 @@
         [
           "V REFBUF _OUT (3)",
           "Voltage reference buffer output",
-          "Degraded mode(2)",
+          "VRS = 010",
           "VRS = 010",
           "Min (V - 0.15 DDA ;2.042)",
           "-",
@@ -34622,7 +33982,7 @@
         [
           "V REFBUF _OUT (3)",
           "Voltage reference buffer output",
-          "Degraded mode(2)",
+          "VRS = 011",
           "VRS = 011",
           "Min (V - 0.15 DDA ;2.493)",
           "-",
@@ -34721,7 +34081,7 @@
         ],
         [
           "PSRR",
-          "Power supply rejection",
+          "rejection",
           "100 kHz",
           "100 kHz",
           "-",
@@ -34738,74 +34098,13 @@
           "110",
           "200",
           "200"
-        ],
-        [
-          "None",
-          "None",
-          "C = 1.1 µF L",
-          "C = 1.1 µF L",
-          "-",
-          "240",
-          "350",
-          "350"
-        ],
-        [
-          "None",
-          "None",
-          "C = 1.5 µF L",
-          "C = 1.5 µF L",
-          "-",
-          "320",
-          "500",
-          "500"
-        ],
-        [
-          "I INRUSH",
-          "Control of DC current drive on V REFBUF_ during startup OUT phase (6)",
-          "-",
-          "-",
-          "-",
-          "8",
-          "11",
-          "11"
-        ],
-        [
-          "I DDA (VREFBUF )",
-          "VREFBUF consumption from V DDA",
-          "I = 0 µA load",
-          "I = 0 µA load",
-          "-",
-          "14",
-          "18",
-          "18"
-        ],
-        [
-          "None",
-          "None",
-          "I = 500 µA load",
-          "I = 500 µA load",
-          "-",
-          "16",
-          "20",
-          "20"
-        ],
-        [
-          "None",
-          "None",
-          "I = 4 mA load",
-          "I = 4 mA load",
-          "-",
-          "42",
-          "50",
-          "50"
         ]
       ],
       "notes": [
         "2. In degraded mode, the voltage reference buffer can not accurately maintain the output voltage (V - drop voltage). DDA",
         "3. Evaluated by characterization. Not tested in production.",
         "4. The capacitive load must include a 100 nF capacitor in order to cut off the high-frequency noise.",
-        "5. The load regulation value only takes into account the die and package resistance. The parasitic resistance on PCB degrades this value.",
-        "6. To correctly control the VREFBUF inrush current during startup phase and scaling change, the V voltage must be in the DDA"
+        "5. The load regulation value only takes into account the die and package resistance. The parasitic resistance on PCB degrades this value."
       ],
       "legend": "",
       "semantic_type": "",
@@ -34889,7 +34188,7 @@
         ],
         [
           "I DDA(SCALER)",
-          "Scaler static consumption from V DDA",
+          "from V DDA",
           "Scaler bridge enabled(5)",
           "-",
           "0.7",
@@ -34916,7 +34215,7 @@
         ],
         [
           "t START",
-          "Comparator startup time to reach propagation delay specification",
+          "reach propagation delay",
           "Medium mode",
           "-",
           "-",
@@ -34942,8 +34241,8 @@
           "ns"
         ],
         [
-          "t (6) D",
-          "Propagation delay for 200 mV step with 100 mV overdrive",
+          "(6) t D",
+          "evirdrevo Vm 001 htiw pets Vm 002",
           "Medium mode",
           "-",
           "0.5",
@@ -35042,7 +34341,7 @@
         ],
         [
           "I DDA(COMP)",
-          "Comparator consumption from V DDA",
+          "from V DDA",
           "Medium mode, with 50 kHz, ±100 mV overdrive square signal",
           "-",
           "3.75",
@@ -35183,7 +34482,7 @@
         ],
         [
           "∆VI OFFSET",
-          "Input offset voltage drift over temperature",
+          "over temperature",
           "Low-power mode",
           "Low-power mode",
           "-",
@@ -35263,7 +34562,7 @@
         ],
         [
           "R LOAD",
-          "Resistive load (connected to VSSA or VDDA)",
+          "to VSSA or VDDA)",
           "Low-power mode",
           "Low-power mode",
           "20",
@@ -35293,7 +34592,7 @@
         ],
         [
           "CMRR",
-          "Common mode rejection ratio",
+          "ratio",
           "Low-power mode",
           "Low-power mode",
           "-",
@@ -35313,7 +34612,7 @@
         ],
         [
           "PSRR",
-          "Power supply rejection ratio",
+          "ratio",
           "Low-power mode",
           "C ≤ 50 pF, LOAD R ≥ 20 kΩ(3), LOAD DC",
           "32",
@@ -35822,6 +35121,15 @@
           "MHz"
         ],
         [
+          "f CCKO",
+          "Output clock frequency in MASTER SPI mode",
+          "≤ 3.6 V 1.71 ≤ V DD",
+          "-",
+          "-",
+          "25",
+          "MHz"
+        ],
+        [
           "t HCCKI t LCCKI",
           "ADF_CCK[1:0] input clock high and low time",
           "In SLAVE SPI mode",
@@ -35853,51 +35161,6 @@
           "Data setup time with respect to ADF_CCK[1:0] input",
           "In SLAVE SPI mode: ADF_CCK[1:0] configured in input, measured on rising and falling edge",
           "4.5",
-          "-",
-          "-",
-          "ns"
-        ],
-        [
-          "t HDCCKI",
-          "Data hold time with respect to ADF_CCK[1:0] input",
-          "In SLAVE SPI mode: ADF_CCK[1:0] configured in input, measured on rising and falling edge",
-          "1",
-          "-",
-          "-",
-          "ns"
-        ],
-        [
-          "t SUCCKO",
-          "Data setup time with respect to ADF_CCK[1:0] output",
-          "In MASTER SPI mode: ADF_CCK[1:0] configured in output, measured on rising and falling edge",
-          "5.5",
-          "-",
-          "-",
-          "ns"
-        ],
-        [
-          "t HDCCKO",
-          "Data hold time with respect to ADF_CCK[1:0] output",
-          "In MASTER SPI mode: ADF_CCK[1:0] configured in output, measured on rising and falling edge",
-          "0",
-          "-",
-          "-",
-          "ns"
-        ],
-        [
-          "t SUCCKOLF",
-          "Data setup time with respect to ADF_CCK[1:0] output",
-          "In LF_MASTER SPI mode: ADF_CCK[1:0] configured in output, measured on rising and falling edge",
-          "19.5",
-          "-",
-          "-",
-          "ns"
-        ],
-        [
-          "t HDCCKOLF",
-          "Data hold time with respect to ADF_CCK[1:0] output",
-          "In LF_MASTER SPI mode: ADF_CCK[1:0] configured in output, measured on rising and falling edge",
-          "0",
           "-",
           "-",
           "ns"
@@ -35962,7 +35225,7 @@
         [
           "f CCKO",
           "Output clock frequency in MASTER SPI mode",
-          "1.71 ≤ V ≤ 3.6 V DD",
+          "DD",
           "-",
           "-",
           "25",
@@ -36155,7 +35418,7 @@
         [
           "t OV(DE)",
           "DE output valid time",
-          "1.71 V ≤ V ≤ 3.6 V DD",
+          "≤ 3.6 V 1.71 V ≤ V DD",
           "-",
           "12.5",
           "ns"
@@ -36358,7 +35621,7 @@
         ],
         [
           "f EXT",
-          "Timer external clock frequency on CH1 to CH4",
+          "CH1 to CH4",
           "f = 160 MHz TIMxCLK",
           "0",
           "80",
@@ -36406,7 +35669,7 @@
         ],
         [
           "t MAX_COUNT",
-          "Maximum possible count with 32-bit counter",
+          "32-bit counter",
           "f = 160 MHz TIMxCLK",
           "-",
           "26.843",
@@ -36614,7 +35877,7 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32u575ag.pdf#page=273",
-    "text_helper": "Table 126. Asynchronous non-multiplexed SRAM/PSRAM/NOR read timings — section 5.3.33 FSMC characteristics. Symbol, Parameter, Min, Max, Unit. (table vide)",
+    "text_helper": "Table 126. Asynchronous non-multiplexed SRAM/PSRAM/NOR read timings — section 5.3.33 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -36623,8 +35886,96 @@
         "Max",
         "Unit"
       ],
-      "rows": [],
-      "notes": [],
+      "rows": [
+        [
+          "t w(NE)",
+          "FMC_NE low time",
+          "3 × t - 1 HCLK",
+          "3 × t + 1 HCLK",
+          "ns"
+        ],
+        [
+          "t v(NOE_NE)",
+          "FMC_NEx low to FMC_NOE low",
+          "0",
+          "5",
+          "ns"
+        ],
+        [
+          "t w(NOE)",
+          "FMC_NOE low time",
+          "2 × t - 1 HCLK",
+          "2 × t + 1 HCLK",
+          "ns"
+        ],
+        [
+          "t h(NE_NOE)",
+          "FMC_NOE high to FMC_NE high hold time",
+          "T HCLK",
+          "-",
+          "ns"
+        ],
+        [
+          "t v(A_NE)",
+          "FMC_NEx low to FMC_A valid",
+          "-",
+          "1.5",
+          "ns"
+        ],
+        [
+          "t h(A_NOE)",
+          "Address hold time after FMC_NOE high",
+          "2 × t - 1 HCLK",
+          "-",
+          "ns"
+        ],
+        [
+          "t su(Data_NE)",
+          "Data to FMC_NEx high setup time",
+          "t + 15 HCLK",
+          "-",
+          "ns"
+        ],
+        [
+          "t su(Data_NOE)",
+          "Data to FMC_NOEx high setup time",
+          "15",
+          "-",
+          "ns"
+        ],
+        [
+          "t h(Data_NOE)",
+          "Data hold time after FMC_NOE high",
+          "0",
+          "-",
+          "ns"
+        ],
+        [
+          "t h(Data_NE)",
+          "Data hold time after FMC_NEx high",
+          "0",
+          "-",
+          "ns"
+        ],
+        [
+          "t v(NADV_NE)",
+          "FMC_NEx low to FMC_NADV low",
+          "-",
+          "1.5",
+          "ns"
+        ],
+        [
+          "t w(NADV)",
+          "FMC_NADV low time",
+          "-",
+          "KLCH 1 + T",
+          "ns"
+        ]
+      ],
+      "notes": [
+        "1. Evaluated by characterization. Not tested in production.",
+        "2. NWAIT pulse is equal to one HCLK cycle. DS13737 Rev 10 273/346"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -36935,7 +36286,7 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32u575ag.pdf#page=276",
-    "text_helper": "Table 130. Asynchronous multiplexed PSRAM/NOR read timings — section 5.3.33 FSMC characteristics. Symbol, Parameter, Min, Max, Unit. (table vide)",
+    "text_helper": "Table 130. Asynchronous multiplexed PSRAM/NOR read timings — section 5.3.33 FSMC characteristics. Symbol, Parameter, Min, Max, Unit.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -36944,8 +36295,130 @@
         "Max",
         "Unit"
       ],
-      "rows": [],
-      "notes": [],
+      "rows": [
+        [
+          "t w(NE)",
+          "FMC_NE low time",
+          "3 × t - 1 HCLK",
+          "3 × t + 1 HCLK",
+          "ns"
+        ],
+        [
+          "t v(NOE_NE)",
+          "FMC_NEx low to FMC_NOE low",
+          "0",
+          "5",
+          "ns"
+        ],
+        [
+          "t w(NOE)",
+          "FMC_NOE low time",
+          "2 × t - 0.5 HCLK",
+          "2 × t + 0.5 HCLK",
+          "ns"
+        ],
+        [
+          "t h(NE_NOE)",
+          "FMC_NOE high to FMC_NE high hold time",
+          "t HCLK",
+          "-",
+          "ns"
+        ],
+        [
+          "t v(A_NE)",
+          "FMC_NEx low to FMC_A valid",
+          "-",
+          "1.5",
+          "ns"
+        ],
+        [
+          "t v(NADV_NE)",
+          "FMC_NEx low to FMC_NADV low",
+          "0",
+          "1.5",
+          "ns"
+        ],
+        [
+          "t w(NADV)",
+          "FMC_NADV low time",
+          "t - 0.5 HCLK",
+          "t + 1 HCLK",
+          "ns"
+        ],
+        [
+          "t h(AD_NADV)",
+          "FMC_AD(address) valid hold time after FMC_NADV high)",
+          "t - 4 HCLK",
+          "-",
+          "ns"
+        ],
+        [
+          "t h(A_NOE)",
+          "Address hold time after FMC_NOE high",
+          "t - 1 HCLK",
+          "-",
+          "ns"
+        ],
+        [
+          "t su(Data_NE)",
+          "Data to FMC_NEx high setup time",
+          "t + 15 HCLK",
+          "-",
+          "ns"
+        ],
+        [
+          "t su(Data_NOE)",
+          "Data to FMC_NOE high setup time",
+          "15",
+          "-",
+          "ns"
+        ],
+        [
+          "t h(Data_NE)",
+          "Data hold time after FMC_NEx high",
+          "0",
+          "-",
+          "ns"
+        ],
+        [
+          "t h(Data_NOE)",
+          "Data hold time after FMC_NOE high",
+          "0",
+          "-",
+          "ns"
+        ],
+        [
+          "t w(NE)",
+          "FMC_NE low time",
+          "8 × t - 1 HCLK",
+          "8 × t + 1 HCLK",
+          "ns"
+        ],
+        [
+          "t w(NOE)",
+          "FMC_NOE low time",
+          "7 × t - 1 HCLK",
+          "7 × t + 1 HCLK",
+          "ns"
+        ],
+        [
+          "t su(NWAIT_NE)",
+          "FMC_NWAIT(2) valid before FMC_NEx high",
+          "4 × t + 9.5 HCLK",
+          "-",
+          "ns"
+        ],
+        [
+          "t h(NE_NWAIT)",
+          "FMC_NEx hold time after FMC_NWAIT invalid",
+          "3 × t + 10 HCLK",
+          "-",
+          "ns"
+        ]
+      ],
+      "notes": [
+        "2. NWAIT pulse is equal to one HCLK cycle. 276/346 DS13737 Rev 10"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -38326,8 +37799,8 @@
         ],
         [
           "t w(CLKL)",
-          "OCTOSPI clock high and low time (even division)",
-          "PRESCALER[7:0] = n (n = 0, 1, 3, 5,..255)",
+          "(even division)",
+          "(n = 0, 1, 3, 5,..255)",
           "t /2 - 0.5 (CLK)",
           "-",
           "t /2 + 0.5 (CLK)",
@@ -38344,8 +37817,8 @@
         ],
         [
           "t w(CLKL)",
-          "OCTOSPI clock high and low time (odd division)",
-          "PRESCALER[7:0] = n (n = 2, 4, 6,..254)",
+          "(odd division)",
+          "(n = 2, 4, 6,..254)",
           "((n/2)+1) × t (CLK) /(n+1) - 0.5",
           "-",
           "((n/2)+1) × t (CLK) /(n+1) + 0.5",
@@ -38361,8 +37834,8 @@
           "ns"
         ],
         [
-          "t sr(IN) t sf(IN)",
-          "Data input setup time",
+          "t sf(IN)",
+          "time",
           "Voltage range 4",
           "3.75",
           "-",
@@ -38379,8 +37852,8 @@
           "ns"
         ],
         [
-          "t hr(IN) t hf(IN)",
-          "Data input hold time",
+          "t hf(IN)",
+          "time",
           "Voltage range 4",
           "1.5",
           "-",
@@ -38397,8 +37870,8 @@
           "ns"
         ],
         [
-          "t vr(OUT) t vf(OUT)",
-          "Data output valid time, DHQC = 0",
+          "t vr(OUT)",
+          "time, DHQC = 0",
           "Voltage range 4",
           "-",
           "13.25",
@@ -38406,7 +37879,7 @@
           "ns"
         ],
         [
-          "t vr(OUT) t vf(OUT)",
+          "vf(OUT)",
           "Data output valid time, DHQC = 1",
           "Voltage range 1 All prescaler values (except 0)",
           "-",
@@ -38424,8 +37897,8 @@
           "ns"
         ],
         [
-          "t hr(OUT) t hf(OUT)",
-          "Data output hold time DHQC = 0",
+          "t hr(OUT)",
+          "time DHQC = 0",
           "Voltage range 4",
           "8",
           "-",
@@ -38433,7 +37906,7 @@
           "ns"
         ],
         [
-          "t hr(OUT) t hf(OUT)",
+          "hf(OUT)",
           "Data output hold time DHQC = 1",
           "Voltage range 1 All prescaler values (except 0)",
           "t /4 - 0.5 (CLK)",
@@ -38699,8 +38172,8 @@
         ],
         [
           "CMD, D inputs (referenced to CK) in e•MMC legacy/SDR/DDR and SD HS/SDR(4)/DDR(4) modes",
-          "CMD, D inputs (referenced to CK) in e•MMC legacy/SDR/DDR and SD HS/SDR(4)/DDR(4) modes",
-          "CMD, D inputs (referenced to CK) in e•MMC legacy/SDR/DDR and SD HS/SDR(4)/DDR(4) modes",
+          "(referenced to CK) in e•MMC",
+          "and SD",
           "CMD, D inputs (referenced to CK) in e•MMC legacy/SDR/DDR and SD HS/SDR(4)/DDR(4) modes",
           "CMD, D inputs (referenced to CK) in e•MMC legacy/SDR/DDR and SD HS/SDR(4)/DDR(4) modes",
           "CMD, D inputs (referenced to CK) in e•MMC legacy/SDR/DDR and SD HS/SDR(4)/DDR(4) modes",
@@ -38735,8 +38208,8 @@
         ],
         [
           "CMD, D outputs (referenced to CK) in e•MMC legacy/SDR/DDR and SD HS/SDR(4)/DDR(4) modes",
-          "CMD, D outputs (referenced to CK) in e•MMC legacy/SDR/DDR and SD HS/SDR(4)/DDR(4) modes",
-          "CMD, D outputs (referenced to CK) in e•MMC legacy/SDR/DDR and SD HS/SDR(4)/DDR(4) modes",
+          "(referenced to CK) in e•MMC",
+          "and SD",
           "CMD, D outputs (referenced to CK) in e•MMC legacy/SDR/DDR and SD HS/SDR(4)/DDR(4) modes",
           "CMD, D outputs (referenced to CK) in e•MMC legacy/SDR/DDR and SD HS/SDR(4)/DDR(4) modes",
           "CMD, D outputs (referenced to CK) in e•MMC legacy/SDR/DDR and SD HS/SDR(4)/DDR(4) modes",
@@ -38762,7 +38235,7 @@
         ],
         [
           "CMD, D inputs (referenced to CK) in SD default mode",
-          "CMD, D inputs (referenced to CK) in SD default mode",
+          "(referenced to CK) in SD default",
           "CMD, D inputs (referenced to CK) in SD default mode",
           "CMD, D inputs (referenced to CK) in SD default mode",
           "CMD, D inputs (referenced to CK) in SD default mode",
@@ -38789,7 +38262,7 @@
         ],
         [
           "CMD, D outputs (referenced to CK) in SD default mode",
-          "CMD, D outputs (referenced to CK) in SD default mode",
+          "(referenced to CK) in SD default",
           "CMD, D outputs (referenced to CK) in SD default mode",
           "CMD, D outputs (referenced to CK) in SD default mode",
           "CMD, D outputs (referenced to CK) in SD default mode",
@@ -38893,7 +38366,7 @@
         ],
         [
           "CMD, D inputs (referenced to CK) in e•MMC mode",
-          "CMD, D inputs (referenced to CK) in e•MMC mode",
+          "(referenced to CK) in e•MMC mode",
           "CMD, D inputs (referenced to CK) in e•MMC mode",
           "CMD, D inputs (referenced to CK) in e•MMC mode",
           "CMD, D inputs (referenced to CK) in e•MMC mode",
@@ -38929,7 +38402,7 @@
         ],
         [
           "CMD, D outputs (referenced to CK) in e•MMC mode",
-          "CMD, D outputs (referenced to CK) in e•MMC mode",
+          "(referenced to CK) in e•MMC mode",
           "CMD, D outputs (referenced to CK) in e•MMC mode",
           "CMD, D outputs (referenced to CK) in e•MMC mode",
           "CMD, D outputs (referenced to CK) in e•MMC mode",
@@ -39117,7 +38590,7 @@
         ],
         [
           "f CK",
-          "USART clock frequency",
+          "frequency",
           "SPI slave transmitter, 1.71 V ≤ V ≤ 3.6 V DDIOX",
           "-",
           "-",
@@ -39584,7 +39057,7 @@
         ],
         [
           "f SCK",
-          "SAI clock frequency(2)",
+          "SAI clock",
           "Master receiver, 1.71 V ≤ V ≤ 3.6 V DDIOX",
           "-",
           "21.5",
@@ -39664,7 +39137,7 @@
         ],
         [
           "t su(SD_B_SR)",
-          "Data input setup time",
+          "time",
           "Slave receiver",
           "3",
           "-",
@@ -39680,7 +39153,7 @@
         ],
         [
           "t h(SD_B_SR)",
-          "Data input hold time",
+          "time",
           "Slave receiver",
           "1",
           "-",
@@ -39696,7 +39169,7 @@
         ],
         [
           "t v(SD_B_ST)",
-          "Data output valid time",
+          "time",
           "Slave transmitter (after enable edge), 1.71 V ≤ V ≤ 3.6 V DDIOX",
           "-",
           "24",
@@ -39720,7 +39193,7 @@
         ],
         [
           "t v(SD_A_MT)",
-          "Data output valid time",
+          "time",
           "Master transmitter (after enable edge), 1.71 V ≤ V ≤ 3.6 V DDIOX",
           "-",
           "27.5",
@@ -39868,7 +39341,9 @@
           "V"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Evaluated by characterization. Not tested in production. 304/346 DS13737 Rev 10"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}

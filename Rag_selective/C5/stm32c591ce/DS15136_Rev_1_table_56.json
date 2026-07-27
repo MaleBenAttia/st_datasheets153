@@ -1,9 +1,9 @@
 {
   "table_id": "table_56",
-  "document": "DS15136 Rev 1 - Table 56. 12-bit ADC characteristics.",
+  "document": "DS15136 Rev 1 - Table 56. 12-bit ADC characteristics",
   "rev": "Rev 1",
   "table_number": "56",
-  "title": "Table 56. 12-bit ADC characteristics.",
+  "title": "Table 56. 12-bit ADC characteristics",
   "page": 92,
   "section": "5.3.18 Delay block (DLYB) characteristics",
   "section_title": "Delay block (DLYB) characteristics",
@@ -11,7 +11,7 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32c591ce.pdf#page=92",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c591ce.pdf",
-  "text_helper": "Table 56. 12-bit ADC characteristics. — section 5.3.18 Delay block (DLYB) characteristics. Symbol, Parameter, Conditions, Conditions, Conditions, +7 autres.",
+  "text_helper": "Table 56. 12-bit ADC characteristics — section 5.3.18 Delay block (DLYB) characteristics. Symbol, Parameter, Conditions, Conditions, Conditions, +7 autres.",
   "table_content": {
     "headers": [
       "Symbol",
@@ -99,8 +99,8 @@
         "MSPS"
       ],
       [
-        "fS with RAIN=47 Ω and CPCB = 22 pF",
-        "Sampling rate for slow channels",
+        "fS w it h RA =4 7 Ω IN",
+        "S a m p l in g rate",
         "Resolution = 10 bits",
         "All modes",
         "2.7 V ≤ V DDA ≤ 3.6 V",
@@ -113,8 +113,8 @@
         "MSPS"
       ],
       [
-        "fS with RAIN=47 Ω and CPCB = 22 pF",
-        "Sampling rate for slow channels",
+        "and CPCB = 22 pF",
+        "channels",
         "Resolution = 8 bits",
         "All modes",
         "2.7 V ≤ V DDA ≤ 3.6 V",
@@ -211,8 +211,8 @@
         "Ω"
       ],
       [
-        "RAIN(1)",
-        "External input impedance",
+        "(1) RAIN",
+        "E x te r n a l in put im p e d a n c e",
         "Resolution = 10 bits, TJ = 125°C",
         "Resolution = 10 bits, TJ = 125°C",
         "Resolution = 10 bits, TJ = 125°C",
@@ -349,65 +349,11 @@
         "-",
         "4",
         "4"
-      ],
-      [
-        "None",
-        "None",
-        "Trigger from a synchronous clock",
-        "Trigger from a synchronous clock",
-        "Trigger from a synchronous clock",
-        "Trigger from a synchronous clock",
-        "Trigger from a synchronous clock",
-        "Trigger from a synchronous clock",
-        "3",
-        "None",
-        "None",
-        "None"
-      ],
-      [
-        "tS",
-        "Sampling time",
-        "-",
-        "-",
-        "-",
-        "-",
-        "-",
-        "-",
-        "2.5",
-        "-",
-        "288.5",
-        "288.5"
-      ],
-      [
-        "tCONV",
-        "Total conversion time (including sampling time)",
-        "N-bits resolution",
-        "N-bits resolution",
-        "N-bits resolution",
-        "N-bits resolution",
-        "N-bits resolution",
-        "N-bits resolution",
-        "tS + 1.5 + N",
-        "None",
-        "None",
-        "None"
-      ],
-      [
-        "IDDA(ADC)",
-        "ADC consumption on VDD, VDDA and VREF",
-        "fS = 2.25 MSPS",
-        "fS = 2.25 MSPS",
-        "fS = 2.25 MSPS",
-        "fS = 2.25 MSPS",
-        "fS = 2.25 MSPS",
-        "fS = 2.25 MSPS",
-        "-",
-        "200",
-        "-",
-        "-"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. High temperature generate leakage current on ADC inputs. This current create voltage drop through Rain directly affecting ADC accuracy (worst case when VAIN = VDDA). To limit this effect to a tolerance of 2LSBs, you must respect Rain max tables."
+    ],
     "legend": [
       "Specified by design - Not tested in production."
     ],

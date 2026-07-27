@@ -11,7 +11,7 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32h7r3a8.pdf#page=173",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h7r3a8.pdf",
-  "text_helper": "Table 41. Typical and maximum current consumption in System Stop mode — section 6.3.7 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, Typ LDO, +6 autres. (table vide)",
+  "text_helper": "Table 41. Typical and maximum current consumption in System Stop mode — section 6.3.7 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, Typ LDO, +6 autres.",
   "table_content": {
     "headers": [
       "Symbol",
@@ -26,8 +26,63 @@
       "Max(1) LDO / T = J 130 ° C",
       "Unit"
     ],
-    "rows": [],
-    "notes": [],
+    "rows": [
+      [
+        "I DD(Stop)",
+        "Stop",
+        "Flash memory in low-power mode",
+        "SVOS high",
+        "1.450",
+        "0.700",
+        "11.0",
+        "66.5",
+        "115.0",
+        "200.0",
+        "mA"
+      ],
+      [
+        "I DD(Stop)",
+        "Stop",
+        "mode SVOS low",
+        "SVOS low",
+        "0.605",
+        "0.265",
+        "4.3",
+        "32.5",
+        "56.0",
+        "105.0",
+        "mA"
+      ],
+      [
+        "I DD(Stop)",
+        "Stop",
+        "Flash memory in normal mode",
+        "SVOS high",
+        "1.500",
+        "0.705",
+        "11.0",
+        "66.5",
+        "115.0",
+        "200.0",
+        "mA"
+      ],
+      [
+        "I DD(Stop)",
+        "Stop",
+        "mode SVOS low",
+        "SVOS low",
+        "0.605",
+        "0.265",
+        "4.3",
+        "32.5",
+        "56.0",
+        "105.0",
+        "mA"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization results unless otherwise specified. Refer to Section 6.3.3: SMPS step-down converter for the SMPS maximum consumption."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

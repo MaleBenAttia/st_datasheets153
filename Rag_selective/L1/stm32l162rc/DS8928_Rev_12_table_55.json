@@ -37,7 +37,7 @@
       [
         "f ADC",
         "ADC clock frequency",
-        "Voltage range 1 & 2",
+        "< V V REF+ DDA ≤ ≤ 2.4 V V 3.6 V V > 2.4 V DDA REF+",
         "2.4 V ≤ V ≤ 3.6 V DDA",
         "V < V REF+ DDA V > 2.4 V REF+",
         "0.480",
@@ -46,8 +46,8 @@
       ],
       [
         "f ADC",
-        "ADC clock frequency",
-        "Voltage range 1 & 2",
+        "A D C c lo c k fre q u e n c y",
+        "< V V R E F + D D A range 1 & 2 ≤ V 2. 4 V R E F +",
         "2.4 V ≤ V ≤ 3.6 V DDA",
         "V < V REF+ DDA V ≤ 2.4 V REF+",
         "0.480",
@@ -57,7 +57,7 @@
       [
         "f ADC",
         "ADC clock frequency",
-        "Voltage range 1 & 2",
+        "V V REF+ = DDA ≤ ≤ 2.4 V 1.8 V V DDA < V V REF+ DDA",
         "1.8 V ≤ V ≤ 2.4 V DDA",
         "V V REF+ = DDA",
         "0.480",
@@ -67,7 +67,7 @@
       [
         "f ADC",
         "ADC clock frequency",
-        "Voltage range 1 & 2",
+        "< V V REF+ DDA",
         "1.8 V ≤ V ≤ 2.4 V DDA",
         "V < V REF+ DDA",
         "0.480",
@@ -85,7 +85,14 @@
         "MHz"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. The Vref+ input can be grounded if neither the ADC nor the DAC are used (this allows to shut down an external voltage reference).",
+      "2. The current consumption through VREF is composed of two parameters: - one constant (max 300 µA)",
+      "3. V can be internally connected to V and V can be internally connected to V , depending on the package. REF+ DDA REF- SSA",
+      "4. V or V must be tied to ground. SSA REF-",
+      "5. Minimum sampling time is reached for an external input impedance limited to a value as defined in Table 58: Maximum source impedance R max.",
+      "6. External impedance has another high value limitation when using short sampling time as defined in Table 58: Maximum source impedance R max."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

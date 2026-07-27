@@ -27,8 +27,8 @@
       [
         "f PLL_IN",
         "PLL input clock(1)",
-        "Conditions",
-        "Conditions",
+        "PLL input clock(1)",
+        "PLL input clock(1)",
         "0.95(2)",
         "1",
         "2.10",
@@ -37,8 +37,8 @@
       [
         "f PLL_OUT",
         "PLL multiplier output clock",
-        "Conditions",
-        "Conditions",
+        "PLL multiplier output clock",
+        "PLL multiplier output clock",
         "24",
         "-",
         "100",
@@ -47,8 +47,8 @@
       [
         "f PLL48_OUT",
         "48 MHz PLL multiplier output clock",
-        "Conditions",
-        "Conditions",
+        "48 MHz PLL multiplier output clock",
+        "48 MHz PLL multiplier output clock",
         "-",
         "48",
         "75",
@@ -57,8 +57,8 @@
       [
         "f VCO_OUT",
         "PLL VCO output",
-        "Conditions",
-        "Conditions",
+        "PLL VCO output",
+        "PLL VCO output",
         "100",
         "-",
         "432",
@@ -97,7 +97,7 @@
       [
         "Jitter(3)",
         "Cycle-to-cycle jitter",
-        "System clock 100 MHz",
+        "peak to peak System clock",
         "peak to peak",
         "-",
         "±150",
@@ -107,7 +107,7 @@
       [
         "Jitter(3)",
         "Period Jitter",
-        "System clock 100 MHz",
+        "100 MHz RMS peak to peak",
         "RMS",
         "-",
         "15",
@@ -117,7 +117,7 @@
       [
         "Jitter(3)",
         "Period Jitter",
-        "System clock 100 MHz",
+        "peak to peak",
         "peak to peak",
         "-",
         "±200",
@@ -145,7 +145,12 @@
         "0.40 0.85"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Take care of using the appropriate division factor M to obtain the specified PLL input clock values. The M factor is shared between PLL and PLLI2S.",
+      "2. Guaranteed by design - Not tested in production.",
+      "3. The use of two PLLs in parallel could degraded the Jitter up to +30%.",
+      "4. Evaluated by characterization - Not tested in production."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

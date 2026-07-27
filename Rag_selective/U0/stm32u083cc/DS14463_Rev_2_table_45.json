@@ -39,7 +39,7 @@
         "Wake-up in flash with flash in power-down during low- power sleep mode (SLEEP_PD = 1 in FLASH_ACR) and with clock MSI = 2 MHz",
         "6",
         "8.3",
-        "Nb of CPU cycles"
+        "CPU cycles"
       ],
       [
         "tWUSTOP0",
@@ -231,7 +231,10 @@
         "μs"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Time until REGLPF flag is cleared in PWR_SR2.",
+      "2. Time until VOSF flag is cleared in PWR_SR2."
+    ],
     "legend": [
       "Evaluated by characterization, not tested in production."
     ],

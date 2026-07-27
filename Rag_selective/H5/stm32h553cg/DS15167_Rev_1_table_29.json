@@ -11,17 +11,17 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32h553cg.pdf#page=110",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h553cg.pdf",
-  "text_helper": "Table 29. Typical consumption in Run mode with CoreMark running from flash memory and SRAM — section 5.3.6 Supply current characteristics. Symbol, Parameter, Conditions / Peripheral, Conditions / Code, f HCLK (MHz), +4 autres.",
+  "text_helper": "Table 29. Typical consumption in Run mode with CoreMark running from flash memory and SRAM — section 5.3.6 Supply current characteristics. Symbol, Parameter, Conditions / Peripheral, Conditions / Code, f HCLK (MHz) / (MHz), +4 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions / Peripheral",
       "Conditions / Code",
-      "f HCLK (MHz)",
-      "Typ LDO",
+      "f HCLK (MHz) / (MHz)",
+      "Typ LDO / LDO",
       "Unit",
-      "Typ LDO",
+      "Typ LDO / LDO",
       "Unit"
     ],
     "rows": [
@@ -39,7 +39,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled, instruction cache 2-way, prefetch ON",
+        "All peripherals disabled,",
         "FLASH",
         "200",
         "23.6",
@@ -50,7 +50,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled, instruction cache 2-way, prefetch ON",
+        "instruction cache 2-way, FLASH",
         "FLASH",
         "168",
         "20.3",
@@ -82,7 +82,7 @@
       ],
       [
         "I DD(Run)",
-        "Supply current in Run mode",
+        "Supply current in",
         "All peripherals disabled, instruction cache 1-way, prefetch ON",
         "FLASH",
         "250",
@@ -94,7 +94,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled, instruction cache 1-way, prefetch ON",
+        "All peripherals disabled,",
         "FLASH",
         "200",
         "21.7",
@@ -105,7 +105,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled, instruction cache 1-way, prefetch ON",
+        "prefetch ON",
         "FLASH",
         "150",
         "15.0",
@@ -115,7 +115,7 @@
       ],
       [
         "I DD(Run)",
-        "Supply current in Run mode",
+        "Supply current in",
         "All peripherals disabled, instruction cache 1-way, prefetch ON",
         "FLASH",
         "100",
@@ -126,7 +126,7 @@
       ],
       [
         "I DD(Run)",
-        "Supply current in Run mode",
+        "Run mode",
         "All peripherals disabled, instruction cache 2-way",
         "SRAM",
         "250",
@@ -149,7 +149,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled, instruction cache 2-way",
+        "SRAM instruction cache 2-way",
         "SRAM",
         "168",
         "19.8",
@@ -193,7 +193,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled, instruction cache 1-way",
+        "All peripherals disabled,",
         "SRAM",
         "200",
         "20.7",
@@ -204,7 +204,7 @@
       [
         "I DD(Run)",
         "Supply current in Run mode",
-        "All peripherals disabled, instruction cache 1-way",
+        "instruction cache 1-way",
         "SRAM",
         "150",
         "14.5",

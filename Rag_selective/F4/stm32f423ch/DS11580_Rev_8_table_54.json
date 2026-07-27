@@ -11,10 +11,9 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f423ch.pdf#page=121",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f423ch.pdf",
-  "text_helper": "Table 54. EMS characteristics for LQFP144 package — section 6.3.13 EMC characteristics. Symbol, Symbol, Parameter, Conditions, Level/ Class.",
+  "text_helper": "Table 54. EMS characteristics for LQFP144 package — section 6.3.13 EMC characteristics. Symbol, Parameter, Conditions, Level/ Class.",
   "table_content": {
     "headers": [
-      "Symbol",
       "Symbol",
       "Parameter",
       "Conditions",
@@ -23,41 +22,21 @@
     "rows": [
       [
         "V FESD",
-        "V FESD",
         "Voltage limits to be applied on any I/O pin to induce a functional disturbance",
         "V = 3.3 V, LQFP144 DD T = +25 °C, f = 100 MHz, A HCLK conforms to IEC 61000-4-2",
         "1B"
       ],
       [
         "V EFTB",
-        "V EFTB",
         "Fast transient voltage burst limits to be applied through 100 pF on V and V DD SS pins to induce a functional disturbance",
         "V = 3.3 V, LQFP144 DD T = +25 °C, f = 100 MHz, A HCLK conforms to IEC 61000-4-4",
         "3B"
-      ],
-      [
-        "S EMI",
-        "Peak(1)",
-        "30 to 130 MHz",
-        "21",
-        "21"
-      ],
-      [
-        "S EMI",
-        "Peak(1)",
-        "130 MHz to 1 GHz",
-        "25",
-        "25"
-      ],
-      [
-        "S EMI",
-        "Peak(1)",
-        "1 GHz to 2 GHz",
-        "19",
-        "19"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Refer to the “EMI radiated test” chapter in AN1709.",
+      "2. Refer to the “EMI level classification” chapter in AN1709."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

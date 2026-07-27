@@ -11,16 +11,16 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32h7s3a8.pdf#page=172",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h7s3a8.pdf",
-  "text_helper": "Table 38. Typical and maximum current consumption in Run mode, code with data processing running from AXISRAM3, cache OFF — section 6.3.7 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, frcc_c_ck (MHz), +7 autres.",
+  "text_helper": "Table 38. Typical and maximum current consumption in Run mode, code with data processing running from AXISRAM3, cache OFF — section 6.3.7 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, frcc_c_ck (MHz) / (MHz), +7 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions",
       "Conditions",
-      "frcc_c_ck (MHz)",
-      "Typ LDO",
-      "Typ SMPS",
+      "frcc_c_ck (MHz) / (MHz)",
+      "Typ LDO / LDO",
+      "Typ SMPS / SMPS",
       "Max(2) LDO / TJ = 25°C",
       "Max(2) LDO / TJ = 85°C",
       "Max(2) LDO / TJ = 105°C",
@@ -45,7 +45,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "high",
         "VOS high",
         "400",
         "66.5",
@@ -59,7 +59,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "VOS peripherals high(3) disabled",
         "VOS high(3)",
         "400",
         "70.5",
@@ -72,8 +72,8 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode",
-        "All peripherals disabled",
+        "Supply",
+        "VOS low",
         "VOS low",
         "400",
         "57.5",
@@ -86,8 +86,8 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode",
-        "All peripherals disabled",
+        "Supply",
+        "low",
         "VOS low",
         "300",
         "46.0",
@@ -100,7 +100,7 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode",
+        "Run mode",
         "All peripherals enabled",
         "VOS high",
         "600",
@@ -115,7 +115,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals enabled",
+        "high",
         "VOS high",
         "400",
         "99.5",
@@ -129,7 +129,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals enabled",
+        "VOS peripherals high(3) enabled",
         "VOS high(3)",
         "400",
         "105.0",
@@ -143,7 +143,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals enabled",
+        "VOS low",
         "VOS low",
         "400",
         "87.0",
@@ -157,7 +157,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals enabled",
+        "low",
         "VOS low",
         "300",
         "68.0",

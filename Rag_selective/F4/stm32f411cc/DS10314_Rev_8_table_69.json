@@ -11,7 +11,7 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f411cc.pdf#page=117",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f411cc.pdf",
-  "text_helper": "Table 69. ADC dynamic accuracy at f = 18 MHz - limited test conditions 117 ADC — section 6.3.19 Communications interfaces. Symbol, Parameter, Test conditions, Min, Typ, +2 autres. (table vide)",
+  "text_helper": "Table 69. ADC dynamic accuracy at f = 18 MHz - limited test conditions 117 ADC — section 6.3.19 Communications interfaces. Symbol, Parameter, Test conditions, Min, Typ, +2 autres.",
   "table_content": {
     "headers": [
       "Symbol",
@@ -22,8 +22,84 @@
       "Max",
       "Unit"
     ],
-    "rows": [],
-    "notes": [],
+    "rows": [
+      [
+        "ENOB",
+        "Effective number of bits",
+        "f =18 MHz ADC V = V = 1.7 V DDA REF+ Input Frequency = 20 KHz Temperature = 25 °C",
+        "10.3",
+        "10.4",
+        "-",
+        "bits"
+      ],
+      [
+        "SINAD",
+        "Signal-to-noise and distortion ratio",
+        "V = V = 3.3 V DDA REF+ Input Frequency = 20 KHz Temperature = 25 °C",
+        "64",
+        "64.2",
+        "-",
+        "dB"
+      ],
+      [
+        "SNR",
+        "Signal-to-noise ratio",
+        "Input Frequency = 20 KHz",
+        "64",
+        "65",
+        "-",
+        "dB"
+      ],
+      [
+        "THD",
+        "Total harmonic distortion",
+        "f =18 MHz ADC V = V = 1.7 V DDA REF+ Input Frequency = 20 KHz Temperature = 25 °C",
+        "-",
+        "-72",
+        "-67",
+        "dB"
+      ],
+      [
+        "ENOB",
+        "Effective number of bits",
+        "f = 36 MHz ADC V = V = 3.3 V DDA REF+ Input Frequency = 20 KHz Temperature = 25 °C",
+        "10.6",
+        "10.8",
+        "-",
+        "bits"
+      ],
+      [
+        "SINAD",
+        "Signal-to noise and distortion ratio",
+        "f = 36 MHz ADC V = V = 3.3 V DDA REF+ Input Frequency = 20 KHz Temperature = 25 °C",
+        "66",
+        "67",
+        "-",
+        "dB"
+      ],
+      [
+        "SNR",
+        "Signal-to noise ratio",
+        "f = 36 MHz ADC V = V = 3.3 V DDA REF+ Input Frequency = 20 KHz Temperature = 25 °C",
+        "64",
+        "68",
+        "-",
+        "dB"
+      ],
+      [
+        "THD",
+        "Total harmonic distortion",
+        "f = 36 MHz ADC V = V = 3.3 V DDA REF+ Input Frequency = 20 KHz Temperature = 25 °C",
+        "-",
+        "-72",
+        "-70",
+        "dB"
+      ]
+    ],
+    "notes": [
+      "1. Evaluated by characterization - Not tested in production. Note: ADC accuracy vs. negative injection current: injecting a negative current on any analog",
+      "2. C represents the capacitance of the PCB (dependent on soldering and PCB layout quality) plus the parasitic"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

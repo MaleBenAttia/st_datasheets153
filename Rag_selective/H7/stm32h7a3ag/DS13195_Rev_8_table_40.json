@@ -43,7 +43,7 @@
       [
         "IDD(Stop)",
         "Stop, DStop",
-        "Flash memory in low- power mode, memory shut-off disable",
+        "Flash memory in low- power SVOS3 LP",
         "SVOS3 LP",
         "0.495",
         "0.193",
@@ -56,7 +56,7 @@
       [
         "IDD(Stop)",
         "Stop, DStop",
-        "Flash memory in low- power mode, memory shut-off disable",
+        "SVOS4",
         "SVOS4",
         "0.370",
         "0.137",
@@ -69,7 +69,7 @@
       [
         "IDD(Stop)",
         "Stop, DStop",
-        "Flash memory in low- power mode, memory shut-off disable",
+        "SVOS5",
         "SVOS5",
         "0.245",
         "0.090",
@@ -95,7 +95,7 @@
       [
         "IDD(Stop)",
         "Stop, DStop",
-        "Flash memory in normal mode, memory shut-off disable",
+        "Flash memory in normal mode, SVOS3 LP",
         "SVOS3 LP",
         "0.515",
         "0.209",
@@ -108,7 +108,7 @@
       [
         "IDD(Stop)",
         "Stop, DStop",
-        "Flash memory in normal mode, memory shut-off disable",
+        "SVOS4",
         "SVOS4",
         "0.390",
         "0.153",
@@ -121,7 +121,7 @@
       [
         "IDD(Stop)",
         "Stop, DStop",
-        "Flash memory in normal mode, memory shut-off disable",
+        "SVOS5",
         "SVOS5",
         "0.245",
         "0.090",
@@ -147,7 +147,7 @@
       [
         "IDD(Stop)",
         "Stop, DStop",
-        "Flash memory in low- power mode, memory shut-off enable",
+        "Flash memory in low- power SVOS3 LP",
         "SVOS3 LP",
         "0.480",
         "0.186",
@@ -160,7 +160,7 @@
       [
         "IDD(Stop)",
         "Stop, DStop",
-        "Flash memory in low- power mode, memory shut-off enable",
+        "SVOS4",
         "SVOS4",
         "0.360",
         "0.134",
@@ -173,7 +173,7 @@
       [
         "IDD(Stop)",
         "Stop, DStop",
-        "Flash memory in low- power mode, memory shut-off enable",
+        "SVOS5",
         "SVOS5",
         "0.230",
         "0.085",
@@ -199,7 +199,7 @@
       [
         "IDD(Stop)",
         "Stop, DStop",
-        "Flash memory in normal mode, memory shut-off enable",
+        "Flash memory in normal mode, SVOS3 LP",
         "SVOS3 LP",
         "0.500",
         "0.204",
@@ -212,7 +212,7 @@
       [
         "IDD(Stop)",
         "Stop, DStop",
-        "Flash memory in normal mode, memory shut-off enable",
+        "SVOS4",
         "SVOS4",
         "0.380",
         "0.151",
@@ -225,7 +225,7 @@
       [
         "IDD(Stop)",
         "Stop, DStop",
-        "Flash memory in normal mode, memory shut-off enable",
+        "SVOS5",
         "SVOS5",
         "0.230",
         "0.085",
@@ -251,7 +251,7 @@
       [
         "IDD(Stop)",
         "Stop, DStop2",
-        "Flash memory in low- power mode, memory shut-off disable",
+        "Flash memory in low- power SVOS3 LP",
         "SVOS3 LP",
         "0.115",
         "0.046",
@@ -264,7 +264,7 @@
       [
         "IDD(Stop)",
         "Stop, DStop2",
-        "Flash memory in low- power mode, memory shut-off disable",
+        "SVOS4",
         "SVOS4",
         "0.095",
         "0.037",
@@ -277,7 +277,7 @@
       [
         "IDD(Stop)",
         "Stop, DStop2",
-        "Flash memory in low- power mode, memory shut-off disable",
+        "SVOS5",
         "SVOS5",
         "0.090",
         "0.032",
@@ -286,6 +286,19 @@
         "1.75",
         "3.80",
         "mA"
+      ],
+      [
+        "Symbol",
+        "Parameter",
+        "Conditions",
+        "Conditions",
+        "Typ LDO",
+        "Typ SMPS",
+        "TJ = 25 °C",
+        "TJ = 85 °C",
+        "TJ = 105 °C",
+        "TJ= 130 °C",
+        "Unit"
       ],
       [
         "IDD(Stop)",
@@ -340,7 +353,11 @@
         "3.02"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Guaranteed by characterization results.",
+      "2. The maximum values are given for LDO regulator ON. Refer to Section 6.3.3 SMPS step-down converterfor the SMPS maximum current consumption.",
+      "3. The SMPS is unnecessarily ON in System Stop mode, leading to an additional consumption. It is recommended to use SVOS3 LP mode to optimize power consumption."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

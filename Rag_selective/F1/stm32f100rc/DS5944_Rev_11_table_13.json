@@ -35,7 +35,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "External clock (2), all peripherals enabled",
+        "peripherals enabled",
         "16 MHz",
         "14.6",
         "14.7",
@@ -52,7 +52,7 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode",
+        "Supply",
         "External clock(2), all peripherals disabled",
         "24 MHz",
         "11.3",
@@ -62,7 +62,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "External clock(2), all peripherals disabled",
+        "peripherals disabled",
         "16 MHz",
         "8.7",
         "8.9",
@@ -70,7 +70,7 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode",
+        "Supply",
         "External clock(2), all peripherals disabled",
         "8 MHz",
         "5.6",
@@ -79,7 +79,7 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode",
+        "Run mode",
         "HSI clock(2), all peripherals enabled",
         "24 MHz",
         "19",
@@ -89,7 +89,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "HSI clock(2), all peripherals enabled",
+        "enabled",
         "16 MHz",
         "13.1",
         "13.2",
@@ -116,7 +116,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "HSI clock(2), all peripherals disabled",
+        "disabled",
         "16 MHz",
         "6.7",
         "7",
@@ -132,7 +132,10 @@
         "mA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Based on characterization, not tested in production.",
+      "2. External clock or HSI frequency is 8 MHz and PLL is on when f > 8 MHz. HCLK"
+    ],
     "legend": [
       "running from Flash"
     ],

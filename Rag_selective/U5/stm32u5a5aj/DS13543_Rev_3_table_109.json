@@ -37,7 +37,7 @@
       [
         "V DDA",
         "Analog supply voltage",
-        "Normal mode",
+        "VRS = 001",
         "VRS = 001",
         "2.1",
         "-",
@@ -47,7 +47,7 @@
       [
         "V DDA",
         "Analog supply voltage",
-        "Normal mode",
+        "VRS = 010",
         "VRS = 010",
         "2.4",
         "-",
@@ -56,8 +56,8 @@
       ],
       [
         "V DDA",
-        "Analog supply voltage",
-        "Normal mode",
+        "Analog supply",
+        "VRS = 011",
         "VRS = 011",
         "2.8",
         "-",
@@ -66,7 +66,7 @@
       ],
       [
         "V DDA",
-        "Analog supply voltage",
+        "voltage",
         "Degraded mode(2)",
         "VRS = 000",
         "1.62",
@@ -77,7 +77,7 @@
       [
         "V DDA",
         "Analog supply voltage",
-        "Degraded mode(2)",
+        "VRS = 001 Degraded",
         "VRS = 001",
         "1.62",
         "-",
@@ -87,7 +87,7 @@
       [
         "V DDA",
         "Analog supply voltage",
-        "Degraded mode(2)",
+        "VRS = 010",
         "VRS = 010",
         "1.62",
         "-",
@@ -97,7 +97,7 @@
       [
         "V DDA",
         "Analog supply voltage",
-        "Degraded mode(2)",
+        "VRS = 011",
         "VRS = 011",
         "1.62",
         "-",
@@ -115,252 +115,19 @@
         "V"
       ],
       [
-        "V REFBUF_ OUT (3)",
-        "Voltage reference buffer output",
-        "Normal mode at V = 3 V, DDA T = 30 °C, J I = 10 µA load",
+        "V REFBUF_",
+        "Voltage reference",
+        "VRS = 001 V = 3 V, DDA",
         "VRS = 001",
         "1.795",
         "1.8",
         "1.805",
         "V"
-      ],
-      [
-        "V REFBUF_ OUT (3)",
-        "Voltage reference buffer output",
-        "Normal mode at V = 3 V, DDA T = 30 °C, J I = 10 µA load",
-        "VRS = 010",
-        "2.042",
-        "2.048",
-        "2.054",
-        "V"
-      ],
-      [
-        "V REFBUF_ OUT (3)",
-        "Voltage reference buffer output",
-        "Normal mode at V = 3 V, DDA T = 30 °C, J I = 10 µA load",
-        "VRS = 011",
-        "2.493",
-        "2.5",
-        "2.507",
-        "V"
-      ],
-      [
-        "V REFBUF_ OUT (3) (cont'd)",
-        "Voltage reference buffer output",
-        "Degraded mode(2)",
-        "VRS = 000",
-        "Min (V - 0.15 DDA ;1.496)",
-        "-",
-        "1.504",
-        "V"
-      ],
-      [
-        "V REFBUF_ OUT (3) (cont'd)",
-        "Voltage reference buffer output",
-        "Degraded mode(2)",
-        "VRS = 001",
-        "Min (V - 0.15 DDA ;1.795)",
-        "-",
-        "1.805",
-        "1.805"
-      ],
-      [
-        "V REFBUF_ OUT (3) (cont'd)",
-        "Voltage reference buffer output",
-        "Degraded mode(2)",
-        "VRS = 010",
-        "Min (V - 0.15 DDA ;2.042)",
-        "-",
-        "2.054",
-        "2.054"
-      ],
-      [
-        "V REFBUF_ OUT (3) (cont'd)",
-        "Voltage reference buffer output",
-        "Degraded mode(2)",
-        "VRS = 011",
-        "Min (V - 0.15 DDA ;2.493)",
-        "-",
-        "2.507",
-        "2.507"
-      ],
-      [
-        "TRIM",
-        "Trim step",
-        "-",
-        "-",
-        "0.1",
-        "0.175",
-        "0.25",
-        "%"
-      ],
-      [
-        "C L",
-        "Load capacitor(4)",
-        "-",
-        "-",
-        "0.5",
-        "1.10",
-        "1.50",
-        "µF"
-      ],
-      [
-        "esr",
-        "C equivalent serial L resistor",
-        "-",
-        "-",
-        "-",
-        "-",
-        "2",
-        "Ω"
-      ],
-      [
-        "I load",
-        "Static load current",
-        "-",
-        "-",
-        "-",
-        "-",
-        "4",
-        "mA"
-      ],
-      [
-        "R PD",
-        "Pull-down resistance",
-        "-",
-        "-",
-        "-",
-        "-",
-        "400",
-        "Ω"
-      ],
-      [
-        "I line_reg",
-        "Line regulation",
-        "V ≤ V ≤ 3.6 V, DDAmin DDA Normal mode, 500 µA ≤ I ≤ 4 mA load",
-        "V ≤ V ≤ 3.6 V, DDAmin DDA Normal mode, 500 µA ≤ I ≤ 4 mA load",
-        "±0.016",
-        "±0.033",
-        "±0.053",
-        "%"
-      ],
-      [
-        "I load_reg",
-        "Load regulation(5)",
-        "Normal mode, 500 μA ≤ I ≤ 4 mA load",
-        "Normal mode, 500 μA ≤ I ≤ 4 mA load",
-        "-",
-        "50",
-        "400",
-        "Am /mpp"
-      ],
-      [
-        "T Coeff",
-        "Temperature coefficient",
-        "–40 °C < T < +130 °C J",
-        "–40 °C < T < +130 °C J",
-        "-",
-        "-",
-        "T coeff_vrefint + 50",
-        "ppm/ °C"
-      ],
-      [
-        "PSRR",
-        "Power supply rejection",
-        "DC",
-        "DC",
-        "-",
-        "65",
-        "-",
-        "dB"
-      ],
-      [
-        "PSRR",
-        "Power supply rejection",
-        "100 kHz",
-        "100 kHz",
-        "-",
-        "30",
-        "-",
-        "-"
-      ],
-      [
-        "t START",
-        "Startup time",
-        "C = 0.5 µF L",
-        "C = 0.5 µF L",
-        "-",
-        "110",
-        "200",
-        "µs"
-      ],
-      [
-        "t START",
-        "Startup time",
-        "C = 1.1 µF L",
-        "C = 1.1 µF L",
-        "-",
-        "240",
-        "350",
-        "350"
-      ],
-      [
-        "t START",
-        "Startup time",
-        "C = 1.5 µF L",
-        "C = 1.5 µF L",
-        "-",
-        "320",
-        "500",
-        "500"
-      ],
-      [
-        "I INRUSH",
-        "Control of DC current drive on V REFBUF_ during startup OUT phase (6)",
-        "-",
-        "-",
-        "-",
-        "8",
-        "11",
-        "mA"
-      ],
-      [
-        "I DDA (VREFBUF)",
-        "VREFBUF consumption from V DDA",
-        "I = 0 µA load",
-        "I = 0 µA load",
-        "-",
-        "14",
-        "18",
-        "µA"
-      ],
-      [
-        "I DDA (VREFBUF)",
-        "VREFBUF consumption from V DDA",
-        "I = 500 µA load",
-        "I = 500 µA load",
-        "-",
-        "16",
-        "20",
-        "20"
-      ],
-      [
-        "I DDA (VREFBUF)",
-        "VREFBUF consumption from V DDA",
-        "I = 4 mA load",
-        "I = 4 mA load",
-        "-",
-        "42",
-        "50",
-        "50"
       ]
     ],
     "notes": [
       "2. Difference between two consecutive codes minus 1 LSB.",
-      "3. Difference between the value measured at code i and the value measured at code i on a line drawn between code 0 and last code 4095.",
-      "4. Difference between the value measured at code (0x001) and the ideal value.",
-      "5. Difference between the ideal transfer-function slope and the measured slope computed from code 0x000 and 0xFFF when the buffer is OFF, and from code giving 0.2 V and (VREF+ - 0.2 V) when the buffer is ON.",
-      "6. Signal is -0.5 dBFS with Fsampling = 1 MHz."
+      "3. Difference between the value measured at code i and the value measured at code i on a line drawn between code 0 and last code 4095."
     ],
     "legend": "",
     "semantic_type": "",

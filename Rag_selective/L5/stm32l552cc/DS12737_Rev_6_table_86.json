@@ -34,7 +34,7 @@
       ],
       [
         "f HSE_ext",
-        "User external clock source frequency",
+        "source frequency",
         "Voltage scaling Range 2",
         "-",
         "8",
@@ -69,29 +69,17 @@
         "ns"
       ],
       [
-        "t w(HSEH) t w(HSEL)",
+        "t w(HSEL)",
         "OSC_IN high or low time",
         "Voltage scaling Range 2",
         "18",
         "-",
         "-",
         "ns"
-      ],
-      [
-        "V LSEL",
-        "OSC32_IN input pin low level voltage",
-        "-",
-        "V SS",
-        "-",
-        "0.3 V DDIOx",
-        "0.3 V DDIOx"
       ]
     ],
     "notes": [
-      "1. Guaranteed by design. Figure 33. High-speed external clock source AC timing diagram",
-      "2. Resonator characteristics given by the crystal/ceramic resonator manufacturer.",
-      "3. This consumption level occurs during the first 2/3 of the t startup time SU(HSE)",
-      "4. t is the startup time measured from the moment it is enabled (by software) to a stabilized 8 MHz SU(HSE)"
+      "1. Guaranteed by design. Figure 33. High-speed external clock source AC timing diagram"
     ],
     "legend": "",
     "semantic_type": "",

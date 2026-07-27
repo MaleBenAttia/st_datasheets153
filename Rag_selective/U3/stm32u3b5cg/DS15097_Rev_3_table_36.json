@@ -47,7 +47,7 @@
       [
         "IDD (Run)",
         "Supply current in Run mode",
-        "fHCLK = fMSI = 48 MHz, all peripherals disable, flash memory bank 2 in powered down, all SRAMs enabled",
+        "all peripherals disable, SecureMark",
         "Range 2",
         "SecureMark",
         "1.35",
@@ -57,12 +57,12 @@
         "28",
         "18.5",
         "17.5",
-        "µA/ MHz"
+        "µA/"
       ],
       [
         "IDD (Run)",
         "Supply current in Run mode",
-        "fHCLK = fMSI = 48 MHz, all peripherals disable, flash memory bank 2 in powered down, all SRAMs enabled",
+        "While(1) powered down, all",
         "Range 2",
         "While(1)",
         "0.92",
@@ -72,12 +72,12 @@
         "19",
         "12.5",
         "12",
-        "µA/ MHz"
+        "MHz"
       ],
       [
         "IDD (Run)",
-        "Supply current in Run mode",
-        "fHCLK = fMSI = 48 MHz, all peripherals disable, flash memory bank 2 in powered down, all SRAMs enabled",
+        "Supply",
+        "Fibonacci",
         "Range 2",
         "Fibonacci",
         "1.05",
@@ -91,7 +91,7 @@
       ],
       [
         "IDD (Run)",
-        "Supply current in Run mode",
+        "Run mode",
         "fHCLK = fMSI = 96 MHz, all peripherals disable, flash memory bank 2 in powered down, all SRAMs enabled",
         "Range 1",
         "Coremark",
@@ -107,7 +107,7 @@
       [
         "IDD (Run)",
         "Supply current in Run mode",
-        "fHCLK = fMSI = 96 MHz, all peripherals disable, flash memory bank 2 in powered down, all SRAMs enabled",
+        "all peripherals disable, SecureMark",
         "Range 1",
         "SecureMark",
         "3.4",
@@ -117,12 +117,12 @@
         "35.5",
         "23",
         "21.5",
-        "µA/ MHz"
+        "µA/"
       ],
       [
         "IDD (Run)",
         "Supply current in Run mode",
-        "fHCLK = fMSI = 96 MHz, all peripherals disable, flash memory bank 2 in powered down, all SRAMs enabled",
+        "While(1) powered down, all",
         "Range 1",
         "While(1)",
         "2.35",
@@ -132,12 +132,12 @@
         "24.5",
         "16",
         "15",
-        "µA/ MHz"
+        "MHz"
       ],
       [
         "IDD (Run)",
         "Supply current in Run mode",
-        "fHCLK = fMSI = 96 MHz, all peripherals disable, flash memory bank 2 in powered down, all SRAMs enabled",
+        "Fibonacci",
         "Range 1",
         "Fibonacci",
         "2.7",
@@ -210,7 +210,9 @@
         "16"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Evaluated by characterization. Not tested in production."
+    ],
     "legend": [
       "ICACHE ON (1-way), prefetch ON",
       "The current consumption from SRAM is similar."

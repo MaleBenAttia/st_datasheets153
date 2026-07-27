@@ -11,11 +11,10 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32u5f7vj.pdf#page=236",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u5f7vj.pdf",
-  "text_helper": "Table 88. EMS characteristics — section 5.3.12 EMC characteristics. Symbol, Parameter, Parameter, Conditions, Level/ Class.",
+  "text_helper": "Table 88. EMS characteristics — section 5.3.12 EMC characteristics. Symbol, Parameter, Conditions, Level/ Class.",
   "table_content": {
     "headers": [
       "Symbol",
-      "Parameter",
       "Parameter",
       "Conditions",
       "Level/ Class"
@@ -24,40 +23,19 @@
       [
         "V FESD",
         "Voltage limits to be applied on any I/O pin to induce a functional disturbance",
-        "Voltage limits to be applied on any I/O pin to induce a functional disturbance",
         "V = 3.3 V, T = +25 °C, f = 160 MHz, DD A HCLK TFBGA216 conforming to IEC 61000-4-2",
         "3B"
       ],
       [
         "V EFTB",
         "Fast transient voltage burst limits to be applied through 100 pF on V and V pins DD SS to induce a functional disturbance",
-        "Fast transient voltage burst limits to be applied through 100 pF on V and V pins DD SS to induce a functional disturbance",
         "V = 3.3 V, T = +25 °C, f = 160 MHz, DD A HCLK TFBGA216 conforming to IEC 61000-4-4",
         "5A"
-      ],
-      [
-        "S EMI",
-        "Peak(1)",
-        "30 MHz to 130 MHz",
-        "13",
-        "13"
-      ],
-      [
-        "S EMI",
-        "Peak(1)",
-        "130 MHz to 1 GHz",
-        "14",
-        "14"
-      ],
-      [
-        "S EMI",
-        "Peak(1)",
-        "1 GHz to 2 GHz",
-        "11",
-        "11"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Evaluated by characterization. Not tested in production. DS14395 Rev 4 237/351"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

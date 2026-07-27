@@ -53,7 +53,7 @@
       [
         "Stop 0",
         "Flash",
-        "Range 1",
+        "HSI16",
         "HSI16",
         "5.23",
         "5.46",
@@ -71,7 +71,7 @@
       [
         "Stop 0",
         "Flash",
-        "Range 2",
+        "Range 2 HSI16",
         "HSI16",
         "17.56",
         "17.94",
@@ -80,7 +80,7 @@
       [
         "Stop 0",
         "Flash",
-        "Range 2",
+        "MSI4",
         "MSI4",
         "23.36",
         "24.59",
@@ -98,7 +98,7 @@
       [
         "Stop 0",
         "SRAM1",
-        "Range 1",
+        "HSI16",
         "HSI16",
         "2.79",
         "3.01",
@@ -116,7 +116,7 @@
       [
         "Stop 0",
         "SRAM1",
-        "Range 2",
+        "Range 2 HSI16",
         "HSI16",
         "2.80",
         "3.03",
@@ -125,7 +125,7 @@
       [
         "Stop 0",
         "SRAM1",
-        "Range 2",
+        "MSI4",
         "MSI4",
         "9.66",
         "10.88",
@@ -143,7 +143,7 @@
       [
         "Stop 1",
         "Flash",
-        "Range 1",
+        "HSI16",
         "HSI16",
         "9.22",
         "9.67",
@@ -161,7 +161,7 @@
       [
         "Stop 1",
         "Flash",
-        "Range 2",
+        "Range 2 HSI16",
         "HSI16",
         "20.98",
         "21.81",
@@ -170,7 +170,7 @@
       [
         "Stop 1",
         "Flash",
-        "Range 2",
+        "MSI4",
         "MSI4",
         "25.48",
         "26.34",
@@ -188,7 +188,7 @@
       [
         "Stop 1",
         "SRAM1",
-        "Range 1",
+        "HSI16",
         "HSI16",
         "6.68",
         "7.06",
@@ -206,7 +206,7 @@
       [
         "Stop 1",
         "SRAM1",
-        "Range 2",
+        "Range 2 HSI16",
         "HSI16",
         "6.18",
         "6.88",
@@ -215,7 +215,7 @@
       [
         "Stop 1",
         "SRAM1",
-        "Range 2",
+        "MSI4",
         "MSI4",
         "11.04",
         "11.99",
@@ -233,7 +233,7 @@
       [
         "Stop 1",
         "SRAM1",
-        "Low Power Run (LPR=1)",
+        "Run (LPR=1)",
         "MSI2",
         "17.8",
         "19",
@@ -375,7 +375,11 @@
         "292.42"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Guaranteed by characterization results.",
+      "2. Time until REGLPF flag is cleared in PWR_SR2.",
+      "3. Time until VOSF flag is cleared in PWR_SR2."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

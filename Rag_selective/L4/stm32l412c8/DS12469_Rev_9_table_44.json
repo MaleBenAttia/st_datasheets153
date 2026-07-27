@@ -11,11 +11,12 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32l412c8.pdf#page=102",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l412c8.pdf",
-  "text_helper": "Table 44. Current consumption in Stop 1 mode — section 6.3.5 Supply current characteristics. Symbol, Parameter, Conditions / -, Conditions / V DD, TYP / 25 °C, +10 autres.",
+  "text_helper": "Table 44. Current consumption in Stop 1 mode — section 6.3.5 Supply current characteristics. Symbol, Parameter, Conditions / -, Conditions / -, Conditions / V DD, +11 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
+      "Conditions / -",
       "Conditions / -",
       "Conditions / V DD",
       "TYP / 25 °C",
@@ -35,6 +36,7 @@
         "I DD_ALL (Stop 1)",
         "Supply current in Stop 1 mode, RTC disabled",
         "-",
+        "-",
         "1.8 V",
         "3.95",
         "13.0",
@@ -49,8 +51,9 @@
         "µA"
       ],
       [
-        "I DD_ALL (Stop 1)",
-        "Supply current in Stop 1 mode, RTC disabled",
+        "I DD_ALL",
+        "in Stop 1",
+        "2.4 V",
         "-",
         "2.4 V",
         "3.95",
@@ -68,6 +71,7 @@
       [
         "I DD_ALL (Stop 1)",
         "Supply current in Stop 1 mode, RTC disabled",
+        "3 V",
         "-",
         "3 V",
         "4.00",
@@ -85,6 +89,7 @@
       [
         "I DD_ALL (Stop 1)",
         "Supply current in Stop 1 mode, RTC disabled",
+        "3.6 V",
         "-",
         "3.6 V",
         "4.10",
@@ -103,6 +108,7 @@
         "I DD_ALL (Stop 1 with RTC)",
         "Supply current in stop 1 mode, RTC enabled",
         "RTC clocked by LSI",
+        "RTC clocked by LSI",
         "1.8 V",
         "4.40",
         "13.5",
@@ -119,6 +125,7 @@
       [
         "I DD_ALL (Stop 1 with RTC)",
         "Supply current in stop 1 mode, RTC enabled",
+        "2.4 V",
         "RTC clocked by LSI",
         "2.4 V",
         "4.60",
@@ -136,6 +143,7 @@
       [
         "I DD_ALL (Stop 1 with RTC)",
         "Supply current in stop 1 mode, RTC enabled",
+        "3 V",
         "RTC clocked by LSI",
         "3 V",
         "4.75",
@@ -153,6 +161,7 @@
       [
         "I DD_ALL (Stop 1 with RTC)",
         "Supply current in stop 1 mode, RTC enabled",
+        "3.6 V",
         "RTC clocked by LSI",
         "3.6 V",
         "5.05",
@@ -171,6 +180,7 @@
         "I DD_ALL (Stop 1 with RTC)",
         "Supply current in stop 1 mode, RTC enabled",
         "RTC clocked by LSE bypassed at 32768 Hz",
+        "RTC clocked by LSE bypassed at 32768 Hz",
         "1.8 V",
         "4.50",
         "13.5",
@@ -185,8 +195,9 @@
         "µA"
       ],
       [
-        "I DD_ALL (Stop 1 with RTC)",
-        "Supply current in stop 1 mode, RTC enabled",
+        "DD_ALL",
+        "in stop 1",
+        "ESL yb dekcolc CTR V 4.2",
         "RTC clocked by LSE bypassed at 32768 Hz",
         "2.4 V",
         "4.70",
@@ -202,8 +213,9 @@
         "µA"
       ],
       [
-        "I DD_ALL (Stop 1 with RTC)",
+        "RTC)",
         "Supply current in stop 1 mode, RTC enabled",
+        "3 V",
         "RTC clocked by LSE bypassed at 32768 Hz",
         "3 V",
         "5.35",
@@ -221,6 +233,7 @@
       [
         "I DD_ALL (Stop 1 with RTC)",
         "Supply current in stop 1 mode, RTC enabled",
+        "3.6 V",
         "RTC clocked by LSE bypassed at 32768 Hz",
         "3.6 V",
         "7.20",
@@ -239,6 +252,7 @@
         "I DD_ALL (Stop 1 with RTC)",
         "Supply current in stop 1 mode, RTC enabled",
         "RTC clocked by LSE quartz(2) in low drive mode",
+        "RTC clocked by LSE quartz(2) in low drive mode",
         "1.8 V",
         "4.25",
         "13.5",
@@ -255,6 +269,7 @@
       [
         "I DD_ALL (Stop 1 with RTC)",
         "Supply current in stop 1 mode, RTC enabled",
+        "quartz(2) 2.4 V RTC clocked by LSE",
         "RTC clocked by LSE quartz(2) in low drive mode",
         "2.4 V",
         "4.35",
@@ -272,6 +287,7 @@
       [
         "I DD_ALL (Stop 1 with RTC)",
         "Supply current in stop 1 mode, RTC enabled",
+        "3 V",
         "RTC clocked by LSE quartz(2) in low drive mode",
         "3 V",
         "4.40",
@@ -289,6 +305,7 @@
       [
         "I DD_ALL (Stop 1 with RTC)",
         "Supply current in stop 1 mode, RTC enabled",
+        "3.6 V",
         "RTC clocked by LSE quartz(2) in low drive mode",
         "3.6 V",
         "4.50",
@@ -307,6 +324,7 @@
         "I DD_ALL (wakeup from Stop1)",
         "Supply current during wakeup from Stop 1",
         "Wakeup clock MSI = 48 MHz, voltage Range 1. See (3).",
+        "Wakeup clock MSI = 48 MHz, voltage Range 1. See (3).",
         "3 V",
         "1.15",
         "-",
@@ -322,7 +340,8 @@
       ],
       [
         "I DD_ALL (wakeup from Stop1)",
-        "Supply current during wakeup from Stop 1",
+        "Supply current during wakeup from",
+        "Wakeup clock MSI = 4 MHz, voltage Range 2. See (3).",
         "Wakeup clock MSI = 4 MHz, voltage Range 2. See (3).",
         "3 V",
         "1.25",
@@ -340,6 +359,7 @@
       [
         "I DD_ALL (wakeup from Stop1)",
         "Supply current during wakeup from Stop 1",
+        "Wakeup clock HSI16 = 16 MHz, voltage Range 1. See (3).",
         "Wakeup clock HSI16 = 16 MHz, voltage Range 1. See (3).",
         "3 V",
         "1.20",

@@ -11,7 +11,7 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32u535cb.pdf#page=153",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u535cb.pdf",
-  "text_helper": "Table 52. Current consumption during wake-up from Stop 1 mode on LDO — section 5.3.6 Supply current characteristics. Symbol, Parameter, Conditions / -, Conditions / V (V) DD, Typ / 25°C, +1 autres. (table vide)",
+  "text_helper": "Table 52. Current consumption during wake-up from Stop 1 mode on LDO — section 5.3.6 Supply current characteristics. Symbol, Parameter, Conditions / -, Conditions / V (V) DD, Typ / 25°C, +1 autres.",
   "table_content": {
     "headers": [
       "Symbol",
@@ -21,8 +21,36 @@
       "Typ / 25°C",
       "Unit"
     ],
-    "rows": [],
-    "notes": [],
+    "rows": [
+      [
+        "Q DD(wakeup from Stop 1)",
+        "Electrical charge consumed during wake-up from Stop 1 mode",
+        "Wake-up clock is MSI 24 MHz",
+        "3.0",
+        "40",
+        "nAs"
+      ],
+      [
+        "Q DD(wakeup from Stop 1)",
+        "Stop 1 mode",
+        "Wake-up clock is HSI 16 MHz",
+        "3.0",
+        "40",
+        "nAs"
+      ],
+      [
+        "Q DD(wakeup from Stop 1)",
+        "Electrical charge consumed during wake-up from Stop 1 mode",
+        "Wake-up clock is MSI 1 MHz",
+        "3.0",
+        "70",
+        "nAs"
+      ]
+    ],
+    "notes": [
+      "1. Evaluated by characterization. Not tested in production.",
+      "2. RTC with default configuration but RTC_CALR.LPCAL = 1."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

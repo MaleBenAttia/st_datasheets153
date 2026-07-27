@@ -56,7 +56,7 @@
       ],
       [
         "f PLL_OUT",
-        "PLL multiplier output clock P, Q, R",
+        "PLL multiplier output clock",
         "VOS1",
         "VOS1",
         "1.17",
@@ -66,7 +66,7 @@
       ],
       [
         "f PLL_OUT",
-        "PLL multiplier output clock P, Q, R",
+        "P, Q, R",
         "VOS2",
         "VOS2",
         "1.17",
@@ -196,8 +196,8 @@
       ],
       [
         "I (PLL) DD",
-        "PLL power consumption on V DD",
-        "f = 420 MHz VCO_OUT",
+        "PLL power consumption on",
+        "V CORE",
         "V CORE",
         "-",
         "450",
@@ -206,7 +206,7 @@
       ],
       [
         "I (PLL) DD",
-        "PLL power consumption on V DD",
+        "V DD",
         "f = 150 MHz VCO_OUT",
         "V DD",
         "-",
@@ -217,7 +217,7 @@
       [
         "I (PLL) DD",
         "PLL power consumption on V DD",
-        "f = 150 MHz VCO_OUT",
+        "V CORE",
         "V CORE",
         "-",
         "165",
@@ -225,7 +225,11 @@
         "μA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Specified by design - Not tested in production, unless otherwise specified.",
+      "2. This value must be limited to the maximum frequency due to the product limitation.",
+      "3. Evaluated by characterization - Not tested in production."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

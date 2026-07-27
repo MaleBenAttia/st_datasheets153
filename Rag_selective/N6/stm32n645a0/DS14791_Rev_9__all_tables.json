@@ -147,7 +147,7 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32n645a0.pdf#page=15",
-    "text_helper": "Table 2. STM32N645xx features and peripheral counts — section 2 Description. Feature / Peripheral, Feature / Peripheral, STM32N645xx (Q3H0X546N), STM32N645xx (Q3H0L546N), STM32N645xx (Q3H0B546N), +4 autres. (table vide)",
+    "text_helper": "Table 2. STM32N645xx features and peripheral counts — section 2 Description. Feature / Peripheral, Feature / Peripheral, STM32N645xx (Q3H0X546N), STM32N645xx (Q3H0L546N), STM32N645xx (Q3H0B546N), +4 autres.",
     "table_content": {
       "headers": [
         "Feature / Peripheral",
@@ -160,7 +160,19 @@
         "STM32N645xx (Q3H0A546N)",
         "STM32N645xx (Q3H0Z546N)"
       ],
-      "rows": [],
+      "rows": [
+        [
+          "General purpose Timers",
+          "General purpose",
+          "10",
+          "10",
+          "10",
+          "10",
+          "7",
+          "8",
+          "7"
+        ]
+      ],
       "notes": [
         "2. SAI PDM mode only. 16/258 DS14791 Rev 9"
       ],
@@ -355,13 +367,13 @@
           "4.2 Mbytes",
           "4.2 Mbytes",
           "4.2 Mbytes",
-          "4.2 Mbytes",
+          "4.2 Mbytes 8 Kbytes",
           "4.2 Mbytes",
           "4.2 Mbytes",
           "4.2 Mbytes"
         ],
         [
-          "SRAM",
+          "Backup",
           "Backup",
           "8 Kbytes",
           "8 Kbytes",
@@ -375,7 +387,7 @@
           "XSPI",
           "16 bits",
           "1",
-          "1",
+          "1 1",
           "0",
           "0",
           "0",
@@ -383,7 +395,7 @@
           "0"
         ],
         [
-          "XSPI",
+          "8 bits",
           "8 bits",
           "1",
           "1",
@@ -398,14 +410,14 @@
           "Advanced control",
           "2",
           "1",
-          "1",
-          "1",
-          "1",
+          "1 4",
+          "3 2",
+          "7 1",
           "0",
-          "0"
+          "0 7 1"
         ],
         [
-          "Timers",
+          "General purpose",
           "General purpose",
           "10",
           "10",
@@ -416,7 +428,7 @@
           "7"
         ],
         [
-          "Timers",
+          "Basic",
           "Basic",
           "3",
           "3",
@@ -427,7 +439,7 @@
           "3"
         ],
         [
-          "Timers",
+          "Low-power",
           "Low-power",
           "5",
           "4",
@@ -441,15 +453,15 @@
           "Communication interfaces",
           "I2S",
           "4",
-          "4",
-          "4",
-          "4",
+          "4 4 5 5 2 2 1",
+          "4 6 4 4 2 3 2 1",
+          "2 4 4 1 Yes 1 Yes Yes Yes Yes",
           "1",
-          "1",
+          "1 4 3 3 0 2 1 2",
           "0"
         ],
         [
-          "Communication interfaces",
+          "SPI",
           "SPI",
           "6",
           "6",
@@ -460,7 +472,7 @@
           "5"
         ],
         [
-          "Communication interfaces",
+          "I2C",
           "I2C",
           "4",
           "4",
@@ -471,7 +483,7 @@
           "3"
         ],
         [
-          "Communication interfaces",
+          "I3C",
           "I3C",
           "2",
           "2",
@@ -482,7 +494,7 @@
           "2"
         ],
         [
-          "Communication interfaces",
+          "USART",
           "USART",
           "5",
           "5",
@@ -493,7 +505,7 @@
           "2"
         ],
         [
-          "Communication interfaces",
+          "UART",
           "UART",
           "5",
           "5",
@@ -504,7 +516,7 @@
           "3"
         ],
         [
-          "Communication interfaces",
+          "LPUART",
           "LPUART",
           "1",
           "1",
@@ -515,7 +527,7 @@
           "1"
         ],
         [
-          "Communication interfaces",
+          "SAI",
           "SAI",
           "2",
           "2",
@@ -526,7 +538,7 @@
           "1(2)"
         ],
         [
-          "Communication interfaces",
+          "FDCAN interfaces",
           "FDCAN",
           "3",
           "3",
@@ -537,7 +549,7 @@
           "3"
         ],
         [
-          "Communication interfaces",
+          "OTG HS",
           "OTG HS",
           "2",
           "2",
@@ -548,7 +560,7 @@
           "2"
         ],
         [
-          "Communication interfaces",
+          "UCPD",
           "UCPD",
           "Yes",
           "Yes",
@@ -559,7 +571,7 @@
           "Yes"
         ],
         [
-          "Communication interfaces",
+          "SDMMC",
           "SDMMC",
           "2",
           "2",
@@ -570,7 +582,7 @@
           "0"
         ],
         [
-          "Communication interfaces",
+          "DCMIPP",
           "DCMIPP",
           "Yes",
           "Yes",
@@ -581,7 +593,7 @@
           "Yes"
         ],
         [
-          "Communication interfaces",
+          "SPDIFRX",
           "SPDIFRX",
           "1",
           "1",
@@ -592,7 +604,7 @@
           "0"
         ],
         [
-          "Communication interfaces",
+          "CSI",
           "CSI",
           "Yes",
           "Yes",
@@ -603,7 +615,7 @@
           "Yes"
         ],
         [
-          "Communication interfaces",
+          "PSSI",
           "PSSI",
           "Yes",
           "Yes",
@@ -614,7 +626,7 @@
           "Yes"
         ],
         [
-          "Communication interfaces",
+          "LTDC",
           "LTDC",
           "Yes",
           "Yes",
@@ -1005,18 +1017,18 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32n645a0.pdf#page=29",
-    "text_helper": "Table 7. Functionalities depending on system operating mode — section 3.4.8 Operation modes. Peripheral(1), Run mode, Stop mode / SVOS / -, Stop mode / high / Wake-up capability, Stop mode SVOS low / -, +4 autres.",
+    "text_helper": "Table 7. Functionalities depending on system operating mode — section 3.4.8 Operation modes. Peripheral(1), Run mode / mode, Stop mode SVOS high / -, Stop mode SVOS high / Wake-up capability, Stop mode SVOS low / -, +4 autres.",
     "table_content": {
       "headers": [
         "Peripheral(1)",
-        "Run mode",
-        "Stop mode / SVOS / -",
-        "Stop mode / high / Wake-up capability",
+        "Run mode / mode",
+        "Stop mode SVOS high / -",
+        "Stop mode SVOS high / Wake-up capability",
         "Stop mode SVOS low / -",
         "Stop mode SVOS low / Wake-up capability",
         "Standby mode / -",
         "Standby mode / Wake-up capability",
-        "V BAT mode"
+        "V BAT mode / mode"
       ],
       "rows": [
         [
@@ -1613,7 +1625,10 @@
           "Low-power"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. X = supported.",
+        "2. Wake-up supported from Stop mode."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -1727,7 +1742,7 @@
         [
           "USART data length",
           "7, 8 and 9 bits",
-          "7, 8 and 9 bits",
+          "7, 8 and 9",
           "7, 8 and 9 bits"
         ],
         [
@@ -1802,7 +1817,7 @@
         [
           "Number of data control (TSIZE)",
           "Up to 65536",
-          "Up to 65536"
+          "65536"
         ],
         [
           "I2S feature",
@@ -1894,12 +1909,12 @@
     "table_number": "16",
     "title": "Table 16. Supported OTG speeds",
     "page": 78,
-    "section": "3.51 USB on-the-go high speed (OTG)",
-    "section_title": "USB on-the-go high speed (OTG)",
+    "section": "3.52 USB HS PHY controller (USBPHYC)",
+    "section_title": "USB HS PHY controller (USBPHYC)",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32n645a0.pdf#page=78",
-    "text_helper": "Table 16. Supported OTG speeds — section 3.51 USB on-the-go high speed (OTG). Mode, HS (480 Mbit/s), FS (12 Mbit/s), LS (1.5 Mbit/s).",
+    "text_helper": "Table 16. Supported OTG speeds — section 3.52 USB HS PHY controller (USBPHYC). Mode, HS (480 Mbit/s), FS (12 Mbit/s), LS (1.5 Mbit/s).",
     "table_content": {
       "headers": [
         "Mode",
@@ -1958,7 +1973,7 @@
           "Pin name",
           "Pin name",
           "Unless otherwise specified in brackets below the pin name, the function during and after reset is the same as the actual pin name",
-          "Unless otherwise specified in brackets below the pin name, the function during and after reset is the same as the actual pin name"
+          "in brackets below the pin name, the function during and after the actual pin name"
         ],
         [
           "Pin type",
@@ -2006,7 +2021,7 @@
           "I/O structure",
           "I/O structure",
           "Options for TT I/Os(1)",
-          "Options for TT I/Os(1)"
+          "I/Os(1) Options for TT"
         ],
         [
           "I/O structure",
@@ -2036,19 +2051,13 @@
           "Notes",
           "Notes",
           "Unless otherwise specified by a note, all I/Os are set as analog inputs during and after reset",
-          "Unless otherwise specified by a note, all I/Os are set as analog inputs during and after reset"
+          "by a note, all I/Os are set as analog inputs during and after reset"
         ],
         [
           "Pin functions",
           "Alternate functions",
           "Functions selected through GPIOx_AFR registers",
-          "Functions selected through GPIOx_AFR registers"
-        ],
-        [
-          "Pin functions",
-          "Additional functions",
-          "Functions directly selected/enabled through peripheral registers",
-          "Functions directly selected/enabled through peripheral registers"
+          "through GPIOx_AFR registers through peripheral registers"
         ]
       ],
       "notes": [
@@ -2088,9 +2097,9 @@
         "Pin number / VFBGA223",
         "Pin number / VFBGA264",
         "Pin name (function after reset)",
-        "Pin type",
-        "I/O structure",
-        "Notes",
+        "Pin type / epyt niP",
+        "I/O structure / O/I",
+        "Notes / setoN",
         "Alternate functions",
         "Additional functions"
       ],
@@ -6449,7 +6458,7 @@
           "USART2_CTS/U SART2_NSS"
         ],
         [
-          "A",
+          "PA1",
           "PA1",
           "-",
           "TIM2_CH2",
@@ -6461,7 +6470,7 @@
           "USART2_RTS"
         ],
         [
-          "A",
+          "PA2",
           "PA2",
           "-",
           "TIM2_CH3",
@@ -6473,7 +6482,7 @@
           "USART2_TX"
         ],
         [
-          "A",
+          "PA3",
           "PA3",
           "-",
           "TIM16_CH1",
@@ -6485,7 +6494,7 @@
           "-"
         ],
         [
-          "A",
+          "PA4",
           "PA4",
           "-",
           "-",
@@ -6497,7 +6506,7 @@
           "USART6_RX"
         ],
         [
-          "A",
+          "PA5",
           "PA5",
           "PWR_CSTOP",
           "TIM2_CH1",
@@ -6509,7 +6518,7 @@
           "-"
         ],
         [
-          "A",
+          "PA6",
           "PA6",
           "BOOT1",
           "TIM1_BKIN",
@@ -6521,7 +6530,7 @@
           "-"
         ],
         [
-          "A",
+          "PA7 A",
           "PA7",
           "-",
           "TIM1_CH1N",
@@ -6533,7 +6542,7 @@
           "USART1_RX"
         ],
         [
-          "A",
+          "PA8",
           "PA8",
           "MCO1",
           "TIM1_CH1",
@@ -6545,7 +6554,7 @@
           "USART1_CK"
         ],
         [
-          "A",
+          "PA9",
           "PA9",
           "-",
           "TIM1_CH2",
@@ -6557,7 +6566,7 @@
           "USART1_TX"
         ],
         [
-          "A",
+          "PA10",
           "PA10",
           "PWR_CSLEEP",
           "TIM1_CH3",
@@ -6569,7 +6578,7 @@
           "USART1_RX"
         ],
         [
-          "A",
+          "PA11",
           "PA11",
           "-",
           "TIM1_CH4",
@@ -6581,7 +6590,7 @@
           "USART1_CTS/U SART1_NSS"
         ],
         [
-          "A",
+          "PA12",
           "PA12",
           "-",
           "TIM1_ETR",
@@ -6593,7 +6602,7 @@
           "USART1_RTS"
         ],
         [
-          "A",
+          "PA13",
           "PA13",
           "JTMS/SWDIO",
           "-",
@@ -6605,7 +6614,7 @@
           "-"
         ],
         [
-          "A",
+          "PA14",
           "PA14",
           "JTCK/SWCLK",
           "-",
@@ -6617,7 +6626,7 @@
           "-"
         ],
         [
-          "A",
+          "PA15",
           "PA15",
           "JTDI",
           "TIM2_CH1",
@@ -8421,7 +8430,7 @@
           "HDP0"
         ],
         [
-          "A",
+          "PA1",
           "PA1",
           "UART4_RX",
           "DCMIPP_D0/ DCMI_D0/PSSI_D0",
@@ -8433,7 +8442,7 @@
           "HDP1"
         ],
         [
-          "A",
+          "PA2",
           "PA2",
           "-",
           "-",
@@ -8445,7 +8454,7 @@
           "HDP2"
         ],
         [
-          "A",
+          "PA3",
           "PA3",
           "UART7_RX",
           "-",
@@ -8457,7 +8466,7 @@
           "EVENTOUT"
         ],
         [
-          "A",
+          "PA4",
           "PA4",
           "-",
           "DCMIPP_D3/ DCMI_D3/PSSI_D3",
@@ -8469,7 +8478,7 @@
           "EVENTOUT"
         ],
         [
-          "A",
+          "PA5",
           "PA5",
           "SPI6_SCK/ I2S6_CK",
           "DCMIPP_D8/ DCMI_D8/PSSI_D8",
@@ -8481,7 +8490,7 @@
           "HDP5"
         ],
         [
-          "A",
+          "PA6",
           "PA6",
           "SPI6_MISO/ I2S6_SDI",
           "DCMIPP_PIXCLK/ DCMI_PIXCLK/ PSSI_PDCK",
@@ -8493,7 +8502,7 @@
           "HDP6"
         ],
         [
-          "A",
+          "A PA7",
           "PA7",
           "SPI6_MOSI/ I2S6_SDO",
           "-",
@@ -8505,7 +8514,7 @@
           "HDP7"
         ],
         [
-          "A",
+          "PA8",
           "PA8",
           "-",
           "TIM11_CH1",
@@ -8517,7 +8526,7 @@
           "HDP0"
         ],
         [
-          "A",
+          "PA9",
           "PA9",
           "-",
           "DCMIPP_D0/ DCMI_D0/PSSI_D0",
@@ -8529,7 +8538,7 @@
           "HDP1"
         ],
         [
-          "A",
+          "PA10",
           "PA10",
           "-",
           "DCMIPP_D1/ DCMI_D1/PSSI_D1",
@@ -8541,7 +8550,7 @@
           "HDP2"
         ],
         [
-          "A",
+          "PA11",
           "PA11",
           "UART4_RX",
           "-",
@@ -8553,7 +8562,7 @@
           "HDP3"
         ],
         [
-          "A",
+          "PA12",
           "PA12",
           "UART4_TX",
           "-",
@@ -8565,7 +8574,7 @@
           "HDP4"
         ],
         [
-          "A",
+          "PA13",
           "PA13",
           "-",
           "-",
@@ -8577,7 +8586,7 @@
           "HDP5"
         ],
         [
-          "A",
+          "PA14",
           "PA14",
           "-",
           "-",
@@ -8589,7 +8598,7 @@
           "HDP6"
         ],
         [
-          "A",
+          "PA15",
           "PA15",
           "UART4_RTS",
           "-",
@@ -10480,12 +10489,12 @@
     "table_number": "21",
     "title": "Table 21. Voltage characteristics",
     "page": 138,
-    "section": "5.2 Absolute maximum ratings",
-    "section_title": "Absolute maximum ratings",
+    "section": "1.8 V supply voltage V",
+    "section_title": "V supply voltage V",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32n645a0.pdf#page=138",
-    "text_helper": "Table 21. Voltage characteristics — section 5.2 Absolute maximum ratings. Symbol, Ratings, , Min, Max, +1 autres.",
+    "text_helper": "Table 21. Voltage characteristics — section 1.8 V supply voltage V. Symbol, Ratings, , Min, Max, +1 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -10499,7 +10508,7 @@
         [
           "V - V DDX SS",
           "External main supply voltage for 1.8 V range (including V , V , V ) DD DDIOx BAT",
-          "External main supply voltage for 1.8 V range (including V , V , V ) DD DDIOx BAT",
+          ", V ) DDA18ADC USB used USB not used = 0) = 1)",
           "-0.3",
           "2.0",
           "V"
@@ -10531,7 +10540,7 @@
         [
           "V - V DDA18 SS",
           "1.8 V supply voltage (including V , V , V , V ) DDA18PLL DDA18CSI DDA18USB DDA18ADC",
-          "1.8 V supply voltage (including V , V , V , V ) DDA18PLL DDA18CSI DDA18USB DDA18ADC",
+          ", V ) DDA18ADC",
           "-0.3",
           "1.98",
           "V"
@@ -10555,7 +10564,7 @@
         [
           "V IN",
           "Input voltage on TT_xx pins (VDDIOxVRSEL = 0)",
-          "Input voltage on TT_xx pins (VDDIOxVRSEL = 0)",
+          "= 0) = 1)",
           "V - 0.3 SS",
           "3.6",
           "V"
@@ -10563,7 +10572,7 @@
         [
           "V IN",
           "Input voltage on TT_xx pins (VDDIOxVRSEL = 1)",
-          "Input voltage on TT_xx pins (VDDIOxVRSEL = 1)",
+          "= 1)",
           "V - 0.3 SS",
           "1.98",
           "V"
@@ -10575,25 +10584,11 @@
           "V - 0.3 SS",
           "BSU33DD 539.1 + V",
           "V"
-        ],
-        [
-          "|∆V | DDx",
-          "Variations between different VDDX power pins of the same domain",
-          "Variations between different VDDX power pins of the same domain",
-          "-",
-          "50.0",
-          "mV"
-        ],
-        [
-          "|V -V | SSx SS",
-          "Variations between all the different ground pins",
-          "Variations between all the different ground pins",
-          "-",
-          "50.0",
-          "mV"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. When several inputs are submitted to a current injection, the maximum ∑|I | is the absolute sum of the negative INJ(PIN)"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -10754,7 +10749,7 @@
         [
           "F CPU overdrive",
           "Clock frequency of Cortex-CM55 in overdrive (VOS high)",
-          "Base-TCM with 0 wait states Flex-TCM with 1 wait state",
+          "Base-TCM with 0 wait states",
           "0",
           "-",
           "800",
@@ -10852,7 +10847,7 @@
         ],
         [
           "V DDIOx",
-          "Specific I/Os supply voltage (x = 2, 3, 4, 5)",
+          "(x = 2, 3, 4, 5)",
           "3.3 V range",
           "2.7",
           "3.3",
@@ -11106,7 +11101,7 @@
         [
           "t VDDCSI",
           "V transitions DDCSI",
-          "Rise and fall time rates",
+          "time rates",
           "10",
           "1500",
           "µs/V"
@@ -11509,7 +11504,7 @@
           "mA"
         ],
         [
-          "SD converter",
+          "DS",
           "I Q",
           "Total quiescent current",
           "I = 0 mA, HP mode out",
@@ -11750,7 +11745,7 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32n645a0.pdf#page=145",
-    "text_helper": "Table 31. Current consumption in Run mode — section 5.3.6 Supply current characteristics. Symbol, Conditions, Conditions, Conditions, frcc_c_ck (MHz), +6 autres. (table vide)",
+    "text_helper": "Table 31. Current consumption in Run mode — section 5.3.6 Supply current characteristics. Symbol, Conditions, Conditions, Conditions, frcc_c_ck (MHz), +6 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -11758,14 +11753,80 @@
         "Conditions",
         "Conditions",
         "frcc_c_ck (MHz)",
-        "SMPS external / Typ",
+        "SMPS external / Typ / Typ T = T = T = T = J J J J 25°C 85°C 105°C 125°C",
         "SMPS external / Max(1) / T = J 25°C",
         "SMPS external / Max(1) / T = J 85°C",
         "SMPS external / Max(1) / T = J 105°C",
         "SMPS external / Max(1) / T = J 125°C",
         "Unit"
       ],
-      "rows": [],
+      "rows": [
+        [
+          "I DD",
+          "from VOS high All peripherals HSI, V = 1.8 V DD enabled VOS low",
+          "All peripherals enabled",
+          "VOS high",
+          "800(3)",
+          "0.27",
+          "0.30",
+          "0.33",
+          "0.35",
+          "0.40",
+          "mA"
+        ],
+        [
+          "I DD",
+          "VOS high (2) Cache ON All peripherals = 1.8 V HSI, V enabled VOS low DD",
+          "All peripherals enabled",
+          "VOS high",
+          "800(3)",
+          "0.27",
+          "0.30",
+          "0.33",
+          "0.35",
+          "0.40",
+          "mA"
+        ],
+        [
+          "I DD",
+          "= 1.8 V HSI, V enabled VOS low DD",
+          "All peripherals enabled",
+          "VOS low",
+          "600(4)",
+          "0.27",
+          "0.30",
+          "0.33",
+          "0.35",
+          "0.40",
+          "mA"
+        ],
+        [
+          "I DD",
+          "VOS high (2) Cache OFF All peripherals HSE, V = 1.8 V enabled VOS low DD",
+          "All peripherals enabled",
+          "VOS high",
+          "800(3)",
+          "0.30",
+          "0.32",
+          "0.35",
+          "0.38",
+          "0.42",
+          "mA"
+        ],
+        [
+          "I DD",
+          "HSE, V = 1.8 V enabled VOS low DD",
+          "All peripherals enabled",
+          "VOS low",
+          "600(4)",
+          "0.30",
+          "0.32",
+          "0.35",
+          "0.38",
+          "0.42",
+          "mA"
+        ]
+      ],
       "notes": [
         "1. Guaranteed by characterization results unless otherwise specified.",
         "2. Data are in DTCM for best computation performance, cache has no influence on consumption in this case.",
@@ -11803,7 +11864,7 @@
         "Conditions",
         "Conditions",
         "frcc_c_ck (MHz)",
-        "SMPS internal / Typ",
+        "SMPS internal / Typ / T = 125°C J",
         "SMPS internal / Max(1) / T = 125°C J",
         "Unit"
       ],
@@ -11820,7 +11881,7 @@
         ],
         [
           "I DD",
-          "Code with data processing running from ITCM(2) HSI, V = 1.8 V DD",
+          "disabled VOS low processing running",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -11830,7 +11891,7 @@
         ],
         [
           "I DD",
-          "Code with data processing running from ITCM(2) HSI, V = 1.8 V DD",
+          "from VOS high All peripherals = 1.8 V HSI, V DD enabled VOS low",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -11840,7 +11901,7 @@
         ],
         [
           "I DD",
-          "Code with data processing running from ITCM(2) HSI, V = 1.8 V DD",
+          "enabled VOS low",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -11860,7 +11921,7 @@
         ],
         [
           "I DD",
-          "Code with data processing running from ITCM (2) HSE, V = 1.8 V DD",
+          "disabled VOS low processing running",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -11870,7 +11931,7 @@
         ],
         [
           "I DD",
-          "Code with data processing running from ITCM (2) HSE, V = 1.8 V DD",
+          "from ITCM VOS high All peripherals HSE, V = 1.8 V DD enabled VOS low",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -11880,7 +11941,7 @@
         ],
         [
           "I DD",
-          "Code with data processing running from ITCM (2) HSE, V = 1.8 V DD",
+          "enabled VOS low",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -11900,7 +11961,7 @@
         ],
         [
           "I DD",
-          "Code with data processing running from AXI-SRAM2, Cache ON (2) HSI, V = 1.8 V DD",
+          "disabled processing running VOS low",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -11910,7 +11971,7 @@
         ],
         [
           "I DD",
-          "Code with data processing running from AXI-SRAM2, Cache ON (2) HSI, V = 1.8 V DD",
+          "VOS high (2) Cache ON All peripherals HSI, V = 1.8 V enabled VOS low DD",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -11920,7 +11981,7 @@
         ],
         [
           "I DD",
-          "Code with data processing running from AXI-SRAM2, Cache ON (2) HSI, V = 1.8 V DD",
+          "HSI, V = 1.8 V enabled VOS low DD",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -11940,7 +12001,7 @@
         ],
         [
           "I DD",
-          "Code with data processing running from AXI-SRAM2, Cache OFF (2) HSE, V = 1.8 V DD",
+          "disabled processing running VOS low",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -11950,7 +12011,7 @@
         ],
         [
           "I DD",
-          "Code with data processing running from AXI-SRAM2, Cache OFF (2) HSE, V = 1.8 V DD",
+          "VOS high (2) Cache OFF All peripherals = 1.8 V HSE, V enabled VOS low DD",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -11960,7 +12021,7 @@
         ],
         [
           "I DD",
-          "Code with data processing running from AXI-SRAM2, Cache OFF (2) HSE, V = 1.8 V DD",
+          "= 1.8 V HSE, V enabled VOS low DD",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -12006,7 +12067,7 @@
         "Conditions",
         "Conditions",
         "frcc_c_ck (MHz)",
-        "SMPS external / Typ",
+        "SMPS external / Typ / Typ T = T = T = T = J J J J 25°C 85°C 105°C 125°C",
         "SMPS external / Max(1) / T = J 25°C",
         "SMPS external / Max(1) / T = J 85°C",
         "SMPS external / Max(1) / T = J 105°C",
@@ -12029,7 +12090,7 @@
         ],
         [
           "I DDCORE",
-          "Code with data processing running from ITCM(2) HSI, V = 1.8 V DD",
+          "disabled VOS low processing running",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -12042,7 +12103,7 @@
         ],
         [
           "I DDCORE",
-          "Code with data processing running from ITCM(2) HSI, V = 1.8 V DD",
+          "from VOS high All peripherals HSI, V = 1.8 V DD enabled VOS low",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -12055,7 +12116,7 @@
         ],
         [
           "I DDCORE",
-          "Code with data processing running from ITCM(2) HSI, V = 1.8 V DD",
+          "enabled VOS low",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -12081,7 +12142,7 @@
         ],
         [
           "I DDCORE",
-          "Code with data processing running from ITCM (2) HSE, V = 1.8 V DD",
+          "disabled VOS low processing running",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -12094,7 +12155,7 @@
         ],
         [
           "I DDCORE",
-          "Code with data processing running from ITCM (2) HSE, V = 1.8 V DD",
+          "from ITCM VOS high All peripherals HSE, V = 1.8 V DD enabled VOS low",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -12107,7 +12168,7 @@
         ],
         [
           "I DDCORE",
-          "Code with data processing running from ITCM (2) HSE, V = 1.8 V DD",
+          "enabled VOS low",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -12133,7 +12194,7 @@
         ],
         [
           "I DDCORE",
-          "Code with data processing running from AXI-SRAM2, Cache ON (2) HSI, V = 1.8 V DD",
+          "disabled processing running VOS low",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -12146,7 +12207,7 @@
         ],
         [
           "I DDCORE",
-          "Code with data processing running from AXI-SRAM2, Cache ON (2) HSI, V = 1.8 V DD",
+          "VOS high (2) Cache ON All peripherals = 1.8 V HSI, V enabled VOS low DD",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -12159,7 +12220,7 @@
         ],
         [
           "I DDCORE",
-          "Code with data processing running from AXI-SRAM2, Cache ON (2) HSI, V = 1.8 V DD",
+          "= 1.8 V HSI, V enabled VOS low DD",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -12185,7 +12246,7 @@
         ],
         [
           "I DDCORE",
-          "Code with data processing running from AXI-SRAM2, Cache OFF (2) HSE, V = 1.8 V DD",
+          "disabled processing running VOS low",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -12198,7 +12259,7 @@
         ],
         [
           "I DDCORE",
-          "Code with data processing running from AXI-SRAM2, Cache OFF (2) HSE, V = 1.8 V DD",
+          "VOS high (2) Cache OFF All peripherals HSE, V = 1.8 V enabled VOS low DD",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -12211,7 +12272,7 @@
         ],
         [
           "I DDCORE",
-          "Code with data processing running from AXI-SRAM2, Cache OFF (2) HSE, V = 1.8 V DD",
+          "HSE, V = 1.8 V enabled VOS low DD",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -12277,7 +12338,7 @@
         ],
         [
           "I DDCORE",
-          "Code with data processing running from ITCM(2) HSI, V = 1.8 V DD",
+          "disabled VOS low processing running",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -12287,7 +12348,7 @@
         ],
         [
           "I DDCORE",
-          "Code with data processing running from ITCM(2) HSI, V = 1.8 V DD",
+          "from VOS high All peripherals HSI, V = 1.8 V DD enabled VOS low",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -12297,7 +12358,7 @@
         ],
         [
           "I DDCORE",
-          "Code with data processing running from ITCM(2) HSI, V = 1.8 V DD",
+          "enabled VOS low",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -12317,7 +12378,7 @@
         ],
         [
           "I DDCORE",
-          "Code with data processing running from ITCM (2) HSE, V = 1.8 V DD",
+          "disabled VOS low processing running",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -12327,7 +12388,7 @@
         ],
         [
           "I DDCORE",
-          "Code with data processing running from ITCM (2) HSE, V = 1.8 V DD",
+          "from ITCM VOS high All peripherals HSE, V = 1.8 V DD enabled VOS low",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -12337,7 +12398,7 @@
         ],
         [
           "I DDCORE",
-          "Code with data processing running from ITCM (2) HSE, V = 1.8 V DD",
+          "enabled VOS low",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -12357,7 +12418,7 @@
         ],
         [
           "I DDCORE",
-          "Code with data processing running from AXI-SRAM2, Cache ON (2) HSI, V = 1.8 V DD",
+          "disabled processing running VOS low",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -12367,7 +12428,7 @@
         ],
         [
           "I DDCORE",
-          "Code with data processing running from AXI-SRAM2, Cache ON (2) HSI, V = 1.8 V DD",
+          "VOS high (2) Cache ON All peripherals = 1.8 V HSI, V enabled VOS low DD",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -12377,7 +12438,7 @@
         ],
         [
           "I DDCORE",
-          "Code with data processing running from AXI-SRAM2, Cache ON (2) HSI, V = 1.8 V DD",
+          "= 1.8 V HSI, V enabled VOS low DD",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -12397,7 +12458,7 @@
         ],
         [
           "I DDCORE",
-          "Code with data processing running from AXI-SRAM2, Cache OFF (2) HSE, V = 1.8 V DD",
+          "disabled processing running VOS low",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -12407,7 +12468,7 @@
         ],
         [
           "I DDCORE",
-          "Code with data processing running from AXI-SRAM2, Cache OFF (2) HSE, V = 1.8 V DD",
+          "VOS high (2) Cache OFF All peripherals HSE, V = 1.8 V enabled VOS low DD",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -12417,7 +12478,7 @@
         ],
         [
           "I DDCORE",
-          "Code with data processing running from AXI-SRAM2, Cache OFF (2) HSE, V = 1.8 V DD",
+          "HSE, V = 1.8 V enabled VOS low DD",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -12463,7 +12524,7 @@
         "Conditions",
         "Conditions",
         "frcc_c_ck (MHz)",
-        "SMPS external / Typ",
+        "SMPS external / Typ / Typ T = T = T = T = J J J J 25°C 85°C 105°C 125°C",
         "SMPS external / Max(1) / T = J 25°C",
         "SMPS external / Max(1) / T = J 85°C",
         "SMPS external / Max(1) / T = J 105°C",
@@ -12486,7 +12547,7 @@
         ],
         [
           "I DDA1V8",
-          "Code with data processing running from ITCM(2) HSI, V = 1.8 V DD",
+          "disabled VOS low processing running",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -12499,7 +12560,7 @@
         ],
         [
           "I DDA1V8",
-          "Code with data processing running from ITCM(2) HSI, V = 1.8 V DD",
+          "from VOS high All peripherals HSI, V = 1.8 V DD enabled VOS low",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -12512,7 +12573,7 @@
         ],
         [
           "I DDA1V8",
-          "Code with data processing running from ITCM(2) HSI, V = 1.8 V DD",
+          "enabled VOS low",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -12538,7 +12599,7 @@
         ],
         [
           "I DDA1V8",
-          "Code with data processing running from ITCM (2) HSE, V = 1.8 V DD",
+          "disabled VOS low processing running",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -12551,7 +12612,7 @@
         ],
         [
           "I DDA1V8",
-          "Code with data processing running from ITCM (2) HSE, V = 1.8 V DD",
+          "from ITCM VOS high All peripherals HSE, V = 1.8 V DD enabled VOS low",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -12564,7 +12625,7 @@
         ],
         [
           "I DDA1V8",
-          "Code with data processing running from ITCM (2) HSE, V = 1.8 V DD",
+          "enabled VOS low",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -12590,7 +12651,7 @@
         ],
         [
           "I DDA1V8",
-          "Code with data processing running from AXI-SRAM2, Cache ON (2) HSI, V = 1.8 V DD",
+          "disabled processing running VOS low",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -12603,7 +12664,7 @@
         ],
         [
           "I DDA1V8",
-          "Code with data processing running from AXI-SRAM2, Cache ON (2) HSI, V = 1.8 V DD",
+          "VOS high (2) Cache ON All peripherals = 1.8 V HSI, V enabled VOS low DD",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -12616,7 +12677,7 @@
         ],
         [
           "I DDA1V8",
-          "Code with data processing running from AXI-SRAM2, Cache ON (2) HSI, V = 1.8 V DD",
+          "= 1.8 V HSI, V enabled VOS low DD",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -12642,7 +12703,7 @@
         ],
         [
           "I DDA1V8",
-          "Code with data processing running from AXI-SRAM2, Cache OFF (2) HSE, V = 1.8 V DD",
+          "disabled processing running VOS low",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -12655,7 +12716,7 @@
         ],
         [
           "I DDA1V8",
-          "Code with data processing running from AXI-SRAM2, Cache OFF (2) HSE, V = 1.8 V DD",
+          "VOS high (2) Cache OFF All peripherals HSE, V = 1.8 V enabled VOS low DD",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -12668,7 +12729,7 @@
         ],
         [
           "I DDA1V8",
-          "Code with data processing running from AXI-SRAM2, Cache OFF (2) HSE, V = 1.8 V DD",
+          "HSE, V = 1.8 V enabled VOS low DD",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -12680,7 +12741,12 @@
           "mA"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by characterization results unless otherwise specified.",
+        "2. Data are in DTCM for best computation performance, cache has no influence on consumption in this case.",
+        "3. cpu_overdrive range frequency.",
+        "4. cpu_nominal range frequency. Note: Power consumption is higher due to VCO frequency (800 MHz for F at 800 MHz HSI,"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -12712,7 +12778,7 @@
         "Conditions",
         "Conditions",
         "frcc_c_ck (MHz)",
-        "SMPS internal / Typ",
+        "SMPS internal / Typ / T = 125°C J",
         "SMPS internal / Max(1) / T = 125°C J",
         "Unit"
       ],
@@ -12729,7 +12795,7 @@
         ],
         [
           "I DDA1V8",
-          "Code with data processing running from ITCM(2) HSI, V = 1.8 V DD",
+          "disabled VOS low processing running",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -12739,7 +12805,7 @@
         ],
         [
           "I DDA1V8",
-          "Code with data processing running from ITCM(2) HSI, V = 1.8 V DD",
+          "from VOS high All peripherals = 1.8 V HSI, V DD enabled VOS low",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -12749,7 +12815,7 @@
         ],
         [
           "I DDA1V8",
-          "Code with data processing running from ITCM(2) HSI, V = 1.8 V DD",
+          "enabled VOS low",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -12769,7 +12835,7 @@
         ],
         [
           "I DDA1V8",
-          "Code with data processing running from ITCM (2) HSE, V = 1.8 V DD",
+          "disabled VOS low processing running",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -12779,7 +12845,7 @@
         ],
         [
           "I DDA1V8",
-          "Code with data processing running from ITCM (2) HSE, V = 1.8 V DD",
+          "from ITCM VOS high All peripherals HSE, V = 1.8 V DD enabled VOS low",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -12789,7 +12855,7 @@
         ],
         [
           "I DDA1V8",
-          "Code with data processing running from ITCM (2) HSE, V = 1.8 V DD",
+          "enabled VOS low",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -12809,7 +12875,7 @@
         ],
         [
           "I DDA1V8",
-          "Code with data processing running from AXI-SRAM2, Cache ON (2) HSI, V = 1.8 V DD",
+          "disabled processing running VOS low",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -12819,7 +12885,7 @@
         ],
         [
           "I DDA1V8",
-          "Code with data processing running from AXI-SRAM2, Cache ON (2) HSI, V = 1.8 V DD",
+          "VOS high (2) Cache ON All peripherals HSI, V = 1.8 V enabled VOS low DD",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -12829,7 +12895,7 @@
         ],
         [
           "I DDA1V8",
-          "Code with data processing running from AXI-SRAM2, Cache ON (2) HSI, V = 1.8 V DD",
+          "HSI, V = 1.8 V enabled VOS low DD",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -12849,7 +12915,7 @@
         ],
         [
           "I DDA1V8",
-          "Code with data processing running from AXI-SRAM2, Cache OFF (2) HSE, V = 1.8 V DD",
+          "disabled processing running VOS low",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -12859,7 +12925,7 @@
         ],
         [
           "I DDA1V8",
-          "Code with data processing running from AXI-SRAM2, Cache OFF (2) HSE, V = 1.8 V DD",
+          "VOS high (2) Cache OFF All peripherals = 1.8 V HSE, V enabled VOS low DD",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -12869,7 +12935,7 @@
         ],
         [
           "I DDA1V8",
-          "Code with data processing running from AXI-SRAM2, Cache OFF (2) HSE, V = 1.8 V DD",
+          "= 1.8 V HSE, V enabled VOS low DD",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -12915,7 +12981,7 @@
         "Conditions",
         "Conditions",
         "frcc_c_ck (MHz)",
-        "SMPS external / Typ",
+        "SMPS external / Typ / Typ T = T = T = T = J J J J 25°C 85°C 105°C 125°C",
         "SMPS external / Max(1) / T = J 25°C",
         "SMPS external / Max(1) / T = J 85°C",
         "SMPS external / Max(1) / T = J 105°C",
@@ -12938,7 +13004,7 @@
         ],
         [
           "I DDA1V8AON",
-          "Code with data processing running from ITCM(2) HSI, V = 1.8 V DD",
+          "disabled VOS low processing running",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -12951,7 +13017,7 @@
         ],
         [
           "I DDA1V8AON",
-          "Code with data processing running from ITCM(2) HSI, V = 1.8 V DD",
+          "from VOS high All peripherals HSI, V = 1.8 V DD enabled VOS low",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -12964,7 +13030,7 @@
         ],
         [
           "I DDA1V8AON",
-          "Code with data processing running from ITCM(2) HSI, V = 1.8 V DD",
+          "enabled VOS low",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -12990,7 +13056,7 @@
         ],
         [
           "I DDA1V8AON",
-          "Code with data processing running from ITCM (2) HSE, V = 1.8 V DD",
+          "disabled VOS low processing running",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -13003,7 +13069,7 @@
         ],
         [
           "I DDA1V8AON",
-          "Code with data processing running from ITCM (2) HSE, V = 1.8 V DD",
+          "from ITCM VOS high All peripherals HSE, V = 1.8 V DD enabled VOS low",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -13016,7 +13082,7 @@
         ],
         [
           "I DDA1V8AON",
-          "Code with data processing running from ITCM (2) HSE, V = 1.8 V DD",
+          "enabled VOS low",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -13042,7 +13108,7 @@
         ],
         [
           "I DDA1V8AON",
-          "Code with data processing running from AXI-SRAM2, Cache ON (2) HSI, V = 1.8 V DD",
+          "disabled processing running VOS low",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -13055,7 +13121,7 @@
         ],
         [
           "I DDA1V8AON",
-          "Code with data processing running from AXI-SRAM2, Cache ON (2) HSI, V = 1.8 V DD",
+          "VOS high (2) Cache ON All peripherals = 1.8 V HSI, V enabled VOS low DD",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -13068,7 +13134,7 @@
         ],
         [
           "I DDA1V8AON",
-          "Code with data processing running from AXI-SRAM2, Cache ON (2) HSI, V = 1.8 V DD",
+          "= 1.8 V HSI, V enabled VOS low DD",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -13094,7 +13160,7 @@
         ],
         [
           "I DDA1V8AON",
-          "Code with data processing running from AXI-SRAM2, Cache OFF (2) HSE, V = 1.8 V DD",
+          "disabled processing running VOS low",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -13107,7 +13173,7 @@
         ],
         [
           "I DDA1V8AON",
-          "Code with data processing running from AXI-SRAM2, Cache OFF (2) HSE, V = 1.8 V DD",
+          "VOS high (2) Cache OFF All peripherals HSE, V = 1.8 V enabled VOS low DD",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -13120,7 +13186,7 @@
         ],
         [
           "I DDA1V8AON",
-          "Code with data processing running from AXI-SRAM2, Cache OFF (2) HSE, V = 1.8 V DD",
+          "HSE, V = 1.8 V enabled VOS low DD",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -13132,7 +13198,12 @@
           "mA"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by characterization results unless otherwise specified.",
+        "2. Data are in DTCM for best computation performance, cache has no influence on consumption in this case.",
+        "3. cpu_overdrive range frequency.",
+        "4. cpu_nominal range frequency. 152/258 DS14791 Rev 9"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -13164,7 +13235,7 @@
         "Conditions",
         "Conditions",
         "frcc_c_ck (MHz)",
-        "SMPS internal / Typ",
+        "SMPS internal / Typ / T = 125°C J",
         "SMPS internal / Max(1) / T = 125°C J",
         "Unit"
       ],
@@ -13181,7 +13252,7 @@
         ],
         [
           "I DDA1V8AON",
-          "Code with data processing running from ITCM(2) HSI, V = 1.8 V DD",
+          "disabled VOS low processing running",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -13191,7 +13262,7 @@
         ],
         [
           "I DDA1V8AON",
-          "Code with data processing running from ITCM(2) HSI, V = 1.8 V DD",
+          "from VOS high All peripherals = 1.8 V HSI, V DD enabled VOS low",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -13201,7 +13272,7 @@
         ],
         [
           "I DDA1V8AON",
-          "Code with data processing running from ITCM(2) HSI, V = 1.8 V DD",
+          "enabled VOS low",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -13221,7 +13292,7 @@
         ],
         [
           "I DDA1V8AON",
-          "Code with data processing running from ITCM (2) HSE, V = 1.8 V DD",
+          "disabled VOS low processing running",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -13231,7 +13302,7 @@
         ],
         [
           "I DDA1V8AON",
-          "Code with data processing running from ITCM (2) HSE, V = 1.8 V DD",
+          "from ITCM VOS high All peripherals HSE, V = 1.8 V DD enabled VOS low",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -13241,7 +13312,7 @@
         ],
         [
           "I DDA1V8AON",
-          "Code with data processing running from ITCM (2) HSE, V = 1.8 V DD",
+          "enabled VOS low",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -13261,7 +13332,7 @@
         ],
         [
           "I DDA1V8AON",
-          "Code with data processing running from AXI-SRAM2, Cache ON (2) HSI, V = 1.8 V DD",
+          "disabled processing running VOS low",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -13271,7 +13342,7 @@
         ],
         [
           "I DDA1V8AON",
-          "Code with data processing running from AXI-SRAM2, Cache ON (2) HSI, V = 1.8 V DD",
+          "VOS high (2) Cache ON All peripherals HSI, V = 1.8 V enabled VOS low DD",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -13281,7 +13352,7 @@
         ],
         [
           "I DDA1V8AON",
-          "Code with data processing running from AXI-SRAM2, Cache ON (2) HSI, V = 1.8 V DD",
+          "HSI, V = 1.8 V enabled VOS low DD",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -13301,7 +13372,7 @@
         ],
         [
           "I DDA1V8AON",
-          "Code with data processing running from AXI-SRAM2, Cache OFF (2) HSE, V = 1.8 V DD",
+          "disabled processing running VOS low",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -13311,7 +13382,7 @@
         ],
         [
           "I DDA1V8AON",
-          "Code with data processing running from AXI-SRAM2, Cache OFF (2) HSE, V = 1.8 V DD",
+          "VOS high (2) Cache OFF All peripherals = 1.8 V HSE, V enabled VOS low DD",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -13321,7 +13392,7 @@
         ],
         [
           "I DDA1V8AON",
-          "Code with data processing running from AXI-SRAM2, Cache OFF (2) HSE, V = 1.8 V DD",
+          "= 1.8 V HSE, V enabled VOS low DD",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -13367,7 +13438,7 @@
         "Conditions",
         "Conditions",
         "frcc_c_ck (MHz)",
-        "SMPS internal / Typ",
+        "SMPS internal / Typ / T = 125°C J",
         "SMPS internal / Max(2) / T = 125°C J",
         "Unit"
       ],
@@ -13384,7 +13455,7 @@
         ],
         [
           "I DDSMPS",
-          "Code with data processing running from ITCM(3) HSI, V = 1.8 V DD",
+          "disabled VOS low processing running",
           "All peripherals disabled",
           "VOS low",
           "600(5)",
@@ -13394,7 +13465,7 @@
         ],
         [
           "I DDSMPS",
-          "Code with data processing running from ITCM(3) HSI, V = 1.8 V DD",
+          "from VOS high All peripherals = 1.8 V HSI, V DD enabled VOS low",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -13404,7 +13475,7 @@
         ],
         [
           "I DDSMPS",
-          "Code with data processing running from ITCM(3) HSI, V = 1.8 V DD",
+          "enabled VOS low",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -13424,7 +13495,7 @@
         ],
         [
           "I DDSMPS",
-          "Code with data processing running from ITCM (2) HSE, V = 1.8 V DD",
+          "disabled VOS low processing running",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -13434,7 +13505,7 @@
         ],
         [
           "I DDSMPS",
-          "Code with data processing running from ITCM (2) HSE, V = 1.8 V DD",
+          "from ITCM VOS high All peripherals HSE, V = 1.8 V DD enabled VOS low",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -13444,7 +13515,7 @@
         ],
         [
           "I DDSMPS",
-          "Code with data processing running from ITCM (2) HSE, V = 1.8 V DD",
+          "enabled VOS low",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -13464,7 +13535,7 @@
         ],
         [
           "I DDSMPS",
-          "Code with data processing running from AXI-SRAM2, Cache ON (2) HSI, V = 1.8 V DD",
+          "disabled processing running VOS low",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -13474,7 +13545,7 @@
         ],
         [
           "I DDSMPS",
-          "Code with data processing running from AXI-SRAM2, Cache ON (2) HSI, V = 1.8 V DD",
+          "VOS high (2) Cache ON All peripherals HSI, V = 1.8 V enabled VOS low DD",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -13484,7 +13555,7 @@
         ],
         [
           "I DDSMPS",
-          "Code with data processing running from AXI-SRAM2, Cache ON (2) HSI, V = 1.8 V DD",
+          "HSI, V = 1.8 V enabled VOS low DD",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -13504,7 +13575,7 @@
         ],
         [
           "I DDSMPS",
-          "Code with data processing running from AXI-SRAM2, Cache OFF (2) HSE, V = 1.8 V DD",
+          "disabled processing running VOS low",
           "All peripherals disabled",
           "VOS low",
           "600(4)",
@@ -13514,7 +13585,7 @@
         ],
         [
           "I DDSMPS",
-          "Code with data processing running from AXI-SRAM2, Cache OFF (2) HSE, V = 1.8 V DD",
+          "VOS high (2) Cache OFF All peripherals = 1.8 V HSE, V enabled VOS low DD",
           "All peripherals enabled",
           "VOS high",
           "800(3)",
@@ -13524,7 +13595,7 @@
         ],
         [
           "I DDSMPS",
-          "Code with data processing running from AXI-SRAM2, Cache OFF (2) HSE, V = 1.8 V DD",
+          "= 1.8 V HSE, V enabled VOS low DD",
           "All peripherals enabled",
           "VOS low",
           "600(4)",
@@ -13570,7 +13641,7 @@
         "Conditions",
         "Conditions",
         "frcc_c_ck (MHz)",
-        "SMPS external / Typ",
+        "SMPS external / Typ / Typ T = T = T = T = J J J J 25°C 85°C 105°C 125°C",
         "SMPS external / Max(1) / T = J 25°C",
         "SMPS external / Max(1) / T = J 85°C",
         "SMPS external / Max(1) / T = J 105°C",
@@ -13593,7 +13664,7 @@
         ],
         [
           "I DD",
-          "HSI, V = 1.8 V DD",
+          "disabled VOS low",
           "All peripherals disabled",
           "VOS low",
           "600(3)",
@@ -13606,7 +13677,7 @@
         ],
         [
           "I DD",
-          "HSI, V = 1.8 V DD",
+          "VOS high All peripherals enabled VOS low",
           "All peripherals enabled",
           "VOS high",
           "800(2)",
@@ -13619,7 +13690,7 @@
         ],
         [
           "I DD",
-          "HSI, V = 1.8 V DD",
+          "enabled VOS low",
           "All peripherals enabled",
           "VOS low",
           "600(3)",
@@ -13632,7 +13703,7 @@
         ],
         [
           "I DDCORE",
-          "HSI, V = 1.8 V DD",
+          "VOS high All peripherals disabled VOS low VOS high All peripherals enabled VOS low HSI,",
           "All peripherals disabled",
           "VOS high",
           "800(2)",
@@ -13645,7 +13716,7 @@
         ],
         [
           "I DDCORE",
-          "HSI, V = 1.8 V DD",
+          "disabled VOS low",
           "All peripherals disabled",
           "VOS low",
           "600(3)",
@@ -13658,7 +13729,7 @@
         ],
         [
           "I DDCORE",
-          "HSI, V = 1.8 V DD",
+          "VOS high All peripherals enabled VOS low HSI,",
           "All peripherals enabled",
           "VOS high",
           "800(2)",
@@ -13671,7 +13742,7 @@
         ],
         [
           "I DDCORE",
-          "HSI, V = 1.8 V DD",
+          "enabled VOS low HSI,",
           "All peripherals enabled",
           "VOS low",
           "600(3)",
@@ -13684,7 +13755,7 @@
         ],
         [
           "I (4) DDA1V8",
-          "HSI, V = 1.8 V DD",
+          "V = 1.8 V VOS high DD All peripherals disabled VOS low VOS high All peripherals enabled VOS low",
           "All peripherals disabled",
           "VOS high",
           "800(2)",
@@ -13694,100 +13765,14 @@
           "2.15",
           "2.15",
           "mA"
-        ],
-        [
-          "I (4) DDA1V8",
-          "HSI, V = 1.8 V DD",
-          "All peripherals disabled",
-          "VOS low",
-          "600(3)",
-          "4.29",
-          "4.52",
-          "4.61",
-          "4.64",
-          "4.67",
-          "mA"
-        ],
-        [
-          "I (4) DDA1V8",
-          "HSI, V = 1.8 V DD",
-          "All peripherals enabled",
-          "VOS high",
-          "800(2)",
-          "2.04",
-          "2.14",
-          "2.15",
-          "2.15",
-          "2.16",
-          "mA"
-        ],
-        [
-          "I (4) DDA1V8",
-          "HSI, V = 1.8 V DD",
-          "All peripherals enabled",
-          "VOS low",
-          "600(3)",
-          "4.31",
-          "4.52",
-          "4.61",
-          "4.65",
-          "4.69",
-          "mA"
-        ],
-        [
-          "I DDA1V8AON",
-          "HSI, V = 1.8 V DD",
-          "All peripherals disabled",
-          "VOS high",
-          "800(2)",
-          "0.25",
-          "0.26",
-          "0.28",
-          "0.29",
-          "0.30",
-          "mA"
-        ],
-        [
-          "I DDA1V8AON",
-          "HSI, V = 1.8 V DD",
-          "All peripherals disabled",
-          "VOS low",
-          "600(3)",
-          "0.25",
-          "0.26",
-          "0.28",
-          "0.29",
-          "0.30",
-          "mA"
-        ],
-        [
-          "I DDA1V8AON",
-          "HSI, V = 1.8 V DD",
-          "All peripherals enabled",
-          "VOS high",
-          "800(2)",
-          "0.45",
-          "0.48",
-          "0.50",
-          "0.51",
-          "0.53",
-          "mA"
-        ],
-        [
-          "I DDA1V8AON",
-          "HSI, V = 1.8 V DD",
-          "All peripherals enabled",
-          "VOS low",
-          "600(3)",
-          "0.45",
-          "0.48",
-          "0.50",
-          "0.51",
-          "0.53",
-          "mA"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by characterization results unless otherwise specified.",
+        "2. cpu_overdrive range frequency",
+        "3. cpu_nominal range frequency.",
+        "4. Sleep mode applies only to the CPU subsystem (CPU clock is stopped). PLL clock configuration changes. Note: Power consumption is higher due to VCO frequency (800 MHz for F at 800 MHz HSI,"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -13819,7 +13804,7 @@
         "Conditions",
         "Conditions",
         "frcc_c_ck (MHz)",
-        "SMPS internal / Typ",
+        "SMPS internal / Typ / Typ T = J 125°C",
         "SMPS internal / Max(1) / T = J 125°C",
         "Unit"
       ],
@@ -13836,7 +13821,7 @@
         ],
         [
           "I DD",
-          "HSI, V = 1.8 V DD",
+          "disabled VOS low",
           "All peripherals disabled",
           "VOS low",
           "600(3)",
@@ -13846,7 +13831,7 @@
         ],
         [
           "I DD",
-          "HSI, V = 1.8 V DD",
+          "VOS high All peripherals enabled VOS low",
           "All peripherals enabled",
           "VOS high",
           "800(2)",
@@ -13856,7 +13841,7 @@
         ],
         [
           "I DD",
-          "HSI, V = 1.8 V DD",
+          "enabled VOS low",
           "All peripherals enabled",
           "VOS low",
           "600(3)",
@@ -13866,162 +13851,12 @@
         ],
         [
           "I (4) DDCORE",
-          "HSI, V = 1.8 V DD",
+          "VOS high All peripherals disabled VOS low VOS high All peripherals enabled VOS low",
           "All peripherals disabled",
           "VOS high",
           "800(2)",
           "47.9",
           "973.0",
-          "mA"
-        ],
-        [
-          "I (4) DDCORE",
-          "HSI, V = 1.8 V DD",
-          "All peripherals disabled",
-          "VOS low",
-          "600(3)",
-          "41.3",
-          "942.3",
-          "mA"
-        ],
-        [
-          "I (4) DDCORE",
-          "HSI, V = 1.8 V DD",
-          "All peripherals enabled",
-          "VOS high",
-          "800(2)",
-          "134.0",
-          "1058.9",
-          "mA"
-        ],
-        [
-          "I (4) DDCORE",
-          "HSI, V = 1.8 V DD",
-          "All peripherals enabled",
-          "VOS low",
-          "600(3)",
-          "117.6",
-          "1014.4",
-          "mA"
-        ],
-        [
-          "I (4) DDSMPS",
-          "HSI, V = 1.8 V DD",
-          "All peripherals disabled",
-          "VOS high",
-          "800(2)",
-          "28.5",
-          "653.6",
-          "mA"
-        ],
-        [
-          "I (4) DDSMPS",
-          "HSI, V = 1.8 V DD",
-          "All peripherals disabled",
-          "VOS low",
-          "600(3)",
-          "22.7",
-          "563.7",
-          "mA"
-        ],
-        [
-          "I (4) DDSMPS",
-          "HSI, V = 1.8 V DD",
-          "All peripherals enabled",
-          "VOS high",
-          "800(2)",
-          "80.9",
-          "724.4",
-          "mA"
-        ],
-        [
-          "I (4) DDSMPS",
-          "HSI, V = 1.8 V DD",
-          "All peripherals enabled",
-          "VOS low",
-          "600(3)",
-          "67.1",
-          "623.6",
-          "mA"
-        ],
-        [
-          "I (4) DDA1V8",
-          "HSI, V = 1.8 V DD",
-          "All peripherals disabled",
-          "VOS high",
-          "800(2)",
-          "2.56",
-          "2.97",
-          "mA"
-        ],
-        [
-          "I (4) DDA1V8",
-          "HSI, V = 1.8 V DD",
-          "All peripherals disabled",
-          "VOS low",
-          "600(3)",
-          "4.80",
-          "5.51",
-          "mA"
-        ],
-        [
-          "I (4) DDA1V8",
-          "HSI, V = 1.8 V DD",
-          "All peripherals enabled",
-          "VOS high",
-          "800(2)",
-          "2.67",
-          "2.98",
-          "mA"
-        ],
-        [
-          "I (4) DDA1V8",
-          "HSI, V = 1.8 V DD",
-          "All peripherals enabled",
-          "VOS low",
-          "600(3)",
-          "4.92",
-          "5.52",
-          "mA"
-        ],
-        [
-          "I DDA1V8AON",
-          "HSI, V = 1.8 V DD",
-          "All peripherals disabled",
-          "VOS high",
-          "800(2)",
-          "0.25",
-          "0.31",
-          "mA"
-        ],
-        [
-          "I DDA1V8AON",
-          "HSI, V = 1.8 V DD",
-          "All peripherals disabled",
-          "VOS low",
-          "600(3)",
-          "0.25",
-          "0.32",
-          "mA"
-        ],
-        [
-          "I DDA1V8AON",
-          "HSI, V = 1.8 V DD",
-          "All peripherals enabled",
-          "VOS high",
-          "800(2)",
-          "0.45",
-          "0.54",
-          "mA"
-        ],
-        [
-          "I DDA1V8AON",
-          "HSI, V = 1.8 V DD",
-          "All peripherals enabled",
-          "VOS low",
-          "600(3)",
-          "0.45",
-          "0.54",
           "mA"
         ]
       ],
@@ -14054,13 +13889,13 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32n645a0.pdf#page=156",
-    "text_helper": "Table 42. Current consumption in Stop mode — section 5.3.6 Supply current characteristics. Symbol, Conditions, Conditions, SMPS external / Typ, SMPS external / Max(1) / T = J 25°C, +4 autres.",
+    "text_helper": "Table 42. Current consumption in Stop mode — section 5.3.6 Supply current characteristics. Symbol, Conditions, Conditions, SMPS external / Typ / Typ T = T = T = T = J J J J 25°C 85°C 105°C 125°C, SMPS external / Max(1) / T = J 25°C, +4 autres.",
     "table_content": {
       "headers": [
         "Symbol",
         "Conditions",
         "Conditions",
-        "SMPS external / Typ",
+        "SMPS external / Typ / Typ T = T = T = T = J J J J 25°C 85°C 105°C 125°C",
         "SMPS external / Max(1) / T = J 25°C",
         "SMPS external / Max(1) / T = J 85°C",
         "SMPS external / Max(1) / T = J 105°C",
@@ -14081,7 +13916,7 @@
         ],
         [
           "I DD",
-          "V = 1.8 V DD",
+          "V = 1.8 V SVOS high DD",
           "SVOS high",
           "273.4",
           "278.5",
@@ -14113,7 +13948,9 @@
           "μA"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by characterization results unless otherwise specified."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -14137,13 +13974,13 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32n645a0.pdf#page=156",
-    "text_helper": "Table 43. Current consumption in Stop mode — section 5.3.6 Supply current characteristics. Symbol, Conditions, Conditions, SMPS internal / Typ, SMPS internal / Max(1) / T = 125°C J, +1 autres.",
+    "text_helper": "Table 43. Current consumption in Stop mode — section 5.3.6 Supply current characteristics. Symbol, Conditions, Conditions, SMPS internal / Typ / T = 125°C J, SMPS internal / Max(1) / T = 125°C J, +1 autres.",
     "table_content": {
       "headers": [
         "Symbol",
         "Conditions",
         "Conditions",
-        "SMPS internal / Typ",
+        "SMPS internal / Typ / T = 125°C J",
         "SMPS internal / Max(1) / T = 125°C J",
         "Unit"
       ],
@@ -14158,7 +13995,7 @@
         ],
         [
           "I DD",
-          "V = 1.8 V DD",
+          "SVOS low",
           "SVOS low",
           "273.4",
           "362.1",
@@ -14166,7 +14003,7 @@
         ],
         [
           "I DDCORE",
-          "V = 1.8 V DD",
+          "SVOS high SVOS low",
           "SVOS high",
           "8.62",
           "521.2",
@@ -14174,7 +14011,7 @@
         ],
         [
           "I DDCORE",
-          "V = 1.8 V DD",
+          "SVOS low",
           "SVOS low",
           "8.70",
           "561.4",
@@ -14182,7 +14019,7 @@
         ],
         [
           "I DDA1V8",
-          "V = 1.8 V DD",
+          "SVOS high V = 1.8 V DD SVOS low",
           "SVOS high",
           "358.5",
           "1022.1",
@@ -14190,7 +14027,7 @@
         ],
         [
           "I DDA1V8",
-          "V = 1.8 V DD",
+          "SVOS low",
           "SVOS low",
           "362.7",
           "1050.6",
@@ -14198,7 +14035,7 @@
         ],
         [
           "I DDSMPS",
-          "V = 1.8 V DD",
+          "SVOS high SVOS low",
           "SVOS high",
           "4.16",
           "288.4",
@@ -14206,7 +14043,7 @@
         ],
         [
           "I DDSMPS",
-          "V = 1.8 V DD",
+          "SVOS low",
           "SVOS low",
           "3.60",
           "267.8",
@@ -14214,7 +14051,7 @@
         ],
         [
           "I DDA1V8AON",
-          "V = 1.8 V DD",
+          "SVOS high SVOS low",
           "SVOS high",
           "56.05",
           "87.97",
@@ -14222,7 +14059,7 @@
         ],
         [
           "I DDA1V8AON",
-          "V = 1.8 V DD",
+          "SVOS low",
           "SVOS low",
           "41.97",
           "86.39",
@@ -14282,7 +14119,7 @@
         ],
         [
           "I DD",
-          "IWDG off, V = 1.8 V DD",
+          "Backup RAM ON RTC and LSE OFF IWDG off,",
           "Backup RAM ON RTC and LSE OFF",
           "48.4",
           "68.7",
@@ -14293,7 +14130,7 @@
         ],
         [
           "I DD",
-          "IWDG off, V = 1.8 V DD",
+          "V = 1.8 V Backup RAM OFF DD RTC and LSE ON",
           "Backup RAM OFF RTC and LSE ON",
           "47.8",
           "66.3",
@@ -14304,7 +14141,7 @@
         ],
         [
           "I DD",
-          "IWDG off, V = 1.8 V DD",
+          "Backup RAM ON RTC and LSE ON",
           "Backup RAM ON RTC and LSE ON",
           "48.4",
           "69.0",
@@ -14326,7 +14163,7 @@
         ],
         [
           "I DDA18ON",
-          "IWDG off",
+          "Backup RAM ON RTC and LSE OFF",
           "Backup RAM ON RTC and LSE OFF",
           "42",
           "80",
@@ -14337,7 +14174,7 @@
         ],
         [
           "I DDA18ON",
-          "IWDG off",
+          "Backup RAM OFF RTC and LSE ON",
           "Backup RAM OFF RTC and LSE ON",
           "42",
           "80",
@@ -14348,7 +14185,7 @@
         ],
         [
           "I DDA18ON",
-          "IWDG off",
+          "Backup RAM ON RTC and LSE ON",
           "Backup RAM ON RTC and LSE ON",
           "42",
           "80",
@@ -14411,7 +14248,7 @@
         ],
         [
           "I DDVBAT",
-          "V = 3.3 V BAT",
+          "Backup RAM ON RTC and LSE OFF",
           "Backup RAM ON RTC and LSE OFF",
           "-",
           "70.8",
@@ -14422,7 +14259,7 @@
         ],
         [
           "I DDVBAT",
-          "V = 3.3 V BAT",
+          "Backup RAM OFF RTC and LSE ON",
           "Backup RAM OFF RTC and LSE ON",
           "-",
           "40.5",
@@ -14433,7 +14270,7 @@
         ],
         [
           "I DDVBAT",
-          "V = 3.3 V BAT",
+          "Backup RAM ON RTC and LSE ON",
           "Backup RAM ON RTC and LSE ON",
           "-",
           "75.8",
@@ -14994,7 +14831,7 @@
         ],
         [
           "G mcritmax",
-          "Maximum critical crystal gm",
+          "Maximum critical",
           "LSEDRV[1:0] = 01, medium-low drive capability",
           "-",
           "-",
@@ -15003,7 +14840,7 @@
         ],
         [
           "G mcritmax",
-          "Maximum critical crystal gm",
+          "crystal gm",
           "LSEDRV[1:0] = 10, medium-high drive capability",
           "-",
           "-",
@@ -15077,7 +14914,10 @@
           "μs"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Specified by design, not tested in production.",
+        "2. Guaranteed by test in production."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -15296,7 +15136,7 @@
         [
           "f MSI",
           "Frequency",
-          "V = 0.81 V, DDCORE T = 30°C J",
+          "T = 30°C MSIFREQSEL = 1 J",
           "MSIFREQSEL = 1",
           "15.824",
           "16",
@@ -15365,7 +15205,7 @@
         ],
         [
           "I VDDCORE(HSI)",
-          "Supply current on V DDCORE",
+          "V DDCORE",
           "16 MHz",
           "MSIFREQSEL = 1",
           "-",
@@ -15527,7 +15367,7 @@
         [
           "f FOUTPOSTDIV",
           "Divided output clock",
-          "Divided output clock",
+          "Division by 1 Even division Odd division",
           "16.32",
           "-",
           "3200",
@@ -15544,7 +15384,7 @@
         ],
         [
           "f FOUTPOSTDIV",
-          "Divided output clock duty cycle",
+          "duty cycle",
           "Even division",
           "48",
           "50",
@@ -15607,7 +15447,7 @@
         ],
         [
           "Jitter",
-          "RMS integrated jitter (10 kHz - 20 MHz)",
+          "(10 kHz - 20 MHz)",
           "f = 3200 MHz, VCO f = 25 MHz, PFD fracN divider",
           "-",
           "-",
@@ -15625,7 +15465,7 @@
         ],
         [
           "I VDDA18PLL",
-          "PLL supply current on V DDA18PLL (analog)",
+          "on V DDA18PLL (analog)",
           "f = 3200 MHz, VCO FBDIV > 256",
           "-",
           "7050",
@@ -15652,7 +15492,7 @@
         ],
         [
           "I VDDCORE(PLL)",
-          "PLL supply current on V (0.81 V) DDCORE",
+          "(0.81 V) on V DDCORE",
           "f = 800 MHz VCO",
           "-",
           "295",
@@ -15660,7 +15500,9 @@
           "μA"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Specified by design, not tested in production unless otherwise specified."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -15733,12 +15575,12 @@
     "table_number": "60",
     "title": "Table 60. OTP characteristics",
     "page": 166,
-    "section": "5.3.13 OTP characteristics",
-    "section_title": "OTP characteristics",
+    "section": "5.3.14 EMC characteristics",
+    "section_title": "EMC characteristics",
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32n645a0.pdf#page=166",
-    "text_helper": "Table 60. OTP characteristics — section 5.3.13 OTP characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+    "text_helper": "Table 60. OTP characteristics — section 5.3.14 EMC characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -15805,7 +15647,11 @@
           "μA"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Evaluated by characterization, not tested in production, unless otherwise specified. Designing hardened software to avoid noise problems",
+        "2. Refer to AN1709, “EMI radiated test” section.",
+        "3. Refer to AN1709, “EMI level classification” section."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -15847,7 +15693,7 @@
         [
           "V FTB",
           "Fast transient voltage burst limits to apply through 100 pF on V and V pins to DD SS induce a functional disturbance",
-          "V = 3.3 V, T = +25°C, DD A f = 1200 MHz, f = 600 MHz, PLL1 ck_icn_hs_mcu VFBGA264 package, conforming to IEC 61000-4-2",
+          "VFBGA264 package, conforming to IEC 61000-4-2",
           "5A"
         ]
       ],
@@ -15900,8 +15746,8 @@
         ],
         [
           "S EMI",
-          "Peak level(2)",
-          "V = 3.6 V, T = 25°C, DD A VFBGA264 package, SMPS on, f = 800 MHz, ck_icn_hs_mcu compliant with IEC 61967-2",
+          "Peak",
+          "DD A VFBGA264 package,",
           "30 MHz to 130 MHz",
           "13",
           "dBµV"
@@ -15909,7 +15755,7 @@
         [
           "S EMI",
           "Peak level(2)",
-          "V = 3.6 V, T = 25°C, DD A VFBGA264 package, SMPS on, f = 800 MHz, ck_icn_hs_mcu compliant with IEC 61967-2",
+          "SMPS on,",
           "130 MHz to 1 GHz",
           "13",
           "dBµV"
@@ -15917,7 +15763,7 @@
         [
           "S EMI",
           "Peak level(2)",
-          "V = 3.6 V, T = 25°C, DD A VFBGA264 package, SMPS on, f = 800 MHz, ck_icn_hs_mcu compliant with IEC 61967-2",
+          "ck_icn_hs_mcu compliant with IEC 61967-2",
           "1 GHz to 2 GHz",
           "7",
           "dBµV"
@@ -16081,7 +15927,7 @@
         ],
         [
           "V IL",
-          "Input low level voltage",
+          "voltage",
           "2.7 V ≤ V ≤ 3.6 V DDxx",
           "0.4 x V - 0.27 DDxx",
           "-",
@@ -16099,7 +15945,7 @@
         ],
         [
           "V IH",
-          "Input high level voltage",
+          "voltage",
           "2.7 V ≤ V ≤ 3.6 V DDxx",
           "0.52 x V - 0.11 DDxx",
           "-",
@@ -16153,7 +15999,7 @@
         ],
         [
           "V OL",
-          "Output low level voltage",
+          "Output low level",
           "CMOS port, I = 16 mA, Speed 11, IO 1.62 V < V < 1.98 V DDxx",
           "-",
           "-",
@@ -16162,7 +16008,7 @@
         ],
         [
           "V OL",
-          "Output low level voltage",
+          "voltage",
           "CMOS port, I = 6.5 mA, Speed 00, IO 2.7 V < V < 3.6 V DDxx",
           "-",
           "-",
@@ -16225,7 +16071,7 @@
         ],
         [
           "V OH",
-          "Output high level voltage",
+          "Output high level",
           "CMOS port, I = 16 mA, Speed 11, IO 1.62 V < V < 1.98 V DDxx",
           "V - 0.45 DDxx",
           "-",
@@ -16234,7 +16080,7 @@
         ],
         [
           "V OH",
-          "Output high level voltage",
+          "voltage",
           "CMOS port, I = 6.5 mA, Speed 00, IO 2.7 V < V < 3.6 V DDxx",
           "V - 0.4 DDxx",
           "-",
@@ -16323,7 +16169,9 @@
           "pF"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. The pull-up is designed with a true resistance in series with a switchable PMOS, whose contribution to the series resistance must be minimum (~10%)."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -16396,7 +16244,9 @@
           "kΩ"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. The pull-up is designed with a true resistance in series with a switchable PMOS, whose contribution to the series resistance must be minimum (~10%)."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -16587,7 +16437,9 @@
           "ns"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Mode 2/B, C, and D only. In mode 1, FMC_NADV is not used. 174/258 DS14791 Rev 9"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -16683,7 +16535,7 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32n645a0.pdf#page=175",
-    "text_helper": "Table 71. Asynchronous non multiplexed SRAM/PSRAM/NOR write timings — section 5.3.19 FMC characteristics. Symbol, Parameter, Min, Max, Unit. (table vide)",
+    "text_helper": "Table 71. Asynchronous non multiplexed SRAM/PSRAM/NOR write timings — section 5.3.19 FMC characteristics. Symbol, Parameter, Min, Max, Unit.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -16692,8 +16544,95 @@
         "Max",
         "Unit"
       ],
-      "rows": [],
-      "notes": [],
+      "rows": [
+        [
+          "t w(NE)",
+          "FMC_NE low time",
+          "3 × T - 0.5 fmc_ker_ck",
+          "3 × T + 1 fmc_ker_ck",
+          "ns"
+        ],
+        [
+          "t v(NWE_NE)",
+          "FMC_NEx low to FMC_NWE low",
+          "T - 4 fmc_ker_ck",
+          "T - 3 fmc_ker_ck",
+          "ns"
+        ],
+        [
+          "t w(NWE)",
+          "FMC_NWE low time",
+          "T - 0.5 fmc_ker_ck",
+          "T + 0.5 fmc_ker_ck",
+          "ns"
+        ],
+        [
+          "t h(NE_NWE)",
+          "FMC_NWE high to FMC_NE high hold time",
+          "T + 3 fmc_ker_ck",
+          "-",
+          "ns"
+        ],
+        [
+          "t v(A_NE)",
+          "FMC_NEx low to FMC_A valid",
+          "-",
+          "0",
+          "ns"
+        ],
+        [
+          "t h(A_NWE)",
+          "Address hold time after FMC_NWE high",
+          "3 × T - 1 fmc_ker_ck",
+          "-",
+          "ns"
+        ],
+        [
+          "t v(BL_NE)",
+          "FMC_NEx low to FMC_BL valid",
+          "-",
+          "0",
+          "ns"
+        ],
+        [
+          "t h(BL_NWE)",
+          "FMC_BL hold time after FMC_NWE high",
+          "3 × T - 1.5 fmc_ker_ck",
+          "-",
+          "ns"
+        ],
+        [
+          "t v(Data_NE)",
+          "FMC_NEx low to Data valid",
+          "-",
+          "2",
+          "ns"
+        ],
+        [
+          "t h(Data_NWE)",
+          "Data hold time after FMC_NEx high",
+          "3 × T - 1 fmc_ker_ck",
+          "-",
+          "ns"
+        ],
+        [
+          "t v(NADV_NE)",
+          "FMC_NEx low to FMC_NADV low",
+          "-",
+          "0",
+          "ns"
+        ],
+        [
+          "t w(NADV)",
+          "FMC_NADV low time",
+          "-",
+          "T + 1 fmc_ker_ck",
+          "ns"
+        ]
+      ],
+      "notes": [
+        "1. Mode 2/B, C, and D only. In mode 1, FMC_NADV is not used. 176/258 DS14791 Rev 9"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -16838,7 +16777,7 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32n645a0.pdf#page=177",
-    "text_helper": "Table 73. Asynchronous multiplexed PSRAM/NOR read timings — section 5.3.19 FMC characteristics. Symbol, Parameter, Min, Max, Unit. (table vide)",
+    "text_helper": "Table 73. Asynchronous multiplexed PSRAM/NOR read timings — section 5.3.19 FMC characteristics. Symbol, Parameter, Min, Max, Unit.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -16847,7 +16786,127 @@
         "Max",
         "Unit"
       ],
-      "rows": [],
+      "rows": [
+        [
+          "t w(NE)",
+          "FMC_NE low time",
+          "4 × T - 0.5 fmc_ker_ck",
+          "4 × T + 1 fmc_ker_ck",
+          "ns"
+        ],
+        [
+          "t v(NOE_NE)",
+          "FMC_NEx low to FMC_NOE low",
+          "2 × T - 1 fmc_ker_ck",
+          "2 × T + 0.5 fmc_ker_ck",
+          "ns"
+        ],
+        [
+          "t w(NOE)",
+          "FMC_NOE low time",
+          "T - 1 fmc_ker_ck",
+          "T + 0.5 fmc_ker_ck",
+          "ns"
+        ],
+        [
+          "t h(NE_NOE)",
+          "FMC_NOE high to FMC_NE high hold time",
+          "T fmc_ker_ck",
+          "-",
+          "ns"
+        ],
+        [
+          "t v(A_NE)",
+          "FMC_NEx low to FMC_A valid",
+          "-",
+          "0.5",
+          "ns"
+        ],
+        [
+          "t v(NADV_NE)",
+          "FMC_NEx low to FMC_NADV low",
+          "0",
+          "0.5",
+          "ns"
+        ],
+        [
+          "t w(NADV)",
+          "FMC_NADV low time",
+          "T - 1 fmc_ker_ck",
+          "T + 0.5 fmc_ker_ck",
+          "ns"
+        ],
+        [
+          "t h(AD_NADV)",
+          "FMC_AD(address) valid hold time after FMC_NADV high",
+          "T - 1 fmc_ker_ck",
+          "-",
+          "ns"
+        ],
+        [
+          "t h(A_NOE)",
+          "Address hold time after FMC_NOE high",
+          "Address held until next read operation",
+          "-",
+          "ns"
+        ],
+        [
+          "t su(Data_NE)",
+          "Data to FMC_NEx high setup time",
+          "T + 17 fmc_ker_ck",
+          "-",
+          "ns"
+        ],
+        [
+          "t su(Data_NOE)",
+          "Data to FMC_NOEx high setup time",
+          "16",
+          "-",
+          "ns"
+        ],
+        [
+          "t h(Data_NE)",
+          "Data hold time after FMC_NEx high",
+          "0",
+          "-",
+          "ns"
+        ],
+        [
+          "t h(Data_NOE)",
+          "Data hold time after FMC_NOE high",
+          "0",
+          "-",
+          "ns"
+        ],
+        [
+          "t w(NE)",
+          "FMC_NE low time",
+          "9 × T - 0.5 fmc_ker_ck",
+          "9 × T + 1 fmc_ker_ck",
+          "ns"
+        ],
+        [
+          "t w(NOE)",
+          "FMC_NOE low time",
+          "6 × T - 0.5 fmc_ker_ck",
+          "6 × T + 1 fmc_ker_ck",
+          "ns"
+        ],
+        [
+          "t su(NWAIT_NE)",
+          "FMC_NWAIT valid before FMC_NEx high",
+          "5 × T + 15 fmc_ker_ck",
+          "-",
+          "ns"
+        ],
+        [
+          "t h(NE_NWAIT)",
+          "FMC_NEx hold time after FMC_NWAIT invalid",
+          "4 × T + 12 fmc_ker_ck",
+          "-",
+          "ns"
+        ]
+      ],
       "notes": [],
       "legend": "",
       "semantic_type": "",
@@ -16991,7 +17050,7 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32n645a0.pdf#page=179",
-    "text_helper": "Table 75. Asynchronous multiplexed PSRAM/NOR write timings — section 5.3.19 FMC characteristics. Symbol, Parameter, Min, Max, Unit. (table vide)",
+    "text_helper": "Table 75. Asynchronous multiplexed PSRAM/NOR write timings — section 5.3.19 FMC characteristics. Symbol, Parameter, Min, Max, Unit.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -17000,7 +17059,127 @@
         "Max",
         "Unit"
       ],
-      "rows": [],
+      "rows": [
+        [
+          "t w(NE)",
+          "FMC_NE low time",
+          "4 × T - 0.5 fmc_ker_ck",
+          "4 × T + 1 fmc_ker_ck",
+          "ns"
+        ],
+        [
+          "t v(NWE_NE)",
+          "FMC_NEx low to FMC_NWE low",
+          "T - 4 fmc_ker_ck",
+          "T - 3 fmc_ker_ck",
+          "ns"
+        ],
+        [
+          "t w(NWE)",
+          "FMC_NWE low time",
+          "2 × T - 0.5 fmc_ker_ck",
+          "2 × T + 0.5 fmc_ker_ck",
+          "ns"
+        ],
+        [
+          "t h(NE_NWE)",
+          "FMC_NWE high to FMC_NE high hold time",
+          "T + 3 fmc_ker_ck",
+          "-",
+          "ns"
+        ],
+        [
+          "t v(A_NE)",
+          "FMC_NEx low to FMC_A valid",
+          "-",
+          "0",
+          "ns"
+        ],
+        [
+          "t v(NADV_NE)",
+          "FMC_NEx low to FMC_NADV low",
+          "0",
+          "0.5",
+          "ns"
+        ],
+        [
+          "t w(NADV)",
+          "FMC_NADV low time",
+          "T - 1 fmc_ker_ck",
+          "T + 1 fmc_ker_ck",
+          "ns"
+        ],
+        [
+          "t h(AD_NADV)",
+          "FMC_AD(address) valid hold time after FMC_NADV high)",
+          "T - 1.5 fmc_ker_ck",
+          "-",
+          "ns"
+        ],
+        [
+          "t h(A_NWE)",
+          "Address hold time after FMC_NWE high",
+          "3 × T - 1 fmc_ker_ck",
+          "-",
+          "ns"
+        ],
+        [
+          "t h(BL_NWE)",
+          "FMC_BL hold time after FMC_NWE high",
+          "T - 1.5 fmc_ker_ck",
+          "-",
+          "ns"
+        ],
+        [
+          "t v(BL_NE)",
+          "FMC_NEx low to FMC_BL valid",
+          "-",
+          "0",
+          "ns"
+        ],
+        [
+          "t h(Data_NWE)",
+          "Data hold time after FMC_NEx high",
+          "-",
+          "T + 2 fmc_ker_ck",
+          "ns"
+        ],
+        [
+          "t h(Data_NWE)",
+          "Data hold time after FMC_NEx high",
+          "T - 1 fmc_ker_ck",
+          "-",
+          "ns"
+        ],
+        [
+          "t w(NE)",
+          "FMC_NE low time",
+          "9 × T - 0.5 fmc_ker_ck",
+          "9 × T + 1 fmc_ker_ck",
+          "ns"
+        ],
+        [
+          "t w(NOE)",
+          "FMC_NOE low time",
+          "7 × T - 0.5 fmc_ker_ck",
+          "7 × T + 1 fmc_ker_ck",
+          "ns"
+        ],
+        [
+          "t su(NWAIT_NE)",
+          "FMC_NWAIT valid before FMC_NEx high",
+          "5 × T + 15 fmc_ker_ck",
+          "-",
+          "ns"
+        ],
+        [
+          "t h(NE_NWAIT)",
+          "FMC_NEx hold time after FMC_NWAIT invalid",
+          "4 × T + 12 fmc_ker_ck",
+          "-",
+          "ns"
+        ]
+      ],
       "notes": [],
       "legend": "",
       "semantic_type": "",
@@ -17611,7 +17790,10 @@
           "ns"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Evaluated by characterization. Not tested in production.",
+        "2. Primary interfaces used. 190/258 DS14791 Rev 9"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -17805,7 +17987,9 @@
           "ns"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "2. Primary interfaces used."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -17847,7 +18031,9 @@
           "ns"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "2. Primary interfaces used."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -18021,51 +18207,6 @@
           "-",
           "140",
           "MHz"
-        ],
-        [
-          "t w(CLKL)",
-          "XSPI clock high and low time, odd division",
-          "PRESCALER[7:0] = n = 2,4,6,8",
-          "(n / 2 + 1)*t / (CLK) (n + 1) - 1",
-          "-",
-          "(n / 2 + 1)*t / (CLK) (n + 1)",
-          "ns"
-        ],
-        [
-          "t s(DQ)",
-          "Data input setup time",
-          "-",
-          "1.5",
-          "-",
-          "-",
-          "ns"
-        ],
-        [
-          "t h(DQ)",
-          "Data input hold time",
-          "-",
-          "2",
-          "-",
-          "-",
-          "ns"
-        ],
-        [
-          "t v(OUT)",
-          "Data output valid time",
-          "-",
-          "-",
-          "0",
-          "0.5",
-          "ns"
-        ],
-        [
-          "t h(OUT)",
-          "Data output hold time",
-          "-",
-          "0",
-          "-",
-          "-",
-          "ns"
         ]
       ],
       "notes": [
@@ -18127,6 +18268,15 @@
           "MHz"
         ],
         [
+          "t w(CLKL)",
+          "division",
+          "n = 0,1,3,5",
+          "t / 2 - 1 (CLK)",
+          "-",
+          "t / 2 (CLK)",
+          "ns"
+        ],
+        [
           "t w(CLKH)",
           "XSPI clock high and low time, odd division",
           "PRESCALER[:0] = n = 2,4,6,8",
@@ -18134,36 +18284,11 @@
           "-",
           "-",
           "ns"
-        ],
-        [
-          "t w(CLKL)",
-          "XSPI clock high and low time, odd division",
-          "PRESCALER[:0] = n = 2,4,6,8",
-          "(n / 2 + 1) × t / (CLK) (n + 1) - 1",
-          "-",
-          "(n / 2 + 1) × t / (n + 1) (CLK)",
-          "ns"
-        ],
-        [
-          "t sr(DQ),tsf(DQ)",
-          "Data input setup time",
-          "-",
-          "2",
-          "-",
-          "-",
-          "ns"
-        ],
-        [
-          "t hr(DQ),thf(DQ)",
-          "Data input hold time",
-          "-",
-          "1",
-          "-",
-          "-",
-          "ns"
         ]
       ],
       "notes": [
+        "1. Evaluated by characterization. Not tested in production.",
+        "2. Voltage scaling = VOS low.",
         "3. When Prescaler = 0 and F < 40 MHz. (CLK)"
       ],
       "legend": "",
@@ -18221,8 +18346,8 @@
         ],
         [
           "t w(CLKL)",
-          "XSPI clock high and low time, even division",
-          "PRESCALER[7:0] = n = 0,1,3,5",
+          "division",
+          "= 0,1,3,5",
           "t / 2 - 1 (CLK)",
           "-",
           "t / 2 (CLK)",
@@ -18236,135 +18361,10 @@
           "-",
           "(n / 2) × t / (CLK) (n + 1) + 1",
           "ns"
-        ],
-        [
-          "t w(CLKL)",
-          "XSPI clock high and low time, odd division",
-          "PRESCALER[7:0] = n = 2,4,6,8",
-          "(n / 2 + 1) × t / (n + 1) - 1 (CLK)",
-          "-",
-          "(n / 2 + 1) × t / (n + 1) (CLK)",
-          "ns"
-        ],
-        [
-          "t w(CS)",
-          "Chip select high time",
-          "-",
-          "3 × t (CLK)",
-          "-",
-          "-",
-          "ns"
-        ],
-        [
-          "t v(CK)",
-          "Clock valid time",
-          "-",
-          "-",
-          "-",
-          "t + 1 (CLK)",
-          "ns"
-        ],
-        [
-          "t h(CK)",
-          "Clock hold time",
-          "-",
-          "t / 2 (CLK)",
-          "-",
-          "-",
-          "ns"
-        ],
-        [
-          "V ODr(CK)",
-          "CLK, NCLK crossing level on CLK rising edge",
-          "V = 1.8 V DD",
-          "1020",
-          "-",
-          "1138 / 1019(2)",
-          "mV"
-        ],
-        [
-          "V ODf(CK)",
-          "CLK, NCLK crossing level on CLK falling edge",
-          "V = 1.8 V DD",
-          "908",
-          "-",
-          "1080",
-          "mV"
-        ],
-        [
-          "t , sr(DQ) t sf(DQ)",
-          "Data input setup time",
-          "-",
-          "0.5 - t / 4 (CLK) 3(3)",
-          "-",
-          "-",
-          "ns"
-        ],
-        [
-          "t , hr(DQ) t hf(DQ)",
-          "Data input hold time",
-          "-",
-          "2 + t / 4 (CLK) 7.5(3)",
-          "-",
-          "-",
-          "ns"
-        ],
-        [
-          "t v(DQ)",
-          "Data input valid time",
-          "-",
-          "0",
-          "-",
-          "-",
-          "ns"
-        ],
-        [
-          "t v(DS)",
-          "Data strobe input valid time",
-          "-",
-          "0",
-          "-",
-          "-",
-          "ns"
-        ],
-        [
-          "t ) h(DS",
-          "Data strobe input hold time",
-          "-",
-          "0",
-          "-",
-          "-",
-          "ns"
-        ],
-        [
-          "t v(RWDS)",
-          "Data strobe output valid time",
-          "-",
-          "-",
-          "-",
-          "3 × t (CLK)",
-          "ns"
-        ],
-        [
-          "t , vr(OUT) t vf(OUT)",
-          "Data output valid time",
-          "-",
-          "-",
-          "t / 4 + 0.5 (CLK) 6(3)",
-          "t / 4 + 1 (CLK) 6.5(3)",
-          "ns"
-        ],
-        [
-          "t , hr(OUT) t hf(OUT)",
-          "Data output hold time",
-          "-",
-          "t / 4 - 0.5 (CLK) 4.5(3)",
-          "-",
-          "-",
-          "ns"
         ]
       ],
       "notes": [
+        "1. Evaluated by characterization. Not tested in production.",
         "2. When using 33 Ω series termination on CLK and NCLK.",
         "3. When Prescaler = 0 and F < 40 MHz. (CLK)"
       ],
@@ -18445,8 +18445,8 @@
       "rows": [
         [
           "CMD, D inputs (referenced to CK) in SD HS/SDR(3)/DDR(3) mode",
-          "CMD, D inputs (referenced to CK) in SD HS/SDR(3)/DDR(3) mode",
-          "CMD, D inputs (referenced to CK) in SD HS/SDR(3)/DDR(3) mode",
+          "CMD, D inputs (referenced to CK)",
+          "in SD",
           "CMD, D inputs (referenced to CK) in SD HS/SDR(3)/DDR(3) mode",
           "CMD, D inputs (referenced to CK) in SD HS/SDR(3)/DDR(3) mode",
           "CMD, D inputs (referenced to CK) in SD HS/SDR(3)/DDR(3) mode",
@@ -18481,8 +18481,8 @@
         ],
         [
           "CMD, D outputs (referenced to CK) in SD HS/SDR(3)/DDR(3) mode",
-          "CMD, D outputs (referenced to CK) in SD HS/SDR(3)/DDR(3) mode",
-          "CMD, D outputs (referenced to CK) in SD HS/SDR(3)/DDR(3) mode",
+          "CMD, D outputs (referenced to",
+          "in SD",
           "CMD, D outputs (referenced to CK) in SD HS/SDR(3)/DDR(3) mode",
           "CMD, D outputs (referenced to CK) in SD HS/SDR(3)/DDR(3) mode",
           "CMD, D outputs (referenced to CK) in SD HS/SDR(3)/DDR(3) mode",
@@ -18508,9 +18508,9 @@
         ],
         [
           "CMD, D inputs (referenced to CK) in SD default mode",
-          "CMD, D inputs (referenced to CK) in SD default mode",
-          "CMD, D inputs (referenced to CK) in SD default mode",
-          "CMD, D inputs (referenced to CK) in SD default mode",
+          "CMD, D inputs (referenced",
+          "to CK) in SD default",
+          "mode",
           "CMD, D inputs (referenced to CK) in SD default mode",
           "CMD, D inputs (referenced to CK) in SD default mode",
           "CMD, D inputs (referenced to CK) in SD default mode"
@@ -18535,9 +18535,9 @@
         ],
         [
           "CMD, D outputs (referenced to CK) in SD default mode",
-          "CMD, D outputs (referenced to CK) in SD default mode",
-          "CMD, D outputs (referenced to CK) in SD default mode",
-          "CMD, D outputs (referenced to CK) in SD default mode",
+          "CMD, D outputs (referenced",
+          "to CK) in SD default",
+          "mode",
           "CMD, D outputs (referenced to CK) in SD default mode",
           "CMD, D outputs (referenced to CK) in SD default mode",
           "CMD, D outputs (referenced to CK) in SD default mode"
@@ -18638,8 +18638,8 @@
         ],
         [
           "CMD, D inputs (referenced to CK) in eMMC mode",
-          "CMD, D inputs (referenced to CK) in eMMC mode",
-          "CMD, D inputs (referenced to CK) in eMMC mode",
+          "CMD, D inputs",
+          "to CK) in eMMC",
           "CMD, D inputs (referenced to CK) in eMMC mode",
           "CMD, D inputs (referenced to CK) in eMMC mode",
           "CMD, D inputs (referenced to CK) in eMMC mode",
@@ -18758,7 +18758,7 @@
         ],
         [
           "t ∆",
-          "Unit delay",
+          "Lock mode",
           "Lock mode",
           "T(1) / 32 - 10%",
           "T(1) / 32",
@@ -18959,7 +18959,7 @@
         ],
         [
           "t LATR",
-          "Trigger conversion latency regular and injected channels without conversion abort",
+          "without conversion abort",
           "CKMODE = 1",
           "-",
           "3",
@@ -18977,7 +18977,7 @@
         ],
         [
           "t LATRINJ",
-          "Trigger conversion latency regular injected channels aborting a regular conversion",
+          "aborting a regular conversion",
           "CKMODE = 1",
           "-",
           "4",
@@ -19211,7 +19211,7 @@
           "-1",
           "-",
           "1",
-          "% of full scale"
+          "scale LSB"
         ],
         [
           "EO",
@@ -19275,7 +19275,7 @@
         [
           "t s_min",
           "Minimum sampling time",
-          "12 bits",
+          "68",
           "68",
           "33",
           "-",
@@ -19285,7 +19285,7 @@
         [
           "t s_min",
           "Minimum sampling time",
-          "12 bits",
+          "100",
           "100",
           "34",
           "-",
@@ -19295,7 +19295,7 @@
         [
           "t s_min",
           "Minimum sampling time",
-          "12 bits",
+          "150",
           "150",
           "36",
           "-",
@@ -19305,7 +19305,7 @@
         [
           "t s_min",
           "Minimum sampling time",
-          "12 bits",
+          "220 12 bits",
           "220",
           "38",
           "-",
@@ -19315,7 +19315,7 @@
         [
           "t s_min",
           "Minimum sampling time",
-          "12 bits",
+          "330",
           "330",
           "42",
           "-",
@@ -19325,7 +19325,7 @@
         [
           "t s_min",
           "Minimum sampling time",
-          "12 bits",
+          "470",
           "470",
           "47",
           "-",
@@ -19335,7 +19335,7 @@
         [
           "t s_min",
           "Minimum sampling time",
-          "12 bits",
+          "680",
           "680",
           "55",
           "-",
@@ -19345,7 +19345,7 @@
         [
           "t s_min",
           "Minimum sampling time",
-          "12 bits",
+          "1000(2)",
           "1000(2)",
           "70",
           "-",
@@ -19365,7 +19365,7 @@
         [
           "t s_min",
           "Minimum sampling time",
-          "10 bits",
+          "68",
           "68",
           "24",
           "-",
@@ -19375,7 +19375,7 @@
         [
           "t s_min",
           "Minimum sampling time",
-          "10 bits",
+          "100",
           "100",
           "25",
           "-",
@@ -19385,7 +19385,7 @@
         [
           "t s_min",
           "Minimum sampling time",
-          "10 bits",
+          "150",
           "150",
           "26",
           "-",
@@ -19395,7 +19395,7 @@
         [
           "t s_min",
           "Minimum sampling time",
-          "10 bits",
+          "220",
           "220",
           "28",
           "-",
@@ -19405,7 +19405,7 @@
         [
           "t s_min",
           "Minimum sampling time",
-          "10 bits",
+          "330",
           "330",
           "30",
           "-",
@@ -19415,7 +19415,7 @@
         [
           "t s_min",
           "Minimum sampling time",
-          "10 bits",
+          "10 bits 470",
           "470",
           "33",
           "-",
@@ -19425,7 +19425,7 @@
         [
           "t s_min",
           "Minimum sampling time",
-          "10 bits",
+          "680",
           "680",
           "38",
           "-",
@@ -19435,7 +19435,7 @@
         [
           "t s_min",
           "Minimum sampling time",
-          "10 bits",
+          "1000",
           "1000",
           "45",
           "-",
@@ -19445,7 +19445,7 @@
         [
           "t s_min",
           "Minimum sampling time",
-          "10 bits",
+          "1500",
           "1500",
           "55",
           "-",
@@ -19455,7 +19455,7 @@
         [
           "t s_min",
           "Minimum sampling time",
-          "10 bits",
+          "2200",
           "2200",
           "71",
           "-",
@@ -19465,7 +19465,7 @@
         [
           "t s_min",
           "Minimum sampling time",
-          "10 bits",
+          "3300",
           "3300",
           "97",
           "-",
@@ -19475,7 +19475,7 @@
         [
           "t s_min",
           "Minimum sampling time",
-          "10 bits",
+          "4700(2)",
           "4700(2)",
           "133",
           "-",
@@ -19653,7 +19653,9 @@
           "-"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "2. Maximum external input impedance value authorized for the given resolution."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -19702,8 +19704,8 @@
         ],
         [
           "V DDA18ADC",
-          "Analog supply voltage",
-          "-",
+          "voltage",
+          "VRS = 001",
           "VRS = 001",
           "1.75",
           "1.8",
@@ -19721,9 +19723,9 @@
           "V"
         ],
         [
-          "V REFBUF_ OUT",
-          "Voltage reference buffer output",
-          "I = 10 μA, LOAD V = 1.8 V, DDA18ADC T = 30°C J",
+          "OUT",
+          "buffer output",
+          "DDA18ADC VRS = 001 = 30°C T J",
           "VRS = 001",
           "1.499",
           "1.5",
@@ -19772,7 +19774,7 @@
         ],
         [
           "I LOAD",
-          "External DC load current",
+          "current",
           "ADC OFF",
           "ADC OFF",
           "-",
@@ -20069,7 +20071,9 @@
           "μs"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "2. Specified by design, not tested in production."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -20201,7 +20205,7 @@
         [
           "T ready",
           "Time needed to have the first code calculation after enabling",
-          "Using an 8 MHz clock (HSI / 8)",
+          "(HSI / 8)",
           "-",
           "96",
           "-",
@@ -20277,7 +20281,7 @@
         [
           "f CCKO",
           "Output clock frequency, in controller SPI mode",
-          "1.65 < V < 3.6 V DD",
+          "DD",
           "-",
           "-",
           "25",
@@ -20302,7 +20306,9 @@
           "MHz"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Evaluated by characterization. Not tested in production. Figure 48. ADF timing diagram"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -20413,7 +20419,7 @@
         [
           "T HDCCKI",
           "Data hold time w.r.t. ADF_CCK[1:0] input",
-          "Target SPI mode, ADF_CCK[1:0] configured in input, measured on rising and falling edge",
+          "in input, measured on rising and falling edge",
           "0.5",
           "-",
           "-",
@@ -20431,7 +20437,7 @@
         [
           "T HDCCKO",
           "Data hold time w.r.t. ADF_CCK[1:0] output",
-          "Controller SPI mode, ADF_CCK[1:0] configured in output, measured on rising and falling edge",
+          "in output, measured on rising and falling edge",
           "0.5",
           "-",
           "-",
@@ -20449,7 +20455,7 @@
         [
           "T HDCCKOLF",
           "Data hold time w.r.t. ADF_CCK[1:0] output",
-          "LF_MASTER SPI mode, ADF_CCK[1:0] configured in output, measured on rising and falling edge",
+          "in output, measured on rising and falling edge",
           "0.5",
           "-",
           "-",
@@ -20918,41 +20924,12 @@
           "-",
           "-",
           "-"
-        ],
-        [
-          "None",
-          "None",
-          "None",
-          "None",
-          "None",
-          "1.5"
-        ],
-        [
-          "t , h(HSYNC)",
-          "emit dloh tuptuo ED/CNYSV/CNYSH",
-          "emit dloh tuptuo ED/CNYSV/CNYSH",
-          "0.5",
-          "0.5",
-          "-"
-        ],
-        [
-          "t , h(VSYNC)",
-          "None",
-          "None",
-          "None",
-          "None",
-          "None"
-        ],
-        [
-          "t h(DE)",
-          "None",
-          "None",
-          "None",
-          "None",
-          "None"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Specified by design. Not tested in production.",
+        "2. TIMx is used as a general term to refer to the TIM1 to TIMx timers."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -21036,7 +21013,10 @@
           "t TIMxCLK"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Specified by design. Not tested in production.",
+        "2. TIMx is used as a general term to refer to the TIM1 to TIMx timers."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -21401,7 +21381,9 @@
           "ns"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "2. Spikes with widths below t are filtered. AF(min)"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -21859,7 +21841,9 @@
           "ns"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Evaluated by characterization. Not tested in production. DS14791 Rev 9 225/258"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -22230,7 +22214,7 @@
         ],
         [
           "tsu(TX)",
-          "Data input setup time",
+          "time",
           "Target mode",
           "6",
           "-",
@@ -22248,7 +22232,7 @@
         ],
         [
           "th(RX)",
-          "Data input hold time",
+          "time",
           "Target mode",
           "0",
           "-",
@@ -22266,7 +22250,7 @@
         ],
         [
           "tv(TX)",
-          "Data output valid time",
+          "time",
           "Controller mode",
           "-",
           "4.5",
@@ -22284,7 +22268,7 @@
         ],
         [
           "th(TX)",
-          "Data output hold time",
+          "time",
           "Controller mode",
           "3",
           "-",
@@ -22352,7 +22336,7 @@
         [
           "I VDDCORE(CSIPHY)",
           "Supply current on V DDCORE",
-          "High-speed receive(2)",
+          "2 lanes at 1.5 Gbps High-speed",
           "2 lanes at 1.5 Gbps",
           "-",
           "3.14",
@@ -22361,8 +22345,8 @@
         ],
         [
           "I VDDCORE(CSIPHY)",
-          "Supply current on V DDCORE",
-          "High-speed receive(2)",
+          "Supply current on",
+          "2 lanes at 2 Gbps",
           "2 lanes at 2 Gbps",
           "-",
           "4.07",
@@ -22371,8 +22355,8 @@
         ],
         [
           "I VDDCORE(CSIPHY)",
-          "Supply current on V DDCORE",
-          "High-speed receive(2)",
+          "V DDCORE",
+          "2 lanes at 2.5 Gbps",
           "2 lanes at 2.5 Gbps",
           "-",
           "5.00",
@@ -22611,7 +22595,7 @@
         ],
         [
           "I VDDCORE(USB2PHY)",
-          "Supply current on V DDCORE",
+          "Supply current on",
           "LS transmit, maximum transition density(6)",
           "LS transmit, maximum transition density(6)",
           "-",
@@ -22620,8 +22604,8 @@
           "mA"
         ],
         [
-          "I VDDCORE(USB2PHY)",
-          "Supply current on V DDCORE",
+          "VDDCORE(USB2PHY)",
+          "V DDCORE",
           "Suspend(7)",
           "Suspend(7)",
           "-",
@@ -22652,7 +22636,7 @@
         [
           "I VDDCORE(USB2PHY)",
           "Supply current on V DDCORE",
-          "Battery charging",
+          "charging VDATDETENB = 1, 1(9) VDATSRCENB =",
           "VDATDETENB = 1, VDATSRCENB = 1(9)",
           "-",
           "5.82",
@@ -22902,132 +22886,6 @@
           "470",
           "600",
           "pF"
-        ],
-        [
-          "Transmitter",
-          "Transmitter",
-          "Transmitter",
-          "Transmitter",
-          "Transmitter",
-          "Transmitter",
-          "Transmitter"
-        ],
-        [
-          "V SWING",
-          "Voltage swing applies on CC pin to both no load condition and under the load condition.",
-          "Voltage swing applies on CC pin to both no load condition and under the load condition.",
-          "1.05",
-          "1.125",
-          "1.2",
-          "V"
-        ],
-        [
-          "Z DRIVER",
-          "TX output impedance. Source output impedance at the Nyquist frequency of USB2.0 low speed (750 kHz) while the source is driving the CC line.",
-          "TX output impedance. Source output impedance at the Nyquist frequency of USB2.0 low speed (750 kHz) while the source is driving the CC line.",
-          "33",
-          "-",
-          "75",
-          "Ω"
-        ],
-        [
-          "T / T r f",
-          "Rise/fall time. 10% to 90% / 90% to 10% amplitude points, minimum is under an unloaded condition. Maximum set by TX mask.",
-          "Rise/fall time. 10% to 90% / 90% to 10% amplitude points, minimum is under an unloaded condition. Maximum set by TX mask.",
-          "300",
-          "-",
-          "735",
-          "ns"
-        ],
-        [
-          "DCYCLE",
-          "TX duty cycle at 0.5625 V (see Y5Tx, BMC Tx 'ONE' Mask and BMC Tx 'ZERO' Mask in the PD Specification)",
-          "TX duty cycle at 0.5625 V (see Y5Tx, BMC Tx 'ONE' Mask and BMC Tx 'ZERO' Mask in the PD Specification)",
-          "47",
-          "-",
-          "53",
-          "%"
-        ],
-        [
-          "Receiver",
-          "Receiver",
-          "Receiver",
-          "Receiver",
-          "Receiver",
-          "Receiver",
-          "Receiver"
-        ],
-        [
-          "V IL",
-          "Rx receive input thresholds. The position of the center line of the inner mask is dependent on whether the receiver is sourcing or sinking power or is power neutral.",
-          "Sourcing power",
-          "-",
-          "-",
-          "0.4825",
-          "V"
-        ],
-        [
-          "V IH",
-          "Rx receive input thresholds. The position of the center line of the inner mask is dependent on whether the receiver is sourcing or sinking power or is power neutral.",
-          "Sourcing power",
-          "0.8925",
-          "-",
-          "-",
-          "V"
-        ],
-        [
-          "V IL",
-          "Rx receive input thresholds. The position of the center line of the inner mask is dependent on whether the receiver is sourcing or sinking power or is power neutral.",
-          "Sinking power",
-          "-",
-          "-",
-          "0.2325",
-          "V"
-        ],
-        [
-          "V IH",
-          "Rx receive input thresholds. The position of the center line of the inner mask is dependent on whether the receiver is sourcing or sinking power or is power neutral.",
-          "Sinking power",
-          "0.6425",
-          "-",
-          "-",
-          "V"
-        ],
-        [
-          "Hysteresis",
-          "Rx receive input hysteresis",
-          "Rx receive input hysteresis",
-          "0.15",
-          "-",
-          "-",
-          "V"
-        ],
-        [
-          "N COUNT",
-          "Number of transitions for signal detection (number to count to detect non-idle bus).",
-          "Number of transitions for signal detection (number to count to detect non-idle bus).",
-          "3",
-          "-",
-          "-",
-          "-"
-        ],
-        [
-          "t TRANWIN",
-          "Time window for detecting non-idle bus",
-          "Time window for detecting non-idle bus",
-          "12",
-          "-",
-          "20",
-          "µs"
-        ],
-        [
-          "Z BMCRX",
-          "Receiver input impedance",
-          "Receiver input impedance",
-          "1",
-          "-",
-          "-",
-          "MΩ"
         ]
       ],
       "notes": [
@@ -23080,7 +22938,7 @@
         [
           "ti su(TMS)",
           "TMS input setup time",
-          "1.65 < V < 3.6 V DD",
+          "< 3.6 V 1.65 < V DD",
           "4",
           "-",
           "-",
@@ -23098,7 +22956,7 @@
         [
           "ti su(TDI)",
           "TDI input setup time",
-          "1.65 < V < 3.6 V DD",
+          "DD",
           "4",
           "-",
           "-",
@@ -23132,7 +22990,9 @@
           "ns"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Evaluated by characterization. Not tested in production. DS14791 Rev 9 233/258"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -23189,7 +23049,7 @@
         [
           "ti h(SWDIO)",
           "SWDIO input hold time",
-          "1.65 < V < 3.6 V DD",
+          "DD",
           "1",
           "-",
           "-",
@@ -23214,7 +23074,9 @@
           "ns"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Evaluated by characterization. Not tested in production. DS14791 Rev 9 233/258"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -23420,7 +23282,18 @@
           "0.0197 BSC"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Dimensioning and tolerancing schemes conform to ASME Y14.5M-2009 apart European projection.",
+        "2. VFBGA stands for very thin profile fine pitch ball grid array: 0.8 mm < A ≤ 1.00 mm / fine pitch e < 1.00 mm.",
+        "3. The profile height, A, is the distance from the seating plane to the highest point on the package. It is measured perpendicular to the seating plane.",
+        "4. A1 is defined as the distance from the seating plane to the lowest point on the package body.",
+        "5. Dimension b is measured at the maximum diameter of the terminal (ball) in a plane parallel to primary datum C.",
+        "6. BSC stands for BASIC dimensions. It corresponds to the nominal value and has no tolerance. For tolerances refer to form and position table. On the drawing these",
+        "9. e represents the solder ball grid pitch.",
+        "10. N represents the total number of balls on the BGA.",
+        "11. Basic dimensions SD and SE are defined with respect to datums A and B. It defines the position of the centre ball(s) in the outer row or column of a fully populated matrix.",
+        "12. Values in inches are converted from mm and rounded to four decimal digits."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -23703,7 +23576,18 @@
           "0.0031"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Dimensioning and tolerancing schemes conform to ASME Y14.5M-2009 apart European projection.",
+        "2. VFBGA stands for very thin profile fine pitch ball grid array: 0.8 mm < A ≤ 1.00 mm / fine pitch e < 1.00 mm.",
+        "3. The profile height, A, is the distance from the seating plane to the highest point on the package. It is measured perpendicular to the seating plane.",
+        "4. A1 is defined as the distance from the seating plane to the lowest point on the package body.",
+        "5. Dimension b is measured at the maximum diameter of the terminal (ball) in a plane parallel to primary datum C.",
+        "6. BSC stands for BASIC dimensions. It corresponds to the nominal value and has no tolerance. For tolerances refer to form and position table. On the drawing these",
+        "9. e represents the solder ball grid pitch.",
+        "10. N represents the total number of balls on the BGA.",
+        "11. Basic dimensions SD and SE are defined with respect to datums A and B. It defines the position of the centre ball(s) in the outer row or column of a fully populated matrix.",
+        "12. Values in inches are converted from mm and rounded to four decimal digits."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -24365,14 +24249,14 @@
         ],
         [
           "θ JA",
-          "Thermal resistance junction-ambient",
+          "Thermal resistance",
           "VFBGA198 - 10 x 10 mm, 0.65 mm pitch",
           "32.0",
           "°C/W"
         ],
         [
           "θ JA",
-          "Thermal resistance junction-ambient",
+          "junction-ambient",
           "VFBGA178 - 10 x 10 mm, 0.8 mm pitch",
           "27.8",
           "°C/W"
@@ -24407,14 +24291,14 @@
         ],
         [
           "θ JB",
-          "Thermal resistance junction-board",
+          "Thermal resistance",
           "VFBGA198 - 10 x 10 mm, 0.65 mm pitch",
           "19.7",
           "°C/W"
         ],
         [
           "θ JB",
-          "Thermal resistance junction-board",
+          "junction-board",
           "VFBGA178 - 10 x 10 mm, 0.8 mm pitch",
           "16.5",
           "°C/W"
@@ -24449,14 +24333,14 @@
         ],
         [
           "θ JC",
-          "Thermal resistance junction-case",
+          "Thermal resistance",
           "VFBGA198 - 10 x 10 mm, 0.65 mm pitch",
           "10.2",
           "°C/W"
         ],
         [
           "θ JC",
-          "Thermal resistance junction-case",
+          "junction-case",
           "VFBGA178 - 10 x 10 mm, 0.8 mm pitch",
           "9.0",
           "°C/W"

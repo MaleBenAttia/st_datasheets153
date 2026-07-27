@@ -11,10 +11,9 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f405oe.pdf#page=113",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f405oe.pdf",
-  "text_helper": "Table 43. EMS characteristics — section 6.3.13 EMC characteristics. Symbol, Symbol, Parameter, Conditions, Level/ Class.",
+  "text_helper": "Table 43. EMS characteristics — section 6.3.13 EMC characteristics. Symbol, Parameter, Conditions, Level/ Class.",
   "table_content": {
     "headers": [
-      "Symbol",
       "Symbol",
       "Parameter",
       "Conditions",
@@ -23,55 +22,20 @@
     "rows": [
       [
         "V FESD",
-        "V FESD",
         "Voltage limits to be applied on any I/O pin to induce a functional disturbance",
         "V = 3.3 V, LQFP176, T = +25 °C, DD A f = 168 MHz, conforms to HCLK IEC 61000-4-2",
         "2B"
       ],
       [
         "V EFTB",
-        "V EFTB",
         "Fast transient voltage burst limits to be applied through 100 pF on V and V DD SS pins to induce a functional disturbance",
         "V = 3.3 V, LQFP176, T = +25 °C, DD A f = 168 MHz, conforms to HCLK IEC 61000-4-2",
         "4A"
-      ],
-      [
-        "S EMI",
-        "Peak(1)",
-        "30 to 130 MHz",
-        "25",
-        "25"
-      ],
-      [
-        "S EMI",
-        "Peak(1)",
-        "130 MHz to 1GHz",
-        "29",
-        "29"
-      ],
-      [
-        "Peak(1)",
-        "V = 3.3 V, T = 25 °C, LQFP176 DD A package, conforming to SAE J1752/3 EEMBC, code running from flash memory with ART accelerator and PLL spread spectrum enabled",
-        "30 to 130 MHz",
-        "16",
-        "16"
-      ],
-      [
-        "Peak(1)",
-        "V = 3.3 V, T = 25 °C, LQFP176 DD A package, conforming to SAE J1752/3 EEMBC, code running from flash memory with ART accelerator and PLL spread spectrum enabled",
-        "130 MHz to 1GHz",
-        "18",
-        "18"
-      ],
-      [
-        "Peak(1)",
-        "Level(2)",
-        "0.1 MHz to 2 GHz",
-        "3.5",
-        "-"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Evaluated by characterization - not tested in production. 114/206 DS8626 Rev 12"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

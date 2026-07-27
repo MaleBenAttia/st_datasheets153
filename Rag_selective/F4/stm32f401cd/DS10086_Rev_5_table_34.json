@@ -11,10 +11,9 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f401cd.pdf#page=75",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f401cd.pdf",
-  "text_helper": "Table 34. Low-power mode wake-up timings(1) — section 6.3.7 Wake-up time from low-power modes. Symbol, Symbol, Parameter, Min(1), Typ(1), +2 autres.",
+  "text_helper": "Table 34. Low-power mode wake-up timings(1) — section 6.3.7 Wake-up time from low-power modes. Symbol, Parameter, Min(1), Typ(1), Max(1), +1 autres.",
   "table_content": {
     "headers": [
-      "Symbol",
       "Symbol",
       "Parameter",
       "Min(1)",
@@ -25,7 +24,6 @@
     "rows": [
       [
         "t (2) WUSLEEP",
-        "t (2) WUSLEEP",
         "Wake-up from Sleep mode",
         "-",
         "4",
@@ -34,7 +32,6 @@
       ],
       [
         "t (2) WUSTOP",
-        "t (2) WUSTOP",
         "Wake-up from Stop mode, usage of main regulator",
         "-",
         "13.5",
@@ -42,8 +39,7 @@
         "µs"
       ],
       [
-        "t (2) WUSTOP",
-        "t (2) WUSTOP",
+        "(2)",
         "Wake-up from Stop mode, usage of main regulator, flash memory in Deep power down mode",
         "-",
         "105",
@@ -51,7 +47,6 @@
         "µs"
       ],
       [
-        "t (2) WUSTOP",
         "t (2) WUSTOP",
         "Wake-up from Stop mode, regulator in low power mode",
         "-",
@@ -61,7 +56,6 @@
       ],
       [
         "t (2) WUSTOP",
-        "t (2) WUSTOP",
         "Wake-up from Stop mode, regulator in low power mode, flash memory in Deep power down mode",
         "-",
         "113",
@@ -70,48 +64,11 @@
       ],
       [
         "t (2)(3) WUSTDBY",
-        "t (2)(3) WUSTDBY",
         "Wake-up from Standby mode",
         "-",
         "314",
         "407",
         "µs"
-      ],
-      [
-        "V HSEH",
-        "OSC_IN input pin high level voltage",
-        "OSC_IN input pin high level voltage",
-        "0.7V DD",
-        "-",
-        "V DD",
-        "V"
-      ],
-      [
-        "V HSEL",
-        "OSC_IN input pin low level voltage",
-        "OSC_IN input pin low level voltage",
-        "V SS",
-        "-",
-        "0.3V DD",
-        "0.3V DD"
-      ],
-      [
-        "t w(HSE) t w(HSE)",
-        "OSC_IN high or low time(1)",
-        "OSC_IN high or low time(1)",
-        "5",
-        "-",
-        "-",
-        "ns"
-      ],
-      [
-        "t r(HSE) t f(HSE)",
-        "OSC_IN rise or fall time(1)",
-        "OSC_IN rise or fall time(1)",
-        "-",
-        "-",
-        "10",
-        "10"
       ]
     ],
     "notes": [

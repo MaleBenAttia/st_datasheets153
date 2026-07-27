@@ -11,10 +11,9 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32u545ce.pdf#page=210",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u545ce.pdf",
-  "text_helper": "Table 96. Output voltage characteristics (all I/Os except FT_c, FT_t in VBAT mode, and FT_o I/Os) — section 5.3.15 I/O port characteristics. Symbol, Symbol, Parameter, Conditions, Min, +2 autres. (table vide)",
+  "text_helper": "Table 96. Output voltage characteristics (all I/Os except FT_c, FT_t in VBAT mode, and FT_o I/Os) — section 5.3.15 I/O port characteristics. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
   "table_content": {
     "headers": [
-      "Symbol",
       "Symbol",
       "Parameter",
       "Conditions",
@@ -22,8 +21,116 @@
       "Max",
       "Unit"
     ],
-    "rows": [],
-    "notes": [],
+    "rows": [
+      [
+        "V OL",
+        "Output low-level voltage",
+        "CMOS port(4), |I |= 8 mA, IO 2.7 V ≤ V ≤ 3.6 V DDIOx",
+        "-",
+        "0.4",
+        "V"
+      ],
+      [
+        "V OH",
+        "Output high-level voltage",
+        "≤ 3.6 V 2.7 V ≤ V DDIOx",
+        "V - 0.4 DDIOx",
+        "-",
+        "V"
+      ],
+      [
+        "V (5) OL",
+        "Output low-level voltage",
+        "TTL port(4),|I |= 8 mA, IO 2.7 V ≤ V ≤ 3.6 V DDIOx",
+        "-",
+        "0.4",
+        "V"
+      ],
+      [
+        "V (5) OH",
+        "Output high-level voltage",
+        "2.7 V ≤ V ≤ 3.6 V DDIOx",
+        "2.4",
+        "-",
+        "V"
+      ],
+      [
+        "V (5) OL",
+        "Output low-level voltage",
+        "All I/Os, |I |= 20 mA, IO 2.7 V ≤ V ≤ 3.6 V DDIOx",
+        "-",
+        "1.3",
+        "V"
+      ],
+      [
+        "V (5) OH",
+        "Output high-level voltage",
+        "2.7 V ≤ V ≤ 3.6 V DDIOx",
+        "V - 1.3 DDIOx",
+        "-",
+        "V"
+      ],
+      [
+        "V (5) OL",
+        "Output low-level voltage",
+        "|I | = 4 mA, IO 1.58 V ≤ V ≤ 3.6 V DDIOx",
+        "-",
+        "0.4",
+        "V"
+      ],
+      [
+        "V (5) OH",
+        "Output high-level voltage",
+        "1.58 V ≤ V ≤ 3.6 V DDIOx",
+        "V - 0.4 DDIOx",
+        "-",
+        "V"
+      ],
+      [
+        "V (5) OL",
+        "Output low-level voltage",
+        "|I | = 1 mA, IO 1.08 V ≤ V <3.6 V DDIOx",
+        "-",
+        "0.4",
+        "V"
+      ],
+      [
+        "V (5) OH",
+        "Output high-level voltage",
+        "<3.6 V 1.08 V ≤ V DDIOx",
+        "V - 0.4 DDIOx",
+        "-",
+        "V"
+      ],
+      [
+        "V (5) OLFM+",
+        "Output low-level voltage for a FT_f I/O pin in FM+ mode",
+        "|I |= 20 mA, IO 2.7 V ≤ V ≤ 3.6 V DDIOx",
+        "-",
+        "0.4",
+        "V"
+      ],
+      [
+        "(5) V OLFM+",
+        "Output low-level voltage for a FT_f I/O pin in FM+ mode",
+        "|I |= 10 mA, IO 1.58 V ≤ V ≤ 3.6 V DDIOx",
+        "-",
+        "0.4",
+        "V"
+      ],
+      [
+        "V (5) OLFM+",
+        "Output low-level voltage for a FT_f I/O pin in FM+ mode",
+        "|I |= 2 mA, IO 1.08 V ≤ V < 3.6 V DDIOx",
+        "-",
+        "0.4",
+        "V"
+      ]
+    ],
+    "notes": [
+      "4. TTL and CMOS outputs are compatible with JEDEC standards JESD36 and JESD52.",
+      "5. Specified by design. Not tested in production."
+    ],
     "legend": [
       "FT_t in V mode, and FT_o I/Os(1))(2)(3)"
     ],

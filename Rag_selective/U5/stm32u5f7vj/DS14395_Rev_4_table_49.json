@@ -11,10 +11,10 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32u5f7vj.pdf#page=182",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u5f7vj.pdf",
-  "text_helper": "Table 49. Current consumption in Stop 0 mode on LDO — section 5.3.6 Supply current characteristics. Symb ol, Parameter, Conditions / V (V) DD, Typ / 25°C, Typ / 55°C, +9 autres.",
+  "text_helper": "Table 49. Current consumption in Stop 0 mode on LDO — section 5.3.6 Supply current characteristics. Symb ol / ol, Parameter, Conditions / V (V) DD, Typ / 25°C, Typ / 55°C, +9 autres.",
   "table_content": {
     "headers": [
-      "Symb ol",
+      "Symb ol / ol",
       "Parameter",
       "Conditions / V (V) DD",
       "Typ / 25°C",
@@ -48,7 +48,7 @@
       ],
       [
         "I DD (Stop 0)",
-        "Supply current in Stop 0 mode, regulator in range 4, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+        "regulator in range 4,",
         "2.4",
         "170",
         "460",
@@ -64,7 +64,7 @@
       ],
       [
         "I DD (Stop 0)",
-        "Supply current in Stop 0 mode, regulator in range 4, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+        "RTC disabled,",
         "3",
         "170",
         "460",
@@ -80,7 +80,7 @@
       ],
       [
         "I DD (Stop 0)",
-        "Supply current in Stop 0 mode, regulator in range 4, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+        "8-Kbyte SRAM2 + ICACHE",
         "3.3",
         "170",
         "460",
@@ -95,7 +95,7 @@
         "µA"
       ],
       [
-        "I DD (Stop 0)",
+        "I DD",
         "Supply current in Stop 0 mode, regulator in range 4, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
         "3.6",
         "170",
@@ -111,7 +111,7 @@
         "µA"
       ],
       [
-        "I DD (Stop 0)",
+        "(Stop 0)",
         "Supply current in Stop 0 mode, regulator in range 4, RTC disabled, all SRAMs retained",
         "1.8",
         "205",
@@ -128,7 +128,7 @@
       ],
       [
         "I DD (Stop 0)",
-        "Supply current in Stop 0 mode, regulator in range 4, RTC disabled, all SRAMs retained",
+        "Supply current in Stop 0 mode,",
         "2.4",
         "205",
         "535",
@@ -144,7 +144,7 @@
       ],
       [
         "I DD (Stop 0)",
-        "Supply current in Stop 0 mode, regulator in range 4, RTC disabled, all SRAMs retained",
+        "RTC disabled,",
         "3",
         "205",
         "540",
@@ -160,7 +160,7 @@
       ],
       [
         "I DD (Stop 0)",
-        "Supply current in Stop 0 mode, regulator in range 4, RTC disabled, all SRAMs retained",
+        "all SRAMs retained",
         "3.3",
         "205",
         "540",
@@ -191,7 +191,9 @@
         "µA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Evaluated by characterization. Not tested in production."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

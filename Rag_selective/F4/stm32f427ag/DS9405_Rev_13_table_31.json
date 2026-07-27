@@ -11,13 +11,13 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f427ag.pdf#page=109",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f427ag.pdf",
-  "text_helper": "Table 31. Typical current consumption in Run mode, code with data processing running — section 6.3.7 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK (MHz), VDD=3.3V / I DD12, +4 autres.",
+  "text_helper": "Table 31. Typical current consumption in Run mode, code with data processing running — section 6.3.7 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK (MHz) / (MHz), VDD=3.3V / I DD12, +4 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions",
-      "f HCLK (MHz)",
+      "f HCLK (MHz) / (MHz)",
       "VDD=3.3V / I DD12",
       "VDD=3.3V / I DD",
       "VDD=1.7V / I DD12",
@@ -61,7 +61,7 @@
       [
         "I / I DD12 DD",
         "Supply current in RUN mode from V and V 12 DD supply",
-        "All Peripherals enabled",
+        "All Peripherals",
         "120",
         "49.9",
         "1.2",
@@ -72,7 +72,7 @@
       [
         "I / I DD12 DD",
         "Supply current in RUN mode from V and V 12 DD supply",
-        "All Peripherals enabled",
+        "enabled",
         "90",
         "39.2",
         "1.3",
@@ -104,7 +104,7 @@
       ],
       [
         "I / I DD12 DD",
-        "Supply current in RUN mode from V and V 12 DD supply",
+        "RUN mode from",
         "All Peripherals enabled",
         "25",
         "13.6",
@@ -115,7 +115,7 @@
       ],
       [
         "I / I DD12 DD",
-        "Supply current in RUN mode from V and V 12 DD supply",
+        "V and V 12 DD supply",
         "All Peripherals disabled",
         "168",
         "38.2",
@@ -149,7 +149,7 @@
       [
         "I / I DD12 DD",
         "Supply current in RUN mode from V and V 12 DD supply",
-        "All Peripherals disabled",
+        "All Peripherals",
         "120",
         "24.0",
         "1.2",
@@ -160,7 +160,7 @@
       [
         "I / I DD12 DD",
         "Supply current in RUN mode from V and V 12 DD supply",
-        "All Peripherals disabled",
+        "disabled",
         "90",
         "18.1",
         "1.4",
@@ -202,7 +202,9 @@
         "mA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. When peripherals are enabled, the power consumption corresponding to the analog part of the peripherals (such as ADC, or DAC) is not included."
+    ],
     "legend": [
       "from Flash memory, regulator OFF (ART accelerator enabled except prefetch)(1)"
     ],

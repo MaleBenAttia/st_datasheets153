@@ -45,8 +45,8 @@
         "MHz"
       ],
       [
-        "f CKIN (1/T ) CKIN",
-        "Input clock frequency",
+        "f CKIN",
+        "Input clock",
         "SPI mode (SITP[1:0]=0,1), External clock mode (SPICKSEL[1:0]=0), 2.7 < V < 3.6 V DD",
         "SPI mode (SITP[1:0]=0,1), External clock mode (SPICKSEL[1:0]=0), 2.7 < V < 3.6 V DD",
         "-",
@@ -55,8 +55,8 @@
         "MHz"
       ],
       [
-        "f CKIN (1/T ) CKIN",
-        "Input clock frequency",
+        "(1/T ) CKIN",
+        "frequency",
         "SPI mode (SITP[1:0]=0,1), Internal clock mode (SPICKSEL[1:0]¹0), 1.62 < V < 3.6 V DD",
         "SPI mode (SITP[1:0]=0,1), Internal clock mode (SPICKSEL[1:0]¹0), 1.62 < V < 3.6 V DD",
         "-",
@@ -95,9 +95,9 @@
         "%"
       ],
       [
-        "DuCy CK OUT",
-        "Output clock frequency duty cycle",
-        "1.62 < V < 3.6 V DD",
+        "OUT",
+        "duty cycle",
+        "Odd division, CKOUTDIV[7:0] = 2, 4, 6...",
         "Odd division, CKOUTDIV[7:0] = 2, 4, 6...",
         "(((n/2+1)/(n+1)) *100)–5",
         "(((n/2+1)/(n+1)) *100)",

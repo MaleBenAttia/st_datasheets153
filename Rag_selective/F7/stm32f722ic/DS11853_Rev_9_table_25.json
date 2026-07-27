@@ -61,7 +61,7 @@
       [
         "I DD",
         "Supply cur- rent in Run mode",
-        "All peripherals enabled(2)(3)",
+        "enabled(2)(3)",
         "168",
         "113.1",
         "119.1",
@@ -93,7 +93,7 @@
       ],
       [
         "I DD",
-        "Supply cur- rent in Run mode",
+        "Supply cur-",
         "All peripherals enabled(2)(3)",
         "25",
         "21.7",
@@ -104,7 +104,7 @@
       ],
       [
         "I DD",
-        "Supply cur- rent in Run mode",
+        "mode",
         "All peripherals disabled(3)",
         "216",
         "90",
@@ -138,7 +138,7 @@
       [
         "I DD",
         "Supply cur- rent in Run mode",
-        "All peripherals disabled(3)",
+        "disabled(3)",
         "168",
         "66",
         "76",
@@ -180,7 +180,11 @@
         "mA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Guaranteed by characterization results.",
+      "2. When analog peripheral blocks such as ADCs, DACs, HSE, LSE, HSI, or LSI are ON, an additional power consumption should be considered.",
+      "3. When the ADC is ON (ADON bit set in the ADC_CR2 register), add an additional power consumption of 1.73 mA per ADC for the analog part."
+    ],
     "legend": [
       "running from Flash memory (ART ON except prefetch / L1-cache ON)",
       "or SRAM on AXI (L1-cache ON), regulator ON"

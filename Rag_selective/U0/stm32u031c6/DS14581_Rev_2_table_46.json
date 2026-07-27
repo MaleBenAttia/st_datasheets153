@@ -33,16 +33,20 @@
         "µs"
       ],
       [
-        "tWUUSART tWULPUART",
-        "Wake-up time needed to calculate the maximum USART/LPUART baud rate allowing to wake up up from stop mode when USART/LPUART clock source is HSI",
-        "Wake-up time needed to calculate the maximum USART/LPUART baud rate allowing to wake up up from stop mode when USART/LPUART clock source is HSI",
+        "tWULPUART",
+        "allowing to wake up up from stop mode when USART/LPUART clock source is HSI",
+        "allowing to wake up up from stop mode when USART/LPUART clock source is HSI",
         "Stop 1 mode and Stop 2 mode",
         "-",
         "8.5",
         "µs"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Resonator characteristics given by the crystal/ceramic resonator manufacturer.",
+      "2. This consumption level occurs during the first 2/3 of the tSU(HSE) startup time",
+      "3. tSU(HSE) is the startup time measured from the moment it is enabled (by software) to a stabilized 8 MHz oscillation is reached. This value is measured for a standard crystal resonator and it can vary significantly with the crystal manufacturer"
+    ],
     "legend": [
       "Evaluated by characterization, not tested in production."
     ],

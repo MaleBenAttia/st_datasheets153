@@ -4,18 +4,132 @@
   "rev": "Rev 6",
   "table_number": "18",
   "title": "Table 18. Peripheral current consumption",
-  "page": 5,
-  "section": "General purpose / Overview",
-  "section_title": "General purpose / Overview",
+  "page": 39,
+  "section": "5.3.5 Supply current characteristics",
+  "section_title": "Supply current characteristics",
   "semantic_type": "",
   "tags": [],
-  "url": "https://www.st.com/resource/en/datasheet/stm32f102c4.pdf#page=5",
+  "url": "https://www.st.com/resource/en/datasheet/stm32f102c4.pdf#page=39",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f102c4.pdf",
-  "text_helper": "Table 18. Peripheral current consumption — section General purpose / Overview.. (table vide)",
+  "text_helper": "Table 18. Peripheral current consumption — section 5.3.5 Supply current characteristics. Peripheral, Peripheral, µA/MHz.",
   "table_content": {
-    "headers": [],
-    "rows": [],
-    "notes": [],
+    "headers": [
+      "Peripheral",
+      "Peripheral",
+      "µA/MHz"
+    ],
+    "rows": [
+      [
+        "AHB (up to 48 MHz)",
+        "DMA1",
+        "15.97"
+      ],
+      [
+        "AHB (up to 48 MHz) CRC",
+        "CRC",
+        "1.67"
+      ],
+      [
+        "BusMatrix(2)",
+        "BusMatrix(2)",
+        "8.33"
+      ],
+      [
+        "APB1 (up to 24 MHz)",
+        "APB1-Bridge",
+        "7.22"
+      ],
+      [
+        "TIM2",
+        "TIM2",
+        "33.33"
+      ],
+      [
+        "TIM3",
+        "TIM3",
+        "33.61"
+      ],
+      [
+        "USART2",
+        "USART2",
+        "12.78"
+      ],
+      [
+        "I2C1",
+        "I2C1",
+        "10.83"
+      ],
+      [
+        "USB",
+        "USB",
+        "16.94"
+      ],
+      [
+        "WWDG",
+        "WWDG",
+        "3.33"
+      ],
+      [
+        "PWR",
+        "PWR",
+        "1.94"
+      ],
+      [
+        "BKP",
+        "BKP",
+        "2.78"
+      ],
+      [
+        "IWDG",
+        "IWDG",
+        "1.39"
+      ],
+      [
+        "APB2 (up to 48 MHz)",
+        "APB2-Bridge",
+        "3.33"
+      ],
+      [
+        "GPIOA",
+        "GPIOA",
+        "7.50"
+      ],
+      [
+        "GPIOB",
+        "GPIOB",
+        "6.81"
+      ],
+      [
+        "GPIOC",
+        "GPIOC",
+        "7.22"
+      ],
+      [
+        "GPIOD",
+        "GPIOD",
+        "6.94"
+      ],
+      [
+        "SPI1",
+        "SPI1",
+        "4.86"
+      ],
+      [
+        "USART1",
+        "USART1",
+        "12.78"
+      ],
+      [
+        "ADC1(3) (4)",
+        "ADC1(3) (4)",
+        "15.54"
+      ]
+    ],
+    "notes": [
+      "2. The BusMatrix is automatically active when at least one master is ON.",
+      "3. Specific conditions for ADC: f = 48 MHz, f = f /2, f = f , f = f /4. HCLK APB1 HCLK APB2 HCLK ADCCLK APB2",
+      "4. When ADON bit in the ADC_CR2 register is set to 1, there is an additional current consumption of 0.68mA. When the ADC is enabled there is an additional current consumption of 0.06 mA."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

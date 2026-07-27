@@ -11,10 +11,9 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f318c8.pdf#page=62",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f318c8.pdf",
-  "text_helper": "Table 34. Low-power mode wakeup timings — section 6.3.5 Wakeup time from low-power mode. Symbol, Symbol, Parameter, Typ @ V = 1.8 V, V = 3.3 V DD DDA, Max, +1 autres.",
+  "text_helper": "Table 34. Low-power mode wakeup timings — section 6.3.5 Wakeup time from low-power mode. Symbol, Parameter, Typ @ V = 1.8 V, V = 3.3 V DD DDA, Max, Unit.",
   "table_content": {
     "headers": [
-      "Symbol",
       "Symbol",
       "Parameter",
       "Typ @ V = 1.8 V, V = 3.3 V DD DDA",
@@ -24,14 +23,12 @@
     "rows": [
       [
         "t WUSTOP",
-        "t WUSTOP",
         "Wakeup from Stop mode",
         "3.9",
         "4.5",
         "µs"
       ],
       [
-        "t WUSLEEP",
         "t WUSLEEP",
         "Wakeup from Sleep mode",
         "6.0",
@@ -40,30 +37,15 @@
       ],
       [
         "t WUPOR",
-        "t WUPOR",
         "Wakeup from Power Off mode",
         "72.8",
         "103",
         "µs"
-      ],
-      [
-        "V HSEL",
-        "OSC_IN input pin low level voltage",
-        "V SS",
-        "-",
-        "0.3V DD",
-        "0.3V DD"
-      ],
-      [
-        "t r(HSE) t f(HSE)",
-        "OSC_IN rise or fall time(1)",
-        "-",
-        "-",
-        "20",
-        "20"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Guaranteed by design. Figure 13. High-speed external clock source AC timing diagram"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

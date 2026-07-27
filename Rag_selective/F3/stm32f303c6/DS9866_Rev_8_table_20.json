@@ -5,13 +5,13 @@
   "table_number": "20",
   "title": "Table 20. Operating conditions at power-up / power-down",
   "page": 52,
-  "section": "6.3.2 Operating conditions at power-up / power-down",
-  "section_title": "Operating conditions at power-up / power-down",
+  "section": "6.3.3 Characteristics of the embedded reset and power-control block",
+  "section_title": "Characteristics of the embedded reset and power-control block",
   "semantic_type": "",
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f303c6.pdf#page=52",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f303c6.pdf",
-  "text_helper": "Table 20. Operating conditions at power-up / power-down — section 6.3.2 Operating conditions at power-up / power-down. Symbol, Parameter, Conditions, Min., Max., +1 autres.",
+  "text_helper": "Table 20. Operating conditions at power-up / power-down — section 6.3.3 Characteristics of the embedded reset and power-control block. Symbol, Parameter, Conditions, Min., Max., +1 autres.",
   "table_content": {
     "headers": [
       "Symbol",
@@ -55,7 +55,11 @@
         "µs/V"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. The PDR detector monitors V and also V (if kept enabled in the option bytes). The POR detector DD DDA",
+      "2. The product behavior is guaranteed by design down to the minimum V value. POR/PDR",
+      "3. Guaranteed by design, not tested in production. 52/124 DS9866 Rev 8"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

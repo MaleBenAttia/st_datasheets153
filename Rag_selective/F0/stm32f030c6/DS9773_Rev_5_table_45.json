@@ -71,7 +71,12 @@
         "mA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Data based on design simulation only. Not tested in production.",
+      "2. The leakage could be higher than the maximum value, if negative current is injected on adjacent pins. Refer to Table 45: I/O current injection susceptibility.",
+      "3. To sustain a voltage higher than V + 0.3 V, the internal pull-up/pull-down resistors must be disabled. DDIOx",
+      "4. Pull-up and pull-down resistors are designed with a true resistance in series with a switchable PMOS/NMOS. This PMOS/NMOS contribution to the series resistance is minimal (~10% order)."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

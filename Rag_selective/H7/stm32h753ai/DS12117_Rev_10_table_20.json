@@ -11,14 +11,14 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32h753ai.pdf#page=111",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h753ai.pdf",
-  "text_helper": "Table 20. Typical and maximum current consumption in Run mode, code with data processing running from flash memory, cache ON, regulator ON — section 6.3.6 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, f rcc_c_ck (MHz), +6 autres.",
+  "text_helper": "Table 20. Typical and maximum current consumption in Run mode, code with data processing running from flash memory, cache ON, regulator ON — section 6.3.6 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, f rcc_c_ck (MHz) / ( M H z ), +6 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions",
       "Conditions",
-      "f rcc_c_ck (MHz)",
+      "f rcc_c_ck (MHz) / ( M H z )",
       "Typ",
       "Max(1) / T = J 25°C",
       "Max(1) / T = J 85°C",
@@ -56,7 +56,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "VOS2 All",
         "VOS2",
         "300",
         "50",
@@ -69,7 +69,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "VOS2",
         "VOS2",
         "216",
         "38",
@@ -82,7 +82,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "All",
         "VOS2",
         "200",
         "36",
@@ -95,7 +95,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals disabled",
+        "peripherals disabled VOS3",
         "VOS3",
         "200",
         "33",
@@ -120,7 +120,7 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode",
+        "Supply",
         "All peripherals disabled",
         "VOS3",
         "168",
@@ -133,7 +133,7 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode",
+        "mode",
         "All peripherals disabled",
         "VOS3",
         "144",
@@ -186,7 +186,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals enabled",
+        "All",
         "VOS1",
         "300",
         "130",
@@ -199,7 +199,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals enabled",
+        "peripherals VOS2 enabled",
         "VOS2",
         "300",
         "120",
@@ -225,7 +225,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "All peripherals enabled",
+        "VOS3",
         "VOS3",
         "200",
         "77",
@@ -236,7 +236,9 @@
         "mA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Guaranteed by characterization results. 112/357 DS12117 Rev 10"
+    ],
     "legend": [
       "running from flash memory, cache ON, regulator ON"
     ],

@@ -11,14 +11,14 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32h745bg.pdf#page=120",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h745bg.pdf",
-  "text_helper": "Table 37. Typical and maximum current consumption in Standby — section 6.3.7 Supply current characteristics. Symbol, Parameter, Conditions / Backup SRAM, Conditions / RTC and LSE, Typ / 1.62 V, +9 autres.",
+  "text_helper": "Table 37. Typical and maximum current consumption in Standby — section 6.3.7 Supply current characteristics. Symbol, Parameter, Conditions / RTC Backup and SRAM LSE / Backup SRAM, Conditions / RTC and LSE, Typ / 1.62 V / 1.62 V 2.4 V 3 V 3.3 V, +9 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
-      "Conditions / Backup SRAM",
+      "Conditions / RTC Backup and SRAM LSE / Backup SRAM",
       "Conditions / RTC and LSE",
-      "Typ / 1.62 V",
+      "Typ / 1.62 V / 1.62 V 2.4 V 3 V 3.3 V",
       "Typ / 2.4 V",
       "Typ / 3 V",
       "Typ / 3.3 V",
@@ -47,8 +47,8 @@
         "µA"
       ],
       [
-        "I DD (Standby)",
-        "Supply current in Standby mode",
+        "I DD",
+        "current in",
         "ON",
         "OFF",
         "3,33",
@@ -63,8 +63,8 @@
         "µA"
       ],
       [
-        "I DD (Standby)",
-        "Supply current in Standby mode",
+        "(Standby)",
+        "Standby",
         "OFF",
         "ON",
         "2,43",
@@ -95,7 +95,9 @@
         "µA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Guaranteed by characterization results, unless otherwise specified."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

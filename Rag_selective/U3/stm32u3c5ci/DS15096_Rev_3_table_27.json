@@ -34,7 +34,7 @@
       ],
       [
         "VDD",
-        "Standard operating voltage",
+        "voltage",
         "HSLV = 1",
         "1.71(2)",
         "-",
@@ -61,7 +61,7 @@
       ],
       [
         "VDDIO2",
-        "Supply voltage for PG[15:2] I/Os",
+        "for PG[15:2] I/Os",
         "At least one I/O in PG[15:2] used, HSLV = 1",
         "1.08",
         "-",
@@ -88,7 +88,7 @@
       ],
       [
         "VDDUSB",
-        "USB supply voltage",
+        "voltage",
         "USB not used",
         "0",
         "-",
@@ -115,7 +115,7 @@
       ],
       [
         "VDDA",
-        "Analog supply voltage",
+        "Analog supply",
         "ADC used",
         "1.62",
         "-",
@@ -156,7 +156,7 @@
         "-0.3",
         "-",
         "Min(min(VDD, VDDA, VDDUSB, VDDIO2) + 3.6, 5.5)(3) (4)",
-        "V"
+        "mA"
       ],
       [
         "VIN",
@@ -196,7 +196,7 @@
       ],
       [
         "VCORE",
-        "Internal regulator ON",
+        "regulator ON",
         "Range 2",
         "0.65",
         "0.75",
@@ -214,7 +214,7 @@
       ],
       [
         "fHCLK",
-        "AHB clock frequency",
+        "frequency",
         "Range 2",
         "-",
         "-",
@@ -231,8 +231,8 @@
         "MHz"
       ],
       [
-        "fPCLKx (x = 1, 2, 3)",
-        "APB1, APB2, APB3 clock frequency",
+        "(x = 1, 2, 3)",
+        "frequency",
         "Range 2",
         "-",
         "-",
@@ -456,7 +456,15 @@
         "110"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. HSLV means high-speed low-voltage mode (refer to the product reference manual).",
+      "2. When RESET is released, the functionality is guaranteed down to VBORx min.",
+      "3. This formula has to be applied only on the power supplies related to the I/O structure described by the pin definition table. The maximum I/O input voltage is the smallest value between Min (VDD, VDDA, VDDUSB, VDDIO2) + 3.6 V, and 5.5 V.",
+      "4. For operation with voltage higher than Min (VDD, VDDA, VDDUSB, VDDIO2) + 0.3 V, the internal pull‑up and pull‑down resistors must be disabled.",
+      "5. The I/Os powered by VSW are: PC13, PC14, PC15",
+      "6. If TA is lower, higher PD values are allowed as long as TJ does not exceed TJmax (see Section 6.11: Package thermal characteristics).",
+      "7. In low‑power dissipation state, TA can be extended to this range as long as TJ does not exceed TJ max (see Section 6.11: Package thermal characteristics)."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

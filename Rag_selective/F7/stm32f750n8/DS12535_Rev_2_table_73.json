@@ -26,7 +26,7 @@
         "f(I2CCLK)",
         "I2CCLK frequency",
         "Standard-mode",
-        "Condition",
+        "Standard-mode",
         "2",
         "MHz"
       ],
@@ -41,7 +41,7 @@
       [
         "f(I2CCLK)",
         "I2CCLK frequency",
-        "Fast-mode",
+        "Analog Filter OFF DNF=1",
         "Analog Filter OFF DNF=1",
         "9",
         "MHz"
@@ -57,21 +57,17 @@
       [
         "f(I2CCLK)",
         "I2CCLK frequency",
-        "Fast-mode Plus",
+        "Analog Filter OFF DNF=1",
         "Analog Filter OFF DNF=1",
         "16",
         "MHz"
-      ],
-      [
-        "t AF",
-        "t AF",
-        "Maximum pulse width of spikes that are suppressed by the analog filter",
-        "Maximum pulse width of spikes that are suppressed by the analog filter",
-        "50(2)",
-        "150(3)"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Guaranteed by characterization results.",
+      "2. Spikes with widths below t are filtered. AF(min)",
+      "3. Spikes with widths above t are not filtered AF(max)"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

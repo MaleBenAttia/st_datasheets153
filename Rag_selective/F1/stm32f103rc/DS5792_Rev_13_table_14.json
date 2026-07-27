@@ -11,7 +11,7 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f103rc.pdf#page=47",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f103rc.pdf",
-  "text_helper": "Table 14. Maximum current consumption in Run mode, code with data processing running from Flash — section 5.3.5 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK, Max(1) / T = 85°C A, +2 autres. (table vide)",
+  "text_helper": "Table 14. Maximum current consumption in Run mode, code with data processing running from Flash — section 5.3.5 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK, Max(1) / T = 85°C A, +2 autres.",
   "table_content": {
     "headers": [
       "Symbol",
@@ -22,8 +22,120 @@
       "Max(1) / T = 105°C A",
       "Unit"
     ],
-    "rows": [],
-    "notes": [],
+    "rows": [
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock(2), all peripherals enabled",
+        "72 MHz",
+        "69",
+        "70",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock(2), all peripherals enabled",
+        "48 MHz",
+        "50",
+        "50.5",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "clock(2), all External",
+        "36 MHz",
+        "39",
+        "39.5",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "peripherals enabled",
+        "24 MHz",
+        "27",
+        "28",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock(2), all peripherals enabled",
+        "16 MHz",
+        "20",
+        "20.5",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in",
+        "External clock(2), all peripherals enabled",
+        "8 MHz",
+        "11",
+        "11.5",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Run mode",
+        "External clock(2), all peripherals disabled",
+        "72 MHz",
+        "37",
+        "37.5",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock(2), all peripherals disabled",
+        "48 MHz",
+        "28",
+        "28.5",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "clock(2), all External",
+        "36 MHz",
+        "22",
+        "22.5",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "peripherals disabled",
+        "24 MHz",
+        "16.5",
+        "17",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock(2), all peripherals disabled",
+        "16 MHz",
+        "12.5",
+        "13",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Run mode",
+        "External clock(2), all peripherals disabled",
+        "8 MHz",
+        "8",
+        "8",
+        "mA"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization results.",
+      "2. External clock is 8 MHz and PLL is on when f > 8 MHz. HCLK"
+    ],
     "legend": [
       "running from Flash"
     ],

@@ -1,9 +1,9 @@
 {
   "table_id": "table_29",
-  "document": "DS12325 Rev 3 - Table 29. Peripheral current consumption in run or Sleep mode.",
+  "document": "DS12325 Rev 3 - Table 29. Peripheral current consumption in run or Sleep mode",
   "rev": "Rev 3",
   "table_number": "29",
-  "title": "Table 29. Peripheral current consumption in run or Sleep mode.",
+  "title": "Table 29. Peripheral current consumption in run or Sleep mode",
   "page": 53,
   "section": "6.3.4 Supply current characteristics",
   "section_title": "Supply current characteristics",
@@ -11,7 +11,7 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32l010k8.pdf#page=53",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l010k8.pdf",
-  "text_helper": "Table 29. Peripheral current consumption in run or Sleep mode. — section 6.3.4 Supply current characteristics. Peripheral, Peripheral, Typical consumption, V = 3.0 V, T = 25 °C / Range 1, V =1.8 V CORE VOS[1:0] =01, Typical consumption, V = 3.0 V, T = 25 °C / Range 2, V =1.5 V CORE VOS[1:0]=10, T...",
+  "text_helper": "Table 29. Peripheral current consumption in run or Sleep mode — section 6.3.4 Supply current characteristics. Peripheral, Peripheral, Typical consumption, V = 3.0 V, T = 25 °C / Range 1, V =1.8 V CORE VOS[1:0] =01, Typical consumption, V = 3.0 V, T = 25 °C / Range 2, V =1.5 V CORE VOS[1:0]=10, Ty...",
   "table_content": {
     "headers": [
       "Peripheral",
@@ -33,7 +33,7 @@
         "µA/MHz (f ) HCLK"
       ],
       [
-        "APB1",
+        "LPUART1",
         "LPUART1",
         "8",
         "6.5",
@@ -42,7 +42,7 @@
         "µA/MHz (f ) HCLK"
       ],
       [
-        "APB1",
+        "I2C1",
         "I2C1",
         "11",
         "9.5",
@@ -51,7 +51,7 @@
         "µA/MHz (f ) HCLK"
       ],
       [
-        "APB1",
+        "LPTIM1",
         "LPTIM1",
         "10",
         "8.5",
@@ -60,7 +60,7 @@
         "µA/MHz (f ) HCLK"
       ],
       [
-        "APB1",
+        "TIM2",
         "TIM2",
         "10.5",
         "8.5",
@@ -69,7 +69,7 @@
         "µA/MHz (f ) HCLK"
       ],
       [
-        "APB1",
+        "USART2",
         "USART2",
         "14.5",
         "12",
@@ -87,7 +87,7 @@
         "µA/MHz (f ) HCLK"
       ],
       [
-        "APB2",
+        "SPI1",
         "SPI1",
         "4",
         "3",
@@ -96,7 +96,7 @@
         "µA/MHz (f ) HCLK"
       ],
       [
-        "APB2",
+        "TIM21 APB2",
         "TIM21",
         "7.5",
         "6",
@@ -105,7 +105,7 @@
         "µA/MHz (f ) HCLK"
       ],
       [
-        "APB2",
+        "DBGMCU",
         "DBGMCU",
         "1.5",
         "1",
@@ -114,7 +114,7 @@
         "µA/MHz (f ) HCLK"
       ],
       [
-        "APB2",
+        "SYSCFG",
         "SYSCFG",
         "2.5",
         "2",
@@ -129,84 +129,20 @@
         "3",
         "2.5",
         "2.5",
-        "µA/MHz (f ) HCLK"
+        "µA/MHz ) (f HCLK"
       ],
       [
-        "Cortex-M0+ I/O port",
+        "GPIOB",
         "GPIOB",
         "3.5",
         "2.5",
         "2",
         "2.5",
-        "µA/MHz (f ) HCLK"
-      ],
-      [
-        "Cortex-M0+ I/O port",
-        "GPIOC",
-        "8.5",
-        "6.5",
-        "5.5",
-        "7",
-        "µA/MHz (f ) HCLK"
-      ],
-      [
-        "Cortex-M0+ I/O port",
-        "GPIOD",
-        "1",
-        "0.5",
-        "0.5",
-        "0.5",
-        "µA/MHz (f ) HCLK"
-      ],
-      [
-        "AHB",
-        "CRC",
-        "1.5",
-        "1",
-        "1",
-        "1",
-        "µA/MHz (f ) HCLK"
-      ],
-      [
-        "AHB",
-        "FLASH(3)",
-        "0",
-        "0",
-        "0",
-        "0",
-        "µA/MHz (f ) HCLK"
-      ],
-      [
-        "AHB",
-        "DMA1",
-        "10",
-        "8",
-        "6",
-        "8.5",
-        "µA/MHz (f ) HCLK"
-      ],
-      [
-        "All enabled",
-        "All enabled",
-        "120",
-        "97",
-        "81",
-        "92",
-        "µA/MHz (f ) HCLK"
-      ],
-      [
-        "PWR",
-        "PWR",
-        "2.5",
-        "2",
-        "2",
-        "1",
-        "µA/MHz (f ) HCLK"
+        ") (f HCLK"
       ]
     ],
     "notes": [
-      "2. HSI oscillator is OFF for this measure.",
-      "3. These values correspond to the Flash memory configuration interface consumption, which is negligible. To assess true Flash memory consumption, compare relevant figures, like for example Table19 and Table21."
+      "2. HSI oscillator is OFF for this measure."
     ],
     "legend": "",
     "semantic_type": "",

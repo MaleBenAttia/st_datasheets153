@@ -44,7 +44,7 @@
       [
         "00",
         "Fmax",
-        "Maximum frequency all I/Os",
+        "Maximum frequency",
         "C = 50 pF, 1.08 V ≤ V < 1.58 V L DDIOx",
         "-",
         "1",
@@ -53,7 +53,7 @@
       [
         "00",
         "Fmax",
-        "Maximum frequency all I/Os",
+        "all I/Os",
         "C = 10 pF, 2.7 V ≤ V ≤ 3.6 V L DDIOx",
         "-",
         "12.5",
@@ -98,7 +98,7 @@
       [
         "00",
         "t/t r f",
-        "Output rise and fall time all I/Os",
+        "Output rise and fall time",
         "C = 50 pF, 1.08 V ≤ V < 1.58 V L DDIOx",
         "-",
         "85",
@@ -107,7 +107,7 @@
       [
         "00",
         "t/t r f",
-        "Output rise and fall time all I/Os",
+        "all I/Os",
         "C = 10 pF, 2.7 V ≤ V ≤ 3.6 V L DDIOx",
         "-",
         "12.5",
@@ -152,7 +152,7 @@
       [
         "01",
         "Fmax",
-        "Maximum frequency all I/Os",
+        "Maximum frequency",
         "C = 30 pF, 1.08 V ≤ V < 1.58 V L DDIOx",
         "-",
         "2.5",
@@ -161,7 +161,7 @@
       [
         "01",
         "Fmax",
-        "Maximum frequency all I/Os",
+        "all I/Os",
         "C = 10 pF, 2.7 V ≤ V ≤ 3.6 V L DDIOx",
         "-",
         "55",
@@ -206,7 +206,7 @@
       [
         "01",
         "t/t r f",
-        "Output rise and fall time all I/Os",
+        "Output rise and fall time",
         "C = 30 pF, 1.08 V ≤ V < 1.58 V L DDIOx",
         "-",
         "18",
@@ -215,7 +215,7 @@
       [
         "01",
         "t/t r f",
-        "Output rise and fall time all I/Os",
+        "all I/Os",
         "C = 10 pF, 2.7 V ≤ V ≤ 3.6 V L DDIOx",
         "-",
         "4.2",
@@ -582,7 +582,10 @@
         "220"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "5. Compensation system enabled.",
+      "6. The fall time is defined between 70% and 30% of the output waveform accordingly to I2C specification. Ta b le 97. Output AC characteristics, HSLV ON (all I/Os except FT_c)(1)(2)(3)(4)"
+    ],
     "legend": [
       "FT_t in V mode, and FT_o I/Os(1))(2)(3)(4)",
       "FT_t in V mode, and FT_o I/Os(1))(2)(3)(4) (continued)",

@@ -11,13 +11,13 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f401cd.pdf#page=68",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f401cd.pdf",
-  "text_helper": "Table 26. Typical and maximum current consumption in Sleep mode — section 6.3.6 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK (MHz), Typ, +4 autres.",
+  "text_helper": "Table 26. Typical and maximum current consumption in Sleep mode — section 6.3.6 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK (MHz) / (MHz), Typ, +4 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions",
-      "f HCLK (MHz)",
+      "f HCLK (MHz) / (MHz)",
       "Typ",
       "Max(1) / T = A 25 °C",
       "Max(1) / T = A 85 °C",
@@ -50,7 +50,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "External clock, all peripherals enabled(2)(3)",
+        "enabled(2)(3) all peripherals",
         "40",
         "8.3",
         "9.0",
@@ -71,7 +71,7 @@
       ],
       [
         "I DD",
-        "Supply current in Sleep mode",
+        "Supply current",
         "External clock, all peripherals enabled(2)(3)",
         "20",
         "5.9",
@@ -82,7 +82,7 @@
       ],
       [
         "I DD",
-        "Supply current in Sleep mode",
+        "in Sleep mode",
         "External clock, all peripherals disabled(3)(4)",
         "84",
         "5.3",
@@ -105,7 +105,7 @@
       [
         "I DD",
         "Supply current in Sleep mode",
-        "External clock, all peripherals disabled(3)(4)",
+        "disabled(3)(4) all peripherals",
         "40",
         "2.9",
         "3.1",
@@ -134,61 +134,6 @@
         "4.1",
         "5.1",
         "mA"
-      ],
-      [
-        "I DD_STO P",
-        "Main regulator usage",
-        "Main regulator usage",
-        "Flash in Stop mode, all oscillators OFF, no independent watchdog",
-        "Flash in Stop mode, all oscillators OFF, no independent watchdog",
-        "109",
-        "135",
-        "440",
-        "650"
-      ],
-      [
-        "None",
-        "Low power regulator usage",
-        "Low power regulator usage",
-        "None",
-        "None",
-        "41",
-        "65",
-        "310",
-        "530(2)"
-      ],
-      [
-        "None",
-        "Main regulator usage",
-        "Main regulator usage",
-        "Flash in Deep power down mode, all oscillators OFF, no independent watchdog",
-        "Flash in Deep power down mode, all oscillators OFF, no independent watchdog",
-        "72",
-        "95",
-        "345",
-        "530"
-      ],
-      [
-        "None",
-        "Low power regulator usage",
-        "Low power regulator usage",
-        "None",
-        "None",
-        "12",
-        "36",
-        "260",
-        "510(2)"
-      ],
-      [
-        "None",
-        "Low power low voltage regulator usage",
-        "Low power low voltage regulator usage",
-        "None",
-        "None",
-        "10",
-        "27",
-        "230",
-        "460"
       ]
     ],
     "notes": [

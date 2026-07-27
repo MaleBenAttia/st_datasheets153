@@ -11,13 +11,13 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f401cb.pdf#page=66",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f401cb.pdf",
-  "text_helper": "Table 24. Typical and maximum current consumption in run mode, code with data processing (ART accelerator disabled) running from Flash memory. — section 6.3.6 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK (MHz), Typ, +5 autres.",
+  "text_helper": "Table 24. Typical and maximum current consumption in run mode, code with data processing (ART accelerator disabled) running from Flash memory. — section 6.3.6 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK (MHz) / (MHz), Typ, +5 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions",
-      "f HCLK (MHz)",
+      "f HCLK (MHz) / (MHz)",
       "Typ",
       "Max(1) / T = A 25°C",
       "Max(1) / T = A 85°C",
@@ -41,7 +41,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "External clock, all peripherals enabled(2)(3)",
+        "External clock,",
         "60",
         "21.4",
         "22",
@@ -53,7 +53,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "External clock, all peripherals enabled(2)(3)",
+        "all peripherals",
         "40",
         "15.6",
         "16",
@@ -76,7 +76,7 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode",
+        "Supply current",
         "External clock, all peripherals enabled(2)(3)",
         "20",
         "10.0",
@@ -88,7 +88,7 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode",
+        "in Run mode",
         "External clock, all peripherals disabled(3)",
         "84",
         "19.9",
@@ -113,7 +113,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "External clock, all peripherals disabled(3)",
+        "disabled(3) all peripherals",
         "40",
         "10.4",
         "11",
@@ -147,7 +147,11 @@
         "mA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Guaranteed by characterization, unless otherwise specified.",
+      "2. Add an additional power consumption of 1.6mA per ADC for the analog part. In applications, this consumption occurs only while the ADC is ON (ADON bit is set in the ADC_CR2 register).",
+      "3. When the ADC is ON (ADON bit set in the ADC_CR2), add an additional power consumption of 1.6 mA per ADC for the analog part."
+    ],
     "legend": [
       "(ART accelerator disabled) running from Flash memory"
     ],

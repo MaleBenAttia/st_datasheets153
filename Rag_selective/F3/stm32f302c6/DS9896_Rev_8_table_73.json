@@ -56,7 +56,7 @@
       ],
       [
         "VI OFFSET",
-        "Input offset voltage",
+        "range Input offset",
         "Maximum calibration range",
         "All voltage/Temp.",
         "-",
@@ -66,7 +66,7 @@
       ],
       [
         "VI OFFSET",
-        "Input offset voltage",
+        "voltage After offset calibration",
         "After offset calibration",
         "25°C, No Load on output.",
         "-",
@@ -243,182 +243,10 @@
         "2.8",
         "5",
         "µs"
-      ],
-      [
-        "t S_OPAM_VOUT",
-        "ADC sampling time when reading the OPAMP output",
-        "ADC sampling time when reading the OPAMP output",
-        "ADC sampling time when reading the OPAMP output",
-        "400",
-        "-",
-        "-",
-        "ns"
-      ],
-      [
-        "PGA gain",
-        "Non inverting gain value",
-        "Non inverting gain value",
-        "-",
-        "-",
-        "2",
-        "-",
-        "-"
-      ],
-      [
-        "None",
-        "None",
-        "None",
-        "None",
-        "-",
-        "4",
-        "-",
-        "None"
-      ],
-      [
-        "None",
-        "None",
-        "None",
-        "None",
-        "-",
-        "8",
-        "-",
-        "None"
-      ],
-      [
-        "None",
-        "None",
-        "None",
-        "None",
-        "-",
-        "16",
-        "-",
-        "None"
-      ],
-      [
-        "R network",
-        "R2/R1 internal resistance values in PGA mode (3)",
-        "R2/R1 internal resistance values in PGA mode (3)",
-        "Gain=2",
-        "-",
-        "5.4/5.4",
-        "-",
-        "kΩ"
-      ],
-      [
-        "None",
-        "None",
-        "None",
-        "Gain=4",
-        "-",
-        "16.2/5.4",
-        "-",
-        "None"
-      ],
-      [
-        "None",
-        "None",
-        "None",
-        "Gain=8",
-        "-",
-        "37.8/5.4",
-        "-",
-        "None"
-      ],
-      [
-        "None",
-        "None",
-        "None",
-        "Gain=16",
-        "-",
-        "40.5/2.7",
-        "-",
-        "None"
-      ],
-      [
-        "PGA gain error",
-        "PGA gain error",
-        "PGA gain error",
-        "-",
-        "-1%",
-        "-",
-        "1%",
-        "%"
-      ],
-      [
-        "I bias",
-        "OPAMP input bias current",
-        "OPAMP input bias current",
-        "-",
-        "-",
-        "-",
-        "±0.2(4)",
-        "µA"
-      ],
-      [
-        "PGA BW",
-        "PGA bandwidth for different non inverting gain",
-        "PGA bandwidth for different non inverting gain",
-        "PGA Gain = 2, Cload = 50pF, Rload = 4 KΩ",
-        "-",
-        "4",
-        "-",
-        "MHz"
-      ],
-      [
-        "None",
-        "None",
-        "None",
-        "PGA Gain = 4, Cload = 50pF, Rload = 4 KΩ",
-        "-",
-        "2",
-        "-",
-        "None"
-      ],
-      [
-        "None",
-        "None",
-        "None",
-        "PGA Gain = 8, Cload = 50pF, Rload = 4 KΩ",
-        "-",
-        "1",
-        "-",
-        "None"
-      ],
-      [
-        "None",
-        "None",
-        "None",
-        "PGA Gain = 16, Cload = 50pF, Rload = 4 KΩ",
-        "-",
-        "0.5",
-        "-",
-        "None"
-      ],
-      [
-        "V n",
-        "Voltage noise density",
-        "Voltage noise density",
-        "@ 1kHz, Output loaded with 4 KΩ",
-        "-",
-        "109",
-        "-",
-        "nV ----------- Hz"
-      ],
-      [
-        "None",
-        "None",
-        "None",
-        "@ 10kHz, Output loaded with 4 KΩ",
-        "-",
-        "43",
-        "-",
-        "None"
       ]
     ],
     "notes": [
-      "2. The saturation voltage can also be limited by the I (drive current). LOAD",
-      "3. R2 is the internal resistance between OPAMP output and OPAMP inverting input. R1 is the internal resistance between OPAMP inverting input and ground. The PGA gain =1+R2/R1.",
-      "4. Mostly TTa I/O leakage, when used in analog mode. DS9896 Rev 8 115/139"
+      "2. The saturation voltage can also be limited by the I (drive current). LOAD"
     ],
     "legend": "",
     "semantic_type": "",

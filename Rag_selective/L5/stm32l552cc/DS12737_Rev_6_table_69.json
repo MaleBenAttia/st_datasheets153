@@ -43,7 +43,7 @@
       [
         "IDD(Run)",
         "Supply current in Run mode",
-        "fHCLK = fHSE up to 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disabled",
+        "80 MHz 72 MHz 64 MHz 48 MHz fHCLK = fHSE up to 48 MHz 32 MHz included, bypass mode PLL ON 26 KHz above 48 MHz all peripherals VDD12=1.1V disabled 16 MHz 8 MHz 4 MHz 2 MHz 1 MHz 100 KHz",
         "VDD12=1.1V",
         "80 MHz",
         "4.11",
@@ -56,7 +56,7 @@
       [
         "IDD(Run)",
         "Supply current in Run mode",
-        "fHCLK = fHSE up to 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disabled",
+        "72 MHz",
         "VDD12=1.1V",
         "72 MHz",
         "3.71",
@@ -69,7 +69,7 @@
       [
         "IDD(Run)",
         "Supply current in Run mode",
-        "fHCLK = fHSE up to 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disabled",
+        "64 MHz",
         "VDD12=1.1V",
         "64 MHz",
         "3.31",
@@ -82,7 +82,7 @@
       [
         "IDD(Run)",
         "Supply current in Run mode",
-        "fHCLK = fHSE up to 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disabled",
+        "48 MHz",
         "VDD12=1.1V",
         "48 MHz",
         "2.51",
@@ -95,7 +95,7 @@
       [
         "IDD(Run)",
         "Supply current in Run mode",
-        "fHCLK = fHSE up to 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disabled",
+        "fHCLK = fHSE up to 48 MHz 32 MHz",
         "VDD12=1.1V",
         "32 MHz",
         "1.71",
@@ -107,8 +107,8 @@
       ],
       [
         "IDD(Run)",
-        "Supply current in Run mode",
-        "fHCLK = fHSE up to 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disabled",
+        "mode",
+        "26 KHz above 48 MHz all peripherals",
         "VDD12=1.1V",
         "26 KHz",
         "1.15",
@@ -121,7 +121,7 @@
       [
         "IDD(Run)",
         "Supply current in Run mode",
-        "fHCLK = fHSE up to 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disabled",
+        "disabled 16 MHz",
         "VDD12=1.1V",
         "16 MHz",
         "0.741",
@@ -134,7 +134,7 @@
       [
         "IDD(Run)",
         "Supply current in Run mode",
-        "fHCLK = fHSE up to 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disabled",
+        "8 MHz",
         "VDD12=1.1V",
         "8 MHz",
         "0.41",
@@ -147,7 +147,7 @@
       [
         "IDD(Run)",
         "Supply current in Run mode",
-        "fHCLK = fHSE up to 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disabled",
+        "4 MHz",
         "VDD12=1.1V",
         "4 MHz",
         "0.241",
@@ -160,7 +160,7 @@
       [
         "IDD(Run)",
         "Supply current in Run mode",
-        "fHCLK = fHSE up to 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disabled",
+        "2 MHz",
         "VDD12=1.1V",
         "2 MHz",
         "0.158",
@@ -173,7 +173,7 @@
       [
         "IDD(Run)",
         "Supply current in Run mode",
-        "fHCLK = fHSE up to 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disabled",
+        "1 MHz",
         "VDD12=1.1V",
         "1 MHz",
         "0.115",
@@ -186,7 +186,7 @@
       [
         "IDD(Run)",
         "Supply current in Run mode",
-        "fHCLK = fHSE up to 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disabled",
+        "100 KHz",
         "VDD12=1.1V",
         "100 KHz",
         "0.079",
@@ -197,7 +197,9 @@
         "mA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. All values are obtained by calculation based on measurements done with internal voltage regulator and using following parameters: SMPS input = 3.3 V, SMPS efficiency = 85%."
+    ],
     "legend": [
       "and power supplied by external SMPS"
     ],

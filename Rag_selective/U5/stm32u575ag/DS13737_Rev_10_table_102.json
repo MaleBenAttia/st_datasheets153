@@ -11,10 +11,9 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32u575ag.pdf#page=239",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u575ag.pdf",
-  "text_helper": "Table 102. Analog switches booster characteristics — section 5.3.18 Analog switches booster. Symbol, Symbol, Parameter, Min, Typ, +2 autres.",
+  "text_helper": "Table 102. Analog switches booster characteristics — section 5.3.18 Analog switches booster. Symbol, Parameter, Min, Typ, Max, +1 autres.",
   "table_content": {
     "headers": [
-      "Symbol",
       "Symbol",
       "Parameter",
       "Min",
@@ -25,7 +24,6 @@
     "rows": [
       [
         "V DD",
-        "V DD",
         "Supply voltage",
         "1.6",
         "1.8",
@@ -33,7 +31,6 @@
         "V"
       ],
       [
-        "t SU(BOOST)",
         "t SU(BOOST)",
         "Booster startup time",
         "-",
@@ -43,105 +40,15 @@
       ],
       [
         "I DD(BOOST)",
-        "I DD(BOOST)",
         "Booster consumption",
         "-",
         "-",
         "125",
         "µA"
-      ],
-      [
-        "V REF+",
-        "Positive reference voltage",
-        "ADD V 2 ≥ V",
-        "2",
-        "-",
-        "V DDA",
-        "V DDA"
-      ],
-      [
-        "V REF+",
-        "Positive reference voltage",
-        "V < 2 V DDA",
-        "V DDA",
-        "V DDA",
-        "V DDA",
-        "V DDA"
-      ],
-      [
-        "V REF-",
-        "Negative reference voltage",
-        "-",
-        "V SSA",
-        "V SSA",
-        "V SSA",
-        "V SSA"
-      ],
-      [
-        "f s",
-        "Sampling rate",
-        "Resolution = 12 bits",
-        "0.25",
-        "-",
-        "2.75",
-        "2.75"
-      ],
-      [
-        "f s",
-        "Sampling rate",
-        "Resolution = 10 bits",
-        "0.28",
-        "-",
-        "3.05",
-        "3.05"
-      ],
-      [
-        "f s",
-        "Sampling rate",
-        "Resolution = 8 bits",
-        "0.31",
-        "-",
-        "3.44",
-        "3.44"
-      ],
-      [
-        "R (5) AIN",
-        "External input impedance",
-        "Resolution = 12 bits T = 130 °C j",
-        "-",
-        "-",
-        "1000",
-        "1000"
-      ],
-      [
-        "R (5) AIN",
-        "External input impedance",
-        "Resolution = 10 bits T = 130 °C j",
-        "-",
-        "-",
-        "4700",
-        "4700"
-      ],
-      [
-        "R (5) AIN",
-        "External input impedance",
-        "Resolution = 8 bits T = 130 °C j",
-        "-",
-        "-",
-        "22000",
-        "22000"
-      ],
-      [
-        "t OFF_CAL",
-        "Offset calibration time",
-        "-",
-        "885",
-        "885",
-        "885",
-        "885"
       ]
     ],
     "notes": [
+      "1. Specified by design. Not tested in production.",
       "3. The external capacitor on NRST must be placed as close as possible to the device."
     ],
     "legend": "",

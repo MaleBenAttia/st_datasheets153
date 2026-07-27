@@ -34,8 +34,8 @@
       ],
       [
         "CMD, D inputs (referenced to CK) in MMC and SD HS mode",
-        "CMD, D inputs (referenced to CK) in MMC and SD HS mode",
-        "CMD, D inputs (referenced to CK) in MMC and SD HS mode",
+        "(referenced to CK) in MMC and SD",
+        "mode",
         "CMD, D inputs (referenced to CK) in MMC and SD HS mode",
         "CMD, D inputs (referenced to CK) in MMC and SD HS mode",
         "CMD, D inputs (referenced to CK) in MMC and SD HS mode",
@@ -61,8 +61,8 @@
       ],
       [
         "CMD, D outputs (referenced to CK) in MMC and SD HS mode",
-        "CMD, D outputs (referenced to CK) in MMC and SD HS mode",
-        "CMD, D outputs (referenced to CK) in MMC and SD HS mode",
+        "(referenced to CK) in MMC and SD",
+        "HS mode",
         "CMD, D outputs (referenced to CK) in MMC and SD HS mode",
         "CMD, D outputs (referenced to CK) in MMC and SD HS mode",
         "CMD, D outputs (referenced to CK) in MMC and SD HS mode",
@@ -88,7 +88,7 @@
       ],
       [
         "CMD, D inputs (referenced to CK) in SD default mode",
-        "CMD, D inputs (referenced to CK) in SD default mode",
+        "(referenced to CK) in SD default",
         "CMD, D inputs (referenced to CK) in SD default mode",
         "CMD, D inputs (referenced to CK) in SD default mode",
         "CMD, D inputs (referenced to CK) in SD default mode",
@@ -141,7 +141,12 @@
         "ns"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Guaranteed by characterization results.",
+      "2. C = 20pF. LOAD",
+      "3. Guaranteed by design.",
+      "4. No external termination series resistors are required on USB_DP (D+) and USB_DM (D-); the matching impedance is already included in the embedded driver."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

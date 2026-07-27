@@ -48,7 +48,7 @@
       ],
       [
         "f EXT",
-        "Timer external clock frequency on CH1 to CH4",
+        "on CH1 to CH4",
         "f = 64 MHz TIMxCLK",
         "0",
         "40",
@@ -88,14 +88,17 @@
       ],
       [
         "t MAX_COUNT",
-        "Maximum possible count with 32-bit counter",
+        "32-bit counter",
         "f = 64 MHz TIMxCLK",
         "-",
         "67.10",
         "s"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. The exact timings further depend on the phase of the APB interface clock versus the LSI clock, which causes an uncertainty of one RC period.",
+      "2. Spikes shorter than the limiting duration are suppressed. SPI/I2S characteristics"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

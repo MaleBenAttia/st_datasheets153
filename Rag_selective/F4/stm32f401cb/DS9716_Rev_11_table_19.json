@@ -1,9 +1,9 @@
 {
   "table_id": "table_19",
-  "document": "DS9716 Rev 11 - Table 19. Embedded reset and power control block characteristics.",
+  "document": "DS9716 Rev 11 - Table 19. Embedded reset and power control block characteristics",
   "rev": "Rev 11",
   "table_number": "19",
-  "title": "Table 19. Embedded reset and power control block characteristics.",
+  "title": "Table 19. Embedded reset and power control block characteristics",
   "page": 62,
   "section": "6.3.5 Embedded reset and power control block characteristics",
   "section_title": "Embedded reset and power control block characteristics",
@@ -11,7 +11,7 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f401cb.pdf#page=62",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f401cb.pdf",
-  "text_helper": "Table 19. Embedded reset and power control block characteristics. — section 6.3.5 Embedded reset and power control block characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "text_helper": "Table 19. Embedded reset and power control block characteristics — section 6.3.5 Embedded reset and power control block characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
   "table_content": {
     "headers": [
       "Symbol",
@@ -88,7 +88,7 @@
       ],
       [
         "V PVD",
-        "Programmable voltage detector level selection",
+        "Programmable voltage",
         "PLS[2:0]=011 (falling edge)",
         "2.44",
         "2.51",
@@ -97,7 +97,7 @@
       ],
       [
         "V PVD",
-        "Programmable voltage detector level selection",
+        "detector level selection",
         "PLS[2:0]=100 (rising edge)",
         "2.70",
         "2.76",
@@ -187,7 +187,7 @@
       ],
       [
         "V POR/PDR",
-        "Power-on/power-down reset threshold",
+        "reset threshold",
         "Rising edge",
         "1.64",
         "1.72",
@@ -294,7 +294,11 @@
         "µC"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Guaranteed by characterization, unless otherwise specified.",
+      "2. When analog peripheral blocks such as ADC, HSE, LSE, HSI, or LSI are ON, an additional power consumption has to be considered.",
+      "3. When the ADC is ON (ADON bit set in the ADC_CR2 register), add an additional power consumption of 1.6mA for the analog part."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

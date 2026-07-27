@@ -11,17 +11,17 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32l072cb.pdf#page=18",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32l072cb.pdf",
-  "text_helper": "Table 5. Functionalities depending on the working mode (from Run/active down to standby) — section 3.1 Low-power modes. IPs, Run/Active, Sleep, Low- power run, Low- power sleep, +4 autres.",
+  "text_helper": "Table 5. Functionalities depending on the working mode (from Run/active down to standby) — section 3.1 Low-power modes. IPs, Run/Active, Sleep, Low- power run / power run, Low- power sleep / power sleep, +4 autres.",
   "table_content": {
     "headers": [
       "IPs",
       "Run/Active",
       "Sleep",
-      "Low- power run",
-      "Low- power sleep",
-      "Stop",
+      "Low- power run / power run",
+      "Low- power sleep / power sleep",
       "Stop / Wakeup capability",
-      "Standby Wakeup capability",
+      "Stop / Wakeup capability",
+      "Standby Wakeup capability / Wakeup capability",
       "Standby Wakeup capability / Wakeup capability"
     ],
     "rows": [
@@ -32,9 +32,9 @@
         "Y",
         "--",
         "--",
-        "Wakeup capability",
         "--",
-        "Wakeup capability"
+        "--",
+        "--"
       ],
       [
         "Flash memory",
@@ -43,9 +43,9 @@
         "O",
         "O",
         "--",
-        "Wakeup capability",
         "--",
-        "Wakeup capability"
+        "--",
+        "--"
       ],
       [
         "RAM",
@@ -54,9 +54,9 @@
         "Y",
         "Y",
         "Y",
-        "Wakeup capability",
+        "Y",
         "--",
-        "Wakeup capability"
+        "--"
       ],
       [
         "Backup registers",
@@ -65,9 +65,9 @@
         "Y",
         "Y",
         "Y",
-        "Wakeup capability",
         "Y",
-        "Wakeup capability"
+        "Y",
+        "Y"
       ],
       [
         "EEPROM",
@@ -76,9 +76,9 @@
         "O",
         "O",
         "--",
-        "Wakeup capability",
         "--",
-        "Wakeup capability"
+        "--",
+        "--"
       ],
       [
         "Brown-out reset (BOR)",
@@ -453,72 +453,6 @@
         "1 µA (with RTC) V =3.0 V DD",
         "0.85 µA (with RTC) V =3.0 V DD",
         "0.85 µA (with RTC) V =3.0 V DD"
-      ],
-      [
-        "Interconnect source",
-        "Interconnect destination",
-        "Interconnect action",
-        "Run",
-        "Sleep",
-        "Low- power run",
-        "Low- power sleep",
-        "Stop",
-        "Stop"
-      ],
-      [
-        "None",
-        "LPTIM",
-        "Timer input channel, trigger from analog signals comparison",
-        "Y",
-        "Y",
-        "Y",
-        "Y",
-        "Y",
-        "Y"
-      ],
-      [
-        "None",
-        "LPTIM",
-        "Timer triggered by RTC event",
-        "Y",
-        "Y",
-        "Y",
-        "Y",
-        "Y",
-        "Y"
-      ],
-      [
-        "None",
-        "TIM3",
-        "USB_SOF is channel input for calibration",
-        "Y",
-        "Y",
-        "-",
-        "-",
-        "-",
-        "-"
-      ],
-      [
-        "None",
-        "LPTIM",
-        "Timer input channel and trigger",
-        "Y",
-        "Y",
-        "Y",
-        "Y",
-        "Y",
-        "Y"
-      ],
-      [
-        "None",
-        "ADC,DAC",
-        "Conversion trigger",
-        "Y",
-        "Y",
-        "Y",
-        "Y",
-        "-",
-        "-"
       ]
     ],
     "notes": [

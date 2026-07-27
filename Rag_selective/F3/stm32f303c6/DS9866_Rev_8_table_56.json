@@ -5,13 +5,13 @@
   "table_number": "56",
   "title": "Table 56. IWDG min./max. timeout period at 40 kHz (LSI)",
   "page": 85,
-  "section": "6.3.16 Timer characteristics",
-  "section_title": "Timer characteristics",
+  "section": "6.3.17 Communication interfaces",
+  "section_title": "Communication interfaces",
   "semantic_type": "",
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f303c6.pdf#page=85",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f303c6.pdf",
-  "text_helper": "Table 56. IWDG min./max. timeout period at 40 kHz (LSI) — section 6.3.16 Timer characteristics. Prescaler divider, PR[2:0] bits, Min. timeout (ms) RL[11:0] = 0x000, Max. timeout (ms) RL[11:0] = 0xFFF.",
+  "text_helper": "Table 56. IWDG min./max. timeout period at 40 kHz (LSI) — section 6.3.17 Communication interfaces. Prescaler divider, PR[2:0] bits, Min. timeout (ms) RL[11:0] = 0x000, Max. timeout (ms) RL[11:0] = 0xFFF.",
   "table_content": {
     "headers": [
       "Prescaler divider",
@@ -63,7 +63,10 @@
         "26214.4"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Data based on characterization results, not tested in production.",
+      "2. Maximum frequency in Slave transmitter mode is determined by the sum of tv(SO) and tsu(MI) which has to fit into SCK low or high phase preceding the SCK sampling edge. This value can be achieved when the SPI communicates with a master"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

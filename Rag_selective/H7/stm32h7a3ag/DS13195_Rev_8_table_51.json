@@ -79,7 +79,7 @@
       ],
       [
         "ΔVDD(HSI48)(2)",
-        "HSI48 oscillator frequency drift with VDD (reference is 3.3 V)",
+        "3 . 3 V )",
         "VDD = 1.62 to 3.6 V",
         "-",
         "0.05",
@@ -121,58 +121,12 @@
         "± 0.25",
         "-",
         "ns"
-      ],
-      [
-        "TRIM",
-        "HSI user trimming step",
-        "Trimming is 128, 256 and 384(3)",
-        "-5.2",
-        "-1.8",
-        "-",
-        "-"
-      ],
-      [
-        "TRIM",
-        "HSI user trimming step",
-        "Trimming is 64, 192, 320 and 448(3)",
-        "-1.4",
-        "-0.8",
-        "-",
-        "-"
-      ],
-      [
-        "TRIM",
-        "HSI user trimming step",
-        "Other trimming are a multiple of 32 (not including multiple of 64 and 128)(3)",
-        "-0.6",
-        "-0.25",
-        "-",
-        "-"
-      ],
-      [
-        "ΔTEMP (HSI)",
-        "HSI oscillator frequency drift over temperature (reference is 64 MHz)",
-        "TJ=-40 to TJmax °C",
-        "-2(4)",
-        "-",
-        "1(4)",
-        "1(4)"
-      ],
-      [
-        "tstab(HSI)",
-        "HSI oscillator stabilization time",
-        "at 5 % of target frequency",
-        "-",
-        "-",
-        "4",
-        "4"
       ]
     ],
     "notes": [
       "1. An external resistor is not required between OSC32_IN and OSC32_OUT and it is forbidden to add one.",
       "2. Guaranteed by design.",
       "3. Guaranteed by characterization results.",
-      "4. ΔfHSI = ACCHSI48_REL + ΔVDD",
       "6. Jitter measurements are performed without clock sources activated in parallel. DS13195 - Rev 8 page 109/237"
     ],
     "legend": "",

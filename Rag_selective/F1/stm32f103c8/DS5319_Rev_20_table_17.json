@@ -71,7 +71,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "External clock(3)",
+        "clock(3) External",
         "8 MHz",
         "5.5",
         "4.6",
@@ -124,7 +124,7 @@
       ],
       [
         "I DD",
-        "Supply current in Run mode",
+        "Run mode",
         "Running on high speed internal RC (HSI), AHB prescaler used to reduce the frequency",
         "64 MHz",
         "31.4",
@@ -152,7 +152,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "Running on high speed internal RC (HSI), AHB prescaler used to reduce the frequency",
+        "Running on high",
         "24 MHz",
         "12.2",
         "9.5",
@@ -161,7 +161,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "Running on high speed internal RC (HSI), AHB prescaler used to reduce the frequency",
+        "speed internal RC",
         "16 MHz",
         "8.5",
         "6.8",
@@ -170,7 +170,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "Running on high speed internal RC (HSI), AHB prescaler used to reduce the frequency",
+        "prescaler used to",
         "8 MHz",
         "4.9",
         "4.0",
@@ -179,7 +179,7 @@
       [
         "I DD",
         "Supply current in Run mode",
-        "Running on high speed internal RC (HSI), AHB prescaler used to reduce the frequency",
+        "reduce the",
         "4 MHz",
         "2.7",
         "2.2",
@@ -222,7 +222,11 @@
         "mA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Typical values are measures at T = 25°C, V = 3.3 V. A DD",
+      "2. Add an additional power consumption of 0.8 mA per ADC for the analog part. In applications, this consumption occurs only while the ADC is on (ADON bit is set in the ADC_CR2 register).",
+      "3. External clock is 8 MHz and PLL is on when f > 8 MHz. HCLK"
+    ],
     "legend": [
       "running from Flash"
     ],

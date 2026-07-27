@@ -119,18 +119,18 @@
           "Timers",
           "Advanced control",
           "1 (16-bit)",
+          "(16-bit)(1) 4 -",
           "1 (16-bit)",
-          "1 (16-bit)",
-          "1 (16-bit)",
-          "1 (16-bit)",
-          "1 (16-bit)",
-          "1 (16-bit)"
+          "1 (16-bit) (16-bit)(2) 1",
+          "5 2 (16-bit)",
+          "(16-bit)(2) 1",
+          "2 (16-bit)"
         ],
         [
-          "Timers",
+          "Timers General purpose",
           "General purpose",
           "4 (16-bit)(1)",
-          "4 (16-bit)(1)",
+          "(16-bit)(1) 4",
           "4 (16-bit)(1)",
           "5 (16-bit)",
           "5 (16-bit)",
@@ -138,7 +138,7 @@
           "5 (16-bit)"
         ],
         [
-          "Timers",
+          "Basic",
           "Basic",
           "-",
           "-",
@@ -152,15 +152,15 @@
           "Comm. interfaces",
           "SPI",
           "1(3)",
+          "1(3) 1(4) 1(5)",
           "1(3)",
-          "1(3)",
           "2",
-          "2",
-          "2",
+          "2 2 6",
+          "2 2 2(6)",
           "2"
         ],
         [
-          "Comm. interfaces",
+          "I2C interfaces",
           "I2C",
           "1(4)",
           "1(4)",
@@ -171,7 +171,7 @@
           "2"
         ],
         [
-          "Comm. interfaces",
+          "USART",
           "USART",
           "1(5)",
           "1(5)",
@@ -230,9 +230,9 @@
           "Operating temperature",
           "Ambient operating temperature: -40°C to 85°C Junction temperature: -40°C to 105°C",
           "Ambient operating temperature: -40°C to 85°C Junction temperature: -40°C to 105°C",
+          "Junction",
           "Ambient operating temperature: -40°C to 85°C Junction temperature: -40°C to 105°C",
-          "Ambient operating temperature: -40°C to 85°C Junction temperature: -40°C to 105°C",
-          "Ambient operating temperature: -40°C to 85°C Junction temperature: -40°C to 105°C",
+          "-40°C to to 105°C",
           "Ambient operating temperature: -40°C to 85°C Junction temperature: -40°C to 105°C",
           "Ambient operating temperature: -40°C to 85°C Junction temperature: -40°C to 105°C"
         ],
@@ -293,7 +293,10 @@
           "0x1FFF F7B8 - 0x1FFF F7B9"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Available on STM32F030x8 and STM32F030xC devices only.",
+        "2. Available on STM32F030xC devices only"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -331,7 +334,10 @@
           "0x1FFF F7BA - 0x1FFF F7BB"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Available on STM32F030x8 and STM32F030xC devices only.",
+        "2. Available on STM32F030xC devices only"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -389,43 +395,13 @@
           "-"
         ],
         [
-          "General purpose",
+          "General",
           "TIM14",
           "16-bit",
           "Up",
           "Any integer between 1 and 65536",
           "No",
           "1",
-          "-"
-        ],
-        [
-          "General purpose",
-          "TIM15(1)",
-          "16-bit",
-          "Up",
-          "Any integer between 1 and 65536",
-          "Yes",
-          "2",
-          "1"
-        ],
-        [
-          "General purpose",
-          "TIM16, TIM17",
-          "16-bit",
-          "Up",
-          "Any integer between 1 and 65536",
-          "Yes",
-          "1",
-          "1"
-        ],
-        [
-          "Basic",
-          "TIM6,(1) TIM7(2)",
-          "16-bit",
-          "Up",
-          "Any integer between 1 and 65536",
-          "Yes",
-          "0",
           "-"
         ]
       ],
@@ -582,10 +558,10 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f030c6.pdf#page=23",
-    "text_helper": "Table 8. STM32F0x0 USART implementation — section 3.14 Universal synchronous/asynchronous receiver/transmitter. USART modes/ features, STM32F030x4 STM32F030x6 / USART1, STM32F030x8 / USART1, STM32F030x8 / USART2, STM32F030xC / USART1 USART2 USART3, +3 autres.",
+    "text_helper": "Table 8. STM32F0x0 USART implementation — section 3.14 Universal synchronous/asynchronous receiver/transmitter. USART modes/ features / features, STM32F030x4 STM32F030x6 / USART1, STM32F030x8 / USART1, STM32F030x8 / USART2, STM32F030xC / USART1 USART2 USART3, +3 autres.",
     "table_content": {
       "headers": [
-        "USART modes/ features",
+        "USART modes/ features / features",
         "STM32F030x4 STM32F030x6 / USART1",
         "STM32F030x8 / USART1",
         "STM32F030x8 / USART2",
@@ -728,7 +704,7 @@
         [
           "USART data length",
           "8 and 9 bits",
-          "8 and 9 bits",
+          "and 9 bits",
           "8 and 9 bits",
           "7, 8 and 9 bits",
           "7, 8 and 9 bits",
@@ -833,7 +809,7 @@
           "Pin name",
           "Pin name",
           "Unless otherwise specified in brackets below the pin name, the pin function during and after reset is the same as the actual pin name",
-          "Unless otherwise specified in brackets below the pin name, the pin function during and after reset is the same as the actual pin name"
+          "specified in brackets below the pin name, the pin function during and as the actual pin name"
         ],
         [
           "Pin type",
@@ -893,19 +869,13 @@
           "Notes",
           "Notes",
           "Unless otherwise specified by a note, all I/Os are set as floating inputs during and after reset.",
-          "Unless otherwise specified by a note, all I/Os are set as floating inputs during and after reset."
+          "specified by a note, all I/Os are set as floating inputs during and after"
         ],
         [
           "Pin functions",
           "Alternate functions",
           "Functions selected through GPIOx_AFR registers",
-          "Functions selected through GPIOx_AFR registers"
-        ],
-        [
-          "Pin functions",
-          "Additional functions",
-          "Functions directly selected/enabled through peripheral registers",
-          "Functions directly selected/enabled through peripheral registers"
+          "through GPIOx_AFR registers selected/enabled through peripheral registers"
         ]
       ],
       "notes": [],
@@ -940,8 +910,8 @@
         "Pin number / LQFP32",
         "Pin number / TSSOP20",
         "Pin name (function after reset)",
-        "Pin type",
-        "I/O structure",
+        "Pin type / epyt niP",
+        "I/O structure / O/I",
         "Notes",
         "Pin functions / Alternate functions",
         "Pin functions / Additional functions"
@@ -2100,7 +2070,11 @@
           "USART2_RX(1)(3)"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. This feature is available on STM32F030xC devices.",
+        "2. This feature is available on STM32F030x4 and STM32F030x6 devices.",
+        "3. This feature is available on STM32F030x8 devices."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -2469,7 +2443,10 @@
           "-"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Available on STM32F030xC devices only.",
+        "2. Default alternate functions for STM32F030x4/x6/x8 devices (they do not have the GPIOC_AFR registers)."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -3034,7 +3011,7 @@
           "V"
         ],
         [
-          "V (2) IN",
+          "(2)",
           "Input voltage on TTa pins",
           "V - 0.3 SS",
           "4.0",
@@ -3072,7 +3049,7 @@
           "V ESD(HBM)",
           "Electrostatic discharge voltage (human body model)",
           "see Section 6.3.12: Electrical sensitivity characteristics",
-          "see Section 6.3.12: Electrical sensitivity characteristics",
+          "Electrical",
           "-"
         ]
       ],
@@ -3167,7 +3144,7 @@
           "mA"
         ],
         [
-          "I (3) INJ(PIN)",
+          "(3) I INJ(PIN)",
           "Injected current on TC and RST pin",
           "± 5",
           "mA"
@@ -3661,171 +3638,18 @@
         "Conditions",
         "f HCLK",
         "All peripherals enabled / Typ",
-        "All peripherals enabled / Max @ T (2) A / 85 °C",
+        "All peripherals enabled / Max @ T (2) A",
         "Unit"
       ],
       "rows": [
         [
-          "I DD",
-          "Supply current in Run mode, code executing from Flash",
-          "HSI or HSE clock, PLL on",
+          "I DDA",
+          "Supply current in Run or Sleep mode, code executing from Flash memory or RAM",
+          "HSE bypass, PLL on",
           "48 MHz",
-          "22.0",
-          "22.8",
-          "mA"
-        ],
-        [
-          "I DD",
-          "Supply current in Run mode, code executing from Flash",
-          "HSI or HSE clock, PLL on",
-          "48 MHz",
-          "26.8",
-          "30.2",
-          "mA"
-        ],
-        [
-          "I DD",
-          "Supply current in Run mode, code executing from Flash",
-          "HSI or HSE clock, PLL on",
-          "24 MHz",
-          "12.2",
-          "13.2",
-          "mA"
-        ],
-        [
-          "I DD",
-          "Supply current in Run mode, code executing from Flash",
-          "HSI or HSE clock, PLL on",
-          "24 MHz",
-          "14.1",
-          "16.2",
-          "mA"
-        ],
-        [
-          "I DD",
-          "Supply current in Run mode, code executing from Flash",
-          "HSI or HSE clock, PLL off",
-          "8 MHz",
-          "4.4",
-          "5.2",
-          "mA"
-        ],
-        [
-          "I DD",
-          "Supply current in Run mode, code executing from Flash",
-          "HSI or HSE clock, PLL off",
-          "8 MHz",
-          "4.9",
-          "5.6",
-          "mA"
-        ],
-        [
-          "I DD",
-          "Supply current in Run mode, code executing from RAM",
-          "HSI or HSE clock, PLL on",
-          "48 MHz",
-          "22.2",
-          "23.2",
-          "mA"
-        ],
-        [
-          "I DD",
-          "Supply current in Run mode, code executing from RAM",
-          "HSI or HSE clock, PLL on",
-          "48 MHz",
-          "26.1",
-          "29.3",
-          "mA"
-        ],
-        [
-          "I DD",
-          "Supply current in Run mode, code executing from RAM",
-          "HSI or HSE clock, PLL on",
-          "24 MHz",
-          "11.2",
-          "12.2",
-          "mA"
-        ],
-        [
-          "I DD",
-          "Supply current in Run mode, code executing from RAM",
-          "HSI or HSE clock, PLL on",
-          "24 MHz",
-          "13.3",
-          "15.7",
-          "mA"
-        ],
-        [
-          "I DD",
-          "Supply current in Run mode, code executing from RAM",
-          "HSI or HSE clock, PLL off",
-          "8 MHz",
-          "4.0",
-          "4.5",
-          "mA"
-        ],
-        [
-          "I DD",
-          "Supply current in Run mode, code executing from RAM",
-          "HSI or HSE clock, PLL off",
-          "8 MHz",
-          "4.6",
-          "5.2",
-          "mA"
-        ],
-        [
-          "I DD",
-          "Supply current in Sleep mode, code executing from Flash or RAM",
-          "HSI or HSE clock, PLL on",
-          "48 MHz",
-          "14",
-          "15.3",
-          "mA"
-        ],
-        [
-          "I DD",
-          "Supply current in Sleep mode, code executing from Flash or RAM",
-          "HSI or HSE clock, PLL on",
-          "48 MHz",
-          "17.0",
-          "19.0",
-          "mA"
-        ],
-        [
-          "I DD",
-          "Supply current in Sleep mode, code executing from Flash or RAM",
-          "HSI or HSE clock, PLL on",
-          "24 MHz",
-          "7.3",
-          "7.8",
-          "mA"
-        ],
-        [
-          "I DD",
-          "Supply current in Sleep mode, code executing from Flash or RAM",
-          "HSI or HSE clock, PLL on",
-          "24 MHz",
-          "8.7",
-          "10.1",
-          "mA"
-        ],
-        [
-          "I DD",
-          "Supply current in Sleep mode, code executing from Flash or RAM",
-          "HSI or HSE clock, PLL off",
-          "8 MHz",
-          "2.6",
-          "2.9",
-          "mA"
-        ],
-        [
-          "I DD",
-          "Supply current in Sleep mode, code executing from Flash or RAM",
-          "HSI or HSE clock, PLL off",
-          "8 MHz",
-          "3.0",
-          "3.5",
-          "mA"
+          "175",
+          "215",
+          "µA"
         ],
         [
           "I DDA",
@@ -3935,107 +3759,35 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f030c6.pdf#page=48",
-    "text_helper": "Table 26. Typical and maximum current consumption from the V supply 48 DDA — section 6.3.5 Supply current characteristics. Symbol, Parameter, Conditions(2), f HCLK, V = 3.6 V / DDA / Typ, +2 autres.",
+    "text_helper": "Table 26. Typical and maximum current consumption from the V supply 48 DDA — section 6.3.5 Supply current characteristics. Symbol, Parameter, Conditions(2), f HCLK, V = 3.6 V, +2 autres.",
     "table_content": {
       "headers": [
         "Symbol",
         "Parameter",
         "Conditions(2)",
         "f HCLK",
-        "V = 3.6 V / DDA / Typ",
-        "V = 3.6 V / Max @ T (3) A / 85 °C",
+        "V = 3.6 V",
+        "",
         "Unit"
       ],
       "rows": [
         [
-          "I DDA",
-          "Supply current in Run or Sleep mode, code executing from Flash memory or RAM",
-          "HSE bypass, PLL on",
-          "48 MHz",
-          "175",
-          "215",
-          "µA"
+          "-",
+          "-",
+          "-",
+          "",
+          "DDA",
+          "DDA",
+          "DDA"
         ],
         [
-          "I DDA",
-          "Supply current in Run or Sleep mode, code executing from Flash memory or RAM",
-          "HSE bypass, PLL on",
-          "48 MHz",
-          "160",
-          "192",
-          "µA"
-        ],
-        [
-          "I DDA",
-          "Supply current in Run or Sleep mode, code executing from Flash memory or RAM",
-          "HSE bypass, PLL off",
-          "8 MHz",
-          "3.9",
-          "4.9",
-          "µA"
-        ],
-        [
-          "I DDA",
-          "Supply current in Run or Sleep mode, code executing from Flash memory or RAM",
-          "HSE bypass, PLL off",
-          "8 MHz",
-          "3.7",
-          "4.6",
-          "µA"
-        ],
-        [
-          "I DDA",
-          "Supply current in Run or Sleep mode, code executing from Flash memory or RAM",
-          "HSE bypass, PLL off",
-          "1 MHz",
-          "3.9",
-          "4.1",
-          "µA"
-        ],
-        [
-          "I DDA",
-          "Supply current in Run or Sleep mode, code executing from Flash memory or RAM",
-          "HSE bypass, PLL off",
-          "1 MHz",
-          "3.3",
-          "4.4",
-          "µA"
-        ],
-        [
-          "I DDA",
-          "Supply current in Run or Sleep mode, code executing from Flash memory or RAM",
-          "HSI clock, PLL on",
-          "48 MHz",
-          "244",
-          "275",
-          "µA"
-        ],
-        [
-          "I DDA",
-          "Supply current in Run or Sleep mode, code executing from Flash memory or RAM",
-          "HSI clock, PLL on",
-          "48 MHz",
-          "235",
-          "275",
-          "µA"
-        ],
-        [
-          "I DDA",
-          "Supply current in Run or Sleep mode, code executing from Flash memory or RAM",
-          "HSI clock, PLL off",
-          "8 MHz",
-          "85",
-          "105",
-          "µA"
-        ],
-        [
-          "I DDA",
-          "Supply current in Run or Sleep mode, code executing from Flash memory or RAM",
-          "HSI clock, PLL off",
-          "8 MHz",
-          "77",
-          "92",
-          "µA"
+          "Symbol",
+          "Parameter",
+          "Conditions(2)",
+          "f HCLK",
+          "Typ",
+          "Max @ T (3) A",
+          "Unit"
         ],
         [
           "I DD",
@@ -4160,7 +3912,7 @@
         ],
         [
           "I DD",
-          "Supply current in Stop mode",
+          "Stop mode",
           "Regulator in low-power mode, all oscillators OFF",
           "Regulator in low-power mode, all oscillators OFF",
           "5",
@@ -4188,7 +3940,7 @@
         [
           "I DDA",
           "Supply current in Standby mode",
-          "V monitoring ON DDA",
+          "FFO GDWI dna FFO ISL NO GDWI dna NO ISL ADD",
           "LSI ON and IWDG ON",
           "3.3",
           "-",
@@ -4196,8 +3948,8 @@
         ],
         [
           "I DDA",
-          "Supply current in Standby mode",
-          "V monitoring ON DDA",
+          "Standby mode",
+          "LSI OFF and IWDG OFF",
           "LSI OFF and IWDG OFF",
           "2.8",
           "3.5",
@@ -4215,7 +3967,7 @@
         [
           "I DDA",
           "Supply current in Standby mode",
-          "V monitoring OFF DDA",
+          "FFO GDWI dna FFO ISL NO GDWI dna NO ISL ADD",
           "LSI ON and IWDG ON",
           "2.3",
           "-",
@@ -4223,8 +3975,8 @@
         ],
         [
           "I DDA",
-          "Supply current in Standby mode",
-          "V monitoring OFF DDA",
+          "Standby mode",
+          "LSI OFF and IWDG OFF",
           "LSI OFF and IWDG OFF",
           "1.4",
           "-",
@@ -4279,9 +4031,9 @@
           "mA"
         ],
         [
-          "I DD",
-          "Supply current in Run mode from V DD supply",
-          "Running from HSE crystal clock 8 MHz, code executing from Flash",
+          "DD",
+          "DD supply",
+          "HSE crystal",
           "8 MHz",
           "4.5",
           "3.0",
@@ -4290,131 +4042,25 @@
         [
           "I DDA",
           "Supply current in Run mode from V DDA supply",
-          "Running from HSE crystal clock 8 MHz, code executing from Flash",
+          "code executing from Flash",
           "48 MHz",
           "158",
           "158",
           "µA"
         ],
         [
-          "I DDA",
-          "Supply current in Run mode from V DDA supply",
-          "Running from HSE crystal clock 8 MHz, code executing from Flash",
+          "DDA",
+          "DDA supply",
+          "from Flash",
           "8 MHz",
           "2.43",
           "2.43",
           "µA"
-        ],
-        [
-          "I SW",
-          "I SW",
-          "I/O current consumption",
-          "V = 3.3 V DDIOx C = 0 pF EXT C = C + C + C INT EXT S",
-          "V = 3.3 V DDIOx C = 0 pF EXT C = C + C + C INT EXT S",
-          "4 MHz",
-          "4 MHz"
-        ],
-        [
-          "None",
-          "None",
-          "None",
-          "None",
-          "None",
-          "8 MHz",
-          "8 MHz"
-        ],
-        [
-          "None",
-          "None",
-          "None",
-          "None",
-          "None",
-          "16 MHz",
-          "16 MHz"
-        ],
-        [
-          "None",
-          "None",
-          "None",
-          "None",
-          "None",
-          "24 MHz",
-          "24 MHz"
-        ],
-        [
-          "None",
-          "None",
-          "None",
-          "None",
-          "None",
-          "48 MHz",
-          "48 MHz"
-        ],
-        [
-          "None",
-          "None",
-          "None",
-          "V = 3.3 V DDIOx C = 22 pF EXT C = C + C + C INT EXT S",
-          "V = 3.3 V DDIOx C = 22 pF EXT C = C + C + C INT EXT S",
-          "4 MHz",
-          "4 MHz"
-        ],
-        [
-          "None",
-          "None",
-          "None",
-          "None",
-          "None",
-          "8 MHz",
-          "8 MHz"
-        ],
-        [
-          "None",
-          "None",
-          "None",
-          "None",
-          "None",
-          "16 MHz",
-          "16 MHz"
-        ],
-        [
-          "None",
-          "None",
-          "None",
-          "None",
-          "None",
-          "24 MHz",
-          "24 MHz"
-        ],
-        [
-          "None",
-          "None",
-          "None",
-          "V = 3.3 V DDIOx C = 47 pF EXT C = C + C + C INT EXT S C = C int",
-          "V = 3.3 V DDIOx C = 47 pF EXT C = C + C + C INT EXT S C = C int",
-          "4 MHz",
-          "4 MHz"
-        ],
-        [
-          "None",
-          "None",
-          "None",
-          "None",
-          "None",
-          "8 MHz",
-          "8 MHz"
-        ],
-        [
-          "None",
-          "None",
-          "None",
-          "None",
-          "None",
-          "16 MHz",
-          "16 MHz"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. C = 7 pF (estimated value). S"
+      ],
       "legend": [
         "running from Flash"
       ],
@@ -4462,7 +4108,7 @@
         [
           "I SW",
           "I/O current consumption",
-          "V = 3.3 V DDIOx C = 0 pF EXT C = C + C + C INT EXT S",
+          "V = 3.3 V DDIOx",
           "8 MHz",
           "0.37",
           "mA"
@@ -4470,7 +4116,7 @@
         [
           "I SW",
           "I/O current consumption",
-          "V = 3.3 V DDIOx C = 0 pF EXT C = C + C + C INT EXT S",
+          "= 0 pF C EXT",
           "16 MHz",
           "0.76",
           "mA"
@@ -4478,7 +4124,7 @@
         [
           "I SW",
           "I/O current consumption",
-          "V = 3.3 V DDIOx C = 0 pF EXT C = C + C + C INT EXT S",
+          "INT EXT S",
           "24 MHz",
           "1.39",
           "mA"
@@ -4500,9 +4146,9 @@
           "mA"
         ],
         [
-          "I SW",
-          "I/O current consumption",
-          "V = 3.3 V DDIOx C = 22 pF EXT C = C + C + C INT EXT S",
+          "SW",
+          "consumption",
+          "DDIOx",
           "8 MHz",
           "0.94",
           "mA"
@@ -4510,7 +4156,7 @@
         [
           "I SW",
           "I/O current consumption",
-          "V = 3.3 V DDIOx C = 22 pF EXT C = C + C + C INT EXT S",
+          "+ C + C C = C INT EXT S",
           "16 MHz",
           "2.38",
           "mA"
@@ -4534,7 +4180,7 @@
         [
           "I SW",
           "I/O current consumption",
-          "V = 3.3 V DDIOx C = 47 pF EXT C = C + C + C INT EXT S C = C int",
+          "EXT",
           "8 MHz",
           "1.7",
           "mA"
@@ -4542,7 +4188,7 @@
         [
           "I SW",
           "I/O current consumption",
-          "V = 3.3 V DDIOx C = 47 pF EXT C = C + C + C INT EXT S C = C int",
+          "C = C int",
           "16 MHz",
           "3.67",
           "mA"
@@ -4686,25 +4332,11 @@
           "-",
           "20",
           "ns"
-        ],
-        [
-          "V LSEL",
-          "OSC32_IN input pin low level voltage",
-          "V SS",
-          "-",
-          "0.3 V DDIOx",
-          "0.3 V DDIOx"
-        ],
-        [
-          "t r(LSE) t f(LSE)",
-          "OSC32_IN rise or fall time",
-          "-",
-          "-",
-          "50",
-          "50"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by design, not tested in production."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -4934,7 +4566,7 @@
         ],
         [
           "I DD",
-          "LSE current consumption",
+          "LSE current",
           "medium-low drive capability",
           "-",
           "-",
@@ -4943,7 +4575,7 @@
         ],
         [
           "I DD",
-          "LSE current consumption",
+          "consumption",
           "medium-high drive capability",
           "-",
           "-",
@@ -5037,7 +4669,7 @@
         ],
         [
           "ACC HSI",
-          "Accuracy of the HSI oscillator (factory calibrated)",
+          "(factory calibrated)",
           "T = 25°C A",
           "-",
           "±1(3)",
@@ -5157,7 +4789,9 @@
           "µA"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "2. Guaranteed by design, not tested in production."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -5295,7 +4929,10 @@
           "ps"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. V = 3.3 V, T = -40 to 85 °C unless otherwise specified. DDA A",
+        "2. Guaranteed by design, not tested in production."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -5511,13 +5148,13 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32f030c6.pdf#page=59",
-    "text_helper": "Table 42. EMI characteristics — section 6.3.11 EMC characteristics. Symbol, Parameter, Conditions, Monitored frequency band, Max vs. [f /f ] HSE HCLK / 8/48 MHz, +1 autres.",
+    "text_helper": "Table 42. EMI characteristics — section 6.3.11 EMC characteristics. Symbol, Parameter, Conditions, Monitored frequency band / frequency band, Max vs. [f /f ] HSE HCLK / 8/48 MHz, +1 autres.",
     "table_content": {
       "headers": [
         "Symbol",
         "Parameter",
         "Conditions",
-        "Monitored frequency band",
+        "Monitored frequency band / frequency band",
         "Max vs. [f /f ] HSE HCLK / 8/48 MHz",
         "Unit"
       ],
@@ -5533,7 +5170,7 @@
         [
           "S EMI",
           "Peak level",
-          "V = 3.6 V, T = 25 °C, DD A LQFP100 package compliant with IEC 61967-2",
+          "LQFP100 package",
           "30 to 130 MHz",
           "23",
           "dBµV"
@@ -5541,7 +5178,7 @@
         [
           "S EMI",
           "Peak level",
-          "V = 3.6 V, T = 25 °C, DD A LQFP100 package compliant with IEC 61967-2",
+          "compliant with",
           "130 MHz to 1 GHz",
           "17",
           "dBµV"
@@ -5738,7 +5375,12 @@
           "mA"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Data based on design simulation only. Not tested in production.",
+        "2. The leakage could be higher than the maximum value, if negative current is injected on adjacent pins. Refer to Table 45: I/O current injection susceptibility.",
+        "3. To sustain a voltage higher than V + 0.3 V, the internal pull-up/pull-down resistors must be disabled. DDIOx",
+        "4. Pull-up and pull-down resistors are designed with a true resistance in series with a switchable PMOS/NMOS. This PMOS/NMOS contribution to the series resistance is minimal (~10% order)."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -5794,7 +5436,7 @@
         ],
         [
           "V IL",
-          "Low level input voltage",
+          "voltage",
           "BOOT0",
           "-",
           "-",
@@ -5830,7 +5472,7 @@
         ],
         [
           "V IH",
-          "High level input voltage",
+          "voltage",
           "BOOT0",
           "0.2 V +0.95(1) DDIOx",
           "-",
@@ -5857,7 +5499,7 @@
         ],
         [
           "V hys",
-          "Schmitt trigger hysteresis",
+          "hysteresis",
           "FT and FTf I/O",
           "-",
           "100(1)",
@@ -5988,7 +5630,7 @@
         [
           "V OH",
           "Output high level voltage for an I/O pin",
-          "|I |= 8 mA IO ≥ V 2.7 V DDIOx",
+          "V 2.7 V DDIOx",
           "V –0.4 DDIOx",
           "-",
           "V"
@@ -6004,7 +5646,7 @@
         [
           "V (2) OH",
           "Output high level voltage for an I/O pin",
-          "|I |= 20 mA IO ≥ V 2.7 V DDIOx",
+          "V 2.7 V DDIOx",
           "V –1.3 DDIOx",
           "-",
           "V"
@@ -6093,7 +5735,7 @@
           "x0",
           "t f(IO)out",
           "Output fall time",
-          "≥ C = 50 pF, V 2.4 V L DDIOx",
+          "C = 50 pF, V 2.4 V L DDIOx",
           "-",
           "125",
           "ns"
@@ -6120,7 +5762,7 @@
           "01",
           "t f(IO)out",
           "Output fall time",
-          "≥ C = 50 pF, V 2.4 V L DDIOx",
+          "C = 50 pF, V 2.4 V L DDIOx",
           "-",
           "25",
           "ns"
@@ -6146,7 +5788,7 @@
         [
           "11",
           "f max(IO)out",
-          "Maximum frequency(3)",
+          "frequency(3) Maximum",
           "≥ C = 50 pF, V 2.7 V L DDIOx",
           "-",
           "30",
@@ -6225,10 +5867,10 @@
           "MHz"
         ],
         [
-          "Fm+ configuration (4)",
+          "configuration (4)",
           "t f(IO)out",
           "Output fall time",
-          "≥ C = 50 pF, V 2.4 V L DDIOx",
+          "C = 50 pF, V 2.4 V L DDIOx",
           "-",
           "12",
           "ns"
@@ -6443,7 +6085,7 @@
         ],
         [
           "f (2) TRIG",
-          "External trigger frequency",
+          "frequency",
           "-",
           "-",
           "-",
@@ -6730,7 +6372,7 @@
         [
           "EO",
           "Offset error",
-          "f = 48 MHz, PCLK f = 14 MHz, R < 10 kΩ ADC AIN V = 2.7 V to 3.6 V DDA - T = 40 to 85 °C A",
+          "= 48 MHz, f PCLK",
           "±1.9",
           "±2.8",
           "LSB"
@@ -6738,7 +6380,7 @@
         [
           "EG",
           "Gain error",
-          "f = 48 MHz, PCLK f = 14 MHz, R < 10 kΩ ADC AIN V = 2.7 V to 3.6 V DDA - T = 40 to 85 °C A",
+          "ADC AIN = 2.7 V to 3.6 V V",
           "±2.8",
           "±3",
           "LSB"
@@ -6746,7 +6388,7 @@
         [
           "ED",
           "Differential linearity error",
-          "f = 48 MHz, PCLK f = 14 MHz, R < 10 kΩ ADC AIN V = 2.7 V to 3.6 V DDA - T = 40 to 85 °C A",
+          "- T = 40 to 85 °C A",
           "±0.7",
           "±1.3",
           "LSB"
@@ -6906,7 +6548,7 @@
         ],
         [
           "f EXT",
-          "Timer external clock frequency on CH1 to CH4",
+          "CH4",
           "f = 48 MHz TIMxCLK",
           "-",
           "24",
@@ -7034,7 +6676,11 @@
           "ms"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Data based on characterization results, not tested in production.",
+        "2. Min time is for the minimum time to drive the output and the max time is for the maximum time to validate the data.",
+        "3. Min time is for the minimum time to invalidate the output and the max time is for the maximum time to put the data in Hi-Z DS9773 Rev 5 73/93"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -7143,7 +6789,10 @@
           "ns"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "2. Spikes with widths below t are filtered. AF(min)",
+        "3. Spikes with widths above t are not filtered AF(max)"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -7187,7 +6836,7 @@
           "MHz"
         ],
         [
-          "f SCK 1/t c(SCK)",
+          "1/t c(SCK)",
           "SPI clock frequency",
           "Slave mode",
           "-",
@@ -7235,7 +6884,7 @@
           "ns"
         ],
         [
-          "t su(MI) t su(SI)",
+          "t su(SI)",
           "Data input setup time",
           "Slave mode",
           "5",
@@ -7418,7 +7067,9 @@
           "7°"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Drawing is not to scale."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -7647,7 +7298,9 @@
           "0.0039"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Drawing is not to scale."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}

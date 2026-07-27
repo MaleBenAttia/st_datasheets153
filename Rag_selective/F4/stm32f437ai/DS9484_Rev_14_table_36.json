@@ -11,11 +11,10 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f437ai.pdf#page=118",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f437ai.pdf",
-  "text_helper": "Table 36. Low-power mode wakeup timings — section 6.3.8 Wake-up time from low-power modes. Symbol, Parameter, Parameter, Conditions, Typ(1), +2 autres.",
+  "text_helper": "Table 36. Low-power mode wakeup timings — section 6.3.8 Wake-up time from low-power modes. Symbol, Parameter, Conditions, Typ(1), Max(1), +1 autres.",
   "table_content": {
     "headers": [
       "Symbol",
-      "Parameter",
       "Parameter",
       "Conditions",
       "Typ(1)",
@@ -26,7 +25,6 @@
       [
         "t (2) WUSLEEP",
         "Wakeup from Sleep",
-        "Wakeup from Sleep",
         "-",
         "6",
         "-",
@@ -35,25 +33,22 @@
       [
         "t (2) WUSTOP",
         "Wakeup from Stop mode with MR/LP regulator in normal mode",
-        "Wakeup from Stop mode with MR/LP regulator in normal mode",
         "Main regulator is ON",
         "13.6",
         "-",
         "µs"
       ],
       [
-        "t (2) WUSTOP",
-        "Wakeup from Stop mode with MR/LP regulator in normal mode",
-        "Wakeup from Stop mode with MR/LP regulator in normal mode",
+        "(2)",
+        "Wakeup from Stop mode",
         "Main regulator is ON and flash memory in Deep power down mode",
         "93",
         "111",
         "µs"
       ],
       [
-        "t (2) WUSTOP",
-        "Wakeup from Stop mode with MR/LP regulator in normal mode",
-        "Wakeup from Stop mode with MR/LP regulator in normal mode",
+        "WUSTOP",
+        "normal mode",
         "Low power regulator is ON",
         "22",
         "32",
@@ -61,7 +56,6 @@
       ],
       [
         "t (2) WUSTOP",
-        "Wakeup from Stop mode with MR/LP regulator in normal mode",
         "Wakeup from Stop mode with MR/LP regulator in normal mode",
         "Low power regulator is ON and flash memory in Deep power down mode",
         "103",
@@ -71,16 +65,14 @@
       [
         "t (2) WUSTOP",
         "Wakeup from Stop mode with MR/LP regulator in Under-drive mode",
-        "Wakeup from Stop mode with MR/LP regulator in Under-drive mode",
         "Main regulator in under-drive mode (flash memory in Deep power-down mode)",
         "105",
         "128",
         "µs"
       ],
       [
-        "t (2) WUSTOP",
-        "Wakeup from Stop mode with MR/LP regulator in Under-drive mode",
-        "Wakeup from Stop mode with MR/LP regulator in Under-drive mode",
+        "(2) t WUSTOP",
+        "with MR/LP regulator in Under-drive mode",
         "Low power regulator in under-drive mode (flash memory in Deep power-down mode )",
         "125",
         "155",
@@ -89,51 +81,14 @@
       [
         "tWUSTDBY (2)(3)",
         "Wakeup from Standby mode",
-        "Wakeup from Standby mode",
         "-",
         "318",
         "412",
         "µs"
-      ],
-      [
-        "V HSEH",
-        "OSC_IN input pin high level voltage",
-        "OSC_IN input pin high level voltage",
-        "0.7V DD",
-        "-",
-        "V DD",
-        "V"
-      ],
-      [
-        "V HSEL",
-        "OSC_IN input pin low level voltage",
-        "OSC_IN input pin low level voltage",
-        "V SS",
-        "-",
-        "0.3V DD",
-        "0.3V DD"
-      ],
-      [
-        "t w(HSE) t w(HSE)",
-        "OSC_IN high or low time(1)",
-        "OSC_IN high or low time(1)",
-        "5",
-        "-",
-        "-",
-        "ns"
-      ],
-      [
-        "t r(HSE) t f(HSE)",
-        "OSC_IN rise or fall time(1)",
-        "OSC_IN rise or fall time(1)",
-        "-",
-        "-",
-        "10",
-        "10"
       ]
     ],
     "notes": [
-      "1. Specified by design.",
+      "1. Evaluated by characterization.",
       "2. The wake-up times are measured from the wake-up event to the point in which the application code reads the first",
       "3. t maximum value is given at –40°C. WUSTDBY"
     ],

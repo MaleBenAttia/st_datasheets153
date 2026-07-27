@@ -1,9 +1,9 @@
 {
   "table_id": "table_104",
-  "document": "DS14861 Rev 3 - Table 104. VREFBUF characteristics.",
+  "document": "DS14861 Rev 3 - Table 104. VREFBUF characteristics",
   "rev": "Rev 3",
   "table_number": "104",
-  "title": "Table 104. VREFBUF characteristics.",
+  "title": "Table 104. VREFBUF characteristics",
   "page": 160,
   "section": "5.3.23 Voltage reference buffer characteristics",
   "section_title": "Voltage reference buffer characteristics",
@@ -11,7 +11,7 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf#page=160",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u375ce.pdf",
-  "text_helper": "Table 104. VREFBUF characteristics. — section 5.3.23 Voltage reference buffer characteristics. Symbol, Parameter, Conditions, Conditions, Min, +3 autres.",
+  "text_helper": "Table 104. VREFBUF characteristics — section 5.3.23 Voltage reference buffer characteristics. Symbol, Parameter, Conditions, Conditions, Min, +3 autres.",
   "table_content": {
     "headers": [
       "Symbol",
@@ -37,7 +37,7 @@
       [
         "VDDA",
         "Analog supply voltage",
-        "Normal mode",
+        "VRS = 001",
         "VRS = 001",
         "2.1",
         "-",
@@ -47,7 +47,7 @@
       [
         "VDDA",
         "Analog supply voltage",
-        "Normal mode",
+        "VRS = 010",
         "VRS = 010",
         "2.4",
         "-",
@@ -57,7 +57,7 @@
       [
         "VDDA",
         "Analog supply voltage",
-        "Normal mode",
+        "VRS = 011",
         "VRS = 011",
         "2.8",
         "-",
@@ -77,7 +77,7 @@
       [
         "VDDA",
         "Analog supply voltage",
-        "Degraded mode(1)",
+        "VRS = 001",
         "VRS = 001",
         "1.62",
         "-",
@@ -87,7 +87,7 @@
       [
         "VDDA",
         "Analog supply voltage",
-        "Degraded mode(1)",
+        "VRS = 010",
         "VRS = 010",
         "1.62",
         "-",
@@ -97,7 +97,7 @@
       [
         "VDDA",
         "Analog supply voltage",
-        "Degraded mode(1)",
+        "VRS = 011",
         "VRS = 011",
         "1.62",
         "-",
@@ -117,7 +117,7 @@
       [
         "VREFBUF_OUT(2)",
         "Voltage reference buffer output",
-        "Normal mode at VDDA = 3 V, TJ = 30 °C, Iload = 10 µA",
+        "Normal mode at VRS = 001 = 3 V, = 30 °C,",
         "VRS = 001",
         "1.795",
         "1.8",
@@ -127,7 +127,7 @@
       [
         "VREFBUF_OUT(2)",
         "Voltage reference buffer output",
-        "Normal mode at VDDA = 3 V, TJ = 30 °C, Iload = 10 µA",
+        "Aµ 01 = daolI 010 = SRV",
         "VRS = 010",
         "2.042",
         "2.048",
@@ -137,7 +137,7 @@
       [
         "VREFBUF_OUT(2)",
         "Voltage reference buffer output",
-        "Normal mode at VDDA = 3 V, TJ = 30 °C, Iload = 10 µA",
+        "VRS = 011",
         "VRS = 011",
         "2.493",
         "2.5",
@@ -145,8 +145,8 @@
         "V"
       ],
       [
-        "VREFBUF_OUT(2)",
-        "Voltage reference buffer output",
+        "(2) VREFBUF_OUT",
+        "V o lt a g e reference buffer ou t p u t",
         "Degraded mode(1)",
         "VRS = 000",
         "Min (VDDA - 0.15; 1.496)",
@@ -157,7 +157,7 @@
       [
         "VREFBUF_OUT(2)",
         "Voltage reference buffer output",
-        "Degraded mode(1)",
+        "VRS = 001",
         "VRS = 001",
         "Min (VDDA - 0.15; 1.795)",
         "-",
@@ -167,7 +167,7 @@
       [
         "VREFBUF_OUT(2)",
         "Voltage reference buffer output",
-        "Degraded mode(1)",
+        "VRS = 010",
         "VRS = 010",
         "Min (VDDA - 0.15; 2.042)",
         "-",
@@ -177,7 +177,7 @@
       [
         "VREFBUF_OUT(2)",
         "Voltage reference buffer output",
-        "Degraded mode(1)",
+        "VRS = 011",
         "VRS = 011",
         "Min (VDDA - 0.15; 2.493)",
         "-",
@@ -333,26 +333,6 @@
         "14",
         "14",
         "18"
-      ],
-      [
-        "None",
-        "None",
-        "Iload = 500 µA",
-        "Iload = 500 µA",
-        "-",
-        "16",
-        "16",
-        "20"
-      ],
-      [
-        "None",
-        "None",
-        "Iload = 4 mA",
-        "Iload = 4 mA",
-        "-",
-        "42",
-        "42",
-        "50"
       ]
     ],
     "notes": [

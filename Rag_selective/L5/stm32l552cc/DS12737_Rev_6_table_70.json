@@ -43,7 +43,7 @@
       [
         "IDD(Sleep)",
         "Supply current in Sleep mode",
-        "fHCLK = fHSE up to 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disabled",
+        "80 MHz 72 MHz 64 MHz 48 MHz fHCLK = fHSE up to 48 MHz 32 MHz included, bypass mode PLL ON 26 MHz above 48 MHz all peripherals VDD12=1.10V disabled 16 MHz 8 MHZ 4 MHz 2MHz 1 MHz 100 Khz",
         "VDD12=1.10V",
         "80 MHz",
         "1.19",
@@ -56,7 +56,7 @@
       [
         "IDD(Sleep)",
         "Supply current in Sleep mode",
-        "fHCLK = fHSE up to 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disabled",
+        "72 MHz",
         "VDD12=1.10V",
         "72 MHz",
         "1.08",
@@ -69,7 +69,7 @@
       [
         "IDD(Sleep)",
         "Supply current in Sleep mode",
-        "fHCLK = fHSE up to 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disabled",
+        "64 MHz",
         "VDD12=1.10V",
         "64 MHz",
         "0.98",
@@ -82,7 +82,7 @@
       [
         "IDD(Sleep)",
         "Supply current in Sleep mode",
-        "fHCLK = fHSE up to 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disabled",
+        "48 MHz",
         "VDD12=1.10V",
         "48 MHz",
         "0.76",
@@ -95,7 +95,7 @@
       [
         "IDD(Sleep)",
         "Supply current in Sleep mode",
-        "fHCLK = fHSE up to 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disabled",
+        "fHCLK = fHSE up to 48 MHz 32 MHz",
         "VDD12=1.10V",
         "32 MHz",
         "0.54",
@@ -107,8 +107,8 @@
       ],
       [
         "IDD(Sleep)",
-        "Supply current in Sleep mode",
-        "fHCLK = fHSE up to 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disabled",
+        "Sleep mode",
+        "26 MHz above 48 MHz all peripherals",
         "VDD12=1.10V",
         "26 MHz",
         "0.453",
@@ -121,7 +121,7 @@
       [
         "IDD(Sleep)",
         "Supply current in Sleep mode",
-        "fHCLK = fHSE up to 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disabled",
+        "disabled 16 MHz",
         "VDD12=1.10V",
         "16 MHz",
         "0.315",
@@ -134,7 +134,7 @@
       [
         "IDD(Sleep)",
         "Supply current in Sleep mode",
-        "fHCLK = fHSE up to 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disabled",
+        "8 MHZ",
         "VDD12=1.10V",
         "8 MHZ",
         "0.203",
@@ -147,7 +147,7 @@
       [
         "IDD(Sleep)",
         "Supply current in Sleep mode",
-        "fHCLK = fHSE up to 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disabled",
+        "4 MHz",
         "VDD12=1.10V",
         "4 MHz",
         "0.147",
@@ -160,7 +160,7 @@
       [
         "IDD(Sleep)",
         "Supply current in Sleep mode",
-        "fHCLK = fHSE up to 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disabled",
+        "2MHz",
         "VDD12=1.10V",
         "2MHz",
         "0.116",
@@ -173,7 +173,7 @@
       [
         "IDD(Sleep)",
         "Supply current in Sleep mode",
-        "fHCLK = fHSE up to 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disabled",
+        "1 MHz",
         "VDD12=1.10V",
         "1 MHz",
         "0.104",
@@ -186,7 +186,7 @@
       [
         "IDD(Sleep)",
         "Supply current in Sleep mode",
-        "fHCLK = fHSE up to 48 MHz included, bypass mode PLL ON above 48 MHz all peripherals disabled",
+        "100 Khz",
         "VDD12=1.10V",
         "100 Khz",
         "0.091",
@@ -197,7 +197,9 @@
         "mA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. All values are obtained by calculation based on measurements done with internal voltage regulator and using following parameters: SMPS input = 3.3 V, SMPS efficiency = 85%."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

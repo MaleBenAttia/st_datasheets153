@@ -45,13 +45,13 @@
           "SRAM on AXI",
           "1024",
           "1024",
-          "1024",
+          "1024 128 32",
           "1024",
           "1024",
           "1024"
         ],
         [
-          "SRAM in Kbytes",
+          "SRAM in Kbytes SRAM on AHB (CD domain)",
           "SRAM on AHB (CD domain)",
           "128",
           "128",
@@ -61,7 +61,7 @@
           "128"
         ],
         [
-          "SRAM in Kbytes",
+          "SRAM on AHB (SRD domain)",
           "SRAM on AHB (SRD domain)",
           "32",
           "32",
@@ -75,13 +75,13 @@
           "ITCM RAM (instruction)",
           "64",
           "64",
-          "64",
+          "64 128",
           "64",
           "64",
           "64"
         ],
         [
-          "TCM RAM in Kbytes",
+          "DTCM RAM (data)",
           "DTCM RAM (data)",
           "128",
           "128",
@@ -105,13 +105,13 @@
           "Interface",
           "1",
           "1",
-          "1",
+          "1 x(2) x - x(2) x - x(2) x - x(2) x -",
           "1",
           "1",
           "1"
         ],
         [
-          "FMC",
+          "rellortnoc MAR/yromem hsalF RON",
           "rellortnoc MAR/yromem hsalF RON",
           "x (2)",
           "x (2)",
@@ -121,7 +121,7 @@
           "-"
         ],
         [
-          "FMC",
+          "Multiplexed I/O NOR Flash FMC memory",
           "Multiplexed I/O NOR Flash memory",
           "x",
           "x",
@@ -131,7 +131,7 @@
           "-"
         ],
         [
-          "FMC",
+          "16-bit NAND Flash memory",
           "16-bit NAND Flash memory",
           "x",
           "x",
@@ -141,7 +141,7 @@
           "-"
         ],
         [
-          "FMC",
+          "SDRAM controller",
           "SDRAM controller",
           "x(2)",
           "x(2)",
@@ -165,13 +165,13 @@
           "General-purpose",
           "10",
           "10",
-          "10",
+          "10 2 2 3",
           "10",
           "10",
           "10"
         ],
         [
-          "Timers",
+          "Advanced-control (PWM)",
           "Advanced-control (PWM)",
           "2",
           "2",
@@ -181,7 +181,7 @@
           "2"
         ],
         [
-          "Timers",
+          "Basic",
           "Basic",
           "2",
           "2",
@@ -191,7 +191,7 @@
           "2"
         ],
         [
-          "Timers",
+          "Low-power",
           "Low-power",
           "3",
           "3",
@@ -231,7 +231,7 @@
           "2"
         ],
         [
-          "Tamper pins (5)",
+          "Active",
           "Active",
           "1",
           "1",
@@ -659,36 +659,6 @@
           "None",
           "None",
           "None"
-        ],
-        [
-          "None",
-          "Junction temperature range: -40 to 130 °C(13)",
-          "None",
-          "None",
-          "None",
-          "None",
-          "None",
-          "None"
-        ],
-        [
-          "Packages",
-          "UFBGA176+25",
-          "UFBGA169",
-          "LQFP176",
-          "LQFP144",
-          "LQFP100",
-          "LQFP64",
-          "LQFP64"
-        ],
-        [
-          "Bootloader",
-          "USART, I2C, SPI, USB- DFU, FDCAN",
-          "USART, I2C, SPI, USB-DFU, FDCAN",
-          "USART, I2C, SPI, USB-DFU, FDCAN",
-          "USART, I2C, SPI, USB-DFU",
-          "None",
-          "None",
-          "None"
         ]
       ],
       "notes": [
@@ -703,8 +673,7 @@
         "9. The ULPI interface is not supported.",
         "10. DCMI and PSSI cannot be used simultaneously since they share the same circuitry.",
         "11. For limitations on fast pads or channels depending on packages, check to the available pins/balls in Table 7. STM32H7B0xB pin/ball definition.",
-        "12. VDD/VDDA can drop down to 1.62 V by using an external power supervisor (see Section 3.5.2 Power supply supervisor) and connecting PDR_ON pin to VSS. Otherwise the supply voltage must stay above 1.71 V with the embedded power voltage detector enabled.",
-        "13. The junction temperature is limited to 105 °C in VOS0 voltage range. DS13196"
+        "12. VDD/VDDA can drop down to 1.62 V by using an external power supervisor (see Section 3.5.2 Power supply supervisor) and connecting PDR_ON pin to VSS. Otherwise the supply voltage must stay above 1.71 V with the embedded power voltage detector enabled."
       ],
       "legend": "",
       "semantic_type": "",
@@ -746,11 +715,6 @@
           "Stop",
           "DStop/DStop2",
           "DStop"
-        ],
-        [
-          "Standby",
-          "Standby",
-          "Standby"
         ]
       ],
       "notes": [],
@@ -873,73 +837,13 @@
           "280"
         ],
         [
-          "General purpose",
+          "General",
           "TIM12",
           "16-bit",
           "Up",
           "Any integer between 1 and 65536",
           "No",
           "2",
-          "No",
-          "140",
-          "280"
-        ],
-        [
-          "General purpose",
-          "TIM13, TIM14",
-          "16-bit",
-          "Up",
-          "Any integer between 1 and 65536",
-          "No",
-          "1",
-          "No",
-          "140",
-          "280"
-        ],
-        [
-          "General purpose",
-          "TIM15",
-          "16-bit",
-          "Up",
-          "Any integer between 1 and 65536",
-          "Yes",
-          "2",
-          "1",
-          "140",
-          "280"
-        ],
-        [
-          "General purpose",
-          "TIM16, TIM17",
-          "16-bit",
-          "Up",
-          "Any integer between 1 and 65536",
-          "Yes",
-          "1",
-          "1",
-          "140",
-          "280"
-        ],
-        [
-          "Basic",
-          "TIM6, TIM7",
-          "16-bit",
-          "Up",
-          "Any integer between 1 and 65536",
-          "Yes",
-          "0",
-          "No",
-          "140",
-          "280"
-        ],
-        [
-          "Low-power timer",
-          "LPTIM1, LPTIM2, LPTIM3",
-          "16-bit",
-          "Up",
-          "1, 2, 4, 8, 16, 32, 64, 128",
-          "No",
-          "0",
           "No",
           "140",
           "280"
@@ -1099,7 +1003,7 @@
         [
           "Pin name",
           "Unless otherwise specified in brackets below the pin name, the pin function during and after reset is the same as the actual pin name",
-          "Unless otherwise specified in brackets below the pin name, the pin function during and after reset is the same as the actual pin name"
+          "below the pin name, the pin the same as the actual pin name"
         ],
         [
           "Pin type",
@@ -1144,7 +1048,7 @@
         [
           "I/O structure",
           "Option for TT and FT I/Os",
-          "Option for TT and FT I/Os"
+          "and FT I/Os"
         ],
         [
           "I/O structure",
@@ -4361,7 +4265,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA1",
           "PA1",
           "-",
           "TIM2_CH2",
@@ -4381,7 +4285,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA2",
           "PA2",
           "-",
           "TIM2_CH3",
@@ -4401,7 +4305,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA3",
           "PA3",
           "-",
           "TIM2_CH4",
@@ -4421,7 +4325,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA4",
           "PA4",
           "-",
           "-",
@@ -4441,7 +4345,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA5",
           "PA5",
           "PWR_NDSTOP2",
           "TIM2_CH1/ TIM2_ETR",
@@ -4461,7 +4365,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA6",
           "PA6",
           "-",
           "TIM1_BKIN",
@@ -4481,7 +4385,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "Port A 7AP",
           "PA7",
           "-",
           "TIM1_CH1N",
@@ -4501,7 +4405,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA8",
           "PA8",
           "MCO1",
           "TIM1_CH1",
@@ -4521,7 +4425,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA9",
           "PA9",
           "-",
           "TIM1_CH2",
@@ -4541,7 +4445,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA10",
           "PA10",
           "-",
           "TIM1_CH3",
@@ -4561,7 +4465,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA11",
           "PA11",
           "-",
           "TIM1_CH4",
@@ -4581,7 +4485,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA12",
           "PA12",
           "-",
           "TIM1_ETR",
@@ -4601,7 +4505,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA13",
           "PA13",
           "JTMS/ SWDIO",
           "-",
@@ -4621,7 +4525,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA14",
           "PA14",
           "JTCK/ SWCLK",
           "-",
@@ -4641,7 +4545,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA15",
           "PA15",
           "JTDI",
           "TIM2_CH1/ TIM2_ETR",
@@ -4661,7 +4565,7 @@
           "EVENTOUT"
         ],
         [
-          "Port A",
+          "PA15",
           "PA15",
           "AF0",
           "AF1",
@@ -4699,74 +4603,6 @@
           "COMP/DCMI/ PSSI/LCD/TIM1",
           "LCD/ UART5",
           "SYS"
-        ]
-      ],
-      "notes": [],
-      "legend": "",
-      "semantic_type": "",
-      "semantic": {}
-    }
-  },
-  {
-    "document": "DS13196 Rev 7 - stm32h7b0ab - Table 9. Port B alternate functions",
-    "rev": "Rev 7",
-    "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf",
-    "references": "DS13196",
-    "package": "LQFP144 (20 x 20 mm), LQFP176 (24 x 24 mm), UFBGA169 (10 x 10 mm), UFBGA176 (14 x 14 mm), TFBGA216, TFBGA225, LQFP100 (14 x 14 mm), LQFP64 (10 x 10 mm)",
-    "family": "H7",
-    "core": "Cortex-M7",
-    "frequency": "110",
-    "table_id": "table_9",
-    "table_number": "9",
-    "title": "Table 9. Port B alternate functions",
-    "page": 54,
-    "section": "3.49 Debug infrastructure",
-    "section_title": "Debug infrastructure",
-    "semantic_type": "",
-    "tags": [],
-    "url": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf#page=54",
-    "text_helper": "Table 9. Port B alternate functions — section 3.49 Debug infrastructure. Port, Port, AF0 / SYS, AF1 / LPTIM1/ TIM1/2/16/17, AF2 / PDM_SAI1/ TIM3/4/5/12/15, +13 autres.",
-    "table_content": {
-      "headers": [
-        "Port",
-        "Port",
-        "AF0 / SYS",
-        "AF1 / LPTIM1/ TIM1/2/16/17",
-        "AF2 / PDM_SAI1/ TIM3/4/5/12/15",
-        "AF3 / DFSDM1/ LPTIM2/3/ LPUART1/ OCTOSPIM_P1/2/ TIM8",
-        "AF4 / CEC/DCMI/PSSI/ DFSDM1/2/ I2C1/2/3/4/ LPTIM2/TIM15/ USART1",
-        "AF5 / CEC/SPI1/ I2S1/SPI2/ I2S2/SPI3/ I2S3/ SPI4/5/ SPI6/I2S6",
-        "AF6 / DFSDM1/2/I2C4/ OCTOSPIM_P1/ SAI1/SPI3/I2S3/ UART4",
-        "AF7 / SDMMC1/SPI2/ I2S2/SPI3/I2S3/ SPI6/I2S6/ UART7/ USART1/2/3/6",
-        "AF8 / LPUART1/ SAI2/ SDMMC1/ SPDIFRX1/ SPI6/I2S6/ UART4/5/8",
-        "AF9 / FDCAN1/2/FMC/LC D/OCTOSPIM_P1/2/ SDMMC2/ SPDIFRX1/TIM13/14",
-        "AF10 / CRS/FMC/LCD/ OCTOSPIM_P1/ OTG1_FS/ OTG1_HS/ SAI2/SDMMC2/ TIM8",
-        "AF11 / DFSDM1/2/ I2C4/LCD/MDIOS/ OCTOSPIM_P1/ SDMMC2/SWPMI1/ TIM1/8/UART7/9/ USART10",
-        "AF12 / FMC/LCD/ MDIOS/ SDMMC1/ TIM1/8",
-        "AF13 / COMP/DCMI/ PSSI/LCD/TIM1",
-        "AF14 / LCD/ UART5",
-        "AF15 / SYS"
-      ],
-      "rows": [
-        [
-          "Port B",
-          "PB0",
-          "-",
-          "TIM1_CH2N",
-          "TIM3_CH3",
-          "TIM8_CH2N",
-          "DFSDM2_CKOUT",
-          "-",
-          "DFSDM1_CKOUT",
-          "-",
-          "UART4_CTS",
-          "LCD_R3",
-          "OTG_HS_ ULPI_D1",
-          "OCTOSPIM_P1_IO1",
-          "-",
-          "-",
-          "LCD_G1",
-          "EVENTOUT"
         ],
         [
           "Port B",
@@ -5067,9 +4903,377 @@
           "-",
           "LCD_G7",
           "EVENTOUT"
-        ],
+        ]
+      ],
+      "notes": [],
+      "legend": "",
+      "semantic_type": "",
+      "semantic": {}
+    }
+  },
+  {
+    "document": "DS13196 Rev 7 - stm32h7b0ab - Table 9. Port B alternate functions",
+    "rev": "Rev 7",
+    "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf",
+    "references": "DS13196",
+    "package": "LQFP144 (20 x 20 mm), LQFP176 (24 x 24 mm), UFBGA169 (10 x 10 mm), UFBGA176 (14 x 14 mm), TFBGA216, TFBGA225, LQFP100 (14 x 14 mm), LQFP64 (10 x 10 mm)",
+    "family": "H7",
+    "core": "Cortex-M7",
+    "frequency": "110",
+    "table_id": "table_9",
+    "table_number": "9",
+    "title": "Table 9. Port B alternate functions",
+    "page": 54,
+    "section": "3.49 Debug infrastructure",
+    "section_title": "Debug infrastructure",
+    "semantic_type": "",
+    "tags": [],
+    "url": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf#page=54",
+    "text_helper": "Table 9. Port B alternate functions — section 3.49 Debug infrastructure. Port, Port, AF0 / SYS, AF1 / LPTIM1/ TIM1/2/16/17, AF2 / PDM_SAI1/ TIM3/4/5/12/15, +13 autres.",
+    "table_content": {
+      "headers": [
+        "Port",
+        "Port",
+        "AF0 / SYS",
+        "AF1 / LPTIM1/ TIM1/2/16/17",
+        "AF2 / PDM_SAI1/ TIM3/4/5/12/15",
+        "AF3 / DFSDM1/ LPTIM2/3/ LPUART1/ OCTOSPIM_P1/2/ TIM8",
+        "AF4 / CEC/DCMI/PSSI/ DFSDM1/2/ I2C1/2/3/4/ LPTIM2/TIM15/ USART1",
+        "AF5 / CEC/SPI1/ I2S1/SPI2/ I2S2/SPI3/ I2S3/ SPI4/5/ SPI6/I2S6",
+        "AF6 / DFSDM1/2/I2C4/ OCTOSPIM_P1/ SAI1/SPI3/I2S3/ UART4",
+        "AF7 / SDMMC1/SPI2/ I2S2/SPI3/I2S3/ SPI6/I2S6/ UART7/ USART1/2/3/6",
+        "AF8 / LPUART1/ SAI2/ SDMMC1/ SPDIFRX1/ SPI6/I2S6/ UART4/5/8",
+        "AF9 / FDCAN1/2/FMC/LC D/OCTOSPIM_P1/2/ SDMMC2/ SPDIFRX1/TIM13/14",
+        "AF10 / CRS/FMC/LCD/ OCTOSPIM_P1/ OTG1_FS/ OTG1_HS/ SAI2/SDMMC2/ TIM8",
+        "AF11 / DFSDM1/2/ I2C4/LCD/MDIOS/ OCTOSPIM_P1/ SDMMC2/SWPMI1/ TIM1/8/UART7/9/ USART10",
+        "AF12 / FMC/LCD/ MDIOS/ SDMMC1/ TIM1/8",
+        "AF13 / COMP/DCMI/ PSSI/LCD/TIM1",
+        "AF14 / LCD/ UART5",
+        "AF15 / SYS"
+      ],
+      "rows": [
         [
           "Port B",
+          "PB0",
+          "-",
+          "TIM1_CH2N",
+          "TIM3_CH3",
+          "TIM8_CH2N",
+          "DFSDM2_CKOUT",
+          "-",
+          "DFSDM1_CKOUT",
+          "-",
+          "UART4_CTS",
+          "LCD_R3",
+          "OTG_HS_ ULPI_D1",
+          "OCTOSPIM_P1_IO1",
+          "-",
+          "-",
+          "LCD_G1",
+          "EVENTOUT"
+        ],
+        [
+          "PB1",
+          "PB1",
+          "-",
+          "TIM1_CH3N",
+          "TIM3_CH4",
+          "TIM8_CH3N",
+          "-",
+          "-",
+          "DFSDM1_DATIN1",
+          "-",
+          "-",
+          "LCD_R6",
+          "OTG_HS_ ULPI_D2",
+          "OCTOSPIM_ P1_IO0",
+          "-",
+          "-",
+          "LCD_G0",
+          "EVENTOUT"
+        ],
+        [
+          "PB2",
+          "PB2",
+          "RTC_OUT2",
+          "-",
+          "SAI1_D1",
+          "-",
+          "DFSDM1_CKIN1",
+          "-",
+          "SAI1_SD_A",
+          "SPI3_MOSI/ I2S3_SDO",
+          "-",
+          "OCTOSPIM_P1_CLK",
+          "OCTOSPIM_ P1_DQS",
+          "-",
+          "-",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PB3",
+          "PB3",
+          "JTDO/ TRACESWO",
+          "TIM2_CH2",
+          "-",
+          "-",
+          "-",
+          "SPI1_SCK/ I2S1_CK",
+          "SPI3_SCK/ I2S3_CK",
+          "-",
+          "SPI6_SCK/ I2S6_CK",
+          "SDMMC2_D2",
+          "CRS_SYNC",
+          "UART7_RX",
+          "-",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PB4",
+          "PB4",
+          "NJTRST",
+          "TIM16_BKIN",
+          "TIM3_CH1",
+          "-",
+          "-",
+          "SPI1_MISO/ I2S1_SDI",
+          "SPI3_MISO/ I2S3_SDI",
+          "SPI2_SS/ I2S2_WS",
+          "SPI6_MISO/ I2S6_SDI",
+          "SDMMC2_D3",
+          "-",
+          "UART7_TX",
+          "-",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PB5",
+          "PB5",
+          "-",
+          "TIM17_BKIN",
+          "TIM3_CH2",
+          "-",
+          "I2C1_SMBA",
+          "SPI1_MOSI/ I2S1_SDO",
+          "I2C4_SMBA",
+          "SPI3_MOSI/ I2S3_SDO",
+          "SPI6_MOSI/ I2S6_SDO",
+          "FDCAN2_RX",
+          "OTG_HS_ ULPI_D7",
+          "LCD_B5",
+          "FMC_SDCKE1",
+          "DCMI_D10/ PSSI_D10",
+          "UART5_RX",
+          "EVENTOUT"
+        ],
+        [
+          "PB6",
+          "PB6",
+          "-",
+          "TIM16_CH1N",
+          "TIM4_CH1",
+          "-",
+          "I2C1_SCL",
+          "HDMI_CEC",
+          "I2C4_SCL",
+          "USART1_TX",
+          "LPUART1_TX",
+          "FDCAN2_TX",
+          "OCTOSPIM_ P1_NCS",
+          "DFSDM1_DATIN5",
+          "FMC_SDNE1",
+          "DCMI_D5/PSSI_D5",
+          "UART5_TX",
+          "EVENTOUT"
+        ],
+        [
+          "PB7 B",
+          "PB7",
+          "-",
+          "TIM17_CH1N",
+          "TIM4_CH2",
+          "-",
+          "I2C1_SDA",
+          "-",
+          "I2C4_SDA",
+          "USART1_RX",
+          "LPUART1_RX",
+          "-",
+          "-",
+          "DFSDM1_CKIN5",
+          "FMC_NL",
+          "DCMI_VSYNC/ PSSI_RDY",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PB8",
+          "PB8",
+          "-",
+          "TIM16_CH1",
+          "TIM4_CH3",
+          "DFSDM1_CKIN7",
+          "I2C1_SCL",
+          "-",
+          "I2C4_SCL",
+          "SDMMC1_CKIN",
+          "UART4_RX",
+          "FDCAN1_RX",
+          "SDMMC2_D4",
+          "-",
+          "SDMMC1_D4",
+          "DCMI_D6/PSSI_D6",
+          "LCD_B6",
+          "EVENTOUT"
+        ],
+        [
+          "PB9",
+          "PB9",
+          "-",
+          "TIM17_CH1",
+          "TIM4_CH4",
+          "DFSDM1_DATIN7",
+          "I2C1_SDA",
+          "SPI2_SS/ I2S2_WS",
+          "I2C4_SDA",
+          "SDMMC1_CDIR",
+          "UART4_TX",
+          "FDCAN1_TX",
+          "SDMMC2_D5",
+          "I2C4_SMBA",
+          "SDMMC1_D5",
+          "DCMI_D7/PSSI_D7",
+          "LCD_B7",
+          "EVENTOUT"
+        ],
+        [
+          "PB10",
+          "PB10",
+          "-",
+          "TIM2_CH3",
+          "-",
+          "LPTIM2_IN1",
+          "I2C2_SCL",
+          "SPI2_SCK/ I2S2_CK",
+          "DFSDM1_DATIN7",
+          "USART3_TX",
+          "-",
+          "OCTOSPIM_ P1_NCS",
+          "OTG_HS_ ULPI_D3",
+          "-",
+          "-",
+          "-",
+          "LCD_G4",
+          "EVENTOUT"
+        ],
+        [
+          "PB11",
+          "PB11",
+          "-",
+          "TIM2_CH4",
+          "-",
+          "LPTIM2_ETR",
+          "I2C2_SDA",
+          "-",
+          "DFSDM1_CKIN7",
+          "USART3_RX",
+          "-",
+          "-",
+          "OTG_HS_ ULPI_D4",
+          "-",
+          "-",
+          "-",
+          "LCD_G5",
+          "EVENTOUT"
+        ],
+        [
+          "PB12",
+          "PB12",
+          "-",
+          "TIM1_BKIN",
+          "-",
+          "OCTOSPIM_ P1_NCLK",
+          "I2C2_SMBA",
+          "SPI2_SS/ I2S2_WS",
+          "DFSDM1_DATIN1",
+          "USART3_CK",
+          "-",
+          "FDCAN2_RX",
+          "OTG_HS_ ULPI_D5",
+          "DFSDM2_DATIN1",
+          "-",
+          "TIM1_BKIN_COMP12",
+          "UART5_RX",
+          "EVENTOUT"
+        ],
+        [
+          "PB13",
+          "PB13",
+          "-",
+          "TIM1_CH1N",
+          "-",
+          "LPTIM2_OUT",
+          "DFSDM2_CKIN1",
+          "SPI2_SCK/ I2S2_CK",
+          "DFSDM1_CKIN1",
+          "USART3_CTS/ USART3_NSS",
+          "-",
+          "FDCAN2_TX",
+          "OTG_HS_ ULPI_D6",
+          "-",
+          "SDMMC1_D0",
+          "DCMI_D2/PSSI_D2",
+          "UART5_TX",
+          "EVENTOUT"
+        ],
+        [
+          "PB14",
+          "PB14",
+          "-",
+          "TIM1_CH2N",
+          "TIM12_CH1",
+          "TIM8_CH2N",
+          "USART1_TX",
+          "SPI2_MISO/ I2S2_SDI",
+          "DFSDM1_DATIN2",
+          "USART3_RTS",
+          "UART4_RTS",
+          "SDMMC2_D0",
+          "-",
+          "-",
+          "-",
+          "-",
+          "LCD_CLK",
+          "EVENTOUT"
+        ],
+        [
+          "PB15",
+          "PB15",
+          "RTC_REFIN",
+          "TIM1_CH3N",
+          "TIM12_CH2",
+          "TIM8_CH3N",
+          "USART1_RX",
+          "SPI2_MOSI/ I2S2_SDO",
+          "DFSDM1_CKIN2",
+          "-",
+          "UART4_CTS",
+          "SDMMC2_D1",
+          "-",
+          "-",
+          "-",
+          "-",
+          "LCD_G7",
+          "EVENTOUT"
+        ],
+        [
+          "PB15",
           "PB15",
           "AF0",
           "AF1",
@@ -5107,74 +5311,6 @@
           "COMP/DCMI/ PSSI/LCD/ TIM1",
           "LCD/UART5",
           "SYS"
-        ]
-      ],
-      "notes": [],
-      "legend": "",
-      "semantic_type": "",
-      "semantic": {}
-    }
-  },
-  {
-    "document": "DS13196 Rev 7 - stm32h7b0ab - Table 10. Port C alternate functions",
-    "rev": "Rev 7",
-    "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf",
-    "references": "DS13196",
-    "package": "LQFP144 (20 x 20 mm), LQFP176 (24 x 24 mm), UFBGA169 (10 x 10 mm), UFBGA176 (14 x 14 mm), TFBGA216, TFBGA225, LQFP100 (14 x 14 mm), LQFP64 (10 x 10 mm)",
-    "family": "H7",
-    "core": "Cortex-M7",
-    "frequency": "110",
-    "table_id": "table_10",
-    "table_number": "10",
-    "title": "Table 10. Port C alternate functions",
-    "page": 55,
-    "section": "3.49 Debug infrastructure",
-    "section_title": "Debug infrastructure",
-    "semantic_type": "",
-    "tags": [],
-    "url": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf#page=55",
-    "text_helper": "Table 10. Port C alternate functions — section 3.49 Debug infrastructure. Port, Port, AF0 / SYS, AF1 / LPTIM1/ TIM1/2/16/17, AF2 / PDM_SAI1/ TIM3/4/5/12/15, +13 autres.",
-    "table_content": {
-      "headers": [
-        "Port",
-        "Port",
-        "AF0 / SYS",
-        "AF1 / LPTIM1/ TIM1/2/16/17",
-        "AF2 / PDM_SAI1/ TIM3/4/5/12/15",
-        "AF3 / DFSDM1/ LPTIM2/3/ LPUART1/ OCTOSPIM_P1/2/ TIM8",
-        "AF4 / CEC/DCMI/PSSI/ DFSDM1/2/ I2C1/2/3/4/ LPTIM2/TIM15/ USART1",
-        "AF5 / CEC/SPI1/ I2S1/SPI2/ I2S2/SPI3/ I2S3/ SPI4/5/ SPI6/I2S6",
-        "AF6 / DFSDM1/2/I2C4/ OCTOSPIM_P1/ SAI1/SPI3/I2S3/ UART4",
-        "AF7 / SDMMC1/ SPI2/I2S2/ SPI3/I2S3/ SPI6/I2S6/ UART7/ USART1/2/3/6",
-        "AF8 / LPUART1/ SAI2/SDMMC1/ SPDIFRX1/SPI6/ I2S6/UART4/5/8",
-        "AF9 / FDCAN1/2/FMC/LCD /OCTOSPIM_P1/2/ SDMMC2/ SPDIFRX1/TIM13/14",
-        "AF10 / CRS/FMC/LCD/ OCTOSPIM_P1/ OTG1_FS/ OTG1_HS/ SAI2/SDMMC2/ TIM8",
-        "AF11 / DFSDM1/2/ I2C4/LCD/ MDIOS/ OCTOSPIM_P1/ SDMMC2/ SWPMI1/ TIM1/8/ UART7/9/ USART10",
-        "AF12 / FMC/LCD/ MDIOS/ SDMMC1/ TIM1/8",
-        "AF13 / COMP/DCMI/ PSSI/LCD/ TIM1",
-        "AF14 / LCD/UART5",
-        "AF15 / SYS"
-      ],
-      "rows": [
-        [
-          "Port C",
-          "PC0",
-          "-",
-          "-",
-          "-",
-          "DFSDM1_CKIN0",
-          "-",
-          "-",
-          "DFSDM1_DATIN4",
-          "-",
-          "SAI2_FS_B",
-          "FMC_A25",
-          "OTG_HS_ ULPI_STP",
-          "LCD_G2",
-          "FMC_SDNWE",
-          "-",
-          "LCD_R5",
-          "EVENTOUT"
         ],
         [
           "Port C",
@@ -5475,9 +5611,377 @@
           "-",
           "-",
           "EVENTOUT"
-        ],
+        ]
+      ],
+      "notes": [],
+      "legend": "",
+      "semantic_type": "",
+      "semantic": {}
+    }
+  },
+  {
+    "document": "DS13196 Rev 7 - stm32h7b0ab - Table 10. Port C alternate functions",
+    "rev": "Rev 7",
+    "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf",
+    "references": "DS13196",
+    "package": "LQFP144 (20 x 20 mm), LQFP176 (24 x 24 mm), UFBGA169 (10 x 10 mm), UFBGA176 (14 x 14 mm), TFBGA216, TFBGA225, LQFP100 (14 x 14 mm), LQFP64 (10 x 10 mm)",
+    "family": "H7",
+    "core": "Cortex-M7",
+    "frequency": "110",
+    "table_id": "table_10",
+    "table_number": "10",
+    "title": "Table 10. Port C alternate functions",
+    "page": 55,
+    "section": "3.49 Debug infrastructure",
+    "section_title": "Debug infrastructure",
+    "semantic_type": "",
+    "tags": [],
+    "url": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf#page=55",
+    "text_helper": "Table 10. Port C alternate functions — section 3.49 Debug infrastructure. Port, Port, AF0 / SYS, AF1 / LPTIM1/ TIM1/2/16/17, AF2 / PDM_SAI1/ TIM3/4/5/12/15, +13 autres.",
+    "table_content": {
+      "headers": [
+        "Port",
+        "Port",
+        "AF0 / SYS",
+        "AF1 / LPTIM1/ TIM1/2/16/17",
+        "AF2 / PDM_SAI1/ TIM3/4/5/12/15",
+        "AF3 / DFSDM1/ LPTIM2/3/ LPUART1/ OCTOSPIM_P1/2/ TIM8",
+        "AF4 / CEC/DCMI/PSSI/ DFSDM1/2/ I2C1/2/3/4/ LPTIM2/TIM15/ USART1",
+        "AF5 / CEC/SPI1/ I2S1/SPI2/ I2S2/SPI3/ I2S3/ SPI4/5/ SPI6/I2S6",
+        "AF6 / DFSDM1/2/I2C4/ OCTOSPIM_P1/ SAI1/SPI3/I2S3/ UART4",
+        "AF7 / SDMMC1/ SPI2/I2S2/ SPI3/I2S3/ SPI6/I2S6/ UART7/ USART1/2/3/6",
+        "AF8 / LPUART1/ SAI2/SDMMC1/ SPDIFRX1/SPI6/ I2S6/UART4/5/8",
+        "AF9 / FDCAN1/2/FMC/LCD /OCTOSPIM_P1/2/ SDMMC2/ SPDIFRX1/TIM13/14",
+        "AF10 / CRS/FMC/LCD/ OCTOSPIM_P1/ OTG1_FS/ OTG1_HS/ SAI2/SDMMC2/ TIM8",
+        "AF11 / DFSDM1/2/ I2C4/LCD/ MDIOS/ OCTOSPIM_P1/ SDMMC2/ SWPMI1/ TIM1/8/ UART7/9/ USART10",
+        "AF12 / FMC/LCD/ MDIOS/ SDMMC1/ TIM1/8",
+        "AF13 / COMP/DCMI/ PSSI/LCD/ TIM1",
+        "AF14 / LCD/UART5",
+        "AF15 / SYS"
+      ],
+      "rows": [
         [
           "Port C",
+          "PC0",
+          "-",
+          "-",
+          "-",
+          "DFSDM1_CKIN0",
+          "-",
+          "-",
+          "DFSDM1_DATIN4",
+          "-",
+          "SAI2_FS_B",
+          "FMC_A25",
+          "OTG_HS_ ULPI_STP",
+          "LCD_G2",
+          "FMC_SDNWE",
+          "-",
+          "LCD_R5",
+          "EVENTOUT"
+        ],
+        [
+          "PC1",
+          "PC1",
+          "TRACED0",
+          "-",
+          "SAI1_D1",
+          "DFSDM1_DATIN0",
+          "DFSDM1_CKIN4",
+          "SPI2_MOSI/ I2S2_SDO",
+          "SAI1_SD_A",
+          "-",
+          "-",
+          "SDMMC2_CK",
+          "OCTOSPIM_ P1_IO4",
+          "-",
+          "MDIOS_MDC",
+          "-",
+          "LCD_G5",
+          "EVENTOUT"
+        ],
+        [
+          "PC2",
+          "PC2",
+          "PWR_CSTOP",
+          "-",
+          "-",
+          "DFSDM1_CKIN1",
+          "-",
+          "SPI2_MISO/ I2S2_SDI",
+          "DFSDM1_CKOUT",
+          "-",
+          "-",
+          "OCTOSPIM_P1_IO2",
+          "OTG_HS_ ULPI_DIR",
+          "OCTOSPIM_ P1_IO5",
+          "FMC_SDNE0",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PC3",
+          "PC3",
+          "PWR_CSLEEP",
+          "-",
+          "-",
+          "DFSDM1_DATIN1",
+          "-",
+          "SPI2_MOSI/ I2S2_SDO",
+          "-",
+          "-",
+          "-",
+          "OCTOSPIM_P1_IO0",
+          "OTG_HS_ ULPI_NXT",
+          "OCTOSPIM_ P1_IO6",
+          "FMC_SDCKE0",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PC4",
+          "PC4",
+          "-",
+          "-",
+          "-",
+          "DFSDM1_CKIN2",
+          "-",
+          "I2S1_MCK",
+          "-",
+          "-",
+          "-",
+          "SPDIFRX1_IN2",
+          "-",
+          "-",
+          "FMC_SDNE0",
+          "-",
+          "LCD_R7",
+          "EVENTOUT"
+        ],
+        [
+          "PC5",
+          "PC5",
+          "-",
+          "-",
+          "SAI1_D3",
+          "DFSDM1_DATIN2",
+          "PSSI_D15",
+          "-",
+          "-",
+          "-",
+          "-",
+          "SPDIFRX1_IN3",
+          "OCTOSPIM_ P1_DQS",
+          "-",
+          "FMC_SDCKE0",
+          "COMP1_OUT",
+          "LCD_DE",
+          "EVENTOUT"
+        ],
+        [
+          "PC6",
+          "PC6",
+          "-",
+          "-",
+          "TIM3_CH1",
+          "TIM8_CH1",
+          "DFSDM1_CKIN3",
+          "I2S2_MCK",
+          "-",
+          "USART6_TX",
+          "SDMMC1_D0DIR",
+          "FMC_NWAIT",
+          "SDMMC2_D6",
+          "-",
+          "SDMMC1_D6",
+          "DCMI_D0/ PSSI_D0",
+          "LCD_HSYNC",
+          "EVENTOUT"
+        ],
+        [
+          "C PC7 troP",
+          "PC7",
+          "TRGIO",
+          "-",
+          "TIM3_CH2",
+          "TIM8_CH2",
+          "DFSDM1_DATIN3",
+          "-",
+          "I2S3_MCK",
+          "USART6_RX",
+          "SDMMC1_D123DIR",
+          "FMC_NE1",
+          "SDMMC2_D7",
+          "SWPMI_TX",
+          "SDMMC1_D7",
+          "DCMI_D1/ PSSI_D1",
+          "LCD_G6",
+          "EVENTOUT"
+        ],
+        [
+          "PC8",
+          "PC8",
+          "TRACED1",
+          "-",
+          "TIM3_CH3",
+          "TIM8_CH3",
+          "-",
+          "-",
+          "-",
+          "USART6_CK",
+          "UART5_RTS",
+          "FMC_NE2/ FMC_NCE",
+          "FMC_INT",
+          "SWPMI_RX",
+          "SDMMC1_D0",
+          "DCMI_D2/ PSSI_D2",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PC9",
+          "PC9",
+          "MCO2",
+          "-",
+          "TIM3_CH4",
+          "TIM8_CH4",
+          "I2C3_SDA",
+          "I2S_CKIN",
+          "-",
+          "-",
+          "UART5_CTS",
+          "OCTOSPIM_P1_IO0",
+          "LCD_G3",
+          "SWPMI_ SUSPEND",
+          "SDMMC1_D1",
+          "DCMI_D3/ PSSI_D3",
+          "LCD_B2",
+          "EVENTOUT"
+        ],
+        [
+          "PC10",
+          "PC10",
+          "-",
+          "-",
+          "-",
+          "DFSDM1_CKIN5",
+          "DFSDM2_CKIN0",
+          "-",
+          "SPI3_SCK/ I2S3_CK",
+          "USART3_TX",
+          "UART4_TX",
+          "OCTOSPIM_P1_IO1",
+          "LCD_B1",
+          "SWPMI_RX",
+          "SDMMC1_D2",
+          "DCMI_D8/ PSSI_D8",
+          "LCD_R2",
+          "EVENTOUT"
+        ],
+        [
+          "PC11",
+          "PC11",
+          "-",
+          "-",
+          "-",
+          "DFSDM1_DATIN5",
+          "DFSDM2_DATIN0",
+          "-",
+          "SPI3_MISO/ I2S3_SDI",
+          "USART3_RX",
+          "UART4_RX",
+          "OCTOSPIM_P1_NCS",
+          "-",
+          "-",
+          "SDMMC1_D3",
+          "DCMI_D4/ PSSI_D4",
+          "LCD_B4",
+          "EVENTOUT"
+        ],
+        [
+          "PC12",
+          "PC12",
+          "TRACED3",
+          "-",
+          "TIM15_CH1",
+          "-",
+          "DFSDM2_CKOUT",
+          "SPI6_SCK/ I2S6_CK",
+          "SPI3_MOSI/ I2S3_SDO",
+          "USART3_CK",
+          "UART5_TX",
+          "-",
+          "-",
+          "-",
+          "SDMMC1_CK",
+          "DCMI_D9/ PSSI_D9",
+          "LCD_R6",
+          "EVENTOUT"
+        ],
+        [
+          "PC13",
+          "PC13",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PC14",
+          "PC14",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PC15",
+          "PC15",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PC15",
           "PC15",
           "AF0",
           "AF1",
@@ -5515,74 +6019,6 @@
           "COMP/ DCMI/ PSSI/LCD/ TIM1",
           "LCDUART5",
           "SYS"
-        ]
-      ],
-      "notes": [],
-      "legend": "",
-      "semantic_type": "",
-      "semantic": {}
-    }
-  },
-  {
-    "document": "DS13196 Rev 7 - stm32h7b0ab - Table 11. Port D alternate functions",
-    "rev": "Rev 7",
-    "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf",
-    "references": "DS13196",
-    "package": "LQFP144 (20 x 20 mm), LQFP176 (24 x 24 mm), UFBGA169 (10 x 10 mm), UFBGA176 (14 x 14 mm), TFBGA216, TFBGA225, LQFP100 (14 x 14 mm), LQFP64 (10 x 10 mm)",
-    "family": "H7",
-    "core": "Cortex-M7",
-    "frequency": "110",
-    "table_id": "table_11",
-    "table_number": "11",
-    "title": "Table 11. Port D alternate functions",
-    "page": 56,
-    "section": "3.49 Debug infrastructure",
-    "section_title": "Debug infrastructure",
-    "semantic_type": "",
-    "tags": [],
-    "url": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf#page=56",
-    "text_helper": "Table 11. Port D alternate functions — section 3.49 Debug infrastructure. Port, Port, AF0 / SYS, AF1 / LPTIM1/ TIM1/2/16/17, AF2 / PDM_SAI1/ TIM3/4/5/12/15, +13 autres.",
-    "table_content": {
-      "headers": [
-        "Port",
-        "Port",
-        "AF0 / SYS",
-        "AF1 / LPTIM1/ TIM1/2/16/17",
-        "AF2 / PDM_SAI1/ TIM3/4/5/12/15",
-        "AF3 / DFSDM1/ LPTIM2/3/ LPUART1/ OCTOSPIM_P1/2/ TIM8",
-        "AF4 / CEC/DCMI/PSSI/ DFSDM1/2/ I2C1/2/3/4/ LPTIM2/TIM15/ USART1",
-        "AF5 / CEC/SPI1/ I2S1/SPI2/ I2S2/SPI3/ I2S3/ SPI4/5/ SPI6/I2S6",
-        "AF6 / DFSDM1/2/I2C4/ OCTOSPIM_P1/ SAI1/SPI3/I2S3/ UART4",
-        "AF7 / SDMMC1/ SPI2/I2S2/ SPI3/I2S3/ SPI6/I2S6/ UART7/ USART1/2/3/6",
-        "AF8 / LPUART1/ SAI2/ SDMMC1/ SPDIFRX1/ SPI6/I2S6/ UART4/5/8",
-        "AF9 / FDCAN1/2/FMC/LC D/OCTOSPIM_P1/2/ SDMMC2/ SPDIFRX1/ TIM13/14",
-        "AF10 / CRS/FMC/LCD/ OCTOSPIM_P1/ OTG1_FS/ OTG1_HS/SAI2/ SDMMC2/TIM8",
-        "AF11 / DFSDM1/2/ I2C4/LCD/ MDIOS/ OCTOSPIM_P1/ SDMMC2/ SWPMI1/ TIM1/8/ UART7/9/ USART10",
-        "AF12 / FMC/LCD/ MDIOS/ SDMMC1/ TIM1/8",
-        "AF13 / COMP/ DCMI/ PSSI/LCD/ TIM1",
-        "AF14 / LCDUART5",
-        "AF15 / SYS"
-      ],
-      "rows": [
-        [
-          "Port D",
-          "PD0",
-          "-",
-          "-",
-          "-",
-          "DFSDM1_CKIN6",
-          "-",
-          "-",
-          "-",
-          "-",
-          "UART4_RX",
-          "FDCAN1_RX",
-          "-",
-          "UART9_CTS",
-          "FMC_D2/ FMC_DA2",
-          "-",
-          "LCD_B1",
-          "EVENTOUT"
         ],
         [
           "Port D",
@@ -5883,9 +6319,377 @@
           "-",
           "-",
           "EVENTOUT"
-        ],
+        ]
+      ],
+      "notes": [],
+      "legend": "",
+      "semantic_type": "",
+      "semantic": {}
+    }
+  },
+  {
+    "document": "DS13196 Rev 7 - stm32h7b0ab - Table 11. Port D alternate functions",
+    "rev": "Rev 7",
+    "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf",
+    "references": "DS13196",
+    "package": "LQFP144 (20 x 20 mm), LQFP176 (24 x 24 mm), UFBGA169 (10 x 10 mm), UFBGA176 (14 x 14 mm), TFBGA216, TFBGA225, LQFP100 (14 x 14 mm), LQFP64 (10 x 10 mm)",
+    "family": "H7",
+    "core": "Cortex-M7",
+    "frequency": "110",
+    "table_id": "table_11",
+    "table_number": "11",
+    "title": "Table 11. Port D alternate functions",
+    "page": 56,
+    "section": "3.49 Debug infrastructure",
+    "section_title": "Debug infrastructure",
+    "semantic_type": "",
+    "tags": [],
+    "url": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf#page=56",
+    "text_helper": "Table 11. Port D alternate functions — section 3.49 Debug infrastructure. Port, Port, AF0 / SYS, AF1 / LPTIM1/ TIM1/2/16/17, AF2 / PDM_SAI1/ TIM3/4/5/12/15, +13 autres.",
+    "table_content": {
+      "headers": [
+        "Port",
+        "Port",
+        "AF0 / SYS",
+        "AF1 / LPTIM1/ TIM1/2/16/17",
+        "AF2 / PDM_SAI1/ TIM3/4/5/12/15",
+        "AF3 / DFSDM1/ LPTIM2/3/ LPUART1/ OCTOSPIM_P1/2/ TIM8",
+        "AF4 / CEC/DCMI/PSSI/ DFSDM1/2/ I2C1/2/3/4/ LPTIM2/TIM15/ USART1",
+        "AF5 / CEC/SPI1/ I2S1/SPI2/ I2S2/SPI3/ I2S3/ SPI4/5/ SPI6/I2S6",
+        "AF6 / DFSDM1/2/I2C4/ OCTOSPIM_P1/ SAI1/SPI3/I2S3/ UART4",
+        "AF7 / SDMMC1/ SPI2/I2S2/ SPI3/I2S3/ SPI6/I2S6/ UART7/ USART1/2/3/6",
+        "AF8 / LPUART1/ SAI2/ SDMMC1/ SPDIFRX1/ SPI6/I2S6/ UART4/5/8",
+        "AF9 / FDCAN1/2/FMC/LC D/OCTOSPIM_P1/2/ SDMMC2/ SPDIFRX1/ TIM13/14",
+        "AF10 / CRS/FMC/LCD/ OCTOSPIM_P1/ OTG1_FS/ OTG1_HS/SAI2/ SDMMC2/TIM8",
+        "AF11 / DFSDM1/2/ I2C4/LCD/ MDIOS/ OCTOSPIM_P1/ SDMMC2/ SWPMI1/ TIM1/8/ UART7/9/ USART10",
+        "AF12 / FMC/LCD/ MDIOS/ SDMMC1/ TIM1/8",
+        "AF13 / COMP/ DCMI/ PSSI/LCD/ TIM1",
+        "AF14 / LCDUART5",
+        "AF15 / SYS"
+      ],
+      "rows": [
         [
           "Port D",
+          "PD0",
+          "-",
+          "-",
+          "-",
+          "DFSDM1_CKIN6",
+          "-",
+          "-",
+          "-",
+          "-",
+          "UART4_RX",
+          "FDCAN1_RX",
+          "-",
+          "UART9_CTS",
+          "FMC_D2/ FMC_DA2",
+          "-",
+          "LCD_B1",
+          "EVENTOUT"
+        ],
+        [
+          "PD1",
+          "PD1",
+          "-",
+          "-",
+          "-",
+          "DFSDM1_DATIN6",
+          "-",
+          "-",
+          "-",
+          "-",
+          "UART4_TX",
+          "FDCAN1_TX",
+          "-",
+          "-",
+          "FMC_D3/ FMC_DA3",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PD2",
+          "PD2",
+          "TRACED2",
+          "-",
+          "TIM3_ETR",
+          "-",
+          "TIM15_BKIN",
+          "-",
+          "-",
+          "-",
+          "UART5_RX",
+          "LCD_B7",
+          "-",
+          "-",
+          "SDMMC1_CMD",
+          "DCMI_D11/ PSSI_D11",
+          "LCD_B2",
+          "EVENTOUT"
+        ],
+        [
+          "PD3",
+          "PD3",
+          "-",
+          "-",
+          "-",
+          "DFSDM1_CKOUT",
+          "-",
+          "SPI2_SCK/ I2S2_CK",
+          "-",
+          "USART2_CTS/ USART2_NSS",
+          "-",
+          "-",
+          "-",
+          "-",
+          "FMC_CLK",
+          "DCMI_D5/ PSSI_D5",
+          "LCD_G7",
+          "EVENTOUT"
+        ],
+        [
+          "PD4",
+          "PD4",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "USART2_RTS",
+          "-",
+          "-",
+          "OCTOSPIM_P1_IO4",
+          "-",
+          "FMC_NOE",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PD5",
+          "PD5",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "USART2_TX",
+          "-",
+          "-",
+          "OCTOSPIM_P1_IO5",
+          "-",
+          "FMC_NWE",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PD6",
+          "PD6",
+          "-",
+          "-",
+          "SAI1_D1",
+          "DFSDM1_CKIN4",
+          "DFSDM1_DATIN1",
+          "SPI3_MOSI/ I2S3_SDO",
+          "SAI1_SD_A",
+          "USART2_RX",
+          "-",
+          "-",
+          "OCTOSPIM_P1_IO6",
+          "SDMMC2_CK",
+          "FMC_NWAIT",
+          "DCMI_D10/ PSSI_D10",
+          "LCD_B2",
+          "EVENTOUT"
+        ],
+        [
+          "PD7",
+          "PD7",
+          "-",
+          "-",
+          "-",
+          "DFSDM1_DATIN4",
+          "-",
+          "SPI1_MOSI/ I2S1_SDO",
+          "DFSDM1_CKIN1",
+          "USART2_CK",
+          "-",
+          "SPDIFRX1_IN0",
+          "OCTOSPIM_P1_IO7",
+          "SDMMC2_CMD",
+          "FMC_NE1",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "D troP PD8",
+          "PD8",
+          "-",
+          "-",
+          "-",
+          "DFSDM1_CKIN3",
+          "-",
+          "-",
+          "-",
+          "USART3_TX",
+          "-",
+          "SPDIFRX1_IN1",
+          "-",
+          "-",
+          "FMC_D13/ FMC_DA13",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PD9",
+          "PD9",
+          "-",
+          "-",
+          "-",
+          "DFSDM1_DATIN3",
+          "-",
+          "-",
+          "-",
+          "USART3_RX",
+          "-",
+          "-",
+          "-",
+          "-",
+          "FMC_D14/ FMC_DA14",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PD10",
+          "PD10",
+          "-",
+          "-",
+          "-",
+          "DFSDM1_CKOUT",
+          "DFSDM2_CKOUT",
+          "-",
+          "-",
+          "USART3_CK",
+          "-",
+          "-",
+          "-",
+          "-",
+          "FMC_D15/ FMC_DA15",
+          "-",
+          "LCD_B3",
+          "EVENTOUT"
+        ],
+        [
+          "PD11",
+          "PD11",
+          "-",
+          "-",
+          "-",
+          "LPTIM2_IN2",
+          "I2C4_SMBA",
+          "-",
+          "-",
+          "USART3_CTS/ USART3_NSS",
+          "-",
+          "OCTOSPIM_P1_IO0",
+          "SAI2_SD_A",
+          "-",
+          "FMC_A16/ FMC_CLE",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PD12",
+          "PD12",
+          "-",
+          "LPTIM1_IN1",
+          "TIM4_CH1",
+          "LPTIM2_IN1",
+          "I2C4_SCL",
+          "-",
+          "-",
+          "USART3_RTS",
+          "-",
+          "OCTOSPIM_P1_IO1",
+          "SAI2_FS_A",
+          "-",
+          "FMC_A17/ FMC_ALE",
+          "DCMI_D12/ PSSI_D12",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PD13",
+          "PD13",
+          "-",
+          "LPTIM1_OUT",
+          "TIM4_CH2",
+          "-",
+          "I2C4_SDA",
+          "-",
+          "-",
+          "-",
+          "-",
+          "OCTOSPIM_P1_IO3",
+          "SAI2_SCK_A",
+          "UART9_RTS",
+          "FMC_A18",
+          "DCMI_D13/ PSSI_D13",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PD14",
+          "PD14",
+          "-",
+          "-",
+          "TIM4_CH3",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "UART8_CTS",
+          "-",
+          "-",
+          "UART9_RX",
+          "FMC_D0/ FMC_DA0",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PD15",
+          "PD15",
+          "-",
+          "-",
+          "TIM4_CH4",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "UART8_RTS",
+          "-",
+          "-",
+          "UART9_TX",
+          "FMC_D1/ FMC_DA1",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PD15",
           "PD15",
           "AF0",
           "AF1",
@@ -5923,114 +6727,6 @@
           "COMP/DCMI/ PSSI/LCD/TIM1",
           "LCD/ UART5",
           "SYS"
-        ],
-        [
-          "Port E",
-          "PE14",
-          "-",
-          "TIM1_CH4",
-          "-",
-          "-",
-          "-",
-          "SPI4_MOSI",
-          "-",
-          "-",
-          "-",
-          "-",
-          "SAI2_MCK_B",
-          "-",
-          "FMC_D11/ FMC_DA11",
-          "-",
-          "LCD_CLK",
-          "EVENTOUT"
-        ],
-        [
-          "Port E",
-          "PE15",
-          "-",
-          "TIM1_BKIN",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "USART10_CK",
-          "FMC_D12/ FMC_DA12",
-          "TIM1_BKIN_COMP12",
-          "LCD_R7",
-          "EVENTOUT"
-        ]
-      ],
-      "notes": [],
-      "legend": "",
-      "semantic_type": "",
-      "semantic": {}
-    }
-  },
-  {
-    "document": "DS13196 Rev 7 - stm32h7b0ab - Table 12. Port E alternate functions",
-    "rev": "Rev 7",
-    "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf",
-    "references": "DS13196",
-    "package": "LQFP144 (20 x 20 mm), LQFP176 (24 x 24 mm), UFBGA169 (10 x 10 mm), UFBGA176 (14 x 14 mm), TFBGA216, TFBGA225, LQFP100 (14 x 14 mm), LQFP64 (10 x 10 mm)",
-    "family": "H7",
-    "core": "Cortex-M7",
-    "frequency": "110",
-    "table_id": "table_12",
-    "table_number": "12",
-    "title": "Table 12. Port E alternate functions",
-    "page": 57,
-    "section": "3.49 Debug infrastructure",
-    "section_title": "Debug infrastructure",
-    "semantic_type": "",
-    "tags": [],
-    "url": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf#page=57",
-    "text_helper": "Table 12. Port E alternate functions — section 3.49 Debug infrastructure. Port, Port, AF0 / SYS, AF1 / LPTIM1/ TIM1/2/16/17, AF2 / PDM_SAI1/ TIM3/4/5/12/15, +13 autres.",
-    "table_content": {
-      "headers": [
-        "Port",
-        "Port",
-        "AF0 / SYS",
-        "AF1 / LPTIM1/ TIM1/2/16/17",
-        "AF2 / PDM_SAI1/ TIM3/4/5/12/15",
-        "AF3 / DFSDM1/ LPTIM2/3/ LPUART1/ OCTOSPIM_P1/2/ TIM8",
-        "AF4 / CEC/DCMI/ PSSI/ DFSDM1/2/ I2C1/2/3/4/ LPTIM2/ TIM15/ USART1",
-        "AF5 / CEC/SPI1/ I2S1/SPI2/ I2S2/SPI3/ I2S3/ SPI4/5/ SPI6/I2S6",
-        "AF6 / DFSDM1/2/ I2C4/ OCTOSPIM_P1/ SAI1/SPI3/I2S3/ UART4",
-        "AF7 / SDMMC1/ SPI2/I2S2/ SPI3/I2S3/ SPI6/I2S6/ UART7/ USART1/2/3/6",
-        "AF8 / LPUART1/ SAI2/ SDMMC1/ SPDIFRX1/ SPI6/I2S6/ UART4/5/8",
-        "AF9 / FDCAN1/2/FMC/LC D/OCTOSPIM_P1/2/ SDMMC2/ SPDIFRX1/ TIM13/14",
-        "AF10 / CRS/FMC/LCD/ OCTOSPIM_P1/ OTG1_FS/ OTG1_HS/SAI2/ SDMMC2/TIM8",
-        "AF11 / DFSDM1/2/ I2C4/LCD/MDIOS/ OCTOSPIM_P1/ SDMMC2/SWPMI1/ TIM1/8/UART7/9/ USART10",
-        "AF12 / FMC/LCD/ MDIOS/ SDMMC1/ TIM1/8",
-        "AF13 / COMP/DCMI/ PSSI/LCD/TIM1",
-        "AF14 / LCD/ UART5",
-        "AF15 / SYS"
-      ],
-      "rows": [
-        [
-          "Port E",
-          "PE0",
-          "-",
-          "LPTIM1_ETR",
-          "TIM4_ETR",
-          "-",
-          "LPTIM2_ETR",
-          "-",
-          "-",
-          "-",
-          "UART8_Rx",
-          "-",
-          "SAI2_MCK_A",
-          "-",
-          "FMC_NBL0",
-          "DCMI_D2/ PSSI_D2",
-          "LCD_R0",
-          "EVENTOUT"
         ],
         [
           "Port E",
@@ -6298,7 +6994,7 @@
           "-",
           "TIM1_CH4",
           "-",
-          "DFSDM1_CKIN5",
+          "-",
           "-",
           "SPI4_MOSI",
           "-",
@@ -6318,6 +7014,374 @@
           "-",
           "TIM1_BKIN",
           "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "USART10_CK",
+          "FMC_D12/ FMC_DA12",
+          "TIM1_BKIN_COMP12",
+          "LCD_R7",
+          "EVENTOUT"
+        ]
+      ],
+      "notes": [],
+      "legend": "",
+      "semantic_type": "",
+      "semantic": {}
+    }
+  },
+  {
+    "document": "DS13196 Rev 7 - stm32h7b0ab - Table 12. Port E alternate functions",
+    "rev": "Rev 7",
+    "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf",
+    "references": "DS13196",
+    "package": "LQFP144 (20 x 20 mm), LQFP176 (24 x 24 mm), UFBGA169 (10 x 10 mm), UFBGA176 (14 x 14 mm), TFBGA216, TFBGA225, LQFP100 (14 x 14 mm), LQFP64 (10 x 10 mm)",
+    "family": "H7",
+    "core": "Cortex-M7",
+    "frequency": "110",
+    "table_id": "table_12",
+    "table_number": "12",
+    "title": "Table 12. Port E alternate functions",
+    "page": 57,
+    "section": "3.49 Debug infrastructure",
+    "section_title": "Debug infrastructure",
+    "semantic_type": "",
+    "tags": [],
+    "url": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf#page=57",
+    "text_helper": "Table 12. Port E alternate functions — section 3.49 Debug infrastructure. Port, Port, AF0 / SYS, AF1 / LPTIM1/ TIM1/2/16/17, AF2 / PDM_SAI1/ TIM3/4/5/12/15, +13 autres.",
+    "table_content": {
+      "headers": [
+        "Port",
+        "Port",
+        "AF0 / SYS",
+        "AF1 / LPTIM1/ TIM1/2/16/17",
+        "AF2 / PDM_SAI1/ TIM3/4/5/12/15",
+        "AF3 / DFSDM1/ LPTIM2/3/ LPUART1/ OCTOSPIM_P1/2/ TIM8",
+        "AF4 / CEC/DCMI/ PSSI/ DFSDM1/2/ I2C1/2/3/4/ LPTIM2/ TIM15/ USART1",
+        "AF5 / CEC/SPI1/ I2S1/SPI2/ I2S2/SPI3/ I2S3/ SPI4/5/ SPI6/I2S6",
+        "AF6 / DFSDM1/2/ I2C4/ OCTOSPIM_P1/ SAI1/SPI3/I2S3/ UART4",
+        "AF7 / SDMMC1/ SPI2/I2S2/ SPI3/I2S3/ SPI6/I2S6/ UART7/ USART1/2/3/6",
+        "AF8 / LPUART1/ SAI2/ SDMMC1/ SPDIFRX1/ SPI6/I2S6/ UART4/5/8",
+        "AF9 / FDCAN1/2/FMC/LC D/OCTOSPIM_P1/2/ SDMMC2/ SPDIFRX1/ TIM13/14",
+        "AF10 / CRS/FMC/LCD/ OCTOSPIM_P1/ OTG1_FS/ OTG1_HS/SAI2/ SDMMC2/TIM8",
+        "AF11 / DFSDM1/2/ I2C4/LCD/MDIOS/ OCTOSPIM_P1/ SDMMC2/SWPMI1/ TIM1/8/UART7/9/ USART10",
+        "AF12 / FMC/LCD/ MDIOS/ SDMMC1/ TIM1/8",
+        "AF13 / COMP/DCMI/ PSSI/LCD/TIM1",
+        "AF14 / LCD/ UART5",
+        "AF15 / SYS"
+      ],
+      "rows": [
+        [
+          "Port E",
+          "PE0",
+          "-",
+          "LPTIM1_ETR",
+          "TIM4_ETR",
+          "-",
+          "LPTIM2_ETR",
+          "-",
+          "-",
+          "-",
+          "UART8_Rx",
+          "-",
+          "SAI2_MCK_A",
+          "-",
+          "FMC_NBL0",
+          "DCMI_D2/ PSSI_D2",
+          "LCD_R0",
+          "EVENTOUT"
+        ],
+        [
+          "PE1",
+          "PE1",
+          "-",
+          "LPTIM1_IN2",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "UART8_Tx",
+          "-",
+          "-",
+          "-",
+          "FMC_NBL1",
+          "DCMI_D3/ PSSI_D3",
+          "LCD_R6",
+          "EVENTOUT"
+        ],
+        [
+          "PE2",
+          "PE2",
+          "TRACECLK",
+          "-",
+          "SAI1_CK1",
+          "-",
+          "-",
+          "SPI4_SCK",
+          "SAI1_MCLK_A",
+          "-",
+          "-",
+          "OCTOSPIM_P1_IO2",
+          "-",
+          "USART10_RX",
+          "FMC_A23",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PE3",
+          "PE3",
+          "TRACED0",
+          "-",
+          "-",
+          "-",
+          "TIM15_BKIN",
+          "-",
+          "SAI1_SD_B",
+          "-",
+          "-",
+          "-",
+          "-",
+          "USART10_TX",
+          "FMC_A19",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PE4",
+          "PE4",
+          "TRACED1",
+          "-",
+          "SAI1_D2",
+          "DFSDM1_DATIN3",
+          "TIM15_CH1N",
+          "SPI4_SS",
+          "SAI1_FS_A",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "FMC_A20",
+          "DCMI_D4/ PSSI_D4",
+          "LCD_B0",
+          "EVENTOUT"
+        ],
+        [
+          "PE5",
+          "PE5",
+          "TRACED2",
+          "-",
+          "SAI1_CK2",
+          "DFSDM1_CKIN3",
+          "TIM15_CH1",
+          "SPI4_MISO",
+          "SAI1_SCK_A",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "FMC_A21",
+          "DCMI_D6/ PSSI_D6",
+          "LCD_G0",
+          "EVENTOUT"
+        ],
+        [
+          "PE6",
+          "PE6",
+          "TRACED3",
+          "TIM1_BKIN2",
+          "SAI1_D1",
+          "-",
+          "TIM15_CH2",
+          "SPI4_MOSI",
+          "SAI1_SD_A",
+          "-",
+          "-",
+          "-",
+          "SAI2_MCK_B",
+          "TIM1_BKIN2_ COMP12",
+          "FMC_A22",
+          "DCMI_D7/ PSSI_D7",
+          "LCD_G1",
+          "EVENTOUT"
+        ],
+        [
+          "PE7",
+          "PE7",
+          "-",
+          "TIM1_ETR",
+          "-",
+          "DFSDM1_DATIN2",
+          "-",
+          "-",
+          "-",
+          "UART7_RX",
+          "-",
+          "-",
+          "OCTOSPIM_P1_IO4",
+          "-",
+          "FMC_D4/ FMC_DA4",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "E troP PE8",
+          "PE8",
+          "-",
+          "TIM1_CH1N",
+          "-",
+          "DFSDM1_CKIN2",
+          "-",
+          "-",
+          "-",
+          "UART7_TX",
+          "-",
+          "-",
+          "OCTOSPIM_P1_IO5",
+          "-",
+          "FMC_D5/ FMC_DA5",
+          "COMP2_OUT",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PE9",
+          "PE9",
+          "-",
+          "TIM1_CH1",
+          "-",
+          "DFSDM1_CKOUT",
+          "-",
+          "-",
+          "-",
+          "UART7_RTS",
+          "-",
+          "-",
+          "OCTOSPIM_P1_IO6",
+          "-",
+          "FMC_D6/ FMC_DA6",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PE10",
+          "PE10",
+          "-",
+          "TIM1_CH2N",
+          "-",
+          "DFSDM1_DATIN4",
+          "-",
+          "-",
+          "-",
+          "UART7_CTS",
+          "-",
+          "-",
+          "OCTOSPIM_P1_IO7",
+          "-",
+          "FMC_D7/ FMC_DA7",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PE11",
+          "PE11",
+          "-",
+          "TIM1_CH2",
+          "-",
+          "DFSDM1_CKIN4",
+          "-",
+          "SPI4_SS",
+          "-",
+          "-",
+          "-",
+          "-",
+          "SAI2_SD_B",
+          "OCTOSPIM_P1_NCS",
+          "FMC_D8/ FMC_DA8",
+          "-",
+          "LCD_G3",
+          "EVENTOUT"
+        ],
+        [
+          "PE12",
+          "PE12",
+          "-",
+          "TIM1_CH3N",
+          "-",
+          "DFSDM1_DATIN5",
+          "-",
+          "SPI4_SCK",
+          "-",
+          "-",
+          "-",
+          "-",
+          "SAI2_SCK_B",
+          "-",
+          "FMC_D9/ FMC_DA9",
+          "COMP1_ OUT",
+          "LCD_B4",
+          "EVENTOUT"
+        ],
+        [
+          "PE13",
+          "PE13",
+          "-",
+          "TIM1_CH3",
+          "-",
+          "DFSDM1_CKIN5",
+          "-",
+          "SPI4_MISO",
+          "-",
+          "-",
+          "-",
+          "-",
+          "SAI2_FS_B",
+          "-",
+          "FMC_D10/ FMC_DA10",
+          "COMP2_OUT",
+          "LCD_DE",
+          "EVENTOUT"
+        ],
+        [
+          "PE14",
+          "PE14",
+          "-",
+          "TIM1_CH4",
+          "-",
+          "DFSDM1_CKIN5",
+          "-",
+          "SPI4_MOSI",
+          "-",
+          "-",
+          "-",
+          "-",
+          "SAI2_MCK_B",
+          "-",
+          "FMC_D11/ FMC_DA11",
+          "-",
+          "LCD_CLK",
+          "EVENTOUT"
+        ],
+        [
+          "PE15",
+          "PE15",
+          "-",
+          "TIM1_BKIN",
+          "-",
           "DFSDM1_CKIN5",
           "-",
           "-",
@@ -6333,7 +7397,7 @@
           "EVENTOUT"
         ],
         [
-          "Port E",
+          "PE15",
           "PE15",
           "AF0",
           "AF1",
@@ -6371,74 +7435,6 @@
           "COMP/ DCMI/ PSSI/LCD/ TIM1",
           "LCD/ UART5",
           "SYS"
-        ]
-      ],
-      "notes": [],
-      "legend": "",
-      "semantic_type": "",
-      "semantic": {}
-    }
-  },
-  {
-    "document": "DS13196 Rev 7 - stm32h7b0ab - Table 13. Port F alternate functions",
-    "rev": "Rev 7",
-    "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf",
-    "references": "DS13196",
-    "package": "LQFP144 (20 x 20 mm), LQFP176 (24 x 24 mm), UFBGA169 (10 x 10 mm), UFBGA176 (14 x 14 mm), TFBGA216, TFBGA225, LQFP100 (14 x 14 mm), LQFP64 (10 x 10 mm)",
-    "family": "H7",
-    "core": "Cortex-M7",
-    "frequency": "110",
-    "table_id": "table_13",
-    "table_number": "13",
-    "title": "Table 13. Port F alternate functions",
-    "page": 58,
-    "section": "3.49 Debug infrastructure",
-    "section_title": "Debug infrastructure",
-    "semantic_type": "",
-    "tags": [],
-    "url": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf#page=58",
-    "text_helper": "Table 13. Port F alternate functions — section 3.49 Debug infrastructure. Port, Port, AF0 / SYS, AF1 / LPTIM1/ TIM1/2/16/17, AF2 / PDM_SAI1/ TIM3/4/5/12/15, +13 autres.",
-    "table_content": {
-      "headers": [
-        "Port",
-        "Port",
-        "AF0 / SYS",
-        "AF1 / LPTIM1/ TIM1/2/16/17",
-        "AF2 / PDM_SAI1/ TIM3/4/5/12/15",
-        "AF3 / DFSDM1/ LPTIM2/3/ LPUART1/ OCTOSPIM_P1/2/ TIM8",
-        "AF4 / CEC/DCMI/ PSSI/ DFSDM1/2/ I2C1/2/3/4/ LPTIM2/ TIM15/ USART1",
-        "AF5 / CEC/SPI1/ I2S1/SPI2/ I2S2/SPI3/ I2S3/SPI4/5/ SPI6/I2S6",
-        "AF6 / DFSDM1/2/I2C4/ OCTOSPIM_P1/ SAI1/SPI3/I2S3/ UART4",
-        "AF7 / SDMMC1/SPI2/ I2S2/SPI3/ I2S3/SPI6/ I2S6/UART7/ USART1/2/3/6",
-        "AF8 / LPUART1/ SAI2/ SDMMC1/ SPDIFRX1/ SPI6/I2S6/ UART4/5/8",
-        "AF9 / FDCAN1/2/FMC/LCD/ OCTOSPIM_P1/2/ SDMMC2/SPDIFRX1/ TIM13/14",
-        "AF10 / CRS/FMC/LCD/ OCTOSPIM_P1/ OTG1_FS/OTG1_HS/ SAI2/SDMMC2/TIM8",
-        "AF11 / DFSDM1/2/ I2C4/LCD/ MDIOS/ OCTOSPIM_P1/ SDMMC2/ SWPMI1/TIM1/8/ UART7/9/ USART10",
-        "AF12 / FMC/LCD/ MDIOS/ SDMMC1/ TIM1/8",
-        "AF13 / COMP/ DCMI/ PSSI/LCD/ TIM1",
-        "AF14 / LCD/ UART5",
-        "AF15 / SYS"
-      ],
-      "rows": [
-        [
-          "Port F",
-          "PF0",
-          "-",
-          "-",
-          "-",
-          "-",
-          "I2C2_SDA",
-          "-",
-          "-",
-          "-",
-          "-",
-          "OCTOSPIM_P2_IO0",
-          "-",
-          "-",
-          "FMC_A0",
-          "-",
-          "-",
-          "EVENTOUT"
         ],
         [
           "Port F",
@@ -6739,9 +7735,377 @@
           "-",
           "-",
           "EVENTOUT"
-        ],
+        ]
+      ],
+      "notes": [],
+      "legend": "",
+      "semantic_type": "",
+      "semantic": {}
+    }
+  },
+  {
+    "document": "DS13196 Rev 7 - stm32h7b0ab - Table 13. Port F alternate functions",
+    "rev": "Rev 7",
+    "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf",
+    "references": "DS13196",
+    "package": "LQFP144 (20 x 20 mm), LQFP176 (24 x 24 mm), UFBGA169 (10 x 10 mm), UFBGA176 (14 x 14 mm), TFBGA216, TFBGA225, LQFP100 (14 x 14 mm), LQFP64 (10 x 10 mm)",
+    "family": "H7",
+    "core": "Cortex-M7",
+    "frequency": "110",
+    "table_id": "table_13",
+    "table_number": "13",
+    "title": "Table 13. Port F alternate functions",
+    "page": 58,
+    "section": "3.49 Debug infrastructure",
+    "section_title": "Debug infrastructure",
+    "semantic_type": "",
+    "tags": [],
+    "url": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf#page=58",
+    "text_helper": "Table 13. Port F alternate functions — section 3.49 Debug infrastructure. Port, Port, AF0 / SYS, AF1 / LPTIM1/ TIM1/2/16/17, AF2 / PDM_SAI1/ TIM3/4/5/12/15, +13 autres.",
+    "table_content": {
+      "headers": [
+        "Port",
+        "Port",
+        "AF0 / SYS",
+        "AF1 / LPTIM1/ TIM1/2/16/17",
+        "AF2 / PDM_SAI1/ TIM3/4/5/12/15",
+        "AF3 / DFSDM1/ LPTIM2/3/ LPUART1/ OCTOSPIM_P1/2/ TIM8",
+        "AF4 / CEC/DCMI/ PSSI/ DFSDM1/2/ I2C1/2/3/4/ LPTIM2/ TIM15/ USART1",
+        "AF5 / CEC/SPI1/ I2S1/SPI2/ I2S2/SPI3/ I2S3/SPI4/5/ SPI6/I2S6",
+        "AF6 / DFSDM1/2/I2C4/ OCTOSPIM_P1/ SAI1/SPI3/I2S3/ UART4",
+        "AF7 / SDMMC1/SPI2/ I2S2/SPI3/ I2S3/SPI6/ I2S6/UART7/ USART1/2/3/6",
+        "AF8 / LPUART1/ SAI2/ SDMMC1/ SPDIFRX1/ SPI6/I2S6/ UART4/5/8",
+        "AF9 / FDCAN1/2/FMC/LCD/ OCTOSPIM_P1/2/ SDMMC2/SPDIFRX1/ TIM13/14",
+        "AF10 / CRS/FMC/LCD/ OCTOSPIM_P1/ OTG1_FS/OTG1_HS/ SAI2/SDMMC2/TIM8",
+        "AF11 / DFSDM1/2/ I2C4/LCD/ MDIOS/ OCTOSPIM_P1/ SDMMC2/ SWPMI1/TIM1/8/ UART7/9/ USART10",
+        "AF12 / FMC/LCD/ MDIOS/ SDMMC1/ TIM1/8",
+        "AF13 / COMP/ DCMI/ PSSI/LCD/ TIM1",
+        "AF14 / LCD/ UART5",
+        "AF15 / SYS"
+      ],
+      "rows": [
         [
           "Port F",
+          "PF0",
+          "-",
+          "-",
+          "-",
+          "-",
+          "I2C2_SDA",
+          "-",
+          "-",
+          "-",
+          "-",
+          "OCTOSPIM_P2_IO0",
+          "-",
+          "-",
+          "FMC_A0",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PF1",
+          "PF1",
+          "-",
+          "-",
+          "-",
+          "-",
+          "I2C2_SCL",
+          "-",
+          "-",
+          "-",
+          "-",
+          "OCTOSPIM_P2_IO1",
+          "-",
+          "-",
+          "FMC_A1",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PF2",
+          "PF2",
+          "-",
+          "-",
+          "-",
+          "-",
+          "I2C2_SMBA",
+          "-",
+          "-",
+          "-",
+          "-",
+          "OCTOSPIM_P2_IO2",
+          "-",
+          "-",
+          "FMC_A2",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PF3",
+          "PF3",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "OCTOSPIM_P2_IO3",
+          "-",
+          "-",
+          "FMC_A3",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PF4",
+          "PF4",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "OCTOSPIM_P2_CLK",
+          "-",
+          "-",
+          "FMC_A4",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PF5",
+          "PF5",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "OCTOSPIM_ P2_NCLK",
+          "-",
+          "-",
+          "FMC_A5",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PF6",
+          "PF6",
+          "-",
+          "TIM16_CH1",
+          "-",
+          "-",
+          "-",
+          "SPI5_SS",
+          "SAI1_SD_B",
+          "UART7_Rx",
+          "-",
+          "-",
+          "OCTOSPIM_P1_IO3",
+          "-",
+          "-",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PF7",
+          "PF7",
+          "-",
+          "TIM17_CH1",
+          "-",
+          "-",
+          "-",
+          "SPI5_SCK",
+          "SAI1_MCLK_B",
+          "UART7_Tx",
+          "-",
+          "-",
+          "OCTOSPIM_P1_IO2",
+          "-",
+          "-",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PF8 F",
+          "PF8",
+          "-",
+          "TIM16_CH1N",
+          "-",
+          "-",
+          "-",
+          "SPI5_MISO",
+          "SAI1_SCK_B",
+          "UART7_RTS",
+          "-",
+          "TIM13_CH1",
+          "OCTOSPIM_P1_IO0",
+          "-",
+          "-",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PF9",
+          "PF9",
+          "-",
+          "TIM17_CH1N",
+          "-",
+          "-",
+          "-",
+          "SPI5_MOSI",
+          "SAI1_FS_B",
+          "UART7_CTS",
+          "-",
+          "TIM14_CH1",
+          "OCTOSPIM_P1_IO1",
+          "-",
+          "-",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PF10",
+          "PF10",
+          "-",
+          "TIM16_BKIN",
+          "SAI1_D3",
+          "-",
+          "PSSI_D15",
+          "-",
+          "-",
+          "-",
+          "-",
+          "OCTOSPIM_P1_CLK",
+          "-",
+          "-",
+          "-",
+          "DCMI_D11/ PSSI_D11",
+          "LCD_DE",
+          "EVENTOUT"
+        ],
+        [
+          "PF11",
+          "PF11",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "SPI5_MOSI",
+          "-",
+          "-",
+          "-",
+          "OCTOSPIM_ P1_NCLK",
+          "SAI2_SD_B",
+          "-",
+          "FMC_SDNRAS",
+          "DCMI_D12/ PSSI_D12",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PF12",
+          "PF12",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "OCTOSPIM_ P2_DQS",
+          "-",
+          "-",
+          "FMC_A6",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PF13",
+          "PF13",
+          "-",
+          "-",
+          "-",
+          "DFSDM1_DATIN6",
+          "I2C4_SMBA",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "FMC_A7",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PF14",
+          "PF14",
+          "-",
+          "-",
+          "-",
+          "DFSDM1_CKIN6",
+          "I2C4_SCL",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "FMC_A8",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PF15",
+          "PF15",
+          "-",
+          "-",
+          "-",
+          "-",
+          "I2C4_SDA",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "FMC_A9",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PF15",
           "PF15",
           "AF0",
           "AF1",
@@ -6779,74 +8143,6 @@
           "COMP/DCMI/ PSSI/LCD/ TIM1",
           "LCD/ UART5",
           "SYS"
-        ]
-      ],
-      "notes": [],
-      "legend": "",
-      "semantic_type": "",
-      "semantic": {}
-    }
-  },
-  {
-    "document": "DS13196 Rev 7 - stm32h7b0ab - Table 14. Port G alternate functions",
-    "rev": "Rev 7",
-    "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf",
-    "references": "DS13196",
-    "package": "LQFP144 (20 x 20 mm), LQFP176 (24 x 24 mm), UFBGA169 (10 x 10 mm), UFBGA176 (14 x 14 mm), TFBGA216, TFBGA225, LQFP100 (14 x 14 mm), LQFP64 (10 x 10 mm)",
-    "family": "H7",
-    "core": "Cortex-M7",
-    "frequency": "110",
-    "table_id": "table_14",
-    "table_number": "14",
-    "title": "Table 14. Port G alternate functions",
-    "page": 59,
-    "section": "3.49 Debug infrastructure",
-    "section_title": "Debug infrastructure",
-    "semantic_type": "",
-    "tags": [],
-    "url": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf#page=59",
-    "text_helper": "Table 14. Port G alternate functions — section 3.49 Debug infrastructure. Port, Port, AF0 / SYS, AF1 / LPTIM1/ TIM1/2/16/17, AF2 / PDM_SAI1/ TIM3/4/5/12/15, +13 autres.",
-    "table_content": {
-      "headers": [
-        "Port",
-        "Port",
-        "AF0 / SYS",
-        "AF1 / LPTIM1/ TIM1/2/16/17",
-        "AF2 / PDM_SAI1/ TIM3/4/5/12/15",
-        "AF3 / DFSDM1/LPTIM2/3/ LPUART1/ OCTOSPIM_P1/2/ TIM8",
-        "AF4 / CEC/DCMI/ PSSI/ DFSDM1/2/ I2C1/2/3/4/ LPTIM2/ TIM15/ USART1",
-        "AF5 / CEC/SPI1/ I2S1/SPI2/ I2S2/SPI3/ I2S3/ SPI4/5/ SPI6/I2S6",
-        "AF6 / DFSDM1/2/ I2C4/ OCTOSPIM_P1/ SAI1/SPI3/I2S3/ UART4",
-        "AF7 / SDMMC1/ SPI2/I2S2/ SPI3/I2S3/ SPI6/I2S6/ UART7/ USART1/2/3/6",
-        "AF8 / LPUART1/ SAI2/ SDMMC1/ SPDIFRX1/ SPI6/I2S6/ UART4/5/8",
-        "AF9 / FDCAN1/2/FMC/LCD /OCTOSPIM_P1/2/ SDMMC2/SPDIFRX1/ TIM13/14",
-        "AF10 / CRS/FMC/LCD/ OCTOSPIM_P1/ OTG1_FS/ OTG1_HS/SAI2/ SDMMC2/TIM8",
-        "AF11 / DFSDM1/2/ I2C4/LCD/ MDIOS/ OCTOSPIM_P1/ SDMMC2/ SWPMI1/ TIM1/8/ UART7/9/ USART10",
-        "AF12 / FMC/LCD/ MDIOS/ SDMMC1/ TIM1/8",
-        "AF13 / COMP/DCMI/ PSSI/LCD/ TIM1",
-        "AF14 / LCD/ UART5",
-        "AF15 / SYS"
-      ],
-      "rows": [
-        [
-          "Port G",
-          "PG0",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "OCTOSPIM_P2_IO4",
-          "-",
-          "UART9_RX",
-          "FMC_A10",
-          "-",
-          "-",
-          "EVENTOUT"
         ],
         [
           "Port G",
@@ -7147,9 +8443,377 @@
           "DCMI_D13/ PSSI_D13",
           "-",
           "EVENTOUT"
-        ],
+        ]
+      ],
+      "notes": [],
+      "legend": "",
+      "semantic_type": "",
+      "semantic": {}
+    }
+  },
+  {
+    "document": "DS13196 Rev 7 - stm32h7b0ab - Table 14. Port G alternate functions",
+    "rev": "Rev 7",
+    "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf",
+    "references": "DS13196",
+    "package": "LQFP144 (20 x 20 mm), LQFP176 (24 x 24 mm), UFBGA169 (10 x 10 mm), UFBGA176 (14 x 14 mm), TFBGA216, TFBGA225, LQFP100 (14 x 14 mm), LQFP64 (10 x 10 mm)",
+    "family": "H7",
+    "core": "Cortex-M7",
+    "frequency": "110",
+    "table_id": "table_14",
+    "table_number": "14",
+    "title": "Table 14. Port G alternate functions",
+    "page": 59,
+    "section": "3.49 Debug infrastructure",
+    "section_title": "Debug infrastructure",
+    "semantic_type": "",
+    "tags": [],
+    "url": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf#page=59",
+    "text_helper": "Table 14. Port G alternate functions — section 3.49 Debug infrastructure. Port, Port, AF0 / SYS, AF1 / LPTIM1/ TIM1/2/16/17, AF2 / PDM_SAI1/ TIM3/4/5/12/15, +13 autres.",
+    "table_content": {
+      "headers": [
+        "Port",
+        "Port",
+        "AF0 / SYS",
+        "AF1 / LPTIM1/ TIM1/2/16/17",
+        "AF2 / PDM_SAI1/ TIM3/4/5/12/15",
+        "AF3 / DFSDM1/LPTIM2/3/ LPUART1/ OCTOSPIM_P1/2/ TIM8",
+        "AF4 / CEC/DCMI/ PSSI/ DFSDM1/2/ I2C1/2/3/4/ LPTIM2/ TIM15/ USART1",
+        "AF5 / CEC/SPI1/ I2S1/SPI2/ I2S2/SPI3/ I2S3/ SPI4/5/ SPI6/I2S6",
+        "AF6 / DFSDM1/2/ I2C4/ OCTOSPIM_P1/ SAI1/SPI3/I2S3/ UART4",
+        "AF7 / SDMMC1/ SPI2/I2S2/ SPI3/I2S3/ SPI6/I2S6/ UART7/ USART1/2/3/6",
+        "AF8 / LPUART1/ SAI2/ SDMMC1/ SPDIFRX1/ SPI6/I2S6/ UART4/5/8",
+        "AF9 / FDCAN1/2/FMC/LCD /OCTOSPIM_P1/2/ SDMMC2/SPDIFRX1/ TIM13/14",
+        "AF10 / CRS/FMC/LCD/ OCTOSPIM_P1/ OTG1_FS/ OTG1_HS/SAI2/ SDMMC2/TIM8",
+        "AF11 / DFSDM1/2/ I2C4/LCD/ MDIOS/ OCTOSPIM_P1/ SDMMC2/ SWPMI1/ TIM1/8/ UART7/9/ USART10",
+        "AF12 / FMC/LCD/ MDIOS/ SDMMC1/ TIM1/8",
+        "AF13 / COMP/DCMI/ PSSI/LCD/ TIM1",
+        "AF14 / LCD/ UART5",
+        "AF15 / SYS"
+      ],
+      "rows": [
         [
           "Port G",
+          "PG0",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "OCTOSPIM_P2_IO4",
+          "-",
+          "UART9_RX",
+          "FMC_A10",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PG1",
+          "PG1",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "OCTOSPIM_P2_IO5",
+          "-",
+          "UART9_TX",
+          "FMC_A11",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PG2",
+          "PG2",
+          "-",
+          "-",
+          "-",
+          "TIM8_BKIN",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "TIM8_BKIN_ COMP12",
+          "FMC_A12",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PG3",
+          "PG3",
+          "-",
+          "-",
+          "-",
+          "TIM8_BKIN2",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "TIM8_BKIN2_ COMP12",
+          "FMC_A13",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PG4",
+          "PG4",
+          "-",
+          "TIM1_BKIN2",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "TIM1_BKIN2_ COMP12",
+          "FMC_A14/ FMC_BA0",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PG5",
+          "PG5",
+          "-",
+          "TIM1_ETR",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "FMC_A15/ FMC_BA1",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PG6",
+          "PG6",
+          "-",
+          "TIM17_BKIN",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "OCTOSPIM_P1_NCS",
+          "-",
+          "FMC_NE3",
+          "DCMI_D12/ PSSI_D12",
+          "LCD_R7",
+          "EVENTOUT"
+        ],
+        [
+          "PG7",
+          "PG7",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "SAI1_MCLK_A",
+          "USART6_CK",
+          "-",
+          "OCTOSPIM_P2_DQS",
+          "-",
+          "-",
+          "FMC_INT",
+          "DCMI_D13/ PSSI_D13",
+          "LCD_CLK",
+          "EVENTOUT"
+        ],
+        [
+          "G troP PG8",
+          "PG8",
+          "-",
+          "-",
+          "-",
+          "TIM8_ETR",
+          "-",
+          "SPI6_SS/ I2S6_WS",
+          "-",
+          "USART6_RTS",
+          "SPDIFRX1_IN2",
+          "-",
+          "-",
+          "-",
+          "FMC_SDCLK",
+          "-",
+          "LCD_G7",
+          "EVENTOUT"
+        ],
+        [
+          "PG9",
+          "PG9",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "SPI1_MISO/ I2S1_SDI",
+          "-",
+          "USART6_RX",
+          "SPDIFRX1_IN3",
+          "OCTOSPIM_P1_IO6",
+          "SAI2_FS_B",
+          "SDMMC2_D0",
+          "FMC_NE2/ FMC_NCE",
+          "DCMI_VSYNC/ PSSI_RDY",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PG10",
+          "PG10",
+          "-",
+          "-",
+          "-",
+          "OCTOSPIM_P2_IO6",
+          "-",
+          "SPI1_SS/ I2S1_WS",
+          "-",
+          "-",
+          "-",
+          "LCD_G3",
+          "SAI2_SD_B",
+          "SDMMC2_D1",
+          "FMC_NE3",
+          "DCMI_D2/ PSSI_D2",
+          "LCD_B2",
+          "EVENTOUT"
+        ],
+        [
+          "PG11",
+          "PG11",
+          "-",
+          "LPTIM1_IN2",
+          "-",
+          "-",
+          "-",
+          "SPI1_SCK/ I2S1_CK",
+          "-",
+          "-",
+          "SPDIFRX1_IN0",
+          "OCTOSPIM_P2_IO7",
+          "SDMMC2_D2",
+          "USART10_RX",
+          "-",
+          "DCMI_D3/ PSSI_D3",
+          "LCD_B3",
+          "EVENTOUT"
+        ],
+        [
+          "PG12",
+          "PG12",
+          "-",
+          "LPTIM1_IN1",
+          "-",
+          "OCTOSPIM_P2_NCS",
+          "-",
+          "SPI6_MISO/ I2S6_SDI",
+          "-",
+          "USART6_RTS",
+          "SPDIFRX1_IN1",
+          "LCD_B4",
+          "SDMMC2_D3",
+          "USART10_TX",
+          "-",
+          "-",
+          "LCD_B1",
+          "EVENTOUT"
+        ],
+        [
+          "PG13",
+          "PG13",
+          "TRACED0",
+          "LPTIM1_OUT",
+          "-",
+          "-",
+          "-",
+          "SPI6_SCK/ I2S6_CK",
+          "-",
+          "USART6_CTS/ USART6_NSS",
+          "-",
+          "-",
+          "SDMMC2_D6",
+          "USART10_CTS/ USART10_NSS",
+          "-",
+          "-",
+          "LCD_R0",
+          "EVENTOUT"
+        ],
+        [
+          "PG14",
+          "PG14",
+          "TRACED1",
+          "LPTIM1_ETR",
+          "-",
+          "-",
+          "-",
+          "SPI6_MOSI/ I2S6_SDO",
+          "-",
+          "USART6_TX",
+          "-",
+          "OCTOSPIM_P1_IO7",
+          "SDMMC2_D7",
+          "USART10_RTS",
+          "-",
+          "-",
+          "LCD_B0",
+          "EVENTOUT"
+        ],
+        [
+          "PG15",
+          "PG15",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "USART6_CTS/ USART6_NSS",
+          "-",
+          "OCTOSPIM_P2_DQS",
+          "-",
+          "-",
+          "-",
+          "DCMI_D13/ PSSI_D13",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PG15",
           "PG15",
           "AF0",
           "AF1",
@@ -7187,74 +8851,6 @@
           "COMP/DCMI/ PSSI/LCD/TIM1",
           "LCD/ UART5",
           "SYS"
-        ]
-      ],
-      "notes": [],
-      "legend": "",
-      "semantic_type": "",
-      "semantic": {}
-    }
-  },
-  {
-    "document": "DS13196 Rev 7 - stm32h7b0ab - Table 15. Port H alternate functions",
-    "rev": "Rev 7",
-    "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf",
-    "references": "DS13196",
-    "package": "LQFP144 (20 x 20 mm), LQFP176 (24 x 24 mm), UFBGA169 (10 x 10 mm), UFBGA176 (14 x 14 mm), TFBGA216, TFBGA225, LQFP100 (14 x 14 mm), LQFP64 (10 x 10 mm)",
-    "family": "H7",
-    "core": "Cortex-M7",
-    "frequency": "110",
-    "table_id": "table_15",
-    "table_number": "15",
-    "title": "Table 15. Port H alternate functions",
-    "page": 60,
-    "section": "3.49 Debug infrastructure",
-    "section_title": "Debug infrastructure",
-    "semantic_type": "",
-    "tags": [],
-    "url": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf#page=60",
-    "text_helper": "Table 15. Port H alternate functions — section 3.49 Debug infrastructure. Port, Port, AF0 / SYS, AF1 / LPTIM1/ TIM1/2/16/17, AF2 / PDM_SAI1/ TIM3/4/5/12/15, +13 autres.",
-    "table_content": {
-      "headers": [
-        "Port",
-        "Port",
-        "AF0 / SYS",
-        "AF1 / LPTIM1/ TIM1/2/16/17",
-        "AF2 / PDM_SAI1/ TIM3/4/5/12/15",
-        "AF3 / DFSDM1/ LPTIM2/3/ LPUART1/ OCTOSPIM_P1/2/ TIM8",
-        "AF4 / CEC/DCMI/ PSSI/ DFSDM1/2/ I2C1/2/3/4/ LPTIM2/ TIM15/ USART1",
-        "AF5 / CEC/SPI1/ I2S1/SPI2/ I2S2/SPI3/ I2S3/SPI4/5/ SPI6/I2S6",
-        "AF6 / DFSDM1/2/I2C4/ OCTOSPIM_P1/ SAI1/SPI3/I2S3/ UART4",
-        "AF7 / SDMMC1/SPI2/ I2S2/SPI3/I2S3/ SPI6/I2S6/ UART7/ USART1/2/3/6",
-        "AF8 / LPUART1/ SAI2/ SDMMC1/ SPDIFRX1/ SPI6/I2S6/ UART4/5/8",
-        "AF9 / FDCAN1/2/FMC/LCD /OCTOSPIM_P1/2/ SDMMC2/SPDIFRX1/ TIM13/14",
-        "AF10 / CRS/FMC/LCD/ OCTOSPIM_P1/ OTG1_FS/ OTG1_HS/SAI2/ SDMMC2/TIM8",
-        "AF11 / DFSDM1/2/ I2C4/LCD/ MDIOS/ OCTOSPIM_P1/ SDMMC2/ SWPMI1/TIM1/8/ UART7/9/ USART10",
-        "AF12 / FMC/LCD/ MDIOS/ SDMMC1/ TIM1/8",
-        "AF13 / COMP/DCMI/ PSSI/LCD/TIM1",
-        "AF14 / LCD/ UART5",
-        "AF15 / SYS"
-      ],
-      "rows": [
-        [
-          "Port H",
-          "PH0",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "EVENTOUT"
         ],
         [
           "Port H",
@@ -7555,9 +9151,377 @@
           "DCMI_D11/ PSSI_D11",
           "LCD_G4",
           "EVENTOUT"
-        ],
+        ]
+      ],
+      "notes": [],
+      "legend": "",
+      "semantic_type": "",
+      "semantic": {}
+    }
+  },
+  {
+    "document": "DS13196 Rev 7 - stm32h7b0ab - Table 15. Port H alternate functions",
+    "rev": "Rev 7",
+    "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf",
+    "references": "DS13196",
+    "package": "LQFP144 (20 x 20 mm), LQFP176 (24 x 24 mm), UFBGA169 (10 x 10 mm), UFBGA176 (14 x 14 mm), TFBGA216, TFBGA225, LQFP100 (14 x 14 mm), LQFP64 (10 x 10 mm)",
+    "family": "H7",
+    "core": "Cortex-M7",
+    "frequency": "110",
+    "table_id": "table_15",
+    "table_number": "15",
+    "title": "Table 15. Port H alternate functions",
+    "page": 60,
+    "section": "3.49 Debug infrastructure",
+    "section_title": "Debug infrastructure",
+    "semantic_type": "",
+    "tags": [],
+    "url": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf#page=60",
+    "text_helper": "Table 15. Port H alternate functions — section 3.49 Debug infrastructure. Port, Port, AF0 / SYS, AF1 / LPTIM1/ TIM1/2/16/17, AF2 / PDM_SAI1/ TIM3/4/5/12/15, +13 autres.",
+    "table_content": {
+      "headers": [
+        "Port",
+        "Port",
+        "AF0 / SYS",
+        "AF1 / LPTIM1/ TIM1/2/16/17",
+        "AF2 / PDM_SAI1/ TIM3/4/5/12/15",
+        "AF3 / DFSDM1/ LPTIM2/3/ LPUART1/ OCTOSPIM_P1/2/ TIM8",
+        "AF4 / CEC/DCMI/ PSSI/ DFSDM1/2/ I2C1/2/3/4/ LPTIM2/ TIM15/ USART1",
+        "AF5 / CEC/SPI1/ I2S1/SPI2/ I2S2/SPI3/ I2S3/SPI4/5/ SPI6/I2S6",
+        "AF6 / DFSDM1/2/I2C4/ OCTOSPIM_P1/ SAI1/SPI3/I2S3/ UART4",
+        "AF7 / SDMMC1/SPI2/ I2S2/SPI3/I2S3/ SPI6/I2S6/ UART7/ USART1/2/3/6",
+        "AF8 / LPUART1/ SAI2/ SDMMC1/ SPDIFRX1/ SPI6/I2S6/ UART4/5/8",
+        "AF9 / FDCAN1/2/FMC/LCD /OCTOSPIM_P1/2/ SDMMC2/SPDIFRX1/ TIM13/14",
+        "AF10 / CRS/FMC/LCD/ OCTOSPIM_P1/ OTG1_FS/ OTG1_HS/SAI2/ SDMMC2/TIM8",
+        "AF11 / DFSDM1/2/ I2C4/LCD/ MDIOS/ OCTOSPIM_P1/ SDMMC2/ SWPMI1/TIM1/8/ UART7/9/ USART10",
+        "AF12 / FMC/LCD/ MDIOS/ SDMMC1/ TIM1/8",
+        "AF13 / COMP/DCMI/ PSSI/LCD/TIM1",
+        "AF14 / LCD/ UART5",
+        "AF15 / SYS"
+      ],
+      "rows": [
         [
           "Port H",
+          "PH0",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PH1",
+          "PH1",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PH2",
+          "PH2",
+          "-",
+          "LPTIM1_IN2",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "OCTOSPIM_P1_IO4",
+          "SAI2_SCK_B",
+          "-",
+          "FMC_SDCKE0",
+          "-",
+          "LCD_R0",
+          "EVENTOUT"
+        ],
+        [
+          "PH3",
+          "PH3",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "OCTOSPIM_P1_IO5",
+          "SAI2_MCK_B",
+          "-",
+          "FMC_SDNE0",
+          "-",
+          "LCD_R1",
+          "EVENTOUT"
+        ],
+        [
+          "PH4",
+          "PH4",
+          "-",
+          "-",
+          "-",
+          "-",
+          "I2C2_SCL",
+          "-",
+          "-",
+          "-",
+          "-",
+          "LCD_G5",
+          "OTG_HS_ ULPI_NXT",
+          "-",
+          "-",
+          "PSSI_D14",
+          "LCD_G4",
+          "EVENTOUT"
+        ],
+        [
+          "PH5",
+          "PH5",
+          "-",
+          "-",
+          "-",
+          "-",
+          "I2C2_SDA",
+          "SPI5_SS",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "FMC_SDNWE",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PH6",
+          "PH6",
+          "-",
+          "-",
+          "TIM12_CH1",
+          "-",
+          "I2C2_SMBA",
+          "SPI5_SCK",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "FMC_SDNE1",
+          "DCMI_D8/ PSSI_D8",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PH7",
+          "PH7",
+          "-",
+          "-",
+          "-",
+          "-",
+          "I2C3_SCL",
+          "SPI5_MISO",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "FMC_SDCKE1",
+          "DCMI_D9/ PSSI_D9",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "Port H 8HP",
+          "PH8",
+          "-",
+          "-",
+          "TIM5_ETR",
+          "-",
+          "I2C3_SDA",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "FMC_D16",
+          "DCMI_HSYNC/ PSSI_DE",
+          "LCD_R2",
+          "EVENTOUT"
+        ],
+        [
+          "PH9",
+          "PH9",
+          "-",
+          "-",
+          "TIM12_CH2",
+          "-",
+          "I2C3_SMBA",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "FMC_D17",
+          "DCMI_D0/ PSSI_D0",
+          "LCD_R3",
+          "EVENTOUT"
+        ],
+        [
+          "PH10",
+          "PH10",
+          "-",
+          "-",
+          "TIM5_CH1",
+          "-",
+          "I2C4_SMBA",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "FMC_D18",
+          "DCMI_D1/ PSSI_D1",
+          "LCD_R4",
+          "EVENTOUT"
+        ],
+        [
+          "PH11",
+          "PH11",
+          "-",
+          "-",
+          "TIM5_CH2",
+          "-",
+          "I2C4_SCL",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "FMC_D19",
+          "DCMI_D2/ PSSI_D2",
+          "LCD_R5",
+          "EVENTOUT"
+        ],
+        [
+          "PH12",
+          "PH12",
+          "-",
+          "-",
+          "TIM5_CH3",
+          "-",
+          "I2C4_SDA",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "FMC_D20",
+          "DCMI_D3/ PSSI_D3",
+          "LCD_R6",
+          "EVENTOUT"
+        ],
+        [
+          "PH13",
+          "PH13",
+          "-",
+          "-",
+          "-",
+          "TIM8_CH1N",
+          "-",
+          "-",
+          "-",
+          "-",
+          "UART4_TX",
+          "FDCAN1_TX",
+          "-",
+          "-",
+          "FMC_D21",
+          "-",
+          "LCD_G2",
+          "EVENTOUT"
+        ],
+        [
+          "PH14",
+          "PH14",
+          "-",
+          "-",
+          "-",
+          "TIM8_CH2N",
+          "-",
+          "-",
+          "-",
+          "-",
+          "UART4_RX",
+          "FDCAN1_RX",
+          "-",
+          "-",
+          "FMC_D22",
+          "DCMI_D4/ PSSI_D4",
+          "LCD_G3",
+          "EVENTOUT"
+        ],
+        [
+          "PH15",
+          "PH15",
+          "-",
+          "-",
+          "-",
+          "TIM8_CH3N",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "FMC_D23",
+          "DCMI_D11/ PSSI_D11",
+          "LCD_G4",
+          "EVENTOUT"
+        ],
+        [
+          "PH15",
           "PH15",
           "AF0",
           "AF1",
@@ -7595,74 +9559,6 @@
           "COMP/DCMI/ PSSI/LCD/TIM1",
           "LCD/ UART5",
           "SYS"
-        ]
-      ],
-      "notes": [],
-      "legend": "",
-      "semantic_type": "",
-      "semantic": {}
-    }
-  },
-  {
-    "document": "DS13196 Rev 7 - stm32h7b0ab - Table 16. Port I alternate functions",
-    "rev": "Rev 7",
-    "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf",
-    "references": "DS13196",
-    "package": "LQFP144 (20 x 20 mm), LQFP176 (24 x 24 mm), UFBGA169 (10 x 10 mm), UFBGA176 (14 x 14 mm), TFBGA216, TFBGA225, LQFP100 (14 x 14 mm), LQFP64 (10 x 10 mm)",
-    "family": "H7",
-    "core": "Cortex-M7",
-    "frequency": "110",
-    "table_id": "table_16",
-    "table_number": "16",
-    "title": "Table 16. Port I alternate functions",
-    "page": 61,
-    "section": "3.49 Debug infrastructure",
-    "section_title": "Debug infrastructure",
-    "semantic_type": "",
-    "tags": [],
-    "url": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf#page=61",
-    "text_helper": "Table 16. Port I alternate functions — section 3.49 Debug infrastructure. Port, Port, AF0 / SYS, AF1 / LPTIM1/ TIM1/2/16/17, AF2 / PDM_SAI1/ TIM3/4/5/12/15, +13 autres.",
-    "table_content": {
-      "headers": [
-        "Port",
-        "Port",
-        "AF0 / SYS",
-        "AF1 / LPTIM1/ TIM1/2/16/17",
-        "AF2 / PDM_SAI1/ TIM3/4/5/12/15",
-        "AF3 / DFSDM1/LPTIM2/3/ LPUART1/ OCTOSPIM_P1/2/ TIM8",
-        "AF4 / CEC/DCMI/ PSSI/ DFSDM1/2/ I2C1/2/3/4/ LPTIM2/ TIM15/ USART1",
-        "AF5 / CEC/SPI1/ I2S1/SPI2/ I2S2/SPI3/ I2S3/SPI4/5/ SPI6/I2S6",
-        "AF6 / DFSDM1/2/I2C4/ OCTOSPIM_P1/ SAI1/SPI3/I2S3/ UART4",
-        "AF7 / SDMMC1/SPI2/ I2S2/SPI3/ I2S3/SPI6/ I2S6/UART7/ USART1/2/3/6",
-        "AF8 / LPUART1/ SAI2/ SDMMC1/ SPDIFRX1/ SPI6/I2S6/ UART4/5/8",
-        "AF9 / FDCAN1/2/FMC/L CD/ OCTOSPIM_P1/2/ SDMMC2/ SPDIFRX1/ TIM13/14",
-        "AF10 / CRS/FMC/LCD/ OCTOSPIM_P1/ OTG1_FS/ OTG1_HS/SAI2/ SDMMC2/TIM8",
-        "AF11 / DFSDM1/2/I2C4/LCD/ MDIOS/OCTOSPIM_P1/ SDMMC2/SWPMI1/ TIM1/8/UART7/9/ USART10",
-        "AF12 / FMC/LCD/ MDIOS/ SDMMC1/ TIM1/8",
-        "AF13 / COMP/DCMI/ PSSI/LCD/TIM1",
-        "AF14 / LCD/ UART5",
-        "AF15 / SYS"
-      ],
-      "rows": [
-        [
-          "Port I",
-          "PI0",
-          "-",
-          "-",
-          "TIM5_CH4",
-          "-",
-          "-",
-          "SPI2_SS/ I2S2_WS",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "-",
-          "FMC_D24",
-          "DCMI_D13/ PSSI_D13",
-          "LCD_G5",
-          "EVENTOUT"
         ],
         [
           "Port I",
@@ -7892,6 +9788,294 @@
     }
   },
   {
+    "document": "DS13196 Rev 7 - stm32h7b0ab - Table 16. Port I alternate functions",
+    "rev": "Rev 7",
+    "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf",
+    "references": "DS13196",
+    "package": "LQFP144 (20 x 20 mm), LQFP176 (24 x 24 mm), UFBGA169 (10 x 10 mm), UFBGA176 (14 x 14 mm), TFBGA216, TFBGA225, LQFP100 (14 x 14 mm), LQFP64 (10 x 10 mm)",
+    "family": "H7",
+    "core": "Cortex-M7",
+    "frequency": "110",
+    "table_id": "table_16",
+    "table_number": "16",
+    "title": "Table 16. Port I alternate functions",
+    "page": 61,
+    "section": "3.49 Debug infrastructure",
+    "section_title": "Debug infrastructure",
+    "semantic_type": "",
+    "tags": [],
+    "url": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf#page=61",
+    "text_helper": "Table 16. Port I alternate functions — section 3.49 Debug infrastructure. Port, Port, AF0 / SYS, AF1 / LPTIM1/ TIM1/2/16/17, AF2 / PDM_SAI1/ TIM3/4/5/12/15, +13 autres.",
+    "table_content": {
+      "headers": [
+        "Port",
+        "Port",
+        "AF0 / SYS",
+        "AF1 / LPTIM1/ TIM1/2/16/17",
+        "AF2 / PDM_SAI1/ TIM3/4/5/12/15",
+        "AF3 / DFSDM1/LPTIM2/3/ LPUART1/ OCTOSPIM_P1/2/ TIM8",
+        "AF4 / CEC/DCMI/ PSSI/ DFSDM1/2/ I2C1/2/3/4/ LPTIM2/ TIM15/ USART1",
+        "AF5 / CEC/SPI1/ I2S1/SPI2/ I2S2/SPI3/ I2S3/SPI4/5/ SPI6/I2S6",
+        "AF6 / DFSDM1/2/I2C4/ OCTOSPIM_P1/ SAI1/SPI3/I2S3/ UART4",
+        "AF7 / SDMMC1/SPI2/ I2S2/SPI3/ I2S3/SPI6/ I2S6/UART7/ USART1/2/3/6",
+        "AF8 / LPUART1/ SAI2/ SDMMC1/ SPDIFRX1/ SPI6/I2S6/ UART4/5/8",
+        "AF9 / FDCAN1/2/FMC/L CD/ OCTOSPIM_P1/2/ SDMMC2/ SPDIFRX1/ TIM13/14",
+        "AF10 / CRS/FMC/LCD/ OCTOSPIM_P1/ OTG1_FS/ OTG1_HS/SAI2/ SDMMC2/TIM8",
+        "AF11 / DFSDM1/2/I2C4/LCD/ MDIOS/OCTOSPIM_P1/ SDMMC2/SWPMI1/ TIM1/8/UART7/9/ USART10",
+        "AF12 / FMC/LCD/ MDIOS/ SDMMC1/ TIM1/8",
+        "AF13 / COMP/DCMI/ PSSI/LCD/TIM1",
+        "AF14 / LCD/ UART5",
+        "AF15 / SYS"
+      ],
+      "rows": [
+        [
+          "Port I",
+          "PI0",
+          "-",
+          "-",
+          "TIM5_CH4",
+          "-",
+          "-",
+          "SPI2_SS/ I2S2_WS",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "FMC_D24",
+          "DCMI_D13/ PSSI_D13",
+          "LCD_G5",
+          "EVENTOUT"
+        ],
+        [
+          "PI1",
+          "PI1",
+          "-",
+          "-",
+          "-",
+          "TIM8_BKIN2",
+          "-",
+          "SPI2_SCK/ I2S2_CK",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "TIM8_BKIN2_COMP12",
+          "FMC_D25",
+          "DCMI_D8/ PSSI_D8",
+          "LCD_G6",
+          "EVENTOUT"
+        ],
+        [
+          "PI2",
+          "PI2",
+          "-",
+          "-",
+          "-",
+          "TIM8_CH4",
+          "-",
+          "SPI2_MISO/ I2S2_SDI",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "FMC_D26",
+          "DCMI_D9/ PSSI_D9",
+          "LCD_G7",
+          "EVENTOUT"
+        ],
+        [
+          "PI3",
+          "PI3",
+          "-",
+          "-",
+          "-",
+          "TIM8_ETR",
+          "-",
+          "SPI2_MOSI/ I2S2_SDO",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "FMC_D27",
+          "DCMI_D10/ PSSI_D10",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PI4",
+          "PI4",
+          "-",
+          "-",
+          "-",
+          "TIM8_BKIN",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "SAI2_MCK_A",
+          "TIM8_BKIN_COMP12",
+          "FMC_NBL2",
+          "DCMI_D5/ PSSI_D5",
+          "LCD_B4",
+          "EVENTOUT"
+        ],
+        [
+          "Port I 5IP",
+          "PI5",
+          "-",
+          "-",
+          "-",
+          "TIM8_CH1",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "SAI2_SCK_A",
+          "-",
+          "FMC_NBL3",
+          "DCMI_VSYNC/ PSSI_ RDY",
+          "LCD_B5",
+          "EVENTOUT"
+        ],
+        [
+          "PI6",
+          "PI6",
+          "-",
+          "-",
+          "-",
+          "TIM8_CH2",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "SAI2_SD_A",
+          "-",
+          "FMC_D28",
+          "DCMI_D6/ PSSI_D6",
+          "LCD_B6",
+          "EVENTOUT"
+        ],
+        [
+          "PI7",
+          "PI7",
+          "-",
+          "-",
+          "-",
+          "TIM8_CH3",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "SAI2_FS_A",
+          "-",
+          "FMC_D29",
+          "DCMI_D7/ PSSI_D7",
+          "LCD_B7",
+          "EVENTOUT"
+        ],
+        [
+          "PI8",
+          "PI8",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "EVENTOUT"
+        ],
+        [
+          "PI9",
+          "PI9",
+          "-",
+          "-",
+          "-",
+          "OCTOSPIM_P2_IO0",
+          "-",
+          "-",
+          "-",
+          "-",
+          "UART4_RX",
+          "FDCAN1_RX",
+          "-",
+          "-",
+          "FMC_D30",
+          "-",
+          "LCD_ VSYNC",
+          "EVENTOUT"
+        ],
+        [
+          "PI10",
+          "PI10",
+          "-",
+          "-",
+          "-",
+          "OCTOSPIM_P2_IO1",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "FMC_D31",
+          "PSSI_D14",
+          "LCD_ HSYNC",
+          "EVENTOUT"
+        ],
+        [
+          "PI11",
+          "PI11",
+          "-",
+          "-",
+          "-",
+          "OCTOSPIM_P2_IO2",
+          "-",
+          "-",
+          "-",
+          "-",
+          "-",
+          "LCD_G6",
+          "OTG_HS_ ULPI_DIR",
+          "-",
+          "-",
+          "PSSI_D15",
+          "-",
+          "EVENTOUT"
+        ]
+      ],
+      "notes": [],
+      "legend": "",
+      "semantic_type": "",
+      "semantic": {}
+    }
+  },
+  {
     "document": "DS13196 Rev 7 - stm32h7b0ab - Table 17. Voltage characteristics",
     "rev": "Rev 7",
     "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf",
@@ -7934,7 +10118,7 @@
           "V"
         ],
         [
-          "VIN(1)",
+          "(1) VIN",
           "Input voltage on TT_xx pins",
           "VSS-0.3",
           "4.0",
@@ -8213,7 +10397,7 @@
         ],
         [
           "VDDMMC",
-          "Standard operating voltage for independent MMC I/Os",
+          "I/Os",
           "Independent MMC I/Os not used VDDMMC = VDD",
           "1.62(1)",
           "-",
@@ -8875,51 +11059,50 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf#page=69",
-    "text_helper": "Table 23. VCAP operating conditions — section 6.3.2 VCAP external capacitor. VCAP pins (refer to Getting started with STM32H7A3B7/3 dna, STM32H7B0hardware development, (AN5307.",
+    "text_helper": "Table 23. VCAP operating conditions — section 6.3.2 VCAP external capacitor. VCAP pins (refer to Getting started with STM, 32H7A3B7/3 dna, STM32H7B0hardware development(AN5307.",
     "table_content": {
       "headers": [
-        "VCAP pins (refer to Getting started with STM32H7A3B7/3 dna",
-        "STM32H7B0hardware development",
-        "(AN5307"
+        "VCAP pins (refer to Getting started with STM",
+        "32H7A3B7/3 dna",
+        "STM32H7B0hardware development(AN5307"
       ],
       "rows": [
         [
-          "VCAP pindna 3B7/3",
-          "STM32H7B0",
-          "(AN5307"
+          "Figure",
+          "14. E xternal ca",
+          "pacitor CEXT"
         ],
         [
-          "VCAP pin Figure 14. E xternal ca",
-          "pacitor CEXT",
-          "(AN5307"
+          "Figure",
+          "14. E C",
+          "pacitor CEXT"
         ],
         [
-          "VCAP pin Figure 14. E C",
-          "pacitor CEXT",
-          "(AN5307"
+          "ES R",
+          "14. E C",
+          "pacitor CEXT"
         ],
         [
-          "VCAP pin ES R 14. E C",
-          "pacitor CEXT",
-          "(AN5307"
+          "ES R",
+          "14. E R Le",
+          "ak"
         ],
         [
-          "VCAP pin ES R 14. E R Le",
-          "ak",
-          "(AN5307"
+          "1. Legend: ESR isthe equivalent series re",
+          "sistance.",
+          "ak"
         ],
         [
-          "1. Leg 1. Legend: ESR isthe equivalent series resistance.",
-          "ak",
-          "(AN5307"
-        ],
-        [
-          "When the i When the internal LDO voltage regulator is switched OFF, the two 2.2",
-          "µF VCAP capacitors are notrequired. Ho",
-          "wever all V"
+          "When the internal LDO voltage regulator is switche",
+          "d OFF, the two 2.2",
+          "µF VCAP capacitors are notrequired. However all V"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. The switching frequency is 2.4 MHz±10%",
+        "2. Including line transient and load transient.",
+        "3. These characteristics are given for SMPSEXTHP bit is set in the PWR_CR3 register. The SMPS current consumption can be determined using the following formula based on the maximum LDO"
+      ],
       "legend": [
         "When the internal LDO voltage regulator is switched OFF, the two 2.2 µF VCAP capacitors are not required. However all VCAPx",
         "package pins must be connected together and it is recommended to add a ceramic filtering capacitor of 100 nF as close as",
@@ -9003,7 +11186,11 @@
           "1.4 A"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. The switching frequency is 2.4 MHz±10%",
+        "2. Including line transient and load transient.",
+        "3. These characteristics are given for SMPSEXTHP bit is set in the PWR_CR3 register. The SMPS current consumption can be determined using the following formula based on the maximum LDO"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -9223,7 +11410,9 @@
           "µs/V"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by design."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -9868,99 +12057,15 @@
           "120",
           "170",
           "µs"
-        ],
-        [
-          "IRUSH",
-          "on VDDSMPS(3)",
-          "SMPS supplies the VDDCORE",
-          "-",
-          "25",
-          "92(4)",
-          "92(4)"
-        ],
-        [
-          "IRUSH",
-          "Inrush current on voltage regulator power-on (POR)",
-          "on VDDSMPS(3)",
-          "SMPS supplies internal LDO VOUT = 2.5 V(5)",
-          "-",
-          "100(4)",
-          "100(4)"
-        ],
-        [
-          "IRUSH",
-          "Inrush current on voltage regulator power-on (POR)",
-          "SMPS supplies external circuit VOUT = 1.8 V(5)",
-          "-",
-          "25",
-          "70(4)",
-          "70(4)"
-        ],
-        [
-          "IRUSH",
-          "Inrush current on voltage regulator power-on (POR)",
-          "SMPS supplies external circuit VOUT = 1.8 V(5)",
-          "SMPS supplies external circuit VOUT = 2.5 V(5)",
-          "-",
-          "50(4)",
-          "50(4)"
-        ],
-        [
-          "IRUSH",
-          "Inrush current on voltage regulator power-on (wakeup from Standby)",
-          "SMPS supplies internal LDO VOUT = 2.5 V",
-          "-",
-          "95",
-          "210(4)",
-          "210(4)"
-        ],
-        [
-          "QRUSH",
-          "on VDDSMPS(3)",
-          "SMPS supplies the VDDCORE",
-          "-",
-          "2.9",
-          "7(2)",
-          "7(2)"
-        ],
-        [
-          "QRUSH",
-          "Inrush current on voltage regulator power-on (POR)",
-          "on VDDSMPS(3)",
-          "SMPS supplies internal LDO VOUT = 2.5 V(5)",
-          "-",
-          "5.7(2)",
-          "5.7(2)"
-        ],
-        [
-          "QRUSH",
-          "Inrush current on voltage regulator power-on (POR)",
-          "SMPS supplies external circuit VOUT = 1.8 V(5)",
-          "-",
-          "2.9",
-          "5.2(2)",
-          "5.2(2)"
-        ],
-        [
-          "QRUSH",
-          "Inrush current on voltage regulator power-on (POR)",
-          "SMPS supplies external circuit VOUT = 1.8 V(5)",
-          "SMPS supplies external circuit VOUT = 2.5 V(5)",
-          "-",
-          "4(2)",
-          "4(2)"
-        ],
-        [
-          "QRUSH",
-          "Inrush current on voltage regulator power-on (wakeup from Standby)",
-          "SMPS supplies internal LDO VOUT = 2.5 V",
-          "-",
-          "14.5",
-          "20.5(2)",
-          "20.5(2)"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. The inrush current and inrush electric charge on VDDLDO are not present in Bypass mode or when the SMPS supplies VDDCORE.",
+        "2. The maximum value is given for the maximum decoupling capacitor CEXT.",
+        "3. The inrush current and inrush electric charge on VDDSMPS is not present if the external component (L or COUT) is not present, that is if the SMPS is not used.",
+        "4. The maximum value is given for the maximum decoupling capacitor COUT and the minimum VDDSMPS voltage.",
+        "5. The inrush current and inrush electric charge due to the transition from 1.2 V to the final VOUT value (1.8 V or 2.5 V) is not taken into account."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -10009,7 +12114,7 @@
         ],
         [
           "IRUSH",
-          "Inrush current on voltage regulator power-on (POR or wakeup from Standby)",
+          "(POR or wakeup from Standby)",
           "on VDDSMPS(3)",
           "SMPS supplies the VDDCORE",
           "-",
@@ -10029,8 +12134,8 @@
         ],
         [
           "IRUSH",
-          "Inrush current on voltage regulator power-on (POR)",
-          "on VDDSMPS(3)",
+          "Inrush current on voltage regulator power-on",
+          "SMPS supplies internal LDO VOUT = V(5) 2.5 (3)",
           "SMPS supplies internal LDO VOUT = 2.5 V(5)",
           "-",
           "45",
@@ -10039,8 +12144,8 @@
         ],
         [
           "IRUSH",
-          "Inrush current on voltage regulator power-on (POR)",
-          "on VDDSMPS(3)",
+          "(POR)",
+          "SMPS supplies external circuit VOUT V(5) = 1.8 SMPS supplies external circuit VOUT V(5) = 2.5",
           "SMPS supplies external circuit VOUT = 1.8 V(5)",
           "-",
           "25",
@@ -10050,7 +12155,7 @@
         [
           "IRUSH",
           "Inrush current on voltage regulator power-on (POR)",
-          "on VDDSMPS(3)",
+          "SMPS supplies external circuit VOUT V(5) = 2.5",
           "SMPS supplies external circuit VOUT = 2.5 V(5)",
           "-",
           "25",
@@ -10069,8 +12174,8 @@
         ],
         [
           "IRUSH",
-          "Inrush current on voltage regulator power-on (wakeup from Standby)",
-          "on VDDSMPS(3)",
+          "(wakeup from Standby)",
+          "SMPS supplies internal LDO VOUT = 2.5 V",
           "SMPS supplies internal LDO VOUT = 2.5 V",
           "-",
           "95",
@@ -10089,7 +12194,7 @@
         ],
         [
           "QRUSH",
-          "Inrush current on voltage regulator power-on (POR or wakeup from Standby)",
+          "(POR or wakeup from Standby)",
           "on VDDSMPS(3)",
           "SMPS supplies the VDDCORE",
           "-",
@@ -10109,8 +12214,8 @@
         ],
         [
           "QRUSH",
-          "Inrush current on voltage regulator power-on (POR)",
-          "on VDDSMPS(3)",
+          "Inrush current on voltage regulator power-on",
+          "SMPS supplies internal LDO VOUT = V(5) 2.5 (3)",
           "SMPS supplies internal LDO VOUT = 2.5 V(5)",
           "-",
           "4.0",
@@ -10119,8 +12224,8 @@
         ],
         [
           "QRUSH",
-          "Inrush current on voltage regulator power-on (POR)",
-          "on VDDSMPS(3)",
+          "(POR)",
+          "SMPS supplies external circuit VOUT V(5) = 1.8 SMPS supplies external circuit VOUT V(5) = 2.5",
           "SMPS supplies external circuit VOUT = 1.8 V(5)",
           "-",
           "2.9",
@@ -10130,7 +12235,7 @@
         [
           "QRUSH",
           "Inrush current on voltage regulator power-on (POR)",
-          "on VDDSMPS(3)",
+          "SMPS supplies external circuit VOUT V(5) = 2.5",
           "SMPS supplies external circuit VOUT = 2.5 V(5)",
           "-",
           "2.9",
@@ -10149,8 +12254,8 @@
         ],
         [
           "QRUSH",
-          "Inrush current on voltage regulator power-on (wakeup from Standby)",
-          "on VDDSMPS(3)",
+          "(wakeup from Standby)",
+          "SMPS supplies internal LDO VOUT = 2.5 V",
           "SMPS supplies internal LDO VOUT = 2.5 V",
           "-",
           "14.5",
@@ -10236,7 +12341,7 @@
         [
           "IDD",
           "Supply current in Run mode",
-          "All peripherals disabled",
+          "VOS1 All peripherals disabled",
           "VOS1",
           "225",
           "52.0",
@@ -10264,7 +12369,7 @@
         [
           "IDD",
           "Supply current in Run mode",
-          "All peripherals disabled",
+          "VOS1",
           "VOS1",
           "180",
           "42",
@@ -10292,7 +12397,7 @@
         [
           "IDD",
           "Supply current in Run mode",
-          "All peripherals disabled",
+          "VOS2",
           "VOS2",
           "144",
           "30.5",
@@ -10305,8 +12410,8 @@
         ],
         [
           "IDD",
-          "Supply current in Run mode",
-          "All peripherals disabled",
+          "Run mode",
+          "VOS3",
           "VOS3",
           "88",
           "18.0",
@@ -10320,7 +12425,7 @@
         [
           "IDD",
           "Supply current in Run mode",
-          "All peripherals disabled",
+          "VOS3",
           "VOS3",
           "60",
           "12.5",
@@ -10376,7 +12481,7 @@
         [
           "IDD",
           "Supply current in Run mode",
-          "All peripherals enabled",
+          "VOS1 All peripherals enabled",
           "VOS1",
           "225",
           "99.0",
@@ -10390,7 +12495,7 @@
         [
           "IDD",
           "Supply current in Run mode",
-          "All peripherals enabled",
+          "enabled",
           "VOS1",
           "160",
           "71.5",
@@ -10400,275 +12505,12 @@
           "118",
           "156",
           "mA"
-        ],
-        [
-          "IDD",
-          "Supply current in Run mode",
-          "All peripherals disabled",
-          "VOS0",
-          "225",
-          "56.0",
-          "27.0",
-          "64",
-          "92",
-          "114",
-          "158",
-          "158"
-        ],
-        [
-          "IDD",
-          "Supply current in Run mode",
-          "All peripherals disabled",
-          "VOS1",
-          "225",
-          "51.5",
-          "23.5",
-          "58",
-          "80",
-          "98",
-          "136",
-          "136"
-        ],
-        [
-          "IDD",
-          "Supply current in Run mode",
-          "All peripherals disabled",
-          "VOS1",
-          "200",
-          "46.5",
-          "21.5",
-          "52",
-          "75",
-          "92",
-          "129",
-          "129"
-        ],
-        [
-          "IDD",
-          "Supply current in Run mode",
-          "All peripherals disabled",
-          "VOS1",
-          "180",
-          "42.0",
-          "19.0",
-          "47",
-          "70",
-          "88",
-          "125",
-          "125"
-        ],
-        [
-          "IDD",
-          "Supply current in Run mode",
-          "All peripherals disabled",
-          "VOS1",
-          "168",
-          "39.0",
-          "18.0",
-          "45",
-          "67",
-          "85",
-          "122",
-          "122"
-        ],
-        [
-          "IDD",
-          "Supply current in Run mode",
-          "All peripherals disabled",
-          "VOS1",
-          "160",
-          "37.5",
-          "17.0",
-          "43",
-          "65",
-          "83",
-          "120",
-          "120"
-        ],
-        [
-          "IDD",
-          "Supply current in Run mode",
-          "All peripherals disabled",
-          "VOS2",
-          "160",
-          "34.0",
-          "14.5",
-          "38",
-          "56",
-          "70",
-          "101",
-          "101"
-        ],
-        [
-          "IDD",
-          "Supply current in Run mode",
-          "All peripherals disabled",
-          "VOS2",
-          "144",
-          "30.5",
-          "13.0",
-          "35",
-          "53",
-          "67",
-          "97",
-          "97"
-        ],
-        [
-          "IDD",
-          "Supply current in Run mode",
-          "All peripherals disabled",
-          "VOS2",
-          "88",
-          "19.0",
-          "8.5",
-          "23",
-          "41",
-          "55",
-          "85",
-          "85"
-        ],
-        [
-          "IDD",
-          "Supply current in Run mode",
-          "All peripherals disabled",
-          "VOS3",
-          "88",
-          "17.5",
-          "7.5",
-          "21",
-          "35",
-          "46",
-          "71",
-          "71"
-        ],
-        [
-          "IDD",
-          "Supply current in Run mode",
-          "All peripherals disabled",
-          "VOS3",
-          "60",
-          "12.5",
-          "5.0",
-          "16",
-          "29",
-          "41",
-          "66",
-          "66"
-        ],
-        [
-          "IDD",
-          "Supply current in Run mode",
-          "All peripherals disabled",
-          "VOS3",
-          "25",
-          "6.0",
-          "2.5",
-          "9",
-          "23",
-          "34",
-          "59",
-          "59"
-        ],
-        [
-          "IDD",
-          "Supply current in Run mode",
-          "All peripherals enabled",
-          "VOS0",
-          "280",
-          "132.5",
-          "63.5",
-          "142",
-          "173",
-          "195",
-          "241",
-          "241"
-        ],
-        [
-          "IDD",
-          "Supply current in Run mode",
-          "All peripherals enabled",
-          "VOS0",
-          "225",
-          "107.5",
-          "51.0",
-          "115",
-          "145",
-          "168",
-          "213",
-          "213"
-        ],
-        [
-          "IDD",
-          "Supply current in Run mode",
-          "All peripherals enabled",
-          "VOS1",
-          "225",
-          "99.0",
-          "44.5",
-          "105",
-          "129",
-          "147",
-          "185",
-          "185"
-        ],
-        [
-          "IDD",
-          "Supply current in Run mode",
-          "All peripherals enabled",
-          "VOS1",
-          "160",
-          "71.5",
-          "32.5",
-          "77",
-          "100",
-          "118",
-          "155",
-          "155"
-        ],
-        [
-          "IDD",
-          "Supply current in Run mode",
-          "All peripherals enabled",
-          "VOS2",
-          "160",
-          "65.0",
-          "27.5",
-          "69",
-          "87",
-          "102",
-          "132",
-          "132"
-        ],
-        [
-          "IDD",
-          "Supply current in Run mode",
-          "All peripherals enabled",
-          "VOS2",
-          "88",
-          "41.5",
-          "17.5",
-          "45",
-          "63",
-          "77",
-          "108",
-          "108"
-        ],
-        [
-          "IDD",
-          "Supply current in Run mode",
-          "All peripherals enabled",
-          "VOS3",
-          "88",
-          "38.0",
-          "15.0",
-          "41",
-          "55",
-          "66",
-          "91",
-          "91"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by characterization results, unless otherwise specified.",
+        "2. The maximum values are given for LDO regulator ON. Refer to Section 6.3.3 SMPS step-down converter for the SMPS maximum current consumption."
+      ],
       "legend": [
         "regulator ON",
         "Data are in DTCM for best computation performance. In this case, the cache has no influence on consumption."
@@ -10743,7 +12585,7 @@
         [
           "IDD",
           "Supply current in Run mode",
-          "All peripherals disabled",
+          "VOS1 All peripherals disabled",
           "VOS1",
           "225",
           "51.5",
@@ -10771,7 +12613,7 @@
         [
           "IDD",
           "Supply current in Run mode",
-          "All peripherals disabled",
+          "VOS1",
           "VOS1",
           "180",
           "42.0",
@@ -10799,7 +12641,7 @@
         [
           "IDD",
           "Supply current in Run mode",
-          "All peripherals disabled",
+          "disabled",
           "VOS1",
           "160",
           "37.5",
@@ -10812,8 +12654,8 @@
         ],
         [
           "IDD",
-          "Supply current in Run mode",
-          "All peripherals disabled",
+          "Supply current in",
+          "VOS2",
           "VOS2",
           "160",
           "34.0",
@@ -10827,7 +12669,7 @@
         [
           "IDD",
           "Supply current in Run mode",
-          "All peripherals disabled",
+          "VOS2",
           "VOS2",
           "144",
           "30.5",
@@ -10840,7 +12682,7 @@
         ],
         [
           "IDD",
-          "Supply current in Run mode",
+          "Supply current in",
           "All peripherals disabled",
           "VOS2",
           "88",
@@ -10854,8 +12696,8 @@
         ],
         [
           "IDD",
-          "Supply current in Run mode",
-          "All peripherals disabled",
+          "Run mode",
+          "VOS3",
           "VOS3",
           "88",
           "17.5",
@@ -10869,7 +12711,7 @@
         [
           "IDD",
           "Supply current in Run mode",
-          "All peripherals disabled",
+          "VOS3",
           "VOS3",
           "60",
           "12.5",
@@ -10925,7 +12767,7 @@
         [
           "IDD",
           "Supply current in Run mode",
-          "All peripherals enabled",
+          "VOS1 All peripherals enabled",
           "VOS1",
           "225",
           "99.0",
@@ -10939,7 +12781,7 @@
         [
           "IDD",
           "Supply current in Run mode",
-          "All peripherals enabled",
+          "enabled",
           "VOS1",
           "160",
           "71.5",
@@ -10953,7 +12795,7 @@
         [
           "IDD",
           "Supply current in Run mode",
-          "All peripherals enabled",
+          "VOS2",
           "VOS2",
           "160",
           "65.0",
@@ -10981,7 +12823,7 @@
         [
           "IDD",
           "Supply current in Run mode",
-          "All peripherals enabled",
+          "VOS3",
           "VOS3",
           "88",
           "38.0",
@@ -10993,7 +12835,10 @@
           "mA"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by characterization results, unless otherwise specified.",
+        "2. The maximum values are given for LDO regulator ON. Refer to Section 6.3.3 SMPS step-down converter for the SMPS maximum current consumption."
+      ],
       "legend": [
         "memory, cache ON"
       ],
@@ -11067,7 +12912,7 @@
         [
           "IDD",
           "Supply current in Run mode",
-          "All peripherals disabled",
+          "VOS1 All peripherals disabled",
           "VOS1",
           "225",
           "43.0",
@@ -11081,7 +12926,7 @@
         [
           "IDD",
           "Supply current in Run mode",
-          "All peripherals disabled",
+          "disabled",
           "VOS1",
           "160",
           "34.0",
@@ -11095,7 +12940,7 @@
         [
           "IDD",
           "Supply current in Run mode",
-          "All peripherals disabled",
+          "VOS2",
           "VOS2",
           "160",
           "29.5",
@@ -11108,7 +12953,7 @@
         ],
         [
           "IDD",
-          "Supply current in Run mode",
+          "Run mode",
           "All peripherals disabled",
           "VOS2",
           "88",
@@ -11123,7 +12968,7 @@
         [
           "IDD",
           "Supply current in Run mode",
-          "All peripherals disabled",
+          "VOS3",
           "VOS3",
           "88",
           "16.5",
@@ -11165,7 +13010,7 @@
         [
           "IDD",
           "Supply current in Run mode",
-          "All peripherals enabled",
+          "VOS1",
           "VOS1",
           "225",
           "90.5",
@@ -11175,6 +13020,20 @@
           "138",
           "176",
           "mA"
+        ],
+        [
+          "Symbol",
+          "Parameter",
+          "Conditions",
+          "Conditions",
+          "rcc_cpu_ck (MHz)",
+          "LDO(1)",
+          "SMPS(1)",
+          "TJ = 25 °C",
+          "TJ = 85 °C",
+          "TJ = 105 °C",
+          "TJ = 130 °C",
+          "Unit"
         ],
         [
           "IDD",
@@ -11296,7 +13155,7 @@
         [
           "IDD",
           "Supply current in Run mode",
-          "All peripherals disabled, cache ON",
+          "FLASH",
           "FLASH",
           "280",
           "1414",
@@ -11310,7 +13169,7 @@
         [
           "IDD",
           "Supply current in Run mode",
-          "All peripherals disabled, cache ON",
+          "AXI All peripherals SRAM disabled,",
           "AXI SRAM",
           "280",
           "1414",
@@ -11324,7 +13183,7 @@
         [
           "IDD",
           "Supply current in Run mode",
-          "All peripherals disabled, cache ON",
+          "cache ON AHB SRAM",
           "AHB SRAM",
           "280",
           "1414",
@@ -11337,8 +13196,8 @@
         ],
         [
           "IDD",
-          "Supply current in Run mode",
-          "All peripherals disabled, cache ON",
+          "Supply current",
+          "SRD SRAM",
           "SRD SRAM",
           "280",
           "1414",
@@ -11347,11 +13206,11 @@
           "mA",
           "49.5",
           "23.8",
-          "µA/ Coremark"
+          "µA/"
         ],
         [
           "IDD",
-          "Supply current in Run mode",
+          "in Run mode",
           "All peripherals disabled cache OFF",
           "ITCM",
           "280",
@@ -11361,12 +13220,12 @@
           "mA",
           "49.2",
           "23.9",
-          "µA/ Coremark"
+          "Coremark"
         ],
         [
           "IDD",
           "Supply current in Run mode",
-          "All peripherals disabled cache OFF",
+          "FLASH",
           "FLASH",
           "280",
           "668",
@@ -11380,7 +13239,7 @@
         [
           "IDD",
           "Supply current in Run mode",
-          "All peripherals disabled cache OFF",
+          "AXI All peripherals SRAM disabled cache",
           "AXI SRAM",
           "280",
           "668",
@@ -11394,7 +13253,7 @@
         [
           "IDD",
           "Supply current in Run mode",
-          "All peripherals disabled cache OFF",
+          "OFF AHB SRAM",
           "AHB SRAM",
           "280",
           "295",
@@ -11408,7 +13267,7 @@
         [
           "IDD",
           "Supply current in Run mode",
-          "All peripherals disabled cache OFF",
+          "SRD SRAM",
           "SRD SRAM",
           "280",
           "295",
@@ -11551,7 +13410,7 @@
         [
           "IDD(Sleep)",
           "Supply current in Sleep mode",
-          "All peripherals disabled",
+          "VOS1 All peripherals disabled",
           "VOS1",
           "225",
           "13.7",
@@ -11564,8 +13423,8 @@
         ],
         [
           "IDD(Sleep)",
-          "Supply current in Sleep mode",
-          "All peripherals disabled",
+          "Sleep mode",
+          "disabled",
           "VOS1",
           "160",
           "10.3",
@@ -11579,7 +13438,7 @@
         [
           "IDD(Sleep)",
           "Supply current in Sleep mode",
-          "All peripherals disabled",
+          "VOS2",
           "VOS2",
           "160",
           "9.3",
@@ -11607,7 +13466,7 @@
         [
           "IDD(Sleep)",
           "Supply current in Sleep mode",
-          "All peripherals disabled",
+          "VOS3",
           "VOS3",
           "88",
           "5.2",
@@ -11617,6 +13476,20 @@
           "32",
           "57",
           "mA"
+        ],
+        [
+          "Symbol",
+          "Parameter",
+          "Conditions",
+          "Conditions",
+          "Conditions",
+          "None",
+          "Typ LDO",
+          "Typ SMPS",
+          "TJ = 25 °C",
+          "TJ = 85 °C",
+          "TJ = 105 °C",
+          "TJ= 130 °C"
         ],
         [
           "IDD(Stop)",
@@ -11631,51 +13504,13 @@
           "1.55",
           "2.63",
           "5.04"
-        ],
-        [
-          "None",
-          "None",
-          "None",
-          "None",
-          "None",
-          "SVOS3 LP",
-          "0.100",
-          "0.040",
-          "0.26",
-          "1.51",
-          "2.58",
-          "4.96"
-        ],
-        [
-          "None",
-          "None",
-          "None",
-          "None",
-          "None",
-          "SVOS4",
-          "0.085",
-          "0.033",
-          "0.19",
-          "1.15",
-          "2.01",
-          "3.98"
-        ],
-        [
-          "None",
-          "None",
-          "None",
-          "None",
-          "None",
-          "SVOS5",
-          "0.075",
-          "0.028",
-          "0.12",
-          "0.80",
-          "1.46",
-          "3.02"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by characterization results.",
+        "2. The maximum values are given for LDO regulator ON. Refer to Section 6.3.3 SMPS step-down converterfor the SMPS maximum current consumption.",
+        "3. The SMPS is unnecessarily ON in System Stop mode, leading to an additional consumption. It is recommended to use SVOS3 LP mode to optimize power consumption."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -11731,7 +13566,7 @@
         [
           "IDD(Stop)",
           "Stop, DStop",
-          "Flash memory in low- power mode, memory shut-off disable",
+          "Flash memory in low- power SVOS3 LP",
           "SVOS3 LP",
           "0.495",
           "0.193",
@@ -11744,7 +13579,7 @@
         [
           "IDD(Stop)",
           "Stop, DStop",
-          "Flash memory in low- power mode, memory shut-off disable",
+          "SVOS4",
           "SVOS4",
           "0.370",
           "0.137",
@@ -11757,7 +13592,7 @@
         [
           "IDD(Stop)",
           "Stop, DStop",
-          "Flash memory in low- power mode, memory shut-off disable",
+          "SVOS5",
           "SVOS5",
           "0.245",
           "0.090",
@@ -11783,7 +13618,7 @@
         [
           "IDD(Stop)",
           "Stop, DStop",
-          "Flash memory in normal mode, memory shut-off disable",
+          "Flash memory in normal mode, SVOS3 LP",
           "SVOS3 LP",
           "0.515",
           "0.209",
@@ -11796,7 +13631,7 @@
         [
           "IDD(Stop)",
           "Stop, DStop",
-          "Flash memory in normal mode, memory shut-off disable",
+          "SVOS4",
           "SVOS4",
           "0.390",
           "0.153",
@@ -11809,7 +13644,7 @@
         [
           "IDD(Stop)",
           "Stop, DStop",
-          "Flash memory in normal mode, memory shut-off disable",
+          "SVOS5",
           "SVOS5",
           "0.245",
           "0.090",
@@ -11835,7 +13670,7 @@
         [
           "IDD(Stop)",
           "Stop, DStop",
-          "Flash memory in low- power mode, memory shut-off enable",
+          "Flash memory in low- power SVOS3 LP",
           "SVOS3 LP",
           "0.480",
           "0.186",
@@ -11848,7 +13683,7 @@
         [
           "IDD(Stop)",
           "Stop, DStop",
-          "Flash memory in low- power mode, memory shut-off enable",
+          "SVOS4",
           "SVOS4",
           "0.360",
           "0.134",
@@ -11861,7 +13696,7 @@
         [
           "IDD(Stop)",
           "Stop, DStop",
-          "Flash memory in low- power mode, memory shut-off enable",
+          "SVOS5",
           "SVOS5",
           "0.230",
           "0.085",
@@ -11887,7 +13722,7 @@
         [
           "IDD(Stop)",
           "Stop, DStop",
-          "Flash memory in normal mode, memory shut-off enable",
+          "Flash memory in normal mode, SVOS3 LP",
           "SVOS3 LP",
           "0.500",
           "0.204",
@@ -11900,7 +13735,7 @@
         [
           "IDD(Stop)",
           "Stop, DStop",
-          "Flash memory in normal mode, memory shut-off enable",
+          "SVOS4",
           "SVOS4",
           "0.380",
           "0.151",
@@ -11913,7 +13748,7 @@
         [
           "IDD(Stop)",
           "Stop, DStop",
-          "Flash memory in normal mode, memory shut-off enable",
+          "SVOS5",
           "SVOS5",
           "0.230",
           "0.085",
@@ -11939,7 +13774,7 @@
         [
           "IDD(Stop)",
           "Stop, DStop2",
-          "Flash memory in low- power mode, memory shut-off disable",
+          "Flash memory in low- power SVOS3 LP",
           "SVOS3 LP",
           "0.115",
           "0.046",
@@ -11952,7 +13787,7 @@
         [
           "IDD(Stop)",
           "Stop, DStop2",
-          "Flash memory in low- power mode, memory shut-off disable",
+          "SVOS4",
           "SVOS4",
           "0.095",
           "0.037",
@@ -11965,7 +13800,7 @@
         [
           "IDD(Stop)",
           "Stop, DStop2",
-          "Flash memory in low- power mode, memory shut-off disable",
+          "SVOS5",
           "SVOS5",
           "0.090",
           "0.032",
@@ -11974,6 +13809,19 @@
           "1.75",
           "3.80",
           "mA"
+        ],
+        [
+          "Symbol",
+          "Parameter",
+          "Conditions",
+          "Conditions",
+          "Typ LDO",
+          "Typ SMPS",
+          "TJ = 25 °C",
+          "TJ = 85 °C",
+          "TJ = 105 °C",
+          "TJ= 130 °C",
+          "Unit"
         ],
         [
           "IDD(Stop)",
@@ -12028,7 +13876,11 @@
           "3.02"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by characterization results.",
+        "2. The maximum values are given for LDO regulator ON. Refer to Section 6.3.3 SMPS step-down converterfor the SMPS maximum current consumption.",
+        "3. The SMPS is unnecessarily ON in System Stop mode, leading to an additional consumption. It is recommended to use SVOS3 LP mode to optimize power consumption."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -12207,8 +14059,8 @@
           "µA"
         ],
         [
-          "IDD (Standby)",
-          "Supply current in Standby mode, IWDG OFF",
+          "IDD",
+          "S u p p l y c u rre n t i n",
           "ON",
           "OFF",
           "2.78",
@@ -12222,8 +14074,8 @@
           "µA"
         ],
         [
-          "IDD (Standby)",
-          "Supply current in Standby mode, IWDG OFF",
+          "(Standby)",
+          "IWDG OFF",
           "OFF",
           "ON",
           "2.46",
@@ -12250,51 +14102,6 @@
           "26.3",
           "66.0",
           "µA"
-        ],
-        [
-          "IDD (VBAT)",
-          "Supply current in VBAT mode",
-          "ON",
-          "OFF",
-          "0.85",
-          "0.93",
-          "1.05",
-          "1.14",
-          "1.5",
-          "3.6",
-          "7.5",
-          "20.0",
-          "20.0"
-        ],
-        [
-          "IDD (VBAT)",
-          "Supply current in VBAT mode",
-          "OFF",
-          "ON",
-          "0.50",
-          "0.63",
-          "0.74",
-          "0.84",
-          "1.2",
-          "3.1",
-          "5.9",
-          "16",
-          "16"
-        ],
-        [
-          "IDD (VBAT)",
-          "Supply current in VBAT mode",
-          "ON",
-          "ON",
-          "1.34",
-          "1.54",
-          "1.76",
-          "1.91",
-          "2.5",
-          "4.8",
-          "8.8",
-          "22.0",
-          "22.0"
         ]
       ],
       "notes": [
@@ -12360,7 +14167,7 @@
         ],
         [
           "IDD (VBAT)",
-          "Supply current in VBAT mode",
+          "Supply current in",
           "ON",
           "OFF",
           "0.85",
@@ -12375,7 +14182,7 @@
         ],
         [
           "IDD (VBAT)",
-          "Supply current in VBAT mode",
+          "VBAT mode",
           "OFF",
           "ON",
           "0.50",
@@ -12453,7 +14260,7 @@
           "µA/MHz"
         ],
         [
-          "AHB3",
+          "DMA2D",
           "DMA2D",
           "3.00",
           "2.80",
@@ -12462,7 +14269,7 @@
           "µA/MHz"
         ],
         [
-          "AHB3",
+          "JPGDEC",
           "JPGDEC",
           "4.70",
           "4.40",
@@ -12471,7 +14278,7 @@
           "µA/MHz"
         ],
         [
-          "AHB3",
+          "FLITF",
           "FLITF",
           "20.00",
           "19.00",
@@ -12480,7 +14287,7 @@
           "µA/MHz"
         ],
         [
-          "AHB3",
+          "FMC registers",
           "FMC registers",
           "1.30",
           "1.30",
@@ -12489,7 +14296,7 @@
           "µA/MHz"
         ],
         [
-          "AHB3",
+          "FMC kernel",
           "FMC kernel",
           "10.00",
           "9.30",
@@ -12498,7 +14305,7 @@
           "µA/MHz"
         ],
         [
-          "AHB3",
+          "OSPI1 registers",
           "OSPI1 registers",
           "0.50",
           "0.60",
@@ -12507,7 +14314,7 @@
           "µA/MHz"
         ],
         [
-          "AHB3",
+          "OSPI1 kernel",
           "OSPI1 kernel",
           "2.30",
           "2.20",
@@ -12516,7 +14323,7 @@
           "µA/MHz"
         ],
         [
-          "AHB3",
+          "SDMMC1 registers",
           "SDMMC1 registers",
           "8.90",
           "8.30",
@@ -12525,7 +14332,7 @@
           "µA/MHz"
         ],
         [
-          "AHB3",
+          "SDMMC1 kernel",
           "SDMMC1 kernel",
           "2.20",
           "2.00",
@@ -12534,7 +14341,7 @@
           "µA/MHz"
         ],
         [
-          "AHB3",
+          "OSPI2 registers",
           "OSPI2 registers",
           "0.70",
           "0.70",
@@ -12543,7 +14350,7 @@
           "µA/MHz"
         ],
         [
-          "AHB3",
+          "AHB3 OSPI2 kernel",
           "OSPI2 kernel",
           "2.00",
           "1.80",
@@ -12552,7 +14359,7 @@
           "µA/MHz"
         ],
         [
-          "AHB3",
+          "IOMNGR",
           "IOMNGR",
           "0.30",
           "0.30",
@@ -12561,7 +14368,7 @@
           "µA/MHz"
         ],
         [
-          "AHB3",
+          "OTFDEC1",
           "OTFDEC1",
           "1.20",
           "1.20",
@@ -12570,7 +14377,7 @@
           "µA/MHz"
         ],
         [
-          "AHB3",
+          "OTFDEC2",
           "OTFDEC2",
           "1.40",
           "1.30",
@@ -12579,7 +14386,7 @@
           "µA/MHz"
         ],
         [
-          "AHB3",
+          "GFXMMU",
           "GFXMMU",
           "2.80",
           "2.70",
@@ -12588,7 +14395,7 @@
           "µA/MHz"
         ],
         [
-          "AHB3",
+          "AXISRAM2",
           "AXISRAM2",
           "5.30",
           "5.00",
@@ -12597,7 +14404,7 @@
           "µA/MHz"
         ],
         [
-          "AHB3",
+          "AXISRAM3",
           "AXISRAM3",
           "5.40",
           "5.10",
@@ -12606,7 +14413,7 @@
           "µA/MHz"
         ],
         [
-          "AHB3",
+          "DTCM1",
           "DTCM1",
           "1.10",
           "1.10",
@@ -12615,7 +14422,7 @@
           "µA/MHz"
         ],
         [
-          "AHB3",
+          "DTCM2",
           "DTCM2",
           "0.70",
           "0.80",
@@ -12624,7 +14431,7 @@
           "µA/MHz"
         ],
         [
-          "AHB3",
+          "ITCM",
           "ITCM",
           "1.10",
           "1.10",
@@ -12633,7 +14440,7 @@
           "µA/MHz"
         ],
         [
-          "AHB3",
+          "AXISRAM1",
           "AXISRAM1",
           "5.30",
           "5.00",
@@ -12642,7 +14449,7 @@
           "µA/MHz"
         ],
         [
-          "AHB3",
+          "Bridge",
           "Bridge",
           "0.10",
           "0.10",
@@ -12660,7 +14467,7 @@
           "µA/MHz"
         ],
         [
-          "AHB1",
+          "DMA2",
           "DMA2",
           "0.90",
           "0.80",
@@ -12669,7 +14476,7 @@
           "µA/MHz"
         ],
         [
-          "AHB1",
+          "CRC",
           "CRC",
           "0.60",
           "0.60",
@@ -12678,7 +14485,7 @@
           "µA/MHz"
         ],
         [
-          "AHB1",
+          "ADC12 registers",
           "ADC12 registers",
           "5.40",
           "4.90",
@@ -12687,7 +14494,7 @@
           "µA/MHz"
         ],
         [
-          "AHB1",
+          "AHB1 ADC12 kernel",
           "ADC12 kernel",
           "1.10",
           "1.00",
@@ -12696,7 +14503,7 @@
           "µA/MHz"
         ],
         [
-          "AHB1",
+          "USB1OTG registers",
           "USB1OTG registers",
           "24.00",
           "22.00",
@@ -12705,7 +14512,7 @@
           "µA/MHz"
         ],
         [
-          "AHB1",
+          "USB1OTG kernel",
           "USB1OTG kernel",
           "9.50",
           "9.30",
@@ -12714,7 +14521,7 @@
           "µA/MHz"
         ],
         [
-          "AHB1",
+          "USB1ULPI",
           "USB1ULPI",
           "0.10",
           "0.10",
@@ -12723,7 +14530,7 @@
           "µA/MHz"
         ],
         [
-          "AHB1",
+          "Bridge",
           "Bridge",
           "0.10",
           "0.10",
@@ -12741,7 +14548,7 @@
           "µA/MHz"
         ],
         [
-          "AHB2",
+          "HASH",
           "HASH",
           "1.80",
           "1.60",
@@ -13839,7 +15646,11 @@
           "µA/MHz"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by design.",
+        "2. The rise and fall times for a digital input signal are not specified. However the VHSEH and VHSEL conditions must be fulfilled.",
+        "3. The DC component of the signal must ensure that the signal peaks are located between VDD and VSS. DS13196 - Rev 7 page 89/205"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -14037,7 +15848,7 @@
           "µs"
         ],
         [
-          "tWUDSTOP(3)",
+          "(3)",
           "Wakeup from DStop",
           "SVOS5, HSI, flash memory in low-power mode",
           "35.0",
@@ -14117,7 +15928,7 @@
           "µs"
         ],
         [
-          "tWUDSTOP2(3)",
+          "(3) tWUDSTOP2",
           "Wakeup from DStop2, clock kept running",
           "SVOS4, HSI, flash memory in low-power mode",
           "20.4",
@@ -14165,7 +15976,11 @@
           "330"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by characterization results.",
+        "2. Measures done at −40 °C in the worst conditions.",
+        "3. The wakeup times are measured from the wakeup event to the point in which the application code reads the first instruction."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -14753,7 +16568,7 @@
         ],
         [
           "ΔVDD(HSI48)(2)",
-          "HSI48 oscillator frequency drift with VDD (reference is 3.3 V)",
+          "3 . 3 V )",
           "VDD = 1.62 to 3.6 V",
           "-",
           "0.05",
@@ -14912,7 +16727,7 @@
         ],
         [
           "ΔTEMP (HSI)",
-          "HSI oscillator frequency drift over temperature (reference is 64 MHz)",
+          "(reference is 64 MHz)",
           "TJ=-40 to TJmax °C",
           "-2(4)",
           "-",
@@ -15097,7 +16912,11 @@
           "µA"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by design, unless otherwise specified.",
+        "2. This value must be limited to the maximum frequency due to the product limitation.",
+        "3. Guaranteed by characterization results."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -15188,7 +17007,11 @@
           "nA"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by design, unless otherwise specified.",
+        "2. This value must be limited to the maximum frequency due to the product limitation.",
+        "3. Guaranteed by characterization results."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -15405,7 +17228,11 @@
           "-"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by design, unless otherwise specified.",
+        "2. This value must be limited to the maximum frequency due to the product limitation.",
+        "3. Guaranteed by characterization results."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -15615,7 +17442,7 @@
         [
           "IDD(PLL)",
           "PLL power consumption on VDD",
-          "fVCO_OUT = 420 MHz",
+          "VCORE",
           "VCORE",
           "-",
           "450",
@@ -15635,42 +17462,12 @@
         [
           "IDD(PLL)",
           "PLL power consumption on VDD",
-          "fVCO_OUT = 150 MHz",
+          "VCORE",
           "VCORE",
           "-",
           "165",
           "-",
           "µA"
-        ],
-        [
-          "IDD",
-          "IDD",
-          "Supply current",
-          "Word program",
-          "-",
-          "2.5",
-          "4",
-          "4"
-        ],
-        [
-          "None",
-          "None",
-          "None",
-          "Sector erase",
-          "-",
-          "1.8",
-          "3",
-          "3"
-        ],
-        [
-          "None",
-          "None",
-          "None",
-          "Mass erase",
-          "-",
-          "2.0",
-          "3",
-          "3"
         ]
       ],
       "notes": [
@@ -15741,7 +17538,9 @@
           "mA"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by characterization results."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -15823,7 +17622,9 @@
           "V"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by characterization results."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -15905,10 +17706,9 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf#page=98",
-    "text_helper": "Table 58. EMS characteristics — section 6.3.13 EMC characteristics. Symbol, Symbol, Parameter, Conditions, Level/ Class.",
+    "text_helper": "Table 58. EMS characteristics — section 6.3.13 EMC characteristics. Symbol, Parameter, Conditions, Level/ Class.",
     "table_content": {
       "headers": [
-        "Symbol",
         "Symbol",
         "Parameter",
         "Conditions",
@@ -15917,41 +17717,21 @@
       "rows": [
         [
           "VFESD",
-          "VFESD",
           "Voltage limits to be applied on any I/O pin to induce a functional disturbance",
           "VDD = 3.3 V, TA = +25 °C, LQFP144, frcc_cpu_ck = 216 MHz, conforms to IEC 61000-4-2",
           "3B"
         ],
         [
           "VFTB",
-          "VFTB",
           "Fast transient voltage burst limits to be applied through 100 pF on VDD and VSS pins to induce a functional disturbance",
-          "VDD = 3.3 V, TA = +25 °C, LQFP144, frcc_cpu_ck = 216 MHz, conforms to IEC 61000-4-2",
+          "216 MHz, conforms to IEC 61000-4-2",
           "5A"
-        ],
-        [
-          "SEMI",
-          "Peak(1)",
-          "30 to 130 MHz",
-          "–1",
-          "–1"
-        ],
-        [
-          "SEMI",
-          "Peak(1)",
-          "130 MHz to 1 GHz",
-          "8",
-          "8"
-        ],
-        [
-          "SEMI",
-          "Peak(1)",
-          "1 GHz to 2 GHz",
-          "7",
-          "7"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by characterization results.",
+        "2. The electrostatic discharge is 2000 V for all pins, except VFBSMPS, for which the test fails at 2000 V and passes at 1600 V. Static latchup"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -16077,8 +17857,8 @@
         ],
         [
           "VESD(HBM)",
-          "Electrostatic discharge voltage (human body model)",
-          "TA = +25 °C conforming to ANSI/ESDA/ JEDEC JS-001",
+          "(h u m a n b o d y m o d e l)",
+          "J E D E C J S -0 0 1",
           "Packages without SMPS",
           "2",
           "2000",
@@ -16095,8 +17875,8 @@
         ],
         [
           "VESD(CDM)",
-          "Electrostatic discharge voltage (charge device model)",
-          "TA = +25 °C conforming to ANSI/ESDA/ JEDEC JS-002",
+          "(c h a r g e d e v i c e m o d e l )",
+          "J E D E C J S -0 0 2",
           "All BGA packages",
           "C2a",
           "500",
@@ -16408,96 +18188,6 @@
           "5",
           "-",
           "pF"
-        ],
-        [
-          "VOL",
-          "VOL",
-          "Output low level voltage",
-          "CMOS port(2) IIO=8 mA 2.7 V≤ VDD ≤3.6 V",
-          "CMOS port(2) IIO=8 mA 2.7 V≤ VDD ≤3.6 V",
-          "-",
-          "0.4"
-        ],
-        [
-          "VOH",
-          "VOH",
-          "Output high level voltage",
-          "CMOS port(2) IIO= -8 mA 2.7 V≤ VDD ≤3.6 V",
-          "CMOS port(2) IIO= -8 mA 2.7 V≤ VDD ≤3.6 V",
-          "VDD-0.4",
-          "-"
-        ],
-        [
-          "VOL(3)",
-          "VOL(3)",
-          "Output low level voltage",
-          "TTL port(2) IIO=8 mA 2.7 V≤ VDD ≤3.6 V",
-          "TTL port(2) IIO=8 mA 2.7 V≤ VDD ≤3.6 V",
-          "-",
-          "0.4"
-        ],
-        [
-          "VOH(3)",
-          "VOH(3)",
-          "Output high level voltage",
-          "TTL port(2) IIO=-8 mA 2.7 V≤ VDD ≤3.6 V",
-          "TTL port(2) IIO=-8 mA 2.7 V≤ VDD ≤3.6 V",
-          "2.4",
-          "-"
-        ],
-        [
-          "VOL(3)",
-          "VOL(3)",
-          "Output low level voltage",
-          "IIO=20 mA 2.7 V≤ VDD ≤3.6 V",
-          "IIO=20 mA 2.7 V≤ VDD ≤3.6 V",
-          "-",
-          "1.3"
-        ],
-        [
-          "VOH(3)",
-          "VOH(3)",
-          "Output high level voltage",
-          "IIO=-20 mA 2.7 V≤ VDD ≤3.6 V",
-          "IIO=-20 mA 2.7 V≤ VDD ≤3.6 V",
-          "VDD-1.3",
-          "-"
-        ],
-        [
-          "VOL(3)",
-          "VOL(3)",
-          "Output low level voltage",
-          "IIO= 4 mA 1.62 V≤ VDD ≤3.6 V",
-          "IIO= 4 mA 1.62 V≤ VDD ≤3.6 V",
-          "-",
-          "0.4"
-        ],
-        [
-          "VOH (3)",
-          "VOH (3)",
-          "Output high level voltage",
-          "IIO= -4 mA 1.62 V≤VDD<3.6 V",
-          "IIO= -4 mA 1.62 V≤VDD<3.6 V",
-          "VDD-0.4",
-          "-"
-        ],
-        [
-          "VOLFM+(3)",
-          "VOLFM+(3)",
-          "Output low level voltage for an FTf I/O pin in FM+ mode",
-          "IIO= 20 mA 2.3 V≤ VDD≤3.6 V",
-          "IIO= 20 mA 2.3 V≤ VDD≤3.6 V",
-          "-",
-          "0.4"
-        ],
-        [
-          "None",
-          "None",
-          "None",
-          "IIO= 10 mA 1.62 V≤ VDD ≤3.6 V",
-          "IIO= 10 mA 1.62 V≤ VDD ≤3.6 V",
-          "-",
-          "0.4"
         ]
       ],
       "notes": [
@@ -16532,7 +18222,7 @@
     "semantic_type": "",
     "tags": [],
     "url": "https://www.st.com/resource/en/datasheet/stm32h7b0ab.pdf#page=102",
-    "text_helper": "Table 64. Output voltage characteristics for all I/Os except PC13, PC14, PC15 and PI8 — section 6.3.16 I/O port characteristics. Symbol, Parameter, Conditions(1), Min, Max, +1 autres. (table vide)",
+    "text_helper": "Table 64. Output voltage characteristics for all I/Os except PC13, PC14, PC15 and PI8 — section 6.3.16 I/O port characteristics. Symbol, Parameter, Conditions(1), Min, Max, +1 autres.",
     "table_content": {
       "headers": [
         "Symbol",
@@ -16542,8 +18232,125 @@
         "Max",
         "Unit"
       ],
-      "rows": [],
-      "notes": [],
+      "rows": [
+        [
+          "VOL",
+          "Output low level voltage",
+          "CMOS port(2) IIO=8 mA 2.7 V≤ VDD ≤3.6 V",
+          "-",
+          "0.4",
+          "V"
+        ],
+        [
+          "VOH",
+          "Output high level voltage",
+          "CMOS port(2) IIO= -8 mA 2.7 V≤ VDD ≤3.6 V",
+          "VDD-0.4",
+          "-",
+          "V"
+        ],
+        [
+          "VOL(3)",
+          "Output low level voltage",
+          "TTL port(2) IIO=8 mA 2.7 V≤ VDD ≤3.6 V",
+          "-",
+          "0.4",
+          "V"
+        ],
+        [
+          "VOH(3)",
+          "Output high level voltage",
+          "TTL port(2) IIO=-8 mA 2.7 V≤ VDD ≤3.6 V",
+          "2.4",
+          "-",
+          "V"
+        ],
+        [
+          "VOL(3)",
+          "Output low level voltage",
+          "IIO=20 mA 2.7 V≤ VDD ≤3.6 V",
+          "-",
+          "1.3",
+          "V"
+        ],
+        [
+          "VOH(3)",
+          "Output high level voltage",
+          "IIO=-20 mA 2.7 V≤ VDD ≤3.6 V",
+          "VDD-1.3",
+          "-",
+          "V"
+        ],
+        [
+          "VOL(3)",
+          "Output low level voltage",
+          "IIO= 4 mA 1.62 V≤ VDD ≤3.6 V",
+          "-",
+          "0.4",
+          "V"
+        ],
+        [
+          "VOH (3)",
+          "Output high level voltage",
+          "IIO= -4 mA 1.62 V≤VDD<3.6 V",
+          "VDD-0.4",
+          "-",
+          "V"
+        ],
+        [
+          "VOLFM+(3)",
+          "Output low level voltage for an FTf I/O pin in FM+ mode",
+          "IIO= 20 mA 2.3 V≤ VDD≤3.6 V",
+          "-",
+          "0.4",
+          "V"
+        ],
+        [
+          "VOLFM+(3)",
+          "Output low level voltage for an FTf I/O pin in FM+ mode",
+          "IIO= 10 mA 1.62 V≤ VDD ≤3.6 V",
+          "-",
+          "0.4",
+          "V"
+        ],
+        [
+          "VOL(3)",
+          "Output low level voltage",
+          "TTL port(2) IIO = 3 mA, 2.7 V≤ VDD ≤ 3.6 V",
+          "-",
+          "0.4",
+          "V"
+        ],
+        [
+          "VOH(3)",
+          "Output high level voltage",
+          "TTL port(2) IIO=-3 mA, 2.7 V ≤ VDD ≤ 3.6 V",
+          "2.4",
+          "-",
+          "-"
+        ],
+        [
+          "VOL(3)",
+          "Output low level voltage",
+          "IIO = 1.5 mA, 1.62 V ≤ VDD ≤ 3.6 V",
+          "-",
+          "0.4",
+          "0.4"
+        ],
+        [
+          "VOH (3)",
+          "Output high level voltage",
+          "IIO = -1.5 mA, 1.62 V ≤ VDD < 3.6 V",
+          "VDD-0.4",
+          "-",
+          "-"
+        ]
+      ],
+      "notes": [
+        "1. Guaranteed by design.",
+        "2. The maximum frequency is defined with the following conditions: (tr+tf) ≤ 2/3 T, skew ≤ 1/20 T, 45%<Duty cycle<55%",
+        "3. The fall and rise times are defined between 90% and 10% and between 10% and 90% of the output waveform, respectively."
+      ],
       "legend": [
         "The IIO current sourced or sunk by the device must always respect the absolute maximum rating specified in Table 17. Voltage",
         "characteristics, and the sum of the currents sourced or sunk by all the I/Os (I/O ports and control pins) must always respect the",
@@ -16755,7 +18562,7 @@
         ],
         [
           "00",
-          "Fmax(2)",
+          "(2)",
           "Maximum frequency",
           "C=30 pF, 2.7 V≤VDD≤3.6 V",
           "-",
@@ -16809,8 +18616,8 @@
         ],
         [
           "00",
-          "tr/tf (3)",
-          "Output high to low level fall time and output low to high level rise time",
+          "(3)",
+          "Output high to low level fall time and output low to",
           "C=30 pF, 2.7 V≤VDD≤3.6 V",
           "-",
           "13.3",
@@ -16819,7 +18626,7 @@
         [
           "00",
           "tr/tf (3)",
-          "Output high to low level fall time and output low to high level rise time",
+          "high level rise time",
           "C=30 pF, 1.62 V≤VDD≤2.7 V",
           "-",
           "25",
@@ -16863,7 +18670,7 @@
         ],
         [
           "01",
-          "Fmax(2)",
+          "(2)",
           "Maximum frequency",
           "C=30 pF, 2.7 V≤VDD≤3.6 V",
           "-",
@@ -16917,8 +18724,8 @@
         ],
         [
           "01",
-          "tr/tf (3)",
-          "Output high to low level fall time and output low to high level rise time",
+          "(3)",
+          "Output high to low level fall time and output low to",
           "C=30 pF, 2.7 V≤VDD≤3.6 V",
           "-",
           "4.2",
@@ -16927,7 +18734,7 @@
         [
           "01",
           "tr/tf (3)",
-          "Output high to low level fall time and output low to high level rise time",
+          "high level rise time",
           "C=30 pF, 1.62 V≤VDD≤2.7 V",
           "-",
           "7.5",
@@ -17168,7 +18975,12 @@
           "2.7"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by design.",
+        "2. The maximum frequency is defined with the following conditions: (tr+tf) ≤ 2/3 T, skew ≤ 1/20 T, 45%<Duty cycle<55%",
+        "3. The fall and rise times are defined between 90% and 10% and between 10% and 90% of the output waveform, respectively.",
+        "4. Compensation system enabled. Output buffer timing characteristics (HSLV option enabled)"
+      ],
       "legend": [
         "The frequency of the GPIOs that can be supplied in VBAT mode (PC13, PC14, PC15 and PI8) is limited to 2 MHz."
       ],
@@ -17217,7 +19029,7 @@
         ],
         [
           "00",
-          "Fmax(2)",
+          "(2) Fmax",
           "Maximum frequency",
           "C=30 pF, 1.62 V≤VDD≤2.7 V",
           "-",
@@ -17244,8 +19056,8 @@
         ],
         [
           "00",
-          "tr/tf(3)",
-          "Output high to low level fall time and output low to high level rise time",
+          "(3) tr/tf",
+          "high level rise time",
           "C=30 pF, 1.62 V≤VDD≤2.7 V",
           "-",
           "9",
@@ -17484,7 +19296,7 @@
         ],
         [
           "Switch impedance",
-          "Switch control not boosted",
+          "VDDSWITCH > 2.4 V",
           "VDDSWITCH > 2.4 V",
           "-",
           "-",
@@ -17493,7 +19305,7 @@
         ],
         [
           "Switch impedance",
-          "Switch control not boosted",
+          "VDDSWITCH > 2.0 V Switch control not boosted",
           "VDDSWITCH > 2.0 V",
           "-",
           "-",
@@ -17502,7 +19314,7 @@
         ],
         [
           "Switch impedance",
-          "Switch control not boosted",
+          "VDDSWITCH > 1.8 V",
           "VDDSWITCH > 1.8 V",
           "-",
           "-",
@@ -17511,36 +19323,15 @@
         ],
         [
           "Switch impedance",
-          "Switch control not boosted",
+          "VDDSWITCH > 1.62 V",
           "VDDSWITCH > 1.62 V",
           "-",
           "-",
           "550",
           "Ω"
-        ],
-        [
-          "VNF(NRST)(1)",
-          "NRST Input not filtered pulse",
-          "1.71 V < VDD < 3.6 V",
-          "350",
-          "-",
-          "-",
-          "-"
-        ],
-        [
-          "VNF(NRST)(1)",
-          "NRST Input not filtered pulse",
-          "1.62 V < VDD < 3.6 V",
-          "1000",
-          "-",
-          "-",
-          "-"
         ]
       ],
-      "notes": [
-        "1. Guaranteed by design.",
-        "2. The maximum frequency is defined with the following conditions: (tr+tf) ≤ 2/3 T, skew ≤ 1/20 T, 45%<Duty cycle<55%"
-      ],
+      "notes": [],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -17735,7 +19526,9 @@
           "Tfmc_ker_ck + 1"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Mode 2/B, C and D only. In Mode 1, FMC_NADV is not used."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -17926,27 +19719,6 @@
           "-",
           "Tfmc_ker_ck + 1",
           "ns"
-        ],
-        [
-          "tw(NWE)",
-          "FMC_NWE low time",
-          "6Tfmc_ker_ck - 1",
-          "6Tfmc_ker_ck + 1",
-          "6Tfmc_ker_ck + 1"
-        ],
-        [
-          "tsu(NWAIT_NE)",
-          "FMC_NWAIT valid before FMC_NEx high",
-          "5Tfmc_ker_ck + 13",
-          "-",
-          "-"
-        ],
-        [
-          "th(NE_NWAIT)",
-          "FMC_NEx hold time after FMC_NWAIT invalid",
-          "4Tfmc_ker_ck+ 12",
-          "-",
-          "-"
         ]
       ],
       "notes": [
@@ -18007,7 +19779,9 @@
           "ns"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by characterization results. Synchronous waveforms and timings"
+      ],
       "legend": [
         "NWAIT pulse width is equal to 1 AHB cycle."
       ],
@@ -18135,7 +19909,9 @@
           "-"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by characterization results. Synchronous waveforms and timings"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -18191,7 +19967,9 @@
           "ns"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by characterization results. Synchronous waveforms and timings"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -18315,30 +20093,11 @@
           "Tfmc_ker_ck+0.5",
           "-",
           "ns"
-        ],
-        [
-          "tw(NWE)",
-          "FMC_NWE low time",
-          "7Tfmc_ker_ck - 0.5",
-          "7Tfmc_ker_ck + 0.5",
-          "7Tfmc_ker_ck + 0.5"
-        ],
-        [
-          "tsu(NWAIT_NE)",
-          "FMC_NWAIT valid before FMC_NEx high",
-          "5Tfmc_ker_ck + 9",
-          "-",
-          "-"
-        ],
-        [
-          "th(NE_NWAIT)",
-          "FMC_NEx hold time after FMC_NWAIT invalid",
-          "4Tfmc_ker_ck + 12",
-          "-",
-          "-"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by characterization results. Synchronous waveforms and timings"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -18515,7 +20274,10 @@
           "-"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by characterization results.",
+        "2. At VOS1, these values are degraded by up to 5 %."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -18648,7 +20410,10 @@
           "-"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by characterization results.",
+        "2. At VOS1, these values are degraded by up to 5 %."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -18753,7 +20518,10 @@
           "ns"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by characterization results.",
+        "2. At VOS1, these values are degraded by up to 5 %."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -18959,7 +20727,9 @@
           "ns"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by characterization results."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -19127,62 +20897,6 @@
           "-",
           "0.5",
           "ns"
-        ],
-        [
-          "tsu(SDCLKH_Data)",
-          "Data input setup time",
-          "3",
-          "-",
-          "-"
-        ],
-        [
-          ")ataD_HKLCDS(ht",
-          "Data input hold time",
-          "0.5",
-          "-",
-          "-"
-        ],
-        [
-          "td(SDCLKL_Add)",
-          "Address valid time",
-          "-",
-          "3.5",
-          "3.5"
-        ],
-        [
-          "td(SDCLKL_SDNE)",
-          "Chip select valid time",
-          "-",
-          "2.5(3)",
-          "2.5(3)"
-        ],
-        [
-          "th(SDCLKL_SDNE)",
-          "Chip select hold time",
-          "0",
-          "-",
-          "-"
-        ],
-        [
-          "td(SDCLKL_SDNRAS",
-          "SDNRAS valid time",
-          "-",
-          "1",
-          "1"
-        ],
-        [
-          "th(SDCLKL_SDNRAS)",
-          "SDNRAS hold time",
-          "0",
-          "-",
-          "-"
-        ],
-        [
-          "th(SDCLKL_SDNCAS)",
-          "SDNCAS hold time",
-          "0",
-          "-",
-          "-"
         ]
       ],
       "notes": [
@@ -19285,83 +20999,6 @@
           "0",
           "-",
           "ns"
-        ],
-        [
-          ")ataD_ LKLCDS(dt",
-          "Data output valid time",
-          "-",
-          "2.5",
-          "2.5"
-        ],
-        [
-          ")ataD_ LKLCDS(ht",
-          "Data output hold time",
-          "0",
-          "-",
-          "-"
-        ],
-        [
-          "td(SDCLKL_Add)",
-          "Address valid time",
-          "-",
-          "2",
-          "2"
-        ],
-        [
-          "td(SDCLKL_SDNWE)",
-          "SDNWE valid time",
-          "-",
-          "2.5",
-          "2.5"
-        ],
-        [
-          "th(SDCLKL_SDNWE)",
-          "SDNWE hold time",
-          "0.5",
-          "-",
-          "-"
-        ],
-        [
-          "td(SDCLKL_ SDNE)",
-          "Chip select valid time",
-          "-",
-          "2(3)",
-          "2(3)"
-        ],
-        [
-          "th(SDCLKL-_SDNE)",
-          "Chip select hold time",
-          "0.5",
-          "-",
-          "-"
-        ],
-        [
-          "td(SDCLKL_SDNRAS)",
-          "SDNRAS valid time",
-          "-",
-          "1.5",
-          "1.5"
-        ],
-        [
-          "th(SDCLKL_SDNRAS)",
-          "SDNRAS hold time",
-          "0.5",
-          "-",
-          "-"
-        ],
-        [
-          "td(SDCLKL_SDNCAS)",
-          "SDNCAS valid time",
-          "-",
-          "1.5",
-          "1.5"
-        ],
-        [
-          "td(SDCLKL_SDNCAS)",
-          "SDNCAS hold time",
-          "0.5",
-          "-",
-          "-"
         ]
       ],
       "notes": [
@@ -19466,7 +21103,11 @@
           "ns"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by characterization results.",
+        "2. At VOS1, these values are degraded by up to 5 %.",
+        "3. Using PC2_C I/O adds 4.5 ns to this timing."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -19636,7 +21277,7 @@
         ],
         [
           "F(CLK)",
-          "OCTOSPI clock frequency",
+          "y c ne u q er f kcol c I P S O T CO",
           "1.62 V < VDD < 3.6 V, VOS0, CLOAD = 20 pF",
           "-",
           "-",
@@ -19651,76 +21292,12 @@
           "-",
           "140",
           "MHz"
-        ],
-        [
-          "tw(CLKL)",
-          "OCTOSPI clock high and low time",
-          "PRESCALER[7:0] = n = 2,4,6,8",
-          "(n/2+1)*t(CLK)/ (n+1) -1",
-          "-",
-          "(n/2+1)*t(CLK)/ (n+1)",
-          "ns"
-        ],
-        [
-          "ts(IN)(4)",
-          "Data input setup time",
-          "2.7 V < VDD < 3.6 V",
-          "2",
-          "-",
-          "-",
-          "ns"
-        ],
-        [
-          "ts(IN)(4)",
-          "Data input setup time",
-          "1.62 V < VDD < 3.6 V",
-          "2",
-          "-",
-          "-",
-          "ns"
-        ],
-        [
-          "th(IN)(4)",
-          "Data input hold time",
-          "2.7 V < VDD < 3.6 V",
-          "4.5",
-          "-",
-          "-",
-          "ns"
-        ],
-        [
-          "th(IN)(4)",
-          "Data input hold time",
-          "1.62 V < VDD < 3.6 V",
-          "5",
-          "-",
-          "-",
-          "ns"
-        ],
-        [
-          "tv(OUT)",
-          "Data output valid time",
-          "-",
-          "-",
-          "1",
-          "1.5(4)",
-          "ns"
-        ],
-        [
-          "th(OUT)",
-          "Data output hold time",
-          "-",
-          "0",
-          "-",
-          "-",
-          "ns"
         ]
       ],
       "notes": [
         "1. All values apply to Octal and Quad-SPI mode.",
         "2. Guaranteed by characterization results.",
-        "3. At VOS1, these values are degraded by up to 5 %.",
-        "4. Using PC2, PC3, PI11, PF0 or PF1 I/O in the data bus adds 3.5 ns to this timing value. DS13196 - Rev 7 page 124/205"
+        "3. At VOS1, these values are degraded by up to 5 %."
       ],
       "legend": [
         "Delay block bypassed."
@@ -19771,9 +21348,9 @@
           "MHz"
         ],
         [
-          "F(CLK)(3)(4)",
-          "OCTOSPI clock frequency",
-          "OCTOSPI clock frequency",
+          "(3)(4) F(CLK)",
+          "y c ne u q er f kcol c I P S O T CO",
+          "y c ne u q er f kcol c I P S O T CO",
           "2.7 V < VDD < 3.6 V, VOS0, CLOAD = 20 pF",
           "-",
           "-",
@@ -19799,226 +21376,6 @@
           "-",
           "t(CLK)/2+1",
           "ns"
-        ],
-        [
-          "tw(CLKL)",
-          "OCTOSPI clock high and low time",
-          "OCTOSPI clock high and low time",
-          "PRESCALER[7:0] = n = 0,1,3,5",
-          "t(CLK)/2-1",
-          "-",
-          "t(CLK)/2",
-          "ns"
-        ],
-        [
-          "tw(CLKH)",
-          "OCTOSPI clock high and low time",
-          "OCTOSPI clock high and low time",
-          "PRESCALER[7:0] = n = 2,4,6,8",
-          "(n/2)*t(CLK)/ (n+1)",
-          "-",
-          "(n/2)*t(CLK)/ (n+1)+1",
-          "ns"
-        ],
-        [
-          "tw(CLKL)",
-          "OCTOSPI clock high and low time",
-          "OCTOSPI clock high and low time",
-          "PRESCALER[7:0] = n = 2,4,6,8",
-          "(n/2+1)*t(CLK)/ (n+1)-1",
-          "-",
-          "(n/2+1)*t(CLK)/ (n+1)",
-          "ns"
-        ],
-        [
-          "tv(CLK)",
-          "Clock valid time",
-          "Clock valid time",
-          "-",
-          "-",
-          "-",
-          "t(CLK)+1",
-          "ns"
-        ],
-        [
-          "th(CLK)",
-          "Clock hold time",
-          "Clock hold time",
-          "-",
-          "t(CLK)/2-0.5 t(CLK)/2",
-          "-",
-          "-",
-          "ns"
-        ],
-        [
-          "tw(CS)",
-          "Chip select high time",
-          "Chip select high time",
-          "-",
-          "3 x t(CLK)",
-          "-",
-          "-",
-          "ns"
-        ],
-        [
-          "tv(DQ)",
-          "Data input vallid time",
-          "Data input vallid time",
-          "-",
-          "0",
-          "-",
-          "-",
-          "ns"
-        ],
-        [
-          "tv(DS)",
-          "Data strobe input valid time",
-          "Data strobe input valid time",
-          "-",
-          "0",
-          "-",
-          "-",
-          "ns"
-        ],
-        [
-          "th(DS)",
-          "Data strobe input hold time",
-          "Data strobe input hold time",
-          "-",
-          "0",
-          "-",
-          "-",
-          "ns"
-        ],
-        [
-          "tv(RWDS)",
-          "Data strobe output valid time",
-          "Data strobe output valid time",
-          "-",
-          "-",
-          "-",
-          "3 x t(CLK)",
-          "ns"
-        ],
-        [
-          "tsr(DQ) tsf(DQ)(7)",
-          "Data input setup time",
-          "Data input setup time",
-          "-",
-          "-1",
-          "-",
-          "-",
-          "ns"
-        ],
-        [
-          "thr(DQ)",
-          "Data input hold time",
-          "Data input hold time",
-          "Rising edge",
-          "3",
-          "-",
-          "-",
-          "ns"
-        ],
-        [
-          "thf(DQ)(7)",
-          "Data input hold time",
-          "Data input hold time",
-          "Falling edge",
-          "3.5",
-          "-",
-          "-",
-          "ns"
-        ],
-        [
-          "tvr(OUT) tvf(OUT)",
-          "Data output valid time",
-          "Data output valid time",
-          "DHQC = 0",
-          "-",
-          "5.5",
-          "7(8)",
-          "ns"
-        ],
-        [
-          "tvr(OUT) tvf(OUT)",
-          "Data output valid time",
-          "Data output valid time",
-          "DHQC = 1, PRESCALER[7:0]=1,2...",
-          "-",
-          "t(CLK)/4+ 1",
-          "t(CLK)/4+2(8)",
-          "ns"
-        ],
-        [
-          "thr(OUT) thf(OUT)",
-          "Data output hold time",
-          "Data output hold time",
-          "DHQC = 0",
-          "4.5",
-          "-",
-          "-",
-          "ns"
-        ],
-        [
-          "thr(OUT) thf(OUT)",
-          "Data output hold time DHQC =",
-          "Data output hold time DHQC =",
-          "1, PRESCALER[7:0]=1,2...",
-          "t(CLK)/4 -",
-          "t(CLK)/4 -",
-          "-",
-          "ns"
-        ],
-        [
-          "R",
-          "R",
-          "R",
-          "R",
-          "R",
-          "R",
-          "R",
-          "R"
-        ],
-        [
-          "R",
-          "ead write recovery",
-          "Access latency",
-          "Access latency",
-          "Access latency",
-          "Access latency",
-          "Access latency",
-          "Access latency"
-        ],
-        [
-          "R",
-          "tv(CLK)",
-          "tv(CLK)",
-          "tv(CLK)",
-          "tv(CLK)",
-          "tv(CLK)",
-          "tv(CLK)",
-          "tv(CLK)"
-        ],
-        [
-          "R",
-          "WDS) High = 2x la",
-          "tv tency count",
-          "tv tency count",
-          "tv tency count",
-          "tv tency count",
-          "tv tency count",
-          "(OUT) th("
-        ],
-        [
-          "R",
-          "WDS) High = 2x la",
-          "tency count Latency count th(OUT) tv",
-          "tency count Latency count th(OUT) tv",
-          "tency count Latency count th(OUT) tv",
-          "tency count Latency count th(OUT) tv",
-          "tency count Latency count th(OUT) tv",
-          "(OUT) th( Dn Dn Dn+"
         ]
       ],
       "notes": [
@@ -20027,9 +21384,7 @@
         "3. The maximum frequency values are given for a maximum RWDS to DQ skew ≤ ±1.0 ns.",
         "4. DHQC must be set to reach the mentioned frequency.",
         "5. Guaranteed by design.",
-        "6. Using PC2, PC3, PI11, PF0 or PF1 I/Os limits the maximum clock frequency.",
-        "7. Delay block bypassed.",
-        "8. Using PC2, PC3, PI11, PF0 or PF1 I/O in the data bus adds 3.5 ns to this timing value."
+        "6. Using PC2, PC3, PI11, PF0 or PF1 I/Os limits the maximum clock frequency."
       ],
       "legend": "",
       "semantic_type": "",
@@ -20079,7 +21434,7 @@
           "-",
           "40",
           "47",
-          "2700 ps 59"
+          "59"
         ]
       ],
       "notes": [],
@@ -20131,11 +21486,11 @@
           "VDDA ≥ 2 V",
           "VDDA ≥ 2 V",
           "1.62 -",
-          "3.6 VDDA V"
+          "VDDA V"
         ],
         [
           "VREF+(2)",
-          "Positive reference voltage",
+          "voltage",
           "VDDA < 2 V",
           "VDDA < 2 V",
           "VDDA",
@@ -20160,26 +21515,26 @@
         [
           "fADC",
           "ADC clock frequency",
-          "1,62 V ≤VDDA ≤ 3.6 V",
+          "BOOST = 10",
           "BOOST = 10",
           "0.12 -",
-          "50 25 MHz 12.5 6.25"
+          "25"
         ],
         [
           "fADC",
           "ADC clock frequency",
-          "1,62 V ≤VDDA ≤ 3.6 V",
+          "BOOST = 01",
           "BOOST = 01",
           "0.12 -",
-          "50 25 MHz 12.5 6.25"
+          "12.5"
         ],
         [
           "fADC",
           "ADC clock frequency",
-          "1,62 V ≤VDDA ≤ 3.6 V",
+          "BOOST = 00",
           "BOOST = 00",
           "- -",
-          "50 25 MHz 12.5 6.25"
+          "6.25"
         ]
       ],
       "notes": [],
@@ -20575,7 +21930,7 @@
         [
           "ET",
           "Total undadjusted error",
-          "Direct channel",
+          "Differential",
           "Differential",
           "-",
           "±15",
@@ -20595,7 +21950,7 @@
         [
           "ET",
           "Total undadjusted error",
-          "Fast channel",
+          "Differential",
           "Differential",
           "-",
           "±15",
@@ -20615,7 +21970,7 @@
         [
           "ET",
           "Total undadjusted error",
-          "Slow channel",
+          "Differential",
           "Differential",
           "-",
           "±10",
@@ -20888,7 +22243,7 @@
         [
           "RL",
           "Resistive Load",
-          "DAC output buffer ON",
+          "connected to VDDA",
           "connected to VDDA",
           "25",
           "-",
@@ -20917,8 +22272,8 @@
         ],
         [
           "RBON",
-          "Output impedance sample and hold mode, output buffer ON",
-          "DAC output buffer ON",
+          "mode, output buffer ON",
+          "VDD = 2.0 V",
           "VDD = 2.0 V",
           "-",
           "-",
@@ -20937,8 +22292,8 @@
         ],
         [
           "RBOFF",
-          "Output impedance sample and hold mode, output buffer OFF",
-          "DAC output buffer OFF",
+          "mode, output buffer OFF",
+          "VDD = 2.0 V",
           "VDD = 2.0 V",
           "-",
           "-",
@@ -20997,8 +22352,8 @@
         ],
         [
           "tSETTLING",
-          "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ±0.5LSB, ±1LSB, ±2LSB, ±4LSB, ±8LSB)",
-          "Normal mode, DAC output buffer ON, CL ≤ 50 pF, RL ≥ 5 kΩ",
+          "Settling time (full scale: for a 12-bit",
+          "±1 LSB Normal mode, DAC",
           "±1 LSB",
           "-",
           "1.97",
@@ -21007,8 +22362,8 @@
         ],
         [
           "tSETTLING",
-          "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ±0.5LSB, ±1LSB, ±2LSB, ±4LSB, ±8LSB)",
-          "Normal mode, DAC output buffer ON, CL ≤ 50 pF, RL ≥ 5 kΩ",
+          "code transition between the lowest",
+          "output buffer ON, ±2 LSB",
           "±2 LSB",
           "-",
           "1.67",
@@ -21017,8 +22372,8 @@
         ],
         [
           "tSETTLING",
-          "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ±0.5LSB, ±1LSB, ±2LSB, ±4LSB, ±8LSB)",
-          "Normal mode, DAC output buffer ON, CL ≤ 50 pF, RL ≥ 5 kΩ",
+          "D A C _ O U T re a c h e s t h e f in a l va l u e",
+          "±4 LSB",
           "±4 LSB",
           "-",
           "1.66",
@@ -21027,8 +22382,8 @@
         ],
         [
           "tSETTLING",
-          "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ±0.5LSB, ±1LSB, ±2LSB, ±4LSB, ±8LSB)",
-          "Normal mode, DAC output buffer ON, CL ≤ 50 pF, RL ≥ 5 kΩ",
+          "±8LSB)",
+          "±8 LSB",
           "±8 LSB",
           "-",
           "1.65",
@@ -21057,7 +22412,7 @@
         ],
         [
           "tWAKEUP(2)",
-          "Wakeup time from off state (setting the ENx bit in the DAC Control register) until the final value of ±1LSB is reached",
+          "until the final value of ±1LSB is reached",
           "Normal mode, DAC output buffer OFF, CL ≤ 10 pF",
           "Normal mode, DAC output buffer OFF, CL ≤ 10 pF",
           "-",
@@ -21087,7 +22442,7 @@
         ],
         [
           "tSAMP",
-          "Sampling time in Sample and Hold mode CL=100 nF (code transition between the lowest input code and the highest input code when DAC_OUT reaches the ±1LSB final value)",
+          "CL=100 nF (code transition between the lowest",
           "MODE<2:0>_V12=110 (BUFFER OFF)",
           "MODE<2:0>_V12=110 (BUFFER OFF)",
           "-",
@@ -21097,7 +22452,7 @@
         ],
         [
           "tSAMP",
-          "Sampling time in Sample and Hold mode CL=100 nF (code transition between the lowest input code and the highest input code when DAC_OUT reaches the ±1LSB final value)",
+          ")eulav lanif BSL1± eht sehcaer TUO_CAD nehw",
           "MODE<2:0>_V12=111(3) (INTERNAL BUFFER OFF)",
           "MODE<2:0>_V12=111(3) (INTERNAL BUFFER OFF)",
           "-",
@@ -21341,8 +22696,8 @@
         ],
         [
           "Offset",
-          "Offset error at code 0x800(3)",
-          "DAC output buffer ON, CL ≤ 50 pF, RL ≥ 5 kΩ",
+          "0x800(3) Offset error at code",
+          "VREF+ = 1.8 V",
           "VREF+ = 1.8 V",
           "-",
           "-",
@@ -21381,8 +22736,8 @@
         ],
         [
           "OffsetCal",
-          "Offset error at code 0x800 after factory calibration",
-          "DAC output buffer ON, CL ≤ 50 pF, RL ≥ 5 kΩ",
+          "factory calibration",
+          "VREF+ = 1.8 V",
           "VREF+ = 1.8 V",
           "-",
           "-",
@@ -21468,56 +22823,6 @@
           "-",
           "-78,6",
           "-"
-        ],
-        [
-          "None",
-          "None",
-          "DAC output buffer OFF CL ≤ 50pF, no RL, 1 kHz",
-          "DAC output buffer OFF CL ≤ 50pF, no RL, 1 kHz",
-          "-",
-          "-",
-          "-78,6",
-          "-"
-        ],
-        [
-          "SINAD",
-          "Signal-to-noise and distorsion ratio(6)",
-          "DAC output buffer ON CL ≤ 50pF, RL ≥ 5kΩ, 1 kHz",
-          "DAC output buffer ON CL ≤ 50pF, RL ≥ 5kΩ, 1 kHz",
-          "-",
-          "-",
-          "67.5",
-          "-"
-        ],
-        [
-          "None",
-          "None",
-          "DAC output buffer OFF CL ≤ 50pF, no RL, 1 kHz",
-          "DAC output buffer OFF CL ≤ 50pF, no RL, 1 kHz",
-          "-",
-          "-",
-          "67.5",
-          "-"
-        ],
-        [
-          "ENOB",
-          "Effective number of bits",
-          "DAC output buffer ON CL ≤ 50pF, RL ≥ 5kΩ, 1 kHz",
-          "DAC output buffer ON CL ≤ 50pF, RL ≥ 5kΩ, 1 kHz",
-          "-",
-          "-",
-          "10.9",
-          "-"
-        ],
-        [
-          "None",
-          "None",
-          "DAC output buffer OFF CL ≤ 50pF, no RL, 1 kHz",
-          "DAC output buffer OFF CL ≤ 50pF, no RL, 1 kHz",
-          "-",
-          "-",
-          "10.9",
-          "-"
         ]
       ],
       "notes": [
@@ -21577,7 +22882,7 @@
         [
           "VDDA",
           "Analog supply voltage",
-          "Normal mode",
+          "VSCALE = 001",
           "VSCALE = 001",
           "2.4",
           "-",
@@ -21587,7 +22892,7 @@
         [
           "VDDA",
           "Analog supply voltage",
-          "Normal mode",
+          "VSCALE = 010",
           "VSCALE = 010",
           "2.1",
           "-",
@@ -21597,7 +22902,7 @@
         [
           "VDDA",
           "Analog supply voltage",
-          "Normal mode",
+          "VSCALE = 011",
           "VSCALE = 011",
           "1.8",
           "-",
@@ -21617,7 +22922,7 @@
         [
           "VDDA",
           "Analog supply voltage",
-          "Degraded mode(2)",
+          "VSCALE = 001",
           "VSCALE = 001",
           "1.62",
           "-",
@@ -21627,7 +22932,7 @@
         [
           "VDDA",
           "Analog supply voltage",
-          "Degraded mode(2)",
+          "VSCALE = 010",
           "VSCALE = 010",
           "1.62",
           "-",
@@ -21637,7 +22942,7 @@
         [
           "VDDA",
           "Analog supply voltage",
-          "Degraded mode(2)",
+          "VSCALE = 011",
           "VSCALE = 011",
           "1.62",
           "-",
@@ -21893,46 +23198,6 @@
           "32",
           "50",
           "50"
-        ],
-        [
-          "None",
-          "VSENSE linearity with temperature (from ADC counter)",
-          "-",
-          "-",
-          "3",
-          "None",
-          "None",
-          "None"
-        ],
-        [
-          "None",
-          "Average slope (from ADC counter)",
-          "-",
-          "2",
-          "-",
-          "None",
-          "None",
-          "None"
-        ],
-        [
-          "tS_temp(1)",
-          "ADC sampling time when reading the temperature",
-          "9",
-          "-",
-          "-",
-          "None",
-          "None",
-          "None"
-        ],
-        [
-          "Isensbuf(1)",
-          "Sensor buffer consumption",
-          "-",
-          "3.8",
-          "6.5",
-          "None",
-          "None",
-          "None"
         ]
       ],
       "notes": [
@@ -22046,14 +23311,6 @@
           "3.8",
           "6.5",
           "µA"
-        ],
-        [
-          "VBATlow",
-          "Low supply monitoring",
-          "-",
-          "1.36",
-          "-",
-          "-"
         ]
       ],
       "notes": [
@@ -22222,60 +23479,6 @@
           "30",
           "70.0",
           "μA"
-        ],
-        [
-          "R",
-          "Resistor bridge for VBAT",
-          "Resistor bridge for VBAT",
-          "-",
-          "26",
-          "-",
-          "KΩ"
-        ],
-        [
-          "Q",
-          "Ratio on VBAT measurement",
-          "Ratio on VBAT measurement",
-          "-",
-          "4",
-          "-",
-          "-"
-        ],
-        [
-          "Er(1)",
-          "Error on Q",
-          "Error on Q",
-          "–10",
-          "-",
-          "+10",
-          "%"
-        ],
-        [
-          "tS_vbat(1)",
-          "ADC sampling time when reading VBAT input",
-          "ADC sampling time when reading VBAT input",
-          "9",
-          "-",
-          "-",
-          "µs"
-        ],
-        [
-          "VBAThigh",
-          "High supply monitoring",
-          "High supply monitoring",
-          "-",
-          "3.55",
-          "-",
-          "V"
-        ],
-        [
-          "VBATlow",
-          "Low supply monitoring",
-          "Low supply monitoring",
-          "-",
-          "1.36",
-          "-",
-          "None"
         ]
       ],
       "notes": [
@@ -22372,7 +23575,10 @@
           "V"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by design.",
+        "3. Guaranteed by characterization results."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -22484,7 +23690,10 @@
           "°C"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Guaranteed by design.",
+        "3. Guaranteed by characterization results."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -23376,7 +24585,11 @@
           "1200"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. The maximum DFSDM kernel clock is specified in Section 6.3.1 .",
+        "2. The internal DFSDMCLK clock must be at least 4 times faster than the external CKIN clock.",
+        "3. The internal DFSDMCLK must be at least 6 times faster than the Manchester data frequency. DS13196 - Rev 7 page 144/205"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -23434,8 +24647,8 @@
           "MHz"
         ],
         [
-          "fCKIN (1/ TCKIN)",
-          "Input clock frequency",
+          "TCKIN)",
+          "frequency",
           "SPI mode (SITP[1:0]=0,1), Internal clock mode (SPICKSEL[1:0]≠0)",
           "SPI mode (SITP[1:0]=0,1), Internal clock mode (SPICKSEL[1:0]≠0)",
           "-",
@@ -23600,41 +24813,6 @@
           "1",
           "-",
           "-"
-        ],
-        [
-          "tdh(DATA)",
-          "Data output hold time",
-          "5",
-          "-",
-          "-"
-        ],
-        [
-          "tdv((DE)",
-          "DE output valid time",
-          "-",
-          "14",
-          "14"
-        ],
-        [
-          "tdh(DE)",
-          "DE output hold time",
-          "6",
-          "-",
-          "-"
-        ],
-        [
-          "tsu(RDY)",
-          "RDY input setup time",
-          "3",
-          "-",
-          "-"
-        ],
-        [
-          "th(RDY)",
-          "RDY input hold time",
-          "0",
-          "-",
-          "-"
         ]
       ],
       "notes": [
@@ -23723,7 +24901,9 @@
           "ns"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. At VOS1, these values are degraded by up to 5 %."
+      ],
       "legend": [
         "Guaranteed by characterization results."
       ],
@@ -24076,7 +25256,9 @@
           "tTIMxCLK"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Measurement points are done at 0.5V and with external C = 30 pF. DD L"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -24130,7 +25312,7 @@
         [
           "fI2CCLK",
           "I2CCLK frequency",
-          "Fast-mode",
+          "Analog Filtre OFF, DNF=1",
           "Analog Filtre OFF, DNF=1",
           "9",
           "MHz"
@@ -25129,8 +26311,8 @@
         ],
         [
           "CMD, D inputs (referenced to CK) in eMMC legacy/SDR/DDR and SD HS/SDR/DDR mode",
-          "CMD, D inputs (referenced to CK) in eMMC legacy/SDR/DDR and SD HS/SDR/DDR mode",
-          "CMD, D inputs (referenced to CK) in eMMC legacy/SDR/DDR and SD HS/SDR/DDR mode",
+          "(referenced to CK) in eMMC legacy/SDR/DDR and SD",
+          "edom RDD/RDS/SH",
           "CMD, D inputs (referenced to CK) in eMMC legacy/SDR/DDR and SD HS/SDR/DDR mode",
           "CMD, D inputs (referenced to CK) in eMMC legacy/SDR/DDR and SD HS/SDR/DDR mode",
           "CMD, D inputs (referenced to CK) in eMMC legacy/SDR/DDR and SD HS/SDR/DDR mode",
@@ -25307,7 +26489,7 @@
         ],
         [
           "CMD, D inputs (referenced to CK) in eMMC mode",
-          "CMD, D inputs (referenced to CK) in eMMC mode",
+          "(referenced to CK) in eMMC mode",
           "CMD, D inputs (referenced to CK) in eMMC mode",
           "CMD, D inputs (referenced to CK) in eMMC mode",
           "CMD, D inputs (referenced to CK) in eMMC mode",
@@ -25343,7 +26525,7 @@
         ],
         [
           "CMD, D outputs (referenced to CK) in eMMC mode",
-          "CMD, D outputs (referenced to CK) in eMMC mode",
+          "(referenced to CK) in eMMC mode",
           "CMD, D outputs (referenced to CK) in eMMC mode",
           "CMD, D outputs (referenced to CK) in eMMC mode",
           "CMD, D outputs (referenced to CK) in eMMC mode",
@@ -25593,7 +26775,7 @@
         ],
         [
           "1/tc(TCK)",
-          "TCK clock frequency",
+          "TMS input setup time TMS input hold time TDI input setup time TDI input hold time TDO output valid time TDO output hold time",
           "1.62 V <VDD< 3.6 V",
           "-",
           "-",
@@ -25664,7 +26846,9 @@
           "ns"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. At VOS1, these values are degraded by up to 5 %."
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -25884,7 +27068,17 @@
           "64"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Dimensioning and tolerancing schemes conform to ASME Y14.5M-1994.",
+        "2. The top package body size may be smaller than the bottom package size by as much as 0.15 mm.",
+        "3. Datums A-B and D to be determined at datum plane H.",
+        "4. To be determined at seating datum plane C.",
+        "5. Dimensions D1and E1 do not include mold flash or protrusions. Allowable mold flash or protrusions is “0.25 mm” per side. D1 and E1 are Maximum plastic body size dimensions including mold mismatch.",
+        "6. Details of pin 1 identifier are optional but must be located within the zone indicated.",
+        "7. All dimensions are in millimeters.",
+        "8. No intrusion allowed inwards the leads.",
+        "9. Dimension “b” does not include dambar protrusion. Allowable dambar protrusion shall not cause the lead width to exceed the maximum “b” dimension by more than 0.08 mm. Dambar cannot be located on the lower"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -26020,7 +27214,17 @@
           "0.0031"
         ]
       ],
-      "notes": [],
+      "notes": [
+        "1. Dimensioning and tolerancing schemes conform to ASME Y14.5M-1994.",
+        "2. The top package body size may be smaller than the bottom package size by as much as 0.15 mm.",
+        "3. Datums A-B and D to be determined at datum plane H.",
+        "4. To be determined at seating datum plane C.",
+        "5. Dimensions D1and E1 do not include mold flash or protrusions. Allowable mold flash or protrusions is “0.25 mm” per side. D1 and E1 are Maximum plastic body size dimensions including mold mismatch.",
+        "6. Details of pin 1 identifier are optional but must be located within the zone indicated.",
+        "7. All dimensions are in millimeters.",
+        "8. No intrusion allowed inwards the leads.",
+        "9. Dimension “b” does not include dambar protrusion. Allowable dambar protrusion shall not cause the lead width to exceed the maximum “b” dimension by more than 0.08 mm. Dambar cannot be located on the lower"
+      ],
       "legend": "",
       "semantic_type": "",
       "semantic": {}
@@ -27093,14 +28297,14 @@
         ],
         [
           "ΘJA",
-          "Thermal resistance junction-ambiant",
+          "Thermal resistance",
           "Thermal resistance junction-ambient LQFP144 - 20 x 20 mm /0.5 mm pitch",
           "46",
           "°C/W"
         ],
         [
           "ΘJA",
-          "Thermal resistance junction-ambiant",
+          "junction-ambiant",
           "Thermal resistance junction-ambient LQFP176 - 24 x 24 mm /0.5 mm pitch",
           "43.6",
           "°C/W"
@@ -27135,14 +28339,14 @@
         ],
         [
           "ΘJB",
-          "Thermal resistance junction-board",
+          "Thermal resistance",
           "Thermal resistance junction-board LQFP144 - 20 x 20 mm /0.5 mm pitch",
           "41.3",
           "°C/W"
         ],
         [
           "ΘJB",
-          "Thermal resistance junction-board",
+          "junction-board",
           "Thermal resistance junction-board LQFP176 - 24 x 24 mm /0.5 mm pitch",
           "40.2",
           "°C/W"
@@ -27184,7 +28388,7 @@
         ],
         [
           "ΘJC",
-          "Thermal resistance junction-case",
+          "junction-case",
           "Thermal resistance junction-case LQFP176 - 24 x 24 mm /0.5 mm pitch",
           "11.5",
           "°C/W"

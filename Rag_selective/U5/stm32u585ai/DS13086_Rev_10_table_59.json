@@ -48,7 +48,7 @@
       ],
       [
         "I DD(Stop 2)",
-        "Supply current in Stop 2 mode, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+        "Supply current in Stop 2 mode,",
         "2.4",
         "3.50",
         "9.6",
@@ -64,7 +64,7 @@
       ],
       [
         "I DD(Stop 2)",
-        "Supply current in Stop 2 mode, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+        "8-Kbyte SRAM2 + ICACHE",
         "3.0",
         "3.90",
         "10.0",
@@ -80,7 +80,7 @@
       ],
       [
         "I DD(Stop 2)",
-        "Supply current in Stop 2 mode, RTC disabled, 8-Kbyte SRAM2 + ICACHE retained",
+        "retained",
         "3.3",
         "3.90",
         "10.0",
@@ -128,7 +128,7 @@
       ],
       [
         "I DD(Stop 2)",
-        "Supply current in Stop 2 mode, RTC disabled, ALL SRAMs retained",
+        "Supply current in Stop 2 mode,",
         "2.4",
         "7.85",
         "19.5",
@@ -144,7 +144,7 @@
       ],
       [
         "I DD(Stop 2)",
-        "Supply current in Stop 2 mode, RTC disabled, ALL SRAMs retained",
+        "RTC disabled,",
         "3.0",
         "8.55",
         "20.5",
@@ -511,7 +511,10 @@
         "-"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Evaluated by characterization. Not tested in production.",
+      "2. RTC with default configuration but LPCAL = 1 in RTC_CALR."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

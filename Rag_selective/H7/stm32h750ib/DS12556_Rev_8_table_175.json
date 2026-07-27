@@ -67,7 +67,7 @@
       [
         "R L",
         "Resistive Load",
-        "DAC output buffer ON",
+        "ON connected to V DDA",
         "connected to V DDA",
         "25",
         "-",
@@ -96,8 +96,8 @@
       ],
       [
         "R BON",
-        "Output impedance sample and hold mode, output buffer ON",
-        "DAC output buffer ON",
+        "output buffer ON",
+        "ON = V DD 2.0 V",
         "V = DD 2.0 V",
         "-",
         "-",
@@ -116,8 +116,8 @@
       ],
       [
         "R BOFF",
-        "Output impedance sample and hold mode, output buffer OFF",
-        "DAC output buffer OFF",
+        "output buffer OFF",
+        "OFF = V DD 2.0 V",
         "V = DD 2.0 V",
         "-",
         "-",
@@ -176,8 +176,8 @@
       ],
       [
         "t SETTLING",
-        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ±0.5LSB, ±1LSB, ±2LSB, ±4LSB, ±8LSB)",
-        "Normal mode, DAC output buffer ON, C ≤ 50 pF, L R ≥ 5 kΩ L",
+        "for a 12-bit code transition",
+        "±1 LSB Normal mode, DAC",
         "±1 LSB",
         "-",
         "1.97",
@@ -186,8 +186,8 @@
       ],
       [
         "t SETTLING",
-        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ±0.5LSB, ±1LSB, ±2LSB, ±4LSB, ±8LSB)",
-        "Normal mode, DAC output buffer ON, C ≤ 50 pF, L R ≥ 5 kΩ L",
+        "between the lowest and",
+        "±2 LSB 50 pF, C ≤",
         "±2 LSB",
         "-",
         "1.67",
@@ -196,8 +196,8 @@
       ],
       [
         "t SETTLING",
-        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ±0.5LSB, ±1LSB, ±2LSB, ±4LSB, ±8LSB)",
-        "Normal mode, DAC output buffer ON, C ≤ 50 pF, L R ≥ 5 kΩ L",
+        "when DAC_OUT reaches",
+        "R ≥ 5 kΩ ±4 LSB L",
         "±4 LSB",
         "-",
         "1.66",
@@ -206,8 +206,8 @@
       ],
       [
         "t SETTLING",
-        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ±0.5LSB, ±1LSB, ±2LSB, ±4LSB, ±8LSB)",
-        "Normal mode, DAC output buffer ON, C ≤ 50 pF, L R ≥ 5 kΩ L",
+        "the final value of ±0.5LSB,",
+        "±8 LSB",
         "±8 LSB",
         "-",
         "1.65",
@@ -216,7 +216,7 @@
       ],
       [
         "t SETTLING",
-        "Settling time (full scale: for a 12-bit code transition between the lowest and the highest input codes when DAC_OUT reaches the final value of ±0.5LSB, ±1LSB, ±2LSB, ±4LSB, ±8LSB)",
+        "±8LSB)",
         "Normal mode, DAC output buffer OFF, ±1LSB C =10 pF L",
         "Normal mode, DAC output buffer OFF, ±1LSB C =10 pF L",
         "-",
@@ -235,8 +235,8 @@
         "µs"
       ],
       [
-        "t (3) WAKEUP",
-        "Wakeup time from off state (setting the ENx bit in the DAC Control register) until the final value of ±1LSB is reached",
+        "WAKEUP",
+        "register) until the final value of ±1LSB is reached",
         "Normal mode, DAC output buffer OFF, C ≤ 10 pF L",
         "Normal mode, DAC output buffer OFF, C ≤ 10 pF L",
         "-",
@@ -413,99 +413,12 @@
         "160*T / ON (T +T ) ON OFF (4)",
         "-",
         "-"
-      ],
-      [
-        "DNL",
-        "Differential non linearity(2)",
-        "DAC output buffer OFF",
-        "DAC output buffer OFF",
-        "-2",
-        "-",
-        "2",
-        "2"
-      ],
-      [
-        "INL",
-        "Integral non linearity(3)",
-        "DAC output buffer OFF, C ≤ 50 pF, no R L L",
-        "DAC output buffer OFF, C ≤ 50 pF, no R L L",
-        "-4",
-        "-",
-        "4",
-        "4"
-      ],
-      [
-        "Offset",
-        "Offset error at code 0x800 (3)",
-        "DAC output buffer ON, C ≤50 pF, L R ≥5 kΩ L",
-        "V = 1.8 V REF+",
-        "-",
-        "-",
-        "±30",
-        "±30"
-      ],
-      [
-        "Offset",
-        "Offset error at code 0x800 (3)",
-        "DAC output buffer OFF, C ≤ 50 pF, no R L L",
-        "DAC output buffer OFF, C ≤ 50 pF, no R L L",
-        "-",
-        "-",
-        "±8",
-        "±8"
-      ],
-      [
-        "OffsetCal",
-        "Offset error at code 0x800 after factory calibration",
-        "DAC output buffer ON, C ≤50 pF, L R ≥5 kΩ L",
-        "V = 1.8 V REF+",
-        "-",
-        "-",
-        "±7",
-        "±7"
-      ],
-      [
-        "Gain",
-        "Gain error(5)",
-        "DAC output buffer OFF, C ≤ 50 pF, no R L L",
-        "DAC output buffer OFF, C ≤ 50 pF, no R L L",
-        "-",
-        "-",
-        "±1",
-        "±1"
-      ],
-      [
-        "SNR",
-        "Signal-to-noise ratio(6)",
-        "DAC output buffer OFF, C ≤ 50 pF, no R ,1 kHz, BW = L L 500 KHz",
-        "DAC output buffer OFF, C ≤ 50 pF, no R ,1 kHz, BW = L L 500 KHz",
-        "-",
-        "67.8",
-        "-",
-        "-"
-      ],
-      [
-        "THD",
-        "Total harmonic distortion(6)",
-        "DAC output buffer OFF, C ≤ 50 pF, no R , 1 kHz L L",
-        "DAC output buffer OFF, C ≤ 50 pF, no R , 1 kHz L L",
-        "-",
-        "-78.6",
-        "-",
-        "-"
-      ],
-      [
-        "SINAD",
-        "Signal-to-noise and distortion ratio(6)",
-        "DAC output buffer OFF, C ≤ 50 pF, no R , 1 kHz L L",
-        "DAC output buffer OFF, C ≤ 50 pF, no R , 1 kHz L L",
-        "-",
-        "67.5",
-        "-",
-        "-"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "3. In buffered mode, the output can overshoot above the final value for low input code (starting from the minimum value).",
+      "4. T is the refresh phase duration, while T is the hold phase duration. Refer to the product reference manual for more ON OFF"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

@@ -11,7 +11,7 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f745ie.pdf#page=115",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f745ie.pdf",
-  "text_helper": "Table 30. Typical and maximum current consumption in Sleep mode, regulator ON — section 6.3.7 Supply current characteristics. Symbol, Parameter, Conditions, f (MHz) HCLK, Typ, +4 autres. (table vide)",
+  "text_helper": "Table 30. Typical and maximum current consumption in Sleep mode, regulator ON — section 6.3.7 Supply current characteristics. Symbol, Parameter, Conditions, f (MHz) HCLK, Typ, +4 autres.",
   "table_content": {
     "headers": [
       "Symbol",
@@ -24,8 +24,167 @@
       "Max(1) / T = 105 °C A",
       "Unit"
     ],
-    "rows": [],
-    "notes": [],
+    "rows": [
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "All peripherals enabled(2)",
+        "216",
+        "116",
+        "137(3)",
+        "159(3)",
+        "-",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "All peripherals enabled(2)",
+        "200",
+        "108",
+        "127",
+        "147",
+        "166",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "All",
+        "180",
+        "95",
+        "112(3)",
+        "126(3)",
+        "140(3)",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "peripherals",
+        "168",
+        "85",
+        "99",
+        "112",
+        "125",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "All peripherals enabled(2)",
+        "144",
+        "65",
+        "76",
+        "87",
+        "98",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "All peripherals enabled(2)",
+        "60",
+        "30",
+        "35",
+        "46",
+        "57",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply",
+        "All peripherals enabled(2)",
+        "25",
+        "15",
+        "18",
+        "29",
+        "39",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Sleep mode",
+        "All peripherals disabled",
+        "216",
+        "35",
+        "46(3)",
+        "71(3)",
+        "-",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "All peripherals disabled",
+        "200",
+        "32",
+        "43",
+        "66",
+        "86",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "All",
+        "180",
+        "28",
+        "38(3)",
+        "53(3)",
+        "70(3)",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "peripherals",
+        "168",
+        "25",
+        "33",
+        "47",
+        "61",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "All peripherals disabled",
+        "144",
+        "20",
+        "26",
+        "37",
+        "50",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "All peripherals disabled",
+        "60",
+        "10",
+        "14",
+        "26",
+        "36",
+        "mA"
+      ],
+      [
+        "I DD",
+        "Supply current in Sleep mode",
+        "All peripherals disabled",
+        "25",
+        "5",
+        "8",
+        "20",
+        "31",
+        "mA"
+      ]
+    ],
+    "notes": [
+      "1. Guaranteed by characterization results.",
+      "2. When analog peripheral blocks such as ADCs, DACs, HSE, LSE, HSI, or LSI are ON, an additional power consumption should be considered.",
+      "3. Guaranteed by test in production."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

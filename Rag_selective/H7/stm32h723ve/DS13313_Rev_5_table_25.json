@@ -11,14 +11,14 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32h723ve.pdf#page=101",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h723ve.pdf",
-  "text_helper": "Table 25. Typical and maximum current consumption in Sleep mode — section 6.3.7 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, f rcc_c_ck (MHz), +6 autres.",
+  "text_helper": "Table 25. Typical and maximum current consumption in Sleep mode — section 6.3.7 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, f rcc_c_ck (MHz) / (MHz), +6 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions",
       "Conditions",
-      "f rcc_c_ck (MHz)",
+      "f rcc_c_ck (MHz) / (MHz)",
       "Typ",
       "Max(1) / T = J 25 °C",
       "Max(1) / T = J 85 °C",
@@ -55,8 +55,8 @@
       ],
       [
         "I DD(Sleep)",
-        "Supply current in Sleep mode",
-        "All peripherals disabled",
+        "Supply",
+        "VOS0 All",
         "VOS0",
         "520",
         "33.5",
@@ -68,8 +68,8 @@
       ],
       [
         "I DD(Sleep)",
-        "Supply current in Sleep mode",
-        "All peripherals disabled",
+        "Supply",
+        "All",
         "VOS0",
         "400",
         "27",
@@ -81,8 +81,8 @@
       ],
       [
         "I DD(Sleep)",
-        "Supply current in Sleep mode",
-        "All peripherals disabled",
+        "current in Sleep mode",
+        "peripherals VOS1 disabled",
         "VOS1",
         "400",
         "22.5",
@@ -108,7 +108,7 @@
       [
         "I DD(Sleep)",
         "Supply current in Sleep mode",
-        "All peripherals disabled",
+        "VOS2",
         "VOS2",
         "300",
         "16.5",
@@ -134,7 +134,7 @@
       [
         "I DD(Sleep)",
         "Supply current in Sleep mode",
-        "All peripherals disabled",
+        "VOS3",
         "VOS3",
         "170",
         "8.5",

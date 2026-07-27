@@ -121,63 +121,13 @@
         "2",
         "-",
         "ms"
-      ],
-      [
-        "IDD(LSE)",
-        "LSE current consumption",
-        "LSEDRV[1:0] = 01, medium low-drive capability",
-        "-",
-        "380",
-        "-",
-        "-"
-      ],
-      [
-        "IDD(LSE)",
-        "LSE current consumption",
-        "LSEDRV[1:0] = 10, medium high-drive capability",
-        "-",
-        "520",
-        "-",
-        "-"
-      ],
-      [
-        "IDD(LSE)",
-        "LSE current consumption",
-        "LSEDRV[1:0] = 11, high-drive capability",
-        "-",
-        "660",
-        "-",
-        "-"
-      ],
-      [
-        "Gmcritmax",
-        "Maximum critical crystal Gm",
-        "LSEDRV[1:0] = 01, medium low-drive capability",
-        "-",
-        "-",
-        "0.75",
-        "0.75"
-      ],
-      [
-        "Gmcritmax",
-        "Maximum critical crystal Gm",
-        "LSEDRV[1:0] = 10, medium high-drive capability",
-        "-",
-        "-",
-        "1.7",
-        "1.7"
-      ],
-      [
-        "Gmcritmax",
-        "Maximum critical crystal Gm",
-        "LSEDRV[1:0] = 11, high-drive capability",
-        "-",
-        "-",
-        "2.7",
-        "2.7"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Refer to the note below this table.",
+      "2. CS_PARA is the equivalent capacitance seen by the crystal due to OSC32_IN and OSC32_OUT internal parasitic capacitances.",
+      "3. tSU(LSE) is the startup time measured from the moment it is enabled (by software) to a stabilized 32.768 kHz oscillation is reached. This value is measured for a standard crystal and it can vary significantly with the crystal manufacturer"
+    ],
     "legend": [
       "Specified by design and not tested in production."
     ],

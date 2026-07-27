@@ -11,18 +11,18 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f072c8.pdf#page=56",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f072c8.pdf",
-  "text_helper": "Table 29. Typical and maximum current consumption from V supply at V = 3.6 V 56 DD DD — section 6.3.5 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK, All peripherals enabled / Typ, +8 autres.",
+  "text_helper": "Table 29. Typical and maximum current consumption from V supply at V = 3.6 V 56 DD DD — section 6.3.5 Supply current characteristics. Symbol, Parameter, Conditions, f HCLK, All peripherals enabled / Typ / 25 °C 85 °C 105 °C, +8 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions",
       "f HCLK",
-      "All peripherals enabled / Typ",
+      "All peripherals enabled / Typ / 25 °C 85 °C 105 °C",
       "All peripherals enabled / Max @ T (1) A / 25 °C",
       "All peripherals enabled / Max @ T (1) A / 85 °C",
       "All peripherals enabled / Max @ T (1) A / 105 °C",
-      "All peripherals disabled / Typ",
+      "All peripherals disabled / Typ / 25 °C 85 °C 105 °C",
       "All peripherals disabled / Max @ T (1) A / 25 °C",
       "All peripherals disabled / Max @ T (1) A / 85 °C",
       "All peripherals disabled / Max @ T (1) A / 105 °C",
@@ -46,7 +46,7 @@
       ],
       [
         "I DD",
-        "yromem ,edom hsalF nuR ni morf tnerruc gnitucexe ylppuS edoc",
+        "yromem ,edom",
         "HSE bypass, PLL on",
         "48 MHz",
         "24.1",
@@ -62,7 +62,7 @@
       [
         "I DD",
         "yromem ,edom hsalF nuR ni morf tnerruc gnitucexe ylppuS edoc",
-        "HSE bypass, PLL on",
+        "PLL on",
         "32 MHz",
         "16.0",
         "18.3",
@@ -91,7 +91,7 @@
       ],
       [
         "I DD",
-        "yromem ,edom hsalF nuR ni morf tnerruc gnitucexe ylppuS edoc",
+        "morf ni",
         "HSE bypass, PLL off",
         "8 MHz",
         "4.52",
@@ -107,7 +107,7 @@
       [
         "I DD",
         "yromem ,edom hsalF nuR ni morf tnerruc gnitucexe ylppuS edoc",
-        "HSE bypass, PLL off",
+        "PLL off",
         "1 MHz",
         "1.25",
         "1.39",
@@ -121,7 +121,7 @@
       ],
       [
         "I DD",
-        "yromem ,edom hsalF nuR ni morf tnerruc gnitucexe ylppuS edoc",
+        "Supply",
         "HSI clock, PLL on",
         "48 MHz",
         "24.1",
@@ -137,7 +137,7 @@
       [
         "I DD",
         "yromem ,edom hsalF nuR ni morf tnerruc gnitucexe ylppuS edoc",
-        "HSI clock, PLL on",
+        "PLL on",
         "32 MHz",
         "16.1",
         "18.2",
@@ -510,7 +510,10 @@
         "0.97"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Data based on characterization results, not tested in production unless otherwise specified.",
+      "2. Data based on characterization results and tested in production (using one common test limit for sum of I and I ). DD DDA"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

@@ -11,10 +11,9 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32g473cb.pdf#page=123",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g473cb.pdf",
-  "text_helper": "Table 49. EMS characteristics — section 5.3.11 EMC characteristics. Symbol, Symbol, Parameter, Conditions, Level/ Class.",
+  "text_helper": "Table 49. EMS characteristics — section 5.3.11 EMC characteristics. Symbol, Parameter, Conditions, Level/ Class.",
   "table_content": {
     "headers": [
-      "Symbol",
       "Symbol",
       "Parameter",
       "Conditions",
@@ -23,41 +22,20 @@
     "rows": [
       [
         "V FESD",
-        "V FESD",
         "Voltage limits to be applied on any I/O pin to induce a functional disturbance",
         "V = 3.3 V, T = +25 °C, DD A f = 170 MHz, HCLK conforming to IEC 61000-4-2",
         "3B"
       ],
       [
         "V EFTB",
-        "V EFTB",
         "Fast transient voltage burst limits to be applied through 100 pF on V and V DD SS pins to induce a functional disturbance",
         "V = 3.3 V, T = +25 °C, DD A f = 170 MHz, HCLK conforming to IEC 61000-4-4",
         "5A"
-      ],
-      [
-        "S EMI",
-        "Peak level",
-        "30 MHz to 130 MHz",
-        "0",
-        "0"
-      ],
-      [
-        "S EMI",
-        "Peak level",
-        "130 MHz to 1 GHz",
-        "16",
-        "16"
-      ],
-      [
-        "S EMI",
-        "Peak level",
-        "1 GHz to 2 GHz",
-        "11",
-        "11"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Evaluated by characterization - Not tested in production. 124/229 DS12712 Rev 5"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

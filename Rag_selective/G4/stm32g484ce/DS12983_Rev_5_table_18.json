@@ -5,13 +5,13 @@
   "table_number": "18",
   "title": "Table 18. Operating conditions at power-up / power-down",
   "page": 85,
-  "section": "5.3.2 Operating conditions at power-up / power-down",
-  "section_title": "Operating conditions at power-up / power-down",
+  "section": "5.3.3 Embedded reset and power control block characteristics",
+  "section_title": "Embedded reset and power control block characteristics",
   "semantic_type": "",
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32g484ce.pdf#page=85",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32g484ce.pdf",
-  "text_helper": "Table 18. Operating conditions at power-up / power-down — section 5.3.2 Operating conditions at power-up / power-down. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
+  "text_helper": "Table 18. Operating conditions at power-up / power-down — section 5.3.3 Embedded reset and power control block characteristics. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
   "table_content": {
     "headers": [
       "Symbol",
@@ -55,7 +55,11 @@
         "µs/V"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Continuous mode means Run/Sleep modes, or temperature sensor enable in Low-power run/Low-power sleep modes.",
+      "2. Guaranteed by design - Not tested in production.",
+      "3. BOR0 is enabled in all modes (except shutdown) and its consumption is therefore included in the supply current characteristics tables."
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

@@ -40,7 +40,7 @@
       ],
       [
         "V - V DD12 SS",
-        "External SMPS supply voltage",
+        "Range 2",
         "Range 2",
         "-0.3",
         "1.4",
@@ -53,61 +53,12 @@
         "V -0.3 SS",
         "min (V , V , V , V , DD DDA DDIO2 DDUSB V ) + 4.0(3)(4) LCD",
         "V"
-      ],
-      [
-        "None",
-        "Input voltage on TT_xx pins",
-        "Input voltage on TT_xx pins",
-        "V -0.3 SS",
-        "4.0",
-        "None"
-      ],
-      [
-        "None",
-        "Input voltage on BOOT0 pin",
-        "Input voltage on BOOT0 pin",
-        "V SS",
-        "9.0",
-        "None"
-      ],
-      [
-        "None",
-        "Input voltage on any other pins",
-        "Input voltage on any other pins",
-        "V -0.3 SS",
-        "4.0",
-        "None"
-      ],
-      [
-        "|∆V | DDx",
-        "Variations between different V power DDX pins of the same domain",
-        "Variations between different V power DDX pins of the same domain",
-        "-",
-        "50",
-        "mV"
-      ],
-      [
-        "|V -V | SSx SS",
-        "Variations between all the different ground pins(5)",
-        "Variations between all the different ground pins(5)",
-        "-",
-        "50",
-        "mV"
-      ],
-      [
-        "V - V REF+ DDA",
-        "Allowed voltage difference for V > REF+ V DDA",
-        "Allowed voltage difference for V > REF+ V DDA",
-        "-",
-        "0.4",
-        "V"
       ]
     ],
     "notes": [
       "2. V maximum must always be respected. Refer to Table 21: Current characteristics for the maximum allowed injected IN",
       "3. This formula has to be applied only on the power supplies related to the IO structure described in the pin definition table.",
-      "4. To sustain a voltage higher than 4 V the internal pull-up/pull-down resistors must be disabled.",
-      "5. A negative injection is induced by V < V . I must never be exceeded. Refer also to Table 20: Voltage IN SS INJ(PIN)"
+      "4. To sustain a voltage higher than 4 V the internal pull-up/pull-down resistors must be disabled."
     ],
     "legend": "",
     "semantic_type": "",

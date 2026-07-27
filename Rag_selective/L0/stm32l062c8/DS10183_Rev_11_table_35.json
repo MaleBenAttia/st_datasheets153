@@ -40,7 +40,7 @@
       ],
       [
         "t WUSLEEP_LP",
-        "Wakeup from Low-power sleep mode, f = 262 kHz HCLK",
+        "= 262 kHz f HCLK",
         "f = 262 kHz HCLK Flash memory switched OFF",
         "9",
         "10",
@@ -56,7 +56,7 @@
       ],
       [
         "t WUSTOP",
-        "Wakeup from Stop mode, regulator in Run mode",
+        "mode",
         "f = f = 16 MHz HCLK HSI",
         "4.9",
         "7",
@@ -104,7 +104,7 @@
       ],
       [
         "t WUSTOP",
-        "Wakeup from Stop mode, regulator in low- power mode",
+        "power mode",
         "f = f = 1.05 MHz HCLK MSI",
         "13",
         "23",
@@ -168,7 +168,7 @@
       ],
       [
         "t WUSTOP",
-        "Wakeup from Stop mode, regulator in low- power mode, code running from RAM",
+        "power mode, code running from RAM",
         "f = f /4 = 4 MHz HCLK HSI",
         "7.9",
         "10",
@@ -207,7 +207,11 @@
         "µs"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. Guaranteed by design, not tested in production DS10183 Rev 11 65/124",
+      "2. Refer to the note and caution paragraphs below the table, and to the application note AN2867 “Oscillator design guide for ST microcontrollers”.",
+      "3. Guaranteed by characterization results. t is the startup time measured from the moment it is enabled (by software) SU(LSE)"
+    ],
     "legend": "",
     "semantic_type": "",
     "semantic": {}

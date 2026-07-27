@@ -1,9 +1,9 @@
 {
   "table_id": "table_51",
-  "document": "DS15125 Rev 2 - Table 51. EXTI input characteristics.",
+  "document": "DS15125 Rev 2 - Table 51. EXTI input characteristics",
   "rev": "Rev 2",
   "table_number": "51",
-  "title": "Table 51. EXTI input characteristics.",
+  "title": "Table 51. EXTI input characteristics",
   "page": 76,
   "section": "5.3.16 Extended interrupt and event controller input (EXTI) characteristics",
   "section_title": "Extended interrupt and event controller input (EXTI) characteristics",
@@ -11,7 +11,7 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32c532cb.pdf#page=76",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32c532cb.pdf",
-  "text_helper": "Table 51. EXTI input characteristics. — section 5.3.16 Extended interrupt and event controller input (EXTI) characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
+  "text_helper": "Table 51. EXTI input characteristics — section 5.3.16 Extended interrupt and event controller input (EXTI) characteristics. Symbol, Parameter, Conditions, Min, Typ, +2 autres.",
   "table_content": {
     "headers": [
       "Symbol",
@@ -71,11 +71,29 @@
       [
         "tLATR",
         "Trigger conversion latency for regular and injected channels",
+        "Trigger from an asynchronous clock",
+        "3",
+        "-",
+        "4",
+        "4"
+      ],
+      [
+        "tLATR",
+        "Trigger conversion latency for regular and injected channels",
         "Trigger from a synchronous clock",
         "3",
         "3",
         "3",
         "3"
+      ],
+      [
+        "tS",
+        "Sampling time",
+        "-",
+        "2.5",
+        "-",
+        "288.5",
+        "288.5"
       ],
       [
         "tCONV",
@@ -96,7 +114,9 @@
         "µA"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. High temperature generate leakage current on ADC inputs. This current create voltage drop through Rain directly affecting ADC accuracy (the worst case when VAIN = VDDA). To limit this effect to a tolerance of 2LSBs, it must respect rain max tables."
+    ],
     "legend": [
       "Specified by design and not tested in production."
     ],

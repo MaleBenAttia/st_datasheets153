@@ -11,11 +11,10 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32u3c5ci.pdf#page=159",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32u3c5ci.pdf",
-  "text_helper": "Table 87. Output voltage characteristics (all I/Os except FT_o and PC13) — section 5.3.14 I/O port characteristics. Symbol, Parameter, Parameter, Conditions, Min, +2 autres.",
+  "text_helper": "Table 87. Output voltage characteristics (all I/Os except FT_o and PC13) — section 5.3.14 I/O port characteristics. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
   "table_content": {
     "headers": [
       "Symbol",
-      "Parameter",
       "Parameter",
       "Conditions",
       "Min",
@@ -26,7 +25,6 @@
       [
         "VOL",
         "Output low-level voltage",
-        "Output low-level voltage",
         "CMOS port(1), |IIO| = 8 mA, 2.7 V ≤ VDDIOx ≤ 3.6 V",
         "-",
         "0.4",
@@ -34,7 +32,6 @@
       ],
       [
         "VOH",
-        "Output high-level voltage",
         "Output high-level voltage",
         "CMOS port(1), |IIO| = 8 mA, 2.7 V ≤ VDDIOx ≤ 3.6 V",
         "VDDIOx - 0.4",
@@ -44,7 +41,6 @@
       [
         "VOL(2)",
         "Output low-level voltage",
-        "Output low-level voltage",
         "TTL port(1),|IIO| = 8 mA, 2.7 V ≤ VDDIOx ≤ 3.6 V",
         "-",
         "0.4",
@@ -52,7 +48,6 @@
       ],
       [
         "VOH(2)",
-        "Output high-level voltage",
         "Output high-level voltage",
         "TTL port(1),|IIO| = 8 mA, 2.7 V ≤ VDDIOx ≤ 3.6 V",
         "2.4",
@@ -62,7 +57,6 @@
       [
         "VOL(2)",
         "Output low-level voltage",
-        "Output low-level voltage",
         "All I/Os, |IIO| = 20 mA, 2.7 V ≤ VDDIOx ≤ 3.6 V",
         "-",
         "1.3",
@@ -70,7 +64,6 @@
       ],
       [
         "VOH(2)",
-        "Output high-level voltage",
         "Output high-level voltage",
         "All I/Os, |IIO| = 20 mA, 2.7 V ≤ VDDIOx ≤ 3.6 V",
         "VDDIOx - 1.3",
@@ -80,7 +73,6 @@
       [
         "VOL(2)",
         "Output low-level voltage",
-        "Output low-level voltage",
         "|IIO| = 4 mA, 1.58 V ≤ VDDIOx ≤ 3.6 V",
         "-",
         "0.4",
@@ -88,7 +80,6 @@
       ],
       [
         "VOH(2)",
-        "Output high-level voltage",
         "Output high-level voltage",
         "|IIO| = 4 mA, 1.58 V ≤ VDDIOx ≤ 3.6 V",
         "VDDIOx - 0.4",
@@ -98,7 +89,6 @@
       [
         "VOL(2)",
         "Output low-level voltage",
-        "Output low-level voltage",
         "|IIO| = 1 mA, 1.08 V ≤ VDDIOx < 3.6 V",
         "-",
         "0.4",
@@ -106,7 +96,6 @@
       ],
       [
         "VOH(2)",
-        "Output high-level voltage",
         "Output high-level voltage",
         "|IIO| = 1 mA, 1.08 V ≤ VDDIOx < 3.6 V",
         "VDDIOx - 0.4",
@@ -116,16 +105,14 @@
       [
         "VOLFM+(2)",
         "Output low-level voltage for a FT_f I/O pin in FM+ mode",
-        "Output low-level voltage for a FT_f I/O pin in FM+ mode",
         "|IIO| = 20 mA, 2.7 V ≤ VDDIOx ≤ 3.6 V",
         "-",
         "0.4",
         "V"
       ],
       [
-        "VOLFM+(2)",
-        "Output low-level voltage for a FT_f I/O pin in FM+ mode",
-        "Output low-level voltage for a FT_f I/O pin in FM+ mode",
+        "(2) VOLFM+",
+        "mode",
         "|IIO| = 10 mA, 1.58 V ≤ VDDIOx ≤ 3.6 V",
         "-",
         "0.4",
@@ -134,14 +121,16 @@
       [
         "VOLFM+(2)",
         "Output low-level voltage for a FT_f I/O pin in FM+ mode",
-        "Output low-level voltage for a FT_f I/O pin in FM+ mode",
         "|IIO| = 2 mA, 1.08 V ≤ VDDIOx < 3.6 V",
         "-",
         "0.4",
         "V"
       ]
     ],
-    "notes": [],
+    "notes": [
+      "1. TTL and CMOS outputs are compatible with JEDEC standards JESD36 and JESD52.",
+      "2. Specified by design. Not tested in production."
+    ],
     "legend": [
       "The I/O structure options listed in this table can be a concatenation of options including the option explicitly listed. For instance, TT_a refers to",
       "any TT I/O with _a option. TT_xx refers to any TT I/O and FT_xx refers to any FT I/O.",

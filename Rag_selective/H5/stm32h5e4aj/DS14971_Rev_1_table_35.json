@@ -11,15 +11,15 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32h5e4aj.pdf#page=179",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32h5e4aj.pdf",
-  "text_helper": "Table 35. Typical and maximum current consumption in Standby mode — section 5.3.7 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, Typ LDO, +6 autres.",
+  "text_helper": "Table 35. Typical and maximum current consumption in Standby mode — section 5.3.7 Supply current characteristics. Symbol, Parameter, Conditions, Conditions, Typ LDO / LDO, +6 autres.",
   "table_content": {
     "headers": [
       "Symbol",
       "Parameter",
       "Conditions",
       "Conditions",
-      "Typ LDO",
-      "Typ SMPS",
+      "Typ LDO / LDO",
+      "Typ SMPS / SMPS",
       "Max(1) (2) / T = J 25°C",
       "Max(1) (2) / T = J 85°C",
       "Max(1) (2) / T = J 105°C",
@@ -43,7 +43,7 @@
       [
         "I DD(stop)",
         "Supply current in Stop",
-        "Flash memory in low power mode, SRAMs ON",
+        "low power mode, SVOS4",
         "SVOS4",
         "0.581",
         "0.255",
@@ -56,7 +56,7 @@
       [
         "I DD(stop)",
         "Supply current in Stop",
-        "Flash memory in low power mode, SRAMs ON",
+        "SVOS5",
         "SVOS5",
         "0.468",
         "0.270",
@@ -82,7 +82,7 @@
       [
         "I DD(stop)",
         "Supply current in Stop",
-        "Flash memory in normal mode, SRAMs ON",
+        "SVOS4 SRAMs ON",
         "SVOS4",
         "0.622",
         "0.268",
@@ -94,7 +94,7 @@
       ],
       [
         "I DD(stop)",
-        "Supply current in Stop",
+        "in Stop",
         "Flash memory in low power mode, SRAMs OFF except SRAM2 16 Kbytes ON",
         "SVOS3",
         "0.526",
@@ -108,7 +108,7 @@
       [
         "I DD(stop)",
         "Supply current in Stop",
-        "Flash memory in low power mode, SRAMs OFF except SRAM2 16 Kbytes ON",
+        "SVOS4 SRAMs OFF except",
         "SVOS4",
         "0.393",
         "0.206",
@@ -121,7 +121,7 @@
       [
         "I DD(stop)",
         "Supply current in Stop",
-        "Flash memory in low power mode, SRAMs OFF except SRAM2 16 Kbytes ON",
+        "SRAM2 16 Kbytes ON SVOS5",
         "SVOS5",
         "0.261",
         "0.170",
@@ -147,7 +147,7 @@
       [
         "I DD(stop)",
         "Supply current in Stop",
-        "Flash memory in low power mode, SRAMs OFF except SRAM2 ON",
+        "SVOS4 SRAMs OFF except",
         "SVOS4",
         "0.422",
         "0.213",
@@ -160,7 +160,7 @@
       [
         "I DD(stop)",
         "Supply current in Stop",
-        "Flash memory in low power mode, SRAMs OFF except SRAM2 ON",
+        "SRAM2 ON SVOS5",
         "SVOS5",
         "0.293",
         "0.179",

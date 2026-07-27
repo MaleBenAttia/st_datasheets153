@@ -11,10 +11,9 @@
   "tags": [],
   "url": "https://www.st.com/resource/en/datasheet/stm32f103rc.pdf#page=95",
   "url_pdf": "https://www.st.com/resource/en/datasheet/stm32f103rc.pdf",
-  "text_helper": "Table 50. TIMx characteristics — section 5.3.16 TIM timer characteristics. Symbol, Symbol, Parameter, Conditions, Min, +2 autres.",
+  "text_helper": "Table 50. TIMx characteristics — section 5.3.16 TIM timer characteristics. Symbol, Parameter, Conditions, Min, Max, +1 autres.",
   "table_content": {
     "headers": [
-      "Symbol",
       "Symbol",
       "Parameter",
       "Conditions",
@@ -25,7 +24,6 @@
     "rows": [
       [
         "t res(TIM)",
-        "t res(TIM)",
         "Timer resolution time",
         "-",
         "1",
@@ -33,7 +31,6 @@
         "t TIMxCLK"
       ],
       [
-        "t res(TIM)",
         "t res(TIM)",
         "Timer resolution time",
         "f = 72 MHz TIMxCLK",
@@ -43,7 +40,6 @@
       ],
       [
         "f EXT",
-        "f EXT",
         "Timer external clock frequency on CH1 to CH4",
         "-",
         "0",
@@ -52,15 +48,13 @@
       ],
       [
         "f EXT",
-        "f EXT",
-        "Timer external clock frequency on CH1 to CH4",
+        "frequency on CH1 to CH4",
         "f = 72 MHz TIMxCLK",
         "0",
         "36",
         "MHz"
       ],
       [
-        "Res TIM",
         "Res TIM",
         "Timer resolution",
         "-",
@@ -70,7 +64,6 @@
       ],
       [
         "t COUNTER",
-        "t COUNTER",
         "16-bit counter clock period when internal clock is selected",
         "-",
         "1",
@@ -78,16 +71,14 @@
         "t TIMxCLK"
       ],
       [
-        "t COUNTER",
-        "t COUNTER",
-        "16-bit counter clock period when internal clock is selected",
+        "COUNTER",
+        "is selected",
         "f = 72 MHz TIMxCLK",
         "0.0139",
         "910",
         "µs"
       ],
       [
-        "t MAX_COUNT",
         "t MAX_COUNT",
         "Maximum possible count",
         "-",
@@ -97,60 +88,16 @@
       ],
       [
         "t MAX_COUNT",
-        "t MAX_COUNT",
         "Maximum possible count",
         "f = 72 MHz TIMxCLK",
         "-",
         "59.6",
         "s"
-      ],
-      [
-        "t w(SCLH)",
-        "SCL clock high time",
-        "4.0",
-        "-",
-        "0.6",
-        "-",
-        "-"
-      ],
-      [
-        "t h(SDA)",
-        "SDA data hold time",
-        "-",
-        "3450(3)",
-        "-",
-        "900(3)",
-        "900(3)"
-      ],
-      [
-        "t r(SDA) t r(SCL)",
-        "SDA and SCL rise time",
-        "-",
-        "1000",
-        "-",
-        "300",
-        "300"
-      ],
-      [
-        "t f(SDA) t f(SCL)",
-        "SDA and SCL fall time",
-        "-",
-        "300",
-        "-",
-        "300",
-        "300"
-      ],
-      [
-        "t su(STA)",
-        "Repeated Start condition setup time",
-        "4.7",
-        "-",
-        "0.6",
-        "-",
-        "-"
       ]
     ],
     "notes": [
+      "1. TIMx is used as a general term to refer to the TIM1, TIM2, TIM3 and TIM4 timers. DS5792 Rev 13 95/143",
+      "2. f must be at least 2 MHz to achieve standard mode I2C frequencies. It must be at least 4 MHz to a P c C h L ie K1 ve the fast mode I2C frequencies and it must be a multiple of 10 MHz in order to reach the I2C fast",
       "3. The device must internally provide a hold time of at least 300ns for the SDA signal in order to bridge the undefined region on the falling edge of SCL.",
       "4. The minimum width of the spikes filtered by the analog filter is above t (max). SP"
     ],
