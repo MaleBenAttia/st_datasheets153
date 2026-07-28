@@ -34,6 +34,16 @@ def _get_reversed_debug_entries() -> list[dict]:
     return list(_reversed_debug_entries)
 
 import os
+
+_INVERS_PATH = os.path.join(os.path.dirname(__file__), "..", "invers.json")
+
+def _load_inv_exceptions() -> dict:
+    try:
+        with open(_INVERS_PATH, encoding="utf-8") as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+
 import pdfplumber
 from pdfplumber.page import Page
 
@@ -1804,7 +1814,24 @@ def extract_table_grid(
         rows_fixed = [row for row in rows_fixed if any(c for c in row)]
 
         # ── [Fix] Correction texte inversé (cellules fusionnées verticales) ─
-        rows_fixed = _fix_reversed_cells(rows_fixed, table_id=ref.table_id)
+        # Restreint aux headers, row 0 et colonne 0, sauf exceptions invers.json
+        _inv_exceptions = _load_inv_exceptions()
+        _is_full = bool(
+            _inv_exceptions.get(pdf_name, [])
+            and ref.table_id in _inv_exceptions[pdf_name]
+        )
+        if _is_full:
+            rows_fixed = _fix_reversed_cells(rows_fixed, table_id=ref.table_id)
+        else:
+            if rows_fixed:
+                rows_fixed[0] = _fix_reversed_cells(
+                    [rows_fixed[0]], table_id=ref.table_id + "_row0"
+                )[0]
+            for row in rows_fixed[1:]:
+                if row and len(row) > 0:
+                    corrected, changed, _ = _normalize_reversed_text(row[0])
+                    if changed:
+                        row[0] = corrected
         # Appliquer aussi la correction aux en-têtes (ex: "kcolc UPC" → "CPU clock")
         headers = _fix_reversed_cells([headers], table_id=ref.table_id + "_headers")[0]
 
